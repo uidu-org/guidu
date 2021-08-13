@@ -55,7 +55,7 @@ function FieldDateRangeStateless({
   const modifiers = { start: from, end: to };
 
   return (
-    <div className={className}>
+    <div className={className} tw="flex items-center space-x-3">
       <FieldDateStateless
         ref={fromElement}
         value={from}
@@ -75,26 +75,24 @@ function FieldDateRangeStateless({
         onDayChange={handleFromChange}
         displayFormat={displayFormat}
       />
-      <ArrowRight size={16} className="flex-shrink-0" />
-      <span className="InputFromTo-to">
-        <FieldDateStateless
-          ref={toElement}
-          value={to}
-          placeholder={placeholders.to}
-          wrapperClassName="position-static"
-          inputClassName="form-control shadow-none border-0 text-center"
-          dayPickerProps={{
-            selectedDays: [from, { from, to }],
-            disabledDays: { before: from },
-            modifiers,
-            month: from,
-            fromMonth: from,
-            numberOfMonths: 2,
-          }}
-          onDayChange={handleToChange}
-          displayFormat={displayFormat}
-        />
-      </span>
+      <ArrowRight size={16} tw="flex-shrink-0" />
+      <FieldDateStateless
+        ref={toElement}
+        value={to}
+        placeholder={placeholders.to}
+        wrapperClassName="position-static"
+        inputClassName="form-control shadow-none border-0 text-center"
+        dayPickerProps={{
+          selectedDays: [from, { from, to }],
+          disabledDays: { before: from },
+          modifiers,
+          month: from,
+          fromMonth: from,
+          numberOfMonths: 2,
+        }}
+        onDayChange={handleToChange}
+        displayFormat={displayFormat}
+      />
       <Helmet>
         <style>
           {`

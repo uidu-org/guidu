@@ -11,7 +11,7 @@ import pkg from '../version.json';
 
 function FieldPhone({
   id,
-  className = 'form-control',
+  className,
   value,
   forwardedRef,
   country = 'IT',

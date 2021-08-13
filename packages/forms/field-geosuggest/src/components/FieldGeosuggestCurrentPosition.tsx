@@ -5,17 +5,17 @@ import { MapPin } from 'react-feather';
 export default function FieldGeosuggestCurrentPosition({ onGeocode }) {
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchCurrentPosition = e => {
+  const fetchCurrentPosition = (e) => {
     e.preventDefault();
     setIsLoading(true);
     navigator.geolocation.getCurrentPosition(
-      position => {
+      (position) => {
         setIsLoading(false);
         if (onGeocode) {
           onGeocode(position.coords);
         }
       },
-      error => console.log(error.message),
+      (error) => console.log(error.message),
       {
         enableHighAccuracy: true,
         timeout: 5000,
@@ -25,7 +25,7 @@ export default function FieldGeosuggestCurrentPosition({ onGeocode }) {
   };
   return (
     <span
-      className="input-group-text bg-transparent"
+      tw="absolute right-0 inset-y-0 px-5 flex items-center"
       onClick={fetchCurrentPosition}
     >
       {isLoading ? <Spinner size="small" /> : <MapPin size={16} />}

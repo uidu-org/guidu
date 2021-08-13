@@ -56,7 +56,7 @@ export default class Basic extends React.Component<{}> {
           ]}
         />
         <div
-          className="mb-5"
+          tw="mb-5"
           style={{
             borderStyle: 'dashed',
             borderWidth: '1px',

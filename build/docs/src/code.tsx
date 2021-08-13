@@ -16,7 +16,7 @@ export default function code(
   source = source.replace(/^(\s*\n)+/g, ''); // Remove leading newlines
   source = source.replace(/(\n\s*)+$/g, ''); // Remove trailing newlines
   return (
-    <div className="my-4 mb-5">
+    <div tw="my-4 mb-5">
       <SyntaxHighlighter
         language="javascript"
         style={tomorrow}
@@ -24,7 +24,7 @@ export default function code(
           border: 0,
           marginTop: 0,
           marginBottom: 0,
-          padding: '1.5rem',
+          padding: '1rem',
           borderRadius: 4,
         }}
       >

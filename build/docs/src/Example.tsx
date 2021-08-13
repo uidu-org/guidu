@@ -47,7 +47,9 @@ export const ToggleTitle = styled.h5`
 const Showcase = styled.div<{ overflowHidden: boolean }>`
   position: relative;
   display: flex;
+  flex-direction: column;
   min-width: 0;
+  min-height: 0;
   ${({ overflowHidden }) =>
     overflowHidden
       ? css`

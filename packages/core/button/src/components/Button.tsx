@@ -75,6 +75,7 @@ function Button(props: ButtonProps) {
     iconAfter,
     iconBefore,
     href,
+    to,
     ...rest
   } = props;
   // ref can be a range of things because we render button, a, span or other React components
@@ -177,12 +178,11 @@ function Button(props: ButtonProps) {
                 {
                   type,
                   href,
+                  to,
                   ...rest,
                 },
                 StyledButton,
               )}
-              href={href}
-              type={type}
               ref={getComposedRefs(button, consumerRef)}
               onMouseEnter={_onMouseEnter}
               onMouseLeave={_onMouseLeave}

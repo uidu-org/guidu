@@ -22,12 +22,12 @@ export const baseTheme = {
       focusSelected: { light: colors.N700, dark: colors.DN0 },
     },
     primary: {
-      default: { light: 'var(--primary)', dark: colors.B100 },
-      hover: { light: colors.B300, dark: colors.B75 },
-      active: { light: colors.B500, dark: colors.B200 },
-      disabled: { light: colors.N20A, dark: colors.DN70 },
-      selected: { light: 'var(--primary)', dark: colors.DN0 },
-      focusSelected: { light: 'var(--primary)', dark: colors.DN0 },
+      default: { light: 'rgba(var(--primary), 1)', dark: colors.B100 },
+      hover: { light: 'rgba(var(--primary), .8)', dark: colors.B75 },
+      active: { light: 'rgba(var(--primary), 1)', dark: colors.B200 },
+      disabled: { light: 'rgba(var(--primary), .4)', dark: colors.DN70 },
+      selected: { light: 'rgba(var(--primary), 1)', dark: colors.DN0 },
+      focusSelected: { light: 'rgba(var(--primary), 1)', dark: colors.DN0 },
     },
     warning: {
       default: { light: colors.Y300, dark: colors.Y300 },

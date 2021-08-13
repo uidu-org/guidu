@@ -16,6 +16,7 @@ export default md`
       Component={require('../examples/App').default}
       title="Basic"
       source={require('!!raw-loader!../examples/App').default}
+      fullWidth
     />
   )}
 

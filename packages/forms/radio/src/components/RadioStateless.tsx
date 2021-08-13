@@ -4,6 +4,7 @@ import {
   withAnalyticsEvents,
 } from '@uidu/analytics';
 import React from 'react';
+import tw from 'twin.macro';
 import { RadioStatelessProps } from '../types';
 import pkg from '../version.json';
 
@@ -16,26 +17,30 @@ function RadioStateless({
   disabled,
   defaultChecked,
   isInline,
+  className,
 }: RadioStatelessProps) {
   return (
     <div
-      className={`custom-control custom-radio${
-        isInline ? ' custom-control-inline' : ''
-      }`}
+      css={[tw`relative items-start`, isInline ? tw`inline-flex` : tw`flex`]}
     >
-      <input
-        type="radio"
-        id={id}
-        name={name}
-        className="custom-control-input"
-        onChange={onChange}
-        value={value}
-        disabled={disabled}
-        defaultChecked={defaultChecked}
-      />
-      <label className="custom-control-label" htmlFor={id}>
-        {label}
-      </label>
+      <div tw="flex items-center h-5">
+        <input
+          type="radio"
+          id={id}
+          name={name}
+          className={className}
+          tw="focus:ring-indigo-500 h-5 w-5 border-gray-300 color[rgba(var(--primary), 1)]"
+          onChange={onChange}
+          value={value}
+          disabled={disabled}
+          defaultChecked={defaultChecked}
+        />
+      </div>
+      <div tw="ml-2">
+        <label tw="mb-0" htmlFor={id}>
+          {label}
+        </label>
+      </div>
     </div>
   );
 }

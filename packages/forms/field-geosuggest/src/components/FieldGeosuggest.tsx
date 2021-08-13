@@ -7,6 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import tw from 'twin.macro';
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
@@ -187,7 +188,11 @@ function FieldGeosuggest({
       id={id}
     >
       <input
-        className={classNames('form-control', className)}
+        className={className}
+        css={[
+          tw`shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border border-color[var(--border)] rounded py-3 px-4 placeholder-gray-400`,
+          isGeolocationAvailable && tw`pr-14`,
+        ]}
         disabled={!ready || disabled}
         name={name}
         ref={element}

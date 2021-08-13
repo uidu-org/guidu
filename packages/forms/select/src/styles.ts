@@ -57,12 +57,12 @@ export default function baseStyles(validationState, isCompact) {
       ...base,
       backgroundColor: '#fff',
       borderRadius: '.25rem',
-      borderColor: state.isFocused ? 'var(--primary)' : 'var(--border)',
+      borderColor: state.isFocused ? 'rgb(var(--primary))' : 'var(--border)',
       boxShadow: state.isFocused
         ? '0 0 0 0.2rem rgba(236, 132, 71, 0.25)'
         : 'none',
       '&:hover': {
-        borderColor: state.isFocused ? 'var(--primary)' : 'var(--border)',
+        borderColor: state.isFocused ? 'rgb(var(--primary))' : 'var(--border)',
       },
     }),
     // valueContainer: css => ({

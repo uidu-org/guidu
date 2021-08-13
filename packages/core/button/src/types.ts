@@ -31,6 +31,8 @@ export type OnlyButtonProps = {
   consumerRef?: ConsumerRef;
   /** Provides a url for buttons being used as a link */
   href?: string;
+  /** Provides a url for buttons being used as a react-router-dom Link */
+  to?: string;
   /** Places an icon within the button, after the button's text */
   iconAfter?: React.ReactChild;
   /** Places an icon within the button, before the button's text */

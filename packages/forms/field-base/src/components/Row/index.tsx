@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React, { PureComponent } from 'react';
+import tw from 'twin.macro';
 import Label from '../Label';
 import { RowProps } from './types';
-
 export default class Row extends PureComponent<RowProps> {
   static defaultProps = {
     label: null,
@@ -46,27 +46,34 @@ export default class Row extends PureComponent<RowProps> {
 
     if (layout === 'horizontal') {
       // Horizontal layout needs a 'row' class for Bootstrap 4
-      cssClasses.row.push('row');
-
       if (!shouldRenderLabel) {
         cssClasses.elementWrapper.push('col-sm-offset-3');
       }
 
-      cssClasses.elementWrapper.push('col-sm-9');
       cssClasses.elementWrapper.push(elementWrapperClassName);
 
       element = (
-        <div className={classNames(cssClasses.elementWrapper)}>{element}</div>
+        <div
+          css={[tw`w-9/12`]}
+          className={classNames(cssClasses.elementWrapper)}
+        >
+          {element}
+        </div>
       );
     }
 
     cssClasses.row.push(rowClassName);
 
     return (
-      <div tw="mb-4" className={classNames(cssClasses.row)}>
-        {shouldRenderLabel ? <Label {...this.props} /> : null}
-        {element}
-      </div>
+      <>
+        <div
+          css={[tw`mb-4`, layout === 'horizontal' && tw`flex`]}
+          className={classNames(cssClasses.row)}
+        >
+          {shouldRenderLabel ? <Label {...this.props} /> : null}
+          {element}
+        </div>
+      </>
     );
   }
 }

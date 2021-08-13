@@ -3,7 +3,6 @@ import {
   withAnalyticsContext,
   withAnalyticsEvents,
 } from '@uidu/analytics';
-import classNames from 'classnames';
 import React, { Component } from 'react';
 import StyledInput from '../styled/Input';
 import pkg from '../version.json';
@@ -83,11 +82,12 @@ class FieldTextStateless extends Component<any> {
         as={as}
         autoComplete={autoComplete}
         autoFocus={autoFocus}
-        tw="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border border-color[var(--border)] rounded"
-        className={classNames('form-control', className, {
-          // 'is-valid': !showErrors,
-          'is-invalid': showErrors,
-        })}
+        tw="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border border-color[var(--border)] rounded py-3 px-4 placeholder-gray-400"
+        className={className}
+        // , {
+        //   // 'is-valid': !showErrors,
+        //   'is-invalid': showErrors,
+        // })}
         disabled={disabled}
         id={id}
         maxLength={maxLength}

@@ -1,5 +1,6 @@
 /* eslint-env node, browser */
 
+import Button from '@uidu/button';
 import { ScrollableContainer, ShellBody, ShellHeader } from '@uidu/shell';
 import * as React from 'react';
 import { CheckboxGroup } from '../../checkbox/src';
@@ -76,19 +77,15 @@ const Options = ({
 
   return (
     <>
-      <ShellHeader className="border-bottom px-4 d-flex align-items-center">
+      <ShellHeader tw="border-b flex items-center px-8">
         <h5 className="m-0">Options</h5>
-        <button
-          type="button"
-          className="btn btn-sm btn-outline-secondary ml-auto"
-          onClick={onToggle}
-        >
+        <Button type="button" tw="ml-auto" onClick={onToggle}>
           {showing ? 'Hide options' : 'Show options'}
-        </button>
+        </Button>
       </ShellHeader>
       <ShellBody>
-        <ScrollableContainer>
-          {showing ? <div className="card-body">{optionsForm}</div> : null}
+        <ScrollableContainer shadowOnScroll={false}>
+          {showing ? <div tw="py-4 px-8">{optionsForm}</div> : null}
         </ScrollableContainer>
       </ShellBody>
     </>

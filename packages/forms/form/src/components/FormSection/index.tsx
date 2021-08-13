@@ -31,23 +31,28 @@ export default function FormSection({
             {layout !== 'elementOnly' && (
               <div
                 css={[
-                  tw`mb-3`,
+                  tw`mb-8`,
                   layout === 'horizontal' ? tw`w-4/12` : tw`w-10/12`,
                 ]}
               >
                 <legend css={[tw`text-xl font-bold flex items-center`]}>
-                  {Icon && (
+                  {/* {Icon && (
                     <div tw="-ml-5 mr-3 opacity-20">
                       <Icon size={30} strokeWidth={1} />
                     </div>
-                  )}
+                  )} */}
                   {name}
                 </legend>
                 {description}
               </div>
             )}
             {children && (
-              <div css={[layout === 'horizontal' ? tw`w-7/12` : tw`w-10/12`]}>
+              <div
+                css={[
+                  tw`space-y-8`,
+                  layout === 'horizontal' ? tw`w-7/12` : tw`w-10/12`,
+                ]}
+              >
                 {children}
               </div>
             )}

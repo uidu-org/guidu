@@ -1,35 +1,31 @@
-import classNames from 'classnames';
 import React from 'react';
 import { CheckSquare, Square } from 'react-feather';
+import tw from 'twin.macro';
 
 export default function Checkbox({ item, index, isSelected, getItemProps }) {
   return (
     <button
       type="button"
       key={item.id}
-      className={classNames(
-        'd-flex card px-4 py-3 mb-2 align-items-center justify-content-start text-left flex-row w-100',
-        {
-          'bg-primary text-white': !!isSelected,
-        },
-      )}
+      css={[
+        tw`flex border px-4 py-3 mb-2 items-center justify-start text-left flex-row w-full`,
+        !!isSelected && tw`text-white background[rgb(var(--primary))]`,
+      ]}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...getItemProps({ item, index })}
     >
       {isSelected ? (
-        <div className="text-white mr-3 d-flex align-items-center">
+        <div tw="text-white mr-3 flex items-center">
           <CheckSquare size={16} />
         </div>
       ) : (
-        <div className="mr-3 d-flex align-items-center">
+        <div tw="mr-3 flex items-center">
           <Square size={16} />
         </div>
       )}
       <div>
-        <p className="mb-0">{item.name}</p>
-        {item.description && (
-          <p className="mb-0 text-muted">{item.description}</p>
-        )}
+        <p>{item.name}</p>
+        {item.description && <p tw="text-gray-500">{item.description}</p>}
       </div>
     </button>
   );
