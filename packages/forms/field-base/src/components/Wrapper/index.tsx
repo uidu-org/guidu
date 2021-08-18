@@ -1,13 +1,11 @@
 import React, { PureComponent } from 'react';
-import {
-  ErrorMessages,
-  FloatLabel,
-  Help,
-  Icon,
-  RequiredSymbol,
-  Row,
-} from '../../index';
+import FloatLabel from '../../styled/FloatLabel';
+import ErrorMessages from '../ErrorMessages';
+import Help from '../Help';
+import Icon from '../Icon';
 import InputGroup from '../InputGroup';
+import RequiredSymbol from '../RequiredSymbol';
+import Row from '../Row';
 import { WrapperProps } from './types';
 
 export default class Wrapper extends PureComponent<WrapperProps> {

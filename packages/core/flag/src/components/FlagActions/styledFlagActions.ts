@@ -1,8 +1,8 @@
 import { gridSize, math } from '@uidu/theme';
 import styled, { css } from 'styled-components';
+import { DEFAULT_APPEARANCE } from '../../constants';
 import { flagTextColor } from '../../theme';
 import { AppearanceTypes } from '../../types';
-import { DEFAULT_APPEARANCE } from '../Flag';
 const { multiply } = math;
 
 interface GetDividerProps {
@@ -12,7 +12,7 @@ interface GetDividerProps {
 // Outputs the styles for actions separator: mid-dot for non-bold flags, or space for bold flags.
 const getDivider = ({ hasDivider, useMidDot }: GetDividerProps) => css`
   display: ${hasDivider ? 'inline-block' : 'none'};
-  content: "${useMidDot ? '\u00B7' : ''}";
+  content: '${useMidDot ? '\u00B7' : ''}';
   width: ${useMidDot ? multiply(gridSize, 2) : gridSize}px;
 `;
 

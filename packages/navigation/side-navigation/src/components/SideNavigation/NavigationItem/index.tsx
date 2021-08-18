@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import styled from 'styled-components';
-import { NavigationSubItem, NavigationSubItemSkeleton } from '../..';
 import {
   StyledNavigationAfter,
   StyledNavigationBefore,
@@ -9,7 +8,9 @@ import {
   StyledNavigationText,
 } from '../../../styled';
 import NavigationActions from '../NavigationActions';
+import NavigationSubItem from '../NavigationSubItem';
 import SortableNavigationSubItems from '../NavigationSubItem/SortableNavigationSubItems';
+import NavigationSubItemSkeleton from '../NavigationSubItemSkeleton';
 
 const StyledNavigationActions = styled.div<{ $isActionOpen: boolean }>`
   position: absolute;

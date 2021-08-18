@@ -12,9 +12,7 @@ import { withFormsy } from 'formsy-react';
 import AsyncCreatableSelectComponent from './AsyncCreatableSelect';
 import AsyncSelectComponent from './AsyncSelect';
 import CreatableSelectComponent from './CreatableSelect';
-import SelectComponent from './Select';
-
-const Select = withFormsy(ComponentHOC(SelectComponent));
+import Select from './FormsySelect';
 
 export const AsyncCreatableSelect = withFormsy(
   ComponentHOC(AsyncCreatableSelectComponent),

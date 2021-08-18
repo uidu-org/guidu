@@ -5,8 +5,9 @@ import {
 } from '@uidu/analytics';
 import React, { Component, MouseEventHandler } from 'react';
 import { ChevronDown, ChevronUp, X } from 'react-feather';
+import { DEFAULT_APPEARANCE } from '../../constants';
 import { flagFocusRingColor } from '../../theme';
-import { AppearanceTypes, FlagProps } from '../../types';
+import { FlagProps } from '../../types';
 import pkg from '../../version.json';
 import Expander from '../Expander';
 import Actions from '../FlagActions';
@@ -18,8 +19,6 @@ import Container, {
   Icon,
   Title,
 } from './styledFlag';
-
-export const DEFAULT_APPEARANCE: AppearanceTypes = 'normal';
 
 interface State {
   isExpanded: boolean;
@@ -59,13 +58,8 @@ class Flag extends Component<FlagProps, State> {
   };
 
   renderToggleOrDismissButton = () => {
-    const {
-      appearance,
-      description,
-      actions,
-      isDismissAllowed,
-      onDismissed,
-    } = this.props;
+    const { appearance, description, actions, isDismissAllowed, onDismissed } =
+      this.props;
     const isBold = this.isBold();
     if (
       !isDismissAllowed ||
@@ -95,13 +89,8 @@ class Flag extends Component<FlagProps, State> {
   };
 
   renderBody = () => {
-    const {
-      actions,
-      appearance,
-      description,
-      linkComponent,
-      testId,
-    } = this.props;
+    const { actions, appearance, description, linkComponent, testId } =
+      this.props;
     const isExpanded = !this.isBold() || this.state.isExpanded;
 
     return (

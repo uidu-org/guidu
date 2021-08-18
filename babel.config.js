@@ -3,7 +3,7 @@ module.exports = function (api) {
 
   const plugins = [
     // '@loadable/babel-plugin',
-    ['babel-plugin-twin', { debug: true }],
+    ['babel-plugin-twin'],
     [
       'macros',
       {

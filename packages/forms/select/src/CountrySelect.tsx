@@ -1,7 +1,7 @@
 import React from 'react';
-import Select from './';
 import Option from './components/Option';
 import { groupedCountries } from './data/countries';
+import Select from './FormsySelect';
 
 // flow stuff
 type OptionType = { id: string; code: number; icon: string; name: string };

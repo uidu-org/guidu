@@ -185,7 +185,7 @@
     "@types/zxcvbn": "^4.4.1",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
-    "@uidu/profilecard": "^0.1.0",
+    "@uidu/profilecard": "^0.2.0",
     "@uifabric/file-type-icons": "^7.6.30",
     "@uppy/aws-s3": "^1.8.0",
     "@uppy/core": "^1.20.0",
