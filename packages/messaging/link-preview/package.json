@@ -9,13 +9,13 @@
   "module": "dist/uidu-link-preview.esm.js",
   "types": "dist/uidu-link-preview.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "axios": "^0.21.1",
     "get-urls": "^10.0.0",
     "nanoclamp": "^1.4.1",
     "react": "^17.0.2",
     "styled-components": "^5.3.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.14",

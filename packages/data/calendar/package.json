@@ -9,15 +9,15 @@
   "module": "dist/uidu-calendar.esm.js",
   "types": "dist/uidu-calendar.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@uidu/dropdown-menu": "^0.5.5",
     "@uidu/shell": "^1.2.21",
     "classnames": "^2.3.1",
     "moment": "^2.29.1",
     "react": "^17.0.2",
-    "react-big-calendar": "^0.33.5",
+    "react-big-calendar": "^0.35.0",
     "react-feather": "^2.0.9",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.14"

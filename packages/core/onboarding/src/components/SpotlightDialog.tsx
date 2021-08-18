@@ -82,6 +82,7 @@ class SpotlightDialog extends Component<SpotlightDialogProps, State> {
       image,
       targetNode,
     } = this.props;
+    console.log(this.props.className);
     const { focusLockDisabled } = this.state;
 
     const translatedPlacement: Placement | undefined = dialogPlacement
@@ -112,6 +113,7 @@ class SpotlightDialog extends Component<SpotlightDialogProps, State> {
             >
               <SpotlightCard
                 ref={ref}
+                className={this.props.className}
                 theme={(parent) => {
                   const { container, ...others } = parent({});
                   return {

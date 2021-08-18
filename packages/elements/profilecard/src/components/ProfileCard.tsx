@@ -26,7 +26,7 @@ import {
 import ErrorMessage from './ErrorMessage';
 import IconLabel from './IconLabel';
 
-export default class Profilecard extends React.PureComponent {
+export default class Profilecard extends React.PureComponent<{}> {
   constructor(props) {
     super(props);
     this.durationSince = (from) => {

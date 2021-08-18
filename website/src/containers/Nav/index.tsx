@@ -38,7 +38,7 @@ export default class Nav extends React.Component<{}, State> {
               {
                 type: 'InlineComponent',
                 component: () => (
-                  <ShellHeader className="px-3 px-xl-4 py-3 h-auto">
+                  <ShellHeader tw="px-3 xl:px-4 py-3 h-auto">
                     <Avatar
                       style={{ width: '96px', height: '96px' }}
                       avatarStyle="Circle"
@@ -54,9 +54,9 @@ export default class Nav extends React.Component<{}, State> {
                       mouthType="Default"
                       skinColor="Light"
                     />
-                    <div className="ml-2">
-                      <h5 className="m-0">GUIDÙ</h5>
-                      <p className="mb-0 text-muted small">
+                    <div tw="ml-2">
+                      <h5 tw="m-0">GUIDÙ</h5>
+                      <p tw="mb-0 text-gray-500 text-sm">
                         A friend who helps you build awesome things
                       </p>
                     </div>
@@ -69,10 +69,10 @@ export default class Nav extends React.Component<{}, State> {
                   {
                     type: 'InlineComponent',
                     component: () => (
-                      <div className="px-3 px-xl-4 mb-4">
+                      <div tw="px-3 md:px-4 mb-2">
                         <input
                           type="search"
-                          className="form-control shadow-none mb-4"
+                          tw="shadow mb-4 border border-gray-300 border-opacity-30 py-2.5 w-full rounded bg-gray-200 bg-opacity-30"
                           autoComplete="off"
                           placeholder="Cerca tra i contatti.."
                         />
@@ -82,6 +82,7 @@ export default class Nav extends React.Component<{}, State> {
                   {
                     type: 'NavigationGroup',
                     items: defaultNavigations,
+                    withMargin: true,
                   },
 
                   ...standardGroups(dirs, location.pathname),

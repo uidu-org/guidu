@@ -1,4 +1,10 @@
 import * as React from 'react';
-import Button from '../src/components/Button';
+import { RouterButton } from '..';
 
-export default () => <Button>Button</Button>;
+export default () => (
+  <div>
+    <RouterButton to="/" tw="bg-red-200 text-red-700">
+      Button
+    </RouterButton>
+  </div>
+);

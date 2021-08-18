@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React, {
   forwardRef,
   RefObject,
@@ -35,7 +34,8 @@ function FieldMentionsStateless({
       style={style}
       placeholder={placeholder}
       allowSpaceInQuery={allowSpaceInQuery}
-      className={classNames('form-control h-auto', className)}
+      tw="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border border-color[rgb(var(--border))] rounded py-3 px-4 placeholder-gray-400"
+      className={className}
       suggestionsPortalHost={suggestionsPortalHost}
       allowSuggestionsAboveCursor
       inputRef={element}

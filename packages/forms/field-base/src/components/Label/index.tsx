@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import React from 'react';
+import tw from 'twin.macro';
 import RequiredSymbol from '../RequiredSymbol';
 import { LabelProps } from './types';
 
@@ -10,14 +10,13 @@ const Label = (props: LabelProps) => {
     return null;
   }
 
-  const labelClassNames = classNames([
-    layout === 'horizontal' ? 'col-sm-3 col-form-label' : 'mb-2',
-    labelClassName,
-  ]);
-
   if (fakeLabel) {
     return (
-      <div className={labelClassNames} data-required={required}>
+      <div
+        css={[layout === 'horizontal' ? tw`w-3/12` : tw`mb-3`]}
+        className={labelClassName}
+        data-required={required}
+      >
         {label}
         <RequiredSymbol required={required} />
       </div>
@@ -26,7 +25,8 @@ const Label = (props: LabelProps) => {
 
   return (
     <label
-      className={labelClassNames}
+      css={[tw`block`, layout === 'horizontal' ? tw`w-3/12` : tw`mb-2`]}
+      className={labelClassName}
       data-required={required}
       htmlFor={htmlFor}
     >

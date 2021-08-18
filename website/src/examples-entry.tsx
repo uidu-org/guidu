@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import 'regenerator-runtime/runtime';
-import './index.scss';
 import ExamplesLoader from './pages/Examples/loader';
 import { Window } from './types';
 

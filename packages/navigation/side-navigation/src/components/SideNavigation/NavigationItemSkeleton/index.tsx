@@ -13,9 +13,9 @@ const NavigationItemLoader = ({ hasBefore, hasAfter, width }) => (
     height={21}
     width={width}
     speed={2}
-    backgroundColor="var(--light)"
+    backgroundColor="rgb(var(--body-on-secondary-bg))"
     backgroundOpacity={1}
-    foregroundColor="var(--light)"
+    foregroundColor="rgb(var(--body-on-secondary-bg))"
     foregroundOpacity={0.6}
   >
     {hasBefore && <circle cx="10" cy="10" r="10" />}

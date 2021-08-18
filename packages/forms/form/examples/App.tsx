@@ -60,8 +60,8 @@ class App extends React.Component<{}, State> {
       disabled,
     } = this.state;
     return (
-      <>
-        <ShellSidebar style={{ width: '20rem' }} className="border-right">
+      <ShellBody>
+        <ShellSidebar style={{ width: '20rem' }} tw="border-r">
           <Options
             layoutChoice={layout}
             sectionLayoutChoice={sectionLayout}
@@ -74,7 +74,7 @@ class App extends React.Component<{}, State> {
           />
         </ShellSidebar>
         <ShellMain>
-          <ShellHeader className="border-bottom px-4">
+          <ShellHeader tw="border-b flex items-center px-8">
             <h5 className="m-0">
               Form Playground{' '}
               <small>
@@ -83,28 +83,22 @@ class App extends React.Component<{}, State> {
             </h5>
           </ShellHeader>
           <ShellBody>
-            <ScrollableContainer>
-              <div className="container my-5">
-                <div className="row justify-content-center">
-                  <div className="col-sm-10">
-                    <Playground
-                      layoutChoice={layout}
-                      sectionLayoutChoice={sectionLayout}
-                      validateBeforeSubmitChoice={validateBeforeSubmit}
-                      validatePristineChoice={validatePristine}
-                      disabledChoice={disabled}
-                    />
-                  </div>
+            <ScrollableContainer shadowOnScroll={false}>
+              <div tw="my-8 px-4 md:px-16">
+                <div tw="mx-auto max-w-6xl">
+                  <Playground
+                    layoutChoice={layout}
+                    sectionLayoutChoice={sectionLayout}
+                    validateBeforeSubmitChoice={validateBeforeSubmit}
+                    validatePristineChoice={validatePristine}
+                    disabledChoice={disabled}
+                  />
                 </div>
               </div>
             </ScrollableContainer>
           </ShellBody>
         </ShellMain>
-        <ShellSidebar
-          style={{ width: '20rem' }}
-          className="border-left"
-        ></ShellSidebar>
-      </>
+      </ShellBody>
     );
   }
 }

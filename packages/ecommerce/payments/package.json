@@ -9,9 +9,9 @@
   "module": "dist/uidu-payments.esm.js",
   "types": "dist/uidu-payments.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@stripe/react-stripe-js": "^1.4.1",
-    "@stripe/stripe-js": "^1.16.0",
+    "@stripe/stripe-js": "^1.17.0",
     "@uidu/field-base": "^0.6.5",
     "@uidu/form": "^0.4.19",
     "@uidu/slider": "^1.6.14",
@@ -20,9 +20,9 @@
     "formsy-react": "^2.2.5",
     "react": "^17.0.2",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.20.5",
+    "react-intl": "^5.20.9",
     "styled-components": "^5.3.0",
-    "tslib": "^2.3.0",
+    "tslib": "^2.3.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

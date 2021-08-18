@@ -57,7 +57,7 @@ export default function ShellResizer({ onClick, isCollapsed }) {
       isHover={isHover}
       isCollapsed={isCollapsed}
     >
-      <ShellHeader className="position-relative" style={{ left: -24 }}>
+      <ShellHeader tw="relative" style={{ left: -24 }}>
         <ResizerButton
           isHover={isHover}
           isCollapsed={isCollapsed}

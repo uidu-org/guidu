@@ -12,10 +12,11 @@ const Swatch = styled.div<{ color: string }>`
   height: 100%;
 `;
 
-function DefaultTrigger({ triggerProps, toggleDialog, value, forwardedRef }) {
+function DefaultTrigger({ toggleDialog, value, forwardedRef, ...rest }) {
+  console.log(rest);
   return (
     <button
-      {...triggerProps}
+      {...rest}
       className="btn btn-sm border p-0 d-block"
       type="button"
       onClick={toggleDialog}
@@ -89,7 +90,7 @@ function FieldColorPicker({
         style={{
           padding: '4px 0 0',
           margin: '4px 0 0',
-          borderTop: '1px solid var(--border)',
+          borderTop: '1px solid rgb(var(--border))',
         }}
       >
         <div className="input-group input-group-sm">
@@ -113,14 +114,18 @@ function FieldColorPicker({
     <Wrapper {...rest}>
       <Popup
         isOpen={dialogOpen}
-        onClose={() => setDialogOpen(false)}
+        // onClose={() => setDialogOpen(false)}
         content={() => <>{content}</>}
         trigger={(triggerProps) => (
           <Trigger
-            triggerProps={triggerProps}
+            {...triggerProps}
             value={value}
             forwardedRef={forwardedRef}
-            toggleDialog={() => setDialogOpen(!dialogOpen)}
+            toggleDialog={(e) => {
+              e.preventDefault();
+              console.log(e);
+              setDialogOpen((prevDialogOpen) => !prevDialogOpen);
+            }}
           />
         )}
       />

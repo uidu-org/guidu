@@ -106,7 +106,7 @@ const schema = [
             type: 'InlineComponent',
             component: () => (
               <NavigationItem
-                className="text-center"
+                tw="text-center"
                 text={<MoreHorizontal />}
                 onClick={console.log}
               />
@@ -161,7 +161,7 @@ export default function Basic({}) {
   return (
     <Shell>
       <GlobalNavigation
-        className="d-flex"
+        tw="flex"
         isOpen={isOpen}
         style={{
           background: 'green',
@@ -257,7 +257,7 @@ export default function Basic({}) {
           }}
         />
       </ShellSidebar>
-      <ShellMain className="bg-light" />
+      <ShellMain tw="bg-gray-50" />
     </Shell>
   );
 }

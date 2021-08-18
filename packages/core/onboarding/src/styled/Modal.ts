@@ -35,12 +35,7 @@ export const Actions = styled.div`
   justify-content: center;
   padding: 0 40px ${40 - actionItemBottomMargin}px;
   flex-flow: wrap;
-
-  flex-direction: ${({
-    shouldReverseButtonOrder,
-  }: {
-    shouldReverseButtonOrder: boolean;
-  }) => (shouldReverseButtonOrder ? 'row-reverse' : 'normal')};
+  flex-direction: row-reverse;
 `;
 
 export const ActionItem = styled.div`

@@ -9,7 +9,7 @@
   "module": "dist/uidu-drawer.esm.js",
   "types": "dist/uidu-drawer.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.4.14",
     "@uidu/blanket": "^0.4.13",
     "@uidu/docs": "^0.3.14",
@@ -20,7 +20,7 @@
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
     "react-transition-group": "^4.4.2",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.4.14",

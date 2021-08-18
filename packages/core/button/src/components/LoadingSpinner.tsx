@@ -5,7 +5,6 @@ const appearances: string[] = ['primary', 'danger'];
 
 type Props = {
   spacing: string;
-  styles: {};
   isDisabled: boolean;
   isSelected: boolean;
   appearance?: string;
@@ -29,11 +28,11 @@ export default class LoadingSpinner extends React.Component<Props> {
   };
 
   render() {
-    const { spacing, styles } = this.props;
+    const { spacing } = this.props;
     let spinnerSize = spacing !== 'default' ? 'xsmall' : 'small';
 
     return (
-      <div style={styles}>
+      <div tw="flex absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
         <Spinner size={spinnerSize} invertColor={this.invertSpinner()} />
       </div>
     );

@@ -53,7 +53,7 @@ export default class ButtonAppearance extends React.Component<{}, State> {
           />
         </div>
         <Table>
-          {appearances.map(a => (
+          {appearances.map((a) => (
             <Row key={a}>
               <Cell>
                 <Button isLoading={showLoadingState} appearance={a}>

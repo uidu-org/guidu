@@ -10,7 +10,7 @@ const breadcrumbs = (
 );
 
 export default () => (
-  <PageHeader breadcrumbs={breadcrumbs}>
+  <PageHeader breadcrumbs={breadcrumbs} tw="border-b">
     Title describing the content
   </PageHeader>
 );

@@ -3,7 +3,7 @@ import {
   NavigationMenu,
   SidebarFooter,
   SidebarLogo,
-  SidebarMenu,
+  SidebarMenu
 } from '../examples-utils';
 import {
   ScrollableContainer,
@@ -11,7 +11,7 @@ import {
   ShellFooter,
   ShellHeader,
   ShellMain,
-  ShellSidebar,
+  ShellSidebar
 } from '../src';
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
         <ShellHeader>
           <SidebarLogo size="large" />
         </ShellHeader>
-        <ScrollableContainer className="my-2">
+        <ScrollableContainer tw="my-2">
           <SidebarMenu />
         </ScrollableContainer>
         <ShellFooter>

@@ -34,7 +34,7 @@ const InputGroup = ({
   };
 
   return (
-    <div className="input-group">
+    <div tw="flex relative">
       {renderAddon(addonBefore, 'prepend')}
       {renderAddon(buttonBefore, 'prepend')}
       {children}

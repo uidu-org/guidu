@@ -8,16 +8,16 @@
   "main": "dist/uidu-button.cjs.js",
   "module": "dist/uidu-button.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.4.14",
     "@uidu/spinner": "^0.4.14",
     "@uidu/theme": "^0.5.15",
     "memoize-one": "^5.2.1",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^21.7.2",
-    "@atlaskit/logo": "^13.5.1",
+    "@atlaskit/icon": "^21.7.3",
+    "@atlaskit/logo": "^13.5.2",
     "@uidu/checkbox": "^0.4.5",
     "@uidu/docs": "^0.3.14",
     "@uidu/form": "^0.4.19",
@@ -28,6 +28,7 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
+    "react-router-dom": "*",
     "styled-components": "^5.0.0"
   },
   "publishConfig": {

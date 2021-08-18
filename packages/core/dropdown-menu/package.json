@@ -8,8 +8,8 @@
   "main": "dist/uidu-dropdown-menu.cjs.js",
   "module": "dist/uidu-dropdown-menu.esm.js",
   "dependencies": {
-    "@atlaskit/icon": "^21.7.2",
-    "@babel/runtime": "^7.14.8",
+    "@atlaskit/icon": "^21.7.3",
+    "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.4.14",
     "@uidu/button": "^0.4.14",
     "@uidu/droplist": "^0.4.15",
@@ -18,7 +18,7 @@
     "array-find": "^1.0.0",
     "prop-types": "^15.7.2",
     "react-uid": "^2.3.1",
-    "tslib": "^2.3.0",
+    "tslib": "^2.3.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

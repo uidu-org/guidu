@@ -210,7 +210,7 @@ export default function Basic({}) {
         <Router>
           <DataManager
             forwardedRef={tableInstance}
-            query={query}
+            // query={query}
             actions={[
               {
                 name: 'Default actions',

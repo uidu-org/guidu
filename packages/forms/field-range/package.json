@@ -15,12 +15,12 @@
   "module": "dist/uidu-field-range.esm.js",
   "types": "dist/uidu-field-range.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@uidu/field-base": "^0.6.5",
     "@uidu/form": "^0.4.19",
     "@uidu/theme": "^0.5.15",
     "formsy-react": "^2.2.5",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.14",

@@ -1,36 +1,47 @@
+import Button from '@uidu/button';
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
-
+import styled from 'styled-components';
+import tw from 'twin.macro';
 import {
   Spotlight,
   SpotlightManager,
   SpotlightTarget,
   SpotlightTransition,
 } from '../src';
-import { HighlightGroup, Highlight } from './styled';
+import { Highlight, HighlightGroup } from './styled';
 
 interface State {
   active: number | null;
 }
+
+const Foo = styled(Spotlight)`
+  ${tw`bg-red-500`}
+`;
+
+const FooButton = styled(Button)`
+  ${tw`bg-blue-900`}
+`;
 
 export default class SpotlightBasicExample extends Component<Object, State> {
   state: State = { active: null };
 
   start = () => this.setState({ active: 0 });
 
-  next = () => this.setState(state => ({ active: (state.active || 0) + 1 }));
+  next = () => this.setState((state) => ({ active: (state.active || 0) + 1 }));
 
-  prev = () => this.setState(state => ({ active: (state.active || 0) - 1 }));
+  prev = () => this.setState((state) => ({ active: (state.active || 0) - 1 }));
 
   finish = () => this.setState({ active: null });
 
   renderActiveSpotlight = () => {
     const variants = [
-      <Spotlight
+      <Foo
         actions={[
           {
             onClick: this.next,
             text: 'Tell me more',
+            component: FooButton,
           },
         ]}
         dialogPlacement="bottom left"
@@ -39,7 +50,7 @@ export default class SpotlightBasicExample extends Component<Object, State> {
         key="green"
       >
         <Lorem count={1} />
-      </Spotlight>,
+      </Foo>,
       <Spotlight
         actions={[
           { onClick: this.next, text: 'Next' },

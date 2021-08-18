@@ -41,6 +41,7 @@ export default () => (
     breadcrumbs={breadcrumbs}
     actions={actionsContent}
     bottomBar={barContent}
+    // truncateTitle
   >
     Title describing what the content should be, along with the context for
     which it applies — maybe also with some catchy words to draw attention

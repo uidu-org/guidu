@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -56,7 +55,8 @@ export default function NavbarItem({
     <NavbarItemEl onMouseEnter={onMouseEnter} onFocus={onMouseEnter}>
       <NavbarItemTitle
         to={path}
-        className={classNames('nav-link py-3', className)}
+        tw="py-3 list-none"
+        className={className}
         // onMouseEnter={onMouseEnter}
         // onClick={onMouseLeave}
         // onFocus={onMouseEnter}

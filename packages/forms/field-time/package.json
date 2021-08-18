@@ -10,7 +10,7 @@
   "module": "dist/uidu-field-time.esm.js",
   "types": "dist/uidu-field-time.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.4.14",
     "@uidu/field-base": "^0.6.5",
     "@uidu/field-text": "^0.5.5",
@@ -19,7 +19,7 @@
     "@uidu/theme": "^0.5.15",
     "formsy-react": "^2.2.5",
     "react": "^17.0.2",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.4.14",
@@ -29,5 +29,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "styled-components": "*"
   }
 }

@@ -44,14 +44,14 @@ function FieldPassword({
       name={name}
       value={value}
       isPasswordVisible={isPasswordVisible}
-      className="border-right-0"
       onChange={handleChange}
       onFocus={handleFocus}
       //  ref={this.initElementRef}
+      tw="pr-14"
       addonAfter={
         <Tooltip {...tooltipProps} className="input-group-append">
           <button
-            className="input-group-text bg-transparent"
+            tw="absolute right-0 inset-y-0 px-5 flex items-center"
             type="button"
             onClick={handleVisiblity}
             disabled={disabled}

@@ -12,13 +12,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.4.14",
     "@uidu/analytics-gas-types": "^0.2.10",
     "@uidu/analytics-namespaced-context": "^0.3.13",
     "lodash.last": "^3.0.0",
     "lodash.merge": "^4.6.2",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.4.14",

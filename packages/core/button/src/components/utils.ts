@@ -31,11 +31,15 @@ export const mapAttributesToState = ({
 
 export const filterProps = (
   // @ts-ignore - createAnalyticsEvent is injected from WithAnalyticsEvents HOC
-  { createAnalyticsEvent, ...props }: Partial<ButtonProps>,
+  { createAnalyticsEvent, testId, ...props }: Partial<ButtonProps>,
   type: React.ReactNode,
 ) => {
   if (type === 'span') {
     const { target, href, ...rest } = props;
+    return rest;
+  }
+  if (type !== 'button') {
+    const { type, ...rest } = props;
     return rest;
   }
   return props;
@@ -49,8 +53,8 @@ export const getLoadingStyle = (isLoading?: boolean) => ({
 export const composeRefs = (...refs: any[]) => {
   return (x: HTMLElement) => {
     refs
-      .filter(r => !!r)
-      .forEach(ref => {
+      .filter((r) => !!r)
+      .forEach((ref) => {
         if (typeof ref === 'function') {
           ref(x);
         } else {

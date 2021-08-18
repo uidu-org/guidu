@@ -37,10 +37,7 @@ export default class Basic extends Component<any> {
     return (
       <>
         <GlobalNavigationSkeleton navigationWidth={25} />
-        <ShellSidebar
-          style={{ display: 'flex', flex: '0 1 25%' }}
-          className="border-right"
-        >
+        <ShellSidebar style={{ flex: '0 1 25%' }} tw="border-r flex">
           <Navigation schema={schema} />
         </ShellSidebar>
       </>

@@ -78,7 +78,7 @@ export const ItemsListWrapper = styled.div<any>`
   min-width: 0;
   min-height: 0;
   margin: 1rem 1rem 0 0;
-  background: var(--light);
+  background: rgb(var(--body-on-primary-bg));
   border-radius: 0.375rem;
   /* height: 100%; */
 `;

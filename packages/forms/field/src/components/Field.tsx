@@ -54,16 +54,16 @@ const CheckboxLoader = () => (
   </ContentLoader>
 );
 
-const LoadableFieldText = (loadable as any).lib(() =>
-  import('@uidu/field-text'),
+const LoadableFieldText = (loadable as any).lib(
+  () => import('@uidu/field-text'),
 );
-const LoadableFieldNumber = (loadable as any).lib(() =>
-  import('@uidu/field-number'),
+const LoadableFieldNumber = (loadable as any).lib(
+  () => import('@uidu/field-number'),
 );
 const LoadableCheckbox = (loadable as any).lib(() => import('@uidu/checkbox'));
 const LoadableSelect = (loadable as any).lib(() => import('@uidu/select'));
-const LoadableFieldTextarea = (loadable as any).lib(() =>
-  import('@uidu/field-textarea'),
+const LoadableFieldTextarea = (loadable as any).lib(
+  () => import('@uidu/field-textarea'),
 );
 
 export default function Field({
@@ -143,11 +143,7 @@ export default function Field({
       return (
         <LoadableFieldTextarea fallback={<FieldLoader withLabel={!!label} />}>
           {({ default: FieldTextarea }) => (
-            <FieldTextarea
-              {...sharedProps}
-              className="form-control form-control-autosize"
-              value={getValue() || ''}
-            />
+            <FieldTextarea {...sharedProps} value={getValue() || ''} />
           )}
         </LoadableFieldTextarea>
       );

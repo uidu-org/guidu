@@ -4,14 +4,16 @@ import Open from '@atlaskit/icon/glyph/editor/open';
 import Unlink from '@atlaskit/icon/glyph/editor/unlink';
 import Page from '@atlaskit/icon/glyph/page';
 import Question from '@atlaskit/icon/glyph/question';
+import { ScrollableContainer, ShellBody, ShellHeader } from '@uidu/shell';
 import * as React from 'react';
-import Button, { ButtonAppearances } from '../src';
+import { PlusCircle } from 'react-feather';
+import Button, { ButtonAppearances, ButtonGroup } from '../src';
 
 const styles = {
   sample: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'baseline',
+    alignItems: 'center',
     borderBottom: '1px solid',
     paddingBottom: '10px',
     paddingTop: '10px',
@@ -70,47 +72,53 @@ const BuildStory = (props: any) => (
       </div>
 
       <div style={styles.sample}>
-        <Button {...props} href="//www.atlassian.com">
-          Create Issue
-        </Button>
+        <div tw="flex space-x-2 items-center">
+          <Button {...props} href="//www.atlassian.com">
+            Create Issue
+          </Button>
+        </div>
         <span>with href attribute + no target</span>
       </div>
 
       <div style={styles.sample}>
-        <span>
-          text
+        <div tw="flex space-x-2 items-center">
+          <span>text</span>
           <Button
             {...props}
             onClick={() => console.log('clicking the Component')}
           >
             Create Issue
           </Button>
-          text
-        </span>
+          <span>text</span>
+        </div>
         <span>click event + text alignment check</span>
       </div>
 
       <div style={styles.sample}>
-        <Button
-          {...props}
-          isDisabled
-          onClick={() => console.log('clicking the Component')}
-        >
-          Disabled Option
-        </Button>
+        <div tw="flex space-x-2 items-center">
+          <Button
+            {...props}
+            isDisabled
+            onClick={() => console.log('clicking the Component')}
+          >
+            Disabled Option
+          </Button>
+        </div>
         <span>disabled</span>
       </div>
 
       <div style={styles.sample}>
-        <Button
-          {...props}
-          isDisabled
-          onClick={() => console.log('clicking the Component')}
-          href="//www.atlassian.com"
-          target="_blank"
-        >
-          Go to Site
-        </Button>
+        <div tw="flex space-x-2 items-center">
+          <Button
+            {...props}
+            isDisabled
+            onClick={() => console.log('clicking the Component')}
+            href="//www.atlassian.com"
+            target="_blank"
+          >
+            Go to Site
+          </Button>
+        </div>
         <span>disabled + href + target</span>
       </div>
 
@@ -121,7 +129,7 @@ const BuildStory = (props: any) => (
       </div>
 
       <div style={styles.sample}>
-        <Button {...props} style={[styles.purpleBorder, styles.pinkBg]}>
+        <Button {...props} tw="bg-red-100! text-red-500! hover:bg-red-200!">
           Custom classes with crazy colors
         </Button>
         <span>custom classes</span>
@@ -143,45 +151,52 @@ const BuildStory = (props: any) => (
       </div>
 
       <div style={styles.sample}>
-        <Button {...props} iconBefore={<Page label="page icon" />}>
+        <Button
+          {...props}
+          iconBefore={<PlusCircle size={18} />}
+          iconAfter={<div tw="bg-gray-500">N</div>}
+        >
           Comment
         </Button>
         <span>button + text with page icon</span>
       </div>
 
       <div style={styles.sample}>
-        <span>
-          text
+        <div tw="flex space-x-2 items-center">
+          <span>text</span>
           <Button
             {...props}
             iconBefore={<Question label="question icon">Question</Question>}
           >
             Info
           </Button>
-          text
-        </span>
+          <span>text</span>
+        </div>
         <span>button + text with question icon + text alignment check</span>
       </div>
 
       <div style={styles.sample}>
-        <span>
-          text
+        <div tw="flex space-x-2 items-center">
+          <span>text</span>
           <Button
             {...props}
             isSelected
-            iconAfter={<Calendar label="calendar icon" />}
+            iconAfter={<Calendar label="calendar icon" size="small" />}
           >
             Pick Date
           </Button>
-          text
-        </span>
+          <span>text</span>
+        </div>
         <span>
           button + text with calendar icon + text alignment check + selected
         </span>
       </div>
 
       <div style={styles.sample}>
-        <Button {...props} iconAfter={<Expand label="expand icon" />}>
+        <Button
+          {...props}
+          iconAfter={<Expand label="expand icon" size="small" />}
+        >
           Show Options
         </Button>
         <span>button + text with expand icon</span>
@@ -191,7 +206,7 @@ const BuildStory = (props: any) => (
         <Button
           {...props}
           href="//www.atlassian.com"
-          iconBefore={<Page label="page icon" />}
+          iconBefore={<Page label="page icon" size="small" />}
         />
         <span>button with Page icon + href</span>
       </div>
@@ -201,17 +216,20 @@ const BuildStory = (props: any) => (
           {...props}
           href="//www.atlassian.com"
           target="_blank"
-          iconBefore={<Expand label="expand icon" />}
+          iconBefore={<Expand label="expand icon" size="small" />}
         />
         <span>button with icons + href + target</span>
       </div>
 
       <div style={styles.sample}>
-        <span>
-          text
-          <Button {...props} iconBefore={<Calendar label="calendar icon" />} />
-          text
-        </span>
+        <div tw="flex space-x-2 items-center">
+          <span>text</span>
+          <Button
+            {...props}
+            iconBefore={<Calendar label="calendar icon" size="small" />}
+          />
+          <span>text</span>
+        </div>
         <span>button with Calendar icon + text alignment check</span>
       </div>
 
@@ -219,13 +237,17 @@ const BuildStory = (props: any) => (
         <Button
           {...props}
           isSelected
-          iconBefore={<Question label="question icon">Question</Question>}
+          iconBefore={
+            <Question label="question icon" size="small">
+              Question
+            </Question>
+          }
         />
         <span>button with Question icon + selected</span>
       </div>
 
       <div style={styles.sample}>
-        <div style={styles.buttonContainer}>
+        <ButtonGroup>
           <Button
             {...props}
             spacing="none"
@@ -248,7 +270,7 @@ const BuildStory = (props: any) => (
             isSelected
             iconBefore={<Open label="open icon">open selected</Open>}
           />
-        </div>
+        </ButtonGroup>
         <span>button with icons, no spacing &amp; selected</span>
       </div>
 
@@ -325,17 +347,23 @@ export default class extends React.Component<{}, State> {
 
   render() {
     return (
-      <div>
-        <h3>Select an apperance option to see its effects in contexts</h3>
-        <select onChange={this.setAppearance} value={this.state.appearance}>
-          {appearances.map(a => (
-            <option key={a} value={a}>
-              {a}
-            </option>
-          ))}
-        </select>
-        <BuildStory appearance={this.state.appearance} />
-      </div>
+      <>
+        <ShellHeader>
+          <h3>Select an apperance option to see its effects in contexts</h3>
+          <select onChange={this.setAppearance} value={this.state.appearance}>
+            {appearances.map((a) => (
+              <option key={a} value={a}>
+                {a}
+              </option>
+            ))}
+          </select>
+        </ShellHeader>
+        <ShellBody>
+          <ScrollableContainer>
+            <BuildStory appearance={this.state.appearance} />
+          </ScrollableContainer>
+        </ShellBody>
+      </>
     );
   }
 }

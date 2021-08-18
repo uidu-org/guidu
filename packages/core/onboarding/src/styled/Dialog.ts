@@ -13,7 +13,7 @@ const shadowColor = themed({
   light: N50A,
   dark: DN50A,
 });
-const boxShadow = props => {
+const boxShadow = (props) => {
   const border = `0 0 1px ${borderColor(props)}`;
   const shadow = `0 4px 8px -2px ${shadowColor(props)}`;
 
@@ -25,7 +25,7 @@ export const FillScreen = styled.div<{ scrollDistance: number }>`
   left: 0;
   overflow-y: auto;
   position: absolute;
-  top: ${p => p.scrollDistance}px;
+  top: ${(p) => p.scrollDistance}px;
   width: 100%;
 `;
 
@@ -74,6 +74,7 @@ export const Actions = styled.div`
 `;
 export const ActionItems = styled.div`
   display: flex;
+  flex-direction: row-reverse;
   margin: 0 -${math.divide(gridSize, 2)}px;
 `;
 export const ActionItem = styled.div`

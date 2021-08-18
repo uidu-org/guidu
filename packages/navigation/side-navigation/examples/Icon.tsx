@@ -68,10 +68,7 @@ export default class Basic extends Component<any> {
   render() {
     return (
       <Shell>
-        <ShellSidebar
-          style={{ display: 'flex', width: '4rem' }}
-          // className="bg-light"
-        >
+        <ShellSidebar tw="w-16 flex">
           <Navigation schema={schema} />
         </ShellSidebar>
         <ShellMain />

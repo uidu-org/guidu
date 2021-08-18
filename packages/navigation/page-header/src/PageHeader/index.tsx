@@ -1,57 +1,39 @@
-import React, { ReactElement, ReactNode } from 'react';
-import {
-  ActionsWrapper,
-  BottomBarWrapper,
-  Outer,
-  StyledTitle,
-  TitleContainer,
-  TitleWrapper,
-} from './styled';
-
-type Props = {
-  /** Returns the inner ref of the component. This is exposed so the focus can be set. */
-  innerRef?: (element: HTMLElement) => void;
-  /** Page breadcrumbs to be rendered above the title. */
-  breadcrumbs?: ReactElement;
-  /** Contents of the action bar to be rendered next to the page title. */
-  actions?: ReactElement;
-  /** Contents of the header bar to be rendered below the page title. */
-  bottomBar?: ReactElement;
-  /** Content of the page title. The text would be trimmed if it doesn't fit the
-   header width and end with an ellipsis */
-  children?: ReactNode;
-  /** Disable default styles for page title */
-  disableTitleStyles?: boolean;
-  /** Prevent the title from wrapping across lines */
-  truncateTitle?: boolean;
-};
+import React from 'react';
+import tw from 'twin.macro';
+import { PageHeaderProps } from '../types';
 
 const PageHeader = ({
   innerRef,
   breadcrumbs,
   actions,
-  bottomBar,
   children,
   disableTitleStyles = false,
   truncateTitle = false,
-}: Props) => {
+  className,
+}: PageHeaderProps) => {
   return (
-    <Outer>
+    <div className={className} tw="flex flex-grow flex-col py-6 min-w-0">
       {breadcrumbs}
-      <TitleWrapper truncate={truncateTitle}>
-        <TitleContainer truncate={truncateTitle}>
+      <div tw="mt-1 flex md:items-start justify-between">
+        <div tw="flex-1 min-w-0">
           {disableTitleStyles ? (
             children
           ) : (
-            <StyledTitle ref={innerRef} tabIndex={-1} truncate={truncateTitle}>
+            <h2
+              ref={innerRef}
+              tabIndex={-1}
+              css={[
+                tw`text-2xl font-bold sm:text-3xl`,
+                truncateTitle && tw`truncate`,
+              ]}
+            >
               {children}
-            </StyledTitle>
+            </h2>
           )}
-        </TitleContainer>
-        <ActionsWrapper>{actions}</ActionsWrapper>
-      </TitleWrapper>
-      {bottomBar && <BottomBarWrapper> {bottomBar} </BottomBarWrapper>}
-    </Outer>
+        </div>
+        <div tw="ml-4">{actions}</div>
+      </div>
+    </div>
   );
 };
 

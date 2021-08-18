@@ -14,16 +14,16 @@ import FieldFileUploader from '../../field-file-uploader/src';
 import FieldGeosuggest from '../../field-geosuggest/src';
 import FieldImageUploader from '../../field-image-uploader/src';
 import FieldMentions from '../../field-mentions/src';
-import FieldMonth from '../../field-month/src';
 import FieldNumber from '../../field-number/src';
 import FieldPassword from '../../field-password/src';
+import FieldPhone from '../../field-phone/src';
 import FieldRange from '../../field-range/src';
 import FieldText from '../../field-text/src';
 import FieldTextarea from '../../field-textarea/src';
 import FieldTime from '../../field-time/src';
 import { RadioGroup } from '../../radio/src';
 import Select from '../../select/src';
-import Form, { FormSection } from '../src';
+import Form, { FormSection, FormSubmit } from '../src';
 import { LayoutChoice } from './App';
 
 interface Props {
@@ -103,9 +103,13 @@ const Playground: React.FunctionComponent<Props> = ({
       className="custom-classname-is-rendered"
       validateBeforeSubmit={validateBeforeSubmitChoice}
       validatePristine={validatePristineChoice}
-      disabled={disabledChoice}
+      // disabled={disabledChoice}
       ref={formRef}
+      footerRenderer={(props) => (
+        <FormSubmit {...props} canSubmit label="Submit" />
+      )}
     >
+      <FieldText name="secret" value="I'm hidden!" type="hidden" />
       <FormSection
         name="FieldText types"
         description={
@@ -115,7 +119,6 @@ const Playground: React.FunctionComponent<Props> = ({
         layout={sectionLayoutChoice}
         isFirst
       >
-        <FieldText name="secret" value="I'm hidden!" type="hidden" />
         <FieldText
           name="text1"
           id="artisanCraftedBespokeId"
@@ -124,7 +127,6 @@ const Playground: React.FunctionComponent<Props> = ({
           type="text"
           placeholder="Here is a text input."
           help="This is a required text input."
-          required
         />
         <FieldText
           name="email"
@@ -138,7 +140,6 @@ const Playground: React.FunctionComponent<Props> = ({
           validationErrors={{
             isEmail: 'This doesn’t look like a valid email address.',
           }}
-          required
         />
         <FieldPassword
           name="password1"
@@ -182,7 +183,6 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Date"
           type="date"
           placeholder="This is a date input."
-          required
         />
         <FieldDateRange
           name="date"
@@ -214,7 +214,7 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Mentions"
           items={[{ trigger: '@', data: [] }]}
         />
-        <FieldMonth name="month" label="Months" />
+        <FieldPhone name="month" label="Phone number" />
         <FieldTime name="time" label="Time" />
       </FormSection>
       <FormSection
@@ -247,7 +247,6 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Select"
           help="This is a required select element."
           options={singleSelectOptions}
-          required
         />
         <Select
           name="select2"
@@ -293,9 +292,9 @@ const Playground: React.FunctionComponent<Props> = ({
         />
         <CheckboxGroup
           name="checkboxGrp2"
-          type="inline"
           label="Checkbox group (inline)"
           options={radioOptions}
+          isInline
         />
       </FormSection>
       <FormSection
@@ -314,15 +313,13 @@ const Playground: React.FunctionComponent<Props> = ({
         />
         <RadioGroup
           name="radioGrp2"
-          type="inline"
           label="Radio group (inline)"
           help="This is a required radio group."
           options={radioOptions}
-          required
+          isInline
         />
         <RadioGroup
           name="radioGrp3"
-          type="inline"
           label="Radio group (disabled)"
           help="Here, “Option B” is disabled."
           options={radioOptionsDisabled}
@@ -393,7 +390,12 @@ const Playground: React.FunctionComponent<Props> = ({
           value=""
           label="Add-on before"
           type="text"
-          addonBefore={<span className="input-group-text">@</span>}
+          tw="pl-10"
+          addonBefore={
+            <span tw="absolute inset-y-0 left-0 flex items-center pointer-events-none w-5 h-5">
+              @
+            </span>
+          }
         />
         <FieldText
           name="addon-after"
@@ -425,18 +427,6 @@ const Playground: React.FunctionComponent<Props> = ({
           }
         />
       </FormSection>
-      <input
-        className="btn btn-secondary"
-        onClick={resetForm}
-        type="reset"
-        defaultValue="Reset"
-      />{' '}
-      <input
-        className="btn btn-primary"
-        formNoValidate
-        type="submit"
-        defaultValue="Submit"
-      />
     </Form>
   );
 };

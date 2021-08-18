@@ -4,6 +4,7 @@ import { Code } from 'react-feather';
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import styled, { css } from 'styled-components';
+import tw from 'twin.macro';
 import ErrorBoundary from './ErrorBoundary';
 import replaceSrc from './replaceSrc';
 
@@ -45,6 +46,10 @@ export const ToggleTitle = styled.h5`
 
 const Showcase = styled.div<{ overflowHidden: boolean }>`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
   ${({ overflowHidden }) =>
     overflowHidden
       ? css`
@@ -96,7 +101,7 @@ export default class Example extends React.Component<Props, State> {
     const mode = isSourceVisible ? 'open' : 'closed';
 
     return (
-      <div className="my-5">
+      <div tw="my-5">
         <Tooltip position="mouse" content={toggleLabel} delay={0}>
           <Toggle
             ref={(c) => {
@@ -110,7 +115,7 @@ export default class Example extends React.Component<Props, State> {
             <Code id="UncontrolledTooltipExample" />
           </Toggle>
         </Tooltip>
-        <Wrapper className="border card">
+        <Wrapper tw="border rounded">
           {isSourceVisible && (
             <SyntaxHighlighter
               language="javascript"
@@ -127,7 +132,7 @@ export default class Example extends React.Component<Props, State> {
               {packageName ? replaceSrc(source, packageName) : source}
             </SyntaxHighlighter>
           )}
-          <div className={fullWidth ? '' : 'card-body'}>
+          <div css={[!fullWidth && tw`p-5`]}>
             <Showcase overflowHidden={overflowHidden}>
               <ErrorBoundary onError={this.onError}>
                 <Component />

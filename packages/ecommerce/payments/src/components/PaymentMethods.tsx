@@ -15,7 +15,7 @@ const Separator = styled.div`
   &::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgb(var(--border));
   }
   &::before {
     margin-right: 1rem;

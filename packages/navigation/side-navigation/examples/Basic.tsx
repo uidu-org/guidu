@@ -253,7 +253,7 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
                           type: 'InlineComponent',
                           component: () => (
                             <NavigationItem
-                              className="text-center"
+                              tw="text-center"
                               text={<MoreHorizontal />}
                               onClick={console.log}
                             />
@@ -312,7 +312,7 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
               }}
             />
           </ShellSidebar>
-          <ShellMain className="bg-light" />
+          <ShellMain tw="bg-gray-50" />
         </Shell>
       </Router>
     );

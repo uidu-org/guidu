@@ -25,7 +25,7 @@ export default md`
       packageName="@uidu/inline-edit"
       Component={require('../examples/00-basic-usage').default}
       title="Basic usage"
-      source={require('!!raw-loader!../examples/00-basic-usage')}
+      source={require('!!raw-loader!../examples/00-basic-usage').default}
     />
   )}
 
@@ -36,7 +36,7 @@ export default md`
       packageName="@uidu/inline-edit"
       Component={require('../examples/01-textarea-usage').default}
       title="Textarea usage"
-      source={require('!!raw-loader!../examples/01-textarea-usage')}
+      source={require('!!raw-loader!../examples/01-textarea-usage').default}
     />
   )}
 
@@ -45,7 +45,7 @@ export default md`
       packageName="@uidu/inline-edit"
       Component={require('../examples/02-select-usage').default}
       title="Select usage"
-      source={require('!!raw-loader!../examples/02-select-usage')}
+      source={require('!!raw-loader!../examples/02-select-usage').default}
     />
   )}
 

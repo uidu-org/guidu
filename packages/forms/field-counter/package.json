@@ -10,16 +10,20 @@
   "module": "dist/uidu-field-counter.esm.js",
   "types": "dist/uidu-field-counter.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.4.14",
     "@uidu/field-base": "^0.6.5",
     "formsy-react": "^2.2.5",
     "react": "^17.0.2",
     "react-numeric-input": "^2.2.3",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.14",
-    "@uidu/form": "^0.4.19"
+    "@uidu/form": "^0.4.19",
+    "styled-components": "^5.3.0"
+  },
+  "peerDependencies": {
+    "styled-components": "*"
   }
 }

@@ -36,7 +36,7 @@ function populateMinutes() {
 
 function FieldTime({
   name,
-  className = 'form-control',
+  className,
   forwardedRef,
   onChange,
   value = '',
@@ -118,11 +118,12 @@ function FieldTime({
 
   return (
     <input
+      tw="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border border-color[rgb(var(--border))] rounded py-3 px-4 placeholder-gray-400"
+      className={className}
       value={value}
       ref={element}
       type="time"
       name={name}
-      className={className}
       onChange={onChange}
       required={required}
       min={min}

@@ -188,7 +188,7 @@
   z-index: 1;
 
   &:after {
-    background-color: var(--primary);
+    background-color: rgba(var(--brand-primary), 1);
     border-radius: 100%;
     content: '';
     position: absolute;

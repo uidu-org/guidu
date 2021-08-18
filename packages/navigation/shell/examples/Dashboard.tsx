@@ -17,7 +17,7 @@ import {
 export default function Dashboard() {
   return (
     <>
-      <ShellSidebar style={{ width: '4rem', backgroundColor: '#4C566A' }}>
+      <ShellSidebar tw="w-12 bg-indigo-400">
         <ShellHeader>
           <SidebarLogo size="large" />
         </ShellHeader>
@@ -29,7 +29,7 @@ export default function Dashboard() {
         </ShellFooter>
       </ShellSidebar>
       <ShellMain>
-        <ShellHeader>
+        <ShellHeader tw="border-b">
           <div className="d-flex px-4 border-bottom h-100 w-100 align-items-center">
             Long navigation with search bar & actions
           </div>

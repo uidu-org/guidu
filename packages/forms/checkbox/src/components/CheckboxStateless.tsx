@@ -10,6 +10,7 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
+import tw from 'twin.macro';
 import pkg from '../version.json';
 
 type CheckboxStatelessProps = {
@@ -34,6 +35,7 @@ function Checkbox({
   checked,
   isInline,
   forwardedRef,
+  className,
 }: CheckboxStatelessProps) {
   const element: RefObject<HTMLInputElement> = useRef();
 
@@ -48,24 +50,27 @@ function Checkbox({
 
   return (
     <div
-      className={`custom-control custom-checkbox${
-        isInline ? ' custom-control-inline' : ''
-      }`}
+      css={[tw`relative items-start`, isInline ? tw`inline-flex` : tw`flex`]}
     >
-      <input
-        type="checkbox"
-        id={id}
-        name={name}
-        className="custom-control-input"
-        onChange={onChange}
-        value={id}
-        disabled={disabled}
-        checked={checked}
-        ref={element}
-      />
-      <label className="custom-control-label" htmlFor={id}>
-        {label}
-      </label>
+      <div tw="flex items-center h-5">
+        <input
+          type="checkbox"
+          className={className}
+          tw="focus:--tw-ring-color[rgba(var(--brand-primary), .5)] h-5 w-5 border-gray-300 rounded color[rgba(var(--brand-primary), 1)]"
+          id={id}
+          name={name}
+          onChange={onChange}
+          value={id}
+          disabled={disabled}
+          checked={checked}
+          ref={element}
+        />
+      </div>
+      <div tw="ml-2">
+        <label tw="mb-0" htmlFor={id}>
+          {label}
+        </label>
+      </div>
     </div>
   );
 }

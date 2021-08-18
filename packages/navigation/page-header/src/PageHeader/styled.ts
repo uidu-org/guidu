@@ -1,5 +1,4 @@
 import { gridSize } from '@uidu/theme/constants';
-import { h700 } from '@uidu/theme/typography';
 import styled from 'styled-components';
 
 interface StyledProps {
@@ -20,7 +19,6 @@ export const Outer = styled.div`
 `;
 
 export const StyledTitle = styled.h1<StyledProps>`
-  ${h700()};
   ${getTruncationStyles} line-height: ${gridSize() * 4}px;
   margin-top: 0;
 `;
