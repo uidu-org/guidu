@@ -58,6 +58,7 @@ class SpotlightCard extends React.Component<Props> {
       theme,
       width,
     } = this.props;
+    console.log(this.props);
     return (
       <ButtonTheme.Provider value={spotlightButtonTheme}>
         <Card
@@ -68,7 +69,8 @@ class SpotlightCard extends React.Component<Props> {
           actionsBeforeElement={actionsBeforeElement}
           components={components}
           image={image}
-          theme={parent => {
+          className={this.props.className}
+          theme={(parent) => {
             const { container, ...others } = parent({});
             return theme!(
               () => ({

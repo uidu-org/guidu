@@ -11,9 +11,9 @@ const ControlLoader = () => (
     height={24}
     width={244}
     speed={2}
-    backgroundColor="var(--light)"
+    backgroundColor="rgb(var(--body-on-primary-bg))"
     backgroundOpacity={1}
-    foregroundColor="var(--light)"
+    foregroundColor="rgb(var(--body-on-primary-bg))"
     foregroundOpacity={0.6}
   >
     <rect width="100%" x={0} y="0" rx="12" ry="12" height="24" />

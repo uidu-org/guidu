@@ -20,6 +20,10 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.14",
-    "@uidu/form": "^0.4.19"
+    "@uidu/form": "^0.4.19",
+    "styled-components": "^5.3.0"
+  },
+  "peerDependencies": {
+    "styled-components": "*"
   }
 }

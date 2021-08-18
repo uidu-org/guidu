@@ -11,14 +11,24 @@ import React, {
   useReducer,
   useRef,
 } from 'react';
-import { Theme } from '../theme';
-import { ButtonProps } from '../types';
+import styled from 'styled-components';
+import tw from 'twin.macro';
+import { buttonVariants } from '../theme';
+import { ButtonAppearances, ButtonProps } from '../types';
 import pkg from '../version.json';
 import Content from './Content';
 import IconWrapper from './IconWrapper';
 import InnerWrapper from './InnerWrapper';
 import LoadingSpinner from './LoadingSpinner';
 import { composeRefs, filterProps, mapAttributesToState } from './utils';
+
+const StyledButton = styled.button<{
+  appearance: ButtonAppearances;
+  status: string;
+}>`
+  ${({ appearance = 'default', status }) =>
+    buttonVariants[appearance] && buttonVariants[appearance][status]}
+`;
 
 export type ButtonState = {
   isActive?: boolean;
@@ -123,13 +133,6 @@ function Button(props: ButtonProps) {
     onBlur && onBlur(e);
   };
 
-  const getElement = () => {
-    if (href) {
-      return isDisabled ? 'span' : 'a';
-    }
-    return 'button';
-  };
-
   // Swallow click events when the button is disabled
   // to prevent inner child clicks bubbling up.
   const _onInnerClick: React.MouseEventHandler<HTMLElement> = (e) => {
@@ -141,304 +144,106 @@ function Button(props: ButtonProps) {
 
   const attributes = { ...state, isSelected, isDisabled };
 
-  const StyledButton: React.ElementType = CustomComponent || getElement();
+  // const StyledButton: React.ElementType = CustomComponent || getElement();
 
   const iconIsOnlyChild: boolean = !!(
     (iconBefore && !iconAfter && !children) ||
     (iconAfter && !iconBefore && !children)
   );
 
-  const specifiers = (styles: {}) => {
-    if (StyledButton === 'a') {
-      return {
-        ...styles,
-        'a&': styles,
-      };
-    } else if (StyledButton === CustomComponent) {
-      return {
-        ...styles,
-        '&, a&, &:hover, &:active, &:focus': styles,
-      };
-    }
-    return styles;
-  };
-
   return (
-    <Theme.Provider value={theme}>
-      <Theme.Consumer
-        // mode={mode}
-        state={mapAttributesToState(attributes)}
-        iconIsOnlyChild={iconIsOnlyChild}
-        {...props}
-      >
-        {({ buttonStyles, spinnerStyles }) => {
-          return (
-            <StyledButton
-              {...filterProps(
-                {
-                  type,
-                  href,
-                  to,
-                  ...rest,
-                },
-                StyledButton,
-              )}
-              ref={getComposedRefs(button, consumerRef)}
-              onMouseEnter={_onMouseEnter}
-              onMouseLeave={_onMouseLeave}
-              onMouseDown={_onMouseDown}
-              onMouseUp={_onMouseUp}
-              onFocus={_onFocus}
-              onBlur={_onBlur}
-              disabled={isDisabled}
-              className={className}
-              style={specifiers(buttonStyles)}
-              // {...rest}
-            >
-              <InnerWrapper onClick={_onInnerClick} fit={!!shouldFitContainer}>
-                {isLoading && (
-                  <LoadingSpinner
-                    spacing={spacing}
-                    appearance={appearance}
-                    isSelected={isSelected}
-                    isDisabled={isDisabled}
-                    styles={spinnerStyles}
-                  />
-                )}
-                {iconBefore && (
-                  <IconWrapper
-                    isLoading={isLoading}
-                    spacing={spacing}
-                    isOnlyChild={iconIsOnlyChild}
-                    icon={iconBefore}
-                  />
-                )}
-                {children && (
-                  <Content
-                    isLoading={isLoading}
-                    followsIcon={!!iconBefore}
-                    spacing={spacing}
-                  >
-                    {children}
-                  </Content>
-                )}
-                {iconAfter && (
-                  <IconWrapper
-                    isLoading={isLoading}
-                    spacing={spacing}
-                    isOnlyChild={iconIsOnlyChild}
-                    icon={iconAfter}
-                  />
-                )}
-              </InnerWrapper>
-            </StyledButton>
-          );
-        }}
-      </Theme.Consumer>
-    </Theme.Provider>
+    <StyledButton
+      {...filterProps(
+        {
+          type,
+          href,
+          to,
+          ...rest,
+        },
+        StyledButton,
+      )}
+      ref={getComposedRefs(button, consumerRef)}
+      onMouseEnter={_onMouseEnter}
+      onMouseLeave={_onMouseLeave}
+      onMouseDown={_onMouseDown}
+      onMouseUp={_onMouseUp}
+      onFocus={_onFocus}
+      onBlur={_onBlur}
+      disabled={isDisabled}
+      css={[
+        tw`align-baseline border-width[1px] border-transparent inline-flex max-w-full outline-none! text-center text-decoration[none] whitespace-nowrap font-size[inherit] font-style[normal] font-weight[normal]`,
+        tw`rounded appearance-none`,
+        isLoading && tw`pointer-events-none`,
+        state === 'hover'
+          ? {
+              transition:
+                'background 0s ease-out, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38)',
+            }
+          : {
+              transition:
+                'background 0.1s ease-out, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38)',
+            },
+        state === 'hover' &&
+        (appearance === 'link' || appearance === 'subtle-link')
+          ? tw`hover:underline`
+          : tw`hover:text-decoration[none]`,
+        spacing === 'none' ? tw`p-0` : tw`px-2 py-1.5`,
+        state === 'hover' || state === 'active' || state === 'selected'
+          ? tw`cursor-pointer`
+          : state === 'disabled'
+          ? tw`cursor-not-allowed`
+          : tw`cursor-default`,
+        spacing === 'none' ? tw`align-baseline` : tw`align-middle`,
+        shouldFitContainer ? tw`w-full` : tw`w-auto`,
+        state === 'active'
+          ? tw`transition-duration[0s]`
+          : state === 'focus'
+          ? tw`transition-duration[0s, 0.2s]`
+          : tw`transition-duration[0.1s, 0.15s]`,
+      ]}
+      appearance={appearance}
+      className={className}
+      iconIsOnlyChild={iconIsOnlyChild}
+      status={mapAttributesToState(attributes)}
+    >
+      <InnerWrapper onClick={_onInnerClick} fit={!!shouldFitContainer}>
+        {isLoading && (
+          <LoadingSpinner
+            spacing={spacing}
+            appearance={appearance}
+            isSelected={isSelected}
+            isDisabled={isDisabled}
+          />
+        )}
+        {iconBefore && (
+          <IconWrapper
+            isLoading={isLoading}
+            spacing={spacing}
+            isOnlyChild={iconIsOnlyChild}
+            icon={iconBefore}
+          />
+        )}
+        {children && (
+          <Content
+            isLoading={isLoading}
+            followsIcon={!!iconBefore}
+            spacing={spacing}
+          >
+            {children}
+          </Content>
+        )}
+        {iconAfter && (
+          <IconWrapper
+            isLoading={isLoading}
+            spacing={spacing}
+            isOnlyChild={iconIsOnlyChild}
+            icon={iconAfter}
+          />
+        )}
+      </InnerWrapper>
+    </StyledButton>
   );
 }
-
-// export class Button extends React.Component<ButtonProps, ButtonState> {
-//   static defaultProps: ButtonProps = {
-//     appearance: 'default',
-//     autoFocus: false,
-//     isDisabled: false,
-//     isLoading: false,
-//     isSelected: false,
-//     shouldFitContainer: false,
-//     spacing: 'default',
-//     theme: (current, props) => current(props),
-//     type: 'button',
-//   };
-
-//   state = {
-//     isActive: false,
-//     isFocus: false,
-//     isHover: false,
-//   };
-
-//   isInteractive = () => !this.props.isDisabled && !this.props.isLoading;
-
-//   onMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
-//     this.setState({ isHover: true });
-//     if (this.props.onMouseEnter) {
-//       this.props.onMouseEnter(e);
-//     }
-//   };
-
-//   onMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
-//     this.setState({ isHover: false, isActive: false });
-//     if (this.props.onMouseLeave) {
-//       this.props.onMouseLeave(e);
-//     }
-//   };
-
-//   onMouseDown = (e: React.MouseEvent<HTMLElement>) => {
-//     e.preventDefault();
-//     this.setState({ isActive: true });
-//     if (this.props.onMouseDown) {
-//       this.props.onMouseDown(e);
-//     }
-//   };
-
-//   onMouseUp = (e: React.MouseEvent<HTMLElement>) => {
-//     this.setState({ isActive: false });
-//     if (this.props.onMouseUp) {
-//       this.props.onMouseUp(e);
-//     }
-//   };
-
-//   onFocus: React.FocusEventHandler<HTMLButtonElement> = (event) => {
-//     this.setState({ isFocus: true });
-//     if (this.props.onFocus) {
-//       this.props.onFocus(event);
-//     }
-//   };
-
-//   onBlur: React.FocusEventHandler<HTMLButtonElement> = (event) => {
-//     this.setState({ isFocus: false });
-//     if (this.props.onBlur) {
-//       this.props.onBlur(event);
-//     }
-//   };
-
-//   getElement = () => {
-//     const { href, isDisabled } = this.props;
-//     if (href) {
-//       return isDisabled ? 'span' : 'a';
-//     }
-//     return 'button';
-//   };
-
-//   // Swallow click events when the button is disabled
-//   // to prevent inner child clicks bubbling up.
-//   onInnerClick: React.MouseEventHandler<HTMLElement> = (e) => {
-//     if (!this.isInteractive()) {
-//       e.stopPropagation();
-//     }
-//     return true;
-//   };
-
-//   render() {
-//     const {
-//       appearance = 'default',
-//       children,
-//       className,
-//       component: CustomComponent,
-//       consumerRef,
-//       iconAfter,
-//       iconBefore,
-//       isDisabled = false,
-//       isLoading = false,
-//       isSelected = false,
-//       shouldFitContainer = false,
-//       spacing = 'default',
-//       theme = (
-//         current: (props: ThemeProps) => ThemeTokens,
-//         props: ThemeProps,
-//       ) => current(props),
-//       ...rest
-//     } = this.props;
-
-//     const attributes = { ...this.state, isSelected, isDisabled };
-
-//     const StyledButton: React.ReactType = CustomComponent || this.getElement();
-
-//     const iconIsOnlyChild: boolean = !!(
-//       (iconBefore && !iconAfter && !children) ||
-//       (iconAfter && !iconBefore && !children)
-//     );
-
-//     const specifiers = (styles: {}) => {
-//       if (StyledButton === 'a') {
-//         return {
-//           ...styles,
-//           'a&': styles,
-//         };
-//       } else if (StyledButton === CustomComponent) {
-//         return {
-//           ...styles,
-//           '&, a&, &:hover, &:active, &:focus': styles,
-//         };
-//       }
-//       return styles;
-//     };
-
-//     return (
-//       <Theme.Provider value={theme}>
-//         <GlobalTheme.Consumer>
-//           {({ mode }: { mode: ThemeMode }) => (
-//             <Theme.Consumer
-//               mode={mode}
-//               state={mapAttributesToState(attributes)}
-//               iconIsOnlyChild={iconIsOnlyChild}
-//               {...this.props}
-//             >
-//               {({ buttonStyles, spinnerStyles }) => {
-//                 return (
-//                   <StyledButton
-//                     {...filterProps(rest, StyledButton)}
-//                     ref={this.getComposedRefs(this.button, consumerRef)}
-//                     onMouseEnter={this.onMouseEnter}
-//                     onMouseLeave={this.onMouseLeave}
-//                     onMouseDown={this.onMouseDown}
-//                     onMouseUp={this.onMouseUp}
-//                     onFocus={this.onFocus}
-//                     onBlur={this.onBlur}
-//                     disabled={isDisabled}
-//                     className={className}
-//                     style={specifiers(buttonStyles)}
-//                   >
-//                     <InnerWrapper
-//                       onClick={this.onInnerClick}
-//                       fit={!!shouldFitContainer}
-//                     >
-//                       {isLoading && (
-//                         <LoadingSpinner
-//                           spacing={spacing}
-//                           appearance={appearance}
-//                           isSelected={isSelected}
-//                           isDisabled={isDisabled}
-//                           styles={spinnerStyles}
-//                         />
-//                       )}
-//                       {iconBefore && (
-//                         <IconWrapper
-//                           isLoading={isLoading}
-//                           spacing={spacing}
-//                           isOnlyChild={iconIsOnlyChild}
-//                           icon={iconBefore}
-//                         />
-//                       )}
-//                       {children && (
-//                         <Content
-//                           isLoading={isLoading}
-//                           followsIcon={!!iconBefore}
-//                           spacing={spacing}
-//                         >
-//                           {children}
-//                         </Content>
-//                       )}
-//                       {iconAfter && (
-//                         <IconWrapper
-//                           isLoading={isLoading}
-//                           spacing={spacing}
-//                           isOnlyChild={iconIsOnlyChild}
-//                           icon={iconAfter}
-//                         />
-//                       )}
-//                     </InnerWrapper>
-//                   </StyledButton>
-//                 );
-//               }}
-//             </Theme.Consumer>
-//           )}
-//         </GlobalTheme.Consumer>
-//       </Theme.Provider>
-//     );
-//   }
-// }
 
 const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 const ButtonWithRef = React.forwardRef<HTMLElement, ButtonProps>(

@@ -66,11 +66,6 @@ export type OnlyButtonProps = {
   target?: string;
   /** Option to fit button width to its parent width */
   shouldFitContainer?: boolean;
-  /** Pass in a custom theme */
-  theme?: (
-    current: (props: ThemeProps) => ThemeTokens,
-    props: ThemeProps,
-  ) => ThemeTokens;
 };
 
 export type ButtonProps = HtmlAttributes & OnlyButtonProps;
@@ -84,21 +79,6 @@ export type ConsumerRef =
 export type Spacing = 'compact' | 'default' | 'none';
 
 export type ThemeMode = 'dark' | 'light';
-
-export type ThemeTokens = {
-  buttonStyles: Object;
-  spinnerStyles: Object;
-};
-
-export interface ThemeProps extends Partial<ButtonProps> {
-  state: string;
-  iconIsOnlyChild?: boolean;
-  mode?: ThemeMode;
-}
-
-export type ThemeFallbacks = {
-  [index: string]: { [index: string]: string };
-};
 
 export type AppearanceStates = {
   default: { light: string; dark?: string };

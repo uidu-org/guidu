@@ -10,7 +10,7 @@ export default function Checkbox({ item, index, isSelected, getItemProps }) {
       key={item.id}
       css={[
         tw`flex border px-4 py-3 mb-2 items-center justify-start text-left flex-row w-full`,
-        !!isSelected && tw`text-white background[rgb(var(--primary))]`,
+        !!isSelected && tw`text-white background[rgb(var(--brand-primary))]`,
       ]}
       onClick={(e) => {
         e.preventDefault();

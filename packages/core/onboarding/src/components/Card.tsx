@@ -72,9 +72,7 @@ const DefaultFooter = styled.div`
 
 const Theme = createTheme<CardTokens, {}>(() => ({
   container: {
-    overflow: 'auto',
     borderRadius: `${borderRadius()}px`,
-    height: 'fit-content',
     zIndex: `${layers.spotlight() + 1}`,
   },
 }));
@@ -89,6 +87,7 @@ const Card: FC<Props> = ({
   headingAfterElement,
   theme,
   innerRef,
+  className,
 }) => {
   const { Header = DefaultHeader, Footer = DefaultFooter } = components;
 
@@ -97,7 +96,12 @@ const Card: FC<Props> = ({
       <Theme.Consumer>
         {({ container }) => {
           return (
-            <Container theme={container} ref={innerRef!}>
+            <Container
+              theme={container}
+              ref={innerRef!}
+              tw="overflow-auto height[fit-content]"
+              className={className}
+            >
               {typeof image === 'string' ? <img src={image} alt="" /> : image}
               <Body>
                 {heading || headingAfterElement ? (

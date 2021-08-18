@@ -91,7 +91,7 @@ export default class App extends React.Component<{}, State> {
               <Route>
                 <Shell>
                   <ShellSidebar
-                    tw="lg:flex hidden bg-gray-50 border-r"
+                    tw="lg:flex hidden background-color[rgba(var(--body-secondary-bg, 1))] border-r"
                     style={{
                       flex: '1 0 18%',
                       minWidth: '18rem',

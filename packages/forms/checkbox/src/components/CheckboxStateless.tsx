@@ -56,7 +56,7 @@ function Checkbox({
         <input
           type="checkbox"
           className={className}
-          tw="focus:ring-indigo-500 h-5 w-5 border-gray-300 rounded color[rgba(var(--primary), 1)]"
+          tw="focus:--tw-ring-color[rgba(var(--brand-primary), .5)] h-5 w-5 border-gray-300 rounded color[rgba(var(--brand-primary), 1)]"
           id={id}
           name={name}
           onChange={onChange}

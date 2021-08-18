@@ -10,7 +10,7 @@ export const StyledNavigationItem = styled.div`
 
   &:hover,
   &.active {
-    color: rgb(var(--primary));
+    color: rgb(var(--brand-primary));
     /* color: var(--body-color); */
     transition: color linear 100ms;
   }

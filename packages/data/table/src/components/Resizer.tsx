@@ -16,7 +16,7 @@ const StyledResizer = styled.div<{ isResizing: boolean }>`
       opacity: isResizing ? 1 : 0;
     `}
   &:hover {
-    background-color: rgba(var(--primary), 1);
+    background-color: rgba(var(--brand-primary), 1);
   }
 `;
 

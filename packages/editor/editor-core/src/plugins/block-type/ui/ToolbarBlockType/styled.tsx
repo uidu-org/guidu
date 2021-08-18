@@ -21,5 +21,5 @@ export const BlockTypeMenuItem = styled.div`
 export const KeyboardShortcut = styled(Shortcut)<{
   selected?: boolean;
 }>`
-  ${(props) => (props.selected ? `color: rgb(var(--primary));` : '')}
+  ${(props) => (props.selected ? `color: rgb(var(--brand-primary));` : '')}
 `;

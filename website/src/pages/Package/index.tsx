@@ -181,24 +181,12 @@ class Package extends React.Component<Props> {
                             return (
                               <ButtonGroup>
                                 <Button
-                                  type="button"
                                   onClick={this.openOptionsDrawer}
                                   appearance="subtle"
                                   iconBefore={<MoreVertical size={18} />}
                                 ></Button>
-                                <Button
-                                  component={React.forwardRef(
-                                    ({ children, ...rest }, ref: any) => (
-                                      <Link
-                                        {...rest}
-                                        to={exampleModalPath}
-                                        ref={ref}
-                                      >
-                                        {children}
-                                      </Link>
-                                    ),
-                                  )}
-                                >
+                                <Button as={Link} to={exampleModalPath}>
+                                  {children}
                                   Examples
                                 </Button>
                               </ButtonGroup>
@@ -207,6 +195,7 @@ class Package extends React.Component<Props> {
                           return (
                             <ButtonGroup>
                               <Button
+                                as="a"
                                 href={`https://www.npmjs.com/package/${pkg.name}`}
                                 label="npm"
                                 summary={pkg.name}
@@ -214,6 +203,7 @@ class Package extends React.Component<Props> {
                                 target="_blank"
                               />
                               <Button
+                                as="a"
                                 href={`https://github.com/uidu-org/guidu/blob/main/packages/${groupId}/${pkgId}`}
                                 label="Source"
                                 summary="Github"
@@ -221,25 +211,13 @@ class Package extends React.Component<Props> {
                                 target="_blank"
                               />
                               <Button
-                                component={Link as any}
+                                as={Link}
                                 to={`/packages/${groupId}/${pkgId}/changelog`}
                                 iconBefore={<List size={16} />}
                               >
                                 Changelog
                               </Button>
-                              <Button
-                                component={React.forwardRef(
-                                  ({ children, ...rest }, ref: any) => (
-                                    <Link
-                                      {...rest}
-                                      to={exampleModalPath}
-                                      ref={ref}
-                                    >
-                                      {children}
-                                    </Link>
-                                  ),
-                                )}
-                              >
+                              <Button as={Link} to={exampleModalPath}>
                                 Examples
                               </Button>
                             </ButtonGroup>

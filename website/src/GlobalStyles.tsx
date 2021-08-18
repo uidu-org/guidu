@@ -12,6 +12,8 @@ const CustomStyles = createGlobalStyle`
   body {
     overscroll-behavior: none;
     overflow: hidden;
+    background-color: rgb(var(--body-primary-bg));
+    color: rgb(var(--body-primary-color));
   }
 
   #root {
@@ -35,12 +37,24 @@ const CustomStyles = createGlobalStyle`
   }
 
   :root {
-    --body-bg: #fff;
-    --body-color: #000000;
-    --light: #ececec;
-    --primary: 29, 209, 37;
-    --border: #E9ECF0;
+    --brand-primary: 12, 45, 124;
+    --brand-secondary: 240, 240, 240;
+    --brand-on-primary: 255, 255, 255;
+    --brand-on-secondary: 10, 10, 10;
+
+    --body-primary-bg: 255, 255, 255;
+    --body-secondary-bg: 249, 250, 251;
+    --body-primary-color: 10, 10, 10;
+    --body-secondary-color: black;
+    --body-on-primary-bg: 245, 244, 243;
+    --body-on-secondary-bg: 220, 220, 220;
+
+    --border: 211, 211, 211;
+    --border-strong: black;
+    --tw-ring-color: rgba(var(--brand-primary),0.5);
   }
+
+
 `;
 
 const GlobalStyles = () => (

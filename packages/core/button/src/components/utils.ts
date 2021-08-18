@@ -34,7 +34,6 @@ export const filterProps = (
   { createAnalyticsEvent, testId, ...props }: Partial<ButtonProps>,
   type: React.ReactNode,
 ) => {
-  console.log(type);
   if (type === 'span') {
     const { target, href, ...rest } = props;
     return rest;

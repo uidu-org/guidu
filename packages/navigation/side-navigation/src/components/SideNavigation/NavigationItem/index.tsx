@@ -26,14 +26,14 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   cursor: pointer;
   display: flex;
   border-radius: 0.375rem;
-  color: var(--body-color);
+  color: rgb(var(--body-secondary-color));
   padding: 0.5rem 0.75rem;
   position: relative;
 
   &:hover,
   &.active {
-    background-color: var(--light);
-    color: var(--body-color);
+    background-color: rgb(var(--body-on-secondary-bg));
+    color: rgb(var(--body-secondary-color));
   }
 
   &:hover ${StyledNavigationActions} {

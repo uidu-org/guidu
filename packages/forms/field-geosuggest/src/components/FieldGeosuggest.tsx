@@ -190,7 +190,7 @@ function FieldGeosuggest({
       <input
         className={className}
         css={[
-          tw`shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border border-color[var(--border)] rounded py-3 px-4 placeholder-gray-400`,
+          tw`shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border border-color[rgb(var(--border))] rounded py-3 px-4 placeholder-gray-400`,
           isGeolocationAvailable && tw`pr-14`,
         ]}
         disabled={!ready || disabled}

@@ -28,6 +28,7 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
+    "react-router-dom": "*",
     "styled-components": "^5.0.0"
   },
   "publishConfig": {

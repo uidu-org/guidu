@@ -90,7 +90,7 @@ function FieldColorPicker({
         style={{
           padding: '4px 0 0',
           margin: '4px 0 0',
-          borderTop: '1px solid var(--border)',
+          borderTop: '1px solid rgb(var(--border))',
         }}
       >
         <div className="input-group input-group-sm">
