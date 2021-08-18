@@ -1,6 +1,6 @@
 {
   "name": "@uidu/devise",
-  "version": "0.5.19",
+  "version": "0.6.0",
   "description": "React component tied to devise for sign_in, sign_up and password recovery ",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/authentication/devise",
   "license": "MIT",
@@ -10,15 +10,15 @@
   "types": "dist/uidu-devise.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.15.3",
-    "@uidu/avatar": "^0.6.15",
-    "@uidu/checkbox": "^0.4.5",
-    "@uidu/field-password": "^0.4.17",
-    "@uidu/field-phone": "^0.2.17",
-    "@uidu/field-text": "^0.5.5",
-    "@uidu/form": "^0.4.19",
-    "@uidu/shell": "^1.2.21",
-    "@uidu/slider": "^1.6.14",
-    "@uidu/spinner": "^0.4.14",
+    "@uidu/avatar": "^0.7.0",
+    "@uidu/checkbox": "^1.0.0",
+    "@uidu/field-password": "^1.0.0",
+    "@uidu/field-phone": "^1.0.0",
+    "@uidu/field-text": "^1.0.0",
+    "@uidu/form": "^1.0.0",
+    "@uidu/shell": "^2.0.0",
+    "@uidu/slider": "^1.7.0",
+    "@uidu/spinner": "^0.5.0",
     "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-animate-height": "^2.0.23",
@@ -30,6 +30,6 @@
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.14"
+    "@uidu/docs": "^0.4.0"
   }
 }
