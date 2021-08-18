@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 import { DashletHeaderProps } from './types';
 
 const HeaderWrapper = styled.div`
-  ${tw`bg-white px-4 py-5 border-b border-gray-200 border-opacity-50 sm:px-6`}
+  ${tw`background[rgb(var(--body-on-primary-bg))] px-4 py-5 sm:px-6`}
 `;
 const HeaderInnerWrapper = styled.div`
   ${tw`-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap`}
@@ -16,7 +16,7 @@ const HeaderLabelName = styled.h3`
   ${tw`text-base font-medium text-gray-900`}
 `;
 const HeaderLabelDescription = styled.p`
-  ${tw`mt-1 text-sm text-gray-500`}
+  ${tw`text-base text-gray-500`}
 `;
 const HeaderChildrenWrapper = styled.div`
   ${tw`ml-4 mt-4 flex-shrink-0`}

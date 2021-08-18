@@ -4,7 +4,7 @@ export default function Event(props) {
   const { event, title } = props;
   console.log(event);
   return (
-    <small className="small text-truncate m-0">
+    <small tw="text-sm truncate">
       {title}
       {event.desc && ':  ' + event.desc}
     </small>

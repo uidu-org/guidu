@@ -1,5 +1,5 @@
+import Button, { ButtonGroup } from '@uidu/button';
 import { ShellHeader } from '@uidu/shell';
-import classNames from 'classnames';
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
@@ -18,18 +18,10 @@ export default function Toolbar({
   const viewNamesGroup = (messages) => {
     if (views.length > 1) {
       return (
-        <div
-          className="btn-group"
-          role="group"
-          aria-label="Switch calendar view"
-        >
+        <ButtonGroup>
           {views.map((name) => (
-            <button
-              className={classNames('btn btn-sm', {
-                'btn-light': view !== name,
-                'btn-primary': view === name,
-              })}
-              type="button"
+            <Button
+              appearance={view === name ? 'primary' : 'default'}
               key={name}
               onClick={(e) => {
                 e.preventDefault();
@@ -37,18 +29,17 @@ export default function Toolbar({
               }}
             >
               {messages[name]}
-            </button>
+            </Button>
           ))}
-        </div>
+        </ButtonGroup>
       );
     }
   };
 
   return (
-    <ShellHeader className="justify-content-between p-3 h-auto">
-      <div className="d-flex align-items-center">
-        <button
-          type="button"
+    <ShellHeader tw="justify-between p-3 h-auto">
+      <div tw="flex items-center space-x-4">
+        <Button
           className="btn btn-sm d-flex align-items-center btn-light"
           onClick={(e) => {
             e.preventDefault();
@@ -56,34 +47,26 @@ export default function Toolbar({
           }}
         >
           {messages.today}
-        </button>
-        <div className="btn-group">
-          <button
-            type="button"
-            className="btn btn-sm d-flex align-items-center px-2"
+        </Button>
+        <ButtonGroup>
+          <Button
+            iconAfter={<ChevronLeft size={18} />}
             onClick={(e) => {
               e.preventDefault();
               navigate('PREV');
             }}
-          >
-            <ChevronLeft size={18} />
-          </button>
-          <button
-            type="button"
-            className="btn btn-sm d-flex align-items-center px-2"
+          />
+          <Button
+            iconAfter={<ChevronRight size={18} />}
             onClick={(e) => {
               e.preventDefault();
               navigate('NEXT');
             }}
-          >
-            <ChevronRight size={18} />
-          </button>
-        </div>
-        <span className="ml-3 text-muted">{label}</span>
+          />
+        </ButtonGroup>
+        <span tw="ml-2 text-gray-400">{label}</span>
       </div>
-      <div className="d-flex align-items-center">
-        {viewNamesGroup(messages)}
-      </div>
+      <div tw="flex items-center ml-auto">{viewNamesGroup(messages)}</div>
     </ShellHeader>
   );
 }

@@ -12,7 +12,7 @@ export default function Calendar({
   events = [],
   components,
   ...rest
-}) {
+}: any) {
   return (
     <>
       <BigCalendar

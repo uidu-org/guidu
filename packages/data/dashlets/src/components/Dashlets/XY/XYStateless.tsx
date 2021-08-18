@@ -127,17 +127,10 @@ export default function XYStateless({ data, series = [], config }) {
 
   useLayoutEffect(() => {
     if (chart.current) {
-      console.log(mergeConfig());
       chart.current.config = mergeConfig();
     }
     return () => null;
   }, [config]);
 
-  return (
-    <div
-      className="px-3"
-      style={{ width: '100%', height: '100%' }}
-      id={id.current}
-    />
-  );
+  return <div tw="px-4 w-full h-full" id={id.current} />;
 }

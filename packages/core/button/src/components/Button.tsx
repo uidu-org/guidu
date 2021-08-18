@@ -25,9 +25,11 @@ import { composeRefs, filterProps, mapAttributesToState } from './utils';
 const StyledButton = styled.button<{
   appearance: ButtonAppearances;
   status: string;
+  $isOnlyChild: boolean;
 }>`
   ${({ appearance = 'default', status }) =>
     buttonVariants[appearance] && buttonVariants[appearance][status]}
+  ${({ $isOnlyChild }) => $isOnlyChild && tw`py-2! px-3!`}
 `;
 
 export type ButtonState = {
@@ -203,7 +205,7 @@ function Button(props: ButtonProps) {
       ]}
       appearance={appearance}
       className={className}
-      iconIsOnlyChild={iconIsOnlyChild}
+      $isOnlyChild={iconIsOnlyChild}
       status={mapAttributesToState(attributes)}
     >
       <InnerWrapper onClick={_onInnerClick} fit={!!shouldFitContainer}>

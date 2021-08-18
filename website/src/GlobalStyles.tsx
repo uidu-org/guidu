@@ -46,7 +46,7 @@ const CustomStyles = createGlobalStyle`
     --body-secondary-bg: 249, 250, 251;
     --body-primary-color: 10, 10, 10;
     --body-secondary-color: black;
-    --body-on-primary-bg: 245, 244, 243;
+    --body-on-primary-bg: 255, 254, 253;
     --body-on-secondary-bg: 220, 220, 220;
 
     --border: 211, 211, 211;

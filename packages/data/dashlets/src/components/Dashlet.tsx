@@ -47,7 +47,7 @@ const DateRanges = [
 // ];
 
 export const Card = styled.div`
-  ${tw`bg-white border rounded overflow-hidden h-full flex-col flex`}
+  ${tw`background[rgb(var(--body-on-primary-bg))] border rounded overflow-hidden h-full flex-col flex`}
 `;
 
 export default function Dashlet({

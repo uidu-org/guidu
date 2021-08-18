@@ -1,6 +1,4 @@
 import { colors } from '@uidu/dashlets';
-import React from 'react';
-import { UserCheck } from 'react-feather';
 import 'twin.macro';
 
 export const dashlets = [
@@ -14,7 +12,7 @@ export const dashlets = [
         {
           dimension: 'Contacts.createdAt',
           granularity: 'month',
-          // dateRange: 'This year',
+          dateRange: 'This year',
         },
       ],
       filters: [],
@@ -25,30 +23,30 @@ export const dashlets = [
       w: 12,
       h: 10,
     },
-    // data: {
-    //   values: [
-    //     {
-    //       category: '2017-01-01T00:00:00.000',
-    //       'Contacts.count': 88,
-    //     },
-    //     {
-    //       category: '2018-01-01T00:00:00.000',
-    //       'Contacts.count': 48,
-    //     },
-    //     {
-    //       category: '2019-01-01T00:00:00.000',
-    //       'Contacts.count': 77,
-    //     },
-    //     {
-    //       category: '2020-01-01T00:00:00.000',
-    //       'Contacts.count': 126,
-    //     },
-    //     {
-    //       category: '2021-01-01T00:00:00.000',
-    //       'Contacts.count': 59,
-    //     },
-    //   ],
-    // },
+    data: {
+      values: [
+        {
+          category: '2017-01-01T00:00:00.000',
+          'Contacts.count': 88,
+        },
+        {
+          category: '2018-01-01T00:00:00.000',
+          'Contacts.count': 48,
+        },
+        {
+          category: '2019-01-01T00:00:00.000',
+          'Contacts.count': 77,
+        },
+        {
+          category: '2020-01-01T00:00:00.000',
+          'Contacts.count': 126,
+        },
+        {
+          category: '2021-01-01T00:00:00.000',
+          'Contacts.count': 59,
+        },
+      ],
+    },
     config: {
       series: [
         {
@@ -184,7 +182,7 @@ export const dashlets = [
   },
   {
     kind: 'Counter',
-    itemBefore: <UserCheck tw="h-6 w-6 text-white" />,
+    // itemBefore: <UserCheck tw="h-6 w-6 text-white" />,
     label: 'counter',
     layout: { x: 4, y: 2, w: 4, h: 2.5 },
     query: {
@@ -263,7 +261,7 @@ export const dashlets = [
       },
       {
         kind: 'Counter',
-        itemBefore: <UserCheck />,
+        // itemBefore: <UserCheck />,
         label: 'counter',
         layout: { x: 4, y: 2, w: 4, h: 4 },
         rollup: ['count', 'id'],
