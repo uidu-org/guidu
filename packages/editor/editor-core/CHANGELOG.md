@@ -1,5 +1,50 @@
 # @uidu/editor-core
 
+## 0.9.0
+
+### Minor Changes
+
+- c5a9ffbf6: ## Forms to tailwind, use css variables where possible, refactor Button completely
+
+  Button now is styleable from outside with tailwind or normal classNames. It's also possible to use css variables to style the button, and use variants to style the button.
+  Removed bootstrap dependency locally, to understand how the uikit behaves in a less opinionated client.
+  Bumped dependencies as well.
+
+### Patch Changes
+
+- Updated dependencies [c5a9ffbf6]
+  - @uidu/button@1.0.0
+  - @uidu/field-date@1.0.0
+  - @uidu/form@1.0.0
+  - @uidu/select@1.0.0
+  - @uidu/analytics@0.5.0
+  - @uidu/avatar@0.7.0
+  - @uidu/avatar-group@2.6.0
+  - @uidu/droplist@0.5.0
+  - @uidu/menu@0.5.0
+  - @uidu/modal-dialog@0.5.0
+  - @uidu/spinner@0.5.0
+  - @uidu/theme@0.6.0
+  - @uidu/tooltip@0.5.0
+  - @uidu/adf-schema@0.5.0
+  - @uidu/adf-utils@0.7.0
+  - @uidu/editor-common@0.5.0
+  - @uidu/editor-json-transformer@0.4.0
+  - @uidu/editor-markdown-transformer@0.5.0
+  - @uidu/analytics-gas-types@0.3.0
+  - @uidu/analytics-listeners@0.4.0
+  - @uidu/analytics-namespaced-context@0.4.0
+  - @uidu/date@0.4.0
+  - @uidu/emoji@0.5.0
+  - @uidu/mentions@0.3.0
+  - @uidu/profilecard@0.2.0
+  - @uidu/status@0.4.0
+  - @uidu/task-decision@0.4.0
+  - @uidu/media-card@0.5.0
+  - @uidu/media-core@0.5.0
+  - @uidu/media-filmstrip@0.4.0
+  - @uidu/media-picker@0.5.0
+
 ## 0.8.8
 
 ### Patch Changes

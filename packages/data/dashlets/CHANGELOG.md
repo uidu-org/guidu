@@ -1,5 +1,25 @@
 # @uidu/blocks
 
+## 0.12.0
+
+### Minor Changes
+
+- c5a9ffbf6: ## Forms to tailwind, use css variables where possible, refactor Button completely
+
+  Button now is styleable from outside with tailwind or normal classNames. It's also possible to use css variables to style the button, and use variants to style the button.
+  Removed bootstrap dependency locally, to understand how the uikit behaves in a less opinionated client.
+  Bumped dependencies as well.
+
+### Patch Changes
+
+- Updated dependencies [c5a9ffbf6]
+  - @uidu/spinner@0.5.0
+  - @uidu/tooltip@0.5.0
+  - @uidu/dashboard-manager@0.13.0
+  - @uidu/dashlet-controls@0.4.0
+  - @uidu/data-fields@0.6.0
+  - @uidu/table@0.9.0
+
 ## 0.11.6
 
 ### Patch Changes

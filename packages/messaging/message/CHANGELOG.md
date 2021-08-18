@@ -1,5 +1,28 @@
 # @uidu/message
 
+## 0.4.0
+
+### Minor Changes
+
+- c5a9ffbf6: ## Forms to tailwind, use css variables where possible, refactor Button completely
+
+  Button now is styleable from outside with tailwind or normal classNames. It's also possible to use css variables to style the button, and use variants to style the button.
+  Removed bootstrap dependency locally, to understand how the uikit behaves in a less opinionated client.
+  Bumped dependencies as well.
+
+### Patch Changes
+
+- Updated dependencies [c5a9ffbf6]
+  - @uidu/avatar@0.7.0
+  - @uidu/drawer@0.6.0
+  - @uidu/dropdown-menu@0.6.0
+  - @uidu/tooltip@0.5.0
+  - @uidu/media-card@0.5.0
+  - @uidu/media-core@0.5.0
+  - @uidu/media-viewer@0.4.0
+  - @uidu/message-form@0.4.0
+  - @uidu/message-renderer@0.4.0
+
 ## 0.3.18
 
 ### Patch Changes

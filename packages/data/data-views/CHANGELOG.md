@@ -1,5 +1,24 @@
 # @uidu/data-views
 
+## 0.6.0
+
+### Minor Changes
+
+- c5a9ffbf6: ## Forms to tailwind, use css variables where possible, refactor Button completely
+
+  Button now is styleable from outside with tailwind or normal classNames. It's also possible to use css variables to style the button, and use variants to style the button.
+  Removed bootstrap dependency locally, to understand how the uikit behaves in a less opinionated client.
+  Bumped dependencies as well.
+
+### Patch Changes
+
+- Updated dependencies [c5a9ffbf6]
+  - @uidu/field-counter@1.0.0
+  - @uidu/field-number@1.0.0
+  - @uidu/form@1.0.0
+  - @uidu/select@1.0.0
+  - @uidu/data-controls@0.8.0
+
 ## 0.5.24
 
 ### Patch Changes

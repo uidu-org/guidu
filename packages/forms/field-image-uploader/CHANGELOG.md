@@ -1,5 +1,24 @@
 # @uidu/field-image-uploader
 
+## 1.0.0
+
+### Major Changes
+
+- c5a9ffbf6: ## Forms to tailwind, use css variables where possible, refactor Button completely
+
+  Button now is styleable from outside with tailwind or normal classNames. It's also possible to use css variables to style the button, and use variants to style the button.
+  Removed bootstrap dependency locally, to understand how the uikit behaves in a less opinionated client.
+  Bumped dependencies as well.
+
+### Patch Changes
+
+- Updated dependencies [c5a9ffbf6]
+  - @uidu/button@1.0.0
+  - @uidu/field-base@1.0.0
+  - @uidu/analytics@0.5.0
+  - @uidu/spinner@0.5.0
+  - @uidu/media-core@0.5.0
+
 ## 0.4.18
 
 ### Patch Changes
