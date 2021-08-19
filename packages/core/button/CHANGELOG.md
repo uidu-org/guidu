@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.1.1
+
+### Patch Changes
+
+- 805f4befb: Button line height now fixed
+
 ## 1.1.0
 
 ### Minor Changes
