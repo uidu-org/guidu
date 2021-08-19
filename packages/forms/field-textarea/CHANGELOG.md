@@ -1,5 +1,15 @@
 # @uidu/field-textarea
 
+## 1.1.0
+
+### Minor Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+
+### Patch Changes
+
+- @uidu/field-base@2.0.0
+
 ## 1.0.0
 
 ### Major Changes

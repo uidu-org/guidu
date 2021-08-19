@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 0.12.1
+
+### Patch Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+- Updated dependencies [4e1595620]
+  - @uidu/tooltip@0.5.1
+  - @uidu/dashboard-manager@0.13.1
+
 ## 0.12.0
 
 ### Minor Changes

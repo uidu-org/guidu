@@ -1,5 +1,27 @@
 # @uidu/editor-core
 
+## 0.9.1
+
+### Patch Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+- Updated dependencies [4e1595620]
+  - @uidu/button@1.1.0
+  - @uidu/field-date@1.1.0
+  - @uidu/form@1.1.0
+  - @uidu/select@1.1.0
+  - @uidu/droplist@0.5.1
+  - @uidu/menu@0.5.1
+  - @uidu/modal-dialog@0.5.1
+  - @uidu/tooltip@0.5.1
+  - @uidu/editor-common@0.5.1
+  - @uidu/emoji@0.5.1
+  - @uidu/mentions@0.3.1
+  - @uidu/profilecard@0.2.1
+  - @uidu/status@0.4.1
+  - @uidu/task-decision@0.4.1
+  - @uidu/media-card@0.5.1
+
 ## 0.9.0
 
 ### Minor Changes

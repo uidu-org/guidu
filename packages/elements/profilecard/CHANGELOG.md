@@ -1,5 +1,14 @@
 # @uidu/profilecard
 
+## 0.2.1
+
+### Patch Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+- Updated dependencies [4e1595620]
+  - @uidu/button@1.1.0
+  - @uidu/popup@0.5.1
+
 ## 0.2.0
 
 ### Minor Changes
