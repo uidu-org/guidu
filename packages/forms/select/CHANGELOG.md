@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 1.1.0
+
+### Minor Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+
+### Patch Changes
+
+- Updated dependencies [4e1595620]
+  - @uidu/checkbox@1.1.0
+  - @uidu/form@1.1.0
+  - @uidu/tooltip@0.5.1
+  - @uidu/field-base@2.0.0
+
 ## 1.0.0
 
 ### Major Changes

@@ -1,5 +1,16 @@
 # Change Log
 
+## 1.1.0
+
+### Minor Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+
+### Patch Changes
+
+- Updated dependencies [4e1595620]
+  - @uidu/button@1.1.0
+
 ## 1.0.0
 
 ### Major Changes

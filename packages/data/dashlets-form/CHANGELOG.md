@@ -1,5 +1,18 @@
 # @uidu/dashlets-form
 
+## 0.5.1
+
+### Patch Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+- Updated dependencies [4e1595620]
+  - @uidu/field-downshift@1.1.0
+  - @uidu/form@1.1.0
+  - @uidu/select@1.1.0
+  - @uidu/dropdown-menu@0.6.1
+  - @uidu/dashlets@0.12.1
+  - @uidu/field-toggle@1.0.1
+
 ## 0.5.0
 
 ### Minor Changes

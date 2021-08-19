@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.13.1
+
+### Patch Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+- Updated dependencies [4e1595620]
+  - @uidu/dashlets@0.12.1
+
 ## 0.13.0
 
 ### Minor Changes

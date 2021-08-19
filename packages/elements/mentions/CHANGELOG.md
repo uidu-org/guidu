@@ -1,5 +1,14 @@
 # @uidu/mentions
 
+## 0.3.1
+
+### Patch Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+- Updated dependencies [4e1595620]
+  - @uidu/button@1.1.0
+  - @uidu/tooltip@0.5.1
+
 ## 0.3.0
 
 ### Minor Changes

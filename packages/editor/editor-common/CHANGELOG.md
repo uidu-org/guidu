@@ -1,5 +1,15 @@
 # @uidu/editor-common
 
+## 0.5.1
+
+### Patch Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+- Updated dependencies [4e1595620]
+  - @uidu/emoji@0.5.1
+  - @uidu/mentions@0.3.1
+  - @uidu/profilecard@0.2.1
+
 ## 0.5.0
 
 ### Minor Changes

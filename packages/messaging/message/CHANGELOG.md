@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.4.1
+
+### Patch Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+- Updated dependencies [4e1595620]
+  - @uidu/dropdown-menu@0.6.1
+  - @uidu/tooltip@0.5.1
+  - @uidu/media-card@0.5.1
+
 ## 0.4.0
 
 ### Minor Changes

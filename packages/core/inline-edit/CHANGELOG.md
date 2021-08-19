@@ -1,5 +1,16 @@
 # @uidu/inline-edit
 
+## 0.3.1
+
+### Patch Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+- Updated dependencies [4e1595620]
+  - @uidu/button@1.1.0
+  - @uidu/field-text@1.1.0
+  - @uidu/form@1.1.0
+  - @uidu/inline-dialog@0.5.1
+
 ## 0.3.0
 
 ### Minor Changes
