@@ -103,7 +103,7 @@ function ExampleNavigation({ examples, exampleId, onExampleSelected }) {
                     className={classNames('nav-link', {
                       active: file.id === exampleId,
                     })}
-                    onClick={event => {
+                    onClick={(event) => {
                       event.preventDefault();
                       onExampleSelected(
                         fs.normalize(filePath.replace('examples/', '')),
@@ -200,13 +200,14 @@ const ModalHeaderComp = ({
         </Button>
         <Tooltip content="Fullscreen" position="bottom">
           <Button
-            component={Link as any}
+            as={Link as any}
             to={toExampleUrl(groupId, packageId, exampleId)}
             iconBefore={<Maximize size={16} />}
           />
         </Tooltip>
         <Tooltip content="Isolated View" position="bottom">
           <Button
+            as="a"
             href={loaderUrl}
             target={'_blank'}
             iconBefore={<LinkIcon size={16} />}
@@ -260,7 +261,7 @@ export default class ExamplesModal extends React.Component<Props, State> {
   }
 
   onCodeToggle = () =>
-    this.setState(state => ({ displayCode: !state.displayCode }));
+    this.setState((state) => ({ displayCode: !state.displayCode }));
 
   close = (event?: React.MouseEvent) => {
     if (event) event.stopPropagation();
@@ -277,18 +278,12 @@ export default class ExamplesModal extends React.Component<Props, State> {
   };
 
   render() {
-    const {
-      hasChanged,
-      groups,
-      examples,
-      packageId,
-      groupId,
-      exampleId,
-    } = packageResolver(
-      this.props.match.params.groupId,
-      this.props.match.params.pkgId,
-      this.props.match.params.exampleId,
-    );
+    const { hasChanged, groups, examples, packageId, groupId, exampleId } =
+      packageResolver(
+        this.props.match.params.groupId,
+        this.props.match.params.pkgId,
+        this.props.match.params.exampleId,
+      );
 
     let example;
     if (exampleId && examples) {

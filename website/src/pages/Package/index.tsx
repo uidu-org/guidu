@@ -185,7 +185,11 @@ class Package extends React.Component<Props> {
                                   appearance="subtle"
                                   iconBefore={<MoreVertical size={18} />}
                                 ></Button>
-                                <Button as={Link} to={exampleModalPath}>
+                                <Button
+                                  as={Link}
+                                  to={exampleModalPath}
+                                  appearance="primary"
+                                >
                                   {children}
                                   Examples
                                 </Button>
@@ -217,7 +221,11 @@ class Package extends React.Component<Props> {
                               >
                                 Changelog
                               </Button>
-                              <Button as={Link} to={exampleModalPath}>
+                              <Button
+                                as={Link}
+                                to={exampleModalPath}
+                                appearance="primary"
+                              >
                                 Examples
                               </Button>
                             </ButtonGroup>

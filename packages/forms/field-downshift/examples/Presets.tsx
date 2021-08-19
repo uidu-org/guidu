@@ -1,7 +1,7 @@
 import { Form } from '@uidu/form';
-import { ShellBody } from '@uidu/shell';
 import React, { PureComponent } from 'react';
 import { Columns, Feather, GitHub, Gitlab, Map } from 'react-feather';
+import { ScrollableContainer } from '../../../navigation/shell/src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 import FieldDownshift, {
@@ -48,7 +48,8 @@ const iconItems = [
 export default class Basic extends PureComponent {
   render() {
     return (
-        <div className="container py-4">
+      <ScrollableContainer>
+        <div tw="container py-4">
           <Form {...formDefaultProps} footerRenderer={() => null}>
             <FieldDownshift
               {...inputDefaultProps}
@@ -56,7 +57,7 @@ export default class Basic extends PureComponent {
               value={iconItems[2].id}
               onChange={console.log}
               label="HorizontalCard"
-              menu={props => <div {...props} />}
+              menu={(props) => <div tw="flex flex-col space-y-4" {...props} />}
               option={DownshiftHorizontalCard}
               options={iconItems}
             />
@@ -66,7 +67,7 @@ export default class Basic extends PureComponent {
               value={iconItems[2].id}
               onChange={console.log}
               label="VerticalCard"
-              menu={props => <div className="card-deck" {...props} />}
+              menu={(props) => <div tw="grid gap-4 grid-cols-3" {...props} />}
               option={DownshiftVerticalCard}
               options={iconItems}
             />
@@ -76,7 +77,7 @@ export default class Basic extends PureComponent {
               value={[iconItems[2].id]}
               onChange={console.log}
               label="Checkbox"
-              menu={props => <div {...props} />}
+              menu={(props) => <div {...props} />}
               option={DownshiftCheckbox}
               options={iconItems}
               multiple
@@ -87,12 +88,13 @@ export default class Basic extends PureComponent {
               value={iconItems[2].id}
               onChange={console.log}
               label="Radio"
-              menu={props => <div {...props} />}
+              menu={(props) => <div {...props} />}
               option={DownshiftRadio}
               options={iconItems}
             />
           </Form>
         </div>
+      </ScrollableContainer>
     );
   }
 }

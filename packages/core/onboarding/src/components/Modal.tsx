@@ -1,4 +1,4 @@
-import Button, { Theme as ButtonTheme } from '@uidu/button';
+import Button from '@uidu/button';
 import Modal, {
   FooterComponentProps,
   HeaderComponentProps,
@@ -12,7 +12,6 @@ import {
   Image,
 } from '../styled/Modal';
 import { Actions } from '../types';
-import { modalButtonTheme } from './theme';
 
 type Props = {
   /** Buttons to render in the footer */
@@ -45,22 +44,20 @@ export default class OnboardingModal extends Component<Props> {
 
     const ActionsElement = () =>
       actionList ? (
-        <ButtonTheme.Provider value={modalButtonTheme}>
-          <ModalActions>
-            {actionList.map(({ text, key, ...rest }, idx) => {
-              const variant = idx ? 'subtle-link' : 'primary';
-              return (
-                <ActionItem
-                  key={key || (typeof text === 'string' ? text : `${idx}`)}
-                >
-                  <Button appearance={variant} autoFocus={!idx} {...rest}>
-                    {text}
-                  </Button>
-                </ActionItem>
-              );
-            })}
-          </ModalActions>
-        </ButtonTheme.Provider>
+        <ModalActions>
+          {actionList.map(({ text, key, ...rest }, idx) => {
+            const variant = idx ? 'subtle-link' : 'primary';
+            return (
+              <ActionItem
+                key={key || (typeof text === 'string' ? text : `${idx}`)}
+              >
+                <Button appearance={variant} autoFocus={!idx} {...rest}>
+                  {text}
+                </Button>
+              </ActionItem>
+            );
+          })}
+        </ModalActions>
       ) : null;
 
     return FooterElement || ActionsElement;

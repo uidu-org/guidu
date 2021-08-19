@@ -1,5 +1,6 @@
 import faker from 'faker';
 import React from 'react';
+import 'twin.macro';
 
 export const defaultUsers = Array.from(Array(10)).map((x) => ({
   ...faker.helpers.userCard(),
@@ -14,7 +15,7 @@ export const defaultOptions = Array.from(Array(10)).map((x) => {
     before: (
       <img
         src={`https://avatars.dicebear.com/api/human/${id}.svg`}
-        className="w-100 rounded-circle"
+        // tw="w-full rounded-full"
       />
     ),
   };

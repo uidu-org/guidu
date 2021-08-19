@@ -50,7 +50,7 @@ const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
   return (
     <div
       {...innerProps}
-      className="d-flex align-items-center mr-auto"
+      tw="flex items-center mr-auto"
       style={{
         ...getStyles('singleValue', otherProps),
         // padding: '1rem',
@@ -59,7 +59,7 @@ const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
       }}
     >
       {data.before && (
-        <div className="mr-2 flex-shrink-0 d-flex" style={{ width: 22 }}>
+        <div tw="mr-2 flex-shrink-0 flex" style={{ width: 22 }}>
           {data.before}
         </div>
       )}

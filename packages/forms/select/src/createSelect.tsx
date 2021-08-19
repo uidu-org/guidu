@@ -199,6 +199,7 @@ const createSelect = <TOriginalProps extends {}>(
         getOptionValue,
         componentRef,
         components,
+        disabled,
         ...props
       } = this.props; // eslint-disable-line
 
@@ -215,6 +216,7 @@ const createSelect = <TOriginalProps extends {}>(
             getOptionLabel={getOptionLabel}
             getOptionValue={getOptionValue}
             formatCreateLabel={(inputValue) => `Create new...${inputValue}`}
+            isDisabled={!!disabled}
             getNewOptionData={(inputValue, optionLabel) => ({
               id: inputValue,
               name: optionLabel,

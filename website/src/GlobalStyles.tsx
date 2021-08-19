@@ -51,7 +51,7 @@ const CustomStyles = createGlobalStyle`
 
     --border: 211, 211, 211;
     --border-strong: black;
-    --tw-ring-color: rgba(var(--brand-primary),0.5);
+    --tw-ring-color: rgba(var(--brand-primary), 0.5);
   }
 
 

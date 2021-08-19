@@ -103,7 +103,7 @@ const Playground: React.FunctionComponent<Props> = ({
       className="custom-classname-is-rendered"
       validateBeforeSubmit={validateBeforeSubmitChoice}
       validatePristine={validatePristineChoice}
-      // disabled={disabledChoice}
+      disabled={disabledChoice}
       ref={formRef}
       footerRenderer={(props) => (
         <FormSubmit {...props} canSubmit label="Submit" />

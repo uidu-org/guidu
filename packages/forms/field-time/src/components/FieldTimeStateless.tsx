@@ -43,6 +43,7 @@ function FieldTime({
   required,
   min,
   max,
+  disabled,
 }: FieldTimeStatelessProps) {
   const [isFallback, setIsFallback] = useState(false);
 
@@ -118,9 +119,10 @@ function FieldTime({
 
   return (
     <input
-      tw="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border border-color[rgb(var(--border))] rounded py-3 px-4 placeholder-gray-400"
+      tw="shadow-sm focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))] block w-full border border-color[rgb(var(--border))] rounded py-3 px-4 placeholder-gray-400 disabled:opacity-50 disabled:background[rgba(var(--brand-secondary), .4)]"
       className={className}
       value={value}
+      disabled={disabled}
       ref={element}
       type="time"
       name={name}

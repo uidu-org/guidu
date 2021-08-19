@@ -1,10 +1,8 @@
-import { Theme as ButtonTheme } from '@uidu/button';
 import { colors } from '@uidu/theme';
 import { ThemeProp } from '@uidu/theme/components';
 import React, { ComponentType, ReactNode, Ref } from 'react';
 import { Actions } from '../types';
 import Card, { CardTokens } from './Card';
-import { spotlightButtonTheme } from './theme';
 
 const { N0, N50A, N60A, P300 } = colors;
 
@@ -60,38 +58,36 @@ class SpotlightCard extends React.Component<Props> {
     } = this.props;
     console.log(this.props);
     return (
-      <ButtonTheme.Provider value={spotlightButtonTheme}>
-        <Card
-          ref={innerRef}
-          heading={heading}
-          headingAfterElement={headingAfterElement}
-          actions={actions}
-          actionsBeforeElement={actionsBeforeElement}
-          components={components}
-          image={image}
-          className={this.props.className}
-          theme={(parent) => {
-            const { container, ...others } = parent({});
-            return theme!(
-              () => ({
-                ...others,
-                container: {
-                  background: P300,
-                  color: N0,
-                  width: `${Math.min(Math.max(width!, 160), 600)}px`,
-                  boxShadow: isFlat
-                    ? undefined
-                    : `0 4px 8px -2px ${N50A}, 0 0 1px ${N60A}`, // AK-5598
-                  ...container,
-                },
-              }),
-              {},
-            );
-          }}
-        >
-          {children}
-        </Card>
-      </ButtonTheme.Provider>
+      <Card
+        ref={innerRef}
+        heading={heading}
+        headingAfterElement={headingAfterElement}
+        actions={actions}
+        actionsBeforeElement={actionsBeforeElement}
+        components={components}
+        image={image}
+        className={this.props.className}
+        theme={(parent) => {
+          const { container, ...others } = parent({});
+          return theme!(
+            () => ({
+              ...others,
+              container: {
+                background: P300,
+                color: N0,
+                width: `${Math.min(Math.max(width!, 160), 600)}px`,
+                boxShadow: isFlat
+                  ? undefined
+                  : `0 4px 8px -2px ${N50A}, 0 0 1px ${N60A}`, // AK-5598
+                ...container,
+              },
+            }),
+            {},
+          );
+        }}
+      >
+        {children}
+      </Card>
     );
   }
 }

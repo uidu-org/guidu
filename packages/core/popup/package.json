@@ -20,7 +20,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^21.7.3",
+    "@atlaskit/icon": "^21.7.4",
     "@uidu/button": "^1.0.0",
     "@uidu/docs": "^0.4.0",
     "@uidu/menu": "^0.5.0",

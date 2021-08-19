@@ -17,13 +17,23 @@ module.exports = {
     },
     extend: {
       backgroundColor: {
-        primary: withOpacity('--color-primary'),
-        secondary: withOpacity('--color-secondary'),
+        primary: withOpacity('--brand-primary'),
+        secondary: withOpacity('--brand-secondary'),
       },
       // these classes end up like `text-base` and `text-primary`
       textColor: {
-        primary: withOpacity('--color-primary'),
-        secondary: withOpacity('--color-secondary'),
+        primary: withOpacity('--brand-primary'),
+        'on-primary': withOpacity('--brand-on-primary'),
+        secondary: withOpacity('--brand-secondary'),
+        'on-secondary': withOpacity('--brand-on-secondary'),
+      },
+      borderColor: {
+        primary: withOpacity('--brand-primary'),
+        secondary: withOpacity('--brand-secondary'),
+      },
+      ringColor: {
+        primary: withOpacity('--brand-primary'),
+        secondary: withOpacity('--brand-secondary'),
       },
     },
   },

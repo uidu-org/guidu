@@ -24,6 +24,7 @@ function FieldDateRangeStateless({
   to: propTo,
   className = 'InputFromTo d-flex form-control align-items-center px-0',
   onChange,
+  ...rest
 }: FieldDateRangeStatelessProps) {
   const fromElement: RefObject<DayPickerInput> = useRef(null);
   const toElement: RefObject<DayPickerInput> = useRef(null);
@@ -74,6 +75,7 @@ function FieldDateRangeStateless({
         }}
         onDayChange={handleFromChange}
         displayFormat={displayFormat}
+        {...rest}
       />
       <ArrowRight size={16} tw="flex-shrink-0" />
       <FieldDateStateless
@@ -92,6 +94,7 @@ function FieldDateRangeStateless({
         }}
         onDayChange={handleToChange}
         displayFormat={displayFormat}
+        {...rest}
       />
       <Helmet>
         <style>

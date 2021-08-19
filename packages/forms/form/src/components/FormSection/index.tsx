@@ -24,7 +24,7 @@ export default function FormSection({
             css={[
               tw`flex justify-between flex-col`,
               !isLast && tw`border-b`,
-              isFirst ? tw`pb-4` : tw`pt-5 pb-4`,
+              isFirst ? tw`pb-16` : tw`pt-14 pb-12`,
               layout === 'horizontal' ? tw`flex-row` : tw`flex-col`,
             ]}
           >
@@ -50,7 +50,7 @@ export default function FormSection({
               <div
                 css={[
                   tw`space-y-8`,
-                  layout === 'horizontal' ? tw`w-7/12` : tw`w-10/12`,
+                  layout === 'horizontal' ? tw`w-7/12` : tw`w-full`,
                 ]}
               >
                 {children}

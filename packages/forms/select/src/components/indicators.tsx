@@ -13,7 +13,7 @@ export const ClearIndicator = (props: any) => {
       {...restInnerProps}
       ref={ref}
       style={getStyles('clearIndicator', props)}
-      className="d-flex align-items-center mx-2"
+      tw="flex items-center mx-2"
     >
       <X size={16} />
     </div>
@@ -29,7 +29,7 @@ export const DropdownIndicator = (props: any) => {
     <div
       {...restInnerProps}
       ref={ref}
-      className="d-flex align-items-center mx-2"
+      tw="flex items-center mx-2"
       style={getStyles('dropdownIndicator', props)}
     >
       <ChevronDown size={18} />

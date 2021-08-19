@@ -1,7 +1,7 @@
 import { FieldTextStateless } from '@uidu/field-text';
 import { Form } from '@uidu/form';
-import classNames from 'classnames';
 import React, { PureComponent } from 'react';
+import tw from 'twin.macro';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 import FieldDownshift from '../src';
@@ -14,7 +14,7 @@ const options = [
   { value: 'banana' },
 ];
 
-const Menu = props => <div className="list-group" {...props} />;
+const Menu = (props) => <div tw="space-y-4 flex flex-col" {...props} />;
 
 const Item = ({ item, highlightedIndex, index, isSelected, getItemProps }) => {
   const { onClick, ...rest } = getItemProps({ item, index });
@@ -22,11 +22,12 @@ const Item = ({ item, highlightedIndex, index, isSelected, getItemProps }) => {
     <a
       key={index}
       href="#"
-      className={classNames('list-group-item list-group-item-action', {
-        'bg-light': highlightedIndex === index,
-        'list-group-item-primary': isSelected,
-      })}
-      onClick={e => {
+      css={[
+        tw`p-4 border rounded`,
+        highlightedIndex === index && tw`bg-gray-50`,
+        isSelected && tw`bg-primary bg-opacity-10`,
+      ]}
+      onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
@@ -37,7 +38,7 @@ const Item = ({ item, highlightedIndex, index, isSelected, getItemProps }) => {
   );
 };
 
-const Input = props => <FieldTextStateless type="search" {...props} />;
+const Input = (props) => <FieldTextStateless type="search" {...props} />;
 
 export default class Basic extends PureComponent {
   render() {
@@ -82,7 +83,7 @@ export default class Basic extends PureComponent {
           filterOptions={({ options, inputValue, isOpen }) =>
             isOpen
               ? options.filter(
-                  item => !inputValue || item.value.includes(inputValue),
+                  (item) => !inputValue || item.value.includes(inputValue),
                 )
               : []
           }

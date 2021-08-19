@@ -11,7 +11,7 @@
   "types": "dist/uidu-message.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.15.3",
-    "@fluentui/react": "^8.28.2",
+    "@fluentui/react": "^8.29.0",
     "@loadable/component": "^5.15.0",
     "@uidu/avatar": "^0.7.0",
     "@uidu/drawer": "^0.6.0",

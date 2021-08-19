@@ -40,6 +40,7 @@ function FieldPassword({
   return (
     <FieldPasswordStateless
       {...rest}
+      disabled={disabled}
       ref={forwardedRef}
       name={name}
       value={value}

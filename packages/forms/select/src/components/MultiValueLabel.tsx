@@ -4,7 +4,7 @@ const MultiValueLabel = ({ innerProps, data }) => {
   return (
     <div
       {...innerProps}
-      className="d-flex align-items-center"
+      tw="flex items-center"
       style={{
         // padding: '1rem',
         marginLeft: 8,
@@ -16,12 +16,12 @@ const MultiValueLabel = ({ innerProps, data }) => {
       }}
     >
       {data.before && (
-        <div className="mr-2 flex-shrink-0 d-flex" style={{ width: 16 }}>
+        <div tw="mr-2 flex-shrink-0 flex" style={{ width: 16 }}>
           {data.before}
         </div>
       )}
       <div style={{ minWidth: 0 }}>
-        <p className="mb-0">{data.name}</p>
+        <div>{data.name}</div>
       </div>
     </div>
   );

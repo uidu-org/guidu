@@ -67,6 +67,7 @@ export default function baseStyles(validationState, isCompact) {
         borderColor: state.isFocused
           ? 'rgb(var(--brand-primary))'
           : 'rgb(var(--border))',
+        ...(state.isFocused && {}),
       },
     }),
     // valueContainer: css => ({
@@ -178,7 +179,7 @@ export default function baseStyles(validationState, isCompact) {
     menu: (base) => ({
       ...base,
       boxShadow: 'none',
-      border: '1px solid #ced4da',
+      border: '1px solid rgb(var(--border))',
     }),
     menuList: (base) => ({
       ...base,

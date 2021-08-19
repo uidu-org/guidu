@@ -85,8 +85,6 @@ function FieldDate({
     );
   }
 
-  console.log(value && value !== '' ? moment(value).format('YYYY-MM-DD') : '');
-
   return (
     <input
       id={id}
@@ -100,7 +98,7 @@ function FieldDate({
       min={min}
       max={max}
       disabled={disabled}
-      tw="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border border-color[rgb(var(--border))] rounded py-3 px-4 placeholder-gray-400"
+      tw="shadow-sm focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))] block w-full border border-color[rgb(var(--border))] rounded py-3 px-4 placeholder-gray-400 disabled:opacity-50 disabled:background[rgba(var(--brand-secondary), .4)]"
     />
   );
 }

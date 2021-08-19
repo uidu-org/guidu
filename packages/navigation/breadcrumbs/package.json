@@ -17,7 +17,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@atlaskit/logo": "^13.5.2",
+    "@atlaskit/logo": "^13.5.3",
     "@uidu/docs": "^0.4.0",
     "@uidu/select": "^1.0.0",
     "react": "^17.0.2",
