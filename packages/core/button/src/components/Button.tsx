@@ -190,7 +190,7 @@ function Button(props: ButtonProps) {
           ? tw`hover:underline`
           : tw`hover:text-decoration[none]`,
         spacing === 'none' ? tw`p-0` : tw`px-2.5 py-2.5`,
-        tw`leading-4`,
+        tw`line-height[initial]`,
         state === 'hover' || state === 'active' || state === 'selected'
           ? tw`cursor-pointer`
           : state === 'disabled'
