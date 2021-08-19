@@ -1,5 +1,18 @@
 # @uidu/renderer
 
+## 0.5.1
+
+### Patch Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+- Updated dependencies [4e1595620]
+  - @uidu/tooltip@0.5.1
+  - @uidu/editor-common@0.5.1
+  - @uidu/mentions@0.3.1
+  - @uidu/status@0.4.1
+  - @uidu/task-decision@0.4.1
+  - @uidu/media-card@0.5.1
+
 ## 0.5.0
 
 ### Minor Changes

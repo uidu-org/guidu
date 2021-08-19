@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.1
+
+### Patch Changes
+
+- 4e1595620: Fix form section spacings, fieldDownshift preset tailwind update, focus ring on fields
+
 ## 0.3.0
 
 ### Minor Changes
