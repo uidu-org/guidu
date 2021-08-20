@@ -1,5 +1,14 @@
 # @uidu/field-image-uploader
 
+## 1.0.2
+
+### Patch Changes
+
+- afaf0cfa4: Bump dependencies and fix button group customization props
+- Updated dependencies [afaf0cfa4]
+  - @uidu/button@1.1.2
+  - @uidu/field-base@2.0.2
+
 ## 1.0.1
 
 ### Patch Changes

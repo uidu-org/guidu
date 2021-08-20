@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.1.2
+
+### Patch Changes
+
+- afaf0cfa4: Bump dependencies and fix button group customization props
+
 ## 1.1.1
 
 ### Patch Changes

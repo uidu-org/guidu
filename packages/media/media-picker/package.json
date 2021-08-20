@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-picker",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "uidu media picker, using Uppy",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/media/media-picker",
   "license": "ISC",
@@ -26,7 +26,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/button": "^1.0.0",
+    "@uidu/button": "^1.1.2",
     "@uidu/docs": "^0.4.0",
     "@uidu/modal-dialog": "^0.5.0"
   },
