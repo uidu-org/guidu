@@ -22,14 +22,14 @@ import InnerWrapper from './InnerWrapper';
 import LoadingSpinner from './LoadingSpinner';
 import { composeRefs, filterProps, mapAttributesToState } from './utils';
 
-const StyledButton = styled.button<{
+export const StyledButton = styled.button<{
   appearance: ButtonAppearances;
   status: string;
   iconIsOnlyChild: boolean;
 }>`
   ${({ appearance = 'default', status }) =>
     buttonVariants[appearance] && buttonVariants[appearance][status]}
-  ${({ iconIsOnlyChild }) => iconIsOnlyChild && tw`py-2.5!`}
+  ${({ iconIsOnlyChild }) => iconIsOnlyChild && tw`py-2`}
 `;
 
 export type ButtonState = {
@@ -189,7 +189,7 @@ function Button(props: ButtonProps) {
         (appearance === 'link' || appearance === 'subtle-link')
           ? tw`hover:underline`
           : tw`hover:text-decoration[none]`,
-        spacing === 'none' ? tw`p-0` : tw`px-2.5 py-2.5`,
+        spacing === 'none' ? tw`p-0` : tw`px-2 py-2`,
         tw`line-height[initial]`,
         state === 'hover' || state === 'active' || state === 'selected'
           ? tw`cursor-pointer`

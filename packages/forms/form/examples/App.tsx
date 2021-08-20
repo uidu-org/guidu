@@ -12,7 +12,7 @@ import Playground from './Playground';
 export type LayoutChoice = 'horizontal' | 'vertical' | 'elementOnly';
 
 const initialState = Object.freeze({
-  sectionLayout: 'vertical' as LayoutChoice,
+  sectionLayout: 'horizontal' as LayoutChoice,
   layout: 'vertical' as LayoutChoice,
   showingOptions: true,
   validateBeforeSubmit: true,
@@ -61,7 +61,7 @@ class App extends React.Component<{}, State> {
     } = this.state;
     return (
       <ShellBody>
-        <ShellSidebar style={{ width: '20rem' }} tw="border-r">
+        <ShellSidebar style={{ width: '20rem' }} tw="hidden md:flex border-r">
           <Options
             layoutChoice={layout}
             sectionLayoutChoice={sectionLayout}

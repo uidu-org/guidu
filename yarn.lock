@@ -12,16 +12,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@amcharts/amcharts4@npm:^4.10.21":
-  version: 4.10.21
-  resolution: "@amcharts/amcharts4@npm:4.10.21"
+"@amcharts/amcharts4@npm:^4.10.22":
+  version: 4.10.22
+  resolution: "@amcharts/amcharts4@npm:4.10.22"
   dependencies:
     "@babel/runtime": ^7.6.3
     core-js: ^3.0.0
     d3-force: ^2.0.1
     d3-geo: ^2.0.1
     d3-geo-projection: ^3.0.0
-    pdfmake: ^0.1.36
+    pdfmake: ^0.2.2
     polylabel: ^1.0.2
     raf: ^3.4.1
     regression: ^2.0.1
@@ -29,8 +29,8 @@ __metadata:
     stackblur-canvas: ^2.0.0
     tslib: ^2.0.1
     venn.js: ^0.2.20
-    xlsx: ^0.16.4
-  checksum: a17b48df8b3bc74cdb196f2f3431c04de6442b9823c5cd6326bbb71614044cce6486e546f7cb8ea5c5014c754ecf6d94b4fbec6d86ae3794aa49539808e118ba
+    xlsx: ^0.17.0
+  checksum: 085bbba2d48217fea4c4152931803c9c781783150a094ce175f5f27fafa17ddca05d47902bdc190dccc1a4efc920dea9ada0a291c807968aa89852a745b3bec9
   languageName: node
   linkType: hard
 
@@ -2711,6 +2711,54 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@foliojs-fork/fontkit@npm:^1.9.1":
+  version: 1.9.1
+  resolution: "@foliojs-fork/fontkit@npm:1.9.1"
+  dependencies:
+    "@foliojs-fork/restructure": ^2.0.2
+    brfs: ^2.0.0
+    brotli: ^1.2.0
+    browserify-optional: ^1.0.1
+    clone: ^1.0.4
+    deep-equal: ^1.0.0
+    dfa: ^1.2.0
+    tiny-inflate: ^1.0.2
+    unicode-properties: ^1.2.2
+    unicode-trie: ^2.0.0
+  checksum: 5d37eca2c5514926c9f313eefef13fe9ca08a19ca09cf71377d2395fa77c537b044a4063fc8062394b068e53fff8ea7b74befaebb6abe5d59f5a6e1a124d0f71
+  languageName: node
+  linkType: hard
+
+"@foliojs-fork/linebreak@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@foliojs-fork/linebreak@npm:1.1.1"
+  dependencies:
+    base64-js: 1.3.1
+    brfs: ^2.0.2
+    unicode-trie: ^2.0.0
+  checksum: eb9326ae3f9a276d7d983c3e33a060bb2b9336239d6687af065084a05816876b998d45c341f216b16d2b16d77abf3a73728316d8da388ce3d79850f6fb8ec949
+  languageName: node
+  linkType: hard
+
+"@foliojs-fork/pdfkit@npm:^0.12.3":
+  version: 0.12.3
+  resolution: "@foliojs-fork/pdfkit@npm:0.12.3"
+  dependencies:
+    "@foliojs-fork/fontkit": ^1.9.1
+    "@foliojs-fork/linebreak": ^1.1.1
+    crypto-js: ^4.0.0
+    png-js: ^1.0.0
+  checksum: 30f32f2d84d1b08e850bcfa8b5e93bb65d34d163ac9a42041a304c685146b7b73bc2187b2ef588768ca687428eb6a64a9879018aa177a1e9b6195a8408e8cef4
+  languageName: node
+  linkType: hard
+
+"@foliojs-fork/restructure@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@foliojs-fork/restructure@npm:2.0.2"
+  checksum: f18877a81ff51acb518ea63da0d4269e85c65db94012d11bc713f8537a7864ac4437d6ea965c1191781ff9df79118aa5c9d4a7d8f389130ee076baf2b487f300
+  languageName: node
+  linkType: hard
+
 "@formatjs/cli@npm:^4.2.31":
   version: 4.2.31
   resolution: "@formatjs/cli@npm:4.2.31"
@@ -4018,9 +4066,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@preconstruct/cli@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@preconstruct/cli@npm:2.1.0"
+"@preconstruct/cli@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@preconstruct/cli@npm:2.1.1"
   dependencies:
     "@babel/code-frame": ^7.5.5
     "@babel/core": ^7.7.7
@@ -4061,7 +4109,7 @@ __metadata:
     v8-compile-cache: ^2.1.1
   bin:
     preconstruct: bin.js
-  checksum: 0539ed7a430e20bc54eff5cc8006f83002d08d4b4676e4e296aab2494f6380d41af025af0aea4e78222680c5afde068ca95bf5873e6e51841f7e76a8b55d0f33
+  checksum: 51b23e74e49607f526552fbed7a53411219efd38ba88e858e9e8b3bad55e1670c257b594fb4230da4572ee687670431a9932e2c917f0bb1cb1022c61c766f936
   languageName: node
   linkType: hard
 
@@ -4490,10 +4538,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stripe/stripe-js@npm:^1.17.0":
-  version: 1.17.0
-  resolution: "@stripe/stripe-js@npm:1.17.0"
-  checksum: d4283778d152afe3e7a93bc2bc3427ae5f885a01bde3e31c5b286567cada105fe01897a5c3c1dd97c8b0412164ac37d613f0a195610c5d12f345a8e42f17eaf5
+"@stripe/stripe-js@npm:^1.17.1":
+  version: 1.17.1
+  resolution: "@stripe/stripe-js@npm:1.17.1"
+  checksum: ba1bc427243da40519924bc79263341b1f039e3dab064136dae81de52078f6d6a2064274f4173c4e4d918137c402a7d14627bd0e9d200532ffe8177ce13cec26
   languageName: node
   linkType: hard
 
@@ -4943,13 +4991,6 @@ __metadata:
   version: 1.0.32
   resolution: "@types/json-stable-stringify@npm:1.0.32"
   checksum: 3091ddc8d15c6cce1a847ba1f8db21e7c2564c7b8bc6923a873801d936228f775096b517d62653fbcebedcb2a7992555dc6ed11517ef050e75525cdf1d1bce8d
-  languageName: node
-  linkType: hard
-
-"@types/json5@npm:^0.0.29":
-  version: 0.0.29
-  resolution: "@types/json5@npm:0.0.29"
-  checksum: e60b153664572116dfea673c5bda7778dbff150498f44f998e34b5886d8afc47f16799280e4b6e241c0472aef1bc36add771c569c68fc5125fc2ae519a3eb9ac
   languageName: node
   linkType: hard
 
@@ -5892,14 +5933,14 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/avatar": ^0.7.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/code": ^0.5.0
     "@uidu/docs": ^0.4.0
-    "@uidu/dropdown-menu": ^0.6.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/field-toggle": ^1.0.0
+    "@uidu/dropdown-menu": ^0.6.1
+    "@uidu/field-base": ^2.0.0
+    "@uidu/field-toggle": ^1.0.1
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     react: ^17.0.2
     react-dom: ^17.0.2
     styled-components: ^5.3.0
@@ -5916,12 +5957,12 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/section-message": ^0.5.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/section-message": ^0.5.1
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     react: ^17.0.2
     react-dom: ^17.0.2
     styled-components: ^5.3.0
@@ -6018,18 +6059,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/breadcrumbs@1.0.0, @uidu/breadcrumbs@^1.0.0, @uidu/breadcrumbs@workspace:packages/navigation/breadcrumbs":
+"@uidu/breadcrumbs@1.0.1, @uidu/breadcrumbs@^1.0.1, @uidu/breadcrumbs@workspace:packages/navigation/breadcrumbs":
   version: 0.0.0-use.local
   resolution: "@uidu/breadcrumbs@workspace:packages/navigation/breadcrumbs"
   dependencies:
     "@atlaskit/logo": ^13.5.3
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/select": ^1.0.0
+    "@uidu/select": ^1.1.0
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-router: ^5.2.0
@@ -6043,7 +6084,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/button@1.0.0, @uidu/button@^1.0.0, @uidu/button@workspace:packages/core/button":
+"@uidu/button@1.1.0, @uidu/button@^1.0.0, @uidu/button@^1.1.0, @uidu/button@workspace:packages/core/button":
   version: 0.0.0-use.local
   resolution: "@uidu/button@workspace:packages/core/button"
   dependencies:
@@ -6051,9 +6092,9 @@ __metadata:
     "@atlaskit/logo": ^13.5.3
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/checkbox": ^1.0.0
+    "@uidu/checkbox": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/form": ^1.0.0
+    "@uidu/form": ^1.1.0
     "@uidu/spinner": ^0.5.0
     "@uidu/theme": ^0.6.0
     memoize-one: ^5.2.1
@@ -6143,15 +6184,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/checkbox@^1.0.0, @uidu/checkbox@workspace:packages/forms/checkbox":
+"@uidu/checkbox@^1.0.0, @uidu/checkbox@^1.1.0, @uidu/checkbox@workspace:packages/forms/checkbox":
   version: 0.0.0-use.local
   resolution: "@uidu/checkbox@workspace:packages/forms/checkbox"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     formsy-react: ^2.2.5
     react: ^17.0.2
     styled-components: ^5.3.0
@@ -6219,7 +6260,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/dashboard-manager@^0.13.0, @uidu/dashboard-manager@workspace:packages/data/dashboard-manager":
+"@uidu/dashboard-manager@^0.13.1, @uidu/dashboard-manager@workspace:packages/data/dashboard-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/dashboard-manager@workspace:packages/data/dashboard-manager"
   dependencies:
@@ -6228,7 +6269,7 @@ __metadata:
     "@cubejs-client/react": ^0.28.24
     "@types/react-grid-layout": ^1.1.2
     "@uidu/dashboard-controls": ^0.5.0
-    "@uidu/dashlets": ^0.12.0
+    "@uidu/dashlets": ^0.12.1
     "@uidu/docs": ^0.4.0
     "@uidu/shell": ^2.0.0
     d3-collection: ^1.0.7
@@ -6267,36 +6308,36 @@ __metadata:
     "@cubejs-client/core": ^0.28.24
     "@cubejs-client/react": ^0.28.24
     "@uidu/accordion": ^0.5.0
-    "@uidu/dashlets": ^0.12.0
+    "@uidu/dashlets": ^0.12.1
     "@uidu/docs": ^0.4.0
-    "@uidu/dropdown-menu": ^0.6.0
-    "@uidu/field-downshift": ^1.0.0
-    "@uidu/field-toggle": ^1.0.0
-    "@uidu/form": ^1.0.0
-    "@uidu/select": ^1.0.0
+    "@uidu/dropdown-menu": ^0.6.1
+    "@uidu/field-downshift": ^1.1.0
+    "@uidu/field-toggle": ^1.0.1
+    "@uidu/form": ^1.1.0
+    "@uidu/select": ^1.1.0
     "@uidu/shell": ^2.0.0
     react: ^17.0.2
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
 
-"@uidu/dashlets@^0.12.0, @uidu/dashlets@workspace:packages/data/dashlets":
+"@uidu/dashlets@^0.12.1, @uidu/dashlets@workspace:packages/data/dashlets":
   version: 0.0.0-use.local
   resolution: "@uidu/dashlets@workspace:packages/data/dashlets"
   dependencies:
-    "@amcharts/amcharts4": ^4.10.21
+    "@amcharts/amcharts4": ^4.10.22
     "@amcharts/amcharts4-geodata": ^4.1.21
     "@babel/runtime": ^7.15.3
     "@cubejs-client/core": ^0.28.24
     "@cubejs-client/react": ^0.28.24
     "@loadable/component": ^5.15.0
-    "@uidu/dashboard-manager": ^0.13.0
+    "@uidu/dashboard-manager": ^0.13.1
     "@uidu/dashlet-controls": ^0.4.0
     "@uidu/data-fields": ^0.6.0
     "@uidu/docs": ^0.4.0
     "@uidu/spinner": ^0.5.0
     "@uidu/table": 0.9.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     d3-array: ^3.0.2
     lodash: ^4.17.21
     numeral: ^2.0.6
@@ -6393,7 +6434,7 @@ __metadata:
     "@uidu/data-fields": ^0.6.0
     "@uidu/data-views": ^0.6.0
     "@uidu/docs": ^0.4.0
-    "@uidu/dropdown-menu": ^0.6.0
+    "@uidu/dropdown-menu": ^0.6.1
     "@uidu/gallery": ^0.3.0
     "@uidu/list": ^0.3.0
     "@uidu/navigation": ^1.0.0
@@ -6532,7 +6573,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/dropdown-menu@^0.6.0, @uidu/dropdown-menu@workspace:packages/core/dropdown-menu":
+"@uidu/dropdown-menu@^0.6.0, @uidu/dropdown-menu@^0.6.1, @uidu/dropdown-menu@workspace:packages/core/dropdown-menu":
   version: 0.0.0-use.local
   resolution: "@uidu/dropdown-menu@workspace:packages/core/dropdown-menu"
   dependencies:
@@ -6540,13 +6581,13 @@ __metadata:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
     "@uidu/avatar": ^0.7.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/droplist": ^0.5.0
+    "@uidu/droplist": ^0.5.1
     "@uidu/item": ^0.5.0
     "@uidu/lozenge": ^0.5.0
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     array-find: ^1.0.0
     prop-types: ^15.7.2
     react: ^17.0.2
@@ -6586,21 +6627,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uidu/droplist@^0.5.0, @uidu/droplist@workspace:packages/core/droplist":
+"@uidu/droplist@^0.5.1, @uidu/droplist@workspace:packages/core/droplist":
   version: 0.0.0-use.local
   resolution: "@uidu/droplist@workspace:packages/core/droplist"
   dependencies:
     "@atlaskit/icon": ^21.7.4
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
+    "@uidu/field-base": ^2.0.0
     "@uidu/item": ^0.5.0
     "@uidu/layer": ^0.5.0
     "@uidu/spinner": ^0.5.0
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     classnames: ^2.3.1
     prop-types: ^15.7.2
     react: ^17.0.2
@@ -6637,7 +6678,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uidu/editor-common@^0.5.0, @uidu/editor-common@workspace:packages/editor/editor-common":
+"@uidu/editor-common@^0.5.0, @uidu/editor-common@^0.5.1, @uidu/editor-common@workspace:packages/editor/editor-common":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
@@ -6647,9 +6688,9 @@ __metadata:
     "@uidu/adf-utils": ^0.7.0
     "@uidu/analytics": ^0.5.0
     "@uidu/analytics-namespaced-context": ^0.4.0
-    "@uidu/emoji": ^0.5.0
-    "@uidu/mentions": ^0.3.0
-    "@uidu/profilecard": ^0.2.0
+    "@uidu/emoji": ^0.5.1
+    "@uidu/mentions": ^0.3.1
+    "@uidu/profilecard": ^0.2.1
     "@uidu/theme": ^0.6.0
     classnames: ^2.3.1
     css-color-names: ^1.0.1
@@ -6682,31 +6723,31 @@ __metadata:
     "@uidu/analytics-namespaced-context": ^0.4.0
     "@uidu/avatar": ^0.7.0
     "@uidu/avatar-group": ^2.6.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/date": ^0.4.0
     "@uidu/docs": ^0.4.0
-    "@uidu/droplist": ^0.5.0
-    "@uidu/editor-common": ^0.5.0
+    "@uidu/droplist": ^0.5.1
+    "@uidu/editor-common": ^0.5.1
     "@uidu/editor-json-transformer": ^0.4.0
     "@uidu/editor-markdown-transformer": ^0.5.0
-    "@uidu/emoji": ^0.5.0
-    "@uidu/field-date": ^1.0.0
-    "@uidu/form": ^1.0.0
-    "@uidu/media-card": ^0.5.0
+    "@uidu/emoji": ^0.5.1
+    "@uidu/field-date": ^1.1.0
+    "@uidu/form": ^1.1.0
+    "@uidu/media-card": ^0.5.1
     "@uidu/media-core": ^0.5.0
     "@uidu/media-filmstrip": ^0.4.0
     "@uidu/media-picker": ^0.5.0
-    "@uidu/mentions": ^0.3.0
-    "@uidu/menu": ^0.5.0
-    "@uidu/modal-dialog": ^0.5.0
-    "@uidu/profilecard": ^0.2.0
-    "@uidu/select": ^1.0.0
+    "@uidu/mentions": ^0.3.1
+    "@uidu/menu": ^0.5.1
+    "@uidu/modal-dialog": ^0.5.1
+    "@uidu/profilecard": ^0.2.1
+    "@uidu/select": ^1.1.0
     "@uidu/shell": ^2.0.0
     "@uidu/spinner": ^0.5.0
-    "@uidu/status": ^0.4.0
-    "@uidu/task-decision": ^0.4.0
+    "@uidu/status": ^0.4.1
+    "@uidu/task-decision": ^0.4.1
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     assert: ^2.0.0
     chromatism: ^3.0.0
     classnames: ^2.3.1
@@ -6799,7 +6840,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/emoji@^0.5.0, @uidu/emoji@workspace:packages/elements/emoji":
+"@uidu/emoji@^0.5.0, @uidu/emoji@^0.5.1, @uidu/emoji@workspace:packages/elements/emoji":
   version: 0.0.0-use.local
   resolution: "@uidu/emoji@workspace:packages/elements/emoji"
   dependencies:
@@ -6809,16 +6850,16 @@ __metadata:
     "@types/js-search": ^1.4.0
     "@types/react-virtualized": ^9.21.13
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/code": ^0.5.0
     "@uidu/docs": ^0.4.0
     "@uidu/elements-test-helpers": ^0.4.0
-    "@uidu/field-text": ^1.0.0
+    "@uidu/field-text": ^1.1.0
     "@uidu/layer": ^0.5.0
-    "@uidu/section-message": ^0.5.0
+    "@uidu/section-message": ^0.5.1
     "@uidu/spinner": ^0.5.0
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     "@uidu/util-data-test": ^0.4.0
     classnames: ^2.3.1
     js-search: ^2.0.0
@@ -6853,7 +6894,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-base@^1.0.0, @uidu/field-base@workspace:packages/forms/field-base":
+"@uidu/field-base@^2.0.0, @uidu/field-base@workspace:packages/forms/field-base":
   version: 0.0.0-use.local
   resolution: "@uidu/field-base@workspace:packages/forms/field-base"
   dependencies:
@@ -6895,9 +6936,9 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
-    "@uidu/popup": ^0.5.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
+    "@uidu/popup": ^0.5.1
     formsy-react: ^2.2.5
     react: ^17.0.2
     react-colorful: ^5.3.0
@@ -6906,15 +6947,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-counter@^1.0.0, @uidu/field-counter@workspace:packages/forms/field-counter":
+"@uidu/field-counter@^1.0.0, @uidu/field-counter@^1.1.0, @uidu/field-counter@workspace:packages/forms/field-counter":
   version: 0.0.0-use.local
   resolution: "@uidu/field-counter@workspace:packages/forms/field-counter"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     formsy-react: ^2.2.5
     react: ^17.0.2
     react-numeric-input: ^2.2.3
@@ -6932,9 +6973,9 @@ __metadata:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/field-date": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/field-date": ^1.1.0
+    "@uidu/form": ^1.1.0
     formsy-react: ^2.2.5
     moment: ^2.29.1
     react: ^17.0.2
@@ -6948,16 +6989,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-date@^1.0.0, @uidu/field-date@workspace:packages/forms/field-date":
+"@uidu/field-date@^1.0.0, @uidu/field-date@^1.1.0, @uidu/field-date@workspace:packages/forms/field-date":
   version: 0.0.0-use.local
   resolution: "@uidu/field-date@workspace:packages/forms/field-date"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/field-text": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/field-text": ^1.1.0
+    "@uidu/form": ^1.1.0
     dayjs: ^1.10.6
     formsy-react: ^2.2.5
     moment: ^2.29.1
@@ -6970,20 +7011,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-downshift@^1.0.0, @uidu/field-downshift@workspace:packages/forms/field-downshift":
+"@uidu/field-downshift@^1.0.0, @uidu/field-downshift@^1.1.0, @uidu/field-downshift@workspace:packages/forms/field-downshift":
   version: 0.0.0-use.local
   resolution: "@uidu/field-downshift@workspace:packages/forms/field-downshift"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/docs": ^0.4.0
-    "@uidu/dropdown-menu": ^0.6.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/field-counter": ^1.0.0
-    "@uidu/field-date": ^1.0.0
-    "@uidu/field-text": ^1.0.0
-    "@uidu/field-time": ^1.0.0
-    "@uidu/form": ^1.0.0
-    "@uidu/radio": ^1.0.0
+    "@uidu/dropdown-menu": ^0.6.1
+    "@uidu/field-base": ^2.0.0
+    "@uidu/field-counter": ^1.1.0
+    "@uidu/field-date": ^1.1.0
+    "@uidu/field-text": ^1.1.0
+    "@uidu/field-time": ^1.1.0
+    "@uidu/form": ^1.1.0
+    "@uidu/radio": ^1.1.0
     "@uidu/shell": ^2.0.0
     classnames: ^2.3.1
     downshift: ^6.1.7
@@ -7003,11 +7044,11 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
-    "@uppy/core": ^1.20.0
-    "@uppy/dashboard": ^1.21.0
-    "@uppy/react": ^1.12.1
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
+    "@uppy/core": ^1.20.1
+    "@uppy/dashboard": ^1.21.1
+    "@uppy/react": ^1.12.2
     "@uppy/xhr-upload": ^1.7.5
     formsy-react: ^2.2.5
     react: ^17.0.2
@@ -7021,8 +7062,8 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     "@uidu/spinner": ^0.5.0
     classnames: ^2.3.1
     formsy-react: ^2.2.5
@@ -7042,16 +7083,16 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     "@uidu/media-core": ^0.5.0
     "@uidu/spinner": ^0.5.0
     "@uppy/aws-s3": ^1.8.0
-    "@uppy/core": ^1.20.0
+    "@uppy/core": ^1.20.1
     "@uppy/drag-drop": ^1.4.31
-    "@uppy/react": ^1.12.1
+    "@uppy/react": ^1.12.2
     "@uppy/thumbnail-generator": ^1.7.11
     "@uppy/xhr-upload": ^1.7.5
     axios: ^0.21.1
@@ -7072,10 +7113,10 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     "@uidu/theme": ^0.6.0
     classnames: ^2.3.1
     formsy-react: ^2.2.5
@@ -7113,10 +7154,10 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     "@uidu/theme": ^0.6.0
     classnames: ^2.3.1
     formsy-react: ^2.2.5
@@ -7133,11 +7174,11 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/field-text": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/field-text": ^1.1.0
+    "@uidu/form": ^1.1.0
     "@uidu/theme": ^0.6.0
     formsy-react: ^2.2.5
     react: ^17.0.2
@@ -7158,13 +7199,13 @@ __metadata:
     "@loadable/component": ^5.15.0
     "@types/zxcvbn": ^4.4.1
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/field-text": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/field-text": ^1.1.0
+    "@uidu/form": ^1.1.0
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     classnames: ^2.3.1
     formsy-react: ^2.2.5
     react: ^17.0.2
@@ -7186,9 +7227,9 @@ __metadata:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/field-text": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/field-text": ^1.1.0
+    "@uidu/form": ^1.1.0
     formsy-react: ^2.2.5
     react: ^17.0.2
     react-phone-number-input: ^3.1.25
@@ -7196,14 +7237,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-range@^1.0.0, @uidu/field-range@workspace:packages/forms/field-range":
+"@uidu/field-range@^1.0.1, @uidu/field-range@workspace:packages/forms/field-range":
   version: 0.0.0-use.local
   resolution: "@uidu/field-range@workspace:packages/forms/field-range"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     "@uidu/theme": ^0.6.0
     formsy-react: ^2.2.5
     react: ^17.0.2
@@ -7216,16 +7257,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-text@^1.0.0, @uidu/field-text@workspace:packages/forms/field-text":
+"@uidu/field-text@^1.0.0, @uidu/field-text@^1.1.0, @uidu/field-text@workspace:packages/forms/field-text":
   version: 0.0.0-use.local
   resolution: "@uidu/field-text@workspace:packages/forms/field-text"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     "@uidu/theme": ^0.6.0
     classnames: ^2.3.1
     formsy-react: ^2.2.5
@@ -7258,15 +7299,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uidu/field-textarea@^1.0.0, @uidu/field-textarea@workspace:packages/forms/field-textarea":
+"@uidu/field-textarea@^1.0.0, @uidu/field-textarea@^1.1.0, @uidu/field-textarea@workspace:packages/forms/field-textarea":
   version: 0.0.0-use.local
   resolution: "@uidu/field-textarea@workspace:packages/forms/field-textarea"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     autosize: ^5.0.1
     formsy-react: ^2.2.5
     react: ^17.0.2
@@ -7277,18 +7318,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-time@^1.0.0, @uidu/field-time@workspace:packages/forms/field-time":
+"@uidu/field-time@^1.0.0, @uidu/field-time@^1.1.0, @uidu/field-time@workspace:packages/forms/field-time":
   version: 0.0.0-use.local
   resolution: "@uidu/field-time@workspace:packages/forms/field-time"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/field-text": ^1.0.0
-    "@uidu/form": ^1.0.0
-    "@uidu/select": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/field-text": ^1.1.0
+    "@uidu/form": ^1.1.0
+    "@uidu/select": ^1.1.0
     "@uidu/theme": ^0.6.0
     formsy-react: ^2.2.5
     react: ^17.0.2
@@ -7300,16 +7341,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-toggle@^1.0.0, @uidu/field-toggle@workspace:packages/forms/field-toggle":
+"@uidu/field-toggle@^1.0.0, @uidu/field-toggle@^1.0.1, @uidu/field-toggle@workspace:packages/forms/field-toggle":
   version: 0.0.0-use.local
   resolution: "@uidu/field-toggle@workspace:packages/forms/field-toggle"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     "@uidu/theme": ^0.6.0
     formsy-react: ^2.2.5
     react: ^17.0.2
@@ -7369,12 +7410,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/form@*, @uidu/form@^1.0.0, @uidu/form@workspace:packages/forms/form":
+"@uidu/form@*, @uidu/form@^1.0.0, @uidu/form@^1.1.0, @uidu/form@workspace:packages/forms/form":
   version: 0.0.0-use.local
   resolution: "@uidu/form@workspace:packages/forms/form"
   dependencies:
     "@babel/runtime": ^7.15.3
-    "@uidu/button": 1.0.0
+    "@uidu/button": 1.1.0
     "@uidu/docs": ^0.4.0
     classnames: ^2.3.1
     formsy-react: ^2.2.5
@@ -7437,29 +7478,29 @@ __metadata:
   resolution: "@uidu/guidu-website@workspace:website"
   dependencies:
     "@uidu/badge": ^0.5.0
-    "@uidu/breadcrumbs": 1.0.0
-    "@uidu/button": ^1.0.0
-    "@uidu/checkbox": ^1.0.0
+    "@uidu/breadcrumbs": 1.0.1
+    "@uidu/button": ^1.1.0
+    "@uidu/checkbox": ^1.1.0
     "@uidu/code": ^0.5.0
     "@uidu/docs": ^0.4.0
     "@uidu/drawer": ^0.6.0
-    "@uidu/field-text": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-text": ^1.1.0
+    "@uidu/form": ^1.1.0
     "@uidu/fs-loader": ^0.1.46
     "@uidu/list": ^0.3.0
     "@uidu/lozenge": ^0.5.0
-    "@uidu/modal-dialog": ^0.5.0
+    "@uidu/modal-dialog": ^0.5.1
     "@uidu/nav-info-loader": ^0.2.0
     "@uidu/navigation": ^1.0.0
     "@uidu/page-header": 1.0.0
-    "@uidu/select": ^1.0.0
+    "@uidu/select": ^1.1.0
     "@uidu/shell": ^2.0.0
     "@uidu/spinner": ^0.5.0
     "@uidu/table": ^0.9.0
     "@uidu/theme": ^0.6.0
     "@uidu/themes-uidu": ^0.4.0
-    "@uidu/tooltip": ^0.5.0
-    "@uidu/webpack-config": ^0.3.0
+    "@uidu/tooltip": ^0.5.1
+    "@uidu/webpack-config": ^0.3.1
     avataaars: ^1.2.2
     codesandboxer: ^1.0.3
     commonmark: ^0.30.0
@@ -7494,18 +7535,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/inline-dialog@^0.5.0, @uidu/inline-dialog@workspace:packages/core/inline-dialog":
+"@uidu/inline-dialog@^0.5.0, @uidu/inline-dialog@^0.5.1, @uidu/inline-dialog@workspace:packages/core/inline-dialog":
   version: 0.0.0-use.local
   resolution: "@uidu/inline-dialog@workspace:packages/core/inline-dialog"
   dependencies:
     "@atlaskit/icon": ^21.7.4
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/form": ^1.0.0
+    "@uidu/form": ^1.1.0
     "@uidu/popper": ^0.5.0
-    "@uidu/select": ^1.0.0
+    "@uidu/select": ^1.1.0
     "@uidu/theme": ^0.6.0
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -7519,7 +7560,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/inline-edit@0.3.0, @uidu/inline-edit@workspace:packages/core/inline-edit":
+"@uidu/inline-edit@0.3.1, @uidu/inline-edit@workspace:packages/core/inline-edit":
   version: 0.0.0-use.local
   resolution: "@uidu/inline-edit@workspace:packages/core/inline-edit"
   dependencies:
@@ -7529,14 +7570,14 @@ __metadata:
     "@babel/runtime": ^7.15.3
     "@loadable/component": ^5.15.0
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
     "@uidu/field": ^1.0.0
-    "@uidu/field-text": ^1.0.0
-    "@uidu/field-textarea": ^1.0.0
-    "@uidu/form": ^1.0.0
-    "@uidu/inline-dialog": ^0.5.0
-    "@uidu/select": ^1.0.0
+    "@uidu/field-text": ^1.1.0
+    "@uidu/field-textarea": ^1.1.0
+    "@uidu/form": ^1.1.0
+    "@uidu/inline-dialog": ^0.5.1
+    "@uidu/select": ^1.1.0
     "@uidu/theme": ^0.6.0
     react: ^17.0.2
     react-loadable: ^5.5.0
@@ -7715,19 +7756,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-card@^0.5.0, @uidu/media-card@workspace:packages/media/media-card":
+"@uidu/media-card@^0.5.0, @uidu/media-card@^0.5.1, @uidu/media-card@workspace:packages/media/media-card":
   version: 0.0.0-use.local
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@fluentui/react": ^8.29.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/dropdown-menu": ^0.6.0
+    "@uidu/dropdown-menu": ^0.6.1
     "@uidu/media-core": ^0.5.0
     "@uidu/spinner": ^0.5.0
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     "@uifabric/file-type-icons": ^7.6.30
     faker: ^5.5.3
     react: ^17.0.2
@@ -7779,12 +7820,12 @@ __metadata:
     "@uidu/docs": ^0.4.0
     "@uidu/media-core": ^0.5.0
     "@uidu/modal-dialog": ^0.5.0
-    "@uppy/core": ^1.20.0
-    "@uppy/dashboard": ^1.21.0
+    "@uppy/core": ^1.20.1
+    "@uppy/dashboard": ^1.21.1
     "@uppy/drag-drop": ^1.4.31
     "@uppy/dropbox": ^1.5.2
     "@uppy/google-drive": ^1.7.2
-    "@uppy/react": ^1.12.1
+    "@uppy/react": ^1.12.2
     "@uppy/url": ^1.5.23
     "@uppy/webcam": ^1.8.13
     "@uppy/xhr-upload": ^1.7.5
@@ -7820,7 +7861,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/mentions@^0.3.0, @uidu/mentions@workspace:packages/elements/mentions":
+"@uidu/mentions@^0.3.0, @uidu/mentions@^0.3.1, @uidu/mentions@workspace:packages/elements/mentions":
   version: 0.0.0-use.local
   resolution: "@uidu/mentions@workspace:packages/elements/mentions"
   dependencies:
@@ -7830,11 +7871,11 @@ __metadata:
     "@uidu/analytics": ^0.5.0
     "@uidu/analytics-gas-types": ^0.3.0
     "@uidu/avatar": ^0.7.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
     "@uidu/lozenge": ^0.5.0
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     faker: ^5.5.3
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -7845,7 +7886,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/menu@^0.5.0, @uidu/menu@workspace:packages/core/menu":
+"@uidu/menu@^0.5.0, @uidu/menu@^0.5.1, @uidu/menu@workspace:packages/core/menu":
   version: 0.0.0-use.local
   resolution: "@uidu/menu@workspace:packages/core/menu"
   dependencies:
@@ -7855,9 +7896,9 @@ __metadata:
     "@babel/runtime": ^7.15.3
     "@emotion/react": ^11.4.1
     "@uidu/avatar": ^0.7.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/section-message": ^0.5.0
+    "@uidu/section-message": ^0.5.1
     "@uidu/theme": ^0.6.0
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -7941,14 +7982,14 @@ __metadata:
     "@uidu/avatar": ^0.7.0
     "@uidu/docs": ^0.4.0
     "@uidu/drawer": ^0.6.0
-    "@uidu/dropdown-menu": ^0.6.0
-    "@uidu/media-card": ^0.5.0
+    "@uidu/dropdown-menu": ^0.6.1
+    "@uidu/media-card": ^0.5.1
     "@uidu/media-core": ^0.5.0
     "@uidu/media-viewer": ^0.4.0
     "@uidu/message-form": ^0.4.0
     "@uidu/message-renderer": ^0.4.0
     "@uidu/shell": ^2.0.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     "@uifabric/file-type-icons": ^7.6.30
     classnames: ^2.3.1
     emoji-regex: ^9.2.2
@@ -7964,7 +8005,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/modal-dialog@^0.5.0, @uidu/modal-dialog@workspace:packages/core/modal-dialog":
+"@uidu/modal-dialog@^0.5.0, @uidu/modal-dialog@^0.5.1, @uidu/modal-dialog@workspace:packages/core/modal-dialog":
   version: 0.0.0-use.local
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:
@@ -7973,15 +8014,15 @@ __metadata:
     "@uidu/analytics": ^0.5.0
     "@uidu/avatar": ^0.7.0
     "@uidu/blanket": ^0.5.0
-    "@uidu/button": ^1.0.0
-    "@uidu/checkbox": ^1.0.0
+    "@uidu/button": ^1.1.0
+    "@uidu/checkbox": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-text": ^1.0.0
-    "@uidu/form": ^1.0.0
-    "@uidu/inline-dialog": ^0.5.0
-    "@uidu/portal": ^0.5.0
-    "@uidu/radio": ^1.0.0
-    "@uidu/select": ^1.0.0
+    "@uidu/field-text": ^1.1.0
+    "@uidu/form": ^1.1.0
+    "@uidu/inline-dialog": ^0.5.1
+    "@uidu/portal": ^0.5.1
+    "@uidu/radio": ^1.1.0
+    "@uidu/select": ^1.1.0
     "@uidu/theme": ^0.6.0
     exenv: ^1.2.2
     prop-types: ^15.7.2
@@ -8043,18 +8084,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/onboarding@^1.0.0, @uidu/onboarding@workspace:packages/core/onboarding":
+"@uidu/onboarding@^1.1.0, @uidu/onboarding@workspace:packages/core/onboarding":
   version: 0.0.0-use.local
   resolution: "@uidu/onboarding@workspace:packages/core/onboarding"
   dependencies:
     "@atlaskit/progress-indicator": ^9.0.5
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/modal-dialog": ^0.5.0
+    "@uidu/modal-dialog": ^0.5.1
     "@uidu/popper": ^0.5.0
-    "@uidu/portal": ^0.5.0
+    "@uidu/portal": ^0.5.1
     "@uidu/theme": ^0.6.0
     exenv: ^1.2.2
     memoize-one: ^5.2.1
@@ -8080,13 +8121,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/page-header@workspace:packages/navigation/page-header"
   dependencies:
-    "@uidu/breadcrumbs": ^1.0.0
-    "@uidu/button": ^1.0.0
+    "@uidu/breadcrumbs": ^1.0.1
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-text": ^1.0.0
-    "@uidu/form": ^1.0.0
-    "@uidu/inline-edit": 0.3.0
-    "@uidu/select": ^1.0.0
+    "@uidu/field-text": ^1.1.0
+    "@uidu/form": ^1.1.0
+    "@uidu/inline-edit": 0.3.1
+    "@uidu/select": ^1.1.0
     "@uidu/shell": ^2.0.0
     "@uidu/theme": ^0.6.0
     react: ^17.0.2
@@ -8128,7 +8169,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@stripe/react-stripe-js": ^1.4.1
-    "@stripe/stripe-js": ^1.17.0
+    "@stripe/stripe-js": ^1.17.1
     "@uidu/docs": ^0.4.0
     "@uidu/form": ^1.0.0
     "@uidu/payments": ^0.5.0
@@ -8145,10 +8186,10 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@stripe/react-stripe-js": ^1.4.1
-    "@stripe/stripe-js": ^1.17.0
+    "@stripe/stripe-js": ^1.17.1
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     "@uidu/slider": ^1.7.0
     "@uidu/theme": ^0.6.0
     axios: ^0.21.1
@@ -8196,20 +8237,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uidu/popup@^0.5.0, @uidu/popup@workspace:packages/core/popup":
+"@uidu/popup@^0.5.0, @uidu/popup@^0.5.1, @uidu/popup@workspace:packages/core/popup":
   version: 0.0.0-use.local
   resolution: "@uidu/popup@workspace:packages/core/popup"
   dependencies:
     "@atlaskit/icon": ^21.7.4
     "@babel/runtime": ^7.15.3
     "@emotion/react": ^11.4.1
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/menu": ^0.5.0
+    "@uidu/menu": ^0.5.1
     "@uidu/popper": ^0.5.0
-    "@uidu/portal": ^0.5.0
-    "@uidu/radio": ^1.0.0
-    "@uidu/select": ^1.0.0
+    "@uidu/portal": ^0.5.1
+    "@uidu/radio": ^1.1.0
+    "@uidu/select": ^1.1.0
     "@uidu/spinner": ^0.5.0
     "@uidu/theme": ^0.6.0
     focus-trap: ^6.6.1
@@ -8223,20 +8264,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/portal@^0.5.0, @uidu/portal@workspace:packages/core/portal":
+"@uidu/portal@^0.5.0, @uidu/portal@^0.5.1, @uidu/portal@workspace:packages/core/portal":
   version: 0.0.0-use.local
   resolution: "@uidu/portal@workspace:packages/core/portal"
   dependencies:
     "@atlaskit/icon": ^21.7.4
     "@babel/runtime": ^7.15.3
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
     "@uidu/flag": ^0.5.0
-    "@uidu/inline-dialog": ^0.5.0
-    "@uidu/modal-dialog": ^0.5.0
-    "@uidu/onboarding": ^1.0.0
+    "@uidu/inline-dialog": ^0.5.1
+    "@uidu/modal-dialog": ^0.5.1
+    "@uidu/onboarding": ^1.1.0
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     exenv: ^1.2.2
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -8265,17 +8306,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uidu/profilecard@^0.2.0, @uidu/profilecard@workspace:packages/elements/profilecard":
+"@uidu/profilecard@^0.2.0, @uidu/profilecard@^0.2.1, @uidu/profilecard@workspace:packages/elements/profilecard":
   version: 0.0.0-use.local
   resolution: "@uidu/profilecard@workspace:packages/elements/profilecard"
   dependencies:
     "@atlaskit/icon": ^21.7.4
     "@babel/runtime": ^7.15.3
     "@uidu/avatar": ^0.7.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": "*"
     "@uidu/lozenge": ^0.5.0
-    "@uidu/popup": ^0.5.0
+    "@uidu/popup": ^0.5.1
     "@uidu/spinner": ^0.5.0
     "@uidu/theme": ^0.6.0
     date-fns: ^2.23.0
@@ -8315,15 +8356,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/radio@^1.0.0, @uidu/radio@workspace:packages/forms/radio":
+"@uidu/radio@^1.0.0, @uidu/radio@^1.1.0, @uidu/radio@workspace:packages/forms/radio":
   version: 0.0.0-use.local
   resolution: "@uidu/radio@workspace:packages/forms/radio"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
     formsy-react: ^2.2.5
     react: ^17.0.2
     styled-components: ^5.3.0
@@ -8339,7 +8380,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/renderer@^0.5.0, @uidu/renderer@workspace:packages/editor/renderer":
+"@uidu/renderer@^0.5.1, @uidu/renderer@workspace:packages/editor/renderer":
   version: 0.0.0-use.local
   resolution: "@uidu/renderer@workspace:packages/editor/renderer"
   dependencies:
@@ -8353,20 +8394,20 @@ __metadata:
     "@uidu/analytics-listeners": ^0.4.0
     "@uidu/analytics-namespaced-context": ^0.4.0
     "@uidu/avatar": ^0.7.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/code": ^0.5.0
     "@uidu/docs": ^0.4.0
-    "@uidu/editor-common": ^0.5.0
+    "@uidu/editor-common": ^0.5.1
     "@uidu/editor-json-transformer": ^0.4.0
-    "@uidu/field-range": ^1.0.0
-    "@uidu/media-card": ^0.5.0
+    "@uidu/field-range": ^1.0.1
+    "@uidu/media-card": ^0.5.1
     "@uidu/media-filmstrip": ^0.4.0
-    "@uidu/mentions": ^0.3.0
+    "@uidu/mentions": ^0.3.1
     "@uidu/navigation": ^1.0.0
-    "@uidu/status": ^0.4.0
-    "@uidu/task-decision": ^0.4.0
+    "@uidu/status": ^0.4.1
+    "@uidu/task-decision": ^0.4.1
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     "@uidu/util-data-test": ^0.4.0
     prosemirror-model: ^1.14.3
     raf-schd: ^4.0.3
@@ -8394,16 +8435,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/section-message@^0.5.0, @uidu/section-message@workspace:packages/core/section-message":
+"@uidu/section-message@^0.5.0, @uidu/section-message@^0.5.1, @uidu/section-message@workspace:packages/core/section-message":
   version: 0.0.0-use.local
   resolution: "@uidu/section-message@workspace:packages/core/section-message"
   dependencies:
     "@atlaskit/icon": ^21.7.4
     "@babel/runtime": ^7.15.3
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/code": ^0.5.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-range": ^1.0.0
+    "@uidu/field-range": ^1.0.1
     "@uidu/theme": ^0.6.0
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -8415,22 +8456,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/select@^1.0.0, @uidu/select@workspace:packages/forms/select":
+"@uidu/select@^1.0.0, @uidu/select@^1.1.0, @uidu/select@workspace:packages/forms/select":
   version: 0.0.0-use.local
   resolution: "@uidu/select@workspace:packages/forms/select"
   dependencies:
     "@atlaskit/icon": ^21.7.4
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
-    "@uidu/checkbox": ^1.0.0
+    "@uidu/button": ^1.1.0
+    "@uidu/checkbox": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/field-base": ^1.0.0
-    "@uidu/form": ^1.0.0
-    "@uidu/modal-dialog": ^0.5.0
+    "@uidu/field-base": ^2.0.0
+    "@uidu/form": ^1.1.0
+    "@uidu/modal-dialog": ^0.5.1
     "@uidu/spinner": ^0.5.0
     "@uidu/theme": ^0.6.0
-    "@uidu/tooltip": ^0.5.0
+    "@uidu/tooltip": ^0.5.1
     faker: ^5.5.3
     focus-trap: ^6.6.1
     formsy-react: ^2.2.5
@@ -8515,7 +8556,7 @@ __metadata:
     classnames: ^2.3.1
     react: ^17.0.2
     styled-components: ^5.3.0
-    swiper: ^6.8.2
+    swiper: ^6.8.3
     tslib: ^2.3.1
     uuid: ^8.3.2
   languageName: unknown
@@ -8556,7 +8597,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uidu/status@^0.4.0, @uidu/status@workspace:packages/elements/status":
+"@uidu/status@^0.4.1, @uidu/status@workspace:packages/elements/status":
   version: 0.0.0-use.local
   resolution: "@uidu/status@workspace:packages/elements/status"
   dependencies:
@@ -8566,7 +8607,7 @@ __metadata:
     "@uidu/analytics-gas-types": ^0.3.0
     "@uidu/docs": ^0.4.0
     "@uidu/elements-test-helpers": ^0.4.0
-    "@uidu/field-text": ^1.0.0
+    "@uidu/field-text": ^1.1.0
     "@uidu/lozenge": ^0.5.0
     "@uidu/theme": ^0.6.0
     react: ^17.0.2
@@ -8604,7 +8645,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.15.3
     "@stripe/react-stripe-js": ^1.4.1
-    "@stripe/stripe-js": ^1.17.0
+    "@stripe/stripe-js": ^1.17.1
     "@uidu/docs": ^0.4.0
     "@uidu/field-text": ^1.0.0
     "@uidu/form": ^1.0.0
@@ -8677,7 +8718,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/task-decision@^0.4.0, @uidu/task-decision@workspace:packages/elements/task-decision":
+"@uidu/task-decision@^0.4.0, @uidu/task-decision@^0.4.1, @uidu/task-decision@workspace:packages/elements/task-decision":
   version: 0.0.0-use.local
   resolution: "@uidu/task-decision@workspace:packages/elements/task-decision"
   dependencies:
@@ -8690,11 +8731,11 @@ __metadata:
     "@uidu/analytics-namespaced-context": ^0.4.0
     "@uidu/avatar": ^0.7.0
     "@uidu/avatar-group": ^2.6.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
-    "@uidu/editor-common": ^0.5.0
+    "@uidu/editor-common": ^0.5.1
     "@uidu/elements-test-helpers": ^0.4.0
-    "@uidu/renderer": ^0.5.0
+    "@uidu/renderer": ^0.5.1
     "@uidu/spinner": ^0.5.0
     "@uidu/theme": ^0.6.0
     "@uidu/util-data-test": ^0.4.0
@@ -8775,17 +8816,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/tooltip@^0.5.0, @uidu/tooltip@workspace:packages/core/tooltip":
+"@uidu/tooltip@^0.5.0, @uidu/tooltip@^0.5.1, @uidu/tooltip@workspace:packages/core/tooltip":
   version: 0.0.0-use.local
   resolution: "@uidu/tooltip@workspace:packages/core/tooltip"
   dependencies:
     "@atlaskit/icon": ^21.7.4
     "@babel/runtime": ^7.15.3
     "@uidu/analytics": ^0.5.0
-    "@uidu/button": ^1.0.0
+    "@uidu/button": ^1.1.0
     "@uidu/docs": ^0.4.0
     "@uidu/popper": ^0.5.0
-    "@uidu/portal": ^0.5.0
+    "@uidu/portal": ^0.5.1
     "@uidu/theme": ^0.6.0
     flushable: ^1.0.0
     react: ^17.0.2
@@ -8863,7 +8904,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/webpack-config@^0.3.0, @uidu/webpack-config@workspace:build/webpack-config":
+"@uidu/webpack-config@^0.3.1, @uidu/webpack-config@workspace:build/webpack-config":
   version: 0.0.0-use.local
   resolution: "@uidu/webpack-config@workspace:build/webpack-config"
   dependencies:
@@ -8895,7 +8936,7 @@ __metadata:
     svg-url-loader: ^7.1.1
     terser-webpack-plugin: ^5.1.4
     url-loader: ^4.1.1
-    webpack: ^5.51.0
+    webpack: ^5.51.1
     webpack-bundle-analyzer: ^4.4.2
     webpack-dev-server: ^3.11.2
     webpack-manifest-plugin: ^4.0.2
@@ -9053,9 +9094,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uppy/core@npm:^1.20.0":
-  version: 1.20.0
-  resolution: "@uppy/core@npm:1.20.0"
+"@uppy/core@npm:^1.20.1":
+  version: 1.20.1
+  resolution: "@uppy/core@npm:1.20.1"
   dependencies:
     "@transloadit/prettier-bytes": 0.0.7
     "@uppy/store-default": ^1.2.7
@@ -9065,13 +9106,13 @@ __metadata:
     mime-match: ^1.0.2
     namespace-emitter: ^2.0.1
     preact: 8.2.9
-  checksum: 50f760e692bce4196467e9d242c0d0c887cf9998aea287706447022969c808af5322582c37b6e4415ca358aab7e270a36f0ac5954c2c0913406b5c116a924868
+  checksum: d481edbead35c55a0c98434de09ab1abb6a5d8767377005073cd19811e018b94a4e50b61d8cb8b7e5d5eeeea43f4593ac29cf2dfb1811450de49d4976e4732e8
   languageName: node
   linkType: hard
 
-"@uppy/dashboard@npm:^1.21.0":
-  version: 1.21.0
-  resolution: "@uppy/dashboard@npm:1.21.0"
+"@uppy/dashboard@npm:^1.21.1":
+  version: 1.21.1
+  resolution: "@uppy/dashboard@npm:1.21.1"
   dependencies:
     "@transloadit/prettier-bytes": 0.0.7
     "@uppy/informer": ^1.6.6
@@ -9089,7 +9130,7 @@ __metadata:
     resize-observer-polyfill: ^1.5.0
   peerDependencies:
     "@uppy/core": ^1.0.0
-  checksum: 25fb05ac965bdc295eced99ddec8a7a789a48bb853d96b8182e9959f18e1a23a3466caf3fbc7b720698b35a3137b07476cbd539d1abbfe862dd2689f4a77de06
+  checksum: 508488f65bc35fec089c73c2de1ac8ed3a76e2ea60c2848db1d4f1fa927e463dd637dbbd6cac5f86b61c4667b6f9f75ba0d65ce5967687debc49abe5b9534e4e
   languageName: node
   linkType: hard
 
@@ -9182,11 +9223,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uppy/react@npm:^1.12.1":
-  version: 1.12.1
-  resolution: "@uppy/react@npm:1.12.1"
+"@uppy/react@npm:^1.12.2":
+  version: 1.12.2
+  resolution: "@uppy/react@npm:1.12.2"
   dependencies:
-    "@uppy/dashboard": ^1.21.0
+    "@uppy/dashboard": ^1.21.1
     "@uppy/drag-drop": ^1.4.31
     "@uppy/file-input": ^1.5.2
     "@uppy/progress-bar": ^1.3.30
@@ -9196,7 +9237,7 @@ __metadata:
   peerDependencies:
     "@uppy/core": ^1.0.0
     react: ^16.0.0 || ^17.0.0
-  checksum: 4ae7a7ce58a66e7d5cef648d525a94d3c03d1c2641e5b9175d83d1b44d28d1aee9d226563fa188c94e99256e51be6e7b736a8db40c222b158275111b53719305
+  checksum: 750fb6ba5c5c6673a44b37304a62986ac55236afcd913edd45164a7d9eead8944c541bcf52d6a10bbb25bdfebd36e41a8ab2c2f067ce486ff416fdb92ba269ef
   languageName: node
   linkType: hard
 
@@ -11068,6 +11109,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"base64-js@npm:1.3.1":
+  version: 1.3.1
+  resolution: "base64-js@npm:1.3.1"
+  checksum: 957b9ced0ea1b39588a117193f801b045a5fb2d6f1b9943dd304bcad46e5681bf837fe092105692b11653658e8443764139d6b11d3c4037093b96e8db4e1dbb2
+  languageName: node
+  linkType: hard
+
 "base64-js@npm:^1.0.2, base64-js@npm:^1.1.2, base64-js@npm:^1.3.0, base64-js@npm:^1.3.1":
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
@@ -12735,15 +12783,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"codepage@npm:~1.14.0":
-  version: 1.14.0
-  resolution: "codepage@npm:1.14.0"
-  dependencies:
-    commander: ~2.14.1
-    exit-on-epipe: ~1.0.1
-  bin:
-    codepage: ./bin/codepage.njs
-  checksum: ea06cbb7b646029d4e252b143b09048f1dee466d80be9e68cc4da05981f982a02f1199db0ea27d5e05a026bfa77b91e3ae8e0d3ed9665bd77ba54911bf2b82b7
+"codepage@npm:~1.15.0":
+  version: 1.15.0
+  resolution: "codepage@npm:1.15.0"
+  checksum: 86bdfd8f8fd4d78ace6ddab02a1621cbb4a833686fe886984b4155d99cd0287581d69495774b816ab2f571c4dc851c1595e1dbb8d69bd6dbb5a631ebf317fab0
   languageName: node
   linkType: hard
 
@@ -12935,13 +12978,6 @@ __metadata:
   version: 7.2.0
   resolution: "commander@npm:7.2.0"
   checksum: 53501cbeee61d5157546c0bef0fedb6cdfc763a882136284bed9a07225f09a14b82d2a84e7637edfd1a679fb35ed9502fd58ef1d091e6287f60d790147f68ddc
-  languageName: node
-  linkType: hard
-
-"commander@npm:~2.14.1":
-  version: 2.14.1
-  resolution: "commander@npm:2.14.1"
-  checksum: 26bd49febeac8efabb7488fb5a4a2480b04bc4c4eef3c50da93eead72959f7a5232d003deda5b9761937205721274e80108f6d1d2b45ae7a8387cfb92031084e
   languageName: node
   linkType: hard
 
@@ -13692,6 +13728,13 @@ __metadata:
   version: 3.3.0
   resolution: "crypto-js@npm:3.3.0"
   checksum: 193923143a4784b2f974366068d96fe8280168fd3fef2bfea9551a5c3e32096f5a8fa49ff4eeb5bd0b9716d325618d38cfbe6125e359a4ef488fbca93e600824
+  languageName: node
+  linkType: hard
+
+"crypto-js@npm:^4.0.0":
+  version: 4.1.1
+  resolution: "crypto-js@npm:4.1.1"
+  checksum: b3747c12ee3a7632fab3b3e171ea50f78b182545f0714f6d3e7e2858385f0f4101a15f2517e033802ce9d12ba50a391575ff4638c9de3dd9b2c4bc47768d5425
   languageName: node
   linkType: hard
 
@@ -15656,13 +15699,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-node@npm:^0.3.5":
-  version: 0.3.5
-  resolution: "eslint-import-resolver-node@npm:0.3.5"
+"eslint-import-resolver-node@npm:^0.3.6":
+  version: 0.3.6
+  resolution: "eslint-import-resolver-node@npm:0.3.6"
   dependencies:
     debug: ^3.2.7
     resolve: ^1.20.0
-  checksum: 93a8176205f18c40d2c11c444fab89aa3990c5a5eed226ef03a893b5779e7cd4d1f5f52b2bbbbbe4b13fb2a75ef629278be0b52099480cbe6e7024888d9982dd
+  checksum: 6266733af1e112970e855a5bcc2d2058fb5ae16ad2a6d400705a86b29552b36131ffc5581b744c23d550de844206fb55e9193691619ee4dbf225c4bde526b1c8
   languageName: node
   linkType: hard
 
@@ -15712,28 +15755,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.24.0":
-  version: 2.24.0
-  resolution: "eslint-plugin-import@npm:2.24.0"
+"eslint-plugin-import@npm:^2.24.1":
+  version: 2.24.1
+  resolution: "eslint-plugin-import@npm:2.24.1"
   dependencies:
     array-includes: ^3.1.3
     array.prototype.flat: ^1.2.4
     debug: ^2.6.9
     doctrine: ^2.1.0
-    eslint-import-resolver-node: ^0.3.5
+    eslint-import-resolver-node: ^0.3.6
     eslint-module-utils: ^2.6.2
     find-up: ^2.0.0
     has: ^1.0.3
-    is-core-module: ^2.4.0
+    is-core-module: ^2.6.0
     minimatch: ^3.0.4
-    object.values: ^1.1.3
+    object.values: ^1.1.4
     pkg-up: ^2.0.0
     read-pkg-up: ^3.0.0
     resolve: ^1.20.0
-    tsconfig-paths: ^3.9.0
+    tsconfig-paths: ^3.10.1
   peerDependencies:
     eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0
-  checksum: 79fb1094197cd1dc720725bd29e5c5fe7d123fd9dd31eb182849993a81a8c18e2bfbc4d267a2caabe02bd4d21aafb1eca1da2f55aca7e5df99fd8ba908e7b869
+  checksum: 6a43dc2c045d8f70a370fead2ed342a4b009685bb75818c0e4dab8bb118b853a77d532c63684f5c0b808239809a5a7289c968e45b5cc56960963be5b8cf1ee54
   languageName: node
   linkType: hard
 
@@ -17891,7 +17934,7 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "guidu@workspace:."
   dependencies:
-    "@amcharts/amcharts4": ^4.10.21
+    "@amcharts/amcharts4": ^4.10.22
     "@amcharts/amcharts4-geodata": ^4.1.21
     "@atlaskit/activity": ^1.0.3
     "@atlaskit/icon": ^21.7.4
@@ -17939,11 +17982,11 @@ fsevents@^1.2.7:
     "@mdx-js/mdx": ^1.6.22
     "@next/mdx": ^11.1.0
     "@popperjs/core": ^2.9.3
-    "@preconstruct/cli": ^2.1.0
+    "@preconstruct/cli": ^2.1.1
     "@preconstruct/next": ^3.0.0
     "@researchgate/react-intersection-observer": ^1.3.5
     "@stripe/react-stripe-js": ^1.4.1
-    "@stripe/stripe-js": ^1.17.0
+    "@stripe/stripe-js": ^1.17.1
     "@tailwindcss/aspect-ratio": ^0.2.1
     "@tailwindcss/forms": ^0.3.3
     "@tailwindcss/typography": ^0.4.1
@@ -18003,11 +18046,11 @@ fsevents@^1.2.7:
     "@uidu/profilecard": ^0.2.0
     "@uifabric/file-type-icons": ^7.6.30
     "@uppy/aws-s3": ^1.8.0
-    "@uppy/core": ^1.20.0
+    "@uppy/core": ^1.20.1
     "@uppy/drag-drop": ^1.4.31
     "@uppy/dropbox": ^1.5.2
     "@uppy/google-drive": ^1.7.2
-    "@uppy/react": ^1.12.1
+    "@uppy/react": ^1.12.2
     "@uppy/thumbnail-generator": ^1.7.11
     "@uppy/url": ^1.5.23
     "@uppy/webcam": ^1.8.13
@@ -18067,7 +18110,7 @@ fsevents@^1.2.7:
     eslint-config-prettier: ^8.3.0
     eslint-plugin-compat: ^3.13.0
     eslint-plugin-formatjs: ^2.17.4
-    eslint-plugin-import: ^2.24.0
+    eslint-plugin-import: ^2.24.1
     eslint-plugin-jsx-a11y: ^6.4.1
     eslint-plugin-prettier: ^3.4.0
     eslint-plugin-react: ^7.24.0
@@ -18229,7 +18272,7 @@ fsevents@^1.2.7:
     stylis: ^4.0.10
     svg-inline-react: ^3.2.0
     svg-url-loader: ^7.1.1
-    swiper: ^6.8.2
+    swiper: ^6.8.3
     tailwindcss: ^2.2.7
     terser-webpack-plugin: ^5.1.4
     thread-loader: ^3.0.4
@@ -18248,7 +18291,7 @@ fsevents@^1.2.7:
     use-places-autocomplete: ^1.9.4
     uuid: ^8.3.2
     w3c-keyname: ^2.2.4
-    webpack: ^5.51.0
+    webpack: ^5.51.1
     webpack-bundle-analyzer: ^4.4.2
     webpack-dev-server: ^3.11.2
     webpack-manifest-plugin: ^4.0.2
@@ -19030,7 +19073,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"iconv-lite@npm:^0.6.2":
+"iconv-lite@npm:^0.6.2, iconv-lite@npm:^0.6.3":
   version: 0.6.3
   resolution: "iconv-lite@npm:0.6.3"
   dependencies:
@@ -19615,12 +19658,21 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.2.0, is-core-module@npm:^2.4.0":
+"is-core-module@npm:^2.2.0":
   version: 2.4.0
   resolution: "is-core-module@npm:2.4.0"
   dependencies:
     has: ^1.0.3
   checksum: c498902d4c4d0e8eba3a2e8293ccd442158cfe49a71d7cfad136ccf9902b6a41de34ddaa86cdc95c8b7c22f872e59572d8a5d994cbec04c8ecf27ffe75137119
+  languageName: node
+  linkType: hard
+
+"is-core-module@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "is-core-module@npm:2.6.0"
+  dependencies:
+    has: ^1.0.3
+  checksum: 183b3b96fed19822b13959876b0317e61fc2cb5ebcbc21639904c81f7ae328af57f8e18cc4750a9c4abebd686130c70d34a89521e57dbe002edfa4614507ce18
   languageName: node
   linkType: hard
 
@@ -20554,7 +20606,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.1.2":
+"json5@npm:^2.1.2, json5@npm:^2.2.0":
   version: 2.2.0
   resolution: "json5@npm:2.2.0"
   dependencies:
@@ -23486,7 +23538,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"object.values@npm:^1.1.1, object.values@npm:^1.1.3, object.values@npm:^1.1.4":
+"object.values@npm:^1.1.1, object.values@npm:^1.1.4":
   version: 1.1.4
   resolution: "object.values@npm:1.1.4"
   dependencies:
@@ -24367,7 +24419,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pdfkit@npm:>=0.8.1, pdfkit@npm:^0.12.0":
+"pdfkit@npm:>=0.8.1":
   version: 0.12.1
   resolution: "pdfkit@npm:0.12.1"
   dependencies:
@@ -24379,16 +24431,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pdfmake@npm:^0.1.36":
-  version: 0.1.71
-  resolution: "pdfmake@npm:0.1.71"
+"pdfmake@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "pdfmake@npm:0.2.2"
   dependencies:
-    iconv-lite: ^0.6.2
-    linebreak: ^1.0.2
-    pdfkit: ^0.12.0
+    "@foliojs-fork/linebreak": ^1.1.1
+    "@foliojs-fork/pdfkit": ^0.12.3
+    iconv-lite: ^0.6.3
     svg-to-pdfkit: ^0.1.8
     xmldoc: ^1.1.2
-  checksum: 58ae70e51982a62a44c3261d4340731b0a796c0f45269920355b7f3e1947f93e5fead852713cae12137710e3d22a049d84c077b74b4a618a87928e88ea8defa5
+  checksum: a9a6550e88814b7d9cd633ef88232dc99519310d141d9e8473bde84b323a5ca3a2a6dfa84e2782352b3c5b0b7037ffce26b8ae2688fdd256702722928c78ae14
   languageName: node
   linkType: hard
 
@@ -29957,13 +30009,13 @@ resolve@~1.17.0:
   languageName: node
   linkType: hard
 
-"swiper@npm:^6.8.2":
-  version: 6.8.2
-  resolution: "swiper@npm:6.8.2"
+"swiper@npm:^6.8.3":
+  version: 6.8.3
+  resolution: "swiper@npm:6.8.3"
   dependencies:
     dom7: ^3.0.0
     ssr-window: ^3.0.0
-  checksum: e12d3f99a4c12b641dc3443b6021d72a395271f89b7d13f6a3e2fcfee0e9301f3978824b6832d747b45fbbabcf74f7ae22724ca4861c6658af47514c0348fc74
+  checksum: ffd70741063038f20d7bb5e527c6891732d3e905e2235a268a63d87e9a92555510b15005660a510bfe3bb95ff251fbf713eb2076e0230a5295343f2bca5264f0
   languageName: node
   linkType: hard
 
@@ -30699,15 +30751,14 @@ resolve@~1.17.0:
   languageName: node
   linkType: hard
 
-"tsconfig-paths@npm:^3.9.0":
-  version: 3.9.0
-  resolution: "tsconfig-paths@npm:3.9.0"
+"tsconfig-paths@npm:^3.10.1":
+  version: 3.10.1
+  resolution: "tsconfig-paths@npm:3.10.1"
   dependencies:
-    "@types/json5": ^0.0.29
-    json5: ^1.0.1
+    json5: ^2.2.0
     minimist: ^1.2.0
     strip-bom: ^3.0.0
-  checksum: 243b3b098c76a4ca90ea0431683f3755a4ff175c6123bcba5f7b4bd80fe2ef8fa9bdc8f4d525148a1e71ade7f3e037e7c0313ae177fd12398ab68f05c2c7f25d
+  checksum: 014ec869276114031d3bd6d2d9ce07c32c96ca6912f32285f46eeb4ca5270bd4c5e4de1353b838c66282157f089dedc8c3377c4e72e2f3d910e706c7b9ac5e6d
   languageName: node
   linkType: hard
 
@@ -32444,13 +32495,13 @@ resolve@~1.17.0:
   languageName: node
   linkType: hard
 
-"xlsx@npm:^0.16.4":
-  version: 0.16.9
-  resolution: "xlsx@npm:0.16.9"
+"xlsx@npm:^0.17.0":
+  version: 0.17.1
+  resolution: "xlsx@npm:0.17.1"
   dependencies:
     adler-32: ~1.2.0
     cfb: ^1.1.4
-    codepage: ~1.14.0
+    codepage: ~1.15.0
     commander: ~2.17.1
     crc-32: ~1.2.0
     exit-on-epipe: ~1.0.1
@@ -32460,7 +32511,7 @@ resolve@~1.17.0:
     word: ~0.3.0
   bin:
     xlsx: bin/xlsx.njs
-  checksum: 7b16b5a6404783c240a02201fa7a2a9576a16ad7d8e3766a952ded51ceae054ca2f1b4e51071397095708642c1ae0145b729f376e29ef7d54b142a5c5f9128b6
+  checksum: 3ad3c9594a24152b35f5ffc74cb697f1b86c4e107627b6d6de638339f0500e4fb23c95ced1118f70530eafb29d77539aae7b347c9a5f37672db1252aa7c5c1ae
   languageName: node
   linkType: hard
 

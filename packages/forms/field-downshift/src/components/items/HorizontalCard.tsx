@@ -14,7 +14,7 @@ export default function HorizontalCard({
     <a
       key={index}
       href="#"
-      css={[isSelected && tw`border-primary`, tw`border p-4 rounded relative`]}
+      css={[isSelected && tw`border-primary`, tw`border p-2 rounded relative`]}
       onClick={(e) => {
         e.preventDefault();
         onClick(e);
@@ -34,7 +34,7 @@ export default function HorizontalCard({
           {isSelected && <Check size={16} />}
         </span>
       </div>
-      <div tw="p-3 md:p-4">
+      <div tw="p-2 md:p-3">
         <div tw="flex items-center">
           {item.before && <div tw="mr-3 flex">{item.before}</div>}
           <div>
