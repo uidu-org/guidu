@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.1
+
+### Patch Changes
+
+- afaf0cfa4: Bump dependencies and fix button group customization props
+- Updated dependencies [afaf0cfa4]
+  - @uidu/payments@0.5.2
+  - @uidu/form@1.1.2
+
 ## 0.3.0
 
 ### Minor Changes
