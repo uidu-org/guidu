@@ -2,61 +2,21 @@
 
 import React from 'react';
 import { useVirtual } from 'react-virtual';
-import styled, { css } from 'styled-components';
-import tw, { theme } from 'twin.macro';
+import { theme } from 'twin.macro';
+import * as defaultComponents from '../styled';
 import Footer from './Footer';
 import Resizer from './Resizer';
 
-const Body = styled.div<{ height: number; verticalPadding: number }>`
-  height: ${({ height }) => `${height}px`};
-  min-height: ${({ verticalPadding }) => `calc(100% - ${verticalPadding}px)`};
-  background: var(--body-bg);
-`;
-
-function getPinnedStyled({ pinned = 'left', index }) {
-  if (pinned === 'left') {
-    return css`
-      left: ${index === 0 ? 0 : '56px'};
-      background: var(--body-bg);
-      ${tw`border-r border-gray-200 border-opacity-50 z-10 sticky!`}
-    `;
-  }
-  if (pinned === 'right') {
-    return css`
-      right: ${index === 0 ? 0 : 0};
-      background: var(--body-bg);
-      ${tw`border-l border-gray-200 border-opacity-50 z-10 sticky!`}
-    `;
-  }
+function getComponents(defaultComponents, overrides = {}) {
+  return Object.keys(defaultComponents).reduce((acc, name) => {
+    const override = overrides[name] || {};
+    acc[name] = {
+      component: override.component || defaultComponents[name],
+      props: { $style: override.style, ...override.props },
+    };
+    return acc;
+  }, {});
 }
-
-const Td = styled.div<{ height: number; pinned?: string; index: number }>`
-  height: ${({ height }) => `${height}px`};
-  font-size: 0.95rem;
-  background: var(--body-bg);
-
-  ${({ pinned, index }) =>
-    !!pinned ? getPinnedStyled({ pinned, index }) : null};
-`;
-
-const Th = styled.div<{ height: number; pinned?: string; index: number }>`
-  height: ${({ height }) => `${height}px`};
-  background: var(--body-bg);
-
-  ${({ pinned, index }) =>
-    !!pinned ? getPinnedStyled({ pinned, index }) : null};
-`;
-
-const StyledRow = styled.div<{ size: number; start: number }>`
-  height: ${({ size }) => `${size}px`};
-  transform: ${({ start }) => `translateY(${start}px)`};
-
-  &:hover {
-    ${Th}, ${Td} {
-      background: ${theme`colors.gray.100`};
-    }
-  }
-`;
 
 const Table = ({
   setAggregation,
@@ -68,6 +28,7 @@ const Table = ({
   groupRowHeightIncrementRatio = 1.2,
   tableInstance,
   onItemClick,
+  overrides = {},
 }) => {
   const {
     getTableBodyProps,
@@ -99,6 +60,13 @@ const Table = ({
   //   return cellLength * magicSpacing;
   // };
 
+  const {
+    Th: { component: Th, props: trProps },
+    Td: { component: Td, props: tdProps },
+    StyledRow: { component: StyledRow, props: rowProps },
+    Body: { component: Body, props: bodyProps },
+  } = getComponents(defaultComponents, overrides);
+
   const getColumnWidth = ({ id: accessor, name }) => {
     let max = 0;
 
@@ -123,7 +91,6 @@ const Table = ({
       return (
         <StyledRow
           key={index}
-          tw="absolute top-0 left-0 cursor-pointer"
           {...row.getRowProps([{ style: { minWidth: '100%' } }])}
           size={size}
           start={start}
@@ -136,7 +103,6 @@ const Table = ({
             .filter((cell) => !cell.column.isPrivate)
             .map((cell, index) => (
               <Td
-                tw="px-4 flex items-center border-b border-r border-gray-200 border-opacity-50 whitespace-nowrap"
                 {...cell.getCellProps([
                   {
                     style: {
@@ -195,7 +161,7 @@ const Table = ({
         ref={parentRef}
         tw="h-full w-full overflow-auto"
       >
-        <div tw="bg-gray-50 flex items-center flex-col min-w-full top-0 sticky z-10 w-max">
+        <div tw="background[rgb(var(--body-on-primary-bg))] flex items-center flex-col min-w-full top-0 sticky z-10 w-max">
           {headerGroups.map((headerGroup) => (
             <div
               {...headerGroup.getHeaderGroupProps([
@@ -209,7 +175,6 @@ const Table = ({
                     height={headerHeight}
                     pinned={column.pinned}
                     index={index}
-                    tw="relative flex items-center px-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-r border-gray-200 border-opacity-50 whitespace-nowrap"
                     {...column.getHeaderProps([
                       {
                         style: {
@@ -244,7 +209,6 @@ const Table = ({
         <Body
           height={rowVirtualizer.totalSize}
           verticalPadding={rowHeight * 2 - 8 - 16}
-          tw="w-full relative"
         >
           {rowVirtualizer.virtualItems.map(({ size, start, index }) => (
             <Row key={index} size={size} start={start} index={index} />

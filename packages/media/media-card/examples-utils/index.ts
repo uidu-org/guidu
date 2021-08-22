@@ -2,11 +2,11 @@ import faker from 'faker';
 import { FileType } from '../../media-core/dist/uidu-media-core.cjs';
 
 export const fakeImage = () => ({
-  id: faker.random.uuid(),
+  id: faker.datatype.uuid(),
   description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
   file: {
-    id: faker.random.uuid(),
+    id: faker.datatype.uuid(),
     type: 'image' as FileType,
     url: faker.image.business(),
     metadata: {
@@ -17,12 +17,12 @@ export const fakeImage = () => ({
 });
 
 export const fakeVideo = () => ({
-  id: faker.random.uuid(),
+  id: faker.datatype.uuid(),
   description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
   createdAt: faker.date.recent(),
   file: {
-    id: faker.random.uuid(),
+    id: faker.datatype.uuid(),
     type: 'video' as FileType,
     url: 'https://peach.blender.org/wp-content/uploads/bbb-splash.png',
     metadata: {
@@ -43,12 +43,12 @@ export const fakeVideo = () => ({
 });
 
 export const fakeFile = () => ({
-  id: faker.random.uuid(),
+  id: faker.datatype.uuid(),
   description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
   createdAt: faker.date.recent(),
   file: {
-    id: faker.random.uuid(),
+    id: faker.datatype.uuid(),
     type: 'file' as FileType,
     url: faker.image.business(),
     metadata: {
@@ -59,12 +59,12 @@ export const fakeFile = () => ({
 });
 
 export const fakeLink = () => ({
-  id: faker.random.uuid(),
+  id: faker.datatype.uuid(),
   description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
   createdAt: faker.date.recent(),
   file: {
-    id: faker.random.uuid(),
+    id: faker.datatype.uuid(),
     type: 'link' as FileType,
     metadata: {
       url: faker.image.dataUri(),

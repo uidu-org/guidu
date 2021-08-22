@@ -1,5 +1,4 @@
 import { N30A, N60A } from '@uidu/theme/colors';
-import { themed } from '@uidu/theme/components';
 import { borderRadius, layers } from '@uidu/theme/constants';
 import styled, { css } from 'styled-components';
 import { gutter, WidthNames, WIDTH_ENUM } from '../shared-variables';
@@ -16,9 +15,7 @@ const boxShadow = ({ isChromeless }: { isChromeless?: boolean }) =>
       0 0 20px -6px ${N60A}
     `;
 const dialogBgColor = ({ isChromeless }: { isChromeless?: boolean }) => {
-  return isChromeless
-    ? 'transparent'
-    : themed({ light: 'var(--body-bg)', dark: 'var(--body-bg)' })();
+  return isChromeless ? 'transparent' : 'rgb(var(--body-primary-bg))';
 };
 const maxDimensions = `calc(100% - ${gutter * 2}px)`;
 const maxHeightDimensions = `calc(100% - ${gutter * 2 - IEMaxHeightCalcPx}px)`;

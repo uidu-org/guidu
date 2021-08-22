@@ -3,34 +3,34 @@ import faker from 'faker';
 import moment from 'moment';
 
 const fakeAttachments = () => {
-  return Array.from(Array(faker.random.number({ min: 1, max: 4 })).keys()).map(
-    (i) => ({
-      id: faker.random.uuid(),
-      file: {
-        id: faker.random.uuid(),
-        url: faker.random.image(),
-        type: faker.random.arrayElement(['file', 'image']),
-        metadata: {
-          filename: faker.random.words(),
-          extension: faker.random.arrayElement([
-            'jpg',
-            'pdf',
-            'docx',
-            'xlsx',
-            'sql',
-          ]),
-        },
+  return Array.from(
+    Array(faker.datatype.number({ min: 1, max: 4 })).keys(),
+  ).map((i) => ({
+    id: faker.datatype.uuid(),
+    file: {
+      id: faker.datatype.uuid(),
+      url: faker.random.image(),
+      type: faker.random.arrayElement(['file', 'image']),
+      metadata: {
+        filename: faker.random.words(),
+        extension: faker.random.arrayElement([
+          'jpg',
+          'pdf',
+          'docx',
+          'xlsx',
+          'sql',
+        ]),
       },
-    }),
-  );
+    },
+  }));
 };
 
 export const message: () => MessageProps = () => ({
   klass: 'Message',
   scope: 'messages',
   kind: 'message.create',
-  id: faker.random.uuid(),
-  uid: faker.random.uuid(),
+  id: faker.datatype.uuid(),
+  uid: faker.datatype.uuid(),
   body: faker.random.boolean() ? faker.lorem.paragraph() : faker.lorem.words(),
   createdAt: moment().toDate(),
   updatedAt: faker.date.recent(),

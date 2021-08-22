@@ -15,7 +15,7 @@ export default (params) => {
   }
 
   return (
-    <div className="text-truncate">
+    <div tw="truncate">
       <span
         tw="rounded px-2 py-1 inline-flex text-sm"
         style={{
@@ -23,7 +23,7 @@ export default (params) => {
           lineHeight: 'normal',
         }}
       >
-        <div className="text-truncate">{value.name}</div>
+        <div tw="truncate">{value.name}</div>
       </span>
     </div>
   );

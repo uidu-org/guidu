@@ -14,34 +14,26 @@ export default function Header({
           {...headerGroup.getHeaderGroupProps()}
           style={{
             ...style,
-            minWidth: '100%',
-            width: 'fit-content',
             height: style.height,
-            borderBottom: '1px solid #f2f2f3',
             fontSize: '14px',
             fontWeight: 500,
-            padding: '1rem 0',
           }}
-          className="sticky-top d-flex align-items-center bg-white mx-n3 mx-xl-n4"
+          tw="sticky top-0 flex items-center background[rgb(var(--body-on-primary-bg))] min-w-full width[fit-content] border-b px-4"
+          className="mx-n3 mx-xl-n4"
         >
           {cover && (
             <div
-              className="text-truncate d-flex align-items-center data-list-cover-header px-3 px-xl-4"
+              tw="truncate flex items-center px-3 xl:px-4 h-full bg-transparent flex-shrink-0"
               style={{
                 width: cover.width || '138px',
-                backgroundColor: 'transparent',
-                height: '100%',
-                flexShrink: 0,
               }}
             >
-              <span className="mr-2" style={{ opacity: 0.4 }}>
-                {cover.icon}
-              </span>
+              <span tw="mr-2.5 opacity-40">{cover.icon}</span>
               Cover
             </div>
           )}
-          <div className="d-flex flex-column">
-            <div className="d-flex">
+          <div tw="flex flex-col">
+            <div tw="flex">
               {headerGroup.headers
                 .filter((column) => !column.isPrivate && !column.isPrimary)
                 .map((column) => {
@@ -49,7 +41,7 @@ export default function Header({
                   return (
                     <div
                       key={`${id}-label`}
-                      className="text-truncate d-flex align-items-center px-3 px-xl-4"
+                      tw="truncate flex items-center px-3 xl:px-4"
                       style={{
                         width: width || '150px',
                         minWidth: minWidth || 'auto',

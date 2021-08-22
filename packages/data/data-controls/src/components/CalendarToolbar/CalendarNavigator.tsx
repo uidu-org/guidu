@@ -11,7 +11,7 @@ export default function CalendarNavigator({
   label,
 }: any) {
   return (
-    <div className="d-flex align-items-center">
+    <div tw="flex items-center">
       <Trigger
         activeBg="#d0f0fd"
         className="btn"
@@ -25,7 +25,7 @@ export default function CalendarNavigator({
           className="btn justify-content-center"
           style={{ width: 140 }}
         >
-          <span style={{ textTransform: 'initial' }} className="text-truncate">
+          <span style={{ textTransform: 'initial' }} tw="truncate">
             {label}
           </span>
         </Trigger>

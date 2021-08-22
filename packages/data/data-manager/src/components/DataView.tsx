@@ -22,12 +22,9 @@ const Column = React.forwardRef<HTMLDivElement, any>((props, ref) => (
 
 const ColumnHeader = ({ title, items, ...rest }) => {
   return (
-    <div
-      className="card-header px-0 bg-transparent border-bottom-0 d-flex align-items-center justify-content-between"
-      {...rest}
-    >
+    <div tw="bg-transparent flex items-center justify-between" {...rest}>
       <div>
-        <span className="mr-2">{title}</span>
+        <span tw="mr-3">{title}</span>
         {/* <Badge>{items.length}</Badge> */}
       </div>
       {/* <div className="btn-group">
@@ -48,7 +45,7 @@ const Item = ({ item, provided, ...rest }) => {
     <a
       // to={item.data.id}
       onClick={() => history.push(`/apps/calls/proposals/${item.id}`)}
-      className="card bg-white mb-2"
+      tw="border rounded background[rgb(var(--body-on-primary-bg))] mb-3"
       ref={provided.innerRef}
       {...rest}
     >
@@ -118,7 +115,7 @@ export default class DataView extends PureComponent<any> {
             <LoadableCalendar fallback={<ShellBodyWithSpinner />}>
               {({ default: Calendar }) => {
                 return (
-                  <div className="h-100">
+                  <div tw="h-full">
                     <Calendar
                       {...viewProps.calendar}
                       onItemClick={onItemClick}
@@ -230,7 +227,7 @@ export default class DataView extends PureComponent<any> {
         desktopView = (
           <LoadableTable fallback={<ShellBodyWithSpinner />}>
             {({ default: Table }) => (
-              <div className="h-100">
+              <div tw="h-full">
                 <Table
                   setAggregation={setAggregation}
                   setColumnWidth={setColumnWidth}

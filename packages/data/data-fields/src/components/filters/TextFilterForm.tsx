@@ -8,8 +8,8 @@ function StringFilterForm({ onChange, filter = {} as any, index = 0, intl }) {
   const filters = filtersByType(intl, 'text');
   return (
     <>
-      <div className="form-row">
-        <div className="col-4">
+      <div tw="flex space-x-4">
+        <div tw="w-4/12">
           <Select
             isClearable={false}
             layout="elementOnly"
@@ -23,7 +23,7 @@ function StringFilterForm({ onChange, filter = {} as any, index = 0, intl }) {
             }}
           />
         </div>
-        <div className="col-8">
+        <div tw="w-8/12">
           <FieldText
             layout="elementOnly"
             name={`filters[${index}][value]`}

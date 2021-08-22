@@ -17,7 +17,7 @@ const LoadableHorizontalRule = loadable(
 );
 const LoadableVerticalRule = loadable(() => import(`./Dashlets/VerticalRule`));
 
-export function renderDashlet({ kind, showHeader = true, ...dashlet }) {
+export function renderDashlet({ kind, showHeader = true, ...dashlet }, index) {
   let content = null;
 
   switch (kind) {
@@ -73,6 +73,7 @@ export function renderDashlet({ kind, showHeader = true, ...dashlet }) {
 
   return (
     <Dashlet
+      key={index}
       dashlet={dashlet}
       isCard={dashlet.isCard}
       component={content}

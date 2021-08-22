@@ -32,22 +32,14 @@ export default function List({
   // const avatar = getAvatar(columns);
 
   return (
-    <div className="h-100">
-      <div
-        ref={parentRef}
-        className="List px-xl-4 px-3"
-        style={{
-          height: '100%',
-          width: '100%',
-          overflow: 'auto',
-        }}
-      >
+    <div tw="h-full">
+      <div ref={parentRef} tw="h-full w-full overflow-auto xl:px-4 px-3">
         <Header headerIcons={headerIcons} headerGroups={headerGroups} />
         <div
+          tw="relative"
           style={{
             height: `${rowVirtualizer.totalSize}px`,
             minHeight: `calc(100% - ${rowHeight * 2 - 8 - 16}px)`,
-            position: 'relative',
           }}
         >
           {rowVirtualizer.virtualItems.map((virtualRow) => {
@@ -56,16 +48,12 @@ export default function List({
             return (
               <div
                 key={virtualRow.index}
-                className="border rounded"
+                tw="border rounded absolute top-0 left-0 flex"
                 style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
                   background: 'white',
                   margin: `${gutterSize}px 0`,
                   height: `${virtualRow.size - gutterSize}px`,
                   transform: `translateY(${virtualRow.start}px)`,
-                  display: 'flex',
                 }}
               >
                 <Item row={row} onItemClick={onItemClick} />

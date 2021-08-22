@@ -14,7 +14,7 @@ export default function GalleryItem({ item, tableInstance, onItemClick }) {
       }}
       key={item.id}
     >
-      <div className="card bg-white">
+      <div tw="border rounded background[rgb(var(--body-on-primary-bg))]">
         <Item
           tableInstance={tableInstance}
           state={tableInstance.state}

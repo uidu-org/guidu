@@ -23,13 +23,8 @@ export default function Configurator({
         active={active}
         onClick={() => setIsDialogOpen(true)}
       >
-        <Icon strokeWidth={2} size={14} className="mr-xl-2" />
-        <span
-          style={{ textTransform: 'initial' }}
-          className="d-none d-xl-block"
-        >
-          {name}
-        </span>
+        <Icon strokeWidth={2} size={14} />
+        <span tw="hidden xl:block text-transform[initial]">{name}</span>
       </Trigger>
       <Drawer
         isOpen={isDialogOpen}

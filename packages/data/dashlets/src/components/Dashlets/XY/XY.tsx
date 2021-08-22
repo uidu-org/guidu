@@ -13,7 +13,6 @@ export default function XY({ resultSet, config, data }) {
 
   const dataRs = resultSet.chartPivot();
   const series = resultSet.series();
-  console.log(series);
 
   return <XYStateless data={dataRs} config={config} series={series} />;
 }

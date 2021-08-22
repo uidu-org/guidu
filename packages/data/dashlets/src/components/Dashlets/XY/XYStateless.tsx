@@ -127,7 +127,6 @@ export default function XYStateless({ data, series = [], config }) {
 
   useLayoutEffect(() => {
     if (chart.current) {
-      console.log(mergeConfig());
       chart.current.config = mergeConfig();
     }
     return () => null;

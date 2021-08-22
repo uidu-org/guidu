@@ -15,7 +15,7 @@ const StyledCover = styled.div<{ height: number; cover?: string }>`
 const Cover = ({ cover, children }: { cover: any; children?: any }) => {
   if (!cover) {
     return (
-      <StyledCover className="card-img-top" height={207}>
+      <StyledCover tw="rounded-t" height={207}>
         {children}
       </StyledCover>
     );
@@ -23,7 +23,7 @@ const Cover = ({ cover, children }: { cover: any; children?: any }) => {
 
   return (
     <StyledCover
-      className="card-img-top"
+      tw="rounded-t"
       height={cover && cover.column.width ? (cover.column.width * 3) / 2 : 200}
       cover={cover.value}
     >

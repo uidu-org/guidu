@@ -10,14 +10,10 @@ export default (params) => {
 
   // create the cell
   return (
-    <div style={{ minWidth: 0 }}>
-      <span className="d-flex align-items-center">
-        <img
-          className="rounded-circle mr-2 border"
-          style={{ width: 24 }}
-          src={params.avatar(params)}
-        />
-        <span className="text-truncate">{value}</span>
+    <div tw="min-w-0">
+      <span tw="flex items-center">
+        <img tw="rounded-full mr-2.5 border w-6" src={params.avatar(params)} />
+        <span tw="truncate">{value}</span>
       </span>
     </div>
   );

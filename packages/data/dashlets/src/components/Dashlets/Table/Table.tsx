@@ -4,8 +4,6 @@ import TableStateless from './TableStateless';
 
 export default function Table({ data, resultSet, onItemClick, ...rest }) {
   if (data) {
-    console.log('non-cube keys', data.keys);
-    console.log('non-cube values', data.values);
     return <TableStateless onItemClick={onItemClick} {...rest} {...data} />;
   }
 
@@ -15,8 +13,6 @@ export default function Table({ data, resultSet, onItemClick, ...rest }) {
 
   const keys = resultSet.tableColumns();
   const values = resultSet.tablePivot();
-  console.log('cube keys', keys);
-  console.log('cube values', values);
 
   return (
     <TableStateless

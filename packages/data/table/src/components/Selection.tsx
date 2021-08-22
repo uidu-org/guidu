@@ -57,7 +57,7 @@ export function RowSelection({ row }) {
   return (
     <>
       <div
-        className="d-flex justify-content-center align-items-center h-100 w-100"
+        tw="flex justify-center items-center h-full w-full"
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -74,11 +74,10 @@ export function RowSelection({ row }) {
           />
         ) : (
           <RowIndex>
-            <span
-              className="d-flex flex-column justify-content-center"
-              style={{ lineHeight: 'initial', minWidth: 0 }}
-            >
-              <span className="text-muted">{row.index + 1}</span>
+            <span tw="flex flex-col justify-center min-w-0 line-height[initial]">
+              <span tw="color[rgb(var(--body-secondary-color))]">
+                {row.index + 1}
+              </span>
             </span>
           </RowIndex>
         )}
@@ -98,10 +97,7 @@ export function HeaderSelection({ getToggleAllRowsSelectedProps, ...rest }) {
 export function AggregatedSelection({ getToggleAllRowsSelectedProps, row }) {
   const { onChange, ...rest } = row.getToggleRowSelectedProps();
   return (
-    <div
-      className="d-flex justify-content-center align-items-center h-100 w-100"
-      onClick={onChange}
-    >
+    <div tw="flex justify-center items-center h-full w-full" onClick={onChange}>
       <CheckboxStateless {...getToggleAllRowsSelectedProps()} id="Foo" />
     </div>
   );

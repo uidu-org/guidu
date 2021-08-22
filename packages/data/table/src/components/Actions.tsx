@@ -1,3 +1,4 @@
+import Button from '@uidu/button';
 import { ButtonItem, MenuGroup, Section } from '@uidu/menu';
 import Popup from '@uidu/popup';
 import React, { useState } from 'react';
@@ -6,13 +7,13 @@ import { MoreHorizontal } from 'react-feather';
 export default function Actions({ actions = [], ...rest }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="flex-grow-1 justify-content-center d-flex">
+    <div tw="flex-grow justify-center flex">
       <Popup
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         placement="bottom-end"
         trigger={(triggerProps) => (
-          <button
+          <Button
             {...triggerProps}
             onClick={(e) => {
               e.preventDefault();
@@ -23,7 +24,7 @@ export default function Actions({ actions = [], ...rest }) {
             className="btn btn-sm d-flex align-items-center px-2 justify-content-between"
           >
             <MoreHorizontal size={14} />
-          </button>
+          </Button>
         )}
         content={() => (
           <>

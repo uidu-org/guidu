@@ -51,18 +51,18 @@ export default class DataCard extends PureComponent<any> {
             </div>
           )} */}
           <div className={`${primary ? 'mt-n3' : ''} card-body pt-1`}>
-            <dl className="mb-0">
+            <dl>
               {visibleCells.map((cell) => {
                 return (
                   <>
                     <dt
-                      className="small text-muted text-truncate mt-3"
+                      tw="text-sm color[rgb(var(--body-secondary-color))] truncate mt-3"
                       key={`${item.id}-${cell.column.id}-name`}
                     >
                       {cell.render('Header')}
                     </dt>
                     <dd
-                      className="mb-0 text-truncate"
+                      tw="truncate"
                       key={`${item.id}-${cell.column.id}-value`}
                     >
                       {cell.render('Cell', { ...cell.column.cellProps })}

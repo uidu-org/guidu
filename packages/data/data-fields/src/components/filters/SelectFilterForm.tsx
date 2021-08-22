@@ -15,8 +15,8 @@ export default function SelectFilterForm({
   const filters = filtersByType(intl, 'singleSelect');
   return (
     <>
-      <div className="form-row">
-        <div className="col-4">
+      <div tw="flex space-x-4">
+        <div tw="w-4/12">
           <Select
             isClearable={false}
             layout="elementOnly"
@@ -25,7 +25,7 @@ export default function SelectFilterForm({
             options={filters}
           />
         </div>
-        <div className="col-8">
+        <div tw="w-8/12">
           <Select
             layout="elementOnly"
             name={`filters[${index}][value]`}

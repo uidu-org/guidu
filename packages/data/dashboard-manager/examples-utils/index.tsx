@@ -184,7 +184,7 @@ export const dashlets = [
   },
   {
     kind: 'Counter',
-    itemBefore: <UserCheck tw="h-6 w-6 text-white" />,
+    // itemBefore: <UserCheck tw="h-6 w-6 text-white" />,
     label: 'counter',
     layout: { x: 4, y: 2, w: 4, h: 2.5 },
     query: {

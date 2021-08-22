@@ -1,5 +1,6 @@
 import cubejs from '@cubejs-client/core';
 import { CubeProvider } from '@cubejs-client/react';
+import Button from '@uidu/button';
 import { More } from '@uidu/data-controls';
 import { buildColumns } from '@uidu/data-fields';
 import DropdownMenu, {
@@ -274,7 +275,7 @@ export default function Basic({}) {
               <>
                 <ShellSidebar tw="w-80 border-r">
                   <Navigation
-                    className="bg-white border-bottom"
+                    tw="bg-white border-b"
                     schema={[
                       {
                         type: 'NavigationHeader',
@@ -315,9 +316,9 @@ export default function Basic({}) {
                             component: () => (
                               <DropdownMenu
                                 trigger={
-                                  <button className="btn btn-primary">
+                                  <Button appearance="primary">
                                     Add a view
-                                  </button>
+                                  </Button>
                                 }
                                 position="bottom right"
                               >
@@ -359,7 +360,7 @@ export default function Basic({}) {
                             icon: (
                               <img
                                 src="https://via.placeholder.com/24x24"
-                                className="rounded-circle"
+                                tw="rounded-full"
                               />
                             ),
                           },
@@ -383,13 +384,13 @@ export default function Basic({}) {
                               width: '20%',
                               background: '#fff',
                             }}
-                            className="border-right"
+                            tw="border-r"
                           >
                             <SideNavigation schema={schema} />
                           </ShellSidebar> */}
                             <ShellMain>
                               <ShellHeader
-                                className="px-3 bg-white border-bottom"
+                                tw="px-4 bg-white border-b"
                                 style={{ zIndex: 30 }}
                               >
                                 {/* <input

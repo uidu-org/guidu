@@ -13,8 +13,8 @@ export default function NumberFilterForm({
   const filters = filtersByType(intl, 'number');
   return (
     <>
-      <div className="form-row">
-        <div className="col-4">
+      <div tw="flex space-x-4">
+        <div tw="w-4/12">
           <Select
             isClearable={false}
             layout="elementOnly"
@@ -28,7 +28,7 @@ export default function NumberFilterForm({
             }}
           />
         </div>
-        <div className="col-8">
+        <div tw="w-8/12">
           <FieldNumber
             layout="elementOnly"
             name={`filters[${index}][value]`}

@@ -25,11 +25,8 @@ export default function Filterer({
         active={!!filtersCount}
         onClick={() => setIsDialogOpen(true)}
       >
-        <Filter strokeWidth={2} size={14} className="mr-xl-2" />
-        <span
-          style={{ textTransform: 'initial' }}
-          className="d-none d-xl-block"
-        >
+        <Filter strokeWidth={2} size={14} tw="xl:mr-2" />
+        <span style={{ textTransform: 'initial' }} tw="hidden xl:block">
           <FormattedMessage
             defaultMessage={`{filtersCount, plural,
                   =0 {Filter}

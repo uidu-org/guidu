@@ -10,7 +10,7 @@ function withOpacity(variableName) {
 }
 
 module.exports = {
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     fontFamily: {
       sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],

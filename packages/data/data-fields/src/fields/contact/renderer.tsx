@@ -7,14 +7,10 @@ export default (params) => {
   const { value, row } = params;
 
   return (
-    <div style={{ minWidth: 0 }}>
-      <span className="d-flex align-items-center">
-        <img
-          className="rounded-circle mr-2"
-          style={{ width: 24 }}
-          src={row.original.avatar}
-        />
-        <span className="text-truncate">{value}</span>
+    <div tw="min-w-0">
+      <span tw="flex items-center">
+        <img tw="rounded-full mr-2.5 w-6" src={row.original.avatar} />
+        <span tw="truncate">{value}</span>
       </span>
     </div>
   );

@@ -1,5 +1,6 @@
 import { faGripVertical, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from '@uidu/button';
 import FieldColorPicker from '@uidu/field-color-picker';
 import FieldText from '@uidu/field-text';
 import React, { useState } from 'react';
@@ -11,7 +12,8 @@ const Trigger = ({ triggerProps, toggleDialog, value }) => (
     {...triggerProps}
     style={{ backgroundColor: value, width: 30, height: 20 }}
     onClick={toggleDialog}
-    className="border rounded ignore-onclickoutside"
+    tw="border rounded"
+    className="ignore-onclickoutside"
   />
 );
 
@@ -94,19 +96,19 @@ export default function WithOptionsForm({
               >
                 {(provided, snapshot) => (
                   <div
-                    className="card d-flex align-items-center flex-row mb-3"
+                    tw="border rounded p-4 flex items-center flex-row mb-3"
                     ref={provided.innerRef}
                     // eslint-disable-next-line react/jsx-props-no-spreading
                     {...provided.draggableProps}
                   >
                     <div
-                      className="mx-2 p-3 d-flex"
+                      tw="mx-2 p-3 flex"
                       // eslint-disable-next-line react/jsx-props-no-spreading
                       {...provided.dragHandleProps}
                     >
                       <FontAwesomeIcon icon={faGripVertical} />
                     </div>
-                    <div className="flex-grow-1 d-flex align-items-center">
+                    <div tw="flex-grow flex items-center">
                       {!option.isNewOption && (
                         <FieldText
                           type="hidden"
@@ -127,9 +129,9 @@ export default function WithOptionsForm({
                         })}
                         required
                         value={option.name}
-                        className="border-0"
+                        tw="border-0"
                       />
-                      <div className="ml-3">
+                      <div tw="ml-3">
                         <FieldColorPicker
                           name={`${prefix}[options][${index}][color]`}
                           trigger={Trigger}
@@ -138,10 +140,9 @@ export default function WithOptionsForm({
                         />
                       </div>
                     </div>
-                    <button
+                    <Button
                       tabIndex={-1}
                       type="button"
-                      className="btn btn-sm btn-simple"
                       onClick={() => {
                         setCurrentOptions((prevCurrentOptions) => [
                           ...prevCurrentOptions.slice(0, index),
@@ -150,7 +151,7 @@ export default function WithOptionsForm({
                       }}
                     >
                       <FontAwesomeIcon icon={faTimes} />
-                    </button>
+                    </Button>
                   </div>
                 )}
               </Draggable>
@@ -159,10 +160,9 @@ export default function WithOptionsForm({
           </div>
         )}
       </Droppable>
-      <div className="my-3">
-        <button
+      <div tw="my-3">
+        <Button
           type="button"
-          className="btn btn-light btn-sm btn-block"
           onClick={() => {
             setCurrentOptions((prevCurrentOptions) => [
               ...prevCurrentOptions,
@@ -175,7 +175,7 @@ export default function WithOptionsForm({
           }}
         >
           {intl.formatMessage({ defaultMessage: 'Add option' })}
-        </button>
+        </Button>
       </div>
     </DragDropContext>
   );

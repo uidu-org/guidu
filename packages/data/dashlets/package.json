@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashlets",
-  "version": "0.12.2",
+  "version": "0.12.1",
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/dashlets",
   "license": "MIT",
@@ -12,8 +12,8 @@
     "@amcharts/amcharts4": "^4.10.22",
     "@amcharts/amcharts4-geodata": "^4.1.21",
     "@babel/runtime": "^7.15.3",
-    "@cubejs-client/core": "^0.28.24",
-    "@cubejs-client/react": "^0.28.24",
+    "@cubejs-client/core": "^0.28.25",
+    "@cubejs-client/react": "^0.28.25",
     "@loadable/component": "^5.15.0",
     "@uidu/dashboard-manager": "^0.13.1",
     "@uidu/dashlet-controls": "^0.4.0",
@@ -29,11 +29,11 @@
     "react-content-loader": "^6.0.3",
     "react-countup": "^5.2.0",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.20.9",
+    "react-intl": "^5.20.10",
     "react-table": "^7.7.0",
     "styled-components": "^5.3.0",
     "tslib": "^2.3.1",
-    "twin.macro": "^2.6.2",
+    "twin.macro": "^2.7.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

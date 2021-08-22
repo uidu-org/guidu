@@ -6,21 +6,18 @@ import { format } from '../../../utils';
 import { CounterStatelessProps } from './types';
 
 const CounterWrapper = styled.div`
-  ${tw`relative bg-white py-5 px-4 sm:px-6 overflow-hidden flex flex-col h-full justify-center`}
+  ${tw`relative py-5 px-4 sm:px-6 overflow-hidden flex flex-col h-full justify-center`}
 `;
-const CounterIcon = styled.div`
-  ${tw`absolute bg-indigo-500 rounded-md p-3`}
-`;
-const CounterLabel = styled.p<{ itemBefore: any }>`
+const CounterLabel = styled.div<{ itemBefore: any }>`
   ${({ itemBefore }) => !!itemBefore && tw`ml-16`}
-  ${tw`text-sm font-medium text-gray-500 truncate`}
+  ${tw`text-sm font-medium truncate color[rgb(var(--body-secondary-color))]`}
 `;
-const CounterStatWrapper = styled.p<{ itemBefore: any }>`
+const CounterStatWrapper = styled.div<{ itemBefore: any }>`
   ${({ itemBefore }) => !!itemBefore && tw`ml-16`}
   ${tw`flex items-baseline`}
 `;
-const CounterStat = styled.p`
-  ${tw`text-2xl font-semibold text-gray-900`}
+const CounterStat = styled.div`
+  ${tw`text-2xl font-semibold color[rgb(var(--body-primary-color))]`}
 `;
 
 export default function CounterStateless({
@@ -32,7 +29,7 @@ export default function CounterStateless({
   return (
     <CounterWrapper>
       <dt>
-        {itemBefore ? <CounterIcon>{itemBefore}</CounterIcon> : null}
+        {itemBefore ? itemBefore : null}
         <CounterLabel itemBefore={itemBefore}>{label}</CounterLabel>
       </dt>
       <CounterStatWrapper itemBefore={itemBefore}>

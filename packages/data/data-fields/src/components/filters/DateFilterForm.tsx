@@ -14,8 +14,8 @@ function DateFilterForm({
   const filters = filtersByType(intl, 'date');
   return (
     <>
-      <div className="form-row">
-        <div className="col-4">
+      <div tw="flex space-x-4">
+        <div tw="w-4/12">
           <Select
             isClearable={false}
             layout="elementOnly"
@@ -24,7 +24,7 @@ function DateFilterForm({
             options={filters}
           />
         </div>
-        <div className="col-8">
+        <div tw="w-8/12">
           <FieldDate
             layout="elementOnly"
             name={`filters[${index}][value]`}

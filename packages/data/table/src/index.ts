@@ -5,5 +5,6 @@ export { default as Header } from './components/headers';
 export * from './components/menu';
 export * from './components/Selection';
 export { default } from './components/Table';
+export * from './styled';
 export * from './types';
 export * from './utils';

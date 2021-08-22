@@ -25,14 +25,14 @@ export default (params) => {
           lineHeight: 'normal',
         }}
       >
-        <div className="text-truncate">{params.value?.name}</div>
+        <div tw="truncate">{params.value?.name}</div>
       </span>
     );
   }
 
   return (
     <>
-      <span className="mr-2">**** 5518</span>
+      <span tw="mr-3">**** 5518</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="14"

@@ -64,23 +64,21 @@ const StyledItemField = styled.div<{
 export default function ItemField({ cell }) {
   return (
     <StyledItemField
-      className="px-3 px-xl-4"
+      tw="px-3 xl:px-4"
       // isSorterActive={sorters.map((s) => s.id).includes(column.id)}
       // isFilterActive={!!filterModel[column.id]}
     >
-      <dt className="small text-muted text-truncate mb-1">
-        <div className="customHeaderLabel flex-grow-1 text-truncate">
+      <dt tw="text-sm color[rgb(var(--body-secondary-color))] truncate mb-2">
+        <div tw="flex-grow truncate">
           {cell.column.icon && (
-            <span className="mr-2 text-muted" style={{ opacity: 0.4 }}>
+            <span tw="mr-2 color[rgb(var(--body-secondary-color))] opacity-40">
               {cell.column.icon}
             </span>
           )}
           {cell.column.name}
         </div>
       </dt>
-      <dd className="mb-0 text-truncate">
-        {cell.render('Cell', { ...cell.column.cellProps })}
-      </dd>
+      <dd tw="truncate">{cell.render('Cell', { ...cell.column.cellProps })}</dd>
     </StyledItemField>
   );
 }

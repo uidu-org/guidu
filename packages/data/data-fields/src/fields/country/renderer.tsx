@@ -19,7 +19,7 @@ export default (params) => {
 
   return (
     <>
-      <span className="mr-2">{value.before}</span>
+      <span tw="mr-2.5">{value.before}</span>
       {value.name}
     </>
   );

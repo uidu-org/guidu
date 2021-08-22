@@ -1,6 +1,6 @@
 import { useColumnDefs } from '@uidu/dashboard-manager';
 import { buildColumns } from '@uidu/data-fields';
-import Table from '@uidu/table';
+import Table, { Td, Th } from '@uidu/table';
 import React, { useMemo } from 'react';
 import { useFlexLayout, useSortBy, useTable } from 'react-table';
 
@@ -41,11 +41,8 @@ export default function TableStateless({ values, keys, onItemClick }) {
       canSortBy: true,
       canGroupBy: false,
       Header: ({ column }) => (
-        <div
-          className="d-flex align-items-center justify-content-center flex-grow-1"
-          style={{ minWidth: 0 }}
-        >
-          <div className="flex-grow-1 text-truncate">{column.name}</div>
+        <div tw="flex items-center justify-center flex-grow min-w-0">
+          <div tw="flex-grow truncate">{column.name}</div>
         </div>
       ),
       Cell: ({ column, value }) =>
@@ -75,6 +72,16 @@ export default function TableStateless({ values, keys, onItemClick }) {
       rowHeight={48}
       headerHeight={48}
       includeFooter={false}
+      overrides={{
+        Td: {
+          component: (props) => <Td tw="px-6" {...props} />,
+        },
+        Th: {
+          component: (props) => {
+            return <Th tw="px-6" {...props} />;
+          },
+        },
+      }}
     />
   );
 }

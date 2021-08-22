@@ -298,13 +298,13 @@ export const fetchContacts = () => {
       clearTimeout(wait);
       resolve(
         Array.from(Array(100).keys()).map((i) => ({
-          id: faker.random.uuid(),
+          id: faker.datatype.uuid(),
           avatar: faker.image.avatar(),
           email: faker.internet.email(),
           displayName: faker.name.findName(),
           cover: faker.image.imageUrl(),
           donationCampaign: {
-            id: faker.random.uuid(),
+            id: faker.datatype.uuid(),
             name: faker.name.findName(),
             path: '/foo/bar',
             scope: 'donations',
@@ -312,12 +312,12 @@ export const fetchContacts = () => {
           text: faker.lorem.paragraphs(),
           amount: parseInt(faker.commerce.price(), 10),
           country: faker.address.countryCode(),
-          percent: faker.random.number(),
+          percent: faker.datatype.number(),
           createdAt: faker.date.past().toString(),
           updatedAt: `${faker.date.recent().toString()}`,
           firstName: faker.name.firstName(),
           lastName: faker.name.lastName(),
-          age: faker.random.number(),
+          age: faker.datatype.number(),
           gender: ['male', 'female', null][Math.floor(Math.random() * 3)],
           role: 'admin',
           paymentMethod: Math.floor(Math.random() * 3) + 1,

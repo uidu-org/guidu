@@ -38,8 +38,8 @@ export default function CalendarView({
           position="bottom"
         >
           <Trigger activeBg="#d1f7c4" className="btn">
-            <Layout strokeWidth={2} size={14} className="mr-2" />
-            <span style={{ textTransform: 'capitalize' }}>{view}</span>
+            <Layout strokeWidth={2} size={14} tw="mr-2" />
+            <span tw="text-transform[capitalize]">{view}</span>
           </Trigger>
         </Tooltip>
       }
@@ -60,7 +60,7 @@ export default function CalendarView({
                 }
               : null)}
           >
-            <span className="text-capitalize">{calendarView}</span>
+            <span tw="capitalize">{calendarView}</span>
           </DropdownItem>
         ))}
       </DropdownItemGroup>

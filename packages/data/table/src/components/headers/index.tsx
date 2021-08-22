@@ -45,20 +45,17 @@ export default function Header({
   };
 
   return (
-    <div
-      className="d-flex align-items-center justify-content-center flex-grow-1"
-      style={{ minWidth: 0 }}
-    >
-      <div className="flex-grow-1 text-truncate">
+    <div tw="flex items-center justify-center flex-grow min-w-0">
+      <div tw="flex-grow truncate">
         {headerIcons && column?.icon && (
-          <span className="mr-2 text-muted" style={{ opacity: 0.4 }}>
+          <span tw="mr-3 color[rgb(var(--body-secondary-color))] opacity-40">
             {column.icon}
           </span>
         )}
         {column.name}
       </div>
       {!column.suppressMenu && (
-        <div className="ml-3" style={{ fontWeight: 'initial' }}>
+        <div tw="ml-4 font-weight[initial]">
           <DropdownMenu
             triggerType="button"
             position="bottom right"

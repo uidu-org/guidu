@@ -92,15 +92,11 @@ export default function Gallery({
             return (
               <div
                 key={virtualRow.index}
-                className="w-100"
+                tw="w-full absolute top-0 left-0 grid"
                 style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
                   padding: `${gutterSize}px`,
                   height: `${virtualRow.size}px`,
                   transform: `translateY(${virtualRow.start}px)`,
-                  display: 'grid',
                   gridColumnGap: `${gutterSize}px`,
                   gridRowGap: `${gutterSize}px`,
                   gridTemplateColumns: Array.from({ length: columnCount })

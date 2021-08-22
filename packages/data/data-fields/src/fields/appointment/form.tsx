@@ -43,21 +43,20 @@ export default function AppointmentForm() {
           ]}
           menu={(props) => (
             <div
-              className="d-flex mx-n2"
+              tw="flex -m-3"
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...props}
             />
           )}
           option={DownshiftRadio}
-          rowClassName="mb-1"
         />
-        <div className="form-group">
+        <div tw="mb-4">
           <label htmlFor="minutes">
             <FormattedMessage defaultMessage="...or choose a custom duration" />
           </label>
 
-          <div className="row">
-            <div className="col-4">
+          <div tw="flex space-x-4">
+            <div tw="w-4/12">
               <FieldNumber
                 layout="elementOnly"
                 name="minutes"
@@ -65,7 +64,7 @@ export default function AppointmentForm() {
                 max={unit === 'minutes' ? 60 : 12}
               />
             </div>
-            <div className="col-4">
+            <div tw="w-4/12">
               <Select
                 layout="elementOnly"
                 name="unit"
@@ -87,67 +86,60 @@ export default function AppointmentForm() {
         </div>
       </FormSection>
       <FormSection name={<FormattedMessage defaultMessage="Availability" />}>
-        <div className="form-group">
-          <div className="container-fluid px-0">
-            <div className="row">
-              <div className="col-sm-7">
-                <div className="card">
-                  <div className="card-header">
-                    <FormattedMessage defaultMessage="Set the weekly hours you're typically available for events" />
-                  </div>
-                  <div className="list-group list-group-flush">
-                    {dayjs.weekdaysShort().map((weekday) => (
-                      <div
-                        key={weekday}
-                        className="list-group-item d-flex align-items-center justify-content-between"
-                      >
-                        <div className="d-flex align-items-center mr-5">
-                          <div
-                            className="tex-nowrap flex-shrink-0 mr-3"
-                            style={{ width: 64 }}
-                          >
-                            <input type="checkbox" /> <strong>{weekday}</strong>
-                          </div>
-                          <div className="d-flex align-items-center">
-                            <FieldTime
-                              layout="elementOnly"
-                              name={`${weekday}-start`}
-                            />
-                            <span className="mx-2">-</span>
-                            <FieldTime
-                              layout="elementOnly"
-                              name={`${weekday}-end`}
-                            />
-
-                            <button className="btn btn-sm d-flex px-2 flex-shrink-0">
-                              <Trash size={16} />
-                            </button>
-                          </div>
-                        </div>
-                        <div className="d-flex align-items-center">
-                          <button className="btn btn-sm d-flex px-2">
-                            <Copy size={16} />
-                          </button>
-                          <button className="btn btn-sm d-flex px-2">
-                            <Plus size={16} />
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+        <div tw="flex space-x-4">
+          <div tw="w-7/12">
+            <div className="card">
+              <div className="card-header">
+                <FormattedMessage defaultMessage="Set the weekly hours you're typically available for events" />
               </div>
-              <div className="col-sm-5">
-                <div className="card h-100">
-                  <div className="card-header">
-                    <FormattedMessage defaultMessage="Add hours for specific dates." />
+              <div className="list-group list-group-flush">
+                {dayjs.weekdaysShort().map((weekday) => (
+                  <div key={weekday} tw="flex items-center content-between">
+                    <div tw="flex items-center mr-5">
+                      <div
+                        tw="whitespace-nowrap flex-shrink-0 mr-3"
+                        style={{ width: 64 }}
+                      >
+                        <input type="checkbox" /> <strong>{weekday}</strong>
+                      </div>
+                      <div tw="flex items-center">
+                        <FieldTime
+                          layout="elementOnly"
+                          name={`${weekday}-start`}
+                        />
+                        <span tw="mx-2">-</span>
+                        <FieldTime
+                          layout="elementOnly"
+                          name={`${weekday}-end`}
+                        />
+
+                        <button className="btn btn-sm d-flex px-2 flex-shrink-0">
+                          <Trash size={16} />
+                        </button>
+                      </div>
+                    </div>
+                    <div tw="flex items-center">
+                      <button className="btn btn-sm d-flex px-2">
+                        <Copy size={16} />
+                      </button>
+                      <button className="btn btn-sm d-flex px-2">
+                        <Plus size={16} />
+                      </button>
+                    </div>
                   </div>
-                  <div className="card-body">
-                    <p className="text-muted text-center">
-                      <FormattedMessage defaultMessage="Add dates when your availability changes from your weekly hours" />
-                    </p>
-                  </div>
-                </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div tw="w-5/12">
+            <div className="card h-100">
+              <div className="card-header">
+                <FormattedMessage defaultMessage="Add hours for specific dates." />
+              </div>
+              <div className="card-body">
+                <p className="text-muted text-center">
+                  <FormattedMessage defaultMessage="Add dates when your availability changes from your weekly hours" />
+                </p>
               </div>
             </div>
           </div>

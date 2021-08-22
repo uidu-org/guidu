@@ -8,16 +8,10 @@ export default (params) => {
   // }
 
   return (
-    <span className="d-flex align-items-center justify-content-between w-100">
-      <span className="flex-grow-1 text-truncate mr-2">
-        {params.value || '-'}
-      </span>
+    <span tw="flex items-center justify-between w-full">
+      <span tw="flex-grow truncate mr-2.5">{params.value || '-'}</span>
       {params.value ? (
-        <a
-          href={`tel:${params.value}`}
-          target="_blank"
-          className="btn p-1 ml-auto d-flex"
-        >
+        <a href={`tel:${params.value}`} target="_blank" tw="p-1 ml-auto flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
