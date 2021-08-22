@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- e1af00303: uidu data packages drop bootstrap
+
+## 1.7.1
+
+### Patch Changes
+
 - afaf0cfa4: Bump dependencies and fix button group customization props
 
 ## 1.7.0

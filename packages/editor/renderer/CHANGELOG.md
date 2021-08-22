@@ -1,5 +1,16 @@
 # @uidu/renderer
 
+## 0.5.2
+
+### Patch Changes
+
+- e1af00303: uidu data packages drop bootstrap
+- Updated dependencies [e1af00303]
+  - @uidu/editor-common@0.5.2
+  - @uidu/mentions@0.3.2
+  - @uidu/status@0.4.2
+  - @uidu/media-card@0.5.2
+
 ## 0.5.1
 
 ### Patch Changes

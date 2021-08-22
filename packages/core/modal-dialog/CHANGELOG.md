@@ -1,5 +1,14 @@
 # @uidu/modal-dialog
 
+## 0.5.2
+
+### Patch Changes
+
+- e1af00303: uidu data packages drop bootstrap
+- Updated dependencies [e1af00303]
+  - @uidu/button@1.1.2
+  - @uidu/form@1.1.2
+
 ## 0.5.1
 
 ### Patch Changes

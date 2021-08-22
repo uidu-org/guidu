@@ -1,5 +1,17 @@
 # @uidu/dashboard-manager
 
+## 1.0.0
+
+### Major Changes
+
+- e1af00303: uidu data packages drop bootstrap
+
+### Patch Changes
+
+- Updated dependencies [e1af00303]
+  - @uidu/dashboard-controls@1.0.0
+  - @uidu/dashlets@1.0.0
+
 ## 0.13.1
 
 ### Patch Changes

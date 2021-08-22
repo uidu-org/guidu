@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 1.1.1
+
+### Patch Changes
+
+- e1af00303: uidu data packages drop bootstrap
+- Updated dependencies [e1af00303]
+  - @uidu/field-base@2.0.2
+  - @uidu/form@1.1.2
+
 ## 1.1.0
 
 ### Minor Changes

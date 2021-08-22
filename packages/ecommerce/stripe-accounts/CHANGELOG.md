@@ -4,6 +4,16 @@
 
 ### Patch Changes
 
+- e1af00303: uidu data packages drop bootstrap
+- Updated dependencies [e1af00303]
+  - @uidu/slider@1.7.1
+  - @uidu/payments@0.5.2
+  - @uidu/form@1.1.2
+
+## 0.3.1
+
+### Patch Changes
+
 - afaf0cfa4: Bump dependencies and fix button group customization props
 - Updated dependencies [afaf0cfa4]
   - @uidu/slider@1.7.1

@@ -1,5 +1,16 @@
 # @uidu/list
 
+## 1.0.0
+
+### Major Changes
+
+- e1af00303: uidu data packages drop bootstrap
+
+### Patch Changes
+
+- Updated dependencies [e1af00303]
+  - @uidu/data-fields@1.0.0
+
 ## 0.3.0
 
 ### Minor Changes

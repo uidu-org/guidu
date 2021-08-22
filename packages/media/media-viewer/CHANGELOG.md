@@ -1,5 +1,14 @@
 # @uidu/media-viewer
 
+## 0.4.1
+
+### Patch Changes
+
+- e1af00303: uidu data packages drop bootstrap
+- Updated dependencies [e1af00303]
+  - @uidu/button@1.1.2
+  - @uidu/shell@2.0.1
+
 ## 0.4.0
 
 ### Minor Changes

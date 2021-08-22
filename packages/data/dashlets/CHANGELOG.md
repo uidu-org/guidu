@@ -1,5 +1,19 @@
 # @uidu/blocks
 
+## 1.0.0
+
+### Major Changes
+
+- e1af00303: uidu data packages drop bootstrap
+
+### Patch Changes
+
+- Updated dependencies [e1af00303]
+  - @uidu/dashboard-manager@1.0.0
+  - @uidu/dashlet-controls@1.0.0
+  - @uidu/data-fields@1.0.0
+  - @uidu/table@1.0.0
+
 ## 0.12.2
 
 ### Patch Changes

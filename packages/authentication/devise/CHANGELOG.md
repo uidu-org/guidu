@@ -1,5 +1,15 @@
 # @uidu/devise
 
+## 0.6.1
+
+### Patch Changes
+
+- e1af00303: uidu data packages drop bootstrap
+- Updated dependencies [e1af00303]
+  - @uidu/slider@1.7.1
+  - @uidu/form@1.1.2
+  - @uidu/shell@2.0.1
+
 ## 0.6.0
 
 ### Minor Changes
