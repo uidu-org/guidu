@@ -4,6 +4,15 @@
 
 ### Patch Changes
 
+- e1af00303: uidu data packages drop bootstrap
+- Updated dependencies [e1af00303]
+  - @uidu/button@1.1.2
+  - @uidu/field-base@2.0.2
+
+## 1.0.2
+
+### Patch Changes
+
 - afaf0cfa4: Bump dependencies and fix button group customization props
 - Updated dependencies [afaf0cfa4]
   - @uidu/button@1.1.2

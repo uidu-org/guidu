@@ -1,5 +1,13 @@
 # @uidu/mentions
 
+## 0.3.2
+
+### Patch Changes
+
+- e1af00303: uidu data packages drop bootstrap
+- Updated dependencies [e1af00303]
+  - @uidu/button@1.1.2
+
 ## 0.3.1
 
 ### Patch Changes

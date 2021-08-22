@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashlet-controls",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/dashlet-controls",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "@uidu/avatar-group": "^2.6.0",
     "@uidu/dropdown-menu": "^0.6.0",
     "@uidu/field-date-range": "^1.0.0",
-    "@uidu/form": "^1.0.0",
+    "@uidu/form": "^1.1.2",
     "react": "^17.0.2",
     "react-feather": "^2.0.9",
     "react-intl": "^5.20.10",

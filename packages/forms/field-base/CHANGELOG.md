@@ -4,6 +4,14 @@
 
 ### Patch Changes
 
+- e1af00303: uidu data packages drop bootstrap
+- Updated dependencies [e1af00303]
+  - @uidu/form@1.1.2
+
+## 2.0.2
+
+### Patch Changes
+
 - Updated dependencies [afaf0cfa4]
   - @uidu/form@1.1.2
 

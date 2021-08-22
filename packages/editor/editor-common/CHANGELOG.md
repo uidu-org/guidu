@@ -1,5 +1,15 @@
 # @uidu/editor-common
 
+## 0.5.2
+
+### Patch Changes
+
+- e1af00303: uidu data packages drop bootstrap
+- Updated dependencies [e1af00303]
+  - @uidu/emoji@0.5.2
+  - @uidu/mentions@0.3.2
+  - @uidu/profilecard@0.2.2
+
 ## 0.5.1
 
 ### Patch Changes

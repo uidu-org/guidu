@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.0.1
+
+### Patch Changes
+
+- e1af00303: uidu data packages drop bootstrap
+
 ## 2.0.0
 
 ### Major Changes

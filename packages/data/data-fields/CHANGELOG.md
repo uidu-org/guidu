@@ -1,5 +1,19 @@
 # @uidu/data-fields
 
+## 1.0.0
+
+### Major Changes
+
+- e1af00303: uidu data packages drop bootstrap
+
+### Patch Changes
+
+- Updated dependencies [e1af00303]
+  - @uidu/button@1.1.2
+  - @uidu/field-downshift@1.1.1
+  - @uidu/form@1.1.2
+  - @uidu/select@1.1.1
+
 ## 0.6.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.4.2
+
+### Patch Changes
+
+- e1af00303: uidu data packages drop bootstrap
+
 ## 0.4.1
 
 ### Patch Changes

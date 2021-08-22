@@ -1,5 +1,16 @@
 # @uidu/dashboard-controls
 
+## 1.0.0
+
+### Major Changes
+
+- e1af00303: uidu data packages drop bootstrap
+
+### Patch Changes
+
+- Updated dependencies [e1af00303]
+  - @uidu/form@1.1.2
+
 ## 0.5.0
 
 ### Minor Changes
