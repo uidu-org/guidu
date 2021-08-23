@@ -1,5 +1,14 @@
 # @uidu/field-mentions
 
+## 1.1.1
+
+### Patch Changes
+
+- 410fbd694: Bump dependencies and editor-core margins
+- Updated dependencies [410fbd694]
+  - @uidu/field-base@2.0.3
+  - @uidu/form@1.1.3
+
 ## 1.1.0
 
 ### Minor Changes

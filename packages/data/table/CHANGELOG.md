@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 1.0.1
+
+### Patch Changes
+
+- 410fbd694: Bump dependencies and editor-core margins
+- Updated dependencies [410fbd694]
+  - @uidu/button@1.1.3
+  - @uidu/data-fields@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

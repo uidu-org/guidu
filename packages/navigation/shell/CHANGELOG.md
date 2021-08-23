@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.0.2
+
+### Patch Changes
+
+- 5c1a9e3ed: FiX shellfooter flex and extending classnames
+
 ## 2.0.1
 
 ### Patch Changes

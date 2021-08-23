@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.4.2
+
+### Patch Changes
+
+- 410fbd694: Bump dependencies and editor-core margins
+- Updated dependencies [410fbd694]
+  - @uidu/media-card@0.5.3
+
 ## 0.4.1
 
 ### Patch Changes
