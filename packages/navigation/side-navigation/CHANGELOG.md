@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 1.0.1
+
+### Patch Changes
+
+- 5c1a9e3ed: FiX shellfooter flex and extending classnames
+- Updated dependencies [5c1a9e3ed]
+  - @uidu/shell@2.0.2
+
 ## 1.0.0
 
 ### Major Changes

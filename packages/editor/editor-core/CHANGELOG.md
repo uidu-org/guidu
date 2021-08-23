@@ -1,5 +1,19 @@
 # @uidu/editor-core
 
+## 0.10.0
+
+### Minor Changes
+
+- 410fbd694: Bump dependencies and editor-core margins
+
+### Patch Changes
+
+- Updated dependencies [410fbd694]
+  - @uidu/button@1.1.3
+  - @uidu/field-date@1.1.1
+  - @uidu/form@1.1.3
+  - @uidu/media-card@0.5.3
+
 ## 0.9.2
 
 ### Patch Changes

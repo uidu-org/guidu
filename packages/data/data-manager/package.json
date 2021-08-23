@@ -17,13 +17,13 @@
     "@uidu/board": "^0.4.0",
     "@uidu/calendar": "^0.3.0",
     "@uidu/data-controls": "^1.0.0",
-    "@uidu/data-fields": "^1.0.0",
+    "@uidu/data-fields": "^1.0.1",
     "@uidu/data-views": "^1.0.0",
     "@uidu/gallery": "^1.0.0",
     "@uidu/list": "^1.0.0",
-    "@uidu/shell": "^2.0.1",
+    "@uidu/shell": "^2.0.2",
     "@uidu/spinner": "^0.5.0",
-    "@uidu/table": "^1.0.0",
+    "@uidu/table": "^1.0.1",
     "d3-array": "^3.0.2",
     "dayjs": "^1.10.6",
     "lodash": "^4.17.21",
@@ -41,7 +41,7 @@
     "@uidu/dropdown-menu": "^0.6.1",
     "@uidu/navigation": "^1.0.0",
     "@uidu/page-header": "^1.0.0",
-    "@uidu/side-navigation": "1.0.0",
+    "@uidu/side-navigation": "1.0.1",
     "react-intl": "^5.20.10"
   }
 }
