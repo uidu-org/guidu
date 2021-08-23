@@ -14,8 +14,6 @@ import { GlobalNavigationProps } from './types';
 
 const defaultStyle = {
   transition: 'transform 130ms ease-in',
-  position: 'absolute',
-  left: 0,
   height: '100%',
   willChange: 'transform',
 };
@@ -33,7 +31,6 @@ const transitionStyles = {
 
 export default function GlobalNavigation({
   className = null,
-  backgroundColor = '#4C566A',
   isOpen = false,
   width = '4rem',
   navigationWidth = 25,
@@ -48,7 +45,6 @@ export default function GlobalNavigation({
       <ShellSidebar
         style={{
           width,
-          backgroundColor,
           zIndex: 3,
           ...style,
         }}
@@ -98,9 +94,10 @@ export default function GlobalNavigation({
         {(state) => {
           return (
             <ShellSidebar
+              tw="flex absolute left-0 h-full"
+              className={className}
               style={{
                 ...defaultStyle,
-                display: 'flex',
                 width: `calc((100% - ${width}) * ${
                   navigationWidth / 100
                 } + ${width})`,
@@ -115,7 +112,7 @@ export default function GlobalNavigation({
                 <FakeGlobalItemWrapper style={{ width }}>
                   <GlobalItem {...header} />
                 </FakeGlobalItemWrapper>
-                <h5 className="m-0 text-light">{header.name}</h5>
+                <h5>{header.name}</h5>
               </ShellHeader>
               {body.length > 0 && (
                 <ShellBody>
@@ -141,7 +138,7 @@ export default function GlobalNavigation({
                 </ShellBody>
               )}
               {footer.length > 0 && (
-                <ShellFooter tw="space-y-0.5 flex flex-col items-center py-4">
+                <ShellFooter tw="space-y-0.5 flex flex-col py-4">
                   {footer.map(({ name, children, ...otherProps }, index) => (
                     <FakeItemWrapper
                       key={`global-navigation-fake-footer-${index}`}

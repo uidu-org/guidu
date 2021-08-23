@@ -9,7 +9,6 @@ export const Resizer = styled.div<{ isHover: boolean; isCollapsed: boolean }>`
   height: 100%;
   position: absolute;
   right: -24px;
-  /* border-left: 1px solid #f2f2f3; */
 
   &:hover {
     cursor: ew-resize;
@@ -33,7 +32,7 @@ export const ResizerButton = styled.button<{
     isHover ? 'flex' : isCollapsed ? 'flex' : 'none'};
 `;
 
-export default function ShellResizer({ onClick, isCollapsed }) {
+export default function ShellResizer({ onClick, isCollapsed, className }) {
   const wrapper = useRef(null);
   const [isHover, setIsHover] = useState(false);
 
@@ -61,7 +60,8 @@ export default function ShellResizer({ onClick, isCollapsed }) {
         <ResizerButton
           isHover={isHover}
           isCollapsed={isCollapsed}
-          className={`btn align-items-center justify-content-center position-absolute bg-white rounded-circle border`}
+          tw="rounded-full items-center border justify-center absolute background[rgb(var(--body-secondary-bg))]"
+          className={className}
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();

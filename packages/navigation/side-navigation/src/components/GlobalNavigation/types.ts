@@ -6,7 +6,7 @@ export type GlobalNavigationProps = {
   footer?: Array<any>;
   header?: any;
   isOpen?: boolean;
-  width: string;
+  width?: string;
   navigationWidth?: number;
   navigationMinWidth?: string;
 };

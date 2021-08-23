@@ -161,13 +161,10 @@ export default function Basic({}) {
   return (
     <Shell>
       <GlobalNavigation
-        tw="flex"
+        tw="flex border-r bg-indigo-400"
         isOpen={isOpen}
-        style={{
-          background: 'green',
-        }}
-        navigationWidth={20}
-        navigationMinWidth="17rem"
+        navigationWidth={18}
+        navigationMinWidth="18rem"
         header={{
           children: <Avatar />,
           name: 'Joydeed',
@@ -240,12 +237,13 @@ export default function Basic({}) {
         ]}
       />
       <ShellSidebar
+        tw="border-r"
         style={{
           transition:
             'width 300ms cubic-bezier(0.2, 0, 0, 1) 0s, min-width 300ms cubic-bezier(0.2, 0, 0, 1) 0s',
           ...(isCollapsed
             ? { width: '24px', minWidth: 0 }
-            : { width: '20%', minWidth: '17rem' }),
+            : { width: '18%', minWidth: '18rem' }),
         }}
       >
         <Navigation schema={schema} />
@@ -257,7 +255,7 @@ export default function Basic({}) {
           }}
         />
       </ShellSidebar>
-      <ShellMain tw="bg-gray-50" />
+      <ShellMain tw="bg-gray-300" />
     </Shell>
   );
 }
