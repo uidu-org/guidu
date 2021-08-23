@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.4.3
+
+### Patch Changes
+
+- 410fbd694: Bump dependencies and editor-core margins
+- Updated dependencies [410fbd694]
+- Updated dependencies [5c1a9e3ed]
+  - @uidu/button@1.1.3
+  - @uidu/table@1.0.1
+  - @uidu/field-text@1.1.1
+  - @uidu/form@1.1.3
+  - @uidu/shell@2.0.2
+
 ## 0.4.2
 
 ### Patch Changes

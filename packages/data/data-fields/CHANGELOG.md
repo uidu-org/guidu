@@ -1,5 +1,16 @@
 # @uidu/data-fields
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [410fbd694]
+  - @uidu/button@1.1.3
+  - @uidu/field-date@1.1.1
+  - @uidu/field-text@1.1.1
+  - @uidu/field-time@1.1.1
+  - @uidu/form@1.1.3
+
 ## 1.0.0
 
 ### Major Changes

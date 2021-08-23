@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.1.3
+
+### Patch Changes
+
+- 410fbd694: Bump dependencies and editor-core margins
+
 ## 1.1.2
 
 ### Patch Changes
