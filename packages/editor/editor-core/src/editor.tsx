@@ -62,7 +62,7 @@ const ContentArea = styled(ContentStyles)`
   flex-grow: 1;
   overflow-x: hidden;
   overflow-y: auto;
-  /* line-height: 24px; */
+  line-height: initial;
 
   /** Hack for Bitbucket to ensure entire editorView gets drop event; see ED-3294 **/
   /** Hack for tables controlls. Otherwise marging collapse and controlls are misplaced. **/
@@ -76,7 +76,7 @@ const ContentArea = styled(ContentStyles)`
     width: calc(100% + ${CommentEditorMargin - GRID_GUTTER}px);
   }
 
-  padding: ${TableControlsPadding}px;
+  padding: 1.5rem;
 
   ${tableCommentEditorStyles};
 `;
@@ -341,6 +341,10 @@ export default class Editor extends PureComponent<EditorProps> {
                   dispatchAnalyticsEvent,
                 }) =>
                   children({
+                    view,
+                    editor,
+                    config,
+                    dispatchAnalyticsEvent,
                     renderToolbar: (props) =>
                       this.renderToolbar({
                         view,
