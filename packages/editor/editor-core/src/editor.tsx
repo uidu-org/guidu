@@ -67,7 +67,7 @@ const ContentArea = styled(ContentStyles)`
   /** Hack for Bitbucket to ensure entire editorView gets drop event; see ED-3294 **/
   /** Hack for tables controlls. Otherwise marging collapse and controlls are misplaced. **/
   .ProseMirror {
-    margin: -1rem 0rem -1rem;
+    margin: -1rem 0rem 1rem;
   }
 
   .gridParent {

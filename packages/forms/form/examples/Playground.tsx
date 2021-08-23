@@ -1,3 +1,4 @@
+import { StyledLabel, StyledRow } from '@uidu/field-base';
 import { localUploadOptions } from '@uidu/media-core';
 import * as React from 'react';
 import { Calendar } from 'react-feather';
@@ -338,7 +339,11 @@ const Playground: React.FunctionComponent<Props> = ({
           label="This row is yellow"
           type="text"
           placeholder="the rowClassName property is ‘yellow’"
-          rowClassName="yellow"
+          overrides={{
+            StyledRow: {
+              component: (props) => <StyledRow tw="bg-yellow-200" {...props} />,
+            },
+          }}
           help="You can modify the class name for the row."
         />
         <FieldText
@@ -347,9 +352,22 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Label and element wrapper"
           type="text"
           placeholder="Label is ‘col-sm-5’, element-wrapper is ‘col-sm-7’"
+          overrides={{
+            StyledLabel: {
+              component: (props) => (
+                <StyledLabel tw="bg-yellow-200" {...props} />
+              ),
+            },
+            RequiredSymbol: {
+              props: {
+                symbol: ' - Required',
+              },
+            },
+          }}
           labelClassName={[{ 'col-sm-3': false }, 'col-sm-5']}
           elementWrapperClassName={[{ 'col-sm-9': false }, 'col-sm-7']}
           help="The label and element-wrapper classes can be changed."
+          required
         />
         <FieldText
           name="cssFieldTextTweaks"

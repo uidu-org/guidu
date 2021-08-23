@@ -6,5 +6,6 @@ export { default as Label } from './components/Label';
 export { default as RequiredSymbol } from './components/RequiredSymbol';
 export { default as Row } from './components/Row';
 export { default as Wrapper } from './components/Wrapper';
+export * from './styled';
 export { default as FloatLabel } from './styled/FloatLabel';
 export * from './types';

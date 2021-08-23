@@ -65,7 +65,7 @@ const Table = ({
     Td: { component: Td, props: tdProps },
     StyledRow: { component: StyledRow, props: rowProps },
     Body: { component: Body, props: bodyProps },
-  } = getComponents(defaultComponents, overrides);
+  } = getComponents(defaultComponents, overrides) as any;
 
   const getColumnWidth = ({ id: accessor, name }) => {
     let max = 0;

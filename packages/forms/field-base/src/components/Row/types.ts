@@ -9,5 +9,4 @@ export type RowProps = {
   required?: boolean;
   showErrors?: boolean;
   elementWrapperClassName?: string;
-  rowClassName?: string;
 };

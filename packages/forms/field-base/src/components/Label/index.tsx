@@ -1,10 +1,25 @@
 import React from 'react';
 import tw from 'twin.macro';
-import RequiredSymbol from '../RequiredSymbol';
+import * as defaultComponents from '../../styled';
+import { getComponents } from '../../utils';
+import DefaultRequiredSymbol from '../RequiredSymbol';
 import { LabelProps } from './types';
 
-const Label = (props: LabelProps) => {
-  const { layout, label, htmlFor, labelClassName, fakeLabel, required } = props;
+export default function Label({
+  layout = 'vertical',
+  label = null,
+  htmlFor,
+  fakeLabel = false,
+  required = false,
+  overrides,
+}: LabelProps) {
+  const {
+    StyledLabel: { component: StyledLabel, props: labelProps },
+    RequiredSymbol: { component: RequiredSymbol, props: requiredSymbolProps },
+  } = getComponents(
+    { ...defaultComponents, RequiredSymbol: DefaultRequiredSymbol },
+    overrides,
+  ) as any;
 
   if (layout === 'elementOnly') {
     return null;
@@ -14,35 +29,18 @@ const Label = (props: LabelProps) => {
     return (
       <div
         css={[layout === 'horizontal' ? tw`w-3/12` : tw`mb-3`]}
-        className={labelClassName}
         data-required={required}
       >
         {label}
-        <RequiredSymbol required={required} />
+        <RequiredSymbol required={required} {...requiredSymbolProps} />
       </div>
     );
   }
 
   return (
-    <label
-      css={[tw`block`, layout === 'horizontal' ? tw`w-3/12` : tw`mb-2`]}
-      className={labelClassName}
-      data-required={required}
-      htmlFor={htmlFor}
-    >
+    <StyledLabel layout={layout} data-required={required} htmlFor={htmlFor}>
       {label}
-      <RequiredSymbol required={required} />
-    </label>
+      <RequiredSymbol required={required} {...requiredSymbolProps} />
+    </StyledLabel>
   );
-};
-
-Label.defaultProps = {
-  fakeLabel: false,
-  labelClassName: null,
-  layout: 'vertical',
-  required: false,
-  label: null,
-  htmlFor: null,
-};
-
-export default Label;
+}

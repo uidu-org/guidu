@@ -20,12 +20,12 @@ export type FormProps = {
   className?: Value;
   // formsy
   elementWrapperClassName?: Value;
-  labelClassName?: Value;
   layout?: LayoutType;
   rowClassName?: Value;
   validateBeforeSubmit?: boolean;
   validatePristine?: boolean;
   disabled?: boolean;
+  overrides?: {} | { [key: string]: any };
 };
 
 export type FormSectionProps = {

@@ -4,11 +4,10 @@ import { LayoutType } from '../types';
 
 const defaultContextValue = {
   elementWrapperClassName: '' as Value,
-  labelClassName: '' as Value,
   layout: 'vertical' as LayoutType,
-  rowClassName: '' as Value,
   validateBeforeSubmit: true,
   validatePristine: false,
+  overrides: {},
 };
 
 const FormContext = createContext(defaultContextValue);

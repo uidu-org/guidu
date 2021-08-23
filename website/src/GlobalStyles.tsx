@@ -39,8 +39,11 @@ const CustomStyles = createGlobalStyle`
   :root {
     --brand-primary: 12, 45, 124;
     --brand-secondary: 240, 240, 240;
+    --brand-subtle: 240, 240, 240;
+
     --brand-on-primary: 255, 255, 255;
     --brand-on-secondary: 10, 10, 10;
+    --brand-on-subtle: 10, 10, 10;
 
     --body-primary-bg: 255, 255, 255;
     --body-secondary-bg: 249, 250, 251;

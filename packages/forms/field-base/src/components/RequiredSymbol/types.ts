@@ -1,4 +1,4 @@
 export type RequiredSymbolProps = {
-  symbol: string;
+  symbol?: string;
   required: boolean;
 };

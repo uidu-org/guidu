@@ -1,27 +1,16 @@
 import React from 'react';
 import { RequiredSymbolProps } from './types';
 
-const RequiredSymbol = (props: RequiredSymbolProps) => {
-  if (props.required === false) {
+export default function RequiredSymbol({
+  symbol = ' *',
+  required,
+}: RequiredSymbolProps) {
+  if (required === true) {
     return (
       <>
-        <small className="text-muted"> - Optional</small>
+        <small className="text-muted">{symbol}</small>
       </>
     );
   }
   return null;
-  // (
-  //   <>
-  //     <span aria-hidden={true} className="required-symbol">
-  //       {props.symbol}
-  //     </span>
-  //     <span className="sr-only"> Required</span>
-  //   </>
-  // );
-};
-
-RequiredSymbol.defaultProps = {
-  symbol: ' *',
-};
-
-export default RequiredSymbol;
+}

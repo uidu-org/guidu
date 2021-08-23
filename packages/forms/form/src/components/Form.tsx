@@ -26,11 +26,10 @@ function Form({
   layout = 'vertical' as LayoutType,
   className = '' as ClassValue,
   elementWrapperClassName = '' as ClassValue,
-  labelClassName = '' as ClassValue,
-  rowClassName = '' as ClassValue,
   validateBeforeSubmit = true,
   validatePristine = false,
   disabled = false,
+  overrides = {},
   ...rest
 }: FormProps & { forwardedRef: React.Ref<any> }) {
   const form: React.RefObject<Formsy> = useRef(null);
@@ -60,11 +59,10 @@ function Form({
 
   const contextProps = {
     elementWrapperClassName,
-    labelClassName,
     layout,
-    rowClassName,
     validateBeforeSubmit,
     validatePristine,
+    overrides,
   };
 
   return (
