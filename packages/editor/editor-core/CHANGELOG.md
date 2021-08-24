@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 0.10.1
+
+### Patch Changes
+
+- 4ef9d8389: Pass down view to render as prop
+
 ## 0.10.0
 
 ### Minor Changes
