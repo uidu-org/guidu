@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.4.1
+
+### Patch Changes
+
+- Updated dependencies [3e8c9666d]
+  - @uidu/button@1.2.0
+  - @uidu/section-message@0.6.0
+
 ## 0.4.0
 
 ### Minor Changes

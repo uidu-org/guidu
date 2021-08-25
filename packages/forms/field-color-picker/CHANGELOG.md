@@ -1,5 +1,11 @@
 # @uidu/field-color-picker
 
+## 1.0.2
+
+### Patch Changes
+
+- @uidu/field-base@3.0.0
+
 ## 1.0.1
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @uidu/field-date-range
 
+## 1.1.1
+
+### Patch Changes
+
+- @uidu/field-base@3.0.0
+- @uidu/field-date@1.1.2
+
 ## 1.1.0
 
 ### Minor Changes

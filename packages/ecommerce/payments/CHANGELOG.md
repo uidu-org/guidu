@@ -1,5 +1,18 @@
 # @uidu/payments
 
+## 1.0.0
+
+### Major Changes
+
+- 3e8c9666d: Stable payments (maybe will be extracted), button and forms API updates
+
+### Patch Changes
+
+- Updated dependencies [3e8c9666d]
+  - @uidu/section-message@0.6.0
+  - @uidu/form@1.2.0
+  - @uidu/field-base@3.0.0
+
 ## 0.5.2
 
 ### Patch Changes

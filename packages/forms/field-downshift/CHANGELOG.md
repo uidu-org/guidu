@@ -1,5 +1,12 @@
 # @uidu/field-downshift
 
+## 1.1.2
+
+### Patch Changes
+
+- @uidu/field-base@3.0.0
+- @uidu/field-text@1.1.2
+
 ## 1.1.1
 
 ### Patch Changes

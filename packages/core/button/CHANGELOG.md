@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.2.0
+
+### Minor Changes
+
+- 3e8c9666d: Stable payments (maybe will be extracted), button and forms API updates
+
 ## 1.1.3
 
 ### Patch Changes
