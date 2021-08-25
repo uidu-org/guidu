@@ -14,19 +14,19 @@ import { SinglePaymentProps } from '../types';
 // https://github.com/stripe/react-stripe-js/blob/master/examples/hooks/1-Card-Detailed.js
 
 function SinglePayment({
-  scope = 'primary',
   children,
   amount,
   clientSecret,
   onSave = (paymentIntent: PaymentIntent, model: any) => Promise.resolve(),
   stripeBillingDetails,
+  label,
   ...rest
 }: SinglePaymentProps) {
   const stripe = useStripe();
   const elements = useElements();
   const paymentRequest = usePaymentRequest({
     amount,
-    label: 'test',
+    label,
     ...rest,
   });
 
@@ -36,16 +36,14 @@ function SinglePayment({
 
   if (paymentRequest) {
     paymentRequest.on('paymentMethod', async (ev) => {
-      const {
-        error: confirmError,
-        paymentIntent,
-      } = await stripe.confirmPaymentIntent(
-        clientSecret,
-        {
-          payment_method: ev.paymentMethod.id,
-        },
-        { handleActions: false },
-      );
+      const { error: confirmError, paymentIntent } =
+        await stripe.confirmPaymentIntent(
+          clientSecret,
+          {
+            payment_method: ev.paymentMethod.id,
+          },
+          { handleActions: false },
+        );
       if (confirmError) {
         // Report to the browser that the payment failed, prompting it to
         // re-show the payment interface, or show an error message and close
@@ -87,15 +85,13 @@ function SinglePayment({
       setLoading(true);
     }
 
-    const {
-      error: stripeError,
-      paymentIntent,
-    } = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: cardElement,
-      },
-      setup_future_usage: 'off_session',
-    });
+    const { error: stripeError, paymentIntent } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: cardElement,
+        },
+        setup_future_usage: 'off_session',
+      });
 
     if (stripeError) {
       // Show error to your customer
@@ -120,15 +116,13 @@ function SinglePayment({
 
     setLoading(true);
 
-    const {
-      error: stripeError,
-      paymentIntent,
-    } = await stripe.confirmSepaDebitPayment(clientSecret, {
-      payment_method: {
-        sepa_debit: iban,
-        billing_details: stripeBillingDetails,
-      },
-    });
+    const { error: stripeError, paymentIntent } =
+      await stripe.confirmSepaDebitPayment(clientSecret, {
+        payment_method: {
+          sepa_debit: iban,
+          billing_details: stripeBillingDetails,
+        },
+      });
 
     if (stripeError) {
       // Show error to your customer.
@@ -181,7 +175,7 @@ export default ({
       fonts: [
         {
           cssSrc:
-            'https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap',
+            'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap',
         },
       ],
       ...stripeOptions,

@@ -1,64 +1,48 @@
-import { borderRadius, colors, gridSize, math, typography } from '@uidu/theme';
 import styled from 'styled-components';
+import tw from 'twin.macro';
+import { Appearance } from '../types';
 
-const { N500 } = colors;
-const { multiply } = math;
-const { h500 } = typography;
+const containerAppearances = {
+  info: tw`bg-blue-50 text-blue-800`,
+  warning: tw`bg-yellow-50 text-yellow-800`,
+  error: tw`bg-red-50 text-red-800`,
+  confirmation: tw`bg-green-50 text-green-800`,
+  change: tw`bg-purple-50 text-purple-800`,
+};
 
-export const Container = styled.section<{ backgroundColor: string }>`
-  display: flex;
-  border-radius: ${borderRadius}px;
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  padding: ${multiply(gridSize, 2)}px;
+export const Container = styled.section<{ appearance: Appearance }>`
+  ${tw`flex rounded p-3.5`}
+  ${({ appearance }) => containerAppearances[appearance]}
 `;
 
 export const ContentContainer = styled.div`
-  flex-grow: 1;
+  ${tw`flex-grow`}
 `;
 
 export const Title = styled.h1`
-  margin: 0;
-  ${h500};
+  ${tw`text-lg font-semibold leading-normal`}
 `;
 
 export const Description = styled.div`
   * + & {
-    margin-top: 8px;
+    ${tw`mt-1.5`}
   }
 `;
 
 export const Actions = styled.ul`
-  display: flex;
-  list-style: none;
-  padding-left: 0;
+  ${tw`flex`}
   * + & {
-    margin-top: 8px;
+    ${tw`mt-1.5`}
   }
 `;
 
 export const Action = styled.li`
-  align-items: center;
-  display: flex;
-  margin: 0;
+  ${tw`m-0 flex items-center`}
   & + &::before {
-    color: ${N500};
-    content: '·';
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    width: ${multiply(gridSize, 2)}px;
+    ${tw`w-4 inline-block text-center align-middle content[.] text-gray-300`}
   }
 `;
 
-// If the icon is not wrapped in a div with a width, and we instead use margin or
-// padding, the icon is shrunk by the padding.
-// Since the icons will have a consistent size, we can treat them as pre-calculated
-// space.
 export const IconWrapper = styled.div`
-  flex: 0 0 auto;
-  width: ${multiply(gridSize, 5)}px;
-  > span {
-    margin: -2px 0;
-    vertical-align: top;
-  }
+  ${tw`flex[0 0 auto] mr-2.5`}
 `;

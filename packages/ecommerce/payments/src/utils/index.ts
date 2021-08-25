@@ -4,14 +4,25 @@ import {
 } from '@stripe/stripe-js';
 
 const defaultOptions = {
-  classes: {
-    base: 'form-control',
-  },
+  classes: {},
   style: {
+    // base: {
+    //   iconColor: '#c4f0ff',
+    //   color: 'rgb(var(--body-primary-color))',
+    //   fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
+    //   fontSize: '16px',
+    //   fontSmoothing: 'antialiased',
+    //   ':-webkit-autofill': {
+    //     color: '#fce883',
+    //   },
+    //   '::placeholder': {
+    //     color: '#87BBFD',
+    //   },
+    // },
     base: {
       fontSize: '15px',
       color: 'var(--body-color)',
-      fontFamily: 'Rubik',
+      fontFamily: 'Inter',
       '::placeholder': {
         color: '#868e96',
         fontWeight: 400,

@@ -11,7 +11,6 @@ import usePaymentRequest from '../hooks/usePaymentRequest';
 import { RecurringPaymentProps } from '../types';
 
 function RecurringPayment({
-  scope = 'primary',
   children,
   onSave = (paymentIntent: PaymentIntent, model: any) => Promise.resolve(),
   amount,
@@ -42,10 +41,8 @@ function RecurringPayment({
       const { client_secret, status } = payment_intent;
 
       if (status === 'requires_action') {
-        const {
-          error: stripeError,
-          paymentIntent,
-        } = await stripe.confirmCardPayment(client_secret);
+        const { error: stripeError, paymentIntent } =
+          await stripe.confirmCardPayment(client_secret);
         if (stripeError) {
           // Display error message in your UI.
           // The card was declined (i.e. insufficient funds, card has expired, etc)
@@ -54,13 +51,13 @@ function RecurringPayment({
         } else {
           // Show a success message to your customer
           // setLoading(false);
-          onSave(paymentIntent);
+          onSave(paymentIntent, {});
         }
       } else {
         // No additional information was needed
         // Show a success message to your customer
         // setLoading(false);
-        onSave(payment_intent);
+        onSave(payment_intent, {});
       }
     }
   };
@@ -153,7 +150,7 @@ export default ({
       fonts: [
         {
           cssSrc:
-            'https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap',
+            'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap',
         },
       ],
       ...stripeOptions,

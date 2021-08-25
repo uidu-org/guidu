@@ -1,37 +1,38 @@
 import Form from '@uidu/form';
+import SectionMessage from '@uidu/section-message';
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
+import tw from 'twin.macro';
 import FieldCard from '../Fields/FieldCard';
 
 export default function Card({
   handleSubmit,
   providerProps = {},
+  formProps = {},
   onChange,
   loading = false,
   canSubmit = false,
   error,
-  footerRenderer,
+  footerRenderer = (props: { loading?: boolean; canSubmit?: boolean }) => null,
   provider,
   children,
+  label = (
+    <FormattedMessage defaultMessage="Insert your credit / debit card details" />
+  ),
 }) {
   const [isLoading, setIsLoading] = useState(true);
+
   return (
     <>
       <style>{`#credit-card { display: flex; flex-direction: column; justify-content: center; }`}</style>
       <Form
         handleSubmit={async (model) => handleSubmit(provider, model)}
         footerRenderer={() => footerRenderer({ loading, canSubmit })}
+        {...formProps}
       >
-        <div
-          style={{
-            position: 'relative',
-            visibility: isLoading ? 'hidden' : 'visible',
-          }}
-        >
+        <div css={[tw`relative`, isLoading ? tw`invisible` : tw`visible`]}>
           <FieldCard
-            label={
-              <FormattedMessage defaultMessage="Insert your credit / debit card details" />
-            }
+            label={label}
             id="credit-card"
             name="credit-card"
             onChange={onChange}
@@ -40,7 +41,11 @@ export default function Card({
             required
           />
         </div>
-        {error && <div className="alert alert-warning">{error.message}</div>}
+        {error && (
+          <SectionMessage appearance="error" tw="mb-3">
+            {error.message}
+          </SectionMessage>
+        )}
         {children}
       </Form>
     </>

@@ -63,7 +63,6 @@ export default function RecurringPaymentExample({}) {
                   {...paymentProps}
                   provider={{ name: 'Credit card', id: 'card' }}
                   providerProps={{ hidePostalCode: true }}
-                  scope="donations"
                 />
               );
             }
@@ -73,7 +72,6 @@ export default function RecurringPaymentExample({}) {
                 {...paymentProps}
                 provider={{ name: 'Credit card', id: 'card' }}
                 providerProps={{ hidePostalCode: true }}
-                scope="donations"
               />
             );
           }}

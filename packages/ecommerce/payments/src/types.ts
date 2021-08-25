@@ -1,6 +1,7 @@
 import {
   PaymentIntent,
   PaymentMethod,
+  PaymentRequest,
   Stripe,
   StripeElementsOptions,
 } from '@stripe/stripe-js';
@@ -8,8 +9,13 @@ import { FormProps } from '@uidu/form';
 import { FC, ReactNode } from 'react';
 import { IconProps } from 'react-feather';
 
-export type PaymentProviderTypes = {
-  id: 'credit_card' | 'bank_account';
+export type PaymentProviderTypes =
+  | 'credit_card'
+  | 'credit_card_split'
+  | 'bank_account';
+
+export type PaymentProviders = {
+  id: PaymentProviderTypes;
   name?: string | ReactNode;
   component: FC<any>;
   icon?: FC<IconProps>;
@@ -18,14 +24,15 @@ export type PaymentProviderTypes = {
 export interface SharedPaymentProps {
   stripe?: Stripe | Promise<Stripe | null>;
   stripeOptions?: StripeElementsOptions;
-  stripeBillingDetails: PaymentMethod['billing_details'];
-  scope?: string;
+  stripeBillingDetails?: PaymentMethod['billing_details'];
+  formProps?: any;
   footerRenderer: FormProps['footerRenderer'];
   /** Label is printed in Payment Request */
   label: string;
   onSave: (paymentIntent: PaymentIntent, model: any) => Promise<any>;
   children: (paymentProps: any) => any;
   amount: number;
+  providers: PaymentProviderTypes[];
 }
 
 export type SinglePaymentProps = SharedPaymentProps & {
@@ -37,6 +44,8 @@ export type RecurringPaymentProps = SharedPaymentProps & {
 };
 
 export type PaymentMethodsProps = {
+  providers: PaymentProviderTypes[];
+  paymentRequest?: PaymentRequest;
   label: string;
   amount: number;
   handleCharge: () => void;
@@ -45,12 +54,9 @@ export type PaymentMethodsProps = {
 
 export type PayWithCardProps = {
   handleSubmit: () => void;
-  scope?: string;
 };
 export type PayWithBankProps = {
   handleSubmit: () => void;
-  scope?: string;
-  mandate?: any;
 };
 
 export type PayProps = PayWithCardProps &

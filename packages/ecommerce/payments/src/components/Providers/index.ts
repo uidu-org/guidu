@@ -1,13 +1,20 @@
 import { CreditCard, DollarSign } from 'react-feather';
-import { PaymentProviderTypes } from '../../types';
+import { PaymentProviders } from '../../types';
 import PayWithBank from './Bank';
 import PayWithCard from './Card';
+import PayWithCardSplit from './CardSplit';
 
-const paymentProviders: PaymentProviderTypes[] = [
+const paymentProviders: PaymentProviders[] = [
   {
     id: 'credit_card',
     component: PayWithCard,
     name: 'Card',
+    icon: CreditCard,
+  },
+  {
+    id: 'credit_card_split',
+    component: PayWithCardSplit,
+    name: 'CardSplit',
     icon: CreditCard,
   },
   {

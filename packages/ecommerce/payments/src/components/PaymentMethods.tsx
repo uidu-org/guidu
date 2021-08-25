@@ -26,7 +26,7 @@ const Separator = styled.div`
 `;
 
 function PaymentMethods({
-  providers = ['credit_card', 'bank_account'],
+  providers,
   paymentRequest,
   ...rest
 }: PaymentMethodsProps) {
@@ -35,6 +35,7 @@ function PaymentMethods({
       paymentProviders.filter((provider) => providers.includes(provider.id)),
     [providers],
   );
+
   const [currentProvider, setCurrentProvider] = useState(
     availableProviders()[0],
   );
@@ -43,31 +44,36 @@ function PaymentMethods({
 
   return (
     <div>
-      <div style={{ height: 48 }}>
-        {paymentRequest && <PaymentRequest paymentRequest={paymentRequest} />}
-      </div>
-      <Separator className="my-4">Or</Separator>
-
+      {paymentRequest && (
+        <>
+          <div tw="height[48px]">
+            {paymentRequest && (
+              <PaymentRequest paymentRequest={paymentRequest} />
+            )}
+          </div>
+          <Separator tw="my-4">Or</Separator>
+        </>
+      )}
       {availableProviders().length > 1 && (
-        <div className="d-flex mb-3">
+        <div tw="flex mb-3">
           {availableProviders().map((provider) => {
             const { id, name, icon: Icon } = provider;
             return (
-              <div key={id} className="mr-2" style={{ width: 96 }}>
+              <div key={id} tw="mr-2" style={{ width: 96 }}>
                 <a
-                  className="card card-body p-3 mb-3"
+                  tw="border rounded p-4 mb-4 flex flex-col items-center"
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
                     setCurrentProvider(provider);
                   }}
                 >
-                  <div className="d-flex flex-column align-items-start">
-                    <div className="bg-light px-2 py-2 mb-3 rounded d-flex">
-                      <Icon className="flex-shrink-0" size={18} />
+                  <div tw="flex flex-col items-start">
+                    <div tw="px-2 py-2 mb-2 rounded flex items-center justify-center">
+                      <Icon size={18} />
                     </div>
-                    <div className="mr-auto text-nowrap">
-                      <h6 className="mb-0">{name}</h6>
+                    <div tw="mr-auto whitespace-nowrap">
+                      <h6 tw="mb-0">{name}</h6>
                     </div>
                   </div>
                 </a>

@@ -1,6 +1,12 @@
+import {
+  CheckCircleIcon,
+  ExclamationIcon,
+  InformationCircleIcon,
+  QuestionMarkCircleIcon,
+  XCircleIcon,
+} from '@heroicons/react/solid';
 import Button from '@uidu/button';
 import React from 'react';
-import { baseAppearanceObj } from '../theme';
 import { Appearance } from '../types';
 import {
   Action,
@@ -56,12 +62,24 @@ interface Props {
   linkComponent?: React.ComponentType<any>;
 }
 
-export default class SectionMessage extends React.Component<Props, any> {
-  static defaultProps = {
-    appearance: 'info',
-  };
+export const baseIcons: { [key: Appearance]: React.FC<any> } = {
+  info: () => <InformationCircleIcon tw="h-6 w-6 text-blue-500" />,
+  warning: () => <ExclamationIcon tw="h-6 w-6 text-yellow-500" />,
+  error: () => <XCircleIcon tw="h-6 w-6 text-red-500" />,
+  confirmation: () => <CheckCircleIcon tw="h-6 w-6 text-green-500" />,
+  change: () => <QuestionMarkCircleIcon tw="h-6 w-6 text-purple-500" />,
+};
 
-  renderAction = (
+export default function SectionMessage({
+  appearance = 'info',
+  children,
+  title,
+  actions,
+  icon,
+  linkComponent,
+  className,
+}: Props) {
+  const renderAction = (
     action: ActionType,
     linkComponent?: React.ComponentType<any>,
   ) => {
@@ -71,6 +89,7 @@ export default class SectionMessage extends React.Component<Props, any> {
       <Action key={key}>
         {onClick || href ? (
           <Button
+            as="a"
             appearance="link"
             spacing="none"
             onClick={onClick}
@@ -86,38 +105,22 @@ export default class SectionMessage extends React.Component<Props, any> {
     );
   };
 
-  render() {
-    const {
-      children,
-      title,
-      actions,
-      appearance,
-      icon,
-      linkComponent,
-    } = this.props;
-    //needs typecasting because TS is not recognising default props :(
-    const appearanceObj =
-      baseAppearanceObj[appearance as Appearance] || baseAppearanceObj.info;
-    const Icon = icon || appearanceObj.Icon;
+  const Icon = icon || baseIcons[appearance];
 
-    return (
-      <Container backgroundColor={appearanceObj.backgroundColor}>
-        <IconWrapper>
-          <Icon
-            primaryColor={appearanceObj.primaryIconColor}
-            secondaryColor={appearanceObj.backgroundColor}
-          />
-        </IconWrapper>
-        <ContentContainer>
-          {title ? <Title>{title}</Title> : null}
-          {children ? <Description>{children}</Description> : null}
-          {actions && actions.length ? (
-            <Actions>
-              {actions.map(action => this.renderAction(action, linkComponent))}
-            </Actions>
-          ) : null}
-        </ContentContainer>
-      </Container>
-    );
-  }
+  return (
+    <Container appearance={appearance} className={className}>
+      <IconWrapper>
+        <Icon />
+      </IconWrapper>
+      <ContentContainer>
+        {title ? <Title>{title}</Title> : null}
+        {children ? <Description>{children}</Description> : null}
+        {actions && actions.length ? (
+          <Actions>
+            {actions.map((action) => renderAction(action, linkComponent))}
+          </Actions>
+        ) : null}
+      </ContentContainer>
+    </Container>
+  );
 }

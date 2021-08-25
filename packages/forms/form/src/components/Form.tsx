@@ -1,6 +1,6 @@
 import { ClassValue } from 'classnames/types';
 import Formsy from 'formsy-react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FormProps, LayoutType } from '../types';
 import FormContext from './FormContext';
@@ -37,6 +37,8 @@ function Form({
   const [canSubmit, setCanSubmit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  useImperativeHandle(forwardedRef, () => form.current);
+
   useEffect(() => {
     isMounted.current = true;
     return function cleanup(): void {
@@ -69,7 +71,7 @@ function Form({
     <FormContext.Provider value={contextProps}>
       <Formsy
         {...rest}
-        ref={forwardedRef}
+        ref={form}
         onValidSubmit={onValidSubmit}
         onValid={enableButton}
         onInvalid={disableButton}

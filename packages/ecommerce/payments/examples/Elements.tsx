@@ -15,21 +15,17 @@ export default class Elements extends Component<any> {
             fonts: [
               {
                 cssSrc:
-                  'https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap',
+                  'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap',
               },
             ],
           }}
         >
           <>
             <div className="mb-5">
-              <PayWithCard
-                providerProps={{ hidePostalCode: true }}
-                scope="donations"
-              />
+              <PayWithCard providerProps={{ hidePostalCode: true }} />
             </div>
             <PayWithBank
               providerProps={{ hidePostalCode: true }}
-              scope="secondary"
               handleSubmit={console.log}
             />
           </>

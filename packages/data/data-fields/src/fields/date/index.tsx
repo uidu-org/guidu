@@ -28,7 +28,7 @@ const Date: Partial<Field> = {
   // filter: 'agDateColumnFilter',
   Cell: (params) =>
     params.value ? (
-      <div tw="flex w-full content-between">
+      <div tw="flex w-full justify-between">
         {dayjs(params.value).format('L')}
         <span>{dayjs(params.value).format('LT')}</span>
       </div>

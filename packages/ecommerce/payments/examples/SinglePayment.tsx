@@ -1,5 +1,5 @@
 import FieldText from '@uidu/field-text';
-import { FormSectionSubmit } from '@uidu/form';
+import { FormSubmit } from '@uidu/form';
 import {
   ScrollableContainer,
   ShellBody,
@@ -8,6 +8,7 @@ import {
 } from '@uidu/shell';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { IntlProvider } from 'react-intl';
 import { PaymentMethods, SinglePayment } from '../src';
 
@@ -46,10 +47,13 @@ export default function Basic({}) {
       <ShellMain>
         <ShellBody>
           <ScrollableContainer>
-            <div className="container p-5 my-5">
-              <div className="row justify-content-center">
-                <div className="col-9">
+            <div tw="container p-5 my-5">
+              <div tw="flex justify-center">
+                <div tw="w-9/12">
                   <SinglePayment
+                    formProps={{
+                      id: 'test-1',
+                    }}
                     stripe={stripe}
                     label="Test"
                     amount={3000}
@@ -57,14 +61,23 @@ export default function Basic({}) {
                       await console.log(paymentIntent);
                     }}
                     clientSecret={paymentIntent?.client_secret}
-                    providers={['credit_card', 'bank_account']}
-                    footerRenderer={(props) => (
-                      <FormSectionSubmit
-                        {...props}
-                        label="Donate 30"
-                        scope="primary"
-                      />
-                    )}
+                    providers={[
+                      'credit_card',
+                      'credit_card_split',
+                      'bank_account',
+                    ]}
+                    footerRenderer={(props) => {
+                      return createPortal(
+                        <div tw="fixed left-0 top-0">
+                          <FormSubmit
+                            {...props}
+                            form="test-1"
+                            label="Donate 30"
+                          />
+                        </div>,
+                        document.body,
+                      );
+                    }}
                   >
                     {(paymentProps) => {
                       return (

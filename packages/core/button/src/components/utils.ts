@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { StyledComponent } from 'styled-components';
 import { ButtonProps } from '../types';
 
 export const mapAttributesToState = ({
@@ -32,13 +32,23 @@ export const mapAttributesToState = ({
 export const filterProps = (
   // @ts-ignore - createAnalyticsEvent is injected from WithAnalyticsEvents HOC
   { createAnalyticsEvent, testId, ...props }: Partial<ButtonProps>,
-  type: React.ReactNode,
 ) => {
-  if (type === 'span') {
+  const { as }: { as?: string | StyledComponent<any, any> } = props;
+
+  let underlyingTarget = 'button';
+  if (as) {
+    if (typeof as === 'string') {
+      underlyingTarget = as;
+    } else if (as.target) {
+      underlyingTarget = as.target;
+    }
+  }
+
+  if (underlyingTarget === 'span') {
     const { target, href, ...rest } = props;
     return rest;
   }
-  if (type !== 'button') {
+  if (underlyingTarget !== 'button') {
     const { type, ...rest } = props;
     return rest;
   }

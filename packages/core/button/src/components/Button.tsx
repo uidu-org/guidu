@@ -72,7 +72,6 @@ function Button(props: ButtonProps) {
     isSelected = false,
     shouldFitContainer = false,
     spacing = 'default',
-    theme = (current, props) => current(props),
     type = 'button',
     onMouseEnter,
     onMouseLeave,
@@ -155,15 +154,12 @@ function Button(props: ButtonProps) {
 
   return (
     <StyledButton
-      {...filterProps(
-        {
-          type,
-          href,
-          to,
-          ...rest,
-        },
-        StyledButton,
-      )}
+      {...filterProps({
+        type,
+        href,
+        to,
+        ...rest,
+      })}
       ref={getComposedRefs(button, consumerRef)}
       onMouseEnter={_onMouseEnter}
       onMouseLeave={_onMouseLeave}
@@ -206,8 +202,8 @@ function Button(props: ButtonProps) {
       ]}
       appearance={appearance}
       className={className}
-      $iconIsOnlyChild={iconIsOnlyChild}
       status={mapAttributesToState(attributes)}
+      $iconIsOnlyChild={iconIsOnlyChild}
     >
       <InnerWrapper onClick={_onInnerClick} fit={!!shouldFitContainer}>
         {isLoading && (
