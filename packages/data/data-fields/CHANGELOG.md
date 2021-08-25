@@ -1,5 +1,22 @@
 # @uidu/data-fields
 
+## 1.0.2
+
+### Patch Changes
+
+- 3e8c9666d: Stable payments (maybe will be extracted), button and forms API updates
+- Updated dependencies [3e8c9666d]
+  - @uidu/button@1.2.0
+  - @uidu/form@1.2.0
+  - @uidu/field-color-picker@1.0.2
+  - @uidu/field-date@1.1.2
+  - @uidu/field-downshift@1.1.2
+  - @uidu/field-number@1.0.2
+  - @uidu/field-text@1.1.2
+  - @uidu/field-time@1.1.2
+  - @uidu/field-toggle@1.0.2
+  - @uidu/select@1.1.2
+
 ## 1.0.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-file-uploader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A file uploader",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-file-uploader",
   "license": "MIT",
@@ -10,7 +10,7 @@
   "types": "dist/uidu-field-file-uploader.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.15.3",
-    "@uidu/field-base": "^2.0.2",
+    "@uidu/field-base": "^3.0.0",
     "@uppy/core": "^1.20.1",
     "@uppy/dashboard": "^1.21.1",
     "@uppy/react": "^1.12.2",
@@ -20,7 +20,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.0",
-    "@uidu/form": "^1.1.2"
+    "@uidu/docs": "^0.4.1",
+    "@uidu/form": "^1.2.0"
   }
 }
