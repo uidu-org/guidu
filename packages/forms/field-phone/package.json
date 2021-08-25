@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-phone",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-phone",
   "license": "MIT",
   "sideEffects": false,
@@ -10,15 +10,15 @@
   "dependencies": {
     "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.5.0",
-    "@uidu/field-base": "^2.0.0",
-    "@uidu/field-text": "^1.1.0",
+    "@uidu/field-base": "^3.0.0",
+    "@uidu/field-text": "^1.1.2",
     "formsy-react": "^2.2.5",
     "react": "^17.0.2",
     "react-phone-number-input": "^3.1.25",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.0",
-    "@uidu/form": "^1.1.0"
+    "@uidu/docs": "^0.4.1",
+    "@uidu/form": "^1.2.0"
   }
 }

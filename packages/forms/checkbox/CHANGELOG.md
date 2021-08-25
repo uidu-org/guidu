@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.1.1
+
+### Patch Changes
+
+- @uidu/field-base@3.0.0
+
 ## 1.1.0
 
 ### Minor Changes

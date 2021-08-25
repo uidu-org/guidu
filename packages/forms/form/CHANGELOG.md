@@ -1,5 +1,16 @@
 # Change Log
 
+## 1.2.0
+
+### Minor Changes
+
+- 3e8c9666d: Stable payments (maybe will be extracted), button and forms API updates
+
+### Patch Changes
+
+- Updated dependencies [3e8c9666d]
+  - @uidu/button@1.2.0
+
 ## 1.1.3
 
 ### Patch Changes

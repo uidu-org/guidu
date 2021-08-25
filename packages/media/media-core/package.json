@@ -9,13 +9,13 @@
   "module": "dist/uidu-media-core.esm.js",
   "types": "dist/uidu-media-core.cjs.d.ts",
   "dependencies": {
-    "@uidu/docs": "^0.4.0",
+    "@uidu/docs": "^0.4.1",
     "@uppy/aws-s3": "^1.8.0",
     "@uppy/xhr-upload": "^1.7.5",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/section-message": "^0.5.0",
+    "@uidu/section-message": "^0.6.0",
     "react": "^17.0.2"
   },
   "peerDependencies": {
