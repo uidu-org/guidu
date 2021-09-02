@@ -1,5 +1,12 @@
 # @uidu/message
 
+## 0.4.4
+
+### Patch Changes
+
+- Updated dependencies [6b0982231]
+  - @uidu/drawer@0.7.0
+
 ## 0.4.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 1.0.4
+
+### Patch Changes
+
+- 0eecdc629: PieStateless and custom formattingFn for counters
+
 ## 1.0.3
 
 ### Patch Changes

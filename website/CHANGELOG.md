@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.4.5
+
+### Patch Changes
+
+- 6b0982231: Drawer is now extendable with className (applied to Wrapper element)
+- Updated dependencies [6b0982231]
+  - @uidu/drawer@0.7.0
+
 ## 0.4.4
 
 ### Patch Changes
