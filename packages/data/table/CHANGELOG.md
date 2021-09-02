@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.0.3
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/button@1.2.1
+  - @uidu/dropdown-menu@0.6.2
+  - @uidu/menu@0.5.2
+  - @uidu/popup@0.5.2
+  - @uidu/data-fields@1.0.3
+  - @uidu/checkbox@1.1.2
+
 ## 1.0.2
 
 ### Patch Changes

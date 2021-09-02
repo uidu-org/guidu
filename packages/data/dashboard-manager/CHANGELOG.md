@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 1.0.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/dashboard-controls@1.0.1
+  - @uidu/dashlets@1.0.3
+
 ## 1.0.0
 
 ### Major Changes

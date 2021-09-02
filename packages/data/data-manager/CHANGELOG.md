@@ -1,5 +1,23 @@
 # @uidu/data-manager
 
+## 1.1.0
+
+### Minor Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+
+### Patch Changes
+
+- Updated dependencies [beb3edb67]
+  - @uidu/spinner@0.5.1
+  - @uidu/board@0.4.1
+  - @uidu/data-controls@1.0.1
+  - @uidu/data-fields@1.0.3
+  - @uidu/gallery@1.0.1
+  - @uidu/list@1.0.1
+  - @uidu/table@1.0.3
+  - @uidu/shell@2.0.3
+
 ## 1.0.0
 
 ### Major Changes

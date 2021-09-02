@@ -1,5 +1,13 @@
 # @uidu/editor-markdown-transformer
 
+## 0.5.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/editor-common@0.5.3
+
 ## 0.5.0
 
 ### Minor Changes

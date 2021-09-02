@@ -1,5 +1,15 @@
 # @uidu/media-filmstrip
 
+## 0.4.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/theme@0.6.1
+  - @uidu/media-card@0.5.4
+  - @uidu/media-viewer@0.4.2
+
 ## 0.4.0
 
 ### Minor Changes

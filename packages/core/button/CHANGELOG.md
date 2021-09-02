@@ -1,5 +1,14 @@
 # @uidu/button
 
+## 1.2.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/spinner@0.5.1
+  - @uidu/theme@0.6.1
+
 ## 1.2.0
 
 ### Minor Changes

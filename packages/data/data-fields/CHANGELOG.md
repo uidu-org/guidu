@@ -1,5 +1,23 @@
 # @uidu/data-fields
 
+## 1.0.3
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/field-downshift@1.2.0
+  - @uidu/select@1.2.0
+  - @uidu/button@1.2.1
+  - @uidu/menu@0.5.2
+  - @uidu/field-color-picker@1.0.3
+  - @uidu/field-date@1.1.3
+  - @uidu/field-number@1.0.3
+  - @uidu/field-text@1.1.3
+  - @uidu/field-time@1.1.3
+  - @uidu/field-toggle@1.0.3
+  - @uidu/form@1.2.1
+
 ## 1.0.2
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.4.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/shell@2.0.3
+
 ## 0.4.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashlets",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/dashlets",
   "license": "MIT",
@@ -15,12 +15,12 @@
     "@cubejs-client/core": "^0.28.25",
     "@cubejs-client/react": "^0.28.25",
     "@loadable/component": "^5.15.0",
-    "@uidu/dashboard-manager": "^1.0.0",
-    "@uidu/dashlet-controls": "^1.0.0",
-    "@uidu/data-fields": "^1.0.2",
-    "@uidu/spinner": "^0.5.0",
-    "@uidu/table": "1.0.2",
-    "@uidu/tooltip": "^0.5.1",
+    "@uidu/dashboard-manager": "^1.0.1",
+    "@uidu/dashlet-controls": "^1.0.1",
+    "@uidu/data-fields": "^1.0.3",
+    "@uidu/spinner": "^0.5.1",
+    "@uidu/table": "1.0.3",
+    "@uidu/tooltip": "^0.5.2",
     "d3-array": "^3.0.2",
     "lodash": "^4.17.21",
     "numeral": "^2.0.6",
@@ -37,7 +37,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.1"
+    "@uidu/docs": "^0.4.2"
   },
   "publishConfig": {
     "access": "public"

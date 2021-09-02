@@ -1,5 +1,15 @@
 # @uidu/status
 
+## 0.4.3
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/lozenge@0.5.1
+  - @uidu/theme@0.6.1
+  - @uidu/field-text@1.1.3
+
 ## 0.4.2
 
 ### Patch Changes

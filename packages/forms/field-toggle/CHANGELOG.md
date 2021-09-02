@@ -1,5 +1,14 @@
 # @uidu/toggle
 
+## 1.0.3
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/theme@0.6.1
+  - @uidu/field-base@3.0.1
+
 ## 1.0.2
 
 ### Patch Changes

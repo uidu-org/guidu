@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.8.0
+
+### Minor Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+
+### Patch Changes
+
+- Updated dependencies [beb3edb67]
+  - @uidu/theme@0.6.1
+  - @uidu/tooltip@0.5.2
+
 ## 0.7.0
 
 ### Minor Changes

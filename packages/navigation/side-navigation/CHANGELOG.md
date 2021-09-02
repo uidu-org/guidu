@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 1.0.2
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/avatar@0.8.0
+  - @uidu/dropdown-menu@0.6.2
+  - @uidu/inline-dialog@0.5.2
+  - @uidu/theme@0.6.1
+  - @uidu/tooltip@0.5.2
+  - @uidu/shell@2.0.3
+
 ## 1.0.1
 
 ### Patch Changes

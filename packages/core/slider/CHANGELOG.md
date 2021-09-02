@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.7.3
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+
 ## 1.7.2
 
 ### Patch Changes

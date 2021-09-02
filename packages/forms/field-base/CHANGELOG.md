@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.0.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/form@1.2.1
+
 ## 3.0.0
 
 ### Patch Changes

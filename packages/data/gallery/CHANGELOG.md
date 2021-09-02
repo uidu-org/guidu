@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.0.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/spinner@0.5.1
+  - @uidu/data-controls@1.0.1
+  - @uidu/data-fields@1.0.3
+  - @uidu/shell@2.0.3
+
 ## 1.0.0
 
 ### Major Changes

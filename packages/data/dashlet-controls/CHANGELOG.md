@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 1.0.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/avatar@0.8.0
+  - @uidu/avatar-group@2.6.1
+  - @uidu/dropdown-menu@0.6.2
+  - @uidu/field-date-range@1.1.2
+  - @uidu/form@1.2.1
+
 ## 1.0.0
 
 ### Major Changes

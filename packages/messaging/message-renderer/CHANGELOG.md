@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/dropdown-menu@0.6.2
+  - @uidu/theme@0.6.1
+
 ## 0.4.0
 
 ### Minor Changes

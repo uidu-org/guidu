@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.2.2
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+
 ## 0.2.1
 
 ### Patch Changes
