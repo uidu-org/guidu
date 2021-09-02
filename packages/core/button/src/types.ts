@@ -1,5 +1,6 @@
 import { UIAnalyticsEvent } from '@uidu/analytics';
 import * as React from 'react';
+import { LinkProps } from 'react-router-dom';
 
 export type ButtonAppearances =
   | 'default'
@@ -32,7 +33,7 @@ export type OnlyButtonProps = {
   /** Provides a url for buttons being used as a link */
   href?: string;
   /** Provides a url for buttons being used as a react-router-dom Link */
-  to?: string;
+  to?: string | LinkProps['to'];
   /** Places an icon within the button, after the button's text */
   iconAfter?: React.ReactChild;
   /** Places an icon within the button, before the button's text */

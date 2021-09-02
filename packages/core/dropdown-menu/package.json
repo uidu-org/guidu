@@ -8,7 +8,7 @@
   "main": "dist/uidu-dropdown-menu.cjs.js",
   "module": "dist/uidu-dropdown-menu.esm.js",
   "dependencies": {
-    "@atlaskit/icon": "^21.7.4",
+    "@atlaskit/icon": "^21.8.0",
     "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.5.0",
     "@uidu/button": "^1.1.0",
@@ -28,7 +28,7 @@
     "@uidu/tooltip": "^0.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.1"
   },
   "peerDependencies": {
     "react": "^17.0.0",

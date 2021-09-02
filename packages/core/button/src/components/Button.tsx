@@ -170,7 +170,7 @@ function Button(props: ButtonProps) {
       disabled={isDisabled}
       css={[
         tw`align-baseline border-width[1px] border-transparent inline-flex max-w-full outline-none! text-center text-decoration[none] whitespace-nowrap font-size[inherit] font-style[normal] font-weight[normal]`,
-        tw`rounded appearance-none`,
+        tw`font-medium rounded appearance-none font-size[.975rem]`,
         isLoading && tw`pointer-events-none`,
         state === 'hover'
           ? {
@@ -185,7 +185,7 @@ function Button(props: ButtonProps) {
         (appearance === 'link' || appearance === 'subtle-link')
           ? tw`hover:underline`
           : tw`hover:text-decoration[none]`,
-        spacing === 'none' ? tw`p-0` : tw`px-2 py-2`,
+        spacing === 'none' ? tw`p-0` : tw`px-1.5 py-2`,
         tw`line-height[initial]`,
         state === 'hover' || state === 'active' || state === 'selected'
           ? tw`cursor-pointer`

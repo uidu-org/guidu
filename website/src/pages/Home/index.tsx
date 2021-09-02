@@ -25,26 +25,24 @@ const Intro = styled.div`
   }
 `;
 
-export default class HomePage extends React.Component {
-  render() {
-    return (
-      <ShellBody>
-        <ShellMain>
-          <ScrollableContainer>
-            <Helmet>
-              <title>{`${BASE_TITLE}`}</title>
-            </Helmet>
-            <div className="jumbotron rounded-0">
-              <Title>Guidu</Title>
-              <Intro>
-                Uidu&#39;s official UI library, built according to the
-                uidu&nbsp;Design&nbsp;Guidelines.
-              </Intro>
-            </div>
-            <Cards />
-          </ScrollableContainer>
-        </ShellMain>
-      </ShellBody>
-    );
-  }
+export default function HomePage({}) {
+  return (
+    <ShellBody>
+      <ShellMain>
+        <ScrollableContainer>
+          <Helmet>
+            <title>{`${BASE_TITLE}`}</title>
+          </Helmet>
+          <div className="jumbotron rounded-0">
+            <Title>Guidu</Title>
+            <Intro>
+              Uidu&#39;s official UI library, built according to the
+              uidu&nbsp;Design&nbsp;Guidelines.
+            </Intro>
+          </div>
+          <Cards />
+        </ScrollableContainer>
+      </ShellMain>
+    </ShellBody>
+  );
 }

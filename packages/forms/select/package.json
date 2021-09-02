@@ -10,7 +10,7 @@
   "module": "dist/uidu-select.esm.js",
   "types": "dist/uidu-select.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.7.4",
+    "@atlaskit/icon": "^21.8.0",
     "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.5.0",
     "@uidu/checkbox": "^1.1.1",
@@ -30,7 +30,7 @@
     "react-popper": "^2.2.5",
     "react-select": "^4.3.1",
     "shallow-equal": "^1.2.1",
-    "styled-components": "^5.3.0",
+    "styled-components": "^5.3.1",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

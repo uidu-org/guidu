@@ -6,14 +6,14 @@ import { selectDefaultProps } from '../examples-utils';
 import Select from '../src';
 
 const SingleExample = () => (
-  <Form {...formDefaultProps}>
+  <Form {...formDefaultProps} onChange={console.log}>
     <Select
       {...inputDefaultProps}
       {...selectDefaultProps}
-      className="single-select"
-      classNamePrefix="react-select"
       placeholder="Choose a City"
       value={selectDefaultProps.options[0].id}
+      defaultMenuIsOpen
+      isFocused
     />
   </Form>
 );

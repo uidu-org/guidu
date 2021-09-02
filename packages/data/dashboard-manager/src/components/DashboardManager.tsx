@@ -45,7 +45,7 @@ export default function DashboardManager({
 
     const children = useMemo(() => {
       return dashlets.map((dashlet, index) => {
-        return <div key={`${index}`}>{renderDashlet(dashlet)}</div>;
+        return <div key={`${index}`}>{renderDashlet(dashlet, index)}</div>;
       });
     }, [dashlets]);
 

@@ -13,10 +13,8 @@ const Avatar: FC<AvatarProps> = (props) => (
     {({ dimensions }) => {
       return (
         <div
+          tw="inline-block relative outline[0]"
           style={{
-            display: 'inline-block',
-            position: 'relative',
-            outline: 0,
             zIndex: props.stackIndex,
             ...dimensions,
           }}
@@ -41,9 +39,8 @@ export const PresenceWrapper: FC<PresenceWrapperProps> = (props) => (
     {({ presence }) => {
       return (
         <span
+          tw="absolute pointer-events-none"
           style={{
-            pointerEvents: 'none',
-            position: 'absolute',
             ...presence,
           }}
         >
@@ -65,8 +62,8 @@ export const StatusWrapper: FC<StatusWrapperProps> = (props) => (
     {({ status }) => {
       return (
         <span
+          tw="absolute"
           style={{
-            position: 'absolute',
             ...status,
           }}
         >

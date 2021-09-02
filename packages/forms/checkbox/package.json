@@ -20,7 +20,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.4.1",
     "@uidu/form": "^1.2.0",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.1"
   },
   "publishConfig": {
     "access": "public"

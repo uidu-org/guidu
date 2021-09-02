@@ -29,7 +29,7 @@
     "@uidu/form": "^1.2.0",
     "@uidu/radio": "^1.1.1",
     "@uidu/shell": "^2.0.1",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.1"
   },
   "peerDependencies": {
     "styled-components": "*"

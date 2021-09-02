@@ -11,11 +11,9 @@ const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
       }}
     >
       {data.before && (
-        <div tw="mr-2 flex-shrink-0 flex" style={{ width: 22 }}>
-          {data.before}
-        </div>
+        <div tw="mr-3 flex-shrink-0 flex w-6 h-6">{data.before}</div>
       )}
-      <div tw="min-w-0">
+      <div tw="min-w-0 flex-grow">
         <div tw="truncate">{data.name}</div>
       </div>
     </div>

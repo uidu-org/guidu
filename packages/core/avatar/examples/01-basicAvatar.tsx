@@ -6,6 +6,18 @@ export default () => (
   <div>
     <Block heading="Circle">
       <Avatar name="xxlarge" size="xxlarge" />
+      <Avatar
+        name="xxlarge"
+        size="xxlarge"
+        component={(props) => {
+          console.log(props);
+          return (
+            <span tw="absolute h-full w-full flex items-center justify-center bg-red-100 rounded-full text-3xl font-bold">
+              AV
+            </span>
+          );
+        }}
+      />
       <Gap />
       <Avatar name="xlarge" size="xlarge" presence="online" />
       <Gap />

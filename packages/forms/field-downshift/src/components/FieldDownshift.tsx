@@ -91,6 +91,7 @@ function FieldDownshift({
       onSelect={onSelect}
       itemToString={(item) => getOptionLabel({ item })}
       initialSelectedItem={selectedItem}
+      // selectedItem={selectedItem}
     >
       {({
         getRootProps,

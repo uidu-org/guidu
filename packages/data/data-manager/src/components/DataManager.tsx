@@ -26,6 +26,7 @@ import {
 import { useExportData } from 'react-table-plugins';
 import { DataManagerProps } from '../types';
 import DataView from './DataView';
+import DataViewFooter from './DataViewFooter';
 import DataViewSidebar from './DataViewSidebar';
 
 const defaultAvailableControls = {
@@ -295,6 +296,10 @@ export default function DataManager({
     return <DataViewSidebar currentView={currentView} data={rowData} />;
   };
 
+  const renderFooter = () => {
+    return <DataViewFooter tableInstance={tableInstance} />;
+  };
+
   const renderControls = ({ controls }) => {
     const availableControls = {
       ...defaultAvailableControls,
@@ -364,5 +369,6 @@ export default function DataManager({
     renderControls,
     renderView,
     renderSidebar,
+    renderFooter,
   });
 }

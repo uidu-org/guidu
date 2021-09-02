@@ -55,13 +55,13 @@ export default function baseStyles(validationState, isCompact) {
     control: (base, state) => ({
       // none of react-selects styles are passed to <View />
       ...base,
-      backgroundColor: '#fff',
+      backgroundColor: 'rgb(var(--body-on-primary-bg))',
       borderRadius: '.25rem',
       borderColor: state.isFocused
         ? 'rgb(var(--brand-primary))'
         : 'rgb(var(--border))',
       boxShadow: state.isFocused
-        ? '0 0 0 0.2rem rgba(236, 132, 71, 0.25)'
+        ? '0 0 0 0.2rem rgba(var(--brand-primary), .25)'
         : 'none',
       '&:hover': {
         borderColor: state.isFocused
@@ -119,42 +119,36 @@ export default function baseStyles(validationState, isCompact) {
       ...base,
       paddingTop: 0,
       paddingBottom: 0,
-      margin: '0 2px',
+      // margin: '0 2px',
     }),
     option: (base, { isSelected, isFocused, isDisabled }) => ({
       ...base,
       padding: '.75rem 1rem',
       backgroundColor:
-        isSelected || isFocused ? 'rgb(242, 249, 252)' : 'transparent',
-      color: isDisabled ? '#ccc' : 'rgb(51, 51, 51)',
+        isSelected || isFocused
+          ? 'rgba(var(--brand-primary), .05)'
+          : 'transparent',
+      color: isDisabled
+        ? 'rgb(var(--brand-subtle))'
+        : 'rgba(var(--body-primary), 1)',
       '&:hover': {
-        backgroundColor: 'rgb(242, 249, 252)',
-        color: isDisabled ? '#ccc' : 'rgb(51, 51, 51)',
+        backgroundColor: 'rgba(var(--brand-primary), .1)',
+        color: isDisabled
+          ? 'rgb(var(--brand-subtle))'
+          : 'rgba(var(--body-primary), 1)',
       },
     }),
-    // placeholder: css => ({ ...css, color: colors.N100 }),
-    // singleValue: (css, { isDisabled }) => ({
-    //   ...css,
-    //   color: isDisabled ? colors.N70 : colors.N800,
-    //   lineHeight: `${gridSize() * 2}px`, // 16px
-    // }),
-    // menuList: css => ({
-    //   ...css,
-    //   paddingTop: gridSize(),
-    //   paddingBottom: gridSize(),
-    // }),
     multiValue: (css) => ({
       ...css,
-      borderRadius: '2px',
-      backgroundColor: colors.N20,
-      color: colors.N500,
+      borderRadius: '.25rem',
+      backgroundColor: 'rgba(var(--brand-primary), .65)',
+      color: 'rgb(var(--brand-on-primary))',
       maxWidth: '100%',
     }),
-    // multiValueLabel: css => ({
-    //   ...css,
-    //   padding: '2px',
-    //   paddingRight: '2px',
-    // }),
+    multiValueLabel: (css) => ({
+      ...css,
+      color: 'rgb(var(--brand-on-primary))',
+    }),
     // multiValueRemove: (css, { isFocused }) => ({
     //   ...css,
     //   backgroundColor: isFocused && colors.R75,
@@ -170,7 +164,6 @@ export default function baseStyles(validationState, isCompact) {
     indicatorSeparator: (base) => ({
       ...base,
       margin: '.75rem 0',
-      backgroundColor: '#ced4da',
     }),
     indicatorsContainer: (base) => ({
       ...base,

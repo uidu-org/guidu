@@ -4,6 +4,7 @@ import React from 'react';
 import { mergeStyles } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import * as defaultComponents from './components';
+import Input from './components/Input';
 import MultiValueLabel from './components/MultiValueLabel';
 import Option from './components/Option';
 import SingleValue from './components/SingleValue';
@@ -131,6 +132,7 @@ const createSelect = <TOriginalProps extends {}>(
         Option,
         SingleValue,
         MultiValueLabel,
+        Input,
       },
     };
 

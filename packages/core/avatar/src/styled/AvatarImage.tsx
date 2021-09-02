@@ -36,19 +36,14 @@ export const Slot = ({
     {({ backgroundColor, borderRadius }) => {
       return (
         <span
+          tw="bg-cover bg-center bg-no-repeat flex h-full w-full"
           style={{
             backgroundColor,
             backgroundImage: backgroundImage
               ? `url(${backgroundImage})`
               : undefined,
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
             borderRadius,
-            display: 'flex',
             flex: '1 1 100%',
-            height: '100%',
-            width: '100%',
           }}
           role={role}
           aria-label={label}
@@ -81,11 +76,10 @@ export const Svg = ({
     {({ backgroundColor, borderRadius }) => {
       return (
         <svg
+          tw="h-full w-full"
           style={{
             backgroundColor,
             borderRadius,
-            height: '100%',
-            width: '100%',
           }}
           {...otherProps}
         >

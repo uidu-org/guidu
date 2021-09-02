@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef, Ref } from 'react';
 import styled from 'styled-components';
 
 export const ShellBody = styled.div`
@@ -12,6 +12,6 @@ export const ShellBody = styled.div`
   min-height: 0;
 `;
 
-export default function (props) {
-  return <ShellBody {...props} />;
-}
+export default forwardRef((props, ref: Ref<HTMLDivElement>) => (
+  <ShellBody {...props} ref={ref} />
+));
