@@ -1,25 +1,19 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { DrawerPrimitiveProps } from '../types';
 import Content from './Content';
 import { Slide } from './transitions';
 import Wrapper from './Wrapper';
 
-export default class DrawerPrimitive extends PureComponent<
-  DrawerPrimitiveProps
-> {
-  render() {
-    const {
-      children,
-      icon: Icon,
-      onClose,
-      onCloseComplete,
-      ...props
-    } = this.props;
-
-    return (
-      <Slide component={Wrapper} onExited={onCloseComplete} {...props}>
-        <Content>{children}</Content>
-      </Slide>
-    );
-  }
+export default function DrawerPrimitive({
+  children,
+  icon: Icon,
+  onClose,
+  onCloseComplete,
+  ...rest
+}: DrawerPrimitiveProps) {
+  return (
+    <Slide component={Wrapper} onExited={onCloseComplete} {...rest}>
+      <Content>{children}</Content>
+    </Slide>
+  );
 }

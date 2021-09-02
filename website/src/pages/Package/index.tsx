@@ -190,7 +190,6 @@ class Package extends React.Component<Props> {
                                   to={exampleModalPath}
                                   appearance="primary"
                                 >
-                                  {children}
                                   Examples
                                 </Button>
                               </ButtonGroup>
@@ -215,14 +214,14 @@ class Package extends React.Component<Props> {
                                 target="_blank"
                               />
                               <Button
-                                as={Link}
+                                as={Link as any}
                                 to={`/packages/${groupId}/${pkgId}/changelog`}
                                 iconBefore={<List size={16} />}
                               >
                                 Changelog
                               </Button>
                               <Button
-                                as={Link}
+                                as={Link as any}
                                 to={exampleModalPath}
                                 appearance="primary"
                               >

@@ -1,21 +1,21 @@
-import Button from '@uidu/button';
+import Button, { ButtonGroup } from '@uidu/button';
 import React, { Component } from 'react';
 import Drawer from '../src';
-import type { DrawerWidth } from '../src/components/types';
 import { sizes } from '../src/constants';
+import { DrawerSize } from '../src/types';
 
 type State = {
   isDrawerOpen: boolean;
-  size: DrawerWidth;
+  size: DrawerSize;
 };
 
 export default class DrawersExample extends Component<{}, State> {
   state = {
     isDrawerOpen: false,
-    size: 'narrow',
+    size: 'narrow' as DrawerSize,
   };
 
-  openDrawer = (size: DrawerWidth) => () =>
+  openDrawer = (size: DrawerSize) => () =>
     this.setState({
       isDrawerOpen: true,
       size,
@@ -30,6 +30,7 @@ export default class DrawersExample extends Component<{}, State> {
     return (
       <div style={{ padding: '2rem' }}>
         <Drawer
+          tw="bg-red-500"
           onClose={this.closeDrawer}
           isOpen={this.state.isDrawerOpen}
           size={this.state.size}
@@ -40,14 +41,15 @@ export default class DrawersExample extends Component<{}, State> {
             }}
           >{`${this.state.size} drawer contents`}</code>
         </Drawer>
-        {sizes.map((size) => (
-          <Button
-            onClick={this.openDrawer(size)}
-            type="button"
-            key={size}
-            className="mr-2 mb-2"
-          >{`Open ${size} Drawer`}</Button>
-        ))}
+        <ButtonGroup tw="flex-wrap">
+          {sizes.map((size) => (
+            <Button
+              onClick={this.openDrawer(size as DrawerSize)}
+              type="button"
+              key={size}
+            >{`Open ${size} Drawer`}</Button>
+          ))}
+        </ButtonGroup>
       </div>
     );
   }

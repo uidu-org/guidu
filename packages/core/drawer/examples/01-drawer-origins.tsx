@@ -1,14 +1,16 @@
-import Button from '@uidu/button';
+import Button, { ButtonGroup } from '@uidu/button';
 import React, { Component } from 'react';
-import Drawer from '../src';
+import Drawer, { DrawerOrigin } from '../src';
 
 type State = {
+  origin: DrawerOrigin;
   isDrawerOpen: boolean;
 };
 
 export default class DrawersExample extends Component<{}, State> {
   state = {
-    origin: 'left',
+    origin: 'left' as DrawerOrigin,
+    isDrawerOpen: false,
   };
 
   openDrawer = () =>
@@ -39,19 +41,21 @@ export default class DrawersExample extends Component<{}, State> {
         >
           <code>Drawer contents from {origin}</code>
         </Drawer>
-        {['left', 'top', 'right', 'bottom'].map((newOrigin) => (
-          <Button
-            type="button"
-            className="mr-2 mb-2"
-            onClick={() =>
-              this.setState({ origin: newOrigin }, () => {
-                this.openDrawer();
-              })
-            }
-          >
-            Open drawer <code>{newOrigin}</code>
-          </Button>
-        ))}
+        <ButtonGroup>
+          {['left', 'top', 'right', 'bottom'].map((newOrigin) => (
+            <Button
+              type="button"
+              className="mr-2 mb-2"
+              onClick={() =>
+                this.setState({ origin: newOrigin as DrawerOrigin }, () => {
+                  this.openDrawer();
+                })
+              }
+            >
+              Open drawer <code>{newOrigin}</code>
+            </Button>
+          ))}
+        </ButtonGroup>
       </div>
     );
   }

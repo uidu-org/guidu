@@ -8,8 +8,6 @@ import { canUseDOM } from 'exenv';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { TransitionGroup } from 'react-transition-group';
-import { ThemeProvider } from 'styled-components';
-import drawerItemTheme from '../theme/drawer-item-theme';
 import { CloseTrigger, DrawerProps } from '../types';
 import pkg from '../version.json';
 import DrawerPrimitive from './DrawerPrimitive';
@@ -110,6 +108,7 @@ export class DrawerBase extends React.Component<DrawerProps> {
       onCloseComplete,
       origin,
       isStacked,
+      className,
     } = this.props;
 
     return createPortal(
@@ -131,6 +130,7 @@ export class DrawerBase extends React.Component<DrawerProps> {
             shouldUnmountOnExit={shouldUnmountOnExit}
             origin={origin}
             isStacked={isStacked}
+            className={className}
           >
             {children}
           </DrawerPrimitive>
@@ -140,10 +140,6 @@ export class DrawerBase extends React.Component<DrawerProps> {
     );
   }
 }
-
-export const DrawerItemTheme = (props: { children: React.ReactNode }) => (
-  <ThemeProvider theme={drawerItemTheme}>{props.children}</ThemeProvider>
-);
 
 export default withAnalyticsContext({
   componentName: 'drawer',
