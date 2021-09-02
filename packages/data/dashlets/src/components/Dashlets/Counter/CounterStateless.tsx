@@ -21,6 +21,7 @@ const CounterStat = styled.div`
 `;
 
 export default function CounterStateless({
+  formattingFn,
   formatter,
   itemBefore,
   value,
@@ -38,7 +39,9 @@ export default function CounterStateless({
             start={0}
             end={value}
             decimals={0}
-            formattingFn={(value) => format(value, formatter)}
+            formattingFn={(value) =>
+              formattingFn ? formattingFn(value) : format(value, formatter)
+            }
           />
         </CounterStat>
       </CounterStatWrapper>
