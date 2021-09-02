@@ -1,5 +1,12 @@
 # @uidu/data-controls
 
+## 1.0.2
+
+### Patch Changes
+
+- Updated dependencies [6b0982231]
+  - @uidu/drawer@0.7.0
+
 ## 1.0.1
 
 ### Patch Changes

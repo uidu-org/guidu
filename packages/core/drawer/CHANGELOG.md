@@ -1,5 +1,11 @@
 # @uidu/drawer
 
+## 0.7.0
+
+### Minor Changes
+
+- 6b0982231: Drawer is now extendable with className (applied to Wrapper element)
+
 ## 0.6.1
 
 ### Patch Changes
