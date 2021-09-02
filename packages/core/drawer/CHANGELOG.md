@@ -1,5 +1,16 @@
 # @uidu/drawer
 
+## 0.6.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/docs@0.4.2
+  - @uidu/blanket@0.5.1
+  - @uidu/item@0.5.1
+  - @uidu/theme@0.6.1
+
 ## 0.6.0
 
 ### Minor Changes

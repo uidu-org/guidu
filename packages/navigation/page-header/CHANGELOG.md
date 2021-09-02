@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.0.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/theme@0.6.1
+  - @uidu/shell@2.0.3
+
 ## 1.0.0
 
 ### Major Changes

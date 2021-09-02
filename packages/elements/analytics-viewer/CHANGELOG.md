@@ -1,5 +1,11 @@
 # @uidu/analytics-viewer
 
+## 0.4.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+
 ## 0.4.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # @uidu/inline-edit
 
+## 0.3.2
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/button@1.2.1
+  - @uidu/inline-dialog@0.5.2
+  - @uidu/theme@0.6.1
+  - @uidu/field-text@1.1.3
+  - @uidu/form@1.2.1
+
 ## 0.3.1
 
 ### Patch Changes

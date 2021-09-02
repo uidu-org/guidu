@@ -1,5 +1,16 @@
 # @uidu/editor-common
 
+## 0.5.3
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/theme@0.6.1
+  - @uidu/emoji@0.5.3
+  - @uidu/mentions@0.3.3
+  - @uidu/profilecard@0.2.3
+
 ## 0.5.2
 
 ### Patch Changes

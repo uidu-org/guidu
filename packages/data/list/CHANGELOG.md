@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 1.0.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/data-fields@1.0.3
+
 ## 1.0.0
 
 ### Major Changes

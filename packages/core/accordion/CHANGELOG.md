@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.5.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/docs@0.4.2
+
 ## 0.5.0
 
 ### Minor Changes

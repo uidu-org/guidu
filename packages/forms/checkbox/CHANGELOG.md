@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.1.2
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/field-base@3.0.1
+
 ## 1.1.1
 
 ### Patch Changes

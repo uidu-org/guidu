@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.0.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+
 ## 1.0.0
 
 ### Major Changes

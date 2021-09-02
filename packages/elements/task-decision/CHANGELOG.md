@@ -1,5 +1,16 @@
 # @uidu/task-decision
 
+## 0.4.2
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/avatar-group@2.6.1
+  - @uidu/button@1.2.1
+  - @uidu/spinner@0.5.1
+  - @uidu/theme@0.6.1
+
 ## 0.4.1
 
 ### Patch Changes

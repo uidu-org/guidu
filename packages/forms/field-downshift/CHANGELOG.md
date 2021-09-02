@@ -1,5 +1,17 @@
 # @uidu/field-downshift
 
+## 1.2.0
+
+### Minor Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+
+### Patch Changes
+
+- Updated dependencies [beb3edb67]
+  - @uidu/field-base@3.0.1
+  - @uidu/field-text@1.1.3
+
 ## 1.1.2
 
 ### Patch Changes

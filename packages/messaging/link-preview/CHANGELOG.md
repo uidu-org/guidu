@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+
 ## 0.3.0
 
 ### Minor Changes

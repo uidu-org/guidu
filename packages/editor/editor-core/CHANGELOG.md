@@ -1,5 +1,35 @@
 # @uidu/editor-core
 
+## 0.10.2
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/avatar@0.8.0
+  - @uidu/select@1.2.0
+  - @uidu/avatar-group@2.6.1
+  - @uidu/button@1.2.1
+  - @uidu/droplist@0.5.2
+  - @uidu/menu@0.5.2
+  - @uidu/modal-dialog@0.5.3
+  - @uidu/spinner@0.5.1
+  - @uidu/theme@0.6.1
+  - @uidu/tooltip@0.5.2
+  - @uidu/editor-common@0.5.3
+  - @uidu/editor-json-transformer@0.4.1
+  - @uidu/editor-markdown-transformer@0.5.1
+  - @uidu/date@0.4.1
+  - @uidu/emoji@0.5.3
+  - @uidu/mentions@0.3.3
+  - @uidu/profilecard@0.2.3
+  - @uidu/status@0.4.3
+  - @uidu/task-decision@0.4.2
+  - @uidu/field-date@1.1.3
+  - @uidu/form@1.2.1
+  - @uidu/media-card@0.5.4
+  - @uidu/media-filmstrip@0.4.1
+
 ## 0.10.1
 
 ### Patch Changes

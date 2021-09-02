@@ -1,5 +1,17 @@
 # @uidu/onboarding
 
+## 1.1.1
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/button@1.2.1
+  - @uidu/modal-dialog@0.5.3
+  - @uidu/popper@0.5.1
+  - @uidu/portal@0.5.2
+  - @uidu/theme@0.6.1
+
 ## 1.1.0
 
 ### Minor Changes

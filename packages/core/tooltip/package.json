@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tooltip",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "A React Component for displaying Tooltips",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/tooltip",
   "license": "ISC",
@@ -12,17 +12,17 @@
     "@atlaskit/icon": "^21.8.0",
     "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.5.0",
-    "@uidu/popper": "^0.5.0",
-    "@uidu/portal": "^0.5.1",
-    "@uidu/theme": "^0.6.0",
+    "@uidu/popper": "^0.5.1",
+    "@uidu/portal": "^0.5.2",
+    "@uidu/theme": "^0.6.1",
     "flushable": "^1.0.0",
     "react-node-resolver": "^2.0.1",
     "react-transition-group": "^4.4.2",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/button": "^1.1.0",
-    "@uidu/docs": "^0.4.0",
+    "@uidu/button": "^1.2.1",
+    "@uidu/docs": "^0.4.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.1"

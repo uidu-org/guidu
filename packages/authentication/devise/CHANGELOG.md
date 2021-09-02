@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.6.2
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/avatar@0.8.0
+  - @uidu/slider@1.7.3
+  - @uidu/spinner@0.5.1
+  - @uidu/checkbox@1.1.2
+  - @uidu/field-password@1.1.2
+  - @uidu/field-phone@1.0.3
+  - @uidu/field-text@1.1.3
+  - @uidu/form@1.2.1
+  - @uidu/shell@2.0.3
+
 ## 0.6.1
 
 ### Patch Changes

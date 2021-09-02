@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 1.0.3
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/spinner@0.5.1
+  - @uidu/tooltip@0.5.2
+  - @uidu/dashboard-manager@1.0.1
+  - @uidu/dashlet-controls@1.0.1
+  - @uidu/data-fields@1.0.3
+  - @uidu/table@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes

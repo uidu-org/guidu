@@ -1,5 +1,14 @@
 # @uidu/inline-dialog
 
+## 0.5.2
+
+### Patch Changes
+
+- beb3edb67: Select style updates, forwardRef to ShellBody
+- Updated dependencies [beb3edb67]
+  - @uidu/popper@0.5.1
+  - @uidu/theme@0.6.1
+
 ## 0.5.1
 
 ### Patch Changes
