@@ -12,6 +12,6 @@ export const ShellBody = styled.div`
   min-height: 0;
 `;
 
-export default forwardRef((props, ref: Ref<HTMLDivElement>) => (
+export default forwardRef((props, ref?: Ref<HTMLDivElement>) => (
   <ShellBody {...props} ref={ref} />
 ));
