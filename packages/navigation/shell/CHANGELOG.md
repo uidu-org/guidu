@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.0.4
+
+### Patch Changes
+
+- d87cfbebb: Make ref optional for ShellBody
+
 ## 2.0.3
 
 ### Patch Changes
