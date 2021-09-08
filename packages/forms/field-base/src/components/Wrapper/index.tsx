@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import FloatLabel from '../../styled/FloatLabel';
 import ErrorMessages from '../ErrorMessages';
 import Help from '../Help';
@@ -25,11 +25,11 @@ export default function Wrapper({
   label,
   elementWrapperClassName,
   overrides,
-}: WrapperProps) {
+}: WrapperProps): ReactElement {
   let control = children;
 
   if (type === 'hidden') {
-    return control;
+    return <>{control}</>;
   }
 
   const inputGroupProps = {
@@ -67,7 +67,7 @@ export default function Wrapper({
   }
 
   if (layout === 'elementOnly') {
-    return control;
+    return <>{control}</>;
   }
 
   return (

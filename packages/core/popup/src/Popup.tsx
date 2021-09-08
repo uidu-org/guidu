@@ -10,7 +10,14 @@ import { useCloseManager } from './useCloseManager';
 import { useFocusManager } from './useFocusManager';
 
 const DefaultPopupComponent = forwardRef<HTMLDivElement, PopupComponentProps>(
-  (props, ref) => <div css={popupCSS} ref={ref} {...props} />,
+  (props, ref) => (
+    <div
+      tw="rounded block overflow-auto border border-opacity-50 shadow background[rgb(var(--body-primary-bg))] flex-auto"
+      css={popupCSS}
+      ref={ref}
+      {...props}
+    />
+  ),
 );
 
 export const Popup: FC<PopupProps> = memo(
@@ -87,9 +94,8 @@ export const Popup: FC<PopupProps> = memo(
                       if (typeof ref === 'function') {
                         ref(node);
                       } else {
-                        (ref as React.MutableRefObject<
-                          HTMLElement
-                        >).current = node;
+                        (ref as React.MutableRefObject<HTMLElement>).current =
+                          node;
                       }
 
                       setPopupRef(node);

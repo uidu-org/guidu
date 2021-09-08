@@ -1,6 +1,7 @@
+import Button from '@uidu/button';
 import { Wrapper } from '@uidu/field-base';
 import Popup from '@uidu/popup';
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import { HexColorInput, HexColorPicker } from 'react-colorful';
 // import 'react-colorful/dist/index.css';
 import styled from 'styled-components';
@@ -12,34 +13,33 @@ const Swatch = styled.div<{ color: string }>`
   height: 100%;
 `;
 
-function DefaultTrigger({ toggleDialog, value, forwardedRef, ...rest }) {
-  console.log(rest);
+function DefaultTrigger(props) {
+  const { toggleDialog, value, consumerRef, forwardedRef, ...rest } = props;
+  useImperativeHandle(forwardedRef, () => consumerRef.current);
   return (
-    <button
+    <Button
       {...rest}
-      className="btn btn-sm border p-0 d-block"
+      ref={consumerRef}
       type="button"
       onClick={toggleDialog}
-      ref={forwardedRef}
-    >
-      <div
-        style={{
-          backgroundColor: value,
-          width: '3rem',
-          height: '1.5rem',
-          borderRadius: '2px',
-        }}
-      />
-    </button>
+      tw="absolute left[2px] inset-y-0.5 flex items-center w-12 z-50 rounded-r-none"
+      style={{
+        backgroundColor: value,
+      }}
+    ></Button>
   );
 }
+
+const DefaulTriggerRef = forwardRef((props: FieldColorPickerProps, ref) => (
+  <DefaultTrigger {...props} consumerRef={ref} />
+));
 
 function FieldColorPicker({
   onSetValue,
   onChange,
   name,
   value,
-  trigger: Trigger = DefaultTrigger,
+  trigger: Trigger = DefaulTriggerRef,
   colors = [
     '#FF6900',
     '#FCB900',
@@ -68,67 +68,51 @@ function FieldColorPicker({
         color={value}
         onChange={(c) => handleChange({ hex: c })}
       />
-      <div
-        style={{
-          display: 'grid',
-          gridGap: '4px',
-          gridTemplateColumns: '1fr 1fr 1fr 1fr',
-          gridTemplateRows: 'auto',
-          margin: '4px 0',
-          height: '90px',
-        }}
-      >
+      <div tw="grid grid-cols-4 my-1 gap-1 h-24">
         {colors.map((color, index) => (
           <Swatch
             key={index}
-            color={color}
+            color={color as string}
             onClick={() => handleChange({ hex: color })}
           />
         ))}
-      </div>
-      <div
-        style={{
-          padding: '4px 0 0',
-          margin: '4px 0 0',
-          borderTop: '1px solid rgb(var(--border))',
-        }}
-      >
-        <div className="input-group input-group-sm">
-          <div className="input-group-prepend">
-            <span className="input-group-text" id="inputGroup-sizing-sm">
-              #
-            </span>
-          </div>
-
-          <HexColorInput
-            className="form-control"
-            color={value}
-            onChange={(c) => handleChange({ hex: c })}
-          />
-        </div>
       </div>
     </div>
   );
 
   return (
     <Wrapper {...rest}>
-      <Popup
-        isOpen={dialogOpen}
-        // onClose={() => setDialogOpen(false)}
-        content={() => <>{content}</>}
-        trigger={(triggerProps) => (
-          <Trigger
-            {...triggerProps}
-            value={value}
-            forwardedRef={forwardedRef}
-            toggleDialog={(e) => {
-              e.preventDefault();
-              console.log(e);
-              setDialogOpen((prevDialogOpen) => !prevDialogOpen);
-            }}
+      <div tw="relative flex">
+        <Popup
+          isOpen={dialogOpen}
+          onClose={() => setDialogOpen(false)}
+          placement="bottom-end"
+          content={() => <>{content}</>}
+          trigger={(triggerProps) => (
+            <>
+              <Trigger
+                {...triggerProps}
+                value={value}
+                forwardedRef={forwardedRef}
+                toggleDialog={(e) => {
+                  e.preventDefault();
+                  setDialogOpen(!dialogOpen);
+                }}
+              />
+            </>
+          )}
+        />
+        <div tw="relative">
+          <span tw="absolute left-11 inset-y-0 px-5 flex items-center text-gray-500">
+            #
+          </span>
+          <HexColorInput
+            tw="background[rgb(var(--body-on-primary-bg))] shadow-sm focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))] block w-full border border-color[rgb(var(--border))] rounded py-3 px-4 placeholder-gray-400 disabled:opacity-50 disabled:background[rgba(var(--brand-subtle), .4)] pl-20"
+            color={value}
+            onChange={(c) => handleChange({ hex: c })}
           />
-        )}
-      />
+        </div>
+      </div>
     </Wrapper>
   );
 }

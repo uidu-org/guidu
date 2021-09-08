@@ -10,6 +10,7 @@
   "types": "dist/uidu-field-color-picker.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.15.3",
+    "@uidu/button": "1.2.1",
     "@uidu/field-base": "^3.0.1",
     "@uidu/popup": "^0.5.2",
     "formsy-react": "^2.2.5",

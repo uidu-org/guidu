@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import tw from 'twin.macro';
 import * as defaultComponents from '../../styled';
 import { getComponents } from '../../utils';
@@ -16,7 +16,7 @@ export default function Row({
   children,
   htmlFor,
   overrides,
-}: RowProps) {
+}: RowProps): ReactElement {
   const {
     StyledRow: { component: StyledRow, props: rowProps },
     Label: { component: Label, props: labelProps },
@@ -28,7 +28,7 @@ export default function Row({
   let element = children;
 
   if (layout === 'elementOnly') {
-    return element;
+    return <>{element}</>;
   }
 
   const cssClasses = {
@@ -61,25 +61,23 @@ export default function Row({
   }
 
   return (
-    <>
-      <StyledRow
-        layout={layout}
-        className={classNames(cssClasses.row)}
-        {...rowProps}
-      >
-        {shouldRenderLabel ? (
-          <Label
-            layout={layout}
-            label={label}
-            htmlFor={htmlFor}
-            fakeLabel={fakeLabel}
-            required={required}
-            overrides={overrides}
-            {...labelProps}
-          />
-        ) : null}
-        {element}
-      </StyledRow>
-    </>
+    <StyledRow
+      layout={layout}
+      className={classNames(cssClasses.row)}
+      {...rowProps}
+    >
+      {shouldRenderLabel ? (
+        <Label
+          layout={layout}
+          label={label}
+          htmlFor={htmlFor}
+          fakeLabel={fakeLabel}
+          required={required}
+          overrides={overrides}
+          {...labelProps}
+        />
+      ) : null}
+      {element}
+    </StyledRow>
   );
 }
