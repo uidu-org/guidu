@@ -1,5 +1,17 @@
 # @uidu/field-color-picker
 
+## 2.0.0
+
+### Major Changes
+
+- 5523e75f0: Field color picker redesigned, ts fixes to shell and field, popup to tailwind colors
+
+### Patch Changes
+
+- Updated dependencies [5523e75f0]
+  - @uidu/popup@0.6.0
+  - @uidu/field-base@3.1.0
+
 ## 1.0.3
 
 ### Patch Changes

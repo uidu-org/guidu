@@ -1,5 +1,11 @@
 # @uidu/drawer
 
+## 0.7.1
+
+### Patch Changes
+
+- 5523e75f0: Field color picker redesigned, ts fixes to shell and field, popup to tailwind colors
+
 ## 0.7.0
 
 ### Minor Changes
