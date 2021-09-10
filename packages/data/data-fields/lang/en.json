@@ -116,6 +116,12 @@
   "fSKy7V": {
     "defaultMessage": "Insert a rating for the column"
   },
+  "field.collection.name": {
+    "defaultMessage": "Collection"
+  },
+  "field.collection.options": {
+    "defaultMessage": "A collection is a list of items with one or more fields."
+  },
   "field.multipleselect.name": {
     "defaultMessage": "MultipleSelect"
   },
@@ -187,6 +193,9 @@
   },
   "uLd91N": {
     "defaultMessage": "A telephone number (e.g. (415) 555-9876)."
+  },
+  "v1VsZE": {
+    "defaultMessage": "Insert field name"
   },
   "vONi+O": {
     "defaultMessage": "Country"
