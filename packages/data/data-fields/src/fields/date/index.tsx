@@ -2,12 +2,14 @@ import { faCalendarDay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import loadable from '@loadable/component';
 import dayjs from 'dayjs';
-import LocalizedFormat from 'dayjs/plugin/localizedFormat';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import utc from 'dayjs/plugin/utc';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 
-dayjs.extend(LocalizedFormat);
+dayjs.extend(localizedFormat);
+dayjs.extend(utc);
 
 const GrouperForm = loadable(() => import('./GrouperForm'));
 const Filter = loadable(
@@ -26,13 +28,21 @@ const Date: Partial<Field> = {
   grouperForm: GrouperForm,
   // cellEditorFramework: Editor,
   // filter: 'agDateColumnFilter',
-  Cell: (params) =>
-    params.value ? (
-      <div tw="flex w-full justify-between">
-        {dayjs(params.value).format('L')}
-        <span>{dayjs(params.value).format('LT')}</span>
-      </div>
-    ) : null,
+  Cell: (params) => {
+    if (!params.value) {
+      return null;
+    }
+
+    // we should ensure value is an utc date, if not force it
+    return (
+      <>
+        <div tw="flex w-full justify-between">
+          {dayjs(params.value).utc(true).format('L')}
+          <span>{dayjs(params.value).utc(true).format('LT')}</span>
+        </div>
+      </>
+    );
+  },
   mocks: {
     value: dayjs().toString(),
   },
