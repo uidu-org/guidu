@@ -7,6 +7,7 @@ export type FieldKind =
   | 'attachments'
   | 'avatar'
   | 'checkbox'
+  | 'collection'
   | 'contact'
   | 'country'
   | 'cover'
