@@ -5,7 +5,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 
-const CollectionFieldsRenderer = loadable(() => import('./renderer'));
+const CollectionFormWithFields = loadable(() => import('./form'));
 
 const Collection: Partial<Field> = {
   kind: 'collection',
@@ -27,7 +27,7 @@ const Collection: Partial<Field> = {
       { id: 'bar', name: 'bar' },
     ],
   },
-  form: CollectionFieldsRenderer,
+  form: CollectionFormWithFields,
 };
 
 export default Collection;
