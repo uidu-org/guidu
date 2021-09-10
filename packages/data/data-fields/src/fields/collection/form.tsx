@@ -23,7 +23,7 @@ const reorder = (
   return result;
 };
 
-export default function CollectionFieldsRenderer({
+export default function CollectionFormWithFields({
   prefix = 'attributes',
   fields = [],
 }: {
