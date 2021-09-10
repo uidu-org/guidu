@@ -9,17 +9,7 @@ import { Field } from '../../types';
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
-import { FormattedDate, useIntl } from 'react-intl';
-
-const Trigger = ({ triggerProps, toggleDialog, value }) => (
-  <div
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    {...triggerProps}
-    style={{ backgroundColor: value, width: 30, height: 20 }}
-    onClick={toggleDialog}
-    className="border rounded ignore-onclickoutside"
-  />
-);
+import { useIntl } from 'react-intl';
 
 const reorder = (
   list: Field[],
@@ -33,22 +23,6 @@ const reorder = (
   return result;
 };
 
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
-type Option = {
-  id: number;
-  name?: string;
-  color: string;
-  isNewOption: boolean;
-};
-
 export default function CollectionFieldsRenderer({
   prefix = 'attributes',
   fields = [],
@@ -59,7 +33,6 @@ export default function CollectionFieldsRenderer({
   const intl = useIntl();
 
   const [currentFields, setCurrentFields] = useState<Field[]>(fields);
-  // const sortAlphabetically = () => console.log('sort');
 
   const onDragEnd = (result) => {
     // dropped outside the list

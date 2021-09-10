@@ -6,6 +6,7 @@ import {
   avatarField,
   byName,
   checkboxField,
+  collectionField,
   contactField,
   countryField,
   coverField,
@@ -41,6 +42,8 @@ const getColumnType = (kind: Field['kind']) => {
       return avatarField;
     case 'checkbox':
       return checkboxField;
+    case 'collection':
+      return collectionField;
     case 'contact':
       return contactField;
     case 'country':
