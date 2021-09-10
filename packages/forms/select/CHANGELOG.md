@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 1.3.0
+
+### Minor Changes
+
+- 1f2df4d24: Added TimeZone Select
+
 ## 1.2.0
 
 ### Minor Changes
