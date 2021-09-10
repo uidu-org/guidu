@@ -4,6 +4,7 @@ import appointmentField from './appointment';
 import attachmentsField from './attachments';
 import avatarField from './avatar';
 import checkboxField from './checkbox';
+import collectionField from './collection';
 import contactField from './contact';
 import countryField from './country';
 import coverField from './cover';
@@ -31,6 +32,7 @@ export { default as appointmentField } from './appointment';
 export { default as attachmentsField } from './attachments';
 export { default as avatarField } from './avatar';
 export { default as checkboxField } from './checkbox';
+export { default as collectionField } from './collection';
 export { default as contactField } from './contact';
 export { default as countryField } from './country';
 export { default as coverField } from './cover';
@@ -59,6 +61,7 @@ export const byName = {
   attachments: attachmentsField,
   avatar: avatarField,
   checkbox: checkboxField,
+  collection: collectionField,
   contact: contactField,
   country: countryField,
   cover: coverField,
@@ -88,6 +91,7 @@ export default [
   attachmentsField,
   avatarField,
   checkboxField,
+  collectionField,
   contactField,
   countryField,
   coverField,
