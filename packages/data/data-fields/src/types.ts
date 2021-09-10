@@ -32,6 +32,7 @@ export type FieldKind =
 export type FieldDefinition = {};
 
 export type Field = {
+  id?: any;
   accessor: String | ((originalRow: any, rowIndex: number) => any);
   kind: FieldKind;
   name: string | React.ReactNode;

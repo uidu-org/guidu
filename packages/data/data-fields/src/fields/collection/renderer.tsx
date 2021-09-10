@@ -1,13 +1,19 @@
-import { faGripVertical, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFont,
+  faGripVertical,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FieldColorPicker from '@uidu/field-color-picker';
 import FieldText from '@uidu/field-text';
+import { Field } from '../../types';
 import React, { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
-import { useIntl } from 'react-intl';
+import { FormattedDate, useIntl } from 'react-intl';
 
 const Trigger = ({ triggerProps, toggleDialog, value }) => (
   <div
+    // eslint-disable-next-line react/jsx-props-no-spreading
     {...triggerProps}
     style={{ backgroundColor: value, width: 30, height: 20 }}
     onClick={toggleDialog}
@@ -16,10 +22,10 @@ const Trigger = ({ triggerProps, toggleDialog, value }) => (
 );
 
 const reorder = (
-  list: Option[],
+  list: Field[],
   startIndex: number,
   endIndex: number,
-): Option[] => {
+): Field[] => {
   const result = Array.from(list);
   const [removed] = result.splice(startIndex, 1);
   result.splice(endIndex, 0, removed);
@@ -45,21 +51,15 @@ type Option = {
 
 export default function CollectionFieldsRenderer({
   prefix = 'attributes',
-  options = [
-    {
-      id: 1,
-      color: 'red',
-      isNewOption: true,
-    },
-  ],
+  fields = [],
 }: {
   prefix?: string;
-  options: Option[];
+  fields: Field[];
 }) {
   const intl = useIntl();
 
-  const [currentOptions, setCurrentOptions] = useState<Option[]>(options);
-  const sortAlphabetically = () => console.log('sort');
+  const [currentFields, setCurrentFields] = useState<Field[]>(fields);
+  // const sortAlphabetically = () => console.log('sort');
 
   const onDragEnd = (result) => {
     // dropped outside the list
@@ -67,12 +67,8 @@ export default function CollectionFieldsRenderer({
       return;
     }
 
-    setCurrentOptions((prevCurrentOptions) =>
-      reorder(
-        prevCurrentOptions,
-        result.source.index,
-        result.destination.index,
-      ),
+    setCurrentFields((prevCurrentFields) =>
+      reorder(prevCurrentFields, result.source.index, result.destination.index),
     );
   };
 
@@ -86,10 +82,10 @@ export default function CollectionFieldsRenderer({
             ref={provided.innerRef}
             // style={getListStyle(snapshot.isDraggingOver)}
           >
-            {currentOptions.map((option, index) => (
+            {currentFields.map((field, index) => (
               <Draggable
-                key={option.id}
-                draggableId={`draggable-${option.id}`}
+                key={field.id}
+                draggableId={`draggable-${field.id}`}
                 index={index}
               >
                 {(provided, snapshot) => (
@@ -107,45 +103,30 @@ export default function CollectionFieldsRenderer({
                       <FontAwesomeIcon icon={faGripVertical} />
                     </div>
                     <div className="flex-grow-1 d-flex align-items-center">
-                      {!option.isNewOption && (
-                        <FieldText
-                          type="hidden"
-                          name={`${prefix}[options][${index}][id]`}
-                          value={option.id}
-                        />
-                      )}
                       <FieldText
                         type="hidden"
-                        name={`${prefix}[options][${index}][position]`}
+                        name={`${prefix}[fields][${index}][position]`}
                         value={index}
                       />
                       <FieldText
-                        name={`${prefix}[options][${index}][name]`}
+                        name={`${prefix}[fields][${index}][name]`}
                         layout="elementOnly"
                         placeholder={intl.formatMessage({
-                          defaultMessage: 'Insert option name',
+                          defaultMessage: 'Insert field name',
                         })}
                         required
-                        value={option.name}
+                        value={field.name}
                         className="border-0"
                       />
-                      <div className="ml-3">
-                        <FieldColorPicker
-                          name={`${prefix}[options][${index}][color]`}
-                          trigger={Trigger}
-                          layout="elementOnly"
-                          value={option.color}
-                        />
-                      </div>
                     </div>
                     <button
                       tabIndex={-1}
                       type="button"
                       className="btn btn-sm btn-simple"
                       onClick={() => {
-                        setCurrentOptions((prevCurrentOptions) => [
-                          ...prevCurrentOptions.slice(0, index),
-                          ...prevCurrentOptions.slice(index + 1),
+                        setCurrentFields((prevCurrentFields) => [
+                          ...prevCurrentFields.slice(0, index),
+                          ...prevCurrentFields.slice(index + 1),
                         ]);
                       }}
                     >
@@ -164,17 +145,21 @@ export default function CollectionFieldsRenderer({
           type="button"
           className="btn btn-light btn-sm btn-block"
           onClick={() => {
-            setCurrentOptions((prevCurrentOptions) => [
-              ...prevCurrentOptions,
+            setCurrentFields((prevCurrentFields) => [
+              ...prevCurrentFields,
               {
-                id: prevCurrentOptions.length + 1,
-                isNewOption: true,
-                color: getRandomColor(),
+                accessor: 'string',
+                id: prevCurrentFields.length + 1,
+                kind: 'string',
+                name: <FormattedMessage defaultMessage="String" />,
+                icon: <FontAwesomeIcon icon={faFont} />,
+                color: '#E4BA3F',
+                // form: StringForm,
               },
             ]);
           }}
         >
-          {intl.formatMessage({ defaultMessage: 'Add option' })}
+          {intl.formatMessage({ defaultMessage: 'Add field' })}
         </button>
       </div>
     </DragDropContext>

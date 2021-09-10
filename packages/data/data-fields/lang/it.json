@@ -116,6 +116,12 @@
   "fSKy7V": {
     "defaultMessage": "Insert a rating for the column"
   },
+  "field.collection.name": {
+    "defaultMessage": "Collection"
+  },
+  "field.collection.options": {
+    "defaultMessage": "A collection allows you to select one or more fields."
+  },
   "field.multipleselect.name": {
     "defaultMessage": "MultipleSelect"
   },

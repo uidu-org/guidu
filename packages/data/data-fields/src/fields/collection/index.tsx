@@ -16,7 +16,7 @@ const Collection: Partial<Field> = {
   description: (
     <FormattedMessage
       id="field.collection.options"
-      defaultMessage="A collection allows you to select one or more fields."
+      defaultMessage="A collection is a list of items with one or more fields."
     />
   ),
   color: '#73BEC8',
