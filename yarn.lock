@@ -6373,10 +6373,10 @@ __metadata:
     "@loadable/component": ^5.15.0
     "@uidu/dashboard-manager": ^1.0.1
     "@uidu/dashlet-controls": ^1.0.1
-    "@uidu/data-fields": ^1.0.3
+    "@uidu/data-fields": ^1.0.4
     "@uidu/docs": ^0.4.2
     "@uidu/spinner": ^0.5.1
-    "@uidu/table": 1.0.3
+    "@uidu/table": 1.0.4
     "@uidu/tooltip": ^0.5.2
     d3-array: ^3.0.2
     lodash: ^4.17.21
@@ -6395,24 +6395,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-controls@^1.0.0, @uidu/data-controls@^1.0.1, @uidu/data-controls@workspace:packages/data/data-controls":
+"@uidu/data-controls@^1.0.0, @uidu/data-controls@^1.0.1, @uidu/data-controls@^1.0.3, @uidu/data-controls@workspace:packages/data/data-controls":
   version: 0.0.0-use.local
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/checkbox": ^1.1.2
-    "@uidu/data-fields": ^1.0.3
+    "@uidu/data-fields": ^1.0.4
     "@uidu/data-views": ^1.0.0
     "@uidu/docs": ^0.4.2
-    "@uidu/drawer": ^0.7.0
+    "@uidu/drawer": ^0.7.1
     "@uidu/dropdown-menu": ^0.6.2
     "@uidu/field-text": ^1.1.3
     "@uidu/form": ^1.2.1
     "@uidu/inline-dialog": ^0.5.2
     "@uidu/menu": ^0.5.2
-    "@uidu/popup": ^0.5.2
+    "@uidu/popup": ^0.6.0
     "@uidu/select": ^1.2.0
-    "@uidu/shell": ^2.0.3
+    "@uidu/shell": ^2.1.0
     "@uidu/spinner": ^0.5.1
     "@uidu/tooltip": ^0.5.2
     lodash: ^4.17.21
@@ -6428,7 +6428,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-fields@^1.0.3, @uidu/data-fields@workspace:packages/data/data-fields":
+"@uidu/data-fields@^1.0.3, @uidu/data-fields@^1.0.4, @uidu/data-fields@workspace:packages/data/data-fields":
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
@@ -6439,7 +6439,7 @@ __metadata:
     "@loadable/component": ^5.15.0
     "@uidu/button": 1.2.1
     "@uidu/docs": ^0.4.2
-    "@uidu/field-color-picker": ^1.0.3
+    "@uidu/field-color-picker": ^2.0.0
     "@uidu/field-date": ^1.1.3
     "@uidu/field-downshift": ^1.2.0
     "@uidu/field-number": ^1.0.3
@@ -6587,7 +6587,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/drawer@^0.7.0, @uidu/drawer@workspace:packages/core/drawer":
+"@uidu/drawer@^0.7.0, @uidu/drawer@^0.7.1, @uidu/drawer@workspace:packages/core/drawer":
   version: 0.0.0-use.local
   resolution: "@uidu/drawer@workspace:packages/core/drawer"
   dependencies:
@@ -6598,7 +6598,7 @@ __metadata:
     "@uidu/docs": ^0.4.2
     "@uidu/dropdown-menu": ^0.6.2
     "@uidu/item": ^0.5.1
-    "@uidu/shell": ^2.0.3
+    "@uidu/shell": ^2.1.0
     "@uidu/theme": ^0.6.1
     chromatism: ^3.0.0
     exenv: ^1.2.2
@@ -6935,7 +6935,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-base@^3.0.0, @uidu/field-base@^3.0.1, @uidu/field-base@workspace:packages/forms/field-base":
+"@uidu/field-base@^3.0.0, @uidu/field-base@^3.0.1, @uidu/field-base@^3.1.0, @uidu/field-base@workspace:packages/forms/field-base":
   version: 0.0.0-use.local
   resolution: "@uidu/field-base@workspace:packages/forms/field-base"
   dependencies:
@@ -6971,16 +6971,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uidu/field-color-picker@^1.0.3, @uidu/field-color-picker@workspace:packages/forms/field-color-picker":
+"@uidu/field-color-picker@^2.0.0, @uidu/field-color-picker@workspace:packages/forms/field-color-picker":
   version: 0.0.0-use.local
   resolution: "@uidu/field-color-picker@workspace:packages/forms/field-color-picker"
   dependencies:
     "@babel/runtime": ^7.15.3
     "@uidu/button": 1.2.1
     "@uidu/docs": ^0.4.2
-    "@uidu/field-base": ^3.0.1
+    "@uidu/field-base": ^3.1.0
     "@uidu/form": ^1.2.1
-    "@uidu/popup": ^0.5.2
+    "@uidu/popup": ^0.6.0
     formsy-react: ^2.2.5
     react: ^17.0.2
     react-colorful: ^5.3.0
@@ -8281,7 +8281,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uidu/popup@^0.5.2, @uidu/popup@workspace:packages/core/popup":
+"@uidu/popup@^0.6.0, @uidu/popup@workspace:packages/core/popup":
   version: 0.0.0-use.local
   resolution: "@uidu/popup@workspace:packages/core/popup"
   dependencies:
@@ -8360,7 +8360,7 @@ __metadata:
     "@uidu/button": ^1.2.1
     "@uidu/docs": "*"
     "@uidu/lozenge": ^0.5.1
-    "@uidu/popup": ^0.5.2
+    "@uidu/popup": ^0.6.0
     "@uidu/spinner": ^0.5.1
     "@uidu/theme": ^0.6.1
     date-fns: ^2.23.0
@@ -8530,13 +8530,14 @@ __metadata:
     react-select: ^4.3.1
     shallow-equal: ^1.2.1
     styled-components: ^5.3.1
+    timezones-list: ^3.0.1
     tslib: ^2.3.1
   peerDependencies:
     react: ^17.0.0
   languageName: unknown
   linkType: soft
 
-"@uidu/shell@^2.0.0, @uidu/shell@^2.0.1, @uidu/shell@^2.0.3, @uidu/shell@workspace:packages/navigation/shell":
+"@uidu/shell@^2.0.0, @uidu/shell@^2.0.1, @uidu/shell@^2.0.3, @uidu/shell@^2.1.0, @uidu/shell@workspace:packages/navigation/shell":
   version: 0.0.0-use.local
   resolution: "@uidu/shell@workspace:packages/navigation/shell"
   dependencies:
@@ -8719,7 +8720,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@1.0.3, @uidu/table@^1.0.3, @uidu/table@workspace:packages/data/table":
+"@uidu/table@1.0.4, @uidu/table@^1.0.3, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -8730,12 +8731,12 @@ __metadata:
     "@fortawesome/react-fontawesome": ^0.1.15
     "@uidu/button": 1.2.1
     "@uidu/checkbox": ^1.1.2
-    "@uidu/data-controls": ^1.0.1
-    "@uidu/data-fields": ^1.0.3
+    "@uidu/data-controls": ^1.0.3
+    "@uidu/data-fields": ^1.0.4
     "@uidu/docs": ^0.4.2
     "@uidu/dropdown-menu": ^0.6.2
     "@uidu/menu": ^0.5.2
-    "@uidu/popup": ^0.5.2
+    "@uidu/popup": ^0.6.0
     faker: ^5.5.3
     numeral: ^2.0.6
     react: ^17.0.2
@@ -30580,6 +30581,13 @@ resolve@~1.17.0:
   dependencies:
     setimmediate: ^1.0.4
   checksum: ec37ae299066bef6c464dcac29c7adafba1999e7227a9bdc4e105a459bee0f0b27234a46bfd7ab4041da79619e06a58433472867a913d01c26f8a203f87cee70
+  languageName: node
+  linkType: hard
+
+"timezones-list@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "timezones-list@npm:3.0.1"
+  checksum: 2c23ce42793c3acb9fd774a497112a6b942fe68b3064423dad4947cbd637d10855b8cf9ea4b3c78263957625ff662310b939bd1e38fce4da44c58352d2181f68
   languageName: node
   linkType: hard
 

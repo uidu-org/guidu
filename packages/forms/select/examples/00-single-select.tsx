@@ -12,7 +12,6 @@ const SingleExample = () => (
       {...selectDefaultProps}
       placeholder="Choose a City"
       value={selectDefaultProps.options[0].id}
-      defaultMenuIsOpen
       isFocused
     />
   </Form>

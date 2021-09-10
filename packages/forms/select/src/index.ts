@@ -7,6 +7,7 @@ export { default as CountrySelect } from './CountrySelect';
 export { allCountries } from './data/countries';
 export { default as PopupSelect } from './PopupSelect';
 export { default as RadioSelect } from './RadioSelect';
+export { default as TimeZoneSelect } from './TimeZoneSelect';
 import { ComponentHOC } from '@uidu/field-base';
 import { withFormsy } from 'formsy-react';
 import AsyncCreatableSelectComponent from './AsyncCreatableSelect';
