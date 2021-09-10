@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 1.0.5
+
+### Patch Changes
+
+- f94662fd5: Fix dates utc handling
+
 ## 1.0.4
 
 ### Patch Changes
