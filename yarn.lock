@@ -6373,10 +6373,10 @@ __metadata:
     "@loadable/component": ^5.15.0
     "@uidu/dashboard-manager": ^1.0.1
     "@uidu/dashlet-controls": ^1.0.1
-    "@uidu/data-fields": ^1.0.4
+    "@uidu/data-fields": ^1.0.5
     "@uidu/docs": ^0.4.2
     "@uidu/spinner": ^0.5.1
-    "@uidu/table": 1.0.4
+    "@uidu/table": 1.0.5
     "@uidu/tooltip": ^0.5.2
     d3-array: ^3.0.2
     lodash: ^4.17.21
@@ -6428,7 +6428,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-fields@^1.0.3, @uidu/data-fields@^1.0.4, @uidu/data-fields@workspace:packages/data/data-fields":
+"@uidu/data-fields@^1.0.3, @uidu/data-fields@^1.0.4, @uidu/data-fields@^1.0.5, @uidu/data-fields@workspace:packages/data/data-fields":
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
@@ -8720,7 +8720,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@1.0.4, @uidu/table@^1.0.3, @uidu/table@workspace:packages/data/table":
+"@uidu/table@1.0.5, @uidu/table@^1.0.3, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -8732,7 +8732,7 @@ __metadata:
     "@uidu/button": 1.2.1
     "@uidu/checkbox": ^1.1.2
     "@uidu/data-controls": ^1.0.3
-    "@uidu/data-fields": ^1.0.4
+    "@uidu/data-fields": ^1.0.5
     "@uidu/docs": ^0.4.2
     "@uidu/dropdown-menu": ^0.6.2
     "@uidu/menu": ^0.5.2
