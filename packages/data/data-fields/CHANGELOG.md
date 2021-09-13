@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 1.1.0
+
+### Minor Changes
+
+- 49dc70ba3: New Collection datafield added
+
 ## 1.0.5
 
 ### Patch Changes
