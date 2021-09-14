@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashlets",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/dashlets",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "@uidu/dashlet-controls": "^1.0.1",
     "@uidu/data-fields": "^1.1.0",
     "@uidu/spinner": "^0.5.1",
-    "@uidu/table": "1.0.5",
+    "@uidu/table": "1.1.0",
     "@uidu/tooltip": "^0.5.2",
     "d3-array": "^3.0.2",
     "lodash": "^4.17.21",

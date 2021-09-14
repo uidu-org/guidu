@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 1.2.0
+
+### Minor Changes
+
+- 277aa3ab4: Bump data-fields
+
+### Patch Changes
+
+- Updated dependencies [277aa3ab4]
+  - @uidu/data-controls@1.1.0
+  - @uidu/gallery@1.1.0
+  - @uidu/list@1.1.0
+  - @uidu/table@1.1.0
+
 ## 1.1.0
 
 ### Minor Changes

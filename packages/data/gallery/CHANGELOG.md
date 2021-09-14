@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.1.0
+
+### Minor Changes
+
+- 277aa3ab4: Bump data-fields
+
+### Patch Changes
+
+- Updated dependencies [277aa3ab4]
+  - @uidu/data-controls@1.1.0
+
 ## 1.0.1
 
 ### Patch Changes
