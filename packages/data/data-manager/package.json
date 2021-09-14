@@ -17,7 +17,7 @@
     "@uidu/board": "^0.4.1",
     "@uidu/calendar": "^0.3.0",
     "@uidu/data-controls": "^1.0.1",
-    "@uidu/data-fields": "^1.0.3",
+    "@uidu/data-fields": "^1.1.0",
     "@uidu/data-views": "^1.0.0",
     "@uidu/gallery": "^1.0.1",
     "@uidu/list": "^1.0.1",

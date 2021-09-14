@@ -17,7 +17,7 @@
     "@loadable/component": "^5.15.0",
     "@uidu/dashboard-manager": "^1.0.1",
     "@uidu/dashlet-controls": "^1.0.1",
-    "@uidu/data-fields": "^1.0.5",
+    "@uidu/data-fields": "^1.1.0",
     "@uidu/spinner": "^0.5.1",
     "@uidu/table": "1.0.5",
     "@uidu/tooltip": "^0.5.2",

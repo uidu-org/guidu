@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.15.3",
     "@uidu/data-controls": "^1.0.1",
-    "@uidu/data-fields": "^1.0.3",
+    "@uidu/data-fields": "^1.1.0",
     "@uidu/shell": "^2.0.3",
     "@uidu/spinner": "^0.5.1",
     "memoize-one": "^5.2.1",

@@ -17,7 +17,7 @@
     "@babel/runtime": "^7.15.3",
     "@uidu/button": "1.2.1",
     "@uidu/checkbox": "^1.1.2",
-    "@uidu/data-fields": "^1.0.5",
+    "@uidu/data-fields": "^1.1.0",
     "@uidu/dropdown-menu": "^0.6.2",
     "@uidu/menu": "^0.5.2",
     "@uidu/popup": "^0.6.0",
