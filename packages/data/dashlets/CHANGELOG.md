@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 1.1.0
+
+### Minor Changes
+
+- 277aa3ab4: Bump data-fields
+
+### Patch Changes
+
+- Updated dependencies [277aa3ab4]
+  - @uidu/table@1.1.0
+
 ## 1.0.6
 
 ### Patch Changes

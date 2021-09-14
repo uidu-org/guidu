@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 1.1.0
+
+### Minor Changes
+
+- 277aa3ab4: Bump data-fields
+
 ## 1.0.5
 
 ### Patch Changes

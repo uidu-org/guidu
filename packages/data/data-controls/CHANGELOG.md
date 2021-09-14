@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 1.1.0
+
+### Minor Changes
+
+- 277aa3ab4: Bump data-fields
+
 ## 1.0.3
 
 ### Patch Changes
