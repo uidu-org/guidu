@@ -1,5 +1,11 @@
 # @uidu/field-downshift
 
+## 1.3.0
+
+### Minor Changes
+
+- 672e8dd3b: Added selectedItem to menu exports
+
 ## 1.2.0
 
 ### Minor Changes
