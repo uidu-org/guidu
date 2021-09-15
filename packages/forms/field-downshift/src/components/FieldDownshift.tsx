@@ -110,6 +110,7 @@ function FieldDownshift({
             {input && input({ ...getInputProps() })}
             {menu({
               ...getMenuProps({}),
+              isOpen,
               selectedItem,
               children: filterOptions({ options, inputValue, isOpen }).map(
                 (item, index) =>

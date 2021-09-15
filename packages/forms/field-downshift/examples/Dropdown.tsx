@@ -53,7 +53,7 @@ const Item = ({ item, index, isSelected, getItemProps }) => {
           'border border-primary': isSelected,
         },
       )}
-      onClick={e => {
+      onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
