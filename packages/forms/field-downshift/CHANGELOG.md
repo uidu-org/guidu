@@ -1,5 +1,11 @@
 # @uidu/field-downshift
 
+## 1.3.1
+
+### Patch Changes
+
+- d8c409e3c: Expose isOpen as well for making field downshift work for stateful components
+
 ## 1.3.0
 
 ### Minor Changes
