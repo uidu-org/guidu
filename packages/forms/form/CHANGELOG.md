@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.3
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+- Updated dependencies [a797171e1]
+  - @uidu/button@1.3.1
+
 ## 1.2.2
 
 ### Patch Changes

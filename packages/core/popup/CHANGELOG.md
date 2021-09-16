@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.6.1
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+- Updated dependencies [a797171e1]
+  - @uidu/popper@0.5.2
+  - @uidu/portal@0.5.3
+  - @uidu/theme@0.6.2
+
 ## 0.6.0
 
 ### Minor Changes
