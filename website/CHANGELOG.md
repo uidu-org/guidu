@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.4.6
+
+### Patch Changes
+
+- Updated dependencies [18d6c84e4]
+  - @uidu/docs@0.5.0
+  - @uidu/drawer@0.7.2
+
 ## 0.4.5
 
 ### Patch Changes

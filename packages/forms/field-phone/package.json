@@ -18,7 +18,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "@uidu/form": "^1.2.1"
   }
 }

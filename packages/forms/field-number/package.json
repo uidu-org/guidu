@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@uidu/button": "^1.2.1",
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.1"

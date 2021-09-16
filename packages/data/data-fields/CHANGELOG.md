@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 1.2.0
+
+### Minor Changes
+
+- 18d6c84e4: Added table components in docs, field date should convert to utc when timezone is not set
+
 ## 1.1.0
 
 ### Minor Changes

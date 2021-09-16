@@ -21,7 +21,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "@uidu/form": "^1.2.1",
     "@uidu/radio": "^1.1.2",
     "@uidu/spinner": "^0.5.1",

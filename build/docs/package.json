@@ -1,6 +1,6 @@
 {
   "name": "@uidu/docs",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Utilities for building documentation",
   "repository": "https://github.com/uidu-org/guidu/tree/main/build/docs",
   "license": "ISC",

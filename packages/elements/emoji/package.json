@@ -36,7 +36,7 @@
   "devDependencies": {
     "@types/js-search": "^1.4.0",
     "@types/react-virtualized": "^9.21.13",
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "@uidu/elements-test-helpers": "^0.4.1",
     "@uidu/layer": "^0.5.1",
     "@uidu/section-message": "^0.6.1",

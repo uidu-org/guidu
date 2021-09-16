@@ -13,7 +13,7 @@
     "@uidu/avatar": "^0.8.0",
     "@uidu/button": "^1.2.1",
     "@uidu/comment": "^0.2.0",
-    "@uidu/media-core": "^0.5.0",
+    "@uidu/media-core": "^0.5.1",
     "@uidu/shell": "^2.0.3",
     "@uidu/spinner": "^0.5.1",
     "@uidu/theme": "^0.6.1",
@@ -26,7 +26,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "@uidu/media-card": "^0.5.4",
     "react-intl": "^5.20.10"
   },
