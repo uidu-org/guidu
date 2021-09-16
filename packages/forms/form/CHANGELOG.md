@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.2.2
+
+### Patch Changes
+
+- Updated dependencies [cca123ed8]
+  - @uidu/button@1.3.0
+
 ## 1.2.1
 
 ### Patch Changes

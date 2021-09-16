@@ -1,5 +1,16 @@
 # @uidu/field-text
 
+## 1.4.0
+
+### Minor Changes
+
+- cca123ed8: Fix styling
+
+### Patch Changes
+
+- @uidu/form@1.2.2
+- @uidu/field-base@3.1.1
+
 ## 1.3.0
 
 ### Minor Changes

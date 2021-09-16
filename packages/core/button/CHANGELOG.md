@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.3.0
+
+### Minor Changes
+
+- cca123ed8: Fix styling
+
 ## 1.2.1
 
 ### Patch Changes
