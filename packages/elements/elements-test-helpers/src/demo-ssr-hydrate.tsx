@@ -1,11 +1,10 @@
 import * as React from 'react';
-
-import { renderToString } from 'react-dom/server';
 import { hydrate } from 'react-dom';
+import { renderToString } from 'react-dom/server';
 
 export default (Example: any, renderSSR: boolean = true) => {
   return class HydrateExample extends React.Component<{}, {}> {
-    private serverHTML: string;
+    public serverHTML: string;
 
     constructor(props: {}) {
       super(props);

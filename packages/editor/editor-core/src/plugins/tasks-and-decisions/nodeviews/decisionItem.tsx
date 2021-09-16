@@ -1,5 +1,5 @@
 import { Node as PMNode } from 'prosemirror-model';
-import { Decoration, NodeView } from 'prosemirror-view';
+import { Decoration, DecorationSet, NodeView } from 'prosemirror-view';
 import React from 'react';
 import { ForwardRef, getPosHandler, ReactNodeView } from '../../../nodeviews';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
@@ -45,7 +45,7 @@ class Decision extends ReactNodeView {
   update(
     node: PMNode,
     decorations: Decoration[],
-    innerDecorations: DecorationSource,
+    innerDecorations: DecorationSet,
   ) {
     return super.update(
       node,

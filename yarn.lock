@@ -5333,7 +5333,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prosemirror-view@npm:*, @types/prosemirror-view@npm:^1.18.0":
+"@types/prosemirror-view@npm:*":
   version: 1.18.0
   resolution: "@types/prosemirror-view@npm:1.18.0"
   dependencies:
@@ -5341,6 +5341,17 @@ __metadata:
     "@types/prosemirror-state": "*"
     "@types/prosemirror-transform": "*"
   checksum: 73116689c404ad10246becfa1a18feea1f765aed70f65eec933a71f168e29fa235ab8e8207e7c7851c21eeac6e55764508bcfd1648e230c75009683130b9f123
+  languageName: node
+  linkType: hard
+
+"@types/prosemirror-view@npm:^1.19.1":
+  version: 1.19.1
+  resolution: "@types/prosemirror-view@npm:1.19.1"
+  dependencies:
+    "@types/prosemirror-model": "*"
+    "@types/prosemirror-state": "*"
+    "@types/prosemirror-transform": "*"
+  checksum: 25f243077daaaaaeb39ca3ec96cc049dcef5aa67f76674e93bc9be8133661afd56791d231a073b96115a5f28931f48363bf1d07dd9de150e53087f29e0f3c0e6
   languageName: node
   linkType: hard
 
@@ -5784,7 +5795,7 @@ __metadata:
     "@types/linkify-it": ^3.0.2
     "@types/prosemirror-model": ^1.13.2
     "@types/prosemirror-state": ^1.2.7
-    "@types/prosemirror-view": ^1.18.0
+    "@types/prosemirror-view": ^1.19.1
     "@uidu/editor-json-transformer": ^0.4.0
     "@uidu/json-schema-generator": ^0.2.0
     axios: ^0.21.4
@@ -5793,7 +5804,7 @@ __metadata:
     linkify-it: ^3.0.2
     prosemirror-model: ^1.14.3
     prosemirror-state: ^1.3.4
-    prosemirror-view: ^1.19.1
+    prosemirror-view: ^1.20.1
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
@@ -6748,7 +6759,7 @@ __metadata:
     prop-types: ^15.7.2
     prosemirror-collab: ^1.2.2
     prosemirror-commands: ^1.1.10
-    prosemirror-history: ^1.1.3
+    prosemirror-history: ^1.2.0
     prosemirror-inputrules: ^1.1.3
     prosemirror-keymap: ^1.1.4
     prosemirror-model: ^1.14.3
@@ -6757,7 +6768,7 @@ __metadata:
     prosemirror-tables: ^1.1.1
     prosemirror-transform: ^1.3.2
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.19.1
+    prosemirror-view: ^1.20.1
     raf-schd: ^4.0.3
     re-resizable: ^6.9.1
     react: ^17.0.2
@@ -6782,7 +6793,7 @@ __metadata:
     "@uidu/editor-common": ^0.5.3
     "@uidu/editor-core": ^0.10.2
     prosemirror-model: ^1.14.3
-    prosemirror-view: ^1.19.1
+    prosemirror-view: ^1.20.1
     react: ^17.0.2
     styled-components: ^5.3.1
     tslib: ^2.3.1
@@ -6802,7 +6813,7 @@ __metadata:
     "@uidu/editor-core": ^0.10.2
     markdown-it: ^12.2.0
     markdown-it-table: ^2.0.4
-    prosemirror-markdown: ^1.5.1
+    prosemirror-markdown: ^1.5.2
     prosemirror-model: ^1.14.3
     react: ^17.0.2
     styled-components: ^5.3.1
@@ -7094,7 +7105,7 @@ __metadata:
     formsy-react: ^2.2.5
     react: ^17.0.2
     react-avatar-editor: ^12.0.0
-    react-dropzone: ^11.3.4
+    react-dropzone: ^11.4.0
     react-feather: ^2.0.9
     styled-components: ^5.3.1
     tslib: ^2.3.1
@@ -7504,7 +7515,7 @@ __metadata:
     lodash.debounce: ^4.0.8
     netlify-cli: ^5.4.16
     node-fetch: ^2.6.2
-    prismjs: ^1.24.1
+    prismjs: ^1.25.0
     query-string: ^7.0.1
     react: ^17.0.2
     react-addons-text-content: ^0.0.4
@@ -17983,7 +17994,7 @@ fsevents@^1.2.7:
     "@types/prosemirror-model": ^1.13.2
     "@types/prosemirror-state": ^1.2.7
     "@types/prosemirror-transform": ^1.1.4
-    "@types/prosemirror-view": ^1.18.0
+    "@types/prosemirror-view": ^1.19.1
     "@types/react": ^17.0.21
     "@types/react-dom": ^17.0.9
     "@types/react-grid-layout": ^1.1.2
@@ -18142,22 +18153,22 @@ fsevents@^1.2.7:
     postcss-safe-parser: ^6.0.0
     prettier: ^2.4.1
     pretty-proptypes: ^1.3.0
-    prismjs: ^1.24.1
+    prismjs: ^1.25.0
     prop-types: ^15.7.2
     prosemirror-collab: ^1.2.2
     prosemirror-commands: ^1.1.10
     prosemirror-dev-tools: ^3.1.0
-    prosemirror-history: ^1.1.3
+    prosemirror-history: ^1.2.0
     prosemirror-inputrules: ^1.1.3
     prosemirror-keymap: ^1.1.4
-    prosemirror-markdown: ^1.5.1
+    prosemirror-markdown: ^1.5.2
     prosemirror-model: ^1.14.3
     prosemirror-schema-list: ^1.1.5
     prosemirror-state: ^1.3.4
     prosemirror-tables: ^1.1.1
     prosemirror-transform: ^1.3.2
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.19.1
+    prosemirror-view: ^1.20.1
     query-string: ^7.0.1
     raf-schd: ^4.0.3
     raw-loader: ^4.0.2
@@ -18179,7 +18190,7 @@ fsevents@^1.2.7:
     react-countup: ^5.2.0
     react-day-picker: ^7.4.10
     react-dom: ^17.0.2
-    react-dropzone: ^11.3.4
+    react-dropzone: ^11.4.0
     react-facebook: ^8.1.4
     react-fast-compare: ^3.2.0
     react-feather: ^2.0.9
@@ -25449,10 +25460,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prismjs@npm:^1.22.0, prismjs@npm:^1.24.1":
+"prismjs@npm:^1.22.0":
   version: 1.24.1
   resolution: "prismjs@npm:1.24.1"
   checksum: e5d14a4ba56773122039295bd760c72106acc964e04cb9831b9ae7e7a58f67ccac6c053e77e21f1018a3684f31d35bb065c0c81fd4ff00b73b1570c3ace4aef0
+  languageName: node
+  linkType: hard
+
+"prismjs@npm:^1.25.0":
+  version: 1.25.0
+  resolution: "prismjs@npm:1.25.0"
+  checksum: 04d8eae9d1b26b76c350bc65621584c8f8cab80ace7da3953f8aef2f9a8dd4b4f71c1d15bc5c67f126ddc90cd5af613919dc1340589a6c57355bed86fa3ac010
   languageName: node
   linkType: hard
 
@@ -25602,14 +25620,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prosemirror-history@npm:^1.1.3":
-  version: 1.1.3
-  resolution: "prosemirror-history@npm:1.1.3"
+"prosemirror-history@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "prosemirror-history@npm:1.2.0"
   dependencies:
     prosemirror-state: ^1.2.2
     prosemirror-transform: ^1.0.0
     rope-sequence: ^1.3.0
-  checksum: b89416c7f9770295800cb6bf9b1d258e659eb14fd4270a314a8d6574792505a431c4cdb705870873747b6878af2d8bb04b8539c00f7b56203c105c878429e387
+  checksum: 9d1bedfd6a39aa007e96abbb57fd14d1397f78f8266ff2863ed3e3e2d3861305765cf1a41b587aebb5c532eec4b17d2fbe1c0c8a27c9c71185226cc13cf942b9
   languageName: node
   linkType: hard
 
@@ -25633,13 +25651,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prosemirror-markdown@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "prosemirror-markdown@npm:1.5.1"
+"prosemirror-markdown@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "prosemirror-markdown@npm:1.5.2"
   dependencies:
     markdown-it: ^10.0.0
     prosemirror-model: ^1.0.0
-  checksum: 0e99c19f826d6773ed6bd2c65708f1759d909f93dafce1b49fac0b308790a41bb3b8269f792065c51c08d5380f5ed32e4abdea67c0200de77eae359d4f2fe33b
+  checksum: 594a91417cb8b504ed50bded7b049bb00ec4dbcd6ae3b61e378510af6a06d208e34d5cca4b4d5eebdf4f372eb181b4bbc3f857a07edddaf4cce833b4a275c029
   languageName: node
   linkType: hard
 
@@ -25705,7 +25723,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.19.1":
+"prosemirror-view@npm:^1.13.3":
   version: 1.19.1
   resolution: "prosemirror-view@npm:1.19.1"
   dependencies:
@@ -25713,6 +25731,17 @@ fsevents@^1.2.7:
     prosemirror-state: ^1.0.0
     prosemirror-transform: ^1.1.0
   checksum: 9864631edec2dbd6bcf5f7f7246f5ba6e9984c7d7431574e815c6762497973daa4e3dca0fee16f52cfcfea7cdd5c0be43ff66da5b11bd1e236ac7c81e60566a9
+  languageName: node
+  linkType: hard
+
+"prosemirror-view@npm:^1.20.1":
+  version: 1.20.1
+  resolution: "prosemirror-view@npm:1.20.1"
+  dependencies:
+    prosemirror-model: ^1.14.3
+    prosemirror-state: ^1.0.0
+    prosemirror-transform: ^1.1.0
+  checksum: 905d7679acd49c6f766433a0341cac28095ff96ba4e89b40678aae20d8b2920505ab38f3cf398a57e01a90013ca3eecd4a764a41a7877ba48da8763e30a58fd6
   languageName: node
   linkType: hard
 
@@ -26365,16 +26394,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-dropzone@npm:^11.3.4":
-  version: 11.3.4
-  resolution: "react-dropzone@npm:11.3.4"
+"react-dropzone@npm:^11.4.0":
+  version: 11.4.0
+  resolution: "react-dropzone@npm:11.4.0"
   dependencies:
     attr-accept: ^2.2.1
     file-selector: ^0.2.2
     prop-types: ^15.7.2
   peerDependencies:
     react: ">= 16.8"
-  checksum: 602ac4e41a39d9ef8b475faed0c5d5429116150c2cdd1cceb98992d741769865212ceb9d379e9886c4c101b8a65d06f16395dee530e949830bf0bb60d46d29b4
+  checksum: a076b1bd98778abb81738cb0e532fbe1c1141f3f0055368206e370f49c2b59413bf84c8f32bc6543e4c55c6b79b639305e8be8c4608ee95655b04f47220c87a8
   languageName: node
   linkType: hard
 

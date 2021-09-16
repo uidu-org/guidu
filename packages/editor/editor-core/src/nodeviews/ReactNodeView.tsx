@@ -1,6 +1,11 @@
 import { Node as PMNode } from 'prosemirror-model';
 import { NodeSelection, Selection } from 'prosemirror-state';
-import { Decoration, EditorView, NodeView } from 'prosemirror-view';
+import {
+  Decoration,
+  DecorationSet,
+  EditorView,
+  NodeView,
+} from 'prosemirror-view';
 import React from 'react';
 import {
   ReactNodeViewState,
@@ -137,7 +142,7 @@ export default class ReactNodeView<P = ReactComponentProps>
   update(
     node: PMNode,
     _decorations: Decoration[],
-    _innerDecorations: DecorationSource,
+    _innerDecorations: DecorationSet,
     validUpdate: (currentNode: PMNode, newNode: PMNode) => boolean = () => true,
   ) {
     const isValidUpdate =

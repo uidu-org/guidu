@@ -5,7 +5,7 @@ import {
 } from '@uidu/analytics';
 import { ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
-import { Decoration, NodeView } from 'prosemirror-view';
+import { Decoration, DecorationSet, NodeView } from 'prosemirror-view';
 import React from 'react';
 import { ForwardRef, getPosHandler, ReactNodeView } from '../../../nodeviews';
 import { getPosHandlerNode } from '../../../nodeviews/ReactNodeView';
@@ -130,7 +130,7 @@ class Task extends ReactNodeView<Props> {
   update(
     node: PMNode,
     decorations: Decoration[],
-    innerDecorations: DecorationSource,
+    innerDecorations: DecorationSet,
   ) {
     return super.update(
       node,

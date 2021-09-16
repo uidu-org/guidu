@@ -25,7 +25,7 @@
     "formsy-react": "^2.2.5",
     "react": "^17.0.2",
     "react-avatar-editor": "^12.0.0",
-    "react-dropzone": "^11.3.4",
+    "react-dropzone": "^11.4.0",
     "react-feather": "^2.0.9",
     "styled-components": "^5.3.1",
     "tslib": "^2.3.1"

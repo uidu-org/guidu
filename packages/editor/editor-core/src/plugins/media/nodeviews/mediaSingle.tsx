@@ -12,7 +12,7 @@ import { Node as PMNode } from 'prosemirror-model';
 import { NodeSelection } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
 import { findParentNodeOfTypeClosestToPos } from 'prosemirror-utils';
-import { Decoration, EditorView } from 'prosemirror-view';
+import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 import React, { Component } from 'react';
 import { EventDispatcher } from '../../../event-dispatcher';
 import {
@@ -363,7 +363,7 @@ class MediaSingleNodeView extends SelectionBasedNodeView<MediaSingleNodeViewProp
   update(
     node: PMNode,
     decorations: Decoration[],
-    innerDecorations: DecorationSource,
+    innerDecorations: DecorationSet,
     isValidUpdate?: (currentNode: PMNode, newNode: PMNode) => boolean,
   ) {
     if (!isValidUpdate) {
