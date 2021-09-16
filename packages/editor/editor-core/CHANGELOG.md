@@ -1,5 +1,15 @@
 # @uidu/editor-core
 
+## 0.10.4
+
+### Patch Changes
+
+- 24d96e94b: Bump other deps, fix build
+- Updated dependencies [24d96e94b]
+  - @uidu/adf-schema@0.5.2
+  - @uidu/editor-json-transformer@0.4.3
+  - @uidu/editor-markdown-transformer@0.5.3
+
 ## 0.10.3
 
 ### Patch Changes

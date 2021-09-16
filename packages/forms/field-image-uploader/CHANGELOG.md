@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 1.0.6
+
+### Patch Changes
+
+- 24d96e94b: Bump other deps, fix build
+
 ## 1.0.5
 
 ### Patch Changes
