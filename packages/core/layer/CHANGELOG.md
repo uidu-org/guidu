@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.5.2
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+
 ## 0.5.1
 
 ### Patch Changes

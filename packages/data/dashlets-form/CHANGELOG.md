@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 1.0.1
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+- Updated dependencies [a797171e1]
+  - @uidu/accordion@0.5.3
+  - @uidu/dropdown-menu@0.6.3
+  - @uidu/dashlets@1.1.2
+  - @uidu/field-downshift@1.4.1
+  - @uidu/field-toggle@1.0.4
+  - @uidu/form@1.2.3
+  - @uidu/select@1.4.1
+  - @uidu/shell@2.1.1
+
 ## 1.0.0
 
 ### Major Changes

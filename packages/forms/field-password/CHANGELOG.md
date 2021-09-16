@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 1.1.3
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+- Updated dependencies [a797171e1]
+  - @uidu/analytics@0.5.1
+  - @uidu/theme@0.6.2
+  - @uidu/tooltip@0.5.3
+  - @uidu/field-base@3.1.2
+  - @uidu/field-text@1.1.4
+  - @uidu/form@1.2.3
+
 ## 1.1.2
 
 ### Patch Changes

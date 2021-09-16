@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.8.1
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+- Updated dependencies [a797171e1]
+  - @uidu/analytics@0.5.1
+  - @uidu/theme@0.6.2
+  - @uidu/tooltip@0.5.3
+
 ## 0.8.0
 
 ### Minor Changes

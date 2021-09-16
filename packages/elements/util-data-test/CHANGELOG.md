@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.1
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+- Updated dependencies [a797171e1]
+  - @uidu/analytics@0.5.1
+  - @uidu/emoji@0.5.4
+  - @uidu/mentions@0.3.4
+  - @uidu/task-decision@0.4.3
+
 ## 0.4.0
 
 ### Minor Changes
