@@ -45,7 +45,7 @@ export default function XYStateless({ data, series = [], config }) {
           type: 'DateAxis',
           dataFields: [
             {
-              date: 'category',
+              date: 'x',
             },
           ],
           renderer: {
@@ -98,7 +98,7 @@ export default function XYStateless({ data, series = [], config }) {
           type: 'StepLineSeries',
           dataFields: {
             valueY: line.key,
-            dateX: 'category',
+            dateX: 'x',
           },
           strokeWidth: 1,
           fillOpacity: 1,

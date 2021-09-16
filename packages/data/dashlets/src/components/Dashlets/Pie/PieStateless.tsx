@@ -25,7 +25,7 @@ export default function PieStateless({ data, series = [], config }) {
           type: 'PieSeries',
           dataFields: {
             value: line.key,
-            category: 'category',
+            category: 'x',
           },
           propertyFields: {
             fill: 'color',

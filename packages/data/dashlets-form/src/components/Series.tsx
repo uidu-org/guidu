@@ -5,7 +5,7 @@ import React from 'react';
 //   {
 //     dataFields: {
 //       valueY: measure.id,
-//       dateX: 'category',
+//       dateX: 'x',
 //     },
 //     strokeWidth: 1,
 //     fillOpacity: 0.6,
@@ -39,7 +39,7 @@ export default function Series({ measures, config, setConfig }) {
                         type: value,
                         dataFields: {
                           valueY: measure.name,
-                          dateX: 'category',
+                          dateX: 'x',
                         },
                         columns: {
                           tooltipText: `{dateX}\n[bold]{valueY}[/]`,
@@ -54,7 +54,7 @@ export default function Series({ measures, config, setConfig }) {
                       ...serie,
                       dataFields: {
                         valueY: measure.name,
-                        dateX: 'category',
+                        dateX: 'x',
                       },
                       strokeWidth: 1,
                       fillOpacity: 0.6,

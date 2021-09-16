@@ -28,23 +28,23 @@ export const dashlets = [
     // data: {
     //   values: [
     //     {
-    //       category: '2017-01-01T00:00:00.000',
+    //       x: '2017-01-01T00:00:00.000',
     //       'Contacts.count': 88,
     //     },
     //     {
-    //       category: '2018-01-01T00:00:00.000',
+    //       x: '2018-01-01T00:00:00.000',
     //       'Contacts.count': 48,
     //     },
     //     {
-    //       category: '2019-01-01T00:00:00.000',
+    //       x: '2019-01-01T00:00:00.000',
     //       'Contacts.count': 77,
     //     },
     //     {
-    //       category: '2020-01-01T00:00:00.000',
+    //       x: '2020-01-01T00:00:00.000',
     //       'Contacts.count': 126,
     //     },
     //     {
-    //       category: '2021-01-01T00:00:00.000',
+    //       x: '2021-01-01T00:00:00.000',
     //       'Contacts.count': 59,
     //     },
     //   ],
@@ -55,7 +55,7 @@ export const dashlets = [
           type: 'ColumnSeries',
           dataFields: {
             valueY: 'Contacts.count',
-            dateX: 'category',
+            dateX: 'x',
           },
           columns: {
             width: '30%',
@@ -110,7 +110,7 @@ export const dashlets = [
           type: 'ColumnSeries',
           dataFields: {
             valueY: 'Donations.totalAmount',
-            dateX: 'category',
+            dateX: 'x',
           },
           name: 'Total amount donations received',
         },
@@ -118,7 +118,7 @@ export const dashlets = [
           type: 'ColumnSeries',
           dataFields: {
             valueY: 'Donations.count',
-            dateX: 'category',
+            dateX: 'x',
           },
           name: 'Total donations received',
         },
@@ -239,13 +239,13 @@ export const dashlets = [
     kind: 'Pie',
     label: 'Metodo di pagamento',
     query: {
-      dimensions: ['Donations.paymentMethod'],
+      dimensions: ['Contacts.email'],
       timeDimensions: [
         {
-          dimension: 'Donations.createdAt',
+          dimension: 'Contacts.createdAt',
         },
       ],
-      measures: ['Donations.count'],
+      measures: ['Contacts.count'],
       filters: [],
     },
     layout: { x: 0, y: 4, w: 8, h: 8 },

@@ -20,7 +20,7 @@ export default function Radar({ config, resultSet }) {
             {
               type: 'CategoryAxis',
               dataFields: {
-                category: 'category',
+                category: 'x',
               },
               renderer: {
                 grid: {
@@ -49,7 +49,7 @@ export default function Radar({ config, resultSet }) {
             type: 'RadarSeries',
             dataFields: {
               valueY: line.key,
-              categoryX: 'category',
+              categoryX: 'x',
             },
             propertyFields: {
               fill: 'color',

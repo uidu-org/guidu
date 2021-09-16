@@ -23,7 +23,7 @@ export function measuresToSeriesForChartType(
     //     type: 'PieSeries',
     //     dataFields: {
     //       value: measure.name,
-    //       category: 'category',
+    //       category: 'x',
     //     },
     //     propertyFields: {
     //       fill: 'color',
@@ -45,7 +45,7 @@ export function measuresToSeriesForChartType(
           type: 'StepLineSeries',
           dataFields: {
             valueY: measure.name,
-            dateX: 'category',
+            dateX: 'x',
           },
           strokeWidth: 1,
           fillOpacity: 0.6,
