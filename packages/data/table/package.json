@@ -17,7 +17,7 @@
     "@babel/runtime": "^7.15.3",
     "@uidu/button": "1.2.1",
     "@uidu/checkbox": "^1.1.2",
-    "@uidu/data-fields": "^1.1.0",
+    "@uidu/data-fields": "^1.2.0",
     "@uidu/dropdown-menu": "^0.6.2",
     "@uidu/menu": "^0.5.2",
     "@uidu/popup": "^0.6.0",
@@ -37,7 +37,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@uidu/data-controls": "^1.1.0",
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "faker": "^5.5.3"
   }
 }

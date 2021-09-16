@@ -1,5 +1,12 @@
 # @uidu/drawer
 
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies [18d6c84e4]
+  - @uidu/docs@0.5.0
+
 ## 0.7.1
 
 ### Patch Changes

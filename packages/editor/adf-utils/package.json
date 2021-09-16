@@ -21,7 +21,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.0",
+    "@uidu/docs": "^0.5.0",
     "@uidu/json-schema-generator": "^0.2.0",
     "react": "^17.0.2"
   }

@@ -1,5 +1,12 @@
 # @uidu/tabs
 
+## 0.3.2
+
+### Patch Changes
+
+- Updated dependencies [18d6c84e4]
+  - @uidu/docs@0.5.0
+
 ## 0.3.1
 
 ### Patch Changes

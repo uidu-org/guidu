@@ -21,7 +21,7 @@
     "use-places-autocomplete": "^1.9.4"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "@uidu/form": "^1.2.1",
     "styled-components": "^5.3.1"
   },

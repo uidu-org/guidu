@@ -13,7 +13,7 @@
     "@fluentui/react": "^8.30.1",
     "@uidu/button": "^1.2.1",
     "@uidu/dropdown-menu": "^0.6.2",
-    "@uidu/media-core": "^0.5.0",
+    "@uidu/media-core": "^0.5.1",
     "@uidu/spinner": "^0.5.1",
     "@uidu/theme": "^0.6.1",
     "@uidu/tooltip": "^0.5.2",
@@ -25,7 +25,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "faker": "^5.5.3"
   }
 }

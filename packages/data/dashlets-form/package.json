@@ -12,7 +12,7 @@
     "@babel/runtime": "^7.15.3",
     "@cubejs-client/core": "^0.28.25",
     "@cubejs-client/react": "^0.28.25",
-    "@uidu/accordion": "^0.5.0",
+    "@uidu/accordion": "^0.5.2",
     "@uidu/dashlets": "^1.0.0",
     "@uidu/dropdown-menu": "^0.6.1",
     "@uidu/field-downshift": "^1.1.1",
@@ -24,6 +24,6 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.0"
+    "@uidu/docs": "^0.5.0"
   }
 }

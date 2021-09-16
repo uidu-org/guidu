@@ -29,7 +29,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.0",
+    "@uidu/docs": "^0.5.0",
     "@uidu/media-picker": "^0.5.0"
   }
 }

@@ -17,7 +17,7 @@
     "@uidu/board": "^0.4.1",
     "@uidu/calendar": "^0.3.0",
     "@uidu/data-controls": "^1.1.0",
-    "@uidu/data-fields": "^1.1.0",
+    "@uidu/data-fields": "^1.2.0",
     "@uidu/data-views": "^1.0.0",
     "@uidu/gallery": "^1.1.0",
     "@uidu/list": "^1.1.0",
@@ -37,7 +37,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "@uidu/dropdown-menu": "^0.6.2",
     "@uidu/navigation": "^1.0.1",
     "@uidu/page-header": "^1.0.1",

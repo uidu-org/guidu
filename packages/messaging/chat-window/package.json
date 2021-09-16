@@ -23,7 +23,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "@uidu/shell": "^2.0.3",
     "faker": "^5.5.3",
     "use-clipboard-copy": "^0.2.0"

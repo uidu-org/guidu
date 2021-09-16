@@ -17,7 +17,7 @@
     "@loadable/component": "^5.15.0",
     "@uidu/dashboard-manager": "^1.0.1",
     "@uidu/dashlet-controls": "^1.0.1",
-    "@uidu/data-fields": "^1.1.0",
+    "@uidu/data-fields": "^1.2.0",
     "@uidu/spinner": "^0.5.1",
     "@uidu/table": "1.1.0",
     "@uidu/tooltip": "^0.5.2",
@@ -37,7 +37,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.2"
+    "@uidu/docs": "^0.5.0"
   },
   "publishConfig": {
     "access": "public"

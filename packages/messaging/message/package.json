@@ -14,10 +14,10 @@
     "@fluentui/react": "^8.30.1",
     "@loadable/component": "^5.15.0",
     "@uidu/avatar": "^0.8.0",
-    "@uidu/drawer": "^0.7.0",
+    "@uidu/drawer": "^0.7.2",
     "@uidu/dropdown-menu": "^0.6.2",
     "@uidu/media-card": "^0.5.4",
-    "@uidu/media-core": "^0.5.0",
+    "@uidu/media-core": "^0.5.1",
     "@uidu/media-viewer": "^0.4.2",
     "@uidu/message-form": "^0.4.0",
     "@uidu/message-renderer": "^0.4.1",
@@ -35,7 +35,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "@uidu/shell": "^2.0.3",
     "faker": "^5.5.3"
   },
