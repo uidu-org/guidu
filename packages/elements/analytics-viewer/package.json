@@ -12,7 +12,7 @@
     "access": "private"
   },
   "dependencies": {
-    "@babel/runtime": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
     "@uidu/analytics": "^0.5.0",
     "styled-components": "^5.3.1",
     "tslib": "^2.3.1"

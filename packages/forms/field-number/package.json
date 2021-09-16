@@ -15,7 +15,7 @@
   "module": "dist/uidu-field-number.esm.js",
   "types": "dist/uidu-field-number.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
     "@uidu/analytics": "^0.5.0",
     "@uidu/field-base": "^3.0.1",
     "@uidu/field-text": "^1.1.3",

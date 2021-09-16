@@ -9,7 +9,7 @@
   "module": "dist/uidu-field-file-uploader.esm.js",
   "types": "dist/uidu-field-file-uploader.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
     "@uidu/field-base": "^3.0.0",
     "@uppy/core": "^1.20.1",
     "@uppy/dashboard": "^1.21.1",

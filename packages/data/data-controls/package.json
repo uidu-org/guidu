@@ -10,7 +10,7 @@
   "module": "dist/uidu-data-controls.esm.js",
   "types": "dist/uidu-data-controls.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
     "@uidu/checkbox": "^1.1.2",
     "@uidu/data-fields": "^1.2.0",
     "@uidu/data-views": "^1.0.0",

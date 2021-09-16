@@ -9,7 +9,7 @@
   "module": "dist/uidu-gallery.esm.js",
   "types": "dist/uidu-gallery.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
     "@uidu/data-controls": "^1.1.0",
     "@uidu/data-fields": "^1.2.0",
     "@uidu/shell": "^2.0.3",
@@ -22,6 +22,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.0",
-    "react-router-dom": "^5.2.1"
+    "react-router-dom": "^5.3.0"
   }
 }

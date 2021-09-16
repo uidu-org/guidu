@@ -9,8 +9,8 @@
   "module": "dist/uidu-media-card.esm.js",
   "types": "dist/uidu-media-card.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.15.3",
-    "@fluentui/react": "^8.30.1",
+    "@babel/runtime": "^7.15.4",
+    "@fluentui/react": "^8.34.2",
     "@uidu/button": "^1.2.1",
     "@uidu/dropdown-menu": "^0.6.2",
     "@uidu/media-core": "^0.5.1",

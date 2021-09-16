@@ -13,7 +13,7 @@
     "en"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
@@ -29,7 +29,7 @@
     "@uidu/form": "^1.2.2",
     "@uidu/menu": "^0.5.2",
     "@uidu/select": "^1.4.0",
-    "dayjs": "^1.10.6",
+    "dayjs": "^1.10.7",
     "numeral": "^2.0.6",
     "react": "^17.0.2",
     "react-beautiful-dnd": "^13.1.0",
