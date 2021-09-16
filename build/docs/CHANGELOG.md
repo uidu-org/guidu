@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.0
+
+### Minor Changes
+
+- 18d6c84e4: Added table components in docs, field date should convert to utc when timezone is not set
+
 ## 0.4.2
 
 ### Patch Changes

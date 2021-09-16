@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@uidu/badge": "^0.5.1",
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "@uidu/lozenge": "^0.5.1",
     "react-feather": "^2.0.9"
   }

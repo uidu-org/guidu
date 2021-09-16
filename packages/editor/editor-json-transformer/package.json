@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/prosemirror-model": "^1.13.2",
-    "@uidu/docs": "^0.4.2",
+    "@uidu/docs": "^0.5.0",
     "@uidu/editor-common": "^0.5.3",
     "@uidu/editor-core": "^0.10.2",
     "prosemirror-view": "^1.19.1",
