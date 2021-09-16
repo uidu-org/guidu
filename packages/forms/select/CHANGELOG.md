@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 1.4.1
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+- Updated dependencies [a797171e1]
+  - @uidu/analytics@0.5.1
+  - @uidu/spinner@0.5.2
+  - @uidu/theme@0.6.2
+  - @uidu/tooltip@0.5.3
+  - @uidu/checkbox@1.1.3
+  - @uidu/field-base@3.1.2
+  - @uidu/form@1.2.3
+
 ## 1.4.0
 
 ### Minor Changes

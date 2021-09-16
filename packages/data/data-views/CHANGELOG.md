@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 1.0.1
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+- Updated dependencies [a797171e1]
+  - @uidu/data-controls@1.1.1
+  - @uidu/field-counter@1.1.4
+  - @uidu/field-number@1.0.4
+  - @uidu/form@1.2.3
+  - @uidu/select@1.4.1
+
 ## 1.0.0
 
 ### Major Changes

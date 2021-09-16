@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.7.1
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+- Updated dependencies [a797171e1]
+  - @uidu/adf-schema@0.5.1
+
 ## 0.7.0
 
 ### Minor Changes

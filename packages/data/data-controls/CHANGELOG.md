@@ -1,5 +1,26 @@
 # @uidu/data-controls
 
+## 1.1.1
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+- Updated dependencies [a797171e1]
+  - @uidu/drawer@0.7.3
+  - @uidu/dropdown-menu@0.6.3
+  - @uidu/inline-dialog@0.5.3
+  - @uidu/menu@0.5.3
+  - @uidu/popup@0.6.1
+  - @uidu/spinner@0.5.2
+  - @uidu/tooltip@0.5.3
+  - @uidu/data-fields@1.2.2
+  - @uidu/data-views@1.0.1
+  - @uidu/checkbox@1.1.3
+  - @uidu/field-text@1.1.4
+  - @uidu/form@1.2.3
+  - @uidu/select@1.4.1
+  - @uidu/shell@2.1.1
+
 ## 1.1.0
 
 ### Minor Changes

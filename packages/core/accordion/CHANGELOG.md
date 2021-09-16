@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.5.3
+
+### Patch Changes
+
+- a797171e1: Bump dependencies
+- Updated dependencies [a797171e1]
+  - @uidu/docs@0.5.1
+
 ## 0.5.2
 
 ### Patch Changes
