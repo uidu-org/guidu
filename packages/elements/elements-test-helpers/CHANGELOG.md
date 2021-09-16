@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.3
+
+### Patch Changes
+
+- 24d96e94b: Bump other deps, fix build
+
 ## 0.4.2
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-image-uploader",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "An image uploader with preview",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-image-uploader",
   "license": "MIT",

@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.5.2
+
+### Patch Changes
+
+- 24d96e94b: Bump other deps, fix build
+
 ## 0.5.1
 
 ### Patch Changes

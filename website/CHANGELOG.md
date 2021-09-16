@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.8
+
+### Patch Changes
+
+- 24d96e94b: Bump other deps, fix build
+
 ## 0.4.7
 
 ### Patch Changes
