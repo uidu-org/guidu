@@ -20,6 +20,9 @@ export const mapAttributesToState = ({
   if (isActive) {
     return 'active';
   }
+  if (isHover && isFocus) {
+    return 'focus';
+  }
   if (isHover) {
     return 'hover';
   }

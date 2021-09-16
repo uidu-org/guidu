@@ -47,9 +47,9 @@ const initialState: ButtonState = {
 function reducer(state, action) {
   switch (action.type) {
     case 'onMouseEnter':
-      return { isHover: true };
+      return { isHover: true, isFocus: state.isFocus };
     case 'onMouseLeave':
-      return { isHover: false, isActive: false };
+      return { isHover: false, isActive: false, isFocus: state.isFocus };
     case 'onMouseDown':
       return { isHover: false, isActive: false };
     case 'onMouseUp':

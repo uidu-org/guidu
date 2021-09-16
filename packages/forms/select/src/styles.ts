@@ -1,4 +1,5 @@
 import { colors } from '@uidu/theme';
+import { theme } from 'twin.macro';
 
 export default function baseStyles(validationState, isCompact) {
   return {
@@ -70,6 +71,9 @@ export default function baseStyles(validationState, isCompact) {
         ...(state.isFocused && {}),
       },
     }),
+    placeholder: (base, state) => ({
+      color: theme`colors.gray.400`,
+    }),
     // valueContainer: css => ({
     //   ...css,
     //   paddingBottom: isCompact ? 0 : 2,
@@ -80,7 +84,7 @@ export default function baseStyles(validationState, isCompact) {
       padding:
         state.isMulti && state.hasValue
           ? 'calc(.75rem - 2px) .5rem'
-          : '.75rem 1rem',
+          : 'calc(.75rem - 1px) 1rem calc(.75rem - 1px) 1rem',
     }),
     clearIndicator: (css) => ({
       ...css,
