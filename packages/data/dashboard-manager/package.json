@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashboard-manager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/dashboard-manager",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "@cubejs-client/react": "^0.28.36",
     "@types/react-grid-layout": "^1.1.2",
     "@uidu/dashboard-controls": "^1.0.2",
-    "@uidu/dashlets": "^1.1.2",
+    "@uidu/dashlets": "^1.2.0",
     "d3-collection": "^1.0.7",
     "lodash": "^4.17.21",
     "react": "^17.0.2",

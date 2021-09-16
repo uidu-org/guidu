@@ -1,5 +1,13 @@
 # @uidu/dashlets-form
 
+## 1.0.2
+
+### Patch Changes
+
+- 7f7c6d4c5: Cube changed pivot category to x
+- Updated dependencies [7f7c6d4c5]
+  - @uidu/dashlets@1.2.0
+
 ## 1.0.1
 
 ### Patch Changes
