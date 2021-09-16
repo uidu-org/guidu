@@ -34,17 +34,22 @@ const Date: Partial<Field> = {
     }
 
     // we should ensure value is an utc date, if not force it
+    const cleaned = params.value.endsWith('Z')
+      ? params.value
+      : `${params.value}Z`;
+    const convertedIntoUTC = dayjs(cleaned).utc().format();
+
     return (
       <>
         <div tw="flex w-full justify-between">
-          {dayjs(params.value).utc(true).format('L')}
-          <span>{dayjs(params.value).utc(true).format('LT')}</span>
+          {dayjs(convertedIntoUTC).format('L')}
+          <span>{dayjs(convertedIntoUTC).format('LT')}</span>
         </div>
       </>
     );
   },
   mocks: {
-    value: dayjs().toString(),
+    value: '2021-09-14T11:07:03.000Z',
   },
 };
 

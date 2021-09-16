@@ -16,6 +16,7 @@ type Props = {
   packageName?: string;
   overflowHidden?: boolean;
   fullWidth?: boolean;
+  style?: any;
 };
 
 type State = {
@@ -89,6 +90,7 @@ export default class Example extends React.Component<Props, State> {
       title,
       packageName,
       overflowHidden,
+      style,
       fullWidth,
     } = this.props;
     const { isSourceVisible } = this.state;
@@ -133,7 +135,7 @@ export default class Example extends React.Component<Props, State> {
             </SyntaxHighlighter>
           )}
           <div css={[!fullWidth && tw`p-5`]}>
-            <Showcase overflowHidden={overflowHidden}>
+            <Showcase overflowHidden={overflowHidden} style={style}>
               <ErrorBoundary onError={this.onError}>
                 <Component />
               </ErrorBoundary>

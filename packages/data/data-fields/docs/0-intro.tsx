@@ -1,4 +1,4 @@
-import { code, Example, md } from '@uidu/docs';
+import { code, Example, md, Table, Td, Th, Tr } from '@uidu/docs';
 import * as React from 'react';
 import { IntlProvider } from 'react-intl';
 import fields from '../src';
@@ -21,42 +21,49 @@ export default md`
 
   ${(
     <IntlProvider locale="en">
-      <table className="table">
+      <Table>
         <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-          </tr>
+          <Tr>
+            <Th>ID</Th>
+            <Th>Name</Th>
+          </Tr>
         </thead>
         <tbody>
           {fields.map((field: any) => (
-            <tr key={field.kind}>
-              <td className="text-nowrap" style={{ verticalAlign: 'middle' }}>
+            <Tr key={field.kind}>
+              <Td>
                 <code>{field.kind}</code>
-              </td>
-              <td className="">
-                <div className="d-flex align-items-center">
+              </Td>
+              <Td>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
                   <span
-                    className="mr-3 d-flex justify-content-center align-items-center rounded flex-shrink-0"
                     style={{
                       backgroundColor: field.color,
                       color: '#fff',
                       width: 28,
                       height: 28,
+                      marginRight: '1rem',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: '4px',
+                      flexShrink: 0,
                     }}
                   >
                     {field.icon}
                   </span>
-                  <div className="">
-                    <p className="mb-0">{field.name}</p>
-                    <p className="mb-0 text-muted small">{field.description}</p>
+                  <div>
+                    <p style={{}}>{field.name}</p>
+                    <p style={{ fontSize: '.95rem', color: 'gray' }}>
+                      {field.description}
+                    </p>
                   </div>
                 </div>
-              </td>
-            </tr>
+              </Td>
+            </Tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </IntlProvider>
   )}
 
@@ -66,6 +73,9 @@ export default md`
       Component={require('../examples/Basic').default}
       title="Basic"
       source={require('!!raw-loader!../examples/Basic').default}
+      overflowHidden
+      fullWidth
+      style={{ flexDirection: 'row' }}
     />
   )}
 `;

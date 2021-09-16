@@ -22,4 +22,5 @@ export { default as code } from './code';
 export { default as Example } from './Example';
 export { default as Props } from './Props';
 export { default as replaceSrc } from './replaceSrc';
+export * from './Table';
 export { customMd as md };
