@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 1.2.0
+
+### Minor Changes
+
+- 7f7c6d4c5: Cube changed pivot category to x
+
+### Patch Changes
+
+- Updated dependencies [7f7c6d4c5]
+  - @uidu/dashboard-manager@1.0.3
+
 ## 1.1.2
 
 ### Patch Changes
