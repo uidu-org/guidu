@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.1.0
+
+### Minor Changes
+
+- 04c039a1d: Bump stripe API to latest version
+
 ## 1.0.2
 
 ### Patch Changes
