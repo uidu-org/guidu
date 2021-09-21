@@ -2,7 +2,7 @@ import { FormSectionSubmit } from '@uidu/form';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { IntlProvider } from 'react-intl';
-import { PayWithBank, PayWithCard, RecurringPayment } from '../src';
+import { PaymentMethods, RecurringPayment } from '../src';
 
 const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
 
@@ -46,8 +46,11 @@ export default function RecurringPaymentExample({}) {
           stripe={stripe}
           label="Test"
           amount={3000}
-          provider={{ id: provider }}
-          createSubscription={(payload) => createSubscription(payload)}
+          providers={['credit_card', 'credit_card_split', 'bank_account']}
+          createSubscription={async (payload) => {
+            console.log(payload);
+            return createSubscription(payload);
+          }}
           onSave={(payload) => {
             console.log(payload);
             window.alert('success');
@@ -57,23 +60,7 @@ export default function RecurringPaymentExample({}) {
           )}
         >
           {(paymentProps) => {
-            if (provider === 'bank_account') {
-              return (
-                <PayWithBank
-                  {...paymentProps}
-                  provider={{ name: 'Credit card', id: 'card' }}
-                  providerProps={{ hidePostalCode: true }}
-                />
-              );
-            }
-
-            return (
-              <PayWithCard
-                {...paymentProps}
-                provider={{ name: 'Credit card', id: 'card' }}
-                providerProps={{ hidePostalCode: true }}
-              />
-            );
+            return <PaymentMethods {...paymentProps}></PaymentMethods>;
           }}
         </RecurringPayment>
       </div>

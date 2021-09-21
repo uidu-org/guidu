@@ -37,7 +37,7 @@ function SinglePayment({
   if (paymentRequest) {
     paymentRequest.on('paymentMethod', async (ev) => {
       const { error: confirmError, paymentIntent } =
-        await stripe.confirmPaymentIntent(
+        await stripe.confirmCardPayment(
           clientSecret,
           {
             payment_method: ev.paymentMethod.id,

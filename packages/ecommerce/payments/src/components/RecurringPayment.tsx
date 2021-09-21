@@ -40,9 +40,13 @@ function RecurringPayment({
       // eslint-disable-next-line camelcase
       const { client_secret, status } = payment_intent;
 
-      if (status === 'requires_action') {
+      if (status === 'succeeded') {
+        setLoading(false);
+        onSave(payment_intent, {});
+      } else {
         const { error: stripeError, paymentIntent } =
           await stripe.confirmCardPayment(client_secret);
+
         if (stripeError) {
           // Display error message in your UI.
           // The card was declined (i.e. insufficient funds, card has expired, etc)
@@ -51,13 +55,15 @@ function RecurringPayment({
         } else {
           // Show a success message to your customer
           // setLoading(false);
-          onSave(paymentIntent, {});
+          if (paymentIntent.status === 'requires_action') {
+          } else {
+            // No additional information was needed
+            // Show a success message to your customer
+            // setLoading(false);
+            setLoading(false);
+            onSave(paymentIntent, {});
+          }
         }
-      } else {
-        // No additional information was needed
-        // Show a success message to your customer
-        // setLoading(false);
-        onSave(payment_intent, {});
       }
     }
   };
