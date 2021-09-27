@@ -34,62 +34,50 @@ interface Props {
   innerRef?: Ref<HTMLElement> | null;
 }
 
-class SpotlightCard extends React.Component<Props> {
-  static defaultProps = {
-    width: 400,
-    isFlat: false,
-    components: {},
-    theme: (themeFn: () => any) => themeFn(),
-  };
-
-  render() {
-    const {
-      actions,
-      actionsBeforeElement,
-      children,
-      components,
-      isFlat,
-      heading,
-      headingAfterElement,
-      image,
-      innerRef,
-      theme,
-      width,
-    } = this.props;
-    console.log(this.props);
-    return (
-      <Card
-        ref={innerRef}
-        heading={heading}
-        headingAfterElement={headingAfterElement}
-        actions={actions}
-        actionsBeforeElement={actionsBeforeElement}
-        components={components}
-        image={image}
-        className={this.props.className}
-        theme={(parent) => {
-          const { container, ...others } = parent({});
-          return theme!(
-            () => ({
-              ...others,
-              container: {
-                background: P300,
-                color: N0,
-                width: `${Math.min(Math.max(width!, 160), 600)}px`,
-                boxShadow: isFlat
-                  ? undefined
-                  : `0 4px 8px -2px ${N50A}, 0 0 1px ${N60A}`, // AK-5598
-                ...container,
-              },
-            }),
-            {},
-          );
-        }}
-      >
-        {children}
-      </Card>
-    );
-  }
+function SpotlightCard({
+  width = 400,
+  isFlat = false,
+  components = {},
+  theme = (themeFn: () => any) => themeFn(),
+  actions,
+  actionsBeforeElement,
+  children,
+  heading,
+  headingAfterElement,
+  image,
+  innerRef,
+  className,
+}: Props) {
+  return (
+    <Card
+      ref={innerRef}
+      heading={heading}
+      headingAfterElement={headingAfterElement}
+      actions={actions}
+      actionsBeforeElement={actionsBeforeElement}
+      components={components}
+      image={image}
+      className={className}
+      tw="shadow"
+      theme={(parent) => {
+        const { container, ...others } = parent({});
+        return theme!(
+          () => ({
+            ...others,
+            container: {
+              background: 'rgb(var(--body-primary-bg))',
+              color: 'rgb(var(--body-primary-color))',
+              width: `${Math.min(Math.max(width!, 160), 600)}px`,
+              ...container,
+            },
+          }),
+          {},
+        );
+      }}
+    >
+      {children}
+    </Card>
+  );
 }
 
 export default React.forwardRef<HTMLElement, Props>((props, ref) => (

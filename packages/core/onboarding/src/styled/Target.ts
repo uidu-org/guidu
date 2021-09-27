@@ -1,4 +1,4 @@
-import { colors, layers } from '@uidu/theme';
+import { layers } from '@uidu/theme';
 import styled, { css, keyframes } from 'styled-components';
 
 interface TargetProps {
@@ -15,11 +15,11 @@ interface TargetProps {
 
 // NOTE:
 // Pulse color "rgb(101, 84, 192)" derived from "colors.P300"
-const baseShadow = `0 0 0 2px ${colors.P300}`;
+const baseShadow = `0 0 0 2px rgb(var(--brand-primary))`;
 const easing = 'cubic-bezier(0.55, 0.055, 0.675, 0.19)';
 const pulseKeframes = keyframes`
-  0%, 33% { box-shadow: ${baseShadow}, 0 0 0 rgba(101, 84, 192, 1) }
-  66%, 100% { box-shadow: ${baseShadow}, 0 0 0 10px rgba(101, 84, 192, 0.01) }
+  0%, 33% { box-shadow: ${baseShadow}, 0 0 0 rgba(var(--brand-primary), 1) }
+  66%, 100% { box-shadow: ${baseShadow}, 0 0 0 10px rgba(var(--brand-primary), 0.01) }
 `;
 const animation = css`
   animation: ${pulseKeframes} 3000ms ${easing} infinite;
@@ -30,8 +30,8 @@ const animation = css`
 export const Div = styled.div<TargetProps>`
   z-index: ${layers.spotlight() + 1};
 
-  ${p => (p.bgColor ? `background-color: ${p.bgColor};` : null)}
-  ${p => (p.radius ? `border-radius: ${p.radius}px;` : null)}
+  ${(p) => (p.bgColor ? `background-color: ${p.bgColor};` : null)}
+  ${(p) => (p.radius ? `border-radius: ${p.radius}px;` : null)}
 `;
 
 export const TargetInner = styled(Div)`
@@ -39,7 +39,7 @@ export const TargetInner = styled(Div)`
 `;
 
 export const TargetOverlay = styled.div`
-  cursor: ${p => (p.onClick ? 'pointer' : 'auto')};
+  cursor: ${(p) => (p.onClick ? 'pointer' : 'auto')};
   height: 100%;
   left: 0;
   position: absolute;
