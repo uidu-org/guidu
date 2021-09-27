@@ -1,5 +1,11 @@
 # @uidu/onboarding
 
+## 1.2.0
+
+### Minor Changes
+
+- db58e3a76: Changed colors for onboarding
+
 ## 1.1.2
 
 ### Patch Changes
