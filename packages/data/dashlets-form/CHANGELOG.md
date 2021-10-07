@@ -1,5 +1,16 @@
 # @uidu/dashlets-form
 
+## 1.0.3
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/dashlets@1.2.1
+  - @uidu/form@1.2.4
+  - @uidu/select@1.4.2
+  - @uidu/shell@2.1.2
+
 ## 1.0.2
 
 ### Patch Changes

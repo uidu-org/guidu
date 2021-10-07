@@ -1,5 +1,19 @@
 # @uidu/data-controls
 
+## 1.1.2
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/popup@0.6.2
+  - @uidu/data-fields@1.2.3
+  - @uidu/data-views@1.0.2
+  - @uidu/field-text@1.1.5
+  - @uidu/form@1.2.4
+  - @uidu/select@1.4.2
+  - @uidu/shell@2.1.2
+
 ## 1.1.1
 
 ### Patch Changes

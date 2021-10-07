@@ -1,5 +1,19 @@
 # @uidu/renderer
 
+## 0.5.5
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/adf-schema@0.5.3
+  - @uidu/editor-common@0.5.5
+  - @uidu/editor-json-transformer@0.4.4
+  - @uidu/mentions@0.3.5
+  - @uidu/status@0.4.5
+  - @uidu/task-decision@0.4.4
+  - @uidu/media-card@0.5.6
+
 ## 0.5.4
 
 ### Patch Changes

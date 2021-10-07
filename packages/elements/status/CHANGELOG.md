@@ -1,5 +1,13 @@
 # @uidu/status
 
+## 0.4.5
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/field-text@1.1.5
+
 ## 0.4.4
 
 ### Patch Changes

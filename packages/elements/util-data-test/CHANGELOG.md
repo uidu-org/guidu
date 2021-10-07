@@ -1,5 +1,15 @@
 # @uidu/util-data-test
 
+## 0.4.2
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/emoji@0.5.5
+  - @uidu/mentions@0.3.5
+  - @uidu/task-decision@0.4.4
+
 ## 0.4.1
 
 ### Patch Changes
