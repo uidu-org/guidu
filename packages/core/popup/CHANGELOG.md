@@ -1,5 +1,13 @@
 # @uidu/popup
 
+## 0.6.2
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/popper@0.5.3
+
 ## 0.6.1
 
 ### Patch Changes

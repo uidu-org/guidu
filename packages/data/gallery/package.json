@@ -1,6 +1,6 @@
 {
   "name": "@uidu/gallery",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "React component to show data items as gallery card",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/gallery",
   "license": "MIT",
@@ -10,9 +10,9 @@
   "types": "dist/uidu-gallery.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.15.4",
-    "@uidu/data-controls": "^1.1.1",
-    "@uidu/data-fields": "^1.2.2",
-    "@uidu/shell": "^2.1.1",
+    "@uidu/data-controls": "^1.1.2",
+    "@uidu/data-fields": "^1.2.3",
+    "@uidu/shell": "^2.1.2",
     "@uidu/spinner": "^0.5.2",
     "memoize-one": "^5.2.1",
     "react": "^17.0.2",
