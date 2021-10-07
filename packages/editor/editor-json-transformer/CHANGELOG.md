@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.4.4
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/adf-schema@0.5.3
+
 ## 0.4.3
 
 ### Patch Changes

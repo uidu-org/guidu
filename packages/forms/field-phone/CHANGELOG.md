@@ -1,5 +1,14 @@
 # @uidu/field-date
 
+## 1.0.5
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/field-text@1.1.5
+  - @uidu/field-base@3.1.3
+
 ## 1.0.4
 
 ### Patch Changes

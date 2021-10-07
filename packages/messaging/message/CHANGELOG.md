@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.4.6
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/media-card@0.5.6
+  - @uidu/media-viewer@0.4.4
+  - @uidu/message-form@0.4.2
+
 ## 0.4.5
 
 ### Patch Changes

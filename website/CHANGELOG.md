@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.4.9
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/button@1.3.2
+  - @uidu/modal-dialog@0.5.5
+  - @uidu/list@1.1.2
+  - @uidu/table@1.1.3
+  - @uidu/field-text@1.1.5
+  - @uidu/form@1.2.4
+  - @uidu/select@1.4.2
+  - @uidu/shell@2.1.2
+
 ## 0.4.8
 
 ### Patch Changes

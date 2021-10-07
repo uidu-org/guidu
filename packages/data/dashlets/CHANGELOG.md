@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 1.2.1
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/dashboard-manager@1.0.4
+  - @uidu/dashlet-controls@1.0.3
+  - @uidu/data-fields@1.2.3
+  - @uidu/table@1.1.3
+
 ## 1.2.0
 
 ### Minor Changes

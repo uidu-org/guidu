@@ -1,5 +1,15 @@
 # @uidu/stripe-accounts
 
+## 0.3.4
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/payments@1.1.1
+  - @uidu/field-text@1.1.5
+  - @uidu/form@1.2.4
+
 ## 0.3.3
 
 ### Patch Changes

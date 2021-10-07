@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.3.4
+
+### Patch Changes
+
+- 85bc01ca1: Bump dependencies
+- Updated dependencies [85bc01ca1]
+  - @uidu/fs-loader@0.1.47
+  - @uidu/nav-info-loader@0.2.1
+
 ## 0.3.3
 
 ### Patch Changes
