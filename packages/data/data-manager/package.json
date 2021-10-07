@@ -10,9 +10,9 @@
   "types": "dist/uidu-data-manager.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.15.4",
-    "@cubejs-client/core": "^0.28.35",
-    "@cubejs-client/react": "^0.28.36",
-    "@cubejs-client/ws-transport": "^0.28.35",
+    "@cubejs-client/core": "^0.28.38",
+    "@cubejs-client/react": "^0.28.38",
+    "@cubejs-client/ws-transport": "^0.28.38",
     "@loadable/component": "^5.15.0",
     "@uidu/board": "^0.4.2",
     "@uidu/calendar": "^0.3.1",
@@ -24,7 +24,7 @@
     "@uidu/shell": "^2.1.1",
     "@uidu/spinner": "^0.5.2",
     "@uidu/table": "^1.1.2",
-    "d3-array": "^3.0.2",
+    "d3-array": "^3.1.1",
     "dayjs": "^1.10.7",
     "lodash": "^4.17.21",
     "papaparse": "^5.3.1",
@@ -42,6 +42,6 @@
     "@uidu/navigation": "^1.0.2",
     "@uidu/page-header": "^1.0.1",
     "@uidu/side-navigation": "1.0.3",
-    "react-intl": "^5.20.10"
+    "react-intl": "^5.20.12"
   }
 }

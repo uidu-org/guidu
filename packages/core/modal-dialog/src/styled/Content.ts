@@ -125,7 +125,7 @@ export const Footer = styled.footer<FooterProps>`
   align-items: center;
   display: flex;
   flex: 0 0 auto;
-  justify-content: space-between;
+  justify-content: flex-end;
   transition: box-shadow 200ms;
   z-index: 1;
   padding: ${modalPadding - keylineHeight}px ${modalPadding}px ${modalPadding}px

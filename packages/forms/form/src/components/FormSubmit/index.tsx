@@ -1,4 +1,4 @@
-import Button, { ButtonAppearances } from '@uidu/button';
+import Button, { ButtonAppearances, ButtonProps } from '@uidu/button';
 import React from 'react';
 
 export default function FormSubmit({
@@ -16,7 +16,7 @@ export default function FormSubmit({
   canSubmit?: boolean;
   loading?: boolean;
   appearance?: ButtonAppearances;
-}) {
+} & ButtonProps) {
   return (
     <Button
       className={className}

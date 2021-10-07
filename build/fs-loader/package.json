@@ -6,7 +6,7 @@
   "author": "uidu",
   "main": "index.js",
   "dependencies": {
-    "bolt": "^0.24.9",
+    "bolt": "^0.24.10",
     "globby": "^11.0.4",
     "loader-utils": "^2.0.0"
   },

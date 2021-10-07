@@ -10,7 +10,7 @@ function FieldText({
   forwardedRef,
   ...rest
 }: FieldTextProps) {
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { value } = event.currentTarget;
     onChange(name, value);
     onSetValue(value);

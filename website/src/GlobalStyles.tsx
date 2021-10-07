@@ -41,6 +41,14 @@ const CustomStyles = createGlobalStyle`
     --brand-secondary: 240, 240, 240;
     --brand-subtle: 240, 240, 240;
 
+    --brand-danger: 239, 68, 68;
+    --brand-warning: 251, 191, 36;
+    --brand-success: 251, 191, 36;
+
+    /* --brand-on-danger: 239, 68, 68; */
+    /* --brand-on-warning: 251, 191, 36; */
+    /* --brand-on-success: 251, 191, 36; */
+
     --brand-on-primary: 255, 255, 255;
     --brand-on-secondary: 10, 10, 10;
     --brand-on-subtle: 10, 10, 10;

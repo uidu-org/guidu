@@ -49,7 +49,7 @@
     "extract-react-types-loader": "^1.0.0",
     "lodash.debounce": "^4.0.8",
     "netlify-cli": "^5.4.16",
-    "node-fetch": "^2.6.2",
+    "node-fetch": "^3.0.0",
     "prismjs": "^1.25.0",
     "query-string": "^7.0.1",
     "react": "^17.0.2",

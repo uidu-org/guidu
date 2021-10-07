@@ -11,7 +11,7 @@
   "types": "dist/uidu-popper.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.15.4",
-    "@popperjs/core": "^2.10.1",
+    "@popperjs/core": "^2.10.2",
     "react-popper": "^2.2.5",
     "tslib": "^2.3.1"
   },

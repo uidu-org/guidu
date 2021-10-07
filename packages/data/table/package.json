@@ -25,9 +25,9 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.20.10",
+    "react-intl": "^5.20.12",
     "react-table": "^7.7.0",
-    "react-virtual": "^2.8.1",
+    "react-virtual": "^2.8.2",
     "styled-components": "^5.3.1",
     "tslib": "^2.3.1"
   },
