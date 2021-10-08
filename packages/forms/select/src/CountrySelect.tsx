@@ -1,50 +1,37 @@
 import React from 'react';
-import Option from './components/Option';
+import { CreateSelectProps } from './createSelect';
+// import Option from './components/Option';
 import { groupedCountries } from './data/countries';
 import Select from './FormsySelect';
-
-// flow stuff
-type OptionType = { id: string; code: number; icon: string; name: string };
-
-// custom option renderer
-const labelCSS = () => ({
-  alignItems: 'center',
-  display: 'flex',
-  lineHeight: 1.2,
-});
 
 const flagCSS = () => ({
   fontSize: '18px',
   marginRight: '8px',
 });
 
-const Opt = ({ children, icon }: any) => (
-  <div style={labelCSS()}>
-    <span style={flagCSS()}>{icon}</span>
-    {children}
+const Option = ({ innerProps, data, getStyles, ...otherProps }) => (
+  <div
+    {...innerProps}
+    style={{
+      ...getStyles('option', otherProps),
+    }}
+  >
+    <div tw="flex items-center mr-auto min-w-0 w-auto">
+      <div tw="absolute w-5 h-5 flex items-center" style={flagCSS()}>
+        {data.before}
+      </div>
+      <div tw="min-w-0 flex-1 pl-8">
+        <div tw="mb-0 truncate">{data.name}</div>
+      </div>
+    </div>
   </div>
 );
 
 // return the country name; used for searching
-const getOptionLabel = (opt: OptionType) => opt.name;
+const getOptionLabel = (opt: any) => opt.name;
 
 // set the country's abbreviation for the option value, (also searchable)
-const getOptionValue = (opt: OptionType) => opt.id;
-
-// the text node of the control
-const controlLabel = (opt: OptionType) => (
-  <Opt icon={opt.icon}>{opt.id.toUpperCase()}</Opt>
-);
-// the text node for an option
-const optionLabel = ({ id, code, icon, name }: OptionType) => (
-  <Opt icon={icon}>
-    {name} ({id.toUpperCase()}) +{code}
-  </Opt>
-);
-
-// switch formatters based on render context (menu | value)
-const formatOptionLabel = (opt: OptionType, { context }): any =>
-  context === 'value' ? controlLabel(opt) : optionLabel(opt);
+const getOptionValue = (opt: any) => opt.id;
 
 const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
   return (
@@ -59,18 +46,19 @@ const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
       }}
     >
       {data.before && (
-        <div tw="mr-2 flex-shrink-0 flex" style={{ width: 22 }}>
+        <div tw="absolute w-5 h-5 flex items-center" style={flagCSS()}>
           {data.before}
         </div>
       )}
-      {data.name}
+      <div tw="min-w-0 flex-1 pl-8">
+        <div tw="truncate">{data.name}</div>
+      </div>
     </div>
   );
 };
 
 // put it all together
-function CountrySelect({ components, ...otherProps }) {
-  console.log(components);
+function CountrySelect({ components, ...otherProps }: CreateSelectProps) {
   return (
     // @ts-ignore
     <Select

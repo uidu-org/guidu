@@ -1,106 +1,14 @@
 import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps, Wrapper } from '@uidu/field-base';
 import React from 'react';
-import { mergeStyles } from 'react-select';
-import makeAnimated from 'react-select/animated';
+import { mergeStyles, Props } from 'react-select';
 import * as defaultComponents from './components';
-import Input from './components/Input';
 import MultiValueLabel from './components/MultiValueLabel';
 import Option from './components/Option';
 import SingleValue from './components/SingleValue';
 import baseStyles from './styles';
-// NOTE in the future, `Props` and `defaultProps` should come
-// directly from react-select
 
-type ValidationState = 'default' | 'error' | 'success';
-type OptionType = any;
-type OptionsType = Array<OptionType>;
-type ValueType = OptionType | OptionsType | null | void;
-
-type ReactSelectProps = {
-  /* HTML ID(s) of element(s) that should be used to describe this input (for assistive tech) */
-  'aria-describedby'?: string;
-  /* Aria label (for assistive tech) */
-  'aria-label'?: string;
-  /* HTML ID of an element that should be used as the label (for assistive tech) */
-  'aria-labelledby'?: string;
-  /* Remove the currently focused option when the user presses backspace */
-  backspaceRemovesValue?: boolean;
-  /* When the user reaches the top/bottom of the menu, prevent scroll on the scroll-parent  */
-  captureMenuScroll?: boolean;
-  /* Close the select menu when the user selects an option */
-  closeMenuOnSelect?: boolean;
-  /* Custom components to use */
-  components?: {};
-  /* Delimiter used to join multiple values into a single HTML Input value */
-  delimiter?: string;
-  /* enables default animated behaviour in components */
-  enableAnimation?: boolean;
-  /* Clear all values when the user presses escape AND the menu is closed */
-  escapeClearsValue?: boolean;
-  /* Custom method to filter whether an option should be displayed in the menu */
-  filterOption?: (({}, string) => boolean) | null;
-  /* Formats option labels in the menu and control as React components */
-  formatOptionLabel?: (OptionType, {}) => React.ReactNode;
-  /* Resolves option data to a string to be displayed as the label by components */
-  getOptionLabel?: (OptionType) => string;
-  /* Resolves option data to a string to compare options and specify value attributes */
-  getOptionValue?: (OptionType) => string;
-  /* Hide the selected option from the menu */
-  hideSelectedOptions?: boolean;
-  /* Define an id prefix for the select components e.g. {your-id}-value */
-  instanceId?: number | string;
-  /* Is the select value clearable */
-  isClearable?: boolean;
-  /* Is the select disabled */
-  isDisabled?: boolean;
-  /* Is the select in a state of loading (async) */
-  isLoading?: boolean;
-  /* Override the built-in logic to detect whether an option is disabled */
-  isOptionDisabled?: boolean;
-  /* Override the built-in logic to detect whether an option is selected */
-  isOptionSelected?: (OptionType, OptionsType) => boolean;
-  /* Support multiple selected options */
-  multiple?: boolean;
-  /* Async: Text to display when loading options */
-  loadingMessage?: ({ inputValue: string }) => string;
-  /* Maximum height of the menu before scrolling */
-  maxMenuHeight?: number;
-  /* Maximum height of the value container before scrolling */
-  maxValueHeight?: number;
-  /* Name of the HTML Input (optional - without this, no input will be rendered) */
-  name?: string;
-  /* Text to display when there are no options */
-  noOptionsMessage?: ({ inputValue: string }) => string;
-  /* Handle blur events on the control */
-  onBlur?: (e: React.FocusEvent<HTMLElement>) => void;
-  /* Handle change events on the select */
-  onChange?: (name, value, { option, actionMeta }) => void;
-  /* Click events by default have preventDefault & stopPropogation called on them. Use this prop to disable this behaviour  */
-  onClickPreventDefault?: boolean;
-  /* Handle focus events on the control */
-  onFocus?: (e: React.FocusEvent<HTMLElement>) => void;
-  /* Handle change events on the input; return a string to modify the value */
-  onInputChange?: (string) => string | void;
-  /* Handle key down events on the select */
-  onKeyDown?: (e: React.KeyboardEvent<HTMLElement>) => void;
-  /* Array of options that populate the select menu */
-  options?: OptionsType;
-  /* Placeholder text for the select value */
-  placeholder?: string | React.ReactNode;
-  /* Status to relay to screen readers */
-  screenReaderStatus?: ({ count: number }) => string;
-  /* Style modifier methods */
-  styles?: {};
-  /* Select the currently focused option when the user presses tab */
-  tabSelectsValue?: boolean;
-  /* The value of the select; reflected by the selected option */
-  value?: ValueType;
-
-  componentRef?: React.RefObject<any> | ((ref: any) => void);
-};
-
-type CreateSelectProps = ReactSelectProps & {
+export type CreateSelectProps = Props & {
   enableAnimation?: boolean;
   components?: any;
 } & FieldBaseProps & {
@@ -132,7 +40,6 @@ const createSelect = <TOriginalProps extends {}>(
         Option,
         SingleValue,
         MultiValueLabel,
-        Input,
       },
     };
 
@@ -226,10 +133,10 @@ const createSelect = <TOriginalProps extends {}>(
             })}
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...(props as ResultProps)}
-            components={makeAnimated({
+            components={{
               ...defaultComponents,
               ...components,
-            })}
+            }}
             styles={mergeStyles(baseStyles(validationState, isCompact), styles)}
             onChange={(option, actionMeta) => {
               if (multiple) {

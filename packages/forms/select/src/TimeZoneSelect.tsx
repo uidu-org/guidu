@@ -1,40 +1,15 @@
 import React from 'react';
 import type { TimeZone } from 'timezones-list';
 import Option from './components/Option';
+import { CreateSelectProps } from './createSelect';
 import timezones from './data/timezones';
 import Select from './FormsySelect';
-
-// custom option renderer
-const labelCSS = () => ({
-  alignItems: 'center',
-  display: 'flex',
-  lineHeight: 1.2,
-});
-
-const flagCSS = () => ({
-  fontSize: '18px',
-  marginRight: '8px',
-});
-
-const Opt = ({ children, icon }: any) => (
-  <div style={labelCSS()}>
-    <span style={flagCSS()}>{icon}</span>
-    {children}
-  </div>
-);
 
 // return the country name; used for searching
 const getOptionLabel = (opt: TimeZone) => opt.label;
 
 // set the country's abbreviation for the option value, (also searchable)
 const getOptionValue = (opt: TimeZone) => opt.tzCode;
-
-// the text node of the control
-const controlLabel = (opt: TimeZone) => (
-  <Opt icon={opt.icon}>{opt.tzCode.toUpperCase()}</Opt>
-);
-// the text node for an option
-const optionLabel = ({ value, label }: TimeZone) => <>{label}</>;
 
 const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
   return (
@@ -59,7 +34,7 @@ const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
 };
 
 // put it all together
-function TimeZoneSelect({ components, ...otherProps }) {
+function TimeZoneSelect({ components, ...otherProps }: CreateSelectProps) {
   return (
     // @ts-ignore
     <Select

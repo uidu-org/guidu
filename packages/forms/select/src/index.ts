@@ -1,6 +1,6 @@
 export { components, createFilter, mergeStyles } from 'react-select';
-export { makeAsyncSelect } from 'react-select/async';
-export { makeCreatableSelect } from 'react-select/creatable';
+export { default as useAsync } from 'react-select/async';
+export { default as useCreatable } from 'react-select/creatable';
 export { default as CheckboxSelect } from './CheckboxSelect';
 export { CheckboxOption, RadioOption } from './components/input-options';
 export { default as CountrySelect } from './CountrySelect';

@@ -3,7 +3,7 @@ import { theme } from 'twin.macro';
 
 export default function baseStyles(validationState, isCompact) {
   return {
-    // control: (css, { isFocused, isDisabled }) => {
+    // control: (base, { isFocused, isDisabled }) => {
     //   let borderColor = isFocused ? colors.B100 : colors.N20;
     //   let backgroundColor = isFocused ? colors.N0 : colors.N20;
     //   if (isDisabled) {
@@ -19,7 +19,7 @@ export default function baseStyles(validationState, isCompact) {
     //   const transitionDuration = '200ms';
 
     //   return {
-    //     ...css,
+    //     ...base,
     //     backgroundColor,
     //     borderColor,
     //     borderStyle: 'solid',
@@ -72,22 +72,38 @@ export default function baseStyles(validationState, isCompact) {
       },
     }),
     placeholder: (base, state) => ({
+      ...base,
       color: theme`colors.gray.400`,
     }),
-    // valueContainer: css => ({
-    //   ...css,
-    //   paddingBottom: isCompact ? 0 : 2,
-    //   paddingTop: isCompact ? 0 : 2,
-    // }),
-    valueContainer: (base, state) => ({
+    valueContainer: (base, state) => {
+      if (state.isMulti) {
+        if (state.selectProps.isSearchable) {
+          return {
+            ...base,
+            padding: 'calc(0.75rem - 2px)',
+          };
+        }
+        if (state.hasValue) {
+          return {
+            ...base,
+            padding: 'calc(0.75rem - 4px)',
+          };
+        }
+        return {
+          ...base,
+          padding: 'calc(0.75rem - 0px)',
+        };
+      }
+      if (state.hasValue) {
+        return { ...base, padding: 'calc(.75rem - 2px) 1rem' };
+      }
+      return {
+        ...base,
+        padding: 'calc(.75rem - 2px) 1rem',
+      };
+    },
+    clearIndicator: (base) => ({
       ...base,
-      padding:
-        state.isMulti && state.hasValue
-          ? 'calc(.75rem - 2px) .5rem'
-          : 'calc(.75rem - 1px) 1rem calc(.75rem - 1px) 1rem',
-    }),
-    clearIndicator: (css) => ({
-      ...css,
       color: colors.N70,
       paddingLeft: '2px',
       paddingRight: '2px',
@@ -97,18 +113,18 @@ export default function baseStyles(validationState, isCompact) {
         color: colors.N500,
       },
     }),
-    loadingIndicator: (css) => ({
-      ...css,
+    loadingIndicator: (base) => ({
+      ...base,
       paddingBottom: isCompact ? 0 : 6,
       paddingTop: isCompact ? 0 : 6,
     }),
-    dropdownIndicator: (css, { isDisabled }) => {
+    dropdownIndicator: (base, { isDisabled }) => {
       let color = colors.N500;
       if (isDisabled) {
         color = colors.N70;
       }
       return {
-        ...css,
+        ...base,
         color,
         paddingBottom: isCompact ? 0 : 6,
         paddingTop: isCompact ? 0 : 6,
@@ -123,6 +139,9 @@ export default function baseStyles(validationState, isCompact) {
       ...base,
       paddingTop: 0,
       paddingBottom: 0,
+      'input:focus': {
+        boxShadow: 'none',
+      },
       // margin: '0 2px',
     }),
     option: (base, { isSelected, isFocused, isDisabled }) => ({
@@ -142,19 +161,19 @@ export default function baseStyles(validationState, isCompact) {
           : 'rgba(var(--body-primary), 1)',
       },
     }),
-    multiValue: (css) => ({
-      ...css,
+    multiValue: (base) => ({
+      ...base,
       borderRadius: '.25rem',
       backgroundColor: 'rgba(var(--brand-primary), .65)',
       color: 'rgb(var(--brand-on-primary))',
       maxWidth: '100%',
     }),
-    multiValueLabel: (css) => ({
-      ...css,
+    multiValueLabel: (base) => ({
+      ...base,
       color: 'rgb(var(--brand-on-primary))',
     }),
-    // multiValueRemove: (css, { isFocused }) => ({
-    //   ...css,
+    // multiValueRemove: (base, { isFocused }) => ({
+    //   ...base,
     //   backgroundColor: isFocused && colors.R75,
     //   color: isFocused && colors.R400,
     //   paddingLeft: '2px',
