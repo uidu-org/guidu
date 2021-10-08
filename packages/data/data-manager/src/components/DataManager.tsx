@@ -79,6 +79,7 @@ export default function DataManager({
   canSelectRows = true,
   forwardedRef,
   getExportFileBlob,
+  getExportFileName,
 }: DataManagerProps) {
   const setColumnCount = (columnCount) => {
     onViewUpdate(currentView, {
@@ -126,6 +127,7 @@ export default function DataManager({
       //   );
       // },
       getExportFileBlob,
+      getExportFileName,
     },
     useFlexLayout,
     useFilters,

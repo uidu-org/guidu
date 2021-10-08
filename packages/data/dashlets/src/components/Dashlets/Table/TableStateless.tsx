@@ -70,7 +70,7 @@ export default function TableStateless({ values, keys, onItemClick }) {
       tableInstance={tableInstance}
       onItemClick={onItemClick}
       rowHeight={48}
-      headerHeight={48}
+      headerHeight={42}
       includeFooter={false}
       overrides={{
         Td: {

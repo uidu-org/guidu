@@ -1,5 +1,6 @@
 import { FieldGroup } from '@uidu/data-fields';
 import { DataView } from '@uidu/data-views';
+import React from 'react';
 
 export type RowAction = {
   children: any;
@@ -7,30 +8,30 @@ export type RowAction = {
 };
 
 export type DataManagerProps = {
-  currentView?: DataView;
-  onViewUpdate: (state: any) => void;
-  updateView?: (dataView: DataView, props: keyof DataView) => Promise<any>;
-  isAutoSaving: string;
   columnDefs: Array<FieldGroup>;
-  rowData: Array<any>;
+  children: ({ renderControls, renderView, renderSidebar }) => any;
+  currentView?: DataView;
+  onViewUpdate?: (state: any) => void;
+  updateView?: (dataView: DataView, props: keyof DataView) => Promise<any>;
+  isAutoSaving?: string;
+  rowData?: Array<any>;
   onAddField?: () => void;
   onItemClick?: ({ data }: { data: any }) => void;
   onItemSelect?: ({ data }: { data: any }) => void;
   canSelectRows?: boolean;
   getExportFileBlob?: any;
-  children: ({ renderControls, renderView, renderSidebar }) => any;
+  getExportFileName: ({
+    fileType,
+    all,
+  }: {
+    fileType?: string;
+    all?: boolean;
+  }) => string;
   actions?: RowAction[];
+  forwardedRef: React.Ref<any>;
 };
 
-export type DataManagerNextProps = {
-  currentView?: DataView;
-  onViewUpdate: (state: any) => void;
-  updateView?: (dataView: DataView, props: keyof DataView) => Promise<any>;
-  isAutoSaving: string;
-  columnDefs: Array<FieldGroup>;
+export type DataManagerNextProps = DataManagerProps & {
   resultSet: any;
-  onAddField?: () => void;
-  onItemClick?: ({ data }: { data: any }) => void;
-  children: ({ renderControls, renderView, renderSidebar }) => any;
-  actions?: RowAction[];
+  query: any;
 };
