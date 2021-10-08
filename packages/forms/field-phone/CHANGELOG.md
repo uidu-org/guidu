@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 1.0.6
+
+### Patch Changes
+
+- 57906cb4a: Bump dependencies,some export related work on data-manager and fields
+
 ## 1.0.5
 
 ### Patch Changes
