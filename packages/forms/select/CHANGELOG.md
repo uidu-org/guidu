@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 1.5.0
+
+### Minor Changes
+
+- 39f3f920a: Bump to react-select 5
+
 ## 1.4.2
 
 ### Patch Changes

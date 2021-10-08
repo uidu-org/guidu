@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 1.2.2
+
+### Patch Changes
+
+- 57906cb4a: Bump dependencies,some export related work on data-manager and fields
+- Updated dependencies [57906cb4a]
+  - @uidu/data-fields@1.3.0
+
 ## 1.2.1
 
 ### Patch Changes
