@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 1.1.1
+
+### Patch Changes
+
+- e90341f1a: Bump all packages having issues with npm
+
 ## 1.1.0
 
 ### Minor Changes

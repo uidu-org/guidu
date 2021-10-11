@@ -1,5 +1,13 @@
 # @uidu/media-viewer
 
+## 0.4.7
+
+### Patch Changes
+
+- e90341f1a: Bump all packages having issues with npm
+- Updated dependencies [e90341f1a]
+  - @uidu/media-core@0.7.1
+
 ## 0.4.6
 
 ### Patch Changes
