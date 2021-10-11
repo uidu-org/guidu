@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.4.9
+
+### Patch Changes
+
+- db66ac2f4: Republish media-core for npm issues
+- Updated dependencies [db66ac2f4]
+  - @uidu/media-core@0.7.0
+  - @uidu/media-card@0.5.9
+  - @uidu/media-viewer@0.4.6
+
 ## 0.4.8
 
 ### Patch Changes

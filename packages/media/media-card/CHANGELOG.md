@@ -1,5 +1,12 @@
 # @uidu/media-card
 
+## 0.5.9
+
+### Patch Changes
+
+- Updated dependencies [db66ac2f4]
+  - @uidu/media-core@0.7.0
+
 ## 0.5.8
 
 ### Patch Changes

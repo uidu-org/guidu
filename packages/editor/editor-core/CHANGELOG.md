@@ -1,5 +1,15 @@
 # @uidu/editor-core
 
+## 0.10.7
+
+### Patch Changes
+
+- Updated dependencies [db66ac2f4]
+  - @uidu/media-core@0.7.0
+  - @uidu/media-card@0.5.9
+  - @uidu/media-filmstrip@0.4.4
+  - @uidu/media-picker@0.6.1
+
 ## 0.10.6
 
 ### Patch Changes
