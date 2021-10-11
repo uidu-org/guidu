@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 0.7.0
+
+### Minor Changes
+
+- db66ac2f4: Republish media-core for npm issues
+
 ## 0.6.0
 
 ### Minor Changes
