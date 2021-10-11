@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.4
+
+### Patch Changes
+
+- bda6aa1c4: Bump @uppy
+
 ## 0.3.3
 
 ### Patch Changes

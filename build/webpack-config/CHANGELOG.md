@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.6
+
+### Patch Changes
+
+- bda6aa1c4: Bump @uppy
+
 ## 0.3.5
 
 ### Patch Changes

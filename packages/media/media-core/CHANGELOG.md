@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 0.6.0
+
+### Minor Changes
+
+- bda6aa1c4: Bump @uppy
+
 ## 0.5.1
 
 ### Patch Changes

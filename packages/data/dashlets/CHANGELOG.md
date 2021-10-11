@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 1.2.3
+
+### Patch Changes
+
+- bda6aa1c4: Bump @uppy
+
 ## 1.2.2
 
 ### Patch Changes

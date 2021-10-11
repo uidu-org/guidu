@@ -1,5 +1,16 @@
 # @uidu/field-image-uploader
 
+## 1.1.0
+
+### Minor Changes
+
+- bda6aa1c4: Bump @uppy
+
+### Patch Changes
+
+- Updated dependencies [bda6aa1c4]
+  - @uidu/media-core@0.6.0
+
 ## 1.0.7
 
 ### Patch Changes
