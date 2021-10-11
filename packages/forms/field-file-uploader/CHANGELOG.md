@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 1.1.0
+
+### Minor Changes
+
+- bda6aa1c4: Bump @uppy
+
 ## 1.0.4
 
 ### Patch Changes
