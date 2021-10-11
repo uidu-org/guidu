@@ -1,5 +1,15 @@
 # @uidu/media-filmstrip
 
+## 0.4.5
+
+### Patch Changes
+
+- e90341f1a: Bump all packages having issues with npm
+- Updated dependencies [e90341f1a]
+  - @uidu/media-card@0.5.10
+  - @uidu/media-core@0.7.1
+  - @uidu/media-viewer@0.4.7
+
 ## 0.4.4
 
 ### Patch Changes

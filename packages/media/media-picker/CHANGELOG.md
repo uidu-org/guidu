@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.6.2
+
+### Patch Changes
+
+- e90341f1a: Bump all packages having issues with npm
+- Updated dependencies [e90341f1a]
+  - @uidu/media-core@0.7.1
+
 ## 0.6.1
 
 ### Patch Changes

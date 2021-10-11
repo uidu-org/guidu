@@ -1,5 +1,13 @@
 # @uidu/message-form
 
+## 0.4.3
+
+### Patch Changes
+
+- e90341f1a: Bump all packages having issues with npm
+- Updated dependencies [e90341f1a]
+  - @uidu/media-filmstrip@0.4.5
+
 ## 0.4.2
 
 ### Patch Changes
