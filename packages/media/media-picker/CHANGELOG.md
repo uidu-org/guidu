@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.7.0
+
+### Minor Changes
+
+- 32faff269: npm issues
+
 ## 0.6.2
 
 ### Patch Changes
