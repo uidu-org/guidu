@@ -4170,133 +4170,133 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-spring/animated@npm:~9.2.6-beta.0":
-  version: 9.2.6
-  resolution: "@react-spring/animated@npm:9.2.6"
+"@react-spring/animated@npm:~9.3.0":
+  version: 9.3.0
+  resolution: "@react-spring/animated@npm:9.3.0"
   dependencies:
-    "@react-spring/shared": ~9.2.6-beta.0
-    "@react-spring/types": ~9.2.6-beta.0
+    "@react-spring/shared": ~9.3.0
+    "@react-spring/types": ~9.3.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
-  checksum: e2b0b4009a72289e370ab7458e2fc75f1ea216458e047fc9b6c6e5bc28338e9733bb88792c4545b80a9077a36a18da5203322672eeb5407f4e6ca824c8d2f3f8
+  checksum: 0a4feb62305e14a5c30a6795f26873789f261730d8569adb6faf50b8493d9d21ba28acc65b4aa29fa8fdd81aa990676d649e058d9cb8446a6d3a11ab31641ce8
   languageName: node
   linkType: hard
 
-"@react-spring/core@npm:~9.2.6-beta.0":
-  version: 9.2.6
-  resolution: "@react-spring/core@npm:9.2.6"
+"@react-spring/core@npm:~9.3.0":
+  version: 9.3.0
+  resolution: "@react-spring/core@npm:9.3.0"
   dependencies:
-    "@react-spring/animated": ~9.2.6-beta.0
-    "@react-spring/shared": ~9.2.6-beta.0
-    "@react-spring/types": ~9.2.6-beta.0
+    "@react-spring/animated": ~9.3.0
+    "@react-spring/shared": ~9.3.0
+    "@react-spring/types": ~9.3.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
-  checksum: 0027ee14a6f2860d60eaff0c5f67c5c97c4f71c3e18aacc780a838c7b354e42c18d7f91f251a20e6fed1533971e98a1d07083e480f34dd2f4a08c58d5328bfbc
+  checksum: ead78eee48dbed5a8400796e6cc3a51298c660343edccee8bbb734fb0b5a5e50cd96ccb0cd25af4f8566946aa402b815892dea96f2e60f49342a4bbe4fa7e07b
   languageName: node
   linkType: hard
 
-"@react-spring/konva@npm:~9.2.6-beta.0":
-  version: 9.2.6
-  resolution: "@react-spring/konva@npm:9.2.6"
+"@react-spring/konva@npm:~9.3.0":
+  version: 9.3.0
+  resolution: "@react-spring/konva@npm:9.3.0"
   dependencies:
-    "@react-spring/animated": ~9.2.6-beta.0
-    "@react-spring/core": ~9.2.6-beta.0
-    "@react-spring/shared": ~9.2.6-beta.0
-    "@react-spring/types": ~9.2.6-beta.0
+    "@react-spring/animated": ~9.3.0
+    "@react-spring/core": ~9.3.0
+    "@react-spring/shared": ~9.3.0
+    "@react-spring/types": ~9.3.0
   peerDependencies:
     konva: ">=2.6"
     react: ^16.8.0  || ^17.0.0
     react-konva: ^16.8.0  || ^17.0.0
-  checksum: 9defc1cc3ba48bdbbd1fdbd4deab03a9b31f0c5ea56c3bcf391c6eec6e67ca700073e7637e3dffc16da9f6143bdaff9aaaa76b8bd97488dc77f05761ab88a019
+  checksum: 2347ecb6946e14cce4768d7ba3d0ce49ce4bcec9f4e0b962a12a85d93ca584920b440716bce97cc065c9a933e98b520fd5b831fd97d15bf4d1f96c1016d0451a
   languageName: node
   linkType: hard
 
-"@react-spring/native@npm:~9.2.6-beta.0":
-  version: 9.2.6
-  resolution: "@react-spring/native@npm:9.2.6"
+"@react-spring/native@npm:~9.3.0":
+  version: 9.3.0
+  resolution: "@react-spring/native@npm:9.3.0"
   dependencies:
-    "@react-spring/animated": ~9.2.6-beta.0
-    "@react-spring/core": ~9.2.6-beta.0
-    "@react-spring/shared": ~9.2.6-beta.0
-    "@react-spring/types": ~9.2.6-beta.0
+    "@react-spring/animated": ~9.3.0
+    "@react-spring/core": ~9.3.0
+    "@react-spring/shared": ~9.3.0
+    "@react-spring/types": ~9.3.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
     react-native: ">=0.58"
-  checksum: 8e404c60518425f380dace61a34996a11fc9761b3d7be9a1936085d509249a62608442ca046917bac94eb33b851eac5681fc2efd73c3e937ea34db317777673a
+  checksum: 09761dba93a42d17dbc32cac1fa4aaf0dbddd45e9c953bf03ec63de4ea3b8b7bc4e70e423f75920f2ad62188d906bfcbcbbf0c48e98e04cfdd31eff92294e32b
   languageName: node
   linkType: hard
 
-"@react-spring/rafz@npm:~9.2.6-beta.0":
-  version: 9.2.6
-  resolution: "@react-spring/rafz@npm:9.2.6"
-  checksum: 371880b3e630e12df84a1385b4661102c9b7b20b562b145778108beeb90e8d32ad651e88ea24b7b4999bbed23d649b5f2be050b2dc94c6b1dcb13ea44f0d99b5
+"@react-spring/rafz@npm:~9.3.0":
+  version: 9.3.0
+  resolution: "@react-spring/rafz@npm:9.3.0"
+  checksum: 42309d25458f75af834eafdb8e6f656fe609372fcb13ea87eae0efdf63cc7f826bd35018fac6e010d560c1e1ec99abd90684fe28d7461ed52dea0f2315ec7250
   languageName: node
   linkType: hard
 
-"@react-spring/shared@npm:~9.2.6-beta.0":
-  version: 9.2.6
-  resolution: "@react-spring/shared@npm:9.2.6"
+"@react-spring/shared@npm:~9.3.0":
+  version: 9.3.0
+  resolution: "@react-spring/shared@npm:9.3.0"
   dependencies:
-    "@react-spring/rafz": ~9.2.6-beta.0
-    "@react-spring/types": ~9.2.6-beta.0
+    "@react-spring/rafz": ~9.3.0
+    "@react-spring/types": ~9.3.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
-  checksum: c707d55a3c7624f88ca998378206f3d3467ffa1b66c457be1f90f05b8dba10595c270edd32e439d232e6840bc3cd65ad447d31f477725847e84d9e7b8cf47af8
+  checksum: 702d3bc8ebcdfbf3f3bdd4648e34fa8a7b6654072425d001c932faa85de74dcb696baa06bfcb662dcbb0071cadc65c7919b54592126152f8fa02b38636cd41ff
   languageName: node
   linkType: hard
 
-"@react-spring/three@npm:~9.2.6-beta.0":
-  version: 9.2.6
-  resolution: "@react-spring/three@npm:9.2.6"
+"@react-spring/three@npm:~9.3.0":
+  version: 9.3.0
+  resolution: "@react-spring/three@npm:9.3.0"
   dependencies:
-    "@react-spring/animated": ~9.2.6-beta.0
-    "@react-spring/core": ~9.2.6-beta.0
-    "@react-spring/shared": ~9.2.6-beta.0
-    "@react-spring/types": ~9.2.6-beta.0
+    "@react-spring/animated": ~9.3.0
+    "@react-spring/core": ~9.3.0
+    "@react-spring/shared": ~9.3.0
+    "@react-spring/types": ~9.3.0
   peerDependencies:
     "@react-three/fiber": ">=6.0"
     react: ">=16.11"
     three: ">=0.126"
-  checksum: 2661c32a30514c95beb448739fb84a408d9adecf35bf19339dc06195a553d32ac1e8a99b27d8b315ea588b11696d338f85c366b2e5e69921ac6ac265c8df17ff
+  checksum: d45c083e51ab61f6f1554db053f82d1433135faea9b89ff6f0512c2728f42a2c6ae3ba9be8b1721aaef0d182e7fe328cf2ee875c4474a3f14c3533d6f04d3489
   languageName: node
   linkType: hard
 
-"@react-spring/types@npm:~9.2.6-beta.0":
-  version: 9.2.6
-  resolution: "@react-spring/types@npm:9.2.6"
-  checksum: 35de67b8e1c7f52615851147f490e42ca31be50916b6ba75fd9cdc1831d3769dbe6f17b9d35f7c966c35f81bfbab93926c9653b47247eada6a087b412b53f61e
+"@react-spring/types@npm:~9.3.0":
+  version: 9.3.0
+  resolution: "@react-spring/types@npm:9.3.0"
+  checksum: ab57f319ac0fc6bf9c9d661b4208aad814945bf2037f27832beb568f3592d89f7e35e09f6934d097408405e95003e8add7b338eedb58c7ce0f87e985f2a2a643
   languageName: node
   linkType: hard
 
-"@react-spring/web@npm:~9.2.6-beta.0":
-  version: 9.2.6
-  resolution: "@react-spring/web@npm:9.2.6"
+"@react-spring/web@npm:~9.3.0":
+  version: 9.3.0
+  resolution: "@react-spring/web@npm:9.3.0"
   dependencies:
-    "@react-spring/animated": ~9.2.6-beta.0
-    "@react-spring/core": ~9.2.6-beta.0
-    "@react-spring/shared": ~9.2.6-beta.0
-    "@react-spring/types": ~9.2.6-beta.0
+    "@react-spring/animated": ~9.3.0
+    "@react-spring/core": ~9.3.0
+    "@react-spring/shared": ~9.3.0
+    "@react-spring/types": ~9.3.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
     react-dom: ^16.8.0  || ^17.0.0
-  checksum: b5ff68627f429fd6027e20f89520381b5787dc24871fccd39a959f9dccb0a675a10472c7cd25c1073ae75d8b183f9245686030e1d13b1110aee8ecf045c2e5db
+  checksum: 9d1bcfbc1d9570ea15956e963a6fa67c9ce68bc29c4bcf9e492495ec7284110a568e937bec7f2051bfe0a921a8b439b5a0d073eedd6694ca4b5e848e12a63229
   languageName: node
   linkType: hard
 
-"@react-spring/zdog@npm:~9.2.6-beta.0":
-  version: 9.2.6
-  resolution: "@react-spring/zdog@npm:9.2.6"
+"@react-spring/zdog@npm:~9.3.0":
+  version: 9.3.0
+  resolution: "@react-spring/zdog@npm:9.3.0"
   dependencies:
-    "@react-spring/animated": ~9.2.6-beta.0
-    "@react-spring/core": ~9.2.6-beta.0
-    "@react-spring/shared": ~9.2.6-beta.0
-    "@react-spring/types": ~9.2.6-beta.0
+    "@react-spring/animated": ~9.3.0
+    "@react-spring/core": ~9.3.0
+    "@react-spring/shared": ~9.3.0
+    "@react-spring/types": ~9.3.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
     react-dom: ^16.8.0  || ^17.0.0
     react-zdog: ">=1.0"
     zdog: ">=1.0"
-  checksum: cbc988bec0c49e37080849e742b6b2c7b854566a90ea80f763bd76e517a75e98002c967be76acb8f300b5d96ee8fefba709570ca05be0642c2e9861382f77c5b
+  checksum: 6a1980cd38daf98109618609ca91da26e6c8d910c8f0cf7c95d1a20619416512edbbfadfa71e033e15282690918c7bdfa2bf07f6a3638ddb7f70c9f05eb7df5c
   languageName: node
   linkType: hard
 
@@ -6297,7 +6297,7 @@ __metadata:
     "@loadable/component": ^5.15.0
     "@uidu/dashboard-manager": ^1.0.4
     "@uidu/dashlet-controls": ^1.0.3
-    "@uidu/data-fields": ^1.2.3
+    "@uidu/data-fields": ^1.3.0
     "@uidu/docs": ^0.5.1
     "@uidu/spinner": ^0.5.2
     "@uidu/table": 1.1.3
@@ -6352,7 +6352,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-fields@^1.2.3, @uidu/data-fields@workspace:packages/data/data-fields":
+"@uidu/data-fields@^1.2.3, @uidu/data-fields@^1.3.0, @uidu/data-fields@workspace:packages/data/data-fields":
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
@@ -6372,7 +6372,7 @@ __metadata:
     "@uidu/field-toggle": ^1.0.4
     "@uidu/form": ^1.2.4
     "@uidu/menu": ^0.5.3
-    "@uidu/select": ^1.4.2
+    "@uidu/select": ^1.5.0
     dayjs: ^1.10.7
     numeral: ^2.0.6
     react: ^17.0.2
@@ -6396,7 +6396,7 @@ __metadata:
     "@uidu/board": ^0.4.2
     "@uidu/calendar": ^0.3.2
     "@uidu/data-controls": ^1.1.2
-    "@uidu/data-fields": ^1.2.3
+    "@uidu/data-fields": ^1.3.0
     "@uidu/data-views": ^1.0.2
     "@uidu/docs": ^0.5.1
     "@uidu/dropdown-menu": ^0.6.3
@@ -6698,10 +6698,10 @@ __metadata:
     "@uidu/emoji": ^0.5.5
     "@uidu/field-date": ^1.1.4
     "@uidu/form": ^1.2.4
-    "@uidu/media-card": ^0.5.6
-    "@uidu/media-core": ^0.5.1
-    "@uidu/media-filmstrip": ^0.4.2
-    "@uidu/media-picker": ^0.5.2
+    "@uidu/media-card": ^0.5.8
+    "@uidu/media-core": ^0.6.0
+    "@uidu/media-filmstrip": ^0.4.3
+    "@uidu/media-picker": ^0.6.0
     "@uidu/mentions": ^0.3.5
     "@uidu/menu": ^0.5.3
     "@uidu/modal-dialog": ^0.5.5
@@ -7056,7 +7056,7 @@ __metadata:
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.3
     "@uidu/form": ^1.2.4
-    "@uidu/media-core": ^0.5.1
+    "@uidu/media-core": ^0.6.0
     "@uidu/spinner": ^0.5.2
     "@uppy/aws-s3": ^2.0.4
     "@uppy/core": ^2.1.0
@@ -7725,7 +7725,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-card@^0.5.5, @uidu/media-card@^0.5.6, @uidu/media-card@workspace:packages/media/media-card":
+"@uidu/media-card@^0.5.6, @uidu/media-card@^0.5.8, @uidu/media-card@workspace:packages/media/media-card":
   version: 0.0.0-use.local
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
@@ -7734,7 +7734,7 @@ __metadata:
     "@uidu/button": ^1.3.2
     "@uidu/docs": ^0.5.1
     "@uidu/dropdown-menu": ^0.6.3
-    "@uidu/media-core": ^0.5.1
+    "@uidu/media-core": ^0.6.0
     "@uidu/spinner": ^0.5.2
     "@uidu/theme": ^0.6.2
     "@uidu/tooltip": ^0.5.3
@@ -7748,7 +7748,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-core@^0.5.1, @uidu/media-core@workspace:packages/media/media-core":
+"@uidu/media-core@^0.6.0, @uidu/media-core@workspace:packages/media/media-core":
   version: 0.0.0-use.local
   resolution: "@uidu/media-core@workspace:packages/media/media-core"
   dependencies:
@@ -7763,15 +7763,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-filmstrip@^0.4.2, @uidu/media-filmstrip@workspace:packages/media/media-filmstrip":
+"@uidu/media-filmstrip@^0.4.2, @uidu/media-filmstrip@^0.4.3, @uidu/media-filmstrip@workspace:packages/media/media-filmstrip":
   version: 0.0.0-use.local
   resolution: "@uidu/media-filmstrip@workspace:packages/media/media-filmstrip"
   dependencies:
     "@babel/runtime": ^7.15.4
     "@uidu/docs": ^0.5.1
-    "@uidu/media-card": ^0.5.5
-    "@uidu/media-core": ^0.5.1
-    "@uidu/media-viewer": ^0.4.3
+    "@uidu/media-card": ^0.5.8
+    "@uidu/media-core": ^0.6.0
+    "@uidu/media-viewer": ^0.4.5
     "@uidu/theme": ^0.6.2
     react: ^17.0.2
     react-images: ^1.2.0-beta.7
@@ -7780,14 +7780,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-picker@^0.5.2, @uidu/media-picker@workspace:packages/media/media-picker":
+"@uidu/media-picker@^0.6.0, @uidu/media-picker@workspace:packages/media/media-picker":
   version: 0.0.0-use.local
   resolution: "@uidu/media-picker@workspace:packages/media/media-picker"
   dependencies:
     "@babel/runtime": ^7.15.4
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
-    "@uidu/media-core": ^0.5.1
+    "@uidu/media-core": ^0.6.0
     "@uidu/modal-dialog": ^0.5.4
     "@uppy/core": ^2.1.0
     "@uppy/dashboard": ^2.1.0
@@ -7805,7 +7805,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-viewer@^0.4.3, @uidu/media-viewer@^0.4.4, @uidu/media-viewer@workspace:packages/media/media-viewer":
+"@uidu/media-viewer@^0.4.5, @uidu/media-viewer@workspace:packages/media/media-viewer":
   version: 0.0.0-use.local
   resolution: "@uidu/media-viewer@workspace:packages/media/media-viewer"
   dependencies:
@@ -7814,8 +7814,8 @@ __metadata:
     "@uidu/button": ^1.3.2
     "@uidu/comment": ^0.2.0
     "@uidu/docs": ^0.5.1
-    "@uidu/media-card": ^0.5.6
-    "@uidu/media-core": ^0.5.1
+    "@uidu/media-card": ^0.5.8
+    "@uidu/media-core": ^0.6.0
     "@uidu/shell": ^2.1.2
     "@uidu/spinner": ^0.5.2
     "@uidu/theme": ^0.6.2
@@ -7893,9 +7893,9 @@ __metadata:
     "@uidu/field-mentions": ^1.1.4
     "@uidu/field-text": ^1.1.5
     "@uidu/form": ^1.2.4
-    "@uidu/media-filmstrip": ^0.4.2
-    "@uidu/media-picker": ^0.5.2
-    "@uidu/message": ^0.4.6
+    "@uidu/media-filmstrip": ^0.4.3
+    "@uidu/media-picker": ^0.6.0
+    "@uidu/message": ^0.4.8
     "@uidu/spinner": ^0.5.2
     classnames: ^2.3.1
     emoji-mart: ^3.0.1
@@ -7941,7 +7941,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uidu/message@^0.4.5, @uidu/message@^0.4.6, @uidu/message@workspace:packages/messaging/message":
+"@uidu/message@^0.4.5, @uidu/message@^0.4.8, @uidu/message@workspace:packages/messaging/message":
   version: 0.0.0-use.local
   resolution: "@uidu/message@workspace:packages/messaging/message"
   dependencies:
@@ -7952,9 +7952,9 @@ __metadata:
     "@uidu/docs": ^0.5.1
     "@uidu/drawer": ^0.7.3
     "@uidu/dropdown-menu": ^0.6.3
-    "@uidu/media-card": ^0.5.6
-    "@uidu/media-core": ^0.5.1
-    "@uidu/media-viewer": ^0.4.4
+    "@uidu/media-card": ^0.5.8
+    "@uidu/media-core": ^0.6.0
+    "@uidu/media-viewer": ^0.4.5
     "@uidu/message-form": ^0.4.2
     "@uidu/message-renderer": ^0.4.2
     "@uidu/shell": ^2.1.2
@@ -7967,7 +7967,7 @@ __metadata:
     prop-types: ^15.7.2
     react: ^17.0.2
     react-feather: ^2.0.9
-    react-spring: ^9.2.6
+    react-spring: ^9.3.0
     react-use-gesture: ^8.0.1
     styled-components: ^5.3.1
     tslib: ^2.3.1
@@ -8427,7 +8427,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/select@^1.4.1, @uidu/select@^1.4.2, @uidu/select@workspace:packages/forms/select":
+"@uidu/select@^1.4.1, @uidu/select@^1.4.2, @uidu/select@^1.5.0, @uidu/select@workspace:packages/forms/select":
   version: 0.0.0-use.local
   resolution: "@uidu/select@workspace:packages/forms/select"
   dependencies:
@@ -18170,7 +18170,7 @@ fsevents@^1.2.7:
     react-scrolllock: ^5.0.1
     react-select: ^5.1.0
     react-simple-timefield: ^3.2.3
-    react-spring: ^9.2.6
+    react-spring: ^9.3.0
     react-switch: ^6.0.0
     react-syntax-highlighter: ^15.4.4
     react-transition-group: ^4.4.2
@@ -26951,17 +26951,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-spring@npm:^9.2.6":
-  version: 9.2.6
-  resolution: "react-spring@npm:9.2.6"
+"react-spring@npm:^9.3.0":
+  version: 9.3.0
+  resolution: "react-spring@npm:9.3.0"
   dependencies:
-    "@react-spring/core": ~9.2.6-beta.0
-    "@react-spring/konva": ~9.2.6-beta.0
-    "@react-spring/native": ~9.2.6-beta.0
-    "@react-spring/three": ~9.2.6-beta.0
-    "@react-spring/web": ~9.2.6-beta.0
-    "@react-spring/zdog": ~9.2.6-beta.0
-  checksum: d8f151256f303b5c878f408f84a3a9078f8150ed9a9628b922ddcebee5655efa5aea0815b743316beb376eb5cad526c90321498658cf4f7193753b80626e6fa5
+    "@react-spring/core": ~9.3.0
+    "@react-spring/konva": ~9.3.0
+    "@react-spring/native": ~9.3.0
+    "@react-spring/three": ~9.3.0
+    "@react-spring/web": ~9.3.0
+    "@react-spring/zdog": ~9.3.0
+  checksum: 7999f43bcfbdef5dfb0ff9d5447f18f22b147eb397ff5e2ec2208540e1acc7acc738625b2e431366eea0b066739e61032e54f54bf6125be44b13511b2092643d
   languageName: node
   linkType: hard
 
