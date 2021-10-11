@@ -1,5 +1,12 @@
 # @uidu/editor-core
 
+## 0.10.8
+
+### Patch Changes
+
+- Updated dependencies [32faff269]
+  - @uidu/media-picker@0.7.0
+
 ## 0.10.7
 
 ### Patch Changes

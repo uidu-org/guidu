@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.5.0
+
+### Minor Changes
+
+- 32faff269: npm issues
+
+### Patch Changes
+
+- @uidu/message-form@0.4.4
+
 ## 0.4.9
 
 ### Patch Changes
