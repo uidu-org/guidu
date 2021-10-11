@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.5.7
+
+### Patch Changes
+
+- 57906cb4a: Bump dependencies,some export related work on data-manager and fields
+
 ## 0.5.6
 
 ### Patch Changes

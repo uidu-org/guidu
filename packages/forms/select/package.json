@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "Select Component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/select",
   "license": "MIT",

@@ -1,5 +1,16 @@
 # @uidu/data-manager
 
+## 1.3.0
+
+### Minor Changes
+
+- 57906cb4a: Bump dependencies,some export related work on data-manager and fields
+
+### Patch Changes
+
+- Updated dependencies [57906cb4a]
+  - @uidu/data-fields@1.3.0
+
 ## 1.2.2
 
 ### Patch Changes
