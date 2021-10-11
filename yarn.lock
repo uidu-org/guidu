@@ -6698,10 +6698,10 @@ __metadata:
     "@uidu/emoji": ^0.5.5
     "@uidu/field-date": ^1.1.4
     "@uidu/form": ^1.2.4
-    "@uidu/media-card": ^0.5.8
-    "@uidu/media-core": ^0.6.0
-    "@uidu/media-filmstrip": ^0.4.3
-    "@uidu/media-picker": ^0.6.0
+    "@uidu/media-card": ^0.5.9
+    "@uidu/media-core": ^0.7.0
+    "@uidu/media-filmstrip": ^0.4.4
+    "@uidu/media-picker": ^0.6.1
     "@uidu/mentions": ^0.3.5
     "@uidu/menu": ^0.5.3
     "@uidu/modal-dialog": ^0.5.5
@@ -7056,7 +7056,7 @@ __metadata:
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.3
     "@uidu/form": ^1.2.4
-    "@uidu/media-core": ^0.6.0
+    "@uidu/media-core": ^0.7.0
     "@uidu/spinner": ^0.5.2
     "@uppy/aws-s3": ^2.0.4
     "@uppy/core": ^2.1.0
@@ -7725,7 +7725,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-card@^0.5.6, @uidu/media-card@^0.5.8, @uidu/media-card@workspace:packages/media/media-card":
+"@uidu/media-card@^0.5.6, @uidu/media-card@^0.5.9, @uidu/media-card@workspace:packages/media/media-card":
   version: 0.0.0-use.local
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
@@ -7734,7 +7734,7 @@ __metadata:
     "@uidu/button": ^1.3.2
     "@uidu/docs": ^0.5.1
     "@uidu/dropdown-menu": ^0.6.3
-    "@uidu/media-core": ^0.6.0
+    "@uidu/media-core": ^0.7.0
     "@uidu/spinner": ^0.5.2
     "@uidu/theme": ^0.6.2
     "@uidu/tooltip": ^0.5.3
@@ -7748,7 +7748,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-core@^0.6.0, @uidu/media-core@workspace:packages/media/media-core":
+"@uidu/media-core@^0.7.0, @uidu/media-core@workspace:packages/media/media-core":
   version: 0.0.0-use.local
   resolution: "@uidu/media-core@workspace:packages/media/media-core"
   dependencies:
@@ -7763,15 +7763,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-filmstrip@^0.4.2, @uidu/media-filmstrip@^0.4.3, @uidu/media-filmstrip@workspace:packages/media/media-filmstrip":
+"@uidu/media-filmstrip@^0.4.2, @uidu/media-filmstrip@^0.4.3, @uidu/media-filmstrip@^0.4.4, @uidu/media-filmstrip@workspace:packages/media/media-filmstrip":
   version: 0.0.0-use.local
   resolution: "@uidu/media-filmstrip@workspace:packages/media/media-filmstrip"
   dependencies:
     "@babel/runtime": ^7.15.4
     "@uidu/docs": ^0.5.1
-    "@uidu/media-card": ^0.5.8
-    "@uidu/media-core": ^0.6.0
-    "@uidu/media-viewer": ^0.4.5
+    "@uidu/media-card": ^0.5.9
+    "@uidu/media-core": ^0.7.0
+    "@uidu/media-viewer": ^0.4.6
     "@uidu/theme": ^0.6.2
     react: ^17.0.2
     react-images: ^1.2.0-beta.7
@@ -7780,14 +7780,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-picker@^0.6.0, @uidu/media-picker@workspace:packages/media/media-picker":
+"@uidu/media-picker@^0.6.1, @uidu/media-picker@workspace:packages/media/media-picker":
   version: 0.0.0-use.local
   resolution: "@uidu/media-picker@workspace:packages/media/media-picker"
   dependencies:
     "@babel/runtime": ^7.15.4
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
-    "@uidu/media-core": ^0.6.0
+    "@uidu/media-core": ^0.7.0
     "@uidu/modal-dialog": ^0.5.4
     "@uppy/core": ^2.1.0
     "@uppy/dashboard": ^2.1.0
@@ -7805,7 +7805,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-viewer@^0.4.5, @uidu/media-viewer@workspace:packages/media/media-viewer":
+"@uidu/media-viewer@^0.4.6, @uidu/media-viewer@workspace:packages/media/media-viewer":
   version: 0.0.0-use.local
   resolution: "@uidu/media-viewer@workspace:packages/media/media-viewer"
   dependencies:
@@ -7814,8 +7814,8 @@ __metadata:
     "@uidu/button": ^1.3.2
     "@uidu/comment": ^0.2.0
     "@uidu/docs": ^0.5.1
-    "@uidu/media-card": ^0.5.8
-    "@uidu/media-core": ^0.6.0
+    "@uidu/media-card": ^0.5.9
+    "@uidu/media-core": ^0.7.0
     "@uidu/shell": ^2.1.2
     "@uidu/spinner": ^0.5.2
     "@uidu/theme": ^0.6.2
@@ -7894,7 +7894,7 @@ __metadata:
     "@uidu/field-text": ^1.1.5
     "@uidu/form": ^1.2.4
     "@uidu/media-filmstrip": ^0.4.3
-    "@uidu/media-picker": ^0.6.0
+    "@uidu/media-picker": ^0.6.1
     "@uidu/message": ^0.4.8
     "@uidu/spinner": ^0.5.2
     classnames: ^2.3.1
@@ -7952,9 +7952,9 @@ __metadata:
     "@uidu/docs": ^0.5.1
     "@uidu/drawer": ^0.7.3
     "@uidu/dropdown-menu": ^0.6.3
-    "@uidu/media-card": ^0.5.8
-    "@uidu/media-core": ^0.6.0
-    "@uidu/media-viewer": ^0.4.5
+    "@uidu/media-card": ^0.5.9
+    "@uidu/media-core": ^0.7.0
+    "@uidu/media-viewer": ^0.4.6
     "@uidu/message-form": ^0.4.2
     "@uidu/message-renderer": ^0.4.2
     "@uidu/shell": ^2.1.2
@@ -9621,16 +9621,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.0.4, acorn@npm:^8.2.1, acorn@npm:^8.4.0, acorn@npm:^8.4.1":
-  version: 8.4.1
-  resolution: "acorn@npm:8.4.1"
-  bin:
-    acorn: bin/acorn
-  checksum: 0a8fd264349285aa36194b26a5a9d70c3641e78ad459ec44b9a9a5738e0ce6d86ec120ca2c0f04477165cee912fdeb158f62d6582697185c82278bdbf71187f8
-  languageName: node
-  linkType: hard
-
-"acorn@npm:^8.5.0":
+"acorn@npm:^8.0.4, acorn@npm:^8.2.1, acorn@npm:^8.4.0, acorn@npm:^8.4.1, acorn@npm:^8.5.0":
   version: 8.5.0
   resolution: "acorn@npm:8.5.0"
   bin:
@@ -27496,14 +27487,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"regexpp@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "regexpp@npm:3.1.0"
-  checksum: 63bcb2c98d63274774c79bef256e03f716d25f1fa8427267d0302d1436a83fa0d905f4e8a172fdfa99fb4d84833df2fb3bf7da2a1a868f156e913174c32b1139
-  languageName: node
-  linkType: hard
-
-"regexpp@npm:^3.2.0":
+"regexpp@npm:^3.1.0, regexpp@npm:^3.2.0":
   version: 3.2.0
   resolution: "regexpp@npm:3.2.0"
   checksum: a78dc5c7158ad9ddcfe01aa9144f46e192ddbfa7b263895a70a5c6c73edd9ce85faf7c0430e59ac38839e1734e275b9c3de5c57ee3ab6edc0e0b1bdebefccef8
