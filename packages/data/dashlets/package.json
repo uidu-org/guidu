@@ -27,7 +27,7 @@
     "react": "^17.0.2",
     "react-animated-number": "^0.4.4",
     "react-content-loader": "^6.0.3",
-    "react-countup": "^5.2.0",
+    "react-countup": "^6.0.0",
     "react-feather": "^2.0.9",
     "react-intl": "^5.20.12",
     "react-table": "^7.7.0",

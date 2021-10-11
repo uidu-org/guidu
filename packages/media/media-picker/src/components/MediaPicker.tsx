@@ -23,9 +23,9 @@ export default class MediaPicker extends PureComponent<any> {
   constructor(props) {
     super(props);
     const { onComplete, uploadOptions } = props;
-    this.uppy = Uppy({
+    this.uppy = new Uppy({
       debug: true,
-      allowMultipleUploads: true,
+      allowMultipleUploadBatches: true,
       restrictions: {
         maxNumberOfFiles: null,
         minNumberOfFiles: null,

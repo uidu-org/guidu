@@ -71,7 +71,7 @@ function FieldImageUploader({
   const [progress, setProgress] = useState(null);
 
   const uppy = useMemo(() => {
-    return Uppy({
+    return new Uppy({
       autoProceed: true,
       restrictions: {
         maxNumberOfFiles: 1,

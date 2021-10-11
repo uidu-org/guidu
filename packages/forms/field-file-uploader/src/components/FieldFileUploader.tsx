@@ -8,7 +8,7 @@ import { FieldFileUploaderProps } from '../types';
 
 const defaultOptions = {
   debug: true,
-  allowMultipleUploads: true,
+  allowMultipleUploadBatches: true,
   restrictions: {
     maxNumberOfFiles: null,
     minNumberOfFiles: null,
@@ -28,7 +28,7 @@ function FieldFileUploader({
 }: FieldFileUploaderProps) {
   const uppy = useMemo(
     () =>
-      Uppy(options)
+      new Uppy(options)
         .use(uploadOptions.module, uploadOptions.options)
         .on('complete', (result) => {
           handleChange(result.successful.map(uploadOptions.responseHandler));

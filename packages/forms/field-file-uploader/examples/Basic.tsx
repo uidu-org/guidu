@@ -1,12 +1,12 @@
 import { Form } from '@uidu/form';
 import React, { PureComponent } from 'react';
-import FieldFileUploader from '../src';
 import {
   localUploadOptions,
   s3UploadOptions,
 } from '../../../media/media-core/src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
+import FieldFileUploader from '../src';
 
 export default class Basic extends PureComponent {
   render() {
@@ -21,7 +21,7 @@ export default class Basic extends PureComponent {
         <FieldFileUploader
           {...inputDefaultProps}
           uploadOptions={s3UploadOptions({
-            url: 'https://uidu-it.org',
+            url: 'https://uidu.dev',
             type: 'file',
           })}
         />
