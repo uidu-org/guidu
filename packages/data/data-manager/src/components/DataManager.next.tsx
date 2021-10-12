@@ -86,6 +86,7 @@ function DataManagerComponent({
   canSelectRows = true,
   forwardedRef,
   getExportFileBlob,
+  getExportFileName,
 }: DataManagerNextProps) {
   const columns = useMemo(
     () =>
@@ -150,6 +151,7 @@ function DataManagerComponent({
         ...(currentView?.state || {}),
       },
       getExportFileBlob,
+      getExportFileName,
     },
     useFlexLayout,
     useFilters,
