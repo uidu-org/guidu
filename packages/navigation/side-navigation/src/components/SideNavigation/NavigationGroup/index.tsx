@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import tw from 'twin.macro';
 import NavigationGroupHeading from './NavigationGroupHeading';
 
 export default class NavigationGroup extends PureComponent<any> {
@@ -18,18 +19,15 @@ export default class NavigationGroup extends PureComponent<any> {
       withPadding,
       withMargin,
       children,
+      className,
     } = this.props;
-    let className = '';
-    if (withMargin) {
-      className += ' mb-3';
-    }
-    if (withPadding) {
-      className += ' px-3';
-    }
 
     return (
       <>
-        <ul className={className} tw="flex flex-col space-y-0.5 px-4">
+        <ul
+          css={[tw`flex flex-col space-y-0.5 px-5`, withMargin && tw`mb-4`]}
+          className={className}
+        >
           {heading && (
             <NavigationGroupHeading
               before={before}
@@ -39,7 +37,7 @@ export default class NavigationGroup extends PureComponent<any> {
           )}
           {children}
         </ul>
-        {separator && <hr tw="mx-4" />}
+        {separator && <hr tw="mx-5" />}
       </>
     );
   }

@@ -10,8 +10,7 @@ export const StyledNavigationItem = styled.li.attrs(({ className }) => ({
 export const StyledNavigationBefore = styled.div`
   align-items: center;
   display: flex;
-  margin-right: 0.75rem;
-  ${tw`mr-3`}
+  ${tw`mr-2`}
 `;
 
 export const StyledNavigationText = styled.div<{
