@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 1.3.1
+
+### Patch Changes
+
+- abae5e911: getExportFileName on data manager
+
 ## 1.3.0
 
 ### Minor Changes
