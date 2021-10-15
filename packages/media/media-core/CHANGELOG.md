@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 0.7.2
+
+### Patch Changes
+
+- 2414312f3: Bump dependency, small design fixes to side-nav
+
 ## 0.7.1
 
 ### Patch Changes

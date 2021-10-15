@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 1.2.4
+
+### Patch Changes
+
+- 2414312f3: Bump dependency, small design fixes to side-nav
+
 ## 1.2.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/media-card
 
+## 0.5.11
+
+### Patch Changes
+
+- 2414312f3: Bump dependency, small design fixes to side-nav
+- Updated dependencies [2414312f3]
+  - @uidu/media-core@0.7.2
+
 ## 0.5.10
 
 ### Patch Changes

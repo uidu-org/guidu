@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.4.5
+
+### Patch Changes
+
+- 2414312f3: Bump dependency, small design fixes to side-nav
+- Updated dependencies [2414312f3]
+  - @uidu/adf-schema@0.5.4
+
 ## 0.4.4
 
 ### Patch Changes

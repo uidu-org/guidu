@@ -1,5 +1,13 @@
 # @uidu/field-image-uploader
 
+## 1.1.3
+
+### Patch Changes
+
+- 2414312f3: Bump dependency, small design fixes to side-nav
+- Updated dependencies [2414312f3]
+  - @uidu/media-core@0.7.2
+
 ## 1.1.2
 
 ### Patch Changes

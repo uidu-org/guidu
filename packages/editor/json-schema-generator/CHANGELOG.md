@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.2.6
+
+### Patch Changes
+
+- 2414312f3: Bump dependency, small design fixes to side-nav
+
 ## 0.2.5
 
 ### Patch Changes

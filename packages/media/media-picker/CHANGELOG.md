@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.7.1
+
+### Patch Changes
+
+- 2414312f3: Bump dependency, small design fixes to side-nav
+- Updated dependencies [2414312f3]
+  - @uidu/media-core@0.7.2
+
 ## 0.7.0
 
 ### Minor Changes
