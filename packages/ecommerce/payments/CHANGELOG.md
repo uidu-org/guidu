@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.1.2
+
+### Patch Changes
+
+- 2414312f3: Bump dependency, small design fixes to side-nav
+
 ## 1.1.1
 
 ### Patch Changes

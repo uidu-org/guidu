@@ -1,5 +1,18 @@
 # @uidu/editor-core
 
+## 0.10.9
+
+### Patch Changes
+
+- 2414312f3: Bump dependency, small design fixes to side-nav
+- Updated dependencies [2414312f3]
+  - @uidu/adf-schema@0.5.4
+  - @uidu/editor-json-transformer@0.4.5
+  - @uidu/profilecard@0.2.7
+  - @uidu/media-card@0.5.11
+  - @uidu/media-core@0.7.2
+  - @uidu/media-picker@0.7.1
+
 ## 0.10.8
 
 ### Patch Changes

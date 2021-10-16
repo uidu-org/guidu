@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 1.0.4
+
+### Patch Changes
+
+- 2414312f3: Bump dependency, small design fixes to side-nav
+
 ## 1.0.3
 
 ### Patch Changes

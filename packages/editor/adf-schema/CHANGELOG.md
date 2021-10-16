@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.5.4
+
+### Patch Changes
+
+- 2414312f3: Bump dependency, small design fixes to side-nav
+
 ## 0.5.3
 
 ### Patch Changes
