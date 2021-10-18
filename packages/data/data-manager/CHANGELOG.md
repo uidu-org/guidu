@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 1.3.2
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+- Updated dependencies [3b7902d78]
+  - @uidu/data-controls@1.1.3
+  - @uidu/data-fields@1.3.1
+  - @uidu/data-views@1.0.3
+  - @uidu/table@1.1.4
+  - @uidu/shell@2.1.3
+
 ## 1.3.1
 
 ### Patch Changes

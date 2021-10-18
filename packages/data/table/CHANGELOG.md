@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 1.1.4
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+- Updated dependencies [3b7902d78]
+  - @uidu/menu@0.5.4
+  - @uidu/popup@0.6.3
+  - @uidu/data-fields@1.3.1
+  - @uidu/checkbox@1.1.4
+
 ## 1.1.3
 
 ### Patch Changes

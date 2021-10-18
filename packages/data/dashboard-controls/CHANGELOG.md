@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 1.0.4
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+
 ## 1.0.3
 
 ### Patch Changes

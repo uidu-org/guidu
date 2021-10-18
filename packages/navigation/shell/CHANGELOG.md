@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.3
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+
 ## 2.1.2
 
 ### Patch Changes

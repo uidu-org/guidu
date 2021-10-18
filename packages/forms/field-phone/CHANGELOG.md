@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 1.0.7
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+
 ## 1.0.6
 
 ### Patch Changes

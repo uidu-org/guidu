@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.5.2
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+- Updated dependencies [3b7902d78]
+  - @uidu/media-card@0.5.12
+  - @uidu/media-viewer@0.4.8
+  - @uidu/message-renderer@0.4.3
+
 ## 0.5.1
 
 ### Patch Changes

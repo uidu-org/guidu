@@ -1,5 +1,14 @@
 # @uidu/profilecard
 
+## 0.2.8
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+- Updated dependencies [3b7902d78]
+  - @uidu/popup@0.6.3
+  - @uidu/theme@0.6.3
+
 ## 0.2.7
 
 ### Patch Changes

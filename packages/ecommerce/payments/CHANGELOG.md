@@ -1,5 +1,13 @@
 # @uidu/payments
 
+## 1.1.3
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+- Updated dependencies [3b7902d78]
+  - @uidu/theme@0.6.3
+
 ## 1.1.2
 
 ### Patch Changes

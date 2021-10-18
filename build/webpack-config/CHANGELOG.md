@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.8
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+
 ## 0.3.7
 
 ### Patch Changes

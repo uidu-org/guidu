@@ -1,5 +1,15 @@
 # @uidu/devise
 
+## 0.6.5
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+- Updated dependencies [3b7902d78]
+  - @uidu/checkbox@1.1.4
+  - @uidu/field-phone@1.0.7
+  - @uidu/shell@2.1.3
+
 ## 0.6.4
 
 ### Patch Changes

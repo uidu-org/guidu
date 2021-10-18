@@ -1,5 +1,13 @@
 # @uidu/media-card
 
+## 0.5.12
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+- Updated dependencies [3b7902d78]
+  - @uidu/theme@0.6.3
+
 ## 0.5.11
 
 ### Patch Changes

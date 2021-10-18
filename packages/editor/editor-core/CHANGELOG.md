@@ -1,5 +1,20 @@
 # @uidu/editor-core
 
+## 0.10.10
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+- Updated dependencies [3b7902d78]
+  - @uidu/menu@0.5.4
+  - @uidu/theme@0.6.3
+  - @uidu/editor-common@0.5.6
+  - @uidu/emoji@0.5.6
+  - @uidu/mentions@0.3.6
+  - @uidu/profilecard@0.2.8
+  - @uidu/status@0.4.6
+  - @uidu/media-card@0.5.12
+
 ## 0.10.9
 
 ### Patch Changes
