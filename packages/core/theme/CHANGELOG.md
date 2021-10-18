@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.6.3
+
+### Patch Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+
 ## 0.6.2
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/blocks
 
+## 1.3.0
+
+### Minor Changes
+
+- 3b7902d78: Allow for XY and Pie DataFormatter - dashboard
+
+### Patch Changes
+
+- Updated dependencies [3b7902d78]
+  - @uidu/dashboard-manager@1.1.0
+  - @uidu/dashlet-controls@1.0.4
+  - @uidu/data-fields@1.3.1
+  - @uidu/table@1.1.4
+
 ## 1.2.4
 
 ### Patch Changes

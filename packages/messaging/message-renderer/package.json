@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-renderer",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Message renderer",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/messaging/message-renderer",
   "license": "MIT",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@uidu/dropdown-menu": "^0.6.3",
-    "@uidu/theme": "^0.6.2",
+    "@uidu/theme": "^0.6.3",
     "interweave": "^12.9.0",
     "interweave-autolink": "^4.4.3",
     "react": "^17.0.2",
