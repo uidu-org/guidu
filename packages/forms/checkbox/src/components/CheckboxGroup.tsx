@@ -6,6 +6,7 @@ import CheckboxStateless from './CheckboxStateless';
 
 function CheckboxGroup({
   isInline = false,
+  className = null,
   options = [],
   value = [],
   onSetValue,
@@ -26,7 +27,10 @@ function CheckboxGroup({
 
   return (
     <Wrapper {...rest}>
-      <div css={[isInline ? tw`space-x-6` : tw`space-y-2`]}>
+      <div
+        css={[isInline ? tw`space-x-6` : tw`space-y-2`]}
+        className={className}
+      >
         {options.map((option) => (
           <CheckboxStateless
             key={`${name}-${option.id}`}

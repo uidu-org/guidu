@@ -11,7 +11,7 @@
   "types": "dist/uidu-popup.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.15.4",
-    "@emotion/react": "^11.4.1",
+    "@emotion/react": "^11.5.0",
     "@uidu/popper": "^0.5.3",
     "@uidu/portal": "^0.5.3",
     "@uidu/theme": "^0.6.2",

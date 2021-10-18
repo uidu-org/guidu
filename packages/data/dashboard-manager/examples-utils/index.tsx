@@ -249,6 +249,24 @@ export const dashlets = [
       filters: [],
     },
     layout: { x: 0, y: 4, w: 8, h: 8 },
+    dataFormatter: (data) => {
+      console.log(data);
+      return data.map((item) => {
+        return {
+          ...item,
+          x: item.x + ' (' + item.y + ')',
+        };
+      });
+    },
+    config: {
+      legend: {
+        position: 'right',
+        disabled: false,
+        fillOpacity: 0.3,
+        fontSize: 14,
+        type: 'Legend',
+      },
+    },
   },
   {
     kind: 'DashletGroup',

@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@stripe/react-stripe-js": "^1.6.0",
-    "@stripe/stripe-js": "^1.19.1",
+    "@stripe/stripe-js": "^1.20.3",
     "@uidu/field-text": "^1.1.5",
     "@uidu/form": "^1.2.4",
     "@uidu/payments": "^1.1.1",
@@ -20,7 +20,7 @@
     "@uidu/stepper": "^0.4.2",
     "dayjs": "^1.10.7",
     "react": "^17.0.2",
-    "react-intl": "^5.20.12",
+    "react-intl": "^5.20.13",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

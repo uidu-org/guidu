@@ -22,7 +22,12 @@ am4core.useTheme(am4themes_myTheme);
 // am4core.options.queue = true;
 am4core.options.commercialLicense = true;
 
-export default function XYStateless({ data, series = [], config }) {
+export default function XYStateless({
+  data,
+  series = [],
+  config,
+  dataFormatter,
+}) {
   const chart = useRef(null);
   const id = useRef(uuid());
 
@@ -90,7 +95,7 @@ export default function XYStateless({ data, series = [], config }) {
         },
       ],
       numberFormat: '#a',
-      data,
+      data: dataFormatter(data),
       ...config,
       series:
         config?.series ||
