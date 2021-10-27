@@ -41,11 +41,15 @@ export type Field = {
   form?: React.FC<any>;
   /** Grouper form allow for specifying grouping behavior for this field */
   Header?: React.FC<any>;
+  /** Grouper form allow for specifying grouping behavior for this field */
   Cell?: React.FC<any>;
+  /** Grouper form allow for specifying grouping behavior for this field */
   Footer?: React.FC<any>;
+  /** Grouper form allow for specifying grouping behavior for this field */
   Filter?: React.FC<any>;
+  /** Grouper form allow for specifying grouping behavior for this field */
   Grouper?: React.FC<any>;
-  Summary?: React.FC<any>;
+  /** Grouper form allow for specifying grouping behavior for this field */
   cellProps?: any;
   cellStyle?: any;
   primary?: boolean;

@@ -6,7 +6,6 @@ import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 import Cell from './Cell';
 
-const Summary = loadable(() => import('./Summary'));
 const mocks = loadable(() => import('./mocks'));
 
 const Address: Field = {
@@ -18,7 +17,6 @@ const Address: Field = {
   ),
   color: '#C384C5',
   Cell,
-  Summary,
   mocks,
 };
 

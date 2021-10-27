@@ -23,12 +23,12 @@ export default function SorterForm({ tableInstance }: SorterFormProps) {
 
   return (
     <Form ref={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
-      <div className="list-group">
+      <div tw="space-y-4">
         {sortBy.map((sorter: any, index: number) => {
           return (
-            <div className="list-group-item px-3 px-xl-4" key={sorter.id}>
-              <div className="form-group mb-0">
-                <label htmlFor="" className="d-flex align-items-center">
+            <div tw="px-3" key={sorter.id}>
+              <div tw="mb-0 flex items-center">
+                <label htmlFor="" tw="flex items-center">
                   <FormattedMessage
                     defaultMessage={`{index, plural,
                         =0 {Sort by}
@@ -40,7 +40,7 @@ export default function SorterForm({ tableInstance }: SorterFormProps) {
                   />
                   <button
                     type="button"
-                    className="btn btn-sm p-0 ml-auto d-flex align-items-center"
+                    className="p-0 ml-auto btn btn-sm d-flex align-items-center"
                     onClick={(e) => {
                       e.preventDefault();
                       setSortBy(sortBy.filter((s) => s.id !== sorter.id));
@@ -49,11 +49,13 @@ export default function SorterForm({ tableInstance }: SorterFormProps) {
                     <X size={13} />
                   </button>
                 </label>
-                <div className="form-row">
-                  <div className="col-8">
+                <div tw="flex w-full items-center">
+                  <div tw="w-8/12">
                     <Select
                       layout="elementOnly"
                       isClearable={false}
+                      isSearchable={false}
+                      menuPortalTarget={document.body}
                       name={`sorters[${index}][id]`}
                       value={sorter.id}
                       options={sortableColumnDefs.map((columnDef) => ({
@@ -72,7 +74,7 @@ export default function SorterForm({ tableInstance }: SorterFormProps) {
                       }}
                     />
                   </div>
-                  <div className="col-4">
+                  <div tw="w-4/12">
                     <Select
                       layout="elementOnly"
                       isClearable={false}

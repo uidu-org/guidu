@@ -178,13 +178,8 @@ export default class Basic extends Component<any, any> {
   };
 
   render() {
-    const {
-      loaded,
-      dataViews,
-      currentView,
-      rowData,
-      isAutoSaving,
-    } = this.state;
+    const { loaded, dataViews, currentView, rowData, isAutoSaving } =
+      this.state;
 
     return (
       <IntlProvider locale="en">
