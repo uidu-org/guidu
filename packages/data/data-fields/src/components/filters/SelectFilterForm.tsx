@@ -30,7 +30,7 @@ export default function SelectFilterForm({
             layout="elementOnly"
             name={`filters[${index}][value]`}
             options={options}
-            value={filter.value || options[0].id}
+            value={filter.value || options[0]?.id}
             onChange={(name, value, { option }) => {
               if (value !== '') {
                 onChange(name, value);

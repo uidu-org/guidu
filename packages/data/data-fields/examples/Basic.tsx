@@ -37,6 +37,7 @@ function CurrentField({ fields }) {
         setIsLoadingMocks(false);
       });
     }
+    setMocks(mocksPromise);
     return setIsLoadingMocks(false);
   }, [kind]);
 
@@ -48,6 +49,8 @@ function CurrentField({ fields }) {
   if (isLoadingMocks) {
     return null;
   }
+
+  console.log(mocks);
 
   return (
     <>
@@ -86,7 +89,7 @@ function CurrentField({ fields }) {
                     <div tw="mb-4">
                       <Filter
                         columnDef={{
-                          cellProps: { options: currentField.mocks?.options },
+                          cellProps: { options: mocks?.options || [] },
                         }}
                       />
                     </div>
@@ -109,7 +112,7 @@ function CurrentField({ fields }) {
                     <div tw="mb-4">
                       <Grouper
                         columnDef={{
-                          cellProps: { options: currentField.mocks?.options },
+                          cellProps: { options: mocks?.options || [] },
                         }}
                       />
                     </div>

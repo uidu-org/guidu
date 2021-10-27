@@ -12,7 +12,12 @@ export default (params) => {
   return (
     <div tw="min-w-0">
       <span tw="flex items-center">
-        <img tw="rounded-full mr-2.5 border w-6" src={params.avatar(params)} />
+        {params.avatar && (
+          <img
+            tw="rounded-full mr-2.5 border w-6"
+            src={params.avatar(params)}
+          />
+        )}
         <span tw="truncate">{value}</span>
       </span>
     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default (params) => {
+  console.log(params);
   if (!params.value) {
     return null;
   }

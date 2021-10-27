@@ -9,7 +9,9 @@ export default (params) => {
   return (
     <div tw="min-w-0">
       <span tw="flex items-center">
-        <img tw="rounded-full mr-2.5 w-6" src={row.original.avatar} />
+        {row && row.original && row.original.avatar && (
+          <img tw="rounded-full mr-2.5 w-6" src={row.original.avatar} />
+        )}
         <span tw="truncate">{value}</span>
       </span>
     </div>

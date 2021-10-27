@@ -9,6 +9,8 @@ const Filter = loadable(
   () => import('../../components/filters/TextFilterForm'),
 );
 
+const mocks = loadable(() => import('./mocks'));
+
 const Text: Field = {
   kind: 'text',
   name: <FormattedMessage defaultMessage="Text" />,
@@ -22,6 +24,7 @@ const Text: Field = {
   color: '#CB732B',
   Filter,
   Cell: (params) => <div tw="truncate">{params.value}</div>,
+  mocks,
 };
 
 export default Text;

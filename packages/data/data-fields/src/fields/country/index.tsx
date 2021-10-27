@@ -11,6 +11,8 @@ const Filter = loadable(
   () => import('../../components/filters/SelectFilterForm'),
 );
 
+const mocks = loadable(() => import('./mocks'));
+
 const Country: Field = {
   kind: 'country',
   name: <FormattedMessage defaultMessage="Country" />,
@@ -24,10 +26,7 @@ const Country: Field = {
   cellProps: {
     options: allCountries,
   },
-  mocks: {
-    value: 'IT',
-    options: allCountries,
-  },
+  mocks,
 };
 
 export default Country;
