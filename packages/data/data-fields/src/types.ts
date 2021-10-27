@@ -40,20 +40,28 @@ export type Field = {
   description?: React.ReactNode;
   form?: React.FC<any>;
   /** Grouper form allow for specifying grouping behavior for this field */
-  grouperForm?: React.FC<any>;
   Header?: React.FC<any>;
   Cell?: React.FC<any>;
   Footer?: React.FC<any>;
   Filter?: React.FC<any>;
+  Grouper?: React.FC<any>;
+  Summary?: React.FC<any>;
   cellProps?: any;
   cellStyle?: any;
   primary?: boolean;
   fieldGroup?: FieldGroupIdentifier;
   aggregate?: string;
-  mocks?: {
-    value: string;
-    options?: Array<{ id: string | number; name: string }>;
-  };
+  mocks?:
+    | {
+        value: string | string[];
+        values: string[] | Array<any>;
+        options?: Array<{ id: string | number; name: string }>;
+      }
+    | Promise<{
+        value: string | string[];
+        values: string[] | Array<any>;
+        options?: Array<{ id: string | number; name: string }>;
+      }>;
   /** Private fields are not editable via interface nor visible to column lists */
   isPrivate?: boolean;
 };

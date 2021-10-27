@@ -16,14 +16,14 @@
     "markdown-it": "^12.2.0",
     "markdown-it-table": "^2.0.4",
     "prosemirror-markdown": "^1.6.0",
-    "prosemirror-model": "^1.14.3",
+    "prosemirror-model": "^1.15.0",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.1",
     "@uidu/editor-core": "^0.10.5",
     "react": "^17.0.2",
-    "styled-components": "^5.3.1"
+    "styled-components": "^5.3.3"
   },
   "peerDependencies": {
     "styled-components": "^5.0.0"

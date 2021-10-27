@@ -11,8 +11,8 @@
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@loadable/component": "^5.15.0",
-    "@types/emoji-mart": "^3.0.6",
-    "@types/react-mentions": "^4.1.4",
+    "@types/emoji-mart": "^3.0.8",
+    "@types/react-mentions": "^4.1.5",
     "@uidu/dropdown-menu": "^0.6.3",
     "@uidu/field-mentions": "^1.1.4",
     "@uidu/field-text": "^1.1.5",

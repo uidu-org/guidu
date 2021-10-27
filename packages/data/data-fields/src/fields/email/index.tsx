@@ -19,6 +19,9 @@ const Email: Field = {
   color: '#5AAA8F',
   Filter,
   Cell: ({ value }) => <div tw="truncate">{value}</div>,
+  mocks: {
+    value: 'info@uidu.org',
+  },
 };
 
 export default Email;

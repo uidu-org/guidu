@@ -4,7 +4,7 @@ import loadable from '@loadable/component';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
-import Cell from './renderer';
+import Cell from './Cell';
 
 const Filter = loadable(
   () => import('../../components/filters/SelectFilterForm'),

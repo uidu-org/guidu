@@ -96,7 +96,7 @@ export default function WithOptionsForm({
               >
                 {(provided, snapshot) => (
                   <div
-                    tw="border rounded p-4 flex items-center flex-row mb-3"
+                    tw="border rounded flex items-center flex-row mb-3"
                     ref={provided.innerRef}
                     // eslint-disable-next-line react/jsx-props-no-spreading
                     {...provided.draggableProps}

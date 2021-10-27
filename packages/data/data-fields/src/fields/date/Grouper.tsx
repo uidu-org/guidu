@@ -1,7 +1,7 @@
 import Select from '@uidu/select';
 import React from 'react';
 
-export default function GrouperForm() {
+export default function Grouper() {
   return (
     <Select
       name="foo"

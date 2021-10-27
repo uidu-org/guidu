@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import withOptions from '../../hoc/withOptions';
+import Cell from './Cell';
 
 export default withOptions({
   kind: 'multipleSelect',
@@ -20,8 +21,9 @@ export default withOptions({
     />
   ),
   color: '#73BEC8',
+  Cell,
   mocks: {
-    value: ['foo'],
+    value: ['foo', 'bar'],
     options: [
       { id: 'foo', name: 'foo' },
       { id: 'bar', name: 'bar' },

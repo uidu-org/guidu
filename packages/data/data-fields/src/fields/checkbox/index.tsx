@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
-import Renderer from './renderer';
+import Cell from './Cell';
 
 const Checkbox: Field = {
   kind: 'checkbox',
@@ -13,7 +13,7 @@ const Checkbox: Field = {
     <FormattedMessage defaultMessage="A single checkbox that can be checked or unchecked." />
   ),
   color: '#C75875',
-  Cell: Renderer,
+  Cell,
 };
 
 export default Checkbox;

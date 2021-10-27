@@ -13,7 +13,7 @@
     "@babel/runtime": "^7.15.4",
     "@emotion/react": "^11.5.0",
     "@uidu/theme": "^0.6.3",
-    "styled-components": "^5.3.1",
+    "styled-components": "^5.3.3",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

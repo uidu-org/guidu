@@ -11,7 +11,7 @@ import { Field } from '../../types';
 dayjs.extend(localizedFormat);
 dayjs.extend(utc);
 
-const GrouperForm = loadable(() => import('./GrouperForm'));
+const Grouper = loadable(() => import('./Grouper'));
 const Filter = loadable(
   () => import('../../components/filters/DateFilterForm'),
 );
@@ -25,7 +25,7 @@ const Date: Partial<Field> = {
   ),
   color: '#EF8A78',
   Filter,
-  grouperForm: GrouperForm,
+  Grouper,
   // cellEditorFramework: Editor,
   // filter: 'agDateColumnFilter',
   Cell: (params) => {

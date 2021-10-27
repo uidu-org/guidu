@@ -30,7 +30,7 @@
     "react-popper": "^2.2.5",
     "react-select": "^5.1.0",
     "shallow-equal": "^1.2.1",
-    "styled-components": "^5.3.1",
+    "styled-components": "^5.3.3",
     "timezones-list": "^3.0.1",
     "tslib": "^2.3.1"
   },
