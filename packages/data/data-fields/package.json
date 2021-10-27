@@ -28,7 +28,7 @@
     "@uidu/field-time": "^1.1.4",
     "@uidu/field-toggle": "^1.0.4",
     "@uidu/form": "^1.2.4",
-    "@uidu/map": "workspace:packages/core/map",
+    "@uidu/map": "0.6.2",
     "@uidu/menu": "^0.5.4",
     "@uidu/select": "^1.5.0",
     "dayjs": "^1.10.7",

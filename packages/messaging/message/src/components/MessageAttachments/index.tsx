@@ -81,7 +81,7 @@ export default React.memo(function MessageAttachments({
                 e.preventDefault();
                 setCurrentModal(index);
               }}
-              className="card p-2 mt-2"
+              className="p-2 mt-2 card"
             >
               <div className="d-flex align-items-center">
                 <div className="flex-shrink-0 d-flex">
@@ -101,8 +101,8 @@ export default React.memo(function MessageAttachments({
                 </div>
 
                 <div style={{ minWidth: 0 }} className="ml-2">
-                  <p className="text-truncate mb-0">{filename}</p>
-                  <p className="text-truncate text-muted mb-0">
+                  <p className="mb-0 text-truncate">{filename}</p>
+                  <p className="mb-0 text-truncate text-muted">
                     {size ? `${formatBytes(size, 2)} - ` : ''}.{extension}
                   </p>
                 </div>
