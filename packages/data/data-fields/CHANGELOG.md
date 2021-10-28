@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 1.4.0
+
+### Minor Changes
+
+- b018a900f: Data fields changed API
+
 ## 1.3.1
 
 ### Patch Changes
