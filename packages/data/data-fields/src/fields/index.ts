@@ -19,6 +19,7 @@ import percentField from './percent';
 import phoneField from './phone';
 import progressField from './progress';
 import ratingField from './rating';
+import richTextField from './richText';
 import singleSelectField from './singleSelect';
 import stringField from './string';
 import textField from './text';
@@ -47,6 +48,7 @@ export { default as percentField } from './percent';
 export { default as phoneField } from './phone';
 export { default as progressField } from './progress';
 export { default as ratingField } from './rating';
+export { default as richTextField } from './richText';
 export { default as singleSelectField } from './singleSelect';
 export { default as stringField } from './string';
 export { default as textField } from './text';
@@ -76,6 +78,7 @@ export const byName = {
   phone: phoneField,
   progress: progressField,
   rating: ratingField,
+  richText: richTextField,
   singleSelect: singleSelectField,
   string: stringField,
   text: textField,
@@ -106,6 +109,7 @@ export default [
   phoneField,
   progressField,
   ratingField,
+  richTextField,
   singleSelectField,
   stringField,
   textField,

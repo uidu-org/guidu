@@ -30,6 +30,7 @@
     "@uidu/form": "^1.2.4",
     "@uidu/map": "0.6.2",
     "@uidu/menu": "^0.5.4",
+    "@uidu/popup": "0.6.3",
     "@uidu/select": "^1.5.0",
     "dayjs": "^1.10.7",
     "faker": "^5.5.3",

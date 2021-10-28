@@ -1,55 +1,65 @@
-import React, { Component } from 'react';
+import { ButtonItem, Section } from '@uidu/menu';
+import Popup from '@uidu/popup';
+import React, { useState } from 'react';
 import { ChevronDown } from 'react-feather';
 
-export default class PickField extends Component<any, any> {
-  static defaultProps = {
-    isDefaultOpen: false,
-  };
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false,
-    };
-  }
-
-  render() {
-    const { columnDefs, onClick, label, isDefaultOpen } = this.props;
-    const { isOpen } = this.state;
-    return (
-      <>
-        <div
-          className={`list-group-item px-3 px-xl-4 text-muted ${
-            isDefaultOpen ? '' : 'list-group-item-action'
-          }`}
-          onClick={() => this.setState({ isOpen: true })}
-        >
-          {label} <ChevronDown size={16} />
-        </div>
-        {(isDefaultOpen || isOpen) &&
-          columnDefs.map((columnDef) => (
-            <a
-              href="#"
-              className="list-group-item list-group-item-action px-3 px-xl-4 d-flex align-items-center"
-              key={columnDef.id}
-              onClick={(e) => {
-                e.preventDefault();
-                this.setState({ isOpen: false }, () => onClick(columnDef));
-              }}
-            >
-              {columnDef.icon && (
-                <span
-                  style={{ width: 22, display: 'inline-block' }}
-                  className="mr-2"
-                >
-                  {columnDef.icon}
-                </span>
-              )}
-              <div className="text-truncate flex-grow-1">{columnDef.name}</div>
-            </a>
-          ))}
-      </>
-    );
-  }
+export default function PickField({
+  columnDefs,
+  onClick,
+  label,
+  isDefaultOpen,
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <>
+      <Popup
+        isOpen={isOpen}
+        trigger={(triggerProps) => (
+          <a
+            {...triggerProps}
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen(true);
+            }}
+            tw="px-3 flex items-center"
+          >
+            {label} <ChevronDown size={16} />
+          </a>
+        )}
+        content={() => {
+          return (
+            <Section className="px-3">
+              {columnDefs.map((columnDef) => {
+                return (
+                  <ButtonItem
+                    tw="px-3 flex items-center"
+                    key={columnDef.id}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsOpen(false);
+                      onClick(columnDef);
+                    }}
+                    {...(columnDef.icon
+                      ? {
+                          iconBefore: (
+                            <span
+                              style={{ width: 22, display: 'inline-block' }}
+                            >
+                              {columnDef.icon}
+                            </span>
+                          ),
+                        }
+                      : {})}
+                  >
+                    {columnDef.name}
+                  </ButtonItem>
+                );
+              })}
+            </Section>
+          );
+        }}
+      />
+    </>
+  );
 }

@@ -1,11 +1,8 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import loadable from '@loadable/component';
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
-
-const CollectionFormWithFields = loadable(() => import('./form'));
 
 const Collection: Partial<Field> = {
   kind: 'collection',
@@ -27,7 +24,6 @@ const Collection: Partial<Field> = {
       { id: 'bar', name: 'bar' },
     ],
   },
-  form: CollectionFormWithFields,
 };
 
 export default Collection;

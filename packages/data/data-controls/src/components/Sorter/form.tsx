@@ -1,7 +1,9 @@
+import { XIcon } from '@heroicons/react/solid';
+import Button from '@uidu/button';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
 import React, { useRef } from 'react';
-import { ArrowDown, ArrowUp, X } from 'react-feather';
+import { ArrowDown, ArrowUp } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { PickField } from '../../utils';
 import { SorterFormProps } from './types';
@@ -26,81 +28,91 @@ export default function SorterForm({ tableInstance }: SorterFormProps) {
       <div tw="space-y-4">
         {sortBy.map((sorter: any, index: number) => {
           return (
-            <div tw="px-3" key={sorter.id}>
-              <div tw="mb-0 flex items-center">
-                <label htmlFor="" tw="flex items-center">
-                  <FormattedMessage
-                    defaultMessage={`{index, plural,
+            <div tw="px-3 space-x-3 mb-0 flex items-center" key={sorter.id}>
+              <label htmlFor="" tw="whitespace-nowrap">
+                <FormattedMessage
+                  defaultMessage={`{index, plural,
                         =0 {Sort by}
                         other {Then by}
                       }`}
-                    values={{
-                      index,
+                  values={{
+                    index,
+                  }}
+                />
+              </label>
+              <div tw="flex w-full items-center">
+                <div tw="w-8/12">
+                  <Select
+                    layout="elementOnly"
+                    isClearable={false}
+                    isSearchable={false}
+                    menuPortalTarget={document.body}
+                    styles={{
+                      menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+                    }}
+                    components={{
+                      DropdownIndicator: () => null,
+                    }}
+                    name={`sorters[${index}][id]`}
+                    value={sorter.id}
+                    options={sortableColumnDefs.map((columnDef) => ({
+                      id: columnDef.id,
+                      name: columnDef.name,
+                      ...(columnDef.icon
+                        ? {
+                            before: columnDef.icon,
+                          }
+                        : {}),
+                    }))}
+                    onChange={() => {
+                      setTimeout(() => {
+                        (form.current as any).submit();
+                      }, 30);
                     }}
                   />
-                  <button
-                    type="button"
-                    className="p-0 ml-auto btn btn-sm d-flex align-items-center"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setSortBy(sortBy.filter((s) => s.id !== sorter.id));
+                </div>
+                <div tw="w-4/12">
+                  <Select
+                    layout="elementOnly"
+                    isClearable={false}
+                    isSearchable={false}
+                    menuPortalTarget={document.body}
+                    styles={{
+                      menuPortal: (base) => ({ ...base, zIndex: 9999 }),
                     }}
-                  >
-                    <X size={13} />
-                  </button>
-                </label>
-                <div tw="flex w-full items-center">
-                  <div tw="w-8/12">
-                    <Select
-                      layout="elementOnly"
-                      isClearable={false}
-                      isSearchable={false}
-                      menuPortalTarget={document.body}
-                      name={`sorters[${index}][id]`}
-                      value={sorter.id}
-                      options={sortableColumnDefs.map((columnDef) => ({
-                        id: columnDef.id,
-                        name: columnDef.name,
-                        ...(columnDef.icon
-                          ? {
-                              before: columnDef.icon,
-                            }
-                          : {}),
-                      }))}
-                      onChange={() => {
-                        setTimeout(() => {
-                          (form.current as any).submit();
-                        }, 30);
-                      }}
-                    />
-                  </div>
-                  <div tw="w-4/12">
-                    <Select
-                      layout="elementOnly"
-                      isClearable={false}
-                      name={`sorters[${index}][desc]`}
-                      value={sorter.desc}
-                      options={[
-                        {
-                          id: true,
-                          name: 'desc',
-                          before: <ArrowDown size={16} />,
-                        },
-                        {
-                          id: false,
-                          name: 'asc',
-                          before: <ArrowUp size={16} />,
-                        },
-                      ]}
-                      onChange={(name, value, { option }) => {
-                        setTimeout(() => {
-                          (form.current as any).submit();
-                        }, 30);
-                      }}
-                    />
-                  </div>
+                    components={{
+                      DropdownIndicator: () => null,
+                    }}
+                    name={`sorters[${index}][desc]`}
+                    value={sorter.desc}
+                    options={[
+                      {
+                        id: true,
+                        name: 'desc',
+                        before: <ArrowDown size={16} />,
+                      },
+                      {
+                        id: false,
+                        name: 'asc',
+                        before: <ArrowUp size={16} />,
+                      },
+                    ]}
+                    onChange={(name, value, { option }) => {
+                      setTimeout(() => {
+                        (form.current as any).submit();
+                      }, 30);
+                    }}
+                  />
                 </div>
               </div>
+              <Button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setSortBy(sortBy.filter((s) => s.id !== sorter.id));
+                }}
+                iconBefore={<XIcon tw="h-4 w-4" />}
+              />
             </div>
           );
         })}

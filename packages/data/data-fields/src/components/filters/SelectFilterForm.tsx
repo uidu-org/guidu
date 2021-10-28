@@ -15,10 +15,18 @@ export default function SelectFilterForm({
   const filters = filtersByType(intl, 'singleSelect');
   return (
     <>
-      <div tw="flex space-x-4">
+      <div tw="flex space-x-3">
         <div tw="w-4/12">
           <Select
             isClearable={false}
+            isSearchable={false}
+            menuPortalTarget={document.body}
+            styles={{
+              menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+            }}
+            components={{
+              DropdownIndicator: () => null,
+            }}
             layout="elementOnly"
             value={filter.type || filters[0].id}
             name={`filters[${index}][type]`}
@@ -28,6 +36,15 @@ export default function SelectFilterForm({
         <div tw="w-8/12">
           <Select
             layout="elementOnly"
+            isClearable={false}
+            isSearchable={false}
+            menuPortalTarget={document.body}
+            styles={{
+              menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+            }}
+            components={{
+              DropdownIndicator: () => null,
+            }}
             name={`filters[${index}][value]`}
             options={options}
             value={filter.value || options[0]?.id}

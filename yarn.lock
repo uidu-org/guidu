@@ -2122,7 +2122,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cubejs-client/core@npm:^0.28.38, @cubejs-client/core@npm:^0.28.45":
+"@cubejs-client/core@npm:^0.28.45":
   version: 0.28.45
   resolution: "@cubejs-client/core@npm:0.28.45"
   dependencies:
@@ -2153,17 +2153,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cubejs-client/ws-transport@npm:^0.28.38":
-  version: 0.28.38
-  resolution: "@cubejs-client/ws-transport@npm:0.28.38"
+"@cubejs-client/ws-transport@npm:^0.28.45":
+  version: 0.28.45
+  resolution: "@cubejs-client/ws-transport@npm:0.28.45"
   dependencies:
     "@babel/runtime": ^7.1.2
-    "@cubejs-client/core": ^0.28.38
+    "@cubejs-client/core": ^0.28.45
     "@types/ws": ^7.2.9
     core-js: ^3.6.5
     isomorphic-ws: ^4.0.1
     ws: ^7.3.1
-  checksum: 8db4a66b107ac323fc36416845dee2cf52e81bdc48232c8e0446fb33140380a89ea62d3e709e706dd4a5411e1b07ef2661468d3288e769c0ebd24ea776636c45
+  checksum: ef5ccfa05f4de7b13a693bdc497d1f3cac09d42be2c0b7e59dbe2cb3f847f54251cd1b060fa4da56cfb149b256b74f72f6633cec624b355a629979bcee9a3c77
   languageName: node
   linkType: hard
 
@@ -2620,9 +2620,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:^8.37.4":
-  version: 8.37.4
-  resolution: "@fluentui/react@npm:8.37.4"
+"@fluentui/react@npm:^8.37.5":
+  version: 8.37.5
+  resolution: "@fluentui/react@npm:8.37.5"
   dependencies:
     "@fluentui/date-time-utilities": ^8.2.2
     "@fluentui/font-icons-mdl2": ^8.1.14
@@ -2642,7 +2642,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: c5c6568aa2338af62af30037e39c9c07654fc5acfe1975072a26ca4b276ee4d47e12ad91d731e31a92df611b23ae53c0964b19d0662084250a9fdad145af0372
+  checksum: 4a3115af345797d07f0476b4020d7e810ac0556d3256f88d0109f50da831e12fe33774c3d8a9ae8c7ae56f55952e0cef7aeec89d85bbc2f75e98b8813fd5a2e0
   languageName: node
   linkType: hard
 
@@ -3075,12 +3075,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@manypkg/cli@npm:^0.18.0":
-  version: 0.18.0
-  resolution: "@manypkg/cli@npm:0.18.0"
+"@manypkg/cli@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@manypkg/cli@npm:0.19.0"
   dependencies:
     "@babel/runtime": ^7.5.5
-    "@manypkg/get-packages": ^1.1.1
+    "@manypkg/get-packages": ^1.1.2
     chalk: ^2.4.2
     detect-indent: ^6.0.0
     find-up: ^4.1.0
@@ -3096,7 +3096,7 @@ __metadata:
     validate-npm-package-name: ^3.0.0
   bin:
     manypkg: bin.js
-  checksum: 801589af8bd9e3b7ce1e25942e5ea0f8348dd6bb17325cf75caffc62ab7f458566179c8cd06a028edbf4754e238a5cfeaecdc8261bc44e3b02fd76271e0f5570
+  checksum: 434062caad74c4072f5956301f6c41b12dfda58e89be72212ff874b69e060b76eb12b3a6031a42fd2a34c2822d4154e9891b1828444743d6ba089573a599b55e
   languageName: node
   linkType: hard
 
@@ -3112,16 +3112,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@manypkg/get-packages@npm:^1.0.1, @manypkg/get-packages@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@manypkg/get-packages@npm:1.1.1"
+"@manypkg/get-packages@npm:^1.0.1, @manypkg/get-packages@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@manypkg/get-packages@npm:1.1.2"
   dependencies:
     "@babel/runtime": ^7.5.5
+    "@changesets/types": ^4.0.1
     "@manypkg/find-root": ^1.1.0
     fs-extra: ^8.1.0
     globby: ^11.0.0
     read-yaml-file: ^1.1.0
-  checksum: f554d1c1e080267f5c4507137043a4a66cc539b54a7b71a6f38557e23c58e285ebfcfa43a5e0921bf7927108f7bedeb542d08313caa954e6d995955674f051e2
+  checksum: 08377c7046adeab53468daf969ff55631121ab9ff625467dfd567ab5f705e30cc09a50ebb7d71200746d4e04654327ed51a3d4f1d251202e9a019d256c817a99
   languageName: node
   linkType: hard
 
@@ -6376,6 +6377,8 @@ __metadata:
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
     "@babel/runtime": ^7.15.4
+    "@heroicons/react": ^1.0.5
+    "@uidu/button": 1.3.2
     "@uidu/checkbox": ^1.1.4
     "@uidu/data-fields": ^1.3.1
     "@uidu/data-views": ^1.0.3
@@ -6426,6 +6429,7 @@ __metadata:
     "@uidu/form": ^1.2.4
     "@uidu/map": 0.6.2
     "@uidu/menu": ^0.5.4
+    "@uidu/popup": 0.6.3
     "@uidu/select": ^1.5.0
     dayjs: ^1.10.7
     faker: ^5.5.3
@@ -6446,7 +6450,7 @@ __metadata:
     "@babel/runtime": ^7.15.4
     "@cubejs-client/core": ^0.28.45
     "@cubejs-client/react": ^0.28.45
-    "@cubejs-client/ws-transport": ^0.28.38
+    "@cubejs-client/ws-transport": ^0.28.45
     "@loadable/component": ^5.15.0
     "@uidu/board": ^0.4.2
     "@uidu/calendar": ^0.3.2
@@ -7785,7 +7789,7 @@ __metadata:
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
     "@babel/runtime": ^7.15.4
-    "@fluentui/react": ^8.37.4
+    "@fluentui/react": ^8.37.5
     "@uidu/button": ^1.3.2
     "@uidu/docs": ^0.5.1
     "@uidu/dropdown-menu": ^0.6.3
@@ -8001,7 +8005,7 @@ __metadata:
   resolution: "@uidu/message@workspace:packages/messaging/message"
   dependencies:
     "@babel/runtime": ^7.15.4
-    "@fluentui/react": ^8.37.4
+    "@fluentui/react": ^8.37.5
     "@loadable/component": ^5.15.0
     "@uidu/avatar": ^0.8.1
     "@uidu/docs": ^0.5.1
@@ -8959,7 +8963,7 @@ __metadata:
     postcss-preset-env: ^6.7.0
     postcss-safe-parser: ^6.0.0
     raw-loader: ^4.0.2
-    sass-loader: ^12.2.0
+    sass-loader: ^12.3.0
     style-loader: ^3.3.1
     svg-url-loader: ^7.1.1
     terser-webpack-plugin: ^5.2.4
@@ -10468,7 +10472,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.2.5, autoprefixer@npm:^10.3.7":
+"autoprefixer@npm:^10.2.5":
   version: 10.3.7
   resolution: "autoprefixer@npm:10.3.7"
   dependencies:
@@ -10483,6 +10487,24 @@ __metadata:
   bin:
     autoprefixer: bin/autoprefixer
   checksum: e5b0a8ca75164cb1aa688dd5a4210b0e3720abb94910eed7f32790aeff352ed26adc47bed145cd22c83fe03d059d903b62baa7130ed2785990e7e42a8b952704
+  languageName: node
+  linkType: hard
+
+"autoprefixer@npm:^10.4.0":
+  version: 10.4.0
+  resolution: "autoprefixer@npm:10.4.0"
+  dependencies:
+    browserslist: ^4.17.5
+    caniuse-lite: ^1.0.30001272
+    fraction.js: ^4.1.1
+    normalize-range: ^0.1.2
+    picocolors: ^1.0.0
+    postcss-value-parser: ^4.1.0
+  peerDependencies:
+    postcss: ^8.1.0
+  bin:
+    autoprefixer: bin/autoprefixer
+  checksum: 7d511c64daeaa13c7888b40b0394cd891fab1852a1f60165330c9e49ab70ac29ad1e3386665d86361661cf2bbe90cea42b78ea73cb77b373ffe30a8f4973a955
   languageName: node
   linkType: hard
 
@@ -11357,13 +11379,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "bootstrap@npm:4.6.0"
+"bootstrap@npm:^4.6.1":
+  version: 4.6.1
+  resolution: "bootstrap@npm:4.6.1"
   peerDependencies:
     jquery: 1.9.1 - 3
     popper.js: ^1.16.1
-  checksum: 998a21691a54113afda3354357338930e86e64c3a29514f342dde11100937f5f3b64248e49fd31b7c4fcce332b730baa9a68cbe553366febcbdd80dae21bd78f
+  checksum: ff44e13787aafe1e2b8ac77802eae0f19bf957ea53a40ce3d9d4af9b67eab8adc585dc5a62cb6be82a3bc33e7ae67b0efd75f02282c0ddca09272d5c18a0b379
   languageName: node
   linkType: hard
 
@@ -11627,6 +11649,21 @@ __metadata:
   bin:
     browserslist: cli.js
   checksum: 9295bdff6e054fdbb131275f88d282dddda7e8d54ddc1571b24374d6ba85e6d1f7cb72280543ea44a9726bb5076ded644d943b38cdc5610249699254ca951f46
+  languageName: node
+  linkType: hard
+
+"browserslist@npm:^4.17.5":
+  version: 4.17.5
+  resolution: "browserslist@npm:4.17.5"
+  dependencies:
+    caniuse-lite: ^1.0.30001271
+    electron-to-chromium: ^1.3.878
+    escalade: ^3.1.1
+    node-releases: ^2.0.1
+    picocolors: ^1.0.0
+  bin:
+    browserslist: cli.js
+  checksum: 0a1d762305c39dd317bb21e3159f44250bb1029a497f9a901ef5066f909263372eaacda58fd39174121c2741c0c32a7e6ace04df9172abe22c2fb69eba139a01
   languageName: node
   linkType: hard
 
@@ -12107,6 +12144,13 @@ __metadata:
   version: 1.0.30001265
   resolution: "caniuse-lite@npm:1.0.30001265"
   checksum: 19f1943045503ebd182191075a991035523123db6985bcccde6702c445154a470a72ff064568a977b607a0c42789bed73ecee6a6a04601dd04691c1a1fdfbd1c
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001271, caniuse-lite@npm:^1.0.30001272":
+  version: 1.0.30001272
+  resolution: "caniuse-lite@npm:1.0.30001272"
+  checksum: 5a08fc35ae298acef6846111634201bde7b4710fe0ccabb69ad5681115f77971265d9b6b5cd9bb976bc44d8d6ff0119cb28d9032753e063a2c70e1e30b630ad9
   languageName: node
   linkType: hard
 
@@ -14581,7 +14625,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "design-system@workspace:apps/design-system"
   dependencies:
-    "@manypkg/get-packages": ^1.1.1
+    "@manypkg/get-packages": ^1.1.2
     "@mdx-js/loader": ^1.6.22
     "@mdx-js/mdx": ^1.6.22
     "@next/mdx": ^11.1.2
@@ -15134,6 +15178,13 @@ __metadata:
   version: 1.3.861
   resolution: "electron-to-chromium@npm:1.3.861"
   checksum: ff1c69e65f707ab90f18871f07f23aafcf847e9df02e1edac4ce3c9948185f05ac3dda0cccc98966bbef734208f1950be235b6745939ffd44adda2becbd3baf0
+  languageName: node
+  linkType: hard
+
+"electron-to-chromium@npm:^1.3.878":
+  version: 1.3.883
+  resolution: "electron-to-chromium@npm:1.3.883"
+  checksum: da869b4021dedf917f4fc1b55e393f2768a350c1c68b36fba0bd52895627df73e67848fe297a6bc5c8eed976f4bb211457dfec060d108d135e4a19bf74de24ed
   languageName: node
   linkType: hard
 
@@ -17946,7 +17997,7 @@ fsevents@^1.2.7:
     "@cubejs-client/react": ^0.28.45
     "@emotion/react": ^11.5.0
     "@emotion/styled": ^11.3.0
-    "@fluentui/react": ^8.37.4
+    "@fluentui/react": ^8.37.5
     "@formatjs/cli": ^4.4.0
     "@fortawesome/fontawesome-free": ^5.15.4
     "@fortawesome/fontawesome-svg-core": ^1.2.36
@@ -17954,7 +18005,7 @@ fsevents@^1.2.7:
     "@fortawesome/react-fontawesome": ^0.1.16
     "@loadable/babel-plugin": ^5.13.2
     "@loadable/component": ^5.15.0
-    "@manypkg/cli": ^0.18.0
+    "@manypkg/cli": ^0.19.0
     "@mdx-js/loader": ^1.6.22
     "@mdx-js/mdx": ^1.6.22
     "@next/mdx": ^11.1.2
@@ -18037,7 +18088,7 @@ fsevents@^1.2.7:
     abortcontroller-polyfill: ^1.7.3
     add: ^2.0.6
     array-find: ^1.0.0
-    autoprefixer: ^10.3.7
+    autoprefixer: ^10.4.0
     autosize: ^5.0.1
     avataaars: ^1.2.2
     axios: ^0.24.0
@@ -18054,7 +18105,7 @@ fsevents@^1.2.7:
     babel-plugin-twin: ^1.0.2
     body-scroll-lock: ^4.0.0-beta.0
     bolt: ^0.24.10
-    bootstrap: ^4.6.0
+    bootstrap: ^4.6.1
     buffer: ^6.0.3
     bundlesize: ^0.18.1
     bytes: ^3.1.0
@@ -18235,7 +18286,7 @@ fsevents@^1.2.7:
     react-virtualized: ^9.22.3
     resolve: ^1.20.0
     sass: ^1.43.4
-    sass-loader: ^12.2.0
+    sass-loader: ^12.3.0
     scroll-into-view-if-needed: ^2.2.28
     scrollparent: ^2.0.1
     semver: ^7.3.5
@@ -23187,6 +23238,13 @@ fsevents@^1.2.7:
   version: 1.1.77
   resolution: "node-releases@npm:1.1.77"
   checksum: eb2fcb45310e7d77f82bfdadeca546a698d258e011f15d88ad9a452a5e838a672ec532906581096ca19c66284a788330c3b09227ffc540e67228730f41b9c2e2
+  languageName: node
+  linkType: hard
+
+"node-releases@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "node-releases@npm:2.0.1"
+  checksum: b20dd8d4bced11f75060f0387e05e76b9dc4a0451f7bb3516eade6f50499ea7768ba95d8a60d520c193402df1e58cb3fe301510cc1c1ad68949c3d57b5149866
   languageName: node
   linkType: hard
 
@@ -28300,9 +28358,9 @@ resolve@~1.17.0:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:^12.2.0":
-  version: 12.2.0
-  resolution: "sass-loader@npm:12.2.0"
+"sass-loader@npm:^12.3.0":
+  version: 12.3.0
+  resolution: "sass-loader@npm:12.3.0"
   dependencies:
     klona: ^2.0.4
     neo-async: ^2.6.2
@@ -28318,7 +28376,7 @@ resolve@~1.17.0:
       optional: true
     sass:
       optional: true
-  checksum: 2b2dd04ab5db65e8b9f5e6b6066735ef0bae134180ac7dc1912048065a6ce7797280f547937078c6f59bc8bd2889cbe8828240f5dd011cfb4a333b49fa628bdd
+  checksum: b755e6d5ceddb70d54334b53f70546b4afc9af5f9704cc0e2666894d0568bdaeccb2b07056bd35465c22c51c55e1d790023b32b9aa0977080403036ef6c47b29
   languageName: node
   linkType: hard
 

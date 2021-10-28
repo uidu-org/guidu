@@ -4,7 +4,7 @@ import { GuiduThemeProvider } from '@uidu/theme';
 import React, { useRef, useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import { localUploadOptions } from '../../../media/media-core/src';
-import { document } from '../../renderer/examples/helper/story-data';
+import { story as document } from '../../renderer/examples/helper/story-data';
 import { Editor, EditorContext, WithEditorActions } from '../src';
 
 export default function Basic({}) {

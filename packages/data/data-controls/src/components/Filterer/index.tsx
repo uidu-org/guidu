@@ -1,9 +1,8 @@
-import Drawer from '@uidu/drawer';
+import Popup from '@uidu/popup';
 import React, { useState } from 'react';
 import { Filter } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
-import DrawerLayout from '../../utils/DrawerLayout';
 import FiltererForm from './form';
 import { FiltererProps } from './types';
 
@@ -18,39 +17,39 @@ export default function Filterer({
   const filtersCount = filters.length;
 
   return (
-    <>
-      <Trigger
-        activeBg="#d1f7c4"
-        className="btn mr-2"
-        active={!!filtersCount}
-        onClick={() => setIsDialogOpen(true)}
-      >
-        <Filter strokeWidth={2} size={14} tw="xl:mr-2" />
-        <span style={{ textTransform: 'initial' }} tw="hidden xl:block">
-          <FormattedMessage
-            defaultMessage={`{filtersCount, plural,
+    <Popup
+      isOpen={isDialogOpen}
+      onClose={() => setIsDialogOpen(false)}
+      trigger={(triggerProps) => (
+        <Trigger
+          {...triggerProps}
+          activeBg="#d1f7c4"
+          className="mr-2 btn"
+          active={!!filtersCount}
+          onClick={() => setIsDialogOpen(true)}
+        >
+          <Filter strokeWidth={2} size={14} tw="xl:mr-2" />
+          <span style={{ textTransform: 'initial' }} tw="hidden xl:block">
+            <FormattedMessage
+              defaultMessage={`{filtersCount, plural,
                   =0 {Filter}
                   one {Filtered by 1 field}
                   other {Filtered by {filtersCount, number} fields}
                 }`}
-            values={{ filtersCount }}
-          />
-        </span>
-      </Trigger>
-      <Drawer
-        isOpen={isDialogOpen}
-        onClose={() => setIsDialogOpen(false)}
-        origin="right"
-        size="medium"
-      >
-        <DrawerLayout name={<FormattedMessage defaultMessage="Filter" />}>
+              values={{ filtersCount }}
+            />
+          </span>
+        </Trigger>
+      )}
+      content={() => (
+        <div tw="w-screen sm:width[500px] py-4 text-sm">
           <FiltererForm
             tableInstance={tableInstance}
             filters={filters}
             filtersCount={filtersCount}
           />
-        </DrawerLayout>
-      </Drawer>
-    </>
+        </div>
+      )}
+    ></Popup>
   );
 }

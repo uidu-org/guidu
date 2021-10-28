@@ -1,8 +1,9 @@
+import { XIcon } from '@heroicons/react/solid';
+import Button from '@uidu/button';
 import { getColumnDef, getFieldFromColumnDef } from '@uidu/data-fields';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
 import React, { useRef } from 'react';
-import { X } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import PickField from '../../utils/PickField';
 import { FiltererFormProps } from './types';
@@ -22,56 +23,53 @@ export default function FiltererForm({
 
   return (
     <Form ref={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
-      <div className="list-group">
+      <div tw="space-y-3">
         {filters.map((filter: any, index) => {
           const columnDef = getColumnDef(filterableColumnDefs, filter);
           const field = getFieldFromColumnDef(columnDef);
           const { Filter: FilterForm } = field;
           return (
-            <div className="list-group-item px-3 px-xl-4" key={filter.id}>
-              <div className="form-group mb-2">
-                <div className="form-group mb-0">
-                  <label htmlFor="" className="d-flex align-items-center">
-                    <FormattedMessage
-                      defaultMessage={`{index, plural,
+            <div tw="px-3 flex items-center space-x-3" key={filter.id}>
+              <div className="mb-0 form-group">
+                <label htmlFor="" className="d-flex align-items-center">
+                  <FormattedMessage
+                    defaultMessage={`{index, plural,
                       =0 {Where}
                       other {Then where}
                     }`}
-                      values={{
-                        index,
-                      }}
-                    />
-                    <button
-                      type="button"
-                      className="btn btn-sm p-0 ml-auto d-flex align-items-center"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        tableInstance.setFilter(filter.id, undefined);
-                      }}
-                    >
-                      <X size={13} />
-                    </button>
-                  </label>
-                </div>
-                <Select
-                  layout="elementOnly"
-                  value={filter.id}
-                  name={`filters[${index}][id]`}
-                  options={filterableColumnDefs.map((columnDef) => ({
-                    id: columnDef.id,
-                    name: columnDef.name,
-                    ...(columnDef.icon
-                      ? {
-                          before: columnDef.icon,
-                        }
-                      : {}),
-                  }))}
-                  onChange={(name, value) => {
-                    console.log(name, value);
-                    // this.updateFilterModel(value, filter.id);
-                  }}
-                />
+                    values={{
+                      index,
+                    }}
+                  />
+                </label>
               </div>
+              <Select
+                layout="elementOnly"
+                isClearable={false}
+                isSearchable={false}
+                menuPortalTarget={document.body}
+                styles={{
+                  menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+                }}
+                components={{
+                  DropdownIndicator: () => null,
+                }}
+                value={filter.id}
+                name={`filters[${index}][id]`}
+                options={filterableColumnDefs.map((columnDef) => ({
+                  id: columnDef.id,
+                  name: columnDef.name,
+                  ...(columnDef.icon
+                    ? {
+                        before: columnDef.icon,
+                      }
+                    : {}),
+                }))}
+                onChange={(name, value) => {
+                  console.log(name, value);
+                  // this.updateFilterModel(value, filter.id);
+                }}
+              />
               {FilterForm && (
                 <FilterForm
                   index={index}
@@ -85,6 +83,14 @@ export default function FiltererForm({
                   }
                 />
               )}
+              <Button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  tableInstance.setFilter(filter.id, undefined);
+                }}
+                iconBefore={<XIcon tw="h-4 w-4" />}
+              />
             </div>
           );
         })}

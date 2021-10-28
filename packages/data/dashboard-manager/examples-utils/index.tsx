@@ -5,6 +5,30 @@ import 'twin.macro';
 
 export const dashlets = [
   {
+    kind: 'InlineComponent',
+    query: {
+      measures: ['Contacts.count'],
+      timeDimensions: [
+        {
+          dimension: 'Contacts.createdAt',
+          granularity: 'month',
+          // dateRange: 'This year',
+        },
+      ],
+      filters: [],
+    },
+    layout: {
+      x: 0,
+      y: 0,
+      w: 12,
+      h: 10,
+    },
+    component: (props) => {
+      console.log(props);
+      return <div>Custom</div>;
+    },
+  },
+  {
     kind: 'XY',
     label: 'Raccolta',
     description: 'Donations amount by time',

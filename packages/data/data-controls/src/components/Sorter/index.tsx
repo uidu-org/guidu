@@ -27,7 +27,7 @@ export default function Sorter({ tableInstance }: SorterProps) {
           active={!!sortersCount}
           onClick={() => setIsDialogOpen(true)}
         >
-          <Sliders strokeWidth={2} size={14} className="mr-xl-2" />
+          <Sliders strokeWidth={2} size={14} tw="xl:mr-2" />
           <span
             style={{ textTransform: 'initial' }}
             className="d-none d-xl-block"
@@ -45,7 +45,7 @@ export default function Sorter({ tableInstance }: SorterProps) {
       )}
       content={() => {
         return (
-          <div tw="w-96">
+          <div tw="w-screen sm:width[300px] py-4 text-sm">
             <SorterForm tableInstance={tableInstance} sorters={sortBy} />
           </div>
         );

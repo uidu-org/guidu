@@ -12,7 +12,7 @@
     "@babel/runtime": "^7.15.4",
     "@cubejs-client/core": "^0.28.45",
     "@cubejs-client/react": "^0.28.45",
-    "@cubejs-client/ws-transport": "^0.28.38",
+    "@cubejs-client/ws-transport": "^0.28.45",
     "@loadable/component": "^5.15.0",
     "@uidu/board": "^0.4.2",
     "@uidu/calendar": "^0.3.2",

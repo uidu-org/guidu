@@ -13,10 +13,18 @@ export default function NumberFilterForm({
   const filters = filtersByType(intl, 'number');
   return (
     <>
-      <div tw="flex space-x-4">
+      <div tw="flex space-x-3 flex-grow">
         <div tw="w-4/12">
           <Select
             isClearable={false}
+            isSearchable={false}
+            menuPortalTarget={document.body}
+            styles={{
+              menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+            }}
+            components={{
+              DropdownIndicator: () => null,
+            }}
             layout="elementOnly"
             value={filter.type || filters[0].id}
             name={`filters[${index}][type]`}
@@ -31,6 +39,7 @@ export default function NumberFilterForm({
         <div tw="w-8/12">
           <FieldNumber
             layout="elementOnly"
+            tw="py-2"
             name={`filters[${index}][value]`}
             value={filter.value}
             onChange={(name, value) => {
@@ -38,11 +47,6 @@ export default function NumberFilterForm({
                 onChange(name, value);
               }
             }}
-            addonBefore={
-              <span className="input-group-text" id="basic-addon1">
-                €
-              </span>
-            }
             autoFocus
           />
         </div>

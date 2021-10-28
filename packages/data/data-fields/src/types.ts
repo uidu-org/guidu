@@ -22,6 +22,7 @@ export type FieldKind =
   | 'phone'
   | 'progress'
   | 'rating'
+  | 'richText'
   | 'singleSelect'
   | 'string'
   | 'text'
@@ -38,7 +39,7 @@ export type Field = {
   icon: React.ReactNode;
   color?: string;
   description?: React.ReactNode;
-  form?: React.FC<any>;
+  // form?: React.FC<any>;
   /** Grouper form allow for specifying grouping behavior for this field */
   Header?: React.FC<any>;
   /** Grouper form allow for specifying grouping behavior for this field */

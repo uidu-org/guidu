@@ -20,14 +20,7 @@ function CurrentField({ fields }) {
   const currentField: Field = fields.find(
     ({ kind: fieldKind }) => fieldKind === kind,
   );
-  const {
-    form: AdditionalForm,
-    Cell,
-    Filter,
-    Grouper,
-    Summary,
-    mocks: mocksPromise,
-  } = currentField;
+  const { Cell, Filter, Grouper, mocks: mocksPromise } = currentField;
 
   const fetchMocks = useCallback(async () => {
     if (mocksPromise && mocksPromise.load) {
@@ -124,58 +117,23 @@ function CurrentField({ fields }) {
             </div>
             <div tw="border rounded mb-4">
               <div tw="p-4 border-b border-opacity-40">
-                <div tw="text-lg">Settings Mode</div>
-                <p tw="text-sm">
-                  This is shown for additional field settings, such as
-                  formatting preferences
-                </p>
-              </div>
-              <div tw="p-4">
-                {AdditionalForm ? (
-                  <Form {...formDefaultProps}>
-                    <AdditionalForm />
-                  </Form>
-                ) : (
-                  'N/A'
-                )}
-              </div>
-            </div>
-            <div tw="border rounded mb-4">
-              <div tw="p-4 border-b border-opacity-40">
-                <div tw="text-lg">Fill Field Form</div>
-                <p tw="text-sm">
-                  This is shown when one wants to fill field value (It's the
-                  corresponding question)
-                </p>
-              </div>
-              <div tw="p-4"></div>
-            </div>
-            <div tw="border rounded mb-4">
-              <div tw="p-4 border-b border-opacity-40">
-                <div tw="text-lg">Summary</div>
-                <p tw="text-sm">
-                  This is shown when one wants a summary of the field values for
-                  this field
-                </p>
-              </div>
-              <div tw="p-4">
-                {Summary ? (
-                  <div tw="mb-4">
-                    <Summary values={mocks?.values} />
-                  </div>
-                ) : (
-                  'N/A'
-                )}
-              </div>
-            </div>
-            <div tw="border rounded mb-4">
-              <div tw="p-4 border-b border-opacity-40">
                 <div tw="text-lg">Edit field mode</div>
                 <p tw="text-sm">
-                  This is shown when one wants to edit field value
+                  This is shown when one wants to edit field value from the
+                  table
                 </p>
               </div>
-              <div tw="p-4"></div>
+              <div tw="p-4">
+                {Cell ? (
+                  <Cell
+                    value={mocks ? mocks.value : null}
+                    options={mocks ? mocks.options : []}
+                    column={{ editable: true }}
+                  />
+                ) : (
+                  mocks?.value || 'Foo'
+                )}
+              </div>
             </div>
           </div>
         </ScrollableContainer>

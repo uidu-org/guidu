@@ -69,6 +69,10 @@ export function renderDashlet({ kind, showHeader = true, ...dashlet }, index) {
       return <LoadableHorizontalRule />;
     case 'VerticalRule':
       return <LoadableVerticalRule />;
+    case 'InlineComponent':
+      content = dashlet.component;
+      showHeader = false;
+      break;
   }
 
   return (

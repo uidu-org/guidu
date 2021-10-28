@@ -188,6 +188,14 @@ export const availableColumns = [
     name: 'firstName',
   },
   {
+    kind: 'rating',
+    id: 'rating',
+    field: 'rating',
+    name: 'Rating',
+    canGroupBy: true,
+    editable: true,
+  },
+  {
     kind: 'string',
     id: 'donationCampaign',
     field: 'donationCampaign',
@@ -312,6 +320,10 @@ export const fetchContacts = () => {
           text: faker.lorem.paragraphs(),
           amount: parseInt(faker.commerce.price(), 10),
           country: faker.address.countryCode(),
+          rating: faker.datatype.number({
+            min: 1,
+            max: 5,
+          }),
           percent: faker.datatype.number(),
           createdAt: faker.date.past().toISOString(),
           updatedAt: `${faker.date.recent().toISOString()}`,
