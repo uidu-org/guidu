@@ -1,5 +1,11 @@
 # @uidu/dashboard-manager
 
+## 1.2.0
+
+### Minor Changes
+
+- 4104e9082: Bump cube
+
 ## 1.1.0
 
 ### Minor Changes
