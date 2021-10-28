@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 1.4.0
+
+### Minor Changes
+
+- b018a900f: Data fields changed API
+
+### Patch Changes
+
+- Updated dependencies [b018a900f]
+  - @uidu/data-fields@1.4.0
+
 ## 1.3.0
 
 ### Minor Changes
