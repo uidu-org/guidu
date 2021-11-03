@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 1.2.0
+
+### Minor Changes
+
+- edb831b09: Added support for png in thumbnails
+
 ## 1.1.3
 
 ### Patch Changes
