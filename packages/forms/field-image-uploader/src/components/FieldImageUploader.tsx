@@ -80,6 +80,7 @@ function FieldImageUploader({
       .use(uploadOptions.module, uploadOptions.options)
       .use(ThumbnailGenerator, {
         thumbnailWidth: calculateWidth(),
+        thumbnailType: 'image/png',
       })
       .on('thumbnail:generated', (file, preview) => {
         setIsLoading(false);
