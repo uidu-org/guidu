@@ -16,6 +16,16 @@ module.exports = {
       sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
     },
     extend: {
+      typography: {
+        primary: {
+          css: {
+            color: '#333',
+            strong: {
+              color: '#333',
+            },
+          },
+        },
+      },
       backgroundColor: {
         primary: withOpacity('--brand-primary'),
         secondary: withOpacity('--brand-secondary'),

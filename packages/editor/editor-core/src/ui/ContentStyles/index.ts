@@ -50,7 +50,7 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
     /* font-size: ${editorFontSize}px; */
 
     ${whitespaceSharedStyles};
-    ${paragraphSharedStyles};
+    /* ${paragraphSharedStyles}; */
     ${listsSharedStyles};
     ${indentationSharedStyles};
     ${shadowSharedStyle};
@@ -104,8 +104,8 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
     }
   }
 
-  ${blocktypeStyles}
-  ${textFormattingStyles}
+  /* ${blocktypeStyles} */
+  /* ${textFormattingStyles} */
   ${placeholderTextStyles}
   ${placeholderStyles}
   ${codeBlockStyles}

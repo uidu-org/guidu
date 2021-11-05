@@ -221,7 +221,7 @@ export default class RendererDemo extends React.Component<
               Toggle Event handlers
             </button>
           </fieldset>
-          {this.renderRenderer()}
+          <div tw="prose prose-primary">{this.renderRenderer()}</div>
           {this.renderText()}
         </div>
       </>

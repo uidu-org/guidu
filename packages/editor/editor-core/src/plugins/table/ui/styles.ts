@@ -1,4 +1,3 @@
-import { borderRadius, colors, fontSize } from '@uidu/theme';
 import { tableBackgroundBorderColor } from '@uidu/adf-schema';
 import {
   akEditorSmallZIndex,
@@ -13,6 +12,7 @@ import {
   tableMarginTop,
   tableSharedStyle,
 } from '@uidu/editor-common';
+import { borderRadius, colors, fontSize } from '@uidu/theme';
 import { css } from 'styled-components';
 import { scrollbarStyles } from '../../../ui/styles';
 import {
@@ -472,7 +472,6 @@ export const tableStyles = css`
     cursor: pointer;
   }
 
-
   .ProseMirror {
     ${tableSharedStyle};
     ${columnControlsLineMarker};
@@ -486,8 +485,7 @@ export const tableStyles = css`
     }
 
     .${ClassName.TABLE_NODE_WRAPPER} {
-      td.${ClassName.TABLE_CELL},
-      th.${ClassName.TABLE_HEADER_CELL} {
+      td.${ClassName.TABLE_CELL}, th.${ClassName.TABLE_HEADER_CELL} {
         position: relative;
         overflow: visible;
       }
@@ -541,12 +539,8 @@ export const tableStyles = css`
     }
 
     /* Breakout only works on top level */
-    > .${ClassName.NODEVIEW_WRAPPER} .${
-  ClassName.TABLE_CONTAINER
-}[data-layout='full-width'],
-    > .${ClassName.NODEVIEW_WRAPPER} .${
-  ClassName.TABLE_CONTAINER
-}[data-layout='wide'] {
+    > .${ClassName.NODEVIEW_WRAPPER} .${ClassName.TABLE_CONTAINER}[data-layout='full-width'],
+    > .${ClassName.NODEVIEW_WRAPPER} .${ClassName.TABLE_CONTAINER}[data-layout='wide'] {
       margin-left: 50%;
       transform: translateX(-50%);
     }
@@ -600,8 +594,7 @@ export const tableStyles = css`
       background: ${tableToolbarSelectedColor};
     }
     .${ClassName.TABLE_CONTAINER}[data-number-column='true'] {
-      .${ClassName.CORNER_CONTROLS},
-      .${ClassName.CONTROLS_CORNER_BUTTON} {
+      .${ClassName.CORNER_CONTROLS}, .${ClassName.CONTROLS_CORNER_BUTTON} {
         width: ${akEditorTableToolbarSize + akEditorTableNumberColumnWidth}px;
       }
       .${ClassName.ROW_CONTROLS} .${ClassName.CONTROLS_BUTTON} {
@@ -613,9 +606,8 @@ export const tableStyles = css`
       background: ${tableToolbarSelectedColor};
       cursor: pointer;
     }
-    :not(.${ClassName.IS_RESIZING}) .${ClassName.CONTROLS_CORNER_BUTTON}.${
-  ClassName.HOVERED_CELL_IN_DANGER
-} {
+    :not(.${ClassName.IS_RESIZING})
+      .${ClassName.CONTROLS_CORNER_BUTTON}.${ClassName.HOVERED_CELL_IN_DANGER} {
       border-color: ${tableBorderDeleteColor};
       background: ${tableToolbarDeleteColor};
     }
@@ -644,8 +636,8 @@ export const tableStyles = css`
         margin-top: -1px;
       }
       .${ClassName.ROW_CONTROLS_BUTTON_WRAP}:hover,
-      .${ClassName.ROW_CONTROLS_BUTTON_WRAP}.active,
-      .${ClassName.CONTROLS_BUTTON}:hover {
+        .${ClassName.ROW_CONTROLS_BUTTON_WRAP}.active,
+        .${ClassName.CONTROLS_BUTTON}:hover {
         z-index: ${akEditorUnitZIndex};
       }
 
@@ -703,8 +695,7 @@ export const tableStyles = css`
       }
     }
     .${ClassName.WITH_CONTROLS} {
-      .${ClassName.CORNER_CONTROLS},
-      .${ClassName.ROW_CONTROLS} {
+      .${ClassName.CORNER_CONTROLS}, .${ClassName.ROW_CONTROLS} {
         display: block;
       }
       .${ClassName.NUMBERED_COLUMN} {
@@ -753,13 +744,12 @@ export const tableStyles = css`
         margin-top: 0;
       }
 
-      .${ClassName.SELECTED_CELL},
-      .${ClassName.HOVERED_CELL_IN_DANGER} {
+      .${ClassName.SELECTED_CELL}, .${ClassName.HOVERED_CELL_IN_DANGER} {
         position: relative;
       }
       /* Give selected cells a blue overlay */
       .${ClassName.SELECTED_CELL}::after,
-      .${ClassName.HOVERED_CELL_IN_DANGER}::after {
+        .${ClassName.HOVERED_CELL_IN_DANGER}::after {
         z-index: ${akEditorSmallZIndex};
         position: absolute;
         content: '';
@@ -776,9 +766,8 @@ export const tableStyles = css`
       .${ClassName.SELECTED_CELL}::after {
         background: ${tableCellSelectedColor};
       }
-      th.${ClassName.HOVERED_CELL_IN_DANGER}::after, td.${
-  ClassName.HOVERED_CELL_IN_DANGER
-}::after {
+      th.${ClassName.HOVERED_CELL_IN_DANGER}::after,
+        td.${ClassName.HOVERED_CELL_IN_DANGER}::after {
         background: ${tableCellDeleteColor};
       }
     }
@@ -816,7 +805,6 @@ export const tableStyles = css`
   .ProseMirror.${ClassName.RESIZE_CURSOR} {
     cursor: col-resize;
   }
-
 `;
 
 export const tableFloatingCellButtonStyles = css`

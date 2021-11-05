@@ -62,7 +62,7 @@ const ContentArea = styled(ContentStyles)`
   flex-grow: 1;
   overflow-x: hidden;
   overflow-y: auto;
-  line-height: initial;
+  /* line-height: initial; */
 
   /** Hack for Bitbucket to ensure entire editorView gets drop event; see ED-3294 **/
   /** Hack for tables controlls. Otherwise marging collapse and controlls are misplaced. **/

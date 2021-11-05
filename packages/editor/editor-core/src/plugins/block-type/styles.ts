@@ -7,6 +7,6 @@ import { css } from 'styled-components';
 export const blocktypeStyles = css`
   .ProseMirror {
     ${blockquoteSharedStyles};
-    ${headingsSharedStyles};
+    /* ${headingsSharedStyles}; */
   }
 `;

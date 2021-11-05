@@ -55,10 +55,11 @@ const tableSharedStyle = css`
   .${TableSharedCssClassName.TABLE_NODE_WRAPPER} > table {
     border-collapse: collapse;
     margin: ${tableMarginTop}px ${tableMarginSides}px 0 0;
-    border: ${tableCellBorderWidth}px solid ${themed({
-  light: akEditorTableBorder,
-  dark: akEditorTableBorderDark,
-})};
+    border: ${tableCellBorderWidth}px solid
+      ${themed({
+        light: akEditorTableBorder,
+        dark: akEditorTableBorderDark,
+      })};
     table-layout: fixed;
     font-size: ${fontSize()}px;
     width: 100%;
@@ -83,18 +84,23 @@ const tableSharedStyle = css`
         min-width: ${tableCellMinWidth}px;
         font-weight: normal;
         vertical-align: top;
-        border: 1px solid ${themed({
-          light: akEditorTableBorder,
-          dark: akEditorTableBorderDark,
-        })};
+        border: 1px solid
+          ${themed({
+            light: akEditorTableBorder,
+            dark: akEditorTableBorderDark,
+          })};
         border-right-width: 0;
         border-bottom-width: 0;
-        padding: ${tableCellPadding}px;
+        padding: ${tableCellPadding}px !important;
         /* https://stackoverflow.com/questions/7517127/borders-not-shown-in-firefox-with-border-collapse-on-table-position-relative-o */
         background-clip: padding-box;
 
         > *:first-child {
           margin-top: 0;
+        }
+
+        > p {
+          margin: 0;
         }
 
         > .ProseMirror-gapcursor.-right:first-child + * {

@@ -73,7 +73,10 @@ export default function Basic({}) {
                         </ShellHeader>
                         <ShellBody>
                           <ShellMain>
-                            <ShellBody ref={element}>
+                            <ShellBody
+                              ref={element}
+                              tw="prose prose-primary max-w-none"
+                            >
                               {renderEditor({})}
                             </ShellBody>
                           </ShellMain>
