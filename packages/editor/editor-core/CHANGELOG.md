@@ -1,5 +1,20 @@
 # @uidu/editor-core
 
+## 0.11.0
+
+### Minor Changes
+
+- 52cb7d511: Bump prosemirror, add styling for making tw typography compatible
+
+### Patch Changes
+
+- Updated dependencies [52cb7d511]
+  - @uidu/adf-schema@0.6.0
+  - @uidu/editor-common@0.6.0
+  - @uidu/editor-json-transformer@0.5.0
+  - @uidu/adf-utils@0.7.2
+  - @uidu/editor-markdown-transformer@0.5.5
+
 ## 0.10.10
 
 ### Patch Changes
