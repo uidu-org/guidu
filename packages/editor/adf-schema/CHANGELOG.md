@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.6.0
+
+### Minor Changes
+
+- 52cb7d511: Bump prosemirror, add styling for making tw typography compatible
+
 ## 0.5.4
 
 ### Patch Changes

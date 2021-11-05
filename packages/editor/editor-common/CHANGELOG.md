@@ -1,5 +1,17 @@
 # @uidu/editor-common
 
+## 0.6.0
+
+### Minor Changes
+
+- 52cb7d511: Bump prosemirror, add styling for making tw typography compatible
+
+### Patch Changes
+
+- Updated dependencies [52cb7d511]
+  - @uidu/adf-schema@0.6.0
+  - @uidu/adf-utils@0.7.2
+
 ## 0.5.6
 
 ### Patch Changes

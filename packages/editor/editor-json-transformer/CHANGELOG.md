@@ -1,5 +1,16 @@
 # @uidu/editor-json-transformer
 
+## 0.5.0
+
+### Minor Changes
+
+- 52cb7d511: Bump prosemirror, add styling for making tw typography compatible
+
+### Patch Changes
+
+- Updated dependencies [52cb7d511]
+  - @uidu/adf-schema@0.6.0
+
 ## 0.4.5
 
 ### Patch Changes
