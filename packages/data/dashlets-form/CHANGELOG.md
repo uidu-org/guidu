@@ -1,5 +1,12 @@
 # @uidu/dashlets-form
 
+## 1.0.4
+
+### Patch Changes
+
+- Updated dependencies [f31b557f9]
+  - @uidu/accordion@0.6.0
+
 ## 1.0.3
 
 ### Patch Changes
