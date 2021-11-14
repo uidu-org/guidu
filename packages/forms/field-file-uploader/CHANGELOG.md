@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 1.1.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/field-base@3.1.4
+
 ## 1.1.2
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/media-viewer
 
+## 0.4.9
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/avatar@0.8.2
+  - @uidu/button@1.3.3
+  - @uidu/spinner@0.5.3
+  - @uidu/theme@0.6.4
+  - @uidu/shell@2.1.4
+
 ## 0.4.8
 
 ### Patch Changes

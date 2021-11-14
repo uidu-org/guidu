@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 1.1.4
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/section-message@0.6.3
+  - @uidu/slider@1.7.5
+  - @uidu/theme@0.6.4
+  - @uidu/field-base@3.1.4
+  - @uidu/form@1.2.5
+
 ## 1.1.3
 
 ### Patch Changes

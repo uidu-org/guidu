@@ -1,5 +1,41 @@
 # @uidu/editor-core
 
+## 0.11.1
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/analytics@0.5.2
+  - @uidu/avatar@0.8.2
+  - @uidu/avatar-group@2.6.3
+  - @uidu/button@1.3.3
+  - @uidu/droplist@0.5.4
+  - @uidu/menu@0.5.5
+  - @uidu/modal-dialog@0.5.6
+  - @uidu/spinner@0.5.3
+  - @uidu/theme@0.6.4
+  - @uidu/tooltip@0.5.4
+  - @uidu/adf-schema@0.6.2
+  - @uidu/adf-utils@0.7.3
+  - @uidu/editor-common@0.6.1
+  - @uidu/editor-json-transformer@0.5.1
+  - @uidu/editor-markdown-transformer@0.5.6
+  - @uidu/analytics-listeners@0.4.2
+  - @uidu/analytics-namespaced-context@0.4.2
+  - @uidu/date@0.4.4
+  - @uidu/emoji@0.5.7
+  - @uidu/mentions@0.3.7
+  - @uidu/profilecard@0.2.9
+  - @uidu/status@0.4.7
+  - @uidu/task-decision@0.4.5
+  - @uidu/field-date@1.1.5
+  - @uidu/form@1.2.5
+  - @uidu/select@1.5.2
+  - @uidu/media-card@0.5.13
+  - @uidu/media-filmstrip@0.4.6
+  - @uidu/media-picker@0.7.2
+
 ## 0.11.0
 
 ### Minor Changes

@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 1.4.1
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/button@1.3.3
+  - @uidu/map@0.6.3
+  - @uidu/menu@0.5.5
+  - @uidu/popup@0.6.4
+  - @uidu/field-color-picker@2.0.4
+  - @uidu/field-date@1.1.5
+  - @uidu/field-downshift@1.4.2
+  - @uidu/field-number@1.0.5
+  - @uidu/field-text@1.1.6
+  - @uidu/field-time@1.1.5
+  - @uidu/field-toggle@1.0.5
+  - @uidu/form@1.2.5
+  - @uidu/select@1.5.2
+
 ## 1.4.0
 
 ### Minor Changes

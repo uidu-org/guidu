@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.3.4
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/dropdown-menu@0.6.4
+  - @uidu/shell@2.1.4
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/analytics@0.5.2
+  - @uidu/emoji@0.5.7
+  - @uidu/mentions@0.3.7
+  - @uidu/task-decision@0.4.5
+
 ## 0.4.2
 
 ### Patch Changes

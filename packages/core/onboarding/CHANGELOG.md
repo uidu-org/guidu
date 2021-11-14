@@ -1,5 +1,18 @@
 # @uidu/onboarding
 
+## 1.2.2
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/analytics@0.5.2
+  - @uidu/button@1.3.3
+  - @uidu/modal-dialog@0.5.6
+  - @uidu/popper@0.5.4
+  - @uidu/portal@0.5.4
+  - @uidu/theme@0.6.4
+
 ## 1.2.1
 
 ### Patch Changes

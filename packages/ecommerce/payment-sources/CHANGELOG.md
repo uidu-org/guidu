@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.6
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/payments@1.1.4
+  - @uidu/form@1.2.5
+
 ## 0.3.5
 
 ### Patch Changes

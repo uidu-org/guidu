@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.5.1
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/adf-schema@0.6.2
+
 ## 0.5.0
 
 ### Minor Changes

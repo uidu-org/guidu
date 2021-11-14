@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.4.2
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/shell@2.1.4
+
 ## 0.4.1
 
 ### Patch Changes

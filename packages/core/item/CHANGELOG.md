@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.5.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/avatar@0.8.2
+  - @uidu/theme@0.6.4
+
 ## 0.5.2
 
 ### Patch Changes

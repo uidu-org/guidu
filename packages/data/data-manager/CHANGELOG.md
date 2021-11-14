@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 1.3.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/spinner@0.5.3
+  - @uidu/board@0.4.3
+  - @uidu/calendar@0.3.4
+  - @uidu/data-controls@1.2.1
+  - @uidu/data-fields@1.4.1
+  - @uidu/data-views@1.1.1
+  - @uidu/gallery@1.1.3
+  - @uidu/list@1.1.3
+  - @uidu/table@1.1.5
+  - @uidu/shell@2.1.4
+
 ## 1.3.2
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 1.4.2
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/field-base@3.1.4
+  - @uidu/field-text@1.1.6
+
 ## 1.4.1
 
 ### Patch Changes

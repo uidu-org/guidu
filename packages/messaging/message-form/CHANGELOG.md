@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.4.5
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/dropdown-menu@0.6.4
+  - @uidu/spinner@0.5.3
+  - @uidu/field-mentions@1.1.5
+  - @uidu/field-text@1.1.6
+  - @uidu/form@1.2.5
+  - @uidu/media-filmstrip@0.4.6
+  - @uidu/message@0.5.3
+
 ## 0.4.4
 
 ### Patch Changes

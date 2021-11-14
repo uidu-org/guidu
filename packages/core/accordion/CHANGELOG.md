@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.1
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/docs@0.5.2
+
 ## 0.6.0
 
 ### Minor Changes

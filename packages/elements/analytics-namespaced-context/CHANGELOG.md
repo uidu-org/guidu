@@ -1,5 +1,13 @@
 # @uidu/analytics-namespaced-context
 
+## 0.4.2
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/analytics@0.5.2
+
 ## 0.4.1
 
 ### Patch Changes

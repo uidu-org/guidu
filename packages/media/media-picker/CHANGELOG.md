@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.7.2
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+
 ## 0.7.1
 
 ### Patch Changes

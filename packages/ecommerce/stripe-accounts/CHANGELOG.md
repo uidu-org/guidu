@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.3.6
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/slider@1.7.5
+  - @uidu/spinner@0.5.3
+  - @uidu/payments@1.1.4
+  - @uidu/field-text@1.1.6
+  - @uidu/form@1.2.5
+  - @uidu/stepper@0.4.3
+
 ## 0.3.5
 
 ### Patch Changes

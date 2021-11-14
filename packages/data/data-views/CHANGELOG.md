@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 1.1.1
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/data-controls@1.2.1
+  - @uidu/field-counter@1.1.5
+  - @uidu/field-number@1.0.5
+  - @uidu/form@1.2.5
+  - @uidu/select@1.5.2
+
 ## 1.1.0
 
 ### Minor Changes

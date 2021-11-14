@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.6.1
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/analytics@0.5.2
+  - @uidu/theme@0.6.4
+  - @uidu/adf-schema@0.6.2
+  - @uidu/adf-utils@0.7.3
+  - @uidu/analytics-namespaced-context@0.4.2
+  - @uidu/emoji@0.5.7
+  - @uidu/mentions@0.3.7
+  - @uidu/profilecard@0.2.9
+
 ## 0.6.0
 
 ### Minor Changes

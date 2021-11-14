@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 1.1.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/data-fields@1.4.1
+
 ## 1.1.2
 
 ### Patch Changes

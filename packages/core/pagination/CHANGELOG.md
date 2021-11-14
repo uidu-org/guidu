@@ -1,5 +1,15 @@
 # @uidu/pagination
 
+## 0.5.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/analytics@0.5.2
+  - @uidu/button@1.3.3
+  - @uidu/theme@0.6.4
+
 ## 0.5.2
 
 ### Patch Changes

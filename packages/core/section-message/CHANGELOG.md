@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.6.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/button@1.3.3
+
 ## 0.6.2
 
 ### Patch Changes

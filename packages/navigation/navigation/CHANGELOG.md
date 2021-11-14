@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.0.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/avatar@0.8.2
+  - @uidu/dropdown-menu@0.6.4
+  - @uidu/inline-dialog@0.5.4
+  - @uidu/menu@0.5.5
+  - @uidu/theme@0.6.4
+  - @uidu/tooltip@0.5.4
+  - @uidu/animated-menu@1.0.3
+  - @uidu/shell@2.1.4
+
 ## 1.0.2
 
 ### Patch Changes

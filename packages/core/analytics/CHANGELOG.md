@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.5.2
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+
 ## 0.5.1
 
 ### Patch Changes

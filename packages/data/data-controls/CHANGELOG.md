@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 1.2.1
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/button@1.3.3
+  - @uidu/drawer@0.7.4
+  - @uidu/dropdown-menu@0.6.4
+  - @uidu/inline-dialog@0.5.4
+  - @uidu/menu@0.5.5
+  - @uidu/popup@0.6.4
+  - @uidu/spinner@0.5.3
+  - @uidu/tooltip@0.5.4
+  - @uidu/data-fields@1.4.1
+  - @uidu/data-views@1.1.1
+  - @uidu/checkbox@1.1.5
+  - @uidu/field-text@1.1.6
+  - @uidu/form@1.2.5
+  - @uidu/select@1.5.2
+  - @uidu/shell@2.1.4
+
 ## 1.2.0
 
 ### Minor Changes

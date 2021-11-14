@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.7.5
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+
 ## 1.7.4
 
 ### Patch Changes

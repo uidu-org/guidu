@@ -1,5 +1,14 @@
 # @uidu/radio
 
+## 1.1.4
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/analytics@0.5.2
+  - @uidu/field-base@3.1.4
+
 ## 1.1.3
 
 ### Patch Changes

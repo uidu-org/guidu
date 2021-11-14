@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.5
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/button@1.3.3
+
 ## 1.2.4
 
 ### Patch Changes

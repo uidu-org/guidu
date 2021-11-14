@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.3.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+
 ## 0.3.2
 
 ### Patch Changes
