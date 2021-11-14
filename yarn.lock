@@ -150,7 +150,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/icon@npm:^21.5.0, @atlaskit/icon@npm:^21.7.2, @atlaskit/icon@npm:^21.9.0":
+"@atlaskit/icon@npm:^21.5.0, @atlaskit/icon@npm:^21.7.2, @atlaskit/icon@npm:^21.9.0, @atlaskit/icon@npm:^21.9.1":
   version: 21.9.1
   resolution: "@atlaskit/icon@npm:21.9.1"
   dependencies:
@@ -164,7 +164,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/logo@npm:^13.5.3":
+"@atlaskit/logo@npm:^13.5.4":
   version: 13.5.4
   resolution: "@atlaskit/logo@npm:13.5.4"
   dependencies:
@@ -2160,7 +2160,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cubejs-client/core@npm:^0.28.45, @cubejs-client/core@npm:^0.28.52":
+"@cubejs-client/core@npm:^0.28.52":
   version: 0.28.52
   resolution: "@cubejs-client/core@npm:0.28.52"
   dependencies:
@@ -2175,7 +2175,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cubejs-client/react@npm:^0.28.45":
+"@cubejs-client/react@npm:^0.28.52":
   version: 0.28.52
   resolution: "@cubejs-client/react@npm:0.28.52"
   dependencies:
@@ -2191,7 +2191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cubejs-client/ws-transport@npm:^0.28.45":
+"@cubejs-client/ws-transport@npm:^0.28.52":
   version: 0.28.52
   resolution: "@cubejs-client/ws-transport@npm:0.28.52"
   dependencies:
@@ -2347,7 +2347,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.1.1, @emotion/react@npm:^11.4.0, @emotion/react@npm:^11.5.0":
+"@emotion/react@npm:^11.1.1, @emotion/react@npm:^11.4.0, @emotion/react@npm:^11.6.0":
   version: 11.6.0
   resolution: "@emotion/react@npm:11.6.0"
   dependencies:
@@ -2658,7 +2658,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:^8.37.5":
+"@fluentui/react@npm:^8.41.4":
   version: 8.41.4
   resolution: "@fluentui/react@npm:8.41.4"
   dependencies:
@@ -3159,7 +3159,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@manypkg/get-packages@npm:^1.0.1, @manypkg/get-packages@npm:^1.1.2, @manypkg/get-packages@npm:^1.1.3":
+"@manypkg/get-packages@npm:^1.0.1, @manypkg/get-packages@npm:^1.1.3":
   version: 1.1.3
   resolution: "@manypkg/get-packages@npm:1.1.3"
   dependencies:
@@ -4745,7 +4745,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stripe/stripe-js@npm:^1.20.3":
+"@stripe/stripe-js@npm:^1.21.1":
   version: 1.21.1
   resolution: "@stripe/stripe-js@npm:1.21.1"
   checksum: 577f6327bddadaa76f7bebdedf2eacd12fb1fba52704781feb209b726ec59ad0e8791b6f0ca841a15c2042677c8d35af52b860fd9cc236a4fd653d44dceb469d
@@ -5944,7 +5944,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/accordion@workspace:packages/core/accordion"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/theme": ^0.6.2
     react: ^17.0.2
@@ -5959,13 +5959,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/adf-schema@workspace:packages/editor/adf-schema"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@types/linkify-it": ^3.0.2
     "@types/prosemirror-model": ^1.13.2
     "@types/prosemirror-state": ^1.2.8
     "@types/prosemirror-view": ^1.19.1
     "@uidu/editor-json-transformer": ^0.5.0
-    "@uidu/json-schema-generator": ^0.2.6
+    "@uidu/json-schema-generator": ^0.2.7
     axios: ^0.24.0
     css-color-names: ^1.0.1
     json-schema-diff-validator: ^0.4.1
@@ -5981,7 +5981,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/adf-utils@workspace:packages/editor/adf-utils"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/adf-schema": ^0.6.0
     "@uidu/docs": ^0.5.1
     "@uidu/json-schema-generator": ^0.2.3
@@ -6004,7 +6004,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/analytics-listeners@workspace:packages/elements/analytics-listeners"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/analytics-gas-types": ^0.3.0
     "@uidu/analytics-namespaced-context": ^0.4.1
@@ -6023,7 +6023,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/analytics-namespaced-context@workspace:packages/elements/analytics-namespaced-context"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/analytics-listeners": ^0.4.1
     "@uidu/docs": ^0.5.1
@@ -6038,7 +6038,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/analytics-viewer@workspace:packages/elements/analytics-viewer"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     react: ^17.0.2
     styled-components: ^5.3.3
@@ -6052,7 +6052,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/analytics@workspace:packages/core/analytics"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
     "@uidu/field-text": ^1.1.4
@@ -6084,7 +6084,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/animated-menu@workspace:packages/navigation/animated-menu"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     classnames: ^2.3.1
     react: ^17.0.2
@@ -6099,7 +6099,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/avatar-group@workspace:packages/core/avatar-group"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/avatar": ^0.8.1
     "@uidu/button": ^1.3.1
     "@uidu/code": ^0.5.2
@@ -6123,7 +6123,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/avatar@workspace:packages/core/avatar"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -6160,7 +6160,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/badge@workspace:packages/core/badge"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/theme": ^0.6.2
     react: ^17.0.2
@@ -6177,7 +6177,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/banner@workspace:packages/core/banner"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
     "@uidu/theme": ^0.6.2
@@ -6212,7 +6212,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/board@workspace:packages/data/board"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/badge": ^0.5.2
     "@uidu/docs": ^0.5.1
     "@uidu/shell": ^2.1.1
@@ -6230,8 +6230,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/breadcrumbs@workspace:packages/navigation/breadcrumbs"
   dependencies:
-    "@atlaskit/logo": ^13.5.3
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/logo": ^13.5.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -6255,9 +6255,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/button@workspace:packages/core/button"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@atlaskit/logo": ^13.5.3
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@atlaskit/logo": ^13.5.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/checkbox": ^1.1.3
     "@uidu/docs": ^0.5.1
@@ -6297,7 +6297,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/calendar@workspace:packages/data/calendar"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/dropdown-menu": ^0.6.3
     "@uidu/shell": ^2.1.2
@@ -6320,7 +6320,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/chat-room@workspace:packages/messaging/chat-room"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/shell": ^2.1.1
     react: ^17.0.2
@@ -6332,7 +6332,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/chat-window@workspace:packages/messaging/chat-window"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/message": ^0.5.0
     "@uidu/message-form": ^0.4.4
@@ -6355,7 +6355,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/checkbox@workspace:packages/forms/checkbox"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.2
@@ -6373,13 +6373,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/code@workspace:packages/core/code"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/theme": ^0.6.2
     memoize-one: ^5.2.1
     react: ^17.0.2
     react-dom: ^17.0.2
-    react-syntax-highlighter: ^15.4.4
+    react-syntax-highlighter: ^15.4.5
     styled-components: ^5.3.3
     tslib: ^2.3.1
   peerDependencies:
@@ -6412,7 +6412,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/dashboard-controls@workspace:packages/data/dashboard-controls"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/avatar": ^0.8.1
     "@uidu/avatar-group": ^2.6.2
     "@uidu/docs": ^0.5.1
@@ -6421,22 +6421,22 @@ __metadata:
     "@uidu/form": ^1.2.4
     react: ^17.0.2
     react-feather: ^2.0.9
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     styled-components: ^5.3.3
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
 
-"@uidu/dashboard-manager@^1.1.0, @uidu/dashboard-manager@workspace:packages/data/dashboard-manager":
+"@uidu/dashboard-manager@^1.3.0, @uidu/dashboard-manager@workspace:packages/data/dashboard-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/dashboard-manager@workspace:packages/data/dashboard-manager"
   dependencies:
-    "@babel/runtime": ^7.15.4
-    "@cubejs-client/core": ^0.28.45
-    "@cubejs-client/react": ^0.28.45
+    "@babel/runtime": ^7.16.3
+    "@cubejs-client/core": ^0.28.52
+    "@cubejs-client/react": ^0.28.52
     "@types/react-grid-layout": ^1.3.0
     "@uidu/dashboard-controls": ^1.0.4
-    "@uidu/dashlets": ^1.3.0
+    "@uidu/dashlets": ^1.5.0
     "@uidu/docs": ^0.5.1
     "@uidu/shell": ^2.1.3
     d3-collection: ^1.0.7
@@ -6453,7 +6453,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/dashlet-controls@workspace:packages/data/dashlet-controls"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/avatar": ^0.8.1
     "@uidu/avatar-group": ^2.6.2
     "@uidu/docs": ^0.5.1
@@ -6462,7 +6462,7 @@ __metadata:
     "@uidu/form": ^1.2.4
     react: ^17.0.2
     react-feather: ^2.0.9
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     styled-components: ^5.3.3
     tslib: ^2.3.1
   languageName: unknown
@@ -6472,9 +6472,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/dashlets-form@workspace:packages/data/dashlets-form"
   dependencies:
-    "@babel/runtime": ^7.15.4
-    "@cubejs-client/core": ^0.28.45
-    "@cubejs-client/react": ^0.28.45
+    "@babel/runtime": ^7.16.3
+    "@cubejs-client/core": ^0.28.52
+    "@cubejs-client/react": ^0.28.52
     "@uidu/accordion": ^0.5.3
     "@uidu/dashlets": ^1.2.1
     "@uidu/docs": ^0.5.1
@@ -6489,17 +6489,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/dashlets@^1.2.1, @uidu/dashlets@^1.3.0, @uidu/dashlets@workspace:packages/data/dashlets":
+"@uidu/dashlets@^1.2.1, @uidu/dashlets@^1.5.0, @uidu/dashlets@workspace:packages/data/dashlets":
   version: 0.0.0-use.local
   resolution: "@uidu/dashlets@workspace:packages/data/dashlets"
   dependencies:
     "@amcharts/amcharts4": ^4.10.22
     "@amcharts/amcharts4-geodata": ^4.1.22
-    "@babel/runtime": ^7.15.4
-    "@cubejs-client/core": ^0.28.45
-    "@cubejs-client/react": ^0.28.45
+    "@babel/runtime": ^7.16.3
+    "@cubejs-client/core": ^0.28.52
+    "@cubejs-client/react": ^0.28.52
     "@loadable/component": ^5.15.0
-    "@uidu/dashboard-manager": ^1.1.0
+    "@uidu/dashboard-manager": ^1.3.0
     "@uidu/dashlet-controls": ^1.0.4
     "@uidu/data-fields": ^1.4.0
     "@uidu/docs": ^0.5.1
@@ -6514,7 +6514,7 @@ __metadata:
     react-content-loader: ^6.0.3
     react-countup: ^6.1.0
     react-feather: ^2.0.9
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     react-table: ^7.7.0
     styled-components: ^5.3.3
     tslib: ^2.3.1
@@ -6523,16 +6523,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-controls@^1.1.2, @uidu/data-controls@^1.1.3, @uidu/data-controls@workspace:packages/data/data-controls":
+"@uidu/data-controls@^1.1.2, @uidu/data-controls@^1.1.3, @uidu/data-controls@^1.2.0, @uidu/data-controls@workspace:packages/data/data-controls":
   version: 0.0.0-use.local
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@heroicons/react": ^1.0.5
     "@uidu/button": 1.3.2
     "@uidu/checkbox": ^1.1.4
     "@uidu/data-fields": ^1.3.1
-    "@uidu/data-views": ^1.0.3
+    "@uidu/data-views": ^1.1.0
     "@uidu/docs": ^0.5.1
     "@uidu/drawer": ^0.7.3
     "@uidu/dropdown-menu": ^0.6.3
@@ -6541,7 +6541,7 @@ __metadata:
     "@uidu/inline-dialog": ^0.5.3
     "@uidu/menu": ^0.5.4
     "@uidu/popup": ^0.6.3
-    "@uidu/select": ^1.4.2
+    "@uidu/select": ^1.5.1
     "@uidu/shell": ^2.1.3
     "@uidu/spinner": ^0.5.2
     "@uidu/tooltip": ^0.5.3
@@ -6552,7 +6552,7 @@ __metadata:
     react-content-loader: ^6.0.3
     react-dom: ^17.0.2
     react-feather: ^2.0.9
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     styled-components: ^5.3.3
     tslib: ^2.3.1
   languageName: unknown
@@ -6562,7 +6562,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@fortawesome/fontawesome-svg-core": ^1.2.36
     "@fortawesome/free-solid-svg-icons": ^5.15.4
     "@fortawesome/react-fontawesome": ^0.1.16
@@ -6588,7 +6588,7 @@ __metadata:
     react: ^17.0.2
     react-beautiful-dnd: ^13.1.0
     react-feather: ^2.0.9
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     styled-components: ^5.3.3
     tslib: ^2.3.1
   languageName: unknown
@@ -6598,10 +6598,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/data-manager@workspace:packages/data/data-manager"
   dependencies:
-    "@babel/runtime": ^7.15.4
-    "@cubejs-client/core": ^0.28.45
-    "@cubejs-client/react": ^0.28.45
-    "@cubejs-client/ws-transport": ^0.28.45
+    "@babel/runtime": ^7.16.3
+    "@cubejs-client/core": ^0.28.52
+    "@cubejs-client/react": ^0.28.52
+    "@cubejs-client/ws-transport": ^0.28.52
     "@loadable/component": ^5.15.0
     "@uidu/board": ^0.4.2
     "@uidu/calendar": ^0.3.2
@@ -6623,7 +6623,7 @@ __metadata:
     lodash: ^4.17.21
     papaparse: ^5.3.1
     react: ^17.0.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     react-media: ^1.10.0
     react-table: ^7.7.0
     react-table-plugins: ^1.3.2
@@ -6633,21 +6633,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-views@^1.0.3, @uidu/data-views@workspace:packages/data/data-views":
+"@uidu/data-views@^1.0.3, @uidu/data-views@^1.1.0, @uidu/data-views@workspace:packages/data/data-views":
   version: 0.0.0-use.local
   resolution: "@uidu/data-views@workspace:packages/data/data-views"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@loadable/component": ^5.15.0
-    "@uidu/data-controls": ^1.1.3
+    "@uidu/data-controls": ^1.2.0
     "@uidu/docs": ^0.5.1
     "@uidu/field-counter": ^1.1.4
     "@uidu/field-number": ^1.0.4
     "@uidu/form": ^1.2.4
-    "@uidu/select": ^1.4.2
+    "@uidu/select": ^1.5.1
     react: ^17.0.2
     react-feather: ^2.0.9
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
@@ -6656,7 +6656,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/date@workspace:packages/elements/date"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/elements-test-helpers": ^0.4.4
     "@uidu/theme": ^0.6.2
@@ -6673,7 +6673,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/devise@workspace:packages/authentication/devise"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/avatar": ^0.8.1
     "@uidu/checkbox": ^1.1.4
     "@uidu/docs": ^0.5.1
@@ -6690,7 +6690,7 @@ __metadata:
     react-facebook: ^8.1.4
     react-feather: ^2.0.9
     react-google-login: ^5.2.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     react-router-dom: ^5.3.0
     styled-components: ^5.3.3
   languageName: unknown
@@ -6700,7 +6700,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/docs@workspace:build/docs"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/button": ^1.3.1
     "@uidu/code": ^0.5.2
     "@uidu/section-message": ^0.6.2
@@ -6712,7 +6712,7 @@ __metadata:
     react-dom: ^17.0.2
     react-feather: ^2.0.9
     react-markings: ^1.3.0
-    react-syntax-highlighter: ^15.4.4
+    react-syntax-highlighter: ^15.4.5
     string-raw: ^1.0.1
     styled-components: ^5.3.3
   peerDependencies:
@@ -6725,7 +6725,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/drawer@workspace:packages/core/drawer"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/blanket": ^0.5.1
     "@uidu/button": ^1.3.1
@@ -6752,8 +6752,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/dropdown-menu@workspace:packages/core/dropdown-menu"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/avatar": ^0.8.1
     "@uidu/button": ^1.3.1
@@ -6806,8 +6806,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/droplist@workspace:packages/core/droplist"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -6857,8 +6857,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
     "@uidu/adf-schema": ^0.6.0
     "@uidu/adf-utils": ^0.7.2
     "@uidu/analytics": ^0.5.1
@@ -6874,7 +6874,7 @@ __metadata:
     raf-schd: ^4.0.3
     react: ^17.0.2
     react-dom: ^17.0.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     react-loadable: ^5.5.0
     styled-components: ^5.3.3
     tslib: ^2.3.1
@@ -6885,10 +6885,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
+    "@atlaskit/icon": ^21.9.1
     "@atlaskit/util-service-support": ^6.0.5
     "@atlaskit/width-detector": ^3.0.6
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@loadable/component": ^5.15.0
     "@uidu/adf-schema": ^0.6.0
     "@uidu/adf-utils": ^0.7.2
@@ -6947,7 +6947,7 @@ __metadata:
     re-resizable: ^6.9.1
     react: ^17.0.2
     react-dom: ^17.0.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     react-loadable: ^5.5.0
     styled-components: ^5.3.3
     tslib: ^2.3.1
@@ -6960,7 +6960,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@types/prosemirror-model": ^1.13.2
     "@uidu/adf-schema": ^0.6.0
     "@uidu/docs": ^0.5.1
@@ -6980,7 +6980,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/editor-markdown-transformer@workspace:packages/editor/editor-markdown-transformer"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/adf-schema": ^0.6.0
     "@uidu/docs": ^0.5.1
     "@uidu/editor-common": ^0.6.0
@@ -7001,12 +7001,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/elements-test-helpers@workspace:packages/elements/elements-test-helpers"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     exenv: ^1.2.2
     react: ^17.0.2
     react-dom: ^17.0.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     tslib: ^2.3.1
   peerDependencies:
     react: ^17.0.0
@@ -7019,9 +7019,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/emoji@workspace:packages/elements/emoji"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
+    "@atlaskit/icon": ^21.9.1
     "@atlaskit/util-service-support": ^6.0.5
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@types/js-search": ^1.4.0
     "@types/react-virtualized": ^9.21.14
     "@uidu/analytics": ^0.5.1
@@ -7043,7 +7043,7 @@ __metadata:
     prop-types: ^15.7.2
     react: ^17.0.2
     react-dom: ^17.0.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     react-virtualized: ^9.22.3
     tslib: ^2.3.1
     typestyle: ^2.1.0
@@ -7060,7 +7060,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/fab@workspace:packages/core/fab"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     react: ^17.0.2
     react-feather: ^2.0.9
@@ -7073,7 +7073,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-base@workspace:packages/forms/field-base"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/form": "*"
     classnames: ^2.3.1
     react: ^17.0.2
@@ -7109,7 +7109,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-color-picker@workspace:packages/forms/field-color-picker"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/button": 1.3.2
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.3
@@ -7127,7 +7127,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-counter@workspace:packages/forms/field-counter"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.2
@@ -7146,7 +7146,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-date-range@workspace:packages/forms/field-date-range"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.2
@@ -7169,7 +7169,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-date@workspace:packages/forms/field-date"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.2
@@ -7191,7 +7191,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-downshift@workspace:packages/forms/field-downshift"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/button": 1.3.2
     "@uidu/docs": ^0.5.1
     "@uidu/dropdown-menu": ^0.6.3
@@ -7221,11 +7221,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-file-uploader@workspace:packages/forms/field-file-uploader"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.2
     "@uidu/form": ^1.2.3
-    "@uppy/core": ^2.1.1
+    "@uppy/core": ^2.1.2
     "@uppy/dashboard": ^2.1.1
     "@uppy/react": ^2.1.1
     "@uppy/xhr-upload": ^2.0.5
@@ -7239,7 +7239,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-geosuggest@workspace:packages/forms/field-geosuggest"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.2
     "@uidu/form": ^1.2.3
@@ -7260,7 +7260,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-image-uploader@workspace:packages/forms/field-image-uploader"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.2
     "@uidu/docs": ^0.5.1
@@ -7269,7 +7269,7 @@ __metadata:
     "@uidu/media-core": ^0.7.2
     "@uidu/spinner": ^0.5.2
     "@uppy/aws-s3": ^2.0.5
-    "@uppy/core": ^2.1.1
+    "@uppy/core": ^2.1.2
     "@uppy/drag-drop": ^2.0.4
     "@uppy/react": ^2.1.1
     "@uppy/thumbnail-generator": ^2.0.5
@@ -7290,7 +7290,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-mentions@workspace:packages/forms/field-mentions"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -7331,7 +7331,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-month@workspace:packages/forms/field-month"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -7351,7 +7351,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-number@workspace:packages/forms/field-number"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -7362,7 +7362,7 @@ __metadata:
     formsy-react: ^2.2.5
     react: ^17.0.2
     react-dom: ^17.0.2
-    react-number-format: ^4.7.3
+    react-number-format: ^4.8.0
     styled-components: ^5.3.3
     tslib: ^2.3.1
   peerDependencies:
@@ -7374,7 +7374,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-password@workspace:packages/forms/field-password"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@loadable/component": ^5.15.0
     "@types/zxcvbn": ^4.4.1
     "@uidu/analytics": ^0.5.1
@@ -7403,7 +7403,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-phone@workspace:packages/forms/field-phone"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.3
@@ -7420,7 +7420,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-range@workspace:packages/forms/field-range"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.2
     "@uidu/form": ^1.2.3
@@ -7440,7 +7440,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-text@workspace:packages/forms/field-text"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.2
     "@uidu/docs": ^0.5.1
@@ -7482,7 +7482,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-textarea@workspace:packages/forms/field-textarea"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.2
@@ -7501,7 +7501,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-time@workspace:packages/forms/field-time"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -7524,7 +7524,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-toggle@workspace:packages/forms/field-toggle"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -7548,7 +7548,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field@workspace:packages/forms/field"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@loadable/component": ^5.15.0
     "@uidu/checkbox": ^1.1.3
     "@uidu/docs": ^0.5.1
@@ -7567,7 +7567,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/flag@workspace:packages/core/flag"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -7593,7 +7593,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/form@workspace:packages/forms/form"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/button": 1.3.2
     "@uidu/docs": ^0.5.1
     classnames: ^2.3.1
@@ -7637,7 +7637,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/gallery@workspace:packages/data/gallery"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/data-controls": ^1.1.2
     "@uidu/data-fields": ^1.2.3
     "@uidu/docs": ^0.5.1
@@ -7672,14 +7672,14 @@ __metadata:
     "@uidu/nav-info-loader": ^0.2.1
     "@uidu/navigation": ^1.0.2
     "@uidu/page-header": 1.0.1
-    "@uidu/select": ^1.4.2
+    "@uidu/select": ^1.5.1
     "@uidu/shell": ^2.1.2
     "@uidu/spinner": ^0.5.2
     "@uidu/table": ^1.1.3
     "@uidu/theme": ^0.6.2
     "@uidu/themes-uidu": ^0.4.0
     "@uidu/tooltip": ^0.5.3
-    "@uidu/webpack-config": ^0.3.4
+    "@uidu/webpack-config": ^0.3.9
     avataaars: ^1.2.2
     codesandboxer: ^1.0.3
     commonmark: ^0.30.0
@@ -7718,8 +7718,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/inline-dialog@workspace:packages/core/inline-dialog"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -7739,14 +7739,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/inline-edit@0.3.3, @uidu/inline-edit@workspace:packages/core/inline-edit":
+"@uidu/inline-edit@0.3.4, @uidu/inline-edit@workspace:packages/core/inline-edit":
   version: 0.0.0-use.local
   resolution: "@uidu/inline-edit@workspace:packages/core/inline-edit"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
+    "@atlaskit/icon": ^21.9.1
     "@atlaskit/tag": ^11.2.1
     "@atlaskit/tag-group": ^10.0.10
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@loadable/component": ^5.15.0
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
@@ -7756,7 +7756,7 @@ __metadata:
     "@uidu/field-textarea": ^1.1.4
     "@uidu/form": ^1.2.3
     "@uidu/inline-dialog": ^0.5.3
-    "@uidu/select": ^1.4.1
+    "@uidu/select": ^1.5.1
     "@uidu/theme": ^0.6.2
     react: ^17.0.2
     react-loadable: ^5.5.0
@@ -7772,7 +7772,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/item@workspace:packages/core/item"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/avatar": ^0.8.1
     "@uidu/docs": ^0.5.1
     "@uidu/lozenge": ^0.5.2
@@ -7815,7 +7815,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uidu/json-schema-generator@^0.2.3, @uidu/json-schema-generator@^0.2.6, @uidu/json-schema-generator@workspace:packages/editor/json-schema-generator":
+"@uidu/json-schema-generator@^0.2.3, @uidu/json-schema-generator@^0.2.7, @uidu/json-schema-generator@workspace:packages/editor/json-schema-generator":
   version: 0.0.0-use.local
   resolution: "@uidu/json-schema-generator@workspace:packages/editor/json-schema-generator"
   dependencies:
@@ -7837,7 +7837,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/layer@workspace:packages/core/layer"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     popper.js: ^1.16.1
     raf-schd: ^4.0.3
@@ -7872,7 +7872,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/link-preview@workspace:packages/messaging/link-preview"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/field-text": ^1.1.5
     "@uidu/form": ^1.2.4
@@ -7890,7 +7890,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/list@workspace:packages/data/list"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/data-fields": ^1.2.3
     "@uidu/docs": ^0.5.1
     react: ^17.0.2
@@ -7904,7 +7904,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/lozenge@workspace:packages/core/lozenge"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/theme": ^0.6.2
     react: ^17.0.2
@@ -7921,7 +7921,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/map@workspace:packages/core/map"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/theme": ^0.6.2
     google-map-react: ^2.1.10
@@ -7939,8 +7939,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
-    "@babel/runtime": ^7.15.4
-    "@fluentui/react": ^8.37.5
+    "@babel/runtime": ^7.16.3
+    "@fluentui/react": ^8.41.4
     "@uidu/button": ^1.3.2
     "@uidu/docs": ^0.5.1
     "@uidu/dropdown-menu": ^0.6.3
@@ -7948,7 +7948,7 @@ __metadata:
     "@uidu/spinner": ^0.5.2
     "@uidu/theme": ^0.6.3
     "@uidu/tooltip": ^0.5.3
-    "@uifabric/file-type-icons": ^7.8.4
+    "@uifabric/file-type-icons": ^7.8.5
     faker: ^5.5.3
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -7977,7 +7977,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/media-filmstrip@workspace:packages/media/media-filmstrip"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/media-card": ^0.5.10
     "@uidu/media-core": ^0.7.1
@@ -7994,12 +7994,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/media-picker@workspace:packages/media/media-picker"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
     "@uidu/media-core": ^0.7.2
     "@uidu/modal-dialog": ^0.5.4
-    "@uppy/core": ^2.1.1
+    "@uppy/core": ^2.1.2
     "@uppy/dashboard": ^2.1.1
     "@uppy/drag-drop": ^2.0.4
     "@uppy/dropbox": ^2.0.4
@@ -8019,7 +8019,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/media-viewer@workspace:packages/media/media-viewer"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/avatar": ^0.8.1
     "@uidu/button": ^1.3.2
     "@uidu/comment": ^0.2.0
@@ -8034,7 +8034,7 @@ __metadata:
     react-dom: ^17.0.2
     react-feather: ^2.0.9
     react-images: ^1.2.0-beta.7
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     styled-components: ^5.3.3
     tslib: ^2.3.1
   languageName: unknown
@@ -8044,9 +8044,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/mentions@workspace:packages/elements/mentions"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
+    "@atlaskit/icon": ^21.9.1
     "@atlaskit/util-service-support": ^6.0.5
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/analytics-gas-types": ^0.3.0
     "@uidu/avatar": ^0.8.1
@@ -8058,7 +8058,7 @@ __metadata:
     faker: ^5.5.3
     react: ^17.0.2
     react-dom: ^17.0.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     styled-components: ^5.3.3
     tslib: ^2.3.1
     uuid: ^8.3.2
@@ -8069,11 +8069,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/menu@workspace:packages/core/menu"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
+    "@atlaskit/icon": ^21.9.1
     "@atlaskit/icon-file-type": ^6.3.4
     "@atlaskit/icon-object": ^6.2.5
-    "@babel/runtime": ^7.15.4
-    "@emotion/react": ^11.5.0
+    "@babel/runtime": ^7.16.3
+    "@emotion/react": ^11.6.0
     "@uidu/avatar": ^0.8.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -8094,7 +8094,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/message-form@workspace:packages/messaging/message-form"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@loadable/component": ^5.15.0
     "@types/emoji-mart": ^3.0.8
     "@types/react-mentions": ^4.1.5
@@ -8121,7 +8121,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/message-renderer@workspace:packages/messaging/message-renderer"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/dropdown-menu": ^0.6.3
     "@uidu/theme": ^0.6.3
@@ -8155,8 +8155,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/message@workspace:packages/messaging/message"
   dependencies:
-    "@babel/runtime": ^7.15.4
-    "@fluentui/react": ^8.37.5
+    "@babel/runtime": ^7.16.3
+    "@fluentui/react": ^8.41.4
     "@loadable/component": ^5.15.0
     "@uidu/avatar": ^0.8.1
     "@uidu/docs": ^0.5.1
@@ -8169,7 +8169,7 @@ __metadata:
     "@uidu/message-renderer": ^0.4.3
     "@uidu/shell": ^2.1.3
     "@uidu/tooltip": ^0.5.3
-    "@uifabric/file-type-icons": ^7.8.4
+    "@uifabric/file-type-icons": ^7.8.5
     classnames: ^2.3.1
     emoji-regex: ^9.2.2
     faker: ^5.5.3
@@ -8188,8 +8188,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/avatar": ^0.8.1
     "@uidu/blanket": ^0.5.1
@@ -8209,12 +8209,12 @@ __metadata:
     react: ^17.0.2
     react-beautiful-dnd: ^13.1.0
     react-dom: ^17.0.2
-    react-focus-lock: ^2.5.2
+    react-focus-lock: ^2.6.0
     react-lorem-component: ^0.13.0
     react-scrolllock: ^5.0.1
     react-transition-group: ^4.4.2
     styled-components: ^5.3.3
-    tiny-invariant: ^1.1.0
+    tiny-invariant: ^1.2.0
     tslib: ^2.3.1
   peerDependencies:
     react: ^17.0.0
@@ -8236,7 +8236,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/navigation@workspace:packages/navigation/navigation"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/animated-menu": ^1.0.2
     "@uidu/avatar": ^0.8.1
     "@uidu/badge": ^0.5.2
@@ -8268,7 +8268,7 @@ __metadata:
   resolution: "@uidu/onboarding@workspace:packages/core/onboarding"
   dependencies:
     "@atlaskit/progress-indicator": ^9.1.2
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -8281,7 +8281,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-feather: ^2.0.9
-    react-focus-lock: ^2.5.2
+    react-focus-lock: ^2.6.0
     react-lorem-component: ^0.13.0
     react-node-resolver: ^2.0.1
     react-scrolllock: ^5.0.1
@@ -8305,8 +8305,8 @@ __metadata:
     "@uidu/docs": ^0.5.1
     "@uidu/field-text": ^1.1.4
     "@uidu/form": ^1.2.3
-    "@uidu/inline-edit": 0.3.3
-    "@uidu/select": ^1.4.1
+    "@uidu/inline-edit": 0.3.4
+    "@uidu/select": ^1.5.1
     "@uidu/shell": ^2.1.1
     "@uidu/theme": ^0.6.2
     react: ^17.0.2
@@ -8324,7 +8324,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/pagination@workspace:packages/core/pagination"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -8346,9 +8346,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/payment-sources@workspace:packages/ecommerce/payment-sources"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@stripe/react-stripe-js": ^1.6.0
-    "@stripe/stripe-js": ^1.20.3
+    "@stripe/stripe-js": ^1.21.1
     "@uidu/docs": ^0.5.1
     "@uidu/form": ^1.2.4
     "@uidu/payments": ^1.1.3
@@ -8363,10 +8363,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/payments@workspace:packages/ecommerce/payments"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@heroicons/react": ^1.0.5
     "@stripe/react-stripe-js": ^1.6.0
-    "@stripe/stripe-js": ^1.20.3
+    "@stripe/stripe-js": ^1.21.1
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.3
     "@uidu/form": ^1.2.4
@@ -8377,7 +8377,7 @@ __metadata:
     formsy-react: ^2.2.5
     react: ^17.0.2
     react-feather: ^2.0.9
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     styled-components: ^5.3.3
     tslib: ^2.3.1
     uuid: ^8.3.2
@@ -8388,7 +8388,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/popper@workspace:packages/core/popper"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@popperjs/core": ^2.10.2
     "@uidu/button": ^1.3.2
     "@uidu/docs": ^0.5.1
@@ -8422,9 +8422,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/popup@workspace:packages/core/popup"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
-    "@emotion/react": ^11.5.0
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
+    "@emotion/react": ^11.6.0
     "@uidu/button": ^1.3.2
     "@uidu/docs": ^0.5.1
     "@uidu/menu": ^0.5.4
@@ -8449,8 +8449,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/portal@workspace:packages/core/portal"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
     "@uidu/flag": ^0.5.2
@@ -8463,7 +8463,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     styled-components: ^5.3.3
-    tiny-invariant: ^1.1.0
+    tiny-invariant: ^1.2.0
     tslib: ^2.3.1
   peerDependencies:
     react: ^17.0.0
@@ -8491,8 +8491,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/profilecard@workspace:packages/elements/profilecard"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
     "@uidu/avatar": ^0.8.1
     "@uidu/button": ^1.3.2
     "@uidu/docs": "*"
@@ -8509,7 +8509,7 @@ __metadata:
     lru-fast: ^0.2.2
     react: ^17.0.2
     react-dom: ^17.0.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     react-node-resolver: ^2.0.1
     sinon: ^11.1.2
     styled-components: ^5.3.3
@@ -8522,8 +8522,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/progress-bar@workspace:packages/core/progress-bar"
   dependencies:
-    "@babel/runtime": ^7.15.4
-    "@emotion/react": ^11.5.0
+    "@babel/runtime": ^7.16.3
+    "@emotion/react": ^11.6.0
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
     "@uidu/theme": ^0.6.3
@@ -8541,7 +8541,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/radio@workspace:packages/forms/radio"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/docs": ^0.5.1
     "@uidu/field-base": ^3.1.2
@@ -8565,8 +8565,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/renderer@workspace:packages/editor/renderer"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
     "@loadable/component": ^5.15.0
     "@types/prosemirror-model": ^1.13.2
     "@uidu/adf-schema": ^0.6.0
@@ -8594,7 +8594,7 @@ __metadata:
     raf-schd: ^4.0.3
     react: ^17.0.2
     react-dom: ^17.0.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     styled-components: ^5.3.3
     tslib: ^2.3.1
     url-parse: ^1.5.3
@@ -8608,7 +8608,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/responsivr@workspace:packages/navigation/responsivr"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     react: ^17.0.2
     react-media: ^1.10.0
@@ -8620,7 +8620,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/section-message@workspace:packages/core/section-message"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@heroicons/react": ^1.0.5
     "@uidu/button": ^1.3.1
     "@uidu/code": ^0.5.2
@@ -8637,12 +8637,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/select@^1.4.1, @uidu/select@^1.4.2, @uidu/select@^1.5.0, @uidu/select@workspace:packages/forms/select":
+"@uidu/select@^1.4.1, @uidu/select@^1.4.2, @uidu/select@^1.5.0, @uidu/select@^1.5.1, @uidu/select@workspace:packages/forms/select":
   version: 0.0.0-use.local
   resolution: "@uidu/select@workspace:packages/forms/select"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.2
     "@uidu/checkbox": ^1.1.3
@@ -8662,7 +8662,7 @@ __metadata:
     react-fast-compare: ^3.2.0
     react-feather: ^2.0.9
     react-node-resolver: ^2.0.1
-    react-number-format: ^4.7.3
+    react-number-format: ^4.8.0
     react-popper: ^2.2.5
     react-select: ^5.2.1
     shallow-equal: ^1.2.1
@@ -8678,7 +8678,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/shell@workspace:packages/navigation/shell"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@loadable/component": ^5.15.0
     "@researchgate/react-intersection-observer": ^1.3.5
     "@types/overlayscrollbars": ^1.12.1
@@ -8692,7 +8692,7 @@ __metadata:
     overlayscrollbars-react: ^0.2.3
     react: ^17.0.2
     react-feather: ^2.0.9
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     react-router-dom: ^5.3.0
     react-scroll: ^1.8.4
     styled-components: ^5.3.3
@@ -8704,7 +8704,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/side-navigation@workspace:packages/navigation/side-navigation"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/avatar": ^0.8.1
     "@uidu/badge": ^0.5.2
     "@uidu/docs": ^0.5.1
@@ -8733,7 +8733,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/slider@workspace:packages/core/slider"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     classnames: ^2.3.1
     react: ^17.0.2
@@ -8748,7 +8748,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/spinner@workspace:packages/core/spinner"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
     "@uidu/theme": ^0.6.2
@@ -8783,8 +8783,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/status@workspace:packages/elements/status"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/analytics-gas-types": ^0.3.0
     "@uidu/docs": ^0.5.1
@@ -8793,7 +8793,7 @@ __metadata:
     "@uidu/lozenge": ^0.5.2
     "@uidu/theme": ^0.6.3
     react: ^17.0.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     styled-components: ^5.3.3
     tslib: ^2.3.1
   peerDependencies:
@@ -8806,7 +8806,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/stepper@workspace:packages/navigation/stepper"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/shell": ^2.1.1
     "@uidu/theme": ^0.6.2
@@ -8825,9 +8825,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/stripe-accounts@workspace:packages/ecommerce/stripe-accounts"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@stripe/react-stripe-js": ^1.6.0
-    "@stripe/stripe-js": ^1.20.3
+    "@stripe/stripe-js": ^1.21.1
     "@uidu/docs": ^0.5.1
     "@uidu/field-text": ^1.1.5
     "@uidu/form": ^1.2.4
@@ -8838,7 +8838,7 @@ __metadata:
     "@uidu/stepper": ^0.4.2
     dayjs: ^1.10.7
     react: ^17.0.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
@@ -8847,7 +8847,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/tabbar@workspace:packages/navigation/tabbar"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/shell": ^2.1.1
     react: ^17.0.2
@@ -8861,7 +8861,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@fortawesome/fontawesome-free": ^5.15.4
     "@fortawesome/fontawesome-svg-core": ^1.2.36
     "@fortawesome/free-solid-svg-icons": ^5.15.4
@@ -8879,7 +8879,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-feather: ^2.0.9
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     react-table: ^7.7.0
     react-virtual: ^2.8.2
     styled-components: ^5.3.3
@@ -8891,7 +8891,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/tabs@workspace:packages/navigation/tabs"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/docs": ^0.5.1
     "@uidu/theme": ^0.6.2
@@ -8905,9 +8905,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/task-decision@workspace:packages/elements/task-decision"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
+    "@atlaskit/icon": ^21.9.1
     "@atlaskit/util-service-support": ^6.0.5
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@types/url-search-params": ^1.1.0
     "@uidu/analytics": ^0.5.1
     "@uidu/analytics-listeners": ^0.4.1
@@ -8942,8 +8942,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/theme@workspace:packages/core/theme"
   dependencies:
-    "@babel/runtime": ^7.15.4
-    "@emotion/react": ^11.5.0
+    "@babel/runtime": ^7.16.3
+    "@emotion/react": ^11.6.0
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
     "@uidu/field-date": ^1.1.4
@@ -9003,8 +9003,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/tooltip@workspace:packages/core/tooltip"
   dependencies:
-    "@atlaskit/icon": ^21.9.0
-    "@babel/runtime": ^7.15.4
+    "@atlaskit/icon": ^21.9.1
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/button": ^1.3.1
     "@uidu/docs": ^0.5.1
@@ -9051,7 +9051,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/treenav@workspace:packages/navigation/treenav"
   dependencies:
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/docs": ^0.5.1
     "@uidu/shell": ^2.1.1
     react: ^17.0.2
@@ -9067,7 +9067,7 @@ __metadata:
   resolution: "@uidu/util-data-test@workspace:packages/elements/util-data-test"
   dependencies:
     "@atlaskit/util-service-support": ^6.0.5
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@uidu/analytics": ^0.5.1
     "@uidu/docs": ^0.5.1
     "@uidu/emoji": ^0.5.5
@@ -9087,7 +9087,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/webpack-config@^0.3.4, @uidu/webpack-config@workspace:build/webpack-config":
+"@uidu/webpack-config@^0.3.9, @uidu/webpack-config@workspace:build/webpack-config":
   version: 0.0.0-use.local
   resolution: "@uidu/webpack-config@workspace:build/webpack-config"
   dependencies:
@@ -9129,7 +9129,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uifabric/file-type-icons@npm:^7.8.4":
+"@uifabric/file-type-icons@npm:^7.8.5":
   version: 7.8.5
   resolution: "@uifabric/file-type-icons@npm:7.8.5"
   dependencies:
@@ -9273,7 +9273,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uppy/core@npm:^2.1.1":
+"@uppy/core@npm:^2.1.2":
   version: 2.1.2
   resolution: "@uppy/core@npm:2.1.2"
   dependencies:
@@ -14742,7 +14742,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "design-system@workspace:apps/design-system"
   dependencies:
-    "@manypkg/get-packages": ^1.1.2
+    "@manypkg/get-packages": ^1.1.3
     "@mdx-js/loader": ^1.6.22
     "@mdx-js/mdx": ^1.6.22
     "@next/mdx": ^12.0.3
@@ -18068,10 +18068,10 @@ fsevents@^1.2.7:
     "@amcharts/amcharts4": ^4.10.22
     "@amcharts/amcharts4-geodata": ^4.1.22
     "@atlaskit/activity": ^1.0.3
-    "@atlaskit/icon": ^21.9.0
+    "@atlaskit/icon": ^21.9.1
     "@atlaskit/icon-file-type": ^6.3.4
     "@atlaskit/icon-object": ^6.2.5
-    "@atlaskit/logo": ^13.5.3
+    "@atlaskit/logo": ^13.5.4
     "@atlaskit/progress-indicator": ^9.1.2
     "@atlaskit/tag": ^11.2.1
     "@atlaskit/task-decision": ^17.2.3
@@ -18094,13 +18094,13 @@ fsevents@^1.2.7:
     "@babel/preset-react": ^7.16.0
     "@babel/preset-typescript": ^7.16.0
     "@babel/register": ^7.16.0
-    "@babel/runtime": ^7.15.4
+    "@babel/runtime": ^7.16.3
     "@changesets/cli": ^2.18.0
-    "@cubejs-client/core": ^0.28.45
-    "@cubejs-client/react": ^0.28.45
-    "@emotion/react": ^11.5.0
+    "@cubejs-client/core": ^0.28.52
+    "@cubejs-client/react": ^0.28.52
+    "@emotion/react": ^11.6.0
     "@emotion/styled": ^11.6.0
-    "@fluentui/react": ^8.37.5
+    "@fluentui/react": ^8.41.4
     "@formatjs/cli": ^4.4.0
     "@fortawesome/fontawesome-free": ^5.15.4
     "@fortawesome/fontawesome-svg-core": ^1.2.36
@@ -18117,7 +18117,7 @@ fsevents@^1.2.7:
     "@preconstruct/next": ^3.0.1
     "@researchgate/react-intersection-observer": ^1.3.5
     "@stripe/react-stripe-js": ^1.6.0
-    "@stripe/stripe-js": ^1.20.3
+    "@stripe/stripe-js": ^1.21.1
     "@tailwindcss/aspect-ratio": ^0.3.0
     "@tailwindcss/forms": ^0.3.4
     "@tailwindcss/typography": ^0.4.1
@@ -18176,9 +18176,9 @@ fsevents@^1.2.7:
     "@uidu/field-base": 3.1.3
     "@uidu/form": 1.2.4
     "@uidu/profilecard": ^0.2.0
-    "@uifabric/file-type-icons": ^7.8.4
+    "@uifabric/file-type-icons": ^7.8.5
     "@uppy/aws-s3": ^2.0.5
-    "@uppy/core": ^2.1.1
+    "@uppy/core": ^2.1.2
     "@uppy/drag-drop": ^2.0.4
     "@uppy/dropbox": ^2.0.4
     "@uppy/google-drive": ^2.0.4
@@ -18353,7 +18353,7 @@ fsevents@^1.2.7:
     react-fast-compare: ^3.2.0
     react-feather: ^2.0.9
     react-flip-toolkit: ^7.0.13
-    react-focus-lock: ^2.5.2
+    react-focus-lock: ^2.6.0
     react-ga: ^3.3.0
     react-google-login: ^5.2.2
     react-google-maps: ^9.4.5
@@ -18362,7 +18362,7 @@ fsevents@^1.2.7:
     react-hook-form: ^7.19.5
     react-images: ^1.2.0-beta.7
     react-intersection-observer: ^8.32.2
-    react-intl: ^5.21.0
+    react-intl: ^5.21.1
     react-loadable: ^5.5.0
     react-lorem-component: ^0.13.0
     react-markdown: ^6.0.3
@@ -18370,7 +18370,7 @@ fsevents@^1.2.7:
     react-media: ^1.10.0
     react-mentions: ^4.3.0
     react-node-resolver: ^2.0.1
-    react-number-format: ^4.7.3
+    react-number-format: ^4.8.0
     react-numeric-input: ^2.2.3
     react-phone-number-input: ^3.1.38
     react-popper: ^2.2.5
@@ -18383,7 +18383,7 @@ fsevents@^1.2.7:
     react-simple-timefield: ^3.2.5
     react-spring: ^9.3.0
     react-switch: ^6.0.0
-    react-syntax-highlighter: ^15.4.4
+    react-syntax-highlighter: ^15.4.5
     react-transition-group: ^4.4.2
     react-use-gesture: ^8.0.1
     react-virtualized: ^9.22.3
@@ -18409,7 +18409,7 @@ fsevents@^1.2.7:
     tailwindcss: ^2.2.19
     terser-webpack-plugin: ^5.2.5
     thread-loader: ^3.0.4
-    tiny-invariant: ^1.1.0
+    tiny-invariant: ^1.2.0
     ts-node: ^10.4.0
     tslib: ^2.3.1
     tti-polyfill: ^0.2.2
@@ -26568,7 +26568,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-focus-lock@npm:^2.5.2, react-focus-lock@npm:^2.6.0":
+"react-focus-lock@npm:^2.6.0":
   version: 2.6.0
   resolution: "react-focus-lock@npm:2.6.0"
   dependencies:
@@ -26733,7 +26733,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-intl@npm:^5.21.0":
+"react-intl@npm:^5.21.1":
   version: 5.21.1
   resolution: "react-intl@npm:5.21.1"
   dependencies:
@@ -26912,7 +26912,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-number-format@npm:^4.7.3":
+"react-number-format@npm:^4.8.0":
   version: 4.8.0
   resolution: "react-number-format@npm:4.8.0"
   dependencies:
@@ -27219,7 +27219,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-syntax-highlighter@npm:^15.4.4":
+"react-syntax-highlighter@npm:^15.4.5":
   version: 15.4.5
   resolution: "react-syntax-highlighter@npm:15.4.5"
   dependencies:
@@ -30514,7 +30514,7 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"tiny-invariant@npm:^1.0.2, tiny-invariant@npm:^1.0.6, tiny-invariant@npm:^1.1.0":
+"tiny-invariant@npm:^1.0.2, tiny-invariant@npm:^1.0.6, tiny-invariant@npm:^1.1.0, tiny-invariant@npm:^1.2.0":
   version: 1.2.0
   resolution: "tiny-invariant@npm:1.2.0"
   checksum: e09a718a7c4a499ba592cdac61f015d87427a0867ca07f50c11fd9b623f90cdba18937b515d4a5e4f43dac92370498d7bdaee0d0e7a377a61095e02c4a92eade

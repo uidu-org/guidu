@@ -10,7 +10,7 @@
   "module": "dist/uidu-field-base.esm.js",
   "types": "dist/uidu-field-base.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.15.4",
+    "@babel/runtime": "^7.16.3",
     "classnames": "^2.3.1",
     "react-feather": "^2.0.9",
     "shortid": "^2.2.16",
