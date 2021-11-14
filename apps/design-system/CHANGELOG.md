@@ -1,5 +1,11 @@
 # design-system
 
+## 0.1.17
+
+### Patch Changes
+
+- 06327a0d9: Data-controls with popup, bumped dependencies
+
 ## 0.1.16
 
 ### Patch Changes

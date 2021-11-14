@@ -1,5 +1,17 @@
 # @uidu/data-controls
 
+## 1.2.0
+
+### Minor Changes
+
+- 06327a0d9: Data-controls with popup, bumped dependencies
+
+### Patch Changes
+
+- Updated dependencies [06327a0d9]
+  - @uidu/data-views@1.1.0
+  - @uidu/select@1.5.1
+
 ## 1.1.3
 
 ### Patch Changes

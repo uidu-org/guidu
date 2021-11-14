@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 1.0.8
+
+### Patch Changes
+
+- 06327a0d9: Data-controls with popup, bumped dependencies
+
 ## 1.0.7
 
 ### Patch Changes

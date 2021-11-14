@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.9
+
+### Patch Changes
+
+- 06327a0d9: Data-controls with popup, bumped dependencies
+
 ## 0.3.8
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 1.5.0
+
+### Minor Changes
+
+- 06327a0d9: Data-controls with popup, bumped dependencies
+
+### Patch Changes
+
+- Updated dependencies [06327a0d9]
+  - @uidu/dashboard-manager@1.3.0
+
 ## 1.4.0
 
 ### Minor Changes

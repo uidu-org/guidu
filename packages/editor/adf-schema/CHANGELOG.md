@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.6.1
+
+### Patch Changes
+
+- 06327a0d9: Data-controls with popup, bumped dependencies
+
 ## 0.6.0
 
 ### Minor Changes
