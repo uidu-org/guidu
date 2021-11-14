@@ -1,5 +1,11 @@
 # @uidu/accordion
 
+## 0.6.0
+
+### Minor Changes
+
+- f31b557f9: Bump react-accessible-accordion
+
 ## 0.5.3
 
 ### Patch Changes
