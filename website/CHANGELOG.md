@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.4.10
+
+### Patch Changes
+
+- 06327a0d9: Data-controls with popup, bumped dependencies
+- Updated dependencies [06327a0d9]
+  - @uidu/select@1.5.1
+
 ## 0.4.9
 
 ### Patch Changes

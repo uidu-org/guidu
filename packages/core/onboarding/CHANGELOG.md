@@ -1,5 +1,11 @@
 # @uidu/onboarding
 
+## 1.2.1
+
+### Patch Changes
+
+- 06327a0d9: Data-controls with popup, bumped dependencies
+
 ## 1.2.0
 
 ### Minor Changes

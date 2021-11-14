@@ -1,6 +1,6 @@
 {
   "name": "@uidu/inline-edit",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A base component used to build inline-editable components that match the Atlassian Design Guidelines",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/inline-edit",
   "license": "MIT",
@@ -27,7 +27,7 @@
     "@atlaskit/tag-group": "^10.0.10",
     "@uidu/docs": "^0.5.1",
     "@uidu/field-textarea": "^1.1.4",
-    "@uidu/select": "^1.4.1",
+    "@uidu/select": "^1.5.1",
     "react": "^17.0.2",
     "styled-components": "^5.3.3"
   },

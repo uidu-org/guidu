@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 1.3.0
+
+### Minor Changes
+
+- 06327a0d9: Data-controls with popup, bumped dependencies
+
+### Patch Changes
+
+- Updated dependencies [06327a0d9]
+  - @uidu/dashlets@1.5.0
+
 ## 1.2.0
 
 ### Minor Changes
