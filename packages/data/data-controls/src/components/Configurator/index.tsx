@@ -1,7 +1,6 @@
-import Drawer from '@uidu/drawer';
+import Popup from '@uidu/popup';
 import React, { useState } from 'react';
 import { Trigger } from '../../styled';
-import DrawerLayout from '../../utils/DrawerLayout';
 import { ConfiguratorProps } from './types';
 
 export default function Configurator({
@@ -16,28 +15,29 @@ export default function Configurator({
   const [isDialogOpen, setIsDialogOpen] = useState(isConfiguratorOpen);
 
   return (
-    <>
-      <Trigger
-        activeBg="#d0f0fd"
-        className="btn mr-2"
-        active={active}
-        onClick={() => setIsDialogOpen(true)}
-      >
-        <Icon strokeWidth={2} size={14} />
-        <span tw="hidden xl:block text-transform[initial]">{name}</span>
-      </Trigger>
-      <Drawer
-        isOpen={isDialogOpen}
-        onClose={() => {
-          setIsDialogOpen(false);
-        }}
-        origin="right"
-        size="wide"
-      >
-        <DrawerLayout name={name}>
-          <ConfiguratorForm fallback={<div>Loading...</div>} {...rest} />
-        </DrawerLayout>
-      </Drawer>
-    </>
+    <Popup
+      isOpen={isDialogOpen}
+      onClose={() => setIsDialogOpen(false)}
+      placement="bottom-start"
+      trigger={(triggerProps) => (
+        <Trigger
+          {...triggerProps}
+          activeBg="#d0f0fd"
+          className="mr-2 btn"
+          active={active}
+          onClick={() => setIsDialogOpen(true)}
+        >
+          <Icon strokeWidth={2} size={14} />
+          <span tw="hidden xl:block text-transform[initial]">{name}</span>
+        </Trigger>
+      )}
+      content={() => {
+        return (
+          <div tw="w-screen sm:width[500px] py-4 text-sm">
+            <ConfiguratorForm fallback={<div>Loading...</div>} {...rest} />
+          </div>
+        );
+      }}
+    />
   );
 }

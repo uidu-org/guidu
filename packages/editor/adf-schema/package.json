@@ -20,7 +20,7 @@
     "@babel/runtime": "^7.15.4",
     "@types/linkify-it": "^3.0.2",
     "@types/prosemirror-model": "^1.13.2",
-    "@types/prosemirror-state": "^1.2.7",
+    "@types/prosemirror-state": "^1.2.8",
     "@types/prosemirror-view": "^1.19.1",
     "css-color-names": "^1.0.1",
     "linkify-it": "^3.0.3",

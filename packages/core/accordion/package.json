@@ -13,7 +13,7 @@
     "@babel/runtime": "^7.15.4",
     "@uidu/docs": "^0.5.1",
     "react": "^17.0.2",
-    "react-accessible-accordion": "^3.3.5",
+    "react-accessible-accordion": "^4.0.0",
     "react-feather": "^2.0.9",
     "styled-components": "^5.3.3",
     "tslib": "^2.3.1"

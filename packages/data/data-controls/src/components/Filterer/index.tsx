@@ -20,6 +20,7 @@ export default function Filterer({
     <Popup
       isOpen={isDialogOpen}
       onClose={() => setIsDialogOpen(false)}
+      placement="bottom-start"
       trigger={(triggerProps) => (
         <Trigger
           {...triggerProps}

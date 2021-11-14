@@ -51,19 +51,5 @@ export default function Sorter({ tableInstance }: SorterProps) {
         );
       }}
     />
-
-    // <Drawer
-    //   isOpen={isDialogOpen}
-    //   onClose={() => {
-    //     setIsDialogOpen(false);
-    //   }}
-    //   origin="right"
-    //   size="medium"
-    // >
-    //   <DrawerLayout name={<FormattedMessage defaultMessage="Sort" />}>
-    //     <SorterForm tableInstance={tableInstance} sorters={sortBy} />
-    //   </DrawerLayout>
-    // </Drawer>
-    // </>
   );
 }

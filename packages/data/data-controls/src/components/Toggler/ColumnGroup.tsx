@@ -12,13 +12,13 @@ export default function ColumnGroup({
 }) {
   const [isOpen, setIsOpen] = useState(true);
   return (
-    <div className="list-group list-group-flush mb-3">
-      <li className="list-group-item px-3 px-xl-4 border-0 py-2">
-        <div className="d-flex align-items-center justify-content-between">
-          <div className="text-truncate flex-grow-1 text-muted text-uppercase small">
+    <div tw="flow-root mb-3">
+      <div tw="px-3 xl:px-4 border-0 py-2">
+        <div tw="flex items-center justify-between">
+          <div tw="truncate flex-grow text-gray-500 uppercase text-sm">
             {columnGroupObj.name} ({checkedColumnsCount}/{columns.length})
           </div>
-          <div className="small">
+          <div tw="text-sm">
             <a
               href="#"
               onClick={(e) => {
@@ -58,23 +58,23 @@ export default function ColumnGroup({
             </a>
           </div>
         </div>
-      </li>
+      </div>
       <AnimateHeight height={isOpen ? 'auto' : 0}>
         {columns.map((column, index) => (
           <a
             href="#"
             key={column.id}
-            className="list-group-item list-group-item-action px-3 px-xl-4 border-0 py-2"
+            tw="px-3 xl:px-4 border-0 py-2 block"
             onClick={(e) => {
               e.preventDefault();
               column.toggleHidden(!!column.isVisible);
             }}
           >
-            <div className="d-flex align-items-center justify-content-between">
-              <span className="mr-1">
+            <div tw="flex items-center justify-between">
+              <span tw="mr-2">
                 <CheckboxStateless checked={column.isVisible} />
               </span>
-              <div className="text-truncate flex-grow-1">{column.name}</div>
+              <div tw="truncate flex-grow">{column.name}</div>
             </div>
           </a>
         ))}

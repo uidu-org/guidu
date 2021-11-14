@@ -28,7 +28,7 @@
     "react-node-resolver": "^2.0.1",
     "react-number-format": "^4.7.3",
     "react-popper": "^2.2.5",
-    "react-select": "^5.1.0",
+    "react-select": "^5.2.1",
     "shallow-equal": "^1.2.1",
     "styled-components": "^5.3.3",
     "timezones-list": "^3.0.1",
