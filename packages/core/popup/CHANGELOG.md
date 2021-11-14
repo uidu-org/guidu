@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.6.4
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/popper@0.5.4
+  - @uidu/portal@0.5.4
+  - @uidu/theme@0.6.4
+
 ## 0.6.3
 
 ### Patch Changes

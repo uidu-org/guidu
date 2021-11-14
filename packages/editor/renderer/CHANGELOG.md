@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.6.1
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/analytics@0.5.2
+  - @uidu/code@0.5.3
+  - @uidu/theme@0.6.4
+  - @uidu/tooltip@0.5.4
+  - @uidu/adf-schema@0.6.2
+  - @uidu/adf-utils@0.7.3
+  - @uidu/editor-common@0.6.1
+  - @uidu/editor-json-transformer@0.5.1
+  - @uidu/analytics-listeners@0.4.2
+  - @uidu/analytics-namespaced-context@0.4.2
+  - @uidu/mentions@0.3.7
+  - @uidu/status@0.4.7
+  - @uidu/task-decision@0.4.5
+  - @uidu/media-card@0.5.13
+  - @uidu/media-filmstrip@0.4.6
+
 ## 0.6.0
 
 ### Minor Changes

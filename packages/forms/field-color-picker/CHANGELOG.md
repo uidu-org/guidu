@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 2.0.4
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/button@1.3.3
+  - @uidu/popup@0.6.4
+  - @uidu/field-base@3.1.4
+
 ## 2.0.3
 
 ### Patch Changes

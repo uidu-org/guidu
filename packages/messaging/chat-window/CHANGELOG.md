@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.4.5
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/message@0.5.3
+  - @uidu/message-form@0.4.5
+  - @uidu/message-renderer@0.4.4
+
 ## 0.4.4
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.1.5
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/button@1.3.3
+  - @uidu/dropdown-menu@0.6.4
+  - @uidu/menu@0.5.5
+  - @uidu/popup@0.6.4
+  - @uidu/data-fields@1.4.1
+  - @uidu/checkbox@1.1.5
+
 ## 1.1.4
 
 ### Patch Changes

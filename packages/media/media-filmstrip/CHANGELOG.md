@@ -1,5 +1,15 @@
 # @uidu/media-filmstrip
 
+## 0.4.6
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/theme@0.6.4
+  - @uidu/media-card@0.5.13
+  - @uidu/media-viewer@0.4.9
+
 ## 0.4.5
 
 ### Patch Changes

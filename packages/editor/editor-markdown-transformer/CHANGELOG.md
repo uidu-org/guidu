@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.5.6
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/adf-schema@0.6.2
+  - @uidu/editor-common@0.6.1
+
 ## 0.5.5
 
 ### Patch Changes

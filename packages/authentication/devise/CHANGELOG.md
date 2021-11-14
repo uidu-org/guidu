@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.6.6
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/avatar@0.8.2
+  - @uidu/slider@1.7.5
+  - @uidu/spinner@0.5.3
+  - @uidu/checkbox@1.1.5
+  - @uidu/field-password@1.1.4
+  - @uidu/field-phone@1.0.9
+  - @uidu/field-text@1.1.6
+  - @uidu/form@1.2.5
+  - @uidu/shell@2.1.4
+
 ## 0.6.5
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/progress-bar
 
+## 0.5.4
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/theme@0.6.4
+
 ## 0.5.3
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/message
 
+## 0.5.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/avatar@0.8.2
+  - @uidu/drawer@0.7.4
+  - @uidu/dropdown-menu@0.6.4
+  - @uidu/tooltip@0.5.4
+  - @uidu/media-card@0.5.13
+  - @uidu/media-viewer@0.4.9
+  - @uidu/message-form@0.4.5
+  - @uidu/message-renderer@0.4.4
+
 ## 0.5.2
 
 ### Patch Changes

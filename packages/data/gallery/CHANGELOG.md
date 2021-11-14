@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.1.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/spinner@0.5.3
+  - @uidu/data-controls@1.2.1
+  - @uidu/data-fields@1.4.1
+  - @uidu/shell@2.1.4
+
 ## 1.1.2
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/drawer
 
+## 0.7.4
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/docs@0.5.2
+  - @uidu/analytics@0.5.2
+  - @uidu/item@0.5.3
+  - @uidu/theme@0.6.4
+
 ## 0.7.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.0.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+
 ## 1.0.2
 
 ### Patch Changes

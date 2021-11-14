@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.2.9
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/avatar@0.8.2
+  - @uidu/button@1.3.3
+  - @uidu/lozenge@0.5.3
+  - @uidu/popup@0.6.4
+  - @uidu/spinner@0.5.3
+  - @uidu/theme@0.6.4
+
 ## 0.2.8
 
 ### Patch Changes

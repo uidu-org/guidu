@@ -1,5 +1,17 @@
 # @uidu/field-text
 
+## 1.0.5
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/analytics@0.5.2
+  - @uidu/theme@0.6.4
+  - @uidu/field-base@3.1.4
+  - @uidu/field-text@1.1.6
+  - @uidu/form@1.2.5
+
 ## 1.0.4
 
 ### Patch Changes

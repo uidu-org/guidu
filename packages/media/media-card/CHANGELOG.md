@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.5.13
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/button@1.3.3
+  - @uidu/dropdown-menu@0.6.4
+  - @uidu/spinner@0.5.3
+  - @uidu/theme@0.6.4
+  - @uidu/tooltip@0.5.4
+
 ## 0.5.12
 
 ### Patch Changes

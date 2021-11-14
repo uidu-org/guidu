@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.6
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+
 ## 0.3.5
 
 ### Patch Changes

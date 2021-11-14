@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.6.2
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+
 ## 0.6.1
 
 ### Patch Changes

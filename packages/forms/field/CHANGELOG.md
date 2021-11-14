@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.0.2
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/checkbox@1.1.5
+  - @uidu/field-number@1.0.5
+  - @uidu/field-text@1.1.6
+  - @uidu/field-textarea@1.1.5
+  - @uidu/select@1.5.2
+
 ## 1.0.1
 
 ### Patch Changes

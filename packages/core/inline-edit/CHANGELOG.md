@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.3.5
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/analytics@0.5.2
+  - @uidu/button@1.3.3
+  - @uidu/inline-dialog@0.5.4
+  - @uidu/theme@0.6.4
+  - @uidu/field@1.0.2
+  - @uidu/field-text@1.1.6
+  - @uidu/form@1.2.5
+
 ## 0.3.4
 
 ### Patch Changes

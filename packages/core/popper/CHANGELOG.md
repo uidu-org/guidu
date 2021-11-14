@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.4
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+
 ## 0.5.3
 
 ### Patch Changes

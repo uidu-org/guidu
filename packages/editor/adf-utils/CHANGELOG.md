@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.7.3
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/adf-schema@0.6.2
+
 ## 0.7.2
 
 ### Patch Changes

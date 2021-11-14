@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.6.4
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/form@1.2.5
+
 ## 0.6.3
 
 ### Patch Changes

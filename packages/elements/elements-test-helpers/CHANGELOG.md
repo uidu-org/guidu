@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.6
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+
 ## 0.4.5
 
 ### Patch Changes

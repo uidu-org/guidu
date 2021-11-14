@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 1.5.1
+
+### Patch Changes
+
+- dc93d940c: Bump dependencies, publish all
+- Updated dependencies [dc93d940c]
+  - @uidu/spinner@0.5.3
+  - @uidu/tooltip@0.5.4
+  - @uidu/dashboard-manager@1.3.1
+  - @uidu/dashlet-controls@1.0.5
+  - @uidu/data-fields@1.4.1
+  - @uidu/table@1.1.5
+
 ## 1.5.0
 
 ### Minor Changes
