@@ -6,7 +6,7 @@ export default styled(AccordionItemPanel)`
   display: block;
   animation: fadein 0.35s ease-in;
 
-  &.accordion__body--hidden {
+  &[hidden] {
     display: none;
     opacity: 0;
     animation: fadein 0.35s ease-in;
