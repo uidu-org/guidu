@@ -1,5 +1,16 @@
 # @uidu/renderer
 
+## 0.6.2
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/editor-common@0.6.2
+  - @uidu/mentions@0.3.8
+  - @uidu/status@0.4.8
+  - @uidu/media-card@0.5.14
+
 ## 0.6.1
 
 ### Patch Changes

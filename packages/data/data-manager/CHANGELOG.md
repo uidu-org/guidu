@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 1.3.4
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/data-controls@1.2.2
+  - @uidu/data-fields@1.4.2
+  - @uidu/data-views@1.1.2
+  - @uidu/table@1.1.6
+  - @uidu/shell@2.1.5
+
 ## 1.3.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.5
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+
 ## 3.1.4
 
 ### Patch Changes

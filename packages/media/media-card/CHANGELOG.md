@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.5.14
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+
 ## 0.5.13
 
 ### Patch Changes

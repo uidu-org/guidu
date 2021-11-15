@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 1.0.6
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+
 ## 1.0.5
 
 ### Patch Changes

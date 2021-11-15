@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.5.4
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/media-card@0.5.14
+  - @uidu/media-viewer@0.4.10
+
 ## 0.5.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.2.10
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+
 ## 0.2.9
 
 ### Patch Changes

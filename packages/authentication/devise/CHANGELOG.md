@@ -1,5 +1,13 @@
 # @uidu/devise
 
+## 0.6.7
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/shell@2.1.5
+
 ## 0.6.6
 
 ### Patch Changes

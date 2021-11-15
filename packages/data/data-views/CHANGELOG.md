@@ -1,5 +1,13 @@
 # @uidu/data-views
 
+## 1.1.2
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/data-controls@1.2.2
+
 ## 1.1.1
 
 ### Patch Changes

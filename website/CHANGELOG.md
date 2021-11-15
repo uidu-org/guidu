@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.4.12
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/table@1.1.6
+  - @uidu/shell@2.1.5
+
 ## 0.4.11
 
 ### Patch Changes
