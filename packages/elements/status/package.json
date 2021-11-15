@@ -30,7 +30,7 @@
     "@uidu/docs": "^0.5.2",
     "@uidu/elements-test-helpers": "^0.4.6",
     "react": "^17.0.2",
-    "react-intl": "^5.21.1"
+    "react-intl": "^5.21.2"
   },
   "peerDependencies": {
     "react": "^17.0.0",

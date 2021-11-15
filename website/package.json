@@ -41,7 +41,7 @@
     "@uidu/theme": "^0.6.4",
     "@uidu/themes-uidu": "^0.4.0",
     "@uidu/tooltip": "^0.5.4",
-    "avataaars": "^1.2.2",
+    "avataaars": "^2.0.0",
     "codesandboxer": "^1.0.3",
     "commonmark": "^0.30.0",
     "commonmark-react-renderer": "^4.3.5",

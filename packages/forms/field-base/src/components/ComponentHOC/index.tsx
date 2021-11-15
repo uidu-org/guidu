@@ -1,7 +1,7 @@
 import { FormContext } from '@uidu/form';
 import { FormsyInjectedProps } from 'formsy-react';
+import { nanoid } from 'nanoid';
 import React from 'react';
-import shortid from 'shortid';
 import {
   getDisplayName,
   getFallbackBoolean,
@@ -67,7 +67,7 @@ const withFRC = <TOriginalProps extends {}>(
     constructor(props: ResultProps) {
       super(props);
       const { id } = props;
-      this.id = id || shortid.generate();
+      this.id = id || nanoid();
     }
 
     render() {
