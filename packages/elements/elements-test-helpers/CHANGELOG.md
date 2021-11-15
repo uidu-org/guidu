@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.7
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+
 ## 0.4.6
 
 ### Patch Changes

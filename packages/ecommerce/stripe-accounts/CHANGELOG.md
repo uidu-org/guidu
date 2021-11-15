@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.3.7
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/payments@1.1.5
+
 ## 0.3.6
 
 ### Patch Changes

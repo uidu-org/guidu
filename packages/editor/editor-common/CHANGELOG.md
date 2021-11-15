@@ -1,5 +1,15 @@
 # @uidu/editor-common
 
+## 0.6.2
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/emoji@0.5.8
+  - @uidu/mentions@0.3.8
+  - @uidu/profilecard@0.2.10
+
 ## 0.6.1
 
 ### Patch Changes

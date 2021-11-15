@@ -1,5 +1,13 @@
 # @uidu/payments
 
+## 1.1.5
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/field-base@3.1.5
+
 ## 1.1.4
 
 ### Patch Changes

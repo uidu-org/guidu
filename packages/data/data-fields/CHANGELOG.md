@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 1.4.2
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+
 ## 1.4.1
 
 ### Patch Changes

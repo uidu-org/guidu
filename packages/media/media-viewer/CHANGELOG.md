@@ -1,5 +1,13 @@
 # @uidu/media-viewer
 
+## 0.4.10
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/shell@2.1.5
+
 ## 0.4.9
 
 ### Patch Changes

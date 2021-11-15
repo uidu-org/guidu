@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.3.8
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+
 ## 0.3.7
 
 ### Patch Changes

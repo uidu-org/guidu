@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 1.5.2
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/dashlet-controls@1.0.6
+  - @uidu/data-fields@1.4.2
+  - @uidu/table@1.1.6
+
 ## 1.5.1
 
 ### Patch Changes

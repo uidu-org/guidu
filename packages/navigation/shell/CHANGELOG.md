@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.5
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+
 ## 2.1.4
 
 ### Patch Changes

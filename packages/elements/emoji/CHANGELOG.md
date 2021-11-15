@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.5.8
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+
 ## 0.5.7
 
 ### Patch Changes

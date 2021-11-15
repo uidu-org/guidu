@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 1.1.6
+
+### Patch Changes
+
+- 030bab5bc: Bump and remove useless deps
+- Updated dependencies [030bab5bc]
+  - @uidu/data-fields@1.4.2
+
 ## 1.1.5
 
 ### Patch Changes
