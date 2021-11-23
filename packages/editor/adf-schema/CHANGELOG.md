@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.6.3
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+
 ## 0.6.2
 
 ### Patch Changes

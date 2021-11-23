@@ -1,5 +1,11 @@
 # @uidu/date
 
+## 0.4.5
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+
 ## 0.4.4
 
 ### Patch Changes

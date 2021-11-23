@@ -1,5 +1,12 @@
 # @uidu/field-date
 
+## 1.0.10
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+  - @uidu/field-base@3.1.6
+
 ## 1.0.9
 
 ### Patch Changes

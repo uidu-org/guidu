@@ -1,5 +1,23 @@
 # @uidu/data-controls
 
+## 1.2.3
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+- Updated dependencies [6986b03f6]
+  - @uidu/button@1.3.4
+  - @uidu/dropdown-menu@0.6.5
+  - @uidu/inline-dialog@0.5.5
+  - @uidu/menu@0.5.6
+  - @uidu/popup@0.6.5
+  - @uidu/tooltip@0.5.5
+  - @uidu/data-fields@1.4.3
+  - @uidu/data-views@1.1.3
+  - @uidu/select@1.5.3
+  - @uidu/shell@2.1.6
+  - @uidu/form@1.2.6
+
 ## 1.2.2
 
 ### Patch Changes

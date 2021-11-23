@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.5.6
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+
 ## 0.5.5
 
 ### Patch Changes

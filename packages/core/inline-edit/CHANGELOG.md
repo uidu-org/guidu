@@ -1,5 +1,15 @@
 # @uidu/inline-edit
 
+## 0.3.6
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+- Updated dependencies [6986b03f6]
+  - @uidu/button@1.3.4
+  - @uidu/inline-dialog@0.5.5
+  - @uidu/form@1.2.6
+
 ## 0.3.5
 
 ### Patch Changes

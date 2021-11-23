@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.3.4
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+
 ## 1.3.3
 
 ### Patch Changes
