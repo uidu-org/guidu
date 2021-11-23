@@ -31,7 +31,7 @@ export default function FiltererForm({
           return (
             <div tw="px-3 flex items-center space-x-3" key={filter.id}>
               <div className="mb-0 form-group">
-                <label htmlFor="" className="d-flex align-items-center">
+                <label htmlFor="" tw="flex items-center m-0">
                   <FormattedMessage
                     defaultMessage={`{index, plural,
                       =0 {Where}
@@ -71,17 +71,19 @@ export default function FiltererForm({
                 }}
               />
               {FilterForm && (
-                <FilterForm
-                  index={index}
-                  filter={filter}
-                  field={field}
-                  columnDef={columnDef}
-                  onChange={() =>
-                    setTimeout(() => {
-                      (form.current as any).submit();
-                    }, 300)
-                  }
-                />
+                <div tw="flex-1">
+                  <FilterForm
+                    index={index}
+                    filter={filter}
+                    field={field}
+                    columnDef={columnDef}
+                    onChange={() =>
+                      setTimeout(() => {
+                        (form.current as any).submit();
+                      }, 300)
+                    }
+                  />
+                </div>
               )}
               <Button
                 type="button"

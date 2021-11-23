@@ -10,7 +10,7 @@
   "module": "dist/uidu-select.esm.js",
   "types": "dist/uidu-select.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.9.1",
+    "@atlaskit/icon": "^21.9.2",
     "@babel/runtime": "^7.16.3",
     "@uidu/analytics": "^0.5.2",
     "@uidu/checkbox": "^1.1.5",

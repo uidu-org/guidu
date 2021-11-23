@@ -10,7 +10,7 @@
   "module": "dist/uidu-profilecard.esm.js",
   "types": "dist/uidu-profilecard.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.9.1",
+    "@atlaskit/icon": "^21.9.2",
     "@babel/runtime": "^7.16.3",
     "@uidu/avatar": "^0.8.2",
     "@uidu/button": "^1.3.3",
@@ -18,12 +18,12 @@
     "@uidu/popup": "^0.6.4",
     "@uidu/spinner": "^0.5.3",
     "@uidu/theme": "^0.6.4",
-    "date-fns": "^2.25.0",
+    "date-fns": "^2.26.0",
     "es6-promise": "^4.2.8",
     "lru-fast": "^0.2.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-intl": "^5.21.2",
+    "react-intl": "^5.22.0",
     "react-node-resolver": "^2.0.1",
     "styled-components": "^5.3.3"
   },
@@ -34,7 +34,7 @@
     "loader-utils": "^2.0.0",
     "lodash": "^4.17.21",
     "sinon": "^11.1.2",
-    "typescript": "^4.4.4",
+    "typescript": "^4.5.2",
     "uid": "^2.0.0"
   }
 }

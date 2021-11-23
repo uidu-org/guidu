@@ -17,7 +17,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^21.9.1",
+    "@atlaskit/icon": "^21.9.2",
     "@atlaskit/logo": "^13.5.4",
     "@uidu/checkbox": "^1.1.5",
     "@uidu/docs": "^0.5.2",
