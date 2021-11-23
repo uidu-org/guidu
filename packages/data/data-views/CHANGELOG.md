@@ -1,5 +1,15 @@
 # @uidu/data-views
 
+## 1.1.3
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+- Updated dependencies [6986b03f6]
+  - @uidu/data-controls@1.2.3
+  - @uidu/select@1.5.3
+  - @uidu/form@1.2.6
+
 ## 1.1.2
 
 ### Patch Changes

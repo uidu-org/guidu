@@ -1,5 +1,11 @@
 # @uidu/inline-dialog
 
+## 0.5.5
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+
 ## 0.5.4
 
 ### Patch Changes

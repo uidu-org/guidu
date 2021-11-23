@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.4.13
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+- Updated dependencies [6986b03f6]
+  - @uidu/button@1.3.4
+  - @uidu/modal-dialog@0.5.7
+  - @uidu/tooltip@0.5.5
+  - @uidu/table@1.1.7
+  - @uidu/select@1.5.3
+  - @uidu/shell@2.1.6
+  - @uidu/form@1.2.6
+
 ## 0.4.12
 
 ### Patch Changes

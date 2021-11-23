@@ -1,5 +1,18 @@
 # @uidu/data-fields
 
+## 1.4.3
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+- Updated dependencies [6986b03f6]
+  - @uidu/button@1.3.4
+  - @uidu/menu@0.5.6
+  - @uidu/popup@0.6.5
+  - @uidu/field-color-picker@2.0.5
+  - @uidu/select@1.5.3
+  - @uidu/form@1.2.6
+
 ## 1.4.2
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/payments
 
+## 1.1.6
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+  - @uidu/form@1.2.6
+  - @uidu/field-base@3.1.6
+
 ## 1.1.5
 
 ### Patch Changes

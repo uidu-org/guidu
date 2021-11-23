@@ -1,5 +1,13 @@
 # @uidu/popup
 
+## 0.6.5
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+- Updated dependencies [6986b03f6]
+  - @uidu/portal@0.5.5
+
 ## 0.6.4
 
 ### Patch Changes

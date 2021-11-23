@@ -1,5 +1,14 @@
 # @uidu/dashboard-controls
 
+## 1.0.7
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+- Updated dependencies [6986b03f6]
+  - @uidu/dropdown-menu@0.6.5
+  - @uidu/form@1.2.6
+
 ## 1.0.6
 
 ### Patch Changes

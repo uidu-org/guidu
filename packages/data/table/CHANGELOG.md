@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 1.1.7
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+- Updated dependencies [6986b03f6]
+  - @uidu/button@1.3.4
+  - @uidu/dropdown-menu@0.6.5
+  - @uidu/menu@0.5.6
+  - @uidu/popup@0.6.5
+  - @uidu/data-fields@1.4.3
+
 ## 1.1.6
 
 ### Patch Changes

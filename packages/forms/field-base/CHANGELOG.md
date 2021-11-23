@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.6
+
+### Patch Changes
+
+- @uidu/form@1.2.6
+
 ## 3.1.5
 
 ### Patch Changes

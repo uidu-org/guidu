@@ -1,5 +1,16 @@
 # @uidu/message
 
+## 0.5.5
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+- Updated dependencies [6986b03f6]
+  - @uidu/dropdown-menu@0.6.5
+  - @uidu/tooltip@0.5.5
+  - @uidu/media-card@0.5.15
+  - @uidu/media-viewer@0.4.11
+
 ## 0.5.4
 
 ### Patch Changes

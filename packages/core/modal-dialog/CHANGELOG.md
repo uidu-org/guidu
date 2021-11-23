@@ -1,5 +1,15 @@
 # @uidu/modal-dialog
 
+## 0.5.7
+
+### Patch Changes
+
+- 6986b03f6: Bump deps
+- Updated dependencies [6986b03f6]
+  - @uidu/button@1.3.4
+  - @uidu/portal@0.5.5
+  - @uidu/form@1.2.6
+
 ## 0.5.6
 
 ### Patch Changes
