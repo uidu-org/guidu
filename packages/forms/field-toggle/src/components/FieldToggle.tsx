@@ -16,7 +16,7 @@ function FieldToggle({
   onColor,
   offColor,
 }: FieldToggleProps) {
-  const handleChange = value => {
+  const handleChange = (value) => {
     onSetValue(value);
     onChange(name, value);
   };
@@ -29,9 +29,11 @@ function FieldToggle({
 
   return (
     <StyledWrapper className={className} onClick={handleClick}>
-      <label htmlFor={id} className="mb-0 mr-5">
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={id} tw="mb-0 mr-5">
+          {label}
+        </label>
+      )}
       <FieldToggleStateless
         id={id}
         size={size}
