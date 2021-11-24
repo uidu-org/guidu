@@ -1,5 +1,11 @@
 # @uidu/toggle
 
+## 1.1.0
+
+### Minor Changes
+
+- 0e89cb656: Allow for empty label
+
 ## 1.0.5
 
 ### Patch Changes
