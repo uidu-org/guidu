@@ -73,6 +73,7 @@ function Modal({
   onStackChange,
   heading,
   testId,
+  modalWrapperClassName,
 }: Props) {
   const [scrollDistance, setScrollDistance] = useState(
     canUseDOM ? getScrollDistance() : 0,
@@ -141,6 +142,7 @@ function Modal({
     >
       {({ fade, slide }) => (
         <StyledFillScreen
+          className={modalWrapperClassName}
           style={fade}
           aria-hidden={isBackground}
           scrollDistance={scrollDistance}

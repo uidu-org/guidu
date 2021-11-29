@@ -28,6 +28,7 @@ export type FormProps = {
   validatePristine?: boolean;
   disabled?: boolean;
   overrides?: {} | { [key: string]: any };
+  id?: string;
 };
 
 export type FormSectionProps = {
