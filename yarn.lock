@@ -6917,7 +6917,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-base@3.1.6, @uidu/field-base@^3.1.4, @uidu/field-base@^3.1.6, @uidu/field-base@workspace:packages/forms/field-base":
+"@uidu/field-base@3.1.7, @uidu/field-base@^3.1.4, @uidu/field-base@^3.1.6, @uidu/field-base@workspace:packages/forms/field-base":
   version: 0.0.0-use.local
   resolution: "@uidu/field-base@workspace:packages/forms/field-base"
   dependencies:
@@ -7382,7 +7382,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/form@*, @uidu/form@1.2.6, @uidu/form@^1.2.5, @uidu/form@^1.2.6, @uidu/form@workspace:packages/forms/form":
+"@uidu/form@*, @uidu/form@1.2.7, @uidu/form@^1.2.5, @uidu/form@^1.2.6, @uidu/form@^1.2.7, @uidu/form@workspace:packages/forms/form":
   version: 0.0.0-use.local
   resolution: "@uidu/form@workspace:packages/forms/form"
   dependencies:
@@ -7919,7 +7919,7 @@ __metadata:
     "@uidu/checkbox": ^1.1.5
     "@uidu/docs": ^0.5.2
     "@uidu/field-text": ^1.1.6
-    "@uidu/form": ^1.2.6
+    "@uidu/form": ^1.2.7
     "@uidu/inline-dialog": ^0.5.5
     "@uidu/portal": ^0.5.5
     "@uidu/radio": ^1.1.4
@@ -17867,8 +17867,8 @@ fsevents@^1.2.7:
     "@types/zxcvbn": ^4.4.1
     "@typescript-eslint/eslint-plugin": ^5.4.0
     "@typescript-eslint/parser": ^5.4.0
-    "@uidu/field-base": 3.1.6
-    "@uidu/form": 1.2.6
+    "@uidu/field-base": 3.1.7
+    "@uidu/form": 1.2.7
     "@uidu/profilecard": ^0.2.0
     "@uifabric/file-type-icons": ^7.8.5
     "@uppy/aws-s3": ^2.0.5
