@@ -1,5 +1,13 @@
 # @uidu/modal-dialog
 
+## 0.5.8
+
+### Patch Changes
+
+- fff7547cf: Small type fixes on forms and modals
+- Updated dependencies [fff7547cf]
+  - @uidu/form@1.2.7
+
 ## 0.5.7
 
 ### Patch Changes

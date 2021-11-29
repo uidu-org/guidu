@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.7
+
+### Patch Changes
+
+- fff7547cf: Small type fixes on forms and modals
+
 ## 1.2.6
 
 ### Patch Changes
