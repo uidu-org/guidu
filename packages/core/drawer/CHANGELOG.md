@@ -1,5 +1,13 @@
 # @uidu/drawer
 
+## 0.7.5
+
+### Patch Changes
+
+- 430e67924: Allow for custom className
+- Updated dependencies [430e67924]
+  - @uidu/blanket@0.5.2
+
 ## 0.7.4
 
 ### Patch Changes
