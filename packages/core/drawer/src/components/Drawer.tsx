@@ -36,6 +36,8 @@ export class DrawerBase extends React.Component<DrawerProps> {
   static defaultProps = {
     width: 'narrow',
     origin: 'left',
+    className: null,
+    blanketClassName: null,
   };
 
   body = canUseDOM ? document.querySelector('body') : undefined;
@@ -109,6 +111,7 @@ export class DrawerBase extends React.Component<DrawerProps> {
       origin,
       isStacked,
       className,
+      blanketClassName,
     } = this.props;
 
     return createPortal(
@@ -119,6 +122,7 @@ export class DrawerBase extends React.Component<DrawerProps> {
               isStacked={isStacked}
               isTinted
               onBlanketClicked={this.handleBlanketClick}
+              className={blanketClassName}
             />
           </Fade>
           <DrawerPrimitive

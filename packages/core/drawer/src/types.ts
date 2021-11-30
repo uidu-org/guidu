@@ -17,6 +17,8 @@ export type BaseProps = {
   isStacked?: boolean;
   /** Classnames are applied to the wrapper, useful for custom widths or custom backgrounds */
   className?: string;
+  /** Classnames applied to blanket */
+  blanketClassName?: string;
 };
 
 export type DrawerPrimitiveProps = BaseProps & {

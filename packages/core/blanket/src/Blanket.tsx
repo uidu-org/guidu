@@ -19,6 +19,8 @@ interface Props extends WithAnalyticsEventsProps {
   isStacked?: boolean;
   /** Padding right is added by parent container if blanket shoul account for scrollbar */
   paddingRight?: number;
+  /** Class applied to blanket main DIV */
+  className?: string;
 }
 
 function Blanket({
@@ -27,6 +29,7 @@ function Blanket({
   onBlanketClicked = () => {},
   isStacked = false,
   paddingRight = 0,
+  className = null,
 }: Props) {
   const onClick = canClickThrough ? null : onBlanketClicked;
   const containerProps = {
@@ -35,6 +38,7 @@ function Blanket({
     onClick,
     isStacked,
     paddingRight,
+    className,
   };
 
   return (
