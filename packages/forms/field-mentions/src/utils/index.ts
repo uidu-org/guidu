@@ -1,49 +1,27 @@
-import { colors, themed } from '@uidu/theme';
-
-const activeBackgroundColor = themed({ light: colors.B75, dark: colors.DN30 });
-const hoverBackgroundColor = themed({ light: colors.N20, dark: colors.DN60 });
-const selectedBackgroundColor = themed({ light: colors.N0, dark: colors.DN30 });
-
-const activePrimaryTextColor = themed({
-  light: colors.N800,
-  dark: colors.DN300,
-});
-const defaultPrimaryTextColor = themed({
-  light: colors.N800,
-  dark: colors.DN600,
-});
-const disabledPrimaryTextColor = themed({
-  light: colors.N70,
-  dark: colors.DN70,
-});
-const primaryPrimaryTextColor = themed({
-  light: colors.B400,
-  dark: colors.B400,
-});
-const selectedPrimaryTextColor = themed({
-  light: colors.N800,
-  dark: colors.N800,
-});
+const hoverBackgroundColor = 'rgb(var(--brand-subtle))';
+const defaultPrimaryTextColor = 'rgb(var(--body-primary))';
 
 export const defaultStyle = {
   control: {
-    lineHeight: 'normal',
+    // lineHeight: 'normal',
   },
 
   highlighter: {
     padding: 0,
     left: 0,
     overflow: 'inherit',
+    border: 0,
   },
 
   input: {
     margin: 0,
-    padding: '0.625rem 1rem',
-    lineHeight: 'normal',
+    padding: '0.75rem 1rem',
+    // lineHeight: 'normal',
     left: 0,
     border: 0,
     letterSpacing: 'inherit',
     overflow: 'inherit',
+    boxShadow: 'none',
   },
 
   // '&singleLine': {
@@ -98,15 +76,15 @@ export const defaultStyle = {
       // borderBottom: '1px solid rgba(0,0,0,0.15)',
 
       '&focused': {
-        backgroundColor: hoverBackgroundColor(),
-        color: defaultPrimaryTextColor(),
+        backgroundColor: hoverBackgroundColor,
+        color: defaultPrimaryTextColor,
       },
     },
   },
 };
 
 export const defaultMentionStyle = {
-  backgroundColor: hoverBackgroundColor(),
+  backgroundColor: hoverBackgroundColor,
   padding: '0px 2px',
   left: '-2px',
   position: 'relative',
