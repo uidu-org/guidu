@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.5.2
+
+### Patch Changes
+
+- 430e67924: Allow for custom className
+
 ## 0.5.1
 
 ### Patch Changes
