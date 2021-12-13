@@ -1,5 +1,11 @@
 # @uidu/field-mentions
 
+## 1.2.0
+
+### Minor Changes
+
+- 0485e2cae: Fix field-mentions styling
+
 ## 1.1.5
 
 ### Patch Changes
