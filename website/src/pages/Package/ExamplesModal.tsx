@@ -1,4 +1,5 @@
 import Button, { ButtonGroup } from '@uidu/button';
+import { LinkItem, MenuGroup, Section } from '@uidu/menu';
 import Modal, {
   ModalBody as Body,
   ModalHeader as OgModalHeader,
@@ -91,33 +92,35 @@ function ExampleNavigation({ examples, exampleId, onExampleSelected }) {
   return (
     <Nav className="nav flex-column">
       <NavInner>
-        {examples ? (
-          fs.flatMap(
-            examples,
-            (file, filePath) =>
-              file.id.match(regex) && (
-                <li className="nav-item">
-                  <a
-                    key={file.id}
-                    href={fs.normalize(filePath.replace('examples/', ''))}
-                    className={classNames('nav-link', {
-                      active: file.id === exampleId,
-                    })}
-                    onClick={(event) => {
-                      event.preventDefault();
-                      onExampleSelected(
-                        fs.normalize(filePath.replace('examples/', '')),
-                      );
-                    }}
-                  >
-                    {fs.titleize(file.id)}
-                  </a>
-                </li>
-              ),
-          )
-        ) : (
-          <div>No Examples</div>
-        )}
+        <MenuGroup>
+          <Section isScrollable>
+            {examples ? (
+              fs.flatMap(
+                examples,
+                (file, filePath) =>
+                  file.id.match(regex) && (
+                    <LinkItem
+                      key={file.id}
+                      href={fs.normalize(filePath.replace('examples/', ''))}
+                      className={classNames('nav-link', {
+                        active: file.id === exampleId,
+                      })}
+                      onClick={(event) => {
+                        event.preventDefault();
+                        onExampleSelected(
+                          fs.normalize(filePath.replace('examples/', '')),
+                        );
+                      }}
+                    >
+                      {fs.titleize(file.id)}
+                    </LinkItem>
+                  ),
+              )
+            ) : (
+              <div>No Examples</div>
+            )}
+          </Section>
+        </MenuGroup>
       </NavInner>
     </Nav>
   );
