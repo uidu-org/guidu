@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 1.5.4
+
+### Patch Changes
+
+- 4eb6032cb: Fix typescript on multiple select
+
 ## 1.5.3
 
 ### Patch Changes
