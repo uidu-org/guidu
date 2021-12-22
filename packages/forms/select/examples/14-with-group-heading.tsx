@@ -8,15 +8,15 @@ const GROUP_OPTIONS = [
   {
     label: 'Group I',
     options: [
-      { label: 'Adelaide', value: 'adelaide' },
-      { label: 'Brisbane', value: 'brisbane' },
+      { name: 'Adelaide', id: 'adelaide' },
+      { name: 'Brisbane', id: 'brisbane' },
     ],
   },
   {
     label: 'Group II',
     options: [
-      { label: 'Canberra', value: 'canberra' },
-      { label: 'Darwin', value: 'darwin' },
+      { name: 'Canberra', id: 'canberra' },
+      { name: 'Darwin', id: 'darwin' },
     ],
   },
 ];
@@ -26,8 +26,6 @@ const SingleExample = () => (
     <Select
       {...inputDefaultProps}
       options={GROUP_OPTIONS}
-      getOptionLabel={({ label }) => label}
-      getOptionValue={({ value }) => value}
       placeholder="Choose a City"
     />
   </Form>

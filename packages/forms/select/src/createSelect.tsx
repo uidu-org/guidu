@@ -11,6 +11,7 @@ import baseStyles from './styles';
 export type CreateSelectProps = Props & {
   enableAnimation?: boolean;
   components?: any;
+  multiple?: boolean;
 } & FieldBaseProps & {
     /* This prop affects the height of the select control. Compact is gridSize() * 4, default is gridSize * 5  */
     spacing?: 'compact' | 'default';
