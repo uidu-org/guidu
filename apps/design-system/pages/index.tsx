@@ -1,4 +1,3 @@
-import Button from '@uidu/button';
 import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
@@ -18,7 +17,6 @@ export default function Home() {
           <Link href="/doc">
             <a>Next.js!</a>
           </Link>
-          <Button appearance="primary">Test</Button>
         </h1>
         <p className={styles.description}>
           Get started by editing{' '}

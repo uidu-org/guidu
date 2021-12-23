@@ -1,8 +1,8 @@
+import WarningIcon from '@atlaskit/icon/glyph/warning';
+import Button from '@uidu/button';
 import React from 'react';
 import styled from 'styled-components';
-import Button from '@uidu/button';
-import WarningIcon from '@atlaskit/icon/glyph/warning';
-import Banner from '../src';
+import Banner from '../src/index';
 
 interface ItemProps {
   isOpen: boolean;
@@ -28,7 +28,7 @@ export default class ToggleBanner extends React.Component<
 > {
   state = { isOpen: false };
 
-  toggleBanner = () => this.setState(state => ({ isOpen: !state.isOpen }));
+  toggleBanner = () => this.setState((state) => ({ isOpen: !state.isOpen }));
 
   render() {
     const { isOpen } = this.state;

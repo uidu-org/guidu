@@ -10,7 +10,7 @@
   "module": "dist/uidu-field-time.esm.js",
   "types": "dist/uidu-field-time.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.16.3",
+    "@babel/runtime": "^7.16.5",
     "@uidu/analytics": "^0.5.2",
     "@uidu/field-base": "^3.1.4",
     "@uidu/field-text": "^1.1.6",

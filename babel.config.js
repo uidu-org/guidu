@@ -50,5 +50,6 @@ module.exports = function (api) {
   return {
     plugins,
     presets,
+    babelrcRoots: ['.', 'apps/*'],
   };
 };

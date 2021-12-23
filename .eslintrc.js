@@ -1,11 +1,11 @@
-const tsRecommendedRules = require('@typescript-eslint/eslint-plugin/dist/configs/recommended')
-  .rules;
-const prettierTsRules = require('eslint-config-prettier/@typescript-eslint')
-  .rules;
+const tsRecommendedRules =
+  require('@typescript-eslint/eslint-plugin/dist/configs/recommended').rules;
+const prettierTsRules =
+  require('eslint-config-prettier/@typescript-eslint').rules;
 
 module.exports = {
   extends: ['airbnb', 'prettier'],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   plugins: ['prettier', 'react-hooks', 'formatjs'],
   rules: {
     'formatjs/no-offset': 'error',

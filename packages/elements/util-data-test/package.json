@@ -13,12 +13,12 @@
   },
   "dependencies": {
     "@atlaskit/util-service-support": "^6.0.5",
-    "@babel/runtime": "^7.16.3",
+    "@babel/runtime": "^7.16.5",
     "@uidu/analytics": "^0.5.2",
     "@uidu/emoji": "^0.5.9",
     "@uidu/mentions": "^0.3.9",
     "@uidu/task-decision": "^0.4.6",
-    "date-fns": "^2.26.0",
+    "date-fns": "^2.27.0",
     "lodash.sample": "^4.2.1",
     "tslib": "^2.3.1",
     "uuid": "^8.3.2"
