@@ -1,5 +1,14 @@
 # design-system
 
+## 0.1.20
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/analytics@0.5.3
+  - @uidu/button@1.3.5
+
 ## 0.1.19
 
 ### Patch Changes

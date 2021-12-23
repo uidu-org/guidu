@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.5.6
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/avatar@0.8.3
+  - @uidu/drawer@0.7.6
+  - @uidu/dropdown-menu@0.6.6
+  - @uidu/tooltip@0.5.6
+  - @uidu/media-card@0.5.16
+  - @uidu/media-core@0.7.3
+  - @uidu/media-viewer@0.4.12
+  - @uidu/message-form@0.4.6
+  - @uidu/message-renderer@0.4.5
+
 ## 0.5.5
 
 ### Patch Changes

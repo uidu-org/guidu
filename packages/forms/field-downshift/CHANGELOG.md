@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 1.4.3
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/field-base@3.1.8
+  - @uidu/field-text@1.1.7
+
 ## 1.4.2
 
 ### Patch Changes

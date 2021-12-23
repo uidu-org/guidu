@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.6.5
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/form@1.2.8
+
 ## 0.6.4
 
 ### Patch Changes

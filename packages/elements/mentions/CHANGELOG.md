@@ -1,5 +1,18 @@
 # @uidu/mentions
 
+## 0.3.10
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/analytics@0.5.3
+  - @uidu/avatar@0.8.3
+  - @uidu/button@1.3.5
+  - @uidu/lozenge@0.5.4
+  - @uidu/theme@0.6.5
+  - @uidu/tooltip@0.5.6
+
 ## 0.3.9
 
 ### Patch Changes

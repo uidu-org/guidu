@@ -1,5 +1,14 @@
 # @uidu/field-textarea
 
+## 1.1.6
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/analytics@0.5.3
+  - @uidu/field-base@3.1.8
+
 ## 1.1.5
 
 ### Patch Changes
