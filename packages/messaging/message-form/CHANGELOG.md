@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.4.6
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/dropdown-menu@0.6.6
+  - @uidu/spinner@0.5.4
+  - @uidu/field-mentions@1.2.1
+  - @uidu/field-text@1.1.7
+  - @uidu/form@1.2.8
+  - @uidu/media-filmstrip@0.4.7
+  - @uidu/message@0.5.6
+
 ## 0.4.5
 
 ### Patch Changes

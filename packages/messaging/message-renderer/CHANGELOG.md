@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.5
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/dropdown-menu@0.6.6
+  - @uidu/theme@0.6.5
+
 ## 0.4.4
 
 ### Patch Changes

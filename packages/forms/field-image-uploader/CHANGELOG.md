@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 1.2.2
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/analytics@0.5.3
+  - @uidu/button@1.3.5
+  - @uidu/spinner@0.5.4
+  - @uidu/field-base@3.1.8
+  - @uidu/media-core@0.7.3
+
 ## 1.2.1
 
 ### Patch Changes

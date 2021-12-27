@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.6.4
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/button@1.3.5
+
 ## 0.6.3
 
 ### Patch Changes

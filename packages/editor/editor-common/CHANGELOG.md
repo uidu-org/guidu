@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.6.4
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/analytics@0.5.3
+  - @uidu/theme@0.6.5
+  - @uidu/adf-schema@0.6.4
+  - @uidu/adf-utils@0.7.4
+  - @uidu/analytics-namespaced-context@0.4.3
+  - @uidu/emoji@0.5.10
+  - @uidu/mentions@0.3.10
+  - @uidu/profilecard@0.2.12
+
 ## 0.6.3
 
 ### Patch Changes

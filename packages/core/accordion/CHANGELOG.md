@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.2
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/docs@0.5.3
+
 ## 0.6.1
 
 ### Patch Changes

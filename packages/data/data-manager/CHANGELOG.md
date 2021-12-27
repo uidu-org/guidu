@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 1.3.6
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/spinner@0.5.4
+  - @uidu/board@0.4.4
+  - @uidu/calendar@0.3.5
+  - @uidu/data-controls@1.2.4
+  - @uidu/data-fields@1.4.4
+  - @uidu/data-views@1.1.4
+  - @uidu/gallery@1.1.4
+  - @uidu/list@1.1.4
+  - @uidu/table@1.1.8
+  - @uidu/shell@2.1.7
+
 ## 1.3.5
 
 ### Patch Changes

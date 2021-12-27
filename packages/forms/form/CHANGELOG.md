@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.8
+
+### Patch Changes
+
+- b5453661d: Bump dependencies
+- Updated dependencies [b5453661d]
+  - @uidu/button@1.3.5
+
 ## 1.2.7
 
 ### Patch Changes
