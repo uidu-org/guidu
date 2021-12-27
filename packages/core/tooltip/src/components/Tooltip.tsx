@@ -266,12 +266,8 @@ class Tooltip extends React.Component<TooltipProps, State> {
       tag: TargetContainer,
     } = this.props;
 
-    const {
-      isVisible,
-      renderTooltip,
-      immediatelyShow,
-      immediatelyHide,
-    } = this.state;
+    const { isVisible, renderTooltip, immediatelyShow, immediatelyHide } =
+      this.state;
     return (
       /* eslint-disable jsx-a11y/mouse-events-have-key-events */
       <>

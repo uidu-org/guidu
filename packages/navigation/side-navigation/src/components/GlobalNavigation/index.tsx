@@ -94,13 +94,11 @@ export default function GlobalNavigation({
         {(state) => {
           return (
             <ShellSidebar
-              tw="flex absolute left-0 h-full"
+              tw="flex absolute left-0 h-full border-r"
               className={className}
               style={{
                 ...defaultStyle,
-                width: `calc((100% - ${width}) * ${
-                  navigationWidth / 100
-                } + ${width})`,
+                width: `calc(100vw * ${navigationWidth / 100} + ${width})`,
                 ...(navigationMinWidth && {
                   minWidth: `calc(${navigationMinWidth} + ${width})`,
                 }),
