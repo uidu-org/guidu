@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.6.5
+
+### Patch Changes
+
+- Updated dependencies [a05b1ad7c]
+  - @uidu/avatar@0.9.0
+
 ## 2.6.4
 
 ### Patch Changes

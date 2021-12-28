@@ -1,5 +1,12 @@
 # @uidu/devise
 
+## 0.6.10
+
+### Patch Changes
+
+- Updated dependencies [a05b1ad7c]
+  - @uidu/avatar@0.9.0
+
 ## 0.6.9
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/editor-common
 
+## 0.6.5
+
+### Patch Changes
+
+- a05b1ad7c: Avatar fixes when using href, side navigation drawer width
+- Updated dependencies [a05b1ad7c]
+  - @uidu/emoji@0.5.11
+  - @uidu/profilecard@0.2.13
+  - @uidu/mentions@0.3.11
+
 ## 0.6.4
 
 ### Patch Changes

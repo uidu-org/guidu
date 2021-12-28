@@ -1,5 +1,13 @@
 # @uidu/profilecard
 
+## 0.2.13
+
+### Patch Changes
+
+- a05b1ad7c: Avatar fixes when using href, side navigation drawer width
+- Updated dependencies [a05b1ad7c]
+  - @uidu/avatar@0.9.0
+
 ## 0.2.12
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.48
+
+### Patch Changes
+
+- a05b1ad7c: Avatar fixes when using href, side navigation drawer width
+
 ## 0.1.47
 
 ### Patch Changes

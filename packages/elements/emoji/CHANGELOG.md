@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.5.11
+
+### Patch Changes
+
+- a05b1ad7c: Avatar fixes when using href, side navigation drawer width
+
 ## 0.5.10
 
 ### Patch Changes

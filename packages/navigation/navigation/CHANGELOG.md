@@ -1,5 +1,12 @@
 # @uidu/navigation
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies [a05b1ad7c]
+  - @uidu/avatar@0.9.0
+
 ## 1.0.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 1.0.7
+
+### Patch Changes
+
+- a05b1ad7c: Avatar fixes when using href, side navigation drawer width
+- Updated dependencies [a05b1ad7c]
+  - @uidu/avatar@0.9.0
+
 ## 1.0.6
 
 ### Patch Changes

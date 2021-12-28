@@ -1,5 +1,19 @@
 # @uidu/editor-core
 
+## 0.11.5
+
+### Patch Changes
+
+- Updated dependencies [a05b1ad7c]
+  - @uidu/avatar@0.9.0
+  - @uidu/editor-common@0.6.5
+  - @uidu/date@0.4.7
+  - @uidu/emoji@0.5.11
+  - @uidu/profilecard@0.2.13
+  - @uidu/task-decision@0.4.8
+  - @uidu/avatar-group@2.6.5
+  - @uidu/mentions@0.3.11
+
 ## 0.11.4
 
 ### Patch Changes

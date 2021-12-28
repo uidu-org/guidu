@@ -1,5 +1,12 @@
 # @uidu/media-viewer
 
+## 0.4.13
+
+### Patch Changes
+
+- Updated dependencies [a05b1ad7c]
+  - @uidu/avatar@0.9.0
+
 ## 0.4.12
 
 ### Patch Changes

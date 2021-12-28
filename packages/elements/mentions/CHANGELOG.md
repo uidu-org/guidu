@@ -1,5 +1,12 @@
 # @uidu/mentions
 
+## 0.3.11
+
+### Patch Changes
+
+- Updated dependencies [a05b1ad7c]
+  - @uidu/avatar@0.9.0
+
 ## 0.3.10
 
 ### Patch Changes
