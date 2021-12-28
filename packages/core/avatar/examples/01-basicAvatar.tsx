@@ -19,13 +19,33 @@ export default () => (
         }}
       />
       <Gap />
-      <Avatar name="xlarge" size="xlarge" presence="online" />
+      <Avatar
+        name="xlarge"
+        size="xlarge"
+        presence="online"
+        href="https://uidu.org"
+      />
       <Gap />
-      <Avatar name="large" size="large" presence="offline" />
+      <Avatar
+        name="large"
+        size="large"
+        presence="offline"
+        href="https://uidu.org"
+      />
       <Gap />
-      <Avatar name="medium" size="medium" presence="busy" />
+      <Avatar
+        name="medium"
+        size="medium"
+        presence="busy"
+        href="https://uidu.org"
+      />
       <Gap />
-      <Avatar name="small" size="small" presence="focus" />
+      <Avatar
+        name="small"
+        size="small"
+        presence="focus"
+        href="https://uidu.org"
+      />
       <Gap />
       <Avatar name="xsmall" size="xsmall" />
     </Block>

@@ -19,9 +19,7 @@ export default (styles: (props: any) => any) => {
     ${styles};
   `);
   const StyledLink = withTheme(styled.a`
-    a& {
-      ${styles};
-    }
+    ${styles};
   `);
   const StyledSpan = withTheme(styled.span`
     ${styles};

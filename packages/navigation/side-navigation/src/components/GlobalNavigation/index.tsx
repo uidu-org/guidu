@@ -98,7 +98,7 @@ export default function GlobalNavigation({
               className={className}
               style={{
                 ...defaultStyle,
-                width: `calc(100vw * ${navigationWidth / 100} + ${width})`,
+                width: `calc(${width} + ${navigationWidth}% + 1px)`,
                 ...(navigationMinWidth && {
                   minWidth: `calc(${navigationMinWidth} + ${width})`,
                 }),
