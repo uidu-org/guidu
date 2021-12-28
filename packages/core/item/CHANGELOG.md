@@ -1,5 +1,12 @@
 # @uidu/item
 
+## 0.5.5
+
+### Patch Changes
+
+- Updated dependencies [a05b1ad7c]
+  - @uidu/avatar@0.9.0
+
 ## 0.5.4
 
 ### Patch Changes

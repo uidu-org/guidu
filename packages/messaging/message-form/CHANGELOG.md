@@ -1,5 +1,12 @@
 # @uidu/message-form
 
+## 0.4.7
+
+### Patch Changes
+
+- a05b1ad7c: Avatar fixes when using href, side navigation drawer width
+  - @uidu/message@0.5.7
+
 ## 0.4.6
 
 ### Patch Changes

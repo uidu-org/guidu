@@ -1,5 +1,11 @@
 # @uidu/date
 
+## 0.4.7
+
+### Patch Changes
+
+- a05b1ad7c: Avatar fixes when using href, side navigation drawer width
+
 ## 0.4.6
 
 ### Patch Changes

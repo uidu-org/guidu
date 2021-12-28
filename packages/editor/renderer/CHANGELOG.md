@@ -1,5 +1,15 @@
 # @uidu/renderer
 
+## 0.6.5
+
+### Patch Changes
+
+- a05b1ad7c: Avatar fixes when using href, side navigation drawer width
+- Updated dependencies [a05b1ad7c]
+  - @uidu/editor-common@0.6.5
+  - @uidu/task-decision@0.4.8
+  - @uidu/mentions@0.3.11
+
 ## 0.6.4
 
 ### Patch Changes

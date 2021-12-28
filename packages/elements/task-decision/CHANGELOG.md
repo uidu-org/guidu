@@ -1,5 +1,12 @@
 # @uidu/task-decision
 
+## 0.4.8
+
+### Patch Changes
+
+- a05b1ad7c: Avatar fixes when using href, side navigation drawer width
+  - @uidu/avatar-group@2.6.5
+
 ## 0.4.7
 
 ### Patch Changes

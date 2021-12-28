@@ -1,5 +1,15 @@
 # @uidu/util-data-test
 
+## 0.4.6
+
+### Patch Changes
+
+- a05b1ad7c: Avatar fixes when using href, side navigation drawer width
+- Updated dependencies [a05b1ad7c]
+  - @uidu/emoji@0.5.11
+  - @uidu/task-decision@0.4.8
+  - @uidu/mentions@0.3.11
+
 ## 0.4.5
 
 ### Patch Changes

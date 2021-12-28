@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.5.7
+
+### Patch Changes
+
+- Updated dependencies [a05b1ad7c]
+  - @uidu/avatar@0.9.0
+  - @uidu/message-form@0.4.7
+  - @uidu/media-viewer@0.4.13
+
 ## 0.5.6
 
 ### Patch Changes

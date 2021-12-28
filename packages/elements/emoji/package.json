@@ -1,6 +1,6 @@
 {
   "name": "@uidu/emoji",
-  "version": "0.5.10",
+  "version": "0.5.11",
   "description": "Fabric emoji React components",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/emoji",
   "license": "Apache-2.0",
@@ -40,7 +40,7 @@
     "@uidu/elements-test-helpers": "^0.4.9",
     "@uidu/layer": "^0.5.4",
     "@uidu/section-message": "^0.6.4",
-    "@uidu/util-data-test": "^0.4.5",
+    "@uidu/util-data-test": "^0.4.6",
     "p-wait-for": "^4.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
