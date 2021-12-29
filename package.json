@@ -462,7 +462,8 @@
       "build/docs",
       "packages/*/*",
       "!packages/editor/json-schema-generator",
-      "!packages/uidu/schema.d.ts"
+      "!packages/uidu/schema.d.ts",
+      "!packages/core/tailwind-config"
     ]
   }
 }
