@@ -1,17 +1,7 @@
 import { CSSObject, keyframes } from '@emotion/react';
-import {
-  B100,
-  N20,
-  N200,
-  N30,
-  N800,
-  skeleton as skeletonColor,
-  subtleHeading,
-  subtleText,
-} from '@uidu/theme/colors';
+import { skeleton as skeletonColor, subtleHeading } from '@uidu/theme/colors';
 import {
   borderRadius,
-  fontSize,
   gridSize as gridSizeFn,
   skeletonShimmer,
 } from '@uidu/theme/constants';
@@ -24,9 +14,7 @@ const itemElemSpacing = gridSize * 1.5;
 const itemExpectedElemSize = gridSize * 3;
 const itemTopBottomPadding = gridSize;
 const itemSidePadding = gridSize * 2.5;
-const itemDescriptionSpacing = gridSize * 0.375;
-const itemMinHeight = gridSize * 5;
-const itemContentMinHeight = itemMinHeight - itemTopBottomPadding * 2;
+const itemMinHeight = 38;
 
 const itemHeadingContentHeight = headingSizes.h100.lineHeight;
 const itemHeadingFontSize = headingSizes.h100.size;
@@ -34,147 +22,12 @@ const itemHeadingFontSize = headingSizes.h100.size;
 const skeletonItemElemSize = gridSize * 2.5;
 const itemElemSkeletonOffset =
   (itemExpectedElemSize - skeletonItemElemSize) / 2;
-const skeletonTextBorderRadius = 100;
-const skeletonHeadingHeight = gridSize;
-const skeletonContentHeight = 9;
-
-const buttonOverrides = {
-  backgroundColor: 'transparent',
-  border: 0,
-  outline: 0,
-  margin: 0,
-  width: '100%',
-};
-
-const anchorOverrides = {};
-
-const customItemOverrides = {
-  color: 'currentColor',
-};
-
-const disabledStyles = {
-  cursor: 'not-allowed',
-  '&, &:hover, &:focus, &:active': {
-    backgroundColor: 'transparent',
-    color: N200,
-  },
-};
-
-const selectedStyles = {
-  backgroundColor: N20,
-  textDecoration: 'none',
-};
+const skeletonTextBorderRadius = 4;
+const skeletonHeadingHeight = 16;
+const skeletonContentHeight = 14;
 
 const shimmer = skeletonShimmer();
 const shimmerKeyframes = keyframes(shimmer.keyframes);
-
-const baseItemCSS = (
-  isDisabled?: boolean,
-  isSelected?: boolean,
-): CSSObject => ({
-  padding: `${itemTopBottomPadding}px ${itemSidePadding}px`,
-  cursor: 'pointer',
-  fontSize: fontSize(),
-  // IE11 fix - wrapping container needs to be flex as well for vertical centering to work.
-  display: 'flex',
-  boxSizing: 'border-box',
-  color: 'var(--body-color)',
-  userSelect: 'none',
-
-  '&:visited': {
-    color: N800,
-  },
-  '&:hover': {
-    color: N800,
-    backgroundColor: N20,
-    textDecoration: 'none',
-  },
-  '&:focus': {
-    outline: 'none',
-    boxShadow: isDisabled ? 'none' : `${B100} 0 0 0 2px inset`,
-  },
-  '&:active': {
-    boxShadow: 'none',
-    color: N800,
-    backgroundColor: N30,
-  },
-  '::-moz-focus-inner': {
-    border: 0,
-  },
-  ...(isSelected && selectedStyles),
-  ...(isDisabled && disabledStyles),
-});
-
-export const buttonItemCSS = (
-  isDisabled?: boolean,
-  isSelected?: boolean,
-): CSSObject => ({
-  ...buttonOverrides,
-  ...baseItemCSS(isDisabled, isSelected),
-});
-
-export const itemCSS = baseItemCSS;
-
-export const contentCSS = {
-  flexGrow: 1,
-  textAlign: 'left',
-  overflow: 'hidden',
-  outline: 'none',
-  display: 'flex',
-  flexDirection: 'column',
-  // Fix - avoid clipped text descenders when using standard 16px line-height
-  lineHeight: 1.22,
-} as CSSObject;
-
-export const truncateCSS = {
-  display: 'block',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
-} as CSSObject;
-
-export const elemBeforeCSS = {
-  display: 'flex',
-  flexShrink: 0,
-  marginRight: itemElemSpacing,
-};
-
-export const elemAfterCSS = {
-  display: 'flex',
-  flexShrink: 0,
-  marginLeft: itemElemSpacing,
-};
-
-export const descriptionCSS = {
-  ...truncateCSS,
-  color: subtleText(),
-  marginTop: itemDescriptionSpacing,
-  fontSize: headingSizes.h200.size,
-} as CSSObject;
-
-export const contentCSSWrapper = {
-  display: 'flex',
-  minHeight: itemContentMinHeight,
-  alignItems: 'center',
-  // IE11 fix - used with flex above to fix vertical centering.
-  width: '100%',
-} as const;
-
-export const linkItemCSS = (
-  isDisabled?: boolean,
-  isSelected?: boolean,
-): CSSObject => ({
-  ...anchorOverrides,
-  ...baseItemCSS(isDisabled, isSelected),
-});
-
-export const customItemCSS = (
-  isDisabled?: boolean,
-  isSelected?: boolean,
-): CSSObject => ({
-  ...customItemOverrides,
-  ...baseItemCSS(isDisabled, isSelected),
-});
 
 export const itemHeadingCSS = {
   textTransform: 'uppercase',
@@ -211,7 +64,6 @@ export const itemSkeletonCSS = (
   width?: string | number,
   isShimmering?: boolean,
 ): CSSObject => ({
-  ...itemCSS(false, false),
   pointerEvents: 'none',
   display: 'flex',
   alignItems: 'center',
@@ -248,9 +100,9 @@ export const itemSkeletonCSS = (
         ...shimmer.css,
         animationName: `${shimmerKeyframes}`,
       }),
-      marginRight: itemElemSpacing + itemElemSkeletonOffset,
-      width: skeletonItemElemSize,
-      height: skeletonItemElemSize,
+      marginRight: '0.75rem',
+      width: 24,
+      height: 24,
       marginLeft: itemElemSkeletonOffset,
       borderRadius: hasAvatar ? '100%' : borderRadius(),
       flexShrink: 0,

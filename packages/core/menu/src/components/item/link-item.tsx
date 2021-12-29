@@ -1,10 +1,8 @@
-/** @jsxImportSource @emotion/react */
-import { CSSObject } from '@emotion/react';
 import React, { DragEventHandler, forwardRef, Ref } from 'react';
 import { LinkItemProps } from '../types';
 import { useBlurOnMouseDown } from '../utils/use-blur-on-mouse-down';
 import BaseItem from './base-item';
-import { linkItemCSS } from './styles';
+import { BaseItemWrapper } from './styled';
 
 const preventEvent: DragEventHandler = (e) => {
   e.preventDefault();
@@ -15,7 +13,6 @@ const LinkItem = forwardRef<HTMLElement, LinkItemProps>(
   ({ href, ...rest }: LinkItemProps, ref) => {
     const {
       children,
-      cssFn = (currentStyles: CSSObject) => currentStyles,
       description,
       iconAfter,
       iconBefore,
@@ -34,12 +31,11 @@ const LinkItem = forwardRef<HTMLElement, LinkItemProps>(
     }
 
     return (
-      <a
+      <BaseItemWrapper
+        as="a"
         ref={ref as Ref<HTMLAnchorElement>}
-        css={cssFn(linkItemCSS(isDisabled, isSelected), {
-          isSelected,
-          isDisabled,
-        })}
+        isDisabled={isDisabled}
+        isSelected={isSelected}
         onDragStart={preventEvent}
         draggable={false}
         href={isDisabled ? undefined : href}
@@ -57,7 +53,7 @@ const LinkItem = forwardRef<HTMLElement, LinkItemProps>(
         >
           {children}
         </BaseItem>
-      </a>
+      </BaseItemWrapper>
     );
   },
 );

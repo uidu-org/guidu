@@ -167,91 +167,93 @@ class Package extends React.Component<Props> {
           </Helmet>
         )}
 
-        <ShellBody>
-          <ShellMain>
-            <ScrollableContainer enableCustomScrollbars>
-              <ShellHeader tw="h-auto">
-                <PageHeader
-                  tw="px-4 md:px-16 mx-auto py-8"
-                  actions={
-                    examplePath && (
-                      <Media query={{ maxWidth: 768 }}>
-                        {(matches) => {
-                          if (matches) {
-                            return (
-                              <ButtonGroup>
-                                <Button
-                                  onClick={this.openOptionsDrawer}
-                                  appearance="subtle"
-                                  iconBefore={<MoreVertical size={18} />}
-                                ></Button>
-                                <Button
-                                  as={Link}
-                                  to={exampleModalPath}
-                                  appearance="primary"
-                                >
-                                  Examples
-                                </Button>
-                              </ButtonGroup>
-                            );
-                          }
-                          return (
-                            <ButtonGroup>
-                              <Button
-                                as="a"
-                                href={`https://www.npmjs.com/package/${pkg.name}`}
-                                label="npm"
-                                summary={pkg.name}
-                                iconBefore={<PackageIcon size={16} />}
-                                target="_blank"
-                              />
-                              <Button
-                                as="a"
-                                href={`https://github.com/uidu-org/guidu/blob/main/packages/${groupId}/${pkgId}`}
-                                label="Source"
-                                summary="Github"
-                                iconBefore={<GitHub size={16} />}
-                                target="_blank"
-                              />
-                              <Button
-                                as={Link as any}
-                                to={`/packages/${groupId}/${pkgId}/changelog`}
-                                iconBefore={<List size={16} />}
-                              >
-                                Changelog
-                              </Button>
-                              <Button
-                                as={Link as any}
-                                to={exampleModalPath}
-                                appearance="primary"
-                              >
-                                Examples
-                              </Button>
-                            </ButtonGroup>
-                          );
-                        }}
-                      </Media>
-                    )
-                  }
-                  breadcrumbs={
-                    <BreadcrumbsStateless onExpand={() => {}}>
-                      <BreadcrumbsItem text="Packages" key="Some project" />
-                      <BreadcrumbsItem text="Core" key="Parent page" />
-                    </BreadcrumbsStateless>
-                  }
-                  // disableTitleStyles
-                >
-                  {/* <Button
+        <ShellHeader tw="border-b h-auto">
+          <PageHeader
+            tw="px-4 py-8 max-w-7xl mx-auto"
+            actions={
+              examplePath && (
+                <Media query={{ maxWidth: 768 }}>
+                  {(matches) => {
+                    if (matches) {
+                      return (
+                        <ButtonGroup>
+                          <Button
+                            onClick={this.openOptionsDrawer}
+                            appearance="subtle"
+                            iconBefore={<MoreVertical size={18} />}
+                          ></Button>
+                          <Button
+                            as={Link}
+                            to={exampleModalPath}
+                            appearance="primary"
+                          >
+                            Examples
+                          </Button>
+                        </ButtonGroup>
+                      );
+                    }
+                    return (
+                      <ButtonGroup>
+                        <Button
+                          as="a"
+                          href={`https://www.npmjs.com/package/${pkg.name}`}
+                          label="npm"
+                          summary={pkg.name}
+                          iconBefore={<PackageIcon size={16} />}
+                          target="_blank"
+                        />
+                        <Button
+                          as="a"
+                          href={`https://github.com/uidu-org/guidu/blob/main/packages/${groupId}/${pkgId}`}
+                          label="Source"
+                          summary="Github"
+                          iconBefore={<GitHub size={16} />}
+                          target="_blank"
+                        />
+                        <Button
+                          as={Link as any}
+                          to={`/packages/${groupId}/${pkgId}/changelog`}
+                          iconBefore={<List size={16} />}
+                        >
+                          Changelog
+                        </Button>
+                        <Button
+                          as={Link as any}
+                          to={exampleModalPath}
+                          appearance="primary"
+                        >
+                          Examples
+                        </Button>
+                      </ButtonGroup>
+                    );
+                  }}
+                </Media>
+              )
+            }
+            breadcrumbs={
+              <BreadcrumbsStateless onExpand={() => {}}>
+                <BreadcrumbsItem text="Packages" key="Some project" />
+                <BreadcrumbsItem text="Core" key="Parent page" />
+              </BreadcrumbsStateless>
+            }
+            // disableTitleStyles
+          >
+            {/* <Button
               type="button"
               onClick={this.openDrawer}
               appearance="subtle"
               iconBefore={<Menu size={18} />}
               tw="mr-3 md:hidden"
             ></Button> */}
-                  {title}
-                </PageHeader>
-              </ShellHeader>
-              <div tw="px-4 md:px-16">{doc || <NoDocs name={pkgId} />}</div>
+            {title}
+          </PageHeader>
+        </ShellHeader>
+        <ShellBody>
+          <ShellMain>
+            <ScrollableContainer enableCustomScrollbars>
+              <div tw="max-w-7xl mx-auto px-4 py-8">
+                {doc || <NoDocs name={pkgId} />}
+              </div>
             </ScrollableContainer>
           </ShellMain>
         </ShellBody>

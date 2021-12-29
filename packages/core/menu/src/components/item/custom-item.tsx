@@ -1,9 +1,9 @@
-import { ClassNames, CSSObject } from '@emotion/react';
+import { CSSObject } from '@emotion/react';
 import React, { DragEventHandler, forwardRef } from 'react';
 import { CustomItemComponentProps, CustomItemProps } from '../types';
 import { useBlurOnMouseDown } from '../utils/use-blur-on-mouse-down';
 import BaseItem from './base-item';
-import { customItemCSS } from './styles';
+import { BaseItemWrapper } from './styled';
 
 const preventEvent: DragEventHandler = (e) => {
   e.preventDefault();
@@ -46,35 +46,29 @@ const CustomItem: CustomItemType = forwardRef<HTMLElement, CustomItemProps>(
     }
 
     return (
-      <ClassNames>
-        {({ css }) => (
-          <Component
-            ref={ref}
-            data-testid={testId}
-            onDragStart={preventEvent}
-            draggable={false}
-            className={css(
-              cssFn(customItemCSS(isDisabled, isSelected), {
-                isDisabled,
-                isSelected,
-              }),
-            )}
-            onMouseDown={onMouseDownHandler}
-            onClick={isDisabled ? undefined : onClick}
-            tabIndex={isDisabled ? -1 : undefined}
-            disabled={isDisabled}
-            {...rest}
-          >
-            <BaseItem
-              overrides={overrides}
-              children={children}
-              description={description}
-              iconAfter={iconAfter}
-              iconBefore={iconBefore}
-            />
-          </Component>
-        )}
-      </ClassNames>
+      <BaseItemWrapper
+        as={Component}
+        ref={ref}
+        data-testid={testId}
+        onDragStart={preventEvent}
+        draggable={false}
+        className={rest.className}
+        isDisabled={isDisabled}
+        isSelected={isSelected}
+        onMouseDown={onMouseDownHandler}
+        onClick={isDisabled ? undefined : onClick}
+        tabIndex={isDisabled ? -1 : undefined}
+        disabled={isDisabled}
+        {...rest}
+      >
+        <BaseItem
+          overrides={overrides}
+          children={children}
+          description={description}
+          iconAfter={iconAfter}
+          iconBefore={iconBefore}
+        />
+      </BaseItemWrapper>
     );
   },
   // Dirty hack to get generics working with forward ref [2/2]

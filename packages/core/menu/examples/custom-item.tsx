@@ -1,9 +1,19 @@
-/** @jsxImportSource @emotion/react */
 import Icon from '@atlaskit/icon';
-import { B100 } from '@uidu/theme/colors';
 import React from 'react';
-import { CSSFn, CustomItem, CustomItemComponentProps } from '../src';
+import styled from 'styled-components';
+import tw from 'twin.macro';
+import { CustomItem, CustomItemComponentProps } from '../src';
 import Slack from './icons/slack';
+
+const StyledCustomComponent = styled.a<{ isDisabled: boolean }>`
+  ${tw`relative overflow-hidden user-select[none]`}
+  ${({ isDisabled }) => {
+    if (isDisabled) {
+      return tw``;
+    }
+    return tw`before:(content absolute inset-y-0 left-0 w-1 bg-primary -translate-x-px) hover:before:translate-x-0`;
+  }})}
+`;
 
 const CustomComponent: React.FC<
   CustomItemComponentProps & {
@@ -11,54 +21,21 @@ const CustomComponent: React.FC<
   }
 > = ({ children, href, ...props }) => {
   return (
-    <a href={href} {...props}>
+    <StyledCustomComponent href={href} {...props}>
       {children}
-    </a>
+    </StyledCustomComponent>
   );
-};
-
-const cssFn: CSSFn = (currentStyles, state) => {
-  return {
-    ...currentStyles,
-    position: 'relative',
-    overflow: 'hidden',
-    userSelect: 'none',
-    ':before': state.isDisabled
-      ? {}
-      : {
-          content: '""',
-          position: 'absolute',
-          left: 0,
-          top: 0,
-          bottom: 0,
-          width: 3,
-          transform: 'translateX(-1px)',
-          transition: 'transform 70ms ease-in-out',
-          backgroundColor: B100,
-        },
-
-    ':hover:before': state.isDisabled
-      ? {}
-      : {
-          transform: 'translateX(0)',
-        },
-  };
 };
 
 export default () => (
   <div onClick={(e) => e.preventDefault()}>
-    <CustomItem
-      href="/navigation-system"
-      component={CustomComponent}
-      cssFn={cssFn}
-    >
+    <CustomItem href="/navigation-system" component={CustomComponent}>
       Navigation System
     </CustomItem>
     <CustomItem
       href="/navigation-system-1"
       isSelected
       component={CustomComponent}
-      cssFn={cssFn}
     >
       Navigation System
     </CustomItem>
@@ -66,7 +43,6 @@ export default () => (
       href="/navigation-system-2"
       isDisabled
       component={CustomComponent}
-      cssFn={cssFn}
     >
       Navigation System
     </CustomItem>
@@ -74,7 +50,6 @@ export default () => (
       href="/navigation-system-3"
       component={CustomComponent}
       iconBefore={<Icon glyph={Slack} label="" />}
-      cssFn={cssFn}
     >
       Navigation System
     </CustomItem>
@@ -83,7 +58,6 @@ export default () => (
       component={CustomComponent}
       iconBefore={<Icon glyph={Slack} label="" />}
       description="Next-gen software project"
-      cssFn={cssFn}
     >
       Navigation System
     </CustomItem>

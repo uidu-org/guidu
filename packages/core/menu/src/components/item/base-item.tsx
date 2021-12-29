@@ -1,19 +1,9 @@
-/** @jsxImportSource @emotion/react */
-import { ClassNames } from '@emotion/react';
 import React from 'react';
-import { BaseItemProps, RenderFunction } from '../types';
-import {
-  contentCSS,
-  contentCSSWrapper,
-  descriptionCSS,
-  elemAfterCSS,
-  elemBeforeCSS,
-  truncateCSS,
-} from './styles';
+import { BaseItemProps } from '../types';
 
-const defaultRender: RenderFunction = (Component, props) => (
-  <Component {...props} />
-);
+function DefaultTitle(p) {
+  return <span {...p} />;
+}
 
 const BaseItem = ({
   children,
@@ -22,36 +12,30 @@ const BaseItem = ({
   iconBefore,
   overrides,
 }: BaseItemProps) => {
-  const renderTitle =
-    (overrides && overrides.Title && overrides.Title.render) || defaultRender;
+  const Title = overrides?.Title || DefaultTitle;
+  console.log(Title);
 
   return (
-    <div css={contentCSSWrapper}>
+    <div tw="flex items-center w-full min-height[fit-content]">
       {iconBefore && (
-        <span data-item-elem-before css={elemBeforeCSS}>
+        <span tw="flex flex-shrink-0 mr-3" data-item-elem-before>
           {iconBefore}
         </span>
       )}
       {children && (
-        <span css={contentCSS}>
-          <ClassNames>
-            {({ css }) =>
-              renderTitle('span', {
-                children,
-                className: css(truncateCSS),
-                'data-item-title': true,
-              })
-            }
-          </ClassNames>
+        <span tw="flex-grow text-left overflow-hidden outline-none flex flex-col">
+          <DefaultTitle data-item-title tw="truncate">
+            {children}
+          </DefaultTitle>
           {description && (
-            <span data-item-description css={descriptionCSS}>
+            <span data-item-description tw="truncate text-sm text-muted">
               {description}
             </span>
           )}
         </span>
       )}
       {iconAfter && (
-        <span data-item-elem-after css={elemAfterCSS}>
+        <span data-item-elem-after tw="flex flex-shrink-0 ml-3">
           {iconAfter}
         </span>
       )}

@@ -1,7 +1,6 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 import { MenuGroupProps } from '../types';
-import { menuGroupCSS } from './styles';
+import { StyledMenuGroup } from './styled';
 
 const MenuGroup = ({
   maxWidth,
@@ -11,8 +10,11 @@ const MenuGroup = ({
   testId,
   ...rest
 }: MenuGroupProps) => (
-  <div
-    css={menuGroupCSS({ maxHeight, maxWidth, minHeight, minWidth })}
+  <StyledMenuGroup
+    maxWidth={maxWidth}
+    minWidth={minWidth}
+    minHeight={minHeight}
+    maxHeight={maxHeight}
     data-testid={testId}
     {...rest}
   />

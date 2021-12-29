@@ -19,7 +19,7 @@ export default [
     before: <Package size={20} />,
   },
   {
-    href: 'https://bitbucket.org/atlassian/atlaskit-mk-2',
+    href: 'https://github.com/uidu-org/guidu',
     text: 'Repository',
     type: 'NavigationItem',
     before: <GitHub size={20} />,

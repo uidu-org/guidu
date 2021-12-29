@@ -1,19 +1,10 @@
-/** @jsxImportSource @emotion/react */
-import { CSSObject } from '@emotion/react';
 import React from 'react';
 import { HeadingItemProps } from '../types';
-import { itemHeadingCSS } from './styles';
 
-const HeadingItem = ({
-  children,
-  testId,
-  id,
-  cssFn = (css: CSSObject) => css,
-  ...rest
-}: HeadingItemProps) => {
+const HeadingItem = ({ children, testId, id, ...rest }: HeadingItemProps) => {
   return (
     <div
-      css={cssFn(itemHeadingCSS, undefined)}
+      tw="uppercase text-sm font-semibold text-muted py-0 px-5"
       data-testid={testId}
       data-ds--menu--heading-item
       id={id}

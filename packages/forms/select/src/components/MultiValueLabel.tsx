@@ -4,16 +4,7 @@ const MultiValueLabel = ({ innerProps, data }) => {
   return (
     <div
       {...innerProps}
-      tw="flex items-center"
-      style={{
-        // padding: '1rem',
-        marginLeft: 8,
-        marginRight: 8,
-        marginTop: 1,
-        marginBottom: 1,
-        minWidth: 0,
-        width: 'auto',
-      }}
+      tw="flex items-center ml-2 mr-2 mt-px mb-px min-w-0 w-auto"
     >
       {data.before && (
         <div tw="mr-2 flex-shrink-0 flex" style={{ width: 16 }}>

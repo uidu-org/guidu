@@ -8,17 +8,13 @@
   "sideEffects": false,
   "main": "dist/uidu-blanket.cjs.js",
   "module": "dist/uidu-blanket.esm.js",
-  "dependencies": {
-    "@uidu/analytics": "^0.5.0",
-    "@uidu/theme": "^0.6.1",
-    "tslib": "^2.3.1"
-  },
   "devDependencies": {
     "@uidu/button": "^1.2.1",
     "@uidu/docs": "^0.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "tslib": "^2.3.1"
   },
   "peerDependencies": {
     "react": "^17.0.0",

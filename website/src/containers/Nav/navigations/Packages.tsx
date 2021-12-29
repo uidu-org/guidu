@@ -1,5 +1,5 @@
-import {Package} from 'react-feather';
 import * as React from 'react';
+import { Package } from 'react-feather';
 import { NavLink as Link } from 'react-router-dom';
 import { Directory, File, NavGroup, NavGroupItem } from '../../../types';
 import * as fs from '../../../utils/fs';
@@ -14,13 +14,13 @@ export function buildSubNavGroup(
 ): NavGroup | null {
   if (!children || !children.length) return null;
   return children
-    .filter(item => !item.id.startsWith('_'))
+    .filter((item) => !item.id.startsWith('_'))
     .reduce(
       (acc, item) => {
         acc.items.push({
           to: url(fs.normalize(item.id)),
           text: fs.titleize(item.id),
-          type: 'NavigationItem',
+          type: 'NavigationSubItem',
           as: Link,
         });
         return acc;
@@ -60,7 +60,7 @@ const getItemDetails = (pkg: Directory, group: Directory, pathname) => {
     text: fs.titleize(pkg.id),
     type: 'NavigationItem',
     as: Link,
-    items,
+    ...docsSubnav,
   };
 };
 
@@ -71,20 +71,17 @@ export type PackagesNavProps = {
 };
 
 export const standardGroups = (dirs: Array<Directory>, pathname): NavGroup[] =>
-  dirs.map(group => {
+  dirs.map((group) => {
     const packages = fs.getDirectories(group.children);
     return {
       heading: group.id,
       type: 'NavigationGroup',
-      items: packages.reduce(
-        (items, pkg) => {
-          const details = getItemDetails(pkg, group, pathname);
-          if (details) {
-            return items.concat(details);
-          }
-          return items;
-        },
-        [] as Array<NavGroupItem>,
-      ),
+      items: packages.reduce((items, pkg) => {
+        const details = getItemDetails(pkg, group, pathname);
+        if (details) {
+          return items.concat(details);
+        }
+        return items;
+      }, [] as Array<NavGroupItem>),
     };
   });

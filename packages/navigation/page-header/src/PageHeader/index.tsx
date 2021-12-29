@@ -14,7 +14,7 @@ const PageHeader = ({
   return (
     <div className={className} tw="flex flex-grow flex-col py-6 min-w-0">
       {breadcrumbs}
-      <div tw="mt-1 flex md:items-start justify-between">
+      <div tw="mt-1 flex md:items-center justify-between">
         <div tw="flex-1 min-w-0">
           {disableTitleStyles ? (
             children

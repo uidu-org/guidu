@@ -1,14 +1,7 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-  WithAnalyticsEventsProps,
-} from '@uidu/analytics';
 import React from 'react';
 import Div from './styled';
-import pkg from './version.json';
 
-interface Props extends WithAnalyticsEventsProps {
+interface BlanketProps {
   /** Whether mouse events can pierce the blanket. If true, onBlanketClicked will not be fired */
   canClickThrough?: boolean;
   /** Whether the blanket has a tinted background color. */
@@ -17,7 +10,7 @@ interface Props extends WithAnalyticsEventsProps {
   onBlanketClicked?: (event: React.MouseEvent<HTMLDivElement>) => void;
   /** Stacked blankets have higher z-index references */
   isStacked?: boolean;
-  /** Padding right is added by parent container if blanket shoul account for scrollbar */
+  /** Padding right is added by parent container if blanket should account for scrollbar */
   paddingRight?: number;
   /** Class applied to blanket main DIV */
   className?: string;
@@ -30,7 +23,7 @@ function Blanket({
   isStacked = false,
   paddingRight = 0,
   className = null,
-}: Props) {
+}: BlanketProps) {
   const onClick = canClickThrough ? null : onBlanketClicked;
   const containerProps = {
     canClickThrough,
@@ -41,31 +34,7 @@ function Blanket({
     className,
   };
 
-  return (
-    <>
-      <Div {...containerProps} />
-    </>
-  );
+  return <Div {...containerProps} />;
 }
 
-export { Blanket as BlanketWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('atlaskit');
-
-export default withAnalyticsContext({
-  componentName: 'blanket',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlanketClicked: createAndFireEventOnGuidu({
-      action: 'clicked',
-      actionSubject: 'blanket',
-
-      attributes: {
-        componentName: 'blanket',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(Blanket),
-);
+export default Blanket;

@@ -247,7 +247,7 @@ export interface CustomItemComponentProps {
 }
 
 export interface CustomItemProps<
-  TCustomComponentProps = CustomItemComponentProps
+  TCustomComponentProps = CustomItemComponentProps,
 > extends BaseItemProps {
   /**
    * Custom component to render as an item.
@@ -301,12 +301,6 @@ export interface SkeletonItemProps {
 export type Width = string | number;
 
 export interface HeadingItemProps {
-  /**
-   * A function that can be used to override the styles.
-   * It receives the current styles and returns a customised styles object.
-   */
-  cssFn?: StatelessCSSFn;
-
   /**
    * The text of the heading.
    */

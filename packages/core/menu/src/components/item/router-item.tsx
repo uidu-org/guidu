@@ -1,10 +1,12 @@
 import React from 'react';
-import { NavLink as Link } from 'react-router-dom';
+import { NavLink as Link, NavLinkProps } from 'react-router-dom';
 import { CustomItemComponentProps } from '../types';
 import CustomItem from './custom-item';
 
-const RouterLink = (props: CustomItemComponentProps) => <Link {...props} />;
+type RouterItemProps = CustomItemComponentProps & NavLinkProps;
 
-export default function RouterItem({ ...rest }) {
+const RouterLink = (props: RouterItemProps) => <Link {...props} />;
+
+export default function RouterItem({ ...rest }: RouterItemProps) {
   return <CustomItem component={RouterLink} {...rest} />;
 }

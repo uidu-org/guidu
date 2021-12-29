@@ -2,6 +2,7 @@
 import { CSSObject } from '@emotion/react';
 import React from 'react';
 import { SkeletonItemProps } from '../types';
+import { BaseItemWrapper } from './styled';
 import { itemSkeletonCSS } from './styles';
 
 const SkeletonItem = ({
@@ -12,7 +13,7 @@ const SkeletonItem = ({
   isShimmering,
   cssFn = (currentStyles: CSSObject) => currentStyles,
 }: SkeletonItemProps) => (
-  <div
+  <BaseItemWrapper
     css={cssFn(
       itemSkeletonCSS(hasAvatar, hasIcon, width, isShimmering),
       undefined,

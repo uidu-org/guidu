@@ -40,6 +40,7 @@ export default class BasicExample extends React.PureComponent<void, State> {
         <p>Click to Open the blanket & click the blanket to dismiss it.</p>
 
         <Blanket
+          // tw="bg-red-800 bg-opacity-40"
           onBlanketClicked={this.onBlanketClicked}
           isTinted={this.state.isBlanketVisible}
           canClickThrough={this.state.canClickThrough}

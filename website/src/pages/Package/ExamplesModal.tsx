@@ -71,7 +71,6 @@ const ModalActions = styled.div`
 // ==============================
 
 const keylineMask = css`
-  background-color: ${colors.background};
   margin-top: -2px;
   padding-top: 2px;
 `;

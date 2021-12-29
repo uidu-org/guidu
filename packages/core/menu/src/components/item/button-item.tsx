@@ -1,17 +1,15 @@
-/** @jsxImportSource @emotion/react */
-import { CSSObject } from '@emotion/react';
 import React, { forwardRef, Ref } from 'react';
+import tw from 'twin.macro';
 import { ButtonItemProps } from '../types';
 import { useBlurOnMouseDown } from '../utils/use-blur-on-mouse-down';
 import BaseItem from './base-item';
-import { buttonItemCSS } from './styles';
+import { BaseItemWrapper } from './styled';
 
 const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
   // Type needed on props to extract types with extract react types.
   (props: ButtonItemProps, ref) => {
     const {
       children,
-      cssFn = (currentStyles: CSSObject) => currentStyles,
       description,
       iconAfter,
       iconBefore,
@@ -32,12 +30,15 @@ const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
     const Container = 'span';
 
     return (
-      <span
+      <BaseItemWrapper
         type={isDisabled ? undefined : 'button'}
-        css={cssFn(buttonItemCSS(isDisabled, isSelected), {
-          isSelected,
-          isDisabled,
-        })}
+        css={[tw`w-full m-0 bg-transparent border-0 outline-none`]}
+        // css={cssFn(buttonItemCSS(isDisabled, isSelected), {
+        //   isSelected,
+        //   isDisabled,
+        // })}
+        isSelected={isSelected}
+        isDisabled={isDisabled}
         data-testid={testId}
         onClick={isDisabled ? undefined : onClick}
         onMouseDown={onMouseDownHandler}
@@ -52,7 +53,7 @@ const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
         >
           {children}
         </BaseItem>
-      </span>
+      </BaseItemWrapper>
     );
   },
 );

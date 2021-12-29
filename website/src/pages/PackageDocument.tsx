@@ -1,12 +1,12 @@
+import { ScrollableContainer, ShellBody, ShellHeader } from '@uidu/shell';
 import * as React from 'react';
-import { match } from 'react-router';
-import Loadable from '../components/WrappedLoader';
 import { Helmet } from 'react-helmet';
+import { match } from 'react-router';
+import Loading from '../components/Loading';
+import Loadable from '../components/WrappedLoader';
 import { packages } from '../site';
 import * as fs from '../utils/fs';
-import Page, { Title } from '../components/Page';
 import FourOhFour from './FourOhFour';
-import Loading from '../components/Loading';
 
 export type PackageDocumentProps = {
   match: match<Record<string, string>>;
@@ -31,20 +31,26 @@ export default function PackageDocument({
   const Content = Loadable<{}, ResolvedJSXElement>({
     loading: () => <Loading />,
     loader: async () => (fs.isFile(found) ? await found.exports() : {}),
-    render: doc => (doc ? doc.default : <FourOhFour />),
+    render: (doc) => (doc ? doc.default : <FourOhFour />),
   });
 
   return (
-    <Page>
+    <>
       <Helmet>
         <title>
           {`${fs.titleize(pkgId)} - ${fs.titleize(docId)} - ${BASE_TITLE}`}
         </title>
       </Helmet>
-      <Title>
+      <ShellHeader tw="px-3 xl:px-4 border-b">
         {fs.titleize(pkgId)} - {fs.titleize(docId)}
-      </Title>
-      <Content />
-    </Page>
+      </ShellHeader>
+      <ShellBody>
+        <ScrollableContainer>
+          <div tw="max-w-7xl mx-auto py-8 px-4">
+            <Content />
+          </div>
+        </ScrollableContainer>
+      </ShellBody>
+    </>
   );
 }

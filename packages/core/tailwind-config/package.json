@@ -1,0 +1,27 @@
+{
+  "name": "@uidu/tailwind-config",
+  "version": "0.1.0",
+  "packageManager": "yarn@3.1.1",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/tailwind-config",
+  "author": "uidu",
+  "sideEffects": false,
+  "main": "index.js",
+  "module": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.5",
+    "@tailwindcss/aspect-ratio": "^0.3.0",
+    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/typography": "^0.4.1"
+  },
+  "peerDependencies": {
+    "postcss": "^8.2.6",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.5",
+    "tailwindcss": "^2.2.19"
+  }
+}

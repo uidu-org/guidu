@@ -54,9 +54,7 @@ export default function Document({
 
   return (
     <Fragment>
-      <ShellHeader className="px-3 px-xl-4 border-bottom">
-        Documentation
-      </ShellHeader>
+      <ShellHeader tw="px-3 xl:px-4 border-b">Documentation</ShellHeader>
       <ShellBody>
         <ShellMain>
           <ScrollableContainer>

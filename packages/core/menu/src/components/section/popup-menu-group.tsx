@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 import { MenuGroupProps } from '../types';
 import MenuGroup from './menu-group';
