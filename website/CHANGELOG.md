@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.4.15
+
+### Patch Changes
+
+- 4eee3b6af: Added tailwind-config package, use tw in @uidu/menu
+- Updated dependencies [4eee3b6af]
+  - @uidu/select@1.5.6
+  - @uidu/page-header@1.0.2
+  - @uidu/table@1.1.9
+  - @uidu/navigation@1.0.6
+
 ## 0.4.14
 
 ### Patch Changes

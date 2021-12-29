@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.6.0
+
+### Minor Changes
+
+- 4eee3b6af: Added tailwind-config package, use tw in @uidu/menu
+
 ## 0.5.7
 
 ### Patch Changes

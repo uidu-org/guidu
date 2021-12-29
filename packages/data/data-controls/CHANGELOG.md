@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 1.2.5
+
+### Patch Changes
+
+- Updated dependencies [4eee3b6af]
+  - @uidu/menu@0.6.0
+  - @uidu/select@1.5.6
+  - @uidu/data-fields@1.4.5
+
 ## 1.2.4
 
 ### Patch Changes

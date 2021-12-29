@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.5.3
+
+### Patch Changes
+
+- 4eee3b6af: Added tailwind-config package, use tw in @uidu/menu
+
 ## 0.5.2
 
 ### Patch Changes
