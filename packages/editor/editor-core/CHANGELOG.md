@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 0.11.6
+
+### Patch Changes
+
+- Updated dependencies [4eee3b6af]
+  - @uidu/menu@0.6.0
+  - @uidu/select@1.5.6
+
 ## 0.11.5
 
 ### Patch Changes

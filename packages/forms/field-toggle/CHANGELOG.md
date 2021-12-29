@@ -1,5 +1,11 @@
 # @uidu/toggle
 
+## 1.1.2
+
+### Patch Changes
+
+- 4eee3b6af: Added tailwind-config package, use tw in @uidu/menu
+
 ## 1.1.1
 
 ### Patch Changes
