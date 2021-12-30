@@ -1,5 +1,25 @@
 # @uidu/dashboard-manager
 
+## 1.3.3
+
+### Patch Changes
+
+- 69fb1dc0d: Data-manager refactor away from render props pattern
+
+  # Breaking Changes
+
+  DataManager no longer accepts render props for the `children` prop. You should use these new components:
+
+  - DataManagerControls
+  - DataManagerView
+  - DataManagerFooter
+
+  Pagination is now included by default, it now splits items into pages client-side.
+
+- Updated dependencies [69fb1dc0d]
+  - @uidu/dashboard-controls@1.0.10
+  - @uidu/dashlets@1.5.6
+
 ## 1.3.2
 
 ### Patch Changes
