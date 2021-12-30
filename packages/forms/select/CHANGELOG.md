@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 1.5.6
+
+### Patch Changes
+
+- 4eee3b6af: Added tailwind-config package, use tw in @uidu/menu
+
 ## 1.5.5
 
 ### Patch Changes

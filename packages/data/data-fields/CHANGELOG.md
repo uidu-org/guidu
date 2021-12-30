@@ -1,5 +1,14 @@
 # @uidu/data-fields
 
+## 1.4.5
+
+### Patch Changes
+
+- Updated dependencies [4eee3b6af]
+  - @uidu/menu@0.6.0
+  - @uidu/field-toggle@1.1.2
+  - @uidu/select@1.5.6
+
 ## 1.4.4
 
 ### Patch Changes
