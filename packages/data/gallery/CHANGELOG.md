@@ -1,5 +1,27 @@
 # @uidu/gallery
 
+## 1.2.0
+
+### Minor Changes
+
+- 69fb1dc0d: Data-manager refactor away from render props pattern
+
+  # Breaking Changes
+
+  DataManager no longer accepts render props for the `children` prop. You should use these new components:
+
+  - DataManagerControls
+  - DataManagerView
+  - DataManagerFooter
+
+  Pagination is now included by default, it now splits items into pages client-side.
+
+### Patch Changes
+
+- Updated dependencies [69fb1dc0d]
+  - @uidu/data-controls@2.0.0
+  - @uidu/data-fields@1.4.6
+
 ## 1.1.4
 
 ### Patch Changes
