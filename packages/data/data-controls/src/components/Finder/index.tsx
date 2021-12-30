@@ -1,3 +1,4 @@
+import { useDataManagerContext } from '@uidu/data-manager';
 import InlineDialog from '@uidu/inline-dialog';
 import Tooltip from '@uidu/tooltip';
 import React, { useEffect, useRef, useState } from 'react';
@@ -5,10 +6,15 @@ import { Search } from 'react-feather';
 import { Trigger } from '../../styled';
 import { FinderProps } from './types';
 
-export default function Finder({ onChange }: FinderProps) {
+export default function Finder({}: FinderProps) {
   const node: React.RefObject<HTMLDivElement> = useRef();
   const input: React.RefObject<HTMLInputElement> = useRef();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const {
+    currentView,
+    tableInstance: { setGlobalFilter },
+  } = useDataManagerContext();
 
   const handleClick = (e) => {
     if (node.current.contains(e.target)) {
@@ -34,11 +40,11 @@ export default function Finder({ onChange }: FinderProps) {
         content={
           <input
             ref={input}
-            className="form-control shadow-none border-0"
+            className="border-0 shadow-none form-control"
             type="search"
             name=""
             placeholder="Cerca..."
-            onChange={onChange}
+            onChange={(e) => setGlobalFilter(e.target.value)}
           />
         }
         placement="bottom-end"
@@ -47,15 +53,14 @@ export default function Finder({ onChange }: FinderProps) {
         <Tooltip content={'Search in view'} position="bottom">
           <Trigger
             activeBg="#fee2d5"
-            className="btn mr-2"
+            className="mr-2 btn"
             active={false}
             onClick={() => {
-              setIsDialogOpen(!isDialogOpen);
+              setIsDialogOpen((prevIsDialogOpen) => !prevIsDialogOpen);
               setTimeout(() => input.current.focus(), 200);
             }}
-          >
-            <Search strokeWidth={2} size={14} />
-          </Trigger>
+            iconBefore={<Search strokeWidth={2} size={14} />}
+          ></Trigger>
         </Tooltip>
       </InlineDialog>
     </div>

@@ -1,15 +1,15 @@
 import { Toggler } from '@uidu/data-controls';
 import React from 'react';
 
-export default function Configurator({ columnDefs, onDragEnd, ...rest }) {
+export default function Configurator({ onDragEnd }) {
   return (
     <>
       <div className="list-group">
-        <div className="list-group-item px-3 px-xl-4 border-0">
+        <div className="px-3 border-0 list-group-item px-xl-4">
           <h6 className="m-0">Visible fields</h6>
         </div>
       </div>
-      <Toggler {...rest} columnDefs={columnDefs} onDragEnd={onDragEnd} />
+      <Toggler onDragEnd={onDragEnd} />
     </>
   );
 }

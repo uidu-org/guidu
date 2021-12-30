@@ -40,6 +40,5 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.3"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

@@ -7,8 +7,6 @@ export default function Cell(params) {
   const max = params.cellProps?.max || 5;
   const { value } = params;
 
-  console.log(params);
-
   if (params.column?.editable) {
     return <EditableCell {...params} />;
   }

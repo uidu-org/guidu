@@ -1,3 +1,4 @@
+import { useDataManagerContext } from '@uidu/data-manager';
 import Popup from '@uidu/popup';
 import React, { useState } from 'react';
 import { Server } from 'react-feather';
@@ -6,15 +7,13 @@ import { Trigger } from '../../styled';
 import GrouperForm from './form';
 import { GrouperProps } from './types';
 
-export default function Grouper({
-  groupers = [],
-  tableInstance,
-  ...rest
-}: GrouperProps) {
+export default function Grouper({}: GrouperProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const {
-    state: { groupBy },
-  } = tableInstance;
+    tableInstance: {
+      state: { groupBy },
+    },
+  } = useDataManagerContext();
   const groupersCount = groupBy.length;
 
   return (
@@ -26,15 +25,13 @@ export default function Grouper({
         <Trigger
           {...triggerProps}
           activeBg="#ede2fe"
-          className="mr-2 btn"
           active={!!groupersCount}
-          onClick={() => setIsDialogOpen(true)}
+          onClick={() =>
+            setIsDialogOpen((prevIsDialogOpen) => !prevIsDialogOpen)
+          }
+          iconBefore={<Server strokeWidth={2} size={14} />}
         >
-          <Server strokeWidth={2} size={14} className="mr-xl-2" />
-          <span
-            style={{ textTransform: 'initial' }}
-            className="d-none d-xl-block"
-          >
+          <span tw="hidden xl:block">
             <FormattedMessage
               defaultMessage={`{groupersCount, plural,
                   =0 {Group by}
@@ -49,7 +46,7 @@ export default function Grouper({
       content={() => {
         return (
           <div tw="w-screen sm:width[500px] py-4 text-sm">
-            <GrouperForm tableInstance={tableInstance} />
+            <GrouperForm />
           </div>
         );
       }}

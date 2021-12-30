@@ -12,13 +12,14 @@ export default class Members extends Component<MembersProps> {
 
   render() {
     const { label, members } = this.props;
-    console.log(this.props);
 
     return (
-      <div className="d-flex align-items-center ml-2">
-        <Trigger activeBg="#d0f0fd" className="btn">
-          <Users strokeWidth={2} size={14} className="mr-2" />
-          <span style={{ textTransform: 'initial' }}>{label}</span>
+      <div tw="flex items-center">
+        <Trigger
+          activeBg="#d0f0fd"
+          iconBefore={<Users strokeWidth={2} size={14} />}
+        >
+          {label}
         </Trigger>
         <AvatarGroup
           appearance="stack"

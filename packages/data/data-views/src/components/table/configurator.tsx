@@ -6,10 +6,10 @@ export default function Configurator({ columnDefs, onDragEnd, ...rest }) {
     <>
       <div tw="">
         <div tw="px-3 xl:px-4 flex items-center">
-          <h6 className="m-0">Visible fields</h6>
+          <h6>Visible fields</h6>
         </div>
       </div>
-      <Toggler {...rest} columnDefs={columnDefs} onDragEnd={onDragEnd} />
+      <Toggler onDragEnd={onDragEnd} />
     </>
   );
 }

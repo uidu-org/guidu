@@ -1,14 +1,9 @@
-import { ButtonItem, Section } from '@uidu/menu';
+import { ButtonItem, MenuGroup, Section } from '@uidu/menu';
 import Popup from '@uidu/popup';
 import React, { useState } from 'react';
 import { ChevronDown } from 'react-feather';
 
-export default function PickField({
-  columnDefs,
-  onClick,
-  label,
-  isDefaultOpen,
-}) {
+export default function PickField({ columnDefs, onClick, label }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -29,34 +24,31 @@ export default function PickField({
         )}
         content={() => {
           return (
-            <Section className="px-3">
-              {columnDefs.map((columnDef) => {
-                return (
-                  <ButtonItem
-                    tw="px-3 flex items-center"
-                    key={columnDef.id}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsOpen(false);
-                      onClick(columnDef);
-                    }}
-                    {...(columnDef.icon
-                      ? {
-                          iconBefore: (
-                            <span
-                              style={{ width: 22, display: 'inline-block' }}
-                            >
-                              {columnDef.icon}
-                            </span>
-                          ),
-                        }
-                      : {})}
-                  >
-                    {columnDef.name}
-                  </ButtonItem>
-                );
-              })}
-            </Section>
+            <MenuGroup>
+              <Section>
+                {columnDefs.map((columnDef) => {
+                  return (
+                    <ButtonItem
+                      key={columnDef.id}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsOpen(false);
+                        onClick(columnDef);
+                      }}
+                      {...(columnDef.icon
+                        ? {
+                            iconBefore: (
+                              <span tw="w-4 text-center">{columnDef.icon}</span>
+                            ),
+                          }
+                        : {})}
+                    >
+                      {columnDef.name}
+                    </ButtonItem>
+                  );
+                })}
+              </Section>
+            </MenuGroup>
           );
         }}
       />

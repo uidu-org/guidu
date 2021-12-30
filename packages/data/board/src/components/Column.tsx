@@ -66,6 +66,7 @@ export default class Column extends Component<ColumnProps> {
                 )
               }
             />
+            {provided.placeholder}
           </Container>
         )}
       </Draggable>

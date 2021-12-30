@@ -9,10 +9,10 @@ export type RowAction = {
 
 export type DataManagerProps = {
   columnDefs: Array<FieldGroup>;
-  children: ({ renderControls, renderView, renderSidebar }) => any;
+  children: React.ReactElement;
   currentView?: DataView;
   onViewUpdate?: (state: any) => void;
-  updateView?: (dataView: DataView, props: keyof DataView) => Promise<any>;
+  updateView?: (name: string, value: any) => Promise<any>;
   isAutoSaving?: string;
   rowData?: Array<any>;
   onAddField?: () => void;
@@ -31,7 +31,9 @@ export type DataManagerProps = {
   forwardedRef: React.Ref<any>;
 };
 
-export type DataManagerNextProps = DataManagerProps & {
+export type DataManagerCubeProps = DataManagerProps & {
   resultSet: any;
   query: any;
+  onReady?: (resultSet: any) => void;
+  subscribe: boolean;
 };

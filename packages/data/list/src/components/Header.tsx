@@ -18,8 +18,7 @@ export default function Header({
             fontSize: '14px',
             fontWeight: 500,
           }}
-          tw="sticky top-0 flex items-center background[rgb(var(--body-on-primary-bg))] min-w-full width[fit-content] border-b px-4"
-          className="mx-n3 mx-xl-n4"
+          tw="sticky top-0 flex items-center background[rgb(var(--body-on-primary-bg))] min-w-full width[fit-content] border-b px-4 -mx-4"
         >
           {cover && (
             <div

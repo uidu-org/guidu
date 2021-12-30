@@ -18,7 +18,7 @@ export default function More({
   onRename,
   onDestroy,
 }: MoreProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const actions = [
     {
       text: 'Rename view',
@@ -49,19 +49,18 @@ export default function More({
 
   return (
     <Popup
-      // className="mr-2"
-      onClose={() => setIsOpen(false)}
-      isOpen={isOpen}
+      onClose={() => setIsDialogOpen(false)}
+      isOpen={isDialogOpen}
       trigger={(triggerProps) => (
         <Trigger
           {...triggerProps}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() =>
+            setIsDialogOpen((prevIsDialogOpen) => !prevIsDialogOpen)
+          }
           activeBg="#fee2d5"
-          className="btn"
           active={false}
-        >
-          <MoreHorizontal strokeWidth={2} size={14} />
-        </Trigger>
+          iconBefore={<MoreHorizontal strokeWidth={2} size={14} />}
+        />
       )}
       content={() => (
         <MenuGroup>

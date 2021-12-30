@@ -8,8 +8,6 @@ export default function SelectEditor(params) {
 
   const { column, options, node, multiple } = params;
 
-  console.log(column);
-
   return (
     <div
       // ref="container"

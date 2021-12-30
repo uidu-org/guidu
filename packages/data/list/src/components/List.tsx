@@ -17,11 +17,11 @@ export default function List({
     prepareRow,
     state: { filterBy },
     columns,
-    rows,
+    page,
   } = tableInstance;
 
   const rowVirtualizer = useVirtual({
-    size: rows.length,
+    size: page.length,
     parentRef,
     estimateSize: useCallback(() => rowHeight, [rowHeight]),
     overscan: 5,
@@ -43,7 +43,7 @@ export default function List({
           }}
         >
           {rowVirtualizer.virtualItems.map((virtualRow) => {
-            const row = rows[virtualRow.index];
+            const row = page[virtualRow.index];
             prepareRow(row);
             return (
               <div

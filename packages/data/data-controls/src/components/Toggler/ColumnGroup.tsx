@@ -1,4 +1,5 @@
 import { CheckboxStateless } from '@uidu/checkbox';
+import { useDataManagerContext } from '@uidu/data-manager';
 import React, { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { FormattedMessage } from 'react-intl';
@@ -8,9 +9,15 @@ export default function ColumnGroup({
   columns,
   checkedColumnsCount,
   isGroupChecked,
-  tableInstance,
 }) {
   const [isOpen, setIsOpen] = useState(true);
+  const {
+    tableInstance: {
+      setHiddenColumns,
+      state: { hiddenColumns },
+    },
+  } = useDataManagerContext();
+
   return (
     <div tw="flow-root mb-3">
       <div tw="px-3 xl:px-4 border-0 py-2">
@@ -25,12 +32,10 @@ export default function ColumnGroup({
                 e.preventDefault();
                 const columnIds = columns.map((column) => column.id);
                 if (isGroupChecked) {
-                  return tableInstance.setHiddenColumns(columnIds);
+                  return setHiddenColumns(columnIds);
                 }
-                return tableInstance.setHiddenColumns(
-                  tableInstance.state.hiddenColumns.filter(
-                    (c) => !columnIds.includes(c),
-                  ),
+                return setHiddenColumns(
+                  hiddenColumns.filter((c) => !columnIds.includes(c)),
                 );
               }}
             >

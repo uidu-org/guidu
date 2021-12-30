@@ -1,7 +1,4 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { ControlsSkeleton, Finder } from '@uidu/data-controls';
-import { byName } from '@uidu/data-views';
-import { ShellBodyWithSpinner } from '@uidu/shell';
 import {
   Aggregated,
   AggregatedSelection,
@@ -18,6 +15,7 @@ import {
   useFlexLayout,
   useGlobalFilter,
   useGroupBy,
+  usePagination,
   useResizeColumns,
   useRowSelect,
   useSortBy,
@@ -25,46 +23,7 @@ import {
 } from 'react-table';
 import { useExportData } from 'react-table-plugins';
 import { DataManagerProps } from '../types';
-import DataView from './DataView';
-import DataViewFooter from './DataViewFooter';
-import DataViewSidebar from './DataViewSidebar';
-
-const defaultAvailableControls = {
-  calendarToolbar: {
-    visible: true,
-    props: {},
-  },
-  finder: {
-    visible: true,
-    props: {},
-  },
-  viewer: {
-    visible: true,
-    props: {},
-  },
-  grouper: {
-    visible: true,
-    props: {},
-  },
-  filterer: {
-    visible: true,
-    props: {},
-  },
-  sorter: {
-    visible: true,
-    props: {},
-  },
-  more: {
-    visible: true,
-    props: {},
-  },
-};
-
-const defaultRowHeight = 56;
-const defaultColumnCount = 4;
-const defaultStartDateField = 'createdAt';
-const defaultEndDateField = null;
-const defaultPrimaryField = null;
+import { DataManagerProvider } from './DataManagerContext';
 
 export default function DataManager({
   children,
@@ -72,7 +31,7 @@ export default function DataManager({
   columnDefs: columns,
   onItemClick,
   onItemSelect = () => {},
-  onViewUpdate = () => {},
+  onViewUpdate = (state) => {},
   currentView,
   updateView,
   actions = [],
@@ -81,14 +40,6 @@ export default function DataManager({
   getExportFileBlob,
   getExportFileName,
 }: DataManagerProps) {
-  const setColumnCount = (columnCount) => {
-    onViewUpdate(currentView, {
-      preferences: { ...currentView.preferences, columnCount },
-    }).then(() => {
-      setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
-    });
-  };
-
   const defaultColumn = React.useMemo(
     () => ({
       minWidth: 80,
@@ -115,6 +66,7 @@ export default function DataManager({
       data: rowData,
       defaultColumn,
       initialState: {
+        pageSize: 20,
         ...(currentView?.state || {}),
       },
       // useControlledState: (state) => {
@@ -136,6 +88,7 @@ export default function DataManager({
     useSortBy,
     useResizeColumns,
     useExpanded,
+    usePagination,
     useRowSelect,
     useExportData,
     (hooks) => {
@@ -200,8 +153,7 @@ export default function DataManager({
 
   useImperativeHandle(forwardedRef, () => tableInstance, [tableInstance]);
 
-  const { state, setGlobalFilter, globalFilter, selectedFlatRows } =
-    tableInstance;
+  const { state, selectedFlatRows } = tableInstance;
 
   const onViewUpdateDebounce = useAsyncDebounce(onViewUpdate, 100);
   const onItemSelectDebounce = useAsyncDebounce(onItemSelect, 100);
@@ -214,163 +166,23 @@ export default function DataManager({
     onItemSelectDebounce(selectedFlatRows);
   }, [selectedFlatRows, onItemSelectDebounce]);
 
-  const setAggregation = (column, aggregate) => {
-    console.log(column);
-    // const index = columnDefinitions.findIndex(({ id }) => id === column.id);
-    // setColumnDefinitions([
-    //   ...columnDefinitions.slice(0, index),
-    //   {
-    //     ...columnDefinitions[index],
-    //     aggregate,
-    //   },
-    //   ...columnDefinitions.slice(index + 1),
-    // ]);
-  };
-
-  const setColumnWidth = (column, width: number) => {
-    console.log(column);
-    // const index = columnDefinitions.findIndex(({ id }) => id === column.id);
-    // setColumnDefinitions([
-    //   ...columnDefinitions.slice(0, index),
-    //   {
-    //     ...columnDefinitions[index],
-    //     width,
-    //   },
-    //   ...columnDefinitions.slice(index + 1),
-    // ]);
-  };
-
-  const renderView = ({
-    viewProps = {
-      board: {},
-      calendar: {},
-      gallery: {},
-      list: {},
-      table: {},
-    },
-  }) => {
-    if (!currentView) {
-      return <ShellBodyWithSpinner />;
-    }
-
-    const {
-      preferences = {
-        rowHeight: defaultRowHeight,
-        columnCount: defaultColumnCount,
-        startDateField: defaultStartDateField,
-        endDateField: defaultEndDateField,
-        primaryField: defaultPrimaryField,
-      },
-    } = currentView;
-
-    const {
-      rowHeight,
-      columnCount,
-      startDateField,
-      endDateField,
-      primaryField,
-    } = preferences;
-
-    return (
-      <DataView
-        {...state}
-        setAggregation={setAggregation}
-        setColumnWidth={setColumnWidth}
-        // props spreading
-        rowData={rowData}
-        onItemClick={onItemClick}
-        currentView={currentView}
-        // onAddField={onAddField}
-        viewProps={viewProps}
-        tableInstance={tableInstance}
-        data={rowData}
-        columns={columns}
-        rowHeight={rowHeight}
-        columnCount={columnCount}
-        startDateField={startDateField}
-        endDateField={endDateField}
-        primaryField={primaryField}
-      />
-    );
-  };
-
-  const renderSidebar = () => {
-    return <DataViewSidebar currentView={currentView} data={rowData} />;
-  };
-
-  const renderFooter = () => {
-    return <DataViewFooter tableInstance={tableInstance} />;
-  };
-
-  const renderControls = ({ controls }) => {
-    const availableControls = {
-      ...defaultAvailableControls,
-      ...controls,
-    };
-
-    if (!currentView) {
-      return <ControlsSkeleton />;
-    }
-
-    const {
-      preferences = {
-        rowHeight: defaultRowHeight,
-        columnCount: defaultColumnCount,
-        startDateField: defaultStartDateField,
-        endDateField: defaultEndDateField,
-        primaryField: defaultPrimaryField,
-      },
-    } = currentView;
-
-    const {
-      rowHeight,
-      columnCount,
-      startDateField,
-      endDateField,
-      primaryField,
-    } = preferences;
-
-    const {
-      icon: Icon,
-      color,
-      controls: Controls = () => null,
-    } = byName[currentView.kind];
-
-    return (
-      <>
-        <Controls
-          tableInstance={tableInstance}
-          isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
-          availableControls={availableControls}
-          currentView={currentView}
-          updateView={updateView}
-          columnDefs={columns}
-          // onDragEnd={this.moveColumn}
-          // onResize={this.setRowHeight}
-          rowHeight={rowHeight}
-          // onDownload={() => this.gridApi.exportDataAsCsv()}
-          columnCount={columnCount}
-          onSetColumnCount={setColumnCount}
-          actions={availableControls.more.actions}
-          // isAutoSaving={isAutoSaving}
-          startDateField={startDateField}
-          endDateField={endDateField}
-          primaryField={primaryField}
-        />
-        {availableControls.finder.visible && (
-          <Finder
-            onChange={(e) => setGlobalFilter(e.target.value)}
-            {...availableControls.finder.props}
-          />
-        )}
-      </>
-    );
-  };
-
-  return (children as any)({
-    renderControls,
-    renderView,
-    renderSidebar,
-    renderFooter,
-  });
+  return (
+    <DataManagerProvider
+      currentView={currentView}
+      rowData={rowData}
+      columnDefs={columns}
+      tableInstance={tableInstance}
+      onItemClick={onItemClick}
+      onItemSelect={onItemSelect}
+      onViewUpdate={onViewUpdate}
+      updateView={updateView}
+      actions={actions}
+      canSelectRows={canSelectRows}
+      forwardedRef={forwardedRef}
+      getExportFileBlob={getExportFileBlob}
+      getExportFileName={getExportFileName}
+    >
+      {children}
+    </DataManagerProvider>
+  );
 }

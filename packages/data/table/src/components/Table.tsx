@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useVirtual } from 'react-virtual';
 import { theme } from 'twin.macro';
 import * as defaultComponents from '../styled';
@@ -33,7 +33,7 @@ const Table = ({
   const {
     getTableBodyProps,
     headerGroups,
-    rows,
+    page,
     prepareRow,
     footerGroups,
     columns,
@@ -73,10 +73,10 @@ const Table = ({
     const maxWidth = 400;
     const magicSpacing = 18;
 
-    for (var i = 0; i < rows.length; i++) {
-      if (rows[i] !== undefined && rows[i].original[accessor] !== null) {
-        if ((rows[i].original[accessor] || 'null').length > max) {
-          max = (rows[i].original[accessor] || 'null').length;
+    for (var i = 0; i < page.length; i++) {
+      if (page[i] !== undefined && page[i].original[accessor] !== null) {
+        if ((page[i].original[accessor] || 'null').length > max) {
+          max = (page[i].original[accessor] || 'null').length;
         }
       }
     }
@@ -84,9 +84,9 @@ const Table = ({
     return Math.min(maxWidth, Math.max(max, name.length) * magicSpacing);
   };
 
-  const Row = React.useCallback(
+  const Row = useCallback(
     ({ index, size, start }) => {
-      const row = rows[index];
+      const row = page[index];
       prepareRow(row);
       return (
         <StyledRow
@@ -142,13 +142,13 @@ const Table = ({
         </StyledRow>
       );
     },
-    [rows, prepareRow, rowHeight, setAggregation, onItemClick],
+    [page, prepareRow, rowHeight, setAggregation, onItemClick],
   );
 
   const parentRef = React.useRef();
 
   const rowVirtualizer = useVirtual({
-    size: rows.length,
+    size: page.length,
     parentRef,
     overscan: 5,
     estimateSize: React.useCallback((i) => rowHeight, [rowHeight]),

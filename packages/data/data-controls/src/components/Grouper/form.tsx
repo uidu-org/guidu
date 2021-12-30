@@ -1,5 +1,6 @@
 import { XIcon } from '@heroicons/react/solid';
 import Button from '@uidu/button';
+import { useDataManagerContext } from '@uidu/data-manager';
 import { Form } from '@uidu/form';
 import Select from '@uidu/select';
 import React, { useRef } from 'react';
@@ -7,13 +8,15 @@ import { FormattedMessage } from 'react-intl';
 import { PickField } from '../../utils';
 import { GrouperFormProps } from './types';
 
-export default function GrouperForm({ tableInstance }: GrouperFormProps) {
+export default function GrouperForm({}: GrouperFormProps) {
   const form = useRef(null);
   const {
-    setGroupBy,
-    columns,
-    state: { groupBy },
-  } = tableInstance;
+    tableInstance: {
+      setGroupBy,
+      columns,
+      state: { groupBy },
+    },
+  } = useDataManagerContext();
 
   const handleSubmit = async (model) => {
     setGroupBy(model.groupers || []);

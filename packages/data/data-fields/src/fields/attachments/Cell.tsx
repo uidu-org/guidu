@@ -8,7 +8,6 @@ export default function Cell(params) {
   return (
     <div>
       {(params.value || []).map((attachment, index) => {
-        console.log(attachment);
         return (
           <div tw="h-5 rounded" key={attachment.id}>
             <img src={attachment.url} tw="h-full rounded" />

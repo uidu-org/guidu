@@ -1,3 +1,4 @@
+import { useDataManagerContext } from '@uidu/data-manager';
 import Popup from '@uidu/popup';
 import React, { useState } from 'react';
 import { Filter } from 'react-feather';
@@ -6,14 +7,13 @@ import { Trigger } from '../../styled';
 import FiltererForm from './form';
 import { FiltererProps } from './types';
 
-export default function Filterer({
-  onChange = async (model) => console.log(model),
-  tableInstance,
-}: FiltererProps) {
+export default function Filterer({}: FiltererProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const {
-    state: { filters },
-  } = tableInstance;
+    tableInstance: {
+      state: { filters },
+    },
+  } = useDataManagerContext();
   const filtersCount = filters.length;
 
   return (
@@ -25,12 +25,13 @@ export default function Filterer({
         <Trigger
           {...triggerProps}
           activeBg="#d1f7c4"
-          className="mr-2 btn"
           active={!!filtersCount}
-          onClick={() => setIsDialogOpen(true)}
+          onClick={() =>
+            setIsDialogOpen((prevIsDialogOpen) => !prevIsDialogOpen)
+          }
+          iconBefore={<Filter strokeWidth={2} size={14} />}
         >
-          <Filter strokeWidth={2} size={14} tw="xl:mr-2" />
-          <span style={{ textTransform: 'initial' }} tw="hidden xl:block">
+          <span tw="hidden xl:block">
             <FormattedMessage
               defaultMessage={`{filtersCount, plural,
                   =0 {Filter}
@@ -44,11 +45,7 @@ export default function Filterer({
       )}
       content={() => (
         <div tw="w-screen sm:width[500px] py-4 text-sm">
-          <FiltererForm
-            tableInstance={tableInstance}
-            filters={filters}
-            filtersCount={filtersCount}
-          />
+          <FiltererForm filtersCount={filtersCount} />
         </div>
       )}
     ></Popup>

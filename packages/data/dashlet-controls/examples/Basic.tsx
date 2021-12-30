@@ -5,7 +5,7 @@ import { More } from '../src';
 export default class Basic extends Component<any> {
   render() {
     return (
-      <div className="d-flex align-items-center p-3">
+      <div className="p-3 d-flex align-items-center">
         {/* <TimeFrame
           activeTimeFrame="1Y"
           onChange={console.log}

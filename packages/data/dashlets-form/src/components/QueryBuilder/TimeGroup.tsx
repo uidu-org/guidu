@@ -10,7 +10,7 @@ const Menu = ({ selectedItem, children, ref, ...rest }) => {
       shouldFlip
       trigger={
         <div
-          className="d-flex align-items-center justify-content-center mx-3 font-weight-bold text-primary"
+          className="mx-3 d-flex align-items-center justify-content-center font-weight-bold text-primary"
           style={{
             backgroundColor: selectedItem
               ? selectedItem.bg
@@ -67,7 +67,6 @@ const TimeGroup = ({
   availableMembers,
   updateMethods,
 }) => {
-  console.log(members);
   return (
     <>
       {members.map((m) => (
@@ -110,7 +109,6 @@ const TimeGroup = ({
             getOptionValue={({ name }) => name}
             getOptionLabel={({ title }) => title}
             onChange={(name, value) => {
-              console.log(value);
               updateMethods.update(m, { ...m, granularity: value });
             }}
           />

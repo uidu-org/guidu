@@ -57,12 +57,10 @@ export default function Item({
           <div
             className={`mb-2${cover ? ' px-3 px-xl-4' : ''}`}
             style={{
-              left: '-1.5rem',
-              width: 'fit-content',
               maxWidth: `calc('100vw - 100px')`,
               fontWeight: 500,
             }}
-            tw="sticky"
+            tw="sticky width[fit-content] -left-6"
           >
             {primary.render('Cell', { ...primary.column.cellProps })}
           </div>

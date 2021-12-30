@@ -25,7 +25,6 @@ export default class Basic extends Component<any, any> {
 
   render() {
     const { rowData, loaded, isEditing } = this.state;
-    console.log(isEditing);
     return (
       <IntlProvider locale="en">
         <DashboardManager
@@ -41,7 +40,7 @@ export default class Basic extends Component<any, any> {
         >
           {({ renderControls, renderDashlets }) => (
             <ShellMain>
-              <ShellHeader className="border-bottom px-xl-4 px-3 d-flex align-items-center">
+              <ShellHeader className="px-3 border-bottom px-xl-4 d-flex align-items-center">
                 {/* {renderControls({})} */}
                 <h5 className="my-0 mr-2">Dashboard</h5>
                 <Shuffle

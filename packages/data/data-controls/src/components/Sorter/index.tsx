@@ -1,3 +1,4 @@
+import { useDataManagerContext } from '@uidu/data-manager';
 import Popup from '@uidu/popup';
 import React, { useState } from 'react';
 import { Sliders } from 'react-feather';
@@ -6,12 +7,13 @@ import { Trigger } from '../../styled';
 import SorterForm from './form';
 import { SorterProps } from './types';
 
-export default function Sorter({ tableInstance }: SorterProps) {
+export default function Sorter(props: SorterProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const {
-    state: { sortBy },
-  } = tableInstance;
-
+    tableInstance: {
+      state: { sortBy },
+    },
+  } = useDataManagerContext();
   const sortersCount = sortBy.length;
 
   return (
@@ -23,15 +25,13 @@ export default function Sorter({ tableInstance }: SorterProps) {
         <Trigger
           {...triggerProps}
           activeBg="#fee2d5"
-          className="mr-2 btn"
           active={!!sortersCount}
-          onClick={() => setIsDialogOpen(true)}
+          onClick={() =>
+            setIsDialogOpen((prevIsDialogOpen) => !prevIsDialogOpen)
+          }
+          iconBefore={<Sliders strokeWidth={2} size={14} />}
         >
-          <Sliders strokeWidth={2} size={14} tw="xl:mr-2" />
-          <span
-            style={{ textTransform: 'initial' }}
-            className="d-none d-xl-block"
-          >
+          <span tw="hidden xl:block">
             <FormattedMessage
               defaultMessage={`{sortersCount, plural,
                   =0 {Sort}
@@ -46,7 +46,7 @@ export default function Sorter({ tableInstance }: SorterProps) {
       content={() => {
         return (
           <div tw="w-screen sm:width[300px] py-4 text-sm">
-            <SorterForm tableInstance={tableInstance} sorters={sortBy} />
+            <SorterForm />
           </div>
         );
       }}

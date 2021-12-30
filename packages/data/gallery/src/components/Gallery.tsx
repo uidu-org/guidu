@@ -7,7 +7,6 @@ import GalleryItem from './GalleryItem';
 
 const ITEM_HEADER_HEIGHT = 42;
 const ITEM_COLUMN_ROW = 64;
-const ITEM_PADDING = 32;
 
 function chunkArray(myArray, chunkSize) {
   const results = [];
@@ -28,7 +27,7 @@ export default function Gallery({
 }: GalleryProps) {
   const parentRef = useRef();
 
-  const { prepareRow, columns } = tableInstance;
+  const { prepareRow, page, columns, visibleColumns } = tableInstance;
 
   const getGutterSize = ({ avatar, cover }) => {
     if (cover) {
@@ -50,7 +49,7 @@ export default function Gallery({
       getGutterSize({ avatar, cover }) +
       ITEM_HEADER_HEIGHT +
       ITEM_COLUMN_ROW *
-        tableInstance.visibleColumns.filter(
+        visibleColumns.filter(
           (column) =>
             column.kind !== 'uid' &&
             column.kind !== 'selection' &&
@@ -61,13 +60,11 @@ export default function Gallery({
       // ITEM_PADDING +
       gutterSize
     );
-  }, [gutterSize, tableInstance.visibleColumns, avatar, cover]);
-
-  console.log(columnCount);
+  }, [gutterSize, visibleColumns, avatar, cover]);
 
   const items = useMemo(
-    () => chunkArray(tableInstance.rows, columnCount),
-    [tableInstance.rows, columnCount],
+    () => chunkArray(page, columnCount),
+    [page, columnCount],
   );
 
   const rowVirtualizer = useVirtual({
@@ -81,10 +78,9 @@ export default function Gallery({
     <ShellBody>
       <ScrollableContainer ref={parentRef}>
         <div
+          tw="w-full relative"
           style={{
             height: `${rowVirtualizer.totalSize}px`,
-            width: '100%',
-            position: 'relative',
           }}
         >
           {rowVirtualizer.virtualItems.map((virtualRow) => {

@@ -50,13 +50,16 @@ export const columnDefsNext = {
   'Users.email': {
     cellProps: {
       avatar: ({ row }) => {
-        return row.values['Users.avatar'];
+        if (!row.values['Users.avatar']) {
+          return null;
+        }
+        return `https://uidu.local:8443/uploads/${row.values['Users.avatar']}`;
       },
     },
     primary: true,
     name: 'Email',
     pinned: 'left',
-    kind: 'member',
+    kind: 'contact',
     width: 340,
   },
   'Donations.average': {
@@ -104,7 +107,9 @@ export const availableColumns = [
   {
     kind: 'contact',
     cellProps: {
-      avatar: (data) => (data ? data.avatar : null),
+      avatar: ({ row }) => {
+        return row.original.avatar;
+      },
     },
     id: 'member',
     accessor: (data) => data.member.email,
@@ -307,7 +312,7 @@ export const fetchContacts = () => {
       resolve(
         Array.from(Array(100).keys()).map((i) => ({
           id: faker.datatype.uuid(),
-          avatar: faker.image.avatar(),
+          avatar: `https://i.pravatar.cc/150?img=${i}`,
           email: faker.internet.email(),
           displayName: faker.name.findName(),
           cover: faker.image.imageUrl(),

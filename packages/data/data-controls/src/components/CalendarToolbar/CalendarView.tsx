@@ -37,8 +37,10 @@ export default function CalendarView({
           content={<FormattedMessage defaultMessage="Choose calendar view" />}
           position="bottom"
         >
-          <Trigger activeBg="#d1f7c4" className="btn">
-            <Layout strokeWidth={2} size={14} tw="mr-2" />
+          <Trigger
+            activeBg="#d1f7c4"
+            iconBefore={<Layout strokeWidth={2} size={14} />}
+          >
             <span tw="text-transform[capitalize]">{view}</span>
           </Trigger>
         </Tooltip>

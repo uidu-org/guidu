@@ -131,10 +131,8 @@ export default class Board extends Component<BoardProps, BoardState> {
       tableInstance,
     } = this.props;
 
-    const {
-      container: ContainerComponent,
-      parent: ParentContainerComponent,
-    } = this.components;
+    const { container: ContainerComponent, parent: ParentContainerComponent } =
+      this.components;
 
     const board = (
       <Droppable

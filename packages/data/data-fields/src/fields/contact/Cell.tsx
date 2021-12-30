@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-export default (params) => {
+function Cell(params) {
   // if (params.row.isGrouped) {
   //   return groupRenderer(params);
   // }
@@ -9,11 +9,16 @@ export default (params) => {
   return (
     <div tw="min-w-0">
       <span tw="flex items-center">
-        {row && row.original && row.original.avatar && (
-          <img tw="rounded-full mr-2.5 w-6" src={row.original.avatar} />
+        {params.avatar && (
+          <img
+            tw="rounded-full mr-2.5 border w-6"
+            src={params.avatar(params)}
+          />
         )}
         <span tw="truncate">{value}</span>
       </span>
     </div>
   );
-};
+}
+
+export default memo(Cell);

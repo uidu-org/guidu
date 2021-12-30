@@ -25,7 +25,6 @@ function CurrentField({ fields }) {
   const fetchMocks = useCallback(async () => {
     if (mocksPromise && mocksPromise.load) {
       return mocksPromise.load().then((response) => {
-        console.log(response);
         setMocks(response.default);
         setIsLoadingMocks(false);
       });
@@ -42,8 +41,6 @@ function CurrentField({ fields }) {
   if (isLoadingMocks) {
     return null;
   }
-
-  console.log(mocks);
 
   return (
     <>
@@ -152,7 +149,7 @@ function Basic({}) {
       }
       `}
       </style>
-      <IntlProvider locale="en">
+      <IntlProvider locale="it">
         <ShellSidebar tw="border-r" style={{ width: '25%' }}>
           <ShellBody>
             <ScrollableContainer>

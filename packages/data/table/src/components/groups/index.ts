@@ -7,8 +7,6 @@ export const groupRenderer = ({ api, value, node }) => {
     return null;
   }
 
-  console.log(value);
-
   return value;
 
   const eDiv = document.createElement('div');

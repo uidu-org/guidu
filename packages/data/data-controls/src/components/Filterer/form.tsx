@@ -1,6 +1,7 @@
 import { XIcon } from '@heroicons/react/solid';
 import Button from '@uidu/button';
 import { getColumnDef, getFieldFromColumnDef } from '@uidu/data-fields';
+import { useDataManagerContext } from '@uidu/data-manager';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
 import React, { useRef } from 'react';
@@ -8,18 +9,23 @@ import { FormattedMessage } from 'react-intl';
 import PickField from '../../utils/PickField';
 import { FiltererFormProps } from './types';
 
-export default function FiltererForm({
-  filtersCount,
-  tableInstance,
-  filters,
-}: FiltererFormProps) {
+export default function FiltererForm({ filtersCount }: FiltererFormProps) {
+  const {
+    columnDefs,
+    tableInstance: {
+      state: { filters },
+      columns,
+      setFilter,
+      setAllFilters,
+    },
+  } = useDataManagerContext();
   const form = useRef(null);
 
   const handleSubmit = async (model) => {
-    tableInstance.setAllFilters(model.filters);
+    setAllFilters(model.filters);
   };
 
-  const filterableColumnDefs = tableInstance.columns.filter((c) => !c.hide);
+  const filterableColumnDefs = columns.filter((c) => !c.hide);
 
   return (
     <Form ref={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
@@ -89,7 +95,7 @@ export default function FiltererForm({
                 type="button"
                 onClick={(e) => {
                   e.preventDefault();
-                  tableInstance.setFilter(filter.id, undefined);
+                  setFilter(filter.id, undefined);
                 }}
                 iconBefore={<XIcon tw="h-4 w-4" />}
               />
@@ -105,7 +111,7 @@ export default function FiltererForm({
             )
           }
           onClick={(columnDef) => {
-            tableInstance.setFilter(columnDef.id, 'a');
+            setFilter(columnDef.id, 'a');
           }}
           isDefaultOpen={filtersCount === 0}
           columnDefs={filterableColumnDefs}

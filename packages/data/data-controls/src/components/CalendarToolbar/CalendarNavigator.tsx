@@ -14,29 +14,20 @@ export default function CalendarNavigator({
     <div tw="flex items-center">
       <Trigger
         activeBg="#d0f0fd"
-        className="btn"
         onClick={() => onNavigate('PREV')}
-      >
-        <ChevronLeft strokeWidth={2} size={14} />
-      </Trigger>
+        iconBefore={<ChevronLeft strokeWidth={2} size={14} />}
+      />
       <Tooltip content={label} position="bottom">
-        <Trigger
-          activeBg="#d0f0fd"
-          className="btn justify-content-center"
-          style={{ width: 140 }}
-        >
-          <span style={{ textTransform: 'initial' }} tw="truncate">
-            {label}
-          </span>
+        <Trigger activeBg="#d0f0fd" style={{ width: 140 }}>
+          <span tw="truncate">{label}</span>
         </Trigger>
       </Tooltip>
       <Trigger
         activeBg="#d0f0fd"
         className="btn"
         onClick={() => onNavigate('NEXT')}
-      >
-        <ChevronRight strokeWidth={2} size={14} />
-      </Trigger>
+        iconBefore={<ChevronRight strokeWidth={2} size={14} />}
+      />
     </div>
   );
 }

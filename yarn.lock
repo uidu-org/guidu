@@ -5637,6 +5637,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-table@npm:^7.7.9":
+  version: 7.7.9
+  resolution: "@types/react-table@npm:7.7.9"
+  dependencies:
+    "@types/react": "*"
+  checksum: 3f6c847c8e904479875bb249af02b70e271c5480d0f8b94f7da96eb3980a83cf011d7e558e885259851e3af8defb6493deb147227242766ebca37c9cb630c306
+  languageName: node
+  linkType: hard
+
 "@types/react-transition-group@npm:^4.4.0, @types/react-transition-group@npm:^4.4.4":
   version: 4.4.4
   resolution: "@types/react-transition-group@npm:4.4.4"
@@ -17785,6 +17794,7 @@ __metadata:
     "@types/react-router": ^5.1.17
     "@types/react-router-dom": ^5.3.2
     "@types/react-syntax-highlighter": ^13.5.2
+    "@types/react-table": ^7.7.9
     "@types/react-transition-group": ^4.4.4
     "@types/react-virtualized": ^9.21.16
     "@types/semver": ^7.3.9

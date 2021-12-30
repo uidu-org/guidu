@@ -9,10 +9,15 @@ import React, { useCallback, useRef, useState } from 'react';
 import 'react-big-calendar/lib/sass/styles';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { DataManagerNext } from '../';
 import '../../calendar/themes/uidu.scss';
 import { byName } from '../../data-views/src';
 import { columnDefsNext } from '../../table/examples-utils';
+import {
+  DataManagerControls,
+  DataManagerCube,
+  DataManagerFooter,
+  DataManagerView,
+} from '../src';
 
 // import '../../table/themes/uidu.scss';
 
@@ -149,8 +154,6 @@ function CubeExample() {
   const resultSet = useRef(null);
   const [dataViews, setDataViews] = useState(defaultDataViews);
   const [currentView, setCurrentView] = useState(defaultDataViews[0]);
-  const [rowData, setRowData] = useState([]);
-  const [loaded, setLoaded] = useState(false);
   const [rendered, setRendered] = useState(false);
   const [isAutoSaving, setIsAutoSaving] = useState(null);
 
@@ -163,7 +166,6 @@ function CubeExample() {
 
   const onViewUpdate = useCallback(
     (state) => {
-      console.log(state);
       if (!isEqual(currentView.state, state)) {
         setIsAutoSaving('in-progress');
         const updatedView = {
@@ -189,11 +191,8 @@ function CubeExample() {
     [currentView],
   );
 
-  console.log(currentView);
-  console.log(resultSet);
-
   return (
-    <DataManagerNext
+    <DataManagerCube
       // isAutoSaving={isAutoSaving}
       key={`table-for-${currentView.id}`}
       columnDefs={columnDefsNext}
@@ -201,16 +200,14 @@ function CubeExample() {
       onItemClick={console.log}
       onViewUpdate={onViewUpdate}
       onReady={(result) => {
-        console.log(result);
         resultSet.current = result;
       }}
     >
-      {({ renderControls, renderView, renderSidebar }) => (
-        <ShellMain>
-          <>
-            <ShellBody>
-              <>
-                {/* <ShellSidebar
+      <ShellMain>
+        <>
+          <ShellBody>
+            <>
+              {/* <ShellSidebar
                             style={{
                               width: '20%',
                               background: '#fff',
@@ -219,86 +216,68 @@ function CubeExample() {
                           >
                             <SideNavigation schema={schema} />
                           </ShellSidebar> */}
-                <ShellMain>
-                  <ShellHeader
-                    className="px-3 bg-white border-bottom"
-                    style={{ zIndex: 30 }}
-                  >
-                    <div style={{ width: 300 }}>
-                      <Form>
-                        <Select
-                          layout="elementOnly"
-                          name="dataView"
-                          isClearable={false}
-                          value={currentView.id}
-                          options={dataViews.map((dataView) => {
-                            const d = byName[dataView.kind];
-                            const { icon: Icon, color } = d;
-                            return {
-                              id: dataView.id,
-                              name: dataView.name,
-                              before: <Icon size={16} color={color} />,
-                              ...dataView,
-                            };
-                          })}
-                          onChange={(name, value, { option }) => {
-                            toggleView(option);
-                          }}
-                        />
-                      </Form>
-                    </div>
-                    <More />
-                    {renderControls({
-                      controls: {
-                        viewer: {
-                          visible: false,
+              <ShellMain>
+                <ShellHeader
+                  className="px-3 bg-white border-bottom"
+                  style={{ zIndex: 30 }}
+                >
+                  <div style={{ width: 300 }}>
+                    <Form>
+                      <Select
+                        layout="elementOnly"
+                        name="dataView"
+                        isClearable={false}
+                        value={currentView.id}
+                        options={dataViews.map((dataView) => {
+                          const d = byName[dataView.kind];
+                          const { icon: Icon, color } = d;
+                          return {
+                            id: dataView.id,
+                            name: dataView.name,
+                            before: <Icon size={16} color={color} />,
+                            ...dataView,
+                          };
+                        })}
+                        onChange={(name, value, { option }) => {
+                          toggleView(option);
+                        }}
+                      />
+                    </Form>
+                  </div>
+                  <More />
+                  <DataManagerControls />
+                  <div>
+                    <button onClick={() => resultSet.current.refetch()}>
+                      Refetch
+                    </button>
+                  </div>
+                </ShellHeader>
+                <ShellBody>
+                  <ShellMain>
+                    <DataManagerView
+                      viewProps={{
+                        gallery: {
+                          gutterSize: 24,
                         },
-                        finder: {
-                          visible: true,
+                        list: {
+                          rowHeight: 104,
                         },
-                        more: {
-                          visible: true,
-                          actions: [
-                            {
-                              name: 'Rename',
-                              rename: true,
-                            },
-                          ],
+                        board: {},
+                        table: {
+                          headerHeight: 48,
+                          rowHeight: 48,
                         },
-                      },
-                    })}
-                    <div>
-                      <button onClick={() => resultSet.current.refetch()}>
-                        Refetch
-                      </button>
-                    </div>
-                  </ShellHeader>
-                  <ShellBody>
-                    <ShellMain>
-                      {renderView({
-                        viewProps: {
-                          gallery: {
-                            gutterSize: 24,
-                          },
-                          list: {
-                            rowHeight: 104,
-                          },
-                          board: {},
-                          table: {
-                            headerHeight: 48,
-                            rowHeight: 48,
-                          },
-                        },
-                      })}
-                    </ShellMain>
-                  </ShellBody>
-                </ShellMain>
-              </>
-            </ShellBody>
-          </>
-        </ShellMain>
-      )}
-    </DataManagerNext>
+                      }}
+                    />
+                  </ShellMain>
+                </ShellBody>
+                <DataManagerFooter />
+              </ShellMain>
+            </>
+          </ShellBody>
+        </>
+      </ShellMain>
+    </DataManagerCube>
   );
 }
 

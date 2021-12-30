@@ -57,7 +57,6 @@ export default function Dashlet({
   isCard = true,
   ...rest
 }: any) {
-  console.log(showHeader);
   // this dashlet passes data without query
   const { data } = dashlet;
   if (data) {
@@ -85,7 +84,6 @@ export default function Dashlet({
     }
 
     if (error) {
-      console.log(error);
       return (
         <Card>
           <FormattedMessage

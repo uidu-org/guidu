@@ -153,8 +153,6 @@ export default class Basic extends Component<any, any> {
   }
 
   updateView = async (currentView, props) => {
-    console.log(currentView);
-    console.log(props);
     this.setState({ isAutoSaving: 'in-progress' });
     const dataViews = this.state.dataViews.map((item) => {
       if (item.id !== currentView.id) {

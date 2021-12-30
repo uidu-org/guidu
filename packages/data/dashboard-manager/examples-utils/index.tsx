@@ -274,7 +274,6 @@ export const dashlets = [
     },
     layout: { x: 0, y: 4, w: 8, h: 8 },
     dataFormatter: (data) => {
-      console.log(data);
       return data.map((item) => {
         return {
           ...item,

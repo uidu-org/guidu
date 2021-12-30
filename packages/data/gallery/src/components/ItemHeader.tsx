@@ -6,10 +6,10 @@ export default class ItemHeader extends PureComponent<any> {
     if (primary) {
       return (
         <div
-          className="card-header border-0 d-flex align-items-center"
+          className="border-0 card-header d-flex align-items-center"
           style={{ fontWeight: 500, height: 42 }}
         >
-          <span className="text-truncate">
+          <span tw="truncate">
             {primary.valueGetter
               ? primary.valueGetter({
                   data: item,

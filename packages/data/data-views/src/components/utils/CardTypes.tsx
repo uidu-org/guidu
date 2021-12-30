@@ -1,15 +1,20 @@
+import { useDataManagerContext } from '@uidu/data-manager';
 import Select from '@uidu/select';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export default function CardTypes({ columnDefs, tableInstance }) {
-  const { state, setHiddenColumns } = tableInstance;
+export default function CardTypes({}) {
+  const {
+    tableInstance: {
+      columns,
+      state: { hiddenColumns },
+      setHiddenColumns,
+    },
+  } = useDataManagerContext();
 
   const options = [{ id: 'basic', name: 'Basic' }];
-  const coverField = columnDefs.filter((column) => column.kind === 'cover')[0];
-  const avatarField = columnDefs.filter(
-    (column) => column.kind === 'avatar',
-  )[0];
+  const coverField = columns.filter((column) => column.kind === 'cover')[0];
+  const avatarField = columns.filter((column) => column.kind === 'avatar')[0];
 
   if (avatarField) {
     options.push({ id: 'with-avatar', name: 'With avatar only' });
@@ -28,23 +33,23 @@ export default function CardTypes({ columnDefs, tableInstance }) {
     switch (value) {
       case 'with-avatar':
         setHiddenColumns([
-          ...state.hiddenColumns.filter((c) => c !== 'avatar'),
+          ...hiddenColumns.filter((c) => c !== 'avatar'),
           'cover',
         ]);
         break;
       case 'with-cover':
         setHiddenColumns([
-          ...state.hiddenColumns.filter((c) => c !== 'cover'),
+          ...hiddenColumns.filter((c) => c !== 'cover'),
           'avatar',
         ]);
         break;
       case 'with-avatar-and-cover':
         setHiddenColumns([
-          ...state.hiddenColumns.filter((c) => ['avatar', 'cover'].includes(c)),
+          ...hiddenColumns.filter((c) => ['avatar', 'cover'].includes(c)),
         ]);
         break;
       default:
-        setHiddenColumns([...state.hiddenColumns, 'avatar', 'cover']);
+        setHiddenColumns([...hiddenColumns, 'avatar', 'cover']);
         break;
     }
   };
@@ -76,7 +81,13 @@ export default function CardTypes({ columnDefs, tableInstance }) {
           id="data_views.gallery.configurator.cardAppearance"
         />
       }
-      rowClassName="mb-0"
+      menuPortalTarget={document.body}
+      styles={{
+        menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+      }}
+      components={{
+        DropdownIndicator: () => null,
+      }}
     />
   );
 }

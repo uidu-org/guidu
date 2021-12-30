@@ -1,5 +1,6 @@
 import { XIcon } from '@heroicons/react/solid';
 import Button from '@uidu/button';
+import { useDataManagerContext } from '@uidu/data-manager';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
 import React, { useRef } from 'react';
@@ -8,18 +9,19 @@ import { FormattedMessage } from 'react-intl';
 import { PickField } from '../../utils';
 import { SorterFormProps } from './types';
 
-export default function SorterForm({ tableInstance }: SorterFormProps) {
-  const { setSortBy } = tableInstance;
+export default function SorterForm(props: SorterFormProps) {
   const form = useRef(null);
+  const {
+    tableInstance: {
+      columns,
+      state: { sortBy },
+      setSortBy,
+    },
+  } = useDataManagerContext();
 
   const handleSubmit = async (model) => {
     setSortBy(model.sorters || []);
   };
-
-  const {
-    columns,
-    state: { sortBy },
-  } = tableInstance;
 
   const sortableColumnDefs = columns.filter((c) => c.isVisible && c.canSortBy);
 

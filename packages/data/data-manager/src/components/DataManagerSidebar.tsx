@@ -1,7 +1,7 @@
 import Spinner from '@uidu/spinner';
 import React from 'react';
 
-export default function DataViewSidebar({ currentView, data }) {
+export default function DataManagerSidebar({ currentView, data }) {
   if (['calendar', 'map'].includes(currentView.kind)) {
     if (!data) {
       return <Spinner />;
