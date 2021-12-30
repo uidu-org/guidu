@@ -16,3 +16,12 @@
 ---
 
 Data-manager refactor away from render props pattern
+
+# Breaking Changes
+
+DataManager no longer accepts render props for the `children` prop. You should use these new components:
+- DataManagerControls
+- DataManagerView
+- DataManagerFooter
+
+Pagination is now included by default, it now splits items into pages client-side.
