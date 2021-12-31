@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 1.5.7
+
+### Patch Changes
+
+- cee3624d9: DataManagerCube lazyLlads, better UI for pagination, fix dashlets -> Table pagination
+- Updated dependencies [cee3624d9]
+  - @uidu/table@1.2.1
+
 ## 1.5.6
 
 ### Patch Changes
