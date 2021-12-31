@@ -1,5 +1,11 @@
 # @uidu/pagination
 
+## 0.5.5
+
+### Patch Changes
+
+- cee3624d9: DataManagerCube lazyLlads, better UI for pagination, fix dashlets -> Table pagination
+
 ## 0.5.4
 
 ### Patch Changes

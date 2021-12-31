@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 2.0.1
+
+### Patch Changes
+
+- cee3624d9: DataManagerCube lazyLlads, better UI for pagination, fix dashlets -> Table pagination
+- 9fdb17352: Make pageSize configurable"
+- Updated dependencies [cee3624d9]
+  - @uidu/pagination@0.5.5
+  - @uidu/table@1.2.1
+  - @uidu/data-controls@2.0.1
+  - @uidu/data-views@1.1.6
+
 ## 2.0.0
 
 ### Major Changes
