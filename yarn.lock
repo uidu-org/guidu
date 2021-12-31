@@ -6595,7 +6595,7 @@ __metadata:
     "@uidu/list": ^1.2.0
     "@uidu/navigation": ^1.0.5
     "@uidu/page-header": ^1.0.1
-    "@uidu/pagination": "workspace:^"
+    "@uidu/pagination": 0.5.4
     "@uidu/shell": ^2.1.7
     "@uidu/side-navigation": 1.0.7
     "@uidu/spinner": ^0.5.4
@@ -8132,7 +8132,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/pagination@workspace:^, @uidu/pagination@workspace:packages/core/pagination":
+"@uidu/pagination@0.5.4, @uidu/pagination@workspace:packages/core/pagination":
   version: 0.0.0-use.local
   resolution: "@uidu/pagination@workspace:packages/core/pagination"
   dependencies:

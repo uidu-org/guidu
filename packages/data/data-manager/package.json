@@ -22,7 +22,7 @@
     "@uidu/data-views": "^1.1.5",
     "@uidu/gallery": "^1.2.0",
     "@uidu/list": "^1.2.0",
-    "@uidu/pagination": "workspace:^",
+    "@uidu/pagination": "0.5.4",
     "@uidu/shell": "^2.1.7",
     "@uidu/spinner": "^0.5.4",
     "@uidu/table": "^1.2.0",
