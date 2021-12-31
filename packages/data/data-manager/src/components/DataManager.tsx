@@ -39,6 +39,7 @@ export default function DataManager({
   forwardedRef,
   getExportFileBlob,
   getExportFileName,
+  pageSize = 50,
 }: DataManagerProps) {
   const defaultColumn = React.useMemo(
     () => ({
@@ -66,7 +67,7 @@ export default function DataManager({
       data: rowData,
       defaultColumn,
       initialState: {
-        pageSize: 10,
+        pageSize,
         ...(currentView?.state || {}),
       },
       // useControlledState: (state) => {

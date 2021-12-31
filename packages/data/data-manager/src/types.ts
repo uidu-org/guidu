@@ -28,6 +28,7 @@ export type DataManagerProps = {
     all?: boolean;
   }) => string;
   actions?: RowAction[];
+  pageSize?: number;
   forwardedRef: React.Ref<any>;
 };
 
