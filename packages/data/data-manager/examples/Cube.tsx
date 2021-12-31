@@ -217,10 +217,7 @@ function CubeExample() {
                             <SideNavigation schema={schema} />
                           </ShellSidebar> */}
               <ShellMain>
-                <ShellHeader
-                  className="px-3 bg-white border-bottom"
-                  style={{ zIndex: 30 }}
-                >
+                <ShellHeader tw="border-b px-3" style={{ zIndex: 30 }}>
                   <div style={{ width: 300 }}>
                     <Form>
                       <Select

@@ -86,7 +86,7 @@ const CustomStyles = createGlobalStyle`
   .dark {
     --brand-primary: 12, 45, 124;
     --brand-secondary: 240, 240, 240;
-    --brand-subtle: 240, 240, 240;
+    --brand-subtle: 40, 40, 50;
 
     --brand-danger: 239, 68, 68;
     --brand-warning: 251, 191, 36;
@@ -98,14 +98,14 @@ const CustomStyles = createGlobalStyle`
 
     --brand-on-primary: 255, 255, 255;
     --brand-on-secondary: 10, 10, 10;
-    --brand-on-subtle: 10, 10, 10;
+    --brand-on-subtle: 240, 240, 240;
 
     --body-primary-bg: 10, 10, 10;
     --body-secondary-bg: 20, 20, 20;
     --body-primary-color: 255, 255, 255;
     --body-secondary-color: black;
-    --body-on-primary-bg: 255, 254, 253;
-    --body-on-primary-hover-bg: 245, 244, 243;
+    --body-on-primary-bg: 16, 15, 17;
+    --body-on-primary-hover-bg: 50, 50, 50;
     --body-on-secondary-bg: 220, 220, 220;
 
     --border: 50, 50, 50;

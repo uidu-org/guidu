@@ -18,6 +18,11 @@ type PagePropsType = Diff<
 
 export default class Page extends Component<PagePropsType> {
   render() {
-    return <Button {...this.props} appearance="subtle" />;
+    return (
+      <Button
+        {...this.props}
+        appearance={this.props.isSelected ? 'default' : 'subtle'}
+      />
+    );
   }
 }

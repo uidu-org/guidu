@@ -12,27 +12,35 @@ function DataManagerResults({
   ...rest
 }: DataManagerCubeProps) {
   const columns = useMemo(() => {
-    return buildColumns([
-      {
-        kind: 'default',
-        name: 'Default fields',
-        columns: resultSet.tableColumns().map((c) => {
-          return {
-            ...c,
-            field: c.key,
-            id: c.key,
-            accessor: (row) => row[c.key],
-            name: c.title,
-            kind: c.meta ? c.meta.kind : 'string',
-            fieldGroup: 'default',
-            ...columnDefs[c.key],
-          };
-        }),
-      },
-    ]);
+    if (resultSet) {
+      return buildColumns([
+        {
+          kind: 'default',
+          name: 'Default fields',
+          columns: resultSet.tableColumns().map((c) => {
+            return {
+              ...c,
+              field: c.key,
+              id: c.key,
+              accessor: (row) => row[c.key],
+              name: c.title,
+              kind: c.meta ? c.meta.kind : 'string',
+              fieldGroup: 'default',
+              ...columnDefs[c.key],
+            };
+          }),
+        },
+      ]);
+    }
+    return [];
   }, [resultSet]);
 
-  const data = useMemo(() => resultSet.tablePivot(), [resultSet]);
+  const data = useMemo(() => {
+    if (resultSet) {
+      return resultSet.tablePivot();
+    }
+    return [];
+  }, [resultSet]);
 
   return <DataManagerComponent {...rest} columnDefs={columns} rowData={data} />;
 }
@@ -61,10 +69,6 @@ export default function DataManager({
 
   if (error) {
     return <p>Query is invalid</p>;
-  }
-
-  if (!resultSet) {
-    return <p>Loading...</p>;
   }
 
   return (

@@ -1,32 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import tw from 'twin.macro';
 
 const Tf = styled.div<{ height: number }>`
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  white-space: nowrap;
+  ${tw`flex items-center relative px-6 whitespace-nowrap border-t background[rgb(var(--body-on-primary-bg))]`}
   height: ${({ height }) => `${height - 16}px`};
   font-size: 0.9375rem;
-  border-top: 1px solid #f2f2f3;
-  /* border-right: 1px solid #f2f2f3; */
-  display: flex;
-  align-items: center;
   font-weight: 500;
-  position: relative;
-  background: var(--body-bg);
 `;
 
 export default function Footer({ footerGroups, rowHeight }) {
   return (
-    <div
-      style={{
-        position: 'sticky',
-        bottom: 0,
-        background: 'var(--body-bg)',
-        width: 'max-content',
-        minWidth: '100%',
-      }}
-    >
+    <div tw="sticky bottom-0 -mt-px background[rgb(var(--body-on-primary-bg))] width[max-content] z-10 min-w-full">
       {footerGroups.map((group) => (
         <div {...group.getFooterGroupProps()}>
           {group.headers

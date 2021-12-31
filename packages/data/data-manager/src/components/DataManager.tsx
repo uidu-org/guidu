@@ -66,7 +66,7 @@ export default function DataManager({
       data: rowData,
       defaultColumn,
       initialState: {
-        pageSize: 20,
+        pageSize: 10,
         ...(currentView?.state || {}),
       },
       // useControlledState: (state) => {

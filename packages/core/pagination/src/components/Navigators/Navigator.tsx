@@ -1,5 +1,4 @@
 import Button, { ButtonProps } from '@uidu/button';
-import { gridSize } from '@uidu/theme/constants';
 import React, { FC, SyntheticEvent } from 'react';
 
 export type NavigatorPropsType = {
@@ -19,27 +18,7 @@ export type NavigatorPropsType = {
 };
 
 const Navigator: FC<ButtonProps> = (props) => (
-  // @ts-ignore
-  <Button
-    {...props}
-    appearance="subtle"
-    spacing="none"
-    theme={(currentTheme, themeProps) => {
-      const { buttonStyles, ...rest } = currentTheme(themeProps);
-      const halfGridSize = gridSize() / 2;
-      return {
-        buttonStyles: {
-          ...buttonStyles,
-          paddingLeft: `${halfGridSize}px`,
-          paddingRight: `${halfGridSize}px`,
-          'html[dir=rtl] &': {
-            transform: 'rotate(180deg)',
-          },
-        },
-        ...rest,
-      };
-    }}
-  />
+  <Button {...props} appearance="subtle" />
 );
 
 export default Navigator;

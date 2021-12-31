@@ -2,7 +2,7 @@ import { useColumnDefs } from '@uidu/dashboard-manager';
 import { buildColumns } from '@uidu/data-fields';
 import Table, { Td, Th } from '@uidu/table';
 import React, { useMemo } from 'react';
-import { useFlexLayout, useSortBy, useTable } from 'react-table';
+import { useFlexLayout, usePagination, useSortBy, useTable } from 'react-table';
 
 export default function TableStateless({ values, keys, onItemClick }) {
   const columnDefs = useColumnDefs();
@@ -60,9 +60,13 @@ export default function TableStateless({ values, keys, onItemClick }) {
       columns,
       data,
       defaultColumn,
+      initialState: {
+        pageSize: 1000,
+      },
     },
     useFlexLayout,
     useSortBy,
+    usePagination,
   );
 
   return (
