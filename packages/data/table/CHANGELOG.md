@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 1.2.4
+
+### Patch Changes
+
+- 113bf823c: Fix lang extraction, Avatar display flex
+- Updated dependencies [113bf823c]
+  - @uidu/data-fields@1.4.9
+
 ## 1.2.3
 
 ### Patch Changes

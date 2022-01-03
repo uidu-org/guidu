@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 2.0.4
+
+### Patch Changes
+
+- b324cbeca: Added lang files"
+- Updated dependencies [113bf823c]
+  - @uidu/data-fields@1.4.9
+
 ## 2.0.3
 
 ### Patch Changes
