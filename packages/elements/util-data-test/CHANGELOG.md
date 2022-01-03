@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/emoji@0.5.12
+  - @uidu/mentions@0.3.12
+  - @uidu/task-decision@0.4.9
+
 ## 0.4.6
 
 ### Patch Changes

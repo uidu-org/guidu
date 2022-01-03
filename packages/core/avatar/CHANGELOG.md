@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.9.1
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/theme@0.6.6
+  - @uidu/tooltip@0.5.7
+
 ## 0.9.0
 
 ### Minor Changes

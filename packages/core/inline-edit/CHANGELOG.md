@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.3.8
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/button@1.3.6
+  - @uidu/inline-dialog@0.5.7
+  - @uidu/theme@0.6.6
+  - @uidu/field@1.0.4
+  - @uidu/field-text@1.1.8
+  - @uidu/form@1.2.9
+
 ## 0.3.7
 
 ### Patch Changes

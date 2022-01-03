@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.6.6
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/avatar@0.9.1
+  - @uidu/dropdown-menu@0.6.7
+  - @uidu/theme@0.6.6
+  - @uidu/tooltip@0.5.7
+
 ## 2.6.5
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.6.6
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/code@0.5.5
+  - @uidu/theme@0.6.6
+  - @uidu/tooltip@0.5.7
+  - @uidu/adf-schema@0.6.5
+  - @uidu/adf-utils@0.7.5
+  - @uidu/editor-common@0.6.6
+  - @uidu/editor-json-transformer@0.5.4
+  - @uidu/analytics-listeners@0.4.4
+  - @uidu/analytics-namespaced-context@0.4.4
+  - @uidu/mentions@0.3.12
+  - @uidu/status@0.4.11
+  - @uidu/task-decision@0.4.9
+  - @uidu/media-card@0.5.17
+  - @uidu/media-filmstrip@0.4.8
+
 ## 0.6.5
 
 ### Patch Changes

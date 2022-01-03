@@ -1,5 +1,13 @@
 # @uidu/analytics-namespaced-context
 
+## 0.4.4
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+
 ## 0.4.3
 
 ### Patch Changes

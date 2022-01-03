@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.8
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/payments@1.1.8
+  - @uidu/form@1.2.9
+
 ## 0.3.7
 
 ### Patch Changes

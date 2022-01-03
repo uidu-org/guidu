@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.2.2
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/button@1.3.6
+  - @uidu/dropdown-menu@0.6.7
+  - @uidu/menu@0.6.1
+  - @uidu/popup@0.6.7
+  - @uidu/data-fields@1.4.7
+  - @uidu/checkbox@1.1.7
+
 ## 1.2.1
 
 ### Patch Changes

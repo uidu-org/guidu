@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.6.5
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/button@1.3.6
+
 ## 0.6.4
 
 ### Patch Changes

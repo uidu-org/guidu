@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.8
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+
 ## 0.3.7
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 1.0.12
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/field-base@3.1.9
+  - @uidu/field-text@1.1.8
+
 ## 1.0.11
 
 ### Patch Changes

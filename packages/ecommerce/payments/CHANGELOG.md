@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 1.1.8
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/section-message@0.6.5
+  - @uidu/slider@1.7.7
+  - @uidu/theme@0.6.6
+  - @uidu/field-base@3.1.9
+  - @uidu/form@1.2.9
+
 ## 1.1.7
 
 ### Patch Changes

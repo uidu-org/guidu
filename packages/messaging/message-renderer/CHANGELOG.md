@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.6
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/dropdown-menu@0.6.7
+  - @uidu/theme@0.6.6
+
 ## 0.4.5
 
 ### Patch Changes

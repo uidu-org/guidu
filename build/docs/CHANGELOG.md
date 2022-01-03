@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.5.4
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/button@1.3.6
+  - @uidu/code@0.5.5
+  - @uidu/section-message@0.6.5
+  - @uidu/theme@0.6.6
+  - @uidu/tooltip@0.5.7
+
 ## 0.5.3
 
 ### Patch Changes

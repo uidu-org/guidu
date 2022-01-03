@@ -1,5 +1,15 @@
 # @uidu/inline-dialog
 
+## 0.5.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/popper@0.5.6
+  - @uidu/theme@0.6.6
+
 ## 0.5.6
 
 ### Patch Changes

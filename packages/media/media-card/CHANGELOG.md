@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.5.17
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/button@1.3.6
+  - @uidu/dropdown-menu@0.6.7
+  - @uidu/spinner@0.5.5
+  - @uidu/theme@0.6.6
+  - @uidu/tooltip@0.5.7
+
 ## 0.5.16
 
 ### Patch Changes

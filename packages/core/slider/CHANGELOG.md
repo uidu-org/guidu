@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.7.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+
 ## 1.7.6
 
 ### Patch Changes

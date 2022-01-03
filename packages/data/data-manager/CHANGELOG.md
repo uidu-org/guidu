@@ -1,5 +1,24 @@
 # @uidu/data-manager
 
+## 2.0.2
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/button@1.3.6
+  - @uidu/pagination@0.5.6
+  - @uidu/spinner@0.5.5
+  - @uidu/board@0.5.1
+  - @uidu/calendar@0.3.7
+  - @uidu/data-controls@2.0.2
+  - @uidu/data-fields@1.4.7
+  - @uidu/data-views@1.1.7
+  - @uidu/gallery@1.2.1
+  - @uidu/list@1.2.1
+  - @uidu/table@1.2.2
+  - @uidu/shell@2.1.8
+
 ## 2.0.1
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.1.8
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/spinner@0.5.5
+
 ## 2.1.7
 
 ### Patch Changes

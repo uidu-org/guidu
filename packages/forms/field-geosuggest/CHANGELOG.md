@@ -1,5 +1,14 @@
 # @uidu/field-geosuggest
 
+## 1.1.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/spinner@0.5.5
+  - @uidu/field-base@3.1.9
+
 ## 1.1.6
 
 ### Patch Changes

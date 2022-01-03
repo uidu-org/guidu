@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.6.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/button@1.3.6
+  - @uidu/droplist@0.5.7
+  - @uidu/item@0.5.6
+  - @uidu/theme@0.6.6
+
 ## 0.6.6
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 1.0.8
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/accordion@0.6.3
+  - @uidu/dropdown-menu@0.6.7
+  - @uidu/dashlets@1.5.8
+  - @uidu/field-downshift@1.4.4
+  - @uidu/field-toggle@1.1.3
+  - @uidu/form@1.2.9
+  - @uidu/select@1.5.7
+  - @uidu/shell@2.1.8
+
 ## 1.0.7
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/breadcrumbs
 
+## 1.0.6
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/button@1.3.6
+  - @uidu/theme@0.6.6
+  - @uidu/tooltip@0.5.7
+
 ## 1.0.5
 
 ### Patch Changes

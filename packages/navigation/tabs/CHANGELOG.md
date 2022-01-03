@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.3.6
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/docs@0.5.4
+  - @uidu/analytics@0.5.4
+  - @uidu/theme@0.6.6
+
 ## 0.3.5
 
 ### Patch Changes
