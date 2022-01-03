@@ -1,29 +1,29 @@
 {
   "6xsuuc": {
-    "message": "Sort A {icon} Z"
+    "message": "Ordina A {icon} Z"
   },
   "DTR7Hm": {
-    "message": "Group by this field"
+    "message": "Raggruppa per questo campo"
   },
   "M/zZVx": {
-    "message": "Add filter"
+    "message": "Aggiungi filtro"
   },
   "XvWIcm": {
-    "message": "Autosize this column"
+    "message": "Ridimensiona automaticamente"
   },
   "dWi239": {
-    "message": "Edit this column"
+    "message": "Modifica questo campo"
   },
   "fwRCRH": {
-    "message": "Unsort"
+    "message": "Rimuovi ordinamento"
   },
   "hESfGB": {
-    "message": "Hide this column"
+    "message": "Nascondi colonna"
   },
   "tVIb9a": {
-    "message": "Remove grouping"
+    "message": "Rimuovi raggruppamento"
   },
   "yntPld": {
-    "message": "Sort Z {icon} A"
+    "message": "Ordina Z {icon} A"
   }
 }
