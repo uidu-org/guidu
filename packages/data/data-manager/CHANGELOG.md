@@ -1,5 +1,16 @@
 # @uidu/data-manager
 
+## 2.1.0
+
+### Minor Changes
+
+- ede9be951: Locale aware data manager
+
+### Patch Changes
+
+- @uidu/data-controls@2.0.6
+- @uidu/data-views@1.1.9
+
 ## 2.0.3
 
 ### Patch Changes
