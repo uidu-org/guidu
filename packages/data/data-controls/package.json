@@ -9,6 +9,10 @@
   "main": "dist/uidu-data-controls.cjs.js",
   "module": "dist/uidu-data-controls.esm.js",
   "types": "dist/uidu-data-controls.cjs.d.ts",
+  "supportedLocales": [
+    "it",
+    "en"
+  ],
   "dependencies": {
     "@babel/runtime": "^7.16.7",
     "@heroicons/react": "^1.0.5",
