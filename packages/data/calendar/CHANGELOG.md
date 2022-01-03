@@ -1,5 +1,15 @@
 # @uidu/calendar
 
+## 0.3.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/button@1.3.7
+  - @uidu/dropdown-menu@0.6.8
+  - @uidu/shell@2.1.9
+
 ## 0.3.7
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.5.4
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 0.5.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.6.6
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/button@1.3.7
+
 ## 0.6.5
 
 ### Patch Changes

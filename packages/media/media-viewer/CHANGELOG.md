@@ -1,5 +1,18 @@
 # @uidu/media-viewer
 
+## 0.4.15
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/avatar@0.9.2
+  - @uidu/button@1.3.7
+  - @uidu/spinner@0.5.6
+  - @uidu/theme@0.6.7
+  - @uidu/media-core@0.7.4
+  - @uidu/shell@2.1.9
+
 ## 0.4.14
 
 ### Patch Changes

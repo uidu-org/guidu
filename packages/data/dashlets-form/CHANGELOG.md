@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 1.0.9
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/accordion@0.6.4
+  - @uidu/dropdown-menu@0.6.8
+  - @uidu/dashlets@1.5.9
+  - @uidu/field-downshift@1.4.5
+  - @uidu/field-toggle@1.1.4
+  - @uidu/form@1.2.10
+  - @uidu/select@1.5.8
+  - @uidu/shell@2.1.9
+
 ## 1.0.8
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.5.13
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/button@1.3.7
+  - @uidu/code@0.5.6
+  - @uidu/spinner@0.5.6
+  - @uidu/theme@0.6.7
+  - @uidu/tooltip@0.5.8
+  - @uidu/field-text@1.1.9
+
 ## 0.5.12
 
 ### Patch Changes

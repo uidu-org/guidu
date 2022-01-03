@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.5.9
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/adf-schema@0.6.6
+  - @uidu/editor-common@0.6.7
+
 ## 0.5.8
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.1
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 0.4.0
 
 ### Minor Changes

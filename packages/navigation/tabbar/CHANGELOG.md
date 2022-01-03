@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.4.6
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/shell@2.1.9
+
 ## 0.4.5
 
 ### Patch Changes

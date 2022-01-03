@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 1.2.4
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/button@1.3.7
+  - @uidu/spinner@0.5.6
+  - @uidu/field-base@3.1.10
+  - @uidu/media-core@0.7.4
+
 ## 1.2.3
 
 ### Patch Changes

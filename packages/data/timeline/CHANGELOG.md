@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.3.1
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 0.3.0
 
 ### Minor Changes

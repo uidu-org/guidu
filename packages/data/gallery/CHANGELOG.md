@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.2.2
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/spinner@0.5.6
+  - @uidu/data-controls@2.0.3
+  - @uidu/data-fields@1.4.8
+  - @uidu/shell@2.1.9
+
 ## 1.2.1
 
 ### Patch Changes

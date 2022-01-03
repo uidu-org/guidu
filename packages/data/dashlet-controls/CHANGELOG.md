@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.0.12
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/avatar@0.9.2
+  - @uidu/avatar-group@2.6.7
+  - @uidu/button@1.3.7
+  - @uidu/dropdown-menu@0.6.8
+  - @uidu/field-date-range@1.1.7
+  - @uidu/form@1.2.10
+
 ## 1.0.11
 
 ### Patch Changes

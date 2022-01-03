@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.6.7
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/theme@0.6.7
+  - @uidu/adf-schema@0.6.6
+  - @uidu/adf-utils@0.7.6
+  - @uidu/analytics-namespaced-context@0.4.5
+  - @uidu/emoji@0.5.13
+  - @uidu/mentions@0.3.13
+  - @uidu/profilecard@0.2.15
+
 ## 0.6.6
 
 ### Patch Changes

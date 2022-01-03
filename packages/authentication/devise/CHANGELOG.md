@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.6.12
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/avatar@0.9.2
+  - @uidu/slider@1.7.8
+  - @uidu/spinner@0.5.6
+  - @uidu/checkbox@1.1.8
+  - @uidu/field-password@1.1.7
+  - @uidu/field-phone@1.0.13
+  - @uidu/field-text@1.1.9
+  - @uidu/form@1.2.10
+  - @uidu/shell@2.1.9
+
 ## 0.6.11
 
 ### Patch Changes
