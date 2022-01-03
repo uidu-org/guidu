@@ -1,5 +1,15 @@
 # @uidu/data-controls
 
+## 2.0.5
+
+### Patch Changes
+
+- 800dd4666: New translations files
+- Updated dependencies [800dd4666]
+  - @uidu/drawer@0.7.9
+  - @uidu/menu@0.6.3
+  - @uidu/data-fields@1.4.10
+
 ## 2.0.4
 
 ### Patch Changes

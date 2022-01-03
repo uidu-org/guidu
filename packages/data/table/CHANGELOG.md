@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 1.2.5
+
+### Patch Changes
+
+- 800dd4666: New translations files
+- Updated dependencies [800dd4666]
+  - @uidu/menu@0.6.3
+  - @uidu/data-fields@1.4.10
+
 ## 1.2.4
 
 ### Patch Changes

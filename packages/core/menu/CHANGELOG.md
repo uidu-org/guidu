@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.6.3
+
+### Patch Changes
+
+- 800dd4666: New translations files
+
 ## 0.6.2
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/drawer
 
+## 0.7.9
+
+### Patch Changes
+
+- 800dd4666: New translations files
+- Updated dependencies [800dd4666]
+  - @uidu/blanket@0.5.5
+
 ## 0.7.8
 
 ### Patch Changes
