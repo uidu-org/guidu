@@ -1,5 +1,17 @@
 # @uidu/status
 
+## 0.4.12
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/lozenge@0.5.6
+  - @uidu/theme@0.6.7
+  - @uidu/analytics-gas-types@0.3.1
+  - @uidu/field-text@1.1.9
+
 ## 0.4.11
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.6.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/popper@0.5.7
+  - @uidu/portal@0.5.8
+  - @uidu/theme@0.6.7
+
 ## 0.6.7
 
 ### Patch Changes

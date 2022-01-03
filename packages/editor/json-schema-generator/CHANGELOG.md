@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.2.10
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 0.2.9
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.6.7
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/form@1.2.10
+
 ## 0.6.6
 
 ### Patch Changes

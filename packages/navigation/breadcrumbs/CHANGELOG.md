@@ -1,5 +1,16 @@
 # @uidu/breadcrumbs
 
+## 1.0.7
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/button@1.3.7
+  - @uidu/theme@0.6.7
+  - @uidu/tooltip@0.5.8
+
 ## 1.0.6
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 1.3.5
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/dashboard-controls@1.0.12
+  - @uidu/dashlets@1.5.9
+
 ## 1.3.4
 
 ### Patch Changes

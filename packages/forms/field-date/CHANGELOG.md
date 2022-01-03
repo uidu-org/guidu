@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 1.1.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/field-base@3.1.10
+  - @uidu/field-text@1.1.9
+
 ## 1.1.7
 
 ### Patch Changes

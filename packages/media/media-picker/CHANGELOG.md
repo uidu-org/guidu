@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.7.5
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/media-core@0.7.4
+
 ## 0.7.4
 
 ### Patch Changes

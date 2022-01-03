@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.4
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/docs@0.5.5
+
 ## 0.6.3
 
 ### Patch Changes

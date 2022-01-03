@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.4.9
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/dropdown-menu@0.6.8
+  - @uidu/spinner@0.5.6
+  - @uidu/field-mentions@1.2.3
+  - @uidu/field-text@1.1.9
+  - @uidu/form@1.2.10
+  - @uidu/media-filmstrip@0.4.9
+  - @uidu/message@0.5.9
+
 ## 0.4.8
 
 ### Patch Changes

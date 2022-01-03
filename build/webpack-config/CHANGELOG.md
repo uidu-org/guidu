@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.3.13
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/changelog-loader@0.1.32
+  - @uidu/fs-loader@0.1.49
+  - @uidu/nav-info-loader@0.2.3
+
 ## 0.3.12
 
 ### Patch Changes

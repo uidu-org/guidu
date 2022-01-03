@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.5.9
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/avatar@0.9.2
+  - @uidu/drawer@0.7.8
+  - @uidu/dropdown-menu@0.6.8
+  - @uidu/tooltip@0.5.8
+  - @uidu/media-card@0.5.18
+  - @uidu/media-core@0.7.4
+  - @uidu/media-viewer@0.4.15
+  - @uidu/message-form@0.4.9
+  - @uidu/message-renderer@0.4.7
+
 ## 0.5.8
 
 ### Patch Changes

@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 1.4.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/button@1.3.7
+  - @uidu/map@0.6.6
+  - @uidu/menu@0.6.2
+  - @uidu/popup@0.6.8
+  - @uidu/field-color-picker@2.0.8
+  - @uidu/field-date@1.1.8
+  - @uidu/field-downshift@1.4.5
+  - @uidu/field-number@1.0.8
+  - @uidu/field-text@1.1.9
+  - @uidu/field-time@1.1.8
+  - @uidu/field-toggle@1.1.4
+  - @uidu/form@1.2.10
+  - @uidu/select@1.5.8
+
 ## 1.4.7
 
 ### Patch Changes

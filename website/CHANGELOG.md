@@ -1,5 +1,33 @@
 # Change Log
 
+## 0.4.18
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/docs@0.5.5
+  - @uidu/badge@0.5.6
+  - @uidu/button@1.3.7
+  - @uidu/code@0.5.6
+  - @uidu/drawer@0.7.8
+  - @uidu/lozenge@0.5.6
+  - @uidu/modal-dialog@0.5.11
+  - @uidu/spinner@0.5.6
+  - @uidu/theme@0.6.7
+  - @uidu/tooltip@0.5.8
+  - @uidu/list@1.2.2
+  - @uidu/table@1.2.3
+  - @uidu/checkbox@1.1.8
+  - @uidu/field-text@1.1.9
+  - @uidu/form@1.2.10
+  - @uidu/select@1.5.8
+  - @uidu/breadcrumbs@1.0.7
+  - @uidu/navigation@1.0.8
+  - @uidu/page-header@1.0.3
+  - @uidu/shell@2.1.9
+  - @uidu/themes-uidu@0.4.1
+
 ## 0.4.17
 
 ### Patch Changes

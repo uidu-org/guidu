@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 1.1.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/button@1.3.7
+  - @uidu/data-controls@2.0.3
+  - @uidu/data-manager@2.0.3
+  - @uidu/field-counter@1.1.8
+  - @uidu/field-number@1.0.8
+  - @uidu/form@1.2.10
+  - @uidu/select@1.5.8
+
 ## 1.1.7
 
 ### Patch Changes

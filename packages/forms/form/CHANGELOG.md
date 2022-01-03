@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.10
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/button@1.3.7
+
 ## 1.2.9
 
 ### Patch Changes

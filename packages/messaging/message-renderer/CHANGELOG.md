@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.7
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/dropdown-menu@0.6.8
+  - @uidu/theme@0.6.7
+
 ## 0.4.6
 
 ### Patch Changes

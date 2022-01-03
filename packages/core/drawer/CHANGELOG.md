@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.7.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/docs@0.5.5
+  - @uidu/analytics@0.5.5
+  - @uidu/blanket@0.5.4
+  - @uidu/item@0.5.7
+  - @uidu/theme@0.6.7
+
 ## 0.7.7
 
 ### Patch Changes

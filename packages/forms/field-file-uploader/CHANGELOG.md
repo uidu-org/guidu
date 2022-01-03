@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 1.1.6
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/field-base@3.1.10
+
 ## 1.1.5
 
 ### Patch Changes

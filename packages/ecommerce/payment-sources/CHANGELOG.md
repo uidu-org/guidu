@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.9
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/payments@1.1.9
+  - @uidu/form@1.2.10
+
 ## 0.3.8
 
 ### Patch Changes

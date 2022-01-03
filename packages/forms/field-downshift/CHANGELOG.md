@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 1.4.5
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/field-base@3.1.10
+  - @uidu/field-text@1.1.9
+
 ## 1.4.4
 
 ### Patch Changes

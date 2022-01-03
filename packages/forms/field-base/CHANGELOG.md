@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.10
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/form@1.2.10
+
 ## 3.1.9
 
 ### Patch Changes

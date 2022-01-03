@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.7.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 1.7.7
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.0.5
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/checkbox@1.1.8
+  - @uidu/field-number@1.0.8
+  - @uidu/field-text@1.1.9
+  - @uidu/field-textarea@1.1.8
+  - @uidu/select@1.5.8
+
 ## 1.0.4
 
 ### Patch Changes

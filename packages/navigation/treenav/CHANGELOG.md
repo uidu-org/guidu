@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.3.6
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 0.3.5
 
 ### Patch Changes

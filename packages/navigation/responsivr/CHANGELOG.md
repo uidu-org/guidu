@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.4.5
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 0.4.4
 
 ### Patch Changes

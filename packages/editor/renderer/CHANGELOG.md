@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.6.7
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/code@0.5.6
+  - @uidu/theme@0.6.7
+  - @uidu/tooltip@0.5.8
+  - @uidu/adf-schema@0.6.6
+  - @uidu/adf-utils@0.7.6
+  - @uidu/editor-common@0.6.7
+  - @uidu/editor-json-transformer@0.5.5
+  - @uidu/analytics-listeners@0.4.5
+  - @uidu/analytics-namespaced-context@0.4.5
+  - @uidu/mentions@0.3.13
+  - @uidu/status@0.4.12
+  - @uidu/task-decision@0.4.10
+  - @uidu/media-card@0.5.18
+  - @uidu/media-filmstrip@0.4.9
+
 ## 0.6.6
 
 ### Patch Changes

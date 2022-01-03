@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.4.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/message@0.5.9
+  - @uidu/message-form@0.4.9
+  - @uidu/message-renderer@0.4.7
+
 ## 0.4.7
 
 ### Patch Changes

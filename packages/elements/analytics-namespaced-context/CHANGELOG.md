@@ -1,5 +1,13 @@
 # @uidu/analytics-namespaced-context
 
+## 0.4.5
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+
 ## 0.4.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 1.2.2
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/data-fields@1.4.8
+
 ## 1.2.1
 
 ### Patch Changes
