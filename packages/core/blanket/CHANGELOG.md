@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.5.5
+
+### Patch Changes
+
+- 800dd4666: New translations files
+
 ## 0.5.4
 
 ### Patch Changes

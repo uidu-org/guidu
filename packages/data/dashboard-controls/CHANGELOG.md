@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 1.0.13
+
+### Patch Changes
+
+- 800dd4666: New translations files
+
 ## 1.0.12
 
 ### Patch Changes

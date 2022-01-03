@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 1.3.6
+
+### Patch Changes
+
+- 800dd4666: New translations files
+- Updated dependencies [800dd4666]
+  - @uidu/dashboard-controls@1.0.13
+  - @uidu/dashlets@1.5.11
+
 ## 1.3.5
 
 ### Patch Changes
