@@ -17,7 +17,7 @@ const LoadableList = (loadable as any).lib(() => import('@uidu/list'));
 
 const Column = React.forwardRef<HTMLDivElement, any>((props, ref) => (
   <div ref={ref}>
-    <div className="" {...props} />
+    <div tw="" {...props} />
   </div>
 ));
 
@@ -28,11 +28,11 @@ const ColumnHeader = ({ title, items, ...rest }) => {
         <span tw="mr-3">{title}</span>
         {/* <Badge>{items.length}</Badge> */}
       </div>
-      {/* <div className="btn-group">
-        <button className="p-2 btn btn-sm">
+      {/* <div tw="btn-group">
+        <button tw="p-2 btn btn-sm">
           <Plus size={16} />
         </button>
-        <button className="p-2 btn btn-sm">
+        <button tw="p-2 btn btn-sm">
           <MoreHorizontal size={16} />
         </button>
       </div> */}
@@ -55,16 +55,44 @@ const Item = ({ item, provided, ...rest }) => {
   );
 };
 
+function DefaultEmptyState() {
+  return (
+    <div tw="text-center h-full flex flex-col justify-center">
+      <svg
+        tw="mx-auto h-12 w-12 text-gray-400"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          vectorEffect="non-scaling-stroke"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+        />
+      </svg>
+      <h3 tw="mt-2 text-sm font-medium text-gray-900">No projects</h3>
+      <p tw="mt-1 text-sm text-gray-500">
+        Get started by creating a new project.
+      </p>
+      <div tw="mt-6">
+        <button
+          type="button"
+          tw="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          New Project
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function DataManagerView({
   onItemClick,
   viewProps,
-  // onSortChanged,
-  // onFilterChanged,
-  // onColumnVisible,
-  // onDragStopped,
-  // onColumnResized,
-  // onRowGroupOpened,
-  // onColumnRowGroupChanged,
+  emptyState: EmptyState = DefaultEmptyState,
 }) {
   const {
     currentView,
@@ -92,6 +120,10 @@ function DataManagerView({
   if (!rowData) {
     return <ShellBodyWithSpinner />;
   }
+
+  // if (rowData.length === 0) {
+  //   return <EmptyState />;
+  // }
 
   let desktopView = null;
   let mobileView = null;

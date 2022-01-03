@@ -29,6 +29,9 @@ export const DataManagerContext = createContext<{
   updateView?: (name: string, value: any) => Promise<any>;
   rowData?: Array<any>;
   onAddField?: () => void;
+  columnCount?: number;
+  setAggregation?: () => void;
+  setColumnWidth?: () => void;
 }>(null);
 
 function DataManagerProvider({
