@@ -1,200 +1,170 @@
 {
   "0+Cz5N": {
-    "defaultMessage": "Allow geolocation of your records with Google Maps autocomplete help"
+    "message": "Allow geolocation of your records with Google Maps autocomplete help"
   },
   "0ho2lW": {
-    "defaultMessage": "Show a progress bar with progress value"
-  },
-  "142pwE": {
-    "defaultMessage": "Insert option name"
+    "message": "Show a progress bar with progress value"
   },
   "55hdQy": {
-    "defaultMessage": "Currency"
+    "message": "Currency"
   },
   "7GrdNm": {
-    "defaultMessage": "Insert a rounded avatar for the record"
+    "message": "Insert a rounded avatar for the record"
   },
   "7L86Z5": {
-    "defaultMessage": "Member"
-  },
-  "7etk18": {
-    "defaultMessage": "Choose a duration"
+    "message": "Member"
   },
   "82aMWa": {
-    "defaultMessage": "Appointment"
+    "message": "Appointment"
   },
   "AnqXgH": {
-    "defaultMessage": "A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
+    "message": "A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
   },
   "B8Of+8": {
-    "defaultMessage": "Add a custom field to your model"
+    "message": "Add a custom field to your model"
   },
   "BOPFCf": {
-    "defaultMessage": "A contact field represents a person or an organization - a contact"
+    "message": "A contact field represents a person or an organization - a contact"
   },
   "BVTni9": {
-    "defaultMessage": "Payment method"
+    "message": "Payment method"
   },
   "BkqnkQ": {
-    "defaultMessage": "A single line of text. You can optionally prefill each new cell with a default value"
+    "message": "A single line of text. You can optionally prefill each new cell with a default value"
   },
   "Dh+V6J": {
-    "defaultMessage": "Single select allows you to select a single option from predefined options in a dropdown."
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
   },
   "DqKd4r": {
-    "defaultMessage": "Percent"
+    "message": "Percent"
   },
   "ETRyBL": {
-    "defaultMessage": "Rating"
+    "message": "Rating"
   },
-  "FY6igM": {
-    "defaultMessage": "Minutes"
+  "Hv3wz6": {
+    "message": "Rich Text"
   },
   "I3MA83": {
-    "defaultMessage": "String"
-  },
-  "IuFETn": {
-    "defaultMessage": "Duration"
+    "message": "String"
   },
   "J8plRQ": {
-    "defaultMessage": "A single checkbox that can be checked or unchecked."
+    "message": "A single checkbox that can be checked or unchecked."
   },
   "O95R3Z": {
-    "defaultMessage": "Phone"
+    "message": "Phone"
   },
   "P7PLVj": {
-    "defaultMessage": "Date"
-  },
-  "PCmChI": {
-    "defaultMessage": "...or choose a custom duration"
+    "message": "Date"
   },
   "PRtqrC": {
-    "defaultMessage": "Checkbox"
+    "message": "Checkbox"
   },
   "PY5NYc": {
-    "defaultMessage": "Attachments allow you to add images, documents, or other files which can then be viewed or downloaded."
+    "message": "Attachments allow you to add images, documents, or other files which can then be viewed or downloaded."
   },
   "Q4HS24": {
-    "defaultMessage": "SingleSelect"
+    "message": "SingleSelect"
   },
   "TBjBZW": {
-    "defaultMessage": "Allow booking an appointment for this record, based on your of your availabilities"
+    "message": "Allow booking an appointment for this record, based on your of your availabilities"
   },
   "TpzCEx": {
-    "defaultMessage": "Url"
+    "message": "Url"
   },
   "UHak2b": {
-    "defaultMessage": "A unique identifier field"
+    "message": "A unique identifier field"
   },
   "VnXp8Z": {
-    "defaultMessage": "Avatar"
+    "message": "Avatar"
   },
   "Y6dihM": {
-    "defaultMessage": "Vote"
+    "message": "Vote"
   },
   "ZvUoKF": {
-    "defaultMessage": "Enter a date (e.g. 11/12/2013) or pick one from a calendar."
+    "message": "Enter a date (e.g. 11/12/2013) or pick one from a calendar."
   },
   "aA8bDw": {
-    "defaultMessage": "Text"
-  },
-  "cCXuwX": {
-    "defaultMessage": "Add dates when your availability changes from your weekly hours"
+    "message": "Text"
   },
   "e6Ph5+": {
-    "defaultMessage": "Address"
+    "message": "Address"
   },
   "eG6ZPK": {
-    "defaultMessage": "Format a percentage"
+    "message": "Format a percentage"
   },
   "eSYQTy": {
-    "defaultMessage": "Add field"
-  },
-  "fQDEtG": {
-    "defaultMessage": "Set the weekly hours you're typically available for events"
+    "message": "Add field"
   },
   "fSKy7V": {
-    "defaultMessage": "Insert a rating for the column"
+    "message": "Insert a rating for the column"
+  },
+  "field.collection.name": {
+    "message": "Collection"
+  },
+  "field.collection.options": {
+    "message": "A collection is a list of items with one or more fields."
   },
   "field.multipleselect.name": {
-    "defaultMessage": "MultipleSelect"
+    "message": "MultipleSelect"
+  },
+  "field.richtext.description": {
+    "message": "A lightweight richtext editor."
   },
   "field.singleSelect.description": {
-    "defaultMessage": "Multiple select allows you to select one or more predefined options listed below."
-  },
-  "field.string.form.defaultValue.label": {
-    "defaultMessage": "Default text"
-  },
-  "field.string.form.defaultValue.placeholder": {
-    "defaultMessage": "Enter default text"
+    "message": "Multiple select allows you to select one or more predefined options listed below."
   },
   "field.text.description": {
-    "defaultMessage": "A long text field that can span multiple lines."
+    "message": "A long text field that can span multiple lines."
   },
   "field.url.description": {
-    "defaultMessage": "A valid URL (e.g. airtable.com or https://airtable.com/universe)."
+    "message": "A valid URL (e.g. airtable.com or https://airtable.com/universe)."
   },
   "filters.notEqual": {
-    "defaultMessage": "Not Equals"
+    "message": "Not Equals"
   },
   "fkWU2P": {
-    "defaultMessage": "Add a Country select list to your record"
+    "message": "Add a Country select list to your record"
   },
   "gsD9k4": {
-    "defaultMessage": "A valid email address (e.g. andrew@example.com)."
-  },
-  "hOxIeP": {
-    "defaultMessage": "Availability"
+    "message": "A valid email address (e.g. andrew@example.com)."
   },
   "hl9bd4": {
-    "defaultMessage": "Cover"
-  },
-  "j9Y9nu": {
-    "defaultMessage": "Hours"
+    "message": "Cover"
   },
   "kFkPWB": {
-    "defaultMessage": "Number"
+    "message": "Number"
   },
   "kU1wCA": {
-    "defaultMessage": "Integer or decimal number"
+    "message": "Integer or decimal number"
   },
   "loSPNM": {
-    "defaultMessage": "Add a cover image to your record"
+    "message": "Add a cover image to your record"
   },
   "m4vqJl": {
-    "defaultMessage": "Files"
-  },
-  "qgBhmu": {
-    "defaultMessage": "Add hours for specific dates."
+    "message": "Files"
   },
   "qlcuNQ": {
-    "defaultMessage": "ID"
-  },
-  "rAMgEh": {
-    "defaultMessage": "Add option"
+    "message": "ID"
   },
   "sIMS7i": {
-    "defaultMessage": "Progress"
+    "message": "Progress"
   },
   "sy+pv5": {
-    "defaultMessage": "Email"
+    "message": "Email"
   },
   "tNgoex": {
-    "defaultMessage": "Format a number with a currency"
-  },
-  "tygEJX": {
-    "defaultMessage": "Date range"
+    "message": "Format a number with a currency"
   },
   "uLd91N": {
-    "defaultMessage": "A telephone number (e.g. (415) 555-9876)."
+    "message": "A telephone number (e.g. (415) 555-9876)."
   },
   "vONi+O": {
-    "defaultMessage": "Country"
+    "message": "Country"
   },
   "zFegDD": {
-    "defaultMessage": "Contact"
+    "message": "Contact"
   },
   "zff+Cr": {
-    "defaultMessage": "Payment method (Credit Card, or others)"
+    "message": "Payment method (Credit Card, or others)"
   }
 }

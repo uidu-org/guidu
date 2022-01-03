@@ -1,29 +1,29 @@
 {
   "6xsuuc": {
-    "defaultMessage": "Sort A {icon} Z"
+    "message": "Sort A {icon} Z"
   },
   "DTR7Hm": {
-    "defaultMessage": "Group by this field"
+    "message": "Group by this field"
   },
   "M/zZVx": {
-    "defaultMessage": "Add filter"
+    "message": "Add filter"
   },
   "XvWIcm": {
-    "defaultMessage": "Autosize this column"
+    "message": "Autosize this column"
   },
   "dWi239": {
-    "defaultMessage": "Edit this column"
+    "message": "Edit this column"
   },
   "fwRCRH": {
-    "defaultMessage": "Unsort"
+    "message": "Unsort"
   },
   "hESfGB": {
-    "defaultMessage": "Hide this column"
+    "message": "Hide this column"
   },
   "tVIb9a": {
-    "defaultMessage": "Remove grouping"
+    "message": "Remove grouping"
   },
   "yntPld": {
-    "defaultMessage": "Sort Z {icon} A"
+    "message": "Sort Z {icon} A"
   }
 }

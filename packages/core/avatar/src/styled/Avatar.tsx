@@ -13,7 +13,7 @@ const Avatar: FC<AvatarProps> = (props) => (
     {({ dimensions }) => {
       return (
         <div
-          tw="inline-block relative outline[0]"
+          tw="relative outline[0]"
           style={{
             zIndex: props.stackIndex,
             ...dimensions,

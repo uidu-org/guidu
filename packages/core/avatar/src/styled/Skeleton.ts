@@ -9,8 +9,8 @@ const Skeleton = styled.div<{
 }>`
   width: ${({ size }) => AVATAR_SIZES[size || 'small']}px;
   height: ${({ size }) => AVATAR_SIZES[size || 'small']}px;
-  display: inline-block;
-  border-radius: ${props =>
+  display: inline-flex;
+  border-radius: ${(props) =>
     props.size && props.appearance === 'square'
       ? `${AVATAR_RADIUS[props.size]}px`
       : '50%'};

@@ -15,11 +15,10 @@ async function extractTranslation() {
       packageJson.supportedLocales &&
       packageJson.supportedLocales.length > 0
     ) {
-      packageJson.supportedLocales.map(async (locale) => {
-        await formatjs.extractAndWrite(files, {
-          outFile: `${relativePath}/lang/${locale}.json`,
-          idInterpolationPattern: '[sha512:contenthash:base64:6]',
-        });
+      await formatjs.extractAndWrite(files, {
+        outFile: `${relativePath}/lang/en.json`,
+        idInterpolationPattern: '[sha512:contenthash:base64:6]',
+        format: 'crowdin',
       });
     }
   });
