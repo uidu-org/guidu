@@ -1,5 +1,14 @@
 # @uidu/toggle
 
+## 1.1.3
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/field-base@3.1.9
+
 ## 1.1.2
 
 ### Patch Changes

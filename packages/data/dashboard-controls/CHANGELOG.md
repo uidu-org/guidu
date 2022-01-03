@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.0.11
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/avatar@0.9.1
+  - @uidu/avatar-group@2.6.6
+  - @uidu/button@1.3.6
+  - @uidu/dropdown-menu@0.6.7
+  - @uidu/field-date-range@1.1.6
+  - @uidu/form@1.2.9
+
 ## 1.0.10
 
 ### Patch Changes

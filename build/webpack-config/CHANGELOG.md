@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.12
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+
 ## 0.3.11
 
 ### Patch Changes

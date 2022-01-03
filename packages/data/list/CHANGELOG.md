@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 1.2.1
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/data-fields@1.4.7
+
 ## 1.2.0
 
 ### Minor Changes

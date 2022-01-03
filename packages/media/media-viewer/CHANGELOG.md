@@ -1,5 +1,17 @@
 # @uidu/media-viewer
 
+## 0.4.14
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/avatar@0.9.1
+  - @uidu/button@1.3.6
+  - @uidu/spinner@0.5.5
+  - @uidu/theme@0.6.6
+  - @uidu/shell@2.1.8
+
 ## 0.4.13
 
 ### Patch Changes

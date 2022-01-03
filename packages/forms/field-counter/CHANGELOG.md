@@ -1,5 +1,14 @@
 # @uidu/field-counter
 
+## 1.1.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/field-base@3.1.9
+
 ## 1.1.6
 
 ### Patch Changes

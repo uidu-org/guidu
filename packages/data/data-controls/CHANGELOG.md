@@ -1,5 +1,28 @@
 # @uidu/data-controls
 
+## 2.0.2
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/button@1.3.6
+  - @uidu/drawer@0.7.7
+  - @uidu/dropdown-menu@0.6.7
+  - @uidu/inline-dialog@0.5.7
+  - @uidu/menu@0.6.1
+  - @uidu/popup@0.6.7
+  - @uidu/spinner@0.5.5
+  - @uidu/tooltip@0.5.7
+  - @uidu/data-fields@1.4.7
+  - @uidu/data-manager@2.0.2
+  - @uidu/data-views@1.1.7
+  - @uidu/checkbox@1.1.7
+  - @uidu/field-text@1.1.8
+  - @uidu/form@1.2.9
+  - @uidu/select@1.5.7
+  - @uidu/shell@2.1.8
+
 ## 2.0.1
 
 ### Patch Changes

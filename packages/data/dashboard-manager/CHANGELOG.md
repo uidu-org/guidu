@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 1.3.4
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/dashboard-controls@1.0.11
+  - @uidu/dashlets@1.5.8
+
 ## 1.3.3
 
 ### Patch Changes

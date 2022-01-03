@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.4.5
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/shell@2.1.8
+
 ## 0.4.4
 
 ### Patch Changes

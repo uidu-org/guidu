@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.5.5
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+
 ## 0.5.4
 
 ### Patch Changes

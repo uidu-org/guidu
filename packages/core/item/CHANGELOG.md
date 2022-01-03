@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.5.6
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/avatar@0.9.1
+  - @uidu/theme@0.6.6
+
 ## 0.5.5
 
 ### Patch Changes

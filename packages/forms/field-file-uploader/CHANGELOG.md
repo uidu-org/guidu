@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 1.1.5
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/field-base@3.1.9
+
 ## 1.1.4
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.4.8
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/dropdown-menu@0.6.7
+  - @uidu/spinner@0.5.5
+  - @uidu/field-mentions@1.2.2
+  - @uidu/field-text@1.1.8
+  - @uidu/form@1.2.9
+  - @uidu/media-filmstrip@0.4.8
+  - @uidu/message@0.5.8
+
 ## 0.4.7
 
 ### Patch Changes

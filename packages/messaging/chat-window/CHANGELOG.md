@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.4.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/message@0.5.8
+  - @uidu/message-form@0.4.8
+  - @uidu/message-renderer@0.4.6
+
 ## 0.4.6
 
 ### Patch Changes

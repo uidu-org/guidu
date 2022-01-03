@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.5.12
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/button@1.3.6
+  - @uidu/code@0.5.5
+  - @uidu/spinner@0.5.5
+  - @uidu/theme@0.6.6
+  - @uidu/tooltip@0.5.7
+  - @uidu/field-text@1.1.8
+
 ## 0.5.11
 
 ### Patch Changes

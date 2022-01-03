@@ -1,5 +1,15 @@
 # @uidu/media-filmstrip
 
+## 0.4.8
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/theme@0.6.6
+  - @uidu/media-card@0.5.17
+  - @uidu/media-viewer@0.4.14
+
 ## 0.4.7
 
 ### Patch Changes

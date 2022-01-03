@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.6
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+
 ## 0.5.5
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 1.4.4
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/field-base@3.1.9
+  - @uidu/field-text@1.1.8
+
 ## 1.4.3
 
 ### Patch Changes

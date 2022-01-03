@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 1.0.8
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/avatar@0.9.1
+  - @uidu/dropdown-menu@0.6.7
+  - @uidu/inline-dialog@0.5.7
+  - @uidu/theme@0.6.6
+  - @uidu/tooltip@0.5.7
+  - @uidu/shell@2.1.8
+
 ## 1.0.7
 
 ### Patch Changes

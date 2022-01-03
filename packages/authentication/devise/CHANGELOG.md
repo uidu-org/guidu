@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.6.11
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/avatar@0.9.1
+  - @uidu/slider@1.7.7
+  - @uidu/spinner@0.5.5
+  - @uidu/checkbox@1.1.7
+  - @uidu/field-password@1.1.6
+  - @uidu/field-phone@1.0.12
+  - @uidu/field-text@1.1.8
+  - @uidu/form@1.2.9
+  - @uidu/shell@2.1.8
+
 ## 0.6.10
 
 ### Patch Changes

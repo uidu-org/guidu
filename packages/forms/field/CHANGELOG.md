@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.0.4
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/checkbox@1.1.7
+  - @uidu/field-number@1.0.7
+  - @uidu/field-text@1.1.8
+  - @uidu/field-textarea@1.1.7
+  - @uidu/select@1.5.7
+
 ## 1.0.3
 
 ### Patch Changes

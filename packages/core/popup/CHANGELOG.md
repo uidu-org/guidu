@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.6.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/popper@0.5.6
+  - @uidu/portal@0.5.7
+  - @uidu/theme@0.6.6
+
 ## 0.6.6
 
 ### Patch Changes
