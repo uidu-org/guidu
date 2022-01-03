@@ -9,7 +9,7 @@
   "module": "dist/uidu-dashboard-controls.esm.js",
   "types": "dist/uidu-dashboard-controls.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.16.5",
+    "@babel/runtime": "^7.16.7",
     "@uidu/avatar": "^0.9.0",
     "@uidu/avatar-group": "^2.6.5",
     "@uidu/button": "1.3.5",
@@ -18,7 +18,7 @@
     "@uidu/form": "^1.2.8",
     "react": "^17.0.2",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.24.0",
+    "react-intl": "^5.24.1",
     "styled-components": "^5.3.3",
     "tslib": "^2.3.1"
   },

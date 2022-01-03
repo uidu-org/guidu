@@ -13,7 +13,7 @@
     "en"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.16.5",
+    "@babel/runtime": "^7.16.7",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
@@ -38,7 +38,7 @@
     "react": "^17.0.2",
     "react-beautiful-dnd": "^13.1.0",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.24.0",
+    "react-intl": "^5.24.1",
     "styled-components": "^5.3.3",
     "tslib": "^2.3.1"
   },

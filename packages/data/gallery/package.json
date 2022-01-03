@@ -9,7 +9,7 @@
   "module": "dist/uidu-gallery.esm.js",
   "types": "dist/uidu-gallery.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.16.5",
+    "@babel/runtime": "^7.16.7",
     "@uidu/data-controls": "^2.0.0",
     "@uidu/data-fields": "^1.4.6",
     "@uidu/shell": "^2.1.7",

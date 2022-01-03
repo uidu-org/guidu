@@ -12,7 +12,7 @@
   "dependencies": {
     "@atlaskit/icon": "^21.9.3",
     "@atlaskit/util-service-support": "^6.0.5",
-    "@babel/runtime": "^7.16.5",
+    "@babel/runtime": "^7.16.7",
     "@uidu/analytics": "^0.5.3",
     "@uidu/analytics-gas-types": "^0.3.0",
     "@uidu/avatar": "^0.9.0",
@@ -22,7 +22,7 @@
     "@uidu/tooltip": "^0.5.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-intl": "^5.24.0",
+    "react-intl": "^5.24.1",
     "styled-components": "^5.3.3",
     "tslib": "^2.3.1",
     "uuid": "^8.3.2"

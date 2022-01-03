@@ -10,7 +10,7 @@
   "module": "dist/uidu-tooltip.esm.js",
   "dependencies": {
     "@atlaskit/icon": "^21.9.3",
-    "@babel/runtime": "^7.16.5",
+    "@babel/runtime": "^7.16.7",
     "@uidu/analytics": "^0.5.3",
     "@uidu/popper": "^0.5.5",
     "@uidu/portal": "^0.5.6",
