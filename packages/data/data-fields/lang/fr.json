@@ -1,0 +1,170 @@
+{
+  "0+Cz5N": {
+    "message": "Allow geolocation of your records with Google Maps autocomplete help"
+  },
+  "0ho2lW": {
+    "message": "Show a progress bar with progress value"
+  },
+  "55hdQy": {
+    "message": "Currency"
+  },
+  "7GrdNm": {
+    "message": "Insert a rounded avatar for the record"
+  },
+  "7L86Z5": {
+    "message": "Member"
+  },
+  "82aMWa": {
+    "message": "Appointment"
+  },
+  "AnqXgH": {
+    "message": "A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
+  },
+  "B8Of+8": {
+    "message": "Add a custom field to your model"
+  },
+  "BOPFCf": {
+    "message": "A contact field represents a person or an organization - a contact"
+  },
+  "BVTni9": {
+    "message": "Payment method"
+  },
+  "BkqnkQ": {
+    "message": "A single line of text. You can optionally prefill each new cell with a default value"
+  },
+  "Dh+V6J": {
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+  },
+  "DqKd4r": {
+    "message": "Percent"
+  },
+  "ETRyBL": {
+    "message": "Rating"
+  },
+  "Hv3wz6": {
+    "message": "Rich Text"
+  },
+  "I3MA83": {
+    "message": "String"
+  },
+  "J8plRQ": {
+    "message": "A single checkbox that can be checked or unchecked."
+  },
+  "O95R3Z": {
+    "message": "Phone"
+  },
+  "P7PLVj": {
+    "message": "Date"
+  },
+  "PRtqrC": {
+    "message": "Checkbox"
+  },
+  "PY5NYc": {
+    "message": "Attachments allow you to add images, documents, or other files which can then be viewed or downloaded."
+  },
+  "Q4HS24": {
+    "message": "SingleSelect"
+  },
+  "TBjBZW": {
+    "message": "Allow booking an appointment for this record, based on your of your availabilities"
+  },
+  "TpzCEx": {
+    "message": "Url"
+  },
+  "UHak2b": {
+    "message": "A unique identifier field"
+  },
+  "VnXp8Z": {
+    "message": "Avatar"
+  },
+  "Y6dihM": {
+    "message": "Vote"
+  },
+  "ZvUoKF": {
+    "message": "Enter a date (e.g. 11/12/2013) or pick one from a calendar."
+  },
+  "aA8bDw": {
+    "message": "Text"
+  },
+  "e6Ph5+": {
+    "message": "Address"
+  },
+  "eG6ZPK": {
+    "message": "Format a percentage"
+  },
+  "eSYQTy": {
+    "message": "Add field"
+  },
+  "fSKy7V": {
+    "message": "Insert a rating for the column"
+  },
+  "field.collection.name": {
+    "message": "Collection"
+  },
+  "field.collection.options": {
+    "message": "A collection is a list of items with one or more fields."
+  },
+  "field.multipleselect.name": {
+    "message": "MultipleSelect"
+  },
+  "field.richtext.description": {
+    "message": "A lightweight richtext editor."
+  },
+  "field.singleSelect.description": {
+    "message": "Multiple select allows you to select one or more predefined options listed below."
+  },
+  "field.text.description": {
+    "message": "A long text field that can span multiple lines."
+  },
+  "field.url.description": {
+    "message": "A valid URL (e.g. airtable.com or https://airtable.com/universe)."
+  },
+  "filters.notEqual": {
+    "message": "Not Equals"
+  },
+  "fkWU2P": {
+    "message": "Add a Country select list to your record"
+  },
+  "gsD9k4": {
+    "message": "A valid email address (e.g. andrew@example.com)."
+  },
+  "hl9bd4": {
+    "message": "Cover"
+  },
+  "kFkPWB": {
+    "message": "Number"
+  },
+  "kU1wCA": {
+    "message": "Integer or decimal number"
+  },
+  "loSPNM": {
+    "message": "Add a cover image to your record"
+  },
+  "m4vqJl": {
+    "message": "Files"
+  },
+  "qlcuNQ": {
+    "message": "ID"
+  },
+  "sIMS7i": {
+    "message": "Progress"
+  },
+  "sy+pv5": {
+    "message": "Email"
+  },
+  "tNgoex": {
+    "message": "Format a number with a currency"
+  },
+  "uLd91N": {
+    "message": "A telephone number (e.g. (415) 555-9876)."
+  },
+  "vONi+O": {
+    "message": "Country"
+  },
+  "zFegDD": {
+    "message": "Contact"
+  },
+  "zff+Cr": {
+    "message": "Payment method (Credit Card, or others)"
+  }
+}

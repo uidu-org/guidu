@@ -1,0 +1,71 @@
+{
+  "0f57EG": {
+    "message": "Add another filter"
+  },
+  "5L6knw": {
+    "message": "No filters applied. Pick a field"
+  },
+  "7pXrnq": {
+    "message": "Day"
+  },
+  "AaZSgN": {
+    "message": "Pick another field to sort by"
+  },
+  "IFo1oo": {
+    "message": "Year"
+  },
+  "KC4fO5": {
+    "message": "{index, plural, =0 {Where} other {Then where} }"
+  },
+  "KIna6h": {
+    "message": "No selected fields to group by. Pick one"
+  },
+  "L/WZOa": {
+    "message": "{filtersCount, plural, =0 {Filter} one {Filtered by 1 field} other {Filtered by {filtersCount, number} fields} }"
+  },
+  "TBovrx": {
+    "message": "Month"
+  },
+  "WN/yIv": {
+    "message": "{index, plural, =0 {Group by} other {Then by} }"
+  },
+  "ZLFzi4": {
+    "message": "{index, plural, =0 {Sort by} other {Then by} }"
+  },
+  "data_controls.toggler.deselect_all": {
+    "message": "Deselect all"
+  },
+  "data_controls.toggler.select_all": {
+    "message": "Select all"
+  },
+  "fbWrEN": {
+    "message": "Choose calendar view"
+  },
+  "k5N90+": {
+    "message": "No selected fields to sort by. Pick one"
+  },
+  "kCZBrb": {
+    "message": "Compact"
+  },
+  "lKv8ex": {
+    "message": "Default"
+  },
+  "m2rU1a": {
+    "message": "{sortersCount, plural, =0 {Sort} one {Sorted by 1 field} other {Sorted by {sortersCount, number} fields} }"
+  },
+  "myq2ZL": {
+    "message": "Normal"
+  },
+  "pE58D7": {
+    "message": "Extra"
+  },
+  "sd2ieZ": {
+    "message": "Week"
+  },
+  "wcR8YO": {
+    "message": "{groupersCount, plural, =0 {Group by} one {Grouped by 1 field} other {Grouped by {groupersCount, number} fields} }"
+  },
+  "xYIsCK": {
+    "message": "Pick a field to group by"
+  }
+}
