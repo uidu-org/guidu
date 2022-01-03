@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.9.3
+
+### Patch Changes
+
+- 113bf823c: Fix lang extraction, Avatar display flex
+
 ## 0.9.2
 
 ### Patch Changes

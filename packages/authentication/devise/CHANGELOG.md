@@ -1,5 +1,14 @@
 # @uidu/devise
 
+## 0.6.13
+
+### Patch Changes
+
+- 1a65d83db: Added supportedLocales
+- 113bf823c: Fix lang extraction, Avatar display flex
+- Updated dependencies [113bf823c]
+  - @uidu/avatar@0.9.3
+
 ## 0.6.12
 
 ### Patch Changes

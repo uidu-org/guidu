@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 1.4.9
+
+### Patch Changes
+
+- 113bf823c: Fix lang extraction, Avatar display flex
+
 ## 1.4.8
 
 ### Patch Changes
