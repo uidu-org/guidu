@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.7
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 0.5.6
 
 ### Patch Changes

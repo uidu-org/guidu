@@ -1,5 +1,13 @@
 # @uidu/analytics-gas-types
 
+## 0.3.1
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+
 ## 0.3.0
 
 ### Minor Changes

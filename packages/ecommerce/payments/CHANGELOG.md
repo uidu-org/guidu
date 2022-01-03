@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 1.1.9
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/section-message@0.6.6
+  - @uidu/slider@1.7.8
+  - @uidu/theme@0.6.7
+  - @uidu/field-base@3.1.10
+  - @uidu/form@1.2.10
+
 ## 1.1.8
 
 ### Patch Changes

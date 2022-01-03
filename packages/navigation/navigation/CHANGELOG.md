@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.0.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/avatar@0.9.2
+  - @uidu/dropdown-menu@0.6.8
+  - @uidu/inline-dialog@0.5.8
+  - @uidu/menu@0.6.2
+  - @uidu/theme@0.6.7
+  - @uidu/tooltip@0.5.8
+  - @uidu/animated-menu@1.0.6
+  - @uidu/shell@2.1.9
+
 ## 1.0.7
 
 ### Patch Changes

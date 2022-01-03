@@ -1,5 +1,24 @@
 # @uidu/data-manager
 
+## 2.0.3
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/button@1.3.7
+  - @uidu/pagination@0.5.7
+  - @uidu/spinner@0.5.6
+  - @uidu/board@0.5.2
+  - @uidu/calendar@0.3.8
+  - @uidu/data-controls@2.0.3
+  - @uidu/data-fields@1.4.8
+  - @uidu/data-views@1.1.8
+  - @uidu/gallery@1.2.2
+  - @uidu/list@1.2.2
+  - @uidu/table@1.2.3
+  - @uidu/shell@2.1.9
+
 ## 2.0.2
 
 ### Patch Changes

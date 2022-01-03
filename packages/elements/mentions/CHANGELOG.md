@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.3.13
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/avatar@0.9.2
+  - @uidu/button@1.3.7
+  - @uidu/lozenge@0.5.6
+  - @uidu/theme@0.6.7
+  - @uidu/tooltip@0.5.8
+  - @uidu/analytics-gas-types@0.3.1
+
 ## 0.3.12
 
 ### Patch Changes

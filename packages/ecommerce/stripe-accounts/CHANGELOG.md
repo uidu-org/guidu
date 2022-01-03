@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.3.11
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/slider@1.7.8
+  - @uidu/spinner@0.5.6
+  - @uidu/payments@1.1.9
+  - @uidu/field-text@1.1.9
+  - @uidu/form@1.2.10
+  - @uidu/stepper@0.4.6
+
 ## 0.3.10
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/field-range
 
+## 1.0.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/theme@0.6.7
+  - @uidu/field-base@3.1.10
+  - @uidu/form@1.2.10
+
 ## 1.0.7
 
 ### Patch Changes

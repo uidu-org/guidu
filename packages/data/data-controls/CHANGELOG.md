@@ -1,5 +1,28 @@
 # @uidu/data-controls
 
+## 2.0.3
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/button@1.3.7
+  - @uidu/drawer@0.7.8
+  - @uidu/dropdown-menu@0.6.8
+  - @uidu/inline-dialog@0.5.8
+  - @uidu/menu@0.6.2
+  - @uidu/popup@0.6.8
+  - @uidu/spinner@0.5.6
+  - @uidu/tooltip@0.5.8
+  - @uidu/data-fields@1.4.8
+  - @uidu/data-manager@2.0.3
+  - @uidu/data-views@1.1.8
+  - @uidu/checkbox@1.1.8
+  - @uidu/field-text@1.1.9
+  - @uidu/form@1.2.10
+  - @uidu/select@1.5.8
+  - @uidu/shell@2.1.9
+
 ## 2.0.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.11
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 0.4.10
 
 ### Patch Changes

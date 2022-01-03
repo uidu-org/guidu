@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.0.6
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 1.0.5
 
 ### Patch Changes

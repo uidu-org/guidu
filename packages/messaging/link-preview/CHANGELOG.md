@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.9
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 0.3.8
 
 ### Patch Changes

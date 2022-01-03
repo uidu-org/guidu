@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.7.6
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/adf-schema@0.6.6
+
 ## 0.7.5
 
 ### Patch Changes

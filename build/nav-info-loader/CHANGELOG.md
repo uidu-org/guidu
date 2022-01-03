@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.3
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+
 ## 0.2.2
 
 ### Patch Changes

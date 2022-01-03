@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.4.10
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/avatar-group@2.6.7
+  - @uidu/button@1.3.7
+  - @uidu/spinner@0.5.6
+  - @uidu/theme@0.6.7
+  - @uidu/analytics-namespaced-context@0.4.5
+
 ## 0.4.9
 
 ### Patch Changes

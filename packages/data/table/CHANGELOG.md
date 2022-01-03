@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.2.3
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/button@1.3.7
+  - @uidu/dropdown-menu@0.6.8
+  - @uidu/menu@0.6.2
+  - @uidu/popup@0.6.8
+  - @uidu/data-fields@1.4.8
+  - @uidu/checkbox@1.1.8
+
 ## 1.2.2
 
 ### Patch Changes

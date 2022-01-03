@@ -1,5 +1,43 @@
 # @uidu/editor-core
 
+## 0.11.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/avatar@0.9.2
+  - @uidu/avatar-group@2.6.7
+  - @uidu/button@1.3.7
+  - @uidu/droplist@0.5.8
+  - @uidu/menu@0.6.2
+  - @uidu/modal-dialog@0.5.11
+  - @uidu/spinner@0.5.6
+  - @uidu/theme@0.6.7
+  - @uidu/tooltip@0.5.8
+  - @uidu/adf-schema@0.6.6
+  - @uidu/adf-utils@0.7.6
+  - @uidu/editor-common@0.6.7
+  - @uidu/editor-json-transformer@0.5.5
+  - @uidu/editor-markdown-transformer@0.5.9
+  - @uidu/analytics-gas-types@0.3.1
+  - @uidu/analytics-listeners@0.4.5
+  - @uidu/analytics-namespaced-context@0.4.5
+  - @uidu/date@0.4.9
+  - @uidu/emoji@0.5.13
+  - @uidu/mentions@0.3.13
+  - @uidu/profilecard@0.2.15
+  - @uidu/status@0.4.12
+  - @uidu/task-decision@0.4.10
+  - @uidu/field-date@1.1.8
+  - @uidu/form@1.2.10
+  - @uidu/select@1.5.8
+  - @uidu/media-card@0.5.18
+  - @uidu/media-core@0.7.4
+  - @uidu/media-filmstrip@0.4.9
+  - @uidu/media-picker@0.7.5
+
 ## 0.11.7
 
 ### Patch Changes

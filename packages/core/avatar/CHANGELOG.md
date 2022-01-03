@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.9.2
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/theme@0.6.7
+  - @uidu/tooltip@0.5.8
+
 ## 0.9.1
 
 ### Patch Changes

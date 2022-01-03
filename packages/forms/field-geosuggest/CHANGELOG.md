@@ -1,5 +1,14 @@
 # @uidu/field-geosuggest
 
+## 1.1.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/spinner@0.5.6
+  - @uidu/field-base@3.1.10
+
 ## 1.1.7
 
 ### Patch Changes

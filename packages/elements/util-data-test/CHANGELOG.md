@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/analytics@0.5.5
+  - @uidu/emoji@0.5.13
+  - @uidu/mentions@0.3.13
+  - @uidu/task-decision@0.4.10
+
 ## 0.4.7
 
 ### Patch Changes

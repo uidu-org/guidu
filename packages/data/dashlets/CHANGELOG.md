@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 1.5.9
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/spinner@0.5.6
+  - @uidu/tooltip@0.5.8
+  - @uidu/dashboard-manager@1.3.5
+  - @uidu/dashlet-controls@1.0.12
+  - @uidu/data-fields@1.4.8
+  - @uidu/table@1.2.3
+
 ## 1.5.8
 
 ### Patch Changes

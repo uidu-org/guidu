@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 2.0.8
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/button@1.3.7
+  - @uidu/popup@0.6.8
+  - @uidu/field-base@3.1.10
+
 ## 2.0.7
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.5.7
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/avatar@0.9.2
+  - @uidu/theme@0.6.7
+
 ## 0.5.6
 
 ### Patch Changes

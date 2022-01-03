@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.4.9
+
+### Patch Changes
+
+- e07f8ed62: Add lang files to npm
+- Updated dependencies [e07f8ed62]
+  - @uidu/theme@0.6.7
+  - @uidu/media-card@0.5.18
+  - @uidu/media-core@0.7.4
+  - @uidu/media-viewer@0.4.15
+
 ## 0.4.8
 
 ### Patch Changes
