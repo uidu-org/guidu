@@ -9,7 +9,7 @@
     "defaultMessage": "Insert option name"
   },
   "55hdQy": {
-    "defaultMessage": "Valuta"
+    "defaultMessage": "Currency"
   },
   "7GrdNm": {
     "defaultMessage": "Insert a rounded avatar for the record"
@@ -18,7 +18,7 @@
     "defaultMessage": "Member"
   },
   "7etk18": {
-    "defaultMessage": "Scegli una data"
+    "defaultMessage": "Choose a duration"
   },
   "82aMWa": {
     "defaultMessage": "Appointment"
@@ -33,7 +33,7 @@
     "defaultMessage": "A contact field represents a person or an organization - a contact"
   },
   "BVTni9": {
-    "defaultMessage": "Metodo di pagamento"
+    "defaultMessage": "Payment method"
   },
   "BkqnkQ": {
     "defaultMessage": "A single line of text. You can optionally prefill each new cell with a default value"
@@ -48,7 +48,7 @@
     "defaultMessage": "Rating"
   },
   "FY6igM": {
-    "defaultMessage": "Minuti"
+    "defaultMessage": "Minutes"
   },
   "I3MA83": {
     "defaultMessage": "String"
@@ -60,10 +60,10 @@
     "defaultMessage": "A single checkbox that can be checked or unchecked."
   },
   "O95R3Z": {
-    "defaultMessage": "Numero di telefono"
+    "defaultMessage": "Phone"
   },
   "P7PLVj": {
-    "defaultMessage": "Data"
+    "defaultMessage": "Date"
   },
   "PCmChI": {
     "defaultMessage": "...or choose a custom duration"
