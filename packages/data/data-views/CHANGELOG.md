@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 1.1.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/button@1.3.6
+  - @uidu/data-controls@2.0.2
+  - @uidu/data-manager@2.0.2
+  - @uidu/field-counter@1.1.7
+  - @uidu/field-number@1.0.7
+  - @uidu/form@1.2.9
+  - @uidu/select@1.5.7
+
 ## 1.1.6
 
 ### Patch Changes

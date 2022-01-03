@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.9
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/button@1.3.6
+
 ## 1.2.8
 
 ### Patch Changes

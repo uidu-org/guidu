@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.7.5
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/adf-schema@0.6.5
+
 ## 0.7.4
 
 ### Patch Changes

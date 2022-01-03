@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.3
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/docs@0.5.4
+
 ## 0.6.2
 
 ### Patch Changes

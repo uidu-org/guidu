@@ -1,5 +1,13 @@
 # @uidu/progress-bar
 
+## 0.5.6
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/theme@0.6.6
+
 ## 0.5.5
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/field-range
 
+## 1.0.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/theme@0.6.6
+  - @uidu/field-base@3.1.9
+  - @uidu/form@1.2.9
+
 ## 1.0.6
 
 ### Patch Changes

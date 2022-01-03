@@ -1,5 +1,18 @@
 # @uidu/mentions
 
+## 0.3.12
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/avatar@0.9.1
+  - @uidu/button@1.3.6
+  - @uidu/lozenge@0.5.5
+  - @uidu/theme@0.6.6
+  - @uidu/tooltip@0.5.7
+
 ## 0.3.11
 
 ### Patch Changes

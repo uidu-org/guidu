@@ -1,5 +1,16 @@
 # @uidu/field-image-uploader
 
+## 1.2.3
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/button@1.3.6
+  - @uidu/spinner@0.5.5
+  - @uidu/field-base@3.1.9
+
 ## 1.2.2
 
 ### Patch Changes

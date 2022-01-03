@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.6.6
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/form@1.2.9
+
 ## 0.6.5
 
 ### Patch Changes

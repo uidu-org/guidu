@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.6.6
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/theme@0.6.6
+  - @uidu/adf-schema@0.6.5
+  - @uidu/adf-utils@0.7.5
+  - @uidu/analytics-namespaced-context@0.4.4
+  - @uidu/emoji@0.5.12
+  - @uidu/mentions@0.3.12
+  - @uidu/profilecard@0.2.14
+
 ## 0.6.5
 
 ### Patch Changes

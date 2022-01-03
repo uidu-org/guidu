@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 1.5.8
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/spinner@0.5.5
+  - @uidu/tooltip@0.5.7
+  - @uidu/dashboard-manager@1.3.4
+  - @uidu/dashlet-controls@1.0.11
+  - @uidu/data-fields@1.4.7
+  - @uidu/table@1.2.2
+
 ## 1.5.7
 
 ### Patch Changes

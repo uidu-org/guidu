@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.9
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/form@1.2.9
+
 ## 3.1.8
 
 ### Patch Changes

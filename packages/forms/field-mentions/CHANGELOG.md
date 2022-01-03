@@ -1,5 +1,16 @@
 # @uidu/field-mentions
 
+## 1.2.2
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/theme@0.6.6
+  - @uidu/field-base@3.1.9
+  - @uidu/form@1.2.9
+
 ## 1.2.1
 
 ### Patch Changes

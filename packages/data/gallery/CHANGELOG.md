@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.2.1
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/spinner@0.5.5
+  - @uidu/data-controls@2.0.2
+  - @uidu/data-fields@1.4.7
+  - @uidu/shell@2.1.8
+
 ## 1.2.0
 
 ### Minor Changes

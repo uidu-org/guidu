@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.4.4
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+
 ## 0.4.3
 
 ### Patch Changes

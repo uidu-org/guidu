@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.5.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/item@0.5.6
+  - @uidu/layer@0.5.5
+  - @uidu/spinner@0.5.5
+  - @uidu/theme@0.6.6
+  - @uidu/tooltip@0.5.7
+
 ## 0.5.6
 
 ### Patch Changes

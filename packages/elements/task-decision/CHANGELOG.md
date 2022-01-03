@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.4.9
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/avatar-group@2.6.6
+  - @uidu/button@1.3.6
+  - @uidu/spinner@0.5.5
+  - @uidu/theme@0.6.6
+  - @uidu/analytics-namespaced-context@0.4.4
+
 ## 0.4.8
 
 ### Patch Changes

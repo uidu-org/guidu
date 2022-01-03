@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 1.4.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/button@1.3.6
+  - @uidu/map@0.6.5
+  - @uidu/menu@0.6.1
+  - @uidu/popup@0.6.7
+  - @uidu/field-color-picker@2.0.7
+  - @uidu/field-date@1.1.7
+  - @uidu/field-downshift@1.4.4
+  - @uidu/field-number@1.0.7
+  - @uidu/field-text@1.1.8
+  - @uidu/field-time@1.1.7
+  - @uidu/field-toggle@1.1.3
+  - @uidu/form@1.2.9
+  - @uidu/select@1.5.7
+
 ## 1.4.6
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/message
 
+## 0.5.8
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/avatar@0.9.1
+  - @uidu/drawer@0.7.7
+  - @uidu/dropdown-menu@0.6.7
+  - @uidu/tooltip@0.5.7
+  - @uidu/media-card@0.5.17
+  - @uidu/media-viewer@0.4.14
+  - @uidu/message-form@0.4.8
+  - @uidu/message-renderer@0.4.6
+
 ## 0.5.7
 
 ### Patch Changes

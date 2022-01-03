@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.4.11
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/lozenge@0.5.5
+  - @uidu/theme@0.6.6
+  - @uidu/field-text@1.1.8
+
 ## 0.4.10
 
 ### Patch Changes

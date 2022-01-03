@@ -1,5 +1,18 @@
 # @uidu/onboarding
 
+## 1.2.4
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/analytics@0.5.4
+  - @uidu/button@1.3.6
+  - @uidu/modal-dialog@0.5.10
+  - @uidu/popper@0.5.6
+  - @uidu/portal@0.5.7
+  - @uidu/theme@0.6.6
+
 ## 1.2.3
 
 ### Patch Changes

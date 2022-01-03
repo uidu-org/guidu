@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.5.4
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/adf-schema@0.6.5
+
 ## 0.5.3
 
 ### Patch Changes

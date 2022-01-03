@@ -1,5 +1,15 @@
 # @uidu/calendar
 
+## 0.3.7
+
+### Patch Changes
+
+- 43e526133: Bump babel dependencies
+- Updated dependencies [43e526133]
+  - @uidu/button@1.3.6
+  - @uidu/dropdown-menu@0.6.7
+  - @uidu/shell@2.1.8
+
 ## 0.3.6
 
 ### Patch Changes
