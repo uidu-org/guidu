@@ -49,5 +49,5 @@ export default styled.div<{
   z-index: ${({ isStacked }) =>
     isStacked ? layers.blanket() + 2 : layers.blanket() + 1}};
   ${({ size, origin }) => positionAndSizes(size, origin)};
-  ${tw`overflow-hidden fixed flex`}
+  ${tw`fixed flex overflow-hidden`}
 `;

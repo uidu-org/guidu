@@ -13,7 +13,6 @@ const BaseItem = ({
   overrides,
 }: BaseItemProps) => {
   const Title = overrides?.Title || DefaultTitle;
-  console.log(Title);
 
   return (
     <div tw="flex items-center w-full min-height[fit-content]">

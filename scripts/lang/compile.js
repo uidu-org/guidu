@@ -21,7 +21,8 @@ async function compileTranslation() {
         const PATTERN = `${relativePath}/lang/${locale}.json`;
         const files = await globby(PATTERN);
         await formatjs.compileAndWrite(files, {
-          outFile: `${relativePath}/dist/lang/${locale}.json`,
+          outFile: `${relativePath}/lang/dist/${locale}.json`,
+          format: 'crowdin',
         });
       });
     }

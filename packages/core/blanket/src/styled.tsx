@@ -7,7 +7,7 @@ export default styled.div<{
   isTinted: boolean;
   canClickThrough: boolean;
 }>`
-  ${tw`fixed top-0 bottom-0 left-0 transition-opacity duration-200 bg-secondary bg-opacity-40`}
+  ${tw`fixed top-0 bottom-0 left-0 transition-opacity duration-200 background[rgba(var(--body-primary-color), .35)]`}
   ${({ isTinted }) => (isTinted ? tw`opacity-100` : tw`opacity-0`)}
   ${({ canClickThrough }) =>
     canClickThrough ? tw`pointer-events-none` : tw`pointer-events-auto`}
