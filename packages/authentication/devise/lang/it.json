@@ -1,266 +1,266 @@
 {
   "+MpPdO": {
-    "defaultMessage": "Inserisci la tua email",
-    "description": "simple_sessions_email_label"
+    "description": "simple_sessions_email_label",
+    "message": "Insert your email"
   },
   "/WhzdW": {
-    "defaultMessage": "Fill your data to sign in",
-    "description": "email_sessions_info_title"
+    "description": "email_sessions_info_title",
+    "message": "Fill your data to sign in"
   },
   "0vaT8n": {
-    "defaultMessage": "Use a valid email address",
-    "description": "email_registrations_email_description"
+    "description": "email_registrations_email_description",
+    "message": "Use a valid email address"
   },
   "2oXVtk": {
-    "defaultMessage": "Sign in with your phone",
-    "description": "phone_sessions_phone_title"
+    "description": "phone_sessions_phone_title",
+    "message": "Sign in with your phone"
   },
   "3GMBFx": {
-    "defaultMessage": "email_sessions_info_description",
-    "description": "email_sessions_info_description"
+    "description": "email_sessions_info_description",
+    "message": "email_sessions_info_description"
   },
   "4Wm3wL": {
-    "defaultMessage": "Use your favourite email account",
-    "description": "email_sessions_email_description"
+    "description": "email_sessions_email_description",
+    "message": "Use your favourite email account"
   },
   "501Tyq": {
-    "defaultMessage": "Fill your data to sign in",
-    "description": "phone_sessions_info_title"
+    "description": "phone_sessions_info_title",
+    "message": "Fill your data to sign in"
   },
   "7QY214": {
-    "defaultMessage": "Reset your password",
-    "description": "password_reset_title"
+    "description": "password_reset_title",
+    "message": "Reset your password"
   },
   "7YOCC3": {
-    "defaultMessage": "Insert your password",
-    "description": "simple_sessions_email_label"
+    "description": "simple_sessions_email_label",
+    "message": "Insert your password"
   },
   "7sNotS": {
-    "defaultMessage": "Insert your email",
-    "description": "simple_registrations_email_label"
+    "description": "simple_registrations_email_label",
+    "message": "Insert your email"
   },
   "833DlP": {
-    "defaultMessage": "Sign in with your email and password",
-    "description": "simple_sessions_description"
+    "description": "simple_sessions_description",
+    "message": "Sign in with your email and password"
   },
   "8NFNJF": {
-    "defaultMessage": "Insert your email",
-    "description": "passwordless_registrations_email_label"
+    "description": "passwordless_registrations_email_label",
+    "message": "Insert your email"
   },
   "ACQjrV": {
-    "defaultMessage": "Use a valid phone address",
-    "description": "phone_registrations_phone_description"
+    "description": "phone_registrations_phone_description",
+    "message": "Use a valid phone address"
   },
   "AKCzRf": {
-    "defaultMessage": "Sign up with to discover stories and make impact",
-    "description": "simple_registrations_description"
+    "description": "simple_registrations_description",
+    "message": "Sign up with to discover stories and make impact"
   },
   "AVvoWi": {
-    "defaultMessage": "phone_registrations_info_description",
-    "description": "phone_registrations_info_description"
+    "description": "phone_registrations_info_description",
+    "message": "phone_registrations_info_description"
   },
   "AorIYR": {
-    "defaultMessage": "Sign up with your email",
-    "description": ""
+    "description": "",
+    "message": "Sign up with your email"
   },
   "BmOo7m": {
-    "defaultMessage": "Already have an account?",
-    "description": "simple_registrations_secondary_cta"
+    "description": "simple_registrations_secondary_cta",
+    "message": "Already have an account?"
   },
   "CRDuCX": {
-    "defaultMessage": "Sign in with {provider}",
-    "description": ""
+    "description": "",
+    "message": "Sign in with {provider}"
   },
   "Cefrei": {
-    "defaultMessage": "email_sessions_password_description",
-    "description": "email_sessions_password_description"
+    "description": "email_sessions_password_description",
+    "message": "email_sessions_password_description"
   },
   "D5xIrB": {
-    "defaultMessage": "Sign in",
-    "description": "passwordless_sessions_title"
+    "description": "passwordless_sessions_title",
+    "message": "Sign in"
   },
   "DItTjL": {
-    "defaultMessage": "Sign in",
-    "description": "passwordless_sessions_primary_cta"
+    "description": "passwordless_sessions_primary_cta",
+    "message": "Sign in"
   },
   "FYiOd2": {
-    "defaultMessage": "email_registrations_info_description",
-    "description": "email_registrations_info_description"
+    "description": "email_registrations_info_description",
+    "message": "email_registrations_info_description"
   },
   "Gjjibu": {
-    "defaultMessage": "Insert a new password",
-    "description": "password_reset_email_label"
+    "description": "password_reset_email_label",
+    "message": "Insert a new password"
   },
   "Hz2Eps": {
-    "defaultMessage": "Sign up",
-    "description": "simple_registrations_title"
+    "description": "simple_registrations_title",
+    "message": "Sign up"
   },
   "IgD55N": {
-    "defaultMessage": "Sign up",
-    "description": "phone_registrations_phone_cta"
+    "description": "phone_registrations_phone_cta",
+    "message": "Sign up"
   },
   "IkswMP": {
-    "defaultMessage": "phone_sessions_info_description",
-    "description": "phone_sessions_info_description"
+    "description": "phone_sessions_info_description",
+    "message": "phone_sessions_info_description"
   },
   "JFFVn4": {
-    "defaultMessage": "Choose a new password to access your account",
-    "description": "password_reset_description"
+    "description": "password_reset_description",
+    "message": "Choose a new password to access your account"
   },
   "KrRobM": {
-    "defaultMessage": "Sign up with your phone",
-    "description": "phone_registrations_phone_title"
+    "description": "phone_registrations_phone_title",
+    "message": "Sign up with your phone"
   },
   "LFKPH0": {
-    "defaultMessage": "Remember me for next sessions",
-    "description": "simple_sessions_email_label"
+    "description": "simple_sessions_email_label",
+    "message": "Remember me for next sessions"
   },
   "LwHrRU": {
-    "defaultMessage": "Send email",
-    "description": "password_recovery_primary_cta"
+    "description": "password_recovery_primary_cta",
+    "message": "Send email"
   },
   "MFRc+W": {
-    "defaultMessage": "Insert your email",
-    "description": "password_recovery_email_label"
+    "description": "password_recovery_email_label",
+    "message": "Insert your email"
   },
   "MWgou3": {
-    "defaultMessage": "Recover your password",
-    "description": "password_recovery_title"
+    "description": "password_recovery_title",
+    "message": "Recover your password"
   },
   "NF7xCO": {
-    "defaultMessage": "Insert your password",
-    "description": "email_sessions_password_title"
+    "description": "email_sessions_password_title",
+    "message": "Insert your password"
   },
   "OPDSwA": {
-    "defaultMessage": "Remember me for next registrations",
-    "description": "simple_registrations_email_label"
+    "description": "simple_registrations_email_label",
+    "message": "Remember me for next registrations"
   },
   "PpVq3b": {
-    "defaultMessage": "Forgot password?",
-    "description": "sessions_forgot_password"
+    "description": "sessions_forgot_password",
+    "message": "Forgot password?"
   },
   "QTKVoP": {
-    "defaultMessage": "email_registrations_password_description",
-    "description": "email_registrations_password_description"
+    "description": "email_registrations_password_description",
+    "message": "email_registrations_password_description"
   },
   "QsMkH2": {
-    "defaultMessage": "Sign in",
-    "description": "password_recovery_secondary_cta"
+    "description": "password_recovery_secondary_cta",
+    "message": "Sign in"
   },
   "RoylPc": {
-    "defaultMessage": "Confirm",
-    "description": "password_reset_primary_cta"
+    "description": "password_reset_primary_cta",
+    "message": "Confirm"
   },
   "TDBufo": {
-    "defaultMessage": "Sign in with your email",
-    "description": "email_sessions_email_title"
+    "description": "email_sessions_email_title",
+    "message": "Sign in with your email"
   },
   "VFGuAo": {
-    "defaultMessage": "Sign up",
-    "description": "simple_registrations_primary_cta"
+    "description": "simple_registrations_primary_cta",
+    "message": "Sign up"
   },
   "W9qgxV": {
-    "defaultMessage": "phone_registrations_password_description",
-    "description": "phone_registrations_password_description"
+    "description": "phone_registrations_password_description",
+    "message": "phone_registrations_password_description"
   },
   "WUETUc": {
-    "defaultMessage": "Sign in",
-    "description": "simple_sessions_primary_cta"
+    "description": "simple_sessions_primary_cta",
+    "message": "Sign in"
   },
   "Wd+OiP": {
-    "defaultMessage": "Create an account",
-    "description": "simple_sessions_secondary_cta"
+    "description": "simple_sessions_secondary_cta",
+    "message": "Create an account"
   },
   "XF3QJU": {
-    "defaultMessage": "Sign in with your email and password",
-    "description": "passwordless_sessions_description"
+    "description": "passwordless_sessions_description",
+    "message": "Sign in with your email and password"
   },
   "XKIdxP": {
-    "defaultMessage": "phone_sessions_password_description",
-    "description": "phone_sessions_password_description"
+    "description": "phone_sessions_password_description",
+    "message": "phone_sessions_password_description"
   },
   "YK2n9f": {
-    "defaultMessage": "Sign in",
-    "description": "Allows user to perform an action again"
+    "description": "Allows user to perform an action again",
+    "message": "Sign in"
   },
   "aCUO6D": {
-    "defaultMessage": "Crea un account per personalizzare la tua homepage, seguire le tue organizzazioni preferite, scoprire quello che di buono c'è vicino a te, e molto altro.",
-    "description": ""
+    "description": "",
+    "message": "Crea un account per personalizzare la tua homepage, seguire le tue organizzazioni preferite, scoprire quello che di buono c'è vicino a te, e molto altro."
   },
   "aqubXm": {
-    "defaultMessage": "Sign up with {provider}",
-    "description": ""
+    "description": "",
+    "message": "Sign up with {provider}"
   },
   "c19CTv": {
-    "defaultMessage": "phone_registrations_info_title",
-    "description": "phone_registrations_info_title"
+    "description": "phone_registrations_info_title",
+    "message": "phone_registrations_info_title"
   },
   "dD22NV": {
-    "defaultMessage": "email_registrations_password_title",
-    "description": "email_registrations_password_title"
+    "description": "email_registrations_password_title",
+    "message": "email_registrations_password_title"
   },
   "hFNwoD": {
-    "defaultMessage": "phone_registrations_password_title",
-    "description": "phone_registrations_password_title"
+    "description": "phone_registrations_password_title",
+    "message": "phone_registrations_password_title"
   },
   "hrYE3k": {
-    "defaultMessage": "Insert your email",
-    "description": "passwordless_sessions_email_label"
+    "description": "passwordless_sessions_email_label",
+    "message": "Insert your email"
   },
   "i7dnLO": {
-    "defaultMessage": "Sign up",
-    "description": "passwordless_registrations_title"
+    "description": "passwordless_registrations_title",
+    "message": "Sign up"
   },
   "mFh4TA": {
-    "defaultMessage": "Use your favourite phone account",
-    "description": "phone_sessions_phone_description"
+    "description": "phone_sessions_phone_description",
+    "message": "Use your favourite phone account"
   },
   "mr5mkK": {
-    "defaultMessage": "email_registrations_info_title",
-    "description": "email_registrations_info_title"
+    "description": "email_registrations_info_title",
+    "message": "email_registrations_info_title"
   },
   "ovofAQ": {
-    "defaultMessage": "Sign in",
-    "description": "simple_sessions_title"
+    "description": "simple_sessions_title",
+    "message": "Sign in"
   },
   "rW2UVp": {
-    "defaultMessage": "Accedi per visualizzare la tua homepage, seguire le tue organizzazioni preferite, scoprire quello che di buono c'è vicino a te.",
-    "description": ""
+    "description": "",
+    "message": "Accedi per visualizzare la tua homepage, seguire le tue organizzazioni preferite, scoprire quello che di buono c'è vicino a te."
   },
   "ruhP/n": {
-    "defaultMessage": "Sign up",
-    "description": "email_registrations_email_cta"
+    "description": "email_registrations_email_cta",
+    "message": "Sign up"
   },
   "s1ecqv": {
-    "defaultMessage": "Insert your password",
-    "description": "phone_sessions_password_title"
+    "description": "phone_sessions_password_title",
+    "message": "Insert your password"
   },
   "sHJv1l": {
-    "defaultMessage": "Insert your email, we'll send you instructions on how to reset your account",
-    "description": "password_recovery_description"
+    "description": "password_recovery_description",
+    "message": "Insert your email, we'll send you instructions on how to reset your account"
   },
   "tvES/S": {
-    "defaultMessage": "Choose a password",
-    "description": "simple_registrations_email_label"
+    "description": "simple_registrations_email_label",
+    "message": "Choose a password"
   },
   "v9ll/I": {
-    "defaultMessage": "Per far funzionare uidu, registriamo i dati degli utenti e li condividiamo con alcuni provider. Registrandoti, accetti le Condizioni d'uso e confermi di aver letto e compreso la Privacy Policy.",
-    "description": ""
+    "description": "",
+    "message": "Per far funzionare uidu, registriamo i dati degli utenti e li condividiamo con alcuni provider. Registrandoti, accetti le Condizioni d'uso e confermi di aver letto e compreso la Privacy Policy."
   },
   "vr1b30": {
-    "defaultMessage": "Sign in",
-    "description": "password_reset_secondary_cta"
+    "description": "password_reset_secondary_cta",
+    "message": "Sign in"
   },
   "vu6mB6": {
-    "defaultMessage": "Sign up with to discover stories and make impact",
-    "description": "passwordless_registrations_description"
+    "description": "passwordless_registrations_description",
+    "message": "Sign up with to discover stories and make impact"
   },
   "w/5gvn": {
-    "defaultMessage": "Sign up",
-    "description": "passwordless_registrations_primary_cta"
+    "description": "passwordless_registrations_primary_cta",
+    "message": "Sign up"
   },
   "xg6sQH": {
-    "defaultMessage": "Sign up with your email",
-    "description": "email_registrations_email_title"
+    "description": "email_registrations_email_title",
+    "message": "Sign up with your email"
   }
 }
