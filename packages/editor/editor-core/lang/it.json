@@ -1,11 +1,11 @@
 {
   "0XNdGG": {
     "description": "Please enter a link.",
-    "message": "Please enter a link."
+    "message": "Inserire il link."
   },
   "3mfaT0": {
     "description": "Please enter a valid link.",
-    "message": "Please enter a valid link."
+    "message": "Inserisci un link valido."
   },
   "uidu.editor-core.action": {
     "description": "Also known as a “task”, “to do item”, or a checklist",
@@ -17,75 +17,75 @@
   },
   "uidu.editor-core.addAltText": {
     "description": "Add an alt text for this image",
-    "message": "Alt text"
+    "message": "Testo alternativo"
   },
   "uidu.editor-core.alignImageCenter": {
     "description": "Aligns image to the center",
-    "message": "Align center"
+    "message": "Allinea al centro"
   },
   "uidu.editor-core.alignImageLeft": {
     "description": "Aligns image to the left",
-    "message": "Align left"
+    "message": "Allinea a sinistra"
   },
   "uidu.editor-core.alignImageRight": {
     "description": "Aligns image to the right",
-    "message": "Align right"
+    "message": "Allinea a destra"
   },
   "uidu.editor-core.alignment": {
     "description": "Aligns text",
-    "message": "Alignment"
+    "message": "Allineamento"
   },
   "uidu.editor-core.altText": {
     "description": "Alternative text for image.",
-    "message": "Alt text"
+    "message": "Testo alternativo"
   },
   "uidu.editor-core.alttext.validation": {
     "description": "Please remove any special characters in alt text. ",
-    "message": "Please remove any special characters in alt text."
+    "message": "Rimuovi tutti i caratteri speciali nel testo alt."
   },
   "uidu.editor-core.annotate": {
     "description": "Annotate an image by drawing arrows, adding text, or scribbles.",
-    "message": "Annotate"
+    "message": "Annota"
   },
   "uidu.editor-core.backLink": {
     "description": "Go back from media linking toolbar to main toolbar",
-    "message": "Go back"
+    "message": "Indietro"
   },
   "uidu.editor-core.blockquote": {
     "description": "Quote some text",
-    "message": "Quote"
+    "message": "Citazione"
   },
   "uidu.editor-core.blockquote.description": {
     "description": "Quote some text",
-    "message": "Insert a quote or citation"
+    "message": "Inserire una citazione"
   },
   "uidu.editor-core.bold": {
     "description": "This refers to bold or “strong” formatting, indicates that its contents have strong importance, seriousness, or urgency.",
-    "message": "Bold"
+    "message": "Grassetto"
   },
   "uidu.editor-core.canNotSortTable": {
     "description": "Split your cells to enable this feature",
-    "message": "⚠️ You can't sort a table with merged cells"
+    "message": "⚠️ Non è possibile ordinare una tabella con celle unite"
   },
   "uidu.editor-core.cancelButton": {
     "description": "Discard the current comment or document",
-    "message": "Cancel"
+    "message": "Annulla"
   },
   "uidu.editor-core.cardFloatingControls": {
     "description": "Options to change card type",
-    "message": "Card options"
+    "message": "Opzioni scheda"
   },
   "uidu.editor-core.cellBackground": {
     "description": "Change the background color of a table cell.",
-    "message": "Cell background"
+    "message": "Sfondo cella"
   },
   "uidu.editor-core.cellOptions": {
     "description": "Opens a menu with options for the current table cell.",
-    "message": "Cell options"
+    "message": "Opzioni cella"
   },
   "uidu.editor-core.clearAltTextEdit": {
     "description": "Clear alt text",
-    "message": "Clear alt text"
+    "message": "Cancella testo"
   },
   "uidu.editor-core.clearCells": {
     "description": "Clears the contents of the selected cells (this does not delete the cells themselves).",
@@ -93,19 +93,19 @@
   },
   "uidu.editor-core.clearFormatting": {
     "description": "Remove all rich text formatting from the selected text",
-    "message": "Clear formatting"
+    "message": "Rimuovi formattazione"
   },
   "uidu.editor-core.clearLink": {
     "description": "Clears link in the link toolbar",
-    "message": "Clear link"
+    "message": "Rimuovi link"
   },
   "uidu.editor-core.clearLinkText": {
     "description": "Clears text on the link toolbar",
-    "message": "Clear text"
+    "message": "Rimuovi testo"
   },
   "uidu.editor-core.closeAltTextEdit": {
     "description": "Back to toolbar",
-    "message": "Back"
+    "message": "Indietro"
   },
   "uidu.editor-core.closeHelpDialog": {
     "description": "",
@@ -197,7 +197,7 @@
   },
   "uidu.editor-core.emoji.description": {
     "description": "Insert an emoticon or smiley :-)",
-    "message": "Use emojis to express ideas 🎉 and emotions 😄"
+    "message": "Usa le emoji per esprimere le idee 🎉 ed emozioni 😄"
   },
   "uidu.editor-core.error": {
     "description": "Panels provide a way to highlight text. The error panel has a red background.",
@@ -301,15 +301,15 @@
   },
   "uidu.editor-core.helpDialogTips": {
     "description": "Hint about how to open a dialog quickly using a shortcut.",
-    "message": "Press {keyMap} to quickly open this dialog at any time"
+    "message": "Premi {keyMap} per aprire rapidamente questa finestra in qualsiasi momento"
   },
   "uidu.editor-core.horizontalRule": {
     "description": "A horizontal rule or divider",
-    "message": "Divider"
+    "message": "Linea di separazione"
   },
   "uidu.editor-core.horizontalRule.description": {
     "description": "A horizontal rule or divider",
-    "message": "Separate content with a horizontal line"
+    "message": "Separa il contenuto con una linea orizzontale"
   },
   "uidu.editor-core.hyperlinkToolbarPlaceholder": {
     "description": "Paste link or search recently viewed",
@@ -317,7 +317,7 @@
   },
   "uidu.editor-core.image": {
     "description": "Insert an image.",
-    "message": "Image"
+    "message": "Immagine"
   },
   "uidu.editor-core.info": {
     "description": "Panels provide a way to highlight text. The info panel has a blue background.",
@@ -341,15 +341,15 @@
   },
   "uidu.editor-core.insertRow": {
     "description": "Add a new row to your table.",
-    "message": "Insert row"
+    "message": "Inserisci riga"
   },
   "uidu.editor-core.italic": {
     "description": "This refers to italics or emphasized formatting.",
-    "message": "Italic"
+    "message": "Corsivo"
   },
   "uidu.editor-core.keyboardShortcuts": {
     "description": "",
-    "message": "Keyboard shortcuts"
+    "message": "Scorciatoie tastiera"
   },
   "uidu.editor-core.layoutFixedWidth": {
     "description": "Display your element (image, table, extension, etc) as standard width",
@@ -357,7 +357,7 @@
   },
   "uidu.editor-core.layoutFullWidth": {
     "description": "Display your element (image, table, extension, etc) as full width",
-    "message": "Go full width"
+    "message": "Vai a tutta larghezza"
   },
   "uidu.editor-core.layoutWide": {
     "description": "Display your element (image, table, extension, etc) wider than normal",
@@ -365,7 +365,7 @@
   },
   "uidu.editor-core.leftSidebar": {
     "description": "Layout with two columns, left column is 1/3 and right is 2/3 of page",
-    "message": "Left sidebar"
+    "message": "Barra laterale di sinistra"
   },
   "uidu.editor-core.link": {
     "description": "Insert a hyperlink",
@@ -373,19 +373,19 @@
   },
   "uidu.editor-core.link.description": {
     "description": "Insert a hyperlink",
-    "message": "Insert a link"
+    "message": "Inserisci un link"
   },
   "uidu.editor-core.linkAddress": {
     "description": "Insert the address of the link",
-    "message": "Link address"
+    "message": "Indirizzo link"
   },
   "uidu.editor-core.linkPlaceholder": {
     "description": "Create a new link by pasting a URL.",
-    "message": "Paste link"
+    "message": "Incolla link"
   },
   "uidu.editor-core.lists": {
     "description": "Menu shows ordered/bullet list and unordered/numbered lists",
-    "message": "Lists"
+    "message": "Elenchi"
   },
   "uidu.editor-core.markdown": {
     "description": "It is a name of popular markup language.",
@@ -393,11 +393,11 @@
   },
   "uidu.editor-core.mediaAddLink": {
     "description": "Add link",
-    "message": "Add link"
+    "message": "Aggiungi link"
   },
   "uidu.editor-core.mention": {
     "description": "Reference another person in your document",
-    "message": "Mention"
+    "message": "Menzione"
   },
   "uidu.editor-core.mention.description": {
     "description": "Reference another person in your document",
@@ -405,7 +405,7 @@
   },
   "uidu.editor-core.mergeCells": {
     "description": "Merge tables cells together.",
-    "message": "Merge cells"
+    "message": "Unisci celle"
   },
   "uidu.editor-core.moreFormatting": {
     "description": "Clicking this will show a menu with additional formatting options",
@@ -413,11 +413,11 @@
   },
   "uidu.editor-core.normal": {
     "description": "This is the default text style",
-    "message": "Normal text"
+    "message": "Testo normale"
   },
   "uidu.editor-core.note": {
     "description": "Panels provide a way to highlight text. The note panel has a purple background.",
-    "message": "Note"
+    "message": "Nota"
   },
   "uidu.editor-core.notePanel": {
     "description": "Visually distinguishes your text by adding a note panel",
@@ -433,7 +433,7 @@
   },
   "uidu.editor-core.orderedList": {
     "description": "A list with ordered items 1… 2… 3…",
-    "message": "Numbered list"
+    "message": "Elenco numerato"
   },
   "uidu.editor-core.orderedList.description": {
     "description": "",
@@ -441,15 +441,15 @@
   },
   "uidu.editor-core.other": {
     "description": "Other text formatting",
-    "message": "Others..."
+    "message": "Altro..."
   },
   "uidu.editor-core.pastePlainText": {
     "description": "",
-    "message": "Paste plain text"
+    "message": "Incolla come testo semplice"
   },
   "uidu.editor-core.placeholderAltText": {
     "description": "Describe this image with alt text",
-    "message": "Describe this image with alt text"
+    "message": "Descrivi questa immagine con il testo alternativo"
   },
   "uidu.editor-core.placeholderText": {
     "description": "",
@@ -465,19 +465,19 @@
   },
   "uidu.editor-core.redo": {
     "description": "",
-    "message": "Redo"
+    "message": "Ripeti"
   },
   "uidu.editor-core.remove": {
     "description": "Delete the element (image, panel, table, etc.) from your document",
-    "message": "Remove"
+    "message": "Rimuovi"
   },
   "uidu.editor-core.removeColumns": {
     "description": "Deletes a table column.",
-    "message": "Remove {0, plural, one {column} other {columns}}"
+    "message": "Rimuovi {0, plural, one {colonna} other {colonne}}"
   },
   "uidu.editor-core.removeRows": {
     "description": "Deletes a table row.",
-    "message": "Remove {0, plural, one {row} other {rows}}"
+    "message": "Rimuovi {0, plural, one {riga} other {righe}}"
   },
   "uidu.editor-core.rightSidebar": {
     "description": "Layout with two columns, left column is 2/3 and right is 1/3 of page",
@@ -485,19 +485,19 @@
   },
   "uidu.editor-core.saveButton": {
     "description": "Submit and save a comment or document",
-    "message": "Save"
+    "message": "Salva"
   },
   "uidu.editor-core.selectLanguage": {
     "description": "Code blocks display software code. A prompt to select the software language the code is written in.",
-    "message": "Select language"
+    "message": "Seleziona la lingua"
   },
   "uidu.editor-core.selected": {
     "description": "If the item is selected or not.",
-    "message": "Selected"
+    "message": "Selezionato"
   },
   "uidu.editor-core.sortColumnASC": {
     "description": "Sort column in ascending order",
-    "message": "Sort column A → Z"
+    "message": "Ordina colonna A → Z"
   },
   "uidu.editor-core.sortColumnDESC": {
     "description": "Sort column in descending order",
@@ -525,7 +525,7 @@
   },
   "uidu.editor-core.subscript": {
     "description": "Whether the text selection is written below the line in a slightly smaller size",
-    "message": "Subscript"
+    "message": "Pedice"
   },
   "uidu.editor-core.success": {
     "description": "Panels provide a way to highlight text. The success panel has a green background.",
@@ -541,7 +541,7 @@
   },
   "uidu.editor-core.superscript": {
     "description": "Whether the text selection is written above the line in a slightly smaller size",
-    "message": "Superscript"
+    "message": "Apice"
   },
   "uidu.editor-core.supportAltText": {
     "description": "Alt text is useful for people using screen readers because of visual limitations.",
@@ -549,15 +549,15 @@
   },
   "uidu.editor-core.table": {
     "description": "Inserts a table in the document",
-    "message": "Table"
+    "message": "Tabella"
   },
   "uidu.editor-core.table.description": {
     "description": "Inserts a table in the document",
-    "message": "Insert a table"
+    "message": "Inserisci una tabella"
   },
   "uidu.editor-core.tableOptions": {
     "description": "Opens a menu with additional table options",
-    "message": "Table options"
+    "message": "Opzioni tabella"
   },
   "uidu.editor-core.taskPlaceholder": {
     "description": "Placeholder description for an empty action/task in the editor",
@@ -565,7 +565,7 @@
   },
   "uidu.editor-core.textColor": {
     "description": "",
-    "message": "Text color"
+    "message": "Colore testo"
   },
   "uidu.editor-core.textColor.lessColors": {
     "description": "Fewer colors",
