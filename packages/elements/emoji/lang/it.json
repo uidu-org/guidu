@@ -5,31 +5,31 @@
   },
   "uidu.emoji.add.label": {
     "description": "verb - Button label to add emoji",
-    "message": "Add emoji"
+    "message": "Aggiungi una emoji"
   },
   "uidu.emoji.cancel.label": {
     "description": "verb - button label to cancel operation",
-    "message": "Cancel"
+    "message": "Annulla"
   },
   "uidu.emoji.categories.search.results": {
     "description": "Emoji categories search results",
-    "message": "Search results"
+    "message": "Risultati della ricerca"
   },
   "uidu.emoji.category.activity": {
     "description": "Emoji activity category",
-    "message": "Activity"
+    "message": "Attività"
   },
   "uidu.emoji.category.all.uploads": {
     "description": "All uploads in the custom category",
-    "message": "All uploads"
+    "message": "Tutti i caricamenti"
   },
   "uidu.emoji.category.flags": {
     "description": "Emoji flags category",
-    "message": "Flags"
+    "message": "Bandiere"
   },
   "uidu.emoji.category.foods": {
     "description": "Emoji Foods category",
-    "message": "Food & Drink"
+    "message": "Cibo e bevande"
   },
   "uidu.emoji.category.frequent": {
     "description": "Emoji frequent category",
@@ -37,27 +37,27 @@
   },
   "uidu.emoji.category.nature": {
     "description": "Emoji nature category",
-    "message": "Nature"
+    "message": "Natura"
   },
   "uidu.emoji.category.objects": {
     "description": "Emoji objects category",
-    "message": "Objects"
+    "message": "Oggetti"
   },
   "uidu.emoji.category.people": {
     "description": "Emoji frequent category",
-    "message": "People"
+    "message": "Persone"
   },
   "uidu.emoji.category.places": {
     "description": "Emoji Places category",
-    "message": "Travel & Places"
+    "message": "Viaggi & Luoghi"
   },
   "uidu.emoji.category.productivity": {
     "description": "Emoji productivity category",
-    "message": "Productivity"
+    "message": "Produttività"
   },
   "uidu.emoji.category.symbols": {
     "description": "Emoji symbols category",
-    "message": "Symbols"
+    "message": "Simboli"
   },
   "uidu.emoji.category.user.uploads": {
     "description": "User uploads in the custom category",
