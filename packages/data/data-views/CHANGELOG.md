@@ -1,5 +1,16 @@
 # @uidu/data-views
 
+## 1.2.0
+
+### Minor Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+
+### Patch Changes
+
+- Updated dependencies [7a6b0ec55]
+  - @uidu/data-controls@2.1.0
+
 ## 1.1.9
 
 ### Patch Changes

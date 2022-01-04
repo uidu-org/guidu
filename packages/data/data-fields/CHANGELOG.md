@@ -1,5 +1,18 @@
 # @uidu/data-fields
 
+## 1.5.0
+
+### Minor Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+
+### Patch Changes
+
+- Updated dependencies [7a6b0ec55]
+  - @uidu/menu@0.7.0
+  - @uidu/field-date@1.1.9
+  - @uidu/field-time@1.1.9
+
 ## 1.4.10
 
 ### Patch Changes

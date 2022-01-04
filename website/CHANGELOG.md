@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.4.19
+
+### Patch Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+- Updated dependencies [7a6b0ec55]
+  - @uidu/table@1.3.0
+  - @uidu/checkbox@1.1.9
+  - @uidu/navigation@1.0.9
+
 ## 0.4.18
 
 ### Patch Changes
