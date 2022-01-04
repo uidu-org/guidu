@@ -1,7 +1,7 @@
 {
   "pt.profile-card.closed.account": {
     "description": "A text in a grey lozenge shows that this user is closed/deleted",
-    "message": "Account deleted"
+    "message": "Account eliminato"
   },
   "pt.profile-card.closed.account.has.date.a.few.months": {
     "description": "A long text explains this user is closed when we know the date of starting to close",
