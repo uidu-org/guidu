@@ -9,63 +9,63 @@
     "message": "{index, plural, =0 {Ordinato per} other {E per} }"
   },
   "uidu.data-controls.calendar.choose_view": {
-    "message": "Choose calendar view"
+    "message": "Scegli una vista"
   },
   "uidu.data-controls.calendar.day": {
-    "message": "Day"
+    "message": "Giorno"
   },
   "uidu.data-controls.calendar.month": {
-    "message": "Month"
+    "message": "Mese"
   },
   "uidu.data-controls.calendar.week": {
-    "message": "Week"
+    "message": "Settimana"
   },
   "uidu.data-controls.calendar.year": {
-    "message": "Year"
+    "message": "Anno"
   },
   "uidu.data-controls.filterer.add_another": {
-    "message": "Add another filter"
+    "message": "Aggiungi un filtro"
   },
   "uidu.data-controls.filterer.filters_count": {
-    "message": "{filtersCount, plural, =0 {Filter} one {Filtered by 1 field} other {Filtered by {filtersCount, number} fields} }"
+    "message": "{filtersCount, plural, =0 {Filtra} one {1 Filtro applicato} other {Filtrato per {filtersCount, number} campi} }"
   },
   "uidu.data-controls.filterer.no_filters": {
-    "message": "No filters applied. Pick a field"
+    "message": "Nessun filtro applicato. Scegli una colonna"
   },
   "uidu.data-controls.grouper.add_another": {
-    "message": "Pick a field to group by"
+    "message": "Scegli un campo per raggruppare i tuoi dati"
   },
   "uidu.data-controls.grouper.groupers_count": {
-    "message": "{groupersCount, plural, =0 {Group by} one {Grouped by 1 field} other {Grouped by {groupersCount, number} fields} }"
+    "message": "{groupersCount, plural, =0 {Raggruppa} one {Raggruppato per 1 campo} other {Raggruppato per {groupersCount, number} campi} }"
   },
   "uidu.data-controls.grouper.no_groups": {
-    "message": "No selected fields to group by. Pick one"
+    "message": "Nessun campo selezionato per il raggruppamento. Scegline uno"
   },
   "uidu.data-controls.resizer.compact": {
-    "message": "Compact"
+    "message": "Compatta"
   },
   "uidu.data-controls.resizer.default": {
-    "message": "Default"
+    "message": "Predefinita"
   },
   "uidu.data-controls.resizer.extra": {
     "message": "Extra"
   },
   "uidu.data-controls.resizer.normal": {
-    "message": "Normal"
+    "message": "Normale"
   },
   "uidu.data-controls.sorter.add_another": {
-    "message": "Pick another field to sort by"
+    "message": "Scegli un campo per ordinare i tuoi dati"
   },
   "uidu.data-controls.sorter.no_sorters": {
-    "message": "No selected fields to sort by. Pick one"
+    "message": "Nessun campo selezionato per l'ordinamento. Scegline uno"
   },
   "uidu.data-controls.sorter.sorters_count": {
-    "message": "{sortersCount, plural, =0 {Sort} one {Sorted by 1 field} other {Sorted by {sortersCount, number} fields} }"
+    "message": "{sortersCount, plural, =0 {Ordina} one {Ordinato per 1 campo} other {Ordinato per {sortersCount, number} campi} }"
   },
   "uidu.data-controls.toggler.deselect_all": {
-    "message": "Deselect all"
+    "message": "Deseleziona tutti"
   },
   "uidu.data-controls.toggler.select_all": {
-    "message": "Select all"
+    "message": "Seleziona tutti"
   }
 }
