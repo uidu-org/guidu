@@ -1,0 +1,68 @@
+{
+  "uidu.data-views.board.description": {
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+  },
+  "uidu.data-views.board.name": {
+    "message": "Board"
+  },
+  "uidu.data-views.calendar.description": {
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+  },
+  "uidu.data-views.calendar.name": {
+    "message": "Calendar"
+  },
+  "uidu.data-views.comparator.description": {
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+  },
+  "uidu.data-views.comparator.name": {
+    "message": "Comparator"
+  },
+  "uidu.data-views.gallery.configurator.column_count": {
+    "message": "Column count"
+  },
+  "uidu.data-views.gallery.controls.card_appearance": {
+    "message": "Card appearance"
+  },
+  "uidu.data-views.gallery.description": {
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+  },
+  "uidu.data-views.gallery.name": {
+    "message": "Gallery"
+  },
+  "uidu.data-views.gantt.description": {
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+  },
+  "uidu.data-views.gantt.name": {
+    "message": "Gantt"
+  },
+  "uidu.data-views.list.controls.hide_fields": {
+    "message": "{hiddenCount, plural, =0 {Hide fields} one {1 hidden field} other {{hiddenCount, number} hidden fields} }"
+  },
+  "uidu.data-views.list.description": {
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+  },
+  "uidu.data-views.list.name": {
+    "message": "List"
+  },
+  "uidu.data-views.sheduler.description": {
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+  },
+  "uidu.data-views.sheduler.name": {
+    "message": "Scheduler"
+  },
+  "uidu.data-views.table.controls.hide_fields": {
+    "message": "{hiddenCount, plural, =0 {Hide fields} one {1 hidden field} other {{hiddenCount, number} hidden fields} }"
+  },
+  "uidu.data-views.table.description": {
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+  },
+  "uidu.data-views.table.name": {
+    "message": "Table"
+  },
+  "uidu.data-views.timeline.description": {
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+  },
+  "uidu.data-views.timeline.name": {
+    "message": "Timeline"
+  }
+}
