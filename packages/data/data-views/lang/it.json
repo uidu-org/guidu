@@ -3,31 +3,31 @@
     "message": "Single select allows you to select a single option from predefined options in a dropdown."
   },
   "uidu.data-views.board.name": {
-    "message": "Board"
+    "message": "Kanban"
   },
   "uidu.data-views.calendar.description": {
     "message": "Single select allows you to select a single option from predefined options in a dropdown."
   },
   "uidu.data-views.calendar.name": {
-    "message": "Calendar"
+    "message": "Calendario"
   },
   "uidu.data-views.comparator.description": {
     "message": "Single select allows you to select a single option from predefined options in a dropdown."
   },
   "uidu.data-views.comparator.name": {
-    "message": "Comparator"
+    "message": "Comparatore"
   },
   "uidu.data-views.gallery.configurator.column_count": {
-    "message": "Column count"
+    "message": "Numero colonne"
   },
   "uidu.data-views.gallery.controls.card_appearance": {
-    "message": "Card appearance"
+    "message": "Visualizzazione elemento"
   },
   "uidu.data-views.gallery.description": {
     "message": "Single select allows you to select a single option from predefined options in a dropdown."
   },
   "uidu.data-views.gallery.name": {
-    "message": "Gallery"
+    "message": "Griglia"
   },
   "uidu.data-views.gantt.description": {
     "message": "Single select allows you to select a single option from predefined options in a dropdown."
@@ -36,28 +36,28 @@
     "message": "Gantt"
   },
   "uidu.data-views.list.controls.hide_fields": {
-    "message": "{hiddenCount, plural, =0 {Hide fields} one {1 hidden field} other {{hiddenCount, number} hidden fields} }"
+    "message": "{hiddenCount, plural, =0 {Nascondi colonne} one {1 colonna nascosta} other {{hiddenCount, number} colonne nascoste} }"
   },
   "uidu.data-views.list.description": {
     "message": "Single select allows you to select a single option from predefined options in a dropdown."
   },
   "uidu.data-views.list.name": {
-    "message": "List"
+    "message": "Lista"
   },
   "uidu.data-views.sheduler.description": {
     "message": "Single select allows you to select a single option from predefined options in a dropdown."
   },
   "uidu.data-views.sheduler.name": {
-    "message": "Scheduler"
+    "message": "Agenda"
   },
   "uidu.data-views.table.controls.hide_fields": {
-    "message": "{hiddenCount, plural, =0 {Hide fields} one {1 hidden field} other {{hiddenCount, number} hidden fields} }"
+    "message": "{hiddenCount, plural, =0 {Nascondi colonne} one {1 colonna nascosta} other {{hiddenCount, number} colonne nascoste} }"
   },
   "uidu.data-views.table.description": {
     "message": "Single select allows you to select a single option from predefined options in a dropdown."
   },
   "uidu.data-views.table.name": {
-    "message": "Table"
+    "message": "Tabella"
   },
   "uidu.data-views.timeline.description": {
     "message": "Single select allows you to select a single option from predefined options in a dropdown."
