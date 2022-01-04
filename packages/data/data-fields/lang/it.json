@@ -24,49 +24,49 @@
     "message": "Insert a rounded avatar for the record"
   },
   "uidu.data-fields.avatar.name": {
-    "message": "Avatar"
+    "message": "Immagine profilo"
   },
   "uidu.data-fields.checkbox.description": {
     "message": "A single checkbox that can be checked or unchecked."
   },
   "uidu.data-fields.checkbox.name": {
-    "message": "Checkbox"
+    "message": "Si/No"
   },
   "uidu.data-fields.collection.description": {
     "message": "A collection is a list of items with one or more fields."
   },
   "uidu.data-fields.collection.name": {
-    "message": "Collection"
+    "message": "Collezione"
   },
   "uidu.data-fields.contact.description": {
     "message": "A contact field represents a person or an organization - a contact"
   },
   "uidu.data-fields.contact.name": {
-    "message": "Contact"
+    "message": "Contatto"
   },
   "uidu.data-fields.country.description": {
     "message": "Add a Country select list to your record"
   },
   "uidu.data-fields.country.name": {
-    "message": "Country"
+    "message": "Paese"
   },
   "uidu.data-fields.cover.description": {
     "message": "Add a cover image to your record"
   },
   "uidu.data-fields.cover.name": {
-    "message": "Cover"
+    "message": "Immagine di copertina"
   },
   "uidu.data-fields.currency .description": {
     "message": "Format a number with a currency"
   },
   "uidu.data-fields.currency.name": {
-    "message": "Currency"
+    "message": "Valuta"
   },
   "uidu.data-fields.date.description": {
-    "message": "Enter a date (e.g. 11/12/2013) or pick one from a calendar."
+    "message": "Inserisci una data (es: 11/12/2013) o scegline una dal calendario."
   },
   "uidu.data-fields.date.name": {
-    "message": "Date"
+    "message": "Data"
   },
   "uidu.data-fields.email.description": {
     "message": "A valid email address (e.g. andrew@example.com)."
@@ -75,52 +75,52 @@
     "message": "Email"
   },
   "uidu.data-fields.files.description": {
-    "message": "Attachments allow you to add images, documents, or other files which can then be viewed or downloaded."
+    "message": "Carica immagini, documenti o altri file."
   },
   "uidu.data-fields.files.name": {
-    "message": "Files"
+    "message": "File"
   },
   "uidu.data-fields.member.description": {
     "message": "A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
   },
   "uidu.data-fields.member.name": {
-    "message": "Member"
+    "message": "Collaboratore"
   },
   "uidu.data-fields.multipleSelect.description": {
     "message": "Multiple select allows you to select one or more predefined options listed below."
   },
   "uidu.data-fields.multipleSelect.name": {
-    "message": "MultipleSelect"
+    "message": "Opzione multipla"
   },
   "uidu.data-fields.number.description": {
-    "message": "Integer or decimal number"
+    "message": "Intero o decimale"
   },
   "uidu.data-fields.number.name": {
-    "message": "Number"
+    "message": "Numero"
   },
   "uidu.data-fields.paymentMethod.description": {
-    "message": "Payment method (Credit Card, or others)"
+    "message": "Metodo di pagamento (Carta di credito o altri)"
   },
   "uidu.data-fields.paymentMethod.name": {
-    "message": "Payment method"
+    "message": "Metodo di pagamento"
   },
   "uidu.data-fields.percent.description": {
     "message": "Format a percentage"
   },
   "uidu.data-fields.percent.name": {
-    "message": "Percent"
+    "message": "Percentuale"
   },
   "uidu.data-fields.phone.description": {
     "message": "A telephone number (e.g. (415) 555-9876)."
   },
   "uidu.data-fields.phone.name": {
-    "message": "Phone"
+    "message": "Numero di telefono"
   },
   "uidu.data-fields.progress.description": {
-    "message": "Show a progress bar with progress value"
+    "message": "Mostra uno stato di avanzamento"
   },
   "uidu.data-fields.progress.name": {
-    "message": "Progress"
+    "message": "Barra di progresso"
   },
   "uidu.data-fields.rating.description": {
     "message": "Insert a rating for the column"
@@ -129,22 +129,22 @@
     "message": "Rating"
   },
   "uidu.data-fields.richTex.name": {
-    "message": "Rich Text"
+    "message": "Testo formattato"
   },
   "uidu.data-fields.richText.description": {
-    "message": "A lightweight richtext editor."
+    "message": "Un editor di testo semplice."
   },
   "uidu.data-fields.singleSelect.description": {
     "message": "Single select allows you to select a single option from predefined options in a dropdown."
   },
   "uidu.data-fields.singleSelect.name": {
-    "message": "SingleSelect"
+    "message": "Opzione singola"
   },
   "uidu.data-fields.string.description": {
-    "message": "A single line of text. You can optionally prefill each new cell with a default value"
+    "message": "Singola linea di testo"
   },
   "uidu.data-fields.string.name": {
-    "message": "String"
+    "message": "Testo breve"
   },
   "uidu.data-fields.text.description": {
     "message": "A long text field that can span multiple lines."
