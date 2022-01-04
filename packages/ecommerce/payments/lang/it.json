@@ -1,0 +1,8 @@
+{
+  "uidu.payments.bank.label": {
+    "message": "Inserisci i tuoi dati bancari (IBAN)"
+  },
+  "uidu.payments.card.label": {
+    "message": "Inserisci i dati della tua carta di credito / debito"
+  }
+}

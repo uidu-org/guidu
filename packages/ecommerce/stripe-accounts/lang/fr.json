@@ -1,0 +1,62 @@
+{
+  "+SgU+0": {
+    "message": "IBAN"
+  },
+  "3EnruA": {
+    "message": "Postal code"
+  },
+  "9+Ddtu": {
+    "message": "Next"
+  },
+  "9AvZbT": {
+    "message": "Organization VAT code"
+  },
+  "B8gXKb": {
+    "message": "Organization fiscal code"
+  },
+  "BKwKO2": {
+    "message": "Account owner"
+  },
+  "GFTdXw": {
+    "message": "Date of birth"
+  },
+  "HAlOn1": {
+    "message": "Name"
+  },
+  "IgB6GU": {
+    "message": "Individual"
+  },
+  "NdO+zh": {
+    "message": "Organization name"
+  },
+  "O8ng1J": {
+    "message": "Personal identification document"
+  },
+  "TE4fIS": {
+    "message": "City"
+  },
+  "TVcDb2": {
+    "message": "Bank Account"
+  },
+  "YSpHVC": {
+    "message": "Business's data"
+  },
+  "g8XYuz": {
+    "message": "Primary business email"
+  },
+  "iaxGEu": {
+    "message": "Primary address"
+  },
+  "jvo0vs": {
+    "message": "Save"
+  },
+  "ku+mDU": {
+    "message": "State"
+  },
+  "txUL0F": {
+    "message": "Last name"
+  },
+  "vONi+O": {
+    "message": "Country"
+  }
+}

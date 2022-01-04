@@ -1,0 +1,734 @@
+{
+  "0XNdGG": {
+    "description": "Please enter a link.",
+    "message": "Inserire il link."
+  },
+  "3mfaT0": {
+    "description": "Please enter a valid link.",
+    "message": "Inserisci un link valido."
+  },
+  "uidu.editor-core.action": {
+    "description": "Also known as a “task”, “to do item”, or a checklist",
+    "message": "Action item"
+  },
+  "uidu.editor-core.action.description": {
+    "description": "",
+    "message": "Create and assign action items"
+  },
+  "uidu.editor-core.addAltText": {
+    "description": "Add an alt text for this image",
+    "message": "Testo alternativo"
+  },
+  "uidu.editor-core.alignImageCenter": {
+    "description": "Aligns image to the center",
+    "message": "Allinea al centro"
+  },
+  "uidu.editor-core.alignImageLeft": {
+    "description": "Aligns image to the left",
+    "message": "Allinea a sinistra"
+  },
+  "uidu.editor-core.alignImageRight": {
+    "description": "Aligns image to the right",
+    "message": "Allinea a destra"
+  },
+  "uidu.editor-core.alignment": {
+    "description": "Aligns text",
+    "message": "Allineamento"
+  },
+  "uidu.editor-core.altText": {
+    "description": "Alternative text for image.",
+    "message": "Testo alternativo"
+  },
+  "uidu.editor-core.alttext.validation": {
+    "description": "Please remove any special characters in alt text. ",
+    "message": "Rimuovi tutti i caratteri speciali nel testo alt."
+  },
+  "uidu.editor-core.annotate": {
+    "description": "Annotate an image by drawing arrows, adding text, or scribbles.",
+    "message": "Annota"
+  },
+  "uidu.editor-core.backLink": {
+    "description": "Go back from media linking toolbar to main toolbar",
+    "message": "Indietro"
+  },
+  "uidu.editor-core.blockquote": {
+    "description": "Quote some text",
+    "message": "Citazione"
+  },
+  "uidu.editor-core.blockquote.description": {
+    "description": "Quote some text",
+    "message": "Inserire una citazione"
+  },
+  "uidu.editor-core.bold": {
+    "description": "This refers to bold or “strong” formatting, indicates that its contents have strong importance, seriousness, or urgency.",
+    "message": "Grassetto"
+  },
+  "uidu.editor-core.canNotSortTable": {
+    "description": "Split your cells to enable this feature",
+    "message": "⚠️ Non è possibile ordinare una tabella con celle unite"
+  },
+  "uidu.editor-core.cancelButton": {
+    "description": "Discard the current comment or document",
+    "message": "Annulla"
+  },
+  "uidu.editor-core.cardFloatingControls": {
+    "description": "Options to change card type",
+    "message": "Opzioni scheda"
+  },
+  "uidu.editor-core.cellBackground": {
+    "description": "Change the background color of a table cell.",
+    "message": "Sfondo cella"
+  },
+  "uidu.editor-core.cellOptions": {
+    "description": "Opens a menu with options for the current table cell.",
+    "message": "Opzioni cella"
+  },
+  "uidu.editor-core.clearAltTextEdit": {
+    "description": "Clear alt text",
+    "message": "Cancella testo"
+  },
+  "uidu.editor-core.clearCells": {
+    "description": "Clears the contents of the selected cells (this does not delete the cells themselves).",
+    "message": "Clear {0, plural, one {cell} other {cells}}"
+  },
+  "uidu.editor-core.clearFormatting": {
+    "description": "Remove all rich text formatting from the selected text",
+    "message": "Rimuovi formattazione"
+  },
+  "uidu.editor-core.clearLink": {
+    "description": "Clears link in the link toolbar",
+    "message": "Rimuovi link"
+  },
+  "uidu.editor-core.clearLinkText": {
+    "description": "Clears text on the link toolbar",
+    "message": "Rimuovi testo"
+  },
+  "uidu.editor-core.closeAltTextEdit": {
+    "description": "Back to toolbar",
+    "message": "Indietro"
+  },
+  "uidu.editor-core.closeHelpDialog": {
+    "description": "",
+    "message": "Close help dialog"
+  },
+  "uidu.editor-core.code": {
+    "description": "Whether the text selection has monospaced/code font",
+    "message": "Code"
+  },
+  "uidu.editor-core.codeblock": {
+    "description": "Insert a snippet/segment of code (code block)",
+    "message": "Code snippet"
+  },
+  "uidu.editor-core.codeblock.description": {
+    "description": "Insert a snippet/segment of code (code block)",
+    "message": "Display code with syntax highlighting"
+  },
+  "uidu.editor-core.columns": {
+    "description": "Create a multi column section or layout",
+    "message": "Layouts"
+  },
+  "uidu.editor-core.columns.description": {
+    "description": "Create a multi column section or layout",
+    "message": "Structure your page using sections"
+  },
+  "uidu.editor-core.date": {
+    "description": "Opens a date picker that lets you select a date",
+    "message": "Date"
+  },
+  "uidu.editor-core.date.description": {
+    "description": "Opens a date picker that lets you select a date",
+    "message": "Add a date using a calendar"
+  },
+  "uidu.editor-core.decision": {
+    "description": "Capture a decision you’ve made",
+    "message": "Decision"
+  },
+  "uidu.editor-core.decision.description": {
+    "description": "Capture a decision you’ve made",
+    "message": "Capture decisions so they’re easy to track"
+  },
+  "uidu.editor-core.decisionPlaceholder": {
+    "description": "Placeholder description for an empty decision in the editor",
+    "message": "Add a decision…"
+  },
+  "uidu.editor-core.displayBlock": {
+    "description": "Display link as a card with a rich preview similar to in a Facebook feed with page title, description, and potentially an image.",
+    "message": "Display as card"
+  },
+  "uidu.editor-core.displayEmbed": {
+    "description": "Display link as an embedded object",
+    "message": "Display as embed"
+  },
+  "uidu.editor-core.displayInline": {
+    "description": "Display link with the title only.",
+    "message": "Display inline"
+  },
+  "uidu.editor-core.displayLink": {
+    "description": "Convert the card to become a regular text-based hyperlink.",
+    "message": "Display as text"
+  },
+  "uidu.editor-core.displayText": {
+    "description": "Text to display",
+    "message": "Text to display"
+  },
+  "uidu.editor-core.edit": {
+    "description": "Edit the properties for this extension.",
+    "message": "Edit"
+  },
+  "uidu.editor-core.editAltText": {
+    "description": "Edit an alt text for this image",
+    "message": "Edit alt text"
+  },
+  "uidu.editor-core.editLink": {
+    "description": "Edit the link, update display text",
+    "message": "Edit link"
+  },
+  "uidu.editor-core.editMode.inviteToEditButton.title": {
+    "description": "Invite another user to edit the current document",
+    "message": "Invite to edit"
+  },
+  "uidu.editor-core.editorHelp": {
+    "description": "Title of editor help dialog.",
+    "message": "Editor help"
+  },
+  "uidu.editor-core.emoji": {
+    "description": "Insert an emoticon or smiley :-)",
+    "message": "Emoji"
+  },
+  "uidu.editor-core.emoji.description": {
+    "description": "Insert an emoticon or smiley :-)",
+    "message": "Usa le emoji per esprimere le idee 🎉 ed emozioni 😄"
+  },
+  "uidu.editor-core.error": {
+    "description": "Panels provide a way to highlight text. The error panel has a red background.",
+    "message": "Error"
+  },
+  "uidu.editor-core.errorPanel": {
+    "description": "Visually distinguishes your text by adding a error panel",
+    "message": "Error panel"
+  },
+  "uidu.editor-core.errorPanel.description": {
+    "description": "Visually distinguishes your text by adding a error panel",
+    "message": "Call out errors in a colored panel"
+  },
+  "uidu.editor-core.expand": {
+    "description": "Inserts an expand in the document",
+    "message": "Expand"
+  },
+  "uidu.editor-core.expand.description": {
+    "description": "Inserts an expand in the document",
+    "message": "Insert an expand"
+  },
+  "uidu.editor-core.feedbackDialog": {
+    "description": "Open the feedback dialog from editor",
+    "message": "Give feedback"
+  },
+  "uidu.editor-core.feedbackDialog.description": {
+    "description": "Description for feedback option under quick insert dropdown",
+    "message": "Tell us about your experience using the new editor"
+  },
+  "uidu.editor-core.filesAndImages": {
+    "description": "Insert one or more files or images",
+    "message": "Files & images"
+  },
+  "uidu.editor-core.filesAndImages.description": {
+    "description": "Insert one or more files or images",
+    "message": "Add images and other files to your page"
+  },
+  "uidu.editor-core.headerColumn": {
+    "description": "Marks the first table column as a header row",
+    "message": "Header column"
+  },
+  "uidu.editor-core.headerRow": {
+    "description": "Marks the first table row as a header row",
+    "message": "Header row"
+  },
+  "uidu.editor-core.heading1": {
+    "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
+    "message": "Heading 1"
+  },
+  "uidu.editor-core.heading1Description": {
+    "description": "Description of the main heading, heading 1",
+    "message": "Use this for a top level heading"
+  },
+  "uidu.editor-core.heading2": {
+    "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
+    "message": "Heading 2"
+  },
+  "uidu.editor-core.heading2Description": {
+    "description": "Description of a subtitle heading or secondary heading",
+    "message": "Use this for key sections"
+  },
+  "uidu.editor-core.heading3": {
+    "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
+    "message": "Heading 3"
+  },
+  "uidu.editor-core.heading3Description": {
+    "description": "",
+    "message": "Use this for sub sections and group headings"
+  },
+  "uidu.editor-core.heading4": {
+    "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
+    "message": "Heading 4"
+  },
+  "uidu.editor-core.heading4Description": {
+    "description": "",
+    "message": "Use this for deep headings"
+  },
+  "uidu.editor-core.heading5": {
+    "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
+    "message": "Heading 5"
+  },
+  "uidu.editor-core.heading5Description": {
+    "description": "",
+    "message": "Use this for grouping list items"
+  },
+  "uidu.editor-core.heading6": {
+    "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
+    "message": "Heading 6"
+  },
+  "uidu.editor-core.heading6Description": {
+    "description": "",
+    "message": "Use this for low level headings"
+  },
+  "uidu.editor-core.help": {
+    "description": "Opens up the help dialog",
+    "message": "Help"
+  },
+  "uidu.editor-core.help.description": {
+    "description": "Browse all the keyboard shortcuts and markdown options",
+    "message": "Browse all the keyboard shortcuts and markdown options"
+  },
+  "uidu.editor-core.helpDialogTips": {
+    "description": "Hint about how to open a dialog quickly using a shortcut.",
+    "message": "Premi {keyMap} per aprire rapidamente questa finestra in qualsiasi momento"
+  },
+  "uidu.editor-core.horizontalRule": {
+    "description": "A horizontal rule or divider",
+    "message": "Linea di separazione"
+  },
+  "uidu.editor-core.horizontalRule.description": {
+    "description": "A horizontal rule or divider",
+    "message": "Separa il contenuto con una linea orizzontale"
+  },
+  "uidu.editor-core.hyperlinkToolbarPlaceholder": {
+    "description": "Paste link or search recently viewed",
+    "message": "Paste link or search recently viewed"
+  },
+  "uidu.editor-core.image": {
+    "description": "Insert an image.",
+    "message": "Immagine"
+  },
+  "uidu.editor-core.info": {
+    "description": "Panels provide a way to highlight text. The info panel has a blue background.",
+    "message": "Info"
+  },
+  "uidu.editor-core.infoPanel": {
+    "description": "Visually distinguishes your text by adding a background colour (blue, purple, yellow, green, red)",
+    "message": "Info panel"
+  },
+  "uidu.editor-core.infoPanel.description": {
+    "description": "Visually distinguishes your text by adding a background colour (blue, purple, yellow, green, red)",
+    "message": "Highlight information in a colored panel"
+  },
+  "uidu.editor-core.insertColumn": {
+    "description": "Add a new column to your table.",
+    "message": "Insert column"
+  },
+  "uidu.editor-core.insertMenu": {
+    "description": "Opens a menu of additional items that can be inserted into your document.",
+    "message": "Insert"
+  },
+  "uidu.editor-core.insertRow": {
+    "description": "Add a new row to your table.",
+    "message": "Inserisci riga"
+  },
+  "uidu.editor-core.italic": {
+    "description": "This refers to italics or emphasized formatting.",
+    "message": "Corsivo"
+  },
+  "uidu.editor-core.keyboardShortcuts": {
+    "description": "",
+    "message": "Scorciatoie tastiera"
+  },
+  "uidu.editor-core.layoutFixedWidth": {
+    "description": "Display your element (image, table, extension, etc) as standard width",
+    "message": "Back to center"
+  },
+  "uidu.editor-core.layoutFullWidth": {
+    "description": "Display your element (image, table, extension, etc) as full width",
+    "message": "Vai a tutta larghezza"
+  },
+  "uidu.editor-core.layoutWide": {
+    "description": "Display your element (image, table, extension, etc) wider than normal",
+    "message": "Go wide"
+  },
+  "uidu.editor-core.leftSidebar": {
+    "description": "Layout with two columns, left column is 1/3 and right is 2/3 of page",
+    "message": "Barra laterale di sinistra"
+  },
+  "uidu.editor-core.link": {
+    "description": "Insert a hyperlink",
+    "message": "Link"
+  },
+  "uidu.editor-core.link.description": {
+    "description": "Insert a hyperlink",
+    "message": "Inserisci un link"
+  },
+  "uidu.editor-core.linkAddress": {
+    "description": "Insert the address of the link",
+    "message": "Indirizzo link"
+  },
+  "uidu.editor-core.linkPlaceholder": {
+    "description": "Create a new link by pasting a URL.",
+    "message": "Incolla link"
+  },
+  "uidu.editor-core.lists": {
+    "description": "Menu shows ordered/bullet list and unordered/numbered lists",
+    "message": "Elenchi"
+  },
+  "uidu.editor-core.markdown": {
+    "description": "It is a name of popular markup language.",
+    "message": "Markdown"
+  },
+  "uidu.editor-core.mediaAddLink": {
+    "description": "Add link",
+    "message": "Aggiungi link"
+  },
+  "uidu.editor-core.mention": {
+    "description": "Reference another person in your document",
+    "message": "Menzione"
+  },
+  "uidu.editor-core.mention.description": {
+    "description": "Reference another person in your document",
+    "message": "Mention someone to send them a notification"
+  },
+  "uidu.editor-core.mergeCells": {
+    "description": "Merge tables cells together.",
+    "message": "Unisci celle"
+  },
+  "uidu.editor-core.moreFormatting": {
+    "description": "Clicking this will show a menu with additional formatting options",
+    "message": "More formatting"
+  },
+  "uidu.editor-core.normal": {
+    "description": "This is the default text style",
+    "message": "Testo normale"
+  },
+  "uidu.editor-core.note": {
+    "description": "Panels provide a way to highlight text. The note panel has a purple background.",
+    "message": "Nota"
+  },
+  "uidu.editor-core.notePanel": {
+    "description": "Visually distinguishes your text by adding a note panel",
+    "message": "Note panel"
+  },
+  "uidu.editor-core.notePanel.description": {
+    "description": "Visually distinguishes your text by adding a note panel",
+    "message": "Add a note in a colored panel"
+  },
+  "uidu.editor-core.numberedColumn": {
+    "description": "Adds an auto-numbering column to your table",
+    "message": "Numbered column"
+  },
+  "uidu.editor-core.orderedList": {
+    "description": "A list with ordered items 1… 2… 3…",
+    "message": "Elenco numerato"
+  },
+  "uidu.editor-core.orderedList.description": {
+    "description": "",
+    "message": "Create an ordered list"
+  },
+  "uidu.editor-core.other": {
+    "description": "Other text formatting",
+    "message": "Altro..."
+  },
+  "uidu.editor-core.pastePlainText": {
+    "description": "",
+    "message": "Incolla come testo semplice"
+  },
+  "uidu.editor-core.placeholderAltText": {
+    "description": "Describe this image with alt text",
+    "message": "Descrivi questa immagine con il testo alternativo"
+  },
+  "uidu.editor-core.placeholderText": {
+    "description": "",
+    "message": "Placeholder text"
+  },
+  "uidu.editor-core.placeholderTextPlaceholder": {
+    "description": "",
+    "message": "Add placeholder text"
+  },
+  "uidu.editor-core.quickInsert": {
+    "description": "Name of a feature, which let you insert items quickly.",
+    "message": "Quick insert"
+  },
+  "uidu.editor-core.redo": {
+    "description": "",
+    "message": "Ripeti"
+  },
+  "uidu.editor-core.remove": {
+    "description": "Delete the element (image, panel, table, etc.) from your document",
+    "message": "Rimuovi"
+  },
+  "uidu.editor-core.removeColumns": {
+    "description": "Deletes a table column.",
+    "message": "Rimuovi {0, plural, one {colonna} other {colonne}}"
+  },
+  "uidu.editor-core.removeRows": {
+    "description": "Deletes a table row.",
+    "message": "Rimuovi {0, plural, one {riga} other {righe}}"
+  },
+  "uidu.editor-core.rightSidebar": {
+    "description": "Layout with two columns, left column is 2/3 and right is 1/3 of page",
+    "message": "Right sidebar"
+  },
+  "uidu.editor-core.saveButton": {
+    "description": "Submit and save a comment or document",
+    "message": "Salva"
+  },
+  "uidu.editor-core.selectLanguage": {
+    "description": "Code blocks display software code. A prompt to select the software language the code is written in.",
+    "message": "Seleziona la lingua"
+  },
+  "uidu.editor-core.selected": {
+    "description": "If the item is selected or not.",
+    "message": "Selezionato"
+  },
+  "uidu.editor-core.sortColumnASC": {
+    "description": "Sort column in ascending order",
+    "message": "Ordina colonna A → Z"
+  },
+  "uidu.editor-core.sortColumnDESC": {
+    "description": "Sort column in descending order",
+    "message": "Sort column Z → A"
+  },
+  "uidu.editor-core.splitCell": {
+    "description": "Split a merged table cell.",
+    "message": "Split cell"
+  },
+  "uidu.editor-core.status": {
+    "description": "Inserts an item representing the status of an activity to task.",
+    "message": "Status"
+  },
+  "uidu.editor-core.status.description": {
+    "description": "Inserts an item representing the status of an activity to task.",
+    "message": "Add a custom status label"
+  },
+  "uidu.editor-core.statusPlaceholder": {
+    "description": "Placeholder description for an empty (new) status item in the editor",
+    "message": "Set a status"
+  },
+  "uidu.editor-core.strike": {
+    "description": "Whether the text selection has crossed out text",
+    "message": "Strikethrough"
+  },
+  "uidu.editor-core.subscript": {
+    "description": "Whether the text selection is written below the line in a slightly smaller size",
+    "message": "Pedice"
+  },
+  "uidu.editor-core.success": {
+    "description": "Panels provide a way to highlight text. The success panel has a green background.",
+    "message": "Success"
+  },
+  "uidu.editor-core.successPanel": {
+    "description": "Visually distinguishes your text by adding a success panel",
+    "message": "Success panel"
+  },
+  "uidu.editor-core.successPanel.description": {
+    "description": "Visually distinguishes your text by adding a success panel",
+    "message": "Add tips in a colored panel"
+  },
+  "uidu.editor-core.superscript": {
+    "description": "Whether the text selection is written above the line in a slightly smaller size",
+    "message": "Apice"
+  },
+  "uidu.editor-core.supportAltText": {
+    "description": "Alt text is useful for people using screen readers because of visual limitations.",
+    "message": "Alt text is useful for people using screen readers because of visual limitations."
+  },
+  "uidu.editor-core.table": {
+    "description": "Inserts a table in the document",
+    "message": "Tabella"
+  },
+  "uidu.editor-core.table.description": {
+    "description": "Inserts a table in the document",
+    "message": "Inserisci una tabella"
+  },
+  "uidu.editor-core.tableOptions": {
+    "description": "Opens a menu with additional table options",
+    "message": "Opzioni tabella"
+  },
+  "uidu.editor-core.taskPlaceholder": {
+    "description": "Placeholder description for an empty action/task in the editor",
+    "message": "Type your action, use '@' to assign to someone."
+  },
+  "uidu.editor-core.textColor": {
+    "description": "",
+    "message": "Colore testo"
+  },
+  "uidu.editor-core.textColor.lessColors": {
+    "description": "Fewer colors",
+    "message": "Fewer colors"
+  },
+  "uidu.editor-core.textColor.moreColors": {
+    "description": "More colors",
+    "message": "More colors"
+  },
+  "uidu.editor-core.textStyles": {
+    "description": "Menu provides access to various heading styles or normal text",
+    "message": "Text styles"
+  },
+  "uidu.editor-core.theme.blue": {
+    "description": "Name of a color",
+    "message": "Blue"
+  },
+  "uidu.editor-core.theme.dark-blue": {
+    "description": "Name of a color",
+    "message": "Dark blue"
+  },
+  "uidu.editor-core.theme.dark-green": {
+    "description": "Name of a color",
+    "message": "Dark green"
+  },
+  "uidu.editor-core.theme.dark-purple": {
+    "description": "Name of a color",
+    "message": "Dark purple"
+  },
+  "uidu.editor-core.theme.dark-red": {
+    "description": "Name of a color",
+    "message": "Dark red"
+  },
+  "uidu.editor-core.theme.dark-teal": {
+    "description": "Name of a color",
+    "message": "Dark teal"
+  },
+  "uidu.editor-core.theme.dark-yellow": {
+    "description": "Name of a color",
+    "message": "Dark yellow"
+  },
+  "uidu.editor-core.theme.gray": {
+    "description": "Name of a color",
+    "message": "Gray"
+  },
+  "uidu.editor-core.theme.green": {
+    "description": "Name of a color",
+    "message": "Green"
+  },
+  "uidu.editor-core.theme.light-blue": {
+    "description": "Name of a color",
+    "message": "Light blue"
+  },
+  "uidu.editor-core.theme.light-gray": {
+    "description": "Name of a color",
+    "message": "Light gray"
+  },
+  "uidu.editor-core.theme.light-green": {
+    "description": "Name of a color",
+    "message": "Light green"
+  },
+  "uidu.editor-core.theme.light-purple": {
+    "description": "Name of a color",
+    "message": "Light purple"
+  },
+  "uidu.editor-core.theme.light-red": {
+    "description": "Name of a color",
+    "message": "Light red"
+  },
+  "uidu.editor-core.theme.light-teal": {
+    "description": "Name of a color",
+    "message": "Light teal"
+  },
+  "uidu.editor-core.theme.light-yellow": {
+    "description": "Name of a color",
+    "message": "Light yellow"
+  },
+  "uidu.editor-core.theme.orange": {
+    "description": "Name of a color.",
+    "message": "Orange"
+  },
+  "uidu.editor-core.theme.purple": {
+    "description": "Name of a color",
+    "message": "Purple"
+  },
+  "uidu.editor-core.theme.red": {
+    "description": "Name of a color",
+    "message": "Red"
+  },
+  "uidu.editor-core.theme.teal": {
+    "description": "Name of a color",
+    "message": "Teal"
+  },
+  "uidu.editor-core.theme.white": {
+    "description": "Name of a color",
+    "message": "White"
+  },
+  "uidu.editor-core.theme.yellow": {
+    "description": "Name of a color",
+    "message": "Yellow"
+  },
+  "uidu.editor-core.threeColumns": {
+    "description": "Layout with three columns of equal width",
+    "message": "Three columns"
+  },
+  "uidu.editor-core.threeColumnsWithSidebars": {
+    "description": "Layout with 3 columns laid out as 25% - 50% - 25%",
+    "message": "Three columns with sidebars"
+  },
+  "uidu.editor-core.twoColumns": {
+    "description": "Layout with two columns of equal width",
+    "message": "Two columns"
+  },
+  "uidu.editor-core.unableToOpenLink": {
+    "description": "Unable to open this link",
+    "message": "Unable to open this link"
+  },
+  "uidu.editor-core.underline": {
+    "description": "Whether the text selection has underlined text",
+    "message": "Underline"
+  },
+  "uidu.editor-core.undo": {
+    "description": "",
+    "message": "Undo"
+  },
+  "uidu.editor-core.unlink": {
+    "description": "Removes the hyperlink but keeps your text.",
+    "message": "Unlink"
+  },
+  "uidu.editor-core.unorderedList": {
+    "description": "A list with bullets. Also known as an “unordered” list",
+    "message": "Bullet list"
+  },
+  "uidu.editor-core.unorderedList.description": {
+    "description": "",
+    "message": "Create an unordered list"
+  },
+  "uidu.editor-core.viewMore": {
+    "description": "",
+    "message": "View more"
+  },
+  "uidu.editor-core.visit": {
+    "description": "Open the link in a new window",
+    "message": "Open link in a new window"
+  },
+  "uidu.editor-core.warning": {
+    "description": "Panels provide a way to highlight text. The warning panel has a yellow background.",
+    "message": "Warning"
+  },
+  "uidu.editor-core.warningPanel": {
+    "description": "Visually distinguishes your text by adding a warning panel",
+    "message": "Warning panel"
+  },
+  "uidu.editor-core.warningPanel.description": {
+    "description": "Visually distinguishes your text by adding a warning panel",
+    "message": "Add a note of caution in a colored panel"
+  },
+  "uidu.editor-core.wrapLeft": {
+    "description": "Aligns your image to the left and wraps text around it.",
+    "message": "Wrap left"
+  },
+  "uidu.editor-core.wrapRight": {
+    "description": "Aligns your image to the right and wraps text around it.",
+    "message": "Wrap right"
+  }
+}

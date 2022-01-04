@@ -1,0 +1,130 @@
+{
+  "uidu.emoji.add.custom.emoji.label": {
+    "description": "Button label to add custom emoji",
+    "message": "Add your own emoji"
+  },
+  "uidu.emoji.add.label": {
+    "description": "verb - Button label to add emoji",
+    "message": "Aggiungi una emoji"
+  },
+  "uidu.emoji.cancel.label": {
+    "description": "verb - button label to cancel operation",
+    "message": "Annulla"
+  },
+  "uidu.emoji.categories.search.results": {
+    "description": "Emoji categories search results",
+    "message": "Risultati della ricerca"
+  },
+  "uidu.emoji.category.activity": {
+    "description": "Emoji activity category",
+    "message": "Attività"
+  },
+  "uidu.emoji.category.all.uploads": {
+    "description": "All uploads in the custom category",
+    "message": "Tutti i caricamenti"
+  },
+  "uidu.emoji.category.flags": {
+    "description": "Emoji flags category",
+    "message": "Bandiere"
+  },
+  "uidu.emoji.category.foods": {
+    "description": "Emoji Foods category",
+    "message": "Cibo e bevande"
+  },
+  "uidu.emoji.category.frequent": {
+    "description": "Emoji frequent category",
+    "message": "Frequent"
+  },
+  "uidu.emoji.category.nature": {
+    "description": "Emoji nature category",
+    "message": "Natura"
+  },
+  "uidu.emoji.category.objects": {
+    "description": "Emoji objects category",
+    "message": "Oggetti"
+  },
+  "uidu.emoji.category.people": {
+    "description": "Emoji frequent category",
+    "message": "Persone"
+  },
+  "uidu.emoji.category.places": {
+    "description": "Emoji Places category",
+    "message": "Viaggi & Luoghi"
+  },
+  "uidu.emoji.category.productivity": {
+    "description": "Emoji productivity category",
+    "message": "Produttività"
+  },
+  "uidu.emoji.category.symbols": {
+    "description": "Emoji symbols category",
+    "message": "Simboli"
+  },
+  "uidu.emoji.category.user.uploads": {
+    "description": "User uploads in the custom category",
+    "message": "Your uploads"
+  },
+  "uidu.emoji.choose.file.ariaLabel": {
+    "description": "Message indicating the purpose of choosing the file and requirements for the file",
+    "message": "Choose a file for the emoji. JPG, PNG or GIF. Max size 1 MB."
+  },
+  "uidu.emoji.choose.file.title": {
+    "description": "Choose custom emoji file",
+    "message": "Choose file"
+  },
+  "uidu.emoji.delete.description": {
+    "description": "Description for emoji removal dialog",
+    "message": "All existing instances of this emoji will be replaced with {emojiShortName}"
+  },
+  "uidu.emoji.delete.label": {
+    "description": "Button label to remove emoji",
+    "message": "Remove"
+  },
+  "uidu.emoji.delete.title": {
+    "description": "Title for emoji removal dialog",
+    "message": "Remove emoji"
+  },
+  "uidu.emoji.error.delete.failed": {
+    "description": "Error message when custom emoji failed to be removed",
+    "message": "Remove failed"
+  },
+  "uidu.emoji.error.image.too.big": {
+    "description": "Error message for image too big, beyond the size limit",
+    "message": "Selected image is more than 1 MB"
+  },
+  "uidu.emoji.error.invalid.image": {
+    "description": "Error message for invalid selected image",
+    "message": "Selected image is invalid"
+  },
+  "uidu.emoji.error.upload.failed": {
+    "description": "Failed to upload emoji image",
+    "message": "Upload failed"
+  },
+  "uidu.emoji.image.requirements": {
+    "description": "Message for emoji image requirements and maximum file size",
+    "message": "JPG, PNG or GIF. Max size 1 MB."
+  },
+  "uidu.emoji.name.ariaLabel": {
+    "description": "Explains to enter a name for a new emoji",
+    "message": "Enter a name for the new emoji"
+  },
+  "uidu.emoji.placeholder": {
+    "description": "Placeholder for emoji",
+    "message": "Emoji name"
+  },
+  "uidu.emoji.preview": {
+    "description": "Emoji preview",
+    "message": "Your new emoji {emoji} looks great"
+  },
+  "uidu.emoji.preview.title": {
+    "description": "Emoji preview title",
+    "message": "Preview"
+  },
+  "uidu.emoji.retry.label": {
+    "description": "verb - Button label to retry upload",
+    "message": "Retry"
+  },
+  "uidu.emoji.search.label": {
+    "description": "verb - button label to search",
+    "message": "Search"
+  }
+}

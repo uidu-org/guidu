@@ -1,71 +1,71 @@
 {
-  "0f57EG": {
-    "message": "Add another filter"
-  },
-  "5L6knw": {
-    "message": "No filters applied. Pick a field"
-  },
-  "7pXrnq": {
-    "message": "Day"
-  },
-  "AaZSgN": {
-    "message": "Pick another field to sort by"
-  },
-  "IFo1oo": {
-    "message": "Year"
-  },
   "KC4fO5": {
-    "message": "{index, plural, =0 {Where} other {Then where} }"
-  },
-  "KIna6h": {
-    "message": "No selected fields to group by. Pick one"
-  },
-  "L/WZOa": {
-    "message": "{filtersCount, plural, =0 {Filter} one {Filtered by 1 field} other {Filtered by {filtersCount, number} fields} }"
-  },
-  "TBovrx": {
-    "message": "Month"
+    "message": "{index, plural, =0 {Dove} other {E dove} }"
   },
   "WN/yIv": {
-    "message": "{index, plural, =0 {Group by} other {Then by} }"
+    "message": "{index, plural, =0 {Raggruppato per} other {E per} }"
   },
   "ZLFzi4": {
-    "message": "{index, plural, =0 {Sort by} other {Then by} }"
+    "message": "{index, plural, =0 {Ordinato per} other {E per} }"
   },
-  "data_controls.toggler.deselect_all": {
-    "message": "Deselect all"
+  "uidu.data-controls.calendar.choose_view": {
+    "message": "Scegli una vista"
   },
-  "data_controls.toggler.select_all": {
-    "message": "Select all"
+  "uidu.data-controls.calendar.day": {
+    "message": "Giorno"
   },
-  "fbWrEN": {
-    "message": "Choose calendar view"
+  "uidu.data-controls.calendar.month": {
+    "message": "Mese"
   },
-  "k5N90+": {
-    "message": "No selected fields to sort by. Pick one"
+  "uidu.data-controls.calendar.week": {
+    "message": "Settimana"
   },
-  "kCZBrb": {
-    "message": "Compact"
+  "uidu.data-controls.calendar.year": {
+    "message": "Anno"
   },
-  "lKv8ex": {
-    "message": "Default"
+  "uidu.data-controls.filterer.add_another": {
+    "message": "Aggiungi un filtro"
   },
-  "m2rU1a": {
-    "message": "{sortersCount, plural, =0 {Sort} one {Sorted by 1 field} other {Sorted by {sortersCount, number} fields} }"
+  "uidu.data-controls.filterer.filters_count": {
+    "message": "{filtersCount, plural, =0 {Filtra} one {1 Filtro applicato} other {Filtrato per {filtersCount, number} campi} }"
   },
-  "myq2ZL": {
-    "message": "Normal"
+  "uidu.data-controls.filterer.no_filters": {
+    "message": "Nessun filtro applicato. Scegli una colonna"
   },
-  "pE58D7": {
+  "uidu.data-controls.grouper.add_another": {
+    "message": "Scegli un campo per raggruppare i tuoi dati"
+  },
+  "uidu.data-controls.grouper.groupers_count": {
+    "message": "{groupersCount, plural, =0 {Raggruppa} one {Raggruppato per 1 campo} other {Raggruppato per {groupersCount, number} campi} }"
+  },
+  "uidu.data-controls.grouper.no_groups": {
+    "message": "Nessun campo selezionato per il raggruppamento. Scegline uno"
+  },
+  "uidu.data-controls.resizer.compact": {
+    "message": "Compatta"
+  },
+  "uidu.data-controls.resizer.default": {
+    "message": "Predefinita"
+  },
+  "uidu.data-controls.resizer.extra": {
     "message": "Extra"
   },
-  "sd2ieZ": {
-    "message": "Week"
+  "uidu.data-controls.resizer.normal": {
+    "message": "Normale"
   },
-  "wcR8YO": {
-    "message": "{groupersCount, plural, =0 {Group by} one {Grouped by 1 field} other {Grouped by {groupersCount, number} fields} }"
+  "uidu.data-controls.sorter.add_another": {
+    "message": "Scegli un campo per ordinare i tuoi dati"
   },
-  "xYIsCK": {
-    "message": "Pick a field to group by"
+  "uidu.data-controls.sorter.no_sorters": {
+    "message": "Nessun campo selezionato per l'ordinamento. Scegline uno"
+  },
+  "uidu.data-controls.sorter.sorters_count": {
+    "message": "{sortersCount, plural, =0 {Ordina} one {Ordinato per 1 campo} other {Ordinato per {sortersCount, number} campi} }"
+  },
+  "uidu.data-controls.toggler.deselect_all": {
+    "message": "Deseleziona tutti"
+  },
+  "uidu.data-controls.toggler.select_all": {
+    "message": "Seleziona tutti"
   }
 }

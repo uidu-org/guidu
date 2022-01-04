@@ -1,0 +1,8 @@
+{
+  "uidu.payments.bank.label": {
+    "message": "Insert your bank details"
+  },
+  "uidu.payments.card.label": {
+    "message": "Insert your credit / debit card details"
+  }
+}

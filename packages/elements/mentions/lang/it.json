@@ -1,0 +1,62 @@
+{
+  "uidu.mentions.error.defaultAction": {
+    "description": "Default advised action when an error occurs",
+    "message": "Riprova tra qualche secondo"
+  },
+  "uidu.mentions.error.defaultHeadline": {
+    "description": "Error message shown when there is an error communicating with backend",
+    "message": "Qualcosa è andato storto"
+  },
+  "uidu.mentions.error.differentText": {
+    "description": "Enter different text message when a forbidden error occurs",
+    "message": "Prova ad inserire un testo diverso"
+  },
+  "uidu.mentions.error.loginAgain": {
+    "description": "Login again message when there is an authentication error occurs",
+    "message": "Try logging out then in again"
+  },
+  "uidu.mentions.mentions.team.meantion.highlight.close.button.tooltip": {
+    "description": "Closes the highlight component when this button is clicked. This text for the tooltip of that button",
+    "message": "Chiudi"
+  },
+  "uidu.mentions.mentions.team.member.50plus": {
+    "description": "Byline to show the number of members in the team when the number exceeds 50",
+    "message": "50+ membri"
+  },
+  "uidu.mentions.mentions.team.member.50plus.including.you": {
+    "description": "Byline to show the number of members in the team when the number exceeds 50 and also includes the current user",
+    "message": "50+ membri, incluso te"
+  },
+  "uidu.mentions.mentions.team.member.count": {
+    "description": "Byline to show the number of members in the team when the current user is not a member of the team",
+    "message": "{0, plural, one{# membro} other{# membri}}"
+  },
+  "uidu.mentions.mentions.team.member.count.including.you": {
+    "description": "Byline to show the number of members in the team when the current user is also a member of the team",
+    "message": "{0, plural, one {1 membro} other {{0} membri}}, compreso te"
+  },
+  "uidu.mentions.mentions.team.mention.highlight.description": {
+    "description": "Description of the highlight shown in the mention tpyeahead. This is related to team mentions",
+    "message": "Get everyone on the page with one click. No team?"
+  },
+  "uidu.mentions.mentions.team.mention.highlight.description.link": {
+    "description": "Team creation link in the description of the highlight shown in the mention tpyeahead. This is related to team mentions",
+    "message": "Start one."
+  },
+  "uidu.mentions.mentions.team.mention.highlight.title": {
+    "description": "Title of the highlight shown in the mention tpyeahead. This is related to team mentions",
+    "message": "Menziona il tuo team"
+  },
+  "uidu.mentions.noAccess.label": {
+    "description": "Label for no access icon",
+    "message": "Non hai accesso"
+  },
+  "uidu.mentions.noAccess.warning": {
+    "description": "Warning message to show that the mentioned user won't be notified",
+    "message": "{name} non sarà avvisato in quanto non ha accesso"
+  },
+  "uidu.mentions.unknow.user.error": {
+    "description": "Mention user name could not be found or look up failed",
+    "message": "Utente sconosciuto {userId}"
+  }
+}
