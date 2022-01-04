@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 2.2.0
+
+### Minor Changes
+
+- a0f03f709: Actions are now passed dependent on each row
+
+### Patch Changes
+
+- Updated dependencies [a0f03f709]
+  - @uidu/data-fields@1.5.1
+  - @uidu/table@1.3.1
+  - @uidu/data-controls@2.1.1
+  - @uidu/data-views@1.2.1
+
 ## 2.1.0
 
 ### Minor Changes

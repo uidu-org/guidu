@@ -1,5 +1,15 @@
 # @uidu/data-controls
 
+## 2.1.1
+
+### Patch Changes
+
+- Updated dependencies [a0f03f709]
+  - @uidu/data-manager@2.2.0
+  - @uidu/menu@0.7.1
+  - @uidu/data-fields@1.5.1
+  - @uidu/data-views@1.2.1
+
 ## 2.1.0
 
 ### Minor Changes
