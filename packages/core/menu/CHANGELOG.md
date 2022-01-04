@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.7.1
+
+### Patch Changes
+
+- a0f03f709: Actions are now passed dependent on each row
+
 ## 0.7.0
 
 ### Minor Changes

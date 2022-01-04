@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 1.3.1
+
+### Patch Changes
+
+- a0f03f709: Actions are now passed dependent on each row
+- Updated dependencies [a0f03f709]
+  - @uidu/menu@0.7.1
+  - @uidu/data-fields@1.5.1
+
 ## 1.3.0
 
 ### Minor Changes
