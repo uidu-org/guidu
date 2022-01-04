@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.7.0
+
+### Minor Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+
+### Patch Changes
+
+- Updated dependencies [7a6b0ec55]
+  - @uidu/adf-schema@0.7.0
+  - @uidu/emoji@0.6.0
+  - @uidu/mentions@0.4.0
+  - @uidu/profilecard@0.3.0
+  - @uidu/adf-utils@0.7.7
+
 ## 0.6.7
 
 ### Patch Changes

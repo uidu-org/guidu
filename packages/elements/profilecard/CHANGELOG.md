@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.3.0
+
+### Minor Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+
 ## 0.2.15
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.5.0
+
+### Minor Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+
 ## 0.4.12
 
 ### Patch Changes

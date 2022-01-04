@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.10
+
+### Patch Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+- Updated dependencies [7a6b0ec55]
+  - @uidu/media-card@0.6.0
+
 ## 0.5.9
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.4
+
+### Patch Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+
 ## 0.1.3
 
 ### Patch Changes
