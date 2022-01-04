@@ -34,7 +34,7 @@ export default function DataManager({
   onViewUpdate = (state) => {},
   currentView,
   updateView,
-  actions = [],
+  actions = () => [],
   canSelectRows = true,
   forwardedRef,
   getExportFileBlob,
@@ -140,7 +140,9 @@ export default function DataManager({
                 width: 56,
                 maxWidth: 56,
                 pinned: 'right',
-                Cell: (foo) => <RowActions {...foo} actions={actions} />,
+                Cell: (params) => {
+                  return <RowActions params={params} actions={actions} />;
+                },
                 groupByBoundary: true,
                 cellStyle: {
                   padding: 0,

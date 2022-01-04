@@ -27,7 +27,6 @@ const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
     }
 
     const Container = 'span';
-    console.log(description, isSelected);
 
     return (
       <BaseItemWrapper

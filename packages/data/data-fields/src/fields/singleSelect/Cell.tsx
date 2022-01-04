@@ -2,22 +2,7 @@ import React from 'react';
 // import { groupRenderer } from '../../groups';
 import EditableCell from './EditableCell';
 
-export default (params) => {
-  // if (params.row.isGrouped) {
-  //   return groupRenderer(params);
-  // }
-  if (params.column?.editable) {
-    return <EditableCell {...params} />;
-  }
-
-  const value = params.options.filter(
-    (option) => option.id === params.value,
-  )[0];
-
-  if (!value) {
-    return null;
-  }
-
+export function Option({ value }) {
   return (
     <div tw="truncate">
       <span
@@ -31,4 +16,27 @@ export default (params) => {
       </span>
     </div>
   );
+}
+
+export function ValueRenderer(params) {
+  const value = params.options.filter(
+    (option) => option.id === params.value,
+  )[0];
+
+  if (!value) {
+    return null;
+  }
+
+  return <Option value={value} />;
+}
+
+export default (params) => {
+  // if (params.row.isGrouped) {
+  //   return groupRenderer(params);
+  // }
+  if (params.column?.editable) {
+    return <EditableCell {...params} />;
+  }
+
+  return <ValueRenderer {...params} />;
 };

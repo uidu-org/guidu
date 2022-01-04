@@ -160,21 +160,23 @@ export default function Basic({}) {
         <DataManager
           forwardedRef={tableInstance}
           // query={query}
-          actions={[
-            {
-              name: 'Default actions',
-              items: [
-                {
-                  children: 'text',
-                  onClick: () => window.alert('onClick row'),
-                },
-                {
-                  children: 'text',
-                  onClick: () => window.alert('onClick row'),
-                },
-              ],
-            },
-          ]}
+          actions={(row: any) => {
+            return [
+              {
+                name: 'Default actions',
+                items: [
+                  {
+                    children: `text for ${row.original.email}`,
+                    onClick: () => window.alert('onClick row'),
+                  },
+                  {
+                    children: 'text',
+                    onClick: () => window.alert('onClick row'),
+                  },
+                ],
+              },
+            ];
+          }}
           isAutoSaving={isAutoSaving}
           key={`table-for-${currentView.id}`}
           onItemSelect={onItemSelect}
@@ -256,57 +258,57 @@ export default function Basic({}) {
                         ],
                       },
                       {
-                        path: `/`,
-                        type: 'InlineComponent',
-                        component: () => (
-                          <DropdownMenu
-                            trigger={
-                              <Button appearance="primary">Add a view</Button>
-                            }
-                            position="bottom left"
-                          >
-                            <DropdownItemGroup title="Create new">
-                              {[
-                                { id: 0, kind: 'table', name: 'Table' },
-                                {
-                                  id: 1,
-                                  kind: 'gallery',
-                                  name: 'Griglia',
-                                },
-                                {
-                                  id: 2,
-                                  kind: 'calendar',
-                                  name: 'Calendario',
-                                },
-                                { id: 3, kind: 'board', name: 'Kanban' },
-                                {
-                                  id: 4,
-                                  kind: 'timeline',
-                                  name: 'Timeline',
-                                },
-                                {
-                                  id: 5,
-                                  kind: 'list',
-                                  name: 'List',
-                                },
-                              ].map((view) => (
-                                <DropdownItem
-                                  key={view.id}
-                                  onClick={() => addView(view)}
-                                  elemBefore={<PlusCircle size={14} />}
-                                >
-                                  Add a {view.kind} view
-                                </DropdownItem>
-                              ))}
-                            </DropdownItemGroup>
-                          </DropdownMenu>
-                        ),
-                        icon: (
-                          <img
-                            src="https://via.placeholder.com/24x24"
-                            tw="rounded-full"
-                          />
-                        ),
+                        type: 'NavigationGroup',
+                        items: [
+                          {
+                            type: 'InlineComponent',
+                            component: () => (
+                              <DropdownMenu
+                                trigger={
+                                  <Button appearance="primary">
+                                    Add a view
+                                  </Button>
+                                }
+                                position="bottom left"
+                              >
+                                <DropdownItemGroup title="Create new">
+                                  {[
+                                    { id: 0, kind: 'table', name: 'Table' },
+                                    {
+                                      id: 1,
+                                      kind: 'gallery',
+                                      name: 'Griglia',
+                                    },
+                                    {
+                                      id: 2,
+                                      kind: 'calendar',
+                                      name: 'Calendario',
+                                    },
+                                    { id: 3, kind: 'board', name: 'Kanban' },
+                                    {
+                                      id: 4,
+                                      kind: 'timeline',
+                                      name: 'Timeline',
+                                    },
+                                    {
+                                      id: 5,
+                                      kind: 'list',
+                                      name: 'List',
+                                    },
+                                  ].map((view) => (
+                                    <DropdownItem
+                                      key={view.id}
+                                      onClick={() => addView(view)}
+                                      elemBefore={<PlusCircle size={14} />}
+                                    >
+                                      Add a {view.kind} view
+                                    </DropdownItem>
+                                  ))}
+                                </DropdownItemGroup>
+                              </DropdownMenu>
+                            ),
+                          },
+                        ],
                       },
                     ],
                   },

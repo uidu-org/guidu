@@ -22,6 +22,7 @@ export default function EditableCell(params) {
       {Array.from(Array(max).keys()).map((i) => {
         return (
           <button
+            key={i}
             type="button"
             css={[
               value >= i + 1

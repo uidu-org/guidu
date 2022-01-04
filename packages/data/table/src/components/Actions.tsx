@@ -1,11 +1,13 @@
 import Button from '@uidu/button';
 import { ButtonItem, MenuGroup, Section } from '@uidu/menu';
 import Popup from '@uidu/popup';
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { MoreHorizontal } from 'react-feather';
 
-export default function Actions({ actions = [], ...rest }) {
+export default function Actions({ actions = (row) => [], params }) {
   const [isOpen, setIsOpen] = useState(false);
+  const perRowActions = useMemo(() => actions(params.row), [params.row]);
+
   return (
     <div tw="flex-grow justify-center flex">
       <Popup
@@ -21,14 +23,13 @@ export default function Actions({ actions = [], ...rest }) {
               setIsOpen((prevIsOpen) => !prevIsOpen);
             }}
             type="button"
-            className="btn btn-sm d-flex align-items-center px-2 justify-content-between"
           >
             <MoreHorizontal size={14} />
           </Button>
         )}
         content={() => (
           <>
-            {actions.map(({ items, name, ...actionGroupProps }) => (
+            {perRowActions.map(({ items, name, ...actionGroupProps }) => (
               <MenuGroup>
                 <Section name={name} {...actionGroupProps}>
                   {items.map(({ onClick, ...action }, index) => (
@@ -38,7 +39,7 @@ export default function Actions({ actions = [], ...rest }) {
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        onClick({ ...rest });
+                        onClick({ ...params });
                       }}
                     />
                   ))}

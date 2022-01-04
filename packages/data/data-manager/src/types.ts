@@ -1,10 +1,16 @@
 import { FieldGroup } from '@uidu/data-fields';
 import { DataView } from '@uidu/data-views';
 import React from 'react';
+import { Row } from 'react-table';
 
 export type RowAction = {
   children: any;
   onClick: any;
+};
+
+export type RowActions = {
+  name: string;
+  items: RowAction[];
 };
 
 export type DataManagerProps = {
@@ -27,7 +33,7 @@ export type DataManagerProps = {
     fileType?: string;
     all?: boolean;
   }) => string;
-  actions?: RowAction[];
+  actions?: (row: Row) => RowActions[];
   pageSize?: number;
   forwardedRef: React.Ref<any>;
 };
