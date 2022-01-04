@@ -26,7 +26,7 @@ export const removePanel = (): Command => (state, dispatch) => {
     attributes: { inputMethod: INPUT_METHOD.TOOLBAR },
     eventType: EVENT_TYPE.TRACK,
   };
-  analyticsService.trackEvent(`atlassian.editor.format.panel.delete.button`);
+  analyticsService.trackEvent(`uidu.editor-core.format.panel.delete.button`);
 
   if (dispatch) {
     dispatch(
@@ -36,42 +36,41 @@ export const removePanel = (): Command => (state, dispatch) => {
   return true;
 };
 
-export const changePanelType = (panelType: PanelType): Command => (
-  state,
-  dispatch,
-) => {
-  const {
-    schema: { nodes },
-    tr,
-  } = state;
+export const changePanelType =
+  (panelType: PanelType): Command =>
+  (state, dispatch) => {
+    const {
+      schema: { nodes },
+      tr,
+    } = state;
 
-  let previousType: PANEL_TYPE = pluginKey.getState(state).activePanelType;
-  const payload: AnalyticsEventPayload = {
-    action: ACTION.CHANGED_TYPE,
-    actionSubject: ACTION_SUBJECT.PANEL,
-    attributes: {
-      newType: panelType as PANEL_TYPE,
-      previousType: previousType,
-    },
-    eventType: EVENT_TYPE.TRACK,
+    let previousType: PANEL_TYPE = pluginKey.getState(state).activePanelType;
+    const payload: AnalyticsEventPayload = {
+      action: ACTION.CHANGED_TYPE,
+      actionSubject: ACTION_SUBJECT.PANEL,
+      attributes: {
+        newType: panelType as PANEL_TYPE,
+        previousType: previousType,
+      },
+      eventType: EVENT_TYPE.TRACK,
+    };
+
+    analyticsService.trackEvent(
+      `uidu.editor-core.format.panel.${panelType}.button`,
+    );
+
+    const changePanelTypeTr = addAnalytics(
+      state,
+      setParentNodeMarkup(nodes.panel, null, { panelType })(tr).setMeta(
+        pluginKey,
+        { activePanelType: panelType },
+      ),
+      payload,
+    );
+    changePanelTypeTr.setMeta('scrollIntoView', false);
+
+    if (dispatch) {
+      dispatch(changePanelTypeTr);
+    }
+    return true;
   };
-
-  analyticsService.trackEvent(
-    `atlassian.editor.format.panel.${panelType}.button`,
-  );
-
-  const changePanelTypeTr = addAnalytics(
-    state,
-    setParentNodeMarkup(nodes.panel, null, { panelType })(tr).setMeta(
-      pluginKey,
-      { activePanelType: panelType },
-    ),
-    payload,
-  );
-  changePanelTypeTr.setMeta('scrollIntoView', false);
-
-  if (dispatch) {
-    dispatch(changePanelTypeTr);
-  }
-  return true;
-};

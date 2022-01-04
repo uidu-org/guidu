@@ -7,9 +7,16 @@ const Chart = loadable(() => import('./Geo'));
 
 export default {
   id: 'geo',
-  name: <FormattedMessage defaultMessage="Geo chart" />,
+  name: (
+    <FormattedMessage defaultMessage="Geo chart" id="uidu.dashlets.geo.name" />
+  ),
   icon: Globe,
   color: '#D08770',
-  description: <FormattedMessage defaultMessage="Geo chart." />,
+  description: (
+    <FormattedMessage
+      defaultMessage="Geo chart."
+      id="uidu.dashlets.geo.description"
+    />
+  ),
   chart: Chart,
 };

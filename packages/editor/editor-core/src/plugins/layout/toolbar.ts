@@ -26,29 +26,29 @@ import { PresetLayout } from './types';
 
 export const messages = defineMessages({
   twoColumns: {
-    id: 'fabric.editor.twoColumns',
+    id: 'uidu.editor-core.twoColumns',
     defaultMessage: 'Two columns',
     description: 'Layout with two columns of equal width',
   },
   threeColumns: {
-    id: 'fabric.editor.threeColumns',
+    id: 'uidu.editor-core.threeColumns',
     defaultMessage: 'Three columns',
     description: 'Layout with three columns of equal width',
   },
   rightSidebar: {
-    id: 'fabric.editor.rightSidebar',
+    id: 'uidu.editor-core.rightSidebar',
     defaultMessage: 'Right sidebar',
     description:
       'Layout with two columns, left column is 2/3 and right is 1/3 of page',
   },
   leftSidebar: {
-    id: 'fabric.editor.leftSidebar',
+    id: 'uidu.editor-core.leftSidebar',
     defaultMessage: 'Left sidebar',
     description:
       'Layout with two columns, left column is 1/3 and right is 2/3 of page',
   },
   threeColumnsWithSidebars: {
-    id: 'fabric.editor.threeColumnsWithSidebars',
+    id: 'uidu.editor-core.threeColumnsWithSidebars',
     defaultMessage: 'Three columns with sidebars',
     description: 'Layout with 3 columns laid out as 25% - 50% - 25%',
   },

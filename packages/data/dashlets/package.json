@@ -41,5 +41,9 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "supportedLocales": [
+    "it",
+    "en"
+  ]
 }

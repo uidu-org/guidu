@@ -6,7 +6,9 @@ import { Field } from '../../types';
 
 const Vote: Field = {
   kind: 'vote',
-  name: <FormattedMessage defaultMessage="Vote" />,
+  name: (
+    <FormattedMessage defaultMessage="Vote" id="uidu.data-fields.vote.name" />
+  ),
   icon: <FontAwesomeIcon icon={faPoll} />,
 };
 

@@ -10,10 +10,18 @@ const mocks = loadable(() => import('./mocks'));
 
 const Address: Field = {
   kind: 'address',
-  name: <FormattedMessage defaultMessage="Address" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Address"
+      id="uidu.data-fields.address.name"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faMapMarkerAlt} />,
   description: (
-    <FormattedMessage defaultMessage="Allow geolocation of your records with Google Maps autocomplete help" />
+    <FormattedMessage
+      defaultMessage="Allow geolocation of your records with Google Maps autocomplete help"
+      id="uidu.data-fields.address.description"
+    />
   ),
   color: '#C384C5',
   Cell,

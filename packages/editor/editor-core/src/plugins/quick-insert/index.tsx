@@ -44,7 +44,7 @@ const quickInsertPlugin = (): EditorPlugin => ({
         _tr,
         dispatch,
       ) => {
-        analyticsService.trackEvent('atlassian.editor.quickinsert.query');
+        analyticsService.trackEvent('uidu.editor-core.quickinsert.query');
         if (!prevActive && queryChanged) {
           (dispatch as AnalyticsDispatch)(analyticsEventKey, {
             payload: {
@@ -81,7 +81,7 @@ const quickInsertPlugin = (): EditorPlugin => ({
         return defaultSearch();
       },
       selectItem: (state, item, insert) => {
-        analyticsService.trackEvent('atlassian.editor.quickinsert.select', {
+        analyticsService.trackEvent('uidu.editor-core.quickinsert.select', {
           item: item.title,
         });
         return (item as QuickInsertItem).action(insert, state);
@@ -116,14 +116,14 @@ const processItems = (items: Array<QuickInsertHandler>, intl: IntlShape) => {
 
 export const pluginKey = new PluginKey('quickInsertPluginKey');
 
-export const setProvider = (
-  provider: Promise<Array<QuickInsertItem>>,
-): Command => (state, dispatch) => {
-  if (dispatch) {
-    dispatch(state.tr.setMeta(pluginKey, provider));
-  }
-  return true;
-};
+export const setProvider =
+  (provider: Promise<Array<QuickInsertItem>>): Command =>
+  (state, dispatch) => {
+    if (dispatch) {
+      dispatch(state.tr.setMeta(pluginKey, provider));
+    }
+    return true;
+  };
 
 function quickInsertPluginFactory(
   quickInsertItems: Array<QuickInsertHandler>,

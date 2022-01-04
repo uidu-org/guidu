@@ -17,7 +17,7 @@ export interface Props {
 }
 
 const onClickMediaButton = (pluginState: MediaPluginState) =>
-  withAnalytics('atlassian.editor.media.button', () => {
+  withAnalytics('uidu.editor-core.media.button', () => {
     pluginState.showMediaPicker();
     return true;
   });

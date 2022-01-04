@@ -36,7 +36,7 @@ export default class WithHelpTrigger extends React.Component<
         eventType: EVENT_TYPE.UI,
       },
     });
-    analyticsService.trackEvent('atlassian.editor.help.button');
+    analyticsService.trackEvent('uidu.editor-core.help.button');
 
     const editorView = editorActions._privateGetEditorView();
     if (editorView) {

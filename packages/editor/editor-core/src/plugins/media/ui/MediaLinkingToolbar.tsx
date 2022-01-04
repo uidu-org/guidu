@@ -24,7 +24,7 @@ import { normalizeUrl } from '../../hyperlink/utils';
 
 export const mediaLinkToolbarMessages = defineMessages({
   backLink: {
-    id: 'fabric.editor.backLink',
+    id: 'uidu.editor-core.backLink',
     defaultMessage: 'Go back',
     description: 'Go back from media linking toolbar to main toolbar',
   },

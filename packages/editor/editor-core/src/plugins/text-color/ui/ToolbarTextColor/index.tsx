@@ -49,17 +49,17 @@ const EXPERIMENT_GROUP_SUBJECT: string = 'subject';
 
 export const messages = defineMessages({
   textColor: {
-    id: 'fabric.editor.textColor',
+    id: 'uidu.editor-core.textColor',
     defaultMessage: 'Text color',
     description: '',
   },
   moreColors: {
-    id: 'fabric.editor.textColor.moreColors',
+    id: 'uidu.editor-core.textColor.moreColors',
     defaultMessage: 'More colors',
     description: 'More colors',
   },
   lessColors: {
-    id: 'fabric.editor.textColor.lessColors',
+    id: 'uidu.editor-core.textColor.lessColors',
     defaultMessage: 'Fewer colors',
     description: 'Fewer colors',
   },
@@ -194,7 +194,7 @@ class ToolbarTextColor extends React.Component<
   }
 
   private changeTextColor = withAnalytics(
-    'atlassian.editor.format.textcolor.button',
+    'uidu.editor-core.format.textcolor.button',
     (color: string, disabled: boolean) => {
       if (!disabled) {
         const {

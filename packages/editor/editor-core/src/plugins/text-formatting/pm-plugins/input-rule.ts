@@ -95,7 +95,7 @@ function addMark(
     }
 
     analyticsService.trackEvent(
-      `atlassian.editor.format.${markType.name}.autoformatting`,
+      `uidu.editor-core.format.${markType.name}.autoformatting`,
     );
 
     // apply mark to the range (from, to)
@@ -127,8 +127,9 @@ function addCodeMark(
           return prefix === '(';
         },
         (prefix: string): boolean => {
-          const nodeBefore = state.doc.resolve(start + prefix.length)
-            .nodeBefore;
+          const nodeBefore = state.doc.resolve(
+            start + prefix.length,
+          ).nodeBefore;
           return (
             (nodeBefore && nodeBefore.type === state.schema.nodes.hardBreak) ||
             false
@@ -155,7 +156,7 @@ function addCodeMark(
       end -= state.selection.to - state.selection.from;
     }
 
-    analyticsService.trackEvent('atlassian.editor.format.code.autoformatting');
+    analyticsService.trackEvent('uidu.editor-core.format.code.autoformatting');
     const regexStart = end - match[2].length + 1;
     const codeMark = state.schema.marks.code.create();
     return applyMarkOnRange(regexStart, end, false, codeMark, tr)
@@ -165,11 +166,14 @@ function addCodeMark(
   };
 }
 
-export const strongRegex1 = /(\S*)(\_\_([^\_\s](\_(?!\_)|[^\_])*[^\_\s]|[^\_\s])\_\_)$/;
-export const strongRegex2 = /(\S*)(\*\*([^\*\s](\*(?!\*)|[^\*])*[^\*\s]|[^\*\s])\*\*)$/;
+export const strongRegex1 =
+  /(\S*)(\_\_([^\_\s](\_(?!\_)|[^\_])*[^\_\s]|[^\_\s])\_\_)$/;
+export const strongRegex2 =
+  /(\S*)(\*\*([^\*\s](\*(?!\*)|[^\*])*[^\*\s]|[^\*\s])\*\*)$/;
 export const italicRegex1 = /(\S*)(\_([^\_\s]([^\_])*[^\_\s]|[^\_\s])\_)$/;
 export const italicRegex2 = /(\S*)(\*([^\*\s]([^\*])*[^\*\s]|[^\*\s])\*)$/;
-export const strikeRegex = /(\S*)(\~\~([^\s\~](\~(?!\~)|[^\~])*[^\s\~]|[^\s\~])\~\~)$/;
+export const strikeRegex =
+  /(\S*)(\~\~([^\s\~](\~(?!\~)|[^\~])*[^\s\~]|[^\s\~])\~\~)$/;
 export const codeRegex = /(\S*)(`[^\s][^`]*`)$/;
 
 /**

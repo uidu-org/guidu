@@ -181,7 +181,7 @@ class ToolbarLists extends PureComponent<Props & WrappedComponentProps, State> {
   }
 
   private handleBulletListClick = withAnalytics(
-    'atlassian.editor.format.list.bullet.button',
+    'uidu.editor-core.format.list.bullet.button',
     () => {
       if (!this.props.bulletListDisabled) {
         if (toggleBulletList(this.props.editorView, INPUT_METHOD.TOOLBAR)) {
@@ -193,7 +193,7 @@ class ToolbarLists extends PureComponent<Props & WrappedComponentProps, State> {
   );
 
   private handleOrderedListClick = withAnalytics(
-    'atlassian.editor.format.list.numbered.button',
+    'uidu.editor-core.format.list.numbered.button',
     () => {
       if (!this.props.orderedListDisabled) {
         if (toggleOrderedList(this.props.editorView, INPUT_METHOD.TOOLBAR)) {

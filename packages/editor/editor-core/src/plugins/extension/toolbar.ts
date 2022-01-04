@@ -23,7 +23,7 @@ import { ExtensionState } from './types';
 
 export const messages = defineMessages({
   edit: {
-    id: 'fabric.editor.edit',
+    id: 'uidu.editor-core.edit',
     defaultMessage: 'Edit',
     description: 'Edit the properties for this extension.',
   },
@@ -115,58 +115,60 @@ const editButton = (
   ];
 };
 
-export const getToolbarConfig = (
-  breakoutEnabled: boolean = true,
-  allowNewConfigPanel: boolean = false,
-): FloatingToolbarHandler => (state, { formatMessage }) => {
-  const extensionState = getPluginState(state);
+export const getToolbarConfig =
+  (
+    breakoutEnabled: boolean = true,
+    allowNewConfigPanel: boolean = false,
+  ): FloatingToolbarHandler =>
+  (state, { formatMessage }) => {
+    const extensionState = getPluginState(state);
 
-  if (
-    extensionState &&
-    !extensionState.showContextPanel &&
-    extensionState.element
-  ) {
-    const nodeType = [
-      state.schema.nodes.extension,
-      state.schema.nodes.inlineExtension,
-      state.schema.nodes.bodiedExtension,
-    ];
+    if (
+      extensionState &&
+      !extensionState.showContextPanel &&
+      extensionState.element
+    ) {
+      const nodeType = [
+        state.schema.nodes.extension,
+        state.schema.nodes.inlineExtension,
+        state.schema.nodes.bodiedExtension,
+      ];
 
-    const editButtonArray = editButton(
-      formatMessage,
-      extensionState,
-      allowNewConfigPanel,
-    );
-    const breakoutButtonArray = breakoutOptions(
-      state,
-      formatMessage,
-      extensionState,
-      breakoutEnabled,
-    );
+      const editButtonArray = editButton(
+        formatMessage,
+        extensionState,
+        allowNewConfigPanel,
+      );
+      const breakoutButtonArray = breakoutOptions(
+        state,
+        formatMessage,
+        extensionState,
+        breakoutEnabled,
+      );
 
-    return {
-      title: 'Extension floating controls',
-      getDomRef: () => extensionState.element!.parentElement || undefined,
-      nodeType,
-      items: [
-        ...editButtonArray,
-        ...breakoutButtonArray,
-        {
-          type: 'separator',
-          hidden:
-            editButtonArray.length === 0 && breakoutButtonArray.length === 0,
-        },
-        {
-          type: 'button',
-          icon: RemoveIcon,
-          appearance: 'danger',
-          onClick: removeExtension(),
-          onMouseEnter: hoverDecoration(nodeType, true),
-          onMouseLeave: hoverDecoration(nodeType, false),
-          title: formatMessage(commonMessages.remove),
-        },
-      ],
-    };
-  }
-  return undefined;
-};
+      return {
+        title: 'Extension floating controls',
+        getDomRef: () => extensionState.element!.parentElement || undefined,
+        nodeType,
+        items: [
+          ...editButtonArray,
+          ...breakoutButtonArray,
+          {
+            type: 'separator',
+            hidden:
+              editButtonArray.length === 0 && breakoutButtonArray.length === 0,
+          },
+          {
+            type: 'button',
+            icon: RemoveIcon,
+            appearance: 'danger',
+            onClick: removeExtension(),
+            onMouseEnter: hoverDecoration(nodeType, true),
+            onMouseLeave: hoverDecoration(nodeType, false),
+            title: formatMessage(commonMessages.remove),
+          },
+        ],
+      };
+    }
+    return undefined;
+  };

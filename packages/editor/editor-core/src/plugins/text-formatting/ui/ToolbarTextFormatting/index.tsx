@@ -20,13 +20,13 @@ import { TextFormattingState } from '../../pm-plugins/main';
 
 export const messages = defineMessages({
   bold: {
-    id: 'fabric.editor.bold',
+    id: 'uidu.editor-core.bold',
     defaultMessage: 'Bold',
     description:
       'This refers to bold or “strong” formatting, indicates that its contents have strong importance, seriousness, or urgency.',
   },
   italic: {
-    id: 'fabric.editor.italic',
+    id: 'uidu.editor-core.italic',
     defaultMessage: 'Italic',
     description: 'This refers to italics or emphasized formatting.',
   },
@@ -88,7 +88,7 @@ class ToolbarTextFormatting extends PureComponent<
   }
 
   private handleBoldClick = withAnalytics(
-    'atlassian.editor.format.strong.button',
+    'uidu.editor-core.format.strong.button',
     () => {
       const { strongDisabled } = this.props.textFormattingState;
       if (!strongDisabled) {
@@ -103,7 +103,7 @@ class ToolbarTextFormatting extends PureComponent<
   );
 
   private handleItalicClick = withAnalytics(
-    'atlassian.editor.format.em.button',
+    'uidu.editor-core.format.em.button',
     (): boolean => {
       const { emDisabled } = this.props.textFormattingState;
       if (!emDisabled) {

@@ -8,31 +8,31 @@ import { Link } from 'react-router-dom';
 export const messages = defineMessages({
   simple_registrations_title: {
     defaultMessage: 'Sign up',
-    description: 'simple_registrations_title',
+    id: 'uidu.devise.simple_registrations_title',
   },
   simple_registrations_description: {
     defaultMessage: 'Sign up with to discover stories and make impact',
-    description: 'simple_registrations_description',
+    id: 'uidu.devise.simple_registrations_description',
   },
   simple_registrations_primary_cta: {
     defaultMessage: 'Sign up',
-    description: 'simple_registrations_primary_cta',
+    id: 'uidu.devise.simple_registrations_primary_cta',
   },
   simple_registrations_secondary_cta: {
     defaultMessage: 'Already have an account?',
-    description: 'simple_registrations_secondary_cta',
+    id: 'uidu.devise.simple_registrations_secondary_cta',
   },
   simple_registrations_email_label: {
     defaultMessage: 'Insert your email',
-    description: 'simple_registrations_email_label',
+    id: 'uidu.devise.simple_registrations_email_label',
   },
   simple_registrations_password_label: {
     defaultMessage: 'Choose a password',
-    description: 'simple_registrations_email_label',
+    id: 'uidu.devise.simple_registrations_password_label',
   },
   simple_registrations_remember_me_label: {
     defaultMessage: 'Remember me for next registrations',
-    description: 'simple_registrations_email_label',
+    id: 'uidu.devise.simple_registrations_remember_me_label',
   },
 });
 
@@ -46,7 +46,7 @@ export default class RegistrationsForm extends PureComponent<any, any> {
     const { routes, additionalInfo } = this.props;
     return (
       <>
-        <div className="text-center mb-4">
+        <div className="mb-4 text-center">
           <h3>
             <FormattedMessage {...messages.simple_registrations_title} />
           </h3>

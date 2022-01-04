@@ -47,7 +47,7 @@ export const insertList = (
 
   // Track event
   analyticsService.trackEvent(
-    `atlassian.editor.format.list.${listTypeName}.autoformatting`,
+    `uidu.editor-core.format.list.${listTypeName}.autoformatting`,
   );
 
   // Split at the start of autoformatting and delete formatting characters.
@@ -93,7 +93,7 @@ function getBulletListInputRules(schema: Schema): InputRule[] {
   );
 
   asteriskRule.handler = trackAndInvoke(
-    'atlassian.editor.format.list.bullet.autoformatting',
+    'uidu.editor-core.format.list.bullet.autoformatting',
     asteriskRule.handler as any,
   );
 
@@ -137,7 +137,7 @@ function getOrderedListInputRules(schema: Schema): InputRule[] {
     true,
   );
   numberOneRule.handler = trackAndInvoke(
-    'atlassian.editor.format.list.numbered.autoformatting',
+    'uidu.editor-core.format.list.numbered.autoformatting',
     numberOneRule.handler as any,
   );
 

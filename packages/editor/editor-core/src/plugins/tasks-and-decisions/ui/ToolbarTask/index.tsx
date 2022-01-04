@@ -45,7 +45,7 @@ export class ToolbarTask extends PureComponent<
   }
 
   private handleInsertTask = withAnalytics(
-    'atlassian.fabric.action.trigger.button',
+    'uidu.editor-core.action.trigger.button',
     (): boolean => {
       const { editorView } = this.props;
       if (!editorView) {

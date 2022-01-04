@@ -6,19 +6,19 @@ import { defineMessages, FormattedMessage } from 'react-intl';
 const messages = defineMessages({
   passwordless_registrations_title: {
     defaultMessage: 'Sign up',
-    description: 'passwordless_registrations_title',
+    description: 'uidu.devise.passwordless_registrations_title',
   },
   passwordless_registrations_description: {
     defaultMessage: 'Sign up with to discover stories and make impact',
-    description: 'passwordless_registrations_description',
+    description: 'uidu.devise.passwordless_registrations_description',
   },
   passwordless_registrations_primary_cta: {
     defaultMessage: 'Sign up',
-    description: 'passwordless_registrations_primary_cta',
+    description: 'uidu.devise.passwordless_registrations_primary_cta',
   },
   passwordless_registrations_email_label: {
     defaultMessage: 'Insert your email',
-    description: 'passwordless_registrations_email_label',
+    description: 'uidu.devise.passwordless_registrations_email_label',
   },
 });
 
@@ -35,7 +35,7 @@ export default class PasswordlessRegistrationsForm extends PureComponent<
     const { routes, additionalInfo } = this.props;
     return (
       <>
-        <div className="text-center mb-4">
+        <div className="mb-4 text-center">
           <h3>
             <FormattedMessage {...messages.passwordless_registrations_title} />
           </h3>

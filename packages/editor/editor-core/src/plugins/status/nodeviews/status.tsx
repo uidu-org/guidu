@@ -16,7 +16,7 @@ import { StatusPluginOptions } from '../types';
 
 export const messages = defineMessages({
   placeholder: {
-    id: 'fabric.editor.statusPlaceholder',
+    id: 'uidu.editor-core.statusPlaceholder',
     defaultMessage: 'Set a status',
     description:
       'Placeholder description for an empty (new) status item in the editor',

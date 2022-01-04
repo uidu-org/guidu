@@ -9,31 +9,31 @@ import { Link } from 'react-router-dom';
 export const messages = defineMessages({
   simple_sessions_title: {
     defaultMessage: 'Sign in',
-    description: 'simple_sessions_title',
+    id: 'uidu.devise.simple_sessions_title',
   },
   simple_sessions_description: {
     defaultMessage: 'Sign in with your email and password',
-    description: 'simple_sessions_description',
+    id: 'uidu.devise.simple_sessions_description',
   },
   simple_sessions_primary_cta: {
     defaultMessage: 'Sign in',
-    description: 'simple_sessions_primary_cta',
+    id: 'uidu.devise.simple_sessions_primary_cta',
   },
   simple_sessions_secondary_cta: {
     defaultMessage: 'Create an account',
-    description: 'simple_sessions_secondary_cta',
+    id: 'uidu.devise.simple_sessions_secondary_cta',
   },
   simple_sessions_email_label: {
     defaultMessage: 'Insert your email',
-    description: 'simple_sessions_email_label',
+    id: 'uidu.devise.simple_sessions_email_label',
   },
   simple_sessions_password_label: {
     defaultMessage: 'Insert your password',
-    description: 'simple_sessions_email_label',
+    id: 'uidu.devise.simple_sessions_password_label',
   },
   simple_sessions_remember_me_label: {
     defaultMessage: 'Remember me for next sessions',
-    description: 'simple_sessions_email_label',
+    id: 'uidu.devise.simple_sessions_remember_me_label',
   },
 });
 
@@ -47,7 +47,7 @@ export default class SessionsForm extends PureComponent<any, any> {
     const { routes } = this.props;
     return (
       <>
-        <div className="text-center mb-4">
+        <div className="mb-4 text-center">
           <h3>
             <FormattedMessage {...messages.simple_sessions_title} />
           </h3>

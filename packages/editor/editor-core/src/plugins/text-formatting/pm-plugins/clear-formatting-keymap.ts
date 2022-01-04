@@ -10,7 +10,7 @@ export function keymapPlugin(): Plugin {
   keymaps.bindKeymapWithCommand(
     keymaps.clearFormatting.common!,
     trackAndInvoke(
-      'atlassian.editor.format.clear.keyboard',
+      'uidu.editor-core.format.clear.keyboard',
       clearFormattingWithAnalytics(INPUT_METHOD.SHORTCUT),
     ),
     list,

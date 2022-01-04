@@ -82,7 +82,7 @@ const createHorizontalRuleAutoformat = (
   end: number,
 ) => {
   analyticsService.trackEvent(
-    `atlassian.editor.format.horizontalrule.autoformatting`,
+    `uidu.editor-core.format.horizontalrule.autoformatting`,
   );
 
   return createHorizontalRule(state, start, end, INPUT_METHOD.FORMATTING);

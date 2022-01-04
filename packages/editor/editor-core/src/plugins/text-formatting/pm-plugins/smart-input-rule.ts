@@ -34,7 +34,7 @@ function replaceTextUsingCaptureGroup(
 
     if (trackingEventName) {
       analyticsService.trackEvent(
-        `atlassian.editor.format.${trackingEventName}.autoformatting`,
+        `uidu.editor-core.format.${trackingEventName}.autoformatting`,
       );
     }
 
@@ -99,7 +99,7 @@ function createSingleQuotesRules(
         const replacement = spacing + '‘' + innerContent + '’';
 
         analyticsService.trackEvent(
-          `atlassian.editor.format.${trackingEventName}.autoformatting`,
+          `uidu.editor-core.format.${trackingEventName}.autoformatting`,
         );
 
         return state.tr.insertText(replacement, start, end);

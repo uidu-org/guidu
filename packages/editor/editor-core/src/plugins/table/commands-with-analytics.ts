@@ -55,12 +55,8 @@ export const emptyMultipleCellsWithAnalytics = (
   targetCellPosition?: number,
 ) =>
   withAnalytics(({ selection }) => {
-    const {
-      horizontalCells,
-      verticalCells,
-      totalRowCount,
-      totalColumnCount,
-    } = getSelectedCellInfo(selection);
+    const { horizontalCells, verticalCells, totalRowCount, totalColumnCount } =
+      getSelectedCellInfo(selection);
 
     return {
       action: TABLE_ACTION.CLEARED,
@@ -77,7 +73,7 @@ export const emptyMultipleCellsWithAnalytics = (
     };
   })(
     withV2Analytics(
-      `atlassian.editor.format.table.delete_content.${
+      `uidu.editor-core.format.table.delete_content.${
         inputMethod === INPUT_METHOD.KEYBOARD ? 'keyboard' : 'button'
       }`,
       clearMultipleCells(targetCellPosition),
@@ -109,7 +105,7 @@ export const mergeCellsWithAnalytics = () =>
     };
   })((state, dispatch) => {
     if (dispatch) {
-      analyticsV2.trackEvent('atlassian.editor.format.table.merge.button');
+      analyticsV2.trackEvent('uidu.editor-core.format.table.merge.button');
       dispatch(mergeCells(state.tr));
     }
     return true;
@@ -120,10 +116,8 @@ export const splitCellWithAnalytics = () =>
     const { totalRowCount, totalColumnCount } = getSelectedCellInfo(selection);
     const cell = findCellClosestToPos(selection.$anchor);
     if (cell) {
-      const {
-        rowspan: verticalCells,
-        colspan: horizontalCells,
-      } = cell.node.attrs;
+      const { rowspan: verticalCells, colspan: horizontalCells } =
+        cell.node.attrs;
 
       return {
         action: TABLE_ACTION.SPLIT,
@@ -140,7 +134,7 @@ export const splitCellWithAnalytics = () =>
       };
     }
     return undefined;
-  })(withV2Analytics('atlassian.editor.format.table.split.button', splitCell));
+  })(withV2Analytics('uidu.editor-core.format.table.split.button', splitCell));
 
 export const setColorWithAnalytics = (
   cellColor: string,
@@ -173,35 +167,34 @@ export const setColorWithAnalytics = (
     };
   })(
     withV2Analytics(
-      'atlassian.editor.format.table.backgroundColor.button',
+      'uidu.editor-core.format.table.backgroundColor.button',
       setMultipleCellAttrs({ background: cellColor }, targetCellPosition),
     ),
   );
 
-export const addRowAroundSelection = (side: RowInsertPosition): Command => (
-  state,
-  dispatch,
-) => {
-  const { selection } = state;
-  const isCellSelection = selection instanceof CellSelection;
-  const rect = isCellSelection
-    ? getSelectionRect(selection)
-    : findCellRectClosestToPos(selection.$from);
+export const addRowAroundSelection =
+  (side: RowInsertPosition): Command =>
+  (state, dispatch) => {
+    const { selection } = state;
+    const isCellSelection = selection instanceof CellSelection;
+    const rect = isCellSelection
+      ? getSelectionRect(selection)
+      : findCellRectClosestToPos(selection.$from);
 
-  if (!rect) {
-    return false;
-  }
+    if (!rect) {
+      return false;
+    }
 
-  const position =
-    isCellSelection && side === 'TOP' ? rect.top : rect.bottom - 1;
+    const position =
+      isCellSelection && side === 'TOP' ? rect.top : rect.bottom - 1;
 
-  const offset = side === 'BOTTOM' ? 1 : 0;
+    const offset = side === 'BOTTOM' ? 1 : 0;
 
-  return insertRowWithAnalytics(INPUT_METHOD.SHORTCUT, {
-    index: position + offset,
-    moveCursorToInsertedRow: false,
-  })(state, dispatch);
-};
+    return insertRowWithAnalytics(INPUT_METHOD.SHORTCUT, {
+      index: position + offset,
+      moveCursorToInsertedRow: false,
+    })(state, dispatch);
+  };
 
 export const insertRowWithAnalytics = (
   inputMethod: InsertRowMethods,
@@ -225,7 +218,7 @@ export const insertRowWithAnalytics = (
     };
   })(
     withV2Analytics(
-      `atlassian.editor.format.table.row.${
+      `uidu.editor-core.format.table.row.${
         inputMethod === INPUT_METHOD.KEYBOARD ? 'keyboard' : 'button'
       }`,
       insertRow(options.index, options.moveCursorToInsertedRow),
@@ -257,7 +250,7 @@ export const insertColumnWithAnalytics = (
     };
   })(
     withV2Analytics(
-      'atlassian.editor.format.table.column.button',
+      'uidu.editor-core.format.table.column.button',
       insertColumn(position),
     ),
   );
@@ -285,7 +278,7 @@ export const deleteRowsWithAnalytics = (
     };
   })((state, dispatch) => {
     if (dispatch) {
-      analyticsV2.trackEvent('atlassian.editor.format.table.delete_row.button');
+      analyticsV2.trackEvent('uidu.editor-core.format.table.delete_row.button');
       dispatch(deleteRows(rect, isHeaderRowRequired)(state.tr));
     }
     return true;
@@ -314,7 +307,7 @@ export const deleteColumnsWithAnalytics = (
   })((state, dispatch) => {
     if (dispatch) {
       analyticsV2.trackEvent(
-        'atlassian.editor.format.table.delete_column.button',
+        'uidu.editor-core.format.table.delete_column.button',
       );
       dispatch(deleteColumns(rect)(state.tr));
     }
@@ -336,7 +329,7 @@ export const deleteTableWithAnalytics = () =>
       eventType: EVENT_TYPE.TRACK,
     };
   })(
-    withV2Analytics('atlassian.editor.format.table.delete.button', deleteTable),
+    withV2Analytics('uidu.editor-core.format.table.delete.button', deleteTable),
   );
 
 export const toggleHeaderRowWithAnalytics = () =>
@@ -359,7 +352,7 @@ export const toggleHeaderRowWithAnalytics = () =>
     };
   })(
     withV2Analytics(
-      'atlassian.editor.format.table.toggleHeaderRow.button',
+      'uidu.editor-core.format.table.toggleHeaderRow.button',
       toggleHeaderRow,
     ),
   );
@@ -384,7 +377,7 @@ export const toggleHeaderColumnWithAnalytics = () =>
     };
   })(
     withV2Analytics(
-      'atlassian.editor.format.table.toggleHeaderColumn.button',
+      'uidu.editor-core.format.table.toggleHeaderColumn.button',
       toggleHeaderColumn,
     ),
   );
@@ -407,7 +400,7 @@ export const toggleNumberColumnWithAnalytics = () =>
     };
   })(
     withV2Analytics(
-      'atlassian.editor.format.table.toggleNumberColumn.button',
+      'uidu.editor-core.format.table.toggleNumberColumn.button',
       toggleNumberColumn,
     ),
   );

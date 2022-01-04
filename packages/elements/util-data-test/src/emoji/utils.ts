@@ -13,4 +13,4 @@ export interface UploadDetail {
 // NOTE: if this is changed in the original package, this must also be modified
 export const customType = 'SITE';
 export const customCategory = 'CUSTOM';
-export const selectedToneStorageKey = 'fabric.emoji.selectedTone';
+export const selectedToneStorageKey = 'uidu.emoji.selectedTone';

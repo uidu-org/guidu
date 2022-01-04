@@ -341,7 +341,7 @@ const createInlineCodeFromTextInput = (
       const hasTickAfter = after && after.text && after.text.startsWith('`');
       if (hasTickBefore && hasTickAfter) {
         analyticsService.trackEvent(
-          `atlassian.editor.format.code.autoformatting`,
+          `uidu.editor-core.format.code.autoformatting`,
         );
         let tr = state.tr.replaceRangeWith(
           from - 1,

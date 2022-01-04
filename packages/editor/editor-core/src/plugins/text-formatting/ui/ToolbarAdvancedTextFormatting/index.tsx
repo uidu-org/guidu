@@ -39,39 +39,39 @@ export interface Props {
 
 export const messages = defineMessages({
   underline: {
-    id: 'fabric.editor.underline',
+    id: 'uidu.editor-core.underline',
     defaultMessage: 'Underline',
     description: 'Whether the text selection has underlined text',
   },
   strike: {
-    id: 'fabric.editor.strike',
+    id: 'uidu.editor-core.strike',
     defaultMessage: 'Strikethrough',
     description: 'Whether the text selection has crossed out text',
   },
   code: {
-    id: 'fabric.editor.code',
+    id: 'uidu.editor-core.code',
     defaultMessage: 'Code',
     description: 'Whether the text selection has monospaced/code font',
   },
   subscript: {
-    id: 'fabric.editor.subscript',
+    id: 'uidu.editor-core.subscript',
     defaultMessage: 'Subscript',
     description:
       'Whether the text selection is written below the line in a slightly smaller size',
   },
   superscript: {
-    id: 'fabric.editor.superscript',
+    id: 'uidu.editor-core.superscript',
     defaultMessage: 'Superscript',
     description:
       'Whether the text selection is written above the line in a slightly smaller size',
   },
   clearFormatting: {
-    id: 'fabric.editor.clearFormatting',
+    id: 'uidu.editor-core.clearFormatting',
     defaultMessage: 'Clear formatting',
     description: 'Remove all rich text formatting from the selected text',
   },
   moreFormatting: {
-    id: 'fabric.editor.moreFormatting',
+    id: 'uidu.editor-core.moreFormatting',
     defaultMessage: 'More formatting',
     description:
       'Clicking this will show a menu with additional formatting options',
@@ -294,7 +294,7 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
 
   private onItemActivated = ({ item }: { item: MenuItem }) => {
     analyticsService.trackEvent(
-      `atlassian.editor.format.${item.value.name}.button`,
+      `uidu.editor-core.format.${item.value.name}.button`,
     );
 
     const { state, dispatch } = this.props.editorView;

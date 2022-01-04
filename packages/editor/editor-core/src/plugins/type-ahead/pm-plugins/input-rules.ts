@@ -52,7 +52,7 @@ export function inputRulePlugin(
     const { tr, selection } = state;
     const marks = selection.$from.marks();
 
-    analyticsService.trackEvent('atlassian.editor.typeahead.trigger', {
+    analyticsService.trackEvent('uidu.editor-core.typeahead.trigger', {
       trigger,
     });
 

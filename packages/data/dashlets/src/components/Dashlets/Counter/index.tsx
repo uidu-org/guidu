@@ -8,10 +8,20 @@ const ChartStateless = loadable(() => import('./CounterStateless'));
 
 export default {
   id: 'counter',
-  name: <FormattedMessage defaultMessage="Counter" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Counter"
+      id="uidu.dashlets.counter.name"
+    />
+  ),
   icon: Hash,
   color: '#D08770',
-  description: <FormattedMessage defaultMessage="Counter" />,
+  description: (
+    <FormattedMessage
+      defaultMessage="Counter"
+      id="uidu.dashlets.counter.description"
+    />
+  ),
   chart: Chart,
   chartStateless: ChartStateless,
 };

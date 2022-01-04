@@ -32,9 +32,9 @@ import { HeadingLevelsAndNormalText } from '../types';
 
 const MAX_HEADING_LEVEL = 6;
 
-function getHeadingLevel(
-  match: string[],
-): { level: HeadingLevelsAndNormalText } {
+function getHeadingLevel(match: string[]): {
+  level: HeadingLevelsAndNormalText;
+} {
   return {
     level: match[1].length as HeadingLevelsAndNormalText,
   };
@@ -89,7 +89,7 @@ function getHeadingRules(schema: Schema): InputRuleWithHandler[] {
   const currentHandler = hashRule.handler;
   hashRule.handler = (state, match: string[], start: number, end: number) => {
     analyticsService.trackEvent(
-      `atlassian.editor.format.heading${match[1].length}.autoformatting`,
+      `uidu.editor-core.format.heading${match[1].length}.autoformatting`,
     );
     return currentHandler(state, match, start, end);
   };
@@ -128,7 +128,7 @@ function getBlockQuoteRules(schema: Schema): InputRuleWithHandler[] {
   );
 
   greatherThanRule.handler = trackAndInvoke(
-    'atlassian.editor.format.blockquote.autoformatting',
+    'uidu.editor-core.format.blockquote.autoformatting',
     greatherThanRule.handler as any,
   );
 
@@ -188,7 +188,7 @@ function getCodeBlockRules(schema: Schema): InputRuleWithHandler[] {
       const newStart = match[0][0] === ' ' ? start + 1 : start;
       if (isConvertableToCodeBlock(state)) {
         analyticsService.trackEvent(
-          `atlassian.editor.format.codeblock.autoformatting`,
+          `uidu.editor-core.format.codeblock.autoformatting`,
         );
         const tr = transformToCodeBlockAction(state, attributes)
           // remove markdown decorator ```

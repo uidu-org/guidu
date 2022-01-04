@@ -10,7 +10,7 @@ const Comparator: DataViewKind = {
   id: 'comparator',
   name: (
     <FormattedMessage
-      id="dataView.comparator.name"
+      id="uidu.data-views.comparator.name"
       defaultMessage="Comparator"
     />
   ),
@@ -18,7 +18,7 @@ const Comparator: DataViewKind = {
   color: '#D08770',
   description: (
     <FormattedMessage
-      id="dataView.comparator.description"
+      id="uidu.data-views.comparator.description"
       defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
     />
   ),

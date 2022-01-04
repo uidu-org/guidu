@@ -18,10 +18,15 @@ const Filter = loadable(
 
 const Date: Partial<Field> = {
   kind: 'date',
-  name: <FormattedMessage defaultMessage="Date" />,
+  name: (
+    <FormattedMessage defaultMessage="Date" id="uidu.data-fields.date.name" />
+  ),
   icon: <FontAwesomeIcon icon={faCalendarDay} />,
   description: (
-    <FormattedMessage defaultMessage="Enter a date (e.g. 11/12/2013) or pick one from a calendar." />
+    <FormattedMessage
+      defaultMessage="Enter a date (e.g. 11/12/2013) or pick one from a calendar."
+      id="uidu.data-fields.date.description"
+    />
   ),
   color: '#EF8A78',
   Filter,

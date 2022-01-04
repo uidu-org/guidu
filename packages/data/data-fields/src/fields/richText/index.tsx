@@ -12,11 +12,16 @@ const Filter = loadable(
 const mocks = loadable(() => import('./mocks'));
 
 const RichText: Field = {
-  name: <FormattedMessage defaultMessage="Rich Text" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Rich Text"
+      id="uidu.data-fields.richTex.name"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faAlignLeft} />,
   description: (
     <FormattedMessage
-      id="field.richtext.description"
+      id="uidu.data-fields.richText.description"
       defaultMessage="A lightweight richtext editor."
     />
   ),

@@ -10,8 +10,10 @@ export const BaseItemWrapper = styled.div<{
   isSelected?: boolean;
 }>`
   ${tw`cursor-pointer flex user-select[none] text-base px-5 py-2 color[rgb(var(--body-primary-color))]`}
-
-  ${tw`hover:(bg-secondary)`}
+  ${tw`w-full m-0 border-0 outline-none`}
+  ${({ isSelected }) =>
+    isSelected ? tw`bg-secondary` : tw`background[rgb(var(--body-primary-bg))]`}
+  ${tw`hover:(bg-secondary color[rgb(var(--body-primary-color))])`}
   ${tw`focus:outline-none`}
   ${tw`visited:(bg-opacity-20)`}
   ${tw`active:(bg-primary bg-opacity-20)`}

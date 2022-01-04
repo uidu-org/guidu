@@ -6,19 +6,19 @@ import { defineMessages, FormattedMessage } from 'react-intl';
 const messages = defineMessages({
   passwordless_sessions_title: {
     defaultMessage: 'Sign in',
-    description: 'passwordless_sessions_title',
+    id: 'uidu.devise.passwordless_sessions_title',
   },
   passwordless_sessions_description: {
     defaultMessage: 'Sign in with your email and password',
-    description: 'passwordless_sessions_description',
+    id: 'uidu.devise.passwordless_sessions_description',
   },
   passwordless_sessions_primary_cta: {
     defaultMessage: 'Sign in',
-    description: 'passwordless_sessions_primary_cta',
+    id: 'uidu.devise.passwordless_sessions_primary_cta',
   },
   passwordless_sessions_email_label: {
     defaultMessage: 'Insert your email',
-    description: 'passwordless_sessions_email_label',
+    id: 'uidu.devise.passwordless_sessions_email_label',
   },
 });
 
@@ -32,7 +32,7 @@ export default class PasswordlessSessionsForm extends PureComponent<any, any> {
     const { routes } = this.props;
     return (
       <>
-        <div className="text-center mb-4">
+        <div className="mb-4 text-center">
           <h3>
             <FormattedMessage {...messages.passwordless_sessions_title} />
           </h3>

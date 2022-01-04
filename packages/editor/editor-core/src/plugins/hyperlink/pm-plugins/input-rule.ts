@@ -20,13 +20,13 @@ export function createLinkInputRule(regexp: RegExp): InputRule {
       if (state.doc.rangeHasMark(start, end, schema.marks.link)) {
         return null;
       }
-      const [link] = (match as any) as Match[];
+      const [link] = match as any as Match[];
 
       const url = normalizeUrl(link.url);
       const markType = schema.mark('link', { href: url });
 
       analyticsService.trackEvent(
-        'atlassian.editor.format.hyperlink.autoformatting',
+        'uidu.editor-core.format.hyperlink.autoformatting',
       );
 
       const tr = queueCards([
@@ -72,7 +72,7 @@ export function createInputRulePlugin(schema: Schema): Plugin | undefined {
       const markType = schema.mark('link', { href: url });
 
       analyticsService.trackEvent(
-        'atlassian.editor.format.hyperlink.autoformatting',
+        'uidu.editor-core.format.hyperlink.autoformatting',
       );
 
       const tr = state.tr.replaceWith(

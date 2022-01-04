@@ -10,20 +10,20 @@ export function keymapPlugin(): Plugin | undefined {
 
   keymaps.bindKeymapWithCommand(
     keymaps.findShortcutByKeymap(keymaps.indent)!,
-    trackAndInvoke('atlassian.editor.format.block.indent.keyboard', indent),
+    trackAndInvoke('uidu.editor-core.format.block.indent.keyboard', indent),
     list,
   );
 
   keymaps.bindKeymapWithCommand(
     keymaps.findShortcutByKeymap(keymaps.outdent)!,
-    trackAndInvoke('atlassian.editor.format.block.outdent.keyboard', outdent),
+    trackAndInvoke('uidu.editor-core.format.block.outdent.keyboard', outdent),
     list,
   );
 
   keymaps.bindKeymapWithCommand(
     keymaps.findShortcutByKeymap(keymaps.backspace)!,
     trackAndInvoke(
-      'atlassian.editor.format.block.outdent.keyboard.alt',
+      'uidu.editor-core.format.block.outdent.keyboard.alt',
       (state, dispatch) => {
         const { selection } = state;
         if (

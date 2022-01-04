@@ -13,31 +13,31 @@ import { getPluginState } from './pm-plugins/main';
 
 export const messages = defineMessages({
   info: {
-    id: 'fabric.editor.info',
+    id: 'uidu.editor-core.info',
     defaultMessage: 'Info',
     description:
       'Panels provide a way to highlight text. The info panel has a blue background.',
   },
   note: {
-    id: 'fabric.editor.note',
+    id: 'uidu.editor-core.note',
     defaultMessage: 'Note',
     description:
       'Panels provide a way to highlight text. The note panel has a purple background.',
   },
   success: {
-    id: 'fabric.editor.success',
+    id: 'uidu.editor-core.success',
     defaultMessage: 'Success',
     description:
       'Panels provide a way to highlight text. The success panel has a green background.',
   },
   warning: {
-    id: 'fabric.editor.warning',
+    id: 'uidu.editor-core.warning',
     defaultMessage: 'Warning',
     description:
       'Panels provide a way to highlight text. The warning panel has a yellow background.',
   },
   error: {
-    id: 'fabric.editor.error',
+    id: 'uidu.editor-core.error',
     defaultMessage: 'Error',
     description:
       'Panels provide a way to highlight text. The error panel has a red background.',

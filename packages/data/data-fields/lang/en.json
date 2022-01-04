@@ -1,170 +1,170 @@
 {
-  "0+Cz5N": {
-    "message": "Allow geolocation of your records with Google Maps autocomplete help"
-  },
-  "0ho2lW": {
-    "message": "Show a progress bar with progress value"
-  },
-  "55hdQy": {
-    "message": "Currency"
-  },
-  "7GrdNm": {
-    "message": "Insert a rounded avatar for the record"
-  },
-  "7L86Z5": {
-    "message": "Member"
-  },
-  "82aMWa": {
-    "message": "Appointment"
-  },
-  "AnqXgH": {
-    "message": "A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
-  },
-  "B8Of+8": {
-    "message": "Add a custom field to your model"
-  },
-  "BOPFCf": {
-    "message": "A contact field represents a person or an organization - a contact"
-  },
-  "BVTni9": {
-    "message": "Payment method"
-  },
-  "BkqnkQ": {
-    "message": "A single line of text. You can optionally prefill each new cell with a default value"
-  },
-  "Dh+V6J": {
-    "message": "Single select allows you to select a single option from predefined options in a dropdown."
-  },
-  "DqKd4r": {
-    "message": "Percent"
-  },
-  "ETRyBL": {
-    "message": "Rating"
-  },
-  "Hv3wz6": {
-    "message": "Rich Text"
-  },
-  "I3MA83": {
-    "message": "String"
-  },
-  "J8plRQ": {
-    "message": "A single checkbox that can be checked or unchecked."
-  },
-  "O95R3Z": {
-    "message": "Phone"
-  },
-  "P7PLVj": {
-    "message": "Date"
-  },
-  "PRtqrC": {
-    "message": "Checkbox"
-  },
-  "PY5NYc": {
-    "message": "Attachments allow you to add images, documents, or other files which can then be viewed or downloaded."
-  },
-  "Q4HS24": {
-    "message": "SingleSelect"
-  },
-  "TBjBZW": {
-    "message": "Allow booking an appointment for this record, based on your of your availabilities"
-  },
-  "TpzCEx": {
-    "message": "Url"
-  },
-  "UHak2b": {
-    "message": "A unique identifier field"
-  },
-  "VnXp8Z": {
-    "message": "Avatar"
-  },
-  "Y6dihM": {
-    "message": "Vote"
-  },
-  "ZvUoKF": {
-    "message": "Enter a date (e.g. 11/12/2013) or pick one from a calendar."
-  },
-  "aA8bDw": {
-    "message": "Text"
-  },
-  "e6Ph5+": {
-    "message": "Address"
-  },
-  "eG6ZPK": {
-    "message": "Format a percentage"
-  },
-  "eSYQTy": {
-    "message": "Add field"
-  },
-  "fSKy7V": {
-    "message": "Insert a rating for the column"
-  },
-  "field.collection.name": {
-    "message": "Collection"
-  },
-  "field.collection.options": {
-    "message": "A collection is a list of items with one or more fields."
-  },
-  "field.multipleselect.name": {
-    "message": "MultipleSelect"
-  },
-  "field.richtext.description": {
-    "message": "A lightweight richtext editor."
-  },
-  "field.singleSelect.description": {
-    "message": "Multiple select allows you to select one or more predefined options listed below."
-  },
-  "field.text.description": {
-    "message": "A long text field that can span multiple lines."
-  },
-  "field.url.description": {
-    "message": "A valid URL (e.g. airtable.com or https://airtable.com/universe)."
-  },
   "filters.notEqual": {
     "message": "Not Equals"
   },
-  "fkWU2P": {
-    "message": "Add a Country select list to your record"
+  "uidu.data-fields.add_field.description": {
+    "message": "Add a custom field to your model"
   },
-  "gsD9k4": {
-    "message": "A valid email address (e.g. andrew@example.com)."
+  "uidu.data-fields.add_field.name": {
+    "message": "Add field"
   },
-  "hl9bd4": {
-    "message": "Cover"
+  "uidu.data-fields.address.description": {
+    "message": "Allow geolocation of your records with Google Maps autocomplete help"
   },
-  "kFkPWB": {
-    "message": "Number"
+  "uidu.data-fields.address.name": {
+    "message": "Address"
   },
-  "kU1wCA": {
-    "message": "Integer or decimal number"
+  "uidu.data-fields.appointment.description": {
+    "message": "Allow booking an appointment for this record, based on your of your availabilities"
   },
-  "loSPNM": {
-    "message": "Add a cover image to your record"
+  "uidu.data-fields.appointment.name": {
+    "message": "Appointment"
   },
-  "m4vqJl": {
-    "message": "Files"
+  "uidu.data-fields.avatar.description": {
+    "message": "Insert a rounded avatar for the record"
   },
-  "qlcuNQ": {
-    "message": "ID"
+  "uidu.data-fields.avatar.name": {
+    "message": "Avatar"
   },
-  "sIMS7i": {
-    "message": "Progress"
+  "uidu.data-fields.checkbox.description": {
+    "message": "A single checkbox that can be checked or unchecked."
   },
-  "sy+pv5": {
-    "message": "Email"
+  "uidu.data-fields.checkbox.name": {
+    "message": "Checkbox"
   },
-  "tNgoex": {
-    "message": "Format a number with a currency"
+  "uidu.data-fields.collection.description": {
+    "message": "A collection is a list of items with one or more fields."
   },
-  "uLd91N": {
-    "message": "A telephone number (e.g. (415) 555-9876)."
+  "uidu.data-fields.collection.name": {
+    "message": "Collection"
   },
-  "vONi+O": {
-    "message": "Country"
+  "uidu.data-fields.contact.description": {
+    "message": "A contact field represents a person or an organization - a contact"
   },
-  "zFegDD": {
+  "uidu.data-fields.contact.name": {
     "message": "Contact"
   },
-  "zff+Cr": {
+  "uidu.data-fields.country.description": {
+    "message": "Add a Country select list to your record"
+  },
+  "uidu.data-fields.country.name": {
+    "message": "Country"
+  },
+  "uidu.data-fields.cover.description": {
+    "message": "Add a cover image to your record"
+  },
+  "uidu.data-fields.cover.name": {
+    "message": "Cover"
+  },
+  "uidu.data-fields.currency .description": {
+    "message": "Format a number with a currency"
+  },
+  "uidu.data-fields.currency.name": {
+    "message": "Currency"
+  },
+  "uidu.data-fields.date.description": {
+    "message": "Enter a date (e.g. 11/12/2013) or pick one from a calendar."
+  },
+  "uidu.data-fields.date.name": {
+    "message": "Date"
+  },
+  "uidu.data-fields.email.description": {
+    "message": "A valid email address (e.g. andrew@example.com)."
+  },
+  "uidu.data-fields.email.name": {
+    "message": "Email"
+  },
+  "uidu.data-fields.files.description": {
+    "message": "Attachments allow you to add images, documents, or other files which can then be viewed or downloaded."
+  },
+  "uidu.data-fields.files.name": {
+    "message": "Files"
+  },
+  "uidu.data-fields.member.description": {
+    "message": "A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
+  },
+  "uidu.data-fields.member.name": {
+    "message": "Member"
+  },
+  "uidu.data-fields.multipleSelect.description": {
+    "message": "Multiple select allows you to select one or more predefined options listed below."
+  },
+  "uidu.data-fields.multipleSelect.name": {
+    "message": "MultipleSelect"
+  },
+  "uidu.data-fields.number.description": {
+    "message": "Integer or decimal number"
+  },
+  "uidu.data-fields.number.name": {
+    "message": "Number"
+  },
+  "uidu.data-fields.paymentMethod.description": {
     "message": "Payment method (Credit Card, or others)"
+  },
+  "uidu.data-fields.paymentMethod.name": {
+    "message": "Payment method"
+  },
+  "uidu.data-fields.percent.description": {
+    "message": "Format a percentage"
+  },
+  "uidu.data-fields.percent.name": {
+    "message": "Percent"
+  },
+  "uidu.data-fields.phone.description": {
+    "message": "A telephone number (e.g. (415) 555-9876)."
+  },
+  "uidu.data-fields.phone.name": {
+    "message": "Phone"
+  },
+  "uidu.data-fields.progress.description": {
+    "message": "Show a progress bar with progress value"
+  },
+  "uidu.data-fields.progress.name": {
+    "message": "Progress"
+  },
+  "uidu.data-fields.rating.description": {
+    "message": "Insert a rating for the column"
+  },
+  "uidu.data-fields.rating.name": {
+    "message": "Rating"
+  },
+  "uidu.data-fields.richTex.name": {
+    "message": "Rich Text"
+  },
+  "uidu.data-fields.richText.description": {
+    "message": "A lightweight richtext editor."
+  },
+  "uidu.data-fields.singleSelect.description": {
+    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+  },
+  "uidu.data-fields.singleSelect.name": {
+    "message": "SingleSelect"
+  },
+  "uidu.data-fields.string.description": {
+    "message": "A single line of text. You can optionally prefill each new cell with a default value"
+  },
+  "uidu.data-fields.string.name": {
+    "message": "String"
+  },
+  "uidu.data-fields.text.description": {
+    "message": "A long text field that can span multiple lines."
+  },
+  "uidu.data-fields.text.name": {
+    "message": "Text"
+  },
+  "uidu.data-fields.uid.description": {
+    "message": "A unique identifier field"
+  },
+  "uidu.data-fields.uid.name": {
+    "message": "ID"
+  },
+  "uidu.data-fields.url.description": {
+    "message": "A valid URL (e.g. airtable.com or https://airtable.com/universe)."
+  },
+  "uidu.data-fields.url.name": {
+    "message": "Url"
+  },
+  "uidu.data-fields.vote.name": {
+    "message": "Vote"
   }
 }

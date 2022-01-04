@@ -42,12 +42,12 @@ export default function ColumnGroup({
               {isGroupChecked ? (
                 <FormattedMessage
                   defaultMessage="Deselect all"
-                  id="data_controls.toggler.deselect_all"
+                  id="uidu.data-controls.toggler.deselect_all"
                 />
               ) : (
                 <FormattedMessage
                   defaultMessage="Select all"
-                  id="data_controls.toggler.select_all"
+                  id="uidu.data-controls.toggler.select_all"
                 />
               )}
             </a>{' '}

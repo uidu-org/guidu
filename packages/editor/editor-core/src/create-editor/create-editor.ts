@@ -16,9 +16,9 @@ export function sortByRank(a: { rank: number }, b: { rank: number }): number {
   return a.rank - b.rank;
 }
 
-export function fixExcludes(marks: {
+export function fixExcludes(marks: { [key: string]: MarkSpec }): {
   [key: string]: MarkSpec;
-}): { [key: string]: MarkSpec } {
+} {
   const markKeys = Object.keys(marks);
   const markGroups = new Set(markKeys.map((mark) => marks[mark].group));
 
@@ -126,7 +126,7 @@ export function createErrorReporter(
 
 export function initAnalytics(analyticsHandler?: AnalyticsHandler) {
   analyticsService.handler = analyticsHandler || (() => {});
-  analyticsService.trackEvent('atlassian.editor.start', {
+  analyticsService.trackEvent('uidu.editor-core.start', {
     name,
     version,
   });

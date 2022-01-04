@@ -11,9 +11,17 @@ const Filter = loadable(
 
 const Currency: Partial<Field> = {
   kind: 'currency',
-  name: <FormattedMessage defaultMessage="Currency" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Currency"
+      id="uidu.data-fields.currency.name"
+    />
+  ),
   description: (
-    <FormattedMessage defaultMessage="Format a number with a currency" />
+    <FormattedMessage
+      defaultMessage="Format a number with a currency"
+      id="uidu.data-fields.currency .description"
+    />
   ),
   icon: <FontAwesomeIcon icon={faEuroSign} />,
   color: 'sandybrown',

@@ -39,6 +39,7 @@ export default function Filterer({}: FiltererProps) {
                   other {Filtered by {filtersCount, number} fields}
                 }`}
               values={{ filtersCount }}
+              id="uidu.data-controls.filterer.filters_count"
             />
           </span>
         </Trigger>

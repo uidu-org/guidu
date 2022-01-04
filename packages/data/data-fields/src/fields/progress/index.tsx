@@ -10,9 +10,17 @@ const mocks = loadable(() => import('./mocks'));
 
 const Progress: Field = {
   kind: 'progress',
-  name: <FormattedMessage defaultMessage="Progress" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Progress"
+      id="uidu.data-fields.progress.name"
+    />
+  ),
   description: (
-    <FormattedMessage defaultMessage="Show a progress bar with progress value" />
+    <FormattedMessage
+      defaultMessage="Show a progress bar with progress value"
+      id="uidu.data-fields.progress.description"
+    />
   ),
   icon: <FontAwesomeIcon icon={faTasks} />,
   color: 'darkseagreen',

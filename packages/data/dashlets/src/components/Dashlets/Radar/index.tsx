@@ -7,9 +7,19 @@ const Chart = loadable(() => import('./Radar'));
 
 export default {
   id: 'radar',
-  name: <FormattedMessage defaultMessage="Radar chart" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Radar chart"
+      id="uidu.dashlets.radar.name"
+    />
+  ),
   icon: Sun,
   color: '#D08770',
-  description: <FormattedMessage defaultMessage="Radar chart." />,
+  description: (
+    <FormattedMessage
+      defaultMessage="Radar chart."
+      id="uidu.dashlets.radar.description"
+    />
+  ),
   chart: Chart,
 };

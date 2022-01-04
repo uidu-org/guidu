@@ -11,10 +11,18 @@ const Filter = loadable(
 
 const String: Partial<Field> = {
   kind: 'string',
-  name: <FormattedMessage defaultMessage="String" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="String"
+      id="uidu.data-fields.string.name"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faFont} />,
   description: (
-    <FormattedMessage defaultMessage="A single line of text. You can optionally prefill each new cell with a default value" />
+    <FormattedMessage
+      defaultMessage="A single line of text. You can optionally prefill each new cell with a default value"
+      id="uidu.data-fields.string.description"
+    />
   ),
   color: '#E4BA3F',
   Filter,

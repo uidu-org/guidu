@@ -30,6 +30,7 @@ export default function Controls({ availableControls }) {
                   other {{hiddenCount, number} hidden fields}
                 }`}
               values={{ hiddenCount }}
+              id="uidu.data-views.list.controls.hide_fields"
             />
           }
           configurator={ConfiguratorForm}

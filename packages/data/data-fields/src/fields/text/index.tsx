@@ -13,11 +13,13 @@ const mocks = loadable(() => import('./mocks'));
 
 const Text: Field = {
   kind: 'text',
-  name: <FormattedMessage defaultMessage="Text" />,
+  name: (
+    <FormattedMessage defaultMessage="Text" id="uidu.data-fields.text.name" />
+  ),
   icon: <FontAwesomeIcon icon={faParagraph} />,
   description: (
     <FormattedMessage
-      id="field.text.description"
+      id="uidu.data-fields.text.description"
       defaultMessage="A long text field that can span multiple lines."
     />
   ),

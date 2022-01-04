@@ -11,10 +11,15 @@ const Filter = loadable(
 
 const Email: Field = {
   kind: 'email',
-  name: <FormattedMessage defaultMessage="Email" />,
+  name: (
+    <FormattedMessage defaultMessage="Email" id="uidu.data-fields.email.name" />
+  ),
   icon: <FontAwesomeIcon icon={faAt} />,
   description: (
-    <FormattedMessage defaultMessage="A valid email address (e.g. andrew@example.com)." />
+    <FormattedMessage
+      defaultMessage="A valid email address (e.g. andrew@example.com)."
+      id="uidu.data-fields.email.description"
+    />
   ),
   color: '#5AAA8F',
   Filter,

@@ -164,13 +164,14 @@ export class MediaPluginStateImplementation implements MediaPluginState {
         const viewMediaClientConfig = this.mediaProvider.viewMediaClientConfig;
 
         if (viewMediaClientConfig) {
-          (this
-            .mediaProvider as MediaProvider).viewMediaClientConfig = viewMediaClientConfig;
+          (this.mediaProvider as MediaProvider).viewMediaClientConfig =
+            viewMediaClientConfig;
         }
       }
 
       if (!this.mediaProvider.uploadMediaClientConfig) {
-        this.mediaProvider.uploadMediaClientConfig = this.mediaProvider.uploadMediaClientConfig;
+        this.mediaProvider.uploadMediaClientConfig =
+          this.mediaProvider.uploadMediaClientConfig;
       }
       assert(
         this.mediaProvider.viewMediaClientConfig,
@@ -401,7 +402,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
 
   public trackNewMediaEvent(mediaState: MediaState) {
     return analyticsService.trackEvent(
-      `atlassian.editor.media.file`,
+      `uidu.editor-core.media.file`,
       mediaState.metadata.mime_type
         ? { fileMimeType: mediaState.metadata.mime_type }
         : {},

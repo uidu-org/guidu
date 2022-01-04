@@ -17,7 +17,10 @@ export default function Card({
   provider,
   children,
   label = (
-    <FormattedMessage defaultMessage="Insert your credit / debit card details" />
+    <FormattedMessage
+      defaultMessage="Insert your credit / debit card details"
+      id="uidu.payments.card.label"
+    />
   ),
 }) {
   const [isLoading, setIsLoading] = useState(true);

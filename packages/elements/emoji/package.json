@@ -59,5 +59,9 @@
       "resource.ts",
       "types.ts"
     ]
-  }
+  },
+  "supportedLocales": [
+    "it",
+    "en"
+  ]
 }

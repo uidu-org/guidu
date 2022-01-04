@@ -12,11 +12,19 @@ const Filter = loadable(
 
 const PaymentMethod: Partial<Field> = {
   kind: 'paymentMethod',
-  name: <FormattedMessage defaultMessage="Payment method" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Payment method"
+      id="uidu.data-fields.paymentMethod.name"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faCashRegister} />,
   color: 'darkmagenta',
   description: (
-    <FormattedMessage defaultMessage="Payment method (Credit Card, or others)" />
+    <FormattedMessage
+      defaultMessage="Payment method (Credit Card, or others)"
+      id="uidu.data-fields.paymentMethod.description"
+    />
   ),
   Filter,
   Cell,

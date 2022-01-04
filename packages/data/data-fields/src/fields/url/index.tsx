@@ -11,12 +11,14 @@ const Filter = loadable(
 
 const Url: Field = {
   kind: 'url',
-  name: <FormattedMessage defaultMessage="Url" />,
+  name: (
+    <FormattedMessage defaultMessage="Url" id="uidu.data-fields.url.name" />
+  ),
   icon: <FontAwesomeIcon icon={faExternalLinkAlt} />,
   color: '#B0B480',
   description: (
     <FormattedMessage
-      id="field.url.description"
+      id="uidu.data-fields.url.description"
       defaultMessage="A valid URL (e.g. airtable.com or https://airtable.com/universe)."
     />
   ),

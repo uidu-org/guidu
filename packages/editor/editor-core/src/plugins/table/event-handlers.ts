@@ -141,9 +141,8 @@ export const handleMouseOver = (
   }
   const { state, dispatch } = view;
   const target = mouseEvent.target;
-  const { insertColumnButtonIndex, insertRowButtonIndex } = getPluginState(
-    state,
-  );
+  const { insertColumnButtonIndex, insertRowButtonIndex } =
+    getPluginState(state);
 
   if (isInsertRowButton(target)) {
     const [startIndex, endIndex] = getColumnOrRowIndex(target);
@@ -237,9 +236,8 @@ export const handleMouseLeave = (view: EditorView, event: Event): boolean => {
   }
 
   const { state, dispatch } = view;
-  const { insertColumnButtonIndex, insertRowButtonIndex } = getPluginState(
-    state,
-  );
+  const { insertColumnButtonIndex, insertRowButtonIndex } =
+    getPluginState(state);
 
   const target = event.target;
   if (isTableControlsButton(target)) {
@@ -415,11 +413,11 @@ export const handleCut = (
             } = getPluginState(newState);
             tr = deleteRows(rect, isHeaderRowRequired)(tr);
             analyticsService.trackEvent(
-              'atlassian.editor.format.table.delete_row.button',
+              'uidu.editor-core.format.table.delete_row.button',
             );
           } else if (tr.selection.isColSelection()) {
             analyticsService.trackEvent(
-              'atlassian.editor.format.table.delete_column.button',
+              'uidu.editor-core.format.table.delete_column.button',
             );
             tr = deleteColumns(rect)(tr);
           }
@@ -431,19 +429,19 @@ export const handleCut = (
   return tr;
 };
 
-export const whenTableInFocus = (
-  eventHandler: (view: EditorView, mouseEvent: Event) => boolean,
-) => (view: EditorView, mouseEvent: Event): boolean => {
-  const tableResizePluginState = getResizePluginState(view.state);
-  const tablePluginState = getPluginState(view.state);
-  const isDragging =
-    tableResizePluginState && !!tableResizePluginState.dragging;
-  const hasTableNode = tablePluginState && tablePluginState.tableNode;
+export const whenTableInFocus =
+  (eventHandler: (view: EditorView, mouseEvent: Event) => boolean) =>
+  (view: EditorView, mouseEvent: Event): boolean => {
+    const tableResizePluginState = getResizePluginState(view.state);
+    const tablePluginState = getPluginState(view.state);
+    const isDragging =
+      tableResizePluginState && !!tableResizePluginState.dragging;
+    const hasTableNode = tablePluginState && tablePluginState.tableNode;
 
-  if (!hasTableNode || isDragging) {
-    return false;
-  }
+    if (!hasTableNode || isDragging) {
+      return false;
+    }
 
-  // debounce event handler
-  return rafSchedule(eventHandler(view, mouseEvent));
-};
+    // debounce event handler
+    return rafSchedule(eventHandler(view, mouseEvent));
+  };

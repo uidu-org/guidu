@@ -39,6 +39,7 @@ export default function Sorter(props: SorterProps) {
                   other {Sorted by {sortersCount, number} fields}
                 }`}
               values={{ sortersCount }}
+              id="uidu.data-controls.sorter.sorters_count"
             />
           </span>
         </Trigger>

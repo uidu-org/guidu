@@ -25,7 +25,7 @@ export default function Configurator({}) {
                 label={
                   <FormattedMessage
                     defaultMessage="Column count"
-                    id="data_views.gallery.configurator.columnCount"
+                    id="uidu.data-views.gallery.configurator.column_count"
                   />
                 }
                 value={columnCount}

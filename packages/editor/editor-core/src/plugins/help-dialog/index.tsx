@@ -114,7 +114,7 @@ const keymapPlugin = (): Plugin => {
       let { tr } = state;
       const isVisible = tr.getMeta(pluginKey);
       if (!isVisible) {
-        analyticsService.trackEvent('atlassian.editor.help.keyboard');
+        analyticsService.trackEvent('uidu.editor-core.help.keyboard');
         tr = addAnalytics(state, tr, {
           action: ACTION.CLICKED,
           actionSubject: ACTION_SUBJECT.BUTTON,

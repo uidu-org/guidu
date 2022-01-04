@@ -10,9 +10,17 @@ const mocks = loadable(() => import('./mocks'));
 
 const Rating: Field = {
   kind: 'rating',
-  name: <FormattedMessage defaultMessage="Rating" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Rating"
+      id="uidu.data-fields.rating.name"
+    />
+  ),
   description: (
-    <FormattedMessage defaultMessage="Insert a rating for the column" />
+    <FormattedMessage
+      defaultMessage="Insert a rating for the column"
+      id="uidu.data-fields.rating.description"
+    />
   ),
   icon: <FontAwesomeIcon icon={faStar} />,
   color: 'burlywood',

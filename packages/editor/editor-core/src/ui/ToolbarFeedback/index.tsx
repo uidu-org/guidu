@@ -219,7 +219,7 @@ export default class ToolbarFeedback extends PureComponent<Props, State> {
   };
 
   private openFeedbackPopup = withAnalytics(
-    'atlassian.editor.feedback.button',
+    'uidu.editor-core.feedback.button',
     (): boolean => {
       const dispatch: AnalyticsDispatch = createDispatch(
         this.context.editorActions.eventDispatcher,

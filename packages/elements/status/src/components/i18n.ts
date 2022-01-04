@@ -2,32 +2,32 @@ import { defineMessages } from 'react-intl';
 
 export const messages = defineMessages({
   neutralColor: {
-    id: 'fabric.status.color.grey',
+    id: 'uidu.status.color.grey',
     defaultMessage: 'Grey',
     description: 'Tooltip for the grey color in color palette',
   },
   purpleColor: {
-    id: 'fabric.status.color.purple',
+    id: 'uidu.status.color.purple',
     defaultMessage: 'Purple',
     description: 'Tooltip for the purple color in color palette',
   },
   blueColor: {
-    id: 'fabric.status.color.blue',
+    id: 'uidu.status.color.blue',
     defaultMessage: 'Blue',
     description: 'Tooltip for the blue color in color palette',
   },
   redColor: {
-    id: 'fabric.status.color.red',
+    id: 'uidu.status.color.red',
     defaultMessage: 'Red',
     description: 'Tooltip for the red color in color palette',
   },
   yellowColor: {
-    id: 'fabric.status.color.yellow',
+    id: 'uidu.status.color.yellow',
     defaultMessage: 'Yellow',
     description: 'Tooltip for the yellow color in color palette',
   },
   greenColor: {
-    id: 'fabric.status.color.green',
+    id: 'uidu.status.color.green',
     defaultMessage: 'Green',
     description: 'Tooltip for the green color in color palette',
   },

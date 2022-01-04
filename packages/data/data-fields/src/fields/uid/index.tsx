@@ -6,9 +6,14 @@ import { Field } from '../../types';
 
 const Uid: Field = {
   kind: 'uid',
-  name: <FormattedMessage defaultMessage="ID" />,
+  name: <FormattedMessage defaultMessage="ID" id="uidu.data-fields.uid.name" />,
   icon: <FontAwesomeIcon icon={faIdBadge} />,
-  description: <FormattedMessage defaultMessage="A unique identifier field" />,
+  description: (
+    <FormattedMessage
+      defaultMessage="A unique identifier field"
+      id="uidu.data-fields.uid.description"
+    />
+  ),
   color: 'cornflowerblue',
   pinned: 'left',
   canHide: false,

@@ -8,11 +8,16 @@ const Controls = loadable(() => import('./controls'));
 
 const Table: DataViewKind = {
   id: 'table',
-  name: <FormattedMessage defaultMessage="Table" />,
+  name: (
+    <FormattedMessage defaultMessage="Table" id="uidu.data-views.table.name" />
+  ),
   icon: AlignJustify,
   color: '#BF616A',
   description: (
-    <FormattedMessage defaultMessage="Single select allows you to select a single option from predefined options in a dropdown." />
+    <FormattedMessage
+      defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
+      id="uidu.data-views.table.description"
+    />
   ),
   controls: Controls,
 };

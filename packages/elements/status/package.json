@@ -42,5 +42,9 @@
       "element.ts",
       "picker.ts"
     ]
-  }
+  },
+  "supportedLocales": [
+    "it",
+    "en"
+  ]
 }

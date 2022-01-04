@@ -56,13 +56,13 @@
     "prosemirror-history": "^1.2.0",
     "prosemirror-inputrules": "^1.1.3",
     "prosemirror-keymap": "^1.1.5",
-    "prosemirror-model": "^1.15.0",
+    "prosemirror-model": "^1.16.1",
     "prosemirror-schema-list": "^1.1.6",
     "prosemirror-state": "^1.3.4",
     "prosemirror-tables": "^1.1.1",
     "prosemirror-transform": "^1.3.3",
     "prosemirror-utils": "^0.9.6",
-    "prosemirror-view": "^1.23.4",
+    "prosemirror-view": "^1.23.5",
     "raf-schd": "^4.0.3",
     "re-resizable": "^6.9.1",
     "react": "^17.0.2",
@@ -77,5 +77,9 @@
   "devDependencies": {
     "@uidu/docs": "^0.5.5",
     "@uidu/shell": "^2.1.9"
-  }
+  },
+  "supportedLocales": [
+    "it",
+    "en"
+  ]
 }

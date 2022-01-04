@@ -6,11 +6,19 @@ import { Field } from '../../types';
 
 const AddField: Partial<Field> = {
   kind: 'addField',
-  name: <FormattedMessage defaultMessage="Add field" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Add field"
+      id="uidu.data-fields.add_field.name"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faPlus} />,
   color: 'var(--light)',
   description: (
-    <FormattedMessage defaultMessage="Add a custom field to your model" />
+    <FormattedMessage
+      defaultMessage="Add a custom field to your model"
+      id="uidu.data-fields.add_field.description"
+    />
   ),
   filter: false,
   canHide: false,

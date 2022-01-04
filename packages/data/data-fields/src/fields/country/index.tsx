@@ -15,10 +15,18 @@ const mocks = loadable(() => import('./mocks'));
 
 const Country: Field = {
   kind: 'country',
-  name: <FormattedMessage defaultMessage="Country" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Country"
+      id="uidu.data-fields.country.name"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faGlobe} />,
   description: (
-    <FormattedMessage defaultMessage="Add a Country select list to your record" />
+    <FormattedMessage
+      defaultMessage="Add a Country select list to your record"
+      id="uidu.data-fields.country.description"
+    />
   ),
   color: 'tan',
   Filter,

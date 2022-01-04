@@ -10,22 +10,22 @@ import {
 
 export const messages = defineMessages({
   collapseNode: {
-    id: 'fabric.editor.collapseNode',
+    id: 'uidu.editor-common.collapseNode',
     defaultMessage: 'Collapse content',
     description: 'Collapse the node',
   },
   expandDefaultTitle: {
-    id: 'fabric.editor.expandDefaultTitle',
+    id: 'uidu.editor-common.expandDefaultTitle',
     defaultMessage: 'Click here to expand...',
     description: 'Placeholder text for an expand node',
   },
   expandNode: {
-    id: 'fabric.editor.expandNode',
+    id: 'uidu.editor-common.expandNode',
     defaultMessage: 'Expand content',
     description: 'Expand the node',
   },
   expandPlaceholderText: {
-    id: 'fabric.editor.expandPlaceholder',
+    id: 'uidu.editor-common.expandPlaceholder',
     defaultMessage: 'Give this expand a title...',
     description: 'Placeholder text for an expand node title input field',
   },

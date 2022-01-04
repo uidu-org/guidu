@@ -16,22 +16,22 @@ import { checkIfNumberColumnEnabled } from './utils';
 
 export const messages = defineMessages({
   tableOptions: {
-    id: 'fabric.editor.tableOptions',
+    id: 'uidu.editor-core.tableOptions',
     defaultMessage: 'Table options',
     description: 'Opens a menu with additional table options',
   },
   headerRow: {
-    id: 'fabric.editor.headerRow',
+    id: 'uidu.editor-core.headerRow',
     defaultMessage: 'Header row',
     description: 'Marks the first table row as a header row',
   },
   headerColumn: {
-    id: 'fabric.editor.headerColumn',
+    id: 'uidu.editor-core.headerColumn',
     defaultMessage: 'Header column',
     description: 'Marks the first table column as a header row',
   },
   numberedColumn: {
-    id: 'fabric.editor.numberedColumn',
+    id: 'uidu.editor-core.numberedColumn',
     defaultMessage: 'Numbered column',
     description: 'Adds an auto-numbering column to your table',
   },
@@ -42,9 +42,8 @@ export const getToolbarConfig: FloatingToolbarHandler = (
   { formatMessage },
 ) => {
   const tableState: TablePluginState | undefined = pluginKey.getState(state);
-  const resizeState:
-    | ColumnResizingPluginState
-    | undefined = tableResizingPluginKey.getState(state);
+  const resizeState: ColumnResizingPluginState | undefined =
+    tableResizingPluginKey.getState(state);
   if (tableState && tableState.tableRef && tableState.pluginConfig) {
     const { pluginConfig } = tableState;
     return {

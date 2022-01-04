@@ -39,17 +39,17 @@ const IconWrapper = styled.span`
 
 export const messages = defineMessages({
   displayText: {
-    id: 'fabric.editor.displayText',
+    id: 'uidu.editor-core.displayText',
     defaultMessage: 'Text to display',
     description: 'Text to display',
   },
   clearText: {
-    id: 'fabric.editor.clearLinkText',
+    id: 'uidu.editor-core.clearLinkText',
     defaultMessage: 'Clear text',
     description: 'Clears text on the link toolbar',
   },
   clearLink: {
-    id: 'fabric.editor.clearLink',
+    id: 'uidu.editor-core.clearLink',
     defaultMessage: 'Clear link',
     description: 'Clears link in the link toolbar',
   },
@@ -279,7 +279,7 @@ class LinkAddToolbar extends PureComponent<
             INPUT_METHOD.TYPEAHEAD,
           );
           this.trackAutoCompleteAnalyticsEvent(
-            'atlassian.editor.format.hyperlink.autocomplete.click',
+            'uidu.editor-core.format.hyperlink.autocomplete.click',
           );
         }
       },
@@ -310,7 +310,7 @@ class LinkAddToolbar extends PureComponent<
           INPUT_METHOD.TYPEAHEAD,
         );
         this.trackAutoCompleteAnalyticsEvent(
-          'atlassian.editor.format.hyperlink.autocomplete.keyboard',
+          'uidu.editor-core.format.hyperlink.autocomplete.keyboard',
         );
       }
     } else if (text && text.length > 0) {
@@ -323,7 +323,7 @@ class LinkAddToolbar extends PureComponent<
           INPUT_METHOD.MANUAL,
         );
         this.trackAutoCompleteAnalyticsEvent(
-          'atlassian.editor.format.hyperlink.autocomplete.notselected',
+          'uidu.editor-core.format.hyperlink.autocomplete.notselected',
         );
       }
     }

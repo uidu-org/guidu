@@ -6,7 +6,7 @@ import service from './service';
  * Usage:
  *
  *     let doSomething = function(a, b) { // ... }
- *     doSomething = trackAndInvoke('atlassian.editor.dosomething', doSomething);
+ *     doSomething = trackAndInvoke('uidu.editor-core.dosomething', doSomething);
  *
  *     doSomething(); // This will send analytics event and call the original function.
  *

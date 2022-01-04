@@ -25,7 +25,7 @@ import ReactDOM from 'react-dom';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import {
   analyticsService as analytics,
-  withAnalytics,
+  withAnalytics
 } from '../../../../analytics';
 import {
   addLink,
@@ -33,7 +33,7 @@ import {
   findShortcutByDescription,
   renderTooltipContent,
   toggleTable,
-  tooltip,
+  tooltip
 } from '../../../../keymaps';
 import DropdownMenu from '../../../../ui/DropdownMenu';
 import { MenuItem } from '../../../../ui/DropdownMenu/types';
@@ -41,7 +41,7 @@ import {
   ButtonGroup,
   ExpandIconWrapper,
   Shortcut,
-  Wrapper,
+  Wrapper
 } from '../../../../ui/styles';
 import ToolbarButton from '../../../../ui/ToolbarButton';
 import {
@@ -50,7 +50,7 @@ import {
   ACTION_SUBJECT_ID,
   EVENT_TYPE,
   INPUT_METHOD,
-  withAnalytics as commandWithAnalytics,
+  withAnalytics as commandWithAnalytics
 } from '../../../analytics';
 import { BlockType } from '../../../block-type/types';
 import { DropdownItem } from '../../../block-type/ui/ToolbarBlockType';
@@ -549,7 +549,7 @@ class ToolbarInsertBlock extends React.PureComponent<
   };
 
   private toggleLinkPanel = withAnalytics(
-    'atlassian.editor.format.hyperlink.button',
+    'uidu.editor-core.format.hyperlink.button',
     (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { editorView } = this.props;
       showLinkToolbar(inputMethod)(editorView.state, editorView.dispatch);
@@ -558,7 +558,7 @@ class ToolbarInsertBlock extends React.PureComponent<
   );
 
   private insertMention = withAnalytics(
-    'atlassian.fabric.mention.picker.trigger.button',
+    'uidu.editor-core.mention.picker.trigger.button',
     (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { editorView } = this.props;
       insertMentionQuery(inputMethod)(editorView.state, editorView.dispatch);
@@ -567,7 +567,7 @@ class ToolbarInsertBlock extends React.PureComponent<
   );
 
   private insertTable = withAnalytics(
-    'atlassian.editor.format.table.button',
+    'uidu.editor-core.format.table.button',
     (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { editorView } = this.props;
       return commandWithAnalytics({
@@ -581,7 +581,7 @@ class ToolbarInsertBlock extends React.PureComponent<
   );
 
   private createDate = withAnalytics(
-    'atlassian.editor.format.date.button',
+    'uidu.editor-core.format.date.button',
     (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { editorView } = this.props;
       insertDate(undefined, inputMethod)(editorView.state, editorView.dispatch);
@@ -591,7 +591,7 @@ class ToolbarInsertBlock extends React.PureComponent<
   );
 
   private createPlaceholderText = withAnalytics(
-    'atlassian.editor.format.placeholder.button',
+    'uidu.editor-core.format.placeholder.button',
     (): boolean => {
       const { editorView } = this.props;
       showPlaceholderFloatingToolbar(editorView.state, editorView.dispatch);
@@ -600,7 +600,7 @@ class ToolbarInsertBlock extends React.PureComponent<
   );
 
   private insertLayoutColumns = withAnalytics(
-    'atlassian.editor.format.layout.button',
+    'uidu.editor-core.format.layout.button',
     (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { editorView } = this.props;
       insertLayoutColumnsWithAnalytics(inputMethod)(
@@ -612,7 +612,7 @@ class ToolbarInsertBlock extends React.PureComponent<
   );
 
   private createStatus = withAnalytics(
-    'atlassian.editor.format.status.button',
+    'uidu.editor-core.format.status.button',
     (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { editorView } = this.props;
       updateStatusWithAnalytics(inputMethod)(
@@ -624,7 +624,7 @@ class ToolbarInsertBlock extends React.PureComponent<
   );
 
   private openMediaPicker = withAnalytics(
-    'atlassian.editor.format.media.button',
+    'uidu.editor-core.format.media.button',
     (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { onShowMediaPicker, dispatchAnalyticsEvent } = this.props;
       if (onShowMediaPicker) {
@@ -647,7 +647,7 @@ class ToolbarInsertBlock extends React.PureComponent<
     name: 'action' | 'decision',
     inputMethod: TOOLBAR_MENU_TYPE,
   ) =>
-    withAnalytics(`atlassian.fabric.${name}.trigger.button`, (): boolean => {
+    withAnalytics(`uidu.editor-core.${name}.trigger.button`, (): boolean => {
       const { editorView } = this.props;
       if (!editorView) {
         return false;
@@ -662,7 +662,7 @@ class ToolbarInsertBlock extends React.PureComponent<
     });
 
   private insertHorizontalRule = withAnalytics(
-    'atlassian.editor.format.horizontalrule.button',
+    'uidu.editor-core.format.horizontalrule.button',
     (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { editorView } = this.props;
 
@@ -688,7 +688,7 @@ class ToolbarInsertBlock extends React.PureComponent<
   };
 
   private insertBlockType = (itemName: string) =>
-    withAnalytics(`atlassian.editor.format.${itemName}.button`, () => {
+    withAnalytics(`uidu.editor-core.format.${itemName}.button`, () => {
       const { editorView, onInsertBlockType } = this.props;
       const { state, dispatch } = editorView;
 
@@ -697,7 +697,7 @@ class ToolbarInsertBlock extends React.PureComponent<
     });
 
   private handleSelectedEmoji = withAnalytics(
-    'atlassian.editor.emoji.button',
+    'uidu.editor-core.emoji.button',
     (emojiId: EmojiId): boolean => {
       this.props.editorView.focus();
       insertEmoji(emojiId, INPUT_METHOD.PICKER)(
@@ -767,7 +767,7 @@ class ToolbarInsertBlock extends React.PureComponent<
         break;
       case 'macro':
         analytics.trackEvent(
-          `atlassian.editor.format.${item.value.name}.button`,
+          `uidu.editor-core.format.${item.value.name}.button`,
         );
         onInsertMacroFromMacroBrowser!(macroProvider!)(
           editorView.state,

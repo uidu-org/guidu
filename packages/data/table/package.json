@@ -9,10 +9,6 @@
   "main": "dist/uidu-table.cjs.js",
   "module": "dist/uidu-table.esm.js",
   "types": "dist/uidu-table.cjs.d.ts",
-  "supportedLocales": [
-    "it",
-    "en"
-  ],
   "dependencies": {
     "@babel/runtime": "^7.16.7",
     "@uidu/button": "1.3.7",
@@ -39,5 +35,9 @@
     "@uidu/data-controls": "^2.0.5",
     "@uidu/docs": "^0.5.5",
     "faker": "^5.5.3"
-  }
+  },
+  "supportedLocales": [
+    "it",
+    "en"
+  ]
 }

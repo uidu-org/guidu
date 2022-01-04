@@ -6,8 +6,18 @@ import { Field } from '../../types';
 
 const Percent: Field = {
   kind: 'percent',
-  name: <FormattedMessage defaultMessage="Percent" />,
-  description: <FormattedMessage defaultMessage="Format a percentage" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Percent"
+      id="uidu.data-fields.percent.name"
+    />
+  ),
+  description: (
+    <FormattedMessage
+      defaultMessage="Format a percentage"
+      id="uidu.data-fields.percent.description"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faPercent} />,
   color: 'darkkhaki',
   valueFormatter: ({ value }) => `${value}%`,

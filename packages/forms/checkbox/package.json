@@ -22,11 +22,11 @@
     "@uidu/form": "^1.2.10",
     "styled-components": "^5.3.3"
   },
+  "peerDependencies": {
+    "styled-components": "*"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
-  "peerDependencies": {
-    "styled-components": "*"
-  }
+  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

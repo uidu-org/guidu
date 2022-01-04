@@ -6,7 +6,7 @@ import TaskItemWithProviders from './task-item-with-providers';
 
 const messages = defineMessages({
   placeholder: {
-    id: 'fabric.editor.taskPlaceholder',
+    id: 'uidu.editor-core.taskPlaceholder',
     defaultMessage: "Type your action, use '@' to assign to someone.",
     description:
       'Placeholder description for an empty action/task in the editor',

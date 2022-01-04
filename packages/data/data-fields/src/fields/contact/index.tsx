@@ -12,11 +12,19 @@ const Filter = loadable(
 
 const Contact: Field = {
   kind: 'contact',
-  name: <FormattedMessage defaultMessage="Contact" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Contact"
+      id="uidu.data-fields.contact.name"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faUsers} />,
   color: '#0AC29A',
   description: (
-    <FormattedMessage defaultMessage="A contact field represents a person or an organization - a contact" />
+    <FormattedMessage
+      defaultMessage="A contact field represents a person or an organization - a contact"
+      id="uidu.data-fields.contact.description"
+    />
   ),
   Filter,
   Cell,

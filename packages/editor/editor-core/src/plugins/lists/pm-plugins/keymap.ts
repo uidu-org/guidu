@@ -18,7 +18,7 @@ export function keymapPlugin(): Plugin | undefined {
   keymaps.bindKeymapWithCommand(
     keymaps.findShortcutByKeymap(keymaps.toggleOrderedList)!,
     trackAndInvoke(
-      'atlassian.editor.format.list.numbered.keyboard',
+      'uidu.editor-core.format.list.numbered.keyboard',
       toggleListCommandWithAnalytics(INPUT_METHOD.KEYBOARD, 'orderedList'),
     ),
     list,
@@ -26,7 +26,7 @@ export function keymapPlugin(): Plugin | undefined {
   keymaps.bindKeymapWithCommand(
     keymaps.findShortcutByKeymap(keymaps.toggleBulletList)!,
     trackAndInvoke(
-      'atlassian.editor.format.list.bullet.keyboard',
+      'uidu.editor-core.format.list.bullet.keyboard',
       toggleListCommandWithAnalytics(INPUT_METHOD.KEYBOARD, 'bulletList'),
     ),
     list,
@@ -34,7 +34,7 @@ export function keymapPlugin(): Plugin | undefined {
   keymaps.bindKeymapWithCommand(
     keymaps.indentList.common!!,
     trackAndInvoke(
-      'atlassian.editor.format.list.indent.keyboard',
+      'uidu.editor-core.format.list.indent.keyboard',
       indentList(INPUT_METHOD.KEYBOARD),
     ),
     list,
@@ -42,7 +42,7 @@ export function keymapPlugin(): Plugin | undefined {
   keymaps.bindKeymapWithCommand(
     keymaps.outdentList.common!!,
     trackAndInvoke(
-      'atlassian.editor.format.list.outdent.keyboard',
+      'uidu.editor-core.format.list.outdent.keyboard',
       outdentList(INPUT_METHOD.KEYBOARD),
     ),
     list,

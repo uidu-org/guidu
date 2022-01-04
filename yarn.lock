@@ -2557,30 +2557,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/font-icons-mdl2@npm:^8.1.19":
-  version: 8.1.19
-  resolution: "@fluentui/font-icons-mdl2@npm:8.1.19"
+"@fluentui/font-icons-mdl2@npm:^8.1.20":
+  version: 8.1.20
+  resolution: "@fluentui/font-icons-mdl2@npm:8.1.20"
   dependencies:
     "@fluentui/set-version": ^8.1.5
-    "@fluentui/style-utilities": ^8.5.1
+    "@fluentui/style-utilities": ^8.5.2
     tslib: ^2.1.0
-  checksum: 36e6408d867940114e4337b501d1783bbe3e9e84b9e5d0297f2c6b5ecbcedc61cb77372326dc0bbc8607731c7a091f6ece8515a03ea62124680e4bd8f1725e73
+  checksum: 376448fefb599d57f43f3c0401241ef7eea87f16c405921563a03c0359738f15ae199239112719dda6d100c7d08d20fb69ca605e6a25856f2aecb32a622a54de
   languageName: node
   linkType: hard
 
-"@fluentui/foundation-legacy@npm:^8.1.18":
-  version: 8.1.18
-  resolution: "@fluentui/foundation-legacy@npm:8.1.18"
+"@fluentui/foundation-legacy@npm:^8.1.19":
+  version: 8.1.19
+  resolution: "@fluentui/foundation-legacy@npm:8.1.19"
   dependencies:
-    "@fluentui/merge-styles": ^8.2.2
+    "@fluentui/merge-styles": ^8.2.3
     "@fluentui/set-version": ^8.1.5
-    "@fluentui/style-utilities": ^8.5.1
-    "@fluentui/utilities": ^8.3.8
+    "@fluentui/style-utilities": ^8.5.2
+    "@fluentui/utilities": ^8.3.9
     tslib: ^2.1.0
   peerDependencies:
     "@types/react": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
-  checksum: b8432d4cd59888a65c31776f1c72e083bc877a2b8b5f434261065f44829a986476084a1465c5b2cda66ca8a40e881308b60e400becd88cdebb5aecee6795e52d
+  checksum: 0da8ce8787e9161286f2d003de7b2bc9c417126ffe8c092eb227aaf7c1acfc96ee64c0acf1f9a5bce6c665c0bb43c3ff93a39c1574ef186e5265482bb374f0be
   languageName: node
   linkType: hard
 
@@ -2602,13 +2602,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/merge-styles@npm:^8.2.2":
-  version: 8.2.2
-  resolution: "@fluentui/merge-styles@npm:8.2.2"
+"@fluentui/merge-styles@npm:^8.2.3":
+  version: 8.2.3
+  resolution: "@fluentui/merge-styles@npm:8.2.3"
   dependencies:
     "@fluentui/set-version": ^8.1.5
     tslib: ^2.1.0
-  checksum: d651cfafb911103bff129b26b24c036b6489721e01ca9c61a86a507470afd7e6cb46511297d3d1568c6a20a0895dc91ce802dc5dd2bc651dc954ed2f7c460b3e
+  checksum: ca9eb8bb31cda5f462ca3ed19f67a399701f0e4f4883ea7b69ea88ea5d48bb361d80658ce32306002ff14eb2bf0cc19744e22c69014f1b05c3cdfd32fc716648
   languageName: node
   linkType: hard
 
@@ -2631,35 +2631,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react-focus@npm:^8.3.13":
-  version: 8.3.13
-  resolution: "@fluentui/react-focus@npm:8.3.13"
+"@fluentui/react-focus@npm:^8.3.14":
+  version: 8.3.14
+  resolution: "@fluentui/react-focus@npm:8.3.14"
   dependencies:
     "@fluentui/keyboard-key": ^0.3.5
-    "@fluentui/merge-styles": ^8.2.2
+    "@fluentui/merge-styles": ^8.2.3
     "@fluentui/set-version": ^8.1.5
-    "@fluentui/style-utilities": ^8.5.1
-    "@fluentui/utilities": ^8.3.8
+    "@fluentui/style-utilities": ^8.5.2
+    "@fluentui/utilities": ^8.3.9
     tslib: ^2.1.0
   peerDependencies:
     "@types/react": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
-  checksum: 3b4b6d11f2a1c1e69f6b7d8cd2cb52b96cc2b1fd4cf2e5af01594055a8b0152b8348cd0c9ef5605306398f1b21d8a77c371a720fe221368cd8494efab34b1187
+  checksum: 23b6d04d03ad4daf2359aa9a934da5f9a27b635ac4b5a63781c43ec4084ed2ce542aaa0083fcf24665d431c369638414cb01e0349b53976084fcb68d358d4521
   languageName: node
   linkType: hard
 
-"@fluentui/react-hooks@npm:^8.3.8":
-  version: 8.3.8
-  resolution: "@fluentui/react-hooks@npm:8.3.8"
+"@fluentui/react-hooks@npm:^8.3.9":
+  version: 8.3.9
+  resolution: "@fluentui/react-hooks@npm:8.3.9"
   dependencies:
     "@fluentui/react-window-provider": ^2.1.6
     "@fluentui/set-version": ^8.1.5
-    "@fluentui/utilities": ^8.3.8
+    "@fluentui/utilities": ^8.3.9
     tslib: ^2.1.0
   peerDependencies:
     "@types/react": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
-  checksum: 1de1fdd8e8957a4e7441517035f8b51359d62faeae950f24b86f2dab90f7dbb9b6b4761de2619a6e19f60603a0639520fd0264603f4e22475c8c951f76fcd94d
+  checksum: 09750c35b36421d2c164f76acbcaf5ef11ba272881e944b6b50d700d2da6083b77fbd46808aaa2eb6e3a8a982a2698fe0d111a97f465f50917eab8a9c0125366
   languageName: node
   linkType: hard
 
@@ -2691,21 +2691,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:^8.48.1":
-  version: 8.48.1
-  resolution: "@fluentui/react@npm:8.48.1"
+"@fluentui/react@npm:^8.49.0":
+  version: 8.49.0
+  resolution: "@fluentui/react@npm:8.49.0"
   dependencies:
     "@fluentui/date-time-utilities": ^8.2.3
-    "@fluentui/font-icons-mdl2": ^8.1.19
-    "@fluentui/foundation-legacy": ^8.1.18
-    "@fluentui/merge-styles": ^8.2.2
-    "@fluentui/react-focus": ^8.3.13
-    "@fluentui/react-hooks": ^8.3.8
+    "@fluentui/font-icons-mdl2": ^8.1.20
+    "@fluentui/foundation-legacy": ^8.1.19
+    "@fluentui/merge-styles": ^8.2.3
+    "@fluentui/react-focus": ^8.3.14
+    "@fluentui/react-hooks": ^8.3.9
     "@fluentui/react-window-provider": ^2.1.6
     "@fluentui/set-version": ^8.1.5
-    "@fluentui/style-utilities": ^8.5.1
-    "@fluentui/theme": ^2.4.5
-    "@fluentui/utilities": ^8.3.8
+    "@fluentui/style-utilities": ^8.5.2
+    "@fluentui/theme": ^2.4.6
+    "@fluentui/utilities": ^8.3.9
     "@microsoft/load-themed-styles": ^1.10.26
     tslib: ^2.1.0
   peerDependencies:
@@ -2713,7 +2713,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: 6a7527757f25ecbf94e219a39f6a7d8e4dec336fbc4ded433048b3b7decd8f9463d487ee2491e2b7fd6fa37c4c08e00d90e4102fa56a9c40bd2bffa962fd124d
+  checksum: d58133e4054d7b16546240a02583d6474699a369c7135fb9664644e96937fb9bdb88b791812078dccba1e751edacf9d1298205172052abee0f0cd594b3a88646
   languageName: node
   linkType: hard
 
@@ -2726,17 +2726,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/style-utilities@npm:^8.5.1":
-  version: 8.5.1
-  resolution: "@fluentui/style-utilities@npm:8.5.1"
+"@fluentui/style-utilities@npm:^8.5.2":
+  version: 8.5.2
+  resolution: "@fluentui/style-utilities@npm:8.5.2"
   dependencies:
-    "@fluentui/merge-styles": ^8.2.2
+    "@fluentui/merge-styles": ^8.2.3
     "@fluentui/set-version": ^8.1.5
-    "@fluentui/theme": ^2.4.5
-    "@fluentui/utilities": ^8.3.8
+    "@fluentui/theme": ^2.4.6
+    "@fluentui/utilities": ^8.3.9
     "@microsoft/load-themed-styles": ^1.10.26
     tslib: ^2.1.0
-  checksum: 5c6829f296c645d81872cb1691e6c26c53c680a6c642d37d68063fd8ddf4d9bae845d38e6f5400541d4153de49f89dde9abb62e82845aa7cb2b8bc7e3fbcb88a
+  checksum: c1790a5f3fcba4e4af1f6516e1ba4a1613f71c6a94165ef1433f4ff09fbc24196496f4bbbbba1d3688d57c3364fd9533818ec08162fe7c037a5eca68abca1b99
   languageName: node
   linkType: hard
 
@@ -2757,33 +2757,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/theme@npm:^2.4.5":
-  version: 2.4.5
-  resolution: "@fluentui/theme@npm:2.4.5"
+"@fluentui/theme@npm:^2.4.6":
+  version: 2.4.6
+  resolution: "@fluentui/theme@npm:2.4.6"
   dependencies:
-    "@fluentui/merge-styles": ^8.2.2
+    "@fluentui/merge-styles": ^8.2.3
     "@fluentui/set-version": ^8.1.5
-    "@fluentui/utilities": ^8.3.8
+    "@fluentui/utilities": ^8.3.9
     tslib: ^2.1.0
   peerDependencies:
     "@types/react": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
-  checksum: 981fd7abad2d561a72acaf30e298323458cf779463b579bce30fb1d2462285b4cdb55d59a6b1ab3e4dd952808993bc5d64181b8d1a3a5d544f24223f54f3b32d
+  checksum: fe7d381e4cd6e7d9447841f78f2b9059826897ef0bf07b5bbc0e65dd9092656529919bcfb862bc0a0066f8134ce4adb0f2b25df313afbc902b26780b52b71ea3
   languageName: node
   linkType: hard
 
-"@fluentui/utilities@npm:^8.3.8":
-  version: 8.3.8
-  resolution: "@fluentui/utilities@npm:8.3.8"
+"@fluentui/utilities@npm:^8.3.9":
+  version: 8.3.9
+  resolution: "@fluentui/utilities@npm:8.3.9"
   dependencies:
     "@fluentui/dom-utilities": ^2.1.5
-    "@fluentui/merge-styles": ^8.2.2
+    "@fluentui/merge-styles": ^8.2.3
     "@fluentui/set-version": ^8.1.5
     tslib: ^2.1.0
   peerDependencies:
     "@types/react": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
-  checksum: b5053ad50c30ce5ed17d9df3258d2d7b46482c8238b35bc7ec7be9802906bd735624286ecb4268ff6bfbf649582619ed32c7064711b048287dd32de588e34a8b
+  checksum: 3383b97dbd286960f41a179642edb172a1029f7b036b3a8458dec5fa7360ffcd37f5545313abeaee7df897e5d0f72c1ba2c993418a056c2e456791ae6f3fcd13
   languageName: node
   linkType: hard
 
@@ -4388,133 +4388,134 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-spring/animated@npm:~9.3.0":
-  version: 9.3.2
-  resolution: "@react-spring/animated@npm:9.3.2"
+"@react-spring/animated@npm:~9.4.0":
+  version: 9.4.0
+  resolution: "@react-spring/animated@npm:9.4.0"
   dependencies:
-    "@react-spring/shared": ~9.3.0
-    "@react-spring/types": ~9.3.0
+    "@react-spring/shared": ~9.4.0
+    "@react-spring/types": ~9.4.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
-  checksum: e42fd174403a692d20f9cdc2511f5f4b1eed6282b4160d1eb0d8421ccce0524f4eaee968712f4e5f9b907a9f941ae3dd037ad35f13eacef8860fcfb90243a4fc
+  checksum: 95e68c2ec0c43ee8db3f179920aad1613b31da812d406f678a4b16f8660edf512583bd7cc28930daa3f183bcbd866245bb26e0341bf4e5578672243acf0a0a00
   languageName: node
   linkType: hard
 
-"@react-spring/core@npm:~9.3.0":
-  version: 9.3.2
-  resolution: "@react-spring/core@npm:9.3.2"
+"@react-spring/core@npm:~9.4.0":
+  version: 9.4.0
+  resolution: "@react-spring/core@npm:9.4.0"
   dependencies:
-    "@react-spring/animated": ~9.3.0
-    "@react-spring/shared": ~9.3.0
-    "@react-spring/types": ~9.3.0
+    "@react-spring/animated": ~9.4.0
+    "@react-spring/rafz": ~9.4.0
+    "@react-spring/shared": ~9.4.0
+    "@react-spring/types": ~9.4.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
-  checksum: 1504143b9446d32c3877c8224c3fee3b6d18c0218b04b6766de7164ed645932808066ef12af63b06123a3da168f6bbc0fdf325c337b17d7f13d8a09f4a37f608
+  checksum: 523a7239fbdd342a20749f5daa389e5c335200a85a77d5c7e62c6c77851e412175bfa5ce4bb0d2351bc52337dbd6d94ae35940d4cf3513dafc2e86ff3c2d665c
   languageName: node
   linkType: hard
 
-"@react-spring/konva@npm:~9.3.0":
-  version: 9.3.2
-  resolution: "@react-spring/konva@npm:9.3.2"
+"@react-spring/konva@npm:~9.4.0":
+  version: 9.4.0
+  resolution: "@react-spring/konva@npm:9.4.0"
   dependencies:
-    "@react-spring/animated": ~9.3.0
-    "@react-spring/core": ~9.3.0
-    "@react-spring/shared": ~9.3.0
-    "@react-spring/types": ~9.3.0
+    "@react-spring/animated": ~9.4.0
+    "@react-spring/core": ~9.4.0
+    "@react-spring/shared": ~9.4.0
+    "@react-spring/types": ~9.4.0
   peerDependencies:
     konva: ">=2.6"
     react: ^16.8.0  || ^17.0.0
     react-konva: ^16.8.0  || ^17.0.0
-  checksum: 31a8cd919bee43aa9ca74008528e22a5c8c6fe241a4f0ffd0e45ba1a93715737b78d3d281f57f45a866f498b2d128f35df2f8ae896aa5d567a46bf28e2f1c8e3
+  checksum: a12b5965def231a46938c867cc608b40a0bf0cd65a27389e4670539633a7a70e1088473b44dfee5d388c95cda55e9a3d39e418e89ede943377b5b2dcd51a28e9
   languageName: node
   linkType: hard
 
-"@react-spring/native@npm:~9.3.0":
-  version: 9.3.2
-  resolution: "@react-spring/native@npm:9.3.2"
+"@react-spring/native@npm:~9.4.0":
+  version: 9.4.0
+  resolution: "@react-spring/native@npm:9.4.0"
   dependencies:
-    "@react-spring/animated": ~9.3.0
-    "@react-spring/core": ~9.3.0
-    "@react-spring/shared": ~9.3.0
-    "@react-spring/types": ~9.3.0
+    "@react-spring/animated": ~9.4.0
+    "@react-spring/core": ~9.4.0
+    "@react-spring/shared": ~9.4.0
+    "@react-spring/types": ~9.4.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
     react-native: ">=0.58"
-  checksum: 513fc2d3d67b385313a37375b669f89040a705376ff60e16362647569be6cb0db9fbfddf01723595cbe3e8bfe580e55724c257666dd1390b8df5c03b6bdd8572
+  checksum: f64989907e7395e2dad385229d4cf9fbfc6797d4365aea2805ee5009b9d4c9bbf42a1a69fe033f4db9b4b45c4158ae66304d10b52c8f997e33efdfa83700ed15
   languageName: node
   linkType: hard
 
-"@react-spring/rafz@npm:~9.3.0":
-  version: 9.3.2
-  resolution: "@react-spring/rafz@npm:9.3.2"
-  checksum: 8213d4940f23f93057dc2e7dc1e4aeca22622bfcfc9b42ab60d783e82f7ffe067e9537e7a397cfcb5634ea7e46d8ea55d06ffe4bd67a99f09ce06dde5e13957a
+"@react-spring/rafz@npm:~9.4.0":
+  version: 9.4.0
+  resolution: "@react-spring/rafz@npm:9.4.0"
+  checksum: 40d71d01c4e9493abb10c8c9c862e8ae6deb28bad95c41861c89f2e00815e11a736372bef7977832fe93cdbc65450ad3225f5b13ba710fe71a93de72cb10e34a
   languageName: node
   linkType: hard
 
-"@react-spring/shared@npm:~9.3.0":
-  version: 9.3.2
-  resolution: "@react-spring/shared@npm:9.3.2"
+"@react-spring/shared@npm:~9.4.0":
+  version: 9.4.0
+  resolution: "@react-spring/shared@npm:9.4.0"
   dependencies:
-    "@react-spring/rafz": ~9.3.0
-    "@react-spring/types": ~9.3.0
+    "@react-spring/rafz": ~9.4.0
+    "@react-spring/types": ~9.4.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
-  checksum: b04dc19fc6a8d585f38af74149e94fbf12b2a9ae9af6254abb02f105a7f77ce6a1e987ff7aaf4bb013786cd0959e41fca45709c4d57094abfca7b12db507a243
+  checksum: 3594d5547c415831c3301ba737dae5dc8fda009157d06e1a765d5c69c041702adaa2b65e9d9339b81e53675fbad29a87ee9c846e3d81bc203a24172a15b806a3
   languageName: node
   linkType: hard
 
-"@react-spring/three@npm:~9.3.0":
-  version: 9.3.2
-  resolution: "@react-spring/three@npm:9.3.2"
+"@react-spring/three@npm:~9.4.0":
+  version: 9.4.0
+  resolution: "@react-spring/three@npm:9.4.0"
   dependencies:
-    "@react-spring/animated": ~9.3.0
-    "@react-spring/core": ~9.3.0
-    "@react-spring/shared": ~9.3.0
-    "@react-spring/types": ~9.3.0
+    "@react-spring/animated": ~9.4.0
+    "@react-spring/core": ~9.4.0
+    "@react-spring/shared": ~9.4.0
+    "@react-spring/types": ~9.4.0
   peerDependencies:
     "@react-three/fiber": ">=6.0"
     react: ">=16.11"
     three: ">=0.126"
-  checksum: 394a066b18ce64de560586c4fda2a5c8acc859ad71f0bf4cb43af2cb37fe439910966d0096c4b05cc4620d3cc822a6e4a6b0ff9feff700f93518a630f500bcfc
+  checksum: cf94b044a45df6ca21ae8a4c3dab930a2017dc0ec0677be2855893aaa8d810698038591694619159d9deb258445070758a44f7ec98fa125a42098e27c06ed592
   languageName: node
   linkType: hard
 
-"@react-spring/types@npm:~9.3.0":
-  version: 9.3.2
-  resolution: "@react-spring/types@npm:9.3.2"
-  checksum: 29fb2be7cd44c3de534d6b0d914b1c51fdc6ea354098727e605218b0e733c3c0ab01f54670f1b8b9b1949d984e399ce3ec153640ae9c590aee9622f33900d16b
+"@react-spring/types@npm:~9.4.0":
+  version: 9.4.0
+  resolution: "@react-spring/types@npm:9.4.0"
+  checksum: f0d9398feddd7f222f7968863826ece225b539292255ead6ddb3df116ed88af98727b88780a54f2a98979846e18a45feefeae63cfc9943c3bd4ba71961d4bdf5
   languageName: node
   linkType: hard
 
-"@react-spring/web@npm:~9.3.0":
-  version: 9.3.2
-  resolution: "@react-spring/web@npm:9.3.2"
+"@react-spring/web@npm:~9.4.0":
+  version: 9.4.0
+  resolution: "@react-spring/web@npm:9.4.0"
   dependencies:
-    "@react-spring/animated": ~9.3.0
-    "@react-spring/core": ~9.3.0
-    "@react-spring/shared": ~9.3.0
-    "@react-spring/types": ~9.3.0
+    "@react-spring/animated": ~9.4.0
+    "@react-spring/core": ~9.4.0
+    "@react-spring/shared": ~9.4.0
+    "@react-spring/types": ~9.4.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
     react-dom: ^16.8.0  || ^17.0.0
-  checksum: c1fe11d801cedf7d38b528ad319c7eabc4faec91873ef6012c258fe014fe802c21c5cb7b316ed25274169de78d7c00785082993d5e4e4e95b4569b0fc5b3aefe
+  checksum: b2d4919f066603d39531695391c9b80862e47c64fb33443cae42ca683cdc80327b4f9f9c6a49cfbff5c4ce592d53c6f972beaa3a20ed1c32cc425ad32b509b15
   languageName: node
   linkType: hard
 
-"@react-spring/zdog@npm:~9.3.0":
-  version: 9.3.2
-  resolution: "@react-spring/zdog@npm:9.3.2"
+"@react-spring/zdog@npm:~9.4.0":
+  version: 9.4.0
+  resolution: "@react-spring/zdog@npm:9.4.0"
   dependencies:
-    "@react-spring/animated": ~9.3.0
-    "@react-spring/core": ~9.3.0
-    "@react-spring/shared": ~9.3.0
-    "@react-spring/types": ~9.3.0
+    "@react-spring/animated": ~9.4.0
+    "@react-spring/core": ~9.4.0
+    "@react-spring/shared": ~9.4.0
+    "@react-spring/types": ~9.4.0
   peerDependencies:
     react: ^16.8.0  || ^17.0.0
     react-dom: ^16.8.0  || ^17.0.0
     react-zdog: ">=1.0"
     zdog: ">=1.0"
-  checksum: e10aa322c75dc6af7ca2cb69a713194766e0311f834ea4ec905277240f2d71e3329f60211b5601ae6167a9f68c9be52512bde7b83b255c8161039d0037b53a5f
+  checksum: d70eeda494316991ee49ec4412345db25f2d9d896aa4f5c515d07174e1c92cb146f157a907b54438c65f37aa892b641a7e2fc98147ab8ed3dc8677b98b144e67
   languageName: node
   linkType: hard
 
@@ -6021,9 +6022,9 @@ __metadata:
     css-color-names: ^1.0.1
     json-schema-diff-validator: ^0.4.1
     linkify-it: ^3.0.3
-    prosemirror-model: ^1.15.0
+    prosemirror-model: ^1.16.1
     prosemirror-state: ^1.3.4
-    prosemirror-view: ^1.23.4
+    prosemirror-view: ^1.23.5
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
@@ -6817,7 +6818,7 @@ __metadata:
     classnames: ^2.3.1
     css-color-names: ^1.0.1
     date-fns: ^2.28.0
-    prosemirror-model: ^1.15.0
+    prosemirror-model: ^1.16.1
     raf-schd: ^4.0.3
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -6883,13 +6884,13 @@ __metadata:
     prosemirror-history: ^1.2.0
     prosemirror-inputrules: ^1.1.3
     prosemirror-keymap: ^1.1.5
-    prosemirror-model: ^1.15.0
+    prosemirror-model: ^1.16.1
     prosemirror-schema-list: ^1.1.6
     prosemirror-state: ^1.3.4
     prosemirror-tables: ^1.1.1
     prosemirror-transform: ^1.3.3
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.23.4
+    prosemirror-view: ^1.23.5
     raf-schd: ^4.0.3
     re-resizable: ^6.9.1
     react: ^17.0.2
@@ -6913,8 +6914,8 @@ __metadata:
     "@uidu/docs": ^0.5.5
     "@uidu/editor-common": ^0.6.7
     "@uidu/editor-core": ^0.11.8
-    prosemirror-model: ^1.15.0
-    prosemirror-view: ^1.23.4
+    prosemirror-model: ^1.16.1
+    prosemirror-view: ^1.23.5
     react: ^17.0.2
     styled-components: ^5.3.3
     tslib: ^2.3.1
@@ -6935,7 +6936,7 @@ __metadata:
     markdown-it: ^12.3.0
     markdown-it-table: ^2.0.4
     prosemirror-markdown: ^1.6.1
-    prosemirror-model: ^1.15.0
+    prosemirror-model: ^1.16.1
     react: ^17.0.2
     styled-components: ^5.3.3
     tslib: ^2.3.1
@@ -7577,7 +7578,7 @@ __metadata:
     react-router: ^5.2.1
     react-router-dom: ^5.3.0
     react-transition-group: ^4.4.2
-    resolve: ^1.20.0
+    resolve: ^1.21.0
     semver: ^7.3.5
     sentence-case: ^3.0.4
     snake-case: ^3.0.4
@@ -7778,7 +7779,7 @@ __metadata:
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
     "@babel/runtime": ^7.16.7
-    "@fluentui/react": ^8.48.1
+    "@fluentui/react": ^8.49.0
     "@uidu/button": ^1.3.7
     "@uidu/docs": ^0.5.5
     "@uidu/dropdown-menu": ^0.6.8
@@ -7976,7 +7977,7 @@ __metadata:
   resolution: "@uidu/message@workspace:packages/messaging/message"
   dependencies:
     "@babel/runtime": ^7.16.7
-    "@fluentui/react": ^8.48.1
+    "@fluentui/react": ^8.49.0
     "@loadable/component": ^5.15.2
     "@uidu/avatar": ^0.9.2
     "@uidu/docs": ^0.5.5
@@ -7997,7 +7998,7 @@ __metadata:
     prop-types: ^15.8.0
     react: ^17.0.2
     react-feather: ^2.0.9
-    react-spring: ^9.3.3
+    react-spring: ^9.4.0
     react-use-gesture: ^8.0.1
     styled-components: ^5.3.3
     tslib: ^2.3.1
@@ -8380,7 +8381,7 @@ __metadata:
     "@uidu/theme": ^0.6.7
     "@uidu/tooltip": ^0.5.8
     "@uidu/util-data-test": ^0.4.8
-    prosemirror-model: ^1.15.0
+    prosemirror-model: ^1.16.1
     raf-schd: ^4.0.3
     react: ^17.0.2
     react-dom: ^17.0.2
@@ -17796,7 +17797,7 @@ __metadata:
     "@cubejs-client/react": ^0.29.8
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
-    "@fluentui/react": ^8.48.1
+    "@fluentui/react": ^8.49.0
     "@formatjs/cli": 4.7.0
     "@fortawesome/fontawesome-free": ^5.15.4
     "@fortawesome/fontawesome-svg-core": ^1.2.36
@@ -18011,13 +18012,13 @@ __metadata:
     prosemirror-inputrules: ^1.1.3
     prosemirror-keymap: ^1.1.5
     prosemirror-markdown: ^1.6.1
-    prosemirror-model: ^1.15.0
+    prosemirror-model: ^1.16.1
     prosemirror-schema-list: ^1.1.6
     prosemirror-state: ^1.3.4
     prosemirror-tables: ^1.1.1
     prosemirror-transform: ^1.3.3
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.23.4
+    prosemirror-view: ^1.23.5
     query-string: ^7.0.1
     raf-schd: ^4.0.3
     raw-loader: ^4.0.2
@@ -18072,13 +18073,13 @@ __metadata:
     react-scrolllock: ^5.0.1
     react-select: ^5.2.1
     react-simple-timefield: ^3.2.5
-    react-spring: ^9.3.3
+    react-spring: ^9.4.0
     react-switch: ^6.0.0
     react-syntax-highlighter: ^15.4.5
     react-transition-group: ^4.4.2
     react-use-gesture: ^8.0.1
     react-virtualized: ^9.22.3
-    resolve: ^1.20.0
+    resolve: ^1.21.0
     sass: ^1.45.2
     sass-loader: ^12.4.0
     scroll-into-view-if-needed: ^2.2.28
@@ -24203,7 +24204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-parse@npm:^1.0.6":
+"path-parse@npm:^1.0.6, path-parse@npm:^1.0.7":
   version: 1.0.7
   resolution: "path-parse@npm:1.0.7"
   checksum: 49abf3d81115642938a8700ec580da6e830dde670be21893c62f4e10bd7dd4c3742ddc603fe24f898cba7eb0c6bc1777f8d9ac14185d34540c6d4d80cd9cae8a
@@ -25430,12 +25431,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-model@npm:>=1.0.0, prosemirror-model@npm:^1.0.0, prosemirror-model@npm:^1.14.3, prosemirror-model@npm:^1.15.0, prosemirror-model@npm:^1.8.1":
-  version: 1.15.0
-  resolution: "prosemirror-model@npm:1.15.0"
+"prosemirror-model@npm:>=1.0.0, prosemirror-model@npm:^1.0.0, prosemirror-model@npm:^1.16.0, prosemirror-model@npm:^1.16.1, prosemirror-model@npm:^1.8.1":
+  version: 1.16.1
+  resolution: "prosemirror-model@npm:1.16.1"
   dependencies:
     orderedmap: ^1.1.0
-  checksum: 75778ae6cb6dee476376725110ad31783c2d2d725aca467e3ef54db7b197dbe3b663cc79616ba0896de84ca617f428f5afa90f8fa3d9b5039fa82f1976c96b26
+  checksum: 76718aafbfad0639393e127b3b1b95f9d99b0fb9ec72c2f207e445d175f06a2711ea10b6035075c4ed9cd5e00f4a72aec01e1439c954ecfee19897fa3584fa11
   languageName: node
   linkType: hard
 
@@ -25492,14 +25493,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.23.4":
-  version: 1.23.4
-  resolution: "prosemirror-view@npm:1.23.4"
+"prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.23.5":
+  version: 1.23.5
+  resolution: "prosemirror-view@npm:1.23.5"
   dependencies:
-    prosemirror-model: ^1.14.3
+    prosemirror-model: ^1.16.0
     prosemirror-state: ^1.0.0
     prosemirror-transform: ^1.1.0
-  checksum: 008e30ee67565dff27f25a5f8077bb3518a049ede1b7ad51a1ee5bd057118241b17703bd681b97efe6dfb501ce396de3a7b60edc4c6beca87b94b4c2d751464e
+  checksum: 9be601e86e89adc15d7f3c743ca1717dde49d42f805cfd32018e14bb0d183281735b527c3d6a169fe77e1ddce85066e958720fd18fbec40544884f27b5572b93
   languageName: node
   linkType: hard
 
@@ -26806,17 +26807,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-spring@npm:^9.3.3":
-  version: 9.3.3
-  resolution: "react-spring@npm:9.3.3"
+"react-spring@npm:^9.4.0":
+  version: 9.4.0
+  resolution: "react-spring@npm:9.4.0"
   dependencies:
-    "@react-spring/core": ~9.3.0
-    "@react-spring/konva": ~9.3.0
-    "@react-spring/native": ~9.3.0
-    "@react-spring/three": ~9.3.0
-    "@react-spring/web": ~9.3.0
-    "@react-spring/zdog": ~9.3.0
-  checksum: e53f072968d1cba4847a194138d45f9276e759df1bb83802a27f7ef098eac1bcbafb215195f9d7b174435cd3ca173424202942b6a295fcd62f46bef67a097d1c
+    "@react-spring/core": ~9.4.0
+    "@react-spring/konva": ~9.4.0
+    "@react-spring/native": ~9.4.0
+    "@react-spring/three": ~9.4.0
+    "@react-spring/web": ~9.4.0
+    "@react-spring/zdog": ~9.4.0
+  checksum: 2a0ffb7c087c7b819a71105f162c8fbe8f5a005452410c825e1b10622363b0681fddf80117bb7bd850907c6c58e5231cc50e689527301fb087832f9b7466a2ed
   languageName: node
   linkType: hard
 
@@ -27647,13 +27648,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.1.10, resolve@npm:^1.1.5, resolve@npm:^1.1.7, resolve@npm:^1.10.0, resolve@npm:^1.10.1, resolve@npm:^1.12.0, resolve@npm:^1.14.2, resolve@npm:^1.17.0, resolve@npm:^1.19.0, resolve@npm:^1.20.0, resolve@npm:^1.3.2, resolve@npm:^1.3.3":
-  version: 1.20.0
-  resolution: "resolve@npm:1.20.0"
+"resolve@npm:^1.1.10, resolve@npm:^1.1.5, resolve@npm:^1.1.7, resolve@npm:^1.10.0, resolve@npm:^1.10.1, resolve@npm:^1.12.0, resolve@npm:^1.14.2, resolve@npm:^1.17.0, resolve@npm:^1.19.0, resolve@npm:^1.20.0, resolve@npm:^1.21.0, resolve@npm:^1.3.2, resolve@npm:^1.3.3":
+  version: 1.21.0
+  resolution: "resolve@npm:1.21.0"
   dependencies:
-    is-core-module: ^2.2.0
-    path-parse: ^1.0.6
-  checksum: 40cf70b2cde00ef57f99daf2dc63c6a56d6c14a1b7fc51735d06a6f0a3b97cb67b4fb7ef6c747b4e13a7baba83b0ef625d7c4ce92a483cd5af923c3b65fd16fe
+    is-core-module: ^2.8.0
+    path-parse: ^1.0.7
+    supports-preserve-symlinks-flag: ^1.0.0
+  bin:
+    resolve: bin/resolve
+  checksum: d7d9092a5c04a048bea16c7e5a2eb605ac3e8363a0cc5644de1fde17d5028e8d5f4343aab1d99bd327b98e91a66ea83e242718150c64dfedcb96e5e7aad6c4f5
   languageName: node
   linkType: hard
 
@@ -27674,13 +27678,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.1.10#~builtin<compat/resolve>, resolve@patch:resolve@^1.1.5#~builtin<compat/resolve>, resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.3#~builtin<compat/resolve>":
-  version: 1.20.0
-  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"
+"resolve@patch:resolve@^1.1.10#~builtin<compat/resolve>, resolve@patch:resolve@^1.1.5#~builtin<compat/resolve>, resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.21.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.3#~builtin<compat/resolve>":
+  version: 1.21.0
+  resolution: "resolve@patch:resolve@npm%3A1.21.0#~builtin<compat/resolve>::version=1.21.0&hash=07638b"
   dependencies:
-    is-core-module: ^2.2.0
-    path-parse: ^1.0.6
-  checksum: a0dd7d16a8e47af23afa9386df2dff10e3e0debb2c7299a42e581d9d9b04d7ad5d2c53f24f1e043f7b3c250cbdc71150063e53d0b6559683d37f790b7c8c3cd5
+    is-core-module: ^2.8.0
+    path-parse: ^1.0.7
+    supports-preserve-symlinks-flag: ^1.0.0
+  bin:
+    resolve: bin/resolve
+  checksum: a0a4d1f7409e73190f31f901f8a619960bb3bd4ae38ba3a54c7ea7e1c87758d28a73256bb8d6a35996a903d1bf14f53883f0dcac6c571c063cb8162d813ad26e
   languageName: node
   linkType: hard
 
@@ -29639,6 +29646,13 @@ __metadata:
     has-flag: ^4.0.0
     supports-color: ^7.0.0
   checksum: aef04fb41f4a67f1bc128f7c3e88a81b6cf2794c800fccf137006efe5bafde281da3e42e72bf9206c2fcf42e6438f37e3a820a389214d0a88613ca1f2d36076a
+  languageName: node
+  linkType: hard
+
+"supports-preserve-symlinks-flag@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
+  checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
   languageName: node
   linkType: hard
 

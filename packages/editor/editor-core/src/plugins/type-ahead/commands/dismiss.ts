@@ -17,7 +17,7 @@ export const dismissCommand = (): Command => (state, dispatch) => {
     return false;
   }
 
-  analyticsService.trackEvent('atlassian.editor.typeahead.dismiss');
+  analyticsService.trackEvent('uidu.editor-core.typeahead.dismiss');
 
   const { typeAheadHandler } = pluginKey.getState(state);
   if (typeAheadHandler && typeAheadHandler.dismiss) {

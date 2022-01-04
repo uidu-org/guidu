@@ -21,7 +21,7 @@ export const defaultEmojiHeight = 20;
 export const emojiPickerWidth = 350;
 export const emojiPickerHeight = 295;
 
-export const localStoragePrefix = 'fabric.emoji';
+export const localStoragePrefix = 'uidu.emoji';
 export const selectedToneStorageKey = `${localStoragePrefix}.selectedTone`;
 export const defaultCategories: CategoryId[] = [
   'PEOPLE',
@@ -38,4 +38,4 @@ export const defaultListLimit = 50;
 
 export const migrationUserId = 'hipchat_migration_emoticons';
 
-export const analyticsEmojiPrefix = 'atlassian.fabric.emoji.picker';
+export const analyticsEmojiPrefix = 'uidu.emoji.picker';

@@ -9,14 +9,14 @@ export default withOptions({
   kind: 'multipleSelect',
   name: (
     <FormattedMessage
-      id="field.multipleselect.name"
+      id="uidu.data-fields.multipleSelect.name"
       defaultMessage="MultipleSelect"
     />
   ),
   icon: <FontAwesomeIcon icon={faListUl} />,
   description: (
     <FormattedMessage
-      id="field.singleSelect.description"
+      id="uidu.data-fields.multipleSelect.description"
       defaultMessage="Multiple select allows you to select one or more predefined options listed below."
     />
   ),

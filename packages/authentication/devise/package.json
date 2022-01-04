@@ -8,10 +8,6 @@
   "main": "dist/uidu-devise.cjs.js",
   "module": "dist/uidu-devise.esm.js",
   "types": "dist/uidu-devise.cjs.d.ts",
-  "supportedLocales": [
-    "en",
-    "it"
-  ],
   "dependencies": {
     "@babel/runtime": "^7.16.7",
     "@uidu/avatar": "^0.9.3",
@@ -35,5 +31,9 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.5"
-  }
+  },
+  "supportedLocales": [
+    "en",
+    "it"
+  ]
 }

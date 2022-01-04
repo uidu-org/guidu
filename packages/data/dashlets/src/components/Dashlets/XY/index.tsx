@@ -8,10 +8,17 @@ const StatelessChart = loadable(() => import('./XYStateless'));
 
 export default {
   id: 'xy',
-  name: <FormattedMessage defaultMessage="XY chart" />,
+  name: (
+    <FormattedMessage defaultMessage="XY chart" id="uidu.dashlets.xy.name" />
+  ),
   icon: BarChart2,
   color: '#D08770',
-  description: <FormattedMessage defaultMessage="XY chart." />,
+  description: (
+    <FormattedMessage
+      defaultMessage="XY chart."
+      id="uidu.dashlets.xy.description"
+    />
+  ),
   chart: Chart,
   chartStateless: StatelessChart,
 };

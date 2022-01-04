@@ -15,7 +15,7 @@ import {
 import * as blockTypes from '../types';
 
 const analyticsEventName = (blockTypeName: string, eventSource: string) =>
-  `atlassian.editor.format.${blockTypeName}.${eventSource}`;
+  `uidu.editor-core.format.${blockTypeName}.${eventSource}`;
 const tryUndoInputRuleElseUndoHistory = chainCommands(undoInputRule, undo);
 
 export default function keymapPlugin(schema: Schema): Plugin {
@@ -24,7 +24,7 @@ export default function keymapPlugin(schema: Schema): Plugin {
   keymaps.bindKeymapWithCommand(
     keymaps.insertNewLine.common!,
     trackAndInvoke(
-      'atlassian.editor.newline.keyboard',
+      'uidu.editor-core.newline.keyboard',
       commands.insertNewLineWithAnalytics,
     ),
     list,
@@ -32,7 +32,7 @@ export default function keymapPlugin(schema: Schema): Plugin {
   keymaps.bindKeymapWithCommand(
     keymaps.moveUp.common!,
     trackAndInvoke(
-      'atlassian.editor.moveup.keyboard',
+      'uidu.editor-core.moveup.keyboard',
       commands.createNewParagraphAbove,
     ),
     list,
@@ -40,21 +40,21 @@ export default function keymapPlugin(schema: Schema): Plugin {
   keymaps.bindKeymapWithCommand(
     keymaps.moveDown.common!,
     trackAndInvoke(
-      'atlassian.editor.movedown.keyboard',
+      'uidu.editor-core.movedown.keyboard',
       commands.createNewParagraphBelow,
     ),
     list,
   );
   keymaps.bindKeymapWithCommand(
     keymaps.findKeyMapForBrowser(keymaps.redo)!,
-    trackAndInvoke('atlassian.editor.redo.keyboard', redo),
+    trackAndInvoke('uidu.editor-core.redo.keyboard', redo),
     list,
   );
 
   keymaps.bindKeymapWithCommand(
     keymaps.undo.common!,
     trackAndInvoke(
-      'atlassian.editor.undo.keyboard',
+      'uidu.editor-core.undo.keyboard',
       tryUndoInputRuleElseUndoHistory,
     ),
     list,

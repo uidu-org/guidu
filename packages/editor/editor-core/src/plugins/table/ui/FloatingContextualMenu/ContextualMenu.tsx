@@ -46,38 +46,38 @@ import { contextualMenuDropdownWidth } from '../styles';
 
 export const messages = defineMessages({
   cellBackground: {
-    id: 'fabric.editor.cellBackground',
+    id: 'uidu.editor-core.cellBackground',
     defaultMessage: 'Cell background',
     description: 'Change the background color of a table cell.',
   },
   mergeCells: {
-    id: 'fabric.editor.mergeCells',
+    id: 'uidu.editor-core.mergeCells',
     defaultMessage: 'Merge cells',
     description: 'Merge tables cells together.',
   },
   splitCell: {
-    id: 'fabric.editor.splitCell',
+    id: 'uidu.editor-core.splitCell',
     defaultMessage: 'Split cell',
     description: 'Split a merged table cell.',
   },
   clearCells: {
-    id: 'fabric.editor.clearCells',
+    id: 'uidu.editor-core.clearCells',
     defaultMessage: 'Clear {0, plural, one {cell} other {cells}}',
     description:
       'Clears the contents of the selected cells (this does not delete the cells themselves).',
   },
   sortColumnASC: {
-    id: 'fabric.editor.sortColumnASC',
+    id: 'uidu.editor-core.sortColumnASC',
     defaultMessage: 'Sort column A → Z',
     description: 'Sort column in ascending order',
   },
   sortColumnDESC: {
-    id: 'fabric.editor.sortColumnDESC',
+    id: 'uidu.editor-core.sortColumnDESC',
     defaultMessage: 'Sort column Z → A',
     description: 'Sort column in descending order',
   },
   canNotSortTable: {
-    id: 'fabric.editor.canNotSortTable',
+    id: 'uidu.editor-core.canNotSortTable',
     defaultMessage: `⚠️ You can't sort a table with merged cells`,
     description: `Split your cells to enable this feature`,
   },

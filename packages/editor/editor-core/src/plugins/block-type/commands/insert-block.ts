@@ -33,7 +33,7 @@ export const insertBlock = (
 
   // Track event
   analyticsService.trackEvent(
-    `atlassian.editor.format.${nodeName}.autoformatting`,
+    `uidu.editor-core.format.${nodeName}.autoformatting`,
   );
 
   // Split at the start of autoformatting and delete formatting characters.

@@ -12,11 +12,19 @@ const Filter = loadable(
 
 const Member: Field = {
   kind: 'member',
-  name: <FormattedMessage defaultMessage="Member" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Member"
+      id="uidu.data-fields.member.name"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faUsers} />,
   color: 'hotpink',
   description: (
-    <FormattedMessage defaultMessage="A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added." />
+    <FormattedMessage
+      defaultMessage="A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
+      id="uidu.data-fields.member.description"
+    />
   ),
   // Filter
   Cell,

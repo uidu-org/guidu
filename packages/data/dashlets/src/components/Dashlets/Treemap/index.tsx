@@ -9,7 +9,7 @@ export default {
   id: 'treemap',
   name: (
     <FormattedMessage
-      id="dashlets.treemap.name"
+      id="uidu.dashlets.treemap.name"
       defaultMessage="Treemap chart"
     />
   ),
@@ -17,7 +17,7 @@ export default {
   color: '#D08770',
   description: (
     <FormattedMessage
-      id="dashlets.treemap.description"
+      id="uidu.dashlets.treemap.description"
       defaultMessage="Treemap chart."
     />
   ),

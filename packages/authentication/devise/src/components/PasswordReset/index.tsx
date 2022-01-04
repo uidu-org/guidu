@@ -10,23 +10,23 @@ import { Link } from 'react-router-dom';
 export const messages = defineMessages({
   password_reset_title: {
     defaultMessage: 'Reset your password',
-    description: 'password_reset_title',
+    id: 'uidu.devise.password_reset_title',
   },
   password_reset_description: {
     defaultMessage: 'Choose a new password to access your account',
-    description: 'password_reset_description',
+    id: 'uidu.devise.password_reset_description',
   },
   password_reset_primary_cta: {
     defaultMessage: 'Confirm',
-    description: 'password_reset_primary_cta',
+    id: 'uidu.devise.password_reset_primary_cta',
   },
   password_reset_secondary_cta: {
     defaultMessage: 'Sign in',
-    description: 'password_reset_secondary_cta',
+    id: 'uidu.devise.password_reset_secondary_cta',
   },
   password_reset_password_label: {
     defaultMessage: 'Insert a new password',
-    description: 'password_reset_email_label',
+    id: 'uidu.devise.password_reset_email_label',
   },
 });
 
@@ -68,7 +68,7 @@ export default class PasswordReset extends PureComponent<any> {
               Indietro
             </Link>
           </div>
-          <div className="text-center mb-4">
+          <div className="mb-4 text-center">
             <h3>
               <FormattedMessage {...messages.password_reset_title} />
             </h3>

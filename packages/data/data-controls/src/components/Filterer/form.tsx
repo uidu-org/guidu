@@ -105,9 +105,15 @@ export default function FiltererForm({ filtersCount }: FiltererFormProps) {
         <PickField
           label={
             filtersCount > 0 ? (
-              <FormattedMessage defaultMessage="Add another filter" />
+              <FormattedMessage
+                defaultMessage="Add another filter"
+                id="uidu.data-controls.filterer.add_another"
+              />
             ) : (
-              <FormattedMessage defaultMessage="No filters applied. Pick a field" />
+              <FormattedMessage
+                defaultMessage="No filters applied. Pick a field"
+                id="uidu.data-controls.filterer.no_filters"
+              />
             )
           }
           onClick={(columnDef) => {

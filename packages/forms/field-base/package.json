@@ -17,16 +17,16 @@
     "styled-components": "^5.3.3",
     "tslib": "^2.3.1"
   },
-  "publishConfig": {
-    "access": "public"
+  "devDependencies": {
+    "@uidu/form": "*",
+    "react": "^17.0.2"
   },
-  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
   "peerDependencies": {
     "@uidu/form": "*",
     "react": "*"
   },
-  "devDependencies": {
-    "@uidu/form": "*",
-    "react": "^17.0.2"
-  }
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

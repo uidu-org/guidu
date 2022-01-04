@@ -16,12 +16,12 @@ export const traverseNode = (node: PMNode, schema: Schema): void => {
 
   if (node.type === unsupportedInline) {
     analyticsService.trackEvent(
-      'atlassian.editor.confluenceUnsupported.inline',
+      'uidu.editor-core.confluenceUnsupported.inline',
       data,
     );
   } else if (node.type === unsupportedBlock) {
     analyticsService.trackEvent(
-      'atlassian.editor.confluenceUnsupported.block',
+      'uidu.editor-core.confluenceUnsupported.block',
       data,
     );
   } else {

@@ -21,7 +21,7 @@ import { BlockTypeMenuItem, KeyboardShortcut } from './styled';
 
 export const messages = defineMessages({
   textStyles: {
-    id: 'fabric.editor.textStyles',
+    id: 'uidu.editor-core.textStyles',
     defaultMessage: 'Text styles',
     description:
       'Menu provides access to various heading styles or normal text',
@@ -149,7 +149,7 @@ export default function ToolbarBlockType({
     setBlockType(blockType.name);
     setActive(false);
 
-    analytics.trackEvent(`atlassian.editor.format.${blockType.name}.button`);
+    analytics.trackEvent(`uidu.editor-core.format.${blockType.name}.button`);
   };
 
   if (!isDisabled && !blockTypesDisabled) {

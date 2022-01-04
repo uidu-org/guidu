@@ -78,7 +78,7 @@ export default function CardTypes({}) {
       label={
         <FormattedMessage
           defaultMessage="Card appearance"
-          id="data_views.gallery.configurator.cardAppearance"
+          id="uidu.data-views.gallery.controls.card_appearance"
         />
       }
       menuPortalTarget={document.body}

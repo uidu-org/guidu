@@ -36,53 +36,53 @@ import {
 
 const messages = defineMessages({
   editorHelp: {
-    id: 'fabric.editor.editorHelp',
+    id: 'uidu.editor-core.editorHelp',
     defaultMessage: 'Editor help',
     description: 'Title of editor help dialog.',
   },
   helpDialogTips: {
-    id: 'fabric.editor.helpDialogTips',
+    id: 'uidu.editor-core.helpDialogTips',
     defaultMessage: 'Press {keyMap} to quickly open this dialog at any time',
     description: 'Hint about how to open a dialog quickly using a shortcut.',
   },
   keyboardShortcuts: {
-    id: 'fabric.editor.keyboardShortcuts',
+    id: 'uidu.editor-core.keyboardShortcuts',
     defaultMessage: 'Keyboard shortcuts',
     description: '',
   },
   markdown: {
-    id: 'fabric.editor.markdown',
+    id: 'uidu.editor-core.markdown',
     defaultMessage: 'Markdown',
     description: 'It is a name of popular markup language.',
   },
   undo: {
-    id: 'fabric.editor.undo',
+    id: 'uidu.editor-core.undo',
     defaultMessage: 'Undo',
     description: '',
   },
   redo: {
-    id: 'fabric.editor.redo',
+    id: 'uidu.editor-core.redo',
     defaultMessage: 'Redo',
     description: '',
   },
   pastePlainText: {
-    id: 'fabric.editor.pastePlainText',
+    id: 'uidu.editor-core.pastePlainText',
     defaultMessage: 'Paste plain text',
     description: '',
   },
   altText: {
-    id: 'fabric.editor.altText',
+    id: 'uidu.editor-core.altText',
     defaultMessage: 'Alt text',
     description: 'Alternative text for image.',
   },
   closeHelpDialog: {
-    id: 'fabric.editor.closeHelpDialog',
+    id: 'uidu.editor-core.closeHelpDialog',
     defaultMessage: 'Close help dialog',
     description: '',
   },
   // TODO: Move it inside quick insert plugin
   quickInsert: {
-    id: 'fabric.editor.quickInsert',
+    id: 'uidu.editor-core.quickInsert',
     defaultMessage: 'Quick insert',
     description: 'Name of a feature, which let you insert items quickly.',
   },

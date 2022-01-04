@@ -6,37 +6,37 @@ export { linkMessages };
 
 export const linkToolbarMessages = defineMessages({
   addLink: {
-    id: 'fabric.editor.mediaAddLink',
+    id: 'uidu.editor-core.mediaAddLink',
     defaultMessage: 'Add link',
     description: 'Add link',
   },
   unableToOpenLink: {
-    id: 'fabric.editor.unableToOpenLink',
+    id: 'uidu.editor-core.unableToOpenLink',
     defaultMessage: 'Unable to open this link',
     description: 'Unable to open this link',
   },
   unlink: {
-    id: 'fabric.editor.unlink',
+    id: 'uidu.editor-core.unlink',
     defaultMessage: 'Unlink',
     description: 'Removes the hyperlink but keeps your text.',
   },
   editLink: {
-    id: 'fabric.editor.editLink',
+    id: 'uidu.editor-core.editLink',
     defaultMessage: 'Edit link',
     description: 'Edit the link, update display text',
   },
   placeholder: {
-    id: 'fabric.editor.hyperlinkToolbarPlaceholder',
+    id: 'uidu.editor-core.hyperlinkToolbarPlaceholder',
     defaultMessage: 'Paste link or search recently viewed',
     description: 'Paste link or search recently viewed',
   },
   linkPlaceholder: {
-    id: 'fabric.editor.linkPlaceholder',
+    id: 'uidu.editor-core.linkPlaceholder',
     defaultMessage: 'Paste link',
     description: 'Create a new link by pasting a URL.',
   },
   linkAddress: {
-    id: 'fabric.editor.linkAddress',
+    id: 'uidu.editor-core.linkAddress',
     defaultMessage: 'Link address',
     description: 'Insert the address of the link',
   },
@@ -52,61 +52,61 @@ export const linkToolbarMessages = defineMessages({
 
 export default defineMessages({
   layoutFixedWidth: {
-    id: 'fabric.editor.layoutFixedWidth',
+    id: 'uidu.editor-core.layoutFixedWidth',
     defaultMessage: 'Back to center',
     description:
       'Display your element (image, table, extension, etc) as standard width',
   },
   layoutWide: {
-    id: 'fabric.editor.layoutWide',
+    id: 'uidu.editor-core.layoutWide',
     defaultMessage: 'Go wide',
     description:
       'Display your element (image, table, extension, etc) wider than normal',
   },
   layoutFullWidth: {
-    id: 'fabric.editor.layoutFullWidth',
+    id: 'uidu.editor-core.layoutFullWidth',
     defaultMessage: 'Go full width',
     description:
       'Display your element (image, table, extension, etc) as full width',
   },
   alignImageRight: {
-    id: 'fabric.editor.alignImageRight',
+    id: 'uidu.editor-core.alignImageRight',
     defaultMessage: 'Align right',
     description: 'Aligns image to the right',
   },
   alignImageCenter: {
-    id: 'fabric.editor.alignImageCenter',
+    id: 'uidu.editor-core.alignImageCenter',
     defaultMessage: 'Align center',
     description: 'Aligns image to the center',
   },
   alignImageLeft: {
-    id: 'fabric.editor.alignImageLeft',
+    id: 'uidu.editor-core.alignImageLeft',
     defaultMessage: 'Align left',
     description: 'Aligns image to the left',
   },
   remove: {
-    id: 'fabric.editor.remove',
+    id: 'uidu.editor-core.remove',
     defaultMessage: 'Remove',
     description:
       'Delete the element (image, panel, table, etc.) from your document',
   },
   visit: {
-    id: 'fabric.editor.visit',
+    id: 'uidu.editor-core.visit',
     defaultMessage: 'Open link in a new window',
     description: 'Open the link in a new window',
   },
   inviteToEditButtonTitle: {
-    id: 'fabric.editor.editMode.inviteToEditButton.title',
+    id: 'uidu.editor-core.editMode.inviteToEditButton.title',
     defaultMessage: 'Invite to edit',
     description: 'Invite another user to edit the current document',
   },
   saveButton: {
-    id: 'fabric.editor.saveButton',
+    id: 'uidu.editor-core.saveButton',
     defaultMessage: 'Save',
     description: 'Submit and save a comment or document',
   },
   cancelButton: {
-    id: 'fabric.editor.cancelButton',
+    id: 'uidu.editor-core.cancelButton',
     defaultMessage: 'Cancel',
     description: 'Discard the current comment or document',
   },

@@ -10,10 +10,18 @@ const mocks = loadable(() => import('./mocks'));
 
 const Checkbox: Field = {
   kind: 'checkbox',
-  name: <FormattedMessage defaultMessage="Checkbox" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Checkbox"
+      id="uidu.data-fields.checkbox.name"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faCheckSquare} />,
   description: (
-    <FormattedMessage defaultMessage="A single checkbox that can be checked or unchecked." />
+    <FormattedMessage
+      defaultMessage="A single checkbox that can be checked or unchecked."
+      id="uidu.data-fields.checkbox.description"
+    />
   ),
   color: '#C75875',
   Cell,

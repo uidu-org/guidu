@@ -47,28 +47,28 @@ import {
 
 export const messages = defineMessages({
   block: {
-    id: 'fabric.editor.displayBlock',
+    id: 'uidu.editor-core.displayBlock',
     defaultMessage: 'Display as card',
     description:
       'Display link as a card with a rich preview similar to in a Facebook feed with page title, description, and potentially an image.',
   },
   inline: {
-    id: 'fabric.editor.displayInline',
+    id: 'uidu.editor-core.displayInline',
     defaultMessage: 'Display inline',
     description: 'Display link with the title only.',
   },
   embed: {
-    id: 'fabric.editor.displayEmbed',
+    id: 'uidu.editor-core.displayEmbed',
     defaultMessage: 'Display as embed',
     description: 'Display link as an embedded object',
   },
   link: {
-    id: 'fabric.editor.displayLink',
+    id: 'uidu.editor-core.displayLink',
     defaultMessage: 'Display as text',
     description: 'Convert the card to become a regular text-based hyperlink.',
   },
   card: {
-    id: 'fabric.editor.cardFloatingControls',
+    id: 'uidu.editor-core.cardFloatingControls',
     defaultMessage: 'Card options',
     description: 'Options to change card type',
   },
@@ -97,7 +97,7 @@ export const removeCard: Command = (state, dispatch) => {
   if (dispatch) {
     dispatch(addAnalytics(state, removeSelectedNode(state.tr), payload));
   }
-  analyticsService.trackEvent('atlassian.editor.format.card.delete.button');
+  analyticsService.trackEvent('uidu.editor-core.format.card.delete.button');
   return true;
 };
 
@@ -122,7 +122,7 @@ export const visitCardLink: Command = (state, dispatch) => {
   };
 
   // All card links should open in the same tab per https://product-fabric.atlassian.net/browse/MS-1583.
-  analyticsService.trackEvent('atlassian.editor.format.card.visit.button');
+  analyticsService.trackEvent('uidu.editor-core.format.card.visit.button');
   // We are in edit mode here, open the smart card URL in a new window.
   window.open(url);
 
@@ -168,76 +168,78 @@ const generateDeleteButton = (
   };
 };
 
-const generateToolbarItems = (
-  state: EditorState,
-  intl: IntlShape,
-  providerFactory: ProviderFactory,
-  cardOptions: CardOptions,
-) => (node: Node): Array<FloatingToolbarItem<Command>> => {
-  const { url } = titleUrlPairFromNode(node);
-  if (url && !isSafeUrl(url)) {
-    return [];
-  }
-
-  const pluginState: CardPluginState = pluginKey.getState(state);
-
-  const currentAppearance = appearanceForNodeType(node.type);
-
-  if (pluginState.showLinkingToolbar) {
-    return [
-      buildEditLinkToolbar({
-        providerFactory,
-        node,
-      }),
-    ];
-  } else {
-    const toolbarItems: Array<FloatingToolbarItem<Command>> = [
-      {
-        type: 'button',
-        selected: false,
-        title: intl.formatMessage(linkToolbarMessages.editLink),
-        showTitle: true,
-        onClick: editLink,
-      },
-      { type: 'separator' },
-      {
-        type: 'button',
-        icon: OpenIcon,
-        className: 'hyperlink-open-link',
-        title: intl.formatMessage(linkMessages.openLink),
-        onClick: visitCardLink,
-      },
-      { type: 'separator' },
-      generateDeleteButton(node, state, intl),
-    ];
-
-    if (cardOptions.allowBlockCards && currentAppearance) {
-      const options = [
-        {
-          title: intl.formatMessage(messages.block),
-          onClick: setSelectedCardAppearance('block'),
-          selected: currentAppearance === 'block',
-          hidden: false,
-        },
-        {
-          title: intl.formatMessage(messages.inline),
-          onClick: setSelectedCardAppearance('inline'),
-          selected: currentAppearance === 'inline',
-          hidden: false,
-        },
-      ];
-
-      toolbarItems.unshift({
-        type: 'dropdown',
-        options,
-        hidden: false,
-        title: intl.formatMessage(messages[currentAppearance]),
-      });
+const generateToolbarItems =
+  (
+    state: EditorState,
+    intl: IntlShape,
+    providerFactory: ProviderFactory,
+    cardOptions: CardOptions,
+  ) =>
+  (node: Node): Array<FloatingToolbarItem<Command>> => {
+    const { url } = titleUrlPairFromNode(node);
+    if (url && !isSafeUrl(url)) {
+      return [];
     }
 
-    return toolbarItems;
-  }
-};
+    const pluginState: CardPluginState = pluginKey.getState(state);
+
+    const currentAppearance = appearanceForNodeType(node.type);
+
+    if (pluginState.showLinkingToolbar) {
+      return [
+        buildEditLinkToolbar({
+          providerFactory,
+          node,
+        }),
+      ];
+    } else {
+      const toolbarItems: Array<FloatingToolbarItem<Command>> = [
+        {
+          type: 'button',
+          selected: false,
+          title: intl.formatMessage(linkToolbarMessages.editLink),
+          showTitle: true,
+          onClick: editLink,
+        },
+        { type: 'separator' },
+        {
+          type: 'button',
+          icon: OpenIcon,
+          className: 'hyperlink-open-link',
+          title: intl.formatMessage(linkMessages.openLink),
+          onClick: visitCardLink,
+        },
+        { type: 'separator' },
+        generateDeleteButton(node, state, intl),
+      ];
+
+      if (cardOptions.allowBlockCards && currentAppearance) {
+        const options = [
+          {
+            title: intl.formatMessage(messages.block),
+            onClick: setSelectedCardAppearance('block'),
+            selected: currentAppearance === 'block',
+            hidden: false,
+          },
+          {
+            title: intl.formatMessage(messages.inline),
+            onClick: setSelectedCardAppearance('inline'),
+            selected: currentAppearance === 'inline',
+            hidden: false,
+          },
+        ];
+
+        toolbarItems.unshift({
+          type: 'dropdown',
+          options,
+          hidden: false,
+          title: intl.formatMessage(messages[currentAppearance]),
+        });
+      }
+
+      return toolbarItems;
+    }
+  };
 
 export const floatingToolbar = (cardOptions: CardOptions) => {
   return (

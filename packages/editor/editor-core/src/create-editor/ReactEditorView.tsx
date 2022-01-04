@@ -484,7 +484,7 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
         .map<SimplifiedNode | string>((node) => getDocStructure(node));
 
       analyticsService.trackEvent(
-        'uidu.fabric.editor.invalidtransaction',
+        'uidu.uidu.editor-core.invalidtransaction',
         { invalidNodes: JSON.stringify(invalidNodes) }, // V2 events don't support object properties
       );
 

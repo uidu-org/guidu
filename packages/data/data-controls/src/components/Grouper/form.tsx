@@ -110,9 +110,15 @@ export default function GrouperForm({}: GrouperFormProps) {
         <PickField
           label={
             groupBy.length ? (
-              <FormattedMessage defaultMessage="Pick a field to group by" />
+              <FormattedMessage
+                defaultMessage="Pick a field to group by"
+                id="uidu.data-controls.grouper.add_another"
+              />
             ) : (
-              <FormattedMessage defaultMessage="No selected fields to group by. Pick one" />
+              <FormattedMessage
+                defaultMessage="No selected fields to group by. Pick one"
+                id="uidu.data-controls.grouper.no_groups"
+              />
             )
           }
           onClick={(columnDef) => {

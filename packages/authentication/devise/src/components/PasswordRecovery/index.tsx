@@ -9,24 +9,24 @@ import { Link } from 'react-router-dom';
 export const messages = defineMessages({
   password_recovery_title: {
     defaultMessage: 'Recover your password',
-    description: 'password_recovery_title',
+    id: 'uidu.devise.password_recovery_title',
   },
   password_recovery_description: {
     defaultMessage:
       "Insert your email, we'll send you instructions on how to reset your account",
-    description: 'password_recovery_description',
+    id: 'uidu.devise.password_recovery_description',
   },
   password_recovery_primary_cta: {
     defaultMessage: 'Send email',
-    description: 'password_recovery_primary_cta',
+    id: 'uidu.devise.password_recovery_primary_cta',
   },
   password_recovery_secondary_cta: {
     defaultMessage: 'Sign in',
-    description: 'password_recovery_secondary_cta',
+    id: 'uidu.devise.password_recovery_secondary_cta',
   },
   password_recovery_email_label: {
     defaultMessage: 'Insert your email',
-    description: 'password_recovery_email_label',
+    id: 'uidu.devise.password_recovery_email_label',
   },
 });
 
@@ -69,7 +69,7 @@ export default class PasswordRecovery extends PureComponent<any> {
               Indietro
             </Link>
           </div>
-          <div className="text-center mb-4">
+          <div className="mb-4 text-center">
             <h3>
               <FormattedMessage {...messages.password_recovery_title} />
             </h3>

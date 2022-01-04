@@ -27,7 +27,7 @@ export function keymapPlugin(): Plugin {
   keymaps.bindKeymapWithCommand(
     keymaps.insertRule.common!,
     trackAndInvoke(
-      'atlassian.editor.format.horizontalrule.keyboard',
+      'uidu.editor-core.format.horizontalrule.keyboard',
       insertRuleWithAnalytics(),
     ),
     list,

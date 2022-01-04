@@ -121,9 +121,15 @@ export default function SorterForm(props: SorterFormProps) {
         <PickField
           label={
             sortBy.length ? (
-              <FormattedMessage defaultMessage="Pick another field to sort by" />
+              <FormattedMessage
+                defaultMessage="Pick another field to sort by"
+                id="uidu.data-controls.sorter.add_another"
+              />
             ) : (
-              <FormattedMessage defaultMessage="No selected fields to sort by. Pick one" />
+              <FormattedMessage
+                defaultMessage="No selected fields to sort by. Pick one"
+                id="uidu.data-controls.sorter.no_sorters"
+              />
             )
           }
           onClick={(columnDef) => {

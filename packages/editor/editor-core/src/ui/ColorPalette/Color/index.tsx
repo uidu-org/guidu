@@ -8,7 +8,7 @@ import { Button, ButtonWrapper } from './styles';
 // IMO these should live inside @uidu/theme
 const messages = defineMessages({
   selected: {
-    id: 'fabric.editor.selected',
+    id: 'uidu.editor-core.selected',
     defaultMessage: 'Selected',
     description: 'If the item is selected or not.',
   },

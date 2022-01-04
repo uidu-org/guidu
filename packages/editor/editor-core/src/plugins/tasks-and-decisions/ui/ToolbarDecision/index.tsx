@@ -45,7 +45,7 @@ export class ToolbarDecision extends PureComponent<
   }
 
   private handleInsertDecision = withAnalytics(
-    'atlassian.fabric.decision.trigger.button',
+    'uidu.editor-core.decision.trigger.button',
     (): boolean => {
       const { editorView } = this.props;
       if (!editorView) {

@@ -42,12 +42,12 @@ const breakoutIcons: IconMap = [
 
 export const messages = defineMessages({
   wrapLeft: {
-    id: 'fabric.editor.wrapLeft',
+    id: 'uidu.editor-core.wrapLeft',
     defaultMessage: 'Wrap left',
     description: 'Aligns your image to the left and wraps text around it.',
   },
   wrapRight: {
-    id: 'fabric.editor.wrapRight',
+    id: 'uidu.editor-core.wrapRight',
     defaultMessage: 'Wrap right',
     description: 'Aligns your image to the right and wraps text around it.',
   },

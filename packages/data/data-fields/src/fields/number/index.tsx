@@ -11,8 +11,18 @@ const Filter = loadable(
 
 const Number: Partial<Field> = {
   kind: 'number',
-  name: <FormattedMessage defaultMessage="Number" />,
-  description: <FormattedMessage defaultMessage="Integer or decimal number" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Number"
+      id="uidu.data-fields.number.name"
+    />
+  ),
+  description: (
+    <FormattedMessage
+      defaultMessage="Integer or decimal number"
+      id="uidu.data-fields.number.description"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faHashtag} />,
   color: '#9291D0',
   Filter,

@@ -9,10 +9,18 @@ const mocks = loadable(() => import('./mocks'));
 
 const Avatar: Field = {
   kind: 'avatar',
-  name: <FormattedMessage defaultMessage="Avatar" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Avatar"
+      id="uidu.data-fields.avatar.name"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faUserCircle} />,
   description: (
-    <FormattedMessage defaultMessage="Insert a rounded avatar for the record" />
+    <FormattedMessage
+      defaultMessage="Insert a rounded avatar for the record"
+      id="uidu.data-fields.avatar.description"
+    />
   ),
   color: 'teal',
   canSortBy: false,

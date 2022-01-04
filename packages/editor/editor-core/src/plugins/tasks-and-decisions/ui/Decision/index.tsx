@@ -4,7 +4,7 @@ import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 
 const messages = defineMessages({
   placeholder: {
-    id: 'fabric.editor.decisionPlaceholder',
+    id: 'uidu.editor-core.decisionPlaceholder',
     defaultMessage: 'Add a decision…',
     description: 'Placeholder description for an empty decision in the editor',
   },

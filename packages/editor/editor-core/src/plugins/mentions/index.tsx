@@ -178,7 +178,7 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
         ) {
           if (!prevActive && queryChanged) {
             analyticsService.trackEvent(
-              'atlassian.fabric.mention.picker.trigger.shortcut',
+              'uidu.editor-core.mention.picker.trigger.shortcut',
             );
             if (!tr.getMeta(analyticsPluginKey)) {
               (dispatch as AnalyticsDispatch)(analyticsEventKey, {
@@ -257,7 +257,7 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
             : 0;
 
           analyticsService.trackEvent(
-            'atlassian.fabric.mention.picker.insert',
+            'uidu.editor-core.mention.picker.insert',
             {
               mode,
               isSpecial: isSpecialMention(item.mention) || false,
@@ -355,49 +355,47 @@ export const ACTIONS = {
   SET_CONTEXT: 'SET_CONTEXT',
 };
 
-export const setProvider = (provider: MentionProvider | undefined): Command => (
-  state,
-  dispatch,
-) => {
-  if (dispatch) {
-    dispatch(
-      state.tr.setMeta(mentionPluginKey, {
-        action: ACTIONS.SET_PROVIDER,
-        params: { provider },
-      }),
-    );
-  }
-  return true;
-};
+export const setProvider =
+  (provider: MentionProvider | undefined): Command =>
+  (state, dispatch) => {
+    if (dispatch) {
+      dispatch(
+        state.tr.setMeta(mentionPluginKey, {
+          action: ACTIONS.SET_PROVIDER,
+          params: { provider },
+        }),
+      );
+    }
+    return true;
+  };
 
-export const setResults = (results: MentionDescription[]): Command => (
-  state,
-  dispatch,
-) => {
-  if (dispatch) {
-    dispatch(
-      state.tr.setMeta(mentionPluginKey, {
-        action: ACTIONS.SET_RESULTS,
-        params: { results },
-      }),
-    );
-  }
-  return true;
-};
+export const setResults =
+  (results: MentionDescription[]): Command =>
+  (state, dispatch) => {
+    if (dispatch) {
+      dispatch(
+        state.tr.setMeta(mentionPluginKey, {
+          action: ACTIONS.SET_RESULTS,
+          params: { results },
+        }),
+      );
+    }
+    return true;
+  };
 
-export const setContext = (
-  context: ContextIdentifierProvider | undefined,
-): Command => (state, dispatch) => {
-  if (dispatch) {
-    dispatch(
-      state.tr.setMeta(mentionPluginKey, {
-        action: ACTIONS.SET_CONTEXT,
-        params: { context },
-      }),
-    );
-  }
-  return true;
-};
+export const setContext =
+  (context: ContextIdentifierProvider | undefined): Command =>
+  (state, dispatch) => {
+    if (dispatch) {
+      dispatch(
+        state.tr.setMeta(mentionPluginKey, {
+          action: ACTIONS.SET_CONTEXT,
+          params: { context },
+        }),
+      );
+    }
+    return true;
+  };
 
 /**
  *

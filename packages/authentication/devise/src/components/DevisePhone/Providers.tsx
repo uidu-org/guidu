@@ -13,42 +13,50 @@ import DeviseForm from './DeviseForm';
 
 export const messages = defineMessages({
   privacy_intro: {
+    id: 'uidu.devise.privacy_intro',
     defaultMessage:
       "Per far funzionare uidu, registriamo i dati degli utenti e li condividiamo con alcuni provider. Registrandoti, accetti le Condizioni d'uso e confermi di aver letto e compreso la Privacy Policy.",
     description: '',
   },
   sessions_title: {
+    id: 'uidu.devise.sessions_title',
     defaultMessage: 'Sign in',
     description: 'Allows user to perform an action again',
   },
   sessions_description: {
+    id: 'uidu.devise.sessions_description',
     defaultMessage:
       "Accedi per visualizzare la tua homepage, seguire le tue organizzazioni preferite, scoprire quello che di buono c'è vicino a te.",
     description: '',
   },
-
   sessions_with_provider: {
+    id: 'uidu.devise.sessions_with_provider',
     defaultMessage: 'Sign in with {provider}',
     description: '',
   },
   registrations_title: {
+    id: 'uidu.devise.registrations_title',
     defaultMessage: 'Sign up with your email',
     description: '',
   },
   registrations_description: {
+    id: 'uidu.devise.registrations_description',
     defaultMessage:
       "Crea un account per personalizzare la tua homepage, seguire le tue organizzazioni preferite, scoprire quello che di buono c'è vicino a te, e molto altro.",
     description: '',
   },
   registrations_with_provider: {
+    id: 'uidu.devise.registrations_with_provider',
     defaultMessage: 'Sign up with {provider}',
     description: '',
   },
   simple_sessions_remember_me_label: {
+    id: 'uidu.devise.phone_sessions_remember_me_label',
     defaultMessage: 'Remember me for next sessions',
     description: 'simple_sessions_email_label',
   },
   sessions_forgot_password: {
+    id: 'uidu.devise.sessions_forgot_password',
     defaultMessage: 'Forgot password?',
     description: 'sessions_forgot_password',
   },
@@ -187,7 +195,7 @@ export default class Providers extends PureComponent<any, any> {
                   </label>
                   <FieldPhone
                     addonBefore={
-                      <span className="input-group-text bg-white">
+                      <span className="bg-white input-group-text">
                         <Smartphone size={16} />
                       </span>
                     }

@@ -19,7 +19,7 @@ export const fireAnalytics = (properties = {}) =>
   sendLogs({
     events: [
       {
-        name: 'uidu.fabric.editor.fixtable',
+        name: 'uidu.uidu.editor-core.fixtable',
         product: 'uidu',
         properties,
         serverTime: new Date().getTime(),

@@ -39,6 +39,7 @@ export default function Grouper({}: GrouperProps) {
                   other {Grouped by {groupersCount, number} fields}
                 }`}
               values={{ groupersCount }}
+              id="uidu.data-controls.grouper.groupers_count"
             />
           </span>
         </Trigger>

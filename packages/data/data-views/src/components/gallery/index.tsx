@@ -8,11 +8,19 @@ const Controls = loadable(() => import('./controls'));
 
 const Gallery: DataViewKind = {
   id: 'gallery',
-  name: <FormattedMessage defaultMessage="Gallery" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="Gallery"
+      id="uidu.data-views.gallery.name"
+    />
+  ),
   icon: Grid,
   color: '#EBCB8B',
   description: (
-    <FormattedMessage defaultMessage="Single select allows you to select a single option from predefined options in a dropdown." />
+    <FormattedMessage
+      defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
+      id="uidu.data-views.gallery.description"
+    />
   ),
   controls: Controls,
 };

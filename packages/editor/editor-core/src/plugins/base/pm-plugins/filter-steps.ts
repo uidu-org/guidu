@@ -20,7 +20,7 @@ export default () => {
         sendLogs({
           events: [
             {
-              name: 'uidu.fabric.editor.invalidstep',
+              name: 'uidu.editor-core.invalidstep',
               product: 'uidu',
               properties: {
                 message: 'Blocked transaction with invalid steps',

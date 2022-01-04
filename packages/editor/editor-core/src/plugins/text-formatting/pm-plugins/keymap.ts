@@ -81,5 +81,5 @@ export default function keymapPlugin(schema: Schema): Plugin {
 }
 
 function analyticsEventName(markType: MarkType): string {
-  return `atlassian.editor.format.${markType.name}.keyboard`;
+  return `uidu.editor-core.format.${markType.name}.keyboard`;
 }

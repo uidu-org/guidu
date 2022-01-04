@@ -95,14 +95,14 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
       getItems(query, state, _intl, { prevActive, queryChanged }) {
         if (!prevActive && queryChanged) {
           analyticsService.trackEvent(
-            'atlassian.fabric.emoji.typeahead.open',
+            'uidu.editor-core.emoji.typeahead.open',
             {},
           );
         }
 
         if (query.charAt(query.length - 1) === ' ') {
           analyticsService.trackEvent(
-            'atlassian.fabric.emoji.typeahead.space',
+            'uidu.editor-core.emoji.typeahead.space',
             {},
           );
         }
@@ -170,7 +170,7 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
           // .catch(recordSelectionFailedSli(options));
         }
 
-        analyticsService.trackEvent('atlassian.fabric.emoji.typeahead.select', {
+        analyticsService.trackEvent('uidu.editor-core.emoji.typeahead.select', {
           mode,
           duration: pickerElapsedTime,
           emojiId: id,
@@ -198,7 +198,7 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
       },
       dismiss() {
         analyticsService.trackEvent(
-          'atlassian.fabric.emoji.typeahead.close',
+          'uidu.editor-core.emoji.typeahead.close',
           {},
         );
       },
@@ -217,34 +217,33 @@ export const ACTIONS = {
   SET_RESULTS: 'SET_RESULTS',
 };
 
-export const setProvider = (provider?: EmojiProvider): Command => (
-  state,
-  dispatch,
-) => {
-  if (dispatch) {
-    dispatch(
-      state.tr.setMeta(emojiPluginKey, {
-        action: ACTIONS.SET_PROVIDER,
-        params: { provider },
-      }),
-    );
-  }
-  return true;
-};
+export const setProvider =
+  (provider?: EmojiProvider): Command =>
+  (state, dispatch) => {
+    if (dispatch) {
+      dispatch(
+        state.tr.setMeta(emojiPluginKey, {
+          action: ACTIONS.SET_PROVIDER,
+          params: { provider },
+        }),
+      );
+    }
+    return true;
+  };
 
-export const setResults = (results: {
-  emojis: Array<EmojiDescription>;
-}): Command => (state, dispatch) => {
-  if (dispatch) {
-    dispatch(
-      state.tr.setMeta(emojiPluginKey, {
-        action: ACTIONS.SET_RESULTS,
-        params: { results },
-      }),
-    );
-  }
-  return true;
-};
+export const setResults =
+  (results: { emojis: Array<EmojiDescription> }): Command =>
+  (state, dispatch) => {
+    if (dispatch) {
+      dispatch(
+        state.tr.setMeta(emojiPluginKey, {
+          action: ACTIONS.SET_RESULTS,
+          params: { results },
+        }),
+      );
+    }
+    return true;
+  };
 
 export const emojiPluginKey = new PluginKey('emojiPlugin');
 

@@ -8,10 +8,17 @@ const ChartStateless = loadable(() => import('./PieStateless'));
 
 export default {
   id: 'pie',
-  name: <FormattedMessage defaultMessage="Pie chart" />,
+  name: (
+    <FormattedMessage defaultMessage="Pie chart" id="uidu.dashlets.pie.name" />
+  ),
   icon: PieChart,
   color: '#D08770',
-  description: <FormattedMessage defaultMessage="Pie chart." />,
+  description: (
+    <FormattedMessage
+      defaultMessage="Pie chart."
+      id="uidu.dashlets.pie.description"
+    />
+  ),
   chart: Chart,
   chartStateless: ChartStateless,
 };

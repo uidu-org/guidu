@@ -64,7 +64,7 @@
     "react-router": "^5.2.1",
     "react-router-dom": "^5.3.0",
     "react-transition-group": "^4.4.2",
-    "resolve": "^1.20.0",
+    "resolve": "^1.21.0",
     "semver": "^7.3.5",
     "sentence-case": "^3.0.4",
     "snake-case": "^3.0.4",

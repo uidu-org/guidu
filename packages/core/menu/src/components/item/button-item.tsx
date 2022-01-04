@@ -1,5 +1,4 @@
 import React, { forwardRef, Ref } from 'react';
-import tw from 'twin.macro';
 import { ButtonItemProps } from '../types';
 import { useBlurOnMouseDown } from '../utils/use-blur-on-mouse-down';
 import BaseItem from './base-item';
@@ -28,15 +27,11 @@ const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
     }
 
     const Container = 'span';
+    console.log(description, isSelected);
 
     return (
       <BaseItemWrapper
         type={isDisabled ? undefined : 'button'}
-        css={[tw`w-full m-0 bg-transparent border-0 outline-none`]}
-        // css={cssFn(buttonItemCSS(isDisabled, isSelected), {
-        //   isSelected,
-        //   isDisabled,
-        // })}
         isSelected={isSelected}
         isDisabled={isDisabled}
         data-testid={testId}

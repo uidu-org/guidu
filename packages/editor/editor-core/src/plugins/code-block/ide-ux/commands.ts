@@ -70,7 +70,7 @@ export function indent(state: EditorState, dispatch?: CommandDispatch) {
   });
   if (dispatch) {
     dispatch(tr);
-    analyticsService.trackEvent(`atlassian.editor.codeblock.indent`);
+    analyticsService.trackEvent(`uidu.editor-core.codeblock.indent`);
   }
   return true;
 }
@@ -107,7 +107,7 @@ export function outdent(state: EditorState, dispatch?: CommandDispatch) {
   });
   if (dispatch) {
     dispatch(tr);
-    analyticsService.trackEvent('atlassian.editor.codeblock.outdent');
+    analyticsService.trackEvent('uidu.editor-core.codeblock.outdent');
   }
   return true;
 }
@@ -120,7 +120,7 @@ export function insertIndent(state: EditorState, dispatch: CommandDispatch) {
       indentToken.size,
   );
   dispatch(state.tr.insertText(indentToAdd));
-  analyticsService.trackEvent('atlassian.editor.codeblock.indent.insert');
+  analyticsService.trackEvent('uidu.editor-core.codeblock.indent.insert');
   return true;
 }
 

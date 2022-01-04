@@ -10,11 +10,11 @@
   "module": "dist/uidu-adf-schema.esm.js",
   "types": "dist/uidu-adf-schema.cjs.d.ts",
   "scripts": {
-    "postbuild": "yarn build:json-schema",
     "build:json-schema": "mkdir -p dist && cp -r json-schema dist",
     "generate:json-schema": "mkdir -p json-schema/v1/ && yarn generate:json-schema:full && yarn generate:json-schema:stage-0",
     "generate:json-schema:full": "json-schema-generator --outDir=./json-schema/v1/ ./src/schema/nodes/doc.ts",
-    "generate:json-schema:stage-0": "json-schema-generator --outDir=./json-schema/v1/ --stage=0 ./src/schema/nodes/doc.ts"
+    "generate:json-schema:stage-0": "json-schema-generator --outDir=./json-schema/v1/ --stage=0 ./src/schema/nodes/doc.ts",
+    "postbuild": "yarn build:json-schema"
   },
   "dependencies": {
     "@babel/runtime": "^7.16.7",
@@ -24,8 +24,8 @@
     "@types/prosemirror-view": "^1.19.2",
     "css-color-names": "^1.0.1",
     "linkify-it": "^3.0.3",
-    "prosemirror-model": "^1.15.0",
-    "prosemirror-view": "^1.23.4",
+    "prosemirror-model": "^1.16.1",
+    "prosemirror-view": "^1.23.5",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

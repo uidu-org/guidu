@@ -6,10 +6,15 @@ import { Field } from '../../types';
 
 const Cover: Field = {
   kind: 'cover',
-  name: <FormattedMessage defaultMessage="Cover" />,
+  name: (
+    <FormattedMessage defaultMessage="Cover" id="uidu.data-fields.cover.name" />
+  ),
   icon: <FontAwesomeIcon icon={faImage} />,
   description: (
-    <FormattedMessage defaultMessage="Add a cover image to your record" />
+    <FormattedMessage
+      defaultMessage="Add a cover image to your record"
+      id="uidu.data-fields.cover.description"
+    />
   ),
   canSortBy: false,
   isPrivate: true,

@@ -16,7 +16,7 @@ export function createKeymapPlugin(): Plugin | undefined {
   keymaps.bindKeymapWithCommand(
     keymaps.addLink.common!,
     trackAndInvoke(
-      'atlassian.editor.format.hyperlink.keyboard',
+      'uidu.editor-core.format.hyperlink.keyboard',
       showLinkToolbar(INPUT_METHOD.SHORTCUT),
     ),
     list,
@@ -86,7 +86,7 @@ const mayConvertLastWordToHyperlink: Command = (state, dispatch) => {
     ])(state.tr.addMark(start, end, markType));
 
     analyticsService.trackEvent(
-      'atlassian.editor.format.hyperlink.autoformatting',
+      'uidu.editor-core.format.hyperlink.autoformatting',
     );
 
     if (dispatch) {

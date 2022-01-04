@@ -12,11 +12,16 @@ const Filter = loadable(
 
 const Phone: Field = {
   kind: 'phone',
-  name: <FormattedMessage defaultMessage="Phone" />,
+  name: (
+    <FormattedMessage defaultMessage="Phone" id="uidu.data-fields.phone.name" />
+  ),
   icon: <FontAwesomeIcon icon={faPhone} />,
   color: '#CB732B',
   description: (
-    <FormattedMessage defaultMessage="A telephone number (e.g. (415) 555-9876)." />
+    <FormattedMessage
+      defaultMessage="A telephone number (e.g. (415) 555-9876)."
+      id="uidu.data-fields.phone.description"
+    />
   ),
   Filter,
   Cell,

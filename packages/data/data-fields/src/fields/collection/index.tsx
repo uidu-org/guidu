@@ -7,12 +7,15 @@ import { Field } from '../../types';
 const Collection: Partial<Field> = {
   kind: 'collection',
   name: (
-    <FormattedMessage id="field.collection.name" defaultMessage="Collection" />
+    <FormattedMessage
+      id="uidu.data-fields.collection.name"
+      defaultMessage="Collection"
+    />
   ),
   icon: <FontAwesomeIcon icon={faBars} />,
   description: (
     <FormattedMessage
-      id="field.collection.options"
+      id="uidu.data-fields.collection.description"
       defaultMessage="A collection is a list of items with one or more fields."
     />
   ),

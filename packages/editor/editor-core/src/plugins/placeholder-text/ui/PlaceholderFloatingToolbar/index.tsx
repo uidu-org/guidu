@@ -10,7 +10,7 @@ import PanelTextInput from '../../../../ui/PanelTextInput';
 
 export const messages = defineMessages({
   placeholderTextPlaceholder: {
-    id: 'fabric.editor.placeholderTextPlaceholder',
+    id: 'uidu.editor-core.placeholderTextPlaceholder',
     defaultMessage: 'Add placeholder text',
     description: '',
   },

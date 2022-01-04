@@ -1,29 +1,29 @@
 {
-  "6xsuuc": {
-    "message": "Sort A {icon} Z"
-  },
-  "DTR7Hm": {
-    "message": "Group by this field"
-  },
-  "M/zZVx": {
+  "uidu.table.header.add_filter": {
     "message": "Add filter"
   },
-  "XvWIcm": {
+  "uidu.table.header.add_grouping": {
+    "message": "Group by this field"
+  },
+  "uidu.table.header.autosize": {
     "message": "Autosize this column"
   },
-  "dWi239": {
+  "uidu.table.header.edit": {
     "message": "Edit this column"
   },
-  "fwRCRH": {
-    "message": "Unsort"
-  },
-  "hESfGB": {
+  "uidu.table.header.hide": {
     "message": "Hide this column"
   },
-  "tVIb9a": {
+  "uidu.table.header.remove_grouping": {
     "message": "Remove grouping"
   },
-  "yntPld": {
+  "uidu.table.header.sort_a_z": {
+    "message": "Sort A {icon} Z"
+  },
+  "uidu.table.header.sort_z_a": {
     "message": "Sort Z {icon} A"
+  },
+  "uidu.table.header.unsort": {
+    "message": "Unsort"
   }
 }

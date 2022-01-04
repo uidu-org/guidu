@@ -26,5 +26,9 @@
   "devDependencies": {
     "@uidu/docs": "^0.5.5",
     "@uidu/shell": "^2.1.9"
-  }
+  },
+  "supportedLocales": [
+    "it",
+    "en"
+  ]
 }

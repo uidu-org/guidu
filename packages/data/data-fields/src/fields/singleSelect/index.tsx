@@ -7,10 +7,18 @@ import Cell from './Cell';
 
 export default withOptions({
   kind: 'singleSelect',
-  name: <FormattedMessage defaultMessage="SingleSelect" />,
+  name: (
+    <FormattedMessage
+      defaultMessage="SingleSelect"
+      id="uidu.data-fields.singleSelect.name"
+    />
+  ),
   icon: <FontAwesomeIcon icon={faChevronCircleDown} />,
   description: (
-    <FormattedMessage defaultMessage="Single select allows you to select a single option from predefined options in a dropdown." />
+    <FormattedMessage
+      defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
+      id="uidu.data-fields.singleSelect.description"
+    />
   ),
   color: '#76AEBD',
   Cell,

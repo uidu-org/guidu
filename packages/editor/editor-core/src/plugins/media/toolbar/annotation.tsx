@@ -41,7 +41,7 @@ const annotate: Command = (state, dispatch) => {
 
 export const messages = defineMessages({
   annotate: {
-    id: 'fabric.editor.annotate',
+    id: 'uidu.editor-core.annotate',
     defaultMessage: 'Annotate',
     description:
       'Annotate an image by drawing arrows, adding text, or scribbles.',

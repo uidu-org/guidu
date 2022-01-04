@@ -14,19 +14,39 @@ export default function CalendarView({
   views = [
     {
       id: 'day',
-      name: <FormattedMessage defaultMessage="Day" />,
+      name: (
+        <FormattedMessage
+          defaultMessage="Day"
+          id="uidu.data-controls.calendar.day"
+        />
+      ),
     },
     {
       id: 'week',
-      name: <FormattedMessage defaultMessage="Week" />,
+      name: (
+        <FormattedMessage
+          defaultMessage="Week"
+          id="uidu.data-controls.calendar.week"
+        />
+      ),
     },
     {
       id: 'month',
-      name: <FormattedMessage defaultMessage="Month" />,
+      name: (
+        <FormattedMessage
+          defaultMessage="Month"
+          id="uidu.data-controls.calendar.month"
+        />
+      ),
     },
     {
       id: 'year',
-      name: <FormattedMessage defaultMessage="Year" />,
+      name: (
+        <FormattedMessage
+          defaultMessage="Year"
+          id="uidu.data-controls.calendar.year"
+        />
+      ),
     },
   ],
 }) {
@@ -34,7 +54,12 @@ export default function CalendarView({
     <DropdownMenu
       trigger={
         <Tooltip
-          content={<FormattedMessage defaultMessage="Choose calendar view" />}
+          content={
+            <FormattedMessage
+              defaultMessage="Choose calendar view"
+              id="uidu.data-controls.calendar.choose_view"
+            />
+          }
           position="bottom"
         >
           <Trigger

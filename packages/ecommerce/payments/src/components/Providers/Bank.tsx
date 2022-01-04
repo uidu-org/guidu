@@ -5,7 +5,12 @@ import tw from 'twin.macro';
 import FieldBank from '../Fields/FieldBank';
 
 export default function Bank({
-  label = <FormattedMessage defaultMessage="Insert your bank details" />,
+  label = (
+    <FormattedMessage
+      defaultMessage="Insert your bank details"
+      id="uidu.payments.bank.label"
+    />
+  ),
   handleSubmit,
   footerRenderer = (props: { loading?: boolean; canSubmit?: boolean }) => null,
   loading = false,

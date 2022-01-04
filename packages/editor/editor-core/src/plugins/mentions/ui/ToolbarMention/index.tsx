@@ -29,7 +29,7 @@ export default class ToolbarMention extends PureComponent<Props> {
   }
 
   private handleInsertMention = withAnalytics(
-    'atlassian.fabric.mention.picker.trigger.button',
+    'uidu.editor-core.mention.picker.trigger.button',
     (): boolean => {
       if (!this.props.editorView) {
         return false;

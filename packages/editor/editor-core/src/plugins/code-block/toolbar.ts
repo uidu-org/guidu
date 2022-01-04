@@ -20,7 +20,7 @@ import { CodeBlockState, pluginKey } from './pm-plugins/main';
 
 export const messages = defineMessages({
   selectLanguage: {
-    id: 'fabric.editor.selectLanguage',
+    id: 'uidu.editor-core.selectLanguage',
     defaultMessage: 'Select language',
     description:
       'Code blocks display software code. A prompt to select the software language the code is written in.',
