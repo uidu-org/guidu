@@ -1,71 +1,71 @@
 {
-  "0f57EG": {
-    "message": "Add another filter"
-  },
-  "5L6knw": {
-    "message": "No filters applied. Pick a field"
-  },
-  "7pXrnq": {
-    "message": "Day"
-  },
-  "AaZSgN": {
-    "message": "Pick another field to sort by"
-  },
-  "IFo1oo": {
-    "message": "Year"
-  },
   "KC4fO5": {
-    "message": "{index, plural, =0 {Where} other {Then where} }"
-  },
-  "KIna6h": {
-    "message": "No selected fields to group by. Pick one"
-  },
-  "L/WZOa": {
-    "message": "{filtersCount, plural, =0 {Filter} one {Filtered by 1 field} other {Filtered by {filtersCount, number} fields} }"
-  },
-  "TBovrx": {
-    "message": "Month"
+    "message": "{index, plural, =0 {Dove} other {E dove} }"
   },
   "WN/yIv": {
-    "message": "{index, plural, =0 {Group by} other {Then by} }"
+    "message": "{index, plural, =0 {Raggruppato per} other {E per} }"
   },
   "ZLFzi4": {
-    "message": "{index, plural, =0 {Sort by} other {Then by} }"
+    "message": "{index, plural, =0 {Ordinato per} other {E per} }"
   },
-  "data_controls.toggler.deselect_all": {
-    "message": "Deselect all"
-  },
-  "data_controls.toggler.select_all": {
-    "message": "Select all"
-  },
-  "fbWrEN": {
+  "uidu.data-controls.calendar.choose_view": {
     "message": "Choose calendar view"
   },
-  "k5N90+": {
-    "message": "No selected fields to sort by. Pick one"
+  "uidu.data-controls.calendar.day": {
+    "message": "Day"
   },
-  "kCZBrb": {
-    "message": "Compact"
+  "uidu.data-controls.calendar.month": {
+    "message": "Month"
   },
-  "lKv8ex": {
-    "message": "Default"
-  },
-  "m2rU1a": {
-    "message": "{sortersCount, plural, =0 {Sort} one {Sorted by 1 field} other {Sorted by {sortersCount, number} fields} }"
-  },
-  "myq2ZL": {
-    "message": "Normal"
-  },
-  "pE58D7": {
-    "message": "Extra"
-  },
-  "sd2ieZ": {
+  "uidu.data-controls.calendar.week": {
     "message": "Week"
   },
-  "wcR8YO": {
+  "uidu.data-controls.calendar.year": {
+    "message": "Year"
+  },
+  "uidu.data-controls.filterer.add_another": {
+    "message": "Add another filter"
+  },
+  "uidu.data-controls.filterer.filters_count": {
+    "message": "{filtersCount, plural, =0 {Filter} one {Filtered by 1 field} other {Filtered by {filtersCount, number} fields} }"
+  },
+  "uidu.data-controls.filterer.no_filters": {
+    "message": "No filters applied. Pick a field"
+  },
+  "uidu.data-controls.grouper.add_another": {
+    "message": "Pick a field to group by"
+  },
+  "uidu.data-controls.grouper.groupers_count": {
     "message": "{groupersCount, plural, =0 {Group by} one {Grouped by 1 field} other {Grouped by {groupersCount, number} fields} }"
   },
-  "xYIsCK": {
-    "message": "Pick a field to group by"
+  "uidu.data-controls.grouper.no_groups": {
+    "message": "No selected fields to group by. Pick one"
+  },
+  "uidu.data-controls.resizer.compact": {
+    "message": "Compact"
+  },
+  "uidu.data-controls.resizer.default": {
+    "message": "Default"
+  },
+  "uidu.data-controls.resizer.extra": {
+    "message": "Extra"
+  },
+  "uidu.data-controls.resizer.normal": {
+    "message": "Normal"
+  },
+  "uidu.data-controls.sorter.add_another": {
+    "message": "Pick another field to sort by"
+  },
+  "uidu.data-controls.sorter.no_sorters": {
+    "message": "No selected fields to sort by. Pick one"
+  },
+  "uidu.data-controls.sorter.sorters_count": {
+    "message": "{sortersCount, plural, =0 {Sort} one {Sorted by 1 field} other {Sorted by {sortersCount, number} fields} }"
+  },
+  "uidu.data-controls.toggler.deselect_all": {
+    "message": "Deselect all"
+  },
+  "uidu.data-controls.toggler.select_all": {
+    "message": "Select all"
   }
 }
