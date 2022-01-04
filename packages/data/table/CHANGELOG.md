@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.3.0
+
+### Minor Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+
+### Patch Changes
+
+- Updated dependencies [7a6b0ec55]
+  - @uidu/menu@0.7.0
+  - @uidu/data-fields@1.5.0
+  - @uidu/checkbox@1.1.9
+
 ## 1.2.5
 
 ### Patch Changes

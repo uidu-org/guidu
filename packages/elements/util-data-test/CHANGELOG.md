@@ -1,5 +1,14 @@
 # @uidu/util-data-test
 
+## 0.4.9
+
+### Patch Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+- Updated dependencies [7a6b0ec55]
+  - @uidu/emoji@0.6.0
+  - @uidu/mentions@0.4.0
+
 ## 0.4.8
 
 ### Patch Changes

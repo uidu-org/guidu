@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.1.9
+
+### Patch Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+- Updated dependencies [7a6b0ec55]
+  - @uidu/field-base@3.1.11
+
 ## 1.1.8
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.11
+
+### Patch Changes
+
+- 7a6b0ec55: Added locale export, migrated from fabric to editor-core, added ids to FormattedMessage to prevent id clashes
+
 ## 3.1.10
 
 ### Patch Changes

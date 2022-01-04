@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-mentions",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Field Mentions Component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-mentions",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.16.7",
     "@uidu/analytics": "^0.5.5",
-    "@uidu/field-base": "^3.1.10",
+    "@uidu/field-base": "^3.1.11",
     "@uidu/form": "^1.2.10",
     "@uidu/theme": "^0.6.7",
     "classnames": "^2.3.1",
