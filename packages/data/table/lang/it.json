@@ -1,29 +1,29 @@
 {
   "uidu.table.header.add_filter": {
-    "message": "Add filter"
+    "message": "Aggiungi filtro"
   },
   "uidu.table.header.add_grouping": {
-    "message": "Group by this field"
+    "message": "Raggruppa per questo campo"
   },
   "uidu.table.header.autosize": {
-    "message": "Autosize this column"
+    "message": "Ridimensiona automaticamente"
   },
   "uidu.table.header.edit": {
-    "message": "Edit this column"
+    "message": "Modifica questo campo"
   },
   "uidu.table.header.hide": {
-    "message": "Hide this column"
+    "message": "Nascondi colonna"
   },
   "uidu.table.header.remove_grouping": {
-    "message": "Remove grouping"
+    "message": "Rimuovi raggruppamento"
   },
   "uidu.table.header.sort_a_z": {
-    "message": "Sort A {icon} Z"
+    "message": "Ordina A {icon} Z"
   },
   "uidu.table.header.sort_z_a": {
-    "message": "Sort Z {icon} A"
+    "message": "Ordina Z {icon} A"
   },
   "uidu.table.header.unsort": {
-    "message": "Unsort"
+    "message": "Rimuovi ordinamento"
   }
 }
