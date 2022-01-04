@@ -1,29 +1,29 @@
 {
-  "6xsuuc": {
-    "message": "Ordina A {icon} Z"
+  "uidu.table.header.add_filter": {
+    "message": "Add filter"
   },
-  "DTR7Hm": {
-    "message": "Raggruppa per questo campo"
+  "uidu.table.header.add_grouping": {
+    "message": "Group by this field"
   },
-  "M/zZVx": {
-    "message": "Aggiungi filtro"
+  "uidu.table.header.autosize": {
+    "message": "Autosize this column"
   },
-  "XvWIcm": {
-    "message": "Ridimensiona automaticamente"
+  "uidu.table.header.edit": {
+    "message": "Edit this column"
   },
-  "dWi239": {
-    "message": "Modifica questo campo"
+  "uidu.table.header.hide": {
+    "message": "Hide this column"
   },
-  "fwRCRH": {
-    "message": "Rimuovi ordinamento"
+  "uidu.table.header.remove_grouping": {
+    "message": "Remove grouping"
   },
-  "hESfGB": {
-    "message": "Nascondi colonna"
+  "uidu.table.header.sort_a_z": {
+    "message": "Sort A {icon} Z"
   },
-  "tVIb9a": {
-    "message": "Rimuovi raggruppamento"
+  "uidu.table.header.sort_z_a": {
+    "message": "Sort Z {icon} A"
   },
-  "yntPld": {
-    "message": "Ordina Z {icon} A"
+  "uidu.table.header.unsort": {
+    "message": "Unsort"
   }
 }
