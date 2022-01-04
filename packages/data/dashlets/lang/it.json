@@ -1,0 +1,53 @@
+{
+  "EZdplJ": {
+    "message": "Error loading {name}"
+  },
+  "uidu.dashlets.counter.description": {
+    "message": "Counter"
+  },
+  "uidu.dashlets.counter.name": {
+    "message": "Counter"
+  },
+  "uidu.dashlets.funnel.description": {
+    "message": "Funnel chart."
+  },
+  "uidu.dashlets.funnel.name": {
+    "message": "Funnel chart"
+  },
+  "uidu.dashlets.geo.description": {
+    "message": "Geo chart."
+  },
+  "uidu.dashlets.geo.name": {
+    "message": "Geo chart"
+  },
+  "uidu.dashlets.pie.description": {
+    "message": "Pie chart."
+  },
+  "uidu.dashlets.pie.name": {
+    "message": "Pie chart"
+  },
+  "uidu.dashlets.radar.description": {
+    "message": "Radar chart."
+  },
+  "uidu.dashlets.radar.name": {
+    "message": "Radar chart"
+  },
+  "uidu.dashlets.table.description": {
+    "message": "Table"
+  },
+  "uidu.dashlets.table.name": {
+    "message": "Table"
+  },
+  "uidu.dashlets.treemap.description": {
+    "message": "Treemap chart."
+  },
+  "uidu.dashlets.treemap.name": {
+    "message": "Treemap chart"
+  },
+  "uidu.dashlets.xy.description": {
+    "message": "XY chart."
+  },
+  "uidu.dashlets.xy.name": {
+    "message": "XY chart"
+  }
+}
