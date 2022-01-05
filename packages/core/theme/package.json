@@ -14,7 +14,7 @@
     "@emotion/react": "^11.7.1",
     "@uidu/form": "^1.2.10",
     "exenv": "^1.2.2",
-    "prop-types": "^15.8.0",
+    "prop-types": "^15.8.1",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

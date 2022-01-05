@@ -50,7 +50,7 @@
     "linkify-it": "^3.0.3",
     "markdown-it": "^12.3.0",
     "memoize-one": "^5.2.1",
-    "prop-types": "^15.8.0",
+    "prop-types": "^15.8.1",
     "prosemirror-collab": "^1.2.2",
     "prosemirror-commands": "^1.1.12",
     "prosemirror-history": "^1.2.0",

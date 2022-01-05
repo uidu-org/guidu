@@ -4308,7 +4308,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.11.0, @popperjs/core@npm:^2.5.3":
+"@popperjs/core@npm:^2.11.2":
+  version: 2.11.2
+  resolution: "@popperjs/core@npm:2.11.2"
+  checksum: 5695bf020eda54636e16a62dc9b5fdd92beaf7b2d19f62fcef049d57c5cff92773562d80cbf760b217c3ec928da310eb24994ab6a00fd39dffa0af9b5dfc01a6
+  languageName: node
+  linkType: hard
+
+"@popperjs/core@npm:^2.5.3":
   version: 2.11.0
   resolution: "@popperjs/core@npm:2.11.0"
   checksum: 84d6f197d3ddfd8a5b05c7276c3692d8404c96128a946ab0a800b25567d8fc231928319c1f97a67e0817e76ce2a1b735589ef0f38f8e8835692408660a2395a1
@@ -4694,6 +4701,45 @@ __metadata:
     zen-observable:
       optional: true
   checksum: 8ec6d43370f419975295f306699f87989dd64a099a29cf62ddacbbbe32df634f87451504d340e15321e74b0a3ca8a9b447736472f792102e234faa207395e6c9
+  languageName: node
+  linkType: hard
+
+"@semantic-release/changelog@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "@semantic-release/changelog@npm:6.0.1"
+  dependencies:
+    "@semantic-release/error": ^3.0.0
+    aggregate-error: ^3.0.0
+    fs-extra: ^9.0.0
+    lodash: ^4.17.4
+  peerDependencies:
+    semantic-release: ">=18.0.0"
+  checksum: a7c999f20297f229ebb32dc65f56c3aee237d941b478a1c75f5e904382c66fc4054bf3da93b1f5382e0b689147a825665500332f70807bfed952d312d2f501ac
+  languageName: node
+  linkType: hard
+
+"@semantic-release/error@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@semantic-release/error@npm:3.0.0"
+  checksum: 29c4391ecbefd9ea991f8fdf5ab3ceb9c4830281da56d9dbacd945c476cb86f10c3b55cd4a6597098c0ea3a59f1ec4752132abeea633e15972f49f4704e61d35
+  languageName: node
+  linkType: hard
+
+"@semantic-release/git@npm:^10.0.1":
+  version: 10.0.1
+  resolution: "@semantic-release/git@npm:10.0.1"
+  dependencies:
+    "@semantic-release/error": ^3.0.0
+    aggregate-error: ^3.0.0
+    debug: ^4.0.0
+    dir-glob: ^3.0.0
+    execa: ^5.0.0
+    lodash: ^4.17.4
+    micromatch: ^4.0.0
+    p-reduce: ^2.0.0
+  peerDependencies:
+    semantic-release: ">=18.0.0"
+  checksum: b0a346acaf13d1bbd8d8d895bb0dee025dd6d4742769b5dd875018fff8fcfe0f5414299dbe1ed026e53b8f8b04eeceef49a3d56c5f6506016c656df95d2ced04
   languageName: node
   linkType: hard
 
@@ -5370,7 +5416,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:14 || 16, @types/node@npm:^16.11.18":
+"@types/node@npm:14 || 16":
   version: 16.11.18
   resolution: "@types/node@npm:16.11.18"
   checksum: f2e615c5f1320552e240170991bc4f6317bb83e7b413ee95ecd44ac42f774eb6cfbbfd5a366f4d6e472c79396afbdc22699c65f1e959426c63c5e72fedd6139f
@@ -5388,6 +5434,13 @@ __metadata:
   version: 12.20.38
   resolution: "@types/node@npm:12.20.38"
   checksum: eb3395bbda31a43353a4555013f9be50c619f553e4c5a90b342c16c70c884d3c18ed64269c5f10dee2f3ab570a6a0ec8e3d4a0191e2c4896db95c38a1bfbeb2e
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^16.11.19":
+  version: 16.11.19
+  resolution: "@types/node@npm:16.11.19"
+  checksum: a9ba0cd1e61c8ad50f3fc9c2b37b795bf0286dacb39dcc985da90328abf0c5151dffe9932d20bc9a6a52c3ce7bfc1e5a7c2dc1416480fb84f1c2d70e25caeba0
   languageName: node
   linkType: hard
 
@@ -6110,7 +6163,7 @@ __metadata:
     "@uidu/field-text": ^1.1.9
     "@uidu/form": ^1.2.10
     lodash.isequal: ^4.5.0
-    prop-types: ^15.8.0
+    prop-types: ^15.8.1
     react: ^17.0.2
     react-dom: ^17.0.2
     tslib: ^2.3.1
@@ -6309,7 +6362,7 @@ __metadata:
     classnames: ^2.3.1
     moment: ^2.29.1
     react: ^17.0.2
-    react-big-calendar: ^0.38.2
+    react-big-calendar: ^0.38.4
     react-feather: ^2.0.9
     styled-components: ^5.3.3
     tslib: ^2.3.1
@@ -6489,10 +6542,10 @@ __metadata:
     "@loadable/component": ^5.15.2
     "@uidu/dashboard-manager": ^1.3.6
     "@uidu/dashlet-controls": ^1.0.13
-    "@uidu/data-fields": ^1.5.0
+    "@uidu/data-fields": ^1.5.1
     "@uidu/docs": ^0.5.5
     "@uidu/spinner": ^0.5.6
-    "@uidu/table": 1.3.0
+    "@uidu/table": 1.3.1
     "@uidu/tooltip": ^0.5.8
     d3-array: ^3.1.1
     lodash: ^4.17.21
@@ -6511,7 +6564,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-controls@^2.0.3, @uidu/data-controls@^2.0.6, @uidu/data-controls@^2.1.0, @uidu/data-controls@workspace:packages/data/data-controls":
+"@uidu/data-controls@^2.0.3, @uidu/data-controls@^2.1.1, @uidu/data-controls@workspace:packages/data/data-controls":
   version: 0.0.0-use.local
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
@@ -6519,16 +6572,16 @@ __metadata:
     "@heroicons/react": ^1.0.5
     "@uidu/button": 1.3.7
     "@uidu/checkbox": ^1.1.9
-    "@uidu/data-fields": ^1.5.0
-    "@uidu/data-manager": 2.1.0
-    "@uidu/data-views": ^1.2.0
+    "@uidu/data-fields": ^1.5.1
+    "@uidu/data-manager": 2.2.0
+    "@uidu/data-views": ^1.2.1
     "@uidu/docs": ^0.5.5
     "@uidu/drawer": ^0.7.9
     "@uidu/dropdown-menu": ^0.6.8
     "@uidu/field-text": ^1.1.9
     "@uidu/form": ^1.2.10
     "@uidu/inline-dialog": ^0.5.8
-    "@uidu/menu": ^0.7.0
+    "@uidu/menu": ^0.7.1
     "@uidu/popup": ^0.6.8
     "@uidu/select": ^1.5.8
     "@uidu/shell": ^2.1.9
@@ -6547,7 +6600,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-fields@^1.4.8, @uidu/data-fields@^1.5.0, @uidu/data-fields@workspace:packages/data/data-fields":
+"@uidu/data-fields@^1.4.8, @uidu/data-fields@^1.5.1, @uidu/data-fields@workspace:packages/data/data-fields":
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
@@ -6568,7 +6621,7 @@ __metadata:
     "@uidu/field-toggle": ^1.1.4
     "@uidu/form": ^1.2.10
     "@uidu/map": 0.6.6
-    "@uidu/menu": ^0.7.0
+    "@uidu/menu": ^0.7.1
     "@uidu/popup": 0.6.8
     "@uidu/select": ^1.5.8
     dayjs: ^1.10.7
@@ -6583,7 +6636,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-manager@2.1.0, @uidu/data-manager@workspace:packages/data/data-manager":
+"@uidu/data-manager@2.2.0, @uidu/data-manager@workspace:packages/data/data-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/data-manager@workspace:packages/data/data-manager"
   dependencies:
@@ -6595,9 +6648,9 @@ __metadata:
     "@uidu/board": ^0.5.2
     "@uidu/button": 1.3.7
     "@uidu/calendar": ^0.3.8
-    "@uidu/data-controls": ^2.0.6
-    "@uidu/data-fields": ^1.4.8
-    "@uidu/data-views": ^1.1.9
+    "@uidu/data-controls": ^2.1.1
+    "@uidu/data-fields": ^1.5.1
+    "@uidu/data-views": ^1.2.1
     "@uidu/docs": ^0.5.5
     "@uidu/dropdown-menu": ^0.6.8
     "@uidu/gallery": ^1.2.2
@@ -6608,7 +6661,7 @@ __metadata:
     "@uidu/shell": ^2.1.9
     "@uidu/side-navigation": 1.0.9
     "@uidu/spinner": ^0.5.6
-    "@uidu/table": ^1.2.3
+    "@uidu/table": ^1.3.1
     d3-array: ^3.1.1
     dayjs: ^1.10.7
     lodash: ^4.17.21
@@ -6625,15 +6678,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-views@^1.1.9, @uidu/data-views@^1.2.0, @uidu/data-views@workspace:packages/data/data-views":
+"@uidu/data-views@^1.2.1, @uidu/data-views@workspace:packages/data/data-views":
   version: 0.0.0-use.local
   resolution: "@uidu/data-views@workspace:packages/data/data-views"
   dependencies:
     "@babel/runtime": ^7.16.7
     "@loadable/component": ^5.15.2
     "@uidu/button": 1.3.7
-    "@uidu/data-controls": ^2.1.0
-    "@uidu/data-manager": 2.1.0
+    "@uidu/data-controls": ^2.1.1
+    "@uidu/data-manager": 2.2.0
     "@uidu/docs": ^0.5.5
     "@uidu/field-counter": ^1.1.8
     "@uidu/field-number": ^1.0.8
@@ -6759,7 +6812,7 @@ __metadata:
     "@uidu/theme": ^0.6.7
     "@uidu/tooltip": ^0.5.8
     array-find: ^1.0.0
-    prop-types: ^15.8.0
+    prop-types: ^15.8.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-uid: ^2.3.1
@@ -6789,7 +6842,7 @@ __metadata:
     "@uidu/theme": ^0.6.7
     "@uidu/tooltip": ^0.5.8
     classnames: ^2.3.1
-    prop-types: ^15.8.0
+    prop-types: ^15.8.1
     react: ^17.0.2
     react-dom: ^17.0.2
     styled-components: ^5.3.3
@@ -6878,7 +6931,7 @@ __metadata:
     linkify-it: ^3.0.3
     markdown-it: ^12.3.0
     memoize-one: ^5.2.1
-    prop-types: ^15.8.0
+    prop-types: ^15.8.1
     prosemirror-collab: ^1.2.2
     prosemirror-commands: ^1.1.12
     prosemirror-history: ^1.2.0
@@ -6935,7 +6988,7 @@ __metadata:
     "@uidu/editor-core": ^0.12.0
     markdown-it: ^12.3.0
     markdown-it-table: ^2.0.4
-    prosemirror-markdown: ^1.6.1
+    prosemirror-markdown: ^1.6.2
     prosemirror-model: ^1.16.1
     react: ^17.0.2
     styled-components: ^5.3.3
@@ -6988,7 +7041,7 @@ __metadata:
     js-search: ^2.0.0
     lru-fast: ^0.2.2
     p-wait-for: ^4.1.0
-    prop-types: ^15.8.0
+    prop-types: ^15.8.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-intl: ^5.24.1
@@ -7131,7 +7184,7 @@ __metadata:
     "@uidu/field-text": ^1.1.9
     "@uidu/field-time": ^1.1.9
     "@uidu/form": ^1.2.10
-    "@uidu/menu": 0.7.0
+    "@uidu/menu": 0.7.1
     "@uidu/popup": 0.6.8
     "@uidu/radio": ^1.1.7
     "@uidu/shell": ^2.1.9
@@ -7654,7 +7707,7 @@ __metadata:
     "@uidu/theme": ^0.6.7
     "@uidu/tooltip": ^0.5.8
     polished: ^4.1.3
-    prop-types: ^15.8.0
+    prop-types: ^15.8.1
     react: ^17.0.2
     react-addons-text-content: ^0.0.4
     react-dom: ^17.0.2
@@ -7903,7 +7956,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/menu@0.7.0, @uidu/menu@^0.7.0, @uidu/menu@workspace:packages/core/menu":
+"@uidu/menu@0.7.1, @uidu/menu@^0.7.0, @uidu/menu@^0.7.1, @uidu/menu@workspace:packages/core/menu":
   version: 0.0.0-use.local
   resolution: "@uidu/menu@workspace:packages/core/menu"
   dependencies:
@@ -7995,7 +8048,7 @@ __metadata:
     emoji-regex: ^9.2.2
     faker: ^5.5.3
     moment: ^2.29.1
-    prop-types: ^15.8.0
+    prop-types: ^15.8.1
     react: ^17.0.2
     react-feather: ^2.0.9
     react-spring: ^9.4.0
@@ -8025,7 +8078,7 @@ __metadata:
     "@uidu/select": ^1.5.8
     "@uidu/theme": ^0.6.7
     exenv: ^1.2.2
-    prop-types: ^15.8.0
+    prop-types: ^15.8.1
     raf-schd: ^4.0.3
     react: ^17.0.2
     react-beautiful-dnd: ^13.1.0
@@ -8210,7 +8263,7 @@ __metadata:
   resolution: "@uidu/popper@workspace:packages/core/popper"
   dependencies:
     "@babel/runtime": ^7.16.7
-    "@popperjs/core": ^2.11.0
+    "@popperjs/core": ^2.11.2
     "@uidu/button": ^1.3.7
     "@uidu/docs": ^0.5.5
     "@uidu/theme": ^0.6.7
@@ -8632,7 +8685,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@1.3.0, @uidu/table@^1.2.3, @uidu/table@^1.3.0, @uidu/table@workspace:packages/data/table":
+"@uidu/table@1.3.1, @uidu/table@^1.3.0, @uidu/table@^1.3.1, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -8643,11 +8696,11 @@ __metadata:
     "@fortawesome/react-fontawesome": ^0.1.16
     "@uidu/button": 1.3.7
     "@uidu/checkbox": ^1.1.9
-    "@uidu/data-controls": ^2.1.0
-    "@uidu/data-fields": ^1.5.0
+    "@uidu/data-controls": ^2.1.1
+    "@uidu/data-fields": ^1.5.1
     "@uidu/docs": ^0.5.5
     "@uidu/dropdown-menu": ^0.6.8
-    "@uidu/menu": ^0.7.0
+    "@uidu/menu": ^0.7.1
     "@uidu/popup": ^0.6.8
     faker: ^5.5.3
     numeral: ^2.0.6
@@ -8743,7 +8796,7 @@ __metadata:
     "@uidu/section-message": ^0.6.6
     color: ^4.1.0
     exenv: ^1.2.2
-    prop-types: ^15.8.0
+    prop-types: ^15.8.1
     react: ^17.0.2
     react-dom: ^17.0.2
     styled-components: ^5.3.3
@@ -14706,7 +14759,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dir-glob@npm:^3.0.1":
+"dir-glob@npm:^3.0.0, dir-glob@npm:^3.0.1":
   version: 3.0.1
   resolution: "dir-glob@npm:3.0.1"
   dependencies:
@@ -16977,7 +17030,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^9.0, fs-extra@npm:^9.0.1":
+"fs-extra@npm:^9.0, fs-extra@npm:^9.0.0, fs-extra@npm:^9.0.1":
   version: 9.1.0
   resolution: "fs-extra@npm:9.1.0"
   dependencies:
@@ -17809,7 +17862,7 @@ __metadata:
     "@mdx-js/loader": ^1.6.22
     "@mdx-js/mdx": ^1.6.22
     "@next/mdx": ^12.0.7
-    "@popperjs/core": ^2.11.0
+    "@popperjs/core": ^2.11.2
     "@preconstruct/cli": ^2.1.5
     "@preconstruct/next": ^3.0.1
     "@researchgate/react-intersection-observer": ^1.3.5
@@ -17831,7 +17884,7 @@ __metadata:
     "@types/markdown-it": ^12.2.3
     "@types/markerclustererplus": ^2.1.33
     "@types/mkdirp": ^1.0.2
-    "@types/node": ^16.11.18
+    "@types/node": ^16.11.19
     "@types/overlayscrollbars": ^1.12.1
     "@types/prettier": ^2.4.2
     "@types/prismjs": ^1.16.6
@@ -18004,14 +18057,14 @@ __metadata:
     prettier: ^2.5.1
     pretty-proptypes: ^1.3.0
     prismjs: ^1.25.0
-    prop-types: ^15.8.0
+    prop-types: ^15.8.1
     prosemirror-collab: ^1.2.2
     prosemirror-commands: ^1.1.12
     prosemirror-dev-tools: ^3.1.0
     prosemirror-history: ^1.2.0
     prosemirror-inputrules: ^1.1.3
     prosemirror-keymap: ^1.1.5
-    prosemirror-markdown: ^1.6.1
+    prosemirror-markdown: ^1.6.2
     prosemirror-model: ^1.16.1
     prosemirror-schema-list: ^1.1.6
     prosemirror-state: ^1.3.4
@@ -18030,7 +18083,7 @@ __metadata:
     react-animated-number: ^0.4.4
     react-avatar-editor: ^12.0.0
     react-beautiful-dnd: ^13.1.0
-    react-big-calendar: ^0.38.2
+    react-big-calendar: ^0.38.4
     react-chatview: ^0.2.5
     react-codesandboxer: ^3.1.5
     react-color: ^2.19.3
@@ -21913,7 +21966,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
+"micromatch@npm:^4.0.0, micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
   version: 4.0.4
   resolution: "micromatch@npm:4.0.4"
   dependencies:
@@ -23860,7 +23913,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-reduce@npm:^2.1.0":
+"p-reduce@npm:^2.0.0, p-reduce@npm:^2.1.0":
   version: 2.1.0
   resolution: "p-reduce@npm:2.1.0"
   checksum: 99b26d36066a921982f25c575e78355824da0787c486e3dd9fc867460e8bf17d5fb3ce98d006b41bdc81ffc0aa99edf5faee53d11fe282a20291fb721b0cb1c7
@@ -25326,7 +25379,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:15.x, prop-types@npm:^15.0.0, prop-types@npm:^15.5.0, prop-types@npm:^15.5.10, prop-types@npm:^15.5.7, prop-types@npm:^15.5.8, prop-types@npm:^15.6.0, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.0":
+"prop-types@npm:15.x, prop-types@npm:^15.0.0, prop-types@npm:^15.5.0, prop-types@npm:^15.5.10, prop-types@npm:^15.5.7, prop-types@npm:^15.5.8, prop-types@npm:^15.6.0, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.8.0
   resolution: "prop-types@npm:15.8.0"
   dependencies:
@@ -25334,6 +25387,17 @@ __metadata:
     object-assign: ^4.1.1
     react-is: ^16.13.1
   checksum: d8d51cf55d70cab207dd1e80df2dc093b8288a4519598a28d25d32d6e02319b2fd66712caa979040451656185f7393341185b0b081158520557aa4cbdcaa4b3a
+  languageName: node
+  linkType: hard
+
+"prop-types@npm:^15.8.1":
+  version: 15.8.1
+  resolution: "prop-types@npm:15.8.1"
+  dependencies:
+    loose-envify: ^1.4.0
+    object-assign: ^4.1.1
+    react-is: ^16.13.1
+  checksum: c056d3f1c057cb7ff8344c645450e14f088a915d078dcda795041765047fa080d38e5d626560ccaac94a4e16e3aa15f3557c1a9a8d1174530955e992c675e459
   languageName: node
   linkType: hard
 
@@ -25421,13 +25485,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-markdown@npm:^1.6.1":
-  version: 1.6.1
-  resolution: "prosemirror-markdown@npm:1.6.1"
+"prosemirror-markdown@npm:^1.6.2":
+  version: 1.6.2
+  resolution: "prosemirror-markdown@npm:1.6.2"
   dependencies:
     markdown-it: ^10.0.0
     prosemirror-model: ^1.0.0
-  checksum: 1a0ed5174bbfe015764e33bbbefb5f5fcb27413d043984d29e469c9dfe66e245517b5b492105bc198db6be08412f447f63f06ae730190e3a3f4935f78654dd89
+  checksum: b5ae8a99a544e7de67d66e481f9d2a15e1c1048a2db2be1320fc2aa3b8c8526784a326fe7f1da9744e29637b93ed5e71a5b076b36b683e96341b0b4fdd782189
   languageName: node
   linkType: hard
 
@@ -25976,11 +26040,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-big-calendar@npm:^0.38.2":
-  version: 0.38.2
-  resolution: "react-big-calendar@npm:0.38.2"
+"react-big-calendar@npm:^0.38.4":
+  version: 0.38.4
+  resolution: "react-big-calendar@npm:0.38.4"
   dependencies:
     "@babel/runtime": ^7.1.5
+    "@semantic-release/changelog": ^6.0.1
+    "@semantic-release/git": ^10.0.1
     clsx: ^1.0.4
     date-arithmetic: ^4.1.0
     dom-helpers: ^5.1.0
@@ -25994,7 +26060,7 @@ __metadata:
   peerDependencies:
     react: ^16.6.1 || ^17
     react-dom: ^16.6.1 || ^17
-  checksum: d644c8fdf0e8681cd42b0ca35dc4052bf090bc6a9b8c656a94858b2b2e8816ad8450fd5860600e27515b8813b3465cb5712f51a440ed73ca7b3b7ef71d8d834b
+  checksum: b4703d3bb0fe91a29b294c000fff44d83e96fb90cbf8fe40b65ea1a02301e7e0d13014ffa12d0d7cbdc07ad0eea44d31ec36560520535d6a8ec19a664a67d857
   languageName: node
   linkType: hard
 

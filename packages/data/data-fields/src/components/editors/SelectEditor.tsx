@@ -1,6 +1,5 @@
 import Form from '@uidu/form';
 import { CustomItem, MenuGroup, Section } from '@uidu/menu';
-import { BaseItemWrapper } from '@uidu/menu/src/components/item/styled';
 import Select from '@uidu/select';
 import React, { useRef } from 'react';
 
@@ -16,16 +15,18 @@ export default function SelectEditor(params) {
         {options.map((option) => (
           <CustomItem
             component={(componentProps) => (
-              <BaseItemWrapper
-                {...componentProps}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  onChange(option.id);
-                }}
-              >
-                <Option value={option} />
-              </BaseItemWrapper>
+              <>
+                <button
+                  {...componentProps}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    onChange(option.id);
+                  }}
+                >
+                  <Option value={option} />
+                </button>
+              </>
             )}
           />
         ))}

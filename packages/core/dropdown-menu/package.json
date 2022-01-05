@@ -16,7 +16,7 @@
     "@uidu/item": "^0.5.7",
     "@uidu/theme": "^0.6.7",
     "array-find": "^1.0.0",
-    "prop-types": "^15.8.0",
+    "prop-types": "^15.8.1",
     "react-uid": "^2.3.1",
     "tslib": "^2.3.1",
     "uuid": "^8.3.2"
