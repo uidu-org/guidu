@@ -1,5 +1,15 @@
 # @uidu/droplist
 
+## 0.5.9
+
+### Patch Changes
+
+- 9f56a68f2: Fix select editor custom item, bumped dependencies
+- Updated dependencies [9f56a68f2]
+  - @uidu/analytics@0.5.6
+  - @uidu/item@0.5.8
+  - @uidu/theme@0.6.8
+
 ## 0.5.8
 
 ### Patch Changes

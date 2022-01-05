@@ -1,5 +1,13 @@
 # @uidu/calendar
 
+## 0.3.9
+
+### Patch Changes
+
+- 9f56a68f2: Fix select editor custom item, bumped dependencies
+- Updated dependencies [9f56a68f2]
+  - @uidu/dropdown-menu@0.6.9
+
 ## 0.3.8
 
 ### Patch Changes

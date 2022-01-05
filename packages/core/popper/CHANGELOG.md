@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.8
+
+### Patch Changes
+
+- 9f56a68f2: Fix select editor custom item, bumped dependencies
+
 ## 0.5.7
 
 ### Patch Changes

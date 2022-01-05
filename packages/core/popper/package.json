@@ -1,6 +1,6 @@
 {
   "name": "@uidu/popper",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "Wrapper for react-popper with common config and some helpers",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/popper",
   "license": "ISC",
@@ -18,7 +18,7 @@
   "devDependencies": {
     "@uidu/button": "^1.3.7",
     "@uidu/docs": "^0.5.5",
-    "@uidu/theme": "^0.6.7",
+    "@uidu/theme": "^0.6.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-lorem-component": "^0.13.0",

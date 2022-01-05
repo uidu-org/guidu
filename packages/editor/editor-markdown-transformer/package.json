@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-markdown-transformer",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Editor Markdown transformer",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/editor-markdown-transformer",
   "license": "MIT",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.5",
-    "@uidu/editor-core": "^0.12.0",
+    "@uidu/editor-core": "^0.12.1",
     "react": "^17.0.2",
     "styled-components": "^5.3.3"
   },
