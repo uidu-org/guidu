@@ -1,5 +1,14 @@
 # @uidu/modal-dialog
 
+## 0.5.12
+
+### Patch Changes
+
+- 9f56a68f2: Fix select editor custom item, bumped dependencies
+- Updated dependencies [9f56a68f2]
+  - @uidu/analytics@0.5.6
+  - @uidu/theme@0.6.8
+
 ## 0.5.11
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/editor-core
 
+## 0.12.1
+
+### Patch Changes
+
+- 9f56a68f2: Fix select editor custom item, bumped dependencies
+- Updated dependencies [9f56a68f2]
+  - @uidu/analytics@0.5.6
+  - @uidu/droplist@0.5.9
+  - @uidu/modal-dialog@0.5.12
+  - @uidu/theme@0.6.8
+  - @uidu/editor-markdown-transformer@0.6.1
+  - @uidu/emoji@0.6.1
+
 ## 0.12.0
 
 ### Minor Changes

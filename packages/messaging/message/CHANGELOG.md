@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.11
+
+### Patch Changes
+
+- 9f56a68f2: Fix select editor custom item, bumped dependencies
+- Updated dependencies [9f56a68f2]
+  - @uidu/dropdown-menu@0.6.9
+
 ## 0.5.10
 
 ### Patch Changes

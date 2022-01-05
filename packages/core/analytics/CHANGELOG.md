@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.5.6
+
+### Patch Changes
+
+- 9f56a68f2: Fix select editor custom item, bumped dependencies
+
 ## 0.5.5
 
 ### Patch Changes

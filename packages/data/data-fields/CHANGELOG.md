@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 1.5.2
+
+### Patch Changes
+
+- 9f56a68f2: Fix select editor custom item, bumped dependencies
+
 ## 1.5.1
 
 ### Patch Changes
