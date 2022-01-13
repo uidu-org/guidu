@@ -1,42 +1,80 @@
-import Button, { ButtonGroup } from '@uidu/button';
+import Button, { ButtonGroup, ButtonProps } from '@uidu/button';
+import { FieldRangeStateless } from '@uidu/field-range';
 import React from 'react';
-import { Trash, ZoomIn } from 'react-feather';
+import { Trash, ZoomIn, ZoomOut } from 'react-feather';
+import { zoom, ZoomDirectionType } from '../../utils';
 import StyledToolbar from './styled';
 
+export interface ToolbarProps {
+  isHovered: boolean;
+  confirm?: ButtonProps['onClick'];
+  dismiss?: ButtonProps['onClick'];
+  label?: string;
+  scale: number;
+  handleScale?: (scale: number) => void;
+}
+
 export default function Toolbar({
+  scale,
   handleScale,
   confirm,
   dismiss,
   isHovered,
   label,
-}) {
+}: ToolbarProps) {
+  const zoomStep = 0.1;
+  const min = 1;
+  const max = 2;
+
   return (
     <StyledToolbar
-      className="card card-body flex-row shadow-lg"
+      tw="border-t rounded-b flex flex-row shadow-lg p-4"
       isHovered={isHovered}
     >
       {handleScale && (
-        <div className="range d-flex align-items-center">
-          <ZoomIn />
-          <input
-            className="custom-range mx-3"
-            name="scale"
-            type="range"
-            onChange={handleScale}
-            min="1"
-            max="2"
-            step="0.01"
-            defaultValue="1"
+        <div tw="space-x-3 flex items-center">
+          <Button
+            isDisabled={scale <= 1}
+            iconBefore={<ZoomOut size={16} />}
+            onClick={() =>
+              zoom({
+                direction: ZoomDirectionType.OUT,
+                scale,
+                step: zoomStep,
+                min,
+                max,
+                callbackFn: handleScale,
+              })
+            }
+          />
+          <FieldRangeStateless
+            min={min}
+            max={max}
+            step={0.01}
+            value={scale}
+            onChange={(value) => {
+              handleScale(parseFloat(value));
+            }}
+          />
+          <Button
+            isDisabled={scale >= 2}
+            iconBefore={<ZoomIn size={16} />}
+            onClick={() => {
+              zoom({
+                direction: ZoomDirectionType.IN,
+                scale,
+                step: zoomStep,
+                min,
+                max,
+                callbackFn: handleScale,
+              });
+            }}
           />
         </div>
       )}
-      <div className="d-flex align-items-center ml-auto">
+      <div tw="ml-auto flex items-center">
         <ButtonGroup>
-          <Button
-            onClick={dismiss}
-            iconBefore={<Trash size={16} />}
-            className={label && 'mr-2'}
-          />
+          <Button onClick={dismiss} iconBefore={<Trash size={16} />} />
           {label && (
             <Button onClick={confirm} appearance="primary">
               {label}

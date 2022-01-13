@@ -1,28 +1,31 @@
-import classNames from 'classnames';
-import React from 'react';
-import { useDropzone } from 'react-dropzone';
+import React, { FC } from 'react';
+import { DropzoneOptions, useDropzone } from 'react-dropzone';
+import { PromptProps } from './Prompt';
+
+export interface EmptyProps extends PromptProps {
+  borderRadius: number;
+  prompt: FC<PromptProps>;
+  onDrop: DropzoneOptions['onDrop'];
+  isHovered: boolean;
+}
 
 export default function Empty({
-  cropClassName,
   borderRadius,
-  text,
   prompt: Prompt,
   label,
   help,
   onDrop,
   errors,
-}) {
+  isHovered,
+}: EmptyProps) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
   });
   return (
-    <div {...(getRootProps() as any)} className="image-uploader h-100">
+    <div {...(getRootProps() as any)} tw="h-full">
       <input {...(getInputProps() as any)} />
       <div
-        className={classNames(
-          'crop d-flex align-items-center justify-content-center h-100 flex-column',
-          cropClassName,
-        )}
+        tw="flex items-center justify-center h-full flex-col"
         style={{
           borderRadius,
         }}

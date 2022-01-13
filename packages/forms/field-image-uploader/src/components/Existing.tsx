@@ -1,47 +1,49 @@
-import classNames from 'classnames';
-import React from 'react';
-import { useDropzone } from 'react-dropzone';
+import React, { ReactNode } from 'react';
+import { DropzoneOptions, useDropzone } from 'react-dropzone';
+
+export interface ExistingProps {
+  value: string;
+  borderRadius: number;
+  className?: string;
+  children?: ReactNode;
+  onDrop: DropzoneOptions['onDrop'];
+  isHovered: boolean;
+}
 
 export default function Existing({
-  cropClassName,
   value,
   className,
   borderRadius,
   children,
   onDrop,
-}) {
+  isHovered,
+}: ExistingProps) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
   });
   return (
-    <div
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...(getRootProps() as any)}
-      className="image-uploader h-100"
-      style={{
-        borderRadius,
-      }}
-    >
-      <input // eslint-disable-next-line react/jsx-props-no-spreading
-        {...(getInputProps() as any)}
+    <>
+      <img
+        tw="object-center object-cover"
+        alt={value}
+        className={className}
+        style={{
+          width: '100%',
+          // height: '100%',
+          borderRadius,
+        }}
+        src={value}
       />
       <div
-        className={classNames(
-          'crop d-flex align-items-center justify-content-center h-100',
-          cropClassName,
-        )}
+        {...(getRootProps() as any)}
+        tw="h-full"
+        style={{
+          borderRadius,
+        }}
       >
-        <img
-          alt={value}
-          className={className}
-          style={{
-            width: '100%',
-            // height: '100%',
-          }}
-          src={value}
-        />
+        <input {...(getInputProps() as any)} />
+        {children}
       </div>
-      {children}
-    </div>
+    </>
   );
 }

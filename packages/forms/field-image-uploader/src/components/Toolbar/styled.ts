@@ -2,14 +2,13 @@ import styled from 'styled-components';
 
 const StyledToolbar = styled.div<{ isHovered: boolean }>`
   position: absolute;
-  top: 50%;
-  width: 50%;
+  bottom: 0;
+  width: 100%;
   display: flex;
-  transform: translateY(-50%) translateX(-50%);
-  left: 50%;
   justify-content: space-between;
+  /* TODO: make it dark-mode ready */
   background: #fff;
-  opacity: ${({ isHovered }) => (isHovered ? 1 : 0)};
+  opacity: ${({ isHovered }) => (isHovered ? 0.9 : 0)};
   transition: opacity 300ms ease-in;
 `;
 

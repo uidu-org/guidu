@@ -1,7 +1,9 @@
 import { ComponentHOC } from '@uidu/field-base';
 import { withFormsy } from 'formsy-react';
 import FieldImageUploaderComponent from './components/FieldImageUploader';
-export { default as Prompt } from './components/Prompt';
+export * from './components';
+export * from './types';
+export * from './utils';
 
 export const FieldImageUploader = withFormsy(
   ComponentHOC(FieldImageUploaderComponent),

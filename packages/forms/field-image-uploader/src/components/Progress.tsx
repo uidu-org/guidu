@@ -1,11 +1,16 @@
 import React from 'react';
 import { StyledProgress } from '../styled';
 
-export default function Progress({ progress }) {
+export interface ProgressProps {
+  progress?: number;
+}
+
+export default function Progress({ progress }: ProgressProps) {
   if (!progress) {
     return null;
   }
 
+  // TODO: do not use bootstrap progress bar here
   return (
     <StyledProgress className="progress">
       <div

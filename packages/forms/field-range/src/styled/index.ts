@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-operators */
 import { colors, elevation } from '@uidu/theme';
 import styled, { css } from 'styled-components';
-import { thumb, track } from '../theme';
+import { track } from '../theme';
 
 const sliderThumbSize = 16;
 const sliderThumbBorderThickness = 2;
@@ -10,7 +10,7 @@ const transitionDuration = '0.2s';
 export const overallHeight = 32;
 
 const sliderThumbStyle = css`
-  background: ${thumb.default.background};
+  background: rgb(var(--brand-primary));
   border: ${sliderThumbBorderThickness}px solid transparent;
   border-radius: 50%;
   height: ${sliderThumbSize}px;
@@ -20,7 +20,7 @@ const sliderThumbStyle = css`
 `;
 
 const sliderThumbFocusedStyle = css`
-  border-color: ${colors.B200};
+  border-color: rgb(var(--brand-primary));
 `;
 
 const sliderThumbDisabledStyle = css`
@@ -29,8 +29,8 @@ const sliderThumbDisabledStyle = css`
 `;
 
 const sliderDefaultBackground = css<{ valuePercent: number }>`
-  background: ${props =>
-    `linear-gradient(${track.default.lower}, ${track.default.lower}) 0/ ${props.valuePercent}% 100% no-repeat ${track.default.upper}`};
+  background: ${(props) =>
+    `linear-gradient(rgb(var(--brand-primary)), rgb(var(--brand-primary))) 0/ ${props.valuePercent}% 100% no-repeat ${track.default.upper}`};
 `;
 
 const sliderTrackStyle = css`
@@ -44,14 +44,14 @@ const sliderTrackStyle = css`
 `;
 
 const sliderTrackDisabledStyle = css<{ valuePercent: number }>`
-  background: ${props =>
+  background: ${(props) =>
     `linear-gradient(${track.disabled.lower}, ${track.disabled.lower}) 0/ ${props.valuePercent}% 100% no-repeat ${track.disabled.upper}`};
   cursor: not-allowed;
 `;
 
 const sliderTrackFocusedStyle = css<{ valuePercent: number }>`
-  background: ${props =>
-    `linear-gradient(${track.hover.lower}, ${track.hover.lower}) 0/ ${props.valuePercent}% 100% no-repeat ${track.hover.upper}`};
+  background: ${(props) =>
+    `linear-gradient(rgb(var(--brand-primary)), rgb(var(--brand-primary))) 0/ ${props.valuePercent}% 100% no-repeat ${track.hover.upper}`};
 `;
 
 const chromeRangeInputStyle = css`

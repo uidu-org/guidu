@@ -11,6 +11,7 @@ import React, {
 } from 'react';
 import AvatarEditor from 'react-avatar-editor';
 import { FieldImageUploaderProps } from '../types';
+import Container from './Container';
 import Empty from './Empty';
 import Existing from './Existing';
 import Progress from './Progress';
@@ -18,7 +19,7 @@ import Prompt from './Prompt';
 import Toolbar from './Toolbar';
 
 export function debounce(func: Function, timeout?: number) {
-  let timer: number | undefined;
+  let timer: ReturnType<typeof setTimeout>;
   return (...args: any[]) => {
     const next = () => func(...args);
     if (timer) {
@@ -28,17 +29,17 @@ export function debounce(func: Function, timeout?: number) {
   };
 }
 
-function FieldImageUploader({
+function FieldImageUploaderStateless({
   toolbar: ToolbarComponent = Toolbar,
   existing: ExistingComponent = Existing,
   empty: EmptyComponent = Empty,
   prompt: PromptComponent = Prompt,
   progress: ProgressComponent = Progress,
+  container: ContainerComponent = Container,
   label,
   help,
   borderRadius = 0,
   max = 20000000, // 20 MB
-  ratio = '16by9',
   dropzoneProps = {
     multiple: false,
   },
@@ -48,6 +49,7 @@ function FieldImageUploader({
   onChange,
   onSetValue,
   uploadOptions,
+  className,
   ...rest
 }: FieldImageUploaderProps) {
   const canvas: React.RefObject<HTMLDivElement> = useRef(null);
@@ -183,8 +185,8 @@ function FieldImageUploader({
     debouncedChange(controlledValue);
   }, [controlledValue, debouncedChange]);
 
-  const handleScale = (e) => {
-    setScale(parseFloat(e.currentTarget.value));
+  const handleScale = (newScale: number) => {
+    setScale(newScale);
     setCrop(editor.current?.getCroppingRect());
     setControlledValue(mergeValueWithMetadata());
   };
@@ -197,6 +199,8 @@ function FieldImageUploader({
   const dismiss = (e) => {
     e.preventDefault();
     e.stopPropagation();
+    uppy.reset();
+    setIsLoading(false);
     setData([]);
     setScale(1);
     onSetValue(defaultValue.current || null);
@@ -213,75 +217,91 @@ function FieldImageUploader({
   };
 
   let control = null;
+  let toolbar = null;
+
+  console.log('data', data);
+  console.log('value', value);
+  console.log('isLoading', isLoading);
 
   if (data.length === 0) {
     if (value) {
+      toolbar = (
+        <ToolbarComponent
+          scale={scale}
+          dismiss={destroy}
+          isHovered={isHovered}
+        />
+      );
       control = (
         <ExistingComponent
           value={imageUrl}
           borderRadius={borderRadius}
           onDrop={handleDrop}
-        >
-          <ToolbarComponent
-            dismiss={destroy}
-            isHovered={isHovered}
-            label="Edit image"
-          />
-        </ExistingComponent>
+          isHovered={isHovered}
+        />
       );
     } else {
       control = (
         <EmptyComponent
-          loading={isLoading}
           errors={errors}
           borderRadius={borderRadius}
           onDrop={handleDrop}
           label={label}
           help={help}
           prompt={PromptComponent}
+          isHovered={isHovered}
         />
       );
     }
   } else {
+    toolbar = (
+      <ToolbarComponent
+        scale={scale}
+        handleScale={handleScale}
+        dismiss={dismiss}
+        isHovered={isHovered}
+      />
+    );
     control = (
-      <div className="image-uploader h-100">
-        <>
-          <AvatarEditor
-            ref={editor}
-            image={imageUrl}
-            width={calculateWidth()}
-            height={calculateHeight()}
-            border={0}
-            borderRadius={borderRadius}
-            color={[0, 0, 0, 0.6]} // RGBA
-            scale={scale}
-            onPositionChange={handlePositionChange}
-          />
-          <ToolbarComponent
-            handleScale={handleScale}
-            dismiss={dismiss}
-            isHovered={isHovered}
-          />
-        </>
-      </div>
+      <AvatarEditor
+        ref={editor}
+        image={imageUrl}
+        width={calculateWidth()}
+        height={calculateHeight()}
+        border={0}
+        borderRadius={borderRadius}
+        color={[0, 0, 0, 0.6]} // RGBA
+        scale={scale}
+        onPositionChange={handlePositionChange}
+      />
     );
   }
 
   return (
     <Wrapper label={label} {...rest}>
       <div
-        className={`embed-responsive embed-responsive-${ratio} card`}
-        style={{ borderRadius }}
+        tw="relative"
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       >
-        <div className="embed-responsive-item" ref={canvas}>
-          <ProgressComponent progress={progress} />
-          {isLoading ? <Spinner /> : control}
-        </div>
+        <Container
+          borderRadius={borderRadius}
+          ref={canvas}
+          className={className}
+        >
+          {isLoading ? (
+            <div tw="h-full w-full flex items-center justify-center">
+              <Spinner />
+            </div>
+          ) : (
+            control
+          )}
+        </Container>
+        {toolbar}
+        <ProgressComponent progress={progress} />
       </div>
     </Wrapper>
   );
 }
 
-export default FieldImageUploader;
+export default FieldImageUploaderStateless;

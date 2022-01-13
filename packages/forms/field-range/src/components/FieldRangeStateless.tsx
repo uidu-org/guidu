@@ -20,13 +20,12 @@ function FieldRangeStateless({
   onChange,
   forwardedRef,
 }: FieldRangeStatelessProps) {
-  const valuePercent = useMemo(() => getPercentValue(value, min, max), [
-    value,
-    min,
-    max,
-  ]);
+  const valuePercent = useMemo(
+    () => getPercentValue(value, min, max),
+    [value, min, max],
+  );
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     onChange(e.target.value);
   };
 
@@ -35,7 +34,7 @@ function FieldRangeStateless({
       id={id}
       ref={forwardedRef}
       type="range"
-      defaultValue={value?.toString()}
+      value={value}
       min={min}
       max={max}
       step={step}

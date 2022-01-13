@@ -32,7 +32,11 @@ export const ResizerButton = styled.button<{
     isHover ? 'flex' : isCollapsed ? 'flex' : 'none'};
 `;
 
-export default function ShellResizer({ onClick, isCollapsed, className }) {
+export default function ShellResizer({
+  onClick,
+  isCollapsed,
+  className = null,
+}) {
   const wrapper = useRef(null);
   const [isHover, setIsHover] = useState(false);
 
