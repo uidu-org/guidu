@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.3.7
+
+### Patch Changes
+
+- bcac36014: Field Image uploader rewrite for better customization
+
 ## 0.3.6
 
 ### Patch Changes
