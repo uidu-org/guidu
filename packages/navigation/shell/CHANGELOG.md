@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.10
+
+### Patch Changes
+
+- bcac36014: Field Image uploader rewrite for better customization
+
 ## 2.1.9
 
 ### Patch Changes

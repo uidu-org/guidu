@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-range",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Component which renders a slider and is a substitute of the native input[range] element",
   "keywords": [
     "react",

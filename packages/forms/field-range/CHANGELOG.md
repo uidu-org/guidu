@@ -1,5 +1,11 @@
 # @uidu/field-range
 
+## 1.1.0
+
+### Minor Changes
+
+- bcac36014: Field Image uploader rewrite for better customization
+
 ## 1.0.8
 
 ### Patch Changes
