@@ -1,5 +1,12 @@
 # @uidu/calendar
 
+## 0.3.10
+
+### Patch Changes
+
+- Updated dependencies [2f086f3c5]
+  - @uidu/button@1.3.8
+
 ## 0.3.9
 
 ### Patch Changes

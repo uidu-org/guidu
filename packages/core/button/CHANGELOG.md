@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.3.8
+
+### Patch Changes
+
+- 2f086f3c5: Typos and cleanup
+
 ## 1.3.7
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/data-controls
 
+## 2.1.2
+
+### Patch Changes
+
+- Updated dependencies [2f086f3c5]
+  - @uidu/button@1.3.8
+  - @uidu/data-fields@1.5.3
+  - @uidu/data-manager@2.2.1
+  - @uidu/data-views@1.2.2
+  - @uidu/form@1.2.11
+
 ## 2.1.1
 
 ### Patch Changes
