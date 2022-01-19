@@ -1,5 +1,14 @@
 # @uidu/field-image-uploader
 
+## 2.0.1
+
+### Patch Changes
+
+- 2f086f3c5: Typos and cleanup
+- Updated dependencies [2f086f3c5]
+  - @uidu/button@1.3.8
+  - @uidu/field-base@3.1.12
+
 ## 2.0.0
 
 ### Major Changes
