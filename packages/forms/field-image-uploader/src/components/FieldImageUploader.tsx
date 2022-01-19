@@ -219,10 +219,6 @@ function FieldImageUploaderStateless({
   let control = null;
   let toolbar = null;
 
-  console.log('data', data);
-  console.log('value', value);
-  console.log('isLoading', isLoading);
-
   if (data.length === 0) {
     if (value) {
       toolbar = (

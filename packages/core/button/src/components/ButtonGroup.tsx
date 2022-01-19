@@ -1,4 +1,4 @@
-import React, { Children, cloneElement } from 'react';
+import React, { Children, cloneElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { ButtonAppearances } from '../types';
@@ -17,7 +17,7 @@ export type ButtonGroupProps = {
   /** Class applied to the group */
   className?: string;
   /** Buttons */
-  children?: JSX.Element[];
+  children?: ReactNode;
 };
 
 export default function ButtonGroup({
