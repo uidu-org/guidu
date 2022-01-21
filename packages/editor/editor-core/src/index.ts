@@ -114,5 +114,5 @@ export { default as ToolbarHelp } from './ui/ToolbarHelp';
 export { default as WithEditorActions } from './ui/WithEditorActions';
 export { default as WithHelpTrigger } from './ui/WithHelpTrigger';
 // Used in editor-test-helpers
-export { setTextSelection } from './utils';
+export { isEmptyDocument, setTextSelection } from './utils';
 export { name, version } from './version-wrapper';
