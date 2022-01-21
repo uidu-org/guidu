@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 0.12.2
+
+### Patch Changes
+
+- 446a0e922: Export isEmptyDocument from editor-core
+
 ## 0.12.1
 
 ### Patch Changes
