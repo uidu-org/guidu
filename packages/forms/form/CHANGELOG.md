@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.12
+
+### Patch Changes
+
+- 2e25ba235: Remove paymentRequest by default CU-1vzc3d4[done]
+
 ## 1.2.11
 
 ### Patch Changes
