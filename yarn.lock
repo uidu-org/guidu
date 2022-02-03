@@ -7056,7 +7056,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-base@3.1.12, @uidu/field-base@^3.1.10, @uidu/field-base@^3.1.11, @uidu/field-base@^3.1.12, @uidu/field-base@workspace:packages/forms/field-base":
+"@uidu/field-base@3.1.13, @uidu/field-base@^3.1.10, @uidu/field-base@^3.1.11, @uidu/field-base@^3.1.12, @uidu/field-base@^3.1.13, @uidu/field-base@workspace:packages/forms/field-base":
   version: 0.0.0-use.local
   resolution: "@uidu/field-base@workspace:packages/forms/field-base"
   dependencies:
@@ -7521,7 +7521,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/form@*, @uidu/form@1.2.11, @uidu/form@^1.2.10, @uidu/form@^1.2.11, @uidu/form@workspace:packages/forms/form":
+"@uidu/form@*, @uidu/form@1.2.12, @uidu/form@^1.2.10, @uidu/form@^1.2.11, @uidu/form@^1.2.12, @uidu/form@workspace:packages/forms/form":
   version: 0.0.0-use.local
   resolution: "@uidu/form@workspace:packages/forms/form"
   dependencies:
@@ -8229,8 +8229,8 @@ __metadata:
     "@stripe/react-stripe-js": ^1.7.0
     "@stripe/stripe-js": ^1.22.0
     "@uidu/docs": ^0.5.5
-    "@uidu/field-base": ^3.1.11
-    "@uidu/form": ^1.2.10
+    "@uidu/field-base": ^3.1.13
+    "@uidu/form": ^1.2.12
     "@uidu/section-message": 0.6.6
     "@uidu/slider": ^1.7.8
     "@uidu/theme": ^0.6.7
@@ -17906,8 +17906,8 @@ __metadata:
     "@types/zxcvbn": ^4.4.1
     "@typescript-eslint/eslint-plugin": ^5.9.0
     "@typescript-eslint/parser": ^5.9.0
-    "@uidu/field-base": 3.1.12
-    "@uidu/form": 1.2.11
+    "@uidu/field-base": 3.1.13
+    "@uidu/form": 1.2.12
     "@uidu/profilecard": ^0.3.0
     "@uifabric/file-type-icons": ^7.8.5
     "@uppy/aws-s3": ^2.0.7
