@@ -1,4 +1,5 @@
 import { Value } from 'classnames';
+import Formsy from 'formsy-react';
 import { FormsyProps } from 'formsy-react/dist/Formsy';
 import { FC, ReactNode } from 'react';
 import { IconProps } from 'react-feather';
@@ -12,8 +13,8 @@ export type FormProps = {
   onChange?: FormsyProps['onChange'];
   handleSubmit: FormHandleSubmit;
   footerRenderer: (
-    { loading, canSubmit },
-    form,
+    { loading, canSubmit }: { loading: boolean; canSubmit: boolean },
+    form: Formsy,
     handleSubmit: (model, resetForm) => void,
   ) => void;
   withLoader?: boolean;

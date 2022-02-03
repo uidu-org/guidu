@@ -46,6 +46,7 @@ export type RecurringPaymentProps = SharedPaymentProps & {
 export type PaymentMethodsProps = {
   providers: PaymentProviderTypes[];
   paymentRequest?: PaymentRequest;
+  enablePaymentRequest?: boolean;
   label: string;
   amount: number;
   handleCharge: () => void;

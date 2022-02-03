@@ -1,6 +1,7 @@
 import { ElementsConsumer } from '@stripe/react-stripe-js';
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
+import tw from 'twin.macro';
 import { PaymentMethodsProps } from '../types';
 import { paymentProviders } from './Providers';
 import PaymentRequest from './Providers/PaymentRequest';
@@ -28,6 +29,7 @@ const Separator = styled.div`
 function PaymentMethods({
   providers,
   paymentRequest,
+  enablePaymentRequest = false,
   ...rest
 }: PaymentMethodsProps) {
   const availableProviders = useCallback(
@@ -44,7 +46,7 @@ function PaymentMethods({
 
   return (
     <div>
-      {paymentRequest && (
+      {enablePaymentRequest && paymentRequest && (
         <>
           <div tw="height[48px]">
             {paymentRequest && (
@@ -61,14 +63,17 @@ function PaymentMethods({
             return (
               <div key={id} tw="mr-2" style={{ width: 96 }}>
                 <a
-                  tw="border rounded p-4 mb-4 flex flex-col items-center"
+                  css={[
+                    tw`flex flex-col items-center p-4 mb-4 border rounded`,
+                    currentProvider.id === id && tw`border-primary`,
+                  ]}
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
                     setCurrentProvider(provider);
                   }}
                 >
-                  <div tw="flex flex-col items-start">
+                  <div tw="flex flex-col items-center">
                     <div tw="px-2 py-2 mb-2 rounded flex items-center justify-center">
                       <Icon size={18} />
                     </div>
