@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 1.3.0
+
+### Minor Changes
+
+- 2e25ba235: Remove paymentRequest by default CU-1vzc3d4[done]
+
+### Patch Changes
+
+- Updated dependencies [2e25ba235]
+  - @uidu/form@1.2.12
+  - @uidu/field-base@3.1.13
+
 ## 1.2.0
 
 ### Minor Changes
