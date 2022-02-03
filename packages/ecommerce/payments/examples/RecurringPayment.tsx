@@ -26,7 +26,7 @@ export default function RecurringPaymentExample({}) {
           This form should receive info about the plan and return payment
           methods
         </p>
-        <ul className="nav nav-pills mb-3">
+        <ul className="mb-3 nav nav-pills">
           {['card', 'bank_account'].map((p) => (
             <li className="nav-item" key={p}>
               <a
@@ -50,6 +50,9 @@ export default function RecurringPaymentExample({}) {
           createSubscription={async (payload) => {
             console.log(payload);
             return createSubscription(payload);
+          }}
+          stripeBillingDetails={{
+            name: 'John Doe',
           }}
           onSave={(payload) => {
             console.log(payload);

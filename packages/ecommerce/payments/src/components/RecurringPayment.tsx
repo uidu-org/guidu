@@ -29,7 +29,7 @@ function RecurringPayment({
   const [cardComplete, setCardComplete] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const stripePaymentIntentHandler = async (subscription) => {
+  const stripePaymentIntentHandler = async (subscription, provider) => {
     // eslint-disable-next-line camelcase
     const { latest_invoice } = subscription;
     // eslint-disable-next-line camelcase
@@ -44,8 +44,12 @@ function RecurringPayment({
         setLoading(false);
         onSave(payment_intent, {});
       } else {
+        const paymentConfirmationFn =
+          provider.id === 'credit_card'
+            ? stripe.confirmCardPayment
+            : stripe.confirmSepaDebitPayment;
         const { error: stripeError, paymentIntent } =
-          await stripe.confirmCardPayment(client_secret);
+          await paymentConfirmationFn(client_secret);
 
         if (stripeError) {
           // Display error message in your UI.
@@ -68,14 +72,16 @@ function RecurringPayment({
     }
   };
 
-  const stripePaymentMethodHandler = (payload, model) => {
+  const stripePaymentMethodHandler = (payload, model, provider) => {
     if (payload.error) {
       // Show error in payment form
       setError(payload.error);
       setLoading(false);
     } else {
       createSubscription({ ...payload, ...model })
-        .then(stripePaymentIntentHandler)
+        .then((subscription) =>
+          stripePaymentIntentHandler(subscription, provider),
+        )
         .catch((error) => {
           setLoading(false);
           setError(error);
@@ -83,7 +89,7 @@ function RecurringPayment({
     }
   };
 
-  const handleCardPayment = async (model) => {
+  const handleCardPayment = async (model, provider) => {
     const cardElement = elements.getElement(CardElement);
 
     if (error) {
@@ -103,10 +109,10 @@ function RecurringPayment({
       card: cardElement,
       type: 'card',
     });
-    stripePaymentMethodHandler(payload, model);
+    stripePaymentMethodHandler(payload, model, provider);
   };
 
-  const handleBankPayment = async (model) => {
+  const handleBankPayment = async (model, provider) => {
     const iban = elements.getElement(IbanElement);
 
     setLoading(true);
@@ -116,14 +122,14 @@ function RecurringPayment({
       type: 'sepa_debit',
       billing_details: stripeBillingDetails,
     });
-    stripePaymentMethodHandler(payload, model);
+    stripePaymentMethodHandler(payload, model, provider);
   };
 
   const handleSubmit = async (provider, model) => {
     if (provider.id === 'credit_card') {
-      handleCardPayment(model);
+      handleCardPayment(model, provider);
     } else if (provider.id === 'bank_account') {
-      handleBankPayment(model);
+      handleBankPayment(model, provider);
     } else {
       throw 'not supported';
     }

@@ -1,4 +1,5 @@
 import Form from '@uidu/form';
+import SectionMessage from '@uidu/section-message';
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import tw from 'twin.macro';
@@ -11,6 +12,7 @@ export default function Bank({
       id="uidu.payments.bank.label"
     />
   ),
+  error,
   handleSubmit,
   footerRenderer = (props: { loading?: boolean; canSubmit?: boolean }) => null,
   loading = false,
@@ -39,6 +41,11 @@ export default function Bank({
             required
           />
         </div>
+        {error && (
+          <SectionMessage appearance="error" tw="mb-3">
+            {error.message}
+          </SectionMessage>
+        )}
         {children}
       </Form>
     </>
