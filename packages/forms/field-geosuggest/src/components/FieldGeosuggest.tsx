@@ -1,6 +1,7 @@
 import { StyledRow, Wrapper } from '@uidu/field-base';
 import React, {
   forwardRef,
+  KeyboardEvent,
   useEffect,
   useImperativeHandle,
   useRef,
@@ -111,25 +112,6 @@ function FieldGeosuggest({
     setActiveSuggestion(newActiveSuggest);
   };
 
-  const selectSuggestion = (suggestion: Suggestion) => {
-    if (!suggestion) return null;
-
-    const { description } = suggestion;
-    let value = description;
-    if (valueGetter) {
-      value = valueGetter(suggestion);
-    }
-    setValue(value, false);
-    // formsy
-    onSetValue(value);
-    onChange(name, value, suggestion);
-    // callbacks
-    if (onGeocode) {
-      geocodeSuggestion(suggestion);
-    }
-    clearSuggestions();
-  };
-
   const geocodeSuggestion = ({ description }) => {
     getGeocode({ address: description })
       .then((results) => getLatLng(results[0]))
@@ -139,7 +121,27 @@ function FieldGeosuggest({
       });
   };
 
-  const onInputKeyDown = (event) => {
+  const selectSuggestion = (suggestion: Suggestion) => {
+    if (!suggestion) return null;
+
+    const { description } = suggestion;
+    let v = description;
+    if (valueGetter) {
+      v = valueGetter(suggestion);
+    }
+    setValue(v, false);
+    // formsy
+    onSetValue(v);
+    onChange(name, v, suggestion);
+    // callbacks
+    if (onGeocode) {
+      geocodeSuggestion(suggestion);
+    }
+    clearSuggestions();
+    return undefined;
+  };
+
+  const onInputKeyDown = (event: KeyboardEvent) => {
     switch (event.which) {
       case 40: // DOWN
         event.preventDefault();
@@ -165,7 +167,7 @@ function FieldGeosuggest({
   };
 
   const onInputFocus = () => {
-    element.current.setSelectionRange(0, 9999);
+    element.current?.setSelectionRange(0, 9999);
   };
 
   const onInputChange = (e) => setValue(e.target.value);

@@ -181,8 +181,8 @@
     "@types/url-search-params": "^1.1.0",
     "@types/uuid": "^8.3.3",
     "@types/zxcvbn": "^4.4.1",
-    "@typescript-eslint/eslint-plugin": "^5.9.0",
-    "@typescript-eslint/parser": "^5.9.0",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
     "@uidu/field-base": "3.1.13",
     "@uidu/form": "1.2.12",
     "@uidu/profilecard": "^0.3.0",
@@ -247,15 +247,7 @@
     "emoji-mart": "^3.0.1",
     "emoji-regex": "^9.2.2",
     "eslint": "^8.6.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-compat": "^4.0.0",
-    "eslint-plugin-formatjs": "^2.20.1",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-config-uidu": "0.1.0",
     "eventemitter2": "^6.4.5",
     "exenv": "^1.2.2",
     "extract-react-types-loader": "^1.0.0",
@@ -464,7 +456,8 @@
       "packages/*/*",
       "!packages/editor/json-schema-generator",
       "!packages/uidu/schema.d.ts",
-      "!packages/core/tailwind-config"
+      "!packages/core/tailwind-config",
+      "!packages/core/eslint-config"
     ]
   }
 }
