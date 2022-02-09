@@ -1,5 +1,11 @@
 # @uidu/field-geosuggest
 
+## 1.1.9
+
+### Patch Changes
+
+- 11ffc7fd0: Created eslint-config-uidu
+
 ## 1.1.8
 
 ### Patch Changes
