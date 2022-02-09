@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.3.1
+
+### Patch Changes
+
+- 4796ce6cb: CU-1vzc3fx WIP fix seba payment intent
+
 ## 1.3.0
 
 ### Minor Changes
