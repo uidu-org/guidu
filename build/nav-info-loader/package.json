@@ -7,7 +7,7 @@
   "main": "index.cjs",
   "dependencies": {
     "bolt": "^0.24.10",
-    "globby": "^11.0.4",
+    "globby": "^11.1.0",
     "loader-utils": "^2.0.2"
   },
   "publishConfig": {

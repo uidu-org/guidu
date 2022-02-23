@@ -9,7 +9,7 @@
   "module": "dist/uidu-field-image-uploader.esm.js",
   "types": "dist/uidu-field-image-uploader.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.16.7",
+    "@babel/runtime": "^7.17.2",
     "@uidu/analytics": "^0.5.5",
     "@uidu/button": "^1.3.8",
     "@uidu/field-base": "^3.1.12",
@@ -17,16 +17,16 @@
     "@uidu/media-core": "^0.7.4",
     "@uidu/spinner": "^0.5.6",
     "@uppy/aws-s3": "^2.0.7",
-    "@uppy/core": "^2.1.4",
-    "@uppy/drag-drop": "^2.0.5",
+    "@uppy/core": "^2.1.5",
+    "@uppy/drag-drop": "^2.0.6",
     "@uppy/react": "^2.1.2",
-    "@uppy/thumbnail-generator": "^2.0.6",
+    "@uppy/thumbnail-generator": "^2.1.1",
     "@uppy/xhr-upload": "^2.0.7",
     "classnames": "^2.3.1",
     "formsy-react": "^2.2.5",
     "react": "^17.0.2",
     "react-avatar-editor": "^12.0.0",
-    "react-dropzone": "^11.4.2",
+    "react-dropzone": "^11.7.1",
     "react-feather": "^2.0.9",
     "styled-components": "^5.3.3",
     "tslib": "^2.3.1"
@@ -34,6 +34,6 @@
   "devDependencies": {
     "@uidu/docs": "^0.5.5",
     "@uidu/form": "^1.2.11",
-    "axios": "^0.24.0"
+    "axios": "^0.26.0"
   }
 }

@@ -9,14 +9,14 @@
   "module": "dist/uidu-stepper.esm.js",
   "types": "dist/uidu-stepper.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.16.7",
+    "@babel/runtime": "^7.17.2",
     "@uidu/theme": "^0.6.7",
     "classnames": "^2.3.1",
-    "query-string": "^7.0.1",
+    "query-string": "^7.1.1",
     "react": "^17.0.2",
     "react-feather": "^2.0.9",
     "react-router-dom": "^5.3.0",
-    "react-scroll": "^1.8.4",
+    "react-scroll": "^1.8.5",
     "styled-components": "^5.3.3",
     "tslib": "^2.3.1"
   },

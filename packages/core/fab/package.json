@@ -9,7 +9,7 @@
   "module": "dist/uidu-fab.esm.js",
   "types": "dist/uidu-fab.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.16.7",
+    "@babel/runtime": "^7.17.2",
     "react": "^17.0.2",
     "react-feather": "^2.0.9",
     "styled-components": "^5.3.3",

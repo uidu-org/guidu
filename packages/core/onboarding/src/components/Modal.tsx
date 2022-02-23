@@ -3,7 +3,7 @@ import Modal, {
   FooterComponentProps,
   HeaderComponentProps,
 } from '@uidu/modal-dialog';
-import React, { Component, ElementType, ReactNode } from 'react';
+import React, { ElementType, ReactNode } from 'react';
 import {
   ActionItem,
   Actions as ModalActions,
@@ -30,8 +30,10 @@ type Props = {
 
 function noop() {}
 
-export default class OnboardingModal extends Component<Props> {
-  headerComponent = (props: Props) => {
+export default function OnboardingModal(props: Props) {
+  const { actions, children, heading, ...rest } = props;
+
+  const headerComponent = () => {
     const { header: HeaderElement, image: src } = props;
 
     const ImageElement = () => <Image alt="" src={src} />;
@@ -39,7 +41,7 @@ export default class OnboardingModal extends Component<Props> {
     return HeaderElement || ImageElement;
   };
 
-  footerComponent = (props: Props) => {
+  const footerComponent = () => {
     const { footer: FooterElement, actions: actionList } = props;
 
     const ActionsElement = () =>
@@ -63,27 +65,23 @@ export default class OnboardingModal extends Component<Props> {
     return FooterElement || ActionsElement;
   };
 
-  render() {
-    const { actions, children, heading, ...props } = this.props;
-
-    return (
-      <Modal
-        autoFocus
-        components={{
-          Header: this.headerComponent(this.props),
-          Footer: this.footerComponent(this.props),
-        }}
-        onClose={noop}
-        scrollBehavior="outside"
-        shouldCloseOnOverlayClick={false}
-        shouldCloseOnEscapePress={false}
-        {...props}
-      >
-        <Body>
-          {heading && <Heading>{heading}</Heading>}
-          {children}
-        </Body>
-      </Modal>
-    );
-  }
+  return (
+    <Modal
+      autoFocus
+      components={{
+        Header: headerComponent(props),
+        Footer: footerComponent(props),
+      }}
+      onClose={noop}
+      scrollBehavior="outside"
+      shouldCloseOnOverlayClick={false}
+      shouldCloseOnEscapePress={false}
+      {...rest}
+    >
+      <Body>
+        {heading && <Heading>{heading}</Heading>}
+        {children}
+      </Body>
+    </Modal>
+  );
 }

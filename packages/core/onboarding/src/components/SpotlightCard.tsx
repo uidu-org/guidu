@@ -1,10 +1,7 @@
-import { colors } from '@uidu/theme';
 import { ThemeProp } from '@uidu/theme/components';
 import React, { ComponentType, ReactNode, Ref } from 'react';
 import { Actions } from '../types';
 import Card, { CardTokens } from './Card';
-
-const { N0, N50A, N60A, P300 } = colors;
 
 interface Props {
   /** Buttons to render in the footer */

@@ -7,13 +7,13 @@
   "main": "index.js",
   "module": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.16.7",
+    "@babel/runtime": "^7.17.2",
     "@tailwindcss/aspect-ratio": "^0.3.0",
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "^0.4.1"
   },
   "devDependencies": {
-    "postcss": "^8.4.5",
+    "postcss": "^8.4.6",
     "tailwindcss": "^2.2.19"
   },
   "peerDependencies": {
