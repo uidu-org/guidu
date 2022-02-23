@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 1.2.3
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/data-fields@1.5.4
+
 ## 1.2.2
 
 ### Patch Changes

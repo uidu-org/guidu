@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.14
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/form@1.2.13
+
 ## 3.1.13
 
 ### Patch Changes

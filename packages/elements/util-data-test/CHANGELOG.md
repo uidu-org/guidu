@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.10
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/analytics@0.5.7
+  - @uidu/emoji@0.6.2
+  - @uidu/mentions@0.4.1
+  - @uidu/task-decision@0.4.11
+
 ## 0.4.9
 
 ### Patch Changes

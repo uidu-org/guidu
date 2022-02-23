@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.3.8
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/docs@0.5.6
+  - @uidu/analytics@0.5.7
+  - @uidu/theme@0.6.9
+
 ## 0.3.7
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 1.2.3
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/button@1.3.9
+  - @uidu/data-controls@2.1.3
+  - @uidu/data-manager@2.2.2
+  - @uidu/field-counter@1.1.9
+  - @uidu/field-number@1.0.9
+  - @uidu/form@1.2.13
+  - @uidu/select@1.5.9
+
 ## 1.2.2
 
 ### Patch Changes

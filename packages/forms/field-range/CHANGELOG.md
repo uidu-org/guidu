@@ -1,5 +1,15 @@
 # @uidu/field-range
 
+## 1.1.1
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/theme@0.6.9
+  - @uidu/field-base@3.1.14
+  - @uidu/form@1.2.13
+
 ## 1.1.0
 
 ### Minor Changes

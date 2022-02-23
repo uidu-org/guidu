@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.5.10
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/analytics@0.5.7
+  - @uidu/item@0.5.9
+  - @uidu/layer@0.5.7
+  - @uidu/spinner@0.5.7
+  - @uidu/theme@0.6.9
+  - @uidu/tooltip@0.5.9
+
 ## 0.5.9
 
 ### Patch Changes
