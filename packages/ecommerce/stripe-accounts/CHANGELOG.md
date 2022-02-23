@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.4.1
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/slider@1.7.9
+  - @uidu/spinner@0.5.7
+  - @uidu/payments@1.3.2
+  - @uidu/field-text@1.1.10
+  - @uidu/form@1.2.13
+  - @uidu/stepper@0.4.7
+
 ## 0.4.0
 
 ### Minor Changes

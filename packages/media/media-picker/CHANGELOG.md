@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.7.6
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+
 ## 0.7.5
 
 ### Patch Changes

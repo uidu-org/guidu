@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.6.8
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/avatar@0.9.4
+  - @uidu/dropdown-menu@0.6.10
+  - @uidu/theme@0.6.9
+  - @uidu/tooltip@0.5.9
+
 ## 2.6.7
 
 ### Patch Changes

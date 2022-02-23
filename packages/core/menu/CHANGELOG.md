@@ -1,5 +1,13 @@
 # @uidu/menu
 
+## 0.7.2
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/theme@0.6.9
+
 ## 0.7.1
 
 ### Patch Changes

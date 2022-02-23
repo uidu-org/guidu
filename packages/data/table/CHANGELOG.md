@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.3.3
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/button@1.3.9
+  - @uidu/dropdown-menu@0.6.10
+  - @uidu/menu@0.7.2
+  - @uidu/popup@0.6.9
+  - @uidu/data-fields@1.5.4
+  - @uidu/checkbox@1.1.10
+
 ## 1.3.2
 
 ### Patch Changes

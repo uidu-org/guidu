@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.0.15
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/avatar@0.9.4
+  - @uidu/avatar-group@2.6.8
+  - @uidu/button@1.3.9
+  - @uidu/dropdown-menu@0.6.10
+  - @uidu/field-date-range@1.1.8
+  - @uidu/form@1.2.13
+
 ## 1.0.14
 
 ### Patch Changes

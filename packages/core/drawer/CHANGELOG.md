@@ -1,5 +1,16 @@
 # @uidu/drawer
 
+## 0.7.10
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/docs@0.5.6
+  - @uidu/analytics@0.5.7
+  - @uidu/item@0.5.9
+  - @uidu/theme@0.6.9
+
 ## 0.7.9
 
 ### Patch Changes

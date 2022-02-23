@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 1.6.3
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/spinner@0.5.7
+  - @uidu/tooltip@0.5.9
+  - @uidu/dashboard-manager@1.3.7
+  - @uidu/dashlet-controls@1.0.15
+  - @uidu/data-fields@1.5.4
+  - @uidu/table@1.3.3
+
 ## 1.6.2
 
 ### Patch Changes

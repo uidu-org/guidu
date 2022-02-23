@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 1.5.9
+
+### Patch Changes
+
+- 02edaec3f: Bump dependencies
+- Updated dependencies [02edaec3f]
+  - @uidu/analytics@0.5.7
+  - @uidu/spinner@0.5.7
+  - @uidu/theme@0.6.9
+  - @uidu/tooltip@0.5.9
+  - @uidu/checkbox@1.1.10
+  - @uidu/field-base@3.1.14
+  - @uidu/form@1.2.13
+
 ## 1.5.8
 
 ### Patch Changes
