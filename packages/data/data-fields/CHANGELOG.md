@@ -1,5 +1,12 @@
 # @uidu/data-fields
 
+## 1.5.7
+
+### Patch Changes
+
+- Updated dependencies [80cbd63c9]
+  - @uidu/map@0.6.8
+
 ## 1.5.6
 
 ### Patch Changes
