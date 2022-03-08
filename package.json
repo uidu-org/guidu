@@ -247,7 +247,7 @@
     "emoji-mart": "^3.0.1",
     "emoji-regex": "^9.2.2",
     "eslint": "^8.10.0",
-    "eslint-config-uidu": "0.1.3",
+    "eslint-config-uidu": "^0.1.2",
     "eventemitter2": "^6.4.5",
     "exenv": "^1.2.2",
     "extract-react-types-loader": "^1.0.0",
