@@ -44,7 +44,7 @@ const StyledMarker = styled.div<{ isHover?: boolean }>`
         transform: scale(1.3) translate(-50%, 50%) rotate(-45deg);
         transform-origin: left;
         transition: background-color 0.15s transform 0.15s ease-out 0s;
-        background-color: #3d64ff;
+        background-color: rgba(var(--brand-primary), 1);
         z-index: 500;
       `;
     }
