@@ -1,5 +1,11 @@
 # @uidu/map
 
+## 0.6.8
+
+### Patch Changes
+
+- 80cbd63c9: Make map marker styleable
+
 ## 0.6.7
 
 ### Patch Changes
