@@ -308,7 +308,7 @@
   - @uidu/field-phone@0.2.13
   - @uidu/field-text@0.5.1
   - @uidu/form@0.4.15
-  - @uidu/shell@1.2.15
+  - @uidu/shell@1.2.13
 
 ## 0.5.12
 

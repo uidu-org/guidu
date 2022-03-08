@@ -176,7 +176,7 @@
 - Updated dependencies [a09ab80e9]
   - @uidu/spinner@0.4.11
 
-## 1.2.15
+## 1.2.13
 
 ### Patch Changes
 

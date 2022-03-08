@@ -12,7 +12,7 @@
   - @uidu/field-date@1.1.11
   - @uidu/select@1.5.10
   - @uidu/field-color-picker@2.0.12
-  - @uidu/form@1.2.15
+  - @uidu/form@1.2.13
 
 ## 1.5.5
 

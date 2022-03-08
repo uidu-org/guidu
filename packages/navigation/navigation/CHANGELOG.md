@@ -230,7 +230,7 @@
   - @uidu/theme@0.5.11
   - @uidu/tooltip@0.4.10
   - @uidu/animated-menu@0.3.8
-  - @uidu/shell@1.2.15
+  - @uidu/shell@1.2.13
 
 ## 0.7.8
 

@@ -27,7 +27,7 @@
     "@uidu/field-counter": "^1.1.9",
     "@uidu/field-date": "^1.1.11",
     "@uidu/field-time": "^1.1.10",
-    "@uidu/form": "^1.2.15",
+    "@uidu/form": "^1.2.13",
     "@uidu/menu": "0.7.3",
     "@uidu/popup": "0.6.10",
     "@uidu/radio": "^1.1.8",

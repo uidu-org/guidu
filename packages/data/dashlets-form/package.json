@@ -17,7 +17,7 @@
     "@uidu/dropdown-menu": "^0.6.11",
     "@uidu/field-downshift": "^1.4.6",
     "@uidu/field-toggle": "^1.1.5",
-    "@uidu/form": "^1.2.15",
+    "@uidu/form": "^1.2.13",
     "@uidu/select": "^1.5.10",
     "@uidu/shell": "^2.1.12",
     "react": "^17.0.2",

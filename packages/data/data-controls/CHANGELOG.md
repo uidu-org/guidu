@@ -17,7 +17,7 @@
   - @uidu/select@1.5.10
   - @uidu/shell@2.1.12
   - @uidu/data-views@1.2.5
-  - @uidu/form@1.2.15
+  - @uidu/form@1.2.13
 
 ## 2.1.4
 
@@ -548,7 +548,7 @@
   - @uidu/field-text@0.5.1
   - @uidu/form@0.4.15
   - @uidu/select@0.6.14
-  - @uidu/shell@1.2.15
+  - @uidu/shell@1.2.13
 
 ## 0.7.10
 

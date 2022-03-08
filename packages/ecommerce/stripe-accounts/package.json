@@ -13,7 +13,7 @@
     "@stripe/react-stripe-js": "^1.7.0",
     "@stripe/stripe-js": "^1.24.0",
     "@uidu/field-text": "^1.1.10",
-    "@uidu/form": "^1.2.15",
+    "@uidu/form": "^1.2.13",
     "@uidu/payments": "^1.3.3",
     "@uidu/slider": "^1.7.9",
     "@uidu/spinner": "^0.5.7",

@@ -10,7 +10,7 @@
   - @uidu/dashlets@1.6.5
   - @uidu/select@1.5.10
   - @uidu/shell@2.1.12
-  - @uidu/form@1.2.15
+  - @uidu/form@1.2.13
 
 ## 1.0.10
 
@@ -293,7 +293,7 @@
   - @uidu/field-toggle@0.4.15
   - @uidu/form@0.4.15
   - @uidu/select@0.6.14
-  - @uidu/shell@1.2.15
+  - @uidu/shell@1.2.13
 
 ## 0.4.3
 

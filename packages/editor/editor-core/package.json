@@ -28,7 +28,7 @@
     "@uidu/editor-markdown-transformer": "^0.6.2",
     "@uidu/emoji": "^0.6.4",
     "@uidu/field-date": "^1.1.11",
-    "@uidu/form": "^1.2.15",
+    "@uidu/form": "^1.2.13",
     "@uidu/media-card": "^0.6.2",
     "@uidu/media-core": "^0.7.4",
     "@uidu/media-filmstrip": "^0.4.11",

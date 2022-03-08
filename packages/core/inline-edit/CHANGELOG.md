@@ -8,7 +8,7 @@
 - Updated dependencies [7eabdf4f4]
   - @uidu/button@1.3.11
   - @uidu/inline-dialog@0.5.10
-  - @uidu/form@1.2.15
+  - @uidu/form@1.2.13
 
 ## 0.3.10
 

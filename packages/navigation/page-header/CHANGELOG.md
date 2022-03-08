@@ -74,7 +74,7 @@
 - 992c21388: Bump dependencies and migrate to yarn2
 - Updated dependencies [992c21388]
   - @uidu/theme@0.5.11
-  - @uidu/shell@1.2.15
+  - @uidu/shell@1.2.13
 
 ## 0.2.9
 

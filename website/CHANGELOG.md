@@ -12,7 +12,7 @@
   - @uidu/select@1.5.10
   - @uidu/shell@2.1.12
   - @uidu/table@1.3.5
-  - @uidu/form@1.2.15
+  - @uidu/form@1.2.13
 
 ## 0.4.20
 
@@ -522,7 +522,7 @@
   - @uidu/form@0.4.15
   - @uidu/select@0.6.14
   - @uidu/navigation@0.7.9
-  - @uidu/shell@1.2.15
+  - @uidu/shell@1.2.13
   - @uidu/themes-uidu@0.3.20
 
 ## 0.3.1

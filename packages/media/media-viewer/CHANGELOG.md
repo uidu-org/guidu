@@ -260,7 +260,7 @@
   - @uidu/spinner@0.4.10
   - @uidu/theme@0.5.11
   - @uidu/media-core@0.4.9
-  - @uidu/shell@1.2.15
+  - @uidu/shell@1.2.13
 
 ## 0.3.11
 

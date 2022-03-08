@@ -14,7 +14,7 @@
     "@stripe/react-stripe-js": "^1.7.0",
     "@stripe/stripe-js": "^1.24.0",
     "@uidu/field-base": "^3.1.14",
-    "@uidu/form": "^1.2.15",
+    "@uidu/form": "^1.2.13",
     "@uidu/section-message": "0.6.8",
     "@uidu/slider": "^1.7.9",
     "@uidu/theme": "^0.6.9",

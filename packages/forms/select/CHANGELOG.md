@@ -7,7 +7,7 @@
 - 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
 - Updated dependencies [7eabdf4f4]
   - @uidu/tooltip@0.5.10
-  - @uidu/form@1.2.15
+  - @uidu/form@1.2.13
 
 ## 1.5.9
 

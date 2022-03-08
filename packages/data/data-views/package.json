@@ -15,7 +15,7 @@
     "@uidu/data-manager": "2.3.0",
     "@uidu/field-counter": "^1.1.9",
     "@uidu/field-number": "^1.0.9",
-    "@uidu/form": "^1.2.15",
+    "@uidu/form": "^1.2.13",
     "@uidu/select": "^1.5.10",
     "react": "^17.0.2",
     "react-feather": "^2.0.9",

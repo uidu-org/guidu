@@ -20,7 +20,7 @@
   - @uidu/field-date@1.1.11
   - @uidu/select@1.5.10
   - @uidu/media-card@0.6.2
-  - @uidu/form@1.2.15
+  - @uidu/form@1.2.13
 
 ## 0.12.4
 

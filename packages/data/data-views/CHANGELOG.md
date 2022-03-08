@@ -9,7 +9,7 @@
   - @uidu/button@1.3.11
   - @uidu/data-controls@2.1.5
   - @uidu/select@1.5.10
-  - @uidu/form@1.2.15
+  - @uidu/form@1.2.13
 
 ## 1.2.4
 

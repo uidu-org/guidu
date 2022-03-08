@@ -7,7 +7,7 @@
 - Updated dependencies [7eabdf4f4]
   - @uidu/button@1.3.11
   - @uidu/dropdown-menu@0.6.11
-  - @uidu/form@1.2.15
+  - @uidu/form@1.2.13
 
 ## 1.0.16
 

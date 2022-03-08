@@ -21,6 +21,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.6",
-    "@uidu/form": "^1.2.15"
+    "@uidu/form": "^1.2.13"
   }
 }

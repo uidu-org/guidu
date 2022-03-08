@@ -212,7 +212,7 @@
   - @uidu/spinner@0.4.10
   - @uidu/data-controls@0.7.11
   - @uidu/data-fields@0.5.13
-  - @uidu/shell@1.2.15
+  - @uidu/shell@1.2.13
 
 ## 0.2.13
 

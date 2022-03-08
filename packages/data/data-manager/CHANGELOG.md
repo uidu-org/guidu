@@ -487,7 +487,7 @@
   - @uidu/gallery@0.2.14
   - @uidu/list@0.2.14
   - @uidu/table@0.7.2
-  - @uidu/shell@1.2.15
+  - @uidu/shell@1.2.13
 
 ## 0.11.2
 

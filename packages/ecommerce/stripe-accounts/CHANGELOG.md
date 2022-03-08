@@ -8,7 +8,7 @@
 - Updated dependencies [7eabdf4f4]
   - @uidu/payments@1.3.3
   - @uidu/stepper@0.4.8
-  - @uidu/form@1.2.15
+  - @uidu/form@1.2.13
 
 ## 0.4.1
 
