@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.3
+
+### Patch Changes
+
+- a2a87e3cf: Fix default export for button
+
 ## 0.1.2
 
 ### Patch Changes

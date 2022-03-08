@@ -1,5 +1,17 @@
 # @uidu/editor-core
 
+## 0.12.4
+
+### Patch Changes
+
+- a2a87e3cf: Fix default export for button
+- Updated dependencies [a2a87e3cf]
+  - @uidu/button@1.3.10
+  - @uidu/adf-schema@0.7.2
+  - @uidu/editor-json-transformer@0.6.2
+  - @uidu/emoji@0.6.3
+  - @uidu/form@1.2.14
+
 ## 0.12.3
 
 ### Patch Changes
