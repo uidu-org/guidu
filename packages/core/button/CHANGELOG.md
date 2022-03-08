@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.3.10
+
+### Patch Changes
+
+- a2a87e3cf: Fix default export for button
+
 ## 1.3.9
 
 ### Patch Changes

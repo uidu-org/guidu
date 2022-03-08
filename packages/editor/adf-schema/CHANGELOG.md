@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.7.2
+
+### Patch Changes
+
+- a2a87e3cf: Fix default export for button
+
 ## 0.7.1
 
 ### Patch Changes

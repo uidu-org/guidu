@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.6
+
+### Patch Changes
+
+- a2a87e3cf: Fix default export for button
+
 ## 0.1.5
 
 ### Patch Changes
