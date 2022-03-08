@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 1.3.4
+
+### Patch Changes
+
+- Updated dependencies [a2a87e3cf]
+  - @uidu/button@1.3.10
+  - @uidu/data-fields@1.5.5
+
 ## 1.3.3
 
 ### Patch Changes

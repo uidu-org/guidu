@@ -1,5 +1,13 @@
 # @uidu/emoji
 
+## 0.6.3
+
+### Patch Changes
+
+- a2a87e3cf: Fix default export for button
+- Updated dependencies [a2a87e3cf]
+  - @uidu/button@1.3.10
+
 ## 0.6.2
 
 ### Patch Changes

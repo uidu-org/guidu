@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 2.2.3
+
+### Patch Changes
+
+- Updated dependencies [a2a87e3cf]
+  - @uidu/button@1.3.10
+  - @uidu/calendar@0.3.12
+  - @uidu/data-controls@2.1.4
+  - @uidu/data-fields@1.5.5
+  - @uidu/data-views@1.2.4
+  - @uidu/table@1.3.4
+
 ## 2.2.2
 
 ### Patch Changes
