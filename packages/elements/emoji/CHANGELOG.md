@@ -1,5 +1,14 @@
 # @uidu/emoji
 
+## 0.6.4
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/button@1.3.11
+  - @uidu/tooltip@0.5.10
+
 ## 0.6.3
 
 ### Patch Changes

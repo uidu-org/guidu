@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 1.5.10
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/tooltip@0.5.10
+  - @uidu/form@1.2.15
+
 ## 1.5.9
 
 ### Patch Changes

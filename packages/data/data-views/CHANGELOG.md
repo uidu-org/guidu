@@ -1,5 +1,16 @@
 # @uidu/data-views
 
+## 1.2.5
+
+### Patch Changes
+
+- Updated dependencies [7eabdf4f4]
+  - @uidu/data-manager@2.3.0
+  - @uidu/button@1.3.11
+  - @uidu/data-controls@2.1.5
+  - @uidu/select@1.5.10
+  - @uidu/form@1.2.15
+
 ## 1.2.4
 
 ### Patch Changes

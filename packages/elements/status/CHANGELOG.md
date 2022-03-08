@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.5.2
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+
 ## 0.5.1
 
 ### Patch Changes

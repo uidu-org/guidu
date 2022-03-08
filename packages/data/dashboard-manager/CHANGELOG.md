@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 1.3.8
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/dashlets@1.6.5
+  - @uidu/dashboard-controls@1.0.17
+
 ## 1.3.7
 
 ### Patch Changes
