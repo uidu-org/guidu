@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 1.1.11
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+
 ## 1.1.10
 
 ### Patch Changes

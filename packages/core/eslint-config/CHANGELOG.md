@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.4
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+
 ## 0.1.3
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/calendar
 
+## 0.4.0
+
+### Minor Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+
+### Patch Changes
+
+- Updated dependencies [7eabdf4f4]
+  - @uidu/button@1.3.11
+  - @uidu/dropdown-menu@0.6.11
+  - @uidu/shell@2.1.12
+
 ## 0.3.12
 
 ### Patch Changes

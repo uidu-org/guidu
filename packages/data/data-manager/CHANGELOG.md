@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 2.3.0
+
+### Minor Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+
+### Patch Changes
+
+- Updated dependencies [7eabdf4f4]
+  - @uidu/calendar@0.4.0
+  - @uidu/button@1.3.11
+  - @uidu/data-controls@2.1.5
+  - @uidu/data-fields@1.5.6
+  - @uidu/shell@2.1.12
+  - @uidu/data-views@1.2.5
+  - @uidu/table@1.3.5
+
 ## 2.2.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.7
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+
 ## 0.1.6
 
 ### Patch Changes

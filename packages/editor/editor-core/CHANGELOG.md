@@ -1,5 +1,27 @@
 # @uidu/editor-core
 
+## 0.12.5
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/button@1.3.11
+  - @uidu/droplist@0.5.11
+  - @uidu/menu@0.7.3
+  - @uidu/modal-dialog@0.5.14
+  - @uidu/tooltip@0.5.10
+  - @uidu/editor-common@0.7.2
+  - @uidu/emoji@0.6.4
+  - @uidu/mentions@0.4.2
+  - @uidu/profilecard@0.3.2
+  - @uidu/status@0.5.2
+  - @uidu/task-decision@0.4.12
+  - @uidu/field-date@1.1.11
+  - @uidu/select@1.5.10
+  - @uidu/media-card@0.6.2
+  - @uidu/form@1.2.15
+
 ## 0.12.4
 
 ### Patch Changes

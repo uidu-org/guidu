@@ -1,5 +1,11 @@
 # @uidu/stepper
 
+## 0.4.8
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+
 ## 0.4.7
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/editor-common
 
+## 0.7.2
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/emoji@0.6.4
+  - @uidu/mentions@0.4.2
+  - @uidu/profilecard@0.3.2
+
 ## 0.7.1
 
 ### Patch Changes
