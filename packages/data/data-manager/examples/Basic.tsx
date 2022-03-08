@@ -24,7 +24,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import 'react-big-calendar/lib/sass/styles';
 import { PlusCircle } from 'react-feather';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -393,6 +392,20 @@ export default function Basic({}) {
                                   },
                                   list: {
                                     rowHeight: 104,
+                                  },
+                                  calendar: {
+                                    components: {
+                                      event: (props) => (
+                                        <div tw="bg-red-500 my-0.5">Ciao</div>
+                                      ),
+                                      month: {
+                                        event: (props) => (
+                                          <div tw="bg-red-500 my-0.5">
+                                            {props.title}
+                                          </div>
+                                        ),
+                                      },
+                                    },
                                   },
                                   board: {},
                                   table: {

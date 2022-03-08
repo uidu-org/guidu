@@ -10,8 +10,8 @@
   "types": "dist/uidu-dashboard-manager.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.17.2",
-    "@cubejs-client/core": "^0.29.23",
-    "@cubejs-client/react": "^0.29.24",
+    "@cubejs-client/core": "^0.29.29",
+    "@cubejs-client/react": "^0.29.29",
     "@types/react-grid-layout": "^1.3.2",
     "@uidu/dashboard-controls": "^1.0.15",
     "@uidu/dashlets": "^1.6.3",

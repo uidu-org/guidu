@@ -1,4 +1,4 @@
-$font-family: 'Avenir' !default; // $font-family-sans-serif;
+$font-family: 'Inter Var' !default; // $font-family-sans-serif;
 $font-size: 1rem !default; // $font-size-base;
 $secondary-font-size: 14px !default; // $font-size-base;
 $foreground-color: 'inherit' !default; // $body-color;
@@ -74,7 +74,7 @@ $primary: #ec8447 !default;
   flex: 1 0 0%;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 0.5rem;
+  padding: 0.75rem;
   // text-align: center;
   vertical-align: middle;
   // font-weight: 500;
@@ -229,10 +229,11 @@ $primary: #ec8447 !default;
 }
 
 .rbc-event {
-  padding: 2px 5px;
-  background-color: #3891a6;
-  color: #fff;
-  cursor: pointer;
+  // margin: 1px 0;
+  // padding: 2px 8px;
+  // background-color: #3891a6;
+  // color: #fff;
+  // cursor: pointer;
 }
 
 .rbc-slot-selecting .rbc-event {
@@ -352,8 +353,9 @@ $primary: #ec8447 !default;
 .rbc-date-cell {
   flex: 1 1 0;
   min-width: 0;
-  padding-right: 5px;
-  text-align: right;
+  padding-top: 8px;
+  padding-left: 8px;
+  text-align: left;
   font-size: 0.8rem;
 
   &.rbc-now {

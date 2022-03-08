@@ -7,7 +7,7 @@
   "module": "dist/uidu-editor-core.esm.js",
   "types": "dist/uidu-editor-core.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.10.3",
+    "@atlaskit/icon": "^21.10.4",
     "@atlaskit/util-service-support": "^6.1.0",
     "@atlaskit/width-detector": "^3.0.8",
     "@babel/runtime": "^7.17.2",

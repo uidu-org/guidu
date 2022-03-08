@@ -14,23 +14,21 @@ export default function Calendar({
   ...rest
 }) {
   return (
-    <>
-      <BigCalendar
-        {...calendarProps({ events, onEventDrop, onEventResize })}
-        defaultView="month"
-        selectable={false}
-        resizable={false}
-        views={['month', 'week', 'day']}
-        components={{
-          toolbar: Toolbar,
+    <BigCalendar
+      {...calendarProps({ events, onEventDrop, onEventResize })}
+      defaultView="month"
+      selectable={false}
+      resizable={false}
+      views={['month', 'week', 'day']}
+      components={{
+        toolbar: Toolbar,
+        event: Event,
+        month: {
           event: Event,
-          month: {
-            event: Event,
-          },
-          // ...components,
-        }}
-        {...rest}
-      />
-    </>
+        },
+        ...components,
+      }}
+      {...rest}
+    />
   );
 }

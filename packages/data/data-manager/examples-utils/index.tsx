@@ -64,7 +64,7 @@ export const defaultDataViews = [
     id: 4,
     name: 'Calendario contatti',
     kind: 'calendar',
-    primaryField: 'createdAt',
+    preferences: { primaryField: 'displayName', startDateField: 'createdAt' },
     fields: ['avatar', 'member', 'amount'],
   },
   {

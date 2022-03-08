@@ -10,9 +10,9 @@
   "types": "dist/uidu-payments.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.17.2",
-    "@heroicons/react": "^1.0.5",
+    "@heroicons/react": "^1.0.6",
     "@stripe/react-stripe-js": "^1.7.0",
-    "@stripe/stripe-js": "^1.23.0",
+    "@stripe/stripe-js": "^1.24.0",
     "@uidu/field-base": "^3.1.14",
     "@uidu/form": "^1.2.13",
     "@uidu/section-message": "0.6.7",

@@ -9,7 +9,7 @@
   "main": "dist/uidu-inline-edit.cjs.js",
   "types": "dist/uidu-inline-edit.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.10.3",
+    "@atlaskit/icon": "^21.10.4",
     "@babel/runtime": "^7.17.2",
     "@loadable/component": "^5.15.2",
     "@uidu/analytics": "^0.5.7",
@@ -23,7 +23,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@atlaskit/tag": "^11.2.5",
+    "@atlaskit/tag": "^11.2.6",
     "@atlaskit/tag-group": "^10.0.11",
     "@uidu/docs": "^0.5.6",
     "@uidu/field-textarea": "^1.1.9",

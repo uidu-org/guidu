@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import loadable from '@loadable/component';
-import { CalendarToolbar } from '@uidu/data-controls';
 import { ShellBodyWithSpinner } from '@uidu/shell';
 import dayjs from 'dayjs';
 import React from 'react';
@@ -103,19 +102,17 @@ function DataManagerView({
     setAggregation,
     setColumnWidth,
   } = useDataManagerContext();
-  const renderResponsiveView = ({ mobileView, desktopView }) => {
-    return (
-      <Media query={{ maxWidth: 768 }}>
-        {(matches) => {
-          if (matches) {
-            return mobileView;
-          }
+  const renderResponsiveView = ({ mobileView, desktopView }) => (
+    <Media query={{ maxWidth: 768 }}>
+      {(matches) => {
+        if (matches) {
+          return mobileView;
+        }
 
-          return desktopView;
-        }}
-      </Media>
-    );
-  };
+        return desktopView;
+      }}
+    </Media>
+  );
 
   if (!rowData) {
     return <ShellBodyWithSpinner />;
@@ -135,121 +132,115 @@ function DataManagerView({
         currentView.preferences?.startDateField || 'beginsAt';
       const endDateField =
         currentView.preferences?.startDateField || 'finishesAt';
+      const { components: calendarComponents, ...calendarViewProps } =
+        viewProps.calendar || {};
+      console.log(calendarComponents);
+      console.log(calendarViewProps);
+      // eslint-disable-next-line no-multi-assign
       desktopView = mobileView = (
-        <>
-          <LoadableCalendar fallback={<ShellBodyWithSpinner />}>
-            {({ default: Calendar }) => {
-              return (
-                <div tw="h-full">
-                  <Calendar
-                    {...viewProps.calendar}
-                    onItemClick={onItemClick}
-                    events={rowData}
-                    startAccessor={(item) => {
-                      return dayjs(item[startDateField]).toDate();
-                    }}
-                    titleAccessor={(item) => item[primaryField]}
-                    endAccessor={(item) => {
-                      return endDateField
-                        ? dayjs(item[endDateField]).toDate()
-                        : dayjs(item[startDateField]).add(3, 'hour').toDate();
-                    }}
-                    columnDefs={columns}
-                    components={{
-                      toolbar: CalendarToolbar,
-                    }}
-                  />
-                </div>
-              );
-            }}
-          </LoadableCalendar>
-        </>
+        <LoadableCalendar fallback={<ShellBodyWithSpinner />}>
+          {({ default: Calendar, Toolbar }) => (
+            <div tw="h-full">
+              <Calendar
+                onSelectEvent={onItemClick}
+                events={rowData}
+                startAccessor={(item) => dayjs(item[startDateField]).toDate()}
+                titleAccessor={(item) => item[primaryField]}
+                endAccessor={(item) =>
+                  endDateField
+                    ? dayjs(item[endDateField]).toDate()
+                    : dayjs(item[startDateField]).add(3, 'hour').toDate()
+                }
+                columnDefs={columns}
+                components={{
+                  toolbar: Toolbar,
+                  ...calendarComponents,
+                }}
+                {...calendarViewProps}
+              />
+            </div>
+          )}
+        </LoadableCalendar>
       );
       break;
     }
     case 'board': {
       const primaryField = currentView.preferences?.primaryField;
+      // eslint-disable-next-line no-multi-assign
       desktopView = mobileView = (
-        <>
-          <LoadableBoard fallback={<ShellBodyWithSpinner />}>
-            {({ default: Board }) => {
-              if (!primaryField) {
-                return null;
-              }
-              return (
-                <Board
-                  {...viewProps.board}
-                  tableInstance={tableInstance}
-                  columnDefs={tableInstance.visibleColumns}
-                  initial={rowData.reduce((res, item, index) => {
-                    const key = item[primaryField];
-                    if (res[key]) {
-                      res[key] = [...res[key], { ...item, content: item.id }];
-                    } else {
-                      res[key] = [{ ...item, content: item.id }];
-                    }
-                    return res;
-                  }, {})}
-                  onItemClick={onItemClick}
-                  components={{
-                    columnContainer: Column,
-                    columnHeader: ColumnHeader,
-                    item: Item,
-                  }}
-                />
-              );
-            }}
-          </LoadableBoard>
-        </>
+        <LoadableBoard fallback={<ShellBodyWithSpinner />}>
+          {({ default: Board }) => {
+            if (!primaryField) {
+              return null;
+            }
+            return (
+              <Board
+                {...viewProps.board}
+                tableInstance={tableInstance}
+                columnDefs={tableInstance.visibleColumns}
+                initial={rowData.reduce((res, item, index) => {
+                  const key = item[primaryField];
+                  if (res[key]) {
+                    res[key] = [...res[key], { ...item, content: item.id }];
+                  } else {
+                    res[key] = [{ ...item, content: item.id }];
+                  }
+                  return res;
+                }, {})}
+                onItemClick={onItemClick}
+                components={{
+                  columnContainer: Column,
+                  columnHeader: ColumnHeader,
+                  item: Item,
+                }}
+              />
+            );
+          }}
+        </LoadableBoard>
       );
       break;
     }
     case 'gallery': {
       mobileView = (
-        <>
-          <LoadableList fallback={<ShellBodyWithSpinner />}>
-            {({ default: List }) => (
-              <List
-                {...viewProps.list}
-                tableInstance={tableInstance}
-                onItemClick={onItemClick}
-                columnDefs={columns}
-              />
-            )}
-          </LoadableList>
-        </>
+        <LoadableList fallback={<ShellBodyWithSpinner />}>
+          {({ default: List }) => (
+            <List
+              {...viewProps.list}
+              tableInstance={tableInstance}
+              onItemClick={onItemClick}
+              columnDefs={columns}
+            />
+          )}
+        </LoadableList>
       );
       desktopView = (
-        <>
-          <LoadableGallery fallback={<ShellBodyWithSpinner />}>
-            {({ default: Gallery }) => (
-              <Gallery
-                {...viewProps.gallery}
-                tableInstance={tableInstance}
-                columnCount={columnCount}
-                onItemClick={onItemClick}
-                columnDefs={columns}
-              />
-            )}
-          </LoadableGallery>
-        </>
+        <LoadableGallery fallback={<ShellBodyWithSpinner />}>
+          {({ default: Gallery }) => (
+            <Gallery
+              {...viewProps.gallery}
+              tableInstance={tableInstance}
+              columnCount={columnCount}
+              onItemClick={onItemClick}
+              columnDefs={columns}
+            />
+          )}
+        </LoadableGallery>
       );
       break;
     }
     case 'list':
+      // eslint-disable-next-line no-multi-assign
       desktopView = mobileView = (
-        <>
-          <LoadableList fallback={<ShellBodyWithSpinner />}>
-            {({ default: List }) => (
-              <List
-                {...viewProps.list}
-                tableInstance={tableInstance}
-                onItemClick={onItemClick}
-                columnDefs={columns}
-              />
-            )}
-          </LoadableList>
-        </>
+        <LoadableList fallback={<ShellBodyWithSpinner />}>
+          {({ default: List }) => (
+            <List
+              {...viewProps.list}
+              tableInstance={tableInstance}
+              onItemClick={onItemClick}
+              columnDefs={columns}
+            />
+          )}
+        </LoadableList>
       );
       break;
     default:
