@@ -1,5 +1,17 @@
 # @uidu/dashlets-form
 
+## 1.0.11
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/dropdown-menu@0.6.11
+  - @uidu/dashlets@1.6.5
+  - @uidu/select@1.5.10
+  - @uidu/shell@2.1.12
+  - @uidu/form@1.2.15
+
 ## 1.0.10
 
 ### Patch Changes

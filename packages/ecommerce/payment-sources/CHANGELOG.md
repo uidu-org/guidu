@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.11
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/payments@1.3.3
+  - @uidu/form@1.2.15
+
 ## 0.3.10
 
 ### Patch Changes

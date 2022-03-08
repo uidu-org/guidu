@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 1.6.5
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/tooltip@0.5.10
+  - @uidu/dashboard-manager@1.3.8
+  - @uidu/data-fields@1.5.6
+  - @uidu/dashlet-controls@1.0.17
+  - @uidu/table@1.3.5
+
 ## 1.6.4
 
 ### Patch Changes

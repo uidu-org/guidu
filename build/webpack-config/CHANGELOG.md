@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.15
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+
 ## 0.3.14
 
 ### Patch Changes

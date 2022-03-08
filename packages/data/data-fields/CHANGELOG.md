@@ -1,5 +1,19 @@
 # @uidu/data-fields
 
+## 1.5.6
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/button@1.3.11
+  - @uidu/menu@0.7.3
+  - @uidu/popup@0.6.10
+  - @uidu/field-date@1.1.11
+  - @uidu/select@1.5.10
+  - @uidu/field-color-picker@2.0.12
+  - @uidu/form@1.2.15
+
 ## 1.5.5
 
 ### Patch Changes

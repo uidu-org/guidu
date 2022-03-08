@@ -1,5 +1,13 @@
 # @uidu/popup
 
+## 0.6.10
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/portal@0.5.10
+
 ## 0.6.9
 
 ### Patch Changes

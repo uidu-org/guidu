@@ -1,5 +1,15 @@
 # @uidu/stripe-accounts
 
+## 0.4.2
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/payments@1.3.3
+  - @uidu/stepper@0.4.8
+  - @uidu/form@1.2.15
+
 ## 0.4.1
 
 ### Patch Changes

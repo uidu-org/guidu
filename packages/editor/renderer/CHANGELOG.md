@@ -1,5 +1,18 @@
 # @uidu/renderer
 
+## 0.7.2
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/tooltip@0.5.10
+  - @uidu/editor-common@0.7.2
+  - @uidu/mentions@0.4.2
+  - @uidu/status@0.5.2
+  - @uidu/task-decision@0.4.12
+  - @uidu/media-card@0.6.2
+
 ## 0.7.1
 
 ### Patch Changes

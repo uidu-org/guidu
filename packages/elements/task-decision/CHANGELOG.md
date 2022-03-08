@@ -1,5 +1,13 @@
 # @uidu/task-decision
 
+## 0.4.12
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/button@1.3.11
+
 ## 0.4.11
 
 ### Patch Changes

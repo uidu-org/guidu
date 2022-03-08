@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.5.13
+
+### Patch Changes
+
+- 7eabdf4f4: Export Toolbar from calendar, customizable Event in calendar view
+- Updated dependencies [7eabdf4f4]
+  - @uidu/dropdown-menu@0.6.11
+  - @uidu/tooltip@0.5.10
+  - @uidu/media-card@0.6.2
+
 ## 0.5.12
 
 ### Patch Changes
