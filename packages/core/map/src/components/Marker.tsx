@@ -53,14 +53,15 @@ const StyledMarker = styled.div<{ isHover?: boolean }>`
 `;
 
 export type MarkerProps = {
+  className: string | null;
   children?: any;
-  id?: any;
-  lat: number;
-  lng: number;
   isHover?: boolean;
 } & ChildComponentProps;
 
-export default function Marker(props: MarkerProps) {
-  const { children, isHover } = props;
-  return <StyledMarker isHover={isHover}>{children}</StyledMarker>;
+export default function Marker({ children, isHover, className }: MarkerProps) {
+  return (
+    <StyledMarker className={className} isHover={isHover}>
+      {children}
+    </StyledMarker>
+  );
 }
