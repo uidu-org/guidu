@@ -1,5 +1,11 @@
 # @uidu/field-geosuggest
 
+## 1.1.11
+
+### Patch Changes
+
+- f93fbd192: Removed bootstrap dropdown
+
 ## 1.1.10
 
 ### Patch Changes
