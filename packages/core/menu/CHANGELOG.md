@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.7.4
+
+### Patch Changes
+
+- 1c7a5ad12: Better hover on button-items
+
 ## 0.7.3
 
 ### Patch Changes

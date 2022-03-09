@@ -1,5 +1,13 @@
 # @uidu/field-geosuggest
 
+## 1.1.12
+
+### Patch Changes
+
+- 1c7a5ad12: Better hover on button-items
+- Updated dependencies [1c7a5ad12]
+  - @uidu/menu@0.7.4
+
 ## 1.1.11
 
 ### Patch Changes
