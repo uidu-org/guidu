@@ -19,5 +19,4 @@ export type FieldGeosuggestProps = {
 export type FieldGeosuggestItemProps = {
   suggestion: Suggestion;
   isActive?: boolean;
-  onClick: (suggestion: Suggestion) => void;
 };

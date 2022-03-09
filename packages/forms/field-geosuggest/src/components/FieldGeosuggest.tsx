@@ -1,4 +1,5 @@
 import { StyledRow, Wrapper } from '@uidu/field-base';
+import { ButtonItem, MenuGroup } from '@uidu/menu';
 import React, {
   forwardRef,
   KeyboardEvent,
@@ -41,8 +42,10 @@ function FieldGeosuggest({
   value: propValue,
   ...rest
 }: FieldGeosuggestProps) {
-  const element = useRef(null);
-  const [activeSuggestion, setActiveSuggestion] = useState(null);
+  const element = useRef<HTMLInputElement>(null);
+  const [activeSuggestion, setActiveSuggestion] = useState<Suggestion | null>(
+    null,
+  );
 
   useImperativeHandle(forwardedRef, () => element.current);
 
@@ -84,7 +87,6 @@ function FieldGeosuggest({
         setIsGeolocationAvailable(false);
       }
     }
-    return () => null;
   }, [geolocationEnabled]);
 
   const activateSuggestion = (direction: string) => {
@@ -212,24 +214,27 @@ function FieldGeosuggest({
         onChange={onInputChange}
         required={required}
       />
-      {status === 'OK' && (
-        <ul className="dropdown-menu show">
-          {data.filter(filterOption).map((suggestion) => {
-            const isActive =
-              activeSuggestion &&
-              suggestion.reference === activeSuggestion.reference;
+      <div tw="absolute overflow-y-scroll p-0 z-30 w-full rounded-b bg-white shadow max-h-72 divide-y">
+        {status === 'OK' && (
+          <MenuGroup>
+            {data.filter(filterOption).map((suggestion) => {
+              const isActive =
+                activeSuggestion &&
+                suggestion.reference === activeSuggestion.reference;
 
-            return (
-              <OptionRenderer
-                key={suggestion.reference}
-                suggestion={suggestion}
-                isActive={isActive}
-                onClick={selectSuggestion}
-              />
-            );
-          })}
-        </ul>
-      )}
+              return (
+                <ButtonItem
+                  key={suggestion.reference}
+                  onClick={() => selectSuggestion(suggestion)}
+                  isSelected={isActive}
+                >
+                  <OptionRenderer suggestion={suggestion} />
+                </ButtonItem>
+              );
+            })}
+          </MenuGroup>
+        )}
+      </div>
     </Wrapper>
   );
 }
