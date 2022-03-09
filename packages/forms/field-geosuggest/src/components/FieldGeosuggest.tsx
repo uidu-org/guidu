@@ -214,7 +214,7 @@ function FieldGeosuggest({
         onChange={onInputChange}
         required={required}
       />
-      <div tw="absolute overflow-y-scroll p-0 z-30 w-full rounded-b bg-white shadow max-h-72 divide-y">
+      <div tw="absolute overflow-y-scroll p-0 z-30 w-full rounded-b bg-white shadow max-h-72 divide-y top-full">
         {status === 'OK' && (
           <MenuGroup>
             {data.filter(filterOption).map((suggestion) => {
