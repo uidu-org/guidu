@@ -7213,7 +7213,7 @@ __metadata:
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
     "@uidu/form": ^1.2.13
-    "@uidu/menu": "workspace:^"
+    "@uidu/menu": 0.7.3
     "@uidu/spinner": ^0.5.7
     classnames: ^2.3.1
     downshift: ^6.1.7
@@ -7946,7 +7946,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/menu@0.7.3, @uidu/menu@^0.7.2, @uidu/menu@^0.7.3, @uidu/menu@workspace:^, @uidu/menu@workspace:packages/core/menu":
+"@uidu/menu@0.7.3, @uidu/menu@^0.7.2, @uidu/menu@^0.7.3, @uidu/menu@workspace:packages/core/menu":
   version: 0.0.0-use.local
   resolution: "@uidu/menu@workspace:packages/core/menu"
   dependencies:
