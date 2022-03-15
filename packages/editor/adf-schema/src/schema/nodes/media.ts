@@ -84,6 +84,12 @@ interface MutableMediaAttributes extends MediaAttributes {
   [key: string]: string | number | undefined | null | boolean | unknown;
 }
 
+export const camelCaseToKebabCase = (str: string) =>
+  str.replace(
+    /([^A-Z]+)([A-Z])/g,
+    (_, x: string, y: string) => `${x}-${y.toLowerCase()}`,
+  );
+
 export const createMediaSpec = (
   attributes: Partial<NodeSpec['attrs']>,
 ): NodeSpec => ({
@@ -112,12 +118,12 @@ export const createMediaSpec = (
         }
 
         const width = Number(attrs.width);
-        if (typeof width !== 'undefined' && !isNaN(width)) {
+        if (typeof width !== 'undefined' && !Number.isNaN(width)) {
           attrs.width = width;
         }
 
         const height = Number(attrs.height);
-        if (typeof height !== 'undefined' && !isNaN(height)) {
+        if (typeof height !== 'undefined' && !Number.isNaN(height)) {
           attrs.height = height;
         }
 
@@ -131,13 +137,11 @@ export const createMediaSpec = (
     },
     {
       tag: 'img:not(.inline-card-icon)',
-      getAttrs: (dom) => {
-        return {
-          type: 'external',
-          url: (dom as HTMLElement).getAttribute('src') || '',
-          alt: (dom as HTMLElement).getAttribute('alt') || '',
-        } as ExternalMediaAttributes;
-      },
+      getAttrs: (dom): ExternalMediaAttributes => ({
+        type: 'external',
+        url: (dom as HTMLElement).getAttribute('src') || '',
+        alt: (dom as HTMLElement).getAttribute('alt') || '',
+      }),
     },
   ],
   toDOM(node: PMNode) {
@@ -171,9 +175,6 @@ export const createMediaSpec = (
 
 export const media: NodeSpec = createMediaSpec(defaultAttrs);
 
-export const camelCaseToKebabCase = (str: string) =>
-  str.replace(/([^A-Z]+)([A-Z])/g, (_, x, y) => `${x}-${y.toLowerCase()}`);
-
 export const copyPrivateAttributes = (
   from: Record<string, any>,
   to: Record<string, any>,
@@ -200,7 +201,14 @@ const optionalAttributes = [
   'alt',
   'file',
 ];
-const externalOnlyAttributes = ['type', 'url', 'width', 'height', 'alt'];
+const externalOnlyAttributes = [
+  'type',
+  'url',
+  'width',
+  'height',
+  'alt',
+  'file',
+];
 
 export const toJSON = (node: PMNode) => ({
   attrs: Object.keys(node.attrs)

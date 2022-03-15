@@ -222,7 +222,7 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
     fullWidthMode,
   };
 
-  const isSelected = selected();
+  const isSelected: boolean = selected();
 
   const uploadComplete = isMobileUploadCompleted(
     mediaPluginState,

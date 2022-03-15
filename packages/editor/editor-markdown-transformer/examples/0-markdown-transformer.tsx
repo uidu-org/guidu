@@ -32,6 +32,10 @@ class Example extends React.PureComponent<Props, State> {
   state: State = { source: exampleMarkdown };
 
   componentDidMount() {
+    // const transformer = new MarkdownTransformer(defaultSchema);
+    // console.log(transformer.parse(exampleMarkdown));
+    // const jsonTransformer = new JSONTransformer();
+    // console.log(jsonTransformer.encode(transformer.parse(exampleMarkdown)));
     window.setTimeout(() => {
       this.props.actions.replaceDocument(this.state.source);
     });
@@ -62,6 +66,9 @@ class Example extends React.PureComponent<Props, State> {
             allowLists={true}
             allowRule={true}
             allowTables={true}
+            onChange={(value) => {
+              console.log(value);
+            }}
             media={{
               allowMediaSingle: true,
             }}
@@ -72,7 +79,7 @@ class Example extends React.PureComponent<Props, State> {
             //   taskDecision.getMockTaskDecisionResource(),
             // )}
           >
-            {({ renderEditor }) => renderEditor()}
+            {({ renderEditor }) => <div tw="prose">{renderEditor()}</div>}
           </Editor>
         </Container>
       </IntlProvider>
