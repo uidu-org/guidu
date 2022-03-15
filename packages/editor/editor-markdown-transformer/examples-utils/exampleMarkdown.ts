@@ -1,3 +1,5 @@
+import faker from 'faker';
+
 const markdown = `
 
 Regular, **Strong**, *Italic*, @Artur Bodera, ***Strong Italic***
@@ -49,7 +51,7 @@ Regular, **Strong**, *Italic*, @Artur Bodera, ***Strong Italic***
 
 ###### Heading 6
 
-![](https://atlaskit.atlassian.com/0bae81b1bba10e0256dff2f46c77af82.png)
+![](${faker.image.imageUrl()})
 
 `;
 

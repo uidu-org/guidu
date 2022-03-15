@@ -5,6 +5,7 @@ import React, { useRef, useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import { localUploadOptions } from '../../../media/media-core/src';
 import { story as document } from '../../renderer/examples/helper/story-data';
+import { DevTools } from '../examples-utils/DevTools';
 import { Editor, EditorContext, WithEditorActions } from '../src';
 
 export default function Basic({}) {
@@ -43,7 +44,7 @@ export default function Basic({}) {
         <GuiduThemeProvider>
           <EditorContext>
             <>
-              {/* <DevTools /> */}
+              <DevTools />
               <WithEditorActions
                 render={(actions) => (
                   <Editor

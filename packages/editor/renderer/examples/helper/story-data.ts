@@ -1,4 +1,5 @@
 import { emoji } from '@uidu/util-data-test';
+import faker from 'faker';
 
 const emojiTestData = emoji.testData;
 const emojiStoryData = emoji.storyData;
@@ -59,7 +60,7 @@ export const story = {
             id: '14b142104182a9961dcfbcb767f79d99.png',
             file: {
               id: '14b142104182a9961dcfbcb767f79d99.png',
-              url: 'https://uidu.local:8443/uploads/cache/14b142104182a9961dcfbcb767f79d99.png',
+              url: faker.image.imageUrl(),
               type: 'image',
               width: 2560,
               height: 1354,

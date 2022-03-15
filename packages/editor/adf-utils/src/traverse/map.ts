@@ -8,10 +8,12 @@ export function map<T = any>(
   const result: Array<T> = [];
 
   traverse(adf, {
-    any: node => {
+    any: (node) => {
       result.push(callback(node));
     },
   });
 
   return result;
 }
+
+export default map;

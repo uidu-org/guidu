@@ -7,3 +7,5 @@ export const paragraph = (
   type: 'paragraph',
   content: createTextNodes(content),
 });
+
+export default paragraph;

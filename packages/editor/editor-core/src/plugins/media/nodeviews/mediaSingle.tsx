@@ -13,7 +13,7 @@ import { NodeSelection } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
 import { findParentNodeOfTypeClosestToPos } from 'prosemirror-utils';
 import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { EventDispatcher } from '../../../event-dispatcher';
 import {
   getPosHandler,
@@ -43,109 +43,106 @@ export interface MediaSingleNodeState {
   isCopying: boolean;
 }
 
-export default class MediaSingleNode extends Component<
-  MediaSingleNodeProps,
-  MediaSingleNodeState
-> {
-  static defaultProps: Partial<MediaSingleNodeProps> = {
-    mediaOptions: {},
-  };
-  static displayName = 'MediaSingleNode';
+export default function MediaSingleNode(props: MediaSingleNodeProps) {
+  // static defaultProps: Partial<MediaSingleNodeProps> = {
+  //   mediaOptions: {},
+  // };
+  // static displayName = 'MediaSingleNode';
 
-  state: MediaSingleNodeState = {
-    width: undefined,
-    height: undefined,
-    viewMediaClientConfig: undefined,
-    isCopying: false,
-  };
+  // state: MediaSingleNodeState = {
+  //   width: undefined,
+  //   height: undefined,
+  //   viewMediaClientConfig: undefined,
+  //   isCopying: false,
+  // };
 
-  createMediaNodeUpdater = (props: MediaSingleNodeProps): MediaNodeUpdater => {
-    const node = this.props.node.firstChild;
+  const [viewMediaClientConfig, setViewMediaClientConfig] = useState(undefined);
+  const [contextIdentifierProvider, setContextIdentifierProvider] =
+    useState(undefined);
+  const [size, setSize] = useState({ width: undefined, height: undefined });
+
+  const createMediaNodeUpdater = (
+    props: MediaSingleNodeProps,
+  ): MediaNodeUpdater => {
+    const node = props.node.firstChild;
 
     return new MediaNodeUpdater({
       ...props,
       isMediaSingle: true,
-      node: node ? (node as PMNode) : this.props.node,
-      dispatchAnalyticsEvent: this.props.dispatchAnalyticsEvent,
+      node: node ? (node as PMNode) : props.node,
+      dispatchAnalyticsEvent: props.dispatchAnalyticsEvent,
     });
   };
 
-  UNSAFE_componentWillReceiveProps(nextProps: MediaSingleNodeProps) {
-    if (nextProps.mediaProvider !== this.props.mediaProvider) {
-      this.setViewMediaClientConfig(nextProps);
-    }
+  // const UNSAFE_componentWillReceiveProps(nextProps: MediaSingleNodeProps) {
+  //   if (nextProps.mediaProvider !== this.props.mediaProvider) {
+  //     this.setViewMediaClientConfig(nextProps);
+  //   }
 
-    // Forced updates not required on mobile
-    if (nextProps.isCopyPasteEnabled === false) {
-      return;
-    }
+  //   // Forced updates not required on mobile
+  //   if (nextProps.isCopyPasteEnabled === false) {
+  //     return;
+  //   }
 
-    // We need to call this method on any prop change since attrs can get removed with collab editing
-    // the method internally checks if we already have all attrs
-    this.createMediaNodeUpdater(nextProps).updateFileAttrs();
-  }
+  //   // We need to call this method on any prop change since attrs can get removed with collab editing
+  //   // the method internally checks if we already have all attrs
+  //   this.createMediaNodeUpdater(nextProps).updateFileAttrs();
+  // }
 
-  setViewMediaClientConfig = async (props: MediaSingleNodeProps) => {
+  const _setViewMediaClientConfig = async (props: MediaSingleNodeProps) => {
     const mediaProvider = await props.mediaProvider;
     if (mediaProvider) {
       const viewMediaClientConfig = mediaProvider.viewMediaClientConfig;
-
-      this.setState({
-        viewMediaClientConfig,
-      });
+      setViewMediaClientConfig(viewMediaClientConfig);
     }
   };
 
-  updateMediaNodeAttributes = async (props: MediaSingleNodeProps) => {
-    const mediaNodeUpdater = this.createMediaNodeUpdater(props);
+  const updateMediaNodeAttributes = async (props: MediaSingleNodeProps) => {
+    const mediaNodeUpdater = createMediaNodeUpdater(props);
     // const { addPendingTask } = this.props.mediaPluginState;
 
     // we want the first child of MediaSingle (type "media")
-    const node = this.props.node.firstChild;
+    const node = props.node.firstChild;
     if (!node) {
       return;
     }
   };
 
-  async componentDidMount() {
-    const { contextIdentifierProvider } = this.props;
+  useEffect(() => {
+    async function onMount() {
+      await Promise.all([
+        _setViewMediaClientConfig(props),
+        updateMediaNodeAttributes(props),
+      ]);
 
-    await Promise.all([
-      this.setViewMediaClientConfig(this.props),
-      this.updateMediaNodeAttributes(this.props),
-    ]);
+      setContextIdentifierProvider(props.contextIdentifierProvider);
+    }
+    onMount();
+  }, []);
 
-    this.setState({
-      contextIdentifierProvider: await contextIdentifierProvider,
-    });
-  }
-
-  private onExternalImageLoaded = ({
+  const onExternalImageLoaded = ({
     width,
     height,
   }: {
     width: number;
     height: number;
   }) => {
-    this.setState(
-      {
-        width,
-        height,
-      },
-      () => {
-        this.forceUpdate();
-      },
-    );
+    setSize({ width, height });
+    forceUpdate();
   };
 
-  selectMediaSingle = (event: React.MouseEvent) => {
+  const selectMediaSingle = (event: React.MouseEvent) => {
+    const {
+      view,
+      getPos,
+      view: { state },
+    } = props;
     event.persist();
     // We need to call "stopPropagation" here in order to prevent the browser from navigating to
     // another URL if the media node is wrapped in a link mark.
     event.stopPropagation();
 
-    const propPos = this.props.getPos();
-    const { state } = this.props.view;
+    const propPos = getPos();
 
     if (event.shiftKey) {
       // don't select text if there is current selection in a table (as this would override selected cells)
@@ -154,24 +151,28 @@ export default class MediaSingleNode extends Component<
       }
 
       setTextSelection(
-        this.props.view,
+        view,
         state.selection.from < propPos ? state.selection.from : propPos,
         // + 3 needed for offset of the media inside mediaSingle and cursor to make whole mediaSingle selected
         state.selection.to > propPos ? state.selection.to : propPos + 3,
       );
     } else {
-      setNodeSelection(this.props.view, propPos);
+      setNodeSelection(view, propPos);
     }
   };
 
-  updateSize = (width: number | null, layout: MediaSingleLayout) => {
-    const { state, dispatch } = this.props.view;
-    const pos = this.props.getPos();
+  const updateSize = (width: number | null, layout: MediaSingleLayout) => {
+    const {
+      node: { attrs },
+      view: { state, dispatch },
+      getPos,
+    } = props;
+    const pos = getPos();
     if (typeof pos === 'undefined') {
       return undefined;
     }
     const tr = state.tr.setNodeMarkup(pos, undefined, {
-      ...this.props.node.attrs,
+      ...attrs,
       layout,
       width,
     });
@@ -179,148 +180,149 @@ export default class MediaSingleNode extends Component<
     return dispatch(tr);
   };
 
-  render() {
-    const {
-      selected,
-      getPos,
-      node,
-      mediaOptions,
-      fullWidthMode,
-      view: { state },
-      view,
-    } = this.props;
-    const { contextIdentifierProvider, isCopying } = this.state;
+  const {
+    selected,
+    getPos,
+    node,
+    mediaOptions,
+    fullWidthMode,
+    view: { state },
+    view,
+    mediaPluginState,
+  } = props;
+  const isCopying = false;
 
-    const { layout, width: mediaSingleWidth } = node.attrs;
-    const childNode = node.firstChild!;
-    let {
-      file: {
-        metadata: { width, height },
-      },
-    } = childNode.attrs as MediaADFAttrs;
+  const { layout, width: mediaSingleWidth } = node.attrs;
+  const childNode = node.firstChild!;
+  let {
+    file: {
+      metadata: { width, height },
+    },
+  } = childNode.attrs as MediaADFAttrs;
 
-    if (!width || !height) {
-      width = DEFAULT_IMAGE_WIDTH;
-      height = DEFAULT_IMAGE_HEIGHT;
+  if (!width || !height) {
+    width = DEFAULT_IMAGE_WIDTH;
+    height = DEFAULT_IMAGE_HEIGHT;
+  }
+  const cardWidth = props.width;
+  const cardHeight = (height / width) * cardWidth;
+
+  const cardDimensions = {
+    width: `${cardWidth}px`,
+    height: `${cardHeight}px`,
+  };
+
+  const mediaSingleProps = {
+    layout,
+    width,
+    height,
+    containerWidth: props.width,
+    lineLength: props.lineLength,
+    pctWidth: mediaSingleWidth,
+    fullWidthMode,
+  };
+
+  const isSelected = selected();
+
+  const uploadComplete = isMobileUploadCompleted(
+    mediaPluginState,
+    childNode.attrs.id,
+  );
+  const originalDimensions = {
+    width,
+    height,
+  };
+  const MediaChild = (
+    <MediaItem
+      view={view}
+      node={childNode}
+      getPos={getPos}
+      cardDimensions={cardDimensions}
+      originalDimensions={originalDimensions}
+      viewMediaClientConfig={viewMediaClientConfig}
+      selected={isSelected}
+      onClick={selectMediaSingle}
+      onExternalImageLoaded={onExternalImageLoaded}
+      allowLazyLoading={mediaOptions && mediaOptions.allowLazyLoading}
+      uploadComplete={uploadComplete}
+      url={childNode.attrs.url}
+      contextIdentifierProvider={contextIdentifierProvider}
+      isLoading={isCopying}
+    />
+  );
+
+  let canResize = !!props.mediaOptions.allowResizing;
+
+  if (!props.mediaOptions.allowResizingInTables) {
+    // If resizing not allowed in tables, check parents for tables
+    const pos = getPos();
+    if (pos) {
+      const $pos = state.doc.resolve(pos);
+      const { table } = state.schema.nodes;
+      const disabledNode = !!findParentNodeOfTypeClosestToPos($pos, [table]);
+      canResize = canResize && !disabledNode;
     }
-    const cardWidth = this.props.width;
-    const cardHeight = (height / width) * cardWidth;
-    console.log(cardHeight);
-    const cardDimensions = {
-      width: `${cardWidth}px`,
-      height: `${cardHeight}px`,
-    };
-
-    const mediaSingleProps = {
-      layout,
-      width,
-      height,
-      containerWidth: this.props.width,
-      lineLength: this.props.lineLength,
-      pctWidth: mediaSingleWidth,
-      fullWidthMode,
-    };
-
-    const uploadComplete = isMobileUploadCompleted(
-      this.props.mediaPluginState,
-      childNode.attrs.id,
-    );
-    const originalDimensions = {
-      width,
-      height,
-    };
-    const MediaChild = (
-      <MediaItem
-        view={this.props.view}
-        node={childNode}
-        getPos={this.props.getPos}
-        cardDimensions={cardDimensions}
-        originalDimensions={originalDimensions}
-        viewMediaClientConfig={this.state.viewMediaClientConfig}
-        selected={selected()}
-        onClick={this.selectMediaSingle}
-        onExternalImageLoaded={this.onExternalImageLoaded}
-        allowLazyLoading={mediaOptions && mediaOptions.allowLazyLoading}
-        uploadComplete={uploadComplete}
-        url={childNode.attrs.url}
-        contextIdentifierProvider={contextIdentifierProvider}
-        isLoading={isCopying}
-      />
-    );
-
-    let canResize = !!this.props.mediaOptions.allowResizing;
-
-    if (!this.props.mediaOptions.allowResizingInTables) {
-      // If resizing not allowed in tables, check parents for tables
-      const pos = getPos();
-      if (pos) {
-        const $pos = state.doc.resolve(pos);
-        const { table } = state.schema.nodes;
-        const disabledNode = !!findParentNodeOfTypeClosestToPos($pos, [table]);
-        canResize = canResize && !disabledNode;
-      }
-    }
-
-    return canResize ? (
-      <ResizableMediaSingle
-        {...mediaSingleProps}
-        lineLength={
-          fullWidthMode
-            ? this.props.lineLength
-            : this.getLineLength(view, getPos()) || this.props.lineLength
-        }
-        view={this.props.view}
-        getPos={getPos}
-        updateSize={this.updateSize}
-        displayGrid={createDisplayGrid(this.props.eventDispatcher)}
-        gridSize={12}
-        viewMediaClientConfig={this.state.viewMediaClientConfig}
-        state={this.props.view.state}
-        // allowBreakoutSnapPoints={
-        //   mediaOptions && mediaOptions.allowBreakoutSnapPoints
-        // }
-        selected={this.props.selected()}
-      >
-        {MediaChild}
-      </ResizableMediaSingle>
-    ) : (
-      <MediaSingle {...mediaSingleProps}>{MediaChild}</MediaSingle>
-    );
   }
 
-  private getLineLength = (view: EditorView, pos: number): number | null => {
-    if (typeof pos !== 'number' || isNaN(pos) || !view) {
-      return null;
-    }
-
-    const { expand, nestedExpand, layoutColumn } = view.state.schema.nodes;
-    const $pos = view.state.doc.resolve(pos);
-    const isInsideOfBlockNode = !!findParentNodeOfTypeClosestToPos($pos, [
-      expand,
-      nestedExpand,
-      layoutColumn,
-    ]);
-
-    if (isInsideOfBlockNode) {
-      const domNode = view.nodeDOM($pos.pos);
-
-      if (
-        $pos.nodeAfter &&
-        floatingLayouts.indexOf($pos.nodeAfter.attrs.layout) > -1 &&
-        domNode &&
-        domNode.parentElement
-      ) {
-        return domNode.parentElement.offsetWidth;
+  return canResize ? (
+    <ResizableMediaSingle
+      {...mediaSingleProps}
+      lineLength={
+        fullWidthMode
+          ? props.lineLength
+          : getLineLength(view, getPos()) || props.lineLength
       }
-
-      if (domNode instanceof HTMLElement) {
-        return domNode.offsetWidth;
-      }
-    }
-
-    return null;
-  };
+      view={view}
+      getPos={getPos}
+      updateSize={updateSize}
+      displayGrid={createDisplayGrid(props.eventDispatcher)}
+      gridSize={12}
+      viewMediaClientConfig={viewMediaClientConfig}
+      state={state}
+      // allowBreakoutSnapPoints={
+      //   mediaOptions && mediaOptions.allowBreakoutSnapPoints
+      // }
+      selected={isSelected}
+    >
+      {MediaChild}
+    </ResizableMediaSingle>
+  ) : (
+    <MediaSingle {...mediaSingleProps}>{MediaChild}</MediaSingle>
+  );
 }
+
+const getLineLength = (view: EditorView, pos: number): number | null => {
+  if (typeof pos !== 'number' || Number.isNaN(pos) || !view) {
+    return null;
+  }
+
+  const { expand, nestedExpand, layoutColumn } = view.state.schema.nodes;
+  const $pos = view.state.doc.resolve(pos);
+  const isInsideOfBlockNode = !!findParentNodeOfTypeClosestToPos($pos, [
+    expand,
+    nestedExpand,
+    layoutColumn,
+  ]);
+
+  if (isInsideOfBlockNode) {
+    const domNode = view.nodeDOM($pos.pos);
+
+    if (
+      $pos.nodeAfter &&
+      floatingLayouts.indexOf($pos.nodeAfter.attrs.layout) > -1 &&
+      domNode &&
+      domNode.parentElement
+    ) {
+      return domNode.parentElement.offsetWidth;
+    }
+
+    if (domNode instanceof HTMLElement) {
+      return domNode.offsetWidth;
+    }
+  }
+
+  return null;
+};
 
 class MediaSingleNodeView extends SelectionBasedNodeView<MediaSingleNodeViewProps> {
   lastOffsetLeft = 0;

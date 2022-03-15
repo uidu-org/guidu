@@ -6064,7 +6064,7 @@ __metadata:
     linkify-it: ^3.0.3
     prosemirror-model: ^1.16.1
     prosemirror-state: ^1.3.4
-    prosemirror-view: ^1.23.7
+    prosemirror-view: ^1.23.9
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
@@ -6930,7 +6930,7 @@ __metadata:
     prosemirror-tables: ^1.1.1
     prosemirror-transform: ^1.3.4
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.23.7
+    prosemirror-view: ^1.23.9
     raf-schd: ^4.0.3
     re-resizable: ^6.9.2
     react: ^17.0.2
@@ -6955,7 +6955,7 @@ __metadata:
     "@uidu/editor-common": ^0.7.1
     "@uidu/editor-core": ^0.12.4
     prosemirror-model: ^1.16.1
-    prosemirror-view: ^1.23.7
+    prosemirror-view: ^1.23.9
     react: ^17.0.2
     styled-components: ^5.3.3
     tslib: ^2.3.1
@@ -6975,7 +6975,7 @@ __metadata:
     "@uidu/editor-core": ^0.12.3
     markdown-it: ^12.3.2
     markdown-it-table: ^2.0.4
-    prosemirror-markdown: ^1.7.1
+    prosemirror-markdown: ^1.8.0
     prosemirror-model: ^1.16.1
     react: ^17.0.2
     styled-components: ^5.3.3
@@ -7171,7 +7171,7 @@ __metadata:
     "@uidu/field-text": ^1.1.10
     "@uidu/field-time": ^1.1.10
     "@uidu/form": ^1.2.13
-    "@uidu/menu": 0.7.3
+    "@uidu/menu": 0.7.4
     "@uidu/popup": 0.6.10
     "@uidu/radio": ^1.1.8
     "@uidu/shell": ^2.1.12
@@ -7213,7 +7213,7 @@ __metadata:
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
     "@uidu/form": ^1.2.13
-    "@uidu/menu": 0.7.3
+    "@uidu/menu": 0.7.4
     "@uidu/spinner": ^0.5.7
     classnames: ^2.3.1
     downshift: ^6.1.7
@@ -7946,7 +7946,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/menu@0.7.3, @uidu/menu@^0.7.2, @uidu/menu@^0.7.3, @uidu/menu@workspace:packages/core/menu":
+"@uidu/menu@0.7.4, @uidu/menu@^0.7.2, @uidu/menu@^0.7.3, @uidu/menu@workspace:packages/core/menu":
   version: 0.0.0-use.local
   resolution: "@uidu/menu@workspace:packages/core/menu"
   dependencies:
@@ -17654,14 +17654,14 @@ __metadata:
     prosemirror-history: ^1.2.0
     prosemirror-inputrules: ^1.1.3
     prosemirror-keymap: ^1.1.5
-    prosemirror-markdown: ^1.7.1
+    prosemirror-markdown: ^1.8.0
     prosemirror-model: ^1.16.1
     prosemirror-schema-list: ^1.1.6
     prosemirror-state: ^1.3.4
     prosemirror-tables: ^1.1.1
     prosemirror-transform: ^1.3.4
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.23.7
+    prosemirror-view: ^1.23.9
     query-string: ^7.1.1
     raf-schd: ^4.0.3
     raw-loader: ^4.0.2
@@ -24850,13 +24850,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-markdown@npm:^1.7.1":
-  version: 1.7.1
-  resolution: "prosemirror-markdown@npm:1.7.1"
+"prosemirror-markdown@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "prosemirror-markdown@npm:1.8.0"
   dependencies:
     markdown-it: ^12.0.0
     prosemirror-model: ^1.0.0
-  checksum: b789778701e794b962ca814cd221d94e4daca09fd061dff9ff2f5681f7ed0aa2c00497188ba55117c64095294ea6ddc80bd0bba3b40023f5ab88d3d16f6907f0
+  checksum: 5ecebdd65d554e0b283929b1f2f06ad247e6c5dd82a91e5afd9dc3b4c4e94a9b35588326f798e21465c716408da2f96a4bffb442ed360887bc7b6a225c91af0a
   languageName: node
   linkType: hard
 
@@ -24922,14 +24922,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.23.7":
-  version: 1.23.7
-  resolution: "prosemirror-view@npm:1.23.7"
+"prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.23.9":
+  version: 1.23.9
+  resolution: "prosemirror-view@npm:1.23.9"
   dependencies:
     prosemirror-model: ^1.16.0
     prosemirror-state: ^1.0.0
     prosemirror-transform: ^1.1.0
-  checksum: 6d0c16002dd379cf33d71d37542df0705f37966c15c4afcc87e3361d015ffce088d52ce6a776cbfb9ebc3cb2b9260354370f8d156358ebe2130e3bef878bf670
+  checksum: 5f62625391e3194e975d9e48ca93a8b7a96fe3c805be2b10f9b17b2d3eebf9250255f3384d876e356fb6e5d54f8864c269de546ba205f7008d7e9313e314b16c
   languageName: node
   linkType: hard
 

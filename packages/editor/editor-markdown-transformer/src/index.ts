@@ -85,7 +85,14 @@ const mdToPmMapping = {
     attrs: (tok: any) => {
       return {
         id: tok.attrGet('url'),
-        file: { id: tok.attrGet('url') },
+        file: {
+          id: tok.attrGet('url'),
+          url: tok.attrGet('url'),
+          metadata: {
+            width: tok.attrGet('width'),
+            height: tok.attrGet('height'),
+          },
+        },
         type: 'external',
       };
     },
@@ -120,14 +127,15 @@ export type Markdown = string;
 
 export class MarkdownTransformer implements Transformer<Markdown> {
   private markdownParser: MarkdownParser;
+
   constructor(schema: Schema = defaultSchema, tokenizer: MarkdownIt = md) {
     // Enable markdown plugins based on schema
     (['nodes', 'marks'] as (keyof SchemaMapping)[]).forEach((key) => {
-      for (const idx in pmSchemaToMdMapping[key]) {
-        if (schema[key][idx]) {
-          tokenizer.enable(pmSchemaToMdMapping[key][idx]);
+      Object.keys(pmSchemaToMdMapping[key]).forEach((pmType) => {
+        if (schema[key][pmType]) {
+          tokenizer.enable(pmSchemaToMdMapping[key][pmType]);
         }
-      }
+      });
     });
 
     if (schema.nodes.table) {
@@ -144,6 +152,7 @@ export class MarkdownTransformer implements Transformer<Markdown> {
       filterMdToPmSchemaMapping(schema, mdToPmMapping),
     );
   }
+
   encode(_node: PMNode): Markdown {
     throw new Error('This is not implemented yet');
   }

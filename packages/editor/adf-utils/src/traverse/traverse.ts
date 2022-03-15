@@ -1,41 +1,21 @@
-import { ADFEntity } from '../types';
+import { ADFEntity, EntityParent, VisitorCollection } from '../types';
 
-export type visitor = (
-  node: ADFEntity,
-  parent: EntityParent,
-  index: number,
-) => ADFEntity | false | undefined | void;
-
-export type EntityParent = { node?: ADFEntity; parent?: EntityParent };
-
-export function validateVisitors(_visitors: { [type: string]: visitor }) {
+export function validateVisitors(_visitors: VisitorCollection) {
   return true;
-}
-
-export function traverse(
-  adf: ADFEntity,
-  visitors: { [type: string]: visitor },
-) {
-  if (!validateVisitors(visitors)) {
-    throw new Error(
-      `Visitors are not valid: "${Object.keys(visitors).join(', ')}"`,
-    );
-  }
-
-  return traverseNode(adf, { node: undefined }, visitors, 0);
 }
 
 function traverseNode(
   adfNode: ADFEntity,
   parent: EntityParent,
-  visitors: { [type: string]: visitor },
+  visitors: VisitorCollection,
   index: number,
+  depth: number,
 ): ADFEntity | false {
   const visitor = visitors[adfNode.type] || visitors['any'];
 
   let newNode = { ...adfNode };
   if (visitor) {
-    const processedNode = visitor({ ...newNode }, parent, index);
+    const processedNode = visitor({ ...newNode }, parent, index, depth);
 
     if (processedNode === false) {
       return false;
@@ -52,6 +32,7 @@ function traverseNode(
           { node: newNode, parent },
           visitors,
           idx,
+          depth + 1,
         );
         if (processedNode !== false) {
           acc.push(processedNode);
@@ -63,4 +44,14 @@ function traverseNode(
   }
 
   return newNode;
+}
+
+export function traverse(adf: ADFEntity, visitors: VisitorCollection) {
+  if (!validateVisitors(visitors)) {
+    throw new Error(
+      `Visitors are not valid: "${Object.keys(visitors).join(', ')}"`,
+    );
+  }
+
+  return traverseNode(adf, { node: undefined }, visitors, 0, 0);
 }
