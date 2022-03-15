@@ -1,5 +1,16 @@
 # @uidu/editor-json-transformer
 
+## 0.7.0
+
+### Minor Changes
+
+- 6e1d4ee0e: Media extraction from markdown and json
+
+### Patch Changes
+
+- Updated dependencies [6e1d4ee0e]
+  - @uidu/adf-schema@0.8.0
+
 ## 0.6.2
 
 ### Patch Changes

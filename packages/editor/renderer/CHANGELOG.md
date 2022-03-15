@@ -1,5 +1,19 @@
 # @uidu/renderer
 
+## 0.8.0
+
+### Minor Changes
+
+- 6e1d4ee0e: Media extraction from markdown and json
+
+### Patch Changes
+
+- Updated dependencies [6e1d4ee0e]
+  - @uidu/adf-schema@0.8.0
+  - @uidu/adf-utils@0.8.0
+  - @uidu/editor-json-transformer@0.7.0
+  - @uidu/editor-common@0.7.3
+
 ## 0.7.2
 
 ### Patch Changes
