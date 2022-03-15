@@ -11,7 +11,7 @@
   "types": "dist/uidu-editor-common.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.10.4",
-    "@babel/runtime": "^7.17.2",
+    "@babel/runtime": "^7.17.7",
     "@uidu/adf-schema": "^0.8.0",
     "@uidu/adf-utils": "^0.8.0",
     "@uidu/analytics": "^0.5.7",
@@ -27,7 +27,7 @@
     "raf-schd": "^4.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-intl": "^5.24.6",
+    "react-intl": "^5.24.7",
     "react-loadable": "^5.5.0",
     "styled-components": "^5.3.3",
     "tslib": "^2.3.1"

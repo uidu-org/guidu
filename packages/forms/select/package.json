@@ -11,7 +11,7 @@
   "types": "dist/uidu-select.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.10.4",
-    "@babel/runtime": "^7.17.2",
+    "@babel/runtime": "^7.17.7",
     "@uidu/analytics": "^0.5.7",
     "@uidu/checkbox": "^1.1.10",
     "@uidu/field-base": "^3.1.14",

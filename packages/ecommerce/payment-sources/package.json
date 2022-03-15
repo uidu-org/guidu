@@ -9,7 +9,7 @@
   "module": "dist/uidu-payment-sources.esm.js",
   "types": "dist/uidu-payment-sources.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.2",
+    "@babel/runtime": "^7.17.7",
     "@stripe/react-stripe-js": "^1.7.0",
     "@stripe/stripe-js": "^1.24.0",
     "@uidu/form": "^1.2.13",
