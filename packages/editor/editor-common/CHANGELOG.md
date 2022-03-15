@@ -1,5 +1,13 @@
 # @uidu/editor-common
 
+## 0.7.4
+
+### Patch Changes
+
+- Updated dependencies [543697848]
+  - @uidu/adf-schema@0.9.0
+  - @uidu/adf-utils@0.8.1
+
 ## 0.7.3
 
 ### Patch Changes

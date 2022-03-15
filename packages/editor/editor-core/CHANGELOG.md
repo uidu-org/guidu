@@ -1,5 +1,17 @@
 # @uidu/editor-core
 
+## 0.13.1
+
+### Patch Changes
+
+- 543697848: Make media exporting file urls for external
+- Updated dependencies [543697848]
+  - @uidu/adf-schema@0.9.0
+  - @uidu/editor-markdown-transformer@0.8.0
+  - @uidu/adf-utils@0.8.1
+  - @uidu/editor-common@0.7.4
+  - @uidu/editor-json-transformer@0.7.1
+
 ## 0.13.0
 
 ### Minor Changes
