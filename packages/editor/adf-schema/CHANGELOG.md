@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.9.0
+
+### Minor Changes
+
+- 543697848: Make media exporting file urls for external
+
 ## 0.8.0
 
 ### Minor Changes

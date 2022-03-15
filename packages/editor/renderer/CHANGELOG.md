@@ -1,5 +1,15 @@
 # @uidu/renderer
 
+## 0.8.1
+
+### Patch Changes
+
+- Updated dependencies [543697848]
+  - @uidu/adf-schema@0.9.0
+  - @uidu/adf-utils@0.8.1
+  - @uidu/editor-common@0.7.4
+  - @uidu/editor-json-transformer@0.7.1
+
 ## 0.8.0
 
 ### Minor Changes

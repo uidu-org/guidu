@@ -1,5 +1,17 @@
 # @uidu/editor-markdown-transformer
 
+## 0.8.0
+
+### Minor Changes
+
+- 543697848: Make media exporting file urls for external
+
+### Patch Changes
+
+- Updated dependencies [543697848]
+  - @uidu/adf-schema@0.9.0
+  - @uidu/editor-common@0.7.4
+
 ## 0.7.0
 
 ### Minor Changes
