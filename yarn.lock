@@ -6686,7 +6686,7 @@ __metadata:
     "@uidu/dropdown-menu": ^0.6.11
     "@uidu/gallery": ^1.2.3
     "@uidu/list": ^1.2.3
-    "@uidu/menu": "workspace:^"
+    "@uidu/menu": 0.7.4
     "@uidu/navigation": ^1.0.10
     "@uidu/page-header": ^1.0.3
     "@uidu/pagination": 0.5.8
@@ -7991,7 +7991,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/menu@0.7.4, @uidu/menu@^0.7.2, @uidu/menu@^0.7.3, @uidu/menu@workspace:^, @uidu/menu@workspace:packages/core/menu":
+"@uidu/menu@0.7.4, @uidu/menu@^0.7.2, @uidu/menu@^0.7.3, @uidu/menu@workspace:packages/core/menu":
   version: 0.0.0-use.local
   resolution: "@uidu/menu@workspace:packages/core/menu"
   dependencies:
