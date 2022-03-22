@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.6.10
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/form@1.2.14
+
 ## 0.6.9
 
 ### Patch Changes

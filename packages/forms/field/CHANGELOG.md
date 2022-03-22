@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.0.7
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/checkbox@1.1.11
+  - @uidu/field-number@1.0.10
+  - @uidu/field-text@1.1.11
+  - @uidu/field-textarea@1.1.10
+  - @uidu/select@1.5.11
+
 ## 1.0.6
 
 ### Patch Changes

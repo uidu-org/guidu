@@ -1,5 +1,13 @@
 # @uidu/lozenge
 
+## 0.5.8
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/theme@0.6.10
+
 ## 0.5.7
 
 ### Patch Changes

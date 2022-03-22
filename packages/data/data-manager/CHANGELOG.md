@@ -1,5 +1,28 @@
 # @uidu/data-manager
 
+## 2.4.0
+
+### Minor Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
+### Patch Changes
+
+- Updated dependencies [cced08c0d]
+  - @uidu/table@1.4.0
+  - @uidu/button@1.3.12
+  - @uidu/menu@0.7.5
+  - @uidu/pagination@0.5.9
+  - @uidu/spinner@0.5.8
+  - @uidu/board@0.5.4
+  - @uidu/calendar@0.4.1
+  - @uidu/data-controls@2.1.6
+  - @uidu/data-fields@1.5.9
+  - @uidu/data-views@1.2.6
+  - @uidu/gallery@1.2.4
+  - @uidu/list@1.2.4
+  - @uidu/shell@2.1.13
+
 ## 2.3.0
 
 ### Minor Changes

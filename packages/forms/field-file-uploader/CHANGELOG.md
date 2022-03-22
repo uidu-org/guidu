@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 1.1.8
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/field-base@3.1.15
+
 ## 1.1.7
 
 ### Patch Changes

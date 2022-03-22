@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.5
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
 ## 0.1.4
 
 ### Patch Changes

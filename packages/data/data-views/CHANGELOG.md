@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 1.2.6
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/data-manager@2.4.0
+  - @uidu/button@1.3.12
+  - @uidu/data-controls@2.1.6
+  - @uidu/field-counter@1.1.10
+  - @uidu/field-number@1.0.10
+  - @uidu/form@1.2.14
+  - @uidu/select@1.5.11
+
 ## 1.2.5
 
 ### Patch Changes

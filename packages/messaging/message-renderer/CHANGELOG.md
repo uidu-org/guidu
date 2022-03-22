@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.9
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/dropdown-menu@0.6.12
+  - @uidu/theme@0.6.10
+
 ## 0.4.8
 
 ### Patch Changes

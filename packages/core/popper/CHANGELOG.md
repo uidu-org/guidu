@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.10
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
 ## 0.5.9
 
 ### Patch Changes

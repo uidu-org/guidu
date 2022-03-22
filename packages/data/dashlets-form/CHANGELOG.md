@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 1.0.12
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/accordion@0.6.6
+  - @uidu/dropdown-menu@0.6.12
+  - @uidu/dashlets@1.6.6
+  - @uidu/field-downshift@1.4.7
+  - @uidu/field-toggle@1.1.6
+  - @uidu/form@1.2.14
+  - @uidu/select@1.5.11
+  - @uidu/shell@2.1.13
+
 ## 1.0.11
 
 ### Patch Changes

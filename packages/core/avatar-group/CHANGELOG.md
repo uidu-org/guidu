@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.6.9
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/avatar@0.9.5
+  - @uidu/dropdown-menu@0.6.12
+  - @uidu/theme@0.6.10
+  - @uidu/tooltip@0.5.11
+
 ## 2.6.8
 
 ### Patch Changes

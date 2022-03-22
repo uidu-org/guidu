@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.14
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/button@1.3.12
+
 ## 1.2.13
 
 ### Patch Changes

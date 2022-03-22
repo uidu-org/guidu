@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 1.5.9
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/button@1.3.12
+  - @uidu/map@0.6.10
+  - @uidu/menu@0.7.5
+  - @uidu/popup@0.6.11
+  - @uidu/field-color-picker@2.0.13
+  - @uidu/field-date@1.1.12
+  - @uidu/field-downshift@1.4.7
+  - @uidu/field-number@1.0.10
+  - @uidu/field-text@1.1.11
+  - @uidu/field-time@1.1.11
+  - @uidu/field-toggle@1.1.6
+  - @uidu/form@1.2.14
+  - @uidu/select@1.5.11
+
 ## 1.5.8
 
 ### Patch Changes

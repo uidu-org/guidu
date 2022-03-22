@@ -1,5 +1,17 @@
 # @uidu/modal-dialog
 
+## 0.5.15
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/button@1.3.12
+  - @uidu/portal@0.5.11
+  - @uidu/theme@0.6.10
+  - @uidu/form@1.2.14
+
 ## 0.5.14
 
 ### Patch Changes

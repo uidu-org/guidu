@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.11
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
 ## 0.3.10
 
 ### Patch Changes

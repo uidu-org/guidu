@@ -1,5 +1,22 @@
 # @uidu/table
 
+## 1.4.0
+
+### Minor Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
+### Patch Changes
+
+- Updated dependencies [cced08c0d]
+  - @uidu/data-manager@2.4.0
+  - @uidu/button@1.3.12
+  - @uidu/dropdown-menu@0.6.12
+  - @uidu/menu@0.7.5
+  - @uidu/popup@0.6.11
+  - @uidu/data-fields@1.5.9
+  - @uidu/checkbox@1.1.11
+
 ## 1.3.5
 
 ### Patch Changes

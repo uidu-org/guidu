@@ -1,5 +1,42 @@
 # @uidu/editor-core
 
+## 0.13.2
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/avatar@0.9.5
+  - @uidu/avatar-group@2.6.9
+  - @uidu/button@1.3.12
+  - @uidu/droplist@0.5.12
+  - @uidu/menu@0.7.5
+  - @uidu/modal-dialog@0.5.15
+  - @uidu/spinner@0.5.8
+  - @uidu/theme@0.6.10
+  - @uidu/tooltip@0.5.11
+  - @uidu/adf-schema@0.9.1
+  - @uidu/adf-utils@0.8.2
+  - @uidu/editor-common@0.7.5
+  - @uidu/editor-json-transformer@0.7.2
+  - @uidu/editor-markdown-transformer@0.8.1
+  - @uidu/analytics-listeners@0.4.7
+  - @uidu/analytics-namespaced-context@0.4.7
+  - @uidu/date@0.4.11
+  - @uidu/emoji@0.6.5
+  - @uidu/mentions@0.4.3
+  - @uidu/profilecard@0.3.3
+  - @uidu/status@0.5.3
+  - @uidu/task-decision@0.4.13
+  - @uidu/field-date@1.1.12
+  - @uidu/form@1.2.14
+  - @uidu/select@1.5.11
+  - @uidu/media-card@0.6.3
+  - @uidu/media-core@0.7.5
+  - @uidu/media-filmstrip@0.4.12
+  - @uidu/media-picker@0.7.7
+
 ## 0.13.1
 
 ### Patch Changes

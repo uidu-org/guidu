@@ -1,5 +1,15 @@
 # @uidu/calendar
 
+## 0.4.1
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/button@1.3.12
+  - @uidu/dropdown-menu@0.6.12
+  - @uidu/shell@2.1.13
+
 ## 0.4.0
 
 ### Minor Changes

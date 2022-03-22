@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.8
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
 ## 0.1.7
 
 ### Patch Changes

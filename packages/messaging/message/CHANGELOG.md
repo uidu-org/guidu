@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.5.14
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/avatar@0.9.5
+  - @uidu/drawer@0.7.11
+  - @uidu/dropdown-menu@0.6.12
+  - @uidu/tooltip@0.5.11
+  - @uidu/media-card@0.6.3
+  - @uidu/media-core@0.7.5
+  - @uidu/media-viewer@0.4.17
+  - @uidu/message-form@0.4.11
+  - @uidu/message-renderer@0.4.9
+
 ## 0.5.13
 
 ### Patch Changes

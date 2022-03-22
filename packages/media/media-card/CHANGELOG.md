@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.6.3
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/button@1.3.12
+  - @uidu/dropdown-menu@0.6.12
+  - @uidu/spinner@0.5.8
+  - @uidu/theme@0.6.10
+  - @uidu/tooltip@0.5.11
+  - @uidu/media-core@0.7.5
+
 ## 0.6.2
 
 ### Patch Changes

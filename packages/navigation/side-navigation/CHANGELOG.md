@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 1.0.11
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/avatar@0.9.5
+  - @uidu/dropdown-menu@0.6.12
+  - @uidu/inline-dialog@0.5.11
+  - @uidu/theme@0.6.10
+  - @uidu/tooltip@0.5.11
+  - @uidu/shell@2.1.13
+
 ## 1.0.10
 
 ### Patch Changes

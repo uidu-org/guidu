@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.4.3
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/slider@1.7.10
+  - @uidu/spinner@0.5.8
+  - @uidu/payments@1.3.4
+  - @uidu/field-text@1.1.11
+  - @uidu/form@1.2.14
+  - @uidu/stepper@0.4.9
+
 ## 0.4.2
 
 ### Patch Changes

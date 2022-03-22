@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 1.2.4
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/data-fields@1.5.9
+
 ## 1.2.3
 
 ### Patch Changes

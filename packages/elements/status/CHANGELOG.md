@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.5.3
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/lozenge@0.5.8
+  - @uidu/theme@0.6.10
+  - @uidu/field-text@1.1.11
+
 ## 0.5.2
 
 ### Patch Changes

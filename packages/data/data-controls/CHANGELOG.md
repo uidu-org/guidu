@@ -1,5 +1,28 @@
 # @uidu/data-controls
 
+## 2.1.6
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/data-manager@2.4.0
+  - @uidu/button@1.3.12
+  - @uidu/drawer@0.7.11
+  - @uidu/dropdown-menu@0.6.12
+  - @uidu/inline-dialog@0.5.11
+  - @uidu/menu@0.7.5
+  - @uidu/popup@0.6.11
+  - @uidu/spinner@0.5.8
+  - @uidu/tooltip@0.5.11
+  - @uidu/data-fields@1.5.9
+  - @uidu/data-views@1.2.6
+  - @uidu/checkbox@1.1.11
+  - @uidu/field-text@1.1.11
+  - @uidu/form@1.2.14
+  - @uidu/select@1.5.11
+  - @uidu/shell@2.1.13
+
 ## 2.1.5
 
 ### Patch Changes

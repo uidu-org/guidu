@@ -1,5 +1,14 @@
 # @uidu/analytics-listeners
 
+## 0.4.7
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/analytics-namespaced-context@0.4.7
+
 ## 0.4.6
 
 ### Patch Changes

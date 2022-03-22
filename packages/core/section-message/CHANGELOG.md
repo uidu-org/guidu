@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.6.9
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/button@1.3.12
+
 ## 0.6.8
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.0.18
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/avatar@0.9.5
+  - @uidu/avatar-group@2.6.9
+  - @uidu/button@1.3.12
+  - @uidu/dropdown-menu@0.6.12
+  - @uidu/field-date-range@1.1.9
+  - @uidu/form@1.2.14
+
 ## 1.0.17
 
 ### Patch Changes

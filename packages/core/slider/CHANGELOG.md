@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.7.10
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
 ## 1.7.9
 
 ### Patch Changes

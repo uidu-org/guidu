@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.0.8
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
 ## 1.0.7
 
 ### Patch Changes

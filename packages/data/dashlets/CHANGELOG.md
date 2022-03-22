@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 1.6.6
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/table@1.4.0
+  - @uidu/spinner@0.5.8
+  - @uidu/tooltip@0.5.11
+  - @uidu/dashboard-manager@1.3.9
+  - @uidu/dashlet-controls@1.0.18
+  - @uidu/data-fields@1.5.9
+
 ## 1.6.5
 
 ### Patch Changes

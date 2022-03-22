@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.5.12
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/item@0.5.10
+  - @uidu/layer@0.5.8
+  - @uidu/spinner@0.5.8
+  - @uidu/theme@0.6.10
+  - @uidu/tooltip@0.5.11
+
 ## 0.5.11
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.8.2
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/adf-schema@0.9.1
+
 ## 0.8.1
 
 ### Patch Changes
