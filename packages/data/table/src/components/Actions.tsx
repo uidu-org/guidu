@@ -42,7 +42,7 @@ export default function Actions({
     () => (
       <>
         {perRowActions.map(({ items, name, ...actionGroupProps }) => (
-          <MenuGroup>
+          <MenuGroup key={name}>
             <Section
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...actionGroupProps}

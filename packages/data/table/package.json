@@ -16,7 +16,6 @@
     "@uidu/checkbox": "^1.1.11",
     "@uidu/data-fields": "^1.5.9",
     "@uidu/data-manager": "2.4.0",
-    "@uidu/dropdown-menu": "^0.6.12",
     "@uidu/menu": "^0.7.5",
     "@uidu/popup": "^0.6.11",
     "numeral": "^2.0.6",

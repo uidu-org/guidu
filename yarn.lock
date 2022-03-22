@@ -8736,7 +8736,6 @@ __metadata:
     "@uidu/data-fields": ^1.5.9
     "@uidu/data-manager": 2.4.0
     "@uidu/docs": ^0.5.7
-    "@uidu/dropdown-menu": ^0.6.12
     "@uidu/menu": ^0.7.5
     "@uidu/popup": ^0.6.11
     faker: ^5.5.3

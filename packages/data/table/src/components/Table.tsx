@@ -7,6 +7,7 @@ import { theme } from 'twin.macro';
 import * as defaultComponents from '../styled';
 import Footer from './Footer';
 import Resizer from './Resizer';
+import RowSingle from './Row';
 
 function getComponents(defaultComponents, overrides = {}) {
   return Object.keys(defaultComponents).reduce((acc, name) => {
@@ -104,60 +105,18 @@ function Table<T extends object>({
       prepareRow(row);
 
       return (
-        <StyledRow
-          key={index}
-          {...row.getRowProps([{ style: { minWidth: '100%' } }])}
+        <RowSingle<T>
+          row={row}
+          rowHeight={rowHeight}
           size={size}
           start={start}
-          onClick={(e: React.MouseEvent) => {
-            e.preventDefault();
-            onItemClick(row);
-          }}
-        >
-          {row.cells
-            .filter((cell) => !cell.column.isPrivate)
-            .map((cell, index) => (
-              <Td
-                {...cell.getCellProps([
-                  {
-                    style: {
-                      left: index === 0 ? 0 : '56px',
-                      ...(cell.column.isSorted
-                        ? { backgroundColor: theme`colors.yellow.50` }
-                        : {}),
-                      ...cell.column.cellStyle,
-                    },
-                  },
-                ])}
-                pinned={cell.column.pinned}
-                index={index}
-                height={rowHeight}
-              >
-                {cell.isGrouped ? (
-                  // If it's a grouped cell, add an expander and row count
-                  <>
-                    <span {...row.getToggleRowExpandedProps()}>
-                      {row.isExpanded ? '👇' : '👉'}
-                    </span>{' '}
-                    {cell.render('Cell', { ...cell.column.cellProps })} (
-                    {row.subRows.length})
-                  </>
-                ) : cell.isAggregated ? (
-                  // If the cell is aggregated, use the Aggregated
-                  // renderer for cell
-                  cell.render('Aggregated', {
-                    setAggregation,
-                  })
-                ) : cell.isPlaceholder ? null : ( // For cells with repeated values, render null
-                  // Otherwise, just render the regular cell
-                  cell.render('Cell', { ...cell.column.cellProps })
-                )}
-              </Td>
-            ))}
-        </StyledRow>
+          components={{ Td, StyledRow }}
+          onItemClick={onItemClick}
+          setAggregation={setAggregation}
+        />
       );
     },
-    [page, prepareRow, rowHeight, setAggregation, onItemClick],
+    [page, prepareRow, rowHeight, setAggregation, onItemClick, StyledRow, Td],
   );
 
   const parentRef = React.useRef();

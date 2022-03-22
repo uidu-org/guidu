@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default (params) => {
+export default function Cell(params) {
   // if (params.node && params.node.group) {
   //   return null;
   // }
@@ -19,8 +19,8 @@ export default (params) => {
 
   return (
     <>
-      <span tw="mr-2.5">{value.before}</span>
-      {value.name}
+      <span tw="mr-2.5 flex-shrink-0">{value.before}</span>
+      <div tw="truncate">{value.name}</div>
     </>
   );
-};
+}
