@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.7.2
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/adf-schema@0.9.1
+
 ## 0.7.1
 
 ### Patch Changes

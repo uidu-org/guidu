@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.4.12
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/theme@0.6.10
+  - @uidu/media-card@0.6.3
+  - @uidu/media-core@0.7.5
+  - @uidu/media-viewer@0.4.17
+
 ## 0.4.11
 
 ### Patch Changes

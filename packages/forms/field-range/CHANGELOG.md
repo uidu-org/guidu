@@ -1,5 +1,15 @@
 # @uidu/field-range
 
+## 1.1.2
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/theme@0.6.10
+  - @uidu/field-base@3.1.15
+  - @uidu/form@1.2.14
+
 ## 1.1.1
 
 ### Patch Changes

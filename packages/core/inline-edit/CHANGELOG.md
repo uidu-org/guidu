@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.3.12
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/button@1.3.12
+  - @uidu/inline-dialog@0.5.11
+  - @uidu/theme@0.6.10
+  - @uidu/field@1.0.7
+  - @uidu/field-text@1.1.11
+  - @uidu/form@1.2.14
+
 ## 0.3.11
 
 ### Patch Changes

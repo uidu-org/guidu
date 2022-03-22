@@ -1,5 +1,16 @@
 # @uidu/breadcrumbs
 
+## 1.0.9
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/button@1.3.12
+  - @uidu/theme@0.6.10
+  - @uidu/tooltip@0.5.11
+
 ## 1.0.8
 
 ### Patch Changes

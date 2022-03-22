@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.8.1
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/adf-schema@0.9.1
+  - @uidu/editor-common@0.7.5
+
 ## 0.8.0
 
 ### Minor Changes

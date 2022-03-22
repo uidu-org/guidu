@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.4.11
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/dropdown-menu@0.6.12
+  - @uidu/spinner@0.5.8
+  - @uidu/field-mentions@1.2.6
+  - @uidu/field-text@1.1.11
+  - @uidu/form@1.2.14
+  - @uidu/media-filmstrip@0.4.12
+  - @uidu/message@0.5.14
+
 ## 0.4.10
 
 ### Patch Changes

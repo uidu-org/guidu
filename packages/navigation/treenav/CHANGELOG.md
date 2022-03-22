@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.3.9
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
 ## 0.3.8
 
 ### Patch Changes

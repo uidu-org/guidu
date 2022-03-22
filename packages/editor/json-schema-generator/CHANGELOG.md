@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.2.13
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
 ## 0.2.12
 
 ### Patch Changes

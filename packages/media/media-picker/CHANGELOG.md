@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.7.7
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/media-core@0.7.5
+
 ## 0.7.6
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 1.3.9
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/dashboard-controls@1.0.18
+  - @uidu/dashlets@1.6.6
+
 ## 1.3.8
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.4.7
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/shell@2.1.13
+
 ## 0.4.6
 
 ### Patch Changes

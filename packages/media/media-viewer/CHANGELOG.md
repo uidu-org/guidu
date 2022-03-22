@@ -1,5 +1,18 @@
 # @uidu/media-viewer
 
+## 0.4.17
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/avatar@0.9.5
+  - @uidu/button@1.3.12
+  - @uidu/spinner@0.5.8
+  - @uidu/theme@0.6.10
+  - @uidu/media-core@0.7.5
+  - @uidu/shell@2.1.13
+
 ## 0.4.16
 
 ### Patch Changes

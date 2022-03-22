@@ -1,5 +1,15 @@
 # @uidu/field-geosuggest
 
+## 1.1.13
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/menu@0.7.5
+  - @uidu/spinner@0.5.8
+  - @uidu/field-base@3.1.15
+
 ## 1.1.12
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.16
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
 ## 0.3.15
 
 ### Patch Changes

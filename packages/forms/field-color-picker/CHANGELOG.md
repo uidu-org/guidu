@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 2.0.13
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/button@1.3.12
+  - @uidu/popup@0.6.11
+  - @uidu/field-base@3.1.15
+
 ## 2.0.12
 
 ### Patch Changes

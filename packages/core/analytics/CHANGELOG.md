@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.5.8
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
 ## 0.5.7
 
 ### Patch Changes

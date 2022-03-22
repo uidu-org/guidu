@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.2.4
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/spinner@0.5.8
+  - @uidu/data-controls@2.1.6
+  - @uidu/data-fields@1.5.9
+  - @uidu/shell@2.1.13
+
 ## 1.2.3
 
 ### Patch Changes

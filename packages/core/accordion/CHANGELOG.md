@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.6
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/docs@0.5.7
+
 ## 0.6.5
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.8.2
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/code@0.5.8
+  - @uidu/theme@0.6.10
+  - @uidu/tooltip@0.5.11
+  - @uidu/adf-schema@0.9.1
+  - @uidu/adf-utils@0.8.2
+  - @uidu/editor-common@0.7.5
+  - @uidu/editor-json-transformer@0.7.2
+  - @uidu/analytics-listeners@0.4.7
+  - @uidu/analytics-namespaced-context@0.4.7
+  - @uidu/mentions@0.4.3
+  - @uidu/status@0.5.3
+  - @uidu/task-decision@0.4.13
+  - @uidu/media-card@0.6.3
+  - @uidu/media-filmstrip@0.4.12
+
 ## 0.8.1
 
 ### Patch Changes

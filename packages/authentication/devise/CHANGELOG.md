@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.7.2
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/avatar@0.9.5
+  - @uidu/slider@1.7.10
+  - @uidu/spinner@0.5.8
+  - @uidu/checkbox@1.1.11
+  - @uidu/field-password@1.1.9
+  - @uidu/field-phone@1.0.15
+  - @uidu/field-text@1.1.11
+  - @uidu/form@1.2.14
+  - @uidu/shell@2.1.13
+
 ## 0.7.1
 
 ### Patch Changes

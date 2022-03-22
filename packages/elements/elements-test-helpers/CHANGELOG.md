@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.13
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+
 ## 0.4.12
 
 ### Patch Changes

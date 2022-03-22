@@ -1,5 +1,16 @@
 # @uidu/tooltip
 
+## 0.5.11
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/popper@0.5.10
+  - @uidu/portal@0.5.11
+  - @uidu/theme@0.6.10
+
 ## 0.5.10
 
 ### Patch Changes

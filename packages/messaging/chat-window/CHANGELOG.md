@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.4.10
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/message@0.5.14
+  - @uidu/message-form@0.4.11
+  - @uidu/message-renderer@0.4.9
+
 ## 0.4.9
 
 ### Patch Changes

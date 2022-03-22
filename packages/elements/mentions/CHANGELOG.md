@@ -1,5 +1,18 @@
 # @uidu/mentions
 
+## 0.4.3
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/avatar@0.9.5
+  - @uidu/button@1.3.12
+  - @uidu/lozenge@0.5.8
+  - @uidu/theme@0.6.10
+  - @uidu/tooltip@0.5.11
+
 ## 0.4.2
 
 ### Patch Changes

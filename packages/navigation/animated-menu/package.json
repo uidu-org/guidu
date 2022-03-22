@@ -1,6 +1,6 @@
 {
   "name": "@uidu/animated-menu",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Animated menu like Stripe",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/animated-menu",
   "license": "MIT",
@@ -18,6 +18,6 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.6"
+    "@uidu/docs": "^0.5.7"
   }
 }

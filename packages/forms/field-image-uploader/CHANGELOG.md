@@ -1,5 +1,18 @@
 # @uidu/field-image-uploader
 
+## 2.0.3
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/button@1.3.12
+  - @uidu/spinner@0.5.8
+  - @uidu/field-base@3.1.15
+  - @uidu/field-range@1.1.2
+  - @uidu/media-core@0.7.5
+
 ## 2.0.2
 
 ### Patch Changes

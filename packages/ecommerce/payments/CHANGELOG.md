@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 1.3.4
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/section-message@0.6.9
+  - @uidu/slider@1.7.10
+  - @uidu/theme@0.6.10
+  - @uidu/field-base@3.1.15
+  - @uidu/form@1.2.14
+
 ## 1.3.3
 
 ### Patch Changes

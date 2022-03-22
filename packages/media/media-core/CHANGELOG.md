@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 0.7.5
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/docs@0.5.7
+
 ## 0.7.4
 
 ### Patch Changes

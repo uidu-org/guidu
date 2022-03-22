@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.7.5
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/theme@0.6.10
+  - @uidu/adf-schema@0.9.1
+  - @uidu/adf-utils@0.8.2
+  - @uidu/analytics-namespaced-context@0.4.7
+  - @uidu/emoji@0.6.5
+  - @uidu/mentions@0.4.3
+  - @uidu/profilecard@0.3.3
+
 ## 0.7.4
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.3.3
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/avatar@0.9.5
+  - @uidu/button@1.3.12
+  - @uidu/lozenge@0.5.8
+  - @uidu/popup@0.6.11
+  - @uidu/spinner@0.5.8
+  - @uidu/theme@0.6.10
+
 ## 0.3.2
 
 ### Patch Changes

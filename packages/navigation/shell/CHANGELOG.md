@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.1.13
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/spinner@0.5.8
+
 ## 2.1.12
 
 ### Patch Changes

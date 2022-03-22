@@ -1,5 +1,17 @@
 # @uidu/field-text
 
+## 1.0.10
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/theme@0.6.10
+  - @uidu/field-base@3.1.15
+  - @uidu/field-text@1.1.11
+  - @uidu/form@1.2.14
+
 ## 1.0.9
 
 ### Patch Changes

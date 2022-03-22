@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.11
+
+### Patch Changes
+
+- cced08c0d: You can now pass components to Table's row Actions
+- Updated dependencies [cced08c0d]
+  - @uidu/analytics@0.5.8
+  - @uidu/emoji@0.6.5
+  - @uidu/mentions@0.4.3
+  - @uidu/task-decision@0.4.13
+
 ## 0.4.10
 
 ### Patch Changes
