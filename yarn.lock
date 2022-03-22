@@ -160,17 +160,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/icon@npm:^21.10.0, @atlaskit/icon@npm:^21.10.4, @atlaskit/icon@npm:^21.5.0":
-  version: 21.10.4
-  resolution: "@atlaskit/icon@npm:21.10.4"
+"@atlaskit/icon@npm:^21.10.0, @atlaskit/icon@npm:^21.10.5, @atlaskit/icon@npm:^21.5.0":
+  version: 21.10.5
+  resolution: "@atlaskit/icon@npm:21.10.5"
   dependencies:
     "@atlaskit/theme": ^12.1.0
-    "@atlaskit/tokens": ^0.7.0
+    "@atlaskit/tokens": ^0.8.0
     "@babel/runtime": ^7.0.0
     "@emotion/core": ^10.0.9
   peerDependencies:
     react: ^16.8.0
-  checksum: 4f6f0d941a105f4f2f217876c919a957b87fb79646c8bd709c888b0e17895b62308f4603d7f7d70a69f87912ab5234a70f39a587845d572c5a203ee6d715e65c
+  checksum: 2f61dcfd6b92f611d84cfd2a642d6f251988131a492e22fc74fd3d3c962793250d341bd6a72a691348aa20eca69fe6b664c8966b11a834020e82945a9222006b
   languageName: node
   linkType: hard
 
@@ -200,20 +200,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/progress-indicator@npm:^9.2.1":
-  version: 9.2.1
-  resolution: "@atlaskit/progress-indicator@npm:9.2.1"
+"@atlaskit/progress-indicator@npm:^9.2.2":
+  version: 9.2.2
+  resolution: "@atlaskit/progress-indicator@npm:9.2.2"
   dependencies:
     "@atlaskit/analytics-next": ^8.0.0
     "@atlaskit/ds-lib": ^1.4.0
     "@atlaskit/focus-ring": ^1.0.0
     "@atlaskit/theme": ^12.1.0
-    "@atlaskit/tokens": ^0.7.0
+    "@atlaskit/tokens": ^0.8.0
     "@babel/runtime": ^7.0.0
     "@emotion/core": ^10.0.9
   peerDependencies:
     react: ^16.8.0
-  checksum: f284aed0ac7570bc30fc8a6430eaec5f37efdfdb7266656e39617989025337585fdee431e89f35ec211990bfc7e1840e8722092af5e07c3d187022c1f13458db
+  checksum: 91de4f0395ff2e1dc93a02230698e7cfbf1921c8b9b2408550fce57b7c33aca9c0d2366332cccd3485e3b6728e681df5598122223dd4a7939eaf89aa287430b4
   languageName: node
   linkType: hard
 
@@ -229,21 +229,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/tag@npm:^11.2.6":
-  version: 11.2.6
-  resolution: "@atlaskit/tag@npm:11.2.6"
+"@atlaskit/tag@npm:^11.3.0":
+  version: 11.3.0
+  resolution: "@atlaskit/tag@npm:11.3.0"
   dependencies:
     "@atlaskit/analytics-next": ^8.0.0
     "@atlaskit/ds-lib": ^1.4.0
     "@atlaskit/icon": ^21.10.0
     "@atlaskit/motion": ^1.0.0
     "@atlaskit/theme": ^12.1.0
-    "@atlaskit/tokens": ^0.7.0
+    "@atlaskit/tokens": ^0.8.0
     "@babel/runtime": ^7.0.0
     "@emotion/core": ^10.0.9
   peerDependencies:
     react: ^16.8.0
-  checksum: 1036b535d9f28f9cfa31502d308302c6f72a390b66a816816902ae34495674a415ca9cdb2fde55a687052e3b97840ccba66cf574c8a77c9a9109073ab9f81c02
+  checksum: bc1294a342fc6ccd48f869427d85c7a37eed628f28c5c16bbece75f83762f1da3f7fa0400fdf5dcb8bbe0fbf704808da998597bed8a6fa2096c284b263ba2eec
   languageName: node
   linkType: hard
 
@@ -293,15 +293,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/tokens@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "@atlaskit/tokens@npm:0.7.0"
+"@atlaskit/tokens@npm:^0.8.0":
+  version: 0.8.2
+  resolution: "@atlaskit/tokens@npm:0.8.2"
   dependencies:
     "@atlaskit/ds-lib": ^1.4.0
     "@babel/runtime": ^7.0.0
     "@babel/traverse": ^7.15.0
     "@babel/types": ^7.15.0
-  checksum: ba6de70da82f8492b81993d7a2714bdc3463cc4482cdea4ffdf0eb48b523117f106ca72f01c57ec3dac227cffe1a74df5fc53a781325d9736a5e9e07848ab81c
+  checksum: 573118153451d45c7cbda084b4f1b0fac008733c7a2231330158dd05484b008cd649bfa63ce35cbaae1e4bd2ff508e605e769051e98ff2aed843685524068b2c
   languageName: node
   linkType: hard
 
@@ -405,17 +405,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.0.0, @babel/core@npm:^7.0.0-beta.56, @babel/core@npm:^7.10.4, @babel/core@npm:^7.11.4, @babel/core@npm:^7.17.7, @babel/core@npm:^7.4.4, @babel/core@npm:^7.7.7":
-  version: 7.17.7
-  resolution: "@babel/core@npm:7.17.7"
+"@babel/core@npm:^7.0.0, @babel/core@npm:^7.0.0-beta.56, @babel/core@npm:^7.10.4, @babel/core@npm:^7.11.4, @babel/core@npm:^7.17.8, @babel/core@npm:^7.4.4, @babel/core@npm:^7.7.7":
+  version: 7.17.8
+  resolution: "@babel/core@npm:7.17.8"
   dependencies:
     "@ampproject/remapping": ^2.1.0
     "@babel/code-frame": ^7.16.7
     "@babel/generator": ^7.17.7
     "@babel/helper-compilation-targets": ^7.17.7
     "@babel/helper-module-transforms": ^7.17.7
-    "@babel/helpers": ^7.17.7
-    "@babel/parser": ^7.17.7
+    "@babel/helpers": ^7.17.8
+    "@babel/parser": ^7.17.8
     "@babel/template": ^7.16.7
     "@babel/traverse": ^7.17.3
     "@babel/types": ^7.17.0
@@ -424,7 +424,7 @@ __metadata:
     gensync: ^1.0.0-beta.2
     json5: ^2.1.2
     semver: ^6.3.0
-  checksum: 467838313f8c84037d08d051238005c48f6b3da6fbaed38cd2dac5fcbe3706df2857365b8a9291402b3b888c24edb9707dc6c93f0127fecc7fe49b700c35c057
+  checksum: 0e686b1be444d25494424065238931f2b3df908bf072b72bab973acfd6d27a481fc280c9cd8a3c6fe2c46beee50e0d2307468d8b15b64dc4036f025e75f6609d
   languageName: node
   linkType: hard
 
@@ -486,7 +486,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-create-class-features-plugin@npm:^7.16.10, @babel/helper-create-class-features-plugin@npm:^7.16.7, @babel/helper-create-class-features-plugin@npm:^7.17.1":
+"@babel/helper-create-class-features-plugin@npm:^7.16.10, @babel/helper-create-class-features-plugin@npm:^7.16.7, @babel/helper-create-class-features-plugin@npm:^7.17.6":
   version: 7.17.6
   resolution: "@babel/helper-create-class-features-plugin@npm:7.17.6"
   dependencies:
@@ -714,14 +714,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helpers@npm:^7.12.5, @babel/helpers@npm:^7.17.7":
-  version: 7.17.7
-  resolution: "@babel/helpers@npm:7.17.7"
+"@babel/helpers@npm:^7.12.5, @babel/helpers@npm:^7.17.8":
+  version: 7.17.8
+  resolution: "@babel/helpers@npm:7.17.8"
   dependencies:
     "@babel/template": ^7.16.7
     "@babel/traverse": ^7.17.3
     "@babel/types": ^7.17.0
-  checksum: fdc93714b3eb3b7a179a5133c3d7008f36785af469bb091a2f056f1a893aeedc8654e87c5e04a5cdecb6587e6177839a4b887b832be289689ffe277d08dfd4a7
+  checksum: 463dad58119fefebf2d0201bfa53ec9607aa00356908895640fc07589747fb3c2e0dfee4019f3e8c9781e57c9aa5dff4c72ec8d1b031c4ed8349f90b6aefe99d
   languageName: node
   linkType: hard
 
@@ -736,12 +736,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.0.0, @babel/parser@npm:^7.1.0, @babel/parser@npm:^7.12.5, @babel/parser@npm:^7.12.7, @babel/parser@npm:^7.15.7, @babel/parser@npm:^7.16.4, @babel/parser@npm:^7.16.7, @babel/parser@npm:^7.17.3, @babel/parser@npm:^7.17.7":
-  version: 7.17.7
-  resolution: "@babel/parser@npm:7.17.7"
+"@babel/parser@npm:^7.0.0, @babel/parser@npm:^7.1.0, @babel/parser@npm:^7.12.5, @babel/parser@npm:^7.12.7, @babel/parser@npm:^7.15.7, @babel/parser@npm:^7.16.4, @babel/parser@npm:^7.16.7, @babel/parser@npm:^7.17.3, @babel/parser@npm:^7.17.8":
+  version: 7.17.8
+  resolution: "@babel/parser@npm:7.17.8"
   bin:
     parser: ./bin/babel-parser.js
-  checksum: d2612c2597838a605bcbe921fd2c7381b3ab75603c7907020df037c22a3d27f0507285da74553cd75f403300ca76642323ca2e72ba55cc4222d4a20b87505b0c
+  checksum: 1771808491982cc47baa888a997aef6b58308e3844c8c00f730f8fd97defe57d32cdbf46075cd49aaee310fa31f3d2c80a0d41b41a4ee0ff336ee09e2ff6c222
   languageName: node
   linkType: hard
 
@@ -807,18 +807,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-proposal-decorators@npm:^7.17.2":
-  version: 7.17.2
-  resolution: "@babel/plugin-proposal-decorators@npm:7.17.2"
+"@babel/plugin-proposal-decorators@npm:^7.17.8":
+  version: 7.17.8
+  resolution: "@babel/plugin-proposal-decorators@npm:7.17.8"
   dependencies:
-    "@babel/helper-create-class-features-plugin": ^7.17.1
+    "@babel/helper-create-class-features-plugin": ^7.17.6
     "@babel/helper-plugin-utils": ^7.16.7
     "@babel/helper-replace-supers": ^7.16.7
     "@babel/plugin-syntax-decorators": ^7.17.0
     charcodes: ^0.2.0
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: da5424d51e49912a1784a7074e8fb7b2d55b4a41c32bf05a829a81987274068e170f469de81d95d177def3480f7de3402a1808d599ad91f98fdaa44023a416da
+  checksum: 8687de0ef0d671bc0c7e2ae0a7970055f8f6a0c8a50dcf81fe54bad85ffb59447ad7d75169f891244ef4a5a7bc2d146d753b7077635597fd998a44db632481ae
   languageName: node
   linkType: hard
 
@@ -1824,12 +1824,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.17.7, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.3.4, @babel/runtime@npm:^7.4.4, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.6.3, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.7, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
-  version: 7.17.7
-  resolution: "@babel/runtime@npm:7.17.7"
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.4, @babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.8, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.2.0, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.3.4, @babel/runtime@npm:^7.4.4, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.6.3, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.7.7, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+  version: 7.17.8
+  resolution: "@babel/runtime@npm:7.17.8"
   dependencies:
     regenerator-runtime: ^0.13.4
-  checksum: d9ec9e2c5ebbf503ac865ebd70d0216443d0fa8380bab572aa44ccf8fafde8b8b9846badfdbba3572f79075c9a196845aa3f42a435fd34ec832acd2bc1467d37
+  checksum: 68d195c1630bb91ac20e86635d292a17ebab7f361cfe79406b3f5a6cc2e59fa283ae5006568899abf869312c2b35b744bd407aea8ffdb650f1a68d07785d47e9
   languageName: node
   linkType: hard
 
@@ -2181,15 +2181,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/postcss-color-function@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@csstools/postcss-color-function@npm:1.0.2"
+"@csstools/postcss-color-function@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@csstools/postcss-color-function@npm:1.0.3"
   dependencies:
     "@csstools/postcss-progressive-custom-properties": ^1.1.0
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: 0fc5c8924dbffca13307038e3363b4e75bd3f32769907b13309d7170c3ab0716ee9e7f7c7a4c4f972ddc6f1e2b4103f910f465a250062fdce5aef1fcd9579610
+  checksum: edb84cef5261f25282c7a660749ddce56c0a00a82f588c19f10e0e72a8c8c9cb4d573917a424b3e7fc2e77ab18860d972663d779614fccdeb7995e37c2b79c97
   languageName: node
   linkType: hard
 
@@ -2227,14 +2227,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/postcss-is-pseudo-class@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@csstools/postcss-is-pseudo-class@npm:2.0.0"
+"@csstools/postcss-is-pseudo-class@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@csstools/postcss-is-pseudo-class@npm:2.0.1"
   dependencies:
     postcss-selector-parser: ^6.0.9
   peerDependencies:
     postcss: ^8.4
-  checksum: a6ef39f0fc1c2e3ad085dc45540bb1037fa7ae9a5c0950bab8a6c6b63a458eb00ac129a78f9f6a2d4d30dae12eae81b00ed8794364f8e1bd0d3ca27222dd2cff
+  checksum: 6383d867108d323e75d51d77f230f86cb51baa53d85b20404de621079bec7ffb345fbca2d482554cabd0666c30efb6e34436a4a85d2ff3a7cc561fe72b3e36c9
   languageName: node
   linkType: hard
 
@@ -2249,32 +2249,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/postcss-oklab-function@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@csstools/postcss-oklab-function@npm:1.0.1"
+"@csstools/postcss-oklab-function@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@csstools/postcss-oklab-function@npm:1.0.2"
   dependencies:
     "@csstools/postcss-progressive-custom-properties": ^1.1.0
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: 2de8f679a2ceccfa6c65cd349b8548a9c38627dfdcbde0cbbdaa82be6181bb63924ccdaac9fcbc2173be867e4f251eafbfe2af574ed79180de607809abdb45c2
+  checksum: 466992d88cfa5c01277732b9de9ce438f1eb205058e31a99c6308bebc46faaf9972d1d641b28af9eac516de6dc8ff928edd39def763f9523cc018396fb7fdd93
   languageName: node
   linkType: hard
 
-"@csstools/postcss-progressive-custom-properties@npm:^1.1.0, @csstools/postcss-progressive-custom-properties@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "@csstools/postcss-progressive-custom-properties@npm:1.2.0"
+"@csstools/postcss-progressive-custom-properties@npm:^1.1.0, @csstools/postcss-progressive-custom-properties@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@csstools/postcss-progressive-custom-properties@npm:1.3.0"
   dependencies:
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.3
-  checksum: 879fc52e8c55c8a4539fdf34f92d4a85f06d83d4d38d0a707061b13522b915f41d531a410092a2993e185094d5cba1c5d1612d123f60641dd44b7f5bc516c92d
+  checksum: e281845fde5b8a80d06ec20147bd74e96a9351bebbec5e5c3a6fb37ea30a597ff84172601786a8a270662f58f708b4a3bf8d822d6318023def9773d2f6589962
   languageName: node
   linkType: hard
 
-"@cubejs-client/core@npm:^0.29.29":
-  version: 0.29.29
-  resolution: "@cubejs-client/core@npm:0.29.29"
+"@cubejs-client/core@npm:^0.29.33":
+  version: 0.29.33
+  resolution: "@cubejs-client/core@npm:0.29.33"
   dependencies:
     "@babel/plugin-transform-runtime": ^7.17.0
     "@babel/runtime": ^7.1.2
@@ -2284,37 +2284,37 @@ __metadata:
     ramda: ^0.27.0
     url-search-params-polyfill: ^7.0.0
     uuid: ^8.3.2
-  checksum: 8c8cef3491c18e67a1f2a796b0b919cbbebc3de961fd6d81c99ac9b65ac3fa01e25323379251359fa08ed07a31e36d59c82718da43dd585057e8d7d18f252c14
+  checksum: c9a99a7e8e6482f136adcaee1551a6b91b324ba37b2b85e68e7fb47c052c201591b1cd682291daa6acfcdd03c770d1f2f83b93142d8651db2678a8748ed3fb14
   languageName: node
   linkType: hard
 
-"@cubejs-client/react@npm:^0.29.29":
-  version: 0.29.29
-  resolution: "@cubejs-client/react@npm:0.29.29"
+"@cubejs-client/react@npm:^0.29.33":
+  version: 0.29.33
+  resolution: "@cubejs-client/react@npm:0.29.33"
   dependencies:
     "@babel/runtime": ^7.1.2
-    "@cubejs-client/core": ^0.29.29
+    "@cubejs-client/core": ^0.29.33
     anser: ^2.0.1
     core-js: ^3.6.5
     html-entities: ^2.3.2
     ramda: ^0.27.0
   peerDependencies:
     react: ">=16.10.2"
-  checksum: fb2f421e2590c01b0ea8d473c4ecef20ffe20c7e7783e5b679b7bcb4831c4ee52908acf9211b197da754a43ecce03ce3f718fad2e830a7c7e92e5761cb288d63
+  checksum: c559bcc9a7344b894a010789aa34619040c957e9a3705d5b4d73df0e8537d2fceeb0b89c6f17eb03eeb4ac61307ccae247952dd7d99807ba03c4c9dd76ecb442
   languageName: node
   linkType: hard
 
-"@cubejs-client/ws-transport@npm:^0.29.29":
-  version: 0.29.29
-  resolution: "@cubejs-client/ws-transport@npm:0.29.29"
+"@cubejs-client/ws-transport@npm:^0.29.33":
+  version: 0.29.33
+  resolution: "@cubejs-client/ws-transport@npm:0.29.33"
   dependencies:
     "@babel/runtime": ^7.1.2
-    "@cubejs-client/core": ^0.29.29
+    "@cubejs-client/core": ^0.29.33
     "@types/ws": ^7.2.9
     core-js: ^3.6.5
     isomorphic-ws: ^4.0.1
     ws: ^7.3.1
-  checksum: d9844377086457c722d2d6586a76c6ed5478ed141a2d0eea2cc347ac89cfde95f3bf3b1290b88389429089a004a2d2eb658b15f8f0cf4b38fb950ac21ad683ad
+  checksum: c2a72ba0c07eaa298cf2df17893c3b65003a80fc3918cde8aa280ddd7d9c4167757f9291cc25b502419ed27267feed637e167328eca730da2d3523738588aa58
   languageName: node
   linkType: hard
 
@@ -2711,9 +2711,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react-focus@npm:^8.5.5":
-  version: 8.5.5
-  resolution: "@fluentui/react-focus@npm:8.5.5"
+"@fluentui/react-focus@npm:^8.5.6":
+  version: 8.5.6
+  resolution: "@fluentui/react-focus@npm:8.5.6"
   dependencies:
     "@fluentui/keyboard-key": ^0.4.0
     "@fluentui/merge-styles": ^8.5.0
@@ -2724,7 +2724,7 @@ __metadata:
   peerDependencies:
     "@types/react": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
-  checksum: 519241d62b5805458aa1fbc2c3156b4e85823971e99c172dc88166ca3f15b2add7480b0b37f97d3fae889334a94ada1d1a4e7655118b2b50b9b2d4b017c9755f
+  checksum: ff0462bc6187afc5ed218d3a4d7e18b6210f00661cb2ac2ee7d1412b54e7480f9af65e157ade054998ce32fc54137dce0ecf12dbe6b0a34dc5022ef87bb0041f
   languageName: node
   linkType: hard
 
@@ -2771,15 +2771,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:^8.61.1":
-  version: 8.61.1
-  resolution: "@fluentui/react@npm:8.61.1"
+"@fluentui/react@npm:^8.62.1":
+  version: 8.62.1
+  resolution: "@fluentui/react@npm:8.62.1"
   dependencies:
     "@fluentui/date-time-utilities": ^8.5.0
     "@fluentui/font-icons-mdl2": ^8.2.5
     "@fluentui/foundation-legacy": ^8.2.5
     "@fluentui/merge-styles": ^8.5.0
-    "@fluentui/react-focus": ^8.5.5
+    "@fluentui/react-focus": ^8.5.6
     "@fluentui/react-hooks": ^8.5.3
     "@fluentui/react-window-provider": ^2.2.0
     "@fluentui/set-version": ^8.2.0
@@ -2793,7 +2793,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: ad8effbe6235f9ef89e7e140e898a5d32004a843debdf68cadd37131cd1be14a3a14dea3e7885329478acde7d32f0ac342478830434fd9974a32b4da0c48c7e8
+  checksum: 8f3b0ef280e28d7643a85642003c41a70fcff0110906483809f52c1f42e4baf37772353e1fbde9b8f13ba4823d9516045b182bb671974cb6a54dba7abb4be9aa
   languageName: node
   linkType: hard
 
@@ -3089,15 +3089,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/react-fontawesome@npm:^0.1.17":
-  version: 0.1.17
-  resolution: "@fortawesome/react-fontawesome@npm:0.1.17"
+"@fortawesome/react-fontawesome@npm:^0.1.18":
+  version: 0.1.18
+  resolution: "@fortawesome/react-fontawesome@npm:0.1.18"
   dependencies:
     prop-types: ^15.8.1
   peerDependencies:
-    "@fortawesome/fontawesome-svg-core": ~1 || >=1.3.0-beta1
+    "@fortawesome/fontawesome-svg-core": ~1 || ~6
     react: ">=16.x"
-  checksum: a95a9ef1783e93312c153b299c084043eed4d0867a5ab90019c817c3b4d845052b6539524ca0daee828bbb8f102637fbf8c36e5759cf3f11cdd99a904623abb2
+  checksum: eba711234541928e1877435905bcd94ab6aea1cf228833a55fc7c6a2fc18dd08d3f7f327ca4af0f3ba365188ad0869d7ecd31be5940d27f4e2bbe7e12cbcf520
   languageName: node
   linkType: hard
 
@@ -4826,10 +4826,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stripe/stripe-js@npm:^1.24.0":
-  version: 1.24.0
-  resolution: "@stripe/stripe-js@npm:1.24.0"
-  checksum: 1b26a429a78a7e69ff492d71e2b161d2359a59c2ea6b7dfa2fe068a0daf8f7fdc9639f3003f9358036372a993fcf4279dbc1bf3a6f9e560562f14970e373990b
+"@stripe/stripe-js@npm:^1.25.0":
+  version: 1.25.0
+  resolution: "@stripe/stripe-js@npm:1.25.0"
+  checksum: b5416068b0d1a230b911fb875fc53a563ee2033555bfc7225e7d6d723070d28c8a3cccac2d158ac61135e175926f1659c939180e66bfd78151f4711abe12d36d
   languageName: node
   linkType: hard
 
@@ -5560,12 +5560,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prosemirror-transform@npm:*, @types/prosemirror-transform@npm:^1.1.5":
-  version: 1.1.5
-  resolution: "@types/prosemirror-transform@npm:1.1.5"
+"@types/prosemirror-transform@npm:*, @types/prosemirror-transform@npm:^1.1.6":
+  version: 1.1.6
+  resolution: "@types/prosemirror-transform@npm:1.1.6"
   dependencies:
     "@types/prosemirror-model": "*"
-  checksum: 2f3f844c8b2497b62bf1d134773db9f28beeb5dd274844fe3a38da26beb270302988ac69f8cb51ce118132c1ad26edd72caee7e8538a9aea3dd07749e48e9a85
+  checksum: eb1ca8593b6e60cdbaa53d5352105d0ee5a061399ddfd58da92e36843b00f72660f2a0fafee9bfd6acc9b1066c90852a66c8f8371cd936db79f67c20ccb4cf31
   languageName: node
   linkType: hard
 
@@ -5580,12 +5580,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^17.0.13":
-  version: 17.0.13
-  resolution: "@types/react-dom@npm:17.0.13"
+"@types/react-dom@npm:^17.0.14":
+  version: 17.0.14
+  resolution: "@types/react-dom@npm:17.0.14"
   dependencies:
     "@types/react": "*"
-  checksum: 62c42a54ac8961c23a0e74b9cdd8b0a78563757e462b1ab665b2aa365bfd8b86a73d3f6eafc09a4a80fb08659321db168f012aa597c41c0df36f645a94e9266b
+  checksum: b54cd0ef573236b3d87fe7493e6d1c36d8b4ca37a3b46364272a5c91ac178e3296b68ea1aeb299ce68f12ad663c5720ee890d0539b14881c6754bdcbdb0befa0
   languageName: node
   linkType: hard
 
@@ -5696,14 +5696,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:16 || 17, @types/react@npm:>=16.9.11, @types/react@npm:^17.0.40":
-  version: 17.0.40
-  resolution: "@types/react@npm:17.0.40"
+"@types/react@npm:*, @types/react@npm:16 || 17, @types/react@npm:>=16.9.11, @types/react@npm:^17.0.41":
+  version: 17.0.41
+  resolution: "@types/react@npm:17.0.41"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 24d1b210b5bf3c7d49f9a7fe5490db02e005a1d989045a2d67528347557dd0bcb0d7bcf96088152697e97521ac4c9506d1357ee48a2b7d4e701c70d838dc7284
+  checksum: 1b086ec0ea5d666f05e19e0724e41278d27a2ca29a2cd71b9d9ab3fe27dba233806eb728d744e092c9fe9637ac738d8c5a05983cde84d215342949b47ecba2ef
   languageName: node
   linkType: hard
 
@@ -5879,13 +5879,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.15.0":
-  version: 5.15.0
-  resolution: "@typescript-eslint/eslint-plugin@npm:5.15.0"
+"@typescript-eslint/eslint-plugin@npm:^5.16.0":
+  version: 5.16.0
+  resolution: "@typescript-eslint/eslint-plugin@npm:5.16.0"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.15.0
-    "@typescript-eslint/type-utils": 5.15.0
-    "@typescript-eslint/utils": 5.15.0
+    "@typescript-eslint/scope-manager": 5.16.0
+    "@typescript-eslint/type-utils": 5.16.0
+    "@typescript-eslint/utils": 5.16.0
     debug: ^4.3.2
     functional-red-black-tree: ^1.0.1
     ignore: ^5.1.8
@@ -5898,7 +5898,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 730ec621b5d87a22ea53cb2a67cae15fd241ccec9cff1bc3bdd24622feb11ea39b186544b845c730afa22112d8922008f17d9116a06b1e2dcd975429209a0c0c
+  checksum: 4007cc1599503424037300e7401fb969ca441b122ef8a8f2fc8d70f84d656fdf7ab7b0d00e506a3aaf702871616c3756da17eb1508ff315dfb25170f2d28a904
   languageName: node
   linkType: hard
 
@@ -5929,11 +5929,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/type-utils@npm:5.15.0":
-  version: 5.15.0
-  resolution: "@typescript-eslint/type-utils@npm:5.15.0"
+"@typescript-eslint/scope-manager@npm:5.16.0":
+  version: 5.16.0
+  resolution: "@typescript-eslint/scope-manager@npm:5.16.0"
   dependencies:
-    "@typescript-eslint/utils": 5.15.0
+    "@typescript-eslint/types": 5.16.0
+    "@typescript-eslint/visitor-keys": 5.16.0
+  checksum: 008a6607d3e6ebcc59a9b28cddcc25703f39a88e27a96c69a6d988acc50a1ea7dbf50963c165ffa5b85a101209a0da3a7ec6832633a162ca4ecc78c0e54acd9f
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/type-utils@npm:5.16.0":
+  version: 5.16.0
+  resolution: "@typescript-eslint/type-utils@npm:5.16.0"
+  dependencies:
+    "@typescript-eslint/utils": 5.16.0
     debug: ^4.3.2
     tsutils: ^3.21.0
   peerDependencies:
@@ -5941,7 +5951,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: ecefdec695602b04f5d403c741336c56a8aa4f5fa3cc48a202a7b3f548d4d470f44cec5632a3db819fe1ca27c9980dbd3100b8c93e4fd7e9a3fa4253c03f4c04
+  checksum: 86d9f1dff6a096c8465453b8c7d0cc667b87a769f19073bfa9bbd36f8baa772c0384ec396b1132052383846bbbcf0d051345ed7d373260c1b506ed27100b383d
   languageName: node
   linkType: hard
 
@@ -5959,7 +5969,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:5.15.0, @typescript-eslint/typescript-estree@npm:^5.9.1":
+"@typescript-eslint/types@npm:5.16.0":
+  version: 5.16.0
+  resolution: "@typescript-eslint/types@npm:5.16.0"
+  checksum: 0450125741c3eef9581da0b75b4a987a633d77009cfb03507c3db29885b790ee80e3c0efc4f9a0dd3376ba758b49c7829722676153472616a57bb04bce5cc4fa
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/typescript-estree@npm:5.15.0":
   version: 5.15.0
   resolution: "@typescript-eslint/typescript-estree@npm:5.15.0"
   dependencies:
@@ -5974,6 +5991,24 @@ __metadata:
     typescript:
       optional: true
   checksum: 84fbb5030db5c1ac34527860725a9ea5b104fa1c49072a69306954b4b8516242427e70cb6a657ec2b822789432179a0df7a866e4618a29ee54b4285ca23556c8
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/typescript-estree@npm:5.16.0, @typescript-eslint/typescript-estree@npm:^5.9.1":
+  version: 5.16.0
+  resolution: "@typescript-eslint/typescript-estree@npm:5.16.0"
+  dependencies:
+    "@typescript-eslint/types": 5.16.0
+    "@typescript-eslint/visitor-keys": 5.16.0
+    debug: ^4.3.2
+    globby: ^11.0.4
+    is-glob: ^4.0.3
+    semver: ^7.3.5
+    tsutils: ^3.21.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 930ead4655712c3bd40885fb6b2074cd3c10fb03da864dd7a7dd2e43abfd330bb07e505f0aec8b4846178bff8befbb017f9f3370c67e9c717e4cb8d3df6e16ef
   languageName: node
   linkType: hard
 
@@ -5995,19 +6030,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:5.15.0":
-  version: 5.15.0
-  resolution: "@typescript-eslint/utils@npm:5.15.0"
+"@typescript-eslint/utils@npm:5.16.0":
+  version: 5.16.0
+  resolution: "@typescript-eslint/utils@npm:5.16.0"
   dependencies:
     "@types/json-schema": ^7.0.9
-    "@typescript-eslint/scope-manager": 5.15.0
-    "@typescript-eslint/types": 5.15.0
-    "@typescript-eslint/typescript-estree": 5.15.0
+    "@typescript-eslint/scope-manager": 5.16.0
+    "@typescript-eslint/types": 5.16.0
+    "@typescript-eslint/typescript-estree": 5.16.0
     eslint-scope: ^5.1.1
     eslint-utils: ^3.0.0
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: 406725b3e1282064612c9e69f346ceae5cf8e3fe4ae37295eaa1d594fb1b7ed3abd161c32b96622b00ca56e7b1120ea43b584954cd0cefad904a46d65b20960e
+  checksum: 46749091a204d7cf80d81b04704e23a86903a142a7e35cc5068a821c147c3bf098a7eff99af2b0e2ea7310013ca90300db9bab33ae5e3b5f773ed1d2961a5ed4
   languageName: node
   linkType: hard
 
@@ -6031,11 +6066,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@typescript-eslint/visitor-keys@npm:5.16.0":
+  version: 5.16.0
+  resolution: "@typescript-eslint/visitor-keys@npm:5.16.0"
+  dependencies:
+    "@typescript-eslint/types": 5.16.0
+    eslint-visitor-keys: ^3.0.0
+  checksum: b587bf3b0da95bb58ff877b75fefcee6472222de1e3ec76aa4b94cae66078b62a372c7d0343374a16aab15cdcbae3f9e019624028b35827f68ef6559389f7fd0
+  languageName: node
+  linkType: hard
+
 "@uidu/accordion@^0.6.5, @uidu/accordion@workspace:packages/core/accordion":
   version: 0.0.0-use.local
   resolution: "@uidu/accordion@workspace:packages/core/accordion"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/theme": ^0.6.9
     react: ^17.0.2
@@ -6050,7 +6095,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/adf-schema@workspace:packages/editor/adf-schema"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@types/linkify-it": ^3.0.2
     "@types/prosemirror-model": ^1.16.1
     "@types/prosemirror-state": ^1.2.8
@@ -6072,7 +6117,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/adf-utils@workspace:packages/editor/adf-utils"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/adf-schema": ^0.9.0
     "@uidu/docs": ^0.5.6
     "@uidu/json-schema-generator": ^0.2.11
@@ -6095,7 +6140,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/analytics-listeners@workspace:packages/elements/analytics-listeners"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/analytics-gas-types": ^0.3.1
     "@uidu/analytics-namespaced-context": ^0.4.6
@@ -6114,7 +6159,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/analytics-namespaced-context@workspace:packages/elements/analytics-namespaced-context"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/analytics-listeners": ^0.4.6
     "@uidu/docs": ^0.5.6
@@ -6129,7 +6174,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/analytics-viewer@workspace:packages/elements/analytics-viewer"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     react: ^17.0.2
     styled-components: ^5.3.3
@@ -6143,7 +6188,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/analytics@workspace:packages/core/analytics"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
     "@uidu/field-text": ^1.1.10
@@ -6162,7 +6207,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/animated-menu@workspace:packages/navigation/animated-menu"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     classnames: ^2.3.1
     react: ^17.0.2
@@ -6177,7 +6222,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/avatar-group@workspace:packages/core/avatar-group"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/avatar": ^0.9.4
     "@uidu/button": ^1.3.9
     "@uidu/code": ^0.5.7
@@ -6201,7 +6246,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/avatar@workspace:packages/core/avatar"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -6222,7 +6267,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/badge@workspace:packages/core/badge"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/theme": ^0.6.9
     react: ^17.0.2
@@ -6239,7 +6284,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/banner@workspace:packages/core/banner"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
     "@uidu/theme": ^0.6.9
@@ -6272,7 +6317,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/board@workspace:packages/data/board"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/badge": ^0.5.7
     "@uidu/docs": ^0.5.6
     "@uidu/shell": ^2.1.11
@@ -6291,7 +6336,7 @@ __metadata:
   resolution: "@uidu/breadcrumbs@workspace:packages/navigation/breadcrumbs"
   dependencies:
     "@atlaskit/logo": ^13.5.4
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -6315,9 +6360,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/button@workspace:packages/core/button"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
+    "@atlaskit/icon": ^21.10.5
     "@atlaskit/logo": ^13.5.4
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/checkbox": ^1.1.10
     "@uidu/docs": ^0.5.6
@@ -6340,7 +6385,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/calendar@workspace:packages/data/calendar"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/button": 1.3.11
     "@uidu/docs": ^0.5.6
     "@uidu/dropdown-menu": ^0.6.11
@@ -6348,7 +6393,7 @@ __metadata:
     classnames: ^2.3.1
     moment: ^2.29.1
     react: ^17.0.2
-    react-big-calendar: ^0.39.4
+    react-big-calendar: ^0.39.5
     react-feather: ^2.0.9
     styled-components: ^5.3.3
     tslib: ^2.3.1
@@ -6365,7 +6410,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/chat-room@workspace:packages/messaging/chat-room"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/shell": ^2.1.11
     react: ^17.0.2
@@ -6377,7 +6422,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/chat-window@workspace:packages/messaging/chat-window"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/message": ^0.5.12
     "@uidu/message-form": ^0.4.10
@@ -6400,7 +6445,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/checkbox@workspace:packages/forms/checkbox"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
@@ -6418,7 +6463,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/code@workspace:packages/core/code"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/theme": ^0.6.9
     memoize-one: ^5.2.1
@@ -6437,7 +6482,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/dashboard-controls@workspace:packages/data/dashboard-controls"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/avatar": ^0.9.4
     "@uidu/avatar-group": ^2.6.8
     "@uidu/button": 1.3.11
@@ -6457,9 +6502,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/dashboard-manager@workspace:packages/data/dashboard-manager"
   dependencies:
-    "@babel/runtime": ^7.17.7
-    "@cubejs-client/core": ^0.29.29
-    "@cubejs-client/react": ^0.29.29
+    "@babel/runtime": ^7.17.8
+    "@cubejs-client/core": ^0.29.33
+    "@cubejs-client/react": ^0.29.33
     "@types/react-grid-layout": ^1.3.2
     "@uidu/dashboard-controls": ^1.0.17
     "@uidu/dashlets": ^1.6.5
@@ -6479,7 +6524,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/dashlet-controls@workspace:packages/data/dashlet-controls"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/avatar": ^0.9.4
     "@uidu/avatar-group": ^2.6.8
     "@uidu/button": 1.3.11
@@ -6499,9 +6544,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/dashlets-form@workspace:packages/data/dashlets-form"
   dependencies:
-    "@babel/runtime": ^7.17.7
-    "@cubejs-client/core": ^0.29.29
-    "@cubejs-client/react": ^0.29.29
+    "@babel/runtime": ^7.17.8
+    "@cubejs-client/core": ^0.29.33
+    "@cubejs-client/react": ^0.29.33
     "@uidu/accordion": ^0.6.5
     "@uidu/dashlets": ^1.6.5
     "@uidu/docs": ^0.5.6
@@ -6522,9 +6567,9 @@ __metadata:
   dependencies:
     "@amcharts/amcharts4": ^4.10.24
     "@amcharts/amcharts4-geodata": ^4.1.22
-    "@babel/runtime": ^7.17.7
-    "@cubejs-client/core": ^0.29.29
-    "@cubejs-client/react": ^0.29.29
+    "@babel/runtime": ^7.17.8
+    "@cubejs-client/core": ^0.29.33
+    "@cubejs-client/react": ^0.29.33
     "@loadable/component": ^5.15.2
     "@uidu/dashboard-manager": ^1.3.8
     "@uidu/dashlet-controls": ^1.0.17
@@ -6554,7 +6599,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@heroicons/react": ^1.0.6
     "@uidu/button": 1.3.11
     "@uidu/checkbox": ^1.1.10
@@ -6590,10 +6635,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@fortawesome/fontawesome-svg-core": ^1.3.0
     "@fortawesome/free-solid-svg-icons": ^5.15.4
-    "@fortawesome/react-fontawesome": ^0.1.17
+    "@fortawesome/react-fontawesome": ^0.1.18
     "@heroicons/react": ^1.0.6
     "@loadable/component": ^5.15.2
     "@uidu/button": 1.3.11
@@ -6626,10 +6671,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/data-manager@workspace:packages/data/data-manager"
   dependencies:
-    "@babel/runtime": ^7.17.7
-    "@cubejs-client/core": ^0.29.29
-    "@cubejs-client/react": ^0.29.29
-    "@cubejs-client/ws-transport": ^0.29.29
+    "@babel/runtime": ^7.17.8
+    "@cubejs-client/core": ^0.29.33
+    "@cubejs-client/react": ^0.29.33
+    "@cubejs-client/ws-transport": ^0.29.33
     "@loadable/component": ^5.15.2
     "@uidu/board": ^0.5.3
     "@uidu/button": 1.3.11
@@ -6641,6 +6686,7 @@ __metadata:
     "@uidu/dropdown-menu": ^0.6.11
     "@uidu/gallery": ^1.2.3
     "@uidu/list": ^1.2.3
+    "@uidu/menu": "workspace:^"
     "@uidu/navigation": ^1.0.10
     "@uidu/page-header": ^1.0.3
     "@uidu/pagination": 0.5.8
@@ -6668,7 +6714,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/data-views@workspace:packages/data/data-views"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@loadable/component": ^5.15.2
     "@uidu/button": 1.3.11
     "@uidu/data-controls": ^2.1.5
@@ -6690,7 +6736,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/date@workspace:packages/elements/date"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/elements-test-helpers": ^0.4.12
     "@uidu/theme": ^0.6.9
@@ -6707,7 +6753,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/devise@workspace:packages/authentication/devise"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/avatar": ^0.9.4
     "@uidu/checkbox": ^1.1.10
     "@uidu/docs": ^0.5.6
@@ -6734,7 +6780,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/docs@workspace:build/docs"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/button": ^1.3.9
     "@uidu/code": ^0.5.7
     "@uidu/section-message": ^0.6.7
@@ -6759,7 +6805,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/drawer@workspace:packages/core/drawer"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/blanket": ^0.5.5
     "@uidu/button": ^1.3.9
@@ -6786,8 +6832,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/dropdown-menu@workspace:packages/core/dropdown-menu"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/avatar": ^0.9.4
     "@uidu/button": ^1.3.11
@@ -6816,8 +6862,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/droplist@workspace:packages/core/droplist"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.11
     "@uidu/docs": ^0.5.6
@@ -6844,8 +6890,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@uidu/adf-schema": ^0.9.0
     "@uidu/adf-utils": ^0.8.1
     "@uidu/analytics": ^0.5.7
@@ -6872,10 +6918,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
+    "@atlaskit/icon": ^21.10.5
     "@atlaskit/util-service-support": ^6.1.0
     "@atlaskit/width-detector": ^3.0.8
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@loadable/component": ^5.15.2
     "@uidu/adf-schema": ^0.9.0
     "@uidu/adf-utils": ^0.8.1
@@ -6947,7 +6993,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@types/prosemirror-model": ^1.16.1
     "@uidu/adf-schema": ^0.9.0
     "@uidu/docs": ^0.5.6
@@ -6967,7 +7013,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/editor-markdown-transformer@workspace:packages/editor/editor-markdown-transformer"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/adf-schema": ^0.9.0
     "@uidu/docs": ^0.5.6
     "@uidu/editor-common": ^0.7.4
@@ -6988,7 +7034,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/elements-test-helpers@workspace:packages/elements/elements-test-helpers"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     exenv: ^1.2.2
     react: ^17.0.2
@@ -7006,9 +7052,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/emoji@workspace:packages/elements/emoji"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
+    "@atlaskit/icon": ^21.10.5
     "@atlaskit/util-service-support": ^6.1.0
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@types/js-search": ^1.4.0
     "@types/react-virtualized": ^9.21.20
     "@uidu/analytics": ^0.5.7
@@ -7047,7 +7093,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/fab@workspace:packages/core/fab"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     react: ^17.0.2
     react-feather: ^2.0.9
@@ -7060,7 +7106,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-base@workspace:packages/forms/field-base"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/form": "*"
     classnames: ^2.3.1
     nanoid: ^3.3.1
@@ -7078,7 +7124,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-color-picker@workspace:packages/forms/field-color-picker"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/button": 1.3.11
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
@@ -7096,7 +7142,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-counter@workspace:packages/forms/field-counter"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
@@ -7115,7 +7161,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-date-range@workspace:packages/forms/field-date-range"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
@@ -7138,7 +7184,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-date@workspace:packages/forms/field-date"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
@@ -7160,7 +7206,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-downshift@workspace:packages/forms/field-downshift"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/button": 1.3.11
     "@uidu/docs": ^0.5.6
     "@uidu/dropdown-menu": ^0.6.11
@@ -7190,11 +7236,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-file-uploader@workspace:packages/forms/field-file-uploader"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
     "@uidu/form": ^1.2.13
-    "@uppy/core": ^2.1.5
+    "@uppy/core": ^2.1.6
     "@uppy/dashboard": ^2.1.4
     "@uppy/react": ^2.1.2
     "@uppy/xhr-upload": ^2.0.7
@@ -7208,7 +7254,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-geosuggest@workspace:packages/forms/field-geosuggest"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
     "@uidu/form": ^1.2.13
@@ -7231,7 +7277,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-image-uploader@workspace:packages/forms/field-image-uploader"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -7240,8 +7286,8 @@ __metadata:
     "@uidu/form": ^1.2.13
     "@uidu/media-core": ^0.7.4
     "@uidu/spinner": ^0.5.7
-    "@uppy/aws-s3": ^2.0.7
-    "@uppy/core": ^2.1.5
+    "@uppy/aws-s3": ^2.0.8
+    "@uppy/core": ^2.1.6
     "@uppy/drag-drop": ^2.0.6
     "@uppy/react": ^2.1.2
     "@uppy/thumbnail-generator": ^2.1.1
@@ -7262,7 +7308,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-mentions@workspace:packages/forms/field-mentions"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -7285,7 +7331,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-month@workspace:packages/forms/field-month"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -7305,7 +7351,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-number@workspace:packages/forms/field-number"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -7328,7 +7374,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-password@workspace:packages/forms/field-password"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@loadable/component": ^5.15.2
     "@types/zxcvbn": ^4.4.1
     "@uidu/analytics": ^0.5.7
@@ -7357,7 +7403,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-phone@workspace:packages/forms/field-phone"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
@@ -7365,7 +7411,7 @@ __metadata:
     "@uidu/form": ^1.2.13
     formsy-react: ^2.2.5
     react: ^17.0.2
-    react-phone-number-input: ^3.1.46
+    react-phone-number-input: ^3.1.47
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
@@ -7374,7 +7420,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-range@workspace:packages/forms/field-range"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
     "@uidu/form": ^1.2.13
@@ -7394,7 +7440,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-text@workspace:packages/forms/field-text"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -7417,7 +7463,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-textarea@workspace:packages/forms/field-textarea"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
@@ -7436,7 +7482,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-time@workspace:packages/forms/field-time"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -7459,7 +7505,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field-toggle@workspace:packages/forms/field-toggle"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -7482,7 +7528,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/field@workspace:packages/forms/field"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@loadable/component": ^5.15.2
     "@uidu/checkbox": ^1.1.10
     "@uidu/docs": ^0.5.6
@@ -7501,7 +7547,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/flag@workspace:packages/core/flag"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -7527,7 +7573,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/form@workspace:packages/forms/form"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/button": 1.3.11
     "@uidu/docs": ^0.5.6
     classnames: ^2.3.1
@@ -7554,7 +7600,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/gallery@workspace:packages/data/gallery"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/data-controls": ^2.1.3
     "@uidu/data-fields": ^1.5.4
     "@uidu/docs": ^0.5.6
@@ -7635,8 +7681,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/inline-dialog@workspace:packages/core/inline-dialog"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.11
     "@uidu/docs": ^0.5.6
@@ -7660,10 +7706,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/inline-edit@workspace:packages/core/inline-edit"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@atlaskit/tag": ^11.2.6
+    "@atlaskit/icon": ^21.10.5
+    "@atlaskit/tag": ^11.3.0
     "@atlaskit/tag-group": ^10.0.11
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@loadable/component": ^5.15.2
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.11
@@ -7689,7 +7735,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/item@workspace:packages/core/item"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/avatar": ^0.9.4
     "@uidu/docs": ^0.5.6
     "@uidu/lozenge": ^0.5.7
@@ -7721,7 +7767,7 @@ __metadata:
     "@types/prettier": ^2.4.4
     meow: ^10.1.2
     mkdirp: ^1.0.4
-    prettier: ^2.5.1
+    prettier: ^2.6.0
     ts-node: ^10.7.0
     tslib: ^2.3.1
     typescript: ^4.6.2
@@ -7734,7 +7780,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/layer@workspace:packages/core/layer"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     popper.js: ^1.16.1
     raf-schd: ^4.0.3
@@ -7753,7 +7799,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/link-preview@workspace:packages/messaging/link-preview"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/field-text": ^1.1.10
     "@uidu/form": ^1.2.13
@@ -7771,7 +7817,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/list@workspace:packages/data/list"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/data-fields": ^1.5.4
     "@uidu/docs": ^0.5.6
     react: ^17.0.2
@@ -7785,7 +7831,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/lozenge@workspace:packages/core/lozenge"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/theme": ^0.6.9
     react: ^17.0.2
@@ -7802,7 +7848,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/map@workspace:packages/core/map"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/theme": ^0.6.9
     google-map-react: ^2.1.10
@@ -7820,8 +7866,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
-    "@babel/runtime": ^7.17.7
-    "@fluentui/react": ^8.61.1
+    "@babel/runtime": ^7.17.8
+    "@fluentui/react": ^8.62.1
     "@uidu/button": ^1.3.11
     "@uidu/docs": ^0.5.6
     "@uidu/dropdown-menu": ^0.6.11
@@ -7845,7 +7891,7 @@ __metadata:
   dependencies:
     "@uidu/docs": ^0.5.5
     "@uidu/section-message": ^0.6.6
-    "@uppy/aws-s3": ^2.0.7
+    "@uppy/aws-s3": ^2.0.8
     "@uppy/xhr-upload": ^2.0.7
     react: ^17.0.2
     tslib: ^2.3.1
@@ -7858,7 +7904,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/media-filmstrip@workspace:packages/media/media-filmstrip"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/media-card": ^0.6.1
     "@uidu/media-core": ^0.7.4
@@ -7875,12 +7921,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/media-picker@workspace:packages/media/media-picker"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
     "@uidu/media-core": ^0.7.4
     "@uidu/modal-dialog": ^0.5.13
-    "@uppy/core": ^2.1.5
+    "@uppy/core": ^2.1.6
     "@uppy/dashboard": ^2.1.4
     "@uppy/drag-drop": ^2.0.6
     "@uppy/dropbox": ^2.0.5
@@ -7900,7 +7946,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/media-viewer@workspace:packages/media/media-viewer"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/avatar": ^0.9.4
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -7924,9 +7970,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/mentions@workspace:packages/elements/mentions"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
+    "@atlaskit/icon": ^21.10.5
     "@atlaskit/util-service-support": ^6.1.0
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/analytics-gas-types": ^0.3.1
     "@uidu/avatar": ^0.9.4
@@ -7945,14 +7991,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/menu@0.7.4, @uidu/menu@^0.7.2, @uidu/menu@^0.7.3, @uidu/menu@workspace:packages/core/menu":
+"@uidu/menu@0.7.4, @uidu/menu@^0.7.2, @uidu/menu@^0.7.3, @uidu/menu@workspace:^, @uidu/menu@workspace:packages/core/menu":
   version: 0.0.0-use.local
   resolution: "@uidu/menu@workspace:packages/core/menu"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
+    "@atlaskit/icon": ^21.10.5
     "@atlaskit/icon-file-type": ^6.3.4
     "@atlaskit/icon-object": ^6.2.5
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@emotion/react": ^11.8.2
     "@uidu/avatar": ^0.9.4
     "@uidu/button": ^1.3.11
@@ -7974,7 +8020,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/message-form@workspace:packages/messaging/message-form"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@loadable/component": ^5.15.2
     "@types/emoji-mart": ^3.0.9
     "@types/react-mentions": ^4.1.5
@@ -8001,7 +8047,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/message-renderer@workspace:packages/messaging/message-renderer"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/dropdown-menu": ^0.6.10
     "@uidu/theme": ^0.6.9
@@ -8018,8 +8064,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/message@workspace:packages/messaging/message"
   dependencies:
-    "@babel/runtime": ^7.17.7
-    "@fluentui/react": ^8.61.1
+    "@babel/runtime": ^7.17.8
+    "@fluentui/react": ^8.62.1
     "@loadable/component": ^5.15.2
     "@uidu/avatar": ^0.9.4
     "@uidu/docs": ^0.5.6
@@ -8051,8 +8097,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/avatar": ^0.9.4
     "@uidu/blanket": ^0.5.4
@@ -8099,7 +8145,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/navigation@workspace:packages/navigation/navigation"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/animated-menu": ^1.0.7
     "@uidu/avatar": ^0.9.4
     "@uidu/badge": ^0.5.7
@@ -8130,8 +8176,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/onboarding@workspace:packages/core/onboarding"
   dependencies:
-    "@atlaskit/progress-indicator": ^9.2.1
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/progress-indicator": ^9.2.2
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.11
     "@uidu/docs": ^0.5.6
@@ -8187,7 +8233,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/pagination@workspace:packages/core/pagination"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -8209,9 +8255,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/payment-sources@workspace:packages/ecommerce/payment-sources"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@stripe/react-stripe-js": ^1.7.0
-    "@stripe/stripe-js": ^1.24.0
+    "@stripe/stripe-js": ^1.25.0
     "@uidu/docs": ^0.5.6
     "@uidu/form": ^1.2.13
     "@uidu/payments": ^1.3.3
@@ -8226,10 +8272,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/payments@workspace:packages/ecommerce/payments"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@heroicons/react": ^1.0.6
     "@stripe/react-stripe-js": ^1.7.0
-    "@stripe/stripe-js": ^1.24.0
+    "@stripe/stripe-js": ^1.25.0
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
     "@uidu/form": ^1.2.13
@@ -8251,7 +8297,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/popper@workspace:packages/core/popper"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@popperjs/core": ^2.11.4
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -8271,8 +8317,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/popup@workspace:packages/core/popup"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@emotion/react": ^11.8.2
     "@uidu/button": ^1.3.11
     "@uidu/docs": ^0.5.6
@@ -8298,8 +8344,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/portal@workspace:packages/core/portal"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@uidu/button": ^1.3.11
     "@uidu/docs": ^0.5.6
     "@uidu/flag": ^0.5.7
@@ -8324,8 +8370,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/profilecard@workspace:packages/elements/profilecard"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@uidu/avatar": ^0.9.4
     "@uidu/button": ^1.3.11
     "@uidu/docs": "*"
@@ -8355,7 +8401,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/progress-bar@workspace:packages/core/progress-bar"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@emotion/react": ^11.8.2
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -8374,7 +8420,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/radio@workspace:packages/forms/radio"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/docs": ^0.5.6
     "@uidu/field-base": ^3.1.14
@@ -8398,8 +8444,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/renderer@workspace:packages/editor/renderer"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@loadable/component": ^5.15.2
     "@types/prosemirror-model": ^1.16.1
     "@uidu/adf-schema": ^0.9.0
@@ -8441,7 +8487,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/responsivr@workspace:packages/navigation/responsivr"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     react: ^17.0.2
     react-media: ^1.10.0
@@ -8453,7 +8499,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/section-message@workspace:packages/core/section-message"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@heroicons/react": ^1.0.6
     "@uidu/button": ^1.3.11
     "@uidu/code": ^0.5.7
@@ -8474,8 +8520,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/select@workspace:packages/forms/select"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.11
     "@uidu/checkbox": ^1.1.10
@@ -8511,7 +8557,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/shell@workspace:packages/navigation/shell"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@loadable/component": ^5.15.2
     "@researchgate/react-intersection-observer": ^1.3.5
     "@types/overlayscrollbars": ^1.12.1
@@ -8537,7 +8583,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/side-navigation@workspace:packages/navigation/side-navigation"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/avatar": ^0.9.4
     "@uidu/badge": ^0.5.7
     "@uidu/docs": ^0.5.6
@@ -8566,7 +8612,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/slider@workspace:packages/core/slider"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     classnames: ^2.3.1
     react: ^17.0.2
@@ -8581,7 +8627,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/spinner@workspace:packages/core/spinner"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
     "@uidu/theme": ^0.6.9
@@ -8600,8 +8646,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/status@workspace:packages/elements/status"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/analytics-gas-types": ^0.3.1
     "@uidu/docs": ^0.5.6
@@ -8623,7 +8669,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/stepper@workspace:packages/navigation/stepper"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/shell": ^2.1.12
     "@uidu/theme": ^0.6.9
@@ -8642,9 +8688,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/stripe-accounts@workspace:packages/ecommerce/stripe-accounts"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@stripe/react-stripe-js": ^1.7.0
-    "@stripe/stripe-js": ^1.24.0
+    "@stripe/stripe-js": ^1.25.0
     "@uidu/docs": ^0.5.6
     "@uidu/field-text": ^1.1.10
     "@uidu/form": ^1.2.13
@@ -8664,7 +8710,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/tabbar@workspace:packages/navigation/tabbar"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/shell": ^2.1.11
     react: ^17.0.2
@@ -8678,15 +8724,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@fortawesome/fontawesome-free": ^5.15.4
     "@fortawesome/fontawesome-svg-core": ^1.3.0
     "@fortawesome/free-solid-svg-icons": ^5.15.4
-    "@fortawesome/react-fontawesome": ^0.1.17
+    "@fortawesome/react-fontawesome": ^0.1.18
+    "@heroicons/react": ^1.0.6
     "@uidu/button": 1.3.11
     "@uidu/checkbox": ^1.1.10
     "@uidu/data-controls": ^2.1.5
     "@uidu/data-fields": ^1.5.6
+    "@uidu/data-manager": 2.3.0
     "@uidu/docs": ^0.5.6
     "@uidu/dropdown-menu": ^0.6.11
     "@uidu/menu": ^0.7.3
@@ -8708,7 +8756,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/tabs@workspace:packages/navigation/tabs"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/docs": ^0.5.6
     "@uidu/theme": ^0.6.9
@@ -8722,11 +8770,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/tailwind-config@workspace:packages/core/tailwind-config"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@tailwindcss/aspect-ratio": ^0.3.0
     "@tailwindcss/forms": ^0.3.4
     "@tailwindcss/typography": ^0.4.1
-    postcss: ^8.4.11
+    postcss: ^8.4.12
     tailwindcss: ^2.2.19
   peerDependencies:
     postcss: ^8.2.6
@@ -8738,9 +8786,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/task-decision@workspace:packages/elements/task-decision"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
+    "@atlaskit/icon": ^21.10.5
     "@atlaskit/util-service-support": ^6.1.0
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@types/url-search-params": ^1.1.0
     "@uidu/analytics": ^0.5.7
     "@uidu/analytics-listeners": ^0.4.6
@@ -8775,7 +8823,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/theme@workspace:packages/core/theme"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@emotion/react": ^11.8.2
     "@uidu/button": ^1.3.9
     "@uidu/docs": ^0.5.6
@@ -8819,8 +8867,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/tooltip@workspace:packages/core/tooltip"
   dependencies:
-    "@atlaskit/icon": ^21.10.4
-    "@babel/runtime": ^7.17.7
+    "@atlaskit/icon": ^21.10.5
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/button": ^1.3.11
     "@uidu/docs": ^0.5.6
@@ -8845,7 +8893,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/treenav@workspace:packages/navigation/treenav"
   dependencies:
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/docs": ^0.5.6
     "@uidu/shell": ^2.1.11
     react: ^17.0.2
@@ -8861,7 +8909,7 @@ __metadata:
   resolution: "@uidu/util-data-test@workspace:packages/elements/util-data-test"
   dependencies:
     "@atlaskit/util-service-support": ^6.1.0
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@uidu/analytics": ^0.5.7
     "@uidu/docs": ^0.5.6
     "@uidu/emoji": ^0.6.2
@@ -8905,7 +8953,7 @@ __metadata:
     minimatch: ^3.1.2
     postcss-flexbugs-fixes: ^5.0.2
     postcss-loader: ^6.2.1
-    postcss-preset-env: ^7.4.2
+    postcss-preset-env: ^7.4.3
     postcss-safe-parser: ^6.0.0
     raw-loader: ^4.0.2
     sass-loader: ^12.6.0
@@ -9043,33 +9091,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uppy/aws-s3@npm:^2.0.7":
-  version: 2.0.7
-  resolution: "@uppy/aws-s3@npm:2.0.7"
+"@uppy/aws-s3@npm:^2.0.8":
+  version: 2.0.8
+  resolution: "@uppy/aws-s3@npm:2.0.8"
   dependencies:
-    "@uppy/companion-client": ^2.0.4
-    "@uppy/utils": ^4.0.4
+    "@uppy/companion-client": ^2.0.5
+    "@uppy/utils": ^4.0.5
     "@uppy/xhr-upload": ^2.0.7
     nanoid: ^3.1.25
   peerDependencies:
-    "@uppy/core": ^2.1.4
-  checksum: 796f3f9980f70167940c128dd7ba7dc39214927262d6f4f95f3b50ef5da434033b5b487da228dc4dca24b4b2882853e72c72b6297827fddec9546ccfd3c9260b
+    "@uppy/core": ^2.1.6
+  checksum: 4ee11b1a541cf7cde5dafb6a0321df80ce482bd4684a6ee02d9cc66a1663f12077c15659735c49e577a7735fd82c6123dc6918aef8a1f914ddab8611b7311116
   languageName: node
   linkType: hard
 
-"@uppy/companion-client@npm:^2.0.4":
-  version: 2.0.4
-  resolution: "@uppy/companion-client@npm:2.0.4"
+"@uppy/companion-client@npm:^2.0.4, @uppy/companion-client@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "@uppy/companion-client@npm:2.0.5"
   dependencies:
-    "@uppy/utils": ^4.0.4
+    "@uppy/utils": ^4.0.5
     namespace-emitter: ^2.0.1
-  checksum: 6626a152bb84ce065890b0ff49097c20c8efb91a06f74f5c2efd857b0fb366e548104020fbbffe296845f330f01a3ac2ce6085c181f85473179152cfdb438819
+  checksum: a68bbd4d7bb65b9eb2901ad409e4704662029e7b5f5c4d350cbbfeaf6e4995a0ff66cedfdaa31b1c46806398f446a196f33bab2877222feed0b10627cb539158
   languageName: node
   linkType: hard
 
-"@uppy/core@npm:^2.1.5":
-  version: 2.1.5
-  resolution: "@uppy/core@npm:2.1.5"
+"@uppy/core@npm:^2.1.6":
+  version: 2.1.6
+  resolution: "@uppy/core@npm:2.1.6"
   dependencies:
     "@transloadit/prettier-bytes": 0.0.7
     "@uppy/store-default": ^2.0.3
@@ -9079,7 +9127,7 @@ __metadata:
     namespace-emitter: ^2.0.1
     nanoid: ^3.1.25
     preact: ^10.5.13
-  checksum: 7c52d278f88462e5e1fdf1c4779e53ba4e610060a3e0c327664fe41f632c68247d463e86a7e2fab24617791b3808815ce2af29efcd5b87c3e99a847a25ee28e7
+  checksum: 1d2c516f4bebd07d684fe63f210ba984e4238ed50b4218b2a7e6aff94b4956ed0ec0ce9e3e47f57143f95cdb698e82f5cb5cca919bdccf980c330d9f31b5faa3
   languageName: node
   linkType: hard
 
@@ -10484,9 +10532,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.2.5, autoprefixer@npm:^10.4.2, autoprefixer@npm:^10.4.3":
-  version: 10.4.3
-  resolution: "autoprefixer@npm:10.4.3"
+"autoprefixer@npm:^10.2.5, autoprefixer@npm:^10.4.4":
+  version: 10.4.4
+  resolution: "autoprefixer@npm:10.4.4"
   dependencies:
     browserslist: ^4.20.2
     caniuse-lite: ^1.0.30001317
@@ -10498,7 +10546,7 @@ __metadata:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: 8a168792bafa5a8d760b235a183565b091fe0501fbf5923889431673c9f373ca430b9a96d279bae7c3a78be1526660d0c26ca7ae551f01fa3473aa782ad24dd6
+  checksum: bd42e23d71af0228b6b0b27d0d0b33c95e67562e55eb4ca0e221cf795a06482c90d565d6544a5f4090d8e303b09b200845fa2bcaaa707d1e8777974250dffe1f
   languageName: node
   linkType: hard
 
@@ -11452,7 +11500,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.14.5, browserslist@npm:^4.16.8, browserslist@npm:^4.17.5, browserslist@npm:^4.19.1, browserslist@npm:^4.19.3, browserslist@npm:^4.20.2":
+"browserslist@npm:^4.14.5, browserslist@npm:^4.16.8, browserslist@npm:^4.17.5, browserslist@npm:^4.19.1, browserslist@npm:^4.20.2":
   version: 4.20.2
   resolution: "browserslist@npm:4.20.2"
   dependencies:
@@ -13444,10 +13492,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssdb@npm:^6.4.0":
-  version: 6.4.1
-  resolution: "cssdb@npm:6.4.1"
-  checksum: cce99deb04b1fccff36fe33529cb318cdb4b7b0064396f2d26dd0b118137ea413602e3ca2977eda184e6769ef98d37e23cdcfd4f54c18daa17179906b168ae58
+"cssdb@npm:^6.5.0":
+  version: 6.5.0
+  resolution: "cssdb@npm:6.5.0"
+  checksum: badd8cfc6d827cf08c8442ccbf733af1cd79b1df751c7f7d9a22207d235e928a612751c1025485f4bd5c77d420e0ed2d35c6184a4c5d195671b2e4d56f255b64
   languageName: node
   linkType: hard
 
@@ -15127,9 +15175,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-airbnb-typescript@npm:^16.1.2":
-  version: 16.1.2
-  resolution: "eslint-config-airbnb-typescript@npm:16.1.2"
+"eslint-config-airbnb-typescript@npm:^16.1.4":
+  version: 16.1.4
+  resolution: "eslint-config-airbnb-typescript@npm:16.1.4"
   dependencies:
     eslint-config-airbnb-base: ^15.0.0
   peerDependencies:
@@ -15137,7 +15185,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.0.0
     eslint: ^7.32.0 || ^8.2.0
     eslint-plugin-import: ^2.25.3
-  checksum: ad3709037e1ab341032acf3152e334d8dad452fa66703b394b75c55467be2153092ec2ced545256a27e29bdc58a5e72f7ba4cbf2ac3388b09f9d6582eb384734
+  checksum: 86556b82eccd3a7c5f84c05d6b36b776172a700e2b0ea13552ee7ff2765de68a91dbf399af2ad213f432943b383054ce23df112cd4a243acc6a34add00f6900a
   languageName: node
   linkType: hard
 
@@ -15173,10 +15221,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "eslint-config-uidu@workspace:packages/core/eslint-config"
   dependencies:
-    "@typescript-eslint/eslint-plugin": ^5.15.0
+    "@typescript-eslint/eslint-plugin": ^5.16.0
     "@typescript-eslint/parser": ^5.15.0
     eslint-config-airbnb: ^19.0.4
-    eslint-config-airbnb-typescript: ^16.1.2
+    eslint-config-airbnb-typescript: ^16.1.4
     eslint-config-prettier: ^8.5.0
     eslint-plugin-babel: ^5.3.1
     eslint-plugin-compat: ^4.0.2
@@ -17415,20 +17463,20 @@ __metadata:
     "@amcharts/amcharts4": ^4.10.24
     "@amcharts/amcharts4-geodata": ^4.1.22
     "@atlaskit/activity": ^1.0.3
-    "@atlaskit/icon": ^21.10.4
+    "@atlaskit/icon": ^21.10.5
     "@atlaskit/icon-file-type": ^6.3.4
     "@atlaskit/icon-object": ^6.2.5
     "@atlaskit/logo": ^13.5.4
-    "@atlaskit/progress-indicator": ^9.2.1
-    "@atlaskit/tag": ^11.2.6
+    "@atlaskit/progress-indicator": ^9.2.2
+    "@atlaskit/tag": ^11.3.0
     "@atlaskit/task-decision": ^17.3.2
     "@atlaskit/util-service-support": ^6.1.0
     "@atlaskit/width-detector": ^3.0.8
     "@babel/cli": ^7.17.6
-    "@babel/core": ^7.17.7
+    "@babel/core": ^7.17.8
     "@babel/eslint-parser": ^7.17.0
     "@babel/plugin-proposal-class-properties": ^7.16.7
-    "@babel/plugin-proposal-decorators": ^7.17.2
+    "@babel/plugin-proposal-decorators": ^7.17.8
     "@babel/plugin-proposal-export-default-from": ^7.16.7
     "@babel/plugin-proposal-object-rest-spread": ^7.17.3
     "@babel/plugin-proposal-optional-chaining": ^7.16.7
@@ -17442,18 +17490,18 @@ __metadata:
     "@babel/preset-react": ^7.16.7
     "@babel/preset-typescript": ^7.16.7
     "@babel/register": ^7.17.7
-    "@babel/runtime": ^7.17.7
+    "@babel/runtime": ^7.17.8
     "@changesets/cli": ^2.21.1
-    "@cubejs-client/core": ^0.29.29
-    "@cubejs-client/react": ^0.29.29
+    "@cubejs-client/core": ^0.29.33
+    "@cubejs-client/react": ^0.29.33
     "@emotion/react": ^11.8.2
     "@emotion/styled": ^11.8.1
-    "@fluentui/react": ^8.61.1
+    "@fluentui/react": ^8.62.1
     "@formatjs/cli": 4.8.2
     "@fortawesome/fontawesome-free": ^5.15.4
     "@fortawesome/fontawesome-svg-core": ^1.3.0
     "@fortawesome/free-solid-svg-icons": ^5.15.4
-    "@fortawesome/react-fontawesome": ^0.1.17
+    "@fortawesome/react-fontawesome": ^0.1.18
     "@loadable/babel-plugin": ^5.13.2
     "@loadable/component": ^5.15.2
     "@manypkg/cli": ^0.19.1
@@ -17465,7 +17513,7 @@ __metadata:
     "@preconstruct/next": ^3.0.1
     "@researchgate/react-intersection-observer": ^1.3.5
     "@stripe/react-stripe-js": ^1.7.0
-    "@stripe/stripe-js": ^1.24.0
+    "@stripe/stripe-js": ^1.25.0
     "@tailwindcss/aspect-ratio": ^0.3.0
     "@tailwindcss/forms": ^0.3.4
     "@tailwindcss/typography": ^0.4.1
@@ -17494,10 +17542,10 @@ __metadata:
     "@types/prosemirror-keymap": ^1.0.4
     "@types/prosemirror-model": ^1.16.1
     "@types/prosemirror-state": ^1.2.8
-    "@types/prosemirror-transform": ^1.1.5
+    "@types/prosemirror-transform": ^1.1.6
     "@types/prosemirror-view": ^1.23.1
-    "@types/react": ^17.0.40
-    "@types/react-dom": ^17.0.13
+    "@types/react": ^17.0.41
+    "@types/react-dom": ^17.0.14
     "@types/react-grid-layout": ^1.3.2
     "@types/react-helmet": ^6.1.5
     "@types/react-loadable": ^5.5.6
@@ -17515,14 +17563,14 @@ __metadata:
     "@types/url-search-params": ^1.1.0
     "@types/uuid": ^8.3.4
     "@types/zxcvbn": ^4.4.1
-    "@typescript-eslint/eslint-plugin": ^5.15.0
+    "@typescript-eslint/eslint-plugin": ^5.16.0
     "@typescript-eslint/parser": ^5.15.0
     "@uidu/field-base": 3.1.14
     "@uidu/form": 1.2.13
     "@uidu/profilecard": ^0.3.0
     "@uifabric/file-type-icons": ^7.8.7
-    "@uppy/aws-s3": ^2.0.7
-    "@uppy/core": ^2.1.5
+    "@uppy/aws-s3": ^2.0.8
+    "@uppy/core": ^2.1.6
     "@uppy/drag-drop": ^2.0.6
     "@uppy/dropbox": ^2.0.5
     "@uppy/google-drive": ^2.0.5
@@ -17535,7 +17583,7 @@ __metadata:
     abortcontroller-polyfill: ^1.7.3
     add: ^2.0.6
     array-find: ^1.0.0
-    autoprefixer: ^10.4.3
+    autoprefixer: ^10.4.4
     autosize: ^5.0.1
     avataaars: ^2.0.0
     axios: ^0.26.1
@@ -17638,13 +17686,13 @@ __metadata:
     pdfjs-dist: ^2.13.216
     polished: ^4.1.4
     popper.js: ^1.16.1
-    postcss: ^8.4.11
+    postcss: ^8.4.12
     postcss-flexbugs-fixes: ^5.0.2
     postcss-import: ^14.0.2
     postcss-loader: ^6.2.1
-    postcss-preset-env: ^7.4.2
+    postcss-preset-env: ^7.4.3
     postcss-safe-parser: ^6.0.0
-    prettier: ^2.5.1
+    prettier: ^2.6.0
     pretty-proptypes: ^1.3.0
     prismjs: ^1.27.0
     process: ^0.11.10
@@ -17674,7 +17722,7 @@ __metadata:
     react-animated-number: ^0.4.4
     react-avatar-editor: ^12.0.0
     react-beautiful-dnd: ^13.1.0
-    react-big-calendar: ^0.39.4
+    react-big-calendar: ^0.39.5
     react-chatview: ^0.2.5
     react-codesandboxer: ^3.1.5
     react-color: ^2.19.3
@@ -17695,7 +17743,7 @@ __metadata:
     react-google-maps: ^9.4.5
     react-grid-layout: ^1.3.4
     react-helmet: ^6.1.0
-    react-hook-form: ^7.28.0
+    react-hook-form: ^7.28.1
     react-images: ^1.2.0-beta.7
     react-intersection-observer: ^8.33.1
     react-intl: ^5.24.7
@@ -17708,7 +17756,7 @@ __metadata:
     react-node-resolver: ^2.0.1
     react-number-format: ^4.9.1
     react-numeric-input: ^2.2.3
-    react-phone-number-input: ^3.1.46
+    react-phone-number-input: ^3.1.47
     react-popper: ^2.2.5
     react-resizable: ^3.0.4
     react-router: ^5.2.1
@@ -20279,10 +20327,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libphonenumber-js@npm:^1.9.47":
-  version: 1.9.49
-  resolution: "libphonenumber-js@npm:1.9.49"
-  checksum: 5c9ba82e69a985716dea722a28509eef77b4b0f96159ccd50089fa2d0cde8b778c77526d26104ca25ec40b148b7a0a588a998e1014ebedc353ff214b7f7e918f
+"libphonenumber-js@npm:^1.9.50":
+  version: 1.9.50
+  resolution: "libphonenumber-js@npm:1.9.50"
+  checksum: ebb80c59b5239259a7b8710a70d68d5d4f5a622091258e55f431a4234c88156a0167e8dfe466e9f5c12c7e1d79fd1a32d3f2613eeb927cfde19c94a7792f4f71
   languageName: node
   linkType: hard
 
@@ -23926,6 +23974,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-clamp@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "postcss-clamp@npm:4.1.0"
+  dependencies:
+    postcss-value-parser: ^4.2.0
+  peerDependencies:
+    postcss: ^8.4.6
+  checksum: 118eec936b3b035dc8d75c89973408f15c5a3de3d1ee210a2b3511e3e431d9c56e6f354b509a90540241e2225ffe3caaa2fdf25919c63348ce4583a28ada642c
+  languageName: node
+  linkType: hard
+
 "postcss-color-functional-notation@npm:^4.2.2":
   version: 4.2.2
   resolution: "postcss-color-functional-notation@npm:4.2.2"
@@ -23968,14 +24027,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-custom-properties@npm:^12.1.4":
-  version: 12.1.4
-  resolution: "postcss-custom-properties@npm:12.1.4"
+"postcss-custom-properties@npm:^12.1.5":
+  version: 12.1.5
+  resolution: "postcss-custom-properties@npm:12.1.5"
   dependencies:
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: c5ef5c5ff126a65adcae9f1842b6c82df8adc337481497a405de5dfb2121c799d381e75aed3dbfe855f4258e9d90927e77801012166fb667ea5c8f7d79562ada
+  checksum: de43ef9fe8f61fc3d2eccb45e1d7359ce69908732bfd8e0155c5ad29b1caff2586f1e77a246c46748233b39020b41b4ea756da977ab5625449689bd953fa25b5
   languageName: node
   linkType: hard
 
@@ -24001,26 +24060,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-double-position-gradients@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "postcss-double-position-gradients@npm:3.1.0"
+"postcss-double-position-gradients@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "postcss-double-position-gradients@npm:3.1.1"
   dependencies:
     "@csstools/postcss-progressive-custom-properties": ^1.1.0
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: 168810c5e9a38c8cab5c19fe9209a6819d35fce7e4e66dc7b67aafacd0bdfa2c24247cb187b63893bfe65339f3981dacdaf0071abf1fca2dbe826bd935673f29
+  checksum: c59131b2d03022fbb69336766786e8cc33f6e78c8040e17d2ba499fce789c675c5dcdc4fd3abe1e76e0ecd3dc910ad8c56d49a307c0115047d21a59544afc527
   languageName: node
   linkType: hard
 
-"postcss-env-function@npm:^4.0.5":
-  version: 4.0.5
-  resolution: "postcss-env-function@npm:4.0.5"
+"postcss-env-function@npm:^4.0.6":
+  version: 4.0.6
+  resolution: "postcss-env-function@npm:4.0.6"
   dependencies:
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: 0dca3569f136e8f6d11a98d61494054f8ca84de4a679ad80909891d60929f725a188c5e9dc53a3b1c419b00db240b3b64c43bf7bafac081fe718e10460fbb5be
+  checksum: 645b2363cfa21be9dcce7fe4a0f172f0af70c00d6a4c1eb3d7ff7e9cfe26d569e291ec2533114d77b12d610023cd168a92d62c38f2fc969fa333b5ae2bff5ffe
   languageName: node
   linkType: hard
 
@@ -24116,15 +24175,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-lab-function@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "postcss-lab-function@npm:4.1.1"
+"postcss-lab-function@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "postcss-lab-function@npm:4.1.2"
   dependencies:
     "@csstools/postcss-progressive-custom-properties": ^1.1.0
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: 8f2b319c84494aef05b1a3bec08f4aa5b0ce199bc3154ba2297397955d74ef3c3e0dfa485b05d83a7a02347b8bedb9ee7a658c2cae71accbbb129ac91e71a99c
+  checksum: a25be050fc27e5bdd9ece81e164bbdbd1661813486ddda7c8eb550b609e6b8930a5b9a816ad377817c9bf1b86ba3eb27f638b075d42ff7c45a6871b786ab3397
   languageName: node
   linkType: hard
 
@@ -24231,14 +24290,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-nesting@npm:^10.1.2":
-  version: 10.1.2
-  resolution: "postcss-nesting@npm:10.1.2"
+"postcss-nesting@npm:^10.1.3":
+  version: 10.1.3
+  resolution: "postcss-nesting@npm:10.1.3"
   dependencies:
-    postcss-selector-parser: ^6.0.8
+    postcss-selector-parser: ^6.0.9
   peerDependencies:
-    postcss: ^8.3
-  checksum: 571385eb40ba2874d9e87ed4f8e6e1743c2626e8e626d2d8dc857eeaff7299cc378aa5a662aea93de807955bd32282cf4eaa0434bdb4bd0fdaa2b74703ba98f7
+    postcss: ^8.4
+  checksum: fce004310b83ee6e1edbcfa1de7fa5b0f3487b45e8e9df96d50de70fffa7840feface0a754e173fdc739509b65d17d5124ad00dd09814c61d5e2c43a69617f34
   languageName: node
   linkType: hard
 
@@ -24278,44 +24337,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-preset-env@npm:^7.4.2":
-  version: 7.4.2
-  resolution: "postcss-preset-env@npm:7.4.2"
+"postcss-preset-env@npm:^7.4.3":
+  version: 7.4.3
+  resolution: "postcss-preset-env@npm:7.4.3"
   dependencies:
-    "@csstools/postcss-color-function": ^1.0.2
+    "@csstools/postcss-color-function": ^1.0.3
     "@csstools/postcss-font-format-keywords": ^1.0.0
     "@csstools/postcss-hwb-function": ^1.0.0
     "@csstools/postcss-ic-unit": ^1.0.0
-    "@csstools/postcss-is-pseudo-class": ^2.0.0
+    "@csstools/postcss-is-pseudo-class": ^2.0.1
     "@csstools/postcss-normalize-display-values": ^1.0.0
-    "@csstools/postcss-oklab-function": ^1.0.1
-    "@csstools/postcss-progressive-custom-properties": ^1.2.0
-    autoprefixer: ^10.4.2
-    browserslist: ^4.19.3
+    "@csstools/postcss-oklab-function": ^1.0.2
+    "@csstools/postcss-progressive-custom-properties": ^1.3.0
+    autoprefixer: ^10.4.4
+    browserslist: ^4.20.2
     css-blank-pseudo: ^3.0.3
     css-has-pseudo: ^3.0.4
     css-prefers-color-scheme: ^6.0.3
-    cssdb: ^6.4.0
+    cssdb: ^6.5.0
     postcss-attribute-case-insensitive: ^5.0.0
+    postcss-clamp: ^4.1.0
     postcss-color-functional-notation: ^4.2.2
     postcss-color-hex-alpha: ^8.0.3
     postcss-color-rebeccapurple: ^7.0.2
     postcss-custom-media: ^8.0.0
-    postcss-custom-properties: ^12.1.4
+    postcss-custom-properties: ^12.1.5
     postcss-custom-selectors: ^6.0.0
     postcss-dir-pseudo-class: ^6.0.4
-    postcss-double-position-gradients: ^3.1.0
-    postcss-env-function: ^4.0.5
+    postcss-double-position-gradients: ^3.1.1
+    postcss-env-function: ^4.0.6
     postcss-focus-visible: ^6.0.4
     postcss-focus-within: ^5.0.4
     postcss-font-variant: ^5.0.0
     postcss-gap-properties: ^3.0.3
     postcss-image-set-function: ^4.0.6
     postcss-initial: ^4.0.1
-    postcss-lab-function: ^4.1.1
+    postcss-lab-function: ^4.1.2
     postcss-logical: ^5.0.4
     postcss-media-minmax: ^5.0.0
-    postcss-nesting: ^10.1.2
+    postcss-nesting: ^10.1.3
     postcss-opacity-percentage: ^1.1.2
     postcss-overflow-shorthand: ^3.0.3
     postcss-page-break: ^3.0.4
@@ -24326,7 +24386,7 @@ __metadata:
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: b5613ec5da2b4303a7d0cc2821c4a196de49e4c23406bde51b463b257bfc9e628c1e793220b96329c4fc6a6a5555f90e54a067e368fb414ec81a8d77e25f18c3
+  checksum: a3b5c93c6df29a0e44485ea4413fed58f367090e74ddfa27aee88548e9f6c40ee4c0ce0ec9274e2908a3aa3fe2cdbfeb0b326bcccee4095d46c9014ea53febd2
   languageName: node
   linkType: hard
 
@@ -24370,7 +24430,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4, postcss-selector-parser@npm:^6.0.6, postcss-selector-parser@npm:^6.0.8, postcss-selector-parser@npm:^6.0.9":
+"postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4, postcss-selector-parser@npm:^6.0.6, postcss-selector-parser@npm:^6.0.9":
   version: 6.0.9
   resolution: "postcss-selector-parser@npm:6.0.9"
   dependencies:
@@ -24416,14 +24476,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.1.10, postcss@npm:^8.1.6, postcss@npm:^8.1.7, postcss@npm:^8.1.8, postcss@npm:^8.3.5, postcss@npm:^8.4.11, postcss@npm:^8.4.7":
-  version: 8.4.11
-  resolution: "postcss@npm:8.4.11"
+"postcss@npm:^8.1.10, postcss@npm:^8.1.6, postcss@npm:^8.1.7, postcss@npm:^8.1.8, postcss@npm:^8.3.5, postcss@npm:^8.4.12, postcss@npm:^8.4.7":
+  version: 8.4.12
+  resolution: "postcss@npm:8.4.12"
   dependencies:
     nanoid: ^3.3.1
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 4943e0d647c21300c30807457cbc5f3b010cad985d5feea74c1ae55215ea370af92ea0ad8c7a299507a14e5288777e15225bca7523a38c5c44820e94ef86b882
+  checksum: 248e3d0f9bbb8efaafcfda7f91627a29bdc9a19f456896886330beb28c5abea0e14c7901b35191928602e2eccbed496b1e94097d27a0b2a980854cd00c7a835f
   languageName: node
   linkType: hard
 
@@ -24540,12 +24600,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.5.1":
-  version: 2.5.1
-  resolution: "prettier@npm:2.5.1"
+"prettier@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "prettier@npm:2.6.0"
   bin:
     prettier: bin-prettier.js
-  checksum: 21b9408476ea1c544b0e45d51ceb94a84789ff92095abb710942d780c862d0daebdb29972d47f6b4d0f7ebbfb0ffbf56cc2cfa3e3e9d1cca54864af185b15b66
+  checksum: 3e527ad62279676778a8404d18174d7ca2365ada4caba6eebbcdd9907d1187afd3bc6ade5b4e5f5d4549bb9fb71e45ca8930d71500017635524f8fc05bc52e93
   languageName: node
   linkType: hard
 
@@ -25340,9 +25400,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-big-calendar@npm:^0.39.4":
-  version: 0.39.4
-  resolution: "react-big-calendar@npm:0.39.4"
+"react-big-calendar@npm:^0.39.5":
+  version: 0.39.5
+  resolution: "react-big-calendar@npm:0.39.5"
   dependencies:
     "@babel/runtime": ^7.17.2
     clsx: ^1.1.1
@@ -25357,7 +25417,7 @@ __metadata:
     react-dom: ^17.0.2
     react-overlays: ^4.1.1
     uncontrollable: ^7.2.1
-  checksum: fd703c07686d71ed17e57b53ae63aff32b75732fba5fac022c6c571641984cb26d6e8e11528b7bc65e4f4caf6fc9bd516230bed49471f99cd8f2fb57e60a98f0
+  checksum: f0ca9df4dc62444e19947dd25e669541e8a5f6c66dab8b091f0ef9244d00ff9bf22e060ca0ba0c89c322badb95187acae04cf6e7b96685dff4692a84254f0de5
   languageName: node
   linkType: hard
 
@@ -25688,12 +25748,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.28.0":
-  version: 7.28.0
-  resolution: "react-hook-form@npm:7.28.0"
+"react-hook-form@npm:^7.28.1":
+  version: 7.28.1
+  resolution: "react-hook-form@npm:7.28.1"
   peerDependencies:
     react: ^16.8.0 || ^17
-  checksum: e70637236113b26bae121cccd6f1ad9df3bd808e5e83311175f69c1b55524ea5240d6914c1c355f6df2e38b27c2103f2b8b17d911409bcfce26cf6fb4107caee
+  checksum: 176e653f3c5c1882125b6d51d3b2258c7120202227b91edbf74708eb3f0d455b3c827f1b6c236cdf208de82871b14e86d9aeacbd44c418bcf591b2346721156f
   languageName: node
   linkType: hard
 
@@ -25946,19 +26006,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-phone-number-input@npm:^3.1.46":
-  version: 3.1.46
-  resolution: "react-phone-number-input@npm:3.1.46"
+"react-phone-number-input@npm:^3.1.47":
+  version: 3.1.47
+  resolution: "react-phone-number-input@npm:3.1.47"
   dependencies:
     classnames: ^2.2.5
     country-flag-icons: ^1.0.2
     input-format: ^0.3.7
-    libphonenumber-js: ^1.9.47
+    libphonenumber-js: ^1.9.50
     prop-types: ^15.7.2
   peerDependencies:
     react: ">=0.16.8"
     react-dom: ">=0.16.8"
-  checksum: 907ba7d07955fa75c09cb620944341f47209a066c92bbd13e4c716dd0340635a3a4c857431e629e671985fde40484d3c7aa0a175f0839e249b90eea1d59bf70c
+  checksum: 3a42dfe89556771e86310f7794f2c01e8923e4bbf3186e98a466d3fbf1278b78ff1ed6dccbe18a7c7bd70325cc6132d070353a76f6957d065eb4536bc20b5af6
   languageName: node
   linkType: hard
 

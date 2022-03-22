@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import React, { useCallback } from 'react';
+import { Row as RowType, TableInstance } from 'react-table';
 import { useVirtual } from 'react-virtual';
 import { theme } from 'twin.macro';
 import * as defaultComponents from '../styled';
@@ -18,7 +19,7 @@ function getComponents(defaultComponents, overrides = {}) {
   }, {});
 }
 
-const Table = ({
+function Table<T extends object>({
   setAggregation,
   setColumnWidth,
   includeFooter = true,
@@ -29,15 +30,20 @@ const Table = ({
   tableInstance,
   onItemClick,
   overrides = {},
-}) => {
-  const {
-    getTableBodyProps,
-    headerGroups,
-    page,
-    prepareRow,
-    footerGroups,
-    columns,
-  } = tableInstance;
+}: {
+  setAggregation: (aggregation: string) => void;
+  setColumnWidth: (column: string, width: number) => void;
+  includeFooter?: boolean;
+  rowHeight?: number;
+  headerHeight?: number;
+  headerIcons?: boolean;
+  groupRowHeightIncrementRatio?: number;
+  tableInstance: TableInstance<T>;
+  onItemClick: (row: RowType<T>) => void;
+  overrides?: Record<string, any>;
+}) {
+  const { getTableBodyProps, headerGroups, page, prepareRow, footerGroups } =
+    tableInstance;
 
   // const getColumnWidth = (data, accessor, headerText) => {
   //   const cellLength = Math.max(
@@ -85,16 +91,25 @@ const Table = ({
   };
 
   const Row = useCallback(
-    ({ index, size, start }) => {
-      const row = page[index];
+    ({
+      index,
+      size,
+      start,
+    }: {
+      index: number;
+      size: number;
+      start: number;
+    }) => {
+      const row: RowType<T> = page[index];
       prepareRow(row);
+
       return (
         <StyledRow
           key={index}
           {...row.getRowProps([{ style: { minWidth: '100%' } }])}
           size={size}
           start={start}
-          onClick={(e) => {
+          onClick={(e: React.MouseEvent) => {
             e.preventDefault();
             onItemClick(row);
           }}
@@ -220,6 +235,6 @@ const Table = ({
       </div>
     </div>
   );
-};
+}
 
 export default Table;

@@ -10,8 +10,8 @@
   "module": "dist/uidu-profilecard.esm.js",
   "types": "dist/uidu-profilecard.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.10.4",
-    "@babel/runtime": "^7.17.7",
+    "@atlaskit/icon": "^21.10.5",
+    "@babel/runtime": "^7.17.8",
     "@uidu/avatar": "^0.9.4",
     "@uidu/button": "^1.3.11",
     "@uidu/lozenge": "^0.5.7",

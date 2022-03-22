@@ -1,11 +1,14 @@
 import { FieldGroup } from '@uidu/data-fields';
 import { DataView } from '@uidu/data-views';
+import { ButtonItemProps } from '@uidu/menu';
 import React from 'react';
 import { Row } from 'react-table';
 
 export type RowAction = {
-  children: any;
-  onClick: any;
+  key?: string;
+  children?: any;
+  component?: React.FC<ButtonItemProps>;
+  onClick?: ({ row }: { row: Row }) => void;
 };
 
 export type RowActions = {
@@ -26,7 +29,7 @@ export type DataManagerProps = {
   onItemSelect?: ({ data }: { data: any }) => void;
   canSelectRows?: boolean;
   getExportFileBlob?: any;
-  getExportFileName: ({
+  getExportFileName?: ({
     fileType,
     all,
   }: {

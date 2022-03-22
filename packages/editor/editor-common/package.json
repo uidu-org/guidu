@@ -10,8 +10,8 @@
   "module": "dist/uidu-editor-common.esm.js",
   "types": "dist/uidu-editor-common.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.10.4",
-    "@babel/runtime": "^7.17.7",
+    "@atlaskit/icon": "^21.10.5",
+    "@babel/runtime": "^7.17.8",
     "@uidu/adf-schema": "^0.9.0",
     "@uidu/adf-utils": "^0.8.1",
     "@uidu/analytics": "^0.5.7",

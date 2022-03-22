@@ -8,7 +8,7 @@
   "main": "dist/uidu-button.cjs.js",
   "module": "dist/uidu-button.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.17.7",
+    "@babel/runtime": "^7.17.8",
     "@uidu/analytics": "^0.5.7",
     "@uidu/spinner": "^0.5.7",
     "@uidu/theme": "^0.6.9",
@@ -17,7 +17,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^21.10.4",
+    "@atlaskit/icon": "^21.10.5",
     "@atlaskit/logo": "^13.5.4",
     "@uidu/checkbox": "^1.1.10",
     "@uidu/docs": "^0.5.6",

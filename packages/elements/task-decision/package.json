@@ -14,9 +14,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@atlaskit/icon": "^21.10.4",
+    "@atlaskit/icon": "^21.10.5",
     "@atlaskit/util-service-support": "^6.1.0",
-    "@babel/runtime": "^7.17.7",
+    "@babel/runtime": "^7.17.8",
     "@uidu/analytics": "^0.5.7",
     "@uidu/analytics-namespaced-context": "^0.4.6",
     "@uidu/avatar-group": "^2.6.8",

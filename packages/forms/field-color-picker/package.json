@@ -9,7 +9,7 @@
   "module": "dist/uidu-field-color-picker.esm.js",
   "types": "dist/uidu-field-color-picker.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.7",
+    "@babel/runtime": "^7.17.8",
     "@uidu/button": "1.3.11",
     "@uidu/field-base": "^3.1.14",
     "@uidu/popup": "^0.6.10",

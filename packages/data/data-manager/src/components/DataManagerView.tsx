@@ -134,8 +134,7 @@ function DataManagerView({
         currentView.preferences?.startDateField || 'finishesAt';
       const { components: calendarComponents, ...calendarViewProps } =
         viewProps.calendar || {};
-      console.log(calendarComponents);
-      console.log(calendarViewProps);
+
       // eslint-disable-next-line no-multi-assign
       desktopView = mobileView = (
         <LoadableCalendar fallback={<ShellBodyWithSpinner />}>

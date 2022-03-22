@@ -17,7 +17,7 @@
     "postbuild": "yarn build:json-schema"
   },
   "dependencies": {
-    "@babel/runtime": "^7.17.7",
+    "@babel/runtime": "^7.17.8",
     "@types/linkify-it": "^3.0.2",
     "@types/prosemirror-model": "^1.16.1",
     "@types/prosemirror-state": "^1.2.8",

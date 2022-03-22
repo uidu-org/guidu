@@ -115,7 +115,6 @@ export const availableColumns = [
     accessor: (data) => data.member.email,
     primary: true,
     name: 'Donor',
-    headerClass: 'ag-header-cell-primary-with-uid',
     field: 'member',
     pinned: 'left',
     valueGetter: (props) => {

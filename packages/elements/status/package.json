@@ -16,8 +16,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@atlaskit/icon": "^21.10.4",
-    "@babel/runtime": "^7.17.7",
+    "@atlaskit/icon": "^21.10.5",
+    "@babel/runtime": "^7.17.8",
     "@uidu/analytics": "^0.5.7",
     "@uidu/analytics-gas-types": "^0.3.1",
     "@uidu/field-text": "^1.1.10",

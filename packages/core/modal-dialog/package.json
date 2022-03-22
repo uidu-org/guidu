@@ -10,8 +10,8 @@
   "module": "dist/uidu-modal-dialog.esm.js",
   "types": "dist/uidu-modal-dialog.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.10.4",
-    "@babel/runtime": "^7.17.7",
+    "@atlaskit/icon": "^21.10.5",
+    "@babel/runtime": "^7.17.8",
     "@uidu/analytics": "^0.5.7",
     "@uidu/blanket": "^0.5.4",
     "@uidu/button": "^1.3.11",

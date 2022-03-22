@@ -3,7 +3,7 @@
 import { CubeContext, useCubeQuery } from '@cubejs-client/react';
 import { buildColumns } from '@uidu/data-fields';
 import React, { useContext, useEffect, useMemo } from 'react';
-import { DataManagerCubeProps } from '..';
+import { DataManagerCubeProps } from '../types';
 import DataManagerComponent from './DataManager';
 
 function DataManagerResults({

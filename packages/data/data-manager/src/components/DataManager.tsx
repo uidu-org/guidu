@@ -7,7 +7,7 @@ import {
   RowActions,
   RowSelection,
 } from '@uidu/table';
-import React, { useEffect, useImperativeHandle } from 'react';
+import React, { useCallback, useEffect, useImperativeHandle } from 'react';
 import {
   useAsyncDebounce,
   useExpanded,
@@ -41,6 +41,21 @@ export default function DataManager({
   getExportFileName,
   pageSize = 50,
 }: DataManagerProps) {
+  const Cell = useCallback(
+    ({ column, value }) =>
+      column.valueFormatter ? (
+        <>{column.valueFormatter({ value })}</>
+      ) : (
+        value || null
+      ),
+    [],
+  );
+
+  const RowActionsCell = useCallback(
+    (params) => <RowActions params={params} actions={actions} />,
+    [actions],
+  );
+
   const defaultColumn = React.useMemo(
     () => ({
       minWidth: 80,
@@ -51,14 +66,9 @@ export default function DataManager({
       canGroupBy: false,
       Header,
       Aggregated,
-      Cell: ({ column, value }) =>
-        column.valueFormatter ? (
-          <>{column.valueFormatter({ value })}</>
-        ) : (
-          value || null
-        ),
+      Cell,
     }),
-    [],
+    [Cell],
   );
 
   const tableInstance = useTable(
@@ -140,9 +150,7 @@ export default function DataManager({
                 width: 56,
                 maxWidth: 56,
                 pinned: 'right',
-                Cell: (params) => {
-                  return <RowActions params={params} actions={actions} />;
-                },
+                Cell: RowActionsCell,
                 groupByBoundary: true,
                 cellStyle: {
                   padding: 0,

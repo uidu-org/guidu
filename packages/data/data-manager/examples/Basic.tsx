@@ -6,6 +6,7 @@ import DropdownMenu, {
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
 import Form from '@uidu/form';
+import { ButtonItem } from '@uidu/menu';
 import Select from '@uidu/select';
 import {
   ShellBody,
@@ -169,7 +170,7 @@ export default function Basic({}) {
                     onClick: () => window.alert('onClick row'),
                   },
                   {
-                    children: 'text',
+                    component: (p) => <ButtonItem {...p}>Test</ButtonItem>,
                     onClick: () => window.alert('onClick row'),
                   },
                 ],

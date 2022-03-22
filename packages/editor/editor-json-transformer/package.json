@@ -10,7 +10,7 @@
   "module": "dist/uidu-editor-json-transformer.esm.js",
   "types": "dist/uidu-editor-json-transformer.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.7",
+    "@babel/runtime": "^7.17.8",
     "@uidu/adf-schema": "^0.9.0",
     "prosemirror-model": "^1.16.1",
     "tslib": "^2.3.1"

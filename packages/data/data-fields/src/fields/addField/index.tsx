@@ -26,8 +26,7 @@ const AddField: Partial<Field> = {
   resizable: false,
   rowDrag: false,
   editable: false,
-  headerClass: 'ag-add-field-header text-center',
-  cellClass: 'ag-add-field-cell',
+  suppressMenu: true,
 };
 
 export default AddField;

@@ -32,7 +32,6 @@ const Uid: Field = {
     padding: '0rem',
     borderRight: 0,
   },
-  headerClass: 'border-right-0 pr-0',
   headerValueGetter: () => null,
   // do not export to CSV/Excel the global ID field
   disableExport: true,
