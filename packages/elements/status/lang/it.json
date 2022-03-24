@@ -1,26 +1,26 @@
 {
   "uidu.status.color.blue": {
     "description": "Tooltip for the blue color in color palette",
-    "message": "Blue"
+    "message": "Blu"
   },
   "uidu.status.color.green": {
     "description": "Tooltip for the green color in color palette",
-    "message": "Green"
+    "message": "Verde"
   },
   "uidu.status.color.grey": {
     "description": "Tooltip for the grey color in color palette",
-    "message": "Grey"
+    "message": "Grigio"
   },
   "uidu.status.color.purple": {
     "description": "Tooltip for the purple color in color palette",
-    "message": "Purple"
+    "message": "Viola"
   },
   "uidu.status.color.red": {
     "description": "Tooltip for the red color in color palette",
-    "message": "Red"
+    "message": "rosso"
   },
   "uidu.status.color.yellow": {
     "description": "Tooltip for the yellow color in color palette",
-    "message": "Yellow"
+    "message": "Giallo"
   }
 }
