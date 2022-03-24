@@ -1,20 +1,20 @@
 {
   "D5xEjf": {
     "description": "uidu.devise.passwordless_registrations_description",
-    "message": "Sign up with to discover stories and make impact"
+    "message": "Iscriviti per scoprire storie e avere un impatto"
   },
   "LAGgvN": {
     "description": "uidu.devise.passwordless_registrations_title",
-    "message": "Sign up"
+    "message": "Iscrizione"
   },
   "uidu.devise.email_registrations_email_cta": {
-    "message": "Sign up"
+    "message": "Iscrizione"
   },
   "uidu.devise.email_registrations_email_description": {
-    "message": "Use a valid email address"
+    "message": "Usa un indirizzo email valido"
   },
   "uidu.devise.email_registrations_email_title": {
-    "message": "Sign up with your email"
+    "message": "Iscriviti con la tua email"
   },
   "uidu.devise.email_registrations_info_description": {
     "message": "email_registrations_info_description"
@@ -29,192 +29,192 @@
     "message": "email_registrations_password_title"
   },
   "uidu.devise.email_sessions_email_description": {
-    "message": "Use your favourite email account"
+    "message": "Usa il tuo account di posta elettronica preferito"
   },
   "uidu.devise.email_sessions_email_title": {
-    "message": "Sign in with your email"
+    "message": "Accedi con la tua email"
   },
   "uidu.devise.email_sessions_info_description": {
     "message": "email_sessions_info_description"
   },
   "uidu.devise.email_sessions_info_title": {
-    "message": "Fill your data to sign in"
+    "message": "Inserisci i tuoi dati per accedere"
   },
   "uidu.devise.email_sessions_password_description": {
     "message": "email_sessions_password_description"
   },
   "uidu.devise.email_sessions_password_title": {
-    "message": "Insert your password"
+    "message": "Inserisci la tua password"
   },
   "uidu.devise.password_recovery_description": {
-    "message": "Insert your email, we'll send you instructions on how to reset your account"
+    "message": "Inserisci la tua email, ti invieremo le istruzioni su come resettare il tuo account"
   },
   "uidu.devise.password_recovery_email_label": {
-    "message": "Insert your email"
+    "message": "Inserisci la tua email"
   },
   "uidu.devise.password_recovery_primary_cta": {
-    "message": "Send email"
+    "message": "Invia una email"
   },
   "uidu.devise.password_recovery_secondary_cta": {
-    "message": "Sign in"
+    "message": "Registrazione"
   },
   "uidu.devise.password_recovery_title": {
-    "message": "Recover your password"
+    "message": "Recupera la tua password"
   },
   "uidu.devise.password_reset_description": {
-    "message": "Choose a new password to access your account"
+    "message": "Scegli una nuova password per accedere al tuo account"
   },
   "uidu.devise.password_reset_email_label": {
-    "message": "Insert a new password"
+    "message": "Inserisci una nuova password"
   },
   "uidu.devise.password_reset_primary_cta": {
-    "message": "Confirm"
+    "message": "Confermare"
   },
   "uidu.devise.password_reset_secondary_cta": {
-    "message": "Sign in"
+    "message": "Registrazione"
   },
   "uidu.devise.password_reset_title": {
-    "message": "Reset your password"
+    "message": "reimposta la tua password"
   },
   "uidu.devise.passwordless_sessions_description": {
-    "message": "Sign in with your email and password"
+    "message": "Accedi con la tua email e password"
   },
   "uidu.devise.passwordless_sessions_email_label": {
-    "message": "Insert your email"
+    "message": "Inserisci la tua email"
   },
   "uidu.devise.passwordless_sessions_primary_cta": {
-    "message": "Sign in"
+    "message": "Registrazione"
   },
   "uidu.devise.passwordless_sessions_title": {
-    "message": "Sign in"
+    "message": "Registrazione"
   },
   "uidu.devise.phone_registrations_info_description": {
-    "message": "phone_registrations_info_description"
+    "message": "telefono_registrazioni_info_description"
   },
   "uidu.devise.phone_registrations_info_title": {
     "message": "phone_registrations_info_title"
   },
   "uidu.devise.phone_registrations_password_description": {
-    "message": "phone_registrations_password_description"
+    "message": "telefono_registrazioni_password_description"
   },
   "uidu.devise.phone_registrations_password_title": {
     "message": "phone_registrations_password_title"
   },
   "uidu.devise.phone_registrations_phone_cta": {
-    "message": "Sign up"
+    "message": "Iscrizione"
   },
   "uidu.devise.phone_registrations_phone_description": {
-    "message": "Use a valid phone address"
+    "message": "Utilizzare un indirizzo di telefono valido"
   },
   "uidu.devise.phone_registrations_phone_title": {
-    "message": "Sign up with your phone"
+    "message": "Iscriviti con il tuo telefono"
   },
   "uidu.devise.phone_sessions_info_description": {
     "message": "phone_sessions_info_description"
   },
   "uidu.devise.phone_sessions_info_title": {
-    "message": "Fill your data to sign in"
+    "message": "Inserisci i tuoi dati per accedere"
   },
   "uidu.devise.phone_sessions_password_description": {
     "message": "phone_sessions_password_description"
   },
   "uidu.devise.phone_sessions_password_title": {
-    "message": "Insert your password"
+    "message": "Inserisci la tua password"
   },
   "uidu.devise.phone_sessions_phone_description": {
-    "message": "Use your favourite phone account"
+    "message": "Usa il tuo account telefonico preferito"
   },
   "uidu.devise.phone_sessions_phone_title": {
-    "message": "Sign in with your phone"
+    "message": "Accedi con il tuo telefono"
   },
   "uidu.devise.phone_sessions_remember_me_label": {
-    "description": "simple_sessions_email_label",
-    "message": "Remember me for next sessions"
+    "description": "etichetta_email_sessione_semplice",
+    "message": "Ricordami per le prossime sessioni"
   },
   "uidu.devise.privacy_intro": {
     "description": "",
-    "message": "Per far funzionare uidu, registriamo i dati degli utenti e li condividiamo con alcuni provider. Registrandoti, accetti le Condizioni d'uso e confermi di aver letto e compreso la Privacy Policy."
+    "message": "Per far uidu, registriamo i dati degli utenti e li condividiamo con alcuni provider. Registrandoti, accetti le Condizioni d'uso e conferma di aver letto e compreso la Privacy Policy."
   },
   "uidu.devise.registrations_description": {
     "description": "",
-    "message": "Crea un account per personalizzare la tua homepage, seguire le tue organizzazioni preferite, scoprire quello che di buono c'è vicino a te, e molto altro."
+    "message": "Crea un account per personalizzare la tua homepage, seguire le tue preferite, scoprire quello che di buono c'è vicino a te, e molto altro."
   },
   "uidu.devise.registrations_title": {
     "description": "",
-    "message": "Sign up with your email"
+    "message": "Iscriviti con la tua email"
   },
   "uidu.devise.registrations_with_provider": {
     "description": "",
-    "message": "Sign up with {provider}"
+    "message": "Iscriviti con {provider}"
   },
   "uidu.devise.sessions_description": {
     "description": "",
-    "message": "Accedi per visualizzare la tua homepage, seguire le tue organizzazioni preferite, scoprire quello che di buono c'è vicino a te."
+    "message": "Accedi per visualizzare la tua homepage, seguire le tue preferite, scoprire quello che di buono c'è a te."
   },
   "uidu.devise.sessions_forgot_password": {
-    "description": "sessions_forgot_password",
-    "message": "Forgot password?"
+    "description": "sessioni_dimenticato_password",
+    "message": "Ha dimenticato la password?"
   },
   "uidu.devise.sessions_remember_me_label": {
-    "description": "simple_sessions_email_label",
-    "message": "Remember me for next sessions"
+    "description": "etichetta_email_sessione_semplice",
+    "message": "Ricordami per le prossime sessioni"
   },
   "uidu.devise.sessions_title": {
-    "description": "Allows user to perform an action again",
-    "message": "Sign in"
+    "description": "Consente all'utente di eseguire nuovamente un'azione",
+    "message": "Registrazione"
   },
   "uidu.devise.sessions_with_provider": {
     "description": "",
-    "message": "Sign in with {provider}"
+    "message": "Accedi con {provider}"
   },
   "uidu.devise.simple_registrations_description": {
-    "message": "Sign up with to discover stories and make impact"
+    "message": "Iscriviti per scoprire storie e avere un impatto"
   },
   "uidu.devise.simple_registrations_email_label": {
-    "message": "Insert your email"
+    "message": "Inserisci la tua email"
   },
   "uidu.devise.simple_registrations_password_label": {
-    "message": "Choose a password"
+    "message": "Scegli una password"
   },
   "uidu.devise.simple_registrations_primary_cta": {
-    "message": "Sign up"
+    "message": "Iscrizione"
   },
   "uidu.devise.simple_registrations_remember_me_label": {
-    "message": "Remember me for next registrations"
+    "message": "Ricordami per le prossime iscrizioni"
   },
   "uidu.devise.simple_registrations_secondary_cta": {
-    "message": "Already have an account?"
+    "message": "Hai già un account?"
   },
   "uidu.devise.simple_registrations_title": {
-    "message": "Sign up"
+    "message": "Iscrizione"
   },
   "uidu.devise.simple_sessions_description": {
-    "message": "Sign in with your email and password"
+    "message": "Accedi con la tua email e password"
   },
   "uidu.devise.simple_sessions_email_label": {
-    "message": "Insert your email"
+    "message": "Inserisci la tua email"
   },
   "uidu.devise.simple_sessions_password_label": {
-    "message": "Insert your password"
+    "message": "Inserisci la tua password"
   },
   "uidu.devise.simple_sessions_primary_cta": {
-    "message": "Sign in"
+    "message": "Registrazione"
   },
   "uidu.devise.simple_sessions_remember_me_label": {
-    "message": "Remember me for next sessions"
+    "message": "Ricordami per le prossime sessioni"
   },
   "uidu.devise.simple_sessions_secondary_cta": {
-    "message": "Create an account"
+    "message": "Creare un account"
   },
   "uidu.devise.simple_sessions_title": {
-    "message": "Sign in"
+    "message": "Registrazione"
   },
   "wqy4J6": {
     "description": "uidu.devise.passwordless_registrations_email_label",
-    "message": "Insert your email"
+    "message": "Inserisci la tua email"
   },
   "wxNlUt": {
     "description": "uidu.devise.passwordless_registrations_primary_cta",
-    "message": "Sign up"
+    "message": "Iscrizione"
   }
 }
