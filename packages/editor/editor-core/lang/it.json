@@ -9,11 +9,11 @@
   },
   "uidu.editor-core.action": {
     "description": "Also known as a “task”, “to do item”, or a checklist",
-    "message": "Action item"
+    "message": "Oggetto d'azione"
   },
   "uidu.editor-core.action.description": {
     "description": "",
-    "message": "Create and assign action items"
+    "message": "Crea e assegna elementi di azione"
   },
   "uidu.editor-core.addAltText": {
     "description": "Add an alt text for this image",
@@ -89,7 +89,7 @@
   },
   "uidu.editor-core.clearCells": {
     "description": "Clears the contents of the selected cells (this does not delete the cells themselves).",
-    "message": "Clear {0, plural, one {cell} other {cells}}"
+    "message": "Chiaro {0, plural, one {cellula} other {cellule}}"
   },
   "uidu.editor-core.clearFormatting": {
     "description": "Remove all rich text formatting from the selected text",
@@ -109,87 +109,87 @@
   },
   "uidu.editor-core.closeHelpDialog": {
     "description": "",
-    "message": "Close help dialog"
+    "message": "Chiudi la finestra di aiuto"
   },
   "uidu.editor-core.code": {
     "description": "Whether the text selection has monospaced/code font",
-    "message": "Code"
+    "message": "Codice"
   },
   "uidu.editor-core.codeblock": {
     "description": "Insert a snippet/segment of code (code block)",
-    "message": "Code snippet"
+    "message": "Frammento di codice"
   },
   "uidu.editor-core.codeblock.description": {
     "description": "Insert a snippet/segment of code (code block)",
-    "message": "Display code with syntax highlighting"
+    "message": "Visualizza il codice con l'evidenziazione della sintassi"
   },
   "uidu.editor-core.columns": {
     "description": "Create a multi column section or layout",
-    "message": "Layouts"
+    "message": "Layout"
   },
   "uidu.editor-core.columns.description": {
     "description": "Create a multi column section or layout",
-    "message": "Structure your page using sections"
+    "message": "Struttura la tua pagina usando le sezioni"
   },
   "uidu.editor-core.date": {
     "description": "Opens a date picker that lets you select a date",
-    "message": "Date"
+    "message": "Data"
   },
   "uidu.editor-core.date.description": {
     "description": "Opens a date picker that lets you select a date",
-    "message": "Add a date using a calendar"
+    "message": "Aggiungi una data usando un calendario"
   },
   "uidu.editor-core.decision": {
     "description": "Capture a decision you’ve made",
-    "message": "Decision"
+    "message": "Decisione"
   },
   "uidu.editor-core.decision.description": {
     "description": "Capture a decision you’ve made",
-    "message": "Capture decisions so they’re easy to track"
+    "message": "Cattura le decisioni in modo che siano facili da monitorare"
   },
   "uidu.editor-core.decisionPlaceholder": {
     "description": "Placeholder description for an empty decision in the editor",
-    "message": "Add a decision…"
+    "message": "Aggiungi una decisione…"
   },
   "uidu.editor-core.displayBlock": {
     "description": "Display link as a card with a rich preview similar to in a Facebook feed with page title, description, and potentially an image.",
-    "message": "Display as card"
+    "message": "Visualizza come carta"
   },
   "uidu.editor-core.displayEmbed": {
     "description": "Display link as an embedded object",
-    "message": "Display as embed"
+    "message": "Visualizza come incorporare"
   },
   "uidu.editor-core.displayInline": {
     "description": "Display link with the title only.",
-    "message": "Display inline"
+    "message": "Visualizza in linea"
   },
   "uidu.editor-core.displayLink": {
     "description": "Convert the card to become a regular text-based hyperlink.",
-    "message": "Display as text"
+    "message": "Visualizza come testo"
   },
   "uidu.editor-core.displayText": {
     "description": "Text to display",
-    "message": "Text to display"
+    "message": "Testo da visualizzare"
   },
   "uidu.editor-core.edit": {
     "description": "Edit the properties for this extension.",
-    "message": "Edit"
+    "message": "Modificare"
   },
   "uidu.editor-core.editAltText": {
     "description": "Edit an alt text for this image",
-    "message": "Edit alt text"
+    "message": "Modifica testo alternativo"
   },
   "uidu.editor-core.editLink": {
     "description": "Edit the link, update display text",
-    "message": "Edit link"
+    "message": "Modifica collegamento"
   },
   "uidu.editor-core.editMode.inviteToEditButton.title": {
     "description": "Invite another user to edit the current document",
-    "message": "Invite to edit"
+    "message": "Invita a modificare"
   },
   "uidu.editor-core.editorHelp": {
     "description": "Title of editor help dialog.",
-    "message": "Editor help"
+    "message": "Aiuto editore"
   },
   "uidu.editor-core.emoji": {
     "description": "Insert an emoticon or smiley :-)",
@@ -201,103 +201,103 @@
   },
   "uidu.editor-core.error": {
     "description": "Panels provide a way to highlight text. The error panel has a red background.",
-    "message": "Error"
+    "message": "Errore"
   },
   "uidu.editor-core.errorPanel": {
     "description": "Visually distinguishes your text by adding a error panel",
-    "message": "Error panel"
+    "message": "Pannello di errore"
   },
   "uidu.editor-core.errorPanel.description": {
     "description": "Visually distinguishes your text by adding a error panel",
-    "message": "Call out errors in a colored panel"
+    "message": "Richiama gli errori in un pannello colorato"
   },
   "uidu.editor-core.expand": {
     "description": "Inserts an expand in the document",
-    "message": "Expand"
+    "message": "Espandere"
   },
   "uidu.editor-core.expand.description": {
     "description": "Inserts an expand in the document",
-    "message": "Insert an expand"
+    "message": "Inserisci un'espansione"
   },
   "uidu.editor-core.feedbackDialog": {
     "description": "Open the feedback dialog from editor",
-    "message": "Give feedback"
+    "message": "Fornire un feedback"
   },
   "uidu.editor-core.feedbackDialog.description": {
     "description": "Description for feedback option under quick insert dropdown",
-    "message": "Tell us about your experience using the new editor"
+    "message": "Raccontaci la tua esperienza con il nuovo editor"
   },
   "uidu.editor-core.filesAndImages": {
     "description": "Insert one or more files or images",
-    "message": "Files & images"
+    "message": "File e immagini"
   },
   "uidu.editor-core.filesAndImages.description": {
     "description": "Insert one or more files or images",
-    "message": "Add images and other files to your page"
+    "message": "Aggiungi immagini e altri file alla tua pagina"
   },
   "uidu.editor-core.headerColumn": {
     "description": "Marks the first table column as a header row",
-    "message": "Header column"
+    "message": "Colonna di intestazione"
   },
   "uidu.editor-core.headerRow": {
     "description": "Marks the first table row as a header row",
-    "message": "Header row"
+    "message": "Riga di intestazione"
   },
   "uidu.editor-core.heading1": {
     "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
-    "message": "Heading 1"
+    "message": "Titolo 1"
   },
   "uidu.editor-core.heading1Description": {
     "description": "Description of the main heading, heading 1",
-    "message": "Use this for a top level heading"
+    "message": "Usalo per un'intestazione di livello superiore"
   },
   "uidu.editor-core.heading2": {
     "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
-    "message": "Heading 2"
+    "message": "Titolo 2"
   },
   "uidu.editor-core.heading2Description": {
     "description": "Description of a subtitle heading or secondary heading",
-    "message": "Use this for key sections"
+    "message": "Usalo per le sezioni chiave"
   },
   "uidu.editor-core.heading3": {
     "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
-    "message": "Heading 3"
+    "message": "Titolo 3"
   },
   "uidu.editor-core.heading3Description": {
     "description": "",
-    "message": "Use this for sub sections and group headings"
+    "message": "Usalo per sottosezioni e intestazioni di gruppo"
   },
   "uidu.editor-core.heading4": {
     "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
-    "message": "Heading 4"
+    "message": "Titolo 4"
   },
   "uidu.editor-core.heading4Description": {
     "description": "",
-    "message": "Use this for deep headings"
+    "message": "Usalo per intestazioni profonde"
   },
   "uidu.editor-core.heading5": {
     "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
-    "message": "Heading 5"
+    "message": "Titolo 5"
   },
   "uidu.editor-core.heading5Description": {
     "description": "",
-    "message": "Use this for grouping list items"
+    "message": "Usalo per raggruppare gli elementi dell'elenco"
   },
   "uidu.editor-core.heading6": {
     "description": "Used for the title of a section of your document, headings run from 1 (largest size) to 6 (smallest size)",
-    "message": "Heading 6"
+    "message": "Titolo 6"
   },
   "uidu.editor-core.heading6Description": {
     "description": "",
-    "message": "Use this for low level headings"
+    "message": "Usalo per titoli di basso livello"
   },
   "uidu.editor-core.help": {
     "description": "Opens up the help dialog",
-    "message": "Help"
+    "message": "Aiuto"
   },
   "uidu.editor-core.help.description": {
     "description": "Browse all the keyboard shortcuts and markdown options",
-    "message": "Browse all the keyboard shortcuts and markdown options"
+    "message": "Sfoglia tutte le scorciatoie da tastiera e le opzioni di riduzione"
   },
   "uidu.editor-core.helpDialogTips": {
     "description": "Hint about how to open a dialog quickly using a shortcut.",
@@ -313,7 +313,7 @@
   },
   "uidu.editor-core.hyperlinkToolbarPlaceholder": {
     "description": "Paste link or search recently viewed",
-    "message": "Paste link or search recently viewed"
+    "message": "Incolla il collegamento o cerca visualizzato di recente"
   },
   "uidu.editor-core.image": {
     "description": "Insert an image.",
@@ -321,23 +321,23 @@
   },
   "uidu.editor-core.info": {
     "description": "Panels provide a way to highlight text. The info panel has a blue background.",
-    "message": "Info"
+    "message": "Informazioni"
   },
   "uidu.editor-core.infoPanel": {
     "description": "Visually distinguishes your text by adding a background colour (blue, purple, yellow, green, red)",
-    "message": "Info panel"
+    "message": "Pannello delle informazioni"
   },
   "uidu.editor-core.infoPanel.description": {
     "description": "Visually distinguishes your text by adding a background colour (blue, purple, yellow, green, red)",
-    "message": "Highlight information in a colored panel"
+    "message": "Evidenzia le informazioni in un pannello colorato"
   },
   "uidu.editor-core.insertColumn": {
     "description": "Add a new column to your table.",
-    "message": "Insert column"
+    "message": "Inserisci colonna"
   },
   "uidu.editor-core.insertMenu": {
     "description": "Opens a menu of additional items that can be inserted into your document.",
-    "message": "Insert"
+    "message": "Inserire"
   },
   "uidu.editor-core.insertRow": {
     "description": "Add a new row to your table.",
@@ -353,7 +353,7 @@
   },
   "uidu.editor-core.layoutFixedWidth": {
     "description": "Display your element (image, table, extension, etc) as standard width",
-    "message": "Back to center"
+    "message": "Torna al centro"
   },
   "uidu.editor-core.layoutFullWidth": {
     "description": "Display your element (image, table, extension, etc) as full width",
@@ -361,7 +361,7 @@
   },
   "uidu.editor-core.layoutWide": {
     "description": "Display your element (image, table, extension, etc) wider than normal",
-    "message": "Go wide"
+    "message": "Vai largo"
   },
   "uidu.editor-core.leftSidebar": {
     "description": "Layout with two columns, left column is 1/3 and right is 2/3 of page",
@@ -401,7 +401,7 @@
   },
   "uidu.editor-core.mention.description": {
     "description": "Reference another person in your document",
-    "message": "Mention someone to send them a notification"
+    "message": "Menziona qualcuno per inviargli una notifica"
   },
   "uidu.editor-core.mergeCells": {
     "description": "Merge tables cells together.",
@@ -409,7 +409,7 @@
   },
   "uidu.editor-core.moreFormatting": {
     "description": "Clicking this will show a menu with additional formatting options",
-    "message": "More formatting"
+    "message": "Più formattazione"
   },
   "uidu.editor-core.normal": {
     "description": "This is the default text style",
@@ -421,15 +421,15 @@
   },
   "uidu.editor-core.notePanel": {
     "description": "Visually distinguishes your text by adding a note panel",
-    "message": "Note panel"
+    "message": "Pannello delle note"
   },
   "uidu.editor-core.notePanel.description": {
     "description": "Visually distinguishes your text by adding a note panel",
-    "message": "Add a note in a colored panel"
+    "message": "Aggiungi una nota in un pannello colorato"
   },
   "uidu.editor-core.numberedColumn": {
     "description": "Adds an auto-numbering column to your table",
-    "message": "Numbered column"
+    "message": "Colonna numerata"
   },
   "uidu.editor-core.orderedList": {
     "description": "A list with ordered items 1… 2… 3…",
@@ -437,7 +437,7 @@
   },
   "uidu.editor-core.orderedList.description": {
     "description": "",
-    "message": "Create an ordered list"
+    "message": "Crea una lista ordinata"
   },
   "uidu.editor-core.other": {
     "description": "Other text formatting",
@@ -453,15 +453,15 @@
   },
   "uidu.editor-core.placeholderText": {
     "description": "",
-    "message": "Placeholder text"
+    "message": "Testo segnaposto"
   },
   "uidu.editor-core.placeholderTextPlaceholder": {
     "description": "",
-    "message": "Add placeholder text"
+    "message": "Aggiungi testo segnaposto"
   },
   "uidu.editor-core.quickInsert": {
     "description": "Name of a feature, which let you insert items quickly.",
-    "message": "Quick insert"
+    "message": "Inserimento rapido"
   },
   "uidu.editor-core.redo": {
     "description": "",
@@ -481,7 +481,7 @@
   },
   "uidu.editor-core.rightSidebar": {
     "description": "Layout with two columns, left column is 2/3 and right is 1/3 of page",
-    "message": "Right sidebar"
+    "message": "Barra laterale destra"
   },
   "uidu.editor-core.saveButton": {
     "description": "Submit and save a comment or document",
@@ -501,27 +501,27 @@
   },
   "uidu.editor-core.sortColumnDESC": {
     "description": "Sort column in descending order",
-    "message": "Sort column Z → A"
+    "message": "Ordina la colonna Z → A"
   },
   "uidu.editor-core.splitCell": {
     "description": "Split a merged table cell.",
-    "message": "Split cell"
+    "message": "Cella divisa"
   },
   "uidu.editor-core.status": {
     "description": "Inserts an item representing the status of an activity to task.",
-    "message": "Status"
+    "message": "Stato"
   },
   "uidu.editor-core.status.description": {
     "description": "Inserts an item representing the status of an activity to task.",
-    "message": "Add a custom status label"
+    "message": "Aggiungi un'etichetta di stato personalizzata"
   },
   "uidu.editor-core.statusPlaceholder": {
     "description": "Placeholder description for an empty (new) status item in the editor",
-    "message": "Set a status"
+    "message": "Imposta uno stato"
   },
   "uidu.editor-core.strike": {
     "description": "Whether the text selection has crossed out text",
-    "message": "Strikethrough"
+    "message": "Barrato"
   },
   "uidu.editor-core.subscript": {
     "description": "Whether the text selection is written below the line in a slightly smaller size",
@@ -529,15 +529,15 @@
   },
   "uidu.editor-core.success": {
     "description": "Panels provide a way to highlight text. The success panel has a green background.",
-    "message": "Success"
+    "message": "Successo"
   },
   "uidu.editor-core.successPanel": {
     "description": "Visually distinguishes your text by adding a success panel",
-    "message": "Success panel"
+    "message": "Pannello di successo"
   },
   "uidu.editor-core.successPanel.description": {
     "description": "Visually distinguishes your text by adding a success panel",
-    "message": "Add tips in a colored panel"
+    "message": "Aggiungi suggerimenti in un pannello colorato"
   },
   "uidu.editor-core.superscript": {
     "description": "Whether the text selection is written above the line in a slightly smaller size",
@@ -545,7 +545,7 @@
   },
   "uidu.editor-core.supportAltText": {
     "description": "Alt text is useful for people using screen readers because of visual limitations.",
-    "message": "Alt text is useful for people using screen readers because of visual limitations."
+    "message": "Il testo alternativo è utile per le persone che usano utilità per la lettura dello schermo a causa di limitazioni visive."
   },
   "uidu.editor-core.table": {
     "description": "Inserts a table in the document",
@@ -561,7 +561,7 @@
   },
   "uidu.editor-core.taskPlaceholder": {
     "description": "Placeholder description for an empty action/task in the editor",
-    "message": "Type your action, use '@' to assign to someone."
+    "message": "Digita la tua azione, usa '@' per assegnare a qualcuno."
   },
   "uidu.editor-core.textColor": {
     "description": "",
@@ -569,166 +569,166 @@
   },
   "uidu.editor-core.textColor.lessColors": {
     "description": "Fewer colors",
-    "message": "Fewer colors"
+    "message": "Meno colori"
   },
   "uidu.editor-core.textColor.moreColors": {
     "description": "More colors",
-    "message": "More colors"
+    "message": "Più colori"
   },
   "uidu.editor-core.textStyles": {
     "description": "Menu provides access to various heading styles or normal text",
-    "message": "Text styles"
+    "message": "Stili di testo"
   },
   "uidu.editor-core.theme.blue": {
     "description": "Name of a color",
-    "message": "Blue"
+    "message": "Blu"
   },
   "uidu.editor-core.theme.dark-blue": {
     "description": "Name of a color",
-    "message": "Dark blue"
+    "message": "Blu scuro"
   },
   "uidu.editor-core.theme.dark-green": {
     "description": "Name of a color",
-    "message": "Dark green"
+    "message": "Verde scuro"
   },
   "uidu.editor-core.theme.dark-purple": {
     "description": "Name of a color",
-    "message": "Dark purple"
+    "message": "Viola scuro"
   },
   "uidu.editor-core.theme.dark-red": {
     "description": "Name of a color",
-    "message": "Dark red"
+    "message": "Rosso scuro"
   },
   "uidu.editor-core.theme.dark-teal": {
     "description": "Name of a color",
-    "message": "Dark teal"
+    "message": "Verde acqua scuro"
   },
   "uidu.editor-core.theme.dark-yellow": {
     "description": "Name of a color",
-    "message": "Dark yellow"
+    "message": "Giallo scuro"
   },
   "uidu.editor-core.theme.gray": {
     "description": "Name of a color",
-    "message": "Gray"
+    "message": "Grigio"
   },
   "uidu.editor-core.theme.green": {
     "description": "Name of a color",
-    "message": "Green"
+    "message": "Verde"
   },
   "uidu.editor-core.theme.light-blue": {
     "description": "Name of a color",
-    "message": "Light blue"
+    "message": "Azzurro"
   },
   "uidu.editor-core.theme.light-gray": {
     "description": "Name of a color",
-    "message": "Light gray"
+    "message": "Grigio chiaro"
   },
   "uidu.editor-core.theme.light-green": {
     "description": "Name of a color",
-    "message": "Light green"
+    "message": "Verde chiaro"
   },
   "uidu.editor-core.theme.light-purple": {
     "description": "Name of a color",
-    "message": "Light purple"
+    "message": "Viola chiaro"
   },
   "uidu.editor-core.theme.light-red": {
     "description": "Name of a color",
-    "message": "Light red"
+    "message": "Rosso chiaro"
   },
   "uidu.editor-core.theme.light-teal": {
     "description": "Name of a color",
-    "message": "Light teal"
+    "message": "Verde acqua"
   },
   "uidu.editor-core.theme.light-yellow": {
     "description": "Name of a color",
-    "message": "Light yellow"
+    "message": "Giallo chiaro"
   },
   "uidu.editor-core.theme.orange": {
     "description": "Name of a color.",
-    "message": "Orange"
+    "message": "arancia"
   },
   "uidu.editor-core.theme.purple": {
     "description": "Name of a color",
-    "message": "Purple"
+    "message": "Viola"
   },
   "uidu.editor-core.theme.red": {
     "description": "Name of a color",
-    "message": "Red"
+    "message": "rosso"
   },
   "uidu.editor-core.theme.teal": {
     "description": "Name of a color",
-    "message": "Teal"
+    "message": "Alzavola"
   },
   "uidu.editor-core.theme.white": {
     "description": "Name of a color",
-    "message": "White"
+    "message": "bianco"
   },
   "uidu.editor-core.theme.yellow": {
     "description": "Name of a color",
-    "message": "Yellow"
+    "message": "Giallo"
   },
   "uidu.editor-core.threeColumns": {
     "description": "Layout with three columns of equal width",
-    "message": "Three columns"
+    "message": "Tre colonne"
   },
   "uidu.editor-core.threeColumnsWithSidebars": {
     "description": "Layout with 3 columns laid out as 25% - 50% - 25%",
-    "message": "Three columns with sidebars"
+    "message": "Tre colonne con barre laterali"
   },
   "uidu.editor-core.twoColumns": {
     "description": "Layout with two columns of equal width",
-    "message": "Two columns"
+    "message": "Due colonne"
   },
   "uidu.editor-core.unableToOpenLink": {
     "description": "Unable to open this link",
-    "message": "Unable to open this link"
+    "message": "Impossibile aprire questo collegamento"
   },
   "uidu.editor-core.underline": {
     "description": "Whether the text selection has underlined text",
-    "message": "Underline"
+    "message": "Sottolineare"
   },
   "uidu.editor-core.undo": {
     "description": "",
-    "message": "Undo"
+    "message": "Disfare"
   },
   "uidu.editor-core.unlink": {
     "description": "Removes the hyperlink but keeps your text.",
-    "message": "Unlink"
+    "message": "Scollega"
   },
   "uidu.editor-core.unorderedList": {
     "description": "A list with bullets. Also known as an “unordered” list",
-    "message": "Bullet list"
+    "message": "Elenco puntato"
   },
   "uidu.editor-core.unorderedList.description": {
     "description": "",
-    "message": "Create an unordered list"
+    "message": "Crea un elenco non ordinato"
   },
   "uidu.editor-core.viewMore": {
     "description": "",
-    "message": "View more"
+    "message": "Visualizza di più"
   },
   "uidu.editor-core.visit": {
     "description": "Open the link in a new window",
-    "message": "Open link in a new window"
+    "message": "Apri collegamento in una nuova finestra"
   },
   "uidu.editor-core.warning": {
     "description": "Panels provide a way to highlight text. The warning panel has a yellow background.",
-    "message": "Warning"
+    "message": "Avvertimento"
   },
   "uidu.editor-core.warningPanel": {
     "description": "Visually distinguishes your text by adding a warning panel",
-    "message": "Warning panel"
+    "message": "Pannello di avvertenza"
   },
   "uidu.editor-core.warningPanel.description": {
     "description": "Visually distinguishes your text by adding a warning panel",
-    "message": "Add a note of caution in a colored panel"
+    "message": "Aggiungi una nota di cautela in un pannello colorato"
   },
   "uidu.editor-core.wrapLeft": {
     "description": "Aligns your image to the left and wraps text around it.",
-    "message": "Wrap left"
+    "message": "Avvolgi a sinistra"
   },
   "uidu.editor-core.wrapRight": {
     "description": "Aligns your image to the right and wraps text around it.",
-    "message": "Wrap right"
+    "message": "Avvolgi a destra"
   }
 }
