@@ -1,7 +1,7 @@
 {
   "uidu.emoji.add.custom.emoji.label": {
     "description": "Button label to add custom emoji",
-    "message": "Add your own emoji"
+    "message": "Aggiungi la tua emoji"
   },
   "uidu.emoji.add.label": {
     "description": "verb - Button label to add emoji",
@@ -33,7 +33,7 @@
   },
   "uidu.emoji.category.frequent": {
     "description": "Emoji frequent category",
-    "message": "Frequent"
+    "message": "Frequente"
   },
   "uidu.emoji.category.nature": {
     "description": "Emoji nature category",
@@ -61,70 +61,70 @@
   },
   "uidu.emoji.category.user.uploads": {
     "description": "User uploads in the custom category",
-    "message": "Your uploads"
+    "message": "I tuoi caricamenti"
   },
   "uidu.emoji.choose.file.ariaLabel": {
     "description": "Message indicating the purpose of choosing the file and requirements for the file",
-    "message": "Choose a file for the emoji. JPG, PNG or GIF. Max size 1 MB."
+    "message": "Scegli un file per l'emoji. JPG, PNG o GIF. Dimensione massima 1 MB."
   },
   "uidu.emoji.choose.file.title": {
     "description": "Choose custom emoji file",
-    "message": "Choose file"
+    "message": "Scegli il file"
   },
   "uidu.emoji.delete.description": {
     "description": "Description for emoji removal dialog",
-    "message": "All existing instances of this emoji will be replaced with {emojiShortName}"
+    "message": "Tutte le istanze esistenti di questa emoji verranno sostituite con {emojiShortName}"
   },
   "uidu.emoji.delete.label": {
     "description": "Button label to remove emoji",
-    "message": "Remove"
+    "message": "Rimuovere"
   },
   "uidu.emoji.delete.title": {
     "description": "Title for emoji removal dialog",
-    "message": "Remove emoji"
+    "message": "Rimuovi le emoji"
   },
   "uidu.emoji.error.delete.failed": {
     "description": "Error message when custom emoji failed to be removed",
-    "message": "Remove failed"
+    "message": "Rimozione non riuscita"
   },
   "uidu.emoji.error.image.too.big": {
     "description": "Error message for image too big, beyond the size limit",
-    "message": "Selected image is more than 1 MB"
+    "message": "L'immagine selezionata supera 1 MB"
   },
   "uidu.emoji.error.invalid.image": {
     "description": "Error message for invalid selected image",
-    "message": "Selected image is invalid"
+    "message": "L'immagine selezionata non è valida"
   },
   "uidu.emoji.error.upload.failed": {
     "description": "Failed to upload emoji image",
-    "message": "Upload failed"
+    "message": "Caricamento fallito"
   },
   "uidu.emoji.image.requirements": {
     "description": "Message for emoji image requirements and maximum file size",
-    "message": "JPG, PNG or GIF. Max size 1 MB."
+    "message": "JPG, PNG o GIF. Dimensione massima 1 MB."
   },
   "uidu.emoji.name.ariaLabel": {
     "description": "Explains to enter a name for a new emoji",
-    "message": "Enter a name for the new emoji"
+    "message": "Inserisci un nome per la nuova emoji"
   },
   "uidu.emoji.placeholder": {
     "description": "Placeholder for emoji",
-    "message": "Emoji name"
+    "message": "Nome emoji"
   },
   "uidu.emoji.preview": {
     "description": "Emoji preview",
-    "message": "Your new emoji {emoji} looks great"
+    "message": "La tua nuova emoji {emoji} ha un bell'aspetto"
   },
   "uidu.emoji.preview.title": {
     "description": "Emoji preview title",
-    "message": "Preview"
+    "message": "Anteprima"
   },
   "uidu.emoji.retry.label": {
     "description": "verb - Button label to retry upload",
-    "message": "Retry"
+    "message": "Riprova"
   },
   "uidu.emoji.search.label": {
     "description": "verb - button label to search",
-    "message": "Search"
+    "message": "Ricerca"
   }
 }
