@@ -27,7 +27,7 @@
     "message": "Immagine profilo"
   },
   "uidu.data-fields.checkbox.description": {
-    "message": "Un'unica casella di controllo che può essere selezionata o deselezionata."
+    "message": "Una casella di controllo singola può essere selezionata o deselezionata."
   },
   "uidu.data-fields.checkbox.name": {
     "message": "Si/No"
@@ -39,7 +39,7 @@
     "message": "Collezione"
   },
   "uidu.data-fields.contact.description": {
-    "message": "Un campo di contatto rappresenta una persona o un'organizzazione, un contatto"
+    "message": "Un campo contatto rappresenta una persona o un'organizzazione - un contatto."
   },
   "uidu.data-fields.contact.name": {
     "message": "Contatto"
