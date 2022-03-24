@@ -3,60 +3,60 @@
     "message": "IBAN"
   },
   "3EnruA": {
-    "message": "Postal code"
+    "message": "Codice Postale"
   },
   "9+Ddtu": {
-    "message": "Next"
+    "message": "Prossimo"
   },
   "9AvZbT": {
-    "message": "Organization VAT code"
+    "message": "Partita IVA organizzazione"
   },
   "B8gXKb": {
-    "message": "Organization fiscal code"
+    "message": "Codice fiscale dell'organizzazione"
   },
   "BKwKO2": {
-    "message": "Account owner"
+    "message": "Titolare dell'account"
   },
   "GFTdXw": {
-    "message": "Date of birth"
+    "message": "Data di nascita"
   },
   "HAlOn1": {
-    "message": "Name"
+    "message": "Nome"
   },
   "IgB6GU": {
-    "message": "Individual"
+    "message": "Individuale"
   },
   "NdO+zh": {
-    "message": "Organization name"
+    "message": "Nome dell'organizzazione"
   },
   "O8ng1J": {
-    "message": "Personal identification document"
+    "message": "Documento di identificazione personale"
   },
   "TE4fIS": {
-    "message": "City"
+    "message": "Città"
   },
   "TVcDb2": {
-    "message": "Bank Account"
+    "message": "Conto bancario"
   },
   "YSpHVC": {
-    "message": "Business's data"
+    "message": "Dati aziendali"
   },
   "g8XYuz": {
-    "message": "Primary business email"
+    "message": "E-mail aziendale principale"
   },
   "iaxGEu": {
-    "message": "Primary address"
+    "message": "Indirizzo primario"
   },
   "jvo0vs": {
-    "message": "Save"
+    "message": "Salva"
   },
   "ku+mDU": {
-    "message": "State"
+    "message": "Stato"
   },
   "txUL0F": {
-    "message": "Last name"
+    "message": "Cognome"
   },
   "vONi+O": {
-    "message": "Country"
+    "message": "Paese"
   }
 }
