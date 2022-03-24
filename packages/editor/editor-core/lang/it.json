@@ -9,7 +9,7 @@
   },
   "uidu.editor-core.action": {
     "description": "Also known as a “task”, “to do item”, or a checklist",
-    "message": "Oggetto d'azione"
+    "message": "Azione"
   },
   "uidu.editor-core.action.description": {
     "description": "",
