@@ -13,7 +13,7 @@
   },
   "uidu.mentions.error.loginAgain": {
     "description": "Login again message when there is an authentication error occurs",
-    "message": "Try logging out then in again"
+    "message": "Prova a disconnetterti e poi ad accedere di nuovo"
   },
   "uidu.mentions.mentions.team.meantion.highlight.close.button.tooltip": {
     "description": "Closes the highlight component when this button is clicked. This text for the tooltip of that button",
@@ -37,11 +37,11 @@
   },
   "uidu.mentions.mentions.team.mention.highlight.description": {
     "description": "Description of the highlight shown in the mention tpyeahead. This is related to team mentions",
-    "message": "Get everyone on the page with one click. No team?"
+    "message": "Porta tutti sulla pagina con un clic. Nessuna squadra?"
   },
   "uidu.mentions.mentions.team.mention.highlight.description.link": {
     "description": "Team creation link in the description of the highlight shown in the mention tpyeahead. This is related to team mentions",
-    "message": "Start one."
+    "message": "Inizia uno."
   },
   "uidu.mentions.mentions.team.mention.highlight.title": {
     "description": "Title of the highlight shown in the mention tpyeahead. This is related to team mentions",
