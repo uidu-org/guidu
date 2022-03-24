@@ -5,10 +5,10 @@
   },
   "LAGgvN": {
     "description": "uidu.devise.passwordless_registrations_title",
-    "message": "Iscrizione"
+    "message": "Registrati"
   },
   "uidu.devise.email_registrations_email_cta": {
-    "message": "Iscrizione"
+    "message": "Registrati"
   },
   "uidu.devise.email_registrations_email_description": {
     "message": "Usa un indirizzo email valido"
@@ -149,7 +149,7 @@
   },
   "uidu.devise.sessions_description": {
     "description": "",
-    "message": "Accedi per visualizzare la tua homepage, seguire le tue preferite, scoprire quello che di buono c'è a te."
+    "message": "Accedi per visualizzare la tua homepage, seguire le tue organizzazioni preferite, scoprire quello che di buono c'è vicino a te."
   },
   "uidu.devise.sessions_forgot_password": {
     "description": "sessioni_dimenticato_password",
