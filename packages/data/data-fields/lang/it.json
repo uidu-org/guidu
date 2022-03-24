@@ -1,63 +1,63 @@
 {
   "filters.notEqual": {
-    "message": "Not Equals"
+    "message": "Non è uguale"
   },
   "uidu.data-fields.add_field.description": {
-    "message": "Add a custom field to your model"
+    "message": "Aggiungi un campo personalizzato al tuo modello"
   },
   "uidu.data-fields.add_field.name": {
-    "message": "Add field"
+    "message": "Aggiungi campo"
   },
   "uidu.data-fields.address.description": {
-    "message": "Allow geolocation of your records with Google Maps autocomplete help"
+    "message": "Consenti la geolocalizzazione dei tuoi record con l'aiuto del completamento automatico di Google Maps"
   },
   "uidu.data-fields.address.name": {
-    "message": "Address"
+    "message": "Indirizzo"
   },
   "uidu.data-fields.appointment.description": {
-    "message": "Allow booking an appointment for this record, based on your of your availabilities"
+    "message": "Consenti la prenotazione di un appuntamento per questo record, in base alle tue disponibilità"
   },
   "uidu.data-fields.appointment.name": {
-    "message": "Appointment"
+    "message": "Appuntamento"
   },
   "uidu.data-fields.avatar.description": {
-    "message": "Insert a rounded avatar for the record"
+    "message": "Inserisci un avatar arrotondato per il record"
   },
   "uidu.data-fields.avatar.name": {
     "message": "Immagine profilo"
   },
   "uidu.data-fields.checkbox.description": {
-    "message": "A single checkbox that can be checked or unchecked."
+    "message": "Un'unica casella di controllo che può essere selezionata o deselezionata."
   },
   "uidu.data-fields.checkbox.name": {
     "message": "Si/No"
   },
   "uidu.data-fields.collection.description": {
-    "message": "A collection is a list of items with one or more fields."
+    "message": "Una raccolta è un elenco di elementi con uno o più campi."
   },
   "uidu.data-fields.collection.name": {
     "message": "Collezione"
   },
   "uidu.data-fields.contact.description": {
-    "message": "A contact field represents a person or an organization - a contact"
+    "message": "Un campo di contatto rappresenta una persona o un'organizzazione, un contatto"
   },
   "uidu.data-fields.contact.name": {
     "message": "Contatto"
   },
   "uidu.data-fields.country.description": {
-    "message": "Add a Country select list to your record"
+    "message": "Aggiungi un elenco di selezione Paese al tuo record"
   },
   "uidu.data-fields.country.name": {
     "message": "Paese"
   },
   "uidu.data-fields.cover.description": {
-    "message": "Add a cover image to your record"
+    "message": "Aggiungi un'immagine di copertina al tuo record"
   },
   "uidu.data-fields.cover.name": {
     "message": "Immagine di copertina"
   },
   "uidu.data-fields.currency .description": {
-    "message": "Format a number with a currency"
+    "message": "Formatta un numero con una valuta"
   },
   "uidu.data-fields.currency.name": {
     "message": "Valuta"
@@ -69,7 +69,7 @@
     "message": "Data"
   },
   "uidu.data-fields.email.description": {
-    "message": "A valid email address (e.g. andrew@example.com)."
+    "message": "Un indirizzo email valido (ad es. andrew@example.com)."
   },
   "uidu.data-fields.email.name": {
     "message": "Email"
@@ -81,13 +81,13 @@
     "message": "File"
   },
   "uidu.data-fields.member.description": {
-    "message": "A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
+    "message": "Un campo collaboratore ti consente di aggiungere collaboratori ai tuoi record. Facoltativamente, i collaboratori possono essere avvisati quando vengono aggiunti."
   },
   "uidu.data-fields.member.name": {
     "message": "Collaboratore"
   },
   "uidu.data-fields.multipleSelect.description": {
-    "message": "Multiple select allows you to select one or more predefined options listed below."
+    "message": "La selezione multipla consente di selezionare una o più opzioni predefinite elencate di seguito."
   },
   "uidu.data-fields.multipleSelect.name": {
     "message": "Opzione multipla"
@@ -105,13 +105,13 @@
     "message": "Metodo di pagamento"
   },
   "uidu.data-fields.percent.description": {
-    "message": "Format a percentage"
+    "message": "Formatta una percentuale"
   },
   "uidu.data-fields.percent.name": {
     "message": "Percentuale"
   },
   "uidu.data-fields.phone.description": {
-    "message": "A telephone number (e.g. (415) 555-9876)."
+    "message": "Un numero di telefono (ad es. (415) 555-9876)."
   },
   "uidu.data-fields.phone.name": {
     "message": "Numero di telefono"
@@ -123,7 +123,7 @@
     "message": "Barra di progresso"
   },
   "uidu.data-fields.rating.description": {
-    "message": "Insert a rating for the column"
+    "message": "Inserisci una valutazione per la colonna"
   },
   "uidu.data-fields.rating.name": {
     "message": "Rating"
@@ -135,7 +135,7 @@
     "message": "Un editor di testo semplice."
   },
   "uidu.data-fields.singleSelect.description": {
-    "message": "Single select allows you to select a single option from predefined options in a dropdown."
+    "message": "La selezione singola consente di selezionare una singola opzione dalle opzioni predefinite in un menu a discesa."
   },
   "uidu.data-fields.singleSelect.name": {
     "message": "Opzione singola"
@@ -147,24 +147,24 @@
     "message": "Testo breve"
   },
   "uidu.data-fields.text.description": {
-    "message": "A long text field that can span multiple lines."
+    "message": "Un campo di testo lungo che può estendersi su più righe."
   },
   "uidu.data-fields.text.name": {
-    "message": "Text"
+    "message": "Testo"
   },
   "uidu.data-fields.uid.description": {
-    "message": "A unique identifier field"
+    "message": "Un campo identificatore univoco"
   },
   "uidu.data-fields.uid.name": {
     "message": "ID"
   },
   "uidu.data-fields.url.description": {
-    "message": "A valid URL (e.g. airtable.com or https://airtable.com/universe)."
+    "message": "Un URL valido (ad es. airtable.com o https://airtable.com/universe)."
   },
   "uidu.data-fields.url.name": {
-    "message": "Url"
+    "message": "URL"
   },
   "uidu.data-fields.vote.name": {
-    "message": "Vote"
+    "message": "Votazione"
   }
 }
