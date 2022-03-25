@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 1.4.1
+
+### Patch Changes
+
+- 0e23fe3a8: Remove dropdown from Table
+- Updated dependencies [0e23fe3a8]
+  - @uidu/data-fields@1.5.10
+
 ## 1.4.0
 
 ### Minor Changes
