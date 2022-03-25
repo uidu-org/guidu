@@ -1,4 +1,4 @@
-import faker from 'faker';
+import faker from '@faker-js/faker';
 import { FileType } from '../../media-core/dist/uidu-media-core.cjs';
 
 export const fakeImage = () => ({

@@ -1,5 +1,5 @@
+import faker from '@faker-js/faker';
 import { ScrollableContainer, ShellMain } from '@uidu/shell';
-import faker from 'faker';
 import React from 'react';
 import { messageLogFactory, messagerFactory } from '../examples-utils';
 import Message, { MessageGroup, MessageLog } from '../src';
@@ -34,8 +34,7 @@ export default () => (
         messager={userB}
         messages={[
           {
-            body:
-              'Default value [John Doe](Member:johndoe) e poi altro, possibilmente con molto testo per capire come si comporta su due righe',
+            body: 'Default value [John Doe](Member:johndoe) e poi altro, possibilmente con molto testo per capire come si comporta su due righe',
             createdAt: faker.date.past(),
           },
         ]}

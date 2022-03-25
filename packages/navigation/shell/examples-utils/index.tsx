@@ -1,5 +1,5 @@
+import faker from '@faker-js/faker';
 import SideNavigation from '@uidu/side-navigation';
-import faker from 'faker';
 import React from 'react';
 import { Activity, Bell, Grid } from 'react-feather';
 

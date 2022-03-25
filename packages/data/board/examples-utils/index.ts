@@ -1,5 +1,5 @@
+import faker from '@faker-js/faker';
 import { colors } from '@uidu/theme';
-import faker from 'faker';
 import { Author, ItemMapProps, ItemProps } from '../src/types';
 
 const jake: Author = {

@@ -1,5 +1,5 @@
+import faker from '@faker-js/faker';
 import { allCountries } from '@uidu/select';
-import faker from 'faker';
 
 const value = () => faker.address.countryCode();
 

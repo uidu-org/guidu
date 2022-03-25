@@ -1,5 +1,5 @@
+import faker from '@faker-js/faker';
 import { emoji } from '@uidu/util-data-test';
-import faker from 'faker';
 
 const emojiTestData = emoji.testData;
 const emojiStoryData = emoji.storyData;
