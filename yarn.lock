@@ -6580,10 +6580,10 @@ __metadata:
     "@loadable/component": ^5.15.2
     "@uidu/dashboard-manager": ^1.3.9
     "@uidu/dashlet-controls": ^1.0.18
-    "@uidu/data-fields": ^1.5.9
+    "@uidu/data-fields": ^1.5.10
     "@uidu/docs": ^0.5.7
     "@uidu/spinner": ^0.5.8
-    "@uidu/table": 1.4.0
+    "@uidu/table": 1.4.1
     "@uidu/tooltip": ^0.5.11
     d3-array: ^3.1.1
     lodash: ^4.17.21
@@ -6638,7 +6638,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-fields@^1.5.9, @uidu/data-fields@workspace:packages/data/data-fields":
+"@uidu/data-fields@^1.5.10, @uidu/data-fields@^1.5.9, @uidu/data-fields@workspace:packages/data/data-fields":
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
@@ -8727,7 +8727,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@1.4.0, @uidu/table@^1.4.0, @uidu/table@workspace:packages/data/table":
+"@uidu/table@1.4.1, @uidu/table@^1.4.0, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -8741,7 +8741,7 @@ __metadata:
     "@uidu/button": 1.3.12
     "@uidu/checkbox": ^1.1.11
     "@uidu/data-controls": ^2.1.6
-    "@uidu/data-fields": ^1.5.9
+    "@uidu/data-fields": ^1.5.10
     "@uidu/data-manager": 2.4.0
     "@uidu/docs": ^0.5.7
     "@uidu/menu": ^0.7.5
