@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.0.19
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/avatar@0.9.6
+  - @uidu/avatar-group@2.6.10
+  - @uidu/button@1.3.13
+  - @uidu/dropdown-menu@0.6.13
+  - @uidu/field-date-range@1.1.10
+  - @uidu/form@1.2.15
+
 ## 1.0.18
 
 ### Patch Changes

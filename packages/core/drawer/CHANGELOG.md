@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.7.12
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/docs@0.5.8
+  - @uidu/analytics@0.5.9
+  - @uidu/blanket@0.5.6
+  - @uidu/item@0.5.11
+  - @uidu/theme@0.6.11
+
 ## 0.7.11
 
 ### Patch Changes

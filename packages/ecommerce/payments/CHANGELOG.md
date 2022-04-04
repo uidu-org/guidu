@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 1.3.5
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/section-message@0.6.10
+  - @uidu/slider@1.7.11
+  - @uidu/theme@0.6.11
+  - @uidu/field-base@3.1.16
+  - @uidu/form@1.2.15
+
 ## 1.3.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/editor-json-transformer
 
+## 0.7.3
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+
 ## 0.7.2
 
 ### Patch Changes

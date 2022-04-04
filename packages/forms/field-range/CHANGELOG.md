@@ -1,5 +1,15 @@
 # @uidu/field-range
 
+## 1.1.3
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/theme@0.6.11
+  - @uidu/field-base@3.1.16
+  - @uidu/form@1.2.15
+
 ## 1.1.2
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.4.14
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/avatar-group@2.6.10
+  - @uidu/button@1.3.13
+  - @uidu/spinner@0.5.9
+  - @uidu/theme@0.6.11
+  - @uidu/analytics-namespaced-context@0.4.8
+
 ## 0.4.13
 
 ### Patch Changes

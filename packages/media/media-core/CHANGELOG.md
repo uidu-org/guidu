@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 0.7.6
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/docs@0.5.8
+
 ## 0.7.5
 
 ### Patch Changes

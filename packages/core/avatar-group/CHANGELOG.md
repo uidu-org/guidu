@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.6.10
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/avatar@0.9.6
+  - @uidu/dropdown-menu@0.6.13
+  - @uidu/theme@0.6.11
+  - @uidu/tooltip@0.5.12
+
 ## 2.6.9
 
 ### Patch Changes

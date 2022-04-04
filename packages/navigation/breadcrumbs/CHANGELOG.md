@@ -1,5 +1,16 @@
 # @uidu/breadcrumbs
 
+## 1.0.10
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/button@1.3.13
+  - @uidu/theme@0.6.11
+  - @uidu/tooltip@0.5.12
+
 ## 1.0.9
 
 ### Patch Changes

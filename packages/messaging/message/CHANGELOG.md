@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.5.15
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/avatar@0.9.6
+  - @uidu/drawer@0.7.12
+  - @uidu/dropdown-menu@0.6.13
+  - @uidu/tooltip@0.5.12
+  - @uidu/media-card@0.6.4
+  - @uidu/media-core@0.7.6
+  - @uidu/media-viewer@0.4.18
+  - @uidu/message-form@0.4.12
+  - @uidu/message-renderer@0.4.10
+
 ## 0.5.14
 
 ### Patch Changes

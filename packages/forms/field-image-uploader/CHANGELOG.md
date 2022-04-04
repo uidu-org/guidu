@@ -1,5 +1,18 @@
 # @uidu/field-image-uploader
 
+## 2.0.4
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/button@1.3.13
+  - @uidu/spinner@0.5.9
+  - @uidu/field-base@3.1.16
+  - @uidu/field-range@1.1.3
+  - @uidu/media-core@0.7.6
+
 ## 2.0.3
 
 ### Patch Changes

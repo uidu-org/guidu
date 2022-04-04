@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.2.5
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/spinner@0.5.9
+  - @uidu/data-controls@2.1.7
+  - @uidu/data-fields@1.5.11
+  - @uidu/shell@2.1.14
+
 ## 1.2.4
 
 ### Patch Changes

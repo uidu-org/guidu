@@ -1,5 +1,13 @@
 # @uidu/analytics-namespaced-context
 
+## 0.4.8
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+
 ## 0.4.7
 
 ### Patch Changes

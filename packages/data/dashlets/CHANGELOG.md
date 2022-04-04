@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 1.6.8
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/spinner@0.5.9
+  - @uidu/tooltip@0.5.12
+  - @uidu/dashboard-manager@1.3.10
+  - @uidu/dashlet-controls@1.0.19
+  - @uidu/data-fields@1.5.11
+  - @uidu/table@1.4.2
+
 ## 1.6.7
 
 ### Patch Changes

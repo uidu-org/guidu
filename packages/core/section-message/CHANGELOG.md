@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.6.10
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/button@1.3.13
+
 ## 0.6.9
 
 ### Patch Changes

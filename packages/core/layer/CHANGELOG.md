@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.5.9
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+
 ## 0.5.8
 
 ### Patch Changes

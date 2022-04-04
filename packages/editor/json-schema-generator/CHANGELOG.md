@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.2.14
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+
 ## 0.2.13
 
 ### Patch Changes

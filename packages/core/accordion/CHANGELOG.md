@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.7
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/docs@0.5.8
+
 ## 0.6.6
 
 ### Patch Changes

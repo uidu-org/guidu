@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.3.2
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+
 ## 0.3.1
 
 ### Patch Changes

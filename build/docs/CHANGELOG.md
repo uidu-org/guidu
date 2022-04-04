@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.5.8
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/button@1.3.13
+  - @uidu/code@0.5.9
+  - @uidu/section-message@0.6.10
+  - @uidu/theme@0.6.11
+  - @uidu/tooltip@0.5.12
+
 ## 0.5.7
 
 ### Patch Changes

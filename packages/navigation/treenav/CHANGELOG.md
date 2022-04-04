@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.3.10
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+
 ## 0.3.9
 
 ### Patch Changes

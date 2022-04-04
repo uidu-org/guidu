@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.6.13
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/button@1.3.13
+  - @uidu/droplist@0.5.13
+  - @uidu/item@0.5.11
+  - @uidu/theme@0.6.11
+
 ## 0.6.12
 
 ### Patch Changes

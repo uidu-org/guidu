@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.0.12
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/avatar@0.9.6
+  - @uidu/dropdown-menu@0.6.13
+  - @uidu/inline-dialog@0.5.12
+  - @uidu/menu@0.7.6
+  - @uidu/theme@0.6.11
+  - @uidu/tooltip@0.5.12
+  - @uidu/animated-menu@1.0.9
+  - @uidu/shell@2.1.14
+
 ## 1.0.11
 
 ### Patch Changes

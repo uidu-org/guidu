@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 1.1.9
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/field-base@3.1.16
+
 ## 1.1.8
 
 ### Patch Changes
