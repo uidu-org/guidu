@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.16
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/form@1.2.15
+
 ## 3.1.15
 
 ### Patch Changes

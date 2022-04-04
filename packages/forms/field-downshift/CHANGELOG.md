@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 1.4.8
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/field-base@3.1.16
+  - @uidu/field-text@1.1.12
+
 ## 1.4.7
 
 ### Patch Changes

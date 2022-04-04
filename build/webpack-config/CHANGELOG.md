@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.17
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+
 ## 0.3.16
 
 ### Patch Changes

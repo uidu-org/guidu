@@ -1,5 +1,15 @@
 # @uidu/calendar
 
+## 0.4.2
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/button@1.3.13
+  - @uidu/dropdown-menu@0.6.13
+  - @uidu/shell@2.1.14
+
 ## 0.4.1
 
 ### Patch Changes

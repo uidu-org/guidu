@@ -1,5 +1,28 @@
 # @uidu/data-controls
 
+## 2.1.7
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/button@1.3.13
+  - @uidu/drawer@0.7.12
+  - @uidu/dropdown-menu@0.6.13
+  - @uidu/inline-dialog@0.5.12
+  - @uidu/menu@0.7.6
+  - @uidu/popup@0.6.12
+  - @uidu/spinner@0.5.9
+  - @uidu/tooltip@0.5.12
+  - @uidu/data-fields@1.5.11
+  - @uidu/data-manager@2.4.1
+  - @uidu/data-views@1.2.7
+  - @uidu/checkbox@1.1.12
+  - @uidu/field-text@1.1.12
+  - @uidu/form@1.2.15
+  - @uidu/select@1.5.12
+  - @uidu/shell@2.1.14
+
 ## 2.1.6
 
 ### Patch Changes

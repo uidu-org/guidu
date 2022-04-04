@@ -1,5 +1,18 @@
 # @uidu/modal-dialog
 
+## 0.5.16
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/blanket@0.5.6
+  - @uidu/button@1.3.13
+  - @uidu/portal@0.5.12
+  - @uidu/theme@0.6.11
+  - @uidu/form@1.2.15
+
 ## 0.5.15
 
 ### Patch Changes

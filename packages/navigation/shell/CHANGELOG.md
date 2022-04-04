@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.1.14
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/spinner@0.5.9
+
 ## 2.1.13
 
 ### Patch Changes

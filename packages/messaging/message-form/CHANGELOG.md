@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.4.12
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/dropdown-menu@0.6.13
+  - @uidu/spinner@0.5.9
+  - @uidu/field-mentions@1.2.7
+  - @uidu/field-text@1.1.12
+  - @uidu/form@1.2.15
+  - @uidu/media-filmstrip@0.4.13
+  - @uidu/message@0.5.15
+
 ## 0.4.11
 
 ### Patch Changes

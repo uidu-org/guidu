@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.13
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/payments@1.3.5
+  - @uidu/form@1.2.15
+
 ## 0.3.12
 
 ### Patch Changes

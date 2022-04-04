@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.5.4
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/lozenge@0.5.9
+  - @uidu/theme@0.6.11
+  - @uidu/field-text@1.1.12
+
 ## 0.5.3
 
 ### Patch Changes

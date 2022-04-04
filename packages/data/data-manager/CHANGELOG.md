@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 2.4.1
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/button@1.3.13
+  - @uidu/menu@0.7.6
+  - @uidu/pagination@0.5.10
+  - @uidu/spinner@0.5.9
+  - @uidu/board@0.5.5
+  - @uidu/calendar@0.4.2
+  - @uidu/data-controls@2.1.7
+  - @uidu/data-fields@1.5.11
+  - @uidu/data-views@1.2.7
+  - @uidu/gallery@1.2.5
+  - @uidu/list@1.2.5
+  - @uidu/table@1.4.2
+  - @uidu/shell@2.1.14
+
 ## 2.4.0
 
 ### Minor Changes

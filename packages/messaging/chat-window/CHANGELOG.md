@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.4.11
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/message@0.5.15
+  - @uidu/message-form@0.4.12
+  - @uidu/message-renderer@0.4.10
+
 ## 0.4.10
 
 ### Patch Changes

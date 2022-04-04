@@ -1,5 +1,16 @@
 # @uidu/field-text
 
+## 1.0.11
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/theme@0.6.11
+  - @uidu/field-base@3.1.16
+  - @uidu/form@1.2.15
+
 ## 1.0.10
 
 ### Patch Changes

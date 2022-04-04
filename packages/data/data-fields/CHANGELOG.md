@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 1.5.11
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/button@1.3.13
+  - @uidu/map@0.6.11
+  - @uidu/menu@0.7.6
+  - @uidu/popup@0.6.12
+  - @uidu/field-color-picker@2.0.14
+  - @uidu/field-date@1.1.13
+  - @uidu/field-downshift@1.4.8
+  - @uidu/field-number@1.0.11
+  - @uidu/field-text@1.1.12
+  - @uidu/field-time@1.1.12
+  - @uidu/field-toggle@1.1.7
+  - @uidu/form@1.2.15
+  - @uidu/select@1.5.12
+
 ## 1.5.10
 
 ### Patch Changes

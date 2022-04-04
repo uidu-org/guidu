@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.0.4
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/theme@0.6.11
+  - @uidu/shell@2.1.14
+
 ## 1.0.3
 
 ### Patch Changes

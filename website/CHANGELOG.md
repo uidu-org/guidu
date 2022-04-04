@@ -1,5 +1,32 @@
 # Change Log
 
+## 0.4.23
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/docs@0.5.8
+  - @uidu/badge@0.5.9
+  - @uidu/button@1.3.13
+  - @uidu/code@0.5.9
+  - @uidu/drawer@0.7.12
+  - @uidu/lozenge@0.5.9
+  - @uidu/modal-dialog@0.5.16
+  - @uidu/spinner@0.5.9
+  - @uidu/theme@0.6.11
+  - @uidu/tooltip@0.5.12
+  - @uidu/list@1.2.5
+  - @uidu/table@1.4.2
+  - @uidu/checkbox@1.1.12
+  - @uidu/field-text@1.1.12
+  - @uidu/form@1.2.15
+  - @uidu/select@1.5.12
+  - @uidu/breadcrumbs@1.0.10
+  - @uidu/navigation@1.0.12
+  - @uidu/page-header@1.0.4
+  - @uidu/shell@2.1.14
+
 ## 0.4.22
 
 ### Patch Changes

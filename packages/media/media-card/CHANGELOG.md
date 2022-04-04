@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.6.4
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/button@1.3.13
+  - @uidu/dropdown-menu@0.6.13
+  - @uidu/spinner@0.5.9
+  - @uidu/theme@0.6.11
+  - @uidu/tooltip@0.5.12
+  - @uidu/media-core@0.7.6
+
 ## 0.6.3
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/radio
 
+## 1.1.10
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/field-base@3.1.16
+
 ## 1.1.9
 
 ### Patch Changes

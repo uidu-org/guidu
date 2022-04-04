@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.0.9
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+
 ## 1.0.8
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 1.0.13
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/accordion@0.6.7
+  - @uidu/dropdown-menu@0.6.13
+  - @uidu/dashlets@1.6.8
+  - @uidu/field-downshift@1.4.8
+  - @uidu/field-toggle@1.1.7
+  - @uidu/form@1.2.15
+  - @uidu/select@1.5.12
+  - @uidu/shell@2.1.14
+
 ## 1.0.12
 
 ### Patch Changes

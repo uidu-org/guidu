@@ -1,5 +1,41 @@
 # @uidu/editor-core
 
+## 0.13.3
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/avatar@0.9.6
+  - @uidu/avatar-group@2.6.10
+  - @uidu/button@1.3.13
+  - @uidu/droplist@0.5.13
+  - @uidu/menu@0.7.6
+  - @uidu/modal-dialog@0.5.16
+  - @uidu/spinner@0.5.9
+  - @uidu/theme@0.6.11
+  - @uidu/tooltip@0.5.12
+  - @uidu/adf-utils@0.8.3
+  - @uidu/editor-common@0.7.6
+  - @uidu/editor-json-transformer@0.7.3
+  - @uidu/editor-markdown-transformer@0.8.2
+  - @uidu/analytics-listeners@0.4.8
+  - @uidu/analytics-namespaced-context@0.4.8
+  - @uidu/date@0.4.12
+  - @uidu/emoji@0.6.6
+  - @uidu/mentions@0.4.4
+  - @uidu/profilecard@0.3.4
+  - @uidu/status@0.5.4
+  - @uidu/task-decision@0.4.14
+  - @uidu/field-date@1.1.13
+  - @uidu/form@1.2.15
+  - @uidu/select@1.5.12
+  - @uidu/media-card@0.6.4
+  - @uidu/media-core@0.7.6
+  - @uidu/media-filmstrip@0.4.13
+  - @uidu/media-picker@0.7.8
+
 ## 0.13.2
 
 ### Patch Changes

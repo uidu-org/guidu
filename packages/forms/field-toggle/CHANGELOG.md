@@ -1,5 +1,14 @@
 # @uidu/toggle
 
+## 1.1.7
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/field-base@3.1.16
+
 ## 1.1.6
 
 ### Patch Changes

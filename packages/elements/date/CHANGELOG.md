@@ -1,5 +1,13 @@
 # @uidu/date
 
+## 0.4.12
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/theme@0.6.11
+
 ## 0.4.11
 
 ### Patch Changes
