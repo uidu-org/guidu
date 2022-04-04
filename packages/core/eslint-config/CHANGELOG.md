@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.6
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+
 ## 0.1.5
 
 ### Patch Changes

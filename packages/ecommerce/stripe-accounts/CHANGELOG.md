@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.4.4
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/slider@1.7.11
+  - @uidu/spinner@0.5.9
+  - @uidu/payments@1.3.5
+  - @uidu/field-text@1.1.12
+  - @uidu/form@1.2.15
+  - @uidu/stepper@0.4.10
+
 ## 0.4.3
 
 ### Patch Changes

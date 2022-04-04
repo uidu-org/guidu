@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tabbar",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/tabbar",
   "license": "MIT",
@@ -10,13 +10,13 @@
   "types": "dist/uidu-tabbar.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.17.8",
-    "@uidu/shell": "^2.1.13",
+    "@uidu/shell": "^2.1.14",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^5.3.0",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.7"
+    "@uidu/docs": "^0.5.8"
   }
 }

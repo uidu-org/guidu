@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.12
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/emoji@0.6.6
+  - @uidu/mentions@0.4.4
+  - @uidu/task-decision@0.4.14
+
 ## 0.4.11
 
 ### Patch Changes

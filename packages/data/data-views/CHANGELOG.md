@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 1.2.7
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/button@1.3.13
+  - @uidu/data-controls@2.1.7
+  - @uidu/data-manager@2.4.1
+  - @uidu/field-counter@1.1.11
+  - @uidu/field-number@1.0.11
+  - @uidu/form@1.2.15
+  - @uidu/select@1.5.12
+
 ## 1.2.6
 
 ### Patch Changes

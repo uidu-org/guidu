@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.6.12
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/popper@0.5.11
+  - @uidu/portal@0.5.12
+  - @uidu/theme@0.6.11
+
 ## 0.6.11
 
 ### Patch Changes

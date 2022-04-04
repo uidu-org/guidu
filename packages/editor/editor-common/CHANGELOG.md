@@ -1,5 +1,19 @@
 # @uidu/editor-common
 
+## 0.7.6
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/theme@0.6.11
+  - @uidu/adf-utils@0.8.3
+  - @uidu/analytics-namespaced-context@0.4.8
+  - @uidu/emoji@0.6.6
+  - @uidu/mentions@0.4.4
+  - @uidu/profilecard@0.3.4
+
 ## 0.7.5
 
 ### Patch Changes

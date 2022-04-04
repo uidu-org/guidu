@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 1.3.10
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/dashboard-controls@1.0.19
+  - @uidu/dashlets@1.6.8
+
 ## 1.3.9
 
 ### Patch Changes

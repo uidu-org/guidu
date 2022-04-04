@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.5.13
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/item@0.5.11
+  - @uidu/layer@0.5.9
+  - @uidu/spinner@0.5.9
+  - @uidu/theme@0.6.11
+  - @uidu/tooltip@0.5.12
+
 ## 0.5.12
 
 ### Patch Changes

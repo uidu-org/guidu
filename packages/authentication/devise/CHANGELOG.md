@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.7.3
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/avatar@0.9.6
+  - @uidu/slider@1.7.11
+  - @uidu/spinner@0.5.9
+  - @uidu/checkbox@1.1.12
+  - @uidu/field-password@1.1.10
+  - @uidu/field-phone@1.0.16
+  - @uidu/field-text@1.1.12
+  - @uidu/form@1.2.15
+  - @uidu/shell@2.1.14
+
 ## 0.7.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.7.11
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+
 ## 1.7.10
 
 ### Patch Changes

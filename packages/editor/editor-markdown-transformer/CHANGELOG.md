@@ -1,5 +1,13 @@
 # @uidu/editor-markdown-transformer
 
+## 0.8.2
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/editor-common@0.7.6
+
 ## 0.8.1
 
 ### Patch Changes

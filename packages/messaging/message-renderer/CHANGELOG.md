@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.10
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/dropdown-menu@0.6.13
+  - @uidu/theme@0.6.11
+
 ## 0.4.9
 
 ### Patch Changes

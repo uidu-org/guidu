@@ -1,5 +1,13 @@
 # @uidu/menu
 
+## 0.7.6
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/theme@0.6.11
+
 ## 0.7.5
 
 ### Patch Changes

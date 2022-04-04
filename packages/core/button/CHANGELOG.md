@@ -1,5 +1,15 @@
 # @uidu/button
 
+## 1.3.13
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/spinner@0.5.9
+  - @uidu/theme@0.6.11
+
 ## 1.3.12
 
 ### Patch Changes

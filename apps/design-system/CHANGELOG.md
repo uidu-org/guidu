@@ -1,5 +1,14 @@
 # design-system
 
+## 0.1.24
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/button@1.3.13
+
 ## 0.1.23
 
 ### Patch Changes

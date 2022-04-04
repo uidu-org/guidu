@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.3.13
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/button@1.3.13
+  - @uidu/inline-dialog@0.5.12
+  - @uidu/theme@0.6.11
+  - @uidu/field@1.0.8
+  - @uidu/field-text@1.1.12
+  - @uidu/form@1.2.15
+
 ## 0.3.12
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.15
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/button@1.3.13
+
 ## 1.2.14
 
 ### Patch Changes

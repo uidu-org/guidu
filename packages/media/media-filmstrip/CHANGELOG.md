@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.4.13
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/theme@0.6.11
+  - @uidu/media-card@0.6.4
+  - @uidu/media-core@0.7.6
+  - @uidu/media-viewer@0.4.18
+
 ## 0.4.12
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/adf-utils
 
+## 0.8.3
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+
 ## 0.8.2
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 2.0.14
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/button@1.3.13
+  - @uidu/popup@0.6.12
+  - @uidu/field-base@3.1.16
+
 ## 2.0.13
 
 ### Patch Changes

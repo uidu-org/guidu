@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.4.2
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/button@1.3.13
+  - @uidu/menu@0.7.6
+  - @uidu/popup@0.6.12
+  - @uidu/data-fields@1.5.11
+  - @uidu/data-manager@2.4.1
+  - @uidu/checkbox@1.1.12
+
 ## 1.4.1
 
 ### Patch Changes

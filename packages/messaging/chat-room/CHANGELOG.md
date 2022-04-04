@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.4.8
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/shell@2.1.14
+
 ## 0.4.7
 
 ### Patch Changes

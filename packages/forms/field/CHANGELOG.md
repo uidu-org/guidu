@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.0.8
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/checkbox@1.1.12
+  - @uidu/field-number@1.0.11
+  - @uidu/field-text@1.1.12
+  - @uidu/field-textarea@1.1.11
+  - @uidu/select@1.5.12
+
 ## 1.0.7
 
 ### Patch Changes

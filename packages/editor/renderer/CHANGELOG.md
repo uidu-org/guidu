@@ -1,5 +1,26 @@
 # @uidu/renderer
 
+## 0.8.3
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/analytics@0.5.9
+  - @uidu/code@0.5.9
+  - @uidu/theme@0.6.11
+  - @uidu/tooltip@0.5.12
+  - @uidu/adf-utils@0.8.3
+  - @uidu/editor-common@0.7.6
+  - @uidu/editor-json-transformer@0.7.3
+  - @uidu/analytics-listeners@0.4.8
+  - @uidu/analytics-namespaced-context@0.4.8
+  - @uidu/mentions@0.4.4
+  - @uidu/status@0.5.4
+  - @uidu/task-decision@0.4.14
+  - @uidu/media-card@0.6.4
+  - @uidu/media-filmstrip@0.4.13
+
 ## 0.8.2
 
 ### Patch Changes

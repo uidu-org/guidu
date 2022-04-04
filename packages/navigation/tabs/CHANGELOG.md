@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.3.10
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/docs@0.5.8
+  - @uidu/analytics@0.5.9
+  - @uidu/theme@0.6.11
+
 ## 0.3.9
 
 ### Patch Changes

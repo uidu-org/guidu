@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.3.4
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/avatar@0.9.6
+  - @uidu/button@1.3.13
+  - @uidu/lozenge@0.5.9
+  - @uidu/popup@0.6.12
+  - @uidu/spinner@0.5.9
+  - @uidu/theme@0.6.11
+
 ## 0.3.3
 
 ### Patch Changes

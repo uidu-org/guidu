@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.7.8
+
+### Patch Changes
+
+- f74b7be3f: Bump to react 18
+- Updated dependencies [f74b7be3f]
+  - @uidu/media-core@0.7.6
+
 ## 0.7.7
 
 ### Patch Changes
