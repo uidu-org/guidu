@@ -13,8 +13,8 @@
     "@uidu/field-base": "^3.1.15",
     "@uidu/field-date": "^1.1.12",
     "formsy-react": "^2.2.5",
-    "moment": "^2.29.1",
-    "react": "^17.0.2",
+    "moment": "^2.29.2",
+    "react": "^18.0.0",
     "react-day-picker": "^7.4.10",
     "react-feather": "^2.0.9",
     "react-helmet": "^6.1.0",
@@ -23,7 +23,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.5.7",
     "@uidu/form": "^1.2.14",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.5"
   },
   "peerDependencies": {
     "styled-components": "*"

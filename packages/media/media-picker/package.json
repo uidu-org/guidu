@@ -11,18 +11,18 @@
   "dependencies": {
     "@babel/runtime": "^7.17.8",
     "@uidu/media-core": "^0.7.5",
-    "@uppy/core": "^2.1.6",
+    "@uppy/core": "^2.1.7",
     "@uppy/dashboard": "^2.1.4",
     "@uppy/drag-drop": "^2.0.6",
     "@uppy/dropbox": "^2.0.5",
     "@uppy/google-drive": "^2.0.5",
     "@uppy/react": "^2.1.2",
     "@uppy/url": "^2.0.5",
-    "@uppy/webcam": "^2.0.5",
+    "@uppy/webcam": "^2.1.0",
     "@uppy/xhr-upload": "^2.0.7",
     "exenv": "^1.2.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

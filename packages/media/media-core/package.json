@@ -16,10 +16,10 @@
   },
   "devDependencies": {
     "@uidu/section-message": "^0.6.9",
-    "react": "^17.0.2"
+    "react": "^18.0.0"
   },
   "peerDependencies": {
-    "react": "^17.0.0"
+    "react": "^18.0.0"
   },
   "publishConfig": {
     "access": "public"

@@ -22,8 +22,8 @@
   "devDependencies": {
     "@uidu/docs": "^0.5.7",
     "@uidu/editor-core": "^0.13.2",
-    "react": "^17.0.2",
-    "styled-components": "^5.3.3"
+    "react": "^18.0.0",
+    "styled-components": "^5.3.5"
   },
   "peerDependencies": {
     "styled-components": "^5.0.0"

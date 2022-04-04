@@ -15,15 +15,15 @@
     "@uidu/message-renderer": "^0.4.9",
     "body-scroll-lock": "^4.0.0-beta.0",
     "d3-collection": "^1.0.7",
-    "moment": "^2.29.1",
-    "react": "^17.0.2",
+    "moment": "^2.29.2",
+    "react": "^18.0.0",
     "react-chatview": "^0.2.5",
     "react-media": "^1.10.0",
-    "styled-components": "^5.3.3",
+    "styled-components": "^5.3.5",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.0.0",
+    "@faker-js/faker": "^6.1.1",
     "@uidu/docs": "^0.5.7",
     "@uidu/shell": "^2.1.13",
     "use-clipboard-copy": "^0.2.0"

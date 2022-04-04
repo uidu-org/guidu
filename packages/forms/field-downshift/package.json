@@ -16,7 +16,7 @@
     "classnames": "^2.3.1",
     "downshift": "^6.1.7",
     "formsy-react": "^2.2.5",
-    "react": "^17.0.2",
+    "react": "^18.0.0",
     "react-feather": "^2.0.9",
     "tslib": "^2.3.1"
   },
@@ -32,7 +32,7 @@
     "@uidu/popup": "0.6.11",
     "@uidu/radio": "^1.1.9",
     "@uidu/shell": "^2.1.13",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.5"
   },
   "peerDependencies": {
     "styled-components": "*"

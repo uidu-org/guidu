@@ -23,17 +23,17 @@
     "@uidu/field-text": "^1.1.11",
     "@uidu/lozenge": "^0.5.8",
     "@uidu/theme": "^0.6.10",
-    "styled-components": "^5.3.3",
+    "styled-components": "^5.3.5",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.7",
     "@uidu/elements-test-helpers": "^0.4.13",
-    "react": "^17.0.2",
-    "react-intl": "^5.24.7"
+    "react": "^18.0.0",
+    "react-intl": "^5.24.8"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
+    "react": "^18.0.0",
     "react-intl": "^5.2.1"
   },
   "preconstruct": {

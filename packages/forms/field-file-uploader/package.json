@@ -11,12 +11,12 @@
   "dependencies": {
     "@babel/runtime": "^7.17.8",
     "@uidu/field-base": "^3.1.15",
-    "@uppy/core": "^2.1.6",
+    "@uppy/core": "^2.1.7",
     "@uppy/dashboard": "^2.1.4",
     "@uppy/react": "^2.1.2",
     "@uppy/xhr-upload": "^2.0.7",
     "formsy-react": "^2.2.5",
-    "react": "^17.0.2",
+    "react": "^18.0.0",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

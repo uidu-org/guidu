@@ -14,9 +14,9 @@
     "@uidu/theme": "^0.6.10",
     "interweave": "^12.9.0",
     "interweave-autolink": "^4.4.3",
-    "react": "^17.0.2",
+    "react": "^18.0.0",
     "react-feather": "^2.0.9",
-    "styled-components": "^5.3.3",
+    "styled-components": "^5.3.5",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

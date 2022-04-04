@@ -14,11 +14,11 @@
     "@uidu/dropdown-menu": "^0.6.12",
     "@uidu/shell": "^2.1.13",
     "classnames": "^2.3.1",
-    "moment": "^2.29.1",
-    "react": "^17.0.2",
-    "react-big-calendar": "^0.39.5",
+    "moment": "^2.29.2",
+    "react": "^18.0.0",
+    "react-big-calendar": "^0.40.0",
     "react-feather": "^2.0.9",
-    "styled-components": "^5.3.3",
+    "styled-components": "^5.3.5",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
