@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.18
+
+### Patch Changes
+
+- cc6a75b18: Bump dependencies
+
 ## 0.3.17
 
 ### Patch Changes

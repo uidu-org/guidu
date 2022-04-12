@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.4.3
+
+### Patch Changes
+
+- cc6a75b18: Bump dependencies
+- Updated dependencies [cc6a75b18]
+  - @uidu/button@1.3.14
+  - @uidu/menu@0.7.7
+  - @uidu/popup@0.6.13
+  - @uidu/data-fields@1.5.12
+  - @uidu/data-manager@2.4.2
+  - @uidu/checkbox@1.1.13
+
 ## 1.4.2
 
 ### Patch Changes

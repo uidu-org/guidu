@@ -1,6 +1,6 @@
 {
   "name": "@uidu/elements-test-helpers",
-  "version": "0.4.14",
+  "version": "0.4.15",
   "private": true,
   "description": "common test helpers",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/elements-test-helpers",
@@ -16,7 +16,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.8",
+    "@uidu/docs": "^0.5.9",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-intl": "^5.24.8"

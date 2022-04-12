@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 0.7.7
+
+### Patch Changes
+
+- cc6a75b18: Bump dependencies
+- Updated dependencies [cc6a75b18]
+  - @uidu/docs@0.5.9
+
 ## 0.7.6
 
 ### Patch Changes

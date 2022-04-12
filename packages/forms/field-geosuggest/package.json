@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-geosuggest",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "Suggest addresses with google autocompletge",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-geosuggest",
   "license": "MIT",
@@ -11,9 +11,9 @@
   "types": "dist/uidu-field-geosuggest.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "@uidu/field-base": "^3.1.16",
-    "@uidu/menu": "0.7.6",
-    "@uidu/spinner": "^0.5.9",
+    "@uidu/field-base": "^3.1.17",
+    "@uidu/menu": "0.7.7",
+    "@uidu/spinner": "^0.5.10",
     "classnames": "^2.3.1",
     "downshift": "^6.1.7",
     "formsy-react": "^2.2.5",
@@ -23,8 +23,8 @@
     "use-places-autocomplete": "^2.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.8",
-    "@uidu/form": "^1.2.15",
+    "@uidu/docs": "^0.5.9",
+    "@uidu/form": "^1.2.16",
     "styled-components": "^5.3.5"
   },
   "peerDependencies": {

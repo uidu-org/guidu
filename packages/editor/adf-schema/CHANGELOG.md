@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.9.2
+
+### Patch Changes
+
+- cc6a75b18: Bump dependencies
+
 ## 0.9.1
 
 ### Patch Changes

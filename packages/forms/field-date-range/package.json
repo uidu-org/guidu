@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-date-range",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-date-range",
   "license": "MIT",
   "sideEffects": false,
@@ -9,9 +9,9 @@
   "types": "dist/uidu-field-date-range.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "@uidu/analytics": "^0.5.9",
-    "@uidu/field-base": "^3.1.16",
-    "@uidu/field-date": "^1.1.13",
+    "@uidu/analytics": "^0.5.10",
+    "@uidu/field-base": "^3.1.17",
+    "@uidu/field-date": "^1.1.14",
     "formsy-react": "^2.2.5",
     "moment": "^2.29.2",
     "react": "^18.0.0",
@@ -21,8 +21,8 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.8",
-    "@uidu/form": "^1.2.15",
+    "@uidu/docs": "^0.5.9",
+    "@uidu/form": "^1.2.16",
     "styled-components": "^5.3.5"
   },
   "peerDependencies": {
