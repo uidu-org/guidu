@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.7.4
+
+### Patch Changes
+
+- cc6a75b18: Bump dependencies
+- Updated dependencies [cc6a75b18]
+  - @uidu/avatar@0.9.7
+  - @uidu/slider@1.7.12
+  - @uidu/spinner@0.5.10
+  - @uidu/checkbox@1.1.13
+  - @uidu/field-password@1.1.11
+  - @uidu/field-phone@1.0.17
+  - @uidu/field-text@1.1.13
+  - @uidu/form@1.2.16
+  - @uidu/shell@2.1.15
+
 ## 0.7.3
 
 ### Patch Changes

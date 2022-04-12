@@ -1,5 +1,16 @@
 # @uidu/field-mentions
 
+## 1.2.8
+
+### Patch Changes
+
+- cc6a75b18: Bump dependencies
+- Updated dependencies [cc6a75b18]
+  - @uidu/analytics@0.5.10
+  - @uidu/theme@0.6.12
+  - @uidu/field-base@3.1.17
+  - @uidu/form@1.2.16
+
 ## 1.2.7
 
 ### Patch Changes

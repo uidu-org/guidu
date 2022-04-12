@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.16
+
+### Patch Changes
+
+- cc6a75b18: Bump dependencies
+- Updated dependencies [cc6a75b18]
+  - @uidu/button@1.3.14
+
 ## 1.2.15
 
 ### Patch Changes
