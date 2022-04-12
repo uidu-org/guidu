@@ -8,7 +8,7 @@ import { PanelType } from '@uidu/adf-schema';
 import { DOMOutputSpec, DOMSerializer, Node } from 'prosemirror-model';
 import { NodeView } from 'prosemirror-view';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 const panelIcons = {
   info: InfoIcon,
@@ -47,10 +47,13 @@ class PanelNodeView {
 
   private renderIcon(panelType: PanelType) {
     const Icon = panelIcons[panelType];
-    ReactDOM.render(<Icon label={`Panel ${panelType}`} />, this.icon);
+    const root = createRoot(this.icon);
+    root.render(<Icon label={`Panel ${panelType}`} />);
   }
 }
 
-export const panelNodeView = () => (node: any): NodeView => {
-  return new PanelNodeView(node);
-};
+export const panelNodeView =
+  () =>
+  (node: any): NodeView => {
+    return new PanelNodeView(node);
+  };

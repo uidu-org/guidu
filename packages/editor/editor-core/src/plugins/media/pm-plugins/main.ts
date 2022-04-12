@@ -13,7 +13,7 @@ import { insertPoint } from 'prosemirror-transform';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import analyticsService from '../../../analytics/service';
 import { Dispatch } from '../../../event-dispatcher';
 import { ProsemirrorGetPosHandler } from '../../../nodeviews';
@@ -43,15 +43,15 @@ export type { MediaState, MediaProvider };
 
 const createDropPlaceholder = (allowDropLine?: boolean) => {
   const dropPlaceholder = document.createElement('div');
+  const root = createRoot(dropPlaceholder);
   if (allowDropLine) {
-    ReactDOM.render(
+    root.render(
       React.createElement(DropPlaceholder, { type: 'single' } as {
         type: PlaceholderType;
       }),
-      dropPlaceholder,
     );
   } else {
-    ReactDOM.render(React.createElement(DropPlaceholder), dropPlaceholder);
+    root.render(React.createElement(DropPlaceholder));
   }
   return dropPlaceholder;
 };

@@ -8,6 +8,7 @@ import { Selection } from 'prosemirror-state';
 import { Decoration, EditorView, NodeView } from 'prosemirror-view';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { IntlShape } from 'react-intl';
 import { keyName } from 'w3c-keyname';
 import {
@@ -58,7 +59,7 @@ const toDOM = (node: PmNode, intl?: IntlShape): DOMOutputSpec => [
       'div',
       {
         // prettier-ignore
-        'class': expandClassNames.inputContainer
+        'class': expandClassNames.inputContainer,
       },
       [
         'input',
@@ -175,12 +176,13 @@ export class ExpandNodeView implements NodeView {
     }
 
     const { __expanded } = (node && node.attrs) || this.node.attrs;
-    ReactDOM.render(
+    const container = this.icon;
+    const root = createRoot(container);
+    root.render(
       <ExpandIconButton
         allowInteractiveExpand={this.isAllowInteractiveExpandEnabled()}
         expanded={__expanded}
       ></ExpandIconButton>,
-      this.icon,
     );
   }
 
