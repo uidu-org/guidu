@@ -9,7 +9,7 @@
   "module": "dist/uidu-treenav.esm.js",
   "types": "dist/uidu-treenav.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
+    "@babel/runtime": "^7.17.9",
     "react": "^18.0.0",
     "react-feather": "^2.0.9",
     "react-media": "^1.10.0",

@@ -10,8 +10,8 @@
   "module": "dist/uidu-message.esm.js",
   "types": "dist/uidu-message.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
-    "@fluentui/react": "^8.63.1",
+    "@babel/runtime": "^7.17.9",
+    "@fluentui/react": "^8.64.3",
     "@loadable/component": "^5.15.2",
     "@uidu/avatar": "^0.9.6",
     "@uidu/drawer": "^0.7.12",
@@ -35,7 +35,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.1.1",
+    "@faker-js/faker": "^6.1.2",
     "@uidu/docs": "^0.5.8",
     "@uidu/shell": "^2.1.14"
   },

@@ -10,8 +10,8 @@
   "module": "dist/uidu-popper.esm.js",
   "types": "dist/uidu-popper.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
-    "@popperjs/core": "^2.11.4",
+    "@babel/runtime": "^7.17.9",
+    "@popperjs/core": "^2.11.5",
     "react-popper": "^2.2.5",
     "tslib": "^2.3.1"
   },

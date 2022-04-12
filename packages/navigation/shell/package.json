@@ -9,7 +9,7 @@
   "module": "dist/uidu-shell.esm.js",
   "types": "dist/uidu-shell.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
+    "@babel/runtime": "^7.17.9",
     "@loadable/component": "^5.15.2",
     "@researchgate/react-intersection-observer": "^1.3.5",
     "@types/overlayscrollbars": "^1.12.1",
@@ -25,10 +25,10 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.1.1",
+    "@faker-js/faker": "^6.1.2",
     "@uidu/docs": "^0.5.8",
     "@uidu/navigation": "^1.0.12",
     "react-router-dom": "^5.3.0",
-    "react-scroll": "^1.8.6"
+    "react-scroll": "^1.8.7"
   }
 }

@@ -9,7 +9,7 @@
   "main": "dist/uidu-spinner.cjs.js",
   "module": "dist/uidu-spinner.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
+    "@babel/runtime": "^7.17.9",
     "@uidu/theme": "^0.6.11",
     "react-dom": "^18.0.0",
     "react-transition-group": "^4.4.2",

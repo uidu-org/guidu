@@ -10,7 +10,7 @@
   "types": "dist/uidu-inline-edit.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.10.5",
-    "@babel/runtime": "^7.17.8",
+    "@babel/runtime": "^7.17.9",
     "@loadable/component": "^5.15.2",
     "@uidu/analytics": "^0.5.9",
     "@uidu/button": "^1.3.13",

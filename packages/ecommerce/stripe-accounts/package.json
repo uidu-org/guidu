@@ -9,9 +9,9 @@
   "module": "dist/uidu-stripe-accounts.esm.js",
   "types": "dist/uidu-stripe-accounts.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
-    "@stripe/react-stripe-js": "^1.7.0",
-    "@stripe/stripe-js": "^1.26.0",
+    "@babel/runtime": "^7.17.9",
+    "@stripe/react-stripe-js": "^1.7.1",
+    "@stripe/stripe-js": "^1.27.0",
     "@uidu/field-text": "^1.1.12",
     "@uidu/form": "^1.2.15",
     "@uidu/payments": "^1.3.5",

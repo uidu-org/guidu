@@ -17,7 +17,7 @@
     "postbuild": "yarn build:json-schema"
   },
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
+    "@babel/runtime": "^7.17.9",
     "@types/linkify-it": "^3.0.2",
     "@types/prosemirror-model": "^1.16.1",
     "@types/prosemirror-state": "^1.2.8",
@@ -25,7 +25,7 @@
     "css-color-names": "^1.0.1",
     "linkify-it": "^3.0.3",
     "prosemirror-model": "^1.16.1",
-    "prosemirror-view": "^1.23.9",
+    "prosemirror-view": "^1.23.12",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

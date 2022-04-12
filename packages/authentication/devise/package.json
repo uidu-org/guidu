@@ -9,7 +9,7 @@
   "module": "dist/uidu-devise.esm.js",
   "types": "dist/uidu-devise.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
+    "@babel/runtime": "^7.17.9",
     "@uidu/avatar": "^0.9.6",
     "@uidu/checkbox": "^1.1.12",
     "@uidu/field-password": "^1.1.10",
@@ -21,7 +21,7 @@
     "@uidu/spinner": "^0.5.9",
     "query-string": "^7.1.1",
     "react": "^18.0.0",
-    "react-animate-height": "^2.0.23",
+    "react-animate-height": "^2.1.0",
     "react-facebook": "^8.1.4",
     "react-feather": "^2.0.9",
     "react-google-login": "^5.2.2",

@@ -9,9 +9,9 @@
   "module": "dist/uidu-dashlets-form.esm.js",
   "types": "dist/uidu-dashlets-form.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
-    "@cubejs-client/core": "^0.29.33",
-    "@cubejs-client/react": "^0.29.33",
+    "@babel/runtime": "^7.17.9",
+    "@cubejs-client/core": "^0.29.43",
+    "@cubejs-client/react": "^0.29.43",
     "@uidu/accordion": "^0.6.7",
     "@uidu/dashlets": "^1.6.8",
     "@uidu/dropdown-menu": "^0.6.13",

@@ -10,8 +10,8 @@
   "module": "dist/uidu-theme.esm.js",
   "types": "dist/uidu-theme.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
-    "@emotion/react": "^11.8.2",
+    "@babel/runtime": "^7.17.9",
+    "@emotion/react": "^11.9.0",
     "@uidu/form": "^1.2.15",
     "exenv": "^1.2.2",
     "prop-types": "^15.8.1",
@@ -23,7 +23,7 @@
     "@uidu/field-date": "^1.1.13",
     "@uidu/lozenge": "^0.5.9",
     "@uidu/section-message": "^0.6.10",
-    "color": "^4.2.1",
+    "color": "^4.2.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "styled-components": "^5.3.5"

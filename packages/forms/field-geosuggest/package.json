@@ -10,7 +10,7 @@
   "module": "dist/uidu-field-geosuggest.esm.js",
   "types": "dist/uidu-field-geosuggest.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
+    "@babel/runtime": "^7.17.9",
     "@uidu/field-base": "^3.1.16",
     "@uidu/menu": "0.7.6",
     "@uidu/spinner": "^0.5.9",

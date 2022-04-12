@@ -9,10 +9,10 @@
   "main": "dist/uidu-item.cjs.js",
   "module": "dist/uidu-item.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.17.8",
+    "@babel/runtime": "^7.17.9",
     "@uidu/avatar": "^0.9.6",
     "@uidu/theme": "^0.6.11",
-    "polished": "^4.2.1",
+    "polished": "^4.2.2",
     "prop-types": "^15.8.1",
     "react-addons-text-content": "^0.0.4",
     "tslib": "^2.3.1",
