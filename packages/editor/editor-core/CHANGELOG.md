@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 0.14.0
+
+### Minor Changes
+
+- 9ab2caaa0: Bump render to 18
+
 ## 0.13.3
 
 ### Patch Changes
