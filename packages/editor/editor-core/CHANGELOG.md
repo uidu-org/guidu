@@ -1,5 +1,27 @@
 # @uidu/editor-core
 
+## 0.14.2
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/button@1.3.15
+  - @uidu/droplist@0.5.15
+  - @uidu/menu@0.7.8
+  - @uidu/modal-dialog@0.5.18
+  - @uidu/tooltip@0.5.14
+  - @uidu/editor-common@0.7.8
+  - @uidu/emoji@0.6.8
+  - @uidu/mentions@0.4.6
+  - @uidu/profilecard@0.3.6
+  - @uidu/status@0.5.6
+  - @uidu/task-decision@0.4.16
+  - @uidu/field-date@1.1.15
+  - @uidu/select@1.5.14
+  - @uidu/media-card@0.6.6
+  - @uidu/form@1.2.17
+
 ## 0.14.1
 
 ### Patch Changes

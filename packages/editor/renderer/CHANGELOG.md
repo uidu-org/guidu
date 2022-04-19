@@ -1,5 +1,18 @@
 # @uidu/renderer
 
+## 0.8.5
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/tooltip@0.5.14
+  - @uidu/editor-common@0.7.8
+  - @uidu/mentions@0.4.6
+  - @uidu/status@0.5.6
+  - @uidu/task-decision@0.4.16
+  - @uidu/media-card@0.6.6
+
 ## 0.8.4
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/media-card
 
+## 0.6.6
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/button@1.3.15
+  - @uidu/dropdown-menu@0.6.15
+  - @uidu/tooltip@0.5.14
+
 ## 0.6.5
 
 ### Patch Changes

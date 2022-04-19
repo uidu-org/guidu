@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 1.5.14
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/tooltip@0.5.14
+  - @uidu/field-base@3.1.18
+  - @uidu/form@1.2.17
+
 ## 1.5.13
 
 ### Patch Changes

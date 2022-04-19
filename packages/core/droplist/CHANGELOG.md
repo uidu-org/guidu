@@ -1,5 +1,14 @@
 # @uidu/droplist
 
+## 0.5.15
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/item@0.5.13
+  - @uidu/tooltip@0.5.14
+
 ## 0.5.14
 
 ### Patch Changes

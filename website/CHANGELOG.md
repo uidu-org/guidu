@@ -1,5 +1,21 @@
 # Change Log
 
+## 0.4.25
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/button@1.3.15
+  - @uidu/modal-dialog@0.5.18
+  - @uidu/tooltip@0.5.14
+  - @uidu/table@1.4.4
+  - @uidu/select@1.5.14
+  - @uidu/breadcrumbs@1.0.12
+  - @uidu/navigation@1.0.14
+  - @uidu/shell@2.1.16
+  - @uidu/form@1.2.17
+
 ## 0.4.24
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/chat-window
 
+## 0.4.13
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/message@0.5.17
+
 ## 0.4.12
 
 ### Patch Changes

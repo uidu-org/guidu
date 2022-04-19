@@ -1,5 +1,13 @@
 # @uidu/field-geosuggest
 
+## 1.1.16
+
+### Patch Changes
+
+- Updated dependencies [7d314a5ca]
+  - @uidu/menu@0.7.8
+  - @uidu/field-base@3.1.18
+
 ## 1.1.15
 
 ### Patch Changes

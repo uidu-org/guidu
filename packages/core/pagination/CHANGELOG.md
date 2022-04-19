@@ -1,5 +1,13 @@
 # @uidu/pagination
 
+## 0.5.12
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/button@1.3.15
+
 ## 0.5.11
 
 ### Patch Changes
