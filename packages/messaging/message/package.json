@@ -11,7 +11,7 @@
   "types": "dist/uidu-message.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "@fluentui/react": "^8.64.3",
+    "@fluentui/react": "^8.65.1",
     "@loadable/component": "^5.15.2",
     "@uidu/avatar": "^0.9.7",
     "@uidu/drawer": "^0.7.13",
@@ -25,7 +25,7 @@
     "@uifabric/file-type-icons": "^7.8.8",
     "classnames": "^2.3.1",
     "emoji-regex": "^9.2.2",
-    "moment": "^2.29.2",
+    "moment": "^2.29.3",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-feather": "^2.0.9",

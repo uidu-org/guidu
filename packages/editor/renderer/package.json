@@ -10,7 +10,7 @@
   "module": "dist/uidu-renderer.esm.js",
   "types": "dist/uidu-renderer.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.10.5",
+    "@atlaskit/icon": "^21.10.6",
     "@babel/runtime": "^7.17.9",
     "@loadable/component": "^5.15.2",
     "@uidu/adf-schema": "^0.9.2",
@@ -30,7 +30,7 @@
     "@uidu/tooltip": "^0.5.13",
     "prosemirror-model": "^1.16.1",
     "raf-schd": "^4.0.3",
-    "react-intl": "^5.24.8",
+    "react-intl": "^5.25.0",
     "tslib": "^2.3.1",
     "url-parse": "^1.5.10"
   },

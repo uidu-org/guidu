@@ -10,7 +10,7 @@
   "module": "dist/uidu-mentions.esm.js",
   "types": "dist/uidu-mentions.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.10.5",
+    "@atlaskit/icon": "^21.10.6",
     "@atlaskit/util-service-support": "^6.1.0",
     "@babel/runtime": "^7.17.9",
     "@uidu/analytics": "^0.5.10",
@@ -22,7 +22,7 @@
     "@uidu/tooltip": "^0.5.13",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-intl": "^5.24.8",
+    "react-intl": "^5.25.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.3.1",
     "uuid": "^8.3.2"
