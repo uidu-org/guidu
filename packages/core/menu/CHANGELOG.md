@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.7.8
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+
 ## 0.7.7
 
 ### Patch Changes

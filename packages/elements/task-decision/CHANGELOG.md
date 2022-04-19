@@ -1,5 +1,13 @@
 # @uidu/task-decision
 
+## 0.4.16
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/button@1.3.15
+
 ## 0.4.15
 
 ### Patch Changes

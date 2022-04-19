@@ -1,5 +1,13 @@
 # @uidu/tooltip
 
+## 0.5.14
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/portal@0.5.14
+
 ## 0.5.13
 
 ### Patch Changes

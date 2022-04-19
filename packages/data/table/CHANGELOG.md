@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 1.4.4
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/button@1.3.15
+  - @uidu/menu@0.7.8
+  - @uidu/popup@0.6.14
+  - @uidu/data-fields@1.5.13
+  - @uidu/data-manager@2.4.3
+
 ## 1.4.3
 
 ### Patch Changes

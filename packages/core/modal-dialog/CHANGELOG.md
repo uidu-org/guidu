@@ -1,5 +1,15 @@
 # @uidu/modal-dialog
 
+## 0.5.18
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/button@1.3.15
+  - @uidu/portal@0.5.14
+  - @uidu/form@1.2.17
+
 ## 0.5.17
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # design-system
 
+## 0.1.26
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/button@1.3.15
+
 ## 0.1.25
 
 ### Patch Changes

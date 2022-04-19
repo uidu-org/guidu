@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.0.11
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+
 ## 1.0.10
 
 ### Patch Changes

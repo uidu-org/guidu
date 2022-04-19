@@ -1,5 +1,13 @@
 # @uidu/field-date
 
+## 1.1.15
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/field-base@3.1.18
+
 ## 1.1.14
 
 ### Patch Changes

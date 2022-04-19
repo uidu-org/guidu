@@ -1,5 +1,14 @@
 # @uidu/devise
 
+## 0.7.5
+
+### Patch Changes
+
+- 7d314a5ca: Bump dependencies
+- Updated dependencies [7d314a5ca]
+  - @uidu/shell@2.1.16
+  - @uidu/form@1.2.17
+
 ## 0.7.4
 
 ### Patch Changes
