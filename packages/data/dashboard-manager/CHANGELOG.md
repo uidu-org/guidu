@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 1.4.0
+
+### Minor Changes
+
+- 00bf7fdb5: Added GQLDashlet, experimental
+
+### Patch Changes
+
+- Updated dependencies [00bf7fdb5]
+  - @uidu/dashlets@1.7.0
+
 ## 1.3.12
 
 ### Patch Changes

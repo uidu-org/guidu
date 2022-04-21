@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 1.7.0
+
+### Minor Changes
+
+- 00bf7fdb5: Added GQLDashlet, experimental
+
+### Patch Changes
+
+- Updated dependencies [00bf7fdb5]
+  - @uidu/dashboard-manager@1.4.0
+
 ## 1.6.10
 
 ### Patch Changes
