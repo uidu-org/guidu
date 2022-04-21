@@ -1,7 +1,7 @@
 import * as am4charts from '@amcharts/amcharts4/charts';
 import * as am4core from '@amcharts/amcharts4/core';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
-import { useColumnDefs } from '@uidu/dashboard-manager';
+import { useDashboardManager } from '@uidu/dashboard-manager';
 import React, { useCallback, useLayoutEffect, useRef } from 'react';
 import { v1 as uuid } from 'uuid';
 
@@ -16,7 +16,7 @@ export default function PieStateless({
 }) {
   const chart = useRef(null);
   const id = useRef(uuid());
-  const columnDefs = useColumnDefs();
+  const { columnDefs } = useDashboardManager();
 
   const mergeConfig = useCallback(() => {
     return {

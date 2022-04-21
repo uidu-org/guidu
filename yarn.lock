@@ -6560,6 +6560,7 @@ __metadata:
     "@uidu/table": 1.4.4
     "@uidu/tooltip": ^0.5.14
     d3-array: ^3.1.6
+    gql-query-builder: ^3.6.0
     lodash: ^4.17.21
     numeral: ^2.0.6
     react: ^18.0.0
@@ -17387,6 +17388,13 @@ __metadata:
     to-readable-stream: ^1.0.0
     url-parse-lax: ^3.0.0
   checksum: 941807bd9704bacf5eb401f0cc1212ffa1f67c6642f2d028fd75900471c221b1da2b8527f4553d2558f3faeda62ea1cf31665f8b002c6137f5de8732f07370b0
+  languageName: node
+  linkType: hard
+
+"gql-query-builder@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "gql-query-builder@npm:3.6.0"
+  checksum: 74afb1fa824dc2f2ba1d04556fb6c9e372b41d9a3146e876437e2faba17205c020d61bd21d3df06a1349a7e8c41e23698bf9bf458acf95f1d5326ebbb2d6e949
   languageName: node
   linkType: hard
 

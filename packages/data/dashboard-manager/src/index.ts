@@ -1,5 +1,5 @@
 export {
-  ColumnDefsContext,
+  DashboardManagerContext,
   default,
-  useColumnDefs,
+  useDashboardManager,
 } from './components/DashboardManager';

@@ -19,6 +19,18 @@ export type DashletProps = {
   formatter?: string;
   dashlets?: DashletProps[];
   itemBefore?: React.ReactNode;
+  /** Pass data as props */
+  data?: Array<any>;
+  /** Pass data as props */
+  dataTransformer?: (data: any) => any;
+  /** Pass data as props */
+  dataFormatter?: (data: any) => any;
+  /** Pass query variables for GQL */
+  gql?: Record<string, any>;
+  /** Use custom component as renderer */
+  component?: React.FC<any>;
+  /** Show dashlet as card */
+  isCard?: boolean;
   /** Config is AmCharts JSON config */
   config?: any;
   /** Quewry is CubeJs query props */

@@ -1,6 +1,6 @@
 import loadable from '@loadable/component';
 import React from 'react';
-import { DashletsProps } from '../types';
+import { DashletProps, DashletsProps } from '../types';
 import Dashlet from './Dashlet';
 import DashletGroup from './Dashlets/DashletGroup';
 
@@ -17,7 +17,14 @@ const LoadableHorizontalRule = loadable(
 );
 const LoadableVerticalRule = loadable(() => import(`./Dashlets/VerticalRule`));
 
-export function renderDashlet({ kind, showHeader = true, ...dashlet }, index) {
+export function renderDashlet(
+  {
+    kind,
+    showHeader = true,
+    ...dashlet
+  }: DashletProps & { showHeader?: DashletsProps['showHeader'] },
+  index: number,
+) {
   let content = null;
 
   switch (kind) {
@@ -73,6 +80,8 @@ export function renderDashlet({ kind, showHeader = true, ...dashlet }, index) {
       content = dashlet.component;
       showHeader = false;
       break;
+    default:
+      return null;
   }
 
   return (

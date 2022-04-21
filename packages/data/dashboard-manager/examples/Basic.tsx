@@ -22,6 +22,7 @@ export default function Basic() {
     <IntlProvider locale="en">
       <CubeProvider cubejsApi={cubejsApi}>
         <DashboardManager
+          apiUrl="https://uidu.uidu.local:8443/graphql"
           gridProps={{
             isDraggable: isEditing,
             isResizable: isEditing,
@@ -32,7 +33,7 @@ export default function Basic() {
           {({ renderControls, renderDashlets }) => (
             <>
               <ShellMain>
-                <ShellHeader className="border-bottom px-xl-4 px-3 d-flex align-items-center">
+                <ShellHeader className="px-3 border-bottom px-xl-4 d-flex align-items-center">
                   {/* {renderControls({})} */}
                   <h5 className="my-0 mr-2">Dashboard</h5>
                   <Shuffle

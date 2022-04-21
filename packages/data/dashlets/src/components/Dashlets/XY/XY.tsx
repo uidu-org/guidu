@@ -9,6 +9,7 @@ export default function XY({
   dataFormatter = (data) => data,
 }) {
   if (data) {
+    console.log(dataFormatter);
     return (
       <XYStateless
         data={data.values}

@@ -11,4 +11,5 @@ export type DashboardManagerProps = {
   }) => any;
   gridProps?: ReactGridLayoutProps;
   columnDefs?: any;
+  apiUrl?: string;
 };

@@ -1,11 +1,11 @@
-import { useColumnDefs } from '@uidu/dashboard-manager';
+import { useDashboardManager } from '@uidu/dashboard-manager';
 import { buildColumns } from '@uidu/data-fields';
 import Table, { Td, Th } from '@uidu/table';
 import React, { useMemo } from 'react';
 import { useFlexLayout, usePagination, useSortBy, useTable } from 'react-table';
 
 export default function TableStateless({ values, keys, onItemClick }) {
-  const columnDefs = useColumnDefs();
+  const { columnDefs } = useDashboardManager();
 
   const columns = useMemo(
     () =>

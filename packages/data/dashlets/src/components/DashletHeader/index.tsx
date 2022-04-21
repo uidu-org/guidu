@@ -7,10 +7,10 @@ const HeaderWrapper = styled.div`
   ${tw`px-4 py-5 border-b border-opacity-50 sm:px-6`}
 `;
 const HeaderInnerWrapper = styled.div`
-  ${tw`-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap`}
+  ${tw`flex flex-wrap items-center justify-between -mt-4 -ml-4 sm:flex-nowrap`}
 `;
 const HeaderLabelWrapper = styled.div`
-  ${tw`ml-4 mt-4`}
+  ${tw`mt-4 ml-4`}
 `;
 const HeaderLabelName = styled.h3`
   ${tw`text-base font-medium color[rgb(var(--body-primary-color))]`}
@@ -19,7 +19,7 @@ const HeaderLabelDescription = styled.p`
   ${tw`mt-1 text-sm color[rgb(var(--body-secondary-color))]`}
 `;
 const HeaderChildrenWrapper = styled.div`
-  ${tw`ml-4 mt-4 flex-shrink-0`}
+  ${tw`flex-shrink-0 mt-4 ml-4`}
 `;
 
 export default function DashletHeader(props: DashletHeaderProps) {

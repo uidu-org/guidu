@@ -31,8 +31,8 @@ export default function XYStateless({
   const chart = useRef(null);
   const id = useRef(uuid());
 
-  const mergeConfig = useCallback(() => {
-    return {
+  const mergeConfig = useCallback(
+    () => ({
       paddingBottom: 15,
       paddingLeft: 0,
       paddingRight: 0,
@@ -111,12 +111,13 @@ export default function XYStateless({
           name: line.title,
           tooltipText: `{dateX}\n[bold]{valueY}[/]`,
         })),
-    };
-  }, [config]);
+    }),
+    [config, data, dataFormatter, series],
+  );
 
   useLayoutEffect(() => {
     if (data) {
-      let x = am4core.createFromConfig(
+      const x = am4core.createFromConfig(
         mergeConfig(),
         id.current,
         am4charts.XYChart,
@@ -128,20 +129,13 @@ export default function XYStateless({
     return () => {
       chart.current?.dispose();
     };
-  }, [data, config]);
+  }, [data, config, mergeConfig]);
 
   useLayoutEffect(() => {
     if (chart.current) {
       chart.current.config = mergeConfig();
     }
-    return () => null;
-  }, [config]);
+  }, [config, mergeConfig]);
 
-  return (
-    <div
-      className="px-3"
-      style={{ width: '100%', height: '100%' }}
-      id={id.current}
-    />
-  );
+  return <div tw="px-4 h-full w-full" id={id.current} />;
 }

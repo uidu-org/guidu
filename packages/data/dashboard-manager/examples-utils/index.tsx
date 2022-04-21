@@ -30,6 +30,62 @@ export const dashlets = [
   },
   {
     kind: 'XY',
+    label: 'Raccolta With GQL',
+    description: 'Donations amount by time',
+    gql: {
+      operation: 'currentWorkspace',
+      fields: ['id', { plans: ['id', 'name', 'createdAt'] }],
+    },
+    dataTransformer: (data) => {
+      return {
+        values: data.currentWorkspace.plans.map((plan) => ({
+          x: plan.createdAt,
+          y: 1,
+        })),
+      };
+    },
+    layout: {
+      x: 0,
+      y: 0,
+      w: 12,
+      h: 10,
+    },
+    config: {
+      series: [
+        {
+          type: 'ColumnSeries',
+          dataFields: {
+            valueY: 'y',
+            dateX: 'x',
+          },
+          columns: {
+            width: '30%',
+            column: { cornerRadiusTopLeft: 4, cornerRadiusTopRight: 4 },
+          },
+
+          // fillOpacity: 0.1,
+          // fill: {
+          //   type: 'LinearGradient',
+          //   stops: [
+          //     {
+          //       color: '#6366F1',
+          //     },
+          //     {
+          //       color: '#A5B4FC',
+          //     },
+          //   ],
+          // },
+          name: 'Total amount donations received',
+        },
+      ],
+      // colors: {
+      //   list: colors,
+      // },
+    },
+    // isCard: false,
+  },
+  {
+    kind: 'XY',
     label: 'Raccolta',
     description: 'Donations amount by time',
     query: {

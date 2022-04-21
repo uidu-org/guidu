@@ -21,7 +21,7 @@ export default function Switch({
   }
 
   return (
-    <span className="text-muted small ml-auto text-nowrap">
+    <span className="ml-auto text-muted small text-nowrap">
       {range.from.format('l')} - {range.to.format('l')}
     </span>
   );
