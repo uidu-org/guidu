@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 1.0.15
+
+### Patch Changes
+
+- 4389d70f9: Bump dependencies
+
 ## 1.0.14
 
 ### Patch Changes

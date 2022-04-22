@@ -29,7 +29,7 @@
     "@uidu/field-time": "^1.1.13",
     "@uidu/form": "^1.2.17",
     "@uidu/menu": "0.7.8",
-    "@uidu/popup": "0.6.14",
+    "@uidu/popup": "0.6.15",
     "@uidu/radio": "^1.1.11",
     "@uidu/shell": "^2.1.16",
     "styled-components": "^5.3.5"

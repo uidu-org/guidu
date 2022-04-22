@@ -1,5 +1,15 @@
 # @uidu/data-controls
 
+## 2.1.10
+
+### Patch Changes
+
+- 4389d70f9: Bump dependencies
+- Updated dependencies [4389d70f9]
+  - @uidu/popup@0.6.15
+  - @uidu/select@1.5.15
+  - @uidu/data-fields@1.5.14
+
 ## 2.1.9
 
 ### Patch Changes

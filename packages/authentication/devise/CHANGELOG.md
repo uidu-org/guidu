@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 0.7.6
+
+### Patch Changes
+
+- 4389d70f9: Bump dependencies
+
 ## 0.7.5
 
 ### Patch Changes
