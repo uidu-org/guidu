@@ -12,9 +12,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@amcharts/amcharts4@npm:^4.10.24":
-  version: 4.10.24
-  resolution: "@amcharts/amcharts4@npm:4.10.24"
+"@amcharts/amcharts4@npm:^4.10.25":
+  version: 4.10.25
+  resolution: "@amcharts/amcharts4@npm:4.10.25"
   dependencies:
     "@babel/runtime": ^7.6.3
     core-js: ^3.0.0
@@ -31,7 +31,7 @@ __metadata:
     stackblur-canvas: ^2.0.0
     tslib: ^2.0.1
     xlsx: ^0.17.0
-  checksum: bd5dbbe20b376bf385e04effeb4212f59e36a4f5aa36afc6904a6bf2d8ff0970165bea1117de5d1ea3b322b95a49688d2fa345437bbd81ef294db18f7a1f73da
+  checksum: d5ed60d34beb16b6e953a3f5266156565cc13434c19a9019e7a57305251c90c32d09fe93627e61a647931163e93479f8e2680a29e0a03252fd459ae9c1f33f35
   languageName: node
   linkType: hard
 
@@ -2644,15 +2644,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/font-icons-mdl2@npm:^8.3.1":
-  version: 8.3.1
-  resolution: "@fluentui/font-icons-mdl2@npm:8.3.1"
+"@fluentui/font-icons-mdl2@npm:^8.3.2":
+  version: 8.3.2
+  resolution: "@fluentui/font-icons-mdl2@npm:8.3.2"
   dependencies:
     "@fluentui/set-version": ^8.2.0
     "@fluentui/style-utilities": ^8.6.6
     "@fluentui/utilities": ^8.8.2
     tslib: ^2.1.0
-  checksum: 64a29b88d9d6b04528a59b8e6607bfd1693703983673af39eb4de02bde94896739699977c9a991f0ceb4ea8b749661d9117d0793f1ad449b26a68f2947b5ed73
+  checksum: b80e49558c45d2b597db09981619325b4afe0ac17e51ab116ca84126f994ec97755a75971f01221c7e871931f49aa2027eab27bbc8bba48382548ae0544c8bd8
   languageName: node
   linkType: hard
 
@@ -2779,12 +2779,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:^8.65.1":
-  version: 8.65.1
-  resolution: "@fluentui/react@npm:8.65.1"
+"@fluentui/react@npm:^8.66.2":
+  version: 8.66.2
+  resolution: "@fluentui/react@npm:8.66.2"
   dependencies:
     "@fluentui/date-time-utilities": ^8.5.0
-    "@fluentui/font-icons-mdl2": ^8.3.1
+    "@fluentui/font-icons-mdl2": ^8.3.2
     "@fluentui/foundation-legacy": ^8.2.6
     "@fluentui/merge-styles": ^8.5.1
     "@fluentui/react-focus": ^8.5.7
@@ -2801,7 +2801,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: 952145409b2fab29be62eb9f11ea5eacc3036cb9e60b3dfffc96afa367a22817e8747b993fc31a62ba625d5d92d30735f401dcd16a65bb6a324c1250da852c78
+  checksum: f5f4fa0a04e11d28fc1352640ca8398625ec055edc7e84721c1f240d03de842d679f2ca09011f1d249ac8ef0938631bfd08f4f7023bf007a7c2876ab17fc044e
   languageName: node
   linkType: hard
 
@@ -6065,7 +6065,7 @@ __metadata:
     "@uidu/docs": ^0.5.9
     "@uidu/theme": ^0.6.12
     react: ^18.0.0
-    react-accessible-accordion: ^4.0.0
+    react-accessible-accordion: ^5.0.0
     react-feather: ^2.0.9
     styled-components: ^5.3.5
     tslib: ^2.3.1
@@ -6546,7 +6546,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/dashlets@workspace:packages/data/dashlets"
   dependencies:
-    "@amcharts/amcharts4": ^4.10.24
+    "@amcharts/amcharts4": ^4.10.25
     "@amcharts/amcharts4-geodata": ^4.1.23
     "@babel/runtime": ^7.17.9
     "@cubejs-client/core": ^0.29.48
@@ -6602,7 +6602,7 @@ __metadata:
     "@uidu/tooltip": ^0.5.14
     lodash: ^4.17.21
     react: ^18.0.0
-    react-animate-height: ^2.1.1
+    react-animate-height: ^2.1.2
     react-beautiful-dnd: ^13.1.0
     react-content-loader: ^6.2.0
     react-dom: ^18.0.0
@@ -6748,7 +6748,7 @@ __metadata:
     "@uidu/spinner": ^0.5.10
     query-string: ^7.1.1
     react: ^18.0.0
-    react-animate-height: ^2.1.1
+    react-animate-height: ^2.1.2
     react-facebook: ^8.1.4
     react-feather: ^2.0.9
     react-google-login: ^5.2.2
@@ -6959,7 +6959,7 @@ __metadata:
     prosemirror-utils: ^0.9.6
     prosemirror-view: ^1.23.12
     raf-schd: ^4.0.3
-    re-resizable: ^6.9.6
+    re-resizable: ^6.9.8
     react: ^18.0.0
     react-dom: ^18.0.0
     react-intl: ^5.25.0
@@ -7301,7 +7301,7 @@ __metadata:
     formsy-react: ^2.2.5
     react: ^18.0.0
     react-dom: ^18.0.0
-    react-mentions: ^4.3.1
+    react-mentions: ^4.3.2
     styled-components: ^5.3.5
     tslib: ^2.3.1
   peerDependencies:
@@ -7850,7 +7850,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.17.9
     "@faker-js/faker": ^6.1.2
-    "@fluentui/react": ^8.65.1
+    "@fluentui/react": ^8.66.2
     "@uidu/button": ^1.3.15
     "@uidu/docs": ^0.5.9
     "@uidu/dropdown-menu": ^0.6.15
@@ -8020,7 +8020,7 @@ __metadata:
     formsy-react: ^2.2.5
     react: ^18.0.0
     react-feather: ^2.0.9
-    react-mentions: ^4.3.1
+    react-mentions: ^4.3.2
     tslib: ^2.3.1
   languageName: unknown
   linkType: soft
@@ -8048,7 +8048,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.17.9
     "@faker-js/faker": ^6.1.2
-    "@fluentui/react": ^8.65.1
+    "@fluentui/react": ^8.66.2
     "@loadable/component": ^5.15.2
     "@uidu/avatar": ^0.9.7
     "@uidu/docs": ^0.5.9
@@ -8142,7 +8142,7 @@ __metadata:
     hoverintent: ^2.2.1
     polished: ^4.2.2
     react: ^18.0.0
-    react-animate-height: ^2.1.1
+    react-animate-height: ^2.1.2
     react-beautiful-dnd: ^13.1.0
     react-content-loader: ^6.2.0
     react-dom: ^18.0.0
@@ -8311,7 +8311,7 @@ __metadata:
     "@uidu/select": ^1.5.14
     "@uidu/spinner": ^0.5.10
     "@uidu/theme": ^0.6.12
-    focus-trap: ^6.7.3
+    focus-trap: ^6.8.0
     react: ^18.0.0
     react-dom: ^18.0.0
     styled-components: ^5.3.5
@@ -8515,7 +8515,7 @@ __metadata:
     "@uidu/spinner": ^0.5.10
     "@uidu/theme": ^0.6.12
     "@uidu/tooltip": ^0.5.14
-    focus-trap: ^6.7.3
+    focus-trap: ^6.8.0
     formsy-react: ^2.2.5
     memoize-one: ^5.2.1
     react: ^18.0.0
@@ -8578,7 +8578,7 @@ __metadata:
     hoverintent: ^2.2.1
     polished: ^4.2.2
     react: ^18.0.0
-    react-animate-height: ^2.1.1
+    react-animate-height: ^2.1.2
     react-beautiful-dnd: ^13.1.0
     react-content-loader: ^6.2.0
     react-dom: ^18.0.0
@@ -8918,7 +8918,7 @@ __metadata:
     "@uidu/changelog-loader": ^0.1.32
     "@uidu/fs-loader": ^0.1.50
     "@uidu/nav-info-loader": ^0.2.4
-    babel-loader: ^8.2.4
+    babel-loader: ^8.2.5
     bolt: ^0.24.10
     chalk: ^4.1.2
     compression-webpack-plugin: ^9.2.0
@@ -9608,14 +9608,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@welldone-software/why-did-you-render@npm:^6.2.3":
-  version: 6.2.3
-  resolution: "@welldone-software/why-did-you-render@npm:6.2.3"
+"@welldone-software/why-did-you-render@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@welldone-software/why-did-you-render@npm:7.0.1"
   dependencies:
     lodash: ^4
   peerDependencies:
-    react: ^16 || ^17
-  checksum: 6c012f0a67c94c19cd2e8221438d547990a26b0593b0d1e8fd57084253d7cd305f4904e5bda984fd38416390b35b95fb0c3631fa485bd41b0b317568f080376c
+    react: ^16 || ^17 || ^18
+  checksum: 0bfc59f1f8613e7dc5fbf189305e88b01c50ee278df2c9b69082ed6abcf8d71758eb468d027235916c6126934a755d6547e9704883007236544763fffad6f48c
   languageName: node
   linkType: hard
 
@@ -10743,9 +10743,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-loader@npm:^8.2.4":
-  version: 8.2.4
-  resolution: "babel-loader@npm:8.2.4"
+"babel-loader@npm:^8.2.5":
+  version: 8.2.5
+  resolution: "babel-loader@npm:8.2.5"
   dependencies:
     find-cache-dir: ^3.3.1
     loader-utils: ^2.0.0
@@ -10754,7 +10754,7 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0
     webpack: ">=2"
-  checksum: 4968251fc4af4279c8e44adba523ed4ad18942f04b37061298e81640d09a570f66e6d53948e39a7d3c3d24ca2b025f0a07c606fadd8e3fbffa8912fd789fd4f0
+  checksum: a6605557885eabbc3250412405f2c63ca87287a95a439c643fdb47d5ea3d5326f72e43ab97be070316998cb685d5dfbc70927ce1abe8be7a6a4f5919287773fb
   languageName: node
   linkType: hard
 
@@ -16453,12 +16453,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"focus-trap@npm:^6.7.3":
-  version: 6.7.3
-  resolution: "focus-trap@npm:6.7.3"
+"focus-trap@npm:^6.8.0":
+  version: 6.8.0
+  resolution: "focus-trap@npm:6.8.0"
   dependencies:
-    tabbable: ^5.2.1
-  checksum: 900c8fe94a7e0bcda7f0bf2c86dff174e997a1101f685833484cde721c8893729260b7a9f1f2c3a2c8560f5f84c332ba7d45695c7d4862f8f9340f6caceace3a
+    tabbable: 5.3.0
+  checksum: da1bb252027ebd9243f7d5db2d7e221768703840e7a551e24fe0ee163624327a561a29982467d95298d4ddf6dd13183ef85bda94a27358d3be0acf8aa28cab92
   languageName: node
   linkType: hard
 
@@ -17441,7 +17441,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "guidu@workspace:."
   dependencies:
-    "@amcharts/amcharts4": ^4.10.24
+    "@amcharts/amcharts4": ^4.10.25
     "@amcharts/amcharts4-geodata": ^4.1.23
     "@atlaskit/activity": ^1.0.3
     "@atlaskit/icon": ^21.10.6
@@ -17478,7 +17478,7 @@ __metadata:
     "@emotion/react": ^11.9.0
     "@emotion/styled": ^11.8.1
     "@faker-js/faker": ^6.1.2
-    "@fluentui/react": ^8.65.1
+    "@fluentui/react": ^8.66.2
     "@formatjs/cli": 4.8.3
     "@fortawesome/fontawesome-free": ^5.15.4
     "@fortawesome/fontawesome-svg-core": ^1.3.0
@@ -17561,7 +17561,7 @@ __metadata:
     "@uppy/url": ^2.0.5
     "@uppy/webcam": ^2.1.0
     "@uppy/xhr-upload": ^2.0.7
-    "@welldone-software/why-did-you-render": ^6.2.3
+    "@welldone-software/why-did-you-render": ^7.0.1
     abortcontroller-polyfill: ^1.7.3
     add: ^2.0.6
     array-find: ^1.0.0
@@ -17569,7 +17569,7 @@ __metadata:
     autosize: ^5.0.1
     avataaars: ^2.0.0
     axios: ^0.26.1
-    babel-loader: ^8.2.4
+    babel-loader: ^8.2.5
     babel-plugin-add-module-exports: ^1.0.4
     babel-plugin-formatjs: ^10.3.19
     babel-plugin-import: ^1.13.5
@@ -17618,7 +17618,7 @@ __metadata:
     fetch-mock: ^9.11.0
     file-loader: ^6.2.0
     flushable: ^1.0.0
-    focus-trap: ^6.7.3
+    focus-trap: ^6.8.0
     formsy-react: ^2.2.5
     fs-extra: ^10.1.0
     fuzzy: ^0.1.3
@@ -17660,7 +17660,7 @@ __metadata:
     npm-run: ^5.0.1
     npm-run-all: ^4.1.5
     numeral: ^2.0.6
-    office-ui-fabric-react: ^7.185.2
+    office-ui-fabric-react: ^7.185.3
     overlayscrollbars: ^1.13.1
     overlayscrollbars-react: ^0.2.3
     p-wait-for: ^4.1.0
@@ -17695,11 +17695,11 @@ __metadata:
     query-string: ^7.1.1
     raf-schd: ^4.0.3
     raw-loader: ^4.0.2
-    re-resizable: ^6.9.6
+    re-resizable: ^6.9.8
     react: ^18.0.0
-    react-accessible-accordion: ^4.0.0
+    react-accessible-accordion: ^5.0.0
     react-addons-text-content: ^0.0.4
-    react-animate-height: ^2.1.1
+    react-animate-height: ^2.1.2
     react-animated-number: ^0.4.4
     react-avatar-editor: ^12.0.0
     react-beautiful-dnd: ^13.1.0
@@ -17733,7 +17733,7 @@ __metadata:
     react-markdown: ^6.0.3
     react-markings: ^1.3.0
     react-media: ^1.10.0
-    react-mentions: ^4.3.1
+    react-mentions: ^4.3.2
     react-node-resolver: ^2.0.1
     react-number-format: ^4.9.1
     react-numeric-input: ^2.2.3
@@ -22941,9 +22941,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"office-ui-fabric-react@npm:^7.185.2":
-  version: 7.185.2
-  resolution: "office-ui-fabric-react@npm:7.185.2"
+"office-ui-fabric-react@npm:^7.185.3":
+  version: 7.185.3
+  resolution: "office-ui-fabric-react@npm:7.185.3"
   dependencies:
     "@fluentui/date-time-utilities": ^7.9.1
     "@fluentui/react-focus": ^7.18.3
@@ -22963,7 +22963,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <17.0.0"
     react: ">=16.8.0 <17.0.0"
     react-dom: ">=16.8.0 <17.0.0"
-  checksum: 672d688e78751a60c403d22b2d2a0f1c2bbe150bfe054a6ab027ab9a4bd12bd87b7cdbeda62c7e503e98b2b61c9f125e5dbc0c496d841747eddc35e8e36939d7
+  checksum: b105713df9df4eb27709ffecb671706c9daec8139785a4cc5d4ad4ffb64c98473f9daf34eef45b5d1fa27417b58fa93de9ae70c6d2b6acb1bcaf56be2b4b4066
   languageName: node
   linkType: hard
 
@@ -25279,15 +25279,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"re-resizable@npm:^6.9.6":
-  version: 6.9.6
-  resolution: "re-resizable@npm:6.9.6"
+"re-resizable@npm:^6.9.8":
+  version: 6.9.8
+  resolution: "re-resizable@npm:6.9.8"
   dependencies:
     fast-memoize: ^2.5.1
   peerDependencies:
     react: ^16.13.1 || ^17.0.0 || ^18.0.0
     react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
-  checksum: ac87fd1058a1086be6330cd56a25de6b89b872eafad3cc2e6b821e39adcb50e79241c78fc369a4eed84931f64affc07cefb4fc3c118ccbe77f93add25ad82a1a
+  checksum: 7c6bf2e43b15f5a97f55d30ac1fe0651ae2c6044f857979866751727895b5b749b8b00375f22ead4e18ecbaa0a763fd8451ace86e2b097026e44c31e246b28b3
   languageName: node
   linkType: hard
 
@@ -25302,13 +25302,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-accessible-accordion@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "react-accessible-accordion@npm:4.0.0"
+"react-accessible-accordion@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "react-accessible-accordion@npm:5.0.0"
   peerDependencies:
-    react: ^16.3.2 || ^17.0.0
-    react-dom: ^16.3.3 || ^17.0.0
-  checksum: 87a3ca755e2fbb11a60f656cadb5e437c9af7380fa77755996ae894b40fe8d03244a81a90ad3a8424f50faeded7ebed979270c3bb7582b2ec9fa5f05207d6d16
+    react: ^16.3.2 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.3.3 || ^17.0.0 || ^18.0.0
+  checksum: a9b63abc72f7b2e868801bba09f80417c69aca9a55bfb0cc447e5e0725b3bac4ce32c1f86c94f5184781fd6fbf941f7e7093b1cc362cc9f234b1c42e2f5acf0e
   languageName: node
   linkType: hard
 
@@ -25319,16 +25319,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-animate-height@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "react-animate-height@npm:2.1.1"
+"react-animate-height@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "react-animate-height@npm:2.1.2"
   dependencies:
     classnames: ^2.2.5
     prop-types: ^15.6.1
   peerDependencies:
     react: ">=15.6.2"
     react-dom: ">=15.6.2"
-  checksum: e15c845ef78b19cdcc68b0528c4b666f1c4d1d11b08607671d1b1eb901d3a1b8756836c41aba9448f75b82da8133ca43e6c91fd36c445c7d6e2f6d466ed8eab7
+  checksum: 56f0db8a8a53a8e115cc9d38ce290aad4bb989e83b573a1b5a01d4b33bddf28810ae6b60cb95cd870fb11bf83eae3ef33ffd4bfd58c578e8c2a28b410e3e9885
   languageName: node
   linkType: hard
 
@@ -25910,9 +25910,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-mentions@npm:^4.3.1":
-  version: 4.3.1
-  resolution: "react-mentions@npm:4.3.1"
+"react-mentions@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "react-mentions@npm:4.3.2"
   dependencies:
     "@babel/runtime": 7.4.5
     invariant: ^2.2.4
@@ -25921,7 +25921,7 @@ __metadata:
   peerDependencies:
     react: ">=16.8.3"
     react-dom: ">=16.8.3"
-  checksum: 23654441c0b19bbcb83d91fd47d02a3bfb5e216e126d5a8df6a29d6dcf02d651c73939e6726b0e2f23e194a8e8b91f5df6e2f3f87f83900d10cf0ab2e6105fca
+  checksum: 587368094c5735e104690c968a47b7e0f4965bbb071279f891efbe8750c3226e61d3613baa791d1cbb6b05f02bfd20a2d9ff235b6546bdbd87559b3003acb5e2
   languageName: node
   linkType: hard
 
@@ -29010,10 +29010,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tabbable@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "tabbable@npm:5.2.1"
-  checksum: d26e9eeb880c4c78b59244bac2c931ad46f6c64a01e5c15ba6da348dc86442222912733846a9e63373342a81fa15d4afb31267606b38431510d10b0fb9ec9bba
+"tabbable@npm:5.3.0":
+  version: 5.3.0
+  resolution: "tabbable@npm:5.3.0"
+  checksum: 3971231b6331458e42542929229e182fb9aff4de8322756d05c34dddab81539379925b110a876bb45addd0d541db11e9e85da1c14a0239442885e6351968901e
   languageName: node
   linkType: hard
 

@@ -15,7 +15,7 @@
     "@uidu/popper": "^0.5.12",
     "@uidu/portal": "^0.5.14",
     "@uidu/theme": "^0.6.12",
-    "focus-trap": "^6.7.3",
+    "focus-trap": "^6.8.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.3.1"
   },
