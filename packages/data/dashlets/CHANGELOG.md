@@ -1,5 +1,12 @@
 # @uidu/blocks
 
+## 1.7.1
+
+### Patch Changes
+
+- 4389d70f9: Bump dependencies
+  - @uidu/data-fields@1.5.14
+
 ## 1.7.0
 
 ### Minor Changes
