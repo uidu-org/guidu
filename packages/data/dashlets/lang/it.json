@@ -1,53 +1,53 @@
 {
   "EZdplJ": {
-    "message": "Error loading {name}"
+    "message": "Errore durante il caricamento {name}"
   },
   "uidu.dashlets.counter.description": {
-    "message": "Counter"
+    "message": "Contatore"
   },
   "uidu.dashlets.counter.name": {
-    "message": "Counter"
+    "message": "Contatore"
   },
   "uidu.dashlets.funnel.description": {
-    "message": "Funnel chart."
+    "message": "Grafico a imbuto."
   },
   "uidu.dashlets.funnel.name": {
-    "message": "Funnel chart"
+    "message": "Grafico a imbuto"
   },
   "uidu.dashlets.geo.description": {
-    "message": "Geo chart."
+    "message": "Grafico geografico."
   },
   "uidu.dashlets.geo.name": {
-    "message": "Geo chart"
+    "message": "Grafico geografico"
   },
   "uidu.dashlets.pie.description": {
-    "message": "Pie chart."
+    "message": "Grafico a torta."
   },
   "uidu.dashlets.pie.name": {
-    "message": "Pie chart"
+    "message": "Grafico a torta"
   },
   "uidu.dashlets.radar.description": {
-    "message": "Radar chart."
+    "message": "Grafico radar."
   },
   "uidu.dashlets.radar.name": {
-    "message": "Radar chart"
+    "message": "Grafico radar"
   },
   "uidu.dashlets.table.description": {
-    "message": "Table"
+    "message": "Tavolo"
   },
   "uidu.dashlets.table.name": {
-    "message": "Table"
+    "message": "Tavolo"
   },
   "uidu.dashlets.treemap.description": {
-    "message": "Treemap chart."
+    "message": "Grafico ad albero."
   },
   "uidu.dashlets.treemap.name": {
-    "message": "Treemap chart"
+    "message": "Grafico ad albero"
   },
   "uidu.dashlets.xy.description": {
-    "message": "XY chart."
+    "message": "Grafico XY."
   },
   "uidu.dashlets.xy.name": {
-    "message": "XY chart"
+    "message": "Grafico XY"
   }
 }
