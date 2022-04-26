@@ -1,5 +1,14 @@
 # @uidu/editor-core
 
+## 0.14.3
+
+### Patch Changes
+
+- 4389d70f9: Bump dependencies
+- Updated dependencies [4389d70f9]
+  - @uidu/select@1.5.15
+  - @uidu/media-card@0.6.7
+
 ## 0.14.2
 
 ### Patch Changes

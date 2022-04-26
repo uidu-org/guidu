@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 1.5.14
+
+### Patch Changes
+
+- Updated dependencies [4389d70f9]
+  - @uidu/popup@0.6.15
+  - @uidu/select@1.5.15
+
 ## 1.5.13
 
 ### Patch Changes
