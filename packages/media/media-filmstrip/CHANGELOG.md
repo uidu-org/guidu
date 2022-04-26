@@ -1,5 +1,13 @@
 # @uidu/media-filmstrip
 
+## 0.4.15
+
+### Patch Changes
+
+- 52e49f851: Small edits to messages components, now inside uidu-core
+- Updated dependencies [52e49f851]
+  - @uidu/media-card@0.6.8
+
 ## 0.4.14
 
 ### Patch Changes

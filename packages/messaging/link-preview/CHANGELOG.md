@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.14
+
+### Patch Changes
+
+- 52e49f851: Small edits to messages components, now inside uidu-core
+
 ## 0.3.13
 
 ### Patch Changes

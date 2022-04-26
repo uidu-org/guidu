@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.6.8
+
+### Patch Changes
+
+- 52e49f851: Small edits to messages components, now inside uidu-core
+
 ## 0.6.7
 
 ### Patch Changes
