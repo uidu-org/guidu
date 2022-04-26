@@ -64,7 +64,7 @@ export default function Message({
   return (
     <>
       <StyledMessage
-        className="message mt-1 position-relative"
+        tw="mt-1 relative"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(isDropdownOpen)}
       >

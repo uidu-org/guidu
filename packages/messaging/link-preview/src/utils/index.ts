@@ -5,16 +5,16 @@ import { css } from 'styled-components';
 const REGEX_HTTPS = /^https/;
 const REGEX_LOCALHOST = /http:\/\/localhost/;
 
-export const isFunction = fn => typeof fn === 'function';
+export const isFunction = (fn) => typeof fn === 'function';
 
-export const isObject = obj => typeof obj === 'object';
+export const isObject = (obj) => typeof obj === 'object';
 
-export const isNil = value => value == null;
+export const isNil = (value) => value == null;
 
-export const getUrlPath = data => (data && isObject(data) ? data.url : data);
+export const getUrlPath = (data) => (data && isObject(data) ? data.url : data);
 
 export const someProp = (data, props) =>
-  data[props.find(prop => data[prop] !== null && data[prop] !== undefined)];
+  data[props.find((prop) => data[prop] !== null && data[prop] !== undefined)];
 
 export const media = {
   mobile: (...args) => css`
@@ -39,7 +39,7 @@ export const defaultApiParameters = {
   prerender: 'auto',
 };
 
-export const createApiUrl = props => {
+export const createApiUrl = (props) => {
   const { apiKey, url: targetUrl, prerender, contrast, media } = props;
   const takeScreenshot = media.includes('screenshot');
   const hasVideo = media.includes('video');
@@ -69,9 +69,11 @@ export const createApiUrl = props => {
 
 export const fetchFromApiUrl = ({ apiKey, apiUrl }, source) => {
   const headers = apiKey ? { 'x-api-key': apiKey } : {};
-  return axios.get(apiUrl, { headers, cancelToken: source.token }).then(res => {
-    return res.data;
-  });
+  return axios
+    .get(apiUrl, { headers, cancelToken: source.token })
+    .then((res) => {
+      return res.data;
+    });
 };
 
 export const fetchFromApi = (props, source) => {
@@ -79,9 +81,9 @@ export const fetchFromApi = (props, source) => {
   return fetchFromApiUrl({ apiUrl, ...props }, source);
 };
 
-export const isLarge = cardSize => cardSize === 'large';
+export const isLarge = (cardSize) => cardSize === 'large';
 
-export const imageProxy = url => {
+export const imageProxy = (url) => {
   if (!url || REGEX_LOCALHOST.test(url) || REGEX_HTTPS.test(url)) return url;
   return `https://images.weserv.nl/?url=${encodeURIComponent(url).replace(
     'http://',
@@ -89,7 +91,7 @@ export const imageProxy = url => {
   )}`;
 };
 
-export const extractFirstUrl = text => {
+export const extractFirstUrl = (text) => {
   const urlsSet = getUrls(text);
   if (urlsSet.size == 0) {
     return null;

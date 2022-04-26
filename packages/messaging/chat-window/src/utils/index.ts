@@ -10,9 +10,7 @@ export const sortByDay = (data: Array<any>): Array<any> =>
 
 export const groupByDay = (data: Array<any>): Object =>
   data.reduce((messages, message) => {
-    const date = moment(message.createdAt)
-      .startOf('day')
-      .format('L');
+    const date = moment(message.createdAt).startOf('day').format('L');
     if (!messages[date]) {
       messages[date] = [];
     }

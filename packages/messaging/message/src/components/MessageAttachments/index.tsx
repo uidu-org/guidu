@@ -18,7 +18,7 @@ function formatBytes(bytes, decimals = 2) {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 }
 
-export default React.memo(function MessageAttachments({
+export default function MessageAttachments({
   attachments,
   className,
   scrollable,
@@ -30,10 +30,12 @@ export default React.memo(function MessageAttachments({
   if (!scrollable?.current) {
     return <div>Loading...</div>;
   }
+
   if (isOnlyImages(files)) {
     return (
       <>
         <div
+          tw="flex "
           className={`row no-gutters mt-2 row-cols-${
             validAttachments.length > 4 ? 4 : validAttachments.length
           }`}
@@ -62,6 +64,7 @@ export default React.memo(function MessageAttachments({
   return (
     <>
       <div
+        tw="flex items-center space-x-2"
         style={{
           width: scrollable.current.offsetWidth * 0.45,
         }}
@@ -81,10 +84,10 @@ export default React.memo(function MessageAttachments({
                 e.preventDefault();
                 setCurrentModal(index);
               }}
-              className="p-2 mt-2 card"
+              tw="p-2 mt-2 border rounded"
             >
-              <div className="d-flex align-items-center">
-                <div className="flex-shrink-0 d-flex">
+              <div tw="flex items-center">
+                <div tw="flex-shrink-0 flex">
                   <Icon
                     {...getFileTypeIconProps({
                       extension,
@@ -100,9 +103,9 @@ export default React.memo(function MessageAttachments({
                   />
                 </div>
 
-                <div style={{ minWidth: 0 }} className="ml-2">
-                  <p className="mb-0 text-truncate">{filename}</p>
-                  <p className="mb-0 text-truncate text-muted">
+                <div tw="ml-3 min-w-0">
+                  <p tw="truncate">{filename}</p>
+                  <p tw="truncate text-gray-500">
                     {size ? `${formatBytes(size, 2)} - ` : ''}.{extension}
                   </p>
                 </div>
@@ -118,4 +121,4 @@ export default React.memo(function MessageAttachments({
       />
     </>
   );
-});
+}

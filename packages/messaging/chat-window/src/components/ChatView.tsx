@@ -32,11 +32,11 @@ function ChatView({
   };
 
   const freezeScroll = () => {
-    scrollable.current.ontouchmove = e => e.preventDefault(); // mobile
+    scrollable.current.ontouchmove = (e) => e.preventDefault(); // mobile
   };
 
   const unfreezeScroll = () => {
-    scrollable.current.ontouchmove = e => true;
+    scrollable.current.ontouchmove = (e) => true;
   };
 
   const { isFetching, setIsFetching, lastY } = useInfiniteScroll(

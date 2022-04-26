@@ -21,7 +21,7 @@ export default function MediaCardViewer({
   const { downloadUrl, kind, filename, extension, metatada } = file;
 
   return (
-    <Wrapper className="card" dimensions={dimensions} onClick={onClick}>
+    <Wrapper tw="border rounded" dimensions={dimensions} onClick={onClick}>
       <div className="wrapper">
         <div className="img-wrapper">
           <Component dimensions={dimensions} file={file} />
@@ -40,8 +40,8 @@ export default function MediaCardViewer({
                 }}
               />
               <div style={{ minWidth: 0 }}>
-                <p className="text-truncate mb-0">{filename}</p>
-                <p className="text-truncate text-muted mb-0">
+                <p className="mb-0 text-truncate">{filename}</p>
+                <p className="mb-0 text-truncate text-muted">
                   323kb - .{extension}
                 </p>
               </div>
