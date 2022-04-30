@@ -1,5 +1,13 @@
 # @uidu/chat-window
 
+## 0.4.14
+
+### Patch Changes
+
+- 52e49f851: Small edits to messages components, now inside uidu-core
+- Updated dependencies [52e49f851]
+  - @uidu/message@0.5.19
+
 ## 0.4.13
 
 ### Patch Changes
