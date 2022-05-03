@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.10
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/docs@0.5.10
+
 ## 0.6.9
 
 ### Patch Changes

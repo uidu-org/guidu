@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 1.1.16
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/field-base@3.1.19
+  - @uidu/field-text@1.1.14
+
 ## 1.1.15
 
 ### Patch Changes

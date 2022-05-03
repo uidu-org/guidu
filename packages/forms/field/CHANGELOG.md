@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.0.10
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/checkbox@1.1.14
+  - @uidu/field-number@1.0.13
+  - @uidu/field-text@1.1.14
+  - @uidu/field-textarea@1.1.13
+  - @uidu/select@1.5.16
+
 ## 1.0.9
 
 ### Patch Changes

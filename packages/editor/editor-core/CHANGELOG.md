@@ -1,5 +1,43 @@
 # @uidu/editor-core
 
+## 0.14.4
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/avatar@0.9.8
+  - @uidu/avatar-group@2.6.12
+  - @uidu/button@1.3.16
+  - @uidu/droplist@0.5.16
+  - @uidu/menu@0.7.9
+  - @uidu/modal-dialog@0.5.19
+  - @uidu/spinner@0.5.11
+  - @uidu/theme@0.6.13
+  - @uidu/tooltip@0.5.15
+  - @uidu/adf-schema@0.9.3
+  - @uidu/adf-utils@0.8.5
+  - @uidu/editor-common@0.7.9
+  - @uidu/editor-json-transformer@0.7.5
+  - @uidu/editor-markdown-transformer@0.8.4
+  - @uidu/analytics-gas-types@0.3.2
+  - @uidu/analytics-listeners@0.4.10
+  - @uidu/analytics-namespaced-context@0.4.10
+  - @uidu/date@0.4.14
+  - @uidu/emoji@0.6.9
+  - @uidu/mentions@0.4.7
+  - @uidu/profilecard@0.3.7
+  - @uidu/status@0.5.7
+  - @uidu/task-decision@0.4.17
+  - @uidu/field-date@1.1.16
+  - @uidu/form@1.2.18
+  - @uidu/select@1.5.16
+  - @uidu/media-card@0.6.9
+  - @uidu/media-core@0.7.8
+  - @uidu/media-filmstrip@0.4.16
+  - @uidu/media-picker@0.7.10
+
 ## 0.14.3
 
 ### Patch Changes

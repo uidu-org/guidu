@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.3.16
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/button@1.3.16
+  - @uidu/inline-dialog@0.5.15
+  - @uidu/theme@0.6.13
+  - @uidu/field@1.0.10
+  - @uidu/field-text@1.1.14
+  - @uidu/form@1.2.18
+
 ## 0.3.15
 
 ### Patch Changes

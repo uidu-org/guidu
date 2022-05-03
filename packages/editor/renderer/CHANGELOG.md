@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.8.6
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/code@0.5.11
+  - @uidu/theme@0.6.13
+  - @uidu/tooltip@0.5.15
+  - @uidu/adf-schema@0.9.3
+  - @uidu/adf-utils@0.8.5
+  - @uidu/editor-common@0.7.9
+  - @uidu/editor-json-transformer@0.7.5
+  - @uidu/analytics-listeners@0.4.10
+  - @uidu/analytics-namespaced-context@0.4.10
+  - @uidu/mentions@0.4.7
+  - @uidu/status@0.5.7
+  - @uidu/task-decision@0.4.17
+  - @uidu/media-card@0.6.9
+  - @uidu/media-filmstrip@0.4.16
+
 ## 0.8.5
 
 ### Patch Changes

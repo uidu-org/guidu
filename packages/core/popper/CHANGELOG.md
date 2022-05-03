@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.13
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.5.12
 
 ### Patch Changes

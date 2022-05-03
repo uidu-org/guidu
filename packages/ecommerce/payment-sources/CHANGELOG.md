@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.16
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/payments@1.3.8
+  - @uidu/form@1.2.18
+
 ## 0.3.15
 
 ### Patch Changes

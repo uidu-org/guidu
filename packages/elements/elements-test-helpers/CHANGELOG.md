@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.17
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.4.16
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/pagination
 
+## 0.5.13
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/button@1.3.16
+  - @uidu/theme@0.6.13
+
 ## 0.5.12
 
 ### Patch Changes

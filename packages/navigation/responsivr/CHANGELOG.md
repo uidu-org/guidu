@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.4.10
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.4.9
 
 ### Patch Changes

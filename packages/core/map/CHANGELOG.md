@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.6.13
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/theme@0.6.13
+
 ## 0.6.12
 
 ### Patch Changes

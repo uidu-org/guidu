@@ -1,5 +1,14 @@
 # design-system
 
+## 0.1.27
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/button@1.3.16
+
 ## 0.1.26
 
 ### Patch Changes

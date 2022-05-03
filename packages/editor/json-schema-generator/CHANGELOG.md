@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.2.16
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.2.15
 
 ### Patch Changes

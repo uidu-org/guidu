@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 1.0.16
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/avatar@0.9.8
+  - @uidu/dropdown-menu@0.6.16
+  - @uidu/inline-dialog@0.5.15
+  - @uidu/theme@0.6.13
+  - @uidu/tooltip@0.5.15
+  - @uidu/shell@2.1.17
+
 ## 1.0.15
 
 ### Patch Changes

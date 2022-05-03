@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.6.9
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/button@1.3.16
+  - @uidu/code@0.5.11
+  - @uidu/spinner@0.5.11
+  - @uidu/theme@0.6.13
+  - @uidu/tooltip@0.5.15
+  - @uidu/field-text@1.1.14
+
 ## 0.6.8
 
 ### Patch Changes

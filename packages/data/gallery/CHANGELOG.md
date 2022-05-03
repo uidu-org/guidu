@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.2.8
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/spinner@0.5.11
+  - @uidu/data-controls@2.1.11
+  - @uidu/data-fields@1.5.15
+  - @uidu/shell@2.1.17
+
 ## 1.2.7
 
 ### Patch Changes

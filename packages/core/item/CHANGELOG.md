@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.5.14
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/avatar@0.9.8
+  - @uidu/theme@0.6.13
+
 ## 0.5.13
 
 ### Patch Changes

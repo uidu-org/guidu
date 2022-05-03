@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.7.14
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/docs@0.5.10
+  - @uidu/analytics@0.5.11
+  - @uidu/blanket@0.5.7
+  - @uidu/item@0.5.14
+  - @uidu/theme@0.6.13
+
 ## 0.7.13
 
 ### Patch Changes

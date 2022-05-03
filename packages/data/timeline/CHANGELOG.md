@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.3.3
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.3.2
 
 ### Patch Changes

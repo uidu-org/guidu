@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.20
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.3.19
 
 ### Patch Changes

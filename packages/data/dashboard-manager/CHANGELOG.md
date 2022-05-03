@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 1.4.1
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/dashboard-controls@1.0.22
+  - @uidu/dashlets@1.7.2
+
 ## 1.4.0
 
 ### Minor Changes

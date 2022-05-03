@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 0.7.8
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/docs@0.5.10
+
 ## 0.7.7
 
 ### Patch Changes

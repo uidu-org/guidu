@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 1.7.2
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/spinner@0.5.11
+  - @uidu/tooltip@0.5.15
+  - @uidu/dashboard-manager@1.4.1
+  - @uidu/dashlet-controls@1.0.22
+  - @uidu/data-fields@1.5.15
+  - @uidu/table@1.4.5
+
 ## 1.7.1
 
 ### Patch Changes

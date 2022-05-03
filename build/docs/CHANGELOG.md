@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.5.10
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/button@1.3.16
+  - @uidu/code@0.5.11
+  - @uidu/section-message@0.6.12
+  - @uidu/theme@0.6.13
+  - @uidu/tooltip@0.5.15
+
 ## 0.5.9
 
 ### Patch Changes

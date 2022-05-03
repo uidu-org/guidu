@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.5.16
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/item@0.5.14
+  - @uidu/layer@0.5.11
+  - @uidu/spinner@0.5.11
+  - @uidu/theme@0.6.13
+  - @uidu/tooltip@0.5.15
+
 ## 0.5.15
 
 ### Patch Changes

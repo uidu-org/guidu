@@ -1,5 +1,15 @@
 # @uidu/analytics-listeners
 
+## 0.4.10
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/analytics-gas-types@0.3.2
+  - @uidu/analytics-namespaced-context@0.4.10
+
 ## 0.4.9
 
 ### Patch Changes

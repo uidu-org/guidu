@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.4.16
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/theme@0.6.13
+  - @uidu/media-card@0.6.9
+  - @uidu/media-core@0.7.8
+  - @uidu/media-viewer@0.4.21
+
 ## 0.4.15
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.3.13
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.3.12
 
 ### Patch Changes

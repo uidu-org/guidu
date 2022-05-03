@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.4.7
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/slider@1.7.13
+  - @uidu/spinner@0.5.11
+  - @uidu/payments@1.3.8
+  - @uidu/field-text@1.1.14
+  - @uidu/form@1.2.18
+  - @uidu/stepper@0.4.13
+
 ## 0.4.6
 
 ### Patch Changes

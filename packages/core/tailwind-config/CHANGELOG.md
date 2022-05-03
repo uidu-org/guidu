@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.10
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.1.9
 
 ### Patch Changes

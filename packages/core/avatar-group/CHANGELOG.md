@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.6.12
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/avatar@0.9.8
+  - @uidu/dropdown-menu@0.6.16
+  - @uidu/theme@0.6.13
+  - @uidu/tooltip@0.5.15
+
 ## 2.6.11
 
 ### Patch Changes

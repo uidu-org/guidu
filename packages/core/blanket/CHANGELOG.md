@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.5.7
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.5.6
 
 ### Patch Changes

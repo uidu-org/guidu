@@ -1,5 +1,15 @@
 # @uidu/calendar
 
+## 0.4.5
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/button@1.3.16
+  - @uidu/dropdown-menu@0.6.16
+  - @uidu/shell@2.1.17
+
 ## 0.4.4
 
 ### Patch Changes

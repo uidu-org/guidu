@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.19
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/form@1.2.18
+
 ## 3.1.18
 
 ### Patch Changes

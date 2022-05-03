@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.9
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.1.8
 
 ### Patch Changes

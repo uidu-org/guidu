@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.4.5
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/button@1.3.16
+  - @uidu/menu@0.7.9
+  - @uidu/popup@0.6.16
+  - @uidu/data-fields@1.5.15
+  - @uidu/data-manager@2.4.4
+  - @uidu/checkbox@1.1.14
+
 ## 1.4.4
 
 ### Patch Changes
