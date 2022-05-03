@@ -11,13 +11,13 @@
   "dependencies": {
     "@babel/runtime": "^7.17.9",
     "@uidu/field-base": "^3.1.17",
-    "@uppy/core": "^2.1.8",
+    "@uppy/core": "^2.1.10",
     "@uppy/dashboard": "^2.1.4",
     "@uppy/react": "^2.1.2",
     "@uppy/xhr-upload": "^2.0.7",
     "formsy-react": "^2.2.5",
-    "react": "^18.0.0",
-    "tslib": "^2.3.1"
+    "react": "^18.1.0",
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.9",

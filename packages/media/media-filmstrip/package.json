@@ -15,10 +15,10 @@
     "@uidu/media-core": "^0.7.7",
     "@uidu/media-viewer": "^0.4.19",
     "@uidu/theme": "^0.6.12",
-    "react": "^18.0.0",
+    "react": "^18.1.0",
     "react-images": "^1.2.0-beta.7",
     "styled-components": "^5.3.5",
-    "tslib": "^2.3.1"
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.9"

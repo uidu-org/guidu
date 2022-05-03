@@ -10,7 +10,7 @@
   "types": "dist/uidu-data-fields.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "@faker-js/faker": "^6.1.2",
+    "@faker-js/faker": "^6.3.1",
     "@fortawesome/fontawesome-svg-core": "^1.3.0",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.18",
@@ -31,12 +31,12 @@
     "@uidu/select": "^1.5.15",
     "dayjs": "^1.11.1",
     "numeral": "^2.0.6",
-    "react": "^18.0.0",
+    "react": "^18.1.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.25.0",
+    "react-intl": "^5.25.1",
     "styled-components": "^5.3.5",
-    "tslib": "^2.3.1"
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.9"

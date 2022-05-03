@@ -14,16 +14,16 @@
     "@uidu/theme": "^0.6.12",
     "memoize-one": "^5.2.1",
     "styled-components": "^5.3.5",
-    "tslib": "^2.3.1"
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.10.6",
-    "@atlaskit/logo": "^13.5.4",
+    "@atlaskit/logo": "^13.5.5",
     "@uidu/checkbox": "^1.1.13",
     "@uidu/docs": "^0.5.9",
     "@uidu/form": "^1.2.17",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "react-router-dom": "^5.3.1"
   },
   "peerDependencies": {

@@ -11,14 +11,14 @@
   "dependencies": {
     "@babel/runtime": "^7.17.9",
     "@uidu/theme": "^0.6.12",
-    "react": "^18.0.0",
+    "react": "^18.1.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-feather": "^2.0.9",
     "styled-components": "^5.3.5",
-    "tslib": "^2.3.1"
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.1.2",
+    "@faker-js/faker": "^6.3.1",
     "@uidu/badge": "^0.5.10",
     "@uidu/docs": "^0.5.9",
     "@uidu/shell": "^2.1.15"

@@ -11,10 +11,10 @@
   "dependencies": {
     "@babel/runtime": "^7.17.9",
     "@uidu/shell": "^2.1.16",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "react-router-dom": "^5.3.1",
-    "tslib": "^2.3.1"
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.9"

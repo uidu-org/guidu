@@ -15,15 +15,15 @@
     "polished": "^4.2.2",
     "prop-types": "^15.8.1",
     "react-addons-text-content": "^0.0.4",
-    "tslib": "^2.3.1",
+    "tslib": "^2.4.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.9",
     "@uidu/lozenge": "^0.5.10",
     "@uidu/tooltip": "^0.5.14",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "react-router": "^5.3.1",
     "react-router-dom": "^5.3.1",
     "styled-components": "^5.3.5"

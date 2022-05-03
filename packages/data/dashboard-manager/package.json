@@ -10,18 +10,18 @@
   "types": "dist/uidu-dashboard-manager.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "@cubejs-client/core": "^0.29.48",
-    "@cubejs-client/react": "^0.29.48",
+    "@cubejs-client/core": "^0.29.54",
+    "@cubejs-client/react": "^0.29.54",
     "@types/react-grid-layout": "^1.3.2",
     "@uidu/dashboard-controls": "^1.0.21",
     "@uidu/dashlets": "^1.7.0",
     "d3-collection": "^1.0.7",
     "lodash": "^4.17.21",
-    "react": "^18.0.0",
+    "react": "^18.1.0",
     "react-grid-layout": "^1.3.4",
     "react-resizable": "^3.0.4",
     "styled-components": "^5.3.5",
-    "tslib": "^2.3.1"
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.9",

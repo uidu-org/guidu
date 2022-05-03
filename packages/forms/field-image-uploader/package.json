@@ -17,23 +17,23 @@
     "@uidu/media-core": "^0.7.7",
     "@uidu/spinner": "^0.5.10",
     "@uppy/aws-s3": "^2.0.9",
-    "@uppy/core": "^2.1.8",
-    "@uppy/drag-drop": "^2.0.6",
+    "@uppy/core": "^2.1.10",
+    "@uppy/drag-drop": "^2.0.7",
     "@uppy/react": "^2.1.2",
     "@uppy/thumbnail-generator": "^2.1.1",
     "@uppy/xhr-upload": "^2.0.7",
     "classnames": "^2.3.1",
     "formsy-react": "^2.2.5",
-    "react": "^18.0.0",
-    "react-avatar-editor": "^12.0.0",
+    "react": "^18.1.0",
+    "react-avatar-editor": "^13.0.0",
     "react-dropzone": "^11.7.1",
     "react-feather": "^2.0.9",
     "styled-components": "^5.3.5",
-    "tslib": "^2.3.1"
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.9",
     "@uidu/form": "^1.2.16",
-    "axios": "^0.26.1"
+    "axios": "^0.27.2"
   }
 }

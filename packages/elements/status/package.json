@@ -24,13 +24,13 @@
     "@uidu/lozenge": "^0.5.10",
     "@uidu/theme": "^0.6.12",
     "styled-components": "^5.3.5",
-    "tslib": "^2.3.1"
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.9",
     "@uidu/elements-test-helpers": "^0.4.16",
-    "react": "^18.0.0",
-    "react-intl": "^5.25.0"
+    "react": "^18.1.0",
+    "react-intl": "^5.25.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",

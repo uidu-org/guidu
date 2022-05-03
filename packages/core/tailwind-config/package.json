@@ -13,7 +13,7 @@
     "@tailwindcss/typography": "^0.4.1"
   },
   "devDependencies": {
-    "postcss": "^8.4.12",
+    "postcss": "^8.4.13",
     "tailwindcss": "^2.2.19"
   },
   "peerDependencies": {

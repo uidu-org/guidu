@@ -21,11 +21,11 @@
     "exenv": "^1.2.2",
     "prop-types": "^15.8.1",
     "raf-schd": "^4.0.3",
-    "react-focus-lock": "^2.8.1",
+    "react-focus-lock": "^2.9.0",
     "react-scrolllock": "^5.0.1",
     "react-transition-group": "^4.4.2",
     "tiny-invariant": "^1.2.0",
-    "tslib": "^2.3.1"
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/avatar": "^0.9.7",
@@ -35,9 +35,9 @@
     "@uidu/inline-dialog": "^0.5.14",
     "@uidu/radio": "^1.1.11",
     "@uidu/select": "^1.5.14",
-    "react": "^18.0.0",
+    "react": "^18.1.0",
     "react-beautiful-dnd": "^13.1.0",
-    "react-dom": "^18.0.0",
+    "react-dom": "^18.1.0",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^5.3.5"
   },

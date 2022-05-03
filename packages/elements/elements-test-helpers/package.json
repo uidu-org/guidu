@@ -13,13 +13,13 @@
   "dependencies": {
     "@babel/runtime": "^7.17.9",
     "exenv": "^1.2.2",
-    "tslib": "^2.3.1"
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.9",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-intl": "^5.25.0"
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-intl": "^5.25.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",
