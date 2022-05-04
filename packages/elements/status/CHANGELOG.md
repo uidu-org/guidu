@@ -1,5 +1,17 @@
 # @uidu/status
 
+## 0.5.7
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/lozenge@0.5.11
+  - @uidu/theme@0.6.13
+  - @uidu/analytics-gas-types@0.3.2
+  - @uidu/field-text@1.1.14
+
 ## 0.5.6
 
 ### Patch Changes

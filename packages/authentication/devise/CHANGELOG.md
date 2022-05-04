@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.7.7
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/avatar@0.9.8
+  - @uidu/slider@1.7.13
+  - @uidu/spinner@0.5.11
+  - @uidu/checkbox@1.1.14
+  - @uidu/field-password@1.1.12
+  - @uidu/field-phone@1.0.18
+  - @uidu/field-text@1.1.14
+  - @uidu/form@1.2.18
+  - @uidu/shell@2.1.17
+
 ## 0.7.6
 
 ### Patch Changes

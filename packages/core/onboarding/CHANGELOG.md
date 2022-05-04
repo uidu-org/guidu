@@ -1,5 +1,18 @@
 # @uidu/onboarding
 
+## 1.2.11
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/button@1.3.16
+  - @uidu/modal-dialog@0.5.19
+  - @uidu/popper@0.5.13
+  - @uidu/portal@0.5.15
+  - @uidu/theme@0.6.13
+
 ## 1.2.10
 
 ### Patch Changes

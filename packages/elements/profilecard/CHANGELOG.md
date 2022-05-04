@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.3.7
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/avatar@0.9.8
+  - @uidu/button@1.3.16
+  - @uidu/lozenge@0.5.11
+  - @uidu/popup@0.6.16
+  - @uidu/spinner@0.5.11
+  - @uidu/theme@0.6.13
+
 ## 0.3.6
 
 ### Patch Changes

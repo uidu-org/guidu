@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.8.5
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/adf-schema@0.9.3
+
 ## 0.8.4
 
 ### Patch Changes

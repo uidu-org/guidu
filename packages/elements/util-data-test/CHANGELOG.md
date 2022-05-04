@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.14
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/emoji@0.6.9
+  - @uidu/mentions@0.4.7
+  - @uidu/task-decision@0.4.17
+
 ## 0.4.13
 
 ### Patch Changes

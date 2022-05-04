@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.0.5
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/theme@0.6.13
+  - @uidu/shell@2.1.17
+
 ## 1.0.4
 
 ### Patch Changes

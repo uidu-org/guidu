@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.7.9
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/theme@0.6.13
+  - @uidu/adf-schema@0.9.3
+  - @uidu/adf-utils@0.8.5
+  - @uidu/analytics-namespaced-context@0.4.10
+  - @uidu/emoji@0.6.9
+  - @uidu/mentions@0.4.7
+  - @uidu/profilecard@0.3.7
+
 ## 0.7.8
 
 ### Patch Changes

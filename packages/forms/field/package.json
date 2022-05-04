@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Load field-* based on field kind",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field",
   "license": "MIT",
@@ -12,17 +12,17 @@
   "dependencies": {
     "@babel/runtime": "^7.17.9",
     "@loadable/component": "^5.15.2",
-    "@uidu/checkbox": "^1.1.13",
-    "@uidu/field-number": "^1.0.12",
-    "@uidu/field-text": "^1.1.13",
-    "@uidu/field-textarea": "^1.1.12",
-    "@uidu/select": "^1.5.13",
+    "@uidu/checkbox": "^1.1.14",
+    "@uidu/field-number": "^1.0.13",
+    "@uidu/field-text": "^1.1.14",
+    "@uidu/field-textarea": "^1.1.13",
+    "@uidu/select": "^1.5.16",
     "react": "^18.1.0",
     "react-content-loader": "^6.2.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.9",
-    "@uidu/form": "^1.2.16"
+    "@uidu/docs": "^0.5.10",
+    "@uidu/form": "^1.2.18"
   }
 }

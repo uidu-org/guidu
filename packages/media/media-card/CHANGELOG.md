@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.6.9
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/button@1.3.16
+  - @uidu/dropdown-menu@0.6.16
+  - @uidu/spinner@0.5.11
+  - @uidu/theme@0.6.13
+  - @uidu/tooltip@0.5.15
+  - @uidu/media-core@0.7.8
+
 ## 0.6.8
 
 ### Patch Changes

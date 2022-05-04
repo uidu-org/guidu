@@ -1,5 +1,13 @@
 # @uidu/badge
 
+## 0.5.11
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/theme@0.6.13
+
 ## 0.5.10
 
 ### Patch Changes

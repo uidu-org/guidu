@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.3.12
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/docs@0.5.10
+  - @uidu/analytics@0.5.11
+  - @uidu/theme@0.6.13
+
 ## 0.3.11
 
 ### Patch Changes

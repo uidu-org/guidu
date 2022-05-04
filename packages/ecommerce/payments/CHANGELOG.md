@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 1.3.8
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/section-message@0.6.12
+  - @uidu/slider@1.7.13
+  - @uidu/theme@0.6.13
+  - @uidu/field-base@3.1.19
+  - @uidu/form@1.2.18
+
 ## 1.3.7
 
 ### Patch Changes

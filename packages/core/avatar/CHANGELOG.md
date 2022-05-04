@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.9.8
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/theme@0.6.13
+  - @uidu/tooltip@0.5.15
+
 ## 0.9.7
 
 ### Patch Changes

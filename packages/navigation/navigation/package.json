@@ -1,6 +1,6 @@
 {
   "name": "@uidu/navigation",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/navigation",
   "license": "MIT",
@@ -10,14 +10,14 @@
   "types": "dist/uidu-navigation.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "@uidu/animated-menu": "^1.0.11",
-    "@uidu/avatar": "^0.9.7",
-    "@uidu/dropdown-menu": "^0.6.15",
-    "@uidu/inline-dialog": "^0.5.14",
-    "@uidu/menu": "^0.7.8",
-    "@uidu/shell": "^2.1.16",
-    "@uidu/theme": "^0.6.12",
-    "@uidu/tooltip": "^0.5.14",
+    "@uidu/animated-menu": "^1.0.12",
+    "@uidu/avatar": "^0.9.8",
+    "@uidu/dropdown-menu": "^0.6.16",
+    "@uidu/inline-dialog": "^0.5.15",
+    "@uidu/menu": "^0.7.9",
+    "@uidu/shell": "^2.1.17",
+    "@uidu/theme": "^0.6.13",
+    "@uidu/tooltip": "^0.5.15",
     "hoverintent": "^2.2.1",
     "polished": "^4.2.2",
     "react": "^18.1.0",
@@ -31,9 +31,9 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@uidu/badge": "^0.5.10",
-    "@uidu/docs": "^0.5.9",
-    "@uidu/lozenge": "^0.5.10",
+    "@uidu/badge": "^0.5.11",
+    "@uidu/docs": "^0.5.10",
+    "@uidu/lozenge": "^0.5.11",
     "react-feather": "^2.0.9"
   }
 }

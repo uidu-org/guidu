@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.18
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/button@1.3.16
+
 ## 1.2.17
 
 ### Patch Changes

@@ -1,5 +1,28 @@
 # @uidu/data-controls
 
+## 2.1.11
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/button@1.3.16
+  - @uidu/drawer@0.7.14
+  - @uidu/dropdown-menu@0.6.16
+  - @uidu/inline-dialog@0.5.15
+  - @uidu/menu@0.7.9
+  - @uidu/popup@0.6.16
+  - @uidu/spinner@0.5.11
+  - @uidu/tooltip@0.5.15
+  - @uidu/data-fields@1.5.15
+  - @uidu/data-manager@2.4.4
+  - @uidu/data-views@1.2.10
+  - @uidu/checkbox@1.1.14
+  - @uidu/field-text@1.1.14
+  - @uidu/form@1.2.18
+  - @uidu/select@1.5.16
+  - @uidu/shell@2.1.17
+
 ## 2.1.10
 
 ### Patch Changes

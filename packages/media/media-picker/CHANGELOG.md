@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.7.10
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/media-core@0.7.8
+
 ## 0.7.9
 
 ### Patch Changes

@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 2.4.4
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/button@1.3.16
+  - @uidu/menu@0.7.9
+  - @uidu/pagination@0.5.13
+  - @uidu/spinner@0.5.11
+  - @uidu/board@0.5.7
+  - @uidu/calendar@0.4.5
+  - @uidu/data-controls@2.1.11
+  - @uidu/data-fields@1.5.15
+  - @uidu/data-views@1.2.10
+  - @uidu/gallery@1.2.8
+  - @uidu/list@1.2.7
+  - @uidu/table@1.4.5
+  - @uidu/shell@2.1.17
+
 ## 2.4.3
 
 ### Patch Changes

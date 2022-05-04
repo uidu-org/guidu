@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.4.17
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/avatar-group@2.6.12
+  - @uidu/button@1.3.16
+  - @uidu/spinner@0.5.11
+  - @uidu/theme@0.6.13
+  - @uidu/analytics-namespaced-context@0.4.10
+
 ## 0.4.16
 
 ### Patch Changes

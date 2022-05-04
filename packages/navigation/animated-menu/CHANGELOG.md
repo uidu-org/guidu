@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.0.12
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 1.0.11
 
 ### Patch Changes

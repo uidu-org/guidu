@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.4.15
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/message@0.5.20
+  - @uidu/message-form@0.4.15
+  - @uidu/message-renderer@0.4.12
+
 ## 0.4.14
 
 ### Patch Changes

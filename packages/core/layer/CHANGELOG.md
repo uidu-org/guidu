@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.5.11
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.5.10
 
 ### Patch Changes

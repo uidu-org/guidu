@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.15
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+
 ## 0.3.14
 
 ### Patch Changes

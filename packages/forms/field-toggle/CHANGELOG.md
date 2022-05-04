@@ -1,5 +1,14 @@
 # @uidu/toggle
 
+## 1.1.9
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/field-base@3.1.19
+
 ## 1.1.8
 
 ### Patch Changes

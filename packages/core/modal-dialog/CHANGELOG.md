@@ -1,5 +1,18 @@
 # @uidu/modal-dialog
 
+## 0.5.19
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/blanket@0.5.7
+  - @uidu/button@1.3.16
+  - @uidu/portal@0.5.15
+  - @uidu/theme@0.6.13
+  - @uidu/form@1.2.18
+
 ## 0.5.18
 
 ### Patch Changes

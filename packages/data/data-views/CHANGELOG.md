@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 1.2.10
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/button@1.3.16
+  - @uidu/data-controls@2.1.11
+  - @uidu/data-manager@2.4.4
+  - @uidu/field-counter@1.1.13
+  - @uidu/field-number@1.0.13
+  - @uidu/form@1.2.18
+  - @uidu/select@1.5.16
+
 ## 1.2.9
 
 ### Patch Changes

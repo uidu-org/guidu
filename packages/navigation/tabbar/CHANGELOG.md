@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.4.12
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/shell@2.1.17
+
 ## 0.4.11
 
 ### Patch Changes

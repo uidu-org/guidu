@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-password",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "Field Password Component",
   "keywords": [
     "react",
@@ -18,12 +18,12 @@
     "@babel/runtime": "^7.17.9",
     "@loadable/component": "^5.15.2",
     "@types/zxcvbn": "^4.4.1",
-    "@uidu/analytics": "^0.5.10",
-    "@uidu/field-base": "^3.1.17",
-    "@uidu/field-text": "^1.1.13",
-    "@uidu/form": "^1.2.16",
-    "@uidu/theme": "^0.6.12",
-    "@uidu/tooltip": "^0.5.13",
+    "@uidu/analytics": "^0.5.11",
+    "@uidu/field-base": "^3.1.19",
+    "@uidu/field-text": "^1.1.14",
+    "@uidu/form": "^1.2.18",
+    "@uidu/theme": "^0.6.13",
+    "@uidu/tooltip": "^0.5.15",
     "classnames": "^2.3.1",
     "formsy-react": "^2.2.5",
     "react-feather": "^2.0.9",
@@ -31,8 +31,8 @@
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
-    "@uidu/button": "^1.3.14",
-    "@uidu/docs": "^0.5.9",
+    "@uidu/button": "^1.3.16",
+    "@uidu/docs": "^0.5.10",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "styled-components": "^5.3.5"

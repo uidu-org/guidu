@@ -1,5 +1,24 @@
 # @uidu/message
 
+## 0.5.20
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/avatar@0.9.8
+  - @uidu/button@1.3.16
+  - @uidu/drawer@0.7.14
+  - @uidu/dropdown-menu@0.6.16
+  - @uidu/menu@0.7.9
+  - @uidu/popup@0.6.16
+  - @uidu/tooltip@0.5.15
+  - @uidu/media-card@0.6.9
+  - @uidu/media-core@0.7.8
+  - @uidu/media-viewer@0.4.21
+  - @uidu/message-form@0.4.15
+  - @uidu/message-renderer@0.4.12
+
 ## 0.5.19
 
 ### Patch Changes

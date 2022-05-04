@@ -1,5 +1,33 @@
 # Change Log
 
+## 0.4.26
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/docs@0.5.10
+  - @uidu/badge@0.5.11
+  - @uidu/button@1.3.16
+  - @uidu/code@0.5.11
+  - @uidu/drawer@0.7.14
+  - @uidu/lozenge@0.5.11
+  - @uidu/modal-dialog@0.5.19
+  - @uidu/spinner@0.5.11
+  - @uidu/theme@0.6.13
+  - @uidu/tooltip@0.5.15
+  - @uidu/list@1.2.7
+  - @uidu/table@1.4.5
+  - @uidu/checkbox@1.1.14
+  - @uidu/field-text@1.1.14
+  - @uidu/form@1.2.18
+  - @uidu/select@1.5.16
+  - @uidu/breadcrumbs@1.0.13
+  - @uidu/navigation@1.0.16
+  - @uidu/page-header@1.0.5
+  - @uidu/shell@2.1.17
+  - @uidu/themes-uidu@0.4.2
+
 ## 0.4.25
 
 ### Patch Changes

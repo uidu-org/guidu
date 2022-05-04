@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 1.2.7
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/data-fields@1.5.15
+
 ## 1.2.6
 
 ### Patch Changes

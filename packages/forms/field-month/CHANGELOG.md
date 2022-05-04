@@ -1,5 +1,16 @@
 # @uidu/field-text
 
+## 1.0.13
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/analytics@0.5.11
+  - @uidu/theme@0.6.13
+  - @uidu/field-base@3.1.19
+  - @uidu/form@1.2.18
+
 ## 1.0.12
 
 ### Patch Changes

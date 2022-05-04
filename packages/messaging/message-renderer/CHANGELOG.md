@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.12
+
+### Patch Changes
+
+- b1420fb70: Bump dependencies and fix messages dep tree
+- Updated dependencies [b1420fb70]
+  - @uidu/dropdown-menu@0.6.16
+  - @uidu/theme@0.6.13
+
 ## 0.4.11
 
 ### Patch Changes
