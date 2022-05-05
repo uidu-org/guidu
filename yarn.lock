@@ -6127,7 +6127,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/adf-schema@^0.9.3, @uidu/adf-schema@workspace:packages/editor/adf-schema":
+"@uidu/adf-schema@^0.9.3, @uidu/adf-schema@^0.9.4, @uidu/adf-schema@workspace:packages/editor/adf-schema":
   version: 0.0.0-use.local
   resolution: "@uidu/adf-schema@workspace:packages/editor/adf-schema"
   dependencies:
@@ -6609,10 +6609,10 @@ __metadata:
     "@loadable/component": ^5.15.2
     "@uidu/dashboard-manager": ^1.4.1
     "@uidu/dashlet-controls": ^1.0.22
-    "@uidu/data-fields": ^1.5.15
-    "@uidu/docs": ^0.5.10
+    "@uidu/data-fields": ^1.5.16
+    "@uidu/docs": ^0.5.11
     "@uidu/spinner": ^0.5.11
-    "@uidu/table": 1.4.5
+    "@uidu/table": 1.4.6
     "@uidu/tooltip": ^0.5.15
     d3-array: ^3.1.6
     gql-query-builder: ^3.6.0
@@ -6668,7 +6668,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-fields@^1.5.15, @uidu/data-fields@workspace:packages/data/data-fields":
+"@uidu/data-fields@^1.5.15, @uidu/data-fields@^1.5.16, @uidu/data-fields@workspace:packages/data/data-fields":
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
@@ -6680,7 +6680,7 @@ __metadata:
     "@heroicons/react": ^1.0.6
     "@loadable/component": ^5.15.2
     "@uidu/button": 1.3.16
-    "@uidu/docs": ^0.5.10
+    "@uidu/docs": ^0.5.11
     "@uidu/field-color-picker": ^2.0.17
     "@uidu/field-date": ^1.1.16
     "@uidu/field-downshift": ^1.4.10
@@ -6813,7 +6813,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/docs@*, @uidu/docs@^0.5.10, @uidu/docs@workspace:build/docs":
+"@uidu/docs@*, @uidu/docs@^0.5.10, @uidu/docs@^0.5.11, @uidu/docs@workspace:build/docs":
   version: 0.0.0-use.local
   resolution: "@uidu/docs@workspace:build/docs"
   dependencies:
@@ -6951,7 +6951,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@^0.14.4, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@^0.14.4, @uidu/editor-core@^0.14.5, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -6960,7 +6960,7 @@ __metadata:
     "@atlaskit/width-detector": ^3.0.8
     "@babel/runtime": ^7.17.9
     "@loadable/component": ^5.15.2
-    "@uidu/adf-schema": ^0.9.3
+    "@uidu/adf-schema": ^0.9.4
     "@uidu/adf-utils": ^0.8.5
     "@uidu/analytics": ^0.5.11
     "@uidu/analytics-gas-types": ^0.3.2
@@ -6970,11 +6970,11 @@ __metadata:
     "@uidu/avatar-group": ^2.6.12
     "@uidu/button": ^1.3.16
     "@uidu/date": ^0.4.14
-    "@uidu/docs": ^0.5.10
+    "@uidu/docs": ^0.5.11
     "@uidu/droplist": ^0.5.16
     "@uidu/editor-common": ^0.7.9
     "@uidu/editor-json-transformer": ^0.7.5
-    "@uidu/editor-markdown-transformer": ^0.8.4
+    "@uidu/editor-markdown-transformer": ^0.8.5
     "@uidu/emoji": ^0.6.9
     "@uidu/field-date": ^1.1.16
     "@uidu/form": ^1.2.18
@@ -7046,15 +7046,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-markdown-transformer@^0.8.4, @uidu/editor-markdown-transformer@workspace:packages/editor/editor-markdown-transformer":
+"@uidu/editor-markdown-transformer@^0.8.5, @uidu/editor-markdown-transformer@workspace:packages/editor/editor-markdown-transformer":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-markdown-transformer@workspace:packages/editor/editor-markdown-transformer"
   dependencies:
     "@babel/runtime": ^7.17.9
-    "@uidu/adf-schema": ^0.9.3
-    "@uidu/docs": ^0.5.10
+    "@uidu/adf-schema": ^0.9.4
+    "@uidu/docs": ^0.5.11
     "@uidu/editor-common": ^0.7.9
-    "@uidu/editor-core": ^0.14.4
+    "@uidu/editor-core": ^0.14.5
     markdown-it: ^13.0.1
     markdown-it-table: ^2.0.4
     prosemirror-markdown: ^1.8.0
@@ -8080,12 +8080,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/message-renderer@^0.4.12, @uidu/message-renderer@workspace:packages/messaging/message-renderer":
+"@uidu/message-renderer@^0.4.12, @uidu/message-renderer@^0.4.13, @uidu/message-renderer@workspace:packages/messaging/message-renderer":
   version: 0.0.0-use.local
   resolution: "@uidu/message-renderer@workspace:packages/messaging/message-renderer"
   dependencies:
     "@babel/runtime": ^7.17.9
-    "@uidu/docs": ^0.5.10
+    "@uidu/docs": ^0.5.11
     "@uidu/dropdown-menu": ^0.6.16
     "@uidu/theme": ^0.6.13
     interweave: ^13.0.0
@@ -8107,7 +8107,7 @@ __metadata:
     "@loadable/component": ^5.15.2
     "@uidu/avatar": ^0.9.8
     "@uidu/button": 1.3.16
-    "@uidu/docs": ^0.5.10
+    "@uidu/docs": ^0.5.11
     "@uidu/drawer": ^0.7.14
     "@uidu/dropdown-menu": ^0.6.16
     "@uidu/media-card": ^0.6.9
@@ -8115,7 +8115,7 @@ __metadata:
     "@uidu/media-viewer": ^0.4.21
     "@uidu/menu": 0.7.9
     "@uidu/message-form": ^0.4.15
-    "@uidu/message-renderer": ^0.4.12
+    "@uidu/message-renderer": ^0.4.13
     "@uidu/popup": 0.6.16
     "@uidu/shell": ^2.1.17
     "@uidu/tooltip": ^0.5.15
@@ -8760,7 +8760,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@1.4.5, @uidu/table@^1.4.5, @uidu/table@workspace:packages/data/table":
+"@uidu/table@1.4.6, @uidu/table@^1.4.5, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -8774,9 +8774,9 @@ __metadata:
     "@uidu/button": 1.3.16
     "@uidu/checkbox": ^1.1.14
     "@uidu/data-controls": ^2.1.11
-    "@uidu/data-fields": ^1.5.15
+    "@uidu/data-fields": ^1.5.16
     "@uidu/data-manager": 2.4.4
-    "@uidu/docs": ^0.5.10
+    "@uidu/docs": ^0.5.11
     "@uidu/menu": ^0.7.9
     "@uidu/popup": ^0.6.16
     numeral: ^2.0.6
