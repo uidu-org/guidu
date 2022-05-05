@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 1.5.16
+
+### Patch Changes
+
+- b4b08ad93: Bump font awesome
+
 ## 1.5.15
 
 ### Patch Changes

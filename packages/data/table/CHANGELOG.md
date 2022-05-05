@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 1.4.6
+
+### Patch Changes
+
+- b4b08ad93: Bump font awesome
+- Updated dependencies [b4b08ad93]
+  - @uidu/data-fields@1.5.16
+
 ## 1.4.5
 
 ### Patch Changes

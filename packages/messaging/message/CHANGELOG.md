@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.21
+
+### Patch Changes
+
+- c49c82693: Bump some major dependencius
+- Updated dependencies [c49c82693]
+  - @uidu/message-renderer@0.4.13
+
 ## 0.5.20
 
 ### Patch Changes

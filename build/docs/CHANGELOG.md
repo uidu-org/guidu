@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.11
+
+### Patch Changes
+
+- b4b08ad93: Bump font awesome
+
 ## 0.5.10
 
 ### Patch Changes
