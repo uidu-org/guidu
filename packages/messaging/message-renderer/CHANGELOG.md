@@ -1,5 +1,11 @@
 # @uidu/message-renderer
 
+## 0.4.13
+
+### Patch Changes
+
+- c49c82693: Bump some major dependencius
+
 ## 0.4.12
 
 ### Patch Changes

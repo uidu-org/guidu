@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-core",
-  "version": "0.14.4",
+  "version": "0.14.5",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/editor-core",
   "license": "MIT",
   "main": "dist/uidu-editor-core.cjs.js",
@@ -12,7 +12,7 @@
     "@atlaskit/width-detector": "^3.0.8",
     "@babel/runtime": "^7.17.9",
     "@loadable/component": "^5.15.2",
-    "@uidu/adf-schema": "^0.9.3",
+    "@uidu/adf-schema": "^0.9.4",
     "@uidu/adf-utils": "^0.8.5",
     "@uidu/analytics": "^0.5.11",
     "@uidu/analytics-gas-types": "^0.3.2",
@@ -25,7 +25,7 @@
     "@uidu/droplist": "^0.5.16",
     "@uidu/editor-common": "^0.7.9",
     "@uidu/editor-json-transformer": "^0.7.5",
-    "@uidu/editor-markdown-transformer": "^0.8.4",
+    "@uidu/editor-markdown-transformer": "^0.8.5",
     "@uidu/emoji": "^0.6.9",
     "@uidu/field-date": "^1.1.16",
     "@uidu/form": "^1.2.18",
@@ -75,7 +75,7 @@
     "w3c-keyname": "^2.2.4"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.10",
+    "@uidu/docs": "^0.5.11",
     "@uidu/shell": "^2.1.17"
   },
   "supportedLocales": [

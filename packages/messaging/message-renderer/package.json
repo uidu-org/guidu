@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-renderer",
-  "version": "0.4.12",
+  "version": "0.4.13",
   "description": "Message renderer",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/messaging/message-renderer",
   "license": "MIT",
@@ -20,6 +20,6 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.10"
+    "@uidu/docs": "^0.5.11"
   }
 }
