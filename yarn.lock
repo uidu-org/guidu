@@ -102,6 +102,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@atlaskit/blanket@npm:^12.2.12":
+  version: 12.2.12
+  resolution: "@atlaskit/blanket@npm:12.2.12"
+  dependencies:
+    "@atlaskit/analytics-next": ^8.2.0
+    "@atlaskit/codemod-utils": ^4.0.0
+    "@atlaskit/ds-lib": ^1.4.0
+    "@atlaskit/theme": ^12.1.0
+    "@atlaskit/tokens": ^0.9.0
+    "@babel/runtime": ^7.0.0
+    "@emotion/core": ^10.0.9
+  peerDependencies:
+    react: ^16.8.0
+  checksum: 1d7e6149e3c58322a7010b76e5c4f648532e58742fec086f4c79d887c57006aad30890288d9307e3e35162b8dc47ceeea689f00125d8aacc7ea73d7340393f09
+  languageName: node
+  linkType: hard
+
 "@atlaskit/codemod-utils@npm:^3.4.0":
   version: 3.4.0
   resolution: "@atlaskit/codemod-utils@npm:3.4.0"
@@ -111,28 +128,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/ds-lib@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "@atlaskit/ds-lib@npm:1.4.0"
+"@atlaskit/codemod-utils@npm:^4.0.0":
+  version: 4.0.2
+  resolution: "@atlaskit/codemod-utils@npm:4.0.2"
+  dependencies:
+    "@babel/runtime": ^7.0.0
+  checksum: ad5f9bd7609fad7661cdae6b257891155ea933582a95364fc3d13b0917eb98eeb16d3695775094e5c46a32ad060c62b7774f0358c4b12a825a05a89abae62721
+  languageName: node
+  linkType: hard
+
+"@atlaskit/ds-lib@npm:^1.4.0, @atlaskit/ds-lib@npm:^1.4.2":
+  version: 1.4.2
+  resolution: "@atlaskit/ds-lib@npm:1.4.2"
   dependencies:
     "@babel/runtime": ^7.0.0
   peerDependencies:
     react: ^16.8.0
-  checksum: 5282d460d76905eeb4a15f87fd43e413f0e88db58bcc25698bace415e6396de0d7b658f826c7ee793a6af4b00aadff86b9ac8416c7e91b4b90e6f982c0444475
+  checksum: ac6072d552dd3ac795e437157a12057a44f62dbb8659f9ea240dce4de4de184f44651323b5b3101b1ee02d21a882a27545927586beba6e794584282c9515a700
   languageName: node
   linkType: hard
 
-"@atlaskit/focus-ring@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@atlaskit/focus-ring@npm:1.0.0"
+"@atlaskit/focus-ring@npm:^1.0.0, @atlaskit/focus-ring@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@atlaskit/focus-ring@npm:1.0.4"
   dependencies:
     "@atlaskit/theme": ^12.1.0
-    "@atlaskit/tokens": ^0.6.0
+    "@atlaskit/tokens": ^0.9.0
     "@babel/runtime": ^7.0.0
     "@emotion/core": ^10.0.9
   peerDependencies:
     react: ^16.8.0
-  checksum: e4132b5ca7f6339a948dd68ed7db4e639fcfb8bf94461b627bb2945922fb2c117981e85f21686ea139b6ece2c0bc5a4a1a74b56b6304dd8c8c3b4e57ca01ae2c
+  checksum: 454ed38f18d51a3eefc8ce428586a669b879438a425da720467d44e72ee848965734ac8a1c89ea58d27b5353447f7f461989572aefbc269ee402664541210e36
   languageName: node
   linkType: hard
 
@@ -188,15 +214,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/motion@npm:^1.0.0":
-  version: 1.0.3
-  resolution: "@atlaskit/motion@npm:1.0.3"
+"@atlaskit/motion@npm:^1.0.0, @atlaskit/motion@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@atlaskit/motion@npm:1.0.4"
   dependencies:
     "@babel/runtime": ^7.0.0
     "@emotion/core": ^10.0.9
   peerDependencies:
     react: ^16.8.0
-  checksum: 636f3b31339c6a78cd34dcaec23838586ae90bba0d9c68c4228899f84c4bbb4dd7c0748aaa8c9a5ca2666cedcc31cb05076731f19e8fe4dc860d1a29ebca11d4
+  checksum: ee6e97e18ef995a93a652c5533e553c9da0a34d1434a2d8ed67d1ed43c89ff6bc109bd0e9730fc4a449336da3bce6519baba01ee48e54d26a3ec0807c15933e6
   languageName: node
   linkType: hard
 
@@ -8111,7 +8137,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:
+    "@atlaskit/blanket": ^12.2.12
+    "@atlaskit/ds-lib": ^1.4.2
+    "@atlaskit/focus-ring": ^1.0.4
     "@atlaskit/icon": ^21.10.6
+    "@atlaskit/motion": ^1.0.4
     "@babel/runtime": ^7.17.9
     "@uidu/analytics": ^0.5.11
     "@uidu/avatar": ^0.9.8
@@ -8126,8 +8156,6 @@ __metadata:
     "@uidu/radio": ^1.1.12
     "@uidu/select": ^1.5.16
     "@uidu/theme": ^0.6.13
-    exenv: ^1.2.2
-    prop-types: ^15.8.1
     raf-schd: ^4.0.3
     react: ^18.1.0
     react-beautiful-dnd: ^13.1.0
@@ -8135,9 +8163,7 @@ __metadata:
     react-focus-lock: ^2.9.0
     react-lorem-component: ^0.13.0
     react-scrolllock: ^5.0.1
-    react-transition-group: ^4.4.2
     styled-components: ^5.3.5
-    tiny-invariant: ^1.2.0
     tslib: ^2.4.0
   peerDependencies:
     react: ^18.0.0

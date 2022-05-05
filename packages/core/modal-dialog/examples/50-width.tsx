@@ -3,11 +3,16 @@ import { gridSize } from '@uidu/theme';
 import React from 'react';
 import Lorem from 'react-lorem-component';
 import styled from 'styled-components';
-import ModalDialog, { ModalTransition } from '../src';
-import { WIDTH_ENUM } from '../src/shared-variables';
+import ModalDialog, {
+  ModalBody,
+  ModalHeader,
+  ModalTitle,
+  ModalTransition,
+} from '../src';
+import { width } from '../src/internal/constants';
 
 const units = [420, '42%', '42em'];
-const sizes: (string | number)[] = WIDTH_ENUM.values;
+const sizes: (string | number)[] = width.values;
 const allWidths = sizes.concat(units);
 const H4 = styled.h4`
   margin-bottom: 0.66em;
@@ -54,11 +59,15 @@ export default class ModalDemo extends React.Component<{}, State> {
                 actions={actions}
                 key={name}
                 onClose={this.close}
-                heading={`Modal: ${String(name)}`}
                 width={name}
                 {...this.props}
               >
-                <Lorem count="1" />
+                <ModalHeader>
+                  <ModalTitle>{`Modal: ${String(name)}`}</ModalTitle>
+                </ModalHeader>
+                <ModalBody>
+                  <Lorem count="1" />
+                </ModalBody>
               </ModalDialog>
             ))}
         </ModalTransition>

@@ -1,10 +1,16 @@
 import Button from '@uidu/button';
 import { Checkbox } from '@uidu/checkbox';
 import FieldText from '@uidu/field-text';
-import Form from '@uidu/form';
+import Form, { FormSubmit } from '@uidu/form';
 import { RadioGroup } from '@uidu/radio';
 import React from 'react';
-import ModalDialog, { ModalFooter, ModalTransition } from '../src';
+import ModalDialog, {
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+  ModalTransition,
+} from '../src';
 import { FooterProps } from '../src/components/Footer';
 
 interface State {
@@ -66,44 +72,45 @@ export default class GuiduFormDemo extends React.Component<{}, State> {
 
         <ModalTransition>
           {isOpen && (
-            <ModalDialog
-              heading="Form Demo"
-              onClose={this.close}
-              components={{
-                Container: ({ children, className }: ContainerProps) => (
-                  <Form
-                    handleSubmit={this.onFormSubmit}
-                    footerRenderer={() => null}
-                  >
-                    {({ formProps }: { formProps: FormProps }) => (
-                      <form {...formProps} className={className}>
-                        {children}
-                      </form>
-                    )}
-                  </Form>
-                ),
-                Footer: footer,
-              }}
-            >
-              <p>Enter some text then submit the form to see the response.</p>
-              <FieldText label="Name" name="my-name" defaultValue="" />
-              <FieldText
-                autoComplete="off"
-                placeholder="gbelson@hooli.com"
-                label="Email"
-                name="my-email"
-                defaultValue=""
-              />
-              <Checkbox
-                value="example"
-                label="Checkbox"
-                name="checkbox"
-                defaultIsChecked
-              />
-              <RadioGroup
-                items={radioItems}
-                label="Basic Radio Group Example"
-              ></RadioGroup>
+            <ModalDialog onClose={this.close}>
+              <ModalHeader>
+                <ModalTitle>
+                  <h2>Form Demo</h2>
+                </ModalTitle>
+              </ModalHeader>
+              <ModalBody>
+                <Form
+                  handleSubmit={this.onFormSubmit}
+                  footerRenderer={(props) => (
+                    <ModalFooter>
+                      <FormSubmit {...props}>Test</FormSubmit>
+                    </ModalFooter>
+                  )}
+                >
+                  <p>
+                    Enter some text then submit the form to see the response.
+                  </p>
+                  <FieldText label="Name" name="my-name" defaultValue="" />
+                  <FieldText
+                    autoComplete="off"
+                    placeholder="gbelson@hooli.com"
+                    label="Email"
+                    name="my-email"
+                    defaultValue=""
+                  />
+                  <Checkbox
+                    value="example"
+                    label="Checkbox"
+                    name="checkbox"
+                    defaultIsChecked
+                  />
+                  <RadioGroup
+                    options={radioItems}
+                    name="radio"
+                    label="Basic Radio Group Example"
+                  ></RadioGroup>
+                </Form>
+              </ModalBody>
             </ModalDialog>
           )}
         </ModalTransition>

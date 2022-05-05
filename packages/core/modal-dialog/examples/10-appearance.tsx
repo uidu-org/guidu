@@ -1,10 +1,16 @@
 import Button, { ButtonGroup } from '@uidu/button';
 import React from 'react';
 import Lorem from 'react-lorem-component';
-import Modal, { ModalTransition } from '../src';
-import { AppearanceType } from '../src/types';
+import Modal, {
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+  ModalTransition,
+} from '../src';
+import { Appearance } from '../src/types';
 
-const appearances: AppearanceType[] = ['warning', 'danger'];
+const appearances: Appearance[] = ['warning', 'danger'];
 
 interface State {
   isOpen: string | null;
@@ -30,7 +36,7 @@ export default class ExampleAppearance extends React.PureComponent<{}, State> {
     return (
       <div>
         <ButtonGroup>
-          {appearances.map(name => (
+          {appearances.map((name) => (
             <Button key={`${name}-trigger`} onClick={() => this.open(name)}>
               Open: {name}
             </Button>
@@ -39,16 +45,22 @@ export default class ExampleAppearance extends React.PureComponent<{}, State> {
 
         <ModalTransition>
           {appearances
-            .filter(a => a === isOpen)
-            .map(name => (
-              <Modal
-                key="active-modal"
-                actions={actions}
-                appearance={name}
-                onClose={this.close}
-                heading={`Modal: ${name}`}
-              >
-                <Lorem count={2} />
+            .filter((a) => a === isOpen)
+            .map((name) => (
+              <Modal key="active-modal" actions={actions} onClose={this.close}>
+                <ModalHeader>
+                  <ModalTitle appearance={name}>{`Modal: ${name}`}</ModalTitle>
+                </ModalHeader>
+                <ModalBody>
+                  <Lorem count={2} />
+                </ModalBody>
+                <ModalFooter>
+                  <ButtonGroup>
+                    {actions.map((action) => (
+                      <Button onClick={action.onClick}>{action.text}</Button>
+                    ))}
+                  </ButtonGroup>
+                </ModalFooter>
               </Modal>
             ))}
         </ModalTransition>

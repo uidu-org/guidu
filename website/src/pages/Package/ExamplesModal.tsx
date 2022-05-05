@@ -1,13 +1,8 @@
 import Button, { ButtonGroup } from '@uidu/button';
 import { LinkItem, MenuGroup, Section } from '@uidu/menu';
-import Modal, {
-  ModalBody as Body,
-  ModalHeader as OgModalHeader,
-  ModalTitle,
-} from '@uidu/modal-dialog';
-import { colors, elevation, gridSize } from '@uidu/theme';
+import Modal, { ModalBody, ModalHeader, ModalTitle } from '@uidu/modal-dialog';
+import { colors, gridSize } from '@uidu/theme';
 import Tooltip from '@uidu/tooltip';
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import { Code, Link as LinkIcon, Maximize, X } from 'react-feather';
@@ -40,10 +35,6 @@ const ErrorMessage = styled.div`
 // ==============================
 // MODAL
 // ==============================
-const ModalBody = styled(Body)`
-  display: flex;
-  flex-direction: column;
-`;
 const ContentBody = styled.div`
   display: flex;
   flex: 1;
@@ -53,13 +44,6 @@ const ModalContent = styled.div`
   flex: 1 1 auto;
   min-height: 240px;
   padding: ${gridSize() * 2}px;
-  ${elevation.e200};
-`;
-const ModalHeader = styled(OgModalHeader)`
-  margin-left: ${gridSize() * 2.5}px;
-  margin-right: ${gridSize() * 2.5}px;
-  padding-left: 0;
-  padding-right: 0;
 `;
 const ModalActions = styled.div`
   display: flex;
@@ -89,39 +73,36 @@ function ExampleNavigation({ examples, exampleId, onExampleSelected }) {
   const regex = /^[a-zA-Z0-9]/; // begins with letter or number, avoid "special" files
 
   return (
-    <Nav className="nav flex-column">
-      <NavInner>
-        <MenuGroup>
-          <Section isScrollable>
-            {examples ? (
-              fs.flatMap(
-                examples,
-                (file, filePath) =>
-                  file.id.match(regex) && (
-                    <LinkItem
-                      key={file.id}
-                      href={fs.normalize(filePath.replace('examples/', ''))}
-                      className={classNames('nav-link', {
-                        active: file.id === exampleId,
-                      })}
-                      onClick={(event) => {
-                        event.preventDefault();
-                        onExampleSelected(
-                          fs.normalize(filePath.replace('examples/', '')),
-                        );
-                      }}
-                    >
-                      {fs.titleize(file.id)}
-                    </LinkItem>
-                  ),
-              )
-            ) : (
-              <div>No Examples</div>
-            )}
-          </Section>
-        </MenuGroup>
-      </NavInner>
-    </Nav>
+    <div tw="border-r flex h-full">
+      <MenuGroup>
+        <Section isScrollable>
+          {examples ? (
+            fs.flatMap(
+              examples,
+              (file, filePath) =>
+                file.id.match(regex) && (
+                  <LinkItem
+                    key={file.id}
+                    tw="px-6"
+                    href={fs.normalize(filePath.replace('examples/', ''))}
+                    isSelected={file.id === exampleId}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      onExampleSelected(
+                        fs.normalize(filePath.replace('examples/', '')),
+                      );
+                    }}
+                  >
+                    {fs.titleize(file.id)}
+                  </LinkItem>
+                ),
+            )
+          ) : (
+            <div>No Examples</div>
+          )}
+        </Section>
+      </MenuGroup>
+    </div>
   );
 }
 
@@ -188,7 +169,7 @@ const ModalHeaderComp = ({
   onCodeToggle,
   close,
 }) => (
-  <ModalHeader showKeyline={showKeyline}>
+  <ModalHeader tw="border-b px-6">
     <ModalTitle>{fs.titleize(packageId)} Examples</ModalTitle>
     <ModalActions>
       <ButtonGroup>
@@ -306,26 +287,26 @@ export default class ExamplesModal extends React.Component<Props, State> {
     return (
       <Modal
         autoFocus={false}
-        body={ModalBody}
-        scrollBehavior="outside"
-        header={({ showKeyline }) => (
-          <ModalHeaderComp
-            showKeyline={showKeyline}
-            packageId={packageId}
-            example={example}
-            examples={examples}
-            exampleId={exampleId}
-            groupId={groupId}
-            pkgJSON={pkgJSON}
-            displayCode={displayCode}
-            loaderUrl={loaderUrl}
-            onCodeToggle={this.onCodeToggle}
-            close={this.close}
-          />
-        )}
+        width="calc(100vw - 2rem)"
+        tw="--modal-dialog-gutter[1rem]"
+        // shouldScrollInViewport
+        // header={({ showKeyline }) => (
+        //   <ModalHeaderComp
+        //     showKeyline={showKeyline}
+        //     packageId={packageId}
+        //     example={example}
+        //     examples={examples}
+        //     exampleId={exampleId}
+        //     groupId={groupId}
+        //     pkgJSON={pkgJSON}
+        //     displayCode={displayCode}
+        //     loaderUrl={loaderUrl}
+        //     onCodeToggle={this.onCodeToggle}
+        //     close={this.close}
+        //   />
+        // )}
         height="100%"
         onClose={this.close}
-        width={1180}
       >
         <Helmet>
           <title>
@@ -333,7 +314,20 @@ export default class ExamplesModal extends React.Component<Props, State> {
             {BASE_TITLE}
           </title>
         </Helmet>
-        <ContentBody>
+        <ModalHeaderComp
+          // showKeyline={showKeyline}
+          packageId={packageId}
+          example={example}
+          examples={examples}
+          exampleId={exampleId}
+          groupId={groupId}
+          pkgJSON={pkgJSON}
+          displayCode={displayCode}
+          loaderUrl={loaderUrl}
+          onCodeToggle={this.onCodeToggle}
+          close={this.close}
+        />
+        <ModalBody tw="h-full flex p-0">
           <ExampleNavigation
             packageId={packageId}
             exampleId={exampleId}
@@ -372,7 +366,7 @@ export default class ExamplesModal extends React.Component<Props, State> {
               </Content>
             )}
           </ModalContent>
-        </ContentBody>
+        </ModalBody>
       </Modal>
     );
   }

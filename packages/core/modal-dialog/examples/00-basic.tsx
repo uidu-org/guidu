@@ -1,7 +1,13 @@
-import Button from '@uidu/button';
+import Button, { ButtonGroup } from '@uidu/button';
 import React from 'react';
 import Lorem from 'react-lorem-component';
-import Modal, { ModalTransition } from '../src';
+import Modal, {
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+  ModalTransition,
+} from '../src';
 
 interface State {
   isOpen: boolean;
@@ -28,8 +34,29 @@ export default class ExampleBasic extends React.PureComponent<{}, State> {
 
         <ModalTransition>
           {isOpen && (
-            <Modal actions={actions} onClose={this.close} heading="Modal Title">
-              <Lorem count={2} />
+            <Modal
+              actions={actions}
+              onClose={this.close}
+              tw="--modal-dialog-gutter[1rem]"
+              width="calc(100vw - 2rem)"
+            >
+              <ModalHeader>
+                <ModalTitle>Modal title</ModalTitle>
+              </ModalHeader>
+              <ModalBody>
+                <div tw="space-y-8">
+                  <Lorem count={2} />
+                  <Lorem count={4} />
+                  <Lorem count={4} />
+                  <Lorem count={4} />
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <ButtonGroup>
+                  <Button onClick={this.close}>Close</Button>
+                  <Button appearance="primary">Save</Button>
+                </ButtonGroup>
+              </ModalFooter>
             </Modal>
           )}
         </ModalTransition>

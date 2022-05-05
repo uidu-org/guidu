@@ -1,7 +1,12 @@
 import Button, { ButtonGroup } from '@uidu/button';
 import React from 'react';
 import styled from 'styled-components';
-import ModalDialog, { ModalTransition } from '../src';
+import ModalDialog, {
+  ModalBody,
+  ModalHeader,
+  ModalTitle,
+  ModalTransition,
+} from '../src';
 
 const H4 = styled.h4`
   margin-bottom: 0.66em;
@@ -61,18 +66,26 @@ export default class ModalDemo extends React.Component<{}, State> {
 
         <ModalTransition>
           {isOpen === 'root' && (
-            <StubDialog autoFocus heading="Boolean on dialog">
-              <p>The first {'"tabbable"'} element will be focused.</p>
-              <button>I am focused!</button>
-              <button>I am NOT focused</button>
+            <StubDialog autoFocus>
+              <ModalHeader>
+                <ModalTitle>Boolean on dialog</ModalTitle>
+              </ModalHeader>
+              <ModalBody>
+                <p>The first {'"tabbable"'} element will be focused.</p>
+                <button>I am focused!</button>
+                <button>I am NOT focused</button>
+              </ModalBody>
             </StubDialog>
           )}
         </ModalTransition>
         <ModalTransition>
           {isOpen === 'autoFocus' && (
-            <StubDialog heading="input has autoFocus">
-              <p>The textbox should be focused</p>
-              <input autoFocus type="text" />
+            <StubDialog>
+              <ModalHeader>input has autoFocus</ModalHeader>
+              <ModalBody>
+                <p>The textbox should be focused</p>
+                <input autoFocus type="text" />
+              </ModalBody>
             </StubDialog>
           )}
         </ModalTransition>

@@ -1,10 +1,21 @@
-export type { FooterComponentProps } from './components/Footer';
-export type { HeaderComponentProps } from './components/Header';
-export { default as ModalTransition } from './components/ModalTransition';
-export { default } from './components/ModalWrapper';
-export {
-  Body as ModalBody,
-  Footer as ModalFooter,
-  Header as ModalHeader,
-  Title as ModalTitle,
-} from './styled/Content';
+export { useModal } from './hooks';
+export { default as ModalBody } from './modal-body';
+export { default as ModalFooter } from './modal-footer';
+export { default as ModalHeader } from './modal-header';
+export { default as ModalTitle } from './modal-title';
+export { default as ModalTransition } from './modal-transition';
+export { default } from './modal-wrapper';
+export type {
+  Appearance,
+  KeyboardOrMouseEvent,
+  ModalAttributes,
+  ModalBodyProps,
+  ModalDialogProps,
+  ModalFooterProps,
+  ModalHeaderProps,
+  ModalTitleProps,
+  OnCloseCompleteHandler,
+  OnCloseHandler,
+  OnOpenCompleteHandler,
+  OnStackChangeHandler,
+} from './types';
