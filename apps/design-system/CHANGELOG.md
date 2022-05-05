@@ -1,5 +1,11 @@
 # design-system
 
+## 0.1.28
+
+### Patch Changes
+
+- b4b08ad93: Bump font awesome
+
 ## 0.1.27
 
 ### Patch Changes
