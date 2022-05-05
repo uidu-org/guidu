@@ -3077,42 +3077,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-common-types@npm:^0.2.36":
-  version: 0.2.36
-  resolution: "@fortawesome/fontawesome-common-types@npm:0.2.36"
-  checksum: d604ac51da0b1597127fde70c64157b70ead6af7f2643ab7dfca268ef99d4ed0b4cc823afba206362422a622e389828408bec573df802bf4f02b118d0fa18dc8
+"@fortawesome/fontawesome-common-types@npm:6.1.1":
+  version: 6.1.1
+  resolution: "@fortawesome/fontawesome-common-types@npm:6.1.1"
+  checksum: 4db285557dd9d178e313a9596ad1c4ba84e9d47efb53dea3206de1bf98252574e0d95c3a0b114cc3cb5f162e2622a2cf8f037011fc98818ccade7bfb6c0c335b
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-common-types@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@fortawesome/fontawesome-common-types@npm:0.3.0"
-  checksum: f08280e2e6c7df5cf2c80c88092828b367bb824ec21a6ba0e5d290ebf86038de166622152c8845a0aeaeff70bd54df7af17f1ef26dea7b832fdebdcc37412c37
+"@fortawesome/fontawesome-free@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "@fortawesome/fontawesome-free@npm:6.1.1"
+  checksum: adb3c71e0d9e60488401a193cfd1925ad100935ae41c88d3969937b59c182289ecc6f8c0835f0a3fb9cc215348a047a39536e918247381774baf7dcebef94b64
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-free@npm:^5.15.4":
-  version: 5.15.4
-  resolution: "@fortawesome/fontawesome-free@npm:5.15.4"
-  checksum: 32281c3df4075290d9a96dfc22f72fadb3da7055d4117e48d34046b8c98032a55fa260ae351b0af5d6f6fb57a2f5d79a4abe52af456da35195f7cb7dda27b4a2
-  languageName: node
-  linkType: hard
-
-"@fortawesome/fontawesome-svg-core@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "@fortawesome/fontawesome-svg-core@npm:1.3.0"
+"@fortawesome/fontawesome-svg-core@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "@fortawesome/fontawesome-svg-core@npm:6.1.1"
   dependencies:
-    "@fortawesome/fontawesome-common-types": ^0.3.0
-  checksum: 78be521be3aac56cf81695c5f3fefda8a0e0dcbd37cd734f09b74a3657dd9c073cb86c5adf60a4904e584936fe9a63ee913d932c03105092bd8c44bb92f3aad6
+    "@fortawesome/fontawesome-common-types": 6.1.1
+  checksum: bf3b09a1ec3c5d6be30ea04c83dffb921c5a457c547fb1b99b814591489efabf939f669878cc5b48deb9771ef705209a1bb1b3088e66f6873cc9b34cbf4c781c
   languageName: node
   linkType: hard
 
-"@fortawesome/free-solid-svg-icons@npm:^5.15.4":
-  version: 5.15.4
-  resolution: "@fortawesome/free-solid-svg-icons@npm:5.15.4"
+"@fortawesome/free-solid-svg-icons@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "@fortawesome/free-solid-svg-icons@npm:6.1.1"
   dependencies:
-    "@fortawesome/fontawesome-common-types": ^0.2.36
-  checksum: eb037b703827ee37af3387a964afc7a190ff42a674ef46f4a6c295b634a38e849741eca78306b6423eaf3062d6ab1e7372aac5be2aec06f0fd9e8bd8110efcf9
+    "@fortawesome/fontawesome-common-types": 6.1.1
+  checksum: 9c42f45af9e75410d9e20a110c4262ded1a778887dc3b1200c0576f6b226e6a5568fb85a862090b45b06060f878798ddde60b987ef56aafccbaa1e7a378dd17c
   languageName: node
   linkType: hard
 
@@ -4464,10 +4457,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@preconstruct/next@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@preconstruct/next@npm:3.0.1"
-  checksum: ea6d7c46e613d3edefc740f025a605b498db9922e09c55fa8856fd1223fd980bc39a26a73eddb28c7fc7a270f7f89468ed8e707e48a2679826e65667a632ab27
+"@preconstruct/next@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@preconstruct/next@npm:4.0.0"
+  checksum: da8b4fcfc44b680993615a2cd87a66bf2ef233d94ffb1b5f01411074e1b471a8b8ecc0d6dbbefef5c33f83470f3bc6a4d7ad738c2f4435692f66f5e7cabda98b
   languageName: node
   linkType: hard
 
@@ -6655,8 +6648,8 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.17.9
     "@faker-js/faker": ^6.3.1
-    "@fortawesome/fontawesome-svg-core": ^1.3.0
-    "@fortawesome/free-solid-svg-icons": ^5.15.4
+    "@fortawesome/fontawesome-svg-core": ^6.1.1
+    "@fortawesome/free-solid-svg-icons": ^6.1.1
     "@fortawesome/react-fontawesome": ^0.1.18
     "@heroicons/react": ^1.0.6
     "@loadable/component": ^5.15.2
@@ -6805,7 +6798,7 @@ __metadata:
     "@uidu/theme": ^0.6.13
     "@uidu/tooltip": ^0.5.15
     codesandboxer: ^1.0.3
-    pretty-proptypes: ^1.5.1
+    pretty-proptypes: ^1.5.2
     react: ^18.1.0
     react-dom: ^18.1.0
     react-feather: ^2.0.9
@@ -8747,9 +8740,9 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.17.9
     "@faker-js/faker": ^6.3.1
-    "@fortawesome/fontawesome-free": ^5.15.4
-    "@fortawesome/fontawesome-svg-core": ^1.3.0
-    "@fortawesome/free-solid-svg-icons": ^5.15.4
+    "@fortawesome/fontawesome-free": ^6.1.1
+    "@fortawesome/fontawesome-svg-core": ^6.1.1
+    "@fortawesome/free-solid-svg-icons": ^6.1.1
     "@fortawesome/react-fontawesome": ^0.1.18
     "@heroicons/react": ^1.0.6
     "@uidu/button": 1.3.16
@@ -14199,7 +14192,7 @@ __metadata:
     "@mdx-js/loader": ^1.6.22
     "@mdx-js/mdx": ^1.6.22
     "@next/mdx": ^12.1.6
-    "@preconstruct/next": ^3.0.1
+    "@preconstruct/next": ^4.0.0
     "@uidu/analytics": ^0.5.11
     "@uidu/button": ^1.3.16
     babel-plugin-macros: ^3.1.0
@@ -17524,9 +17517,9 @@ __metadata:
     "@faker-js/faker": ^6.3.1
     "@fluentui/react": ^8.67.2
     "@formatjs/cli": 4.8.4
-    "@fortawesome/fontawesome-free": ^5.15.4
-    "@fortawesome/fontawesome-svg-core": ^1.3.0
-    "@fortawesome/free-solid-svg-icons": ^5.15.4
+    "@fortawesome/fontawesome-free": ^6.1.1
+    "@fortawesome/fontawesome-svg-core": ^6.1.1
+    "@fortawesome/free-solid-svg-icons": ^6.1.1
     "@fortawesome/react-fontawesome": ^0.1.18
     "@loadable/babel-plugin": ^5.13.2
     "@loadable/component": ^5.15.2
@@ -17536,7 +17529,7 @@ __metadata:
     "@next/mdx": ^12.1.6
     "@popperjs/core": ^2.11.5
     "@preconstruct/cli": ^2.1.5
-    "@preconstruct/next": ^3.0.1
+    "@preconstruct/next": ^4.0.0
     "@researchgate/react-intersection-observer": ^1.3.5
     "@stripe/react-stripe-js": ^1.7.2
     "@stripe/stripe-js": ^1.29.0
@@ -17718,7 +17711,7 @@ __metadata:
     postcss-preset-env: ^7.5.0
     postcss-safe-parser: ^6.0.0
     prettier: ^2.6.2
-    pretty-proptypes: ^1.5.1
+    pretty-proptypes: ^1.5.2
     prismjs: ^1.28.0
     process: ^0.11.10
     prop-types: ^15.8.1
@@ -24704,9 +24697,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-proptypes@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "pretty-proptypes@npm:1.5.1"
+"pretty-proptypes@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "pretty-proptypes@npm:1.5.2"
   dependencies:
     "@babel/runtime": ^7.4.4
     "@emotion/core": ^10.0.14
@@ -24714,7 +24707,7 @@ __metadata:
     react-markings: ^1.2.0
   peerDependencies:
     react: ">=16"
-  checksum: 71ff7048a89bf796b5a8a733cc5c0ed823c1e16c28805d9271fc32d5f0f7ed02f4015eae71b1ee2fa34d4feb32a2345073ba0a71bf675f0690f10ca188436597
+  checksum: 42876b313f7da8cd9c432e344992ba3935a73ac7d054eefd525b7b8cf36fbf22488ec2b7ba9ace3a4fdda82d0d0f49f2a4964987499b1449f7f2bcb41b3e4cea
   languageName: node
   linkType: hard
 
