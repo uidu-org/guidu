@@ -2,28 +2,7 @@ import React from 'react';
 import { TouchScrollable } from 'react-scrolllock';
 import { useModal } from './hooks';
 import ScrollContainer from './internal/components/scroll-container';
-import { keylineHeight, padding } from './internal/constants';
 import useScroll from './internal/hooks/use-scroll';
-
-const bodyStyles = {
-  /* This ensures the body fills the whole space between header and footer. */
-  flex: '1 1 auto',
-};
-
-/**
- * Adding the padding here avoids cropping the keyline on its sides.
- * The combined vertical spacing is maintained by subtracting the
- * keyline height from header and footer. */
-const bodyScrollStyles = {
-  padding: `${keylineHeight}px ${padding}px`,
-};
-
-/**
- * Keylines will not be shown if scrolling in viewport so we do
- * not account for them in this case. */
-const viewportScrollStyles = {
-  padding: `0px ${padding}px`,
-};
 
 export interface ModalBodyProps {
   /**

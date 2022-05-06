@@ -1,49 +1,67 @@
-import React from 'react';
+import { usePlatformLeafEventHandler } from '@uidu/analytics';
+import React, { forwardRef, memo, MouseEvent, useCallback } from 'react';
 import styled from 'styled-components';
 import tw, { theme } from 'twin.macro';
+import type { BlanketProps } from './types';
 
 const Div = styled.div<{
   isStacked: boolean;
   paddingRight: number;
   isTinted: boolean;
-  canClickThrough: boolean;
+  shouldAllowClickThrough: boolean;
 }>`
   ${tw`fixed top-0 bottom-0 left-0 transition-opacity duration-200 background[rgba(var(--body-primary-color), .35)]`}
   ${({ isTinted }) => (isTinted ? tw`opacity-100` : tw`opacity-0`)}
-  ${({ canClickThrough }) =>
-    canClickThrough ? tw`pointer-events-none` : tw`pointer-events-auto`}
+  ${({ shouldAllowClickThrough }) =>
+    shouldAllowClickThrough ? tw`pointer-events-none` : tw`pointer-events-auto`}
   right: ${({ paddingRight }) => `${paddingRight}px`};
   z-index: ${({ isStacked }) =>
     isStacked ? `${theme`zIndex.blanket`} + 1` : theme`zIndex.blanket`};
 `;
 
-interface BlanketProps {
-  /** Whether mouse events can pierce the blanket. If true, onBlanketClicked will not be fired */
-  canClickThrough?: boolean;
-  /** Whether the blanket has a tinted background color. */
-  isTinted?: boolean;
-  /** Handler function to be called when the blanket is clicked */
-  onBlanketClicked?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  /** Stacked blankets have higher z-index references */
-  isStacked?: boolean;
-  /** Padding right is added by parent container if blanket should account for scrollbar */
-  paddingRight?: number;
-  /** Class applied to blanket main DIV */
-  className?: string;
-}
+const packageName = process.env._PACKAGE_NAME_ as string;
+const packageVersion = process.env._PACKAGE_VERSION_ as string;
 
-function Blanket({
-  canClickThrough = false,
-  isTinted = false,
-  onBlanketClicked = () => {},
-  isStacked = false,
-  paddingRight = 0,
-  className = null,
-  children,
-}: BlanketProps) {
-  const onClick = canClickThrough ? null : onBlanketClicked;
+const analyticsAttributes = {
+  componentName: 'blanket',
+  packageName,
+  packageVersion,
+};
+
+function StatelessBlanket(
+  {
+    shouldAllowClickThrough = false,
+    isTinted = false,
+    onBlanketClicked = () => {},
+    isStacked = false,
+    paddingRight = 0,
+    className = null,
+    children,
+    analyticsContext,
+  }: BlanketProps,
+  ref,
+) {
+  const onBlanketClickedWithAnalytics = usePlatformLeafEventHandler({
+    fn: onBlanketClicked,
+    action: 'clicked',
+    analyticsData: analyticsContext,
+    ...analyticsAttributes,
+  });
+
+  const blanketClickOutsideChildren = useCallback(
+    (e: MouseEvent<HTMLDivElement>) =>
+      e.currentTarget === e.target
+        ? onBlanketClickedWithAnalytics(e)
+        : undefined,
+    [onBlanketClickedWithAnalytics],
+  );
+
+  const onClick = shouldAllowClickThrough
+    ? undefined
+    : blanketClickOutsideChildren;
+
   const containerProps = {
-    canClickThrough,
+    shouldAllowClickThrough,
     isTinted,
     onClick,
     isStacked,
@@ -52,7 +70,15 @@ function Blanket({
     children,
   };
 
-  return <Div {...containerProps} />;
+  return (
+    <Div role="presentation" onClick={onClick} ref={ref} {...containerProps} />
+  );
 }
+
+const Blanket = memo(
+  forwardRef<HTMLDivElement, BlanketProps>(StatelessBlanket),
+);
+
+Blanket.displayName = 'Blanket';
 
 export default Blanket;

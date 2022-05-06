@@ -1,41 +1,21 @@
 import ErrorIcon from '@atlaskit/icon/glyph/error';
 import WarningIcon from '@atlaskit/icon/glyph/warning';
 import React, { ReactNode } from 'react';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 import { useModal } from './hooks';
-import { iconColor, titleIconMargin } from './internal/constants';
+import { iconColor } from './internal/constants';
 import { Appearance } from './types';
 
-const fontSize = 20;
-const lineHeight = 1;
-const adjustedLineHeight = 1.2;
-
-const iconStyles = {
-  marginRight: `${titleIconMargin}px`,
-
-  /* Keeps the size of the icon the same, in case the text element grows in width. */
-  flex: '0 0 auto',
-};
-
-/**
- * When the title is truncated (not multi-line), we adjust the
- * line height to avoid cropping the descenders. This removes
- * the extra spacing that we get from that adjustment. */
-const lineHeightOffset = fontSize - fontSize * adjustedLineHeight;
-
-const truncatedTextStyles = {
-  marginTop: `${lineHeightOffset / 2}px`,
-  marginBottom: `${lineHeightOffset / 2}px`,
-
-  lineHeight: adjustedLineHeight,
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
-};
-
-const truncatedTextIconStyles = {
-  marginBottom: `${lineHeightOffset / 2}px`,
-  lineHeight: 1.2,
-};
+const IconWrapper = styled.span<{ isMultiline: boolean }>`
+  ${tw`flex[0 0 auto] flex items-center mr-4`}
+  ${({ isMultiline }) => {
+    if (isMultiline) {
+      return tw`mr-2`;
+    }
+    return tw`mr-4`;
+  }}
+`;
 
 function TitleIcon({
   appearance,
@@ -44,9 +24,9 @@ function TitleIcon({
   const Icon = appearance === 'danger' ? ErrorIcon : WarningIcon;
 
   return (
-    <span css={[iconStyles, !isMultiline && truncatedTextIconStyles]}>
+    <IconWrapper isMultiline={isMultiline}>
       <Icon label={`${appearance} icon`} primaryColor={iconColor[appearance]} />
-    </span>
+    </IconWrapper>
   );
 }
 
@@ -86,18 +66,9 @@ function ModalTitle(props: ModalTitleProps) {
 
   const testId = userDefinedTestId || (modalTestId && `${modalTestId}--title`);
 
-  const titleStyles = {
-    fontSize: `${fontSize}px`,
-    fontStyle: 'inherit',
-    fontWeight: 500,
-    letterSpacing: `-0.008em`,
-    lineHeight: lineHeight,
-  };
-
   return (
     <h1
-      tw="flex min-w-0 m-0 items-center"
-      style={titleStyles}
+      tw="flex min-w-0 m-0 items-center text-2xl font-medium"
       data-testid={testId}
     >
       {appearance && (
@@ -105,10 +76,11 @@ function ModalTitle(props: ModalTitleProps) {
       )}
       <span
         id={titleId}
-        tw="min-w-0 flex[1 1 auto] word-wrap[break-word]"
-        style={{
-          ...(!isMultiline && { ...truncatedTextStyles }),
-        }}
+        tw=""
+        css={[
+          tw`min-w-0 flex[1 1 auto] word-wrap[break-word]`,
+          !isMultiline && tw`truncate`,
+        ]}
         data-testid={testId && `${testId}-text`}
       >
         {children}

@@ -6194,7 +6194,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/analytics@^0.5.11, @uidu/analytics@workspace:packages/core/analytics":
+"@uidu/analytics@0.5.11, @uidu/analytics@^0.5.11, @uidu/analytics@workspace:packages/core/analytics":
   version: 0.0.0-use.local
   resolution: "@uidu/analytics@workspace:packages/core/analytics"
   dependencies:
@@ -6311,6 +6311,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/blanket@workspace:packages/core/blanket"
   dependencies:
+    "@uidu/analytics": 0.5.11
     "@uidu/button": ^1.3.16
     "@uidu/docs": ^0.5.10
     react: ^18.1.0
