@@ -1,5 +1,22 @@
 # @uidu/modal-dialog
 
+## 1.0.0
+
+### Major Changes
+
+- 24a8146b6: Modal dialog is now composable, but the API completely changed
+
+### Patch Changes
+
+- 628a807d5: Allow children to blanket
+- 1b6c46260: Analytics Api and folder changed
+- Updated dependencies [628a807d5]
+- Updated dependencies [a56ee7ae4]
+- Updated dependencies [1b6c46260]
+  - @uidu/blanket@0.6.0
+  - @uidu/portal@0.5.16
+  - @uidu/analytics@0.6.0
+
 ## 0.5.19
 
 ### Patch Changes

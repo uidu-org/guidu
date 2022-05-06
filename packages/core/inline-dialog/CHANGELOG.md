@@ -1,5 +1,12 @@
 # @uidu/inline-dialog
 
+## 0.5.16
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+
 ## 0.5.15
 
 ### Patch Changes

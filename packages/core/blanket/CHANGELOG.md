@@ -1,5 +1,17 @@
 # @uidu/blanket
 
+## 0.6.0
+
+### Minor Changes
+
+- 628a807d5: Allow children to blanket
+- 1b6c46260: Analytics Api and folder changed
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+
 ## 0.5.7
 
 ### Patch Changes

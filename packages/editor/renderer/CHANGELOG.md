@@ -1,5 +1,19 @@
 # @uidu/renderer
 
+## 0.8.7
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+  - @uidu/tooltip@0.5.16
+  - @uidu/editor-common@0.7.10
+  - @uidu/analytics-listeners@0.4.11
+  - @uidu/analytics-namespaced-context@0.4.11
+  - @uidu/mentions@0.4.8
+  - @uidu/status@0.5.8
+  - @uidu/task-decision@0.4.18
+
 ## 0.8.6
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/analytics-listeners
 
+## 0.4.11
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+  - @uidu/analytics-gas-types@0.3.3
+  - @uidu/analytics-namespaced-context@0.4.11
+
 ## 0.4.10
 
 ### Patch Changes

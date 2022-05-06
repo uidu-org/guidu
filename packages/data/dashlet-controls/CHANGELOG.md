@@ -1,5 +1,15 @@
 # @uidu/dashboard-controls
 
+## 1.0.23
+
+### Patch Changes
+
+- @uidu/avatar@0.9.9
+- @uidu/button@1.3.17
+- @uidu/dropdown-menu@0.6.17
+- @uidu/field-date-range@1.1.14
+- @uidu/form@1.2.19
+
 ## 1.0.22
 
 ### Patch Changes

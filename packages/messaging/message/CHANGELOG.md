@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.5.22
+
+### Patch Changes
+
+- @uidu/drawer@0.7.15
+- @uidu/avatar@0.9.9
+- @uidu/button@1.3.17
+- @uidu/dropdown-menu@0.6.17
+- @uidu/tooltip@0.5.16
+
 ## 0.5.21
 
 ### Patch Changes

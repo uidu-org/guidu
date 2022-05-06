@@ -1,5 +1,14 @@
 # @uidu/task-decision
 
+## 0.4.18
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+  - @uidu/button@1.3.17
+  - @uidu/analytics-namespaced-context@0.4.11
+
 ## 0.4.17
 
 ### Patch Changes

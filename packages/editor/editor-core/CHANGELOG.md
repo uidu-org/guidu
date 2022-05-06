@@ -1,5 +1,36 @@
 # @uidu/editor-core
 
+## 0.15.0
+
+### Minor Changes
+
+- a56ee7ae4: Updated modal usage, remove onboarding modal
+
+### Patch Changes
+
+- 1b6c46260: Analytics Api and folder changed
+- Updated dependencies [628a807d5]
+- Updated dependencies [24a8146b6]
+- Updated dependencies [a56ee7ae4]
+- Updated dependencies [1b6c46260]
+  - @uidu/modal-dialog@1.0.0
+  - @uidu/select@1.5.17
+  - @uidu/analytics@0.6.0
+  - @uidu/avatar@0.9.9
+  - @uidu/button@1.3.17
+  - @uidu/droplist@0.5.17
+  - @uidu/tooltip@0.5.16
+  - @uidu/editor-common@0.7.10
+  - @uidu/analytics-gas-types@0.3.3
+  - @uidu/analytics-listeners@0.4.11
+  - @uidu/analytics-namespaced-context@0.4.11
+  - @uidu/emoji@0.6.10
+  - @uidu/mentions@0.4.8
+  - @uidu/status@0.5.8
+  - @uidu/task-decision@0.4.18
+  - @uidu/field-date@1.1.17
+  - @uidu/form@1.2.19
+
 ## 0.14.5
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/editor-common
 
+## 0.7.10
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+  - @uidu/analytics-namespaced-context@0.4.11
+  - @uidu/emoji@0.6.10
+  - @uidu/mentions@0.4.8
+
 ## 0.7.9
 
 ### Patch Changes
