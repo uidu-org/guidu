@@ -1,5 +1,4 @@
 export {
-  Modal,
   Spotlight,
   SpotlightCard,
   SpotlightManager,

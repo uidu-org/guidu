@@ -74,12 +74,4 @@ export default md`
       source={require('!!raw-loader!../examples/99-modal-basic').default}
     />
   )}
-
-  ${(
-    <Props
-      heading="Benefits Modal Props"
-      props={require('!!extract-react-types-loader!../src/components/Modal')}
-    />
-  )}
-
 `;

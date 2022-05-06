@@ -94,7 +94,7 @@ export default class ChangeLog extends React.Component<Props> {
   render() {
     const { changelog, packageName, range } = this.props;
     const logs = range
-      ? changelog.filter(e => semver.satisfies(e.version, range))
+      ? changelog.filter((e) => semver.satisfies(e.version, range))
       : changelog;
 
     let currentMajor = '0';
@@ -116,10 +116,30 @@ export default class ChangeLog extends React.Component<Props> {
               /* eslint-disable react/no-array-index-key */
               <LogItem key={`${v.version}-${i}`} major={majorHasChanged}>
                 <ReactMarkdown
-                  escapeHtml
-                  source={v.md}
-                  renderers={{
-                    Heading: props => (
+                  children={v.md}
+                  components={{
+                    h1: (props) => (
+                      <Heading
+                        packageName={packageName}
+                        href={href}
+                        {...props}
+                      />
+                    ),
+                    h2: (props) => (
+                      <Heading
+                        packageName={packageName}
+                        href={href}
+                        {...props}
+                      />
+                    ),
+                    h3: (props) => (
+                      <Heading
+                        packageName={packageName}
+                        href={href}
+                        {...props}
+                      />
+                    ),
+                    h4: (props) => (
                       <Heading
                         packageName={packageName}
                         href={href}

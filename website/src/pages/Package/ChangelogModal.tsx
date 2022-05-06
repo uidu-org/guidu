@@ -1,6 +1,9 @@
 import Button from '@uidu/button';
 import { FieldTextStateless as Input } from '@uidu/field-text';
-import Modal, { ModalHeader as OgModalHeader } from '@uidu/modal-dialog';
+import Modal, {
+  ModalBody,
+  ModalHeader as OgModalHeader,
+} from '@uidu/modal-dialog';
 import { gridSize, math } from '@uidu/theme';
 import * as H from 'history';
 import * as React from 'react';
@@ -17,10 +20,6 @@ import * as fs from '../../utils/fs';
 // ==============================
 // STYLES
 // ==============================
-
-const ModalBody = styled.div`
-  padding-bottom: ${math.multiply(gridSize, 2)}px;
-`;
 
 const ModalHeader = styled(OgModalHeader)`
   margin-left: 20px;
@@ -163,7 +162,7 @@ export default class ExamplesModal extends React.Component<Props, State> {
       loading: () => <Loading />,
       loader: async () =>
         fs.isFile(found) ? { changelog: await found.contents() } : {},
-      render: changelog =>
+      render: (changelog) =>
         changelog ? (
           <Changelog
             changelog={divvyChangelog({ default: changelog.changelog || '' })}
@@ -176,13 +175,8 @@ export default class ExamplesModal extends React.Component<Props, State> {
     });
 
     return (
-      <Modal
-        autoFocus
-        components={{ Header: this.header }}
-        height={600}
-        onClose={this.close}
-        width={640}
-      >
+      <Modal autoFocus height={600} onClose={this.close} width={640}>
+        {this.header()}
         <Helmet>
           <title>{`Changelog - ${fs.titleize(pkgId)} - ${BASE_TITLE}`}</title>
         </Helmet>

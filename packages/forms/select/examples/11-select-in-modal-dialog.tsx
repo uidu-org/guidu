@@ -1,6 +1,12 @@
 import Button from '@uidu/button';
 import { Form } from '@uidu/form';
-import Modal, { ModalTransition } from '@uidu/modal-dialog';
+import Modal, {
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+  ModalTransition,
+} from '@uidu/modal-dialog';
 import React, { Component } from 'react';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
@@ -36,20 +42,32 @@ export default class SelectInModal extends Component<{}, State> {
 
         <ModalTransition>
           {isOpen && (
-            <Modal actions={actions} onClose={this.close} heading="Modal Title">
-              <Form {...formDefaultProps}>
-                <Select
-                  {...inputDefaultProps}
-                  getOptionLabel={({ label }) => label}
-                  getOptionValue={({ value }) => value}
-                  menuPortalTarget={document.body}
-                  multiple
-                  styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }}
-                  defaultValue={options.slice(3)}
-                  options={options}
-                  placeholder="Choose a City"
-                />
-              </Form>
+            <Modal onClose={this.close}>
+              <ModalHeader>
+                <ModalTitle>Modal title</ModalTitle>
+              </ModalHeader>
+              <ModalBody>
+                <Form {...formDefaultProps}>
+                  <Select
+                    {...inputDefaultProps}
+                    getOptionLabel={({ label }) => label}
+                    getOptionValue={({ value }) => value}
+                    menuPortalTarget={document.body}
+                    multiple
+                    styles={{
+                      menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+                    }}
+                    defaultValue={options.slice(3)}
+                    options={options}
+                    placeholder="Choose a City"
+                  />
+                </Form>
+              </ModalBody>
+              <ModalFooter>
+                {actions.map((action) => (
+                  <Button onClick={action.onClick}>{action.text}</Button>
+                ))}
+              </ModalFooter>
             </Modal>
           )}
         </ModalTransition>

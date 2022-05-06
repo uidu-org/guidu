@@ -1,6 +1,6 @@
 import Button from '@uidu/button';
+import Modal, { ModalBody, ModalTransition } from '@uidu/modal-dialog';
 import React, { Component } from 'react';
-import { Modal } from '../src';
 import welcomeImage from './assets/this-is-new-jira.png';
 
 interface State {
@@ -20,13 +20,17 @@ export default class Example extends Component<{}, State> {
     return (
       <div>
         <Button onClick={this.start}>Launch benefits modal</Button>
-        {active && (
-          <Modal
-            actions={[
-              { onClick: this.finish, text: 'Switch to the new JIRA' },
-              { onClick: this.finish, text: 'Remind me later' },
-            ]}
-            header={(props) => (
+        <ModalTransition>
+          {active && (
+            <Modal
+              actions={[
+                { onClick: this.finish, text: 'Switch to the new JIRA' },
+                { onClick: this.finish, text: 'Remind me later' },
+              ]}
+              heading="Experience your new JIRA"
+              image={welcomeImage}
+              key="welcome"
+            >
               <div tw="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
                 <svg
                   tw="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8 scale-75 origin-top sm:scale-100 lg:hidden"
@@ -102,18 +106,16 @@ export default class Example extends Component<{}, State> {
                   </button>
                 </div>
               </div>
-            )}
-            heading="Experience your new JIRA"
-            image={welcomeImage}
-            key="welcome"
-          >
-            <p>
-              Switch context, jump between project, and get back to work quickly
-              with our new look and feel.
-            </p>
-            <p>Take it for a spin and let us know what you think.</p>
-          </Modal>
-        )}
+              <ModalBody>
+                <p>
+                  Switch context, jump between project, and get back to work
+                  quickly with our new look and feel.
+                </p>
+                <p>Take it for a spin and let us know what you think.</p>
+              </ModalBody>
+            </Modal>
+          )}
+        </ModalTransition>
       </div>
     );
   }

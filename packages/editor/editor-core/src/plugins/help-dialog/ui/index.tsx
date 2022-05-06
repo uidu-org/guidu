@@ -1,6 +1,6 @@
 import CrossIcon from '@atlaskit/icon/glyph/cross';
 import { browser } from '@uidu/editor-common';
-import Modal, { ModalTransition } from '@uidu/modal-dialog';
+import Modal, { ModalBody, ModalTransition } from '@uidu/modal-dialog';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import React from 'react';
@@ -87,8 +87,6 @@ const messages = defineMessages({
     description: 'Name of a feature, which let you insert items quickly.',
   },
 });
-
-const AkModalDialog: React.FC<any> = Modal;
 
 export interface Format {
   name: string;
@@ -501,72 +499,74 @@ class HelpDialog extends React.Component<Props & WrappedComponentProps> {
     return (
       <ModalTransition>
         {this.props.isVisible ? (
-          <AkModalDialog
-            width="large"
-            onClose={this.closeDialog}
-            components={{ Header: ModalHeader, Footer: ModalFooter }}
-          >
-            <ContentWrapper>
-              <Line />
-              <Content>
-                <ColumnLeft>
-                  <Title>
-                    <FormattedMessage {...messages.keyboardShortcuts} />
-                  </Title>
-                  <div>
-                    {this.formatting
-                      .filter((form) => {
-                        const keymap = form.keymap && form.keymap(this.props);
-                        return (
-                          keymap && keymap[browser.mac ? 'mac' : 'windows']
-                        );
-                      })
-                      .map((form) => (
-                        <Row key={`textFormatting-${form.name}`}>
-                          <span>{form.name}</span>
-                          {getComponentFromKeymap(form.keymap!())}
-                        </Row>
-                      ))}
-
-                    {this.formatting
-                      .filter(
-                        (form) =>
-                          shortcutNamesWithoutKeymap.indexOf(form.type) !== -1,
-                      )
-                      .filter((form) => form.autoFormatting)
-                      .map((form) => (
-                        <Row key={`autoFormatting-${form.name}`}>
-                          <span>{form.name}</span>
-                          {form.autoFormatting!()}
-                        </Row>
-                      ))}
-                  </div>
-                </ColumnLeft>
+          <Modal width="large" onClose={this.closeDialog}>
+            <ModalHeader onClose={this.closeDialog} />
+            <ModalBody>
+              <ContentWrapper>
                 <Line />
-                <ColumnRight>
-                  <Title>
-                    <FormattedMessage {...messages.markdown} />
-                  </Title>
-                  <div>
-                    {this.formatting
-                      .filter(
-                        (form) =>
-                          shortcutNamesWithoutKeymap.indexOf(form.type) === -1,
-                      )
-                      .map(
-                        (form) =>
-                          form.autoFormatting && (
-                            <Row key={`autoFormatting-${form.name}`}>
-                              <span>{form.name}</span>
-                              {form.autoFormatting()}
-                            </Row>
-                          ),
-                      )}
-                  </div>
-                </ColumnRight>
-              </Content>
-            </ContentWrapper>
-          </AkModalDialog>
+                <Content>
+                  <ColumnLeft>
+                    <Title>
+                      <FormattedMessage {...messages.keyboardShortcuts} />
+                    </Title>
+                    <div>
+                      {this.formatting
+                        .filter((form) => {
+                          const keymap = form.keymap && form.keymap(this.props);
+                          return (
+                            keymap && keymap[browser.mac ? 'mac' : 'windows']
+                          );
+                        })
+                        .map((form) => (
+                          <Row key={`textFormatting-${form.name}`}>
+                            <span>{form.name}</span>
+                            {getComponentFromKeymap(form.keymap!())}
+                          </Row>
+                        ))}
+
+                      {this.formatting
+                        .filter(
+                          (form) =>
+                            shortcutNamesWithoutKeymap.indexOf(form.type) !==
+                            -1,
+                        )
+                        .filter((form) => form.autoFormatting)
+                        .map((form) => (
+                          <Row key={`autoFormatting-${form.name}`}>
+                            <span>{form.name}</span>
+                            {form.autoFormatting!()}
+                          </Row>
+                        ))}
+                    </div>
+                  </ColumnLeft>
+                  <Line />
+                  <ColumnRight>
+                    <Title>
+                      <FormattedMessage {...messages.markdown} />
+                    </Title>
+                    <div>
+                      {this.formatting
+                        .filter(
+                          (form) =>
+                            shortcutNamesWithoutKeymap.indexOf(form.type) ===
+                            -1,
+                        )
+                        .map(
+                          (form) =>
+                            form.autoFormatting && (
+                              <Row key={`autoFormatting-${form.name}`}>
+                                <span>{form.name}</span>
+                                {form.autoFormatting()}
+                              </Row>
+                            ),
+                        )}
+                    </div>
+                  </ColumnRight>
+                </Content>
+              </ContentWrapper>
+            </ModalBody>
+            <ModalFooter />
+          </Modal>
         ) : null}
       </ModalTransition>
     );

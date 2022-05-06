@@ -1,11 +1,15 @@
 /* eslint-disable react/no-multi-comp */
-import React, { ReactNode } from 'react';
-
-import Button from '@uidu/button';
-import Flag, { FlagGroup } from '@uidu/flag';
 import EmojiIcon from '@atlaskit/icon/glyph/emoji';
+import Button, { ButtonGroup } from '@uidu/button';
+import Flag, { FlagGroup } from '@uidu/flag';
 import InlineDialog from '@uidu/inline-dialog';
-import ModalDialog, { ModalTransition } from '@uidu/modal-dialog';
+import ModalDialog, {
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+  ModalTransition,
+} from '@uidu/modal-dialog';
 import {
   Spotlight,
   SpotlightManager,
@@ -13,6 +17,7 @@ import {
   SpotlightTransition,
 } from '@uidu/onboarding';
 import Tooltip from '@uidu/tooltip';
+import React, { ReactNode } from 'react';
 
 const TooltipButton = ({
   children,
@@ -114,48 +119,56 @@ class Modal extends React.Component<ModalProps, ModalState> {
     this.setState({ flags: [this.state.flags.length, ...this.state.flags] });
 
   removeFlag = (id: number | string) =>
-    this.setState({ flags: this.state.flags.filter(v => v !== id) });
+    this.setState({ flags: this.state.flags.filter((v) => v !== id) });
 
   render() {
     const { onboardingOpen, inlineOpen, flags } = this.state;
     return (
       <React.Fragment>
-        <ModalDialog
-          heading="Modal dialog 🔥"
-          onClose={this.props.onClose}
-          actions={[
-            { text: 'Close', onClick: this.props.onClose },
-            { text: 'Open another', onClick: this.props.onOpen },
-          ]}
-        >
-          <p>This dialog has three great features:</p>
-          <ThreeStepSpotlight
-            open={onboardingOpen}
-            onFinish={() => this.toggleOnboarding(false)}
-            stepOne={
-              <TooltipButton onClick={() => this.toggleOnboarding(true)}>
-                Show onboarding
-              </TooltipButton>
-            }
-            stepTwo={
-              <InlineDialog
-                content="This button is very nice"
-                isOpen={inlineOpen}
-              >
-                <TooltipButton onClick={() => this.toggleInline(!inlineOpen)}>
-                  Show an inline dialog
+        <ModalDialog onClose={this.props.onClose}>
+          <ModalHeader>
+            <ModalTitle>Modal dialog 🔥</ModalTitle>
+          </ModalHeader>
+          <ModalBody>
+            <p>This dialog has three great features:</p>
+            <ThreeStepSpotlight
+              open={onboardingOpen}
+              onFinish={() => this.toggleOnboarding(false)}
+              stepOne={
+                <TooltipButton onClick={() => this.toggleOnboarding(true)}>
+                  Show onboarding
                 </TooltipButton>
-              </InlineDialog>
-            }
-            stepThree={
-              <TooltipButton onClick={() => this.addFlag()}>
-                Show an flag
-              </TooltipButton>
-            }
-          />
+              }
+              stepTwo={
+                <InlineDialog
+                  content="This button is very nice"
+                  isOpen={inlineOpen}
+                >
+                  <TooltipButton onClick={() => this.toggleInline(!inlineOpen)}>
+                    Show an inline dialog
+                  </TooltipButton>
+                </InlineDialog>
+              }
+              stepThree={
+                <TooltipButton onClick={() => this.addFlag()}>
+                  Show an flag
+                </TooltipButton>
+              }
+            />
+          </ModalBody>
+          <ModalFooter>
+            <ButtonGroup>
+              {[
+                { text: 'Close', onClick: this.props.onClose },
+                { text: 'Open another', onClick: this.props.onOpen },
+              ].map((action) => (
+                <Button onClick={action.onClick}>{action.text}</Button>
+              ))}
+            </ButtonGroup>
+          </ModalFooter>
         </ModalDialog>
         <FlagGroup onDismissed={(id: number | string) => this.removeFlag(id)}>
-          {flags.map(id => (
+          {flags.map((id) => (
             <Flag
               id={id}
               key={`${id}`}
@@ -184,12 +197,12 @@ class App extends React.Component<{}, State> {
     return (
       <React.Fragment>
         <ModalTransition>
-          {modals.map(id => (
+          {modals.map((id) => (
             <Modal
               key={id}
               onOpen={() => this.setState({ modals: [...modals, nextId] })}
               onClose={() =>
-                this.setState({ modals: modals.filter(i => i !== id) })
+                this.setState({ modals: modals.filter((i) => i !== id) })
               }
             />
           ))}

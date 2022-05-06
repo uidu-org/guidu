@@ -288,6 +288,7 @@ export default class ExamplesModal extends React.Component<Props, State> {
       <Modal
         autoFocus={false}
         width="calc(100vw - 2rem)"
+        height="calc(100vh - 2rem)"
         tw="--modal-dialog-gutter[1rem]"
         // shouldScrollInViewport
         // header={({ showKeyline }) => (
@@ -305,7 +306,6 @@ export default class ExamplesModal extends React.Component<Props, State> {
         //     close={this.close}
         //   />
         // )}
-        height="100%"
         onClose={this.close}
       >
         <Helmet>
