@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { gutter, verticalOffset } from '../constants';
+import { gutter } from '../constants';
 
 const maxWidthDimensions = `calc(100vw - ${gutter * 2}px)`;
 const maxHeightDimensions = `calc(100vh - ${gutter * 2 - 1}px)`;
@@ -52,7 +52,7 @@ function Positioner(props: PositionerProps) {
       shouldScrollInViewport={shouldScrollInViewport}
       stackIndex={stackIndex}
       css={{
-        '--modal-dialog-translate-y': `${stackIndex * (verticalOffset / 2)}px`,
+        '--modal-dialog-translate-y': `${stackIndex * 10}px`,
         '--modal-dialog-gutter': gutter,
       }}
       data-testid={testId && `${testId}--positioner`}
