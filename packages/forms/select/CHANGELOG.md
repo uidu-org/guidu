@@ -1,5 +1,16 @@
 # @uidu/field-text
 
+## 1.5.17
+
+### Patch Changes
+
+- a56ee7ae4: Updated modal usage, remove onboarding modal
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+  - @uidu/tooltip@0.5.16
+  - @uidu/checkbox@1.1.15
+  - @uidu/form@1.2.19
+
 ## 1.5.16
 
 ### Patch Changes

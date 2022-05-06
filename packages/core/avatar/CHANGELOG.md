@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.9.9
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+  - @uidu/tooltip@0.5.16
+
 ## 0.9.8
 
 ### Patch Changes

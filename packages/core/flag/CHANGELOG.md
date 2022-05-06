@@ -1,5 +1,15 @@
 # @uidu/flag
 
+## 0.5.12
+
+### Patch Changes
+
+- Updated dependencies [a56ee7ae4]
+- Updated dependencies [1b6c46260]
+  - @uidu/portal@0.5.16
+  - @uidu/analytics@0.6.0
+  - @uidu/button@1.3.17
+
 ## 0.5.11
 
 ### Patch Changes

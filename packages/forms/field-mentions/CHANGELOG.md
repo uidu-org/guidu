@@ -1,5 +1,13 @@
 # @uidu/field-mentions
 
+## 1.2.11
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+  - @uidu/form@1.2.19
+
 ## 1.2.10
 
 ### Patch Changes

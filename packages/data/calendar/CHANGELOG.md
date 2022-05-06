@@ -1,5 +1,12 @@
 # @uidu/calendar
 
+## 0.4.6
+
+### Patch Changes
+
+- @uidu/button@1.3.17
+- @uidu/dropdown-menu@0.6.17
+
 ## 0.4.5
 
 ### Patch Changes

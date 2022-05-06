@@ -18,8 +18,8 @@
   "devDependencies": {
     "@types/prosemirror-model": "^1.16.2",
     "@uidu/docs": "^0.5.10",
-    "@uidu/editor-common": "^0.7.9",
-    "@uidu/editor-core": "^0.14.4",
+    "@uidu/editor-common": "^0.7.10",
+    "@uidu/editor-core": "^0.15.0",
     "prosemirror-view": "^1.23.13",
     "react": "^18.1.0",
     "styled-components": "^5.3.5"

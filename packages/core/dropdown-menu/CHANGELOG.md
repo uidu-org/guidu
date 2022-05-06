@@ -1,5 +1,14 @@
 # @uidu/dropdown-menu
 
+## 0.6.17
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+  - @uidu/button@1.3.17
+  - @uidu/droplist@0.5.17
+
 ## 0.6.16
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.6.0
+
+### Minor Changes
+
+- 1b6c46260: Analytics Api and folder changed
+
 ## 0.5.11
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/status
 
+## 0.5.8
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+  - @uidu/analytics-gas-types@0.3.3
+  - @uidu/field-text@1.1.15
+
 ## 0.5.7
 
 ### Patch Changes

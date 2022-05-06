@@ -1,5 +1,11 @@
 # @uidu/portal
 
+## 0.5.16
+
+### Patch Changes
+
+- a56ee7ae4: Updated modal usage, remove onboarding modal
+
 ## 0.5.15
 
 ### Patch Changes

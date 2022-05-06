@@ -1,5 +1,12 @@
 # @uidu/button
 
+## 1.3.17
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+
 ## 1.3.16
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.19
+
+### Patch Changes
+
+- @uidu/button@1.3.17
+
 ## 1.2.18
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 2.4.5
+
+### Patch Changes
+
+- @uidu/button@1.3.17
+- @uidu/pagination@0.5.14
+- @uidu/calendar@0.4.6
+- @uidu/data-controls@2.1.12
+- @uidu/data-fields@1.5.17
+- @uidu/data-views@1.2.11
+- @uidu/table@1.4.7
+
 ## 2.4.4
 
 ### Patch Changes

@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.17.9",
     "@uidu/adf-schema": "^0.9.4",
-    "@uidu/editor-common": "^0.7.9",
+    "@uidu/editor-common": "^0.7.10",
     "markdown-it": "^13.0.1",
     "markdown-it-table": "^2.0.4",
     "prosemirror-markdown": "^1.8.0",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.11",
-    "@uidu/editor-core": "^0.14.5",
+    "@uidu/editor-core": "^0.15.0",
     "react": "^18.1.0",
     "styled-components": "^5.3.5"
   },

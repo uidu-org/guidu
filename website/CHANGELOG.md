@@ -1,5 +1,29 @@
 # Change Log
 
+## 0.5.0
+
+### Minor Changes
+
+- 24a8146b6: Modal dialog is now composable, but the API completely changed
+
+### Patch Changes
+
+- a56ee7ae4: Updated modal usage, remove onboarding modal
+- Updated dependencies [628a807d5]
+- Updated dependencies [24a8146b6]
+- Updated dependencies [a56ee7ae4]
+- Updated dependencies [1b6c46260]
+  - @uidu/modal-dialog@1.0.0
+  - @uidu/select@1.5.17
+  - @uidu/drawer@0.7.15
+  - @uidu/button@1.3.17
+  - @uidu/tooltip@0.5.16
+  - @uidu/checkbox@1.1.15
+  - @uidu/field-text@1.1.15
+  - @uidu/breadcrumbs@1.0.14
+  - @uidu/table@1.4.7
+  - @uidu/form@1.2.19
+
 ## 0.4.26
 
 ### Patch Changes

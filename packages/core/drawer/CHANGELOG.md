@@ -1,5 +1,14 @@
 # @uidu/drawer
 
+## 0.7.15
+
+### Patch Changes
+
+- Updated dependencies [628a807d5]
+- Updated dependencies [1b6c46260]
+  - @uidu/blanket@0.6.0
+  - @uidu/analytics@0.6.0
+
 ## 0.7.14
 
 ### Patch Changes

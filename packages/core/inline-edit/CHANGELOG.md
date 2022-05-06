@@ -1,5 +1,16 @@
 # @uidu/inline-edit
 
+## 0.3.17
+
+### Patch Changes
+
+- Updated dependencies [1b6c46260]
+  - @uidu/analytics@0.6.0
+  - @uidu/button@1.3.17
+  - @uidu/inline-dialog@0.5.16
+  - @uidu/field-text@1.1.15
+  - @uidu/form@1.2.19
+
 ## 0.3.16
 
 ### Patch Changes

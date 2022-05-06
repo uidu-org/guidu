@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 1.4.7
+
+### Patch Changes
+
+- @uidu/button@1.3.17
+- @uidu/checkbox@1.1.15
+- @uidu/data-fields@1.5.17
+- @uidu/data-manager@2.4.5
+
 ## 1.4.6
 
 ### Patch Changes
