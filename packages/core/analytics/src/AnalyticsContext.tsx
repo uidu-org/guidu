@@ -3,8 +3,8 @@ import React, { Children, Component } from 'react';
 import { AnalyticsReactContext } from './AnalyticsReactContext';
 
 const ContextTypes = {
-  getGuiduAnalyticsContext: PropTypes.func,
-  getGuidulyticsEventHandlers: PropTypes.func,
+  getAnalyticsContext: PropTypes.func,
+  getAnalyticsEventHandlers: PropTypes.func,
 };
 
 interface Props {
@@ -16,8 +16,8 @@ interface Props {
 }
 
 interface State {
-  getGuiduAnalyticsContext: () => any[];
-  getGuiduAnalyticsEventHandlers: () => any[];
+  getAnalyticsContext: () => any[];
+  getAnalyticsEventHandlers: () => any[];
 }
 
 class AnalyticsContext extends Component<Props, State> {
@@ -27,31 +27,30 @@ class AnalyticsContext extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      getGuiduAnalyticsContext: this.getAnalyticsContext,
-      getGuiduAnalyticsEventHandlers: this.getAnalyticsEventHandlers,
+      getAnalyticsContext: this.getAnalyticsContext,
+      getAnalyticsEventHandlers: this.getAnalyticsEventHandlers,
     };
   }
 
   getChildContext = () => ({
-    getGuiduAnalyticsContext: this.getAnalyticsContext,
+    getAnalyticsContext: this.getAnalyticsContext,
   });
 
   getAnalyticsContext = () => {
     const { data } = this.props;
-    const { getGuiduAnalyticsContext } = this.context;
+    const { getAnalyticsContext } = this.context;
     const ancestorData =
-      (typeof getGuiduAnalyticsContext === 'function' &&
-        getGuiduAnalyticsContext()) ||
+      (typeof getAnalyticsContext === 'function' && getAnalyticsContext()) ||
       [];
 
     return [...ancestorData, data];
   };
 
   getAnalyticsEventHandlers = () => {
-    const { getGuiduAnalyticsEventHandlers } = this.context;
+    const { getAnalyticsEventHandlers } = this.context;
     const ancestorHandlers =
-      (typeof getGuiduAnalyticsEventHandlers === 'function' &&
-        getGuiduAnalyticsEventHandlers()) ||
+      (typeof getAnalyticsEventHandlers === 'function' &&
+        getAnalyticsEventHandlers()) ||
       [];
     return ancestorHandlers;
   };

@@ -2,8 +2,7 @@ import mergeRefs from '@atlaskit/ds-lib/merge-refs';
 import useAutoFocus from '@atlaskit/ds-lib/use-auto-focus';
 import FocusRing from '@atlaskit/focus-ring';
 import FadeIn from '@atlaskit/motion/fade-in';
-import React, { useMemo } from 'react';
-import { useUID } from 'react-uid';
+import React, { useId, useMemo } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import type { ModalDialogProps } from '../../types';
@@ -56,7 +55,7 @@ function ModalDialog(props: ModalDialogProps) {
     className,
   } = props;
 
-  const id = useUID();
+  const id = useId();
   const titleId = `modal-dialog-title-${id}`;
 
   useAutoFocus(

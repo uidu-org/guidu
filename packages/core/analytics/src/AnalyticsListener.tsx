@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { AnalyticsReactContext } from './AnalyticsReactContext';
 import UIAnalyticsEvent, { UIAnalyticsEventHandler } from './UIAnalyticsEvent';
 
@@ -14,7 +14,7 @@ type Props = {
 };
 
 const ContextTypes = {
-  getGuiduAnalyticsEventHandlers: PropTypes.func,
+  getAnalyticsEventHandlers: PropTypes.func,
 };
 
 class AnalyticsListener extends Component<Props> {
@@ -22,15 +22,15 @@ class AnalyticsListener extends Component<Props> {
   static childContextTypes = ContextTypes;
 
   getChildContext = () => ({
-    getGuidulyticsEventHandlers: this.getAnalyticsEventHandlers,
+    getAnalyticsEventHandlers: this.getAnalyticsEventHandlers,
   });
 
   getAnalyticsEventHandlers = () => {
     const { channel, onEvent } = this.props;
-    const { getGuidulyticsEventHandlers } = this.context;
+    const { getAnalyticsEventHandlers } = this.context;
     const parentEventHandlers =
-      (typeof getGuidulyticsEventHandlers === 'function' &&
-        getGuidulyticsEventHandlers()) ||
+      (typeof getAnalyticsEventHandlers === 'function' &&
+        getAnalyticsEventHandlers()) ||
       [];
     const handler: UIAnalyticsEventHandler = (event, eventChannel) => {
       if (channel === '*' || channel === eventChannel) {
@@ -42,13 +42,13 @@ class AnalyticsListener extends Component<Props> {
   };
 
   render() {
-    const { getGuiduAnalyticsContext = () => [] } = this.context;
+    const { getAnalyticsContext = () => [] } = this.context;
     const { children } = this.props;
     return (
       <AnalyticsReactContext.Provider
         value={{
-          getGuidulyticsEventHandlers: this.getAnalyticsEventHandlers,
-          getGuiduAnalyticsContext,
+          getAnalyticsEventHandlers: this.getAnalyticsEventHandlers,
+          getAnalyticsContext,
         }}
       >
         {children}

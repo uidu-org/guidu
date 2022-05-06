@@ -1,13 +1,12 @@
 import React from 'react';
 
 export interface AnalyticsReactContextInterface {
-  getGuiduAnalyticsContext(): any[];
-  getGuidulyticsEventHandlers(): any[];
+  getAnalyticsContext(): any[];
+  getAnalyticsEventHandlers(): any[];
 }
 
-export const AnalyticsReactContext = React.createContext<
-  AnalyticsReactContextInterface
->({
-  getGuiduAnalyticsContext: () => [],
-  getGuidulyticsEventHandlers: () => [],
-});
+export const AnalyticsReactContext =
+  React.createContext<AnalyticsReactContextInterface>({
+    getAnalyticsContext: () => [],
+    getAnalyticsEventHandlers: () => [],
+  });

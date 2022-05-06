@@ -117,7 +117,7 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
   }) => void;
 
   static contextTypes = {
-    getGuiduAnalyticsEventHandlers: PropTypes.func,
+    getAnalyticsEventHandlers: PropTypes.func,
   };
 
   // ProseMirror is instantiated prior to the initial React render cycle,

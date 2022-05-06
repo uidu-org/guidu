@@ -1,8 +1,8 @@
-import { usePlatformLeafEventHandler } from '@atlaskit/analytics-next';
-import Blanket from '@atlaskit/blanket';
 import noop from '@atlaskit/ds-lib/noop';
 import useCloseOnEscapePress from '@atlaskit/ds-lib/use-close-on-escape-press';
 import FadeIn from '@atlaskit/motion/fade-in';
+import { usePlatformLeafEventHandler } from '@uidu/analytics';
+import Blanket from '@uidu/blanket';
 import Portal from '@uidu/portal';
 import React, { useCallback } from 'react';
 import FocusLock from 'react-focus-lock';

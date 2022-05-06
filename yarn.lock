@@ -102,38 +102,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/blanket@npm:^12.2.12":
-  version: 12.2.12
-  resolution: "@atlaskit/blanket@npm:12.2.12"
-  dependencies:
-    "@atlaskit/analytics-next": ^8.2.0
-    "@atlaskit/codemod-utils": ^4.0.0
-    "@atlaskit/ds-lib": ^1.4.0
-    "@atlaskit/theme": ^12.1.0
-    "@atlaskit/tokens": ^0.9.0
-    "@babel/runtime": ^7.0.0
-    "@emotion/core": ^10.0.9
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 1d7e6149e3c58322a7010b76e5c4f648532e58742fec086f4c79d887c57006aad30890288d9307e3e35162b8dc47ceeea689f00125d8aacc7ea73d7340393f09
-  languageName: node
-  linkType: hard
-
 "@atlaskit/codemod-utils@npm:^3.4.0":
   version: 3.4.0
   resolution: "@atlaskit/codemod-utils@npm:3.4.0"
   dependencies:
     "@babel/runtime": ^7.0.0
   checksum: cd164655cee24a70cd0ac288f0fbccc497eda85b4cb0e0cea8464ca75046782e396a2f986adcee5f583c04e6f5efc36619ca3b346ae56354b8e96179e75586df
-  languageName: node
-  linkType: hard
-
-"@atlaskit/codemod-utils@npm:^4.0.0":
-  version: 4.0.2
-  resolution: "@atlaskit/codemod-utils@npm:4.0.2"
-  dependencies:
-    "@babel/runtime": ^7.0.0
-  checksum: ad5f9bd7609fad7661cdae6b257891155ea933582a95364fc3d13b0917eb98eeb16d3695775094e5c46a32ad060c62b7774f0358c4b12a825a05a89abae62721
   languageName: node
   linkType: hard
 
@@ -8137,7 +8111,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:
-    "@atlaskit/blanket": ^12.2.12
     "@atlaskit/ds-lib": ^1.4.2
     "@atlaskit/focus-ring": ^1.0.4
     "@atlaskit/icon": ^21.10.6

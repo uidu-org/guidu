@@ -23,11 +23,11 @@ export interface AnalyticsContextConsumerProps<Props> {
  * This makes it easier to use with the forward ref API.
  */
 class AnalyticsContextConsumer<
-  Props extends Record<string, any>
+  Props extends Record<string, any>,
 > extends React.Component<AnalyticsContextConsumerProps<Props>> {
   static contextTypes = {
-    getGuiduAnalyticsEventHandlers: PropTypes.func,
-    getGuiduAnalyticsContext: PropTypes.func,
+    getAnalyticsEventHandlers: PropTypes.func,
+    getAnalyticsContext: PropTypes.func,
   };
 
   static defaultProps = {
@@ -102,19 +102,15 @@ class AnalyticsContextConsumer<
     }, {});
 
   createAnalyticsEvent = (payload: AnalyticsEventPayload): UIAnalyticsEvent => {
-    const {
-      getGuidulyticsEventHandlers,
-      getGuiduAnalyticsContext,
-    } = this.context;
+    const { getAnalyticsEventHandlers, getAnalyticsContext } = this.context;
 
     return new UIAnalyticsEvent({
       context:
-        (typeof getGuiduAnalyticsContext === 'function' &&
-          getGuiduAnalyticsContext()) ||
+        (typeof getAnalyticsContext === 'function' && getAnalyticsContext()) ||
         [],
       handlers:
-        (typeof getGuidulyticsEventHandlers === 'function' &&
-          getGuidulyticsEventHandlers()) ||
+        (typeof getAnalyticsEventHandlers === 'function' &&
+          getAnalyticsEventHandlers()) ||
         [],
       payload,
     });
