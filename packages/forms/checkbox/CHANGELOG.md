@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.4.0
+
+### Minor Changes
+
+- b37441c3c: Fix border color issue
+
 ## 1.3.0
 
 ### Minor Changes
