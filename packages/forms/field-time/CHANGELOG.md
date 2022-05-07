@@ -1,5 +1,17 @@
 # @uidu/field-text
 
+## 1.2.0
+
+### Minor Changes
+
+- b12e28515: Added border-color css variables
+
+### Patch Changes
+
+- Updated dependencies [b12e28515]
+  - @uidu/field-text@1.2.0
+  - @uidu/select@1.6.0
+
 ## 1.1.15
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/media-filmstrip
 
+## 0.5.0
+
+### Minor Changes
+
+- b12e28515: Added border-color css variables
+
 ## 0.4.16
 
 ### Patch Changes

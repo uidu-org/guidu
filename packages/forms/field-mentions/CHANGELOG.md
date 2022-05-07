@@ -1,5 +1,11 @@
 # @uidu/field-mentions
 
+## 1.3.0
+
+### Minor Changes
+
+- b12e28515: Added border-color css variables
+
 ## 1.2.11
 
 ### Patch Changes

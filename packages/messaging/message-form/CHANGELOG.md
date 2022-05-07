@@ -1,5 +1,14 @@
 # @uidu/message-form
 
+## 0.4.16
+
+### Patch Changes
+
+- Updated dependencies [b12e28515]
+  - @uidu/field-mentions@1.3.0
+  - @uidu/field-text@1.2.0
+  - @uidu/media-filmstrip@0.5.0
+
 ## 0.4.15
 
 ### Patch Changes

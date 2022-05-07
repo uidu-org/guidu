@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-filmstrip",
-  "version": "0.4.16",
+  "version": "0.5.0",
   "description": "Includes components that show media cards as a filmstrip",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/media/media-filmstrip",
   "license": "MIT",

@@ -1,5 +1,12 @@
 # @uidu/renderer
 
+## 0.8.8
+
+### Patch Changes
+
+- Updated dependencies [b12e28515]
+  - @uidu/media-filmstrip@0.5.0
+
 ## 0.8.7
 
 ### Patch Changes
