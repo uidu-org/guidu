@@ -6452,7 +6452,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/checkbox@^1.1.14, @uidu/checkbox@^1.1.15, @uidu/checkbox@workspace:packages/forms/checkbox":
+"@uidu/checkbox@^1.1.14, @uidu/checkbox@^1.1.15, @uidu/checkbox@^1.2.0, @uidu/checkbox@workspace:packages/forms/checkbox":
   version: 0.0.0-use.local
   resolution: "@uidu/checkbox@workspace:packages/forms/checkbox"
   dependencies:
@@ -6951,17 +6951,17 @@ __metadata:
     "@uidu/editor-json-transformer": ^0.7.5
     "@uidu/editor-markdown-transformer": ^0.8.5
     "@uidu/emoji": ^0.6.10
-    "@uidu/field-date": ^1.1.17
+    "@uidu/field-date": ^1.2.0
     "@uidu/form": ^1.2.19
     "@uidu/media-card": ^0.6.9
     "@uidu/media-core": ^0.7.8
-    "@uidu/media-filmstrip": ^0.4.16
+    "@uidu/media-filmstrip": ^0.5.0
     "@uidu/media-picker": ^0.7.10
     "@uidu/mentions": ^0.4.8
     "@uidu/menu": ^0.7.9
     "@uidu/modal-dialog": ^1.0.0
     "@uidu/profilecard": ^0.3.7
-    "@uidu/select": ^1.5.17
+    "@uidu/select": ^1.6.0
     "@uidu/shell": ^2.1.17
     "@uidu/spinner": ^0.5.11
     "@uidu/status": ^0.5.8
@@ -7192,7 +7192,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-date@^1.1.16, @uidu/field-date@^1.1.17, @uidu/field-date@workspace:packages/forms/field-date":
+"@uidu/field-date@^1.1.16, @uidu/field-date@^1.1.17, @uidu/field-date@^1.2.0, @uidu/field-date@workspace:packages/forms/field-date":
   version: 0.0.0-use.local
   resolution: "@uidu/field-date@workspace:packages/forms/field-date"
   dependencies:
@@ -7200,7 +7200,7 @@ __metadata:
     "@uidu/analytics": ^0.6.0
     "@uidu/docs": ^0.5.10
     "@uidu/field-base": ^3.1.19
-    "@uidu/field-text": ^1.1.15
+    "@uidu/field-text": ^1.2.0
     "@uidu/form": ^1.2.19
     dayjs: ^1.11.1
     formsy-react: ^2.2.5
@@ -7316,7 +7316,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-mentions@^1.2.10, @uidu/field-mentions@workspace:packages/forms/field-mentions":
+"@uidu/field-mentions@^1.3.0, @uidu/field-mentions@workspace:packages/forms/field-mentions":
   version: 0.0.0-use.local
   resolution: "@uidu/field-mentions@workspace:packages/forms/field-mentions"
   dependencies:
@@ -7448,7 +7448,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-text@^1.1.14, @uidu/field-text@^1.1.15, @uidu/field-text@workspace:packages/forms/field-text":
+"@uidu/field-text@^1.1.14, @uidu/field-text@^1.1.15, @uidu/field-text@^1.2.0, @uidu/field-text@workspace:packages/forms/field-text":
   version: 0.0.0-use.local
   resolution: "@uidu/field-text@workspace:packages/forms/field-text"
   dependencies:
@@ -7499,9 +7499,9 @@ __metadata:
     "@uidu/button": ^1.3.17
     "@uidu/docs": ^0.5.10
     "@uidu/field-base": ^3.1.19
-    "@uidu/field-text": ^1.1.15
+    "@uidu/field-text": ^1.2.0
     "@uidu/form": ^1.2.19
-    "@uidu/select": ^1.5.17
+    "@uidu/select": ^1.6.0
     "@uidu/theme": ^0.6.13
     formsy-react: ^2.2.5
     react: ^18.1.0
@@ -7634,11 +7634,11 @@ __metadata:
     "@uidu/badge": ^0.5.11
     "@uidu/breadcrumbs": 1.0.14
     "@uidu/button": ^1.3.17
-    "@uidu/checkbox": ^1.1.15
+    "@uidu/checkbox": ^1.2.0
     "@uidu/code": ^0.5.11
     "@uidu/docs": ^0.5.10
     "@uidu/drawer": ^0.7.15
-    "@uidu/field-text": ^1.1.15
+    "@uidu/field-text": ^1.2.0
     "@uidu/form": ^1.2.19
     "@uidu/fs-loader": ^0.1.50
     "@uidu/list": ^1.2.7
@@ -7647,7 +7647,7 @@ __metadata:
     "@uidu/nav-info-loader": ^0.2.4
     "@uidu/navigation": ^1.0.16
     "@uidu/page-header": 1.0.5
-    "@uidu/select": ^1.5.17
+    "@uidu/select": ^1.6.0
     "@uidu/shell": ^2.1.17
     "@uidu/spinner": ^0.5.11
     "@uidu/table": ^1.4.7
@@ -7912,7 +7912,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-filmstrip@^0.4.16, @uidu/media-filmstrip@workspace:packages/media/media-filmstrip":
+"@uidu/media-filmstrip@^0.5.0, @uidu/media-filmstrip@workspace:packages/media/media-filmstrip":
   version: 0.0.0-use.local
   resolution: "@uidu/media-filmstrip@workspace:packages/media/media-filmstrip"
   dependencies:
@@ -8038,10 +8038,10 @@ __metadata:
     "@types/react-mentions": ^4.1.6
     "@uidu/docs": ^0.5.10
     "@uidu/dropdown-menu": ^0.6.16
-    "@uidu/field-mentions": ^1.2.10
-    "@uidu/field-text": ^1.1.14
+    "@uidu/field-mentions": ^1.3.0
+    "@uidu/field-text": ^1.2.0
     "@uidu/form": ^1.2.18
-    "@uidu/media-filmstrip": ^0.4.16
+    "@uidu/media-filmstrip": ^0.5.0
     "@uidu/media-picker": ^0.7.10
     "@uidu/message": ^0.5.20
     "@uidu/spinner": ^0.5.11
@@ -8475,7 +8475,7 @@ __metadata:
     "@uidu/editor-json-transformer": ^0.7.5
     "@uidu/field-range": ^1.1.5
     "@uidu/media-card": ^0.6.9
-    "@uidu/media-filmstrip": ^0.4.16
+    "@uidu/media-filmstrip": ^0.5.0
     "@uidu/mentions": ^0.4.8
     "@uidu/navigation": ^1.0.16
     "@uidu/status": ^0.5.8
@@ -8530,7 +8530,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/select@^1.5.16, @uidu/select@^1.5.17, @uidu/select@workspace:packages/forms/select":
+"@uidu/select@^1.5.16, @uidu/select@^1.5.17, @uidu/select@^1.6.0, @uidu/select@workspace:packages/forms/select":
   version: 0.0.0-use.local
   resolution: "@uidu/select@workspace:packages/forms/select"
   dependencies:
@@ -8539,7 +8539,7 @@ __metadata:
     "@faker-js/faker": ^6.3.1
     "@uidu/analytics": ^0.6.0
     "@uidu/button": ^1.3.17
-    "@uidu/checkbox": ^1.1.15
+    "@uidu/checkbox": ^1.2.0
     "@uidu/docs": ^0.5.10
     "@uidu/field-base": ^3.1.19
     "@uidu/form": ^1.2.19
