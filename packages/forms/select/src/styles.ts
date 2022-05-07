@@ -60,14 +60,14 @@ export default function baseStyles(validationState, isCompact) {
       borderRadius: '.25rem',
       borderColor: state.isFocused
         ? 'rgb(var(--brand-primary))'
-        : 'rgb(var(--border))',
+        : 'rgb(var(--field-border, var(--border)))',
       boxShadow: state.isFocused
         ? '0 0 0 0.2rem rgba(var(--brand-primary), .25)'
         : 'none',
       '&:hover': {
         borderColor: state.isFocused
           ? 'rgb(var(--brand-primary))'
-          : 'rgb(var(--border))',
+          : 'rgb(var(--field-border, var(--border)))',
         ...(state.isFocused && {}),
       },
     }),

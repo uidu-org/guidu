@@ -29,7 +29,7 @@ function RadioStateless({
           id={id}
           name={name}
           className={className}
-          tw="focus:--tw-ring-color[rgba(var(--brand-primary), .5)] h-5 w-5 border-color[rgb(var(--border))] color[rgba(var(--brand-primary), 1)]"
+          tw="focus:--tw-ring-color[rgba(var(--brand-primary), .5)] h-5 w-5 border-color[rgb(var(--radio-border, var(--border)))] color[rgba(var(--brand-primary), 1)]"
           onChange={onChange}
           value={value}
           disabled={disabled}
