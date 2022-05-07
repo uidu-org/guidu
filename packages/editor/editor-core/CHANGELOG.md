@@ -1,5 +1,14 @@
 # @uidu/editor-core
 
+## 0.15.1
+
+### Patch Changes
+
+- Updated dependencies [b12e28515]
+  - @uidu/field-date@1.2.0
+  - @uidu/select@1.6.0
+  - @uidu/media-filmstrip@0.5.0
+
 ## 0.15.0
 
 ### Minor Changes

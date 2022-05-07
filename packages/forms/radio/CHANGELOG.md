@@ -1,5 +1,11 @@
 # @uidu/radio
 
+## 1.2.0
+
+### Minor Changes
+
+- b12e28515: Added border-color css variables
+
 ## 1.1.13
 
 ### Patch Changes

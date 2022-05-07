@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-textarea",
-  "version": "1.1.14",
+  "version": "1.2.0",
   "description": "Simple Textarea component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-textarea",
   "license": "MIT",

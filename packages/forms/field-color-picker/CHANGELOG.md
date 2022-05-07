@@ -1,5 +1,11 @@
 # @uidu/field-color-picker
 
+## 2.1.0
+
+### Minor Changes
+
+- b12e28515: Added border-color css variables
+
 ## 2.0.18
 
 ### Patch Changes

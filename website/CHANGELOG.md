@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.6.0
+
+### Minor Changes
+
+- b12e28515: Added border-color css variables
+- a37e5695c: Darkened input --border var to 198, 203, 216
+
+### Patch Changes
+
+- Updated dependencies [b12e28515]
+  - @uidu/checkbox@1.2.0
+  - @uidu/field-text@1.2.0
+  - @uidu/select@1.6.0
+
 ## 0.5.0
 
 ### Minor Changes

@@ -1,5 +1,16 @@
 # @uidu/field-text
 
+## 1.6.0
+
+### Minor Changes
+
+- b12e28515: Added border-color css variables
+
+### Patch Changes
+
+- Updated dependencies [b12e28515]
+  - @uidu/checkbox@1.2.0
+
 ## 1.5.17
 
 ### Patch Changes

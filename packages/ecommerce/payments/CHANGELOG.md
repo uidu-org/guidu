@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.4.0
+
+### Minor Changes
+
+- b12e28515: Added border-color css variables
+
 ## 1.3.8
 
 ### Patch Changes
