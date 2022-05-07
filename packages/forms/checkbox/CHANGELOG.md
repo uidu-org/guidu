@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.3.0
+
+### Minor Changes
+
+- d0a7d3c3d: Fix broken styles
+
 ## 1.2.0
 
 ### Minor Changes
