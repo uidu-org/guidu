@@ -71,6 +71,9 @@ const CustomStyles = createGlobalStyle`
     --body-on-secondary-hover-bg: 245, 244, 243;
 
     --border: 234, 237, 245;
+    --field-border: 198, 203, 216;
+    --checkbox-border: 198, 203, 216;
+    --radio-border: 198, 203, 216;
     --border-strong: 0, 0, 0;
 
     --brand-danger: 239, 68, 68;
