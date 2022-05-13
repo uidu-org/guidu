@@ -20,7 +20,7 @@
     "@uidu/theme": "^0.6.13",
     "exenv": "^1.2.2",
     "memoize-one": "^5.2.1",
-    "react-focus-lock": "^2.9.0",
+    "react-focus-lock": "^2.9.1",
     "react-node-resolver": "^2.0.1",
     "react-scrolllock": "^5.0.1",
     "react-transition-group": "^4.4.2",

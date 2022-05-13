@@ -29,7 +29,7 @@
     "@uidu/menu": "^0.7.9",
     "@uidu/popup": "0.6.16",
     "@uidu/select": "^1.5.17",
-    "dayjs": "^1.11.1",
+    "dayjs": "^1.11.2",
     "numeral": "^2.0.6",
     "react": "^18.1.0",
     "react-beautiful-dnd": "^13.1.0",

@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react';
-import StyledWrapper from '../styled';
 import { FieldToggleProps } from '../types';
 import FieldToggleStateless from './FieldToggleStateless';
 
@@ -10,7 +9,7 @@ function FieldToggle({
   value = false,
   id,
   label,
-  className = 'list-group-item list-group-action',
+  className,
   forwardedRef,
   size,
   onColor,
@@ -28,7 +27,8 @@ function FieldToggle({
   };
 
   return (
-    <StyledWrapper className={className} onClick={handleClick}>
+    <div tw="flex items-center justify-between relative" className={className}>
+      <button type="button" onClick={handleClick} tw="inset-0 absolute" />
       {label && (
         <label htmlFor={id} tw="mb-0 mr-5">
           {label}
@@ -43,7 +43,7 @@ function FieldToggle({
         onChange={handleChange}
         ref={forwardedRef}
       />
-    </StyledWrapper>
+    </div>
   );
 }
 
