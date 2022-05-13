@@ -1,5 +1,11 @@
 # @uidu/stripe-accounts
 
+## 0.4.8
+
+### Patch Changes
+
+- 02d868b1c: Bump dependencies
+
 ## 0.4.7
 
 ### Patch Changes

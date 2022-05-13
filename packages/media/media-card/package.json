@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-card",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "description": "Includes all media card related components, CardView, CardViewSmall, Card...",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/media/media-card",
   "license": "ISC",
@@ -26,6 +26,6 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^6.3.1",
-    "@uidu/docs": "^0.5.10"
+    "@uidu/docs": "^0.5.12"
   }
 }

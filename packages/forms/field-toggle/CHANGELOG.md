@@ -1,5 +1,11 @@
 # @uidu/toggle
 
+## 1.1.11
+
+### Patch Changes
+
+- 02d868b1c: Bump dependencies
+
 ## 1.1.10
 
 ### Patch Changes

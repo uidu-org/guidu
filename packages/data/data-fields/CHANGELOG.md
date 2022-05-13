@@ -1,5 +1,16 @@
 # @uidu/data-fields
 
+## 1.5.18
+
+### Patch Changes
+
+- 02d868b1c: Bump dependencies
+- Updated dependencies [02d868b1c]
+  - @uidu/popup@0.6.17
+  - @uidu/field-date@1.2.1
+  - @uidu/field-toggle@1.1.11
+  - @uidu/select@1.6.1
+
 ## 1.5.17
 
 ### Patch Changes

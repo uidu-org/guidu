@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 1.4.8
+
+### Patch Changes
+
+- Updated dependencies [02d868b1c]
+  - @uidu/popup@0.6.17
+  - @uidu/data-fields@1.5.18
+  - @uidu/data-manager@2.4.6
+
 ## 1.4.7
 
 ### Patch Changes

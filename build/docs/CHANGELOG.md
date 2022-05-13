@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.12
+
+### Patch Changes
+
+- 02d868b1c: Bump dependencies
+
 ## 0.5.11
 
 ### Patch Changes

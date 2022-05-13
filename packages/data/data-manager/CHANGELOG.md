@@ -1,5 +1,16 @@
 # @uidu/data-manager
 
+## 2.4.6
+
+### Patch Changes
+
+- 02d868b1c: Bump dependencies
+- Updated dependencies [02d868b1c]
+  - @uidu/data-fields@1.5.18
+  - @uidu/data-controls@2.1.13
+  - @uidu/data-views@1.2.12
+  - @uidu/table@1.4.8
+
 ## 2.4.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 1.6.1
+
+### Patch Changes
+
+- 02d868b1c: Bump dependencies
+
 ## 1.6.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.5.23
+
+### Patch Changes
+
+- 02d868b1c: Bump dependencies
+- Updated dependencies [02d868b1c]
+  - @uidu/popup@0.6.17
+  - @uidu/media-card@0.6.10
+
 ## 0.5.22
 
 ### Patch Changes

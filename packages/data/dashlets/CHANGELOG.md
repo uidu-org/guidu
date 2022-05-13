@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 1.7.5
+
+### Patch Changes
+
+- 02d868b1c: Bump dependencies
+- Updated dependencies [02d868b1c]
+  - @uidu/dashboard-manager@1.4.2
+  - @uidu/data-fields@1.5.18
+  - @uidu/table@1.4.8
+
 ## 1.7.4
 
 ### Patch Changes
