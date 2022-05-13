@@ -1,5 +1,16 @@
 # @uidu/data-controls
 
+## 2.1.13
+
+### Patch Changes
+
+- Updated dependencies [02d868b1c]
+  - @uidu/popup@0.6.17
+  - @uidu/data-fields@1.5.18
+  - @uidu/data-manager@2.4.6
+  - @uidu/select@1.6.1
+  - @uidu/data-views@1.2.12
+
 ## 2.1.12
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/onboarding
 
+## 1.3.1
+
+### Patch Changes
+
+- 02d868b1c: Bump dependencies
+- Updated dependencies [02d868b1c]
+  - @uidu/modal-dialog@1.0.1
+
 ## 1.3.0
 
 ### Minor Changes

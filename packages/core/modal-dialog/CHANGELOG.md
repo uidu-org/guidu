@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 1.0.1
+
+### Patch Changes
+
+- 02d868b1c: Bump dependencies
+
 ## 1.0.0
 
 ### Major Changes

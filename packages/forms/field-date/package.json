@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-date",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-date",
   "license": "MIT",
   "sideEffects": false,
@@ -25,7 +25,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.10",
+    "@uidu/docs": "^0.5.12",
     "@uidu/form": "^1.2.19",
     "styled-components": "^5.3.5"
   },

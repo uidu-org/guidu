@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 1.2.1
+
+### Patch Changes
+
+- 02d868b1c: Bump dependencies
+
 ## 1.2.0
 
 ### Minor Changes
