@@ -1,5 +1,12 @@
 # @uidu/field-color-picker
 
+## 2.1.1
+
+### Patch Changes
+
+- Updated dependencies [65e282c60]
+  - @uidu/button@1.3.18
+
 ## 2.1.0
 
 ### Minor Changes

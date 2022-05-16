@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 1.1.12
+
+### Patch Changes
+
+- 65e282c60: Monday bumps
+
 ## 1.1.11
 
 ### Patch Changes

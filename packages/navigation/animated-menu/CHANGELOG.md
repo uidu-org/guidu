@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.0.13
+
+### Patch Changes
+
+- 65e282c60: Monday bumps
+
 ## 1.0.12
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.6.1
+
+### Patch Changes
+
+- Updated dependencies [65e282c60]
+  - @uidu/button@1.3.18
+  - @uidu/breadcrumbs@1.0.15
+  - @uidu/table@1.4.9
+  - @uidu/form@1.2.20
+
 ## 0.6.0
 
 ### Minor Changes

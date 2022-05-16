@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 0.7.9
+
+### Patch Changes
+
+- 65e282c60: Monday bumps
+
 ## 0.7.8
 
 ### Patch Changes

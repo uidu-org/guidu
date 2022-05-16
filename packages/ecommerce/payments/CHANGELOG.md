@@ -1,5 +1,12 @@
 # @uidu/payments
 
+## 1.4.1
+
+### Patch Changes
+
+- 65e282c60: Monday bumps
+  - @uidu/form@1.2.20
+
 ## 1.4.0
 
 ### Minor Changes

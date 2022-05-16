@@ -1,5 +1,14 @@
 # @uidu/media-card
 
+## 0.6.11
+
+### Patch Changes
+
+- 65e282c60: Monday bumps
+- Updated dependencies [65e282c60]
+  - @uidu/button@1.3.18
+  - @uidu/media-core@0.7.9
+
 ## 0.6.10
 
 ### Patch Changes

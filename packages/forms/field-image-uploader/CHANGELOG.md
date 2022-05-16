@@ -1,5 +1,14 @@
 # @uidu/field-image-uploader
 
+## 2.0.8
+
+### Patch Changes
+
+- 65e282c60: Monday bumps
+- Updated dependencies [65e282c60]
+  - @uidu/button@1.3.18
+  - @uidu/media-core@0.7.9
+
 ## 2.0.7
 
 ### Patch Changes

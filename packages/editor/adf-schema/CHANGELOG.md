@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.9.5
+
+### Patch Changes
+
+- 65e282c60: Monday bumps
+
 ## 0.9.4
 
 ### Patch Changes
