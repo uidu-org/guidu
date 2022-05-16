@@ -1,5 +1,13 @@
 # @uidu/breadcrumbs
 
+## 1.0.15
+
+### Patch Changes
+
+- 65e282c60: Monday bumps
+- Updated dependencies [65e282c60]
+  - @uidu/button@1.3.18
+
 ## 1.0.14
 
 ### Patch Changes

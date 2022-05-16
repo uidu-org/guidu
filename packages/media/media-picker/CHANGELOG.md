@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.7.11
+
+### Patch Changes
+
+- 65e282c60: Monday bumps
+- Updated dependencies [65e282c60]
+  - @uidu/media-core@0.7.9
+
 ## 0.7.10
 
 ### Patch Changes

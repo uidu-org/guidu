@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.17
+
+### Patch Changes
+
+- 65e282c60: Monday bumps
+- Updated dependencies [65e282c60]
+  - @uidu/payments@1.4.1
+  - @uidu/form@1.2.20
+
 ## 0.3.16
 
 ### Patch Changes

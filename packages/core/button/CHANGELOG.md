@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.3.18
+
+### Patch Changes
+
+- 65e282c60: Monday bumps
+
 ## 1.3.17
 
 ### Patch Changes
