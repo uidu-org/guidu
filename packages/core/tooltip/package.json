@@ -9,8 +9,8 @@
   "main": "dist/uidu-tooltip.cjs.js",
   "module": "dist/uidu-tooltip.esm.js",
   "dependencies": {
-    "@atlaskit/icon": "^21.10.6",
-    "@babel/runtime": "^7.17.9",
+    "@atlaskit/icon": "^21.10.7",
+    "@babel/runtime": "^7.18.3",
     "@uidu/analytics": "^0.6.0",
     "@uidu/popper": "^0.5.13",
     "@uidu/portal": "^0.5.16",

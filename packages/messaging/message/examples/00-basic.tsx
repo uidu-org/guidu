@@ -1,4 +1,4 @@
-import faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { ScrollableContainer, ShellMain } from '@uidu/shell';
 import React from 'react';
 import { messageLogFactory, messagerFactory } from '../examples-utils';

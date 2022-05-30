@@ -9,7 +9,7 @@
   "main": "dist/uidu-item.cjs.js",
   "module": "dist/uidu-item.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.17.9",
+    "@babel/runtime": "^7.18.3",
     "@uidu/avatar": "^0.9.8",
     "@uidu/theme": "^0.6.13",
     "polished": "^4.2.2",
@@ -24,8 +24,8 @@
     "@uidu/tooltip": "^0.5.15",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-router": "^5.3.1",
-    "react-router-dom": "^5.3.1",
+    "react-router": "^5.3.3",
+    "react-router-dom": "^5.3.3",
     "styled-components": "^5.3.5"
   },
   "peerDependencies": {

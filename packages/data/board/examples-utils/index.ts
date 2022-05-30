@@ -1,4 +1,4 @@
-import faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { colors } from '@uidu/theme';
 import { Author, ItemMapProps, ItemProps } from '../src/types';
 

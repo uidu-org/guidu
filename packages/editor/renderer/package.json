@@ -10,8 +10,8 @@
   "module": "dist/uidu-renderer.esm.js",
   "types": "dist/uidu-renderer.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.10.6",
-    "@babel/runtime": "^7.17.9",
+    "@atlaskit/icon": "^21.10.7",
+    "@babel/runtime": "^7.18.3",
     "@loadable/component": "^5.15.2",
     "@uidu/adf-schema": "^0.9.3",
     "@uidu/adf-utils": "^0.8.5",
@@ -30,7 +30,7 @@
     "@uidu/tooltip": "^0.5.16",
     "prosemirror-model": "^1.16.1",
     "raf-schd": "^4.0.3",
-    "react-intl": "^5.25.1",
+    "react-intl": "^6.0.3",
     "tslib": "^2.4.0",
     "url-parse": "^1.5.10"
   },

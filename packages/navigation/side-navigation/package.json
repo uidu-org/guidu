@@ -9,7 +9,7 @@
   "module": "dist/uidu-side-navigation.esm.js",
   "types": "dist/uidu-side-navigation.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.9",
+    "@babel/runtime": "^7.18.3",
     "@uidu/avatar": "^0.9.8",
     "@uidu/dropdown-menu": "^0.6.16",
     "@uidu/inline-dialog": "^0.5.15",
@@ -23,7 +23,7 @@
     "react-beautiful-dnd": "^13.1.0",
     "react-content-loader": "^6.2.0",
     "react-dom": "^18.1.0",
-    "react-router-dom": "^5.3.1",
+    "react-router-dom": "^5.3.3",
     "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"

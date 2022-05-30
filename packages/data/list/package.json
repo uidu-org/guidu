@@ -9,7 +9,7 @@
   "module": "dist/uidu-list.esm.js",
   "types": "dist/uidu-list.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.17.9",
+    "@babel/runtime": "^7.18.3",
     "@uidu/data-fields": "^1.5.15",
     "react": "^18.1.0",
     "react-virtual": "^2.10.4",

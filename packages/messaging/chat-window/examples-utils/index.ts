@@ -1,4 +1,4 @@
-import faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { MessageProps } from '@uidu/message';
 import moment from 'moment';
 
