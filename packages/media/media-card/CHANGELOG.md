@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.6.12
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/button@1.3.19
+  - @uidu/dropdown-menu@0.6.18
+  - @uidu/spinner@0.5.12
+  - @uidu/theme@0.6.14
+  - @uidu/tooltip@0.5.17
+
 ## 0.6.11
 
 ### Patch Changes

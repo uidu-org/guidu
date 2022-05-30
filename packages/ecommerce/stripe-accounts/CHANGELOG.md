@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.4.10
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/slider@1.7.14
+  - @uidu/spinner@0.5.12
+  - @uidu/payments@1.4.2
+  - @uidu/field-text@1.2.1
+  - @uidu/form@1.2.21
+  - @uidu/stepper@0.4.14
+
 ## 0.4.9
 
 ### Patch Changes

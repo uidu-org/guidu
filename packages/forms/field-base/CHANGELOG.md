@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.20
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/form@1.2.21
+
 ## 3.1.19
 
 ### Patch Changes

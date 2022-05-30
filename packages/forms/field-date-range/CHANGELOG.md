@@ -1,5 +1,15 @@
 # @uidu/field-date-range
 
+## 1.1.15
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/field-base@3.1.20
+  - @uidu/field-date@1.2.2
+
 ## 1.1.14
 
 ### Patch Changes

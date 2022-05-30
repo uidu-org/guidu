@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.7.12
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+
 ## 0.7.11
 
 ### Patch Changes

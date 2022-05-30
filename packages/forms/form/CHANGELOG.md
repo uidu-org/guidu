@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.21
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/button@1.3.19
+
 ## 1.2.20
 
 ### Patch Changes

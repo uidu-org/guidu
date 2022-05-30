@@ -1,5 +1,16 @@
 # @uidu/tooltip
 
+## 0.5.17
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/popper@0.5.14
+  - @uidu/portal@0.5.17
+  - @uidu/theme@0.6.14
+
 ## 0.5.16
 
 ### Patch Changes

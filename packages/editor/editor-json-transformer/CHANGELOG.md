@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.7.6
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/adf-schema@0.9.6
+
 ## 0.7.5
 
 ### Patch Changes

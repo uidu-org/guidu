@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.6.11
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/button@1.3.19
+  - @uidu/code@0.5.12
+  - @uidu/spinner@0.5.12
+  - @uidu/theme@0.6.14
+  - @uidu/tooltip@0.5.17
+  - @uidu/field-text@1.2.1
+
 ## 0.6.10
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.4.16
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/message@0.5.25
+  - @uidu/message-form@0.4.17
+  - @uidu/message-renderer@0.4.14
+
 ## 0.4.15
 
 ### Patch Changes

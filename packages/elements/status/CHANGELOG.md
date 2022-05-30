@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.5.9
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/lozenge@0.5.12
+  - @uidu/theme@0.6.14
+  - @uidu/field-text@1.2.1
+
 ## 0.5.8
 
 ### Patch Changes

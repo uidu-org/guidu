@@ -1,5 +1,14 @@
 # Change Log
 
+## 1.4.1
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/field-base@3.1.20
+
 ## 1.4.0
 
 ### Minor Changes

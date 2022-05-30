@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.5.12
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+
 ## 0.5.11
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.0.11
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/checkbox@1.4.1
+  - @uidu/field-number@1.0.15
+  - @uidu/field-text@1.2.1
+  - @uidu/field-textarea@1.2.1
+  - @uidu/select@1.6.2
+
 ## 1.0.10
 
 ### Patch Changes

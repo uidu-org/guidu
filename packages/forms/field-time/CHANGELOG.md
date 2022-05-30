@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 1.2.1
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/theme@0.6.14
+  - @uidu/field-base@3.1.20
+  - @uidu/field-text@1.2.1
+  - @uidu/form@1.2.21
+  - @uidu/select@1.6.2
+
 ## 1.2.0
 
 ### Minor Changes

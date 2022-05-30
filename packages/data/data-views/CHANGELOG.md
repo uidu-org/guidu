@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 1.2.14
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/button@1.3.19
+  - @uidu/data-controls@2.1.15
+  - @uidu/data-manager@2.4.8
+  - @uidu/field-counter@1.2.1
+  - @uidu/field-number@1.0.15
+  - @uidu/form@1.2.21
+  - @uidu/select@1.6.2
+
 ## 1.2.13
 
 ### Patch Changes

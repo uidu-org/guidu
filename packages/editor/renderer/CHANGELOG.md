@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.8.9
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/code@0.5.12
+  - @uidu/theme@0.6.14
+  - @uidu/tooltip@0.5.17
+  - @uidu/adf-schema@0.9.6
+  - @uidu/adf-utils@0.8.6
+  - @uidu/editor-common@0.7.11
+  - @uidu/editor-json-transformer@0.7.6
+  - @uidu/analytics-listeners@0.4.12
+  - @uidu/analytics-namespaced-context@0.4.12
+  - @uidu/mentions@0.4.9
+  - @uidu/status@0.5.9
+  - @uidu/task-decision@0.4.19
+  - @uidu/media-card@0.6.12
+  - @uidu/media-filmstrip@0.5.1
+
 ## 0.8.8
 
 ### Patch Changes

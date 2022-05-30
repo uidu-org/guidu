@@ -1,5 +1,14 @@
 # @uidu/analytics-listeners
 
+## 0.4.12
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/analytics-namespaced-context@0.4.12
+
 ## 0.4.11
 
 ### Patch Changes

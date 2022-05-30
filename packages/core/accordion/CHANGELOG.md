@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.11
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/docs@0.5.13
+
 ## 0.6.10
 
 ### Patch Changes
