@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.7.14
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+
 ## 1.7.13
 
 ### Patch Changes

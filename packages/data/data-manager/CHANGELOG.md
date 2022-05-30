@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 2.4.8
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/button@1.3.19
+  - @uidu/menu@0.7.10
+  - @uidu/pagination@0.5.15
+  - @uidu/spinner@0.5.12
+  - @uidu/board@0.5.8
+  - @uidu/calendar@0.4.8
+  - @uidu/data-controls@2.1.15
+  - @uidu/data-fields@1.5.20
+  - @uidu/data-views@1.2.14
+  - @uidu/gallery@1.2.9
+  - @uidu/list@1.2.8
+  - @uidu/table@1.4.10
+  - @uidu/shell@2.1.18
+
 ## 2.4.7
 
 ### Patch Changes

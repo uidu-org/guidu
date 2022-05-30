@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.5.18
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/item@0.5.15
+  - @uidu/layer@0.5.12
+  - @uidu/spinner@0.5.12
+  - @uidu/theme@0.6.14
+  - @uidu/tooltip@0.5.17
+
 ## 0.5.17
 
 ### Patch Changes

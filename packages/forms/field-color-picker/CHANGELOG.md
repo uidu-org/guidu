@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 2.1.2
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/button@1.3.19
+  - @uidu/popup@0.6.18
+  - @uidu/field-base@3.1.20
+
 ## 2.1.1
 
 ### Patch Changes

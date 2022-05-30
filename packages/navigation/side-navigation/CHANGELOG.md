@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 1.0.17
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/avatar@0.9.10
+  - @uidu/dropdown-menu@0.6.18
+  - @uidu/inline-dialog@0.5.17
+  - @uidu/theme@0.6.14
+  - @uidu/tooltip@0.5.17
+  - @uidu/shell@2.1.18
+
 ## 1.0.16
 
 ### Patch Changes

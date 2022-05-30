@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 1.5.20
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/button@1.3.19
+  - @uidu/map@0.6.14
+  - @uidu/menu@0.7.10
+  - @uidu/popup@0.6.18
+  - @uidu/field-color-picker@2.1.2
+  - @uidu/field-date@1.2.2
+  - @uidu/field-downshift@1.4.11
+  - @uidu/field-number@1.0.15
+  - @uidu/field-text@1.2.1
+  - @uidu/field-time@1.2.1
+  - @uidu/field-toggle@1.1.12
+  - @uidu/form@1.2.21
+  - @uidu/select@1.6.2
+
 ## 1.5.19
 
 ### Patch Changes

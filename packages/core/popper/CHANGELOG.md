@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.14
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+
 ## 0.5.13
 
 ### Patch Changes

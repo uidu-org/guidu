@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.3.14
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/docs@0.5.13
+  - @uidu/analytics@0.6.1
+  - @uidu/theme@0.6.14
+
 ## 0.3.13
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/button
 
+## 1.3.19
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/spinner@0.5.12
+  - @uidu/theme@0.6.14
+
 ## 1.3.18
 
 ### Patch Changes

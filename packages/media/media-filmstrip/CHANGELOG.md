@@ -1,5 +1,15 @@
 # @uidu/media-filmstrip
 
+## 0.5.1
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/theme@0.6.14
+  - @uidu/media-card@0.6.12
+  - @uidu/media-viewer@0.4.22
+
 ## 0.5.0
 
 ### Minor Changes

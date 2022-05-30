@@ -1,5 +1,13 @@
 # @uidu/analytics-viewer
 
+## 0.4.13
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+
 ## 0.4.12
 
 ### Patch Changes

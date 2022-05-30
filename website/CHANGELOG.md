@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.6.2
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/docs@0.5.13
+  - @uidu/badge@0.5.12
+  - @uidu/button@1.3.19
+  - @uidu/code@0.5.12
+  - @uidu/drawer@0.7.16
+  - @uidu/lozenge@0.5.12
+  - @uidu/modal-dialog@1.0.2
+  - @uidu/spinner@0.5.12
+  - @uidu/theme@0.6.14
+  - @uidu/tooltip@0.5.17
+  - @uidu/list@1.2.8
+  - @uidu/table@1.4.10
+  - @uidu/checkbox@1.4.1
+  - @uidu/field-text@1.2.1
+  - @uidu/form@1.2.21
+  - @uidu/select@1.6.2
+  - @uidu/breadcrumbs@1.0.16
+  - @uidu/navigation@1.0.17
+  - @uidu/shell@2.1.18
+
 ## 0.6.1
 
 ### Patch Changes

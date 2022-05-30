@@ -1,5 +1,15 @@
 # @uidu/field-range
 
+## 1.1.6
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/theme@0.6.14
+  - @uidu/field-base@3.1.20
+  - @uidu/form@1.2.21
+
 ## 1.1.5
 
 ### Patch Changes

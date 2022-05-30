@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.14
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/dropdown-menu@0.6.18
+  - @uidu/theme@0.6.14
+
 ## 0.4.13
 
 ### Patch Changes

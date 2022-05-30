@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.8.6
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/adf-schema@0.9.6
+
 ## 0.8.5
 
 ### Patch Changes

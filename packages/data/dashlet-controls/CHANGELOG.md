@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.0.25
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/avatar@0.9.10
+  - @uidu/avatar-group@2.6.13
+  - @uidu/button@1.3.19
+  - @uidu/dropdown-menu@0.6.18
+  - @uidu/field-date-range@1.1.15
+  - @uidu/form@1.2.21
+
 ## 1.0.24
 
 ### Patch Changes

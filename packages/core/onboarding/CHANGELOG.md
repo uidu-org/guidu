@@ -1,5 +1,18 @@
 # @uidu/onboarding
 
+## 1.3.2
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/button@1.3.19
+  - @uidu/modal-dialog@1.0.2
+  - @uidu/popper@0.5.14
+  - @uidu/portal@0.5.17
+  - @uidu/theme@0.6.14
+
 ## 1.3.1
 
 ### Patch Changes

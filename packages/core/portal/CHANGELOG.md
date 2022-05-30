@@ -1,5 +1,13 @@
 # @uidu/portal
 
+## 0.5.17
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/theme@0.6.14
+
 ## 0.5.16
 
 ### Patch Changes

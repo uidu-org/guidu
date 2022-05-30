@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 1.1.13
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/field-base@3.1.20
+
 ## 1.1.12
 
 ### Patch Changes

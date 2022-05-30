@@ -1,5 +1,15 @@
 # @uidu/field-geosuggest
 
+## 1.2.1
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/menu@0.7.10
+  - @uidu/spinner@0.5.12
+  - @uidu/field-base@3.1.20
+
 ## 1.2.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 1.4.2
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/section-message@0.6.13
+  - @uidu/slider@1.7.14
+  - @uidu/theme@0.6.14
+  - @uidu/field-base@3.1.20
+  - @uidu/form@1.2.21
+
 ## 1.4.1
 
 ### Patch Changes

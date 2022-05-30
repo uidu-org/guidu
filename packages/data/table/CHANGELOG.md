@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.4.10
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/button@1.3.19
+  - @uidu/menu@0.7.10
+  - @uidu/popup@0.6.18
+  - @uidu/data-fields@1.5.20
+  - @uidu/data-manager@2.4.8
+  - @uidu/checkbox@1.4.1
+
 ## 1.4.9
 
 ### Patch Changes

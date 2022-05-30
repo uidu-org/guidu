@@ -1,5 +1,16 @@
 # @uidu/breadcrumbs
 
+## 1.0.16
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/button@1.3.19
+  - @uidu/theme@0.6.14
+  - @uidu/tooltip@0.5.17
+
 ## 1.0.15
 
 ### Patch Changes

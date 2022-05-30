@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.11
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+
 ## 0.1.10
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.4.17
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/dropdown-menu@0.6.18
+  - @uidu/spinner@0.5.12
+  - @uidu/field-mentions@1.3.1
+  - @uidu/field-text@1.2.1
+  - @uidu/form@1.2.21
+  - @uidu/media-filmstrip@0.5.1
+  - @uidu/message@0.5.25
+
 ## 0.4.16
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.6.13
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/avatar@0.9.10
+  - @uidu/dropdown-menu@0.6.18
+  - @uidu/theme@0.6.14
+  - @uidu/tooltip@0.5.17
+
 ## 2.6.12
 
 ### Patch Changes

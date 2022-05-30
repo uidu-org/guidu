@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.6.18
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/button@1.3.19
+  - @uidu/droplist@0.5.18
+  - @uidu/item@0.5.15
+  - @uidu/theme@0.6.14
+
 ## 0.6.17
 
 ### Patch Changes

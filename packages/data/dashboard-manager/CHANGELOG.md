@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 1.4.3
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/dashboard-controls@1.0.25
+  - @uidu/dashlets@1.7.7
+
 ## 1.4.2
 
 ### Patch Changes

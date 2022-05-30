@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.7.8
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/avatar@0.9.10
+  - @uidu/slider@1.7.14
+  - @uidu/spinner@0.5.12
+  - @uidu/checkbox@1.4.1
+  - @uidu/field-password@1.1.14
+  - @uidu/field-phone@1.0.20
+  - @uidu/field-text@1.2.1
+  - @uidu/form@1.2.21
+  - @uidu/shell@2.1.18
+
 ## 0.7.7
 
 ### Patch Changes

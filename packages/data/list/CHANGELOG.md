@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 1.2.8
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/data-fields@1.5.20
+
 ## 1.2.7
 
 ### Patch Changes

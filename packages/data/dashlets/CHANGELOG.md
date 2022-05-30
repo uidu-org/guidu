@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 1.7.7
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/spinner@0.5.12
+  - @uidu/tooltip@0.5.17
+  - @uidu/dashboard-manager@1.4.3
+  - @uidu/dashlet-controls@1.0.25
+  - @uidu/data-fields@1.5.20
+  - @uidu/table@1.4.10
+
 ## 1.7.6
 
 ### Patch Changes

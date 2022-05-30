@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.4.11
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+
 ## 0.4.10
 
 ### Patch Changes

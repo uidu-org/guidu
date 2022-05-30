@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.4.11
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/shell@2.1.18
+
 ## 0.4.10
 
 ### Patch Changes

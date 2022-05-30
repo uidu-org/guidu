@@ -1,5 +1,15 @@
 # @uidu/pagination
 
+## 0.5.15
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/analytics@0.6.1
+  - @uidu/button@1.3.19
+  - @uidu/theme@0.6.14
+
 ## 0.5.14
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.2.9
+
+### Patch Changes
+
+- 146ad48ee: Bump dependencies on react-intl
+- Updated dependencies [146ad48ee]
+  - @uidu/spinner@0.5.12
+  - @uidu/data-controls@2.1.15
+  - @uidu/data-fields@1.5.20
+  - @uidu/shell@2.1.18
+
 ## 1.2.8
 
 ### Patch Changes
