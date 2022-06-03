@@ -15,7 +15,7 @@
     "classnames": "^2.3.1",
     "formsy-react": "^2.2.5",
     "react": "^18.1.0",
-    "react-feather": "^2.0.9",
+    "react-feather": "^2.0.10",
     "react-media": "^1.10.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"

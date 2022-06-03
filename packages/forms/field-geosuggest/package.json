@@ -18,7 +18,7 @@
     "downshift": "^6.1.7",
     "formsy-react": "^2.2.5",
     "react": "^18.1.0",
-    "react-feather": "^2.0.9",
+    "react-feather": "^2.0.10",
     "tslib": "^2.4.0",
     "use-places-autocomplete": "^3.0.0"
   },

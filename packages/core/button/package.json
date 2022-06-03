@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.10.7",
-    "@atlaskit/logo": "^13.6.0",
+    "@atlaskit/logo": "^13.7.0",
     "@uidu/checkbox": "^1.4.1",
     "@uidu/docs": "^0.5.13",
     "@uidu/form": "^1.2.21",

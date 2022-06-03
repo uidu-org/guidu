@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import 'regenerator-runtime/runtime';
 import App from './containers/App';
 // import './index.scss';
@@ -12,4 +12,6 @@ if (process.env.NODE_ENV !== 'production' && process.env.TRACK_RENDERS) {
   });
 }
 
-render(<App />, document.getElementById('app'));
+const container = document.getElementById('app');
+const root = createRoot(container);
+root.render(<App />);

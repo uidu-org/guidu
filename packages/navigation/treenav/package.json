@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.18.3",
     "react": "^18.1.0",
-    "react-feather": "^2.0.9",
+    "react-feather": "^2.0.10",
     "react-media": "^1.10.0",
     "react-router-dom": "^5.3.3",
     "tslib": "^2.4.0"

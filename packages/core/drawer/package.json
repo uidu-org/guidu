@@ -18,7 +18,7 @@
     "chromatism": "^3.0.0",
     "exenv": "^1.2.2",
     "react-dom": "^18.1.0",
-    "react-feather": "^2.0.9",
+    "react-feather": "^2.0.10",
     "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"

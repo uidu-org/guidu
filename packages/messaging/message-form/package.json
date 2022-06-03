@@ -24,8 +24,8 @@
     "emoji-mart": "^3.0.1",
     "formsy-react": "^2.2.5",
     "react": "^18.1.0",
-    "react-feather": "^2.0.9",
-    "react-mentions": "^4.3.2",
+    "react-feather": "^2.0.10",
+    "react-mentions": "^4.4.2",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

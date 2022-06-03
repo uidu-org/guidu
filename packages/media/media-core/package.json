@@ -10,8 +10,8 @@
   "types": "dist/uidu-media-core.cjs.d.ts",
   "dependencies": {
     "@uidu/docs": "^0.5.10",
-    "@uppy/aws-s3": "^2.1.0",
-    "@uppy/xhr-upload": "^2.1.0",
+    "@uppy/aws-s3": "^2.2.0",
+    "@uppy/xhr-upload": "^2.1.1",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
