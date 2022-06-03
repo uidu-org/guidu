@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 1.6.3
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/field-base@3.1.21
+  - @uidu/form@1.2.22
+
 ## 1.6.2
 
 ### Patch Changes

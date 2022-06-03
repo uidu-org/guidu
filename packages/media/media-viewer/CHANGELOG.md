@@ -1,5 +1,15 @@
 # @uidu/media-viewer
 
+## 0.4.23
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/button@1.3.20
+  - @uidu/media-core@0.7.10
+  - @uidu/shell@2.1.19
+
 ## 0.4.22
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/devise
 
+## 0.7.9
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/field-password@1.1.15
+  - @uidu/form@1.2.22
+  - @uidu/shell@2.1.19
+
 ## 0.7.8
 
 ### Patch Changes

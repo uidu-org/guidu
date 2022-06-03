@@ -1,5 +1,21 @@
 # @uidu/data-manager
 
+## 2.4.9
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/button@1.3.20
+  - @uidu/pagination@0.5.16
+  - @uidu/board@0.5.9
+  - @uidu/calendar@0.4.9
+  - @uidu/data-controls@2.1.16
+  - @uidu/data-fields@1.5.21
+  - @uidu/data-views@1.2.15
+  - @uidu/table@1.4.11
+  - @uidu/shell@2.1.19
+
 ## 2.4.8
 
 ### Patch Changes

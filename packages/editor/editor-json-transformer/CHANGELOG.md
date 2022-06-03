@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.7.7
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/adf-schema@0.9.7
+
 ## 0.7.6
 
 ### Patch Changes

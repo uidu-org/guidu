@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.9.7
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+
 ## 0.9.6
 
 ### Patch Changes

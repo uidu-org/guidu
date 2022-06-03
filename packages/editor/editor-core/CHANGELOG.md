@@ -1,5 +1,22 @@
 # @uidu/editor-core
 
+## 0.15.3
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/button@1.3.20
+  - @uidu/adf-schema@0.9.7
+  - @uidu/editor-common@0.7.12
+  - @uidu/editor-json-transformer@0.7.7
+  - @uidu/editor-markdown-transformer@0.8.7
+  - @uidu/form@1.2.22
+  - @uidu/select@1.6.3
+  - @uidu/media-card@0.6.13
+  - @uidu/media-core@0.7.10
+  - @uidu/media-picker@0.7.13
+
 ## 0.15.2
 
 ### Patch Changes

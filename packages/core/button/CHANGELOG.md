@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.3.20
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+
 ## 1.3.19
 
 ### Patch Changes

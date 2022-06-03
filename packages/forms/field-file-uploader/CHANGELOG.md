@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 1.1.14
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/field-base@3.1.21
+
 ## 1.1.13
 
 ### Patch Changes

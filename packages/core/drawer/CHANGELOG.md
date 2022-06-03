@@ -1,5 +1,13 @@
 # @uidu/drawer
 
+## 0.7.17
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/docs@0.5.14
+
 ## 0.7.16
 
 ### Patch Changes

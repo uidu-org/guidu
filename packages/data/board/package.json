@@ -1,6 +1,6 @@
 {
   "name": "@uidu/board",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "description": "Trello-like Kanban boards",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/board",
   "license": "MIT",
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@faker-js/faker": "^7.1.0",
     "@uidu/badge": "^0.5.12",
-    "@uidu/docs": "^0.5.13",
-    "@uidu/shell": "^2.1.18"
+    "@uidu/docs": "^0.5.14",
+    "@uidu/shell": "^2.1.19"
   }
 }

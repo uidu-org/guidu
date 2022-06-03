@@ -1,6 +1,6 @@
 {
   "name": "@uidu/devise",
-  "version": "0.7.8",
+  "version": "0.7.9",
   "description": "React component tied to devise for sign_in, sign_up and password recovery ",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/authentication/devise",
   "license": "MIT",
@@ -12,11 +12,11 @@
     "@babel/runtime": "^7.18.3",
     "@uidu/avatar": "^0.9.10",
     "@uidu/checkbox": "^1.4.1",
-    "@uidu/field-password": "^1.1.14",
+    "@uidu/field-password": "^1.1.15",
     "@uidu/field-phone": "^1.0.20",
     "@uidu/field-text": "^1.2.1",
-    "@uidu/form": "^1.2.21",
-    "@uidu/shell": "^2.1.18",
+    "@uidu/form": "^1.2.22",
+    "@uidu/shell": "^2.1.19",
     "@uidu/slider": "^1.7.14",
     "@uidu/spinner": "^0.5.12",
     "query-string": "^7.1.1",
@@ -30,7 +30,7 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.13"
+    "@uidu/docs": "^0.5.14"
   },
   "supportedLocales": [
     "en",

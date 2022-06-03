@@ -1,5 +1,17 @@
 # @uidu/data-fields
 
+## 1.5.21
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/button@1.3.20
+  - @uidu/field-downshift@1.4.12
+  - @uidu/form@1.2.22
+  - @uidu/select@1.6.3
+  - @uidu/field-color-picker@2.1.3
+
 ## 1.5.20
 
 ### Patch Changes

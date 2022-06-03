@@ -1,5 +1,20 @@
 # @uidu/data-controls
 
+## 2.1.16
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/button@1.3.20
+  - @uidu/drawer@0.7.17
+  - @uidu/data-fields@1.5.21
+  - @uidu/data-manager@2.4.9
+  - @uidu/data-views@1.2.15
+  - @uidu/form@1.2.22
+  - @uidu/select@1.6.3
+  - @uidu/shell@2.1.19
+
 ## 2.1.15
 
 ### Patch Changes

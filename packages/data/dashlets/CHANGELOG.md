@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 1.7.8
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/dashlet-controls@1.0.26
+  - @uidu/data-fields@1.5.21
+  - @uidu/table@1.4.11
+
 ## 1.7.7
 
 ### Patch Changes

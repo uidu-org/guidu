@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.12
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/docs@0.5.14
+
 ## 0.6.11
 
 ### Patch Changes

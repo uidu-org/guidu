@@ -1,5 +1,15 @@
 # @uidu/dashboard-controls
 
+## 1.0.26
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/button@1.3.20
+  - @uidu/field-date-range@1.1.16
+  - @uidu/form@1.2.22
+
 ## 1.0.25
 
 ### Patch Changes

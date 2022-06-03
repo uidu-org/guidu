@@ -1,5 +1,21 @@
 # Change Log
 
+## 0.6.3
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/docs@0.5.14
+  - @uidu/button@1.3.20
+  - @uidu/drawer@0.7.17
+  - @uidu/table@1.4.11
+  - @uidu/form@1.2.22
+  - @uidu/select@1.6.3
+  - @uidu/breadcrumbs@1.0.17
+  - @uidu/navigation@1.0.18
+  - @uidu/shell@2.1.19
+
 ## 0.6.2
 
 ### Patch Changes
