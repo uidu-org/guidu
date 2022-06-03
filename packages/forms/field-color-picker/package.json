@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-color-picker",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A color picker React Component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-color-picker",
   "license": "MIT",
@@ -10,8 +10,8 @@
   "types": "dist/uidu-field-color-picker.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.18.3",
-    "@uidu/button": "1.3.19",
-    "@uidu/field-base": "^3.1.20",
+    "@uidu/button": "1.3.20",
+    "@uidu/field-base": "^3.1.21",
     "@uidu/popup": "^0.6.18",
     "formsy-react": "^2.2.5",
     "react": "^18.1.0",
@@ -20,7 +20,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.13",
-    "@uidu/form": "^1.2.21"
+    "@uidu/docs": "^0.5.14",
+    "@uidu/form": "^1.2.22"
   }
 }

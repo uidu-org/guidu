@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.7.13
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/media-core@0.7.10
+
 ## 0.7.12
 
 ### Patch Changes

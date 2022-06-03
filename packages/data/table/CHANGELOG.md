@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 1.4.11
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/button@1.3.20
+  - @uidu/data-fields@1.5.21
+  - @uidu/data-manager@2.4.9
+
 ## 1.4.10
 
 ### Patch Changes

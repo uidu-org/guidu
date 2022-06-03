@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 1.0.18
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/shell@2.1.19
+
 ## 1.0.17
 
 ### Patch Changes

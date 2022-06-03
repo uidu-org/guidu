@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.22
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/button@1.3.20
+
 ## 1.2.21
 
 ### Patch Changes

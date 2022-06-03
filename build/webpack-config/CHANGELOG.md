@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.23
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+
 ## 0.3.22
 
 ### Patch Changes

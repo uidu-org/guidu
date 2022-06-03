@@ -1,5 +1,15 @@
 # @uidu/field-image-uploader
 
+## 2.0.10
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/button@1.3.20
+  - @uidu/field-base@3.1.21
+  - @uidu/media-core@0.7.10
+
 ## 2.0.9
 
 ### Patch Changes

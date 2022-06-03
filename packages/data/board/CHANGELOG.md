@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.5.9
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+
 ## 0.5.8
 
 ### Patch Changes

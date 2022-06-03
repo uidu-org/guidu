@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.19
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+
 ## 2.1.18
 
 ### Patch Changes

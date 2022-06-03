@@ -1,5 +1,15 @@
 # @uidu/message-form
 
+## 0.4.18
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/field-mentions@1.3.2
+  - @uidu/form@1.2.22
+  - @uidu/message@0.5.26
+
 ## 0.4.17
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/renderer
 
+## 0.8.10
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/adf-schema@0.9.7
+  - @uidu/editor-common@0.7.12
+  - @uidu/editor-json-transformer@0.7.7
+  - @uidu/media-card@0.6.13
+
 ## 0.8.9
 
 ### Patch Changes

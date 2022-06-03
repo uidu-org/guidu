@@ -1,5 +1,11 @@
 # @uidu/stepper
 
+## 0.4.15
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+
 ## 0.4.14
 
 ### Patch Changes

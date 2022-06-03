@@ -1,5 +1,19 @@
 # @uidu/message
 
+## 0.5.26
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+- Updated dependencies [cf6f28672]
+  - @uidu/button@1.3.20
+  - @uidu/drawer@0.7.17
+  - @uidu/media-card@0.6.13
+  - @uidu/media-core@0.7.10
+  - @uidu/media-viewer@0.4.23
+  - @uidu/message-form@0.4.18
+  - @uidu/message-renderer@0.4.15
+
 ## 0.5.25
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.12
+
+### Patch Changes
+
+- cf6f28672: Maybe fix CU-2zne9kv
+
 ## 0.1.11
 
 ### Patch Changes
