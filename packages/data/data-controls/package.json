@@ -35,7 +35,7 @@
     "react-content-loader": "^6.2.0",
     "react-dom": "^18.1.0",
     "react-feather": "^2.0.10",
-    "react-intl": "^6.0.3",
+    "react-intl": "^6.0.4",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },
