@@ -1,6 +1,6 @@
 {
   "name": "@uidu/stripe-accounts",
-  "version": "0.4.10",
+  "version": "0.4.11",
   "description": "Payment form using Stripe",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/ecommerce/stripe-accounts",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "@stripe/stripe-js": "^1.31.0",
     "@uidu/field-text": "^1.2.1",
     "@uidu/form": "^1.2.21",
-    "@uidu/payments": "^1.4.2",
+    "@uidu/payments": "^1.4.4",
     "@uidu/slider": "^1.7.14",
     "@uidu/spinner": "^0.5.12",
     "@uidu/stepper": "^0.4.14",
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.13",
-    "@uidu/shell": "^2.1.18"
+    "@uidu/shell": "^2.1.20"
   },
   "supportedLocales": [
     "it",

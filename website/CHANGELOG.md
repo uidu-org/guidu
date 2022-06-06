@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.6.4
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+- Updated dependencies [5b7e33063]
+  - @uidu/table@1.4.12
+  - @uidu/shell@2.1.20
+
 ## 0.6.3
 
 ### Patch Changes

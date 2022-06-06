@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.4.4
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+
 ## 1.4.3
 
 ### Patch Changes

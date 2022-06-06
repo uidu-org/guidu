@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.20
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+
 ## 2.1.19
 
 ### Patch Changes

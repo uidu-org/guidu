@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.4.11
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+- Updated dependencies [5b7e33063]
+  - @uidu/payments@1.4.4
+
 ## 0.4.10
 
 ### Patch Changes

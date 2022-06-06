@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 1.7.9
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+- Updated dependencies [5b7e33063]
+  - @uidu/dashlet-controls@1.0.27
+  - @uidu/data-fields@1.5.22
+  - @uidu/table@1.4.12
+
 ## 1.7.8
 
 ### Patch Changes

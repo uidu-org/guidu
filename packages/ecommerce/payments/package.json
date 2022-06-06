@@ -1,6 +1,6 @@
 {
   "name": "@uidu/payments",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Payment form using Stripe",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/ecommerce/payments",
   "license": "MIT",

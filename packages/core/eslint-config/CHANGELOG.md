@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.13
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+
 ## 0.1.12
 
 ### Patch Changes

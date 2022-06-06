@@ -1,5 +1,18 @@
 # @uidu/editor-core
 
+## 0.15.4
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+- Updated dependencies [5b7e33063]
+  - @uidu/editor-common@0.7.13
+  - @uidu/emoji@0.6.12
+  - @uidu/mentions@0.4.10
+  - @uidu/profilecard@0.3.9
+  - @uidu/status@0.5.10
+  - @uidu/field-date@1.2.3
+
 ## 0.15.3
 
 ### Patch Changes

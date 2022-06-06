@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.3.9
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+
 ## 0.3.8
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 1.5.22
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+- Updated dependencies [5b7e33063]
+  - @uidu/field-date@1.2.3
+
 ## 1.5.21
 
 ### Patch Changes
