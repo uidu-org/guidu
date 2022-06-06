@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.4.10
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+
 ## 0.4.9
 
 ### Patch Changes

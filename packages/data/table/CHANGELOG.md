@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 1.4.12
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+- Updated dependencies [5b7e33063]
+  - @uidu/data-fields@1.5.22
+  - @uidu/data-manager@2.4.10
+
 ## 1.4.11
 
 ### Patch Changes

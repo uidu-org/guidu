@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.6.12
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+
 ## 0.6.11
 
 ### Patch Changes

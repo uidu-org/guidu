@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.19
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+
 ## 0.4.18
 
 ### Patch Changes

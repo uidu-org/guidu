@@ -1,5 +1,16 @@
 # @uidu/data-controls
 
+## 2.1.17
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+- Updated dependencies [5b7e33063]
+  - @uidu/data-fields@1.5.22
+  - @uidu/data-manager@2.4.10
+  - @uidu/data-views@1.2.16
+  - @uidu/shell@2.1.20
+
 ## 2.1.16
 
 ### Patch Changes

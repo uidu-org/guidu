@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 1.2.3
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+
 ## 1.2.2
 
 ### Patch Changes

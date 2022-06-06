@@ -1,5 +1,13 @@
 # @uidu/media-viewer
 
+## 0.4.24
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+- Updated dependencies [5b7e33063]
+  - @uidu/shell@2.1.20
+
 ## 0.4.23
 
 ### Patch Changes

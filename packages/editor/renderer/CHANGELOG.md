@@ -1,5 +1,15 @@
 # @uidu/renderer
 
+## 0.8.11
+
+### Patch Changes
+
+- 5b7e33063: Bump yarn and dependencies
+- Updated dependencies [5b7e33063]
+  - @uidu/editor-common@0.7.13
+  - @uidu/mentions@0.4.10
+  - @uidu/status@0.5.10
+
 ## 0.8.10
 
 ### Patch Changes
