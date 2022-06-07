@@ -250,7 +250,7 @@ class Package extends React.Component<Props> {
         </ShellHeader>
         <ShellBody>
           <ShellMain>
-            <ScrollableContainer enableCustomScrollbars>
+            <ScrollableContainer>
               <div tw="max-w-7xl mx-auto px-4 py-8">
                 {doc || <NoDocs name={pkgId} />}
               </div>

@@ -2,6 +2,7 @@ import Button from '@uidu/button';
 import {
   ScrollableContainer,
   ShellBody,
+  ShellFooter,
   ShellHeader,
   ShellMain,
 } from '@uidu/shell';
@@ -49,6 +50,7 @@ export default class DrawersExample extends Component<{}, State> {
               </ScrollableContainer>
             </ShellMain>
           </ShellBody>
+          <ShellFooter>TEst footer mobile</ShellFooter>
         </Drawer>
         <Button type="button" onClick={this.openDrawer}>
           Open drawer

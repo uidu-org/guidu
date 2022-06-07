@@ -25,7 +25,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.1.0",
+    "@faker-js/faker": "^7.2.0",
     "@uidu/docs": "^0.5.14",
     "@uidu/navigation": "^1.0.18",
     "react-router-dom": "^5.3.3",

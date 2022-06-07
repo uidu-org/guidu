@@ -23,7 +23,7 @@ const positionAndSizes = (size, origin) => {
     return css`
       ${[origin]}: 0;
       top: 0;
-      height: 100vh;
+      height: 100%;
       max-width: ${size === 'full' ? '100vw' : '90vw'};
       ${widths[size]}
     `;
@@ -31,7 +31,7 @@ const positionAndSizes = (size, origin) => {
     return css`
       ${[origin]}: 0;
       left: 0;
-      width: 100vw;
+      width: 100%;
       max-height: ${size === 'full' ? '100vh' : '90vh'};
       ${heights[size]}
     `;

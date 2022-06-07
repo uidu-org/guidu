@@ -28,7 +28,7 @@
     "@uidu/task-decision": "^0.4.19",
     "@uidu/theme": "^0.6.14",
     "@uidu/tooltip": "^0.5.17",
-    "prosemirror-model": "^1.17.0",
+    "prosemirror-model": "^1.18.0",
     "raf-schd": "^4.0.3",
     "react-intl": "^6.0.4",
     "tslib": "^2.4.0",
