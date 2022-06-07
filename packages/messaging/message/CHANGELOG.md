@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.5.27
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+- Updated dependencies [22031e30f]
+  - @uidu/drawer@0.7.18
+  - @uidu/media-card@0.6.14
+  - @uidu/media-core@0.7.11
+
 ## 0.5.26
 
 ### Patch Changes

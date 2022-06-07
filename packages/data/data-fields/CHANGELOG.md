@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 1.5.23
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+- Updated dependencies [22031e30f]
+  - @uidu/select@1.6.4
+
 ## 1.5.22
 
 ### Patch Changes

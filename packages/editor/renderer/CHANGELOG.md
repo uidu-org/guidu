@@ -1,5 +1,17 @@
 # @uidu/renderer
 
+## 0.8.12
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+- Updated dependencies [22031e30f]
+  - @uidu/adf-schema@0.9.8
+  - @uidu/editor-common@0.7.14
+  - @uidu/editor-json-transformer@0.7.8
+  - @uidu/mentions@0.4.11
+  - @uidu/media-card@0.6.14
+
 ## 0.8.11
 
 ### Patch Changes

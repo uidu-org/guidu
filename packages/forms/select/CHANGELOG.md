@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 1.6.4
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+
 ## 1.6.3
 
 ### Patch Changes

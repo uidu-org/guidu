@@ -1,5 +1,13 @@
 # @uidu/chat-window
 
+## 0.4.17
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+- Updated dependencies [22031e30f]
+  - @uidu/message@0.5.27
+
 ## 0.4.16
 
 ### Patch Changes

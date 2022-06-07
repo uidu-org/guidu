@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 1.7.10
+
+### Patch Changes
+
+- Updated dependencies [22031e30f]
+  - @uidu/data-fields@1.5.23
+  - @uidu/table@1.4.13
+
 ## 1.7.9
 
 ### Patch Changes

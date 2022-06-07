@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.7.8
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+- Updated dependencies [22031e30f]
+  - @uidu/adf-schema@0.9.8
+
 ## 0.7.7
 
 ### Patch Changes

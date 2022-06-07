@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.21
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+
 ## 2.1.20
 
 ### Patch Changes

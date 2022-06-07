@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.6.5
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+- Updated dependencies [22031e30f]
+  - @uidu/drawer@0.7.18
+  - @uidu/table@1.4.13
+  - @uidu/select@1.6.4
+  - @uidu/shell@2.1.21
+
 ## 0.6.4
 
 ### Patch Changes
