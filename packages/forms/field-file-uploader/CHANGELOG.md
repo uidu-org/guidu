@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 1.1.15
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+
 ## 1.1.14
 
 ### Patch Changes

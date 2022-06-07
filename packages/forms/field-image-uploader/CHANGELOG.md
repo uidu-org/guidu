@@ -1,5 +1,13 @@
 # @uidu/field-image-uploader
 
+## 2.0.11
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+- Updated dependencies [22031e30f]
+  - @uidu/media-core@0.7.11
+
 ## 2.0.10
 
 ### Patch Changes

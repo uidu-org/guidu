@@ -1,5 +1,21 @@
 # @uidu/editor-core
 
+## 0.15.5
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+- Updated dependencies [22031e30f]
+  - @uidu/adf-schema@0.9.8
+  - @uidu/editor-common@0.7.14
+  - @uidu/editor-json-transformer@0.7.8
+  - @uidu/editor-markdown-transformer@0.8.8
+  - @uidu/mentions@0.4.11
+  - @uidu/select@1.6.4
+  - @uidu/media-card@0.6.14
+  - @uidu/media-core@0.7.11
+  - @uidu/media-picker@0.7.14
+
 ## 0.15.4
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/editor-common
 
+## 0.7.14
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+- Updated dependencies [22031e30f]
+  - @uidu/adf-schema@0.9.8
+  - @uidu/mentions@0.4.11
+
 ## 0.7.13
 
 ### Patch Changes

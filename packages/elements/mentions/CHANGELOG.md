@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.4.11
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+
 ## 0.4.10
 
 ### Patch Changes

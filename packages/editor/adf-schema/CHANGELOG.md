@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.9.8
+
+### Patch Changes
+
+- 22031e30f: Fixed drawer bug CU-2znfkb6[review]
+
 ## 0.9.7
 
 ### Patch Changes
