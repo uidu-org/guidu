@@ -31,7 +31,7 @@
     "dayjs": "^1.11.3",
     "lodash": "^4.17.21",
     "papaparse": "^5.3.2",
-    "react": "^18.1.0",
+    "react": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-media": "^1.10.0",
     "react-table": "^7.8.0",

@@ -17,10 +17,10 @@
     "classnames": "^2.3.1",
     "downshift": "^6.1.7",
     "formsy-react": "^2.2.5",
-    "react": "^18.1.0",
+    "react": "^18.2.0",
     "react-feather": "^2.0.10",
     "tslib": "^2.4.0",
-    "use-places-autocomplete": "^3.0.0"
+    "use-places-autocomplete": "^4.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.14",

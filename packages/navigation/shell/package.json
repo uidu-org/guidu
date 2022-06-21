@@ -18,14 +18,14 @@
     "hoverintent": "^2.2.1",
     "overlayscrollbars": "^1.13.2",
     "overlayscrollbars-react": "^0.3.0",
-    "react": "^18.1.0",
+    "react": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-intl": "^6.0.4",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.2.0",
+    "@faker-js/faker": "^7.3.0",
     "@uidu/docs": "^0.5.14",
     "@uidu/navigation": "^1.0.18",
     "react-router-dom": "^5.3.3",

@@ -20,8 +20,8 @@
   "devDependencies": {
     "@uidu/docs": "^0.5.14",
     "@uidu/section-message": "^0.6.13",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.3",
     "styled-components": "^5.3.5"
   },

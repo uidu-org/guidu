@@ -16,14 +16,14 @@
     "body-scroll-lock": "^4.0.0-beta.0",
     "d3-collection": "^1.0.7",
     "moment": "^2.29.3",
-    "react": "^18.1.0",
+    "react": "^18.2.0",
     "react-chatview": "^0.2.5",
     "react-media": "^1.10.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.2.0",
+    "@faker-js/faker": "^7.3.0",
     "@uidu/docs": "^0.5.13",
     "@uidu/shell": "^2.1.21",
     "use-clipboard-copy": "^0.2.0"

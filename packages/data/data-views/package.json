@@ -17,7 +17,7 @@
     "@uidu/field-number": "^1.0.15",
     "@uidu/form": "^1.2.22",
     "@uidu/select": "^1.6.3",
-    "react": "^18.1.0",
+    "react": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-intl": "^6.0.4",
     "styled-components": "^5.3.5",

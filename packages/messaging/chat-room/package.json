@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.18.3",
     "@uidu/shell": "^2.1.18",
-    "react": "^18.1.0",
+    "react": "^18.2.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
