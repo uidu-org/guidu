@@ -1,7 +1,8 @@
 import Button from '@uidu/button';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import FieldText from '../../field-text/src/components/FieldTextHook';
+import FieldTextareaHook from '../../field-textarea/src/components/FieldTextareaHook';
 
 function Stateless({ setList, list, text, setText }) {
   // console.log('inputs', form.current?.inputs);
@@ -32,10 +33,18 @@ function Stateless({ setList, list, text, setText }) {
   console.log(dirtyFields);
 
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FieldText name="foo" {...register('foo')} />
-        <FieldText name="foo" {...register('bar')} />
+        <FieldText label="text foo  " name="foo" register={register} />
+        <FieldText label="text bar  " name="bar" register={register} />
+        <FieldTextareaHook
+          label="Long text  "
+          name="long"
+          register={register}
+          autoSize
+          onChange={console.log}
+          required
+        />
         <button type="submit">Send {formState.isValid}</button>
       </form>
       <pre>{JSON.stringify(formState, null, 2)}</pre>
@@ -55,7 +64,7 @@ function Stateless({ setList, list, text, setText }) {
       >
         add text
       </Button>
-    </>
+    </div>
   );
 }
 
