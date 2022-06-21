@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.5.14
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+
 ## 0.5.13
 
 ### Patch Changes

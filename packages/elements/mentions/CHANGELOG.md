@@ -1,5 +1,18 @@
 # @uidu/mentions
 
+## 0.4.12
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/analytics@0.6.2
+  - @uidu/avatar@0.9.11
+  - @uidu/button@1.3.21
+  - @uidu/lozenge@0.5.13
+  - @uidu/theme@0.6.15
+  - @uidu/tooltip@0.5.18
+
 ## 0.4.11
 
 ### Patch Changes

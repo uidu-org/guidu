@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.5.15
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/button@1.3.21
+  - @uidu/code@0.5.13
+  - @uidu/section-message@0.6.14
+  - @uidu/theme@0.6.15
+  - @uidu/tooltip@0.5.18
+
 ## 0.5.14
 
 ### Patch Changes

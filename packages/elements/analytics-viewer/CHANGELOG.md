@@ -1,5 +1,13 @@
 # @uidu/analytics-viewer
 
+## 0.4.14
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/analytics@0.6.2
+
 ## 0.4.13
 
 ### Patch Changes

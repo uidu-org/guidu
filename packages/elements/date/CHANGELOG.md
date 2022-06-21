@@ -1,5 +1,13 @@
 # @uidu/date
 
+## 0.4.16
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/theme@0.6.15
+
 ## 0.4.15
 
 ### Patch Changes

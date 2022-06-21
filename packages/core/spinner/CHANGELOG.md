@@ -1,5 +1,13 @@
 # @uidu/spinner
 
+## 0.5.13
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/theme@0.6.15
+
 ## 0.5.12
 
 ### Patch Changes

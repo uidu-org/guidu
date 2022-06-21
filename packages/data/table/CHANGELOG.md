@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.4.14
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/button@1.3.21
+  - @uidu/menu@0.7.11
+  - @uidu/popup@0.6.19
+  - @uidu/data-fields@1.5.24
+  - @uidu/data-manager@2.4.11
+  - @uidu/checkbox@1.4.2
+
 ## 1.4.13
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # Change Log
 
+## 1.4.2
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/analytics@0.6.2
+  - @uidu/field-base@3.1.22
+
 ## 1.4.1
 
 ### Patch Changes

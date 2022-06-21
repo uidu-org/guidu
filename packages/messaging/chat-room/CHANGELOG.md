@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.4.12
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/shell@2.1.22
+
 ## 0.4.11
 
 ### Patch Changes

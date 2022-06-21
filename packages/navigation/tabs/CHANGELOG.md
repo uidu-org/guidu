@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.3.15
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/docs@0.5.15
+  - @uidu/analytics@0.6.2
+  - @uidu/theme@0.6.15
+
 ## 0.3.14
 
 ### Patch Changes

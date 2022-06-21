@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.6.13
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/analytics@0.6.2
+  - @uidu/button@1.3.21
+  - @uidu/code@0.5.13
+  - @uidu/spinner@0.5.13
+  - @uidu/theme@0.6.15
+  - @uidu/tooltip@0.5.18
+  - @uidu/field-text@1.2.2
+
 ## 0.6.12
 
 ### Patch Changes
