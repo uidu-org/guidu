@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.5.16
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/avatar@0.9.11
+  - @uidu/theme@0.6.15
+
 ## 0.5.15
 
 ### Patch Changes

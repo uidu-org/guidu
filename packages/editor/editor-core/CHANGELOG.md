@@ -1,5 +1,42 @@
 # @uidu/editor-core
 
+## 0.15.6
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/analytics@0.6.2
+  - @uidu/avatar@0.9.11
+  - @uidu/avatar-group@2.6.14
+  - @uidu/button@1.3.21
+  - @uidu/droplist@0.5.19
+  - @uidu/menu@0.7.11
+  - @uidu/modal-dialog@1.0.3
+  - @uidu/spinner@0.5.13
+  - @uidu/theme@0.6.15
+  - @uidu/tooltip@0.5.18
+  - @uidu/adf-schema@0.9.9
+  - @uidu/adf-utils@0.8.7
+  - @uidu/editor-common@0.7.15
+  - @uidu/editor-json-transformer@0.7.9
+  - @uidu/editor-markdown-transformer@0.8.9
+  - @uidu/analytics-listeners@0.4.13
+  - @uidu/analytics-namespaced-context@0.4.13
+  - @uidu/date@0.4.16
+  - @uidu/emoji@0.6.13
+  - @uidu/mentions@0.4.12
+  - @uidu/profilecard@0.3.10
+  - @uidu/status@0.5.11
+  - @uidu/task-decision@0.4.20
+  - @uidu/field-date@1.2.4
+  - @uidu/form@1.2.23
+  - @uidu/select@1.6.5
+  - @uidu/media-card@0.6.15
+  - @uidu/media-core@0.7.12
+  - @uidu/media-filmstrip@0.5.2
+  - @uidu/media-picker@0.7.15
+
 ## 0.15.5
 
 ### Patch Changes

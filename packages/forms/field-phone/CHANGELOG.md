@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 1.0.21
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/analytics@0.6.2
+  - @uidu/field-base@3.1.22
+  - @uidu/field-text@1.2.2
+
 ## 1.0.20
 
 ### Patch Changes

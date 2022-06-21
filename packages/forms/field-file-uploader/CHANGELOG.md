@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 1.1.16
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/field-base@3.1.22
+
 ## 1.1.15
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.3.16
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+
 ## 0.3.15
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/timeline",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Timeline view for data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/timeline",
   "license": "MIT",
@@ -11,6 +11,6 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.10"
+    "@uidu/docs": "^0.5.15"
   }
 }

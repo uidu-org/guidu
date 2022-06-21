@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.13
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/docs@0.5.15
+
 ## 0.6.12
 
 ### Patch Changes

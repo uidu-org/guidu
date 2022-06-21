@@ -1,5 +1,15 @@
 # @uidu/button
 
+## 1.3.21
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/analytics@0.6.2
+  - @uidu/spinner@0.5.13
+  - @uidu/theme@0.6.15
+
 ## 1.3.20
 
 ### Patch Changes

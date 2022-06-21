@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.0.6
+
+### Patch Changes
+
+- 994b16edf: Bump deps
+- Updated dependencies [994b16edf]
+  - @uidu/theme@0.6.15
+  - @uidu/shell@2.1.22
+
 ## 1.0.5
 
 ### Patch Changes
