@@ -14,7 +14,7 @@
     "@uidu/field-text": "^1.2.2",
     "formsy-react": "^2.2.5",
     "react": "^18.2.0",
-    "react-phone-number-input": "^3.2.2",
+    "react-phone-number-input": "^3.2.3",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

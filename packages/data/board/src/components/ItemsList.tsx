@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Draggable,
   DraggableProvided,
@@ -16,29 +16,27 @@ type ItemListProps = {
   columnDefs?: any;
 };
 
-class InnerItemListComponent extends Component<ItemListProps> {
-  render() {
-    const { items, components, columnDefs, tableInstance } = this.props;
-    return items.map((item: ItemProps, index: number) => (
-      <Draggable key={item.id} draggableId={item.id} index={index}>
-        {(
-          dragProvided: DraggableProvided,
-          dragSnapshot: DraggableStateSnapshot,
-        ) => (
-          <Item
-            tableInstance={tableInstance}
-            key={item.id}
-            item={item}
-            components={components}
-            isDragging={dragSnapshot.isDragging}
-            isGroupedOver={Boolean(dragSnapshot.combineTargetFor)}
-            provided={dragProvided}
-            columnDefs={columnDefs}
-          />
-        )}
-      </Draggable>
-    ));
-  }
+function InnerItemListComponent(props: ItemListProps) {
+  const { items, components, columnDefs, tableInstance } = props;
+  return items.map((item: ItemProps, index: number) => (
+    <Draggable key={item.id} draggableId={item.id} index={index}>
+      {(
+        dragProvided: DraggableProvided,
+        dragSnapshot: DraggableStateSnapshot,
+      ) => (
+        <Item
+          tableInstance={tableInstance}
+          key={item.id}
+          item={item}
+          components={components}
+          isDragging={dragSnapshot.isDragging}
+          isGroupedOver={Boolean(dragSnapshot.combineTargetFor)}
+          provided={dragProvided}
+          columnDefs={columnDefs}
+        />
+      )}
+    </Draggable>
+  ));
 }
 
 const InnerItemList = React.memo(InnerItemListComponent);
@@ -53,10 +51,8 @@ type InnerListProps = {
 function InnerList(props: InnerListProps) {
   const { items, dropProvided, components, columnDefs, tableInstance } = props;
 
-  const {
-    innerListContainer: Container,
-    innerListDropzone: DropZone,
-  } = components;
+  const { innerListContainer: Container, innerListDropzone: DropZone } =
+    components;
 
   return (
     <Container>

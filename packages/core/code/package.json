@@ -15,7 +15,7 @@
   "dependencies": {
     "@babel/runtime": "^7.18.3",
     "@uidu/theme": "^0.6.15",
-    "memoize-one": "^5.2.1",
+    "memoize-one": "^6.0.0",
     "react-syntax-highlighter": "^15.5.0",
     "tslib": "^2.4.0"
   },

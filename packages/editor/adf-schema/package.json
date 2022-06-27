@@ -25,7 +25,7 @@
     "css-color-names": "^1.0.1",
     "linkify-it": "^4.0.1",
     "prosemirror-model": "^1.18.1",
-    "prosemirror-view": "^1.26.1",
+    "prosemirror-view": "^1.26.2",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
@@ -33,6 +33,6 @@
     "@uidu/json-schema-generator": "^0.2.20",
     "axios": "^0.27.2",
     "json-schema-diff-validator": "^0.4.1",
-    "prosemirror-state": "^1.4.0"
+    "prosemirror-state": "^1.4.1"
   }
 }

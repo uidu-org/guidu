@@ -13,7 +13,7 @@
     "@uidu/dropdown-menu": "^0.6.19",
     "@uidu/theme": "^0.6.15",
     "interweave": "^13.0.0",
-    "interweave-autolink": "^5.0.0",
+    "interweave-autolink": "^5.1.0",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
     "styled-components": "^5.3.5",

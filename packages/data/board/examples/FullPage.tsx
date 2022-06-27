@@ -14,7 +14,7 @@ const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => (
 const ColumnHeader = ({ title, items, ...rest }) => {
   return (
     <div
-      className="card-header px-0 border-0 bg-transparent d-flex justify-content-between"
+      className="px-0 bg-transparent border-0 card-header d-flex justify-content-between"
       {...rest}
     >
       <div>
@@ -36,7 +36,7 @@ const ColumnHeader = ({ title, items, ...rest }) => {
 const Item = ({ item, provided, ...rest }) => {
   return (
     <div
-      className="card card-body bg-white mb-2"
+      className="mb-2 bg-white card card-body"
       ref={provided.innerRef}
       {...rest}
     >
@@ -49,7 +49,7 @@ export default class Basic extends Component<any> {
   render() {
     return (
       <ShellBody>
-        <div className="py-4 pl-4 h-100" style={{ overflowX: 'auto' }}>
+        <div tw="py-4 pl-4 h-full" style={{ overflowX: 'auto' }}>
           <Board
             initial={authorItemMap}
             withScrollableColumns

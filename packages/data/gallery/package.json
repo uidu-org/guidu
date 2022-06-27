@@ -14,7 +14,7 @@
     "@uidu/data-fields": "^1.5.24",
     "@uidu/shell": "^2.1.22",
     "@uidu/spinner": "^0.5.13",
-    "memoize-one": "^5.2.1",
+    "memoize-one": "^6.0.0",
     "react": "^18.2.0",
     "react-virtual": "^2.10.4",
     "styled-components": "^5.3.5",

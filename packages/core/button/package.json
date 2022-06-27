@@ -12,13 +12,13 @@
     "@uidu/analytics": "^0.6.2",
     "@uidu/spinner": "^0.5.13",
     "@uidu/theme": "^0.6.15",
-    "memoize-one": "^5.2.1",
+    "memoize-one": "^6.0.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.10.7",
-    "@atlaskit/logo": "^13.7.0",
+    "@atlaskit/logo": "^13.7.1",
     "@uidu/checkbox": "^1.4.2",
     "@uidu/docs": "^0.5.15",
     "@uidu/form": "^1.2.23",
