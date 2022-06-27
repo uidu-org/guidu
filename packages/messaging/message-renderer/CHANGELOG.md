@@ -1,5 +1,11 @@
 # @uidu/message-renderer
 
+## 0.4.17
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+
 ## 0.4.16
 
 ### Patch Changes

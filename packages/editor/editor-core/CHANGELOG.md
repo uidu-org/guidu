@@ -1,5 +1,20 @@
 # @uidu/editor-core
 
+## 0.15.7
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/button@1.3.22
+  - @uidu/modal-dialog@1.0.4
+  - @uidu/adf-schema@0.9.10
+  - @uidu/editor-json-transformer@0.7.10
+  - @uidu/profilecard@0.3.11
+  - @uidu/select@1.6.6
+  - @uidu/media-card@0.6.16
+  - @uidu/form@1.2.24
+
 ## 0.15.6
 
 ### Patch Changes

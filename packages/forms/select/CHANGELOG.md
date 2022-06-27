@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 1.6.6
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/field-base@3.1.23
+  - @uidu/form@1.2.24
+
 ## 1.6.5
 
 ### Patch Changes

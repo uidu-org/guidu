@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 1.7.12
+
+### Patch Changes
+
+- @uidu/dashlet-controls@1.0.29
+- @uidu/data-fields@1.5.25
+- @uidu/table@1.4.15
+
 ## 1.7.11
 
 ### Patch Changes

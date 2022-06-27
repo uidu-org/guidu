@@ -1,5 +1,13 @@
 # @uidu/profilecard
 
+## 0.3.11
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/button@1.3.22
+
 ## 0.3.10
 
 ### Patch Changes

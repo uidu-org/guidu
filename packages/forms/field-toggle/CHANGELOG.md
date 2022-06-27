@@ -1,5 +1,13 @@
 # @uidu/toggle
 
+## 1.1.14
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/field-base@3.1.23
+
 ## 1.1.13
 
 ### Patch Changes

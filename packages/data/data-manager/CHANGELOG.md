@@ -1,5 +1,20 @@
 # @uidu/data-manager
 
+## 2.4.12
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/button@1.3.22
+  - @uidu/board@0.5.12
+  - @uidu/gallery@1.2.11
+  - @uidu/calendar@0.4.11
+  - @uidu/data-controls@2.1.19
+  - @uidu/data-fields@1.5.25
+  - @uidu/data-views@1.2.18
+  - @uidu/table@1.4.15
+
 ## 2.4.11
 
 ### Patch Changes

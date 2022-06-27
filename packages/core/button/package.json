@@ -1,6 +1,6 @@
 {
   "name": "@uidu/button",
-  "version": "1.3.21",
+  "version": "1.3.22",
   "description": "Button component for use in forms",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/button",
   "license": "ISC",
@@ -21,7 +21,7 @@
     "@atlaskit/logo": "^13.7.1",
     "@uidu/checkbox": "^1.4.2",
     "@uidu/docs": "^0.5.15",
-    "@uidu/form": "^1.2.23",
+    "@uidu/form": "^1.2.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.3"

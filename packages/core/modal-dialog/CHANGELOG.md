@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 1.0.4
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+
 ## 1.0.3
 
 ### Patch Changes

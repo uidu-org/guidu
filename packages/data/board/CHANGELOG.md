@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.5.12
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+
 ## 0.5.11
 
 ### Patch Changes
