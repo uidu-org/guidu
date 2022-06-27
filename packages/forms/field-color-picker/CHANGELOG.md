@@ -1,5 +1,17 @@
 # @uidu/field-color-picker
 
+## 2.2.0
+
+### Minor Changes
+
+- 464f85026: Field color picker with more customizations
+
+### Patch Changes
+
+- Updated dependencies [464f85026]
+  - @uidu/button@1.3.22
+  - @uidu/field-base@3.1.23
+
 ## 2.1.4
 
 ### Patch Changes

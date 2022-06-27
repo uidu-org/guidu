@@ -1,5 +1,17 @@
 # @uidu/data-controls
 
+## 2.1.19
+
+### Patch Changes
+
+- Updated dependencies [464f85026]
+  - @uidu/button@1.3.22
+  - @uidu/data-manager@2.4.12
+  - @uidu/select@1.6.6
+  - @uidu/data-fields@1.5.25
+  - @uidu/data-views@1.2.18
+  - @uidu/form@1.2.24
+
 ## 2.1.18
 
 ### Patch Changes

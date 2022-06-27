@@ -1,5 +1,13 @@
 # @uidu/media-card
 
+## 0.6.16
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/button@1.3.22
+
 ## 0.6.15
 
 ### Patch Changes

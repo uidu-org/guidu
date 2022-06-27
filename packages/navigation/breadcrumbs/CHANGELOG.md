@@ -1,5 +1,13 @@
 # @uidu/breadcrumbs
 
+## 1.0.19
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/button@1.3.22
+
 ## 1.0.18
 
 ### Patch Changes

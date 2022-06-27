@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.7.10
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/adf-schema@0.9.10
+
 ## 0.7.9
 
 ### Patch Changes

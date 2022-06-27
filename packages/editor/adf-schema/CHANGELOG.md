@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.9.10
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+
 ## 0.9.9
 
 ### Patch Changes

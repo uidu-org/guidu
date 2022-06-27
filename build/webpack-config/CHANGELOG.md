@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.25
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+
 ## 0.3.24
 
 ### Patch Changes

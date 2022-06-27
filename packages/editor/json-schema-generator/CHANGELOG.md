@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.2.21
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+
 ## 0.2.20
 
 ### Patch Changes

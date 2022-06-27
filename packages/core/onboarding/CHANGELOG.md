@@ -1,5 +1,14 @@
 # @uidu/onboarding
 
+## 1.3.5
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/button@1.3.22
+  - @uidu/modal-dialog@1.0.4
+
 ## 1.3.4
 
 ### Patch Changes

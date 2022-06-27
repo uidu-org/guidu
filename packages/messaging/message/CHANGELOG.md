@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.5.29
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/button@1.3.22
+  - @uidu/media-card@0.6.16
+  - @uidu/message-renderer@0.4.17
+
 ## 0.5.28
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.6.7
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/button@1.3.22
+  - @uidu/code@0.5.14
+  - @uidu/modal-dialog@1.0.4
+  - @uidu/select@1.6.6
+  - @uidu/breadcrumbs@1.0.19
+  - @uidu/table@1.4.15
+  - @uidu/form@1.2.24
+
 ## 0.6.6
 
 ### Patch Changes

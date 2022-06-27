@@ -1,5 +1,14 @@
 # @uidu/inline-edit
 
+## 0.3.20
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+- Updated dependencies [464f85026]
+  - @uidu/button@1.3.22
+  - @uidu/form@1.2.24
+
 ## 0.3.19
 
 ### Patch Changes

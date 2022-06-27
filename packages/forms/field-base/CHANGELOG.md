@@ -1,5 +1,12 @@
 # Change Log
 
+## 3.1.23
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+  - @uidu/form@1.2.24
+
 ## 3.1.22
 
 ### Patch Changes

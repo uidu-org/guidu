@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.16
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+
 ## 0.1.15
 
 ### Patch Changes

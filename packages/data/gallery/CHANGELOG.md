@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 1.2.11
+
+### Patch Changes
+
+- 464f85026: Field color picker with more customizations
+  - @uidu/data-controls@2.1.19
+  - @uidu/data-fields@1.5.25
+
 ## 1.2.10
 
 ### Patch Changes
