@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.5.14
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+
 ## 0.5.13
 
 ### Patch Changes

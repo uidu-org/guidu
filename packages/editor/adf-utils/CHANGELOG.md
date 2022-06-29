@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.8.8
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/adf-schema@0.9.11
+
 ## 0.8.7
 
 ### Patch Changes

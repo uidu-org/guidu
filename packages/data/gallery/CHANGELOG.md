@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.2.12
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/spinner@0.5.14
+  - @uidu/data-controls@2.1.20
+  - @uidu/data-fields@1.5.26
+  - @uidu/shell@2.1.23
+
 ## 1.2.11
 
 ### Patch Changes

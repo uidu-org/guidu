@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.18
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/dropdown-menu@0.6.20
+  - @uidu/theme@0.6.16
+
 ## 0.4.17
 
 ### Patch Changes

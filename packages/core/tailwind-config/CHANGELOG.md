@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.12
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+
 ## 0.1.11
 
 ### Patch Changes

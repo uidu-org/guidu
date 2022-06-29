@@ -1,6 +1,6 @@
 {
   "name": "@uidu/radio",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Radio component for forms",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/radio",
   "license": "MIT",
@@ -10,15 +10,15 @@
   "types": "dist/uidu-radio.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.18.6",
-    "@uidu/analytics": "^0.6.2",
-    "@uidu/field-base": "^3.1.22",
+    "@uidu/analytics": "^0.6.3",
+    "@uidu/field-base": "^3.1.24",
     "formsy-react": "^2.2.5",
     "react": "^18.2.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.15",
-    "@uidu/form": "^1.2.23"
+    "@uidu/docs": "^0.5.16",
+    "@uidu/form": "^1.2.25"
   }
 }

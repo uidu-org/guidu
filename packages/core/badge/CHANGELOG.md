@@ -1,5 +1,13 @@
 # @uidu/badge
 
+## 0.5.14
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/theme@0.6.16
+
 ## 0.5.13
 
 ### Patch Changes

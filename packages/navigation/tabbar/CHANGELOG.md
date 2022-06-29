@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.4.15
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/shell@2.1.23
+
 ## 0.4.14
 
 ### Patch Changes

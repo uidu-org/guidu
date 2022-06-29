@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.5.12
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/analytics@0.6.3
+  - @uidu/lozenge@0.5.14
+  - @uidu/theme@0.6.16
+  - @uidu/field-text@1.2.3
+
 ## 0.5.11
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.4.13
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+
 ## 0.4.12
 
 ### Patch Changes

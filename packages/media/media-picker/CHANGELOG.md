@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.7.16
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+
 ## 0.7.15
 
 ### Patch Changes
