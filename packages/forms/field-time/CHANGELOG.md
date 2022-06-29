@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 1.2.3
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/analytics@0.6.3
+  - @uidu/theme@0.6.16
+  - @uidu/field-base@3.1.24
+  - @uidu/field-text@1.2.3
+  - @uidu/form@1.2.25
+  - @uidu/select@1.6.7
+
 ## 1.2.2
 
 ### Patch Changes

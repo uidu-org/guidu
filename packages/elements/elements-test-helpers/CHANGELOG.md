@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.21
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+
 ## 0.4.20
 
 ### Patch Changes

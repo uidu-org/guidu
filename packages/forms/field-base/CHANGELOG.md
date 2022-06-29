@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.24
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/form@1.2.25
+
 ## 3.1.23
 
 ### Patch Changes

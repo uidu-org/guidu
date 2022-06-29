@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.8.10
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/adf-schema@0.9.11
+  - @uidu/editor-common@0.7.16
+
 ## 0.8.9
 
 ### Patch Changes

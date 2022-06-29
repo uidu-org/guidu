@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.6.8
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/docs@0.5.16
+  - @uidu/badge@0.5.14
+  - @uidu/button@1.3.23
+  - @uidu/code@0.5.15
+  - @uidu/drawer@0.7.20
+  - @uidu/lozenge@0.5.14
+  - @uidu/modal-dialog@1.0.5
+  - @uidu/spinner@0.5.14
+  - @uidu/theme@0.6.16
+  - @uidu/tooltip@0.5.19
+  - @uidu/list@1.2.10
+  - @uidu/table@1.4.16
+  - @uidu/checkbox@1.4.3
+  - @uidu/field-text@1.2.3
+  - @uidu/form@1.2.25
+  - @uidu/select@1.6.7
+  - @uidu/breadcrumbs@1.0.20
+  - @uidu/navigation@1.0.20
+  - @uidu/shell@2.1.23
+
 ## 0.6.7
 
 ### Patch Changes

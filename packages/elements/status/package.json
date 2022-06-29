@@ -1,6 +1,6 @@
 {
   "name": "@uidu/status",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "description": "Fabric Status React Components",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/status",
   "license": "Apache-2.0",
@@ -18,17 +18,17 @@
   "dependencies": {
     "@atlaskit/icon": "^21.10.7",
     "@babel/runtime": "^7.18.6",
-    "@uidu/analytics": "^0.6.2",
+    "@uidu/analytics": "^0.6.3",
     "@uidu/analytics-gas-types": "^0.3.3",
-    "@uidu/field-text": "^1.2.2",
-    "@uidu/lozenge": "^0.5.13",
-    "@uidu/theme": "^0.6.15",
+    "@uidu/field-text": "^1.2.3",
+    "@uidu/lozenge": "^0.5.14",
+    "@uidu/theme": "^0.6.16",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.15",
-    "@uidu/elements-test-helpers": "^0.4.20",
+    "@uidu/docs": "^0.5.16",
+    "@uidu/elements-test-helpers": "^0.4.21",
     "react": "^18.2.0",
     "react-intl": "^6.0.4"
   },

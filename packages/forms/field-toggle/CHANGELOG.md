@@ -1,5 +1,14 @@
 # @uidu/toggle
 
+## 1.1.15
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/analytics@0.6.3
+  - @uidu/field-base@3.1.24
+
 ## 1.1.14
 
 ### Patch Changes

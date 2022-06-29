@@ -1,5 +1,14 @@
 # design-system
 
+## 0.1.32
+
+### Patch Changes
+
+- 4d6d2e1ba: Bump deps
+- Updated dependencies [4d6d2e1ba]
+  - @uidu/analytics@0.6.3
+  - @uidu/button@1.3.23
+
 ## 0.1.31
 
 ### Patch Changes
