@@ -58,7 +58,7 @@ const CustomStyles = createGlobalStyle`
     --brand-on-danger: 245, 245, 245;
 
     --body-primary-bg: 253, 254, 255;
-    --body-secondary-bg: 253, 254, 255;
+    --body-secondary-bg: 252, 252, 252;
     // --body-secondary-bg: 250, 251, 251; // 253, 253, 254;
 
     --body-primary-color: 9, 14, 26;
