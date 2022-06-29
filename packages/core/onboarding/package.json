@@ -10,8 +10,8 @@
   "module": "dist/uidu-onboarding.esm.js",
   "types": "dist/uidu-onboarding.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/progress-indicator": "^9.2.6",
-    "@babel/runtime": "^7.18.3",
+    "@atlaskit/progress-indicator": "^9.2.7",
+    "@babel/runtime": "^7.18.6",
     "@uidu/analytics": "^0.6.2",
     "@uidu/button": "^1.3.22",
     "@uidu/modal-dialog": "^1.0.4",

@@ -9,7 +9,7 @@
   "module": "dist/uidu-tabbar.esm.js",
   "types": "dist/uidu-tabbar.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.3",
+    "@babel/runtime": "^7.18.6",
     "@uidu/shell": "^2.1.22",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

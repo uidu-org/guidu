@@ -10,7 +10,7 @@
   "module": "dist/uidu-accordion.esm.js",
   "types": "dist/uidu-accordion.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.3",
+    "@babel/runtime": "^7.18.6",
     "@uidu/docs": "^0.5.15",
     "react": "^18.2.0",
     "react-accessible-accordion": "^5.0.0",

@@ -9,7 +9,7 @@
   "module": "dist/uidu-data-manager.esm.js",
   "types": "dist/uidu-data-manager.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.3",
+    "@babel/runtime": "^7.18.6",
     "@cubejs-client/core": "^0.30.4",
     "@cubejs-client/react": "^0.30.4",
     "@cubejs-client/ws-transport": "^0.30.27",
