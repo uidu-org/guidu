@@ -49,7 +49,6 @@ const runDevServer = async ({
   webpackOptions = {},
   websiteOptions = {},
 }) => {
-  console.log('process', process.argv);
   const workspaceGlobs = process.argv
     .slice(2)
     .filter((arg) => !arg.startsWith('--')) // in case we ever pass other flags to this script
@@ -116,10 +115,10 @@ const runDevServer = async ({
     compress: true,
 
     historyApiFallback: true,
-    disableHostCheck,
+    // disableHostCheck,
 
-    overlay: true,
-    stats,
+    // overlay: true,
+    // stats,
     ...serverOptions,
   });
 

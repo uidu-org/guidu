@@ -15,7 +15,7 @@
     "@uidu/message-renderer": "^0.4.18",
     "body-scroll-lock": "^4.0.0-beta.0",
     "d3-collection": "^1.0.7",
-    "moment": "^2.29.3",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-chatview": "^0.2.5",
     "react-media": "^1.10.0",

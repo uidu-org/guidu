@@ -30,7 +30,7 @@
     "@uidu/tooltip": "^0.5.19",
     "prosemirror-model": "^1.18.1",
     "raf-schd": "^4.0.3",
-    "react-intl": "^6.0.4",
+    "react-intl": "^6.0.5",
     "tslib": "^2.4.0",
     "url-parse": "^1.5.10"
   },
