@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-uidu",
   "packageManager": "yarn@3.1.1",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",

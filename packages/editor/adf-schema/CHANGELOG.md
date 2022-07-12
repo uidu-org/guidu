@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.9.12
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+
 ## 0.9.11
 
 ### Patch Changes

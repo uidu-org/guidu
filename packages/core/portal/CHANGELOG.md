@@ -1,5 +1,13 @@
 # @uidu/portal
 
+## 0.5.20
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/theme@0.6.17
+
 ## 0.5.19
 
 ### Patch Changes

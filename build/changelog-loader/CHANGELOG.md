@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.33
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+
 ## 0.1.32
 
 ### Patch Changes

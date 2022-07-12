@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.2.13
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/spinner@0.5.15
+  - @uidu/data-controls@2.1.21
+  - @uidu/data-fields@1.5.27
+  - @uidu/shell@2.1.24
+
 ## 1.2.12
 
 ### Patch Changes

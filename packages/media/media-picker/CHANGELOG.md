@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.7.17
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/media-core@0.7.13
+
 ## 0.7.16
 
 ### Patch Changes

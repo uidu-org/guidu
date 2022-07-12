@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.25
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/form@1.2.26
+
 ## 3.1.24
 
 ### Patch Changes

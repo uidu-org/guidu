@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.5.18
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/avatar@0.9.13
+  - @uidu/theme@0.6.17
+
 ## 0.5.17
 
 ### Patch Changes

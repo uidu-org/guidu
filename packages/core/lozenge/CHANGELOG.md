@@ -1,5 +1,13 @@
 # @uidu/lozenge
 
+## 0.5.15
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/theme@0.6.17
+
 ## 0.5.14
 
 ### Patch Changes

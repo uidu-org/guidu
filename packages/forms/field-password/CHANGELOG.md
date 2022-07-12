@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 1.1.18
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/analytics@0.6.4
+  - @uidu/theme@0.6.17
+  - @uidu/tooltip@0.5.20
+  - @uidu/field-base@3.1.25
+  - @uidu/field-text@1.2.4
+  - @uidu/form@1.2.26
+
 ## 1.1.17
 
 ### Patch Changes

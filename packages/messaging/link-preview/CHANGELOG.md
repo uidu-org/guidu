@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.19
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+
 ## 0.3.18
 
 ### Patch Changes

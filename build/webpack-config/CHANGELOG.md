@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.3.27
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/changelog-loader@0.1.33
+  - @uidu/fs-loader@0.1.51
+  - @uidu/nav-info-loader@0.2.5
+
 ## 0.3.26
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 1.7.14
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/spinner@0.5.15
+  - @uidu/tooltip@0.5.20
+  - @uidu/dashboard-manager@1.4.6
+  - @uidu/dashlet-controls@1.0.31
+  - @uidu/data-fields@1.5.27
+  - @uidu/table@1.4.17
+
 ## 1.7.13
 
 ### Patch Changes

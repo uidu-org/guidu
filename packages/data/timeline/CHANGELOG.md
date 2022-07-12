@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.3.5
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+
 ## 0.3.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.4.14
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+
 ## 0.4.13
 
 ### Patch Changes

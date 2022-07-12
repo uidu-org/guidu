@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.17
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+
 ## 0.5.16
 
 ### Patch Changes
