@@ -1,5 +1,18 @@
 # @uidu/media-viewer
 
+## 0.4.27
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/avatar@0.9.13
+  - @uidu/button@1.3.24
+  - @uidu/spinner@0.5.15
+  - @uidu/theme@0.6.17
+  - @uidu/media-core@0.7.13
+  - @uidu/shell@2.1.24
+
 ## 0.4.26
 
 ### Patch Changes

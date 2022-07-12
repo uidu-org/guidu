@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.4.14
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/analytics@0.6.4
+  - @uidu/avatar@0.9.13
+  - @uidu/button@1.3.24
+  - @uidu/lozenge@0.5.15
+  - @uidu/theme@0.6.17
+  - @uidu/tooltip@0.5.20
+  - @uidu/analytics-gas-types@0.3.4
+
 ## 0.4.13
 
 ### Patch Changes

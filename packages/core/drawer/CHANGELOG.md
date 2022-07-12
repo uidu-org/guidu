@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.7.21
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/docs@0.5.17
+  - @uidu/analytics@0.6.4
+  - @uidu/blanket@0.6.4
+  - @uidu/item@0.5.18
+  - @uidu/theme@0.6.17
+
 ## 0.7.20
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/analytics-listeners
 
+## 0.4.15
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/analytics@0.6.4
+  - @uidu/analytics-gas-types@0.3.4
+  - @uidu/analytics-namespaced-context@0.4.15
+
 ## 0.4.14
 
 ### Patch Changes

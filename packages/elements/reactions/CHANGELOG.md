@@ -1,5 +1,11 @@
 # @uidu/reactions
 
+## 0.3.3
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+
 ## 0.3.2
 
 ### Patch Changes

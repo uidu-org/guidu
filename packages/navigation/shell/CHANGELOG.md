@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.1.24
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/spinner@0.5.15
+
 ## 2.1.23
 
 ### Patch Changes

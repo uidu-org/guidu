@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.4.14
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/shell@2.1.24
+
 ## 0.4.13
 
 ### Patch Changes

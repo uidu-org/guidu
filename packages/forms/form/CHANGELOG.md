@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.26
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/button@1.3.24
+
 ## 1.2.25
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.6.17
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/form@1.2.26
+
 ## 0.6.16
 
 ### Patch Changes

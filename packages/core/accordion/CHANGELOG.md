@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.15
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/docs@0.5.17
+
 ## 0.6.14
 
 ### Patch Changes

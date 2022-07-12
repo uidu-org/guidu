@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.5.4
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/theme@0.6.17
+  - @uidu/media-card@0.6.18
+  - @uidu/media-core@0.7.13
+  - @uidu/media-viewer@0.4.27
+
 ## 0.5.3
 
 ### Patch Changes

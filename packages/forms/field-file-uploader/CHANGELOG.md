@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 1.1.18
+
+### Patch Changes
+
+- cd7de2c14: Bump dependencies
+- Updated dependencies [cd7de2c14]
+  - @uidu/field-base@3.1.25
+
 ## 1.1.17
 
 ### Patch Changes
