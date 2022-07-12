@@ -110,17 +110,20 @@ const runDevServer = async ({
   // Starting Webpack Dev Server
   //
 
-  const server = new WebpackDevServer(compiler, {
-    // Enable gzip compression of generated files.
-    compress: true,
+  const server = new WebpackDevServer(
+    {
+      // Enable gzip compression of generated files.
+      compress: true,
 
-    historyApiFallback: true,
-    // disableHostCheck,
+      historyApiFallback: true,
+      // disableHostCheck,
 
-    // overlay: true,
-    // stats,
-    ...serverOptions,
-  });
+      // overlay: true,
+      // stats,
+      ...serverOptions,
+    },
+    compiler,
+  );
 
   return new Promise((resolve, reject) => {
     server.listen(PORT, HOST, (err) => {
@@ -129,12 +132,12 @@ const runDevServer = async ({
         return reject(1);
       }
 
-      server.use(
-        historyApiFallback({
-          disableDotRule: true,
-          htmlAcceptHeaders: ['text/html'],
-        }),
-      );
+      // server.use(
+      //   historyApiFallback({
+      //     disableDotRule: true,
+      //     htmlAcceptHeaders: ['text/html'],
+      //   }),
+      // );
     });
   });
 };
