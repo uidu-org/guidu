@@ -10,12 +10,12 @@
   "module": "dist/uidu-editor-markdown-transformer.esm.js",
   "types": "dist/uidu-editor-markdown-transformer.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.6",
+    "@babel/runtime": "^7.18.9",
     "@uidu/adf-schema": "^0.9.12",
     "@uidu/editor-common": "^0.7.17",
     "markdown-it": "^13.0.1",
     "markdown-it-table": "^2.0.4",
-    "prosemirror-markdown": "^1.9.1",
+    "prosemirror-markdown": "^1.9.3",
     "prosemirror-model": "^1.18.1",
     "tslib": "^2.4.0"
   },

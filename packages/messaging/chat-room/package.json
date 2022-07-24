@@ -9,7 +9,7 @@
   "module": "dist/uidu-chat-room.esm.js",
   "types": "dist/uidu-chat-rooom.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.6",
+    "@babel/runtime": "^7.18.9",
     "@uidu/shell": "^2.1.24",
     "react": "^18.2.0",
     "tslib": "^2.4.0"

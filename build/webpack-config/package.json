@@ -20,7 +20,7 @@
     "@uidu/nav-info-loader": "^0.2.5",
     "babel-loader": "^8.2.5",
     "bolt": "^0.24.10",
-    "chalk": "^5.0.1",
+    "chalk": "^4.1.2",
     "compression-webpack-plugin": "^10.0.0",
     "connect-history-api-fallback": "^2.0.0",
     "css-loader": "^6.7.1",

@@ -9,7 +9,7 @@
   "module": "dist/uidu-data-fields.esm.js",
   "types": "dist/uidu-data-fields.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.6",
+    "@babel/runtime": "^7.18.9",
     "@faker-js/faker": "^7.3.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
@@ -29,7 +29,7 @@
     "@uidu/menu": "^0.7.13",
     "@uidu/popup": "0.6.21",
     "@uidu/select": "^1.6.8",
-    "dayjs": "^1.11.3",
+    "dayjs": "^1.11.4",
     "numeral": "^2.0.6",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.0",

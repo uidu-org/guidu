@@ -14,7 +14,7 @@
     "@atlaskit/focus-ring": "^1.0.5",
     "@atlaskit/icon": "^21.10.7",
     "@atlaskit/motion": "^1.1.2",
-    "@babel/runtime": "^7.18.6",
+    "@babel/runtime": "^7.18.9",
     "@uidu/analytics": "^0.6.4",
     "@uidu/blanket": "^0.6.4",
     "@uidu/portal": "^0.5.20",

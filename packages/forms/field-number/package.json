@@ -15,13 +15,13 @@
   "module": "dist/uidu-field-number.esm.js",
   "types": "dist/uidu-field-number.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.6",
+    "@babel/runtime": "^7.18.9",
     "@uidu/analytics": "^0.6.4",
     "@uidu/field-base": "^3.1.25",
     "@uidu/field-text": "^1.2.4",
     "@uidu/form": "^1.2.26",
     "@uidu/theme": "^0.6.17",
-    "formsy-react": "^2.2.5",
+    "formsy-react": "^2.2.7",
     "react-number-format": "^4.9.3",
     "tslib": "^2.4.0"
   },

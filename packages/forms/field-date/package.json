@@ -13,12 +13,12 @@
     "index.module.scss"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.18.6",
+    "@babel/runtime": "^7.18.9",
     "@uidu/analytics": "^0.6.4",
     "@uidu/field-base": "^3.1.25",
     "@uidu/field-text": "^1.2.4",
-    "dayjs": "^1.11.3",
-    "formsy-react": "^2.2.5",
+    "dayjs": "^1.11.4",
+    "formsy-react": "^2.2.7",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-day-picker": "^7.4.10",
