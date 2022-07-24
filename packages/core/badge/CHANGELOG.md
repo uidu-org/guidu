@@ -1,5 +1,13 @@
 # @uidu/badge
 
+## 0.5.16
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/theme@0.6.18
+
 ## 0.5.15
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.4.15
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+
 ## 0.4.14
 
 ### Patch Changes

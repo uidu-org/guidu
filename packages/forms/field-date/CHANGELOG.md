@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 1.2.7
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+  - @uidu/field-base@3.1.26
+  - @uidu/field-text@1.2.5
+
 ## 1.2.6
 
 ### Patch Changes

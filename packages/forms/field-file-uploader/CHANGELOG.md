@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 1.1.19
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/field-base@3.1.26
+
 ## 1.1.18
 
 ### Patch Changes

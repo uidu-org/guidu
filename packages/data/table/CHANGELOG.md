@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 1.4.18
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/button@1.3.25
+  - @uidu/menu@0.7.14
+  - @uidu/popup@0.6.22
+  - @uidu/data-fields@1.5.28
+  - @uidu/data-manager@2.4.15
+  - @uidu/checkbox@1.4.5
+
 ## 1.4.17
 
 ### Patch Changes

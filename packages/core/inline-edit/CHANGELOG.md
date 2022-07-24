@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.3.23
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+  - @uidu/button@1.3.25
+  - @uidu/inline-dialog@0.5.21
+  - @uidu/theme@0.6.18
+  - @uidu/field@1.0.15
+  - @uidu/field-text@1.2.5
+  - @uidu/form@1.2.27
+
 ## 0.3.22
 
 ### Patch Changes

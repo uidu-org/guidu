@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.2.27
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/button@1.3.25
+
 ## 1.2.26
 
 ### Patch Changes

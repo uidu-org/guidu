@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 2.4.15
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/button@1.3.25
+  - @uidu/menu@0.7.14
+  - @uidu/pagination@0.5.20
+  - @uidu/spinner@0.5.16
+  - @uidu/board@0.5.15
+  - @uidu/calendar@0.4.14
+  - @uidu/data-controls@2.1.22
+  - @uidu/data-fields@1.5.28
+  - @uidu/data-views@1.2.21
+  - @uidu/gallery@1.2.14
+  - @uidu/list@1.2.12
+  - @uidu/table@1.4.18
+  - @uidu/shell@2.1.25
+
 ## 2.4.14
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.3.14
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/avatar@0.9.14
+  - @uidu/button@1.3.25
+  - @uidu/lozenge@0.5.16
+  - @uidu/popup@0.6.22
+  - @uidu/spinner@0.5.16
+  - @uidu/theme@0.6.18
+
 ## 0.3.13
 
 ### Patch Changes

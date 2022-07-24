@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.0.22
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/avatar@0.9.14
+  - @uidu/dropdown-menu@0.6.22
+  - @uidu/inline-dialog@0.5.21
+  - @uidu/menu@0.7.14
+  - @uidu/theme@0.6.18
+  - @uidu/tooltip@0.5.21
+  - @uidu/animated-menu@1.0.18
+  - @uidu/shell@2.1.25
+
 ## 1.0.21
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.5.19
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/avatar@0.9.14
+  - @uidu/theme@0.6.18
+
 ## 0.5.18
 
 ### Patch Changes

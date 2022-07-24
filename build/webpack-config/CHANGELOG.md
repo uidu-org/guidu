@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.28
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+
 ## 0.3.27
 
 ### Patch Changes

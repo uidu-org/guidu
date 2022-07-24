@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.20
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+
 ## 0.3.19
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.19
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+
 ## 0.1.18
 
 ### Patch Changes

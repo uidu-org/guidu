@@ -1,5 +1,23 @@
 # @uidu/message
 
+## 0.5.32
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/avatar@0.9.14
+  - @uidu/button@1.3.25
+  - @uidu/drawer@0.7.22
+  - @uidu/dropdown-menu@0.6.22
+  - @uidu/menu@0.7.14
+  - @uidu/popup@0.6.22
+  - @uidu/tooltip@0.5.21
+  - @uidu/media-card@0.6.19
+  - @uidu/media-viewer@0.4.28
+  - @uidu/message-form@0.4.22
+  - @uidu/message-renderer@0.4.20
+
 ## 0.5.31
 
 ### Patch Changes

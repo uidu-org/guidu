@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.26
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/form@1.2.27
+
 ## 3.1.25
 
 ### Patch Changes

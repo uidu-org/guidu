@@ -1,5 +1,13 @@
 # @uidu/analytics-viewer
 
+## 0.4.17
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+
 ## 0.4.16
 
 ### Patch Changes

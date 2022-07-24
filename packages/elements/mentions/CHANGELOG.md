@@ -1,5 +1,18 @@
 # @uidu/mentions
 
+## 0.4.15
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+  - @uidu/avatar@0.9.14
+  - @uidu/button@1.3.25
+  - @uidu/lozenge@0.5.16
+  - @uidu/theme@0.6.18
+  - @uidu/tooltip@0.5.21
+
 ## 0.4.14
 
 ### Patch Changes

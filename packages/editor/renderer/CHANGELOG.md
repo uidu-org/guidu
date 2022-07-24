@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.8.16
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+  - @uidu/code@0.5.17
+  - @uidu/theme@0.6.18
+  - @uidu/tooltip@0.5.21
+  - @uidu/adf-schema@0.9.13
+  - @uidu/adf-utils@0.8.10
+  - @uidu/editor-common@0.7.18
+  - @uidu/editor-json-transformer@0.7.13
+  - @uidu/analytics-listeners@0.4.16
+  - @uidu/analytics-namespaced-context@0.4.16
+  - @uidu/mentions@0.4.15
+  - @uidu/status@0.5.14
+  - @uidu/task-decision@0.4.23
+  - @uidu/media-card@0.6.19
+  - @uidu/media-filmstrip@0.5.5
+
 ## 0.8.15
 
 ### Patch Changes

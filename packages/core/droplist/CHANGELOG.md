@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.5.22
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+  - @uidu/item@0.5.19
+  - @uidu/layer@0.5.16
+  - @uidu/spinner@0.5.16
+  - @uidu/theme@0.6.18
+  - @uidu/tooltip@0.5.21
+
 ## 0.5.21
 
 ### Patch Changes
