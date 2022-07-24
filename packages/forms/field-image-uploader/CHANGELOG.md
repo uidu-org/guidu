@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 2.0.15
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+  - @uidu/button@1.3.25
+  - @uidu/spinner@0.5.16
+  - @uidu/field-base@3.1.26
+  - @uidu/field-range@1.1.10
+
 ## 2.0.14
 
 ### Patch Changes

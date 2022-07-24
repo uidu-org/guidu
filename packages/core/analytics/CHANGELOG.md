@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.6.5
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+
 ## 0.6.4
 
 ### Patch Changes

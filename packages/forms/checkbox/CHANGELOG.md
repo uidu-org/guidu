@@ -1,5 +1,14 @@
 # Change Log
 
+## 1.4.5
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+  - @uidu/field-base@3.1.26
+
 ## 1.4.4
 
 ### Patch Changes

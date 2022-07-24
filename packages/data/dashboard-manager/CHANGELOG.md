@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 1.4.7
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/dashboard-controls@1.0.32
+  - @uidu/dashlets@1.7.15
+
 ## 1.4.6
 
 ### Patch Changes

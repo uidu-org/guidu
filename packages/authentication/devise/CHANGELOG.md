@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.7.14
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/avatar@0.9.14
+  - @uidu/slider@1.7.18
+  - @uidu/spinner@0.5.16
+  - @uidu/checkbox@1.4.5
+  - @uidu/field-password@1.1.19
+  - @uidu/field-phone@1.0.25
+  - @uidu/field-text@1.2.5
+  - @uidu/form@1.2.27
+  - @uidu/shell@2.1.25
+
 ## 0.7.13
 
 ### Patch Changes

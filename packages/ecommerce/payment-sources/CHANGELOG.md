@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.22
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/payments@1.4.8
+  - @uidu/form@1.2.27
+
 ## 0.3.21
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.7.18
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+
 ## 1.7.17
 
 ### Patch Changes

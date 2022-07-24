@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.9.13
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+
 ## 0.9.12
 
 ### Patch Changes

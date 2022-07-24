@@ -1,5 +1,18 @@
 # @uidu/onboarding
 
+## 1.3.8
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+  - @uidu/button@1.3.25
+  - @uidu/modal-dialog@1.0.7
+  - @uidu/popper@0.5.18
+  - @uidu/portal@0.5.21
+  - @uidu/theme@0.6.18
+
 ## 1.3.7
 
 ### Patch Changes

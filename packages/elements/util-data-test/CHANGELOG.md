@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.20
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+  - @uidu/emoji@0.6.16
+  - @uidu/mentions@0.4.15
+  - @uidu/task-decision@0.4.23
+
 ## 0.4.19
 
 ### Patch Changes

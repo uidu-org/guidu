@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.3.19
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+
 ## 0.3.18
 
 ### Patch Changes

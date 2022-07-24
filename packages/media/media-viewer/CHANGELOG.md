@@ -1,5 +1,17 @@
 # @uidu/media-viewer
 
+## 0.4.28
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/avatar@0.9.14
+  - @uidu/button@1.3.25
+  - @uidu/spinner@0.5.16
+  - @uidu/theme@0.6.18
+  - @uidu/shell@2.1.25
+
 ## 0.4.27
 
 ### Patch Changes

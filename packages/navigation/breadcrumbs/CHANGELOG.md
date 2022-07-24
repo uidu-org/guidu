@@ -1,5 +1,16 @@
 # @uidu/breadcrumbs
 
+## 1.0.22
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+  - @uidu/button@1.3.25
+  - @uidu/theme@0.6.18
+  - @uidu/tooltip@0.5.21
+
 ## 1.0.21
 
 ### Patch Changes

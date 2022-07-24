@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.3.18
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/docs@0.5.18
+  - @uidu/analytics@0.6.5
+  - @uidu/theme@0.6.18
+
 ## 0.3.17
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.7.18
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+
 ## 0.7.17
 
 ### Patch Changes

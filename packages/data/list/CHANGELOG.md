@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 1.2.12
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/data-fields@1.5.28
+
 ## 1.2.11
 
 ### Patch Changes

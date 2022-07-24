@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.16
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/docs@0.5.18
+
 ## 0.6.15
 
 ### Patch Changes

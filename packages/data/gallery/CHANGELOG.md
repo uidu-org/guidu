@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 1.2.14
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/spinner@0.5.16
+  - @uidu/data-controls@2.1.22
+  - @uidu/data-fields@1.5.28
+  - @uidu/shell@2.1.25
+
 ## 1.2.13
 
 ### Patch Changes

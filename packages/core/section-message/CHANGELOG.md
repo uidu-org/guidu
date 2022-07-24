@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.6.17
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/button@1.3.25
+
 ## 0.6.16
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.23
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+
 ## 0.4.22
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.5.17
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+
 ## 0.5.16
 
 ### Patch Changes

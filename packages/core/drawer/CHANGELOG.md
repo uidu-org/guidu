@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.7.22
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/docs@0.5.18
+  - @uidu/analytics@0.6.5
+  - @uidu/item@0.5.19
+  - @uidu/theme@0.6.18
+  - @uidu/blanket@0.6.5
+
 ## 0.7.21
 
 ### Patch Changes

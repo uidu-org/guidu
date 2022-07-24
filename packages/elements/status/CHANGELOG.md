@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.5.14
+
+### Patch Changes
+
+- b25063e64: Bumped deps
+- Updated dependencies [b25063e64]
+  - @uidu/analytics@0.6.5
+  - @uidu/lozenge@0.5.16
+  - @uidu/theme@0.6.18
+  - @uidu/field-text@1.2.5
+
 ## 0.5.13
 
 ### Patch Changes
