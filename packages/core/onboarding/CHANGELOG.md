@@ -1,5 +1,14 @@
 # @uidu/onboarding
 
+## 1.3.9
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/modal-dialog@1.0.8
+  - @uidu/theme@0.6.19
+
 ## 1.3.8
 
 ### Patch Changes

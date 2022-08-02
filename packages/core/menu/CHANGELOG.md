@@ -1,5 +1,13 @@
 # @uidu/menu
 
+## 0.7.15
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/theme@0.6.19
+
 ## 0.7.14
 
 ### Patch Changes

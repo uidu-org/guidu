@@ -1,5 +1,14 @@
 # @uidu/dashlets-form
 
+## 1.0.23
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/dashlets@1.7.16
+  - @uidu/select@1.6.10
+
 ## 1.0.22
 
 ### Patch Changes

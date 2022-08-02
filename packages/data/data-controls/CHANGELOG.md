@@ -1,5 +1,20 @@
 # @uidu/data-controls
 
+## 2.1.23
+
+### Patch Changes
+
+- Updated dependencies [375f00239]
+  - @uidu/drawer@0.7.23
+  - @uidu/menu@0.7.15
+  - @uidu/popup@0.6.23
+  - @uidu/spinner@0.5.17
+  - @uidu/tooltip@0.5.22
+  - @uidu/data-fields@1.5.29
+  - @uidu/data-manager@2.4.16
+  - @uidu/select@1.6.10
+  - @uidu/data-views@1.2.22
+
 ## 2.1.22
 
 ### Patch Changes

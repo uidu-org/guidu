@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.2.24
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+
 ## 0.2.23
 
 ### Patch Changes

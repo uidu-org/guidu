@@ -1,5 +1,14 @@
 # @uidu/stripe-accounts
 
+## 0.4.16
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/spinner@0.5.17
+  - @uidu/payments@1.4.9
+
 ## 0.4.15
 
 ### Patch Changes

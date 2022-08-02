@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.29
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+
 ## 0.3.28
 
 ### Patch Changes

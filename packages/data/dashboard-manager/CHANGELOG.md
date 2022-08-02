@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 1.4.8
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/dashlets@1.7.16
+
 ## 1.4.7
 
 ### Patch Changes
