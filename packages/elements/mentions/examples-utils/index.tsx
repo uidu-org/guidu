@@ -19,7 +19,9 @@ export const generateMentionItem = (
 
 export const randomMentions = () =>
   Array.from(Array(10)).map((x) => ({
-    ...faker.helpers.userCard(),
+    avatar: faker.image.avatar(),
+    name: faker.name.findName(),
+    email: faker.internet.email(),
   }));
 
 export const onSelection: OnMentionEvent = (mention: MentionDescription) =>

@@ -23,7 +23,7 @@
     "react-focus-lock": "^2.9.1",
     "react-node-resolver": "^2.0.1",
     "react-scrolllock": "^5.0.1",
-    "react-transition-group": "^4.4.2",
+    "react-transition-group": "^4.4.5",
     "scroll-into-view-if-needed": "^2.2.29",
     "tslib": "^2.4.0"
   },

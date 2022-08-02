@@ -11,7 +11,7 @@
   "types": "dist/uidu-menu.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@emotion/react": "^11.9.3",
+    "@emotion/react": "^11.10.0",
     "@uidu/theme": "^0.6.18",
     "react-router-dom": "^5.3.3",
     "styled-components": "^5.3.5",

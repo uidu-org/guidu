@@ -29,7 +29,7 @@
     "prop-types": "^15.8.1",
     "react-virtualized": "^9.22.3",
     "tslib": "^2.4.0",
-    "typestyle": "^2.3.0",
+    "typestyle": "^2.4.0",
     "url": "^0.11.0",
     "uuid": "^8.3.2"
   },

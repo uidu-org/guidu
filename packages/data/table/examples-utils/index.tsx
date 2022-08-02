@@ -337,7 +337,11 @@ export const fetchContacts = () => {
           gender: ['male', 'female', null][Math.floor(Math.random() * 3)],
           role: 'admin',
           paymentMethod: Math.floor(Math.random() * 3) + 1,
-          member: faker.helpers.userCard(),
+          member: {
+            avatar: faker.image.avatar(),
+            name: faker.name.findName(),
+            email: faker.internet.email(),
+          },
           phone: faker.phone.phoneNumber(),
           progress: Math.random(),
         })),

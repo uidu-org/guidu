@@ -42,7 +42,7 @@
     "svg-url-loader": "^7.1.1",
     "terser-webpack-plugin": "^5.3.3",
     "url-loader": "^4.1.1",
-    "webpack": "^5.73.0",
+    "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-dev-server": "^4.9.3",
     "webpack-manifest-plugin": "^5.0.0"

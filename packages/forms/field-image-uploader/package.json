@@ -17,7 +17,7 @@
     "@uidu/media-core": "^0.7.13",
     "@uidu/spinner": "^0.5.16",
     "@uppy/aws-s3": "^2.2.1",
-    "@uppy/core": "^2.3.1",
+    "@uppy/core": "^2.3.2",
     "@uppy/drag-drop": "^2.1.1",
     "@uppy/react": "^2.2.2",
     "@uppy/thumbnail-generator": "^2.2.0",

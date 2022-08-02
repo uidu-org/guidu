@@ -11,8 +11,8 @@
   "dependencies": {
     "@babel/runtime": "^7.18.9",
     "@uidu/media-core": "^0.7.13",
-    "@uppy/core": "^2.3.1",
-    "@uppy/dashboard": "^2.4.0",
+    "@uppy/core": "^2.3.2",
+    "@uppy/dashboard": "^2.4.1",
     "@uppy/drag-drop": "^2.1.1",
     "@uppy/dropbox": "^2.0.7",
     "@uppy/google-drive": "^2.1.1",

@@ -17,7 +17,7 @@
     "@uidu/theme": "^0.6.18",
     "flushable": "^1.0.0",
     "react-node-resolver": "^2.0.1",
-    "react-transition-group": "^4.4.2",
+    "react-transition-group": "^4.4.5",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

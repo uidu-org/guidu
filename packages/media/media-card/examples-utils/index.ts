@@ -4,7 +4,11 @@ import { FileType } from '../../media-core/dist/uidu-media-core.cjs';
 export const fakeImage = () => ({
   id: faker.datatype.uuid(),
   description: faker.lorem.sentence(),
-  author: faker.helpers.userCard(),
+  author: {
+    avatar: faker.image.avatar(),
+    name: faker.name.findName(),
+    email: faker.internet.email(),
+  },
   file: {
     id: faker.datatype.uuid(),
     type: 'image' as FileType,
@@ -19,7 +23,10 @@ export const fakeImage = () => ({
 export const fakeVideo = () => ({
   id: faker.datatype.uuid(),
   description: faker.lorem.sentence(),
-  author: faker.helpers.userCard(),
+  author: {
+    avatar: faker.image.avatar(),
+    name: faker.name.findName(),
+  },
   createdAt: faker.date.recent(),
   file: {
     id: faker.datatype.uuid(),
@@ -45,7 +52,10 @@ export const fakeVideo = () => ({
 export const fakeFile = () => ({
   id: faker.datatype.uuid(),
   description: faker.lorem.sentence(),
-  author: faker.helpers.userCard(),
+  author: {
+    avatar: faker.image.avatar(),
+    name: faker.name.findName(),
+  },
   createdAt: faker.date.recent(),
   file: {
     id: faker.datatype.uuid(),
@@ -61,7 +71,10 @@ export const fakeFile = () => ({
 export const fakeLink = () => ({
   id: faker.datatype.uuid(),
   description: faker.lorem.sentence(),
-  author: faker.helpers.userCard(),
+  author: {
+    avatar: faker.image.avatar(),
+    name: faker.name.findName(),
+  },
   createdAt: faker.date.recent(),
   file: {
     id: faker.datatype.uuid(),

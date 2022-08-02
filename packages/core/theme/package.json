@@ -11,7 +11,7 @@
   "types": "dist/uidu-theme.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@emotion/react": "^11.9.3",
+    "@emotion/react": "^11.10.0",
     "@uidu/form": "^1.2.27",
     "exenv": "^1.2.2",
     "prop-types": "^15.8.1",

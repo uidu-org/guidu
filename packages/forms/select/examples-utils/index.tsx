@@ -3,7 +3,9 @@ import React from 'react';
 import 'twin.macro';
 
 export const defaultUsers = Array.from(Array(10)).map((x) => ({
-  ...faker.helpers.userCard(),
+  avatar: faker.image.avatar(),
+  name: faker.name.findName(),
+  email: faker.internet.email(),
 }));
 
 export const defaultOptions = Array.from(Array(10)).map((x) => {
