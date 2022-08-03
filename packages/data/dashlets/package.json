@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashlets",
-  "version": "1.7.17",
+  "version": "1.7.18",
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/dashlets",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "@uidu/dashlet-controls": "^1.0.32",
     "@uidu/data-fields": "^1.5.30",
     "@uidu/spinner": "^0.5.17",
-    "@uidu/table": "1.4.20",
+    "@uidu/table": "1.4.21",
     "@uidu/tooltip": "^0.5.22",
     "d3-array": "^3.2.0",
     "gql-query-builder": "^3.7.0",
