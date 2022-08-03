@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 2.1.25
+
+### Patch Changes
+
+- f83814697: Fix sorter size and proportions
+
 ## 2.1.24
 
 ### Patch Changes

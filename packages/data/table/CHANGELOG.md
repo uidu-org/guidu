@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 1.4.21
+
+### Patch Changes
+
+- f83814697: Fix sorter size and proportions
+
 ## 1.4.20
 
 ### Patch Changes
