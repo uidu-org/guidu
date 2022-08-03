@@ -1,5 +1,12 @@
 # @uidu/profilecard
 
+## 0.3.15
+
+### Patch Changes
+
+- Updated dependencies [7f26d4c85]
+  - @uidu/popup@0.7.0
+
 ## 0.3.14
 
 ### Patch Changes

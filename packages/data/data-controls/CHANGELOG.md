@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 2.1.24
+
+### Patch Changes
+
+- Updated dependencies [7f26d4c85]
+  - @uidu/popup@0.7.0
+  - @uidu/data-fields@1.5.30
+
 ## 2.1.23
 
 ### Patch Changes

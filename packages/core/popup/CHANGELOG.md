@@ -1,5 +1,11 @@
 # @uidu/popup
 
+## 0.7.0
+
+### Minor Changes
+
+- 7f26d4c85: Higher zIndex by default
+
 ## 0.6.23
 
 ### Patch Changes
