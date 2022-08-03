@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 1.5.30
+
+### Patch Changes
+
+- Updated dependencies [7f26d4c85]
+  - @uidu/popup@0.7.0
+  - @uidu/field-color-picker@2.2.4
+
 ## 1.5.29
 
 ### Patch Changes
