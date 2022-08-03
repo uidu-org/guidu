@@ -1,7 +1,7 @@
+import { SwitchVerticalIcon } from '@heroicons/react/solid';
 import { useDataManagerContext } from '@uidu/data-manager';
 import Popup from '@uidu/popup';
 import React, { useState } from 'react';
-import { Sliders } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
 import SorterForm from './form';
@@ -14,6 +14,7 @@ export default function Sorter(props: SorterProps) {
       state: { sortBy },
     },
   } = useDataManagerContext();
+
   const sortersCount = sortBy.length;
 
   return (
@@ -29,7 +30,7 @@ export default function Sorter(props: SorterProps) {
           onClick={() =>
             setIsDialogOpen((prevIsDialogOpen) => !prevIsDialogOpen)
           }
-          iconBefore={<Sliders strokeWidth={2} size={14} />}
+          iconBefore={<SwitchVerticalIcon tw="h-4 w-4" />}
         >
           <span tw="hidden xl:block">
             <FormattedMessage
@@ -46,7 +47,7 @@ export default function Sorter(props: SorterProps) {
       )}
       content={() => {
         return (
-          <div tw="w-screen sm:width[300px] py-4 text-sm">
+          <div tw="w-screen sm:width[500px] py-4 text-sm">
             <SorterForm />
           </div>
         );

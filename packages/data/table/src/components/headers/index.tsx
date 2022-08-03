@@ -53,7 +53,7 @@ export default function Header({
     () => (
       <MenuGroup>
         {column.canEdit && (
-          <Section>
+          <Section hasSeparator>
             <ButtonItem
               onClick={() => console.log('Edit field')}
               iconBefore={<Edit2 size={14} />}
@@ -65,7 +65,7 @@ export default function Header({
             </ButtonItem>
           </Section>
         )}
-        <Section>
+        <Section hasSeparator>
           <ButtonItem
             onClick={() => {
               setIsOpen(false);
@@ -105,11 +105,13 @@ export default function Header({
             }}
             iconBefore={<ArrowDownRight size={14} />}
           >
-            <FormattedMessage
-              defaultMessage="Sort A {icon} Z"
-              values={{ icon: () => <ArrowRight size={14} /> }}
-              id="uidu.table.header.sort_a_z"
-            />
+            <span tw="flex items-center">
+              <FormattedMessage
+                defaultMessage="Sort A {icon} Z"
+                values={{ icon: <ArrowRight tw="mx-1" size={14} /> }}
+                id="uidu.table.header.sort_a_z"
+              />
+            </span>
           </ButtonItem>
           <ButtonItem
             isDisabled={column.isSorted && column.isSortedDesc}
@@ -119,11 +121,13 @@ export default function Header({
             }}
             iconBefore={<ArrowUpRight size={14} />}
           >
-            <FormattedMessage
-              defaultMessage="Sort Z {icon} A"
-              values={{ icon: () => <ArrowRight size={14} /> }}
-              id="uidu.table.header.sort_z_a"
-            />
+            <span tw="flex items-center">
+              <FormattedMessage
+                defaultMessage="Sort Z {icon} A"
+                values={{ icon: <ArrowRight tw="mx-1" size={14} /> }}
+                id="uidu.table.header.sort_z_a"
+              />
+            </span>
           </ButtonItem>
           {column.canFilter && (
             <ButtonItem
@@ -228,7 +232,6 @@ export default function Header({
       {!column.suppressMenu && (
         <div tw="ml-4 font-weight[initial]">
           <Popup
-            zIndex={100}
             isOpen={isOpen}
             placement="bottom-end"
             rootBoundary="document"
