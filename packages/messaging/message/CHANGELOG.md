@@ -1,5 +1,17 @@
 # @uidu/message
 
+## 0.5.33
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/drawer@0.7.23
+  - @uidu/menu@0.7.15
+  - @uidu/popup@0.6.23
+  - @uidu/tooltip@0.5.22
+  - @uidu/media-card@0.6.20
+
 ## 0.5.32
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/payments",
-  "version": "1.4.8",
+  "version": "1.4.9",
   "description": "Payment form using Stripe",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/ecommerce/payments",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "@uidu/form": "^1.2.27",
     "@uidu/section-message": "0.6.17",
     "@uidu/slider": "^1.7.18",
-    "@uidu/theme": "^0.6.18",
+    "@uidu/theme": "^0.6.19",
     "axios": "^0.27.2",
     "formsy-react": "^2.2.7",
     "react": "^18.2.0",

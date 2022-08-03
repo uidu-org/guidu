@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 1.0.26
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+
 ## 1.0.25
 
 ### Patch Changes

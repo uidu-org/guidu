@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 1.6.10
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/spinner@0.5.17
+  - @uidu/theme@0.6.19
+  - @uidu/tooltip@0.5.22
+
 ## 1.6.9
 
 ### Patch Changes

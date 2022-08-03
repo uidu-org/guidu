@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.20
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+
 ## 0.1.19
 
 ### Patch Changes

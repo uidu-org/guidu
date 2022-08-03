@@ -1,5 +1,13 @@
 # @uidu/payment-sources
 
+## 0.3.23
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/payments@1.4.9
+
 ## 0.3.22
 
 ### Patch Changes

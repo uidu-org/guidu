@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 1.7.16
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/spinner@0.5.17
+  - @uidu/tooltip@0.5.22
+  - @uidu/dashboard-manager@1.4.8
+  - @uidu/data-fields@1.5.29
+  - @uidu/table@1.4.19
+
 ## 1.7.15
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/mentions
 
+## 0.4.16
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/theme@0.6.19
+  - @uidu/tooltip@0.5.22
+
 ## 0.4.15
 
 ### Patch Changes

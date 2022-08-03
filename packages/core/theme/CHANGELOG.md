@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.6.19
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+
 ## 0.6.18
 
 ### Patch Changes

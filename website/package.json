@@ -1,6 +1,6 @@
 {
   "name": "@uidu/guidu-website",
-  "version": "0.6.10",
+  "version": "0.6.11",
   "repository": "https://github.com/uidu-org/guidu/tree/main/website",
   "license": "MIT",
   "scripts": {
@@ -26,21 +26,21 @@
     "@uidu/checkbox": "^1.4.5",
     "@uidu/code": "^0.5.17",
     "@uidu/docs": "^0.5.18",
-    "@uidu/drawer": "^0.7.22",
+    "@uidu/drawer": "^0.7.23",
     "@uidu/field-text": "^1.2.5",
     "@uidu/form": "^1.2.27",
     "@uidu/list": "^1.2.12",
     "@uidu/lozenge": "^0.5.16",
-    "@uidu/modal-dialog": "^1.0.7",
-    "@uidu/navigation": "^1.0.22",
+    "@uidu/modal-dialog": "^1.0.8",
+    "@uidu/navigation": "^1.0.23",
     "@uidu/page-header": "1.0.7",
-    "@uidu/select": "^1.6.9",
+    "@uidu/select": "^1.6.10",
     "@uidu/shell": "^2.1.25",
-    "@uidu/spinner": "^0.5.16",
-    "@uidu/table": "^1.4.18",
-    "@uidu/theme": "^0.6.18",
+    "@uidu/spinner": "^0.5.17",
+    "@uidu/table": "^1.4.19",
+    "@uidu/theme": "^0.6.19",
     "@uidu/themes-uidu": "^0.4.3",
-    "@uidu/tooltip": "^0.5.21",
+    "@uidu/tooltip": "^0.5.22",
     "avataaars": "^2.0.0",
     "codesandboxer": "^1.0.3",
     "commonmark": "^0.30.0",
@@ -76,7 +76,7 @@
   "devDependencies": {
     "@uidu/fs-loader": "^0.1.51",
     "@uidu/nav-info-loader": "^0.2.5",
-    "@uidu/webpack-config": "^0.3.28"
+    "@uidu/webpack-config": "^0.3.29"
   },
   "publishConfig": {
     "access": "public"

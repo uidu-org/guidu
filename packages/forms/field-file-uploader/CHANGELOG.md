@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 1.1.20
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+
 ## 1.1.19
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/editor-core
 
+## 0.15.11
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/menu@0.7.15
+  - @uidu/modal-dialog@1.0.8
+  - @uidu/spinner@0.5.17
+  - @uidu/theme@0.6.19
+  - @uidu/tooltip@0.5.22
+  - @uidu/emoji@0.6.17
+  - @uidu/mentions@0.4.16
+  - @uidu/select@1.6.10
+  - @uidu/media-card@0.6.20
+  - @uidu/media-picker@0.7.19
+
 ## 0.15.10
 
 ### Patch Changes

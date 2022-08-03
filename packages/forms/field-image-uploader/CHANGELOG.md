@@ -1,5 +1,13 @@
 # @uidu/field-image-uploader
 
+## 2.0.16
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/spinner@0.5.17
+
 ## 2.0.15
 
 ### Patch Changes

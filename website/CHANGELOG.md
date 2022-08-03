@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.6.11
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/drawer@0.7.23
+  - @uidu/modal-dialog@1.0.8
+  - @uidu/spinner@0.5.17
+  - @uidu/theme@0.6.19
+  - @uidu/tooltip@0.5.22
+  - @uidu/table@1.4.19
+  - @uidu/select@1.6.10
+  - @uidu/navigation@1.0.23
+
 ## 0.6.10
 
 ### Patch Changes

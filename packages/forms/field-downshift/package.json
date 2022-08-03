@@ -28,8 +28,8 @@
     "@uidu/field-date": "^1.2.7",
     "@uidu/field-time": "^1.2.5",
     "@uidu/form": "^1.2.27",
-    "@uidu/menu": "0.7.14",
-    "@uidu/popup": "0.6.22",
+    "@uidu/menu": "0.7.15",
+    "@uidu/popup": "0.6.23",
     "@uidu/radio": "^1.2.5",
     "@uidu/shell": "^2.1.25",
     "styled-components": "^5.3.5"

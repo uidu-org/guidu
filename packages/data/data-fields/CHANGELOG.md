@@ -1,5 +1,15 @@
 # @uidu/data-fields
 
+## 1.5.29
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/menu@0.7.15
+  - @uidu/popup@0.6.23
+  - @uidu/select@1.6.10
+
 ## 1.5.28
 
 ### Patch Changes

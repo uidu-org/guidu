@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.7.19
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+
 ## 0.7.18
 
 ### Patch Changes

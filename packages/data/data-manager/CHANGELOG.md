@@ -1,5 +1,18 @@
 # @uidu/data-manager
 
+## 2.4.16
+
+### Patch Changes
+
+- 375f00239: Added tanstack deps but not using it yet
+- Updated dependencies [375f00239]
+  - @uidu/menu@0.7.15
+  - @uidu/spinner@0.5.17
+  - @uidu/data-fields@1.5.29
+  - @uidu/table@1.4.19
+  - @uidu/data-controls@2.1.23
+  - @uidu/data-views@1.2.22
+
 ## 2.4.15
 
 ### Patch Changes
