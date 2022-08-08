@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.0.0
+
+### Major Changes
+
+- 074f55362: Bump react-table and typed all data-manager related components
+
 ## 1.5.30
 
 ### Patch Changes

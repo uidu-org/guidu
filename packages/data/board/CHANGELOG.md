@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 1.0.0
+
+### Major Changes
+
+- 074f55362: Bump react-table and typed all data-manager related components
+
 ## 0.5.15
 
 ### Patch Changes

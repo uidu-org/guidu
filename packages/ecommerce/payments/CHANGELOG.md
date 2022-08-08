@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.4.10
+
+### Patch Changes
+
+- 074f55362: Bump react-table and typed all data-manager related components
+
 ## 1.4.9
 
 ### Patch Changes
