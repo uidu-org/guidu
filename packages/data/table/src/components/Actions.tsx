@@ -1,17 +1,17 @@
 import { DotsHorizontalIcon } from '@heroicons/react/solid';
+import { CellContext, Row } from '@tanstack/react-table';
 import Button from '@uidu/button';
 import { RowActions } from '@uidu/data-manager';
 import { ButtonItem, MenuGroup, Section } from '@uidu/menu';
 import Popup from '@uidu/popup';
 import React, { useCallback, useMemo, useState } from 'react';
-import { Row } from 'react-table';
 
-export default function Actions({
+export default function Actions<T>({
   actions = () => [],
   params,
 }: {
-  actions: (row: Row) => RowActions[];
-  params: { row: Row; rowIndex: number };
+  actions: (row: Row<T>) => RowActions<T>[];
+  params: CellContext<T, unknown>;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const perRowActions = useMemo(

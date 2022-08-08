@@ -1,8 +1,8 @@
 import Pagination from '@uidu/pagination';
 import React from 'react';
 
-function DataManagerPagination({ pageIndex, pageOptions, gotoPage }) {
-  const pages = [...Array(pageOptions.length)].map((_, i) => ({
+function DataManagerPagination({ pageIndex, pageSize, gotoPage }) {
+  const pages = [...Array(pageSize)].map((_, i) => ({
     label: i + 1,
     href: `page-${i + 1}`,
     index: i,

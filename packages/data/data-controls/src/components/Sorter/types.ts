@@ -7,4 +7,6 @@ export type SorterProps = {
   sorters: Array<Sort>;
 };
 
-export type SorterFormProps = {};
+export type SorterFormProps = {
+  closePopup: () => void;
+};

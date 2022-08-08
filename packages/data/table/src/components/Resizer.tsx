@@ -1,30 +1,34 @@
+import { Header, Table } from '@tanstack/react-table';
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 
 const StyledResizer = styled.div<{ isResizing: boolean }>`
-  display: inline-block;
-  background: transparent;
-  width: 2px;
-  height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: translateX(50%);
-  z-index: 1;
+  ${tw`w-1 h-full absolute top-0 right-0 user-select[none] cursor[col-resize] touch-action[none] hover:opacity-100 z-20`}
   ${({ isResizing }) =>
-    css`
-      opacity: isResizing ? 1 : 0;
-    `}
-  &:hover {
-    background-color: rgba(var(--brand-primary), 1);
-  }
+    isResizing
+      ? tw`background-color[rgba(var(--brand-primary), .5)] opacity-100`
+      : tw``}
 `;
 
-export default function Resizer({ column }) {
+export default function Resizer<T>({
+  table,
+  header,
+}: {
+  table: Table<T>;
+  header: Header<T, unknown>;
+}) {
   return (
     <StyledResizer
-      {...column.getResizerProps({})}
-      className={`resizer ${column.isResizing ? 'isResizing' : ''}`}
+      onMouseDown={header.getResizeHandler()}
+      onTouchStart={header.getResizeHandler()}
+      isResizing={header.column.getIsResizing()}
+      className={`resizer ${header.column.getIsResizing() ? 'isResizing' : ''}`}
+      style={{
+        transform: header.column.getIsResizing()
+          ? `translateX(${table.getState().columnSizingInfo.deltaOffset}px)`
+          : '',
+      }}
     />
   );
 }

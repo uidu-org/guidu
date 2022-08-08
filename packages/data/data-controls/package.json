@@ -12,6 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.18.9",
     "@heroicons/react": "^1.0.6",
+    "@tanstack/react-table": "^8.5.11",
     "@uidu/button": "1.3.25",
     "@uidu/checkbox": "^1.4.5",
     "@uidu/data-fields": "^1.5.30",

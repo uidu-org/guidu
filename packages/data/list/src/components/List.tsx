@@ -1,27 +1,30 @@
+import { Row, Table } from '@tanstack/react-table';
 import React, { useCallback, useRef } from 'react';
 import { useVirtual } from 'react-virtual';
 import Header from './Header';
 import Item from './Item';
 
-export default function List({
-  rowHeight,
-  headerIcons,
+export default function List<T>({
+  rowHeight = 48,
   gutterSize = 16,
   tableInstance,
   onItemClick,
+}: {
+  rowHeight: number;
+  headerIcons: any;
+  gutterSize: number;
+  tableInstance: Table<T>;
+  onItemClick: (item: Row<T>) => void;
 }) {
   const parentRef = useRef();
 
-  const {
-    headerGroups,
-    prepareRow,
-    state: { filterBy },
-    columns,
-    page,
-  } = tableInstance;
+  const { getHeaderGroups, getRowModel } = tableInstance;
+
+  const headerGroups = getHeaderGroups();
+  const { rows } = getRowModel();
 
   const rowVirtualizer = useVirtual({
-    size: page.length,
+    size: rows.length,
     parentRef,
     estimateSize: useCallback(() => rowHeight, [rowHeight]),
     overscan: 5,
@@ -34,7 +37,7 @@ export default function List({
   return (
     <div tw="h-full">
       <div ref={parentRef} tw="h-full w-full overflow-auto xl:px-4 px-3">
-        <Header headerIcons={headerIcons} headerGroups={headerGroups} />
+        <Header headerGroups={headerGroups} />
         <div
           tw="relative"
           style={{
@@ -43,8 +46,7 @@ export default function List({
           }}
         >
           {rowVirtualizer.virtualItems.map((virtualRow) => {
-            const row = page[virtualRow.index];
-            prepareRow(row);
+            const row = rows[virtualRow.index];
             return (
               <div
                 key={virtualRow.index}

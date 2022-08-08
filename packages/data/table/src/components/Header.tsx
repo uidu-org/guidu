@@ -1,4 +1,5 @@
 import { ChevronDownIcon } from '@heroicons/react/solid';
+import { HeaderContext } from '@tanstack/react-table';
 import Button from '@uidu/button';
 import { ButtonItem, MenuGroup, Section } from '@uidu/menu';
 import Popup from '@uidu/popup';
@@ -17,23 +18,24 @@ import { FormattedMessage } from 'react-intl';
 
 export default function Header({
   column,
-  state,
-  setHiddenColumns,
-  setSortBy,
-  setGroupBy,
+  table,
+  header,
   autosizeAllColumns,
   setColumnWidth,
   getColumnWidth,
-  headerIcons,
-}) {
+  headerIcons = true,
+}: HeaderContext<any, unknown>) {
+  const { setColumnVisibility, setSorting, setGrouping, getState } = table;
+  const state = getState();
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const updateSortBy = useCallback(
     (columnId: string, desc: boolean) => {
-      if (state.sortBy.find((s) => s.id === columnId)) {
+      if (state.sorting.find((s) => s.id === columnId)) {
         // update
-        return setSortBy(
-          state.sortBy.map((s) => {
+        return setSorting(
+          state.sorting.map((s) => {
             if (s.id === columnId) {
               return {
                 id: columnId,
@@ -44,15 +46,15 @@ export default function Header({
           }),
         );
       }
-      return setSortBy([...state.sortBy, { id: columnId, desc }]);
+      return setSorting([...state.sorting, { id: columnId, desc }]);
     },
-    [state, setSortBy],
+    [state, setSorting],
   );
 
   const Content = useCallback(
     () => (
       <MenuGroup>
-        {column.canEdit && (
+        {column.columnDef.canEdit && (
           <Section hasSeparator>
             <ButtonItem
               onClick={() => console.log('Edit field')}
@@ -69,7 +71,7 @@ export default function Header({
           <ButtonItem
             onClick={() => {
               setIsOpen(false);
-              setColumnWidth(column, getColumnWidth(column));
+              // setColumnWidth(column, getColumnWidth(column));
             }}
             iconBefore={<AlignJustify size={14} />}
           >
@@ -83,11 +85,11 @@ export default function Header({
               </ButtonItem> */}
         </Section>
         <Section>
-          {column.isSorted && (
+          {column.getIsSorted() && (
             <ButtonItem
               onClick={(e) => {
                 setIsOpen(false);
-                setSortBy(state.sortBy.filter((s) => s.id !== column.id));
+                setSorting(state.sorting.filter((s) => s.id !== column.id));
               }}
               iconBefore={<ArrowRight size={14} />}
             >
@@ -98,7 +100,7 @@ export default function Header({
             </ButtonItem>
           )}
           <ButtonItem
-            isDisabled={column.isSorted && !column.isSortedDesc}
+            isDisabled={column.getIsSorted() && !column.getFirstSortDir()}
             onClick={(e) => {
               setIsOpen(false);
               updateSortBy(column.id, false);
@@ -114,8 +116,10 @@ export default function Header({
             </span>
           </ButtonItem>
           <ButtonItem
-            isDisabled={column.isSorted && column.isSortedDesc}
-            onClick={(e) => {
+            isDisabled={
+              column.getIsSorted() && column.getFirstSortDir() !== 'desc'
+            }
+            onClick={() => {
               setIsOpen(false);
               updateSortBy(column.id, true);
             }}
@@ -129,7 +133,7 @@ export default function Header({
               />
             </span>
           </ButtonItem>
-          {column.canFilter && (
+          {column.getCanFilter() && (
             <ButtonItem
               onClick={() => console.log('Add filter')}
               iconBefore={<Filter size={14} />}
@@ -140,42 +144,39 @@ export default function Header({
               />
             </ButtonItem>
           )}
-          {column.canGroupBy && (
-            <>
-              {column.isGrouped ? (
-                <ButtonItem
-                  onClick={() => {
-                    setIsOpen(false);
-                    setGroupBy(state.groupBy.filter((g) => g !== column.id));
-                  }}
-                  iconBefore={<Server size={14} />}
-                >
-                  <FormattedMessage
-                    defaultMessage="Remove grouping"
-                    id="uidu.table.header.remove_grouping"
-                  />
-                </ButtonItem>
-              ) : (
-                <ButtonItem
-                  onClick={() => {
-                    setIsOpen(false);
-                    setGroupBy([...state.groupBy, column.id]);
-                  }}
-                  iconBefore={<Server size={14} />}
-                >
-                  <FormattedMessage
-                    defaultMessage="Group by this field"
-                    id="uidu.table.header.add_grouping"
-                  />
-                </ButtonItem>
-              )}
-            </>
-          )}
-          {column.canHide && (
+          {column.getCanGroup() &&
+            (column.getIsGrouped() ? (
+              <ButtonItem
+                onClick={() => {
+                  setIsOpen(false);
+                  setGrouping(state.grouping.filter((g) => g !== column.id));
+                }}
+                iconBefore={<Server size={14} />}
+              >
+                <FormattedMessage
+                  defaultMessage="Remove grouping"
+                  id="uidu.table.header.remove_grouping"
+                />
+              </ButtonItem>
+            ) : (
+              <ButtonItem
+                onClick={() => {
+                  setIsOpen(false);
+                  setGrouping([...state.grouping, column.id]);
+                }}
+                iconBefore={<Server size={14} />}
+              >
+                <FormattedMessage
+                  defaultMessage="Group by this field"
+                  id="uidu.table.header.add_grouping"
+                />
+              </ButtonItem>
+            ))}
+          {column.columnDef.enableHiding && (
             <ButtonItem
               onClick={(e) => {
                 setIsOpen(false);
-                setHiddenColumns([...state.hiddenColumns, column.id]);
+                setColumnVisibility([...state.columnVisibility, column.id]);
               }}
               iconBefore={<EyeOff size={14} />}
             >
@@ -188,16 +189,7 @@ export default function Header({
         </Section>
       </MenuGroup>
     ),
-    [
-      column,
-      getColumnWidth,
-      setColumnWidth,
-      state,
-      setHiddenColumns,
-      setGroupBy,
-      setSortBy,
-      updateSortBy,
-    ],
+    [column, state, setColumnVisibility, setGrouping, setSorting, updateSortBy],
   );
 
   const Trigger = useCallback(
@@ -222,12 +214,12 @@ export default function Header({
       onDoubleClick={() => setIsOpen(true)}
     >
       <div tw="flex-grow truncate">
-        {headerIcons && column?.icon && (
+        {headerIcons && column?.columnDef.meta?.icon && (
           <span tw="mr-3 color[rgb(var(--body-secondary-color))] opacity-40">
-            {column.icon}
+            {column.columnDef.meta?.icon}
           </span>
         )}
-        {column.name}
+        {column.columnDef.meta?.name}
       </div>
       {!column.suppressMenu && (
         <div tw="ml-4 font-weight[initial]">

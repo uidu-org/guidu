@@ -7,4 +7,6 @@ export type GrouperProps = {
   groupers?: Array<Group>;
 };
 
-export type GrouperFormProps = {};
+export type GrouperFormProps = {
+  closePopup: () => void;
+};

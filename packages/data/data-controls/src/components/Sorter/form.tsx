@@ -2,12 +2,14 @@ import { XIcon } from '@heroicons/react/solid';
 import Button from '@uidu/button';
 import { useDataManagerContext } from '@uidu/data-manager';
 import Form from '@uidu/form';
+import { MenuGroup, Section } from '@uidu/menu';
 import Select from '@uidu/select';
 import React, { Fragment, useRef } from 'react';
 import { ArrowDown, ArrowRight, ArrowUp } from 'react-feather';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { OptionProps, SingleValueProps } from 'react-select';
 import { PickField } from '../../utils';
+import ColumnsList from '../../utils/ColumnsList';
 import { SorterFormProps } from './types';
 
 function Option({ data, innerProps, getStyles, ...otherProps }: OptionProps) {
@@ -51,30 +53,56 @@ function SingleValue({
   );
 }
 
-export default function SorterForm(props: SorterFormProps) {
+export default function SorterForm({ closePopup }: SorterFormProps) {
   const intl = useIntl();
   const form = useRef(null);
   const {
-    tableInstance: {
-      columns,
-      state: { sortBy },
-      setSortBy,
-    },
+    tableInstance: { getState, setSorting, getAllFlatColumns },
   } = useDataManagerContext();
 
+  const { sorting } = getState();
+  const columns = getAllFlatColumns();
+
   const handleSubmit = async (model) => {
-    setSortBy(model.sorters || []);
+    setSorting(model.sorters || []);
   };
 
-  const sortableColumnDefs = columns.filter((c) => c.isVisible && c.canSortBy);
+  const sortableColumns = columns.filter((column) => column.getCanSort()); //.filter((c) => c.isVisible && c.canSortBy);
+
+  if (sorting.length === 0) {
+    return (
+      <MenuGroup>
+        <Section
+          title={intl.formatMessage({
+            defaultMessage: 'Pick a field to group by',
+          })}
+        >
+          <ColumnsList
+            columns={sortableColumns.filter(
+              (f) => sorting.map((s) => s.id).indexOf(f.id) < 0,
+            )}
+            onClick={(column) =>
+              setSorting([
+                ...sorting,
+                {
+                  id: column.id,
+                  desc: false,
+                },
+              ])
+            }
+          />
+        </Section>
+      </MenuGroup>
+    );
+  }
 
   return (
-    <Form ref={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
-      <div tw="space-y-4">
-        {sortBy.length > 0 && (
-          <div tw="grid grid-template-columns[max-content 1fr min-content] gap-4 px-4">
-            {sortBy.map((sorter: any, index: number) => {
-              return (
+    <div tw="py-4">
+      <Form ref={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
+        <div tw="space-y-4">
+          {sorting?.length > 0 && (
+            <div tw="grid grid-template-columns[max-content 1fr min-content] gap-4 px-4">
+              {sorting.map((sorter, index: number) => (
                 <Fragment
                   // tw="px-3 space-x-3 mb-0 flex items-center"
                   key={sorter.id}
@@ -107,12 +135,12 @@ export default function SorterForm(props: SorterFormProps) {
                         }}
                         name={`sorters[${index}][id]`}
                         value={sorter.id}
-                        options={sortableColumnDefs.map((columnDef) => ({
-                          id: columnDef.id,
-                          name: columnDef.name,
-                          ...(columnDef.icon
+                        options={sortableColumns.map((column) => ({
+                          id: column.id,
+                          name: column.columnDef.meta?.name,
+                          ...(column.columnDef.meta?.icon
                             ? {
-                                before: columnDef.icon,
+                                before: column.columnDef.meta?.icon,
                               }
                             : {}),
                         }))}
@@ -175,44 +203,49 @@ export default function SorterForm(props: SorterFormProps) {
                     type="button"
                     onClick={(e) => {
                       e.preventDefault();
-                      setSortBy(sortBy.filter((s) => s.id !== sorter.id));
+                      const newSorting = sorting.filter(
+                        (s) => s.id !== sorter.id,
+                      );
+                      setSorting(newSorting);
+                      if (newSorting.length === 0) {
+                        closePopup();
+                      }
                     }}
                     iconBefore={<XIcon tw="h-4 w-4" />}
                   />
                 </Fragment>
-              );
-            })}
-          </div>
-        )}
-        <PickField
-          label={
-            sortBy.length ? (
-              <FormattedMessage
-                defaultMessage="Pick another field to sort by"
-                id="uidu.data-controls.sorter.add_another"
-              />
-            ) : (
-              <FormattedMessage
-                defaultMessage="No selected fields to sort by. Pick one"
-                id="uidu.data-controls.sorter.no_sorters"
-              />
-            )
-          }
-          onClick={(columnDef) => {
-            setSortBy([
-              ...sortBy,
-              {
-                id: columnDef.id,
-                desc: false,
-              },
-            ]);
-          }}
-          isDefaultOpen={sortBy.length === 0}
-          columnDefs={sortableColumnDefs.filter(
-            (f) => sortBy.map((s) => s.id).indexOf(f.id) < 0,
+              ))}
+            </div>
           )}
-        />
-      </div>
-    </Form>
+          <PickField
+            label={
+              sorting.length ? (
+                <FormattedMessage
+                  defaultMessage="Pick another field to sort by"
+                  id="uidu.data-controls.sorter.add_another"
+                />
+              ) : (
+                <FormattedMessage
+                  defaultMessage="No selected fields to sort by. Pick one"
+                  id="uidu.data-controls.sorter.no_sorters"
+                />
+              )
+            }
+            onClick={(columnDef) => {
+              setSorting([
+                ...sorting,
+                {
+                  id: columnDef.id,
+                  desc: false,
+                },
+              ]);
+            }}
+            columns={sortableColumns.filter(
+              (f) => sorting.map((s) => s.id).indexOf(f.id) < 0,
+            )}
+          />
+        </div>
+      </Form>
+    </div>
   );
 }

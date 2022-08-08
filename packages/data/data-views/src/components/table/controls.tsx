@@ -10,41 +10,40 @@ const ConfiguratorForm = loadable(() => import('./configurator'));
 
 export default function Controls({ availableControls }) {
   const {
-    tableInstance: {
-      state: { hiddenColumns },
-    },
+    tableInstance: { getState },
   } = useDataManagerContext();
-  const hiddenCount = hiddenColumns.length;
+  const { columnVisibility } = getState();
+
+  const hiddenCount =
+    Object.entries(columnVisibility).filter((item) => !item[1]).length || 0;
 
   return (
-    <>
-      <ButtonGroup>
-        <Configurator
-          active={hiddenCount > 0}
-          icon={EyeOff}
-          name={
-            <FormattedMessage
-              defaultMessage={`{hiddenCount, plural,
+    <ButtonGroup>
+      <Configurator
+        active={hiddenCount > 0}
+        icon={EyeOff}
+        name={
+          <FormattedMessage
+            defaultMessage={`{hiddenCount, plural,
                   =0 {Hide fields}
                   one {1 hidden field}
                   other {{hiddenCount, number} hidden fields}
                 }`}
-              values={{ hiddenCount }}
-              id="uidu.data-views.table.controls.hide_fields"
-            />
-          }
-          configurator={ConfiguratorForm}
-        />
-        {availableControls.filterer.visible && (
-          <Filterer {...availableControls.filterer.props} />
-        )}
-        {availableControls.sorter.visible && (
-          <Sorter {...availableControls.sorter.props} />
-        )}
-        {availableControls.grouper.visible && (
-          <Grouper {...availableControls.grouper.props} />
-        )}
-      </ButtonGroup>
-    </>
+            values={{ hiddenCount }}
+            id="uidu.data-views.table.controls.hide_fields"
+          />
+        }
+        configurator={ConfiguratorForm}
+      />
+      {availableControls.filterer.visible && (
+        <Filterer {...availableControls.filterer.props} />
+      )}
+      {availableControls.sorter.visible && (
+        <Sorter {...availableControls.sorter.props} />
+      )}
+      {availableControls.grouper.visible && (
+        <Grouper {...availableControls.grouper.props} />
+      )}
+    </ButtonGroup>
   );
 }

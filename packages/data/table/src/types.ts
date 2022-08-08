@@ -11,7 +11,6 @@ export type ColumnGroup = ColumnGroupIdentifier & {
 };
 
 export type Column = Field & {
-  cellProps?: any;
   primary?: boolean;
   fieldGroup?: ColumnGroupIdentifier;
 };

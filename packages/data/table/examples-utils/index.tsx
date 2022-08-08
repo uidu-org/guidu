@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { ColumnDef, Row } from '@tanstack/react-table';
 import numeral from 'numeral';
 
 export const withGroupColumns = [
@@ -40,52 +41,70 @@ export const withGroupColumns = [
   },
 ];
 
-export const columnDefsNext = {
+export const columnDefsNext: Record<string, ColumnDef<unknown>> = {
   'Users.id': {
-    isPrivate: true,
+    id: 'Users.id',
+    meta: {
+      kind: 'string',
+      isPrivate: true,
+    },
   },
   'Users.firstName': {
-    name: 'First name',
+    id: 'Users.firstName',
+    meta: {
+      kind: 'string',
+      name: 'First name',
+    },
   },
   'Users.email': {
-    cellProps: {
-      avatar: ({ row }) => {
-        if (!row.values['Users.avatar']) {
-          return null;
+    id: 'Users.email',
+    meta: {
+      avatar: ({ row }: { row: Row<unknown> }) => {
+        if (!row._valuesCache['Users.avatar']) {
+          return '';
         }
-        return `https://uidu.local:8443/uploads/${row.values['Users.avatar']}`;
+        return `https://uidu.local:8443/uploads/${row._valuesCache['Users.avatar']}`;
       },
+      isPrimary: true,
+      name: 'Email',
+      pinned: 'left',
+      kind: 'contact',
     },
-    primary: true,
-    name: 'Email',
-    pinned: 'left',
-    kind: 'contact',
-    width: 340,
+    size: 340,
   },
   'Donations.average': {
-    name: 'Average donations',
-    kind: 'currency',
-    valueFormatter: ({ value }) => {
-      return numeral(value).format('$ 0,0.00');
+    id: 'Donations.average',
+    meta: {
+      name: 'Average donations',
+      kind: 'currency',
+      valueFormatter: (value) => {
+        return numeral(value).format('$ 0,0.00');
+      },
     },
   },
   'Donations.max': {
-    name: 'Amount',
-    kind: 'currency',
-    valueFormatter: ({ value }) => {
-      return numeral(value).format('$ 0,0.00');
+    id: 'Donations.max',
+    meta: {
+      name: 'Amount',
+      kind: 'currency',
+      valueFormatter: (value) => {
+        return numeral(value).format('$ 0,0.00');
+      },
     },
   },
   'Donations.amount': {
-    name: 'Donations amount',
-    kind: 'currency',
-    valueFormatter: ({ value }) => {
-      return numeral(value).format('$ 0,0.00');
+    id: 'Donations.amount',
+    meta: {
+      name: 'Donations amount',
+      kind: 'currency',
+      valueFormatter: (value) => {
+        return numeral(value).format('$ 0,0.00');
+      },
     },
   },
 };
 
-export const availableColumns = [
+export const availableColumns: ColumnDef<unknown>[] = [
   // {
   //   kind: 'uid',
   //   id: 'id',
@@ -93,119 +112,135 @@ export const availableColumns = [
   //   cellProps: { onItemClick: (params) => console.log(params) },
   // },
   {
-    kind: 'cover',
-    id: 'cover',
-    field: 'cover',
-    name: 'Cover',
+    accessorKey: 'cover',
+    meta: {
+      kind: 'cover',
+      name: 'Cover',
+    },
   },
   {
-    kind: 'avatar',
-    id: 'avatar',
-    field: 'avatar',
-    name: 'Avatar',
+    accessorKey: 'avatar',
+    meta: {
+      kind: 'avatar',
+      id: 'avatar',
+      name: 'Avatar',
+    },
   },
   {
-    kind: 'contact',
-    cellProps: {
+    meta: {
+      kind: 'contact',
       avatar: ({ row }) => {
         return row.original.avatar;
       },
+      isPrimary: true,
+      name: 'Donor',
+      pinned: 'left',
+      valueGetter: (props) => {
+        return props.data ? props.data.member.email : null;
+      },
     },
     id: 'member',
-    accessor: (data) => data.member.email,
-    primary: true,
-    name: 'Donor',
-    field: 'member',
-    pinned: 'left',
-    valueGetter: (props) => {
-      return props.data ? props.data.member.email : null;
-    },
-    width: 340,
+    accessorFn: (data) => data.member.email,
+    size: 340,
   },
   {
-    kind: 'string',
     id: 'displayName',
-    field: 'displayName',
-    name: 'FullName',
-  },
-  {
-    kind: 'currency',
-    id: 'amount',
-    field: 'amount',
-    name: 'Donation amount',
-    aggFunc: 'sum',
-    valueFormatter: ({ value, node, aggData, groupData, ...rest }) => {
-      return numeral(value).format('$ 0,0.00');
+    meta: {
+      kind: 'string',
+      name: 'FullName',
     },
+    accessorKey: 'displayName',
   },
   {
-    kind: 'country',
+    id: 'amount',
+    meta: {
+      name: 'Donation amount',
+      kind: 'currency',
+      aggFunc: 'sum',
+      valueFormatter: (value) => {
+        return numeral(value).format('$ 0,0.00');
+      },
+    },
+    accessorKey: 'amount',
+  },
+  {
     id: 'country',
-    field: 'country',
-    name: 'Country',
-    canGroupBy: true,
-    editable: true,
+    meta: {
+      kind: 'country',
+      name: 'Country',
+      enableEditing: true,
+    },
+    accessorKey: 'country',
+    enableGrouping: true,
   },
   {
-    kind: 'percent',
+    meta: {
+      kind: 'percent',
+      name: 'Percentuale',
+      valueFormatter: (value: number) => numeral(value / 100).format('% 0'),
+    },
     id: 'percent',
-    field: 'percent',
-    name: 'Percentuale',
-    valueGetter: ({ value }) => numeral(value / 100).format('% 0'),
+    accessorKey: 'percent',
   },
   {
-    kind: 'date',
-    cellProps: { format: 'l' },
     id: 'createdAt',
-    field: 'createdAt',
-    name: 'Data creazione',
-    canGroupBy: true,
-    editable: true,
+    meta: {
+      kind: 'date',
+      name: 'Data creazione',
+      enableEditing: true,
+    },
+    accessorKey: 'createdAt',
+    enableGrouping: true,
   },
   {
-    kind: 'date',
-    cellProps: { format: 'l' },
+    meta: {
+      kind: 'date',
+      name: 'Ultimo aggiornamento',
+    },
     id: 'updatedAt',
-    field: 'updatedAt',
-    name: 'Ultimo aggiornamento',
+    accessorKey: 'updatedAt',
   },
   {
-    kind: 'singleSelect',
-    cellProps: {
+    id: 'gender',
+    meta: {
+      kind: 'singleSelect',
       options: [
         { id: 'male', name: 'Maschio', color: 'turquoise' },
         { id: 'female', name: 'Femmina', color: 'yellow' },
         { id: null, name: 'Unknown' },
       ],
+      name: 'Genere',
+      enableEditing: true,
     },
-    id: 'gender',
-    field: 'gender',
-    name: 'Genere',
-    canGroupBy: true,
-    editable: true,
+    accessorKey: 'gender',
+    enableGrouping: true,
     filter: 'exact',
   },
   {
-    kind: 'string',
+    meta: { kind: 'string', name: 'firstName' },
     id: 'firstName',
-    field: 'firstName',
-    name: 'firstName',
+    accessorKey: 'firstName',
   },
   {
-    kind: 'rating',
+    meta: {
+      kind: 'rating',
+      name: 'Rating',
+      enableEditing: true,
+    },
     id: 'rating',
-    field: 'rating',
-    name: 'Rating',
-    canGroupBy: true,
-    editable: true,
+    accessorKey: 'rating',
+    enableGrouping: true,
   },
   {
-    kind: 'string',
+    meta: {
+      kind: 'string',
+      name: 'Donation Campaign',
+    },
     id: 'donationCampaign',
-    field: 'donationCampaign',
-    name: 'Donation Campaign',
-    canGroupBy: true,
-    accessor: (data) => data.donationCampaign.name,
+    accessorKey: 'donationCampaign',
+
+    enableGrouping: true,
+    accessorFn: (data) => data.donationCampaign.name,
   },
   // {
   //   id: 'role',
@@ -244,20 +279,24 @@ export const availableColumns = [
   //   ...addressColumn(),
   // },
   {
-    kind: 'phone',
+    meta: {
+      kind: 'phone',
+      name: 'Telefono',
+    },
     id: 'phone',
-    field: 'phone',
-    name: 'Telefono',
+    accessorKey: 'phone',
   },
   {
-    kind: 'text',
+    meta: {
+      kind: 'text',
+      name: 'Long text',
+    },
     id: 'text',
-    field: 'text',
-    name: 'Long text',
+    accessorKey: 'text',
   },
   {
-    kind: 'paymentMethod',
-    cellProps: {
+    meta: {
+      kind: 'paymentMethod',
       options: [
         {
           id: 1,
@@ -266,11 +305,12 @@ export const availableColumns = [
         { id: 2, name: 'Transfer' },
         { id: 3, name: 'Credit Card' },
       ],
+      name: 'Payment Method',
     },
+
     id: 'paymentMethod',
-    field: 'paymentMethod',
-    name: 'Payment Method',
-    canGroupBy: true,
+    accessorKey: 'paymentMethod',
+    enableGrouping: true,
   },
 
   // {
@@ -342,10 +382,10 @@ export const fetchContacts = () => {
             name: faker.name.findName(),
             email: faker.internet.email(),
           },
-          phone: faker.phone.phoneNumber(),
+          phone: faker.phone.number(),
           progress: Math.random(),
         })),
       );
-    }, 3000);
+    }, 300);
   });
 };

@@ -1,25 +1,25 @@
+import { CellContext } from '@tanstack/react-table';
 import React from 'react';
-// import { groupRenderer } from '../../groups';
 
-export default (params) => {
-  // if (params.node && params.node.group) {
-  //   return groupRenderer(params);
+export default function Cell<T>(props: CellContext<T, string>) {
+  // if (props.row.isGrouped) {
+  //   return groupRenderer(props);
   // }
+  const { getValue, row, column } = props;
+  const value = getValue();
 
-  const { value, row } = params;
-
-  // create the cell
   return (
     <div tw="min-w-0">
       <span tw="flex items-center">
-        {params.avatar && (
+        {column.columnDef.meta?.avatar && (
           <img
             tw="rounded-full mr-2.5 border w-6"
-            src={params.avatar(params)}
+            src={column.columnDef.meta.avatar({ row })}
+            alt={value}
           />
         )}
         <span tw="truncate">{value}</span>
       </span>
     </div>
   );
-};
+}

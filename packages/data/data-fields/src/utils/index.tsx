@@ -1,3 +1,4 @@
+import { Column, ColumnDef } from '@tanstack/react-table';
 import numeral from 'numeral';
 import {
   addField,
@@ -28,9 +29,9 @@ import {
   urlField,
   voteField,
 } from '../fields';
-import { Field, FieldGroup } from '../types';
+import { FieldGroup, FieldKind } from '../types';
 
-const getColumnType = (kind: Field['kind']) => {
+const getColumnType = (kind: FieldKind) => {
   switch (kind) {
     case 'addField':
       return addField;
@@ -89,6 +90,26 @@ const getColumnType = (kind: Field['kind']) => {
   }
 };
 
+export function buildNextColumn<T>({
+  columns,
+}: {
+  columns: ColumnDef<T, unknown>[];
+}): ColumnDef<T, unknown>[] {
+  return columns.map((column) => {
+    const columnType = getColumnType(column.meta?.kind);
+    return {
+      id: column.accessorKey,
+      accessor: column.id,
+      ...columnType,
+      ...column,
+      meta: {
+        ...(columnType?.meta || {}),
+        ...column.meta,
+      },
+    };
+  });
+}
+
 export const buildColumn = ({ columns, ...fieldGroup }: FieldGroup) => {
   return columns.map(({ primary, kind, ...column }) => {
     return {
@@ -111,20 +132,32 @@ export const buildColumn = ({ columns, ...fieldGroup }: FieldGroup) => {
   });
 };
 
+export function buildNextColumns<T>(
+  columns: ColumnDef<T>[],
+): Array<ColumnDef<T>> {
+  return columns.reduce(
+    (arr, item) => [...arr, ...buildNextColumn(item)],
+    [] as ColumnDef<T>[],
+  );
+}
+
 export const buildColumns = (columns): Array<FieldGroup> => {
   return columns.reduce((arr, item) => {
     return [...arr, ...buildColumn(item)];
   }, []);
 };
 
-export const getPrimary = (columnDefs) =>
-  columnDefs.filter((column) => column.isPrimary)[0];
+export function getPrimary<T>(columns: Column<T>[]) {
+  return columns.find((column) => column.columnDef.meta?.isPrimary);
+}
 
-export const getCover = (columnDefs) =>
-  columnDefs.filter((column) => column.kind === 'cover')[0];
+export function getCover<T>(columns: Column<T>[]) {
+  return columns.find((column) => column.columnDef.meta?.kind === 'cover');
+}
 
-export const getAvatar = (columnDefs) =>
-  columnDefs.filter((column) => column.kind === 'avatar')[0];
+export function getAvatar<T>(columns: Column<T>[]) {
+  return columns.find((column) => column.columnDef.meta?.kind === 'avatar');
+}
 
 export const numericComparator = (number1, number2) => {
   const numericNumber1 = numeral(number1).value();

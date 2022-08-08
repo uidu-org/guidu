@@ -1,46 +1,38 @@
-import { FieldGroup } from '@uidu/data-fields';
-import React, { createContext, useContext } from 'react';
-import {
-  UseColumnOrderInstanceProps,
-  UseExpandedInstanceProps,
-  UseFiltersInstanceProps,
-  UseGroupByInstanceProps,
-  UsePaginationInstanceProps,
-  UseRowSelectInstanceProps,
-  UseSortByInstanceProps,
-  UseTableInstanceProps,
-} from 'react-table';
+import { Column, Table } from '@tanstack/react-table';
+import React, { createContext, useContext, useMemo } from 'react';
 
-export interface TableInstance<D extends object = {}>
-  extends UseColumnOrderInstanceProps<D>,
-    UseExpandedInstanceProps<D>,
-    UseFiltersInstanceProps<D>,
-    UseGroupByInstanceProps<D>,
-    UsePaginationInstanceProps<D>,
-    UseRowSelectInstanceProps<D>,
-    UseTableInstanceProps<D>,
-    UseSortByInstanceProps<D> {}
-
-export const DataManagerContext = createContext<{
-  tableInstance: TableInstance<any>;
-  columnDefs: Array<FieldGroup>;
-  columns: Array<FieldGroup>;
+interface DataManagerContextProps<T> {
+  tableInstance: Table<T>;
+  columns: Column<T, unknown>[];
+  onItemClick: (item: T) => void;
   currentView?: any;
   updateView?: (name: string, value: any) => Promise<any>;
-  rowData?: Array<any>;
+  rowData?: Array<T>;
   onAddField?: () => void;
   columnCount?: number;
   setAggregation?: () => void;
   setColumnWidth?: () => void;
-}>(null);
+}
 
-function DataManagerProvider({
+export const DataManagerContext =
+  createContext<DataManagerContextProps<T>>(null);
+
+function DataManagerProvider<T>({
   children,
   rowData = [],
-  columnDefs: columns,
+  columns,
   currentView,
   updateView,
   tableInstance,
+  onItemClick,
+}: {
+  children: React.ReactNode;
+  rowData?: T[];
+  columns: Column<T, unknown>[];
+  currentView?: any;
+  updateView?: (name: string, value: any) => Promise<any>;
+  tableInstance: Table<T>;
+  onItemClick: (item: T) => void;
 }) {
   const setColumnCount = (columnCount) => {
     updateView('preferences', { ...currentView.preferences, columnCount }).then(
@@ -76,21 +68,32 @@ function DataManagerProvider({
     // ]);
   };
 
+  const value = useMemo(
+    () => ({
+      tableInstance,
+      currentView,
+      updateView,
+      columns,
+      rowData,
+      columnCount: currentView.preferences?.columnCount,
+      setColumnCount,
+      setAggregation,
+      setColumnWidth,
+      onItemClick,
+    }),
+    [
+      tableInstance,
+      currentView,
+      updateView,
+      columns,
+      rowData,
+      setColumnCount,
+      onItemClick,
+    ],
+  );
+
   return (
-    <DataManagerContext.Provider
-      value={{
-        tableInstance,
-        currentView,
-        updateView,
-        columns,
-        columnDefs: columns,
-        rowData,
-        columnCount: currentView.preferences?.columnCount,
-        setColumnCount,
-        setAggregation,
-        setColumnWidth,
-      }}
-    >
+    <DataManagerContext.Provider value={value}>
       {children}
     </DataManagerContext.Provider>
   );

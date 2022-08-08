@@ -12,7 +12,7 @@ const StyledCover = styled.div<{ height: number; cover?: string }>`
   align-items: center;
 `;
 
-const Cover = ({ cover, children }: { cover: any; children?: any }) => {
+function Cover({ cover, children }: { cover: any; children?: any }) {
   if (!cover) {
     return (
       <StyledCover tw="rounded-t" height={207}>
@@ -30,13 +30,13 @@ const Cover = ({ cover, children }: { cover: any; children?: any }) => {
       {children}
     </StyledCover>
   );
-};
+}
 
-const Avatar = ({ avatar }) => {
+function Avatar({ avatar }) {
   return (
     <img src={avatar.value} style={{ borderRadius: '100%', width: '7rem' }} />
   );
-};
+}
 
 export default function ItemCover({ cover, avatar }) {
   return <Cover cover={cover}>{avatar && <Avatar avatar={avatar} />}</Cover>;

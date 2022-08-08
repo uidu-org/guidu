@@ -5,12 +5,11 @@ import { FormattedMessage } from 'react-intl';
 
 export default function CardTypes({}) {
   const {
-    tableInstance: {
-      columns,
-      state: { hiddenColumns },
-      setHiddenColumns,
-    },
+    tableInstance: { getAllColumns, getState, setColumnVisibility },
   } = useDataManagerContext();
+
+  const columns = getAllColumns();
+  const { columnVisibility } = getState();
 
   const options = [{ id: 'basic', name: 'Basic' }];
   const coverField = columns.filter((column) => column.kind === 'cover')[0];
@@ -32,24 +31,24 @@ export default function CardTypes({}) {
   const handleChange = (_name, value) => {
     switch (value) {
       case 'with-avatar':
-        setHiddenColumns([
-          ...hiddenColumns.filter((c) => c !== 'avatar'),
+        setColumnVisibility([
+          ...columnVisibility.filter((c) => c !== 'avatar'),
           'cover',
         ]);
         break;
       case 'with-cover':
-        setHiddenColumns([
-          ...hiddenColumns.filter((c) => c !== 'cover'),
+        setColumnVisibility([
+          ...columnVisibility.filter((c) => c !== 'cover'),
           'avatar',
         ]);
         break;
       case 'with-avatar-and-cover':
-        setHiddenColumns([
-          ...hiddenColumns.filter((c) => ['avatar', 'cover'].includes(c)),
+        setColumnVisibility([
+          ...columnVisibility.filter((c) => ['avatar', 'cover'].includes(c)),
         ]);
         break;
       default:
-        setHiddenColumns([...hiddenColumns, 'avatar', 'cover']);
+        setColumnVisibility([...columnVisibility, 'avatar', 'cover']);
         break;
     }
   };

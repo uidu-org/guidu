@@ -1,3 +1,4 @@
+import { Column, Row } from '@tanstack/react-table';
 import { getAvatar, getCover } from '@uidu/data-fields';
 import { ScrollableContainer, ShellBody } from '@uidu/shell';
 import React, { useCallback, useMemo, useRef } from 'react';
@@ -8,8 +9,8 @@ import GalleryItem from './GalleryItem';
 const ITEM_HEADER_HEIGHT = 42;
 const ITEM_COLUMN_ROW = 64;
 
-function chunkArray(myArray, chunkSize) {
-  const results = [];
+function chunkArray<T>(myArray: Row<T>[], chunkSize: number) {
+  const results = [] as Row<T>[][];
   const copied = [...myArray];
 
   while (copied.length) {
@@ -19,52 +20,60 @@ function chunkArray(myArray, chunkSize) {
   return results;
 }
 
-export default function Gallery({
+export default function Gallery<T>({
   tableInstance,
   onItemClick,
   columnCount = 4,
   gutterSize = 8,
-}: GalleryProps) {
+}: GalleryProps<T>) {
   const parentRef = useRef();
+  const { getRowModel, getAllFlatColumns } = tableInstance;
+  const columns = getAllFlatColumns();
+  const { rows } = getRowModel();
 
-  const { prepareRow, page, columns, visibleColumns } = tableInstance;
+  const getGutterSize = useCallback(
+    ({ avatar, cover }: { avatar?: Column<T>; cover?: Column<T> }) => {
+      if (cover) {
+        return cover ? (cover.getSize() * 3) / 2 : 207;
+      }
 
-  const getGutterSize = ({ avatar, cover }) => {
-    if (cover) {
-      return cover.width ? (cover.width * 3) / 2 : 207;
-    }
+      if (avatar) {
+        return 207;
+      }
 
-    if (avatar) {
-      return 207;
-    }
+      return 0;
+    },
+    [],
+  );
 
-    return 0;
-  };
+  const cover = useMemo(() => getCover<T>(columns), [columns]);
+  const avatar = useMemo(() => getAvatar<T>(columns), [columns]);
 
-  const cover = getCover(columns);
-  const avatar = getAvatar(columns);
+  console.log('renderer');
 
-  const estimateSize = useCallback(() => {
-    return (
+  const estimateSize = useCallback(
+    () =>
       getGutterSize({ avatar, cover }) +
       ITEM_HEADER_HEIGHT +
       ITEM_COLUMN_ROW *
-        visibleColumns.filter(
-          (column) =>
-            column.kind !== 'uid' &&
-            column.kind !== 'selection' &&
-            !column.isPrivate &&
-            !column.isPrimary &&
-            column.kind !== 'addField',
-        ).length +
+        columns
+          .filter((column) => column.getIsVisible())
+          .filter(
+            (column) =>
+              column.columnDef?.meta?.kind !== 'uid' &&
+              column.columnDef?.meta?.kind !== 'selection' &&
+              !column.isPrivate &&
+              !column.isPrimary &&
+              column.columnDef?.meta?.kind !== 'addField',
+          ).length +
       // ITEM_PADDING +
-      gutterSize
-    );
-  }, [gutterSize, visibleColumns, avatar, cover]);
+      gutterSize,
+    [gutterSize, columns, avatar, cover, getGutterSize],
+  );
 
-  const items = useMemo(
-    () => chunkArray(page, columnCount),
-    [page, columnCount],
+  const items: Array<Row<T>[]> = useMemo(
+    () => chunkArray<T>(rows, columnCount),
+    [rows, columnCount],
   );
 
   const rowVirtualizer = useVirtual({
@@ -84,7 +93,10 @@ export default function Gallery({
           }}
         >
           {rowVirtualizer.virtualItems.map((virtualRow) => {
-            const row = items[virtualRow.index];
+            const gridRow = items[virtualRow.index];
+            if (!gridRow) {
+              return null;
+            }
             return (
               <div
                 key={virtualRow.index}
@@ -100,17 +112,14 @@ export default function Gallery({
                     .join(' '),
                 }}
               >
-                {row.map((item, index) => {
-                  prepareRow(item);
-                  return (
-                    <GalleryItem
-                      key={`${virtualRow.index}-${index}`}
-                      onItemClick={onItemClick}
-                      item={item}
-                      tableInstance={tableInstance}
-                    />
-                  );
-                })}
+                {gridRow.map((item) => (
+                  <GalleryItem
+                    key={item.id}
+                    onItemClick={onItemClick}
+                    item={item}
+                    tableInstance={tableInstance}
+                  />
+                ))}
               </div>
             );
           })}

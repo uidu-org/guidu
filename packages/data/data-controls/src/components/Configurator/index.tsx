@@ -1,6 +1,6 @@
-import Popup from '@uidu/popup';
-import React, { useState } from 'react';
-import { Trigger } from '../../styled';
+import Popup, { TriggerProps } from '@uidu/popup';
+import React, { useCallback, useState } from 'react';
+import { Trigger as StyledTrigger } from '../../styled';
 import { ConfiguratorProps } from './types';
 
 export default function Configurator({
@@ -12,31 +12,38 @@ export default function Configurator({
 }: ConfiguratorProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(isConfiguratorOpen);
 
+  const Trigger = useCallback(
+    (triggerProps: TriggerProps) => (
+      <StyledTrigger
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...triggerProps}
+        activeBg="#d0f0fd"
+        active={active}
+        onClick={() => setIsDialogOpen((prevIsDialogOpen) => !prevIsDialogOpen)}
+        iconBefore={<Icon strokeWidth={2} size={14} />}
+      >
+        <span tw="hidden xl:block">{name}</span>
+      </StyledTrigger>
+    ),
+    [name, active, Icon],
+  );
+
+  const Content = useCallback(
+    () => (
+      <div tw="w-screen sm:max-width[400px]">
+        <ConfiguratorForm fallback={<div>Loading...</div>} />
+      </div>
+    ),
+    [ConfiguratorForm],
+  );
+
   return (
     <Popup
       isOpen={isDialogOpen}
       onClose={() => setIsDialogOpen(false)}
       placement="bottom-start"
-      trigger={(triggerProps) => (
-        <Trigger
-          {...triggerProps}
-          activeBg="#d0f0fd"
-          active={active}
-          onClick={() =>
-            setIsDialogOpen((prevIsDialogOpen) => !prevIsDialogOpen)
-          }
-          iconBefore={<Icon strokeWidth={2} size={14} />}
-        >
-          <span tw="hidden xl:block">{name}</span>
-        </Trigger>
-      )}
-      content={() => {
-        return (
-          <div tw="w-screen sm:width[500px] py-4 text-sm">
-            <ConfiguratorForm fallback={<div>Loading...</div>} />
-          </div>
-        );
-      }}
+      trigger={Trigger}
+      content={Content}
     />
   );
 }

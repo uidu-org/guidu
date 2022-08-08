@@ -1,9 +1,13 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable react/jsx-props-no-spreading */
 
+import {
+  flexRender,
+  Row as RowType,
+  Table as TableType,
+} from '@tanstack/react-table';
 import React, { useCallback } from 'react';
-import { Row as RowType, TableInstance } from 'react-table';
 import { useVirtual } from 'react-virtual';
-import { theme } from 'twin.macro';
 import * as defaultComponents from '../styled';
 import Footer from './Footer';
 import Resizer from './Resizer';
@@ -39,12 +43,15 @@ function Table<T extends object>({
   headerHeight?: number;
   headerIcons?: boolean;
   groupRowHeightIncrementRatio?: number;
-  tableInstance: TableInstance<T>;
-  onItemClick: (row: RowType<T>) => void;
+  tableInstance: TableType<T>;
+  onItemClick: (row: T) => void;
   overrides?: Record<string, any>;
 }) {
-  const { getTableBodyProps, headerGroups, page, prepareRow, footerGroups } =
-    tableInstance;
+  const { getHeaderGroups, getFooterGroups, getRowModel } = tableInstance;
+
+  const headerGroups = getHeaderGroups();
+  const footerGroups = getFooterGroups();
+  const { rows } = getRowModel();
 
   // const getColumnWidth = (data, accessor, headerText) => {
   //   const cellLength = Math.max(
@@ -101,8 +108,7 @@ function Table<T extends object>({
       size: number;
       start: number;
     }) => {
-      const row: RowType<T> = page[index];
-      prepareRow(row);
+      const row: RowType<T> = rows[index];
 
       return (
         <RowSingle<T>
@@ -116,13 +122,13 @@ function Table<T extends object>({
         />
       );
     },
-    [page, prepareRow, rowHeight, setAggregation, onItemClick, StyledRow, Td],
+    [rows, rowHeight, setAggregation, onItemClick, StyledRow, Td],
   );
 
   const parentRef = React.useRef();
 
   const rowVirtualizer = useVirtual({
-    size: page.length,
+    size: rows.length,
     parentRef,
     overscan: 5,
     estimateSize: React.useCallback((i) => rowHeight, [rowHeight]),
@@ -130,67 +136,59 @@ function Table<T extends object>({
 
   return (
     <div tw="h-full" role="table">
-      <div
-        {...getTableBodyProps()}
-        ref={parentRef}
-        tw="h-full w-full overflow-auto"
-      >
-        <div tw="background[rgb(var(--body-on-primary-bg))] flex items-center flex-col min-w-full top-0 sticky z-10 w-max">
-          {headerGroups.map((headerGroup) => (
-            <div
-              {...headerGroup.getHeaderGroupProps([
-                { style: { minWidth: '100%' } },
-              ])}
-            >
-              {headerGroup.headers
-                .filter((column) => !column.isPrivate)
-                .map((column, index) => (
-                  <Th
-                    height={headerHeight}
-                    pinned={column.pinned}
-                    index={index}
-                    {...column.getHeaderProps([
-                      {
-                        style: {
-                          ...column.style,
-                          // width: column.width,
-                          // maxWidth: column.maxWidth,
-                          // minWidth: column.minWidth,
-                          ...(column.isSorted
-                            ? { backgroundColor: theme`colors.yellow.50` }
-                            : {}),
-                          ...column.headerStyle,
-                        },
-                      },
-                    ])}
-                  >
-                    {column.render('Header', {
-                      setColumnWidth,
-                      getColumnWidth,
-                      headerIcons,
-                      autosizeAllColumns: () => {
-                        // columns.map((column) => {
-                        //   return setColumnWidth(column, getColumnWidth(column));
-                        // });
-                      },
-                    })}
-                    {!!column.getResizerProps && <Resizer column={column} />}
-                  </Th>
-                ))}
-            </div>
-          ))}
-        </div>
-        <Body
-          height={rowVirtualizer.totalSize}
-          verticalPadding={rowHeight * 2 - 8 - 16}
+      <div ref={parentRef} tw="h-full w-full overflow-auto">
+        <div
+        // style={{
+        //   width: tableInstance.getTotalSize(),
+        // }}
         >
-          {rowVirtualizer.virtualItems.map(({ size, start, index }) => (
-            <Row key={index} size={size} start={start} index={index} />
-          ))}
-        </Body>
-        {includeFooter ? (
-          <Footer footerGroups={footerGroups} rowHeight={rowHeight} />
-        ) : null}
+          <div tw="background[rgb(var(--body-on-primary-bg))] flex flex-col min-w-full top-0 sticky z-10 w-max">
+            {headerGroups.map((headerGroup) => {
+              return (
+                <div tw="flex min-w-full" key={headerGroup.id}>
+                  {headerGroup.headers
+                    .filter(
+                      (header) => !header.column.columnDef.meta?.isPrivate,
+                    )
+                    // eslint-disable-next-line arrow-body-style
+                    .map((header, index) => {
+                      return (
+                        <Th
+                          key={header.id}
+                          height={headerHeight}
+                          width={header.getSize()}
+                          isSorted={header.column.getIsSorted()}
+                          pinned={header?.column.columnDef.meta?.pinned}
+                          index={index}
+                        >
+                          {header.isPlaceholder
+                            ? null
+                            : flexRender(
+                                header.column.columnDef.header,
+                                header.getContext(),
+                              )}
+                          {header.column.columnDef.enableResizing && (
+                            <Resizer table={tableInstance} header={header} />
+                          )}
+                        </Th>
+                      );
+                    })}
+                </div>
+              );
+            })}
+          </div>
+          <Body
+            height={rowVirtualizer.totalSize}
+            verticalPadding={rowHeight * 2 - 8 - 16}
+          >
+            {rowVirtualizer.virtualItems.map(({ size, start, index }) => (
+              <Row key={index} size={size} start={start} index={index} />
+            ))}
+          </Body>
+          {includeFooter ? (
+            <Footer footerGroups={footerGroups} rowHeight={rowHeight} />
+          ) : null}
+        </div>
       </div>
     </div>
   );

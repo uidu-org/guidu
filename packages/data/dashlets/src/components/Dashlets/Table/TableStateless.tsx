@@ -1,10 +1,15 @@
+import {
+  ColumnDef,
+  getCoreRowModel,
+  getSortedRowModel,
+  useReactTable,
+} from '@tanstack/react-table';
 import { useDashboardManager } from '@uidu/dashboard-manager';
 import { buildColumns } from '@uidu/data-fields';
 import Table, { Td, Th } from '@uidu/table';
 import React, { useMemo } from 'react';
-import { useFlexLayout, usePagination, useSortBy, useTable } from 'react-table';
 
-export default function TableStateless({ values, keys, onItemClick }) {
+export default function TableStateless<T>({ values, keys, onItemClick }) {
   const { columnDefs } = useDashboardManager();
 
   const columns = useMemo(
@@ -16,58 +21,53 @@ export default function TableStateless({ values, keys, onItemClick }) {
           columns: keys.map((c) => {
             return {
               ...c,
-              field: c.key,
               id: c.key,
-              accessor: (row) => row[c.key],
-              name: c.title,
-              kind: c.meta ? c.meta.kind : 'string',
-              fieldGroup: 'default',
+              accessorFn: (row) => row[c.key],
               ...columnDefs[c.key],
+              meta: {
+                name: c.title,
+                kind: c.meta ? c.meta.kind : 'string',
+                ...columnDefs[c.key]?.meta,
+              },
             };
           }),
         },
       ]),
-    [keys],
+    [keys, columnDefs],
   );
 
   const data = useMemo(() => values, [values]);
 
-  const defaultColumn = React.useMemo(
+  const defaultColumn: ColumnDef<T> = React.useMemo(
     () => ({
-      minWidth: 80,
-      width: 150,
-      maxWidth: 250,
-      canHide: true,
-      canSortBy: true,
-      canGroupBy: false,
-      Header: ({ column }) => (
+      minSize: 80,
+      size: 150,
+      maxSize: 250,
+      enableHiding: true,
+      enableSorting: true,
+      enableGrouping: false,
+      header: (props) => (
         <div tw="flex items-center justify-center flex-grow min-w-0">
-          <div tw="flex-grow truncate">{column.name}</div>
+          <div tw="flex-grow truncate">{props.column.columnDef.meta.name}</div>
         </div>
       ),
-      Cell: ({ column, value }) =>
-        column.valueFormatter ? (
-          <>{column.valueFormatter({ value })}</>
+      cell: ({ column, getValue }) =>
+        column.columnDef.meta.valueFormatter ? (
+          <>{column.valueFormatter(getValue())}</>
         ) : (
-          value || null
+          getValue() || null
         ),
     }),
     [],
   );
 
-  const tableInstance = useTable(
-    {
-      columns,
-      data,
-      defaultColumn,
-      initialState: {
-        pageSize: 1000,
-      },
-    },
-    useFlexLayout,
-    useSortBy,
-    usePagination,
-  );
+  const tableInstance = useReactTable<T>({
+    columns,
+    data,
+    defaultColumn,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+  });
 
   return (
     <Table

@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import loadable from '@loadable/component';
+import { Row } from '@tanstack/react-table';
 import { ShellBodyWithSpinner } from '@uidu/shell';
 import dayjs from 'dayjs';
 import React from 'react';
@@ -39,12 +40,9 @@ const ColumnHeader = ({ title, items, ...rest }) => {
   );
 };
 
-const Item = ({ item, provided, ...rest }) => {
-  const { history } = item;
+function Item({ item, provided, ...rest }) {
   return (
     <a
-      // to={item.data.id}
-      onClick={() => history.push(`/apps/calls/proposals/${item.id}`)}
       tw="block border rounded background[rgb(var(--body-on-primary-bg))] mb-3 p-4"
       ref={provided.innerRef}
       {...rest}
@@ -52,7 +50,7 @@ const Item = ({ item, provided, ...rest }) => {
       <DataCard item={item} {...rest} />
     </a>
   );
-};
+}
 
 function DefaultEmptyState() {
   return (
@@ -88,10 +86,20 @@ function DefaultEmptyState() {
   );
 }
 
-function DataManagerView({
+function DataManagerView<T>({
   onItemClick,
   viewProps,
   emptyState: EmptyState = DefaultEmptyState,
+}: {
+  onItemClick?: (item: Row<T>) => void;
+  viewProps: {
+    board?: any;
+    calendar?: any;
+    gallery?: any;
+    list?: any;
+    table?: any;
+  };
+  emptyState?: React.FC<any>;
 }) {
   const {
     currentView,
@@ -125,7 +133,7 @@ function DataManagerView({
   let desktopView = null;
   let mobileView = null;
 
-  switch (currentView.kind) {
+  switch (currentView?.kind) {
     case 'calendar': {
       const primaryField = currentView.preferences?.primaryField || 'name';
       const startDateField =
@@ -143,9 +151,11 @@ function DataManagerView({
               <Calendar
                 onSelectEvent={onItemClick}
                 events={rowData}
-                startAccessor={(item) => dayjs(item[startDateField]).toDate()}
-                titleAccessor={(item) => item[primaryField]}
-                endAccessor={(item) =>
+                startAccessor={(item: Row<T>) =>
+                  dayjs(item[startDateField]).toDate()
+                }
+                titleAccessor={(item: Row<T>) => item[primaryField]}
+                endAccessor={(item: Row<T>) =>
                   endDateField
                     ? dayjs(item[endDateField]).toDate()
                     : dayjs(item[startDateField]).add(3, 'hour').toDate()
@@ -172,20 +182,20 @@ function DataManagerView({
             if (!primaryField) {
               return null;
             }
+            const initial = rowData.reduce((res, item) => {
+              const key = item[primaryField];
+              if (res[key]) {
+                res[key] = [...res[key], { ...item, content: item.id }];
+              } else {
+                res[key] = [{ ...item, content: item.id }];
+              }
+              return res;
+            }, {});
             return (
               <Board
                 {...viewProps.board}
                 tableInstance={tableInstance}
-                columnDefs={tableInstance.visibleColumns}
-                initial={rowData.reduce((res, item, index) => {
-                  const key = item[primaryField];
-                  if (res[key]) {
-                    res[key] = [...res[key], { ...item, content: item.id }];
-                  } else {
-                    res[key] = [{ ...item, content: item.id }];
-                  }
-                  return res;
-                }, {})}
+                columns={initial}
                 onItemClick={onItemClick}
                 components={{
                   columnContainer: Column,
@@ -270,18 +280,16 @@ function DataManagerView({
         </LoadableTable>
       );
       mobileView = (
-        <>
-          <LoadableList fallback={<ShellBodyWithSpinner />}>
-            {({ default: List }) => (
-              <List
-                {...viewProps.list}
-                tableInstance={tableInstance}
-                onItemClick={onItemClick}
-                columnDefs={columns}
-              />
-            )}
-          </LoadableList>
-        </>
+        <LoadableList fallback={<ShellBodyWithSpinner />}>
+          {({ default: List }) => (
+            <List
+              {...viewProps.list}
+              tableInstance={tableInstance}
+              onItemClick={onItemClick}
+              columnDefs={columns}
+            />
+          )}
+        </LoadableList>
       );
       break;
   }

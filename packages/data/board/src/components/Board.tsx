@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import {
   DragDropContext,
   Droppable,
@@ -33,88 +33,26 @@ const defaultComponents = {
   item: Item,
 };
 
-export default function Board({
+export default function Board<T>({
   isCombineEnabled = false,
   withDraggableColumns = false,
   components = defaultComponents,
-  columns = {},
   containerHeight,
   withScrollableColumns,
-  columnDefs,
   tableInstance,
   onDragEnd,
-}: BoardProps) {
+  columns,
+}: BoardProps<T>) {
   const ordered = Object.keys(columns);
   const boardRef = useRef(null);
 
-  const getComponents = () => {
-    return {
+  const getComponents = useCallback(
+    () => ({
       ...defaultComponents,
       ...components,
-    };
-  };
-
-  // const onDragEnd = (result: DropResult) => {
-  //   if (result.combine) {
-  //     if (result.type === 'COLUMN') {
-  //       const shallow: string[] = [...this.state.ordered];
-  //       shallow.splice(result.source.index, 1);
-  //       this.setState({ ordered: shallow });
-  //       return;
-  //     }
-
-  //     const column: ItemProps[] = this.state.columns[result.source.droppableId];
-  //     const withItemRemoved: ItemProps[] = [...column];
-  //     withItemRemoved.splice(result.source.index, 1);
-  //     const columns: ItemMapProps = {
-  //       ...this.state.columns,
-  //       [result.source.droppableId]: withItemRemoved,
-  //     };
-  //     this.setState({ columns });
-  //     return;
-  //   }
-
-  //   // dropped nowhere
-  //   if (!result.destination) {
-  //     return;
-  //   }
-
-  //   const source: DraggableLocation = result.source;
-  //   const destination: DraggableLocation = result.destination;
-
-  //   // did not move anywhere - can bail early
-  //   if (
-  //     source.droppableId === destination.droppableId &&
-  //     source.index === destination.index
-  //   ) {
-  //     return;
-  //   }
-
-  //   // reordering column
-  //   if (result.type === 'COLUMN') {
-  //     const ordered: string[] = reorder(
-  //       this.state.ordered,
-  //       source.index,
-  //       destination.index,
-  //     );
-
-  //     this.setState({
-  //       ordered,
-  //     });
-
-  //     return;
-  //   }
-
-  //   const data = reorderItemMap({
-  //     itemMap: this.state.columns,
-  //     source,
-  //     destination,
-  //   });
-
-  //   this.setState({
-  //     columns: data.itemMap,
-  //   });
-  // };
+    }),
+    [components],
+  );
 
   const { container: ContainerComponent, parent: ParentContainerComponent } =
     getComponents();
@@ -142,7 +80,7 @@ export default function Board({
               isScrollable={withScrollableColumns}
               isCombineEnabled={isCombineEnabled}
               isDragDisabled={!withDraggableColumns}
-              columnDefs={columnDefs}
+              columns={columns}
               tableInstance={tableInstance}
             />
           ))}

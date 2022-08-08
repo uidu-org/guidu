@@ -1,11 +1,12 @@
+import { CellContext } from '@tanstack/react-table';
 import Popup from '@uidu/popup';
 import React, { useState } from 'react';
 import SelectEditor from '../../components/editors/SelectEditor';
 import { Option, ValueRenderer } from './Cell';
 
-export default function EditableCell(params) {
-  const { value: initialValue, column } = params;
-  const [value, setValue] = useState(initialValue);
+export default function EditableCell(props: CellContext<any, string>) {
+  const { getValue, column } = props;
+  const [value, setValue] = useState(getValue());
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -15,7 +16,7 @@ export default function EditableCell(params) {
       content={() => (
         <div style={{ width: column.width }}>
           <SelectEditor
-            {...params}
+            {...props}
             onChange={(newValue) => {
               setValue(newValue);
               setIsOpen(false);
@@ -31,7 +32,7 @@ export default function EditableCell(params) {
           {...triggerProps}
           onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
         >
-          <ValueRenderer {...params} value={value} />
+          <ValueRenderer {...props} value={value} />
         </div>
       )}
     />

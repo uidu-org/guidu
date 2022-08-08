@@ -1,22 +1,24 @@
+import { flexRender, HeaderGroup } from '@tanstack/react-table';
 import React from 'react';
 
-export default function Header({
+export default function Header<T>({
   headerGroups,
-  headerIcons,
-  gutterSize = 16,
   style = {},
+}: {
+  headerGroups: HeaderGroup<T>[];
+  style?: React.CSSProperties;
 }) {
   const cover = null;
   return (
     <>
       {headerGroups.map((headerGroup) => (
         <div
-          {...headerGroup.getHeaderGroupProps()}
           style={{
             ...style,
-            height: style.height,
+            height: style.height || 48,
             fontSize: '14px',
             fontWeight: 500,
+            zIndex: 20,
           }}
           tw="sticky top-0 flex items-center background[rgb(var(--body-on-primary-bg))] min-w-full width[fit-content] border-b px-4 -mx-4"
         >
@@ -34,42 +36,28 @@ export default function Header({
           <div tw="flex flex-col">
             <div tw="flex">
               {headerGroup.headers
-                .filter((column) => !column.isPrivate && !column.isPrimary)
-                .map((column) => {
-                  const { id, width, minWidth, maxWidth, name, icon } = column;
+                .filter(
+                  (header) =>
+                    !header.column.isPrivate && !header.column.isPrimary,
+                )
+                .map((header) => {
+                  const { column } = header;
                   return (
                     <div
-                      key={`${id}-label`}
+                      key={`${column.id}-label`}
                       tw="truncate flex items-center px-3 xl:px-4"
                       style={{
-                        width: width || '150px',
-                        minWidth: minWidth || 'auto',
-                        maxWidth: maxWidth || 'auto',
+                        width: column.getSize() || '150px',
+                        minWidth: column.columnDef.minSize || 'auto',
+                        maxWidth: column.columnDef.maxSize || 'auto',
+                        ...(column.getIsSorted()
+                          ? {
+                              backgroundColor: 'rgb(254, 248, 244)',
+                            }
+                          : {}),
                       }}
-                      // eslint-disable-next-line react/jsx-props-no-spreading
-                      {...column.getHeaderProps([
-                        {
-                          style: {
-                            ...column.style,
-                            // width: column.width,
-                            // maxWidth: column.maxWidth,
-                            // minWidth: column.minWidth,
-                            ...(column.isSorted
-                              ? { backgroundColor: 'rgb(254, 248, 244)' }
-                              : {}),
-                            ...column.headerStyle,
-                          },
-                        },
-                      ])}
                     >
-                      {column.render('Header', {
-                        headerIcons,
-                        autosizeAllColumns: () => {
-                          // columns.map((column) => {
-                          //   return setColumnWidth(column, getColumnWidth(column));
-                          // });
-                        },
-                      })}
+                      {flexRender(column.columnDef.header, header.getContext())}
                     </div>
                   );
                 })}

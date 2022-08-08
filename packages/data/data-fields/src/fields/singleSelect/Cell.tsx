@@ -1,3 +1,4 @@
+import { CellContext } from '@tanstack/react-table';
 import React from 'react';
 // import { groupRenderer } from '../../groups';
 import EditableCell from './EditableCell';
@@ -18,10 +19,11 @@ export function Option({ value }) {
   );
 }
 
-export function ValueRenderer(params) {
-  const value = params.options.filter(
-    (option) => option.id === params.value,
-  )[0];
+export function ValueRenderer(props: CellContext<any, string>) {
+  const { getValue, column } = props;
+  const value = (column.columnDef.meta?.options || []).find(
+    (option) => option.id === getValue(),
+  );
 
   if (!value) {
     return null;
@@ -30,13 +32,16 @@ export function ValueRenderer(params) {
   return <Option value={value} />;
 }
 
-export default (params) => {
+export default function Cell(props: CellContext<any, string>) {
+  const { column } = props;
   // if (params.row.isGrouped) {
   //   return groupRenderer(params);
   // }
-  if (params.column?.editable) {
-    return <EditableCell {...params} />;
+  if (column?.columnDef?.meta?.editable) {
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    return <EditableCell {...props} />;
   }
 
-  return <ValueRenderer {...params} />;
-};
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  return <ValueRenderer {...props} />;
+}

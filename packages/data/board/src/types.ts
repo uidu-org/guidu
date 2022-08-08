@@ -1,3 +1,4 @@
+import { Table } from '@tanstack/react-table';
 import { DraggableId, DraggableLocation } from 'react-beautiful-dnd';
 
 export type Id = string;
@@ -37,14 +38,16 @@ export type BoardComponents = {
   columnDefs?: any;
 };
 
-export type BoardProps = {
+export type BoardProps<T> = {
   initial: ItemMapProps;
   withScrollableColumns?: boolean;
   withDraggableColumns?: boolean;
   isCombineEnabled?: boolean;
   containerHeight?: string;
   components?: BoardComponents;
-  columnDefs?: any;
+  onDragEnd?: (result: any) => void;
+  columns: Record<string, T[]>;
+  tableInstance: Table<T>;
 };
 
 export type BoardState = {

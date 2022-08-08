@@ -1,12 +1,12 @@
 import { faCalendarDay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import loadable from '@loadable/component';
+import { ColumnDef } from '@tanstack/react-table';
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import utc from 'dayjs/plugin/utc';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Field } from '../../types';
 
 dayjs.extend(localizedFormat);
 dayjs.extend(utc);
@@ -16,43 +16,41 @@ const Filter = loadable(
   () => import('../../components/filters/DateFilterForm'),
 );
 
-const Date: Partial<Field> = {
-  kind: 'date',
-  name: (
-    <FormattedMessage defaultMessage="Date" id="uidu.data-fields.date.name" />
-  ),
-  icon: <FontAwesomeIcon icon={faCalendarDay} />,
-  description: (
-    <FormattedMessage
-      defaultMessage="Enter a date (e.g. 11/12/2013) or pick one from a calendar."
-      id="uidu.data-fields.date.description"
-    />
-  ),
-  color: '#EF8A78',
-  Filter,
-  Grouper,
-  // cellEditorFramework: Editor,
-  // filter: 'agDateColumnFilter',
-  Cell: (params) => {
-    if (!params.value) {
+const Date: ColumnDef<unknown, string> = {
+  meta: {
+    kind: 'date',
+    name: (
+      <FormattedMessage defaultMessage="Date" id="uidu.data-fields.date.name" />
+    ),
+    icon: <FontAwesomeIcon icon={faCalendarDay} />,
+    description: (
+      <FormattedMessage
+        defaultMessage="Enter a date (e.g. 11/12/2013) or pick one from a calendar."
+        id="uidu.data-fields.date.description"
+      />
+    ),
+    color: '#EF8A78',
+  },
+  cell: ({ getValue, column }) => {
+    if (!getValue()) {
       return null;
     }
 
     // we should ensure value is an utc date, if not force it
-    const cleaned = params.value.endsWith('Z')
-      ? params.value
-      : `${params.value}Z`;
+    const cleaned = getValue().endsWith('Z') ? getValue() : `${getValue()}Z`;
     const convertedIntoUTC = dayjs(cleaned).utc().format();
 
     return (
-      <>
-        <div tw="flex w-full justify-between">
-          {dayjs(convertedIntoUTC).format('L')}
-          <span>{dayjs(convertedIntoUTC).format('LT')}</span>
-        </div>
-      </>
+      <div tw="flex w-full justify-between">
+        {dayjs(convertedIntoUTC).format('L')}
+        <span>{dayjs(convertedIntoUTC).format('LT')}</span>
+      </div>
     );
   },
+  Filter,
+  Grouper,
+  // cellEditorFramework: Editor,
+  // filter: 'agDateColumnFilter',
   mocks: {
     value: '2021-09-14T11:07:03.000Z',
   },

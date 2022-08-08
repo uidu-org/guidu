@@ -1,32 +1,64 @@
-import { FieldGroup } from '@uidu/data-fields';
+import {
+  ColumnDef,
+  ColumnPinningPosition,
+  Row as RowType,
+  RowData,
+  TableOptions,
+} from '@tanstack/react-table';
+import { FieldKind } from '@uidu/data-fields';
 import { DataView } from '@uidu/data-views';
 import { ButtonItemProps } from '@uidu/menu';
 import React from 'react';
-import { Row } from 'react-table';
 
-export type RowAction = {
+declare module '@tanstack/table-core' {
+  interface ColumnMeta<TData extends RowData, TValue> {
+    // field Meta
+    name?: string | React.ReactNode;
+    icon?: string | React.ReactNode;
+    description?: string | React.ReactNode;
+    color?: string;
+    kind?: FieldKind;
+    // column behaviors
+    isPrimary?: boolean;
+    isPrivate?: boolean;
+    pinned?: ColumnPinningPosition;
+    valueFormatter?: (value: TValue) => React.ReactNode;
+    // editing mode
+    enableEditing?: boolean;
+    // specific field kinds
+    options?: Array<{
+      id: string | number | null;
+      name: string;
+      before?: React.ReactNode;
+      color?: string;
+    }>;
+    avatar?: ({ row }: { row: RowType<TData> }) => string;
+    max?: number;
+  }
+}
+
+export type RowAction<T> = {
   key?: string;
   children?: any;
   component?: React.FC<ButtonItemProps>;
-  onClick?: ({ row }: { row: Row }) => void;
+  onClick?: ({ row }: { row: RowType<T> }) => void;
 };
 
-export type RowActions = {
+export type RowActions<T> = {
   name: string;
-  items: RowAction[];
+  items: RowAction<T>[];
 };
 
-export type DataManagerProps = {
-  columnDefs: Array<FieldGroup>;
+export type DataManagerProps<T> = {
+  columns: ColumnDef<T>[];
   children: React.ReactElement;
   currentView?: DataView;
   onViewUpdate?: (state: any) => void;
   updateView?: (name: string, value: any) => Promise<any>;
   isAutoSaving?: string;
-  rowData?: Array<any>;
+  rowData?: Array<T>;
   onAddField?: () => void;
-  onItemClick?: ({ data }: { data: any }) => void;
-  onItemSelect?: ({ data }: { data: any }) => void;
+  onItemClick: (item: T) => void;
   canSelectRows?: boolean;
   getExportFileBlob?: any;
   getExportFileName?: ({
@@ -36,12 +68,13 @@ export type DataManagerProps = {
     fileType?: string;
     all?: boolean;
   }) => string;
-  actions?: (row: Row) => RowActions[];
+  actions?: (row: RowType<T>) => RowActions<T>[];
   pageSize?: number;
   forwardedRef: React.Ref<any>;
+  options?: Partial<TableOptions<T>>;
 };
 
-export type DataManagerCubeProps = DataManagerProps & {
+export type DataManagerCubeProps<T> = DataManagerProps<T> & {
   resultSet: any;
   query: any;
   onReady?: (resultSet: any) => void;

@@ -1,3 +1,4 @@
+import { Cell, flexRender } from '@tanstack/react-table';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -61,7 +62,7 @@ const StyledItemField = styled.div<{
   }}
 `;
 
-export default function ItemField({ cell }) {
+export default function ItemField<T>({ cell }: { cell: Cell<T, unknown> }) {
   return (
     <StyledItemField
       tw="px-3 xl:px-4"
@@ -70,15 +71,17 @@ export default function ItemField({ cell }) {
     >
       <dt tw="text-sm color[rgb(var(--body-secondary-color))] truncate mb-2">
         <div tw="flex-grow truncate">
-          {cell.column.icon && (
+          {cell.column.columnDef.meta?.icon && (
             <span tw="mr-2 color[rgb(var(--body-secondary-color))] opacity-40">
-              {cell.column.icon}
+              {cell.column.columnDef.meta?.icon}
             </span>
           )}
-          {cell.column.name}
+          {cell.column.columnDef.meta?.name}
         </div>
       </dt>
-      <dd tw="truncate">{cell.render('Cell', { ...cell.column.cellProps })}</dd>
+      <dd tw="flex">
+        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+      </dd>
     </StyledItemField>
   );
 }

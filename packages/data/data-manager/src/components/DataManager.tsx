@@ -1,194 +1,232 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import {
-  Aggregated,
-  AggregatedSelection,
-  Header,
-  HeaderSelection,
-  RowActions,
-  RowSelection,
-} from '@uidu/table';
-import React, { useCallback, useEffect, useImperativeHandle } from 'react';
-import {
-  useAsyncDebounce,
-  useExpanded,
-  useFilters,
-  useFlexLayout,
-  useGlobalFilter,
-  useGroupBy,
-  usePagination,
-  useResizeColumns,
-  useRowSelect,
-  useSortBy,
-  useTable,
-} from 'react-table';
-import { useExportData } from 'react-table-plugins';
+  CellContext,
+  ColumnDef,
+  getCoreRowModel,
+  getExpandedRowModel,
+  getFacetedMinMaxValues,
+  getFacetedRowModel,
+  getFacetedUniqueValues,
+  getFilteredRowModel,
+  getGroupedRowModel,
+  getSortedRowModel,
+  useReactTable,
+} from '@tanstack/react-table';
+import { Aggregated, Header, RowActions } from '@uidu/table';
+import React, { useCallback, useImperativeHandle } from 'react';
 import { DataManagerProps } from '../types';
+import { fuzzyFilter } from '../utils';
 import { DataManagerProvider } from './DataManagerContext';
 
-export default function DataManager({
+export default function DataManager<T>({
   children,
+  columns,
   rowData = [],
-  columnDefs: columns,
   onItemClick,
-  onItemSelect = () => {},
   onViewUpdate = (state) => {},
   currentView,
   updateView,
   actions = () => [],
-  canSelectRows = true,
   forwardedRef,
   getExportFileBlob,
   getExportFileName,
   pageSize = 50,
-}: DataManagerProps) {
+  options = {},
+}: DataManagerProps<T>) {
   const Cell = useCallback(
-    ({ column, value }) =>
-      column.valueFormatter ? (
-        <>{column.valueFormatter({ value })}</>
+    ({ column, getValue }: CellContext<any, unknown>) =>
+      column.columnDef.meta?.valueFormatter ? (
+        <>{column.columnDef.meta.valueFormatter(getValue())}</>
       ) : (
-        value || null
+        getValue() || null
       ),
     [],
   );
 
   const RowActionsCell = useCallback(
-    (params) => <RowActions params={params} actions={actions} />,
+    (params: CellContext<T, unknown>) => (
+      <RowActions params={params} actions={actions} />
+    ),
     [actions],
   );
 
-  const defaultColumn = React.useMemo(
+  const defaultColumns = [...columns];
+
+  if (actions.length > 0) {
+    defaultColumns.push({
+      id: 'actions',
+      header: (props) => <div />,
+      footer: (props) => <div />,
+      cell: RowActionsCell,
+      // suppressMenu: true,
+      enableResizing: false,
+      minSize: 56,
+      size: 56,
+      maxSize: 56,
+      meta: { pinned: 'right' },
+    } as Partial<ColumnDef<T>>);
+  }
+
+  const defaultColumn: Partial<ColumnDef<T>> = React.useMemo(
     () => ({
-      minWidth: 80,
-      width: 240,
-      maxWidth: 400,
-      canHide: true,
-      canSortBy: true,
-      canGroupBy: false,
-      Header,
-      Aggregated,
-      Cell,
+      minSize: 80,
+      size: 240,
+      maxSize: 400,
+      enableResizing: true,
+      enableHiding: true,
+      enableColumnFilter: true,
+      enableGrouping: false,
+      header: Header,
+      aggregatedCell: Aggregated,
+      cell: Cell,
     }),
     [Cell],
   );
 
-  const tableInstance = useTable(
-    {
-      columns,
-      data: rowData,
-      defaultColumn,
-      initialState: {
-        pageSize,
-        ...(currentView?.state || {}),
-      },
-      // useControlledState: (state) => {
-      //   return React.useMemo(
-      //     () => ({
-      //       ...state,
-      //       columnDefinitions,
-      //     }),
-      //     [state],
-      //   );
-      // },
-      getExportFileBlob,
-      getExportFileName,
+  const table = useReactTable<T>({
+    data: rowData,
+    defaultColumn,
+    columns: defaultColumns,
+    // state: {},
+    columnResizeMode: 'onEnd',
+    // onSortingChange: console.log,
+    // onStateChange: console.log,
+    // filters
+    globalFilterFn: fuzzyFilter,
+    filterFns: {
+      fuzzy: fuzzyFilter,
     },
-    useFlexLayout,
-    useFilters,
-    useGlobalFilter,
-    useGroupBy,
-    useSortBy,
-    useResizeColumns,
-    useExpanded,
-    usePagination,
-    useRowSelect,
-    useExportData,
-    (hooks) => {
-      hooks.visibleColumns.push((columns) => [
-        // Let's make a column for selection
-        ...(canSelectRows
-          ? [
-              {
-                id: 'uid',
-                kind: 'uid',
-                field: 'id',
-                disableResizing: true,
-                minWidth: 56,
-                width: 56,
-                maxWidth: 56,
-                pinned: 'left',
-                groupByBoundary: true,
-                cellStyle: {
-                  padding: 0,
-                },
-                // The header can use the table's getToggleAllRowsSelectedProps method
-                // to render a checkbox
-                Header: (props) =>
-                  props.headerGroups.length > 1 ? null : (
-                    <HeaderSelection {...props} />
-                  ),
-                // The cell can use the individual row's getToggleRowSelectedProps method
-                // to the render a checkbox
-                Cell: RowSelection,
-                Aggregated: AggregatedSelection,
-                Footer: (info) => {
-                  // Only calculate total visits if rows change
+    // Pipeline
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getExpandedRowModel: getExpandedRowModel(),
+    getGroupedRowModel: getGroupedRowModel(),
+    getFacetedRowModel: getFacetedRowModel(),
+    getFacetedUniqueValues: getFacetedUniqueValues(),
+    getFacetedMinMaxValues: getFacetedMinMaxValues(),
+    getFilteredRowModel: getFilteredRowModel(),
+    // getPaginationRowModel: getPaginationRowModel(),
+    //
+    debugTable: true,
+    debugHeaders: true,
+    debugColumns: true,
+    ...options,
+  });
 
-                  return <>Total: {info.rows.length}</>;
-                },
-              },
-            ]
-          : []),
-        ...columns,
-        ...(actions.length > 0
-          ? [
-              {
-                id: 'actions',
-                kind: 'actions',
-                suppressMenu: true,
-                disableResizing: true,
-                minWidth: 56,
-                width: 56,
-                maxWidth: 56,
-                pinned: 'right',
-                Cell: RowActionsCell,
-                groupByBoundary: true,
-                cellStyle: {
-                  padding: 0,
-                },
-              },
-            ]
-          : []),
-      ]);
-    },
-  );
+  // const tableInstance = useTable(
+  //   {
+  //     columns,
+  //     data: rowData,
+  //     defaultColumn,
+  //     initialState: {
+  //       pageSize,
+  //       ...(currentView?.state || {}),
+  //     },
+  //     // useControlledState: (state) => {
+  //     //   return React.useMemo(
+  //     //     () => ({
+  //     //       ...state,
+  //     //       columnDefinitions,
+  //     //     }),
+  //     //     [state],
+  //     //   );
+  //     // },
+  //     getExportFileBlob,
+  //     getExportFileName,
+  //   },
+  //   useFlexLayout,
+  //   useFilters,
+  //   useGlobalFilter,
+  //   useGroupBy,
+  //   useSortBy,
+  //   useResizeColumns,
+  //   useExpanded,
+  //   usePagination,
+  //   useRowSelect,
+  //   useExportData,
+  //   (hooks) => {
+  //     hooks.visibleColumns.push((columns) => [
+  //       // Let's make a column for selection
+  //       ...(canSelectRows
+  //         ? [
+  //             {
+  //               id: 'uid',
+  //               kind: 'uid',
+  //               field: 'id',
+  //               disableResizing: true,
+  //               minWidth: 56,
+  //               width: 56,
+  //               maxWidth: 56,
+  //               pinned: 'left',
+  //               groupByBoundary: true,
+  //               cellStyle: {
+  //                 padding: 0,
+  //               },
+  //               // The header can use the table's getToggleAllRowsSelectedProps method
+  //               // to render a checkbox
+  //               Header: (props) =>
+  //                 props.headerGroups.length > 1 ? null : (
+  //                   <HeaderSelection {...props} />
+  //                 ),
+  //               // The cell can use the individual row's getToggleRowSelectedProps method
+  //               // to the render a checkbox
+  //               Cell: RowSelection,
+  //               Aggregated: AggregatedSelection,
+  //               Footer: (info) => {
+  //                 // Only calculate total visits if rows change
 
-  useImperativeHandle(forwardedRef, () => tableInstance, [tableInstance]);
+  //                 return <>Total: {info.rows.length}</>;
+  //               },
+  //             },
+  //           ]
+  //         : []),
+  //       ...columns,
+  //       ...(actions.length > 0
+  //         ? [
+  //             {
+  //               id: 'actions',
+  //               kind: 'actions',
+  //               suppressMenu: true,
+  //               disableResizing: true,
+  //               minWidth: 56,
+  //               width: 56,
+  //               maxWidth: 56,
+  //               pinned: 'right',
+  //               Cell: RowActionsCell,
+  //               groupByBoundary: true,
+  //               cellStyle: {
+  //                 padding: 0,
+  //               },
+  //             },
+  //           ]
+  //         : []),
+  //     ]);
+  //   },
+  // );
 
-  const { state, selectedFlatRows } = tableInstance;
+  useImperativeHandle(forwardedRef, () => table, [table]);
 
-  const onViewUpdateDebounce = useAsyncDebounce(onViewUpdate, 100);
-  const onItemSelectDebounce = useAsyncDebounce(onItemSelect, 100);
+  // const onViewUpdateDebounce = useAsyncDebounce(onViewUpdate, 100);
+  // const onItemSelectDebounce = useAsyncDebounce(onItemSelect, 100);
 
-  useEffect(() => {
-    onViewUpdateDebounce(state);
-  }, [state, onViewUpdateDebounce]);
+  // useEffect(() => {
+  //   onViewUpdateDebounce(state);
+  // }, [state, onViewUpdateDebounce]);
 
-  useEffect(() => {
-    onItemSelectDebounce(selectedFlatRows);
-  }, [selectedFlatRows, onItemSelectDebounce]);
+  // useEffect(() => {
+  //   onItemSelectDebounce(selectedFlatRows);
+  // }, [selectedFlatRows, onItemSelectDebounce]);
 
   return (
     <DataManagerProvider
       currentView={currentView}
       rowData={rowData}
-      columnDefs={columns}
-      tableInstance={tableInstance}
+      columns={table.getAllColumns()}
+      tableInstance={table}
       onItemClick={onItemClick}
-      onItemSelect={onItemSelect}
       onViewUpdate={onViewUpdate}
       updateView={updateView}
       actions={actions}
-      canSelectRows={canSelectRows}
       forwardedRef={forwardedRef}
       getExportFileBlob={getExportFileBlob}
       getExportFileName={getExportFileName}

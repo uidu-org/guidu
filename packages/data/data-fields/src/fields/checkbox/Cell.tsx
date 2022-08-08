@@ -1,7 +1,11 @@
+import { CellContext } from '@tanstack/react-table';
 import React from 'react';
 
-export default (params) => {
-  if (!params.value) {
+export default function Cell<T>(props: CellContext<T, boolean>) {
+  const { getValue } = props;
+  const value = getValue();
+
+  if (!value) {
     return null;
   }
 
@@ -21,4 +25,4 @@ export default (params) => {
       <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
     </svg>
   );
-};
+}

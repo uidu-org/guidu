@@ -1,3 +1,4 @@
+import { ColumnDef } from '@tanstack/react-table';
 import { DashletProps, renderDashlet } from '@uidu/dashlets';
 import React, { createContext, useCallback, useContext, useMemo } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
@@ -7,15 +8,14 @@ import { DashboardManagerProps } from '../types';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
-interface DashboardManagerContextProps {
-  columnDefs: { [key: string]: any };
+interface DashboardManagerContextProps<T> {
+  columnDefs: Record<string, ColumnDef<T>>;
   apiUrl: string;
 }
 
-export const DashboardManagerContext =
-  createContext<DashboardManagerContextProps>(
-    {} as DashboardManagerContextProps,
-  );
+export const DashboardManagerContext = createContext<
+  DashboardManagerContextProps<T>
+>({} as DashboardManagerContextProps<T>);
 
 function DashboardManagerProvider({ columnDefs, apiUrl, children }) {
   const value = useMemo(() => ({ columnDefs, apiUrl }), [columnDefs, apiUrl]);

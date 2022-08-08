@@ -1,10 +1,10 @@
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import loadable from '@loadable/component';
+import { ColumnDef } from '@tanstack/react-table';
 import { allCountries } from '@uidu/select';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Field } from '../../types';
 import Cell from './Cell';
 
 const Filter = loadable(
@@ -13,27 +13,27 @@ const Filter = loadable(
 
 const mocks = loadable(() => import('./mocks'));
 
-const Country: Field = {
-  kind: 'country',
-  name: (
-    <FormattedMessage
-      defaultMessage="Country"
-      id="uidu.data-fields.country.name"
-    />
-  ),
-  icon: <FontAwesomeIcon icon={faGlobe} />,
-  description: (
-    <FormattedMessage
-      defaultMessage="Add a Country select list to your record"
-      id="uidu.data-fields.country.description"
-    />
-  ),
-  color: 'tan',
-  Filter,
-  Cell,
-  cellProps: {
+const Country: ColumnDef<unknown> = {
+  meta: {
+    kind: 'country',
+    name: (
+      <FormattedMessage
+        defaultMessage="Country"
+        id="uidu.data-fields.country.name"
+      />
+    ),
+    icon: <FontAwesomeIcon icon={faGlobe} />,
+    description: (
+      <FormattedMessage
+        defaultMessage="Add a Country select list to your record"
+        id="uidu.data-fields.country.description"
+      />
+    ),
+    color: 'tan',
     options: allCountries,
   },
+  Filter,
+  cell: Cell,
   mocks,
 };
 

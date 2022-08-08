@@ -16,7 +16,7 @@ const Div = styled.div<{
     shouldAllowClickThrough ? tw`pointer-events-none` : tw`pointer-events-auto`}
   right: ${({ paddingRight }) => `${paddingRight}px`};
   z-index: ${({ isStacked }) =>
-    isStacked ? `${theme`zIndex.blanket`} + 1` : theme`zIndex.blanket`};
+    isStacked ? `calc(${theme`zIndex.blanket`} + 1)` : theme`zIndex.blanket`};
 `;
 
 const packageName = process.env._PACKAGE_NAME_ as string;

@@ -1,128 +1,165 @@
 import { XIcon } from '@heroicons/react/solid';
+import { ColumnFilter } from '@tanstack/react-table';
 import Button from '@uidu/button';
-import { getColumnDef, getFieldFromColumnDef } from '@uidu/data-fields';
+import { getFieldFromColumnDef } from '@uidu/data-fields';
 import { useDataManagerContext } from '@uidu/data-manager';
 import Form from '@uidu/form';
+import { MenuGroup, Section } from '@uidu/menu';
 import Select from '@uidu/select';
-import React, { useRef } from 'react';
-import { FormattedMessage } from 'react-intl';
+import React, { Fragment, useRef } from 'react';
+import { FormattedMessage, useIntl } from 'react-intl';
+import ColumnsList from '../../utils/ColumnsList';
 import PickField from '../../utils/PickField';
 import { FiltererFormProps } from './types';
 
-export default function FiltererForm({ filtersCount }: FiltererFormProps) {
+export default function FiltererForm({ closePopup }: FiltererFormProps) {
   const {
-    columnDefs,
     tableInstance: {
-      state: { filters },
-      columns,
-      setFilter,
-      setAllFilters,
+      getAllColumns,
+      getAllFlatColumns,
+      getState,
+      setColumnFilters,
+      setGlobalFilter,
+      getColumn,
+      // setFilter,
+      // setAllFilters,
     },
   } = useDataManagerContext();
+  const intl = useIntl();
+
+  const columns = getAllFlatColumns();
+  const { columnFilters } = getState();
   const form = useRef(null);
 
-  const handleSubmit = async (model) => {
-    setAllFilters(model.filters);
+  const handleSubmit = async (model: { filters: ColumnFilter[] }) => {
+    setColumnFilters(model.filters);
   };
 
-  const filterableColumnDefs = columns.filter((c) => !c.hide);
+  const filterableColumns = columns.filter((column) => column.getCanFilter());
+
+  if (columnFilters.length === 0) {
+    return (
+      <MenuGroup>
+        <Section
+          title={intl.formatMessage({
+            defaultMessage: 'Pick a field to filter by',
+            id: 'uidu.data-controls.filterer.no_filters',
+          })}
+        >
+          <ColumnsList
+            onClick={(column) => {
+              setColumnFilters([
+                ...columnFilters,
+                { id: column.id, value: 'a' },
+              ]);
+            }}
+            columns={filterableColumns}
+          />
+        </Section>
+      </MenuGroup>
+    );
+  }
 
   return (
-    <Form ref={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
-      <div tw="space-y-3">
-        {filters.map((filter: any, index) => {
-          const columnDef = getColumnDef(filterableColumnDefs, filter);
-          const field = getFieldFromColumnDef(columnDef);
-          const { Filter: FilterForm } = field;
-          return (
-            <div tw="px-3 flex items-center space-x-3" key={filter.id}>
-              <div className="mb-0 form-group">
-                <label htmlFor="" tw="flex items-center m-0">
-                  <FormattedMessage
-                    defaultMessage={`{index, plural,
+    <div tw="py-4">
+      <Form ref={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
+        <div tw="space-y-4">
+          <div tw="grid grid-template-columns[max-content 1fr 2fr min-content] gap-4 px-4">
+            {columnFilters.map((filter, index) => {
+              const column = getColumn(filter.id);
+              const { columnDef } = column;
+              const field = getFieldFromColumnDef(columnDef);
+              const { Filter: FilterForm } = field;
+              return (
+                <Fragment key={filter.id}>
+                  <div tw="flex items-center">
+                    <label htmlFor="" tw="flex items-center m-0">
+                      <FormattedMessage
+                        defaultMessage={`{index, plural,
                       =0 {Where}
                       other {Then where}
                     }`}
-                    values={{
-                      index,
+                        values={{
+                          index,
+                        }}
+                      />
+                    </label>
+                  </div>
+                  <Select
+                    layout="elementOnly"
+                    isClearable={false}
+                    isSearchable={false}
+                    menuPortalTarget={document.body}
+                    styles={{
+                      menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+                    }}
+                    components={{
+                      DropdownIndicator: () => null,
+                    }}
+                    value={filter.id}
+                    name={`filters[${index}][id]`}
+                    options={filterableColumns.map((c) => ({
+                      id: c.id,
+                      name: c.columnDef?.meta?.name,
+                      ...(c.columnDef?.meta?.icon
+                        ? {
+                            before: c.columnDef?.meta?.icon,
+                          }
+                        : {}),
+                    }))}
+                    onChange={(name, value) => {
+                      console.log(name, value);
+                      // this.updateFilterModel(value, filter.id);
                     }}
                   />
-                </label>
-              </div>
-              <Select
-                layout="elementOnly"
-                isClearable={false}
-                isSearchable={false}
-                menuPortalTarget={document.body}
-                styles={{
-                  menuPortal: (base) => ({ ...base, zIndex: 9999 }),
-                }}
-                components={{
-                  DropdownIndicator: () => null,
-                }}
-                value={filter.id}
-                name={`filters[${index}][id]`}
-                options={filterableColumnDefs.map((columnDef) => ({
-                  id: columnDef.id,
-                  name: columnDef.name,
-                  ...(columnDef.icon
-                    ? {
-                        before: columnDef.icon,
+                  {FilterForm && (
+                    <div tw="flex-1">
+                      <FilterForm
+                        index={index}
+                        filter={filter}
+                        field={field}
+                        columnDef={columnDef}
+                        onChange={() =>
+                          setTimeout(() => {
+                            (form.current as any).submit();
+                          }, 300)
+                        }
+                      />
+                    </div>
+                  )}
+                  <Button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const newColumnFilters = columnFilters.filter(
+                        (f, i) => i !== index,
+                      );
+                      setColumnFilters(newColumnFilters);
+                      if (newColumnFilters.length === 0) {
+                        closePopup();
                       }
-                    : {}),
-                }))}
-                onChange={(name, value) => {
-                  console.log(name, value);
-                  // this.updateFilterModel(value, filter.id);
-                }}
-              />
-              {FilterForm && (
-                <div tw="flex-1">
-                  <FilterForm
-                    index={index}
-                    filter={filter}
-                    field={field}
-                    columnDef={columnDef}
-                    onChange={() =>
-                      setTimeout(() => {
-                        (form.current as any).submit();
-                      }, 300)
-                    }
+                    }}
+                    iconBefore={<XIcon tw="h-4 w-4" />}
                   />
-                </div>
-              )}
-              <Button
-                type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setFilter(filter.id, undefined);
-                }}
-                iconBefore={<XIcon tw="h-4 w-4" />}
-              />
-            </div>
-          );
-        })}
-        <PickField
-          label={
-            filtersCount > 0 ? (
-              <FormattedMessage
-                defaultMessage="Add another filter"
-                id="uidu.data-controls.filterer.add_another"
-              />
-            ) : (
-              <FormattedMessage
-                defaultMessage="No filters applied. Pick a field"
-                id="uidu.data-controls.filterer.no_filters"
-              />
-            )
-          }
-          onClick={(columnDef) => {
-            setFilter(columnDef.id, 'a');
-          }}
-          isDefaultOpen={filtersCount === 0}
-          columnDefs={filterableColumnDefs}
-        />
-      </div>
-    </Form>
+                </Fragment>
+              );
+            })}
+          </div>
+          <PickField
+            label={intl.formatMessage({
+              defaultMessage: 'Add another filter',
+              id: 'uidu.data-controls.filterer.add_another',
+            })}
+            onClick={(columnDef) => {
+              setColumnFilters([
+                ...columnFilters,
+                { id: columnDef.id, value: 'a' },
+              ]);
+            }}
+            columns={filterableColumns}
+          />
+        </div>
+      </Form>
+    </div>
   );
 }

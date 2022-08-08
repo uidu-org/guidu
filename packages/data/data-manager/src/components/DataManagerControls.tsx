@@ -34,11 +34,8 @@ const defaultAvailableControls = {
   },
 };
 
-export default function DataManagerControls({ controls }) {
-  const {
-    currentView,
-    tableInstance: { setGlobalFilter },
-  } = useDataManagerContext();
+export default function DataManagerControls({ controls }: { controls: any }) {
+  const { currentView } = useDataManagerContext();
   const availableControls = {
     ...defaultAvailableControls,
     ...controls,

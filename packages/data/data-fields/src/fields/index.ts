@@ -1,3 +1,4 @@
+import { ColumnDef } from '@tanstack/react-table';
 import addField from './addField';
 import addressField from './address';
 import appointmentField from './appointment';
@@ -87,7 +88,7 @@ export const byName = {
   vote: voteField,
 };
 
-export default [
+const allFields: ColumnDef<unknown>[] = [
   addField,
   addressField,
   appointmentField,
@@ -117,3 +118,5 @@ export default [
   urlField,
   voteField,
 ];
+
+export default allFields;

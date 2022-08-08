@@ -1,13 +1,16 @@
+import { CellContext } from '@tanstack/react-table';
 import React from 'react';
 // import { groupRenderer } from '../../groups';
 
-export default (params) => {
-  // if (params.row.isGrouped) {
-  //   return groupRenderer(params);
+export default function Cell<T>(props: CellContext<T, string[]>) {
+  const { getValue, column } = props;
+  const value = getValue();
+  // if (props.row.isGrouped) {
+  //   return groupRenderer(props);
   // }
 
-  const values = params.options.filter((option) =>
-    (params.value || []).includes(option.id),
+  const values = (column.columnDef.meta?.options || []).filter((option) =>
+    (value || []).includes(option.id),
   );
 
   if (!values || values.length === 0) {
@@ -16,17 +19,17 @@ export default (params) => {
 
   return (
     <div tw="truncate -mb-1.5">
-      {values.map((value) => (
+      {values.map((v) => (
         <span
           tw="rounded px-2 py-1 inline-flex text-sm mr-1.5 mb-1.5"
           style={{
-            backgroundColor: value.color || '#f1f3f5',
+            backgroundColor: v.color || '#f1f3f5',
             lineHeight: 'normal',
           }}
         >
-          <div tw="truncate">{value.name}</div>
+          <div tw="truncate">{v.name}</div>
         </span>
       ))}
     </div>
   );
-};
+}

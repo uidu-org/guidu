@@ -1,3 +1,4 @@
+import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
 
 export type FieldKind =
@@ -32,7 +33,7 @@ export type FieldKind =
 
 export type FieldDefinition = {};
 
-export type Field = {
+export type Field<T> = Partial<ColumnDef<T>> & {
   accessor: String | ((originalRow: any, rowIndex: number) => any);
   kind: FieldKind;
   name: string | React.ReactNode;
@@ -51,7 +52,6 @@ export type Field = {
   /** Grouper form allow for specifying grouping behavior for this field */
   Grouper?: React.FC<any>;
   /** Grouper form allow for specifying grouping behavior for this field */
-  cellProps?: any;
   cellStyle?: any;
   primary?: boolean;
   fieldGroup?: FieldGroupIdentifier;

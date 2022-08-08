@@ -1,7 +1,16 @@
+import { Row, Table } from '@tanstack/react-table';
 import React from 'react';
 import Item from './Item';
 
-export default function GalleryItem({ item, tableInstance, onItemClick }) {
+export default function GalleryItem<T>({
+  item,
+  tableInstance,
+  onItemClick,
+}: {
+  item: Row<T>;
+  tableInstance: Table<T>;
+  onItemClick: (item: Row<T>) => void;
+}) {
   if (!item) {
     return null;
   }
@@ -15,12 +24,7 @@ export default function GalleryItem({ item, tableInstance, onItemClick }) {
       key={item.id}
     >
       <div tw="border rounded background[rgb(var(--body-on-primary-bg))]">
-        <Item
-          tableInstance={tableInstance}
-          state={tableInstance.state}
-          row={item}
-          item={item}
-        />
+        <Item tableInstance={tableInstance} item={item} />
       </div>
     </div>
   );

@@ -12,6 +12,7 @@
     "@babel/runtime": "^7.18.9",
     "@cubejs-client/core": "^0.30.29",
     "@cubejs-client/react": "^0.30.40",
+    "@tanstack/react-table": "^8.5.11",
     "@types/react-grid-layout": "^1.3.2",
     "@uidu/dashboard-controls": "^1.0.32",
     "@uidu/dashlets": "^1.7.16",

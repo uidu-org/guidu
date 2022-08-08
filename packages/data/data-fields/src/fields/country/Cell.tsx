@@ -1,26 +1,29 @@
+import { CellContext } from '@tanstack/react-table';
 import React from 'react';
 
-export default function Cell(params) {
-  // if (params.node && params.node.group) {
+export default function Cell<T>({ getValue, column }: CellContext<T, unknown>) {
+  // if (props.node && props.node.group) {
   //   return null;
   // }
 
-  if (!params || !params.value) {
+  const value = getValue();
+
+  if (!value) {
     return null;
   }
 
-  const value = params.options.filter(
-    (option) => option.id === params.value,
-  )[0];
+  const option = (column.columnDef?.meta?.options || []).find(
+    (o) => o.id === value,
+  );
 
-  if (!value) {
-    return params.value;
+  if (!option) {
+    return value;
   }
 
   return (
     <>
-      <span tw="mr-2.5 flex-shrink-0">{value.before}</span>
-      <div tw="truncate">{value.name}</div>
+      <span tw="mr-2.5 flex-shrink-0">{option.before}</span>
+      <div tw="truncate">{option.name}</div>
     </>
   );
 }

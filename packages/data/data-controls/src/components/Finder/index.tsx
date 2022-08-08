@@ -12,7 +12,6 @@ export default function Finder({}: FinderProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const {
-    currentView,
     tableInstance: { setGlobalFilter },
   } = useDataManagerContext();
 

@@ -1,18 +1,21 @@
-import React, { memo } from 'react';
+import { CellContext } from '@tanstack/react-table';
+import React from 'react';
 
-function Cell(params) {
-  // if (params.row.isGrouped) {
-  //   return groupRenderer(params);
+export default function Cell<T>(props: CellContext<T, string>) {
+  // if (props.row.isGrouped) {
+  //   return groupRenderer(props);
   // }
-  const { value, row } = params;
+  const { getValue, row, column } = props;
+  const value = getValue();
 
   return (
     <div tw="min-w-0">
       <span tw="flex items-center">
-        {params.avatar && (
+        {column.columnDef.meta?.avatar && (
           <img
             tw="rounded-full mr-2.5 border w-6"
-            src={params.avatar(params)}
+            src={column.columnDef.meta.avatar({ row })}
+            alt={value}
           />
         )}
         <span tw="truncate">{value}</span>
@@ -20,5 +23,3 @@ function Cell(params) {
     </div>
   );
 }
-
-export default memo(Cell);

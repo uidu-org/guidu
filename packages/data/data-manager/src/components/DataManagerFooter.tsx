@@ -1,13 +1,12 @@
 import React from 'react';
 import { useDataManagerContext } from './DataManagerContext';
-import DataManagerPagination from './DataManagerPagination';
 
 export default function DataManagerFooter() {
   const {
     currentView,
     tableInstance,
     tableInstance: {
-      state: { pageIndex },
+      getState,
       previousPage,
       nextPage,
       canPreviousPage,
@@ -16,6 +15,8 @@ export default function DataManagerFooter() {
       gotoPage,
     },
   } = useDataManagerContext();
+  const { pagination } = getState();
+
   switch (currentView.kind) {
     case 'calendar':
       return <></>;
@@ -24,43 +25,43 @@ export default function DataManagerFooter() {
     case 'gallery':
       return (
         <>
-          <DataManagerPagination
+          {/* <DataManagerPagination
             previousPage={previousPage}
             nextPage={nextPage}
             canPreviousPage={canPreviousPage}
             canNextPage={canNextPage}
-            pageIndex={pageIndex}
-            pageOptions={pageOptions}
+            pageIndex={pagination.pageIndex}
+            pageSize={pagination.pageSize}
             gotoPage={gotoPage}
-          />
+          /> */}
         </>
       );
     case 'list':
       return (
         <>
-          <DataManagerPagination
+          {/* <DataManagerPagination
             previousPage={previousPage}
             nextPage={nextPage}
             canPreviousPage={canPreviousPage}
             canNextPage={canNextPage}
-            pageIndex={pageIndex}
-            pageOptions={pageOptions}
+            pageIndex={pagination.pageIndex}
+            pageSize={pagination.pageSize}
             gotoPage={gotoPage}
-          />
+          /> */}
         </>
       );
     default:
       return (
         <>
-          <DataManagerPagination
+          {/* <DataManagerPagination
             previousPage={previousPage}
             nextPage={nextPage}
             canPreviousPage={canPreviousPage}
             canNextPage={canNextPage}
-            pageIndex={pageIndex}
-            pageOptions={pageOptions}
+            pageIndex={pagination.pageIndex}
+            pageSize={pagination.pageSize}
             gotoPage={gotoPage}
-          />
+          /> */}
         </>
       );
   }

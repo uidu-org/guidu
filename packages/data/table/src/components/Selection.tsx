@@ -1,3 +1,4 @@
+import { CellContext, HeaderContext } from '@tanstack/react-table';
 import { CheckboxStateless } from '@uidu/checkbox';
 import React, { useCallback, useRef, useState } from 'react';
 import styled from 'styled-components';
@@ -48,57 +49,98 @@ const useHover = <T extends HTMLElement>(): [
   return [callbackRef, value];
 };
 
-export function RowSelection({ row }) {
+export function RowSelection<T>({ row }: CellContext<T, unknown>) {
   const [hoverRef, isHovered] = useHover<HTMLDivElement>();
 
-  const { isSelected } = row;
-  const { onChange, checked, ...rest } = row.getToggleRowSelectedProps();
+  const { getIsSelected, toggleSelected } = row;
+  const isSelected = getIsSelected();
 
   return (
-    <>
-      <div
-        tw="flex justify-center items-center h-full w-full"
+    <div
+      tw="flex justify-center items-center h-full w-full relative"
+      ref={hoverRef}
+    >
+      {isHovered || isSelected ? (
+        <>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleSelected(!isSelected);
+            }}
+            tw="absolute inset-0"
+          />
+          <CheckboxStateless
+            checked={isSelected}
+            onChange={() => toggleSelected(!isSelected)}
+            id={row.id}
+          />
+        </>
+      ) : (
+        <RowIndex>
+          <span tw="flex flex-col justify-center min-w-0 line-height[initial]">
+            <span tw="color[rgb(var(--body-secondary-color))]">
+              {row.index + 1}
+            </span>
+          </span>
+        </RowIndex>
+      )}
+    </div>
+  );
+}
+
+export function HeaderSelection<T>({
+  table: {
+    getToggleAllRowsSelectedHandler,
+    toggleAllRowsSelected,
+    getIsAllRowsSelected,
+    getIsSomeRowsSelected,
+  },
+}: HeaderContext<T, unknown>) {
+  return (
+    <div tw="flex justify-center items-center h-full w-full relative">
+      <button
+        type="button"
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
-          row.toggleRowSelected(!isSelected);
+          toggleAllRowsSelected(!getIsAllRowsSelected());
         }}
-        ref={hoverRef}
-      >
-        {isHovered || isSelected ? (
-          <CheckboxStateless
-            {...rest}
-            checked={checked}
-            onChange={() => {}}
-            id={row.id}
-          />
-        ) : (
-          <RowIndex>
-            <span tw="flex flex-col justify-center min-w-0 line-height[initial]">
-              <span tw="color[rgb(var(--body-secondary-color))]">
-                {row.index + 1}
-              </span>
-            </span>
-          </RowIndex>
-        )}
-      </div>
-    </>
+        tw="absolute inset-0"
+      />
+      <CheckboxStateless
+        onChange={getToggleAllRowsSelectedHandler()}
+        checked={getIsAllRowsSelected()}
+        isIndeterminate={getIsSomeRowsSelected()}
+      />
+    </div>
   );
 }
 
-export function HeaderSelection({ getToggleAllRowsSelectedProps, ...rest }) {
+export function AggregatedSelection<T>({ table }: CellContext<T, unknown>) {
+  const {
+    getToggleAllRowsSelectedHandler,
+    toggleAllRowsSelected,
+    getIsAllRowsSelected,
+    getIsSomeRowsSelected,
+  } = table;
   return (
-    <>
-      <CheckboxStateless {...getToggleAllRowsSelectedProps()} id="Foo" />
-    </>
-  );
-}
-
-export function AggregatedSelection({ getToggleAllRowsSelectedProps, row }) {
-  const { onChange, ...rest } = row.getToggleRowSelectedProps();
-  return (
-    <div tw="flex justify-center items-center h-full w-full" onClick={onChange}>
-      <CheckboxStateless {...getToggleAllRowsSelectedProps()} id="Foo" />
+    <div tw="flex justify-center items-center h-full w-full relative">
+      <button
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleAllRowsSelected(!getIsAllRowsSelected());
+        }}
+        tw="absolute inset-0"
+      />
+      <CheckboxStateless
+        onChange={getToggleAllRowsSelectedHandler()}
+        checked={getIsAllRowsSelected()}
+        isIndeterminate={getIsSomeRowsSelected()}
+      />
     </div>
   );
 }

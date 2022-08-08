@@ -29,16 +29,16 @@ export default md`
           </Tr>
         </thead>
         <tbody>
-          {fields.map((field: any) => (
-            <Tr key={field.kind}>
+          {fields.map((field) => (
+            <Tr key={field.meta?.kind}>
               <Td>
-                <code>{field.kind}</code>
+                <code>{field.meta?.kind}</code>
               </Td>
               <Td>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   <span
                     style={{
-                      backgroundColor: field.color,
+                      backgroundColor: field.meta?.color,
                       color: '#fff',
                       width: 28,
                       height: 28,
@@ -50,12 +50,12 @@ export default md`
                       flexShrink: 0,
                     }}
                   >
-                    {field.icon}
+                    {field.meta?.icon}
                   </span>
                   <div>
-                    <p style={{}}>{field.name}</p>
+                    <p style={{}}>{field.meta?.name}</p>
                     <p style={{ fontSize: '.95rem', color: 'gray' }}>
-                      {field.description}
+                      {field.meta?.description}
                     </p>
                   </div>
                 </div>

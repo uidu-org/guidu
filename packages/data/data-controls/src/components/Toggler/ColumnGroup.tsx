@@ -1,87 +1,111 @@
+import { Column, HeaderGroup } from '@tanstack/react-table';
+import Button, { ButtonGroup } from '@uidu/button';
 import { CheckboxStateless } from '@uidu/checkbox';
 import { useDataManagerContext } from '@uidu/data-manager';
 import React, { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
-import { FormattedMessage } from 'react-intl';
+import { useIntl } from 'react-intl';
 
-export default function ColumnGroup({
-  columnGroupObj,
+export default function ColumnGroup<T>({
   columns,
+  columnGroupObj,
   checkedColumnsCount,
-  isGroupChecked,
+}: {
+  columns: Column<T, unknown>[];
+  columnGroupObj: HeaderGroup<T>;
 }) {
+  console.log(columnGroupObj);
+  const intl = useIntl();
+  const { headers } = columnGroupObj;
+
   const [isOpen, setIsOpen] = useState(true);
   const {
-    tableInstance: {
-      setHiddenColumns,
-      state: { hiddenColumns },
-    },
+    tableInstance: { setColumnVisibility, getState },
   } = useDataManagerContext();
+
+  const { columnVisibility } = getState();
+
+  const isGroupChecked = headers.every((header) =>
+    header.column.getIsVisible(),
+  );
 
   return (
     <div tw="flow-root mb-3">
       <div tw="px-3 xl:px-4 border-0 py-2">
         <div tw="flex items-center justify-between">
           <div tw="truncate flex-grow text-gray-500 uppercase text-sm">
-            {columnGroupObj.name} ({checkedColumnsCount}/{columns.length})
+            {columnGroupObj.id} ({checkedColumnsCount}/{headers.length})
           </div>
           <div tw="text-sm">
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                const columnIds = columns.map((column) => column.id);
-                if (isGroupChecked) {
-                  return setHiddenColumns(columnIds);
-                }
-                return setHiddenColumns(
-                  hiddenColumns.filter((c) => !columnIds.includes(c)),
-                );
-              }}
-            >
-              {isGroupChecked ? (
-                <FormattedMessage
-                  defaultMessage="Deselect all"
-                  id="uidu.data-controls.toggler.deselect_all"
-                />
-              ) : (
-                <FormattedMessage
-                  defaultMessage="Select all"
-                  id="uidu.data-controls.toggler.select_all"
-                />
-              )}
-            </a>{' '}
-            &middot;{' '}
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setIsOpen(!isOpen);
-              }}
-            >
-              Toggle group
-            </a>
+            <ButtonGroup>
+              <Button
+                onClick={(e) => {
+                  e.preventDefault();
+                  const columnIds = headers.map((header) => header.id);
+                  if (isGroupChecked) {
+                    return setColumnVisibility(
+                      columnIds.reduce(
+                        (obj, item) => ({
+                          ...obj,
+                          [item]: false,
+                        }),
+                        columnVisibility,
+                      ),
+                    );
+                  }
+                  return setColumnVisibility(
+                    columnIds.reduce(
+                      (obj, item) => ({
+                        ...obj,
+                        [item]: true,
+                      }),
+                      columnVisibility,
+                    ),
+                  );
+                }}
+              >
+                {isGroupChecked
+                  ? intl.formatMessage({
+                      defaultMessage: 'Deselect all',
+                      id: 'uidu.data-controls.toggler.deselect_all',
+                    })
+                  : intl.formatMessage({
+                      defaultMessage: 'Select all',
+                      id: 'uidu.data-controls.toggler.select_all',
+                    })}
+              </Button>
+              <Button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsOpen(!isOpen);
+                }}
+              >
+                {intl.formatMessage({ defaultMessage: 'Toggle group' })}
+              </Button>
+            </ButtonGroup>
           </div>
         </div>
       </div>
       <AnimateHeight height={isOpen ? 'auto' : 0}>
-        {columns.map((column, index) => (
-          <a
-            href="#"
-            key={column.id}
-            tw="px-3 xl:px-4 border-0 py-2 block"
-            onClick={(e) => {
-              e.preventDefault();
-              column.toggleHidden(!!column.isVisible);
-            }}
-          >
+        {headers.map((header) => (
+          <div key={header.id} tw="px-3 xl:px-4 border-0 py-2 block relative">
+            <button
+              type="button"
+              tw="absolute inset-0"
+              onClick={(e) => {
+                e.preventDefault();
+                header.column.toggleVisibility(!header.column.getIsVisible());
+              }}
+            />
             <div tw="flex items-center justify-between">
               <span tw="mr-2">
-                <CheckboxStateless checked={column.isVisible} />
+                <CheckboxStateless checked={header.column.getIsVisible()} />
               </span>
-              <div tw="truncate flex-grow">{column.name}</div>
+              <div tw="truncate flex-grow">
+                {header.column.columnDef.meta?.name}
+              </div>
             </div>
-          </a>
+          </div>
         ))}
       </AnimateHeight>
     </div>

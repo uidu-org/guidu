@@ -1,8 +1,7 @@
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/solid';
+import { CellContext, flexRender, Row as RowType } from '@tanstack/react-table';
 import React from 'react';
-import { Cell, Row as RowType } from 'react-table';
 import { StyledComponent } from 'styled-components';
-import { theme } from 'twin.macro';
 
 export default function Row<T extends object>({
   components,
@@ -18,7 +17,7 @@ export default function Row<T extends object>({
     Td: StyledComponent<any, {}>;
   };
   rowHeight: number;
-  onItemClick: (row: RowType<T>) => void;
+  onItemClick: (row: T) => void;
   row: RowType<T>;
   size: number;
   start: number;
@@ -26,51 +25,51 @@ export default function Row<T extends object>({
 }) {
   const { StyledRow, Td } = components;
 
-  const renderCell = (cell: Cell<T>) => {
-    if (cell.isGrouped) {
+  const renderCell = (cell: CellContext<T, unknown>) => {
+    if (cell.cell.getIsGrouped()) {
+      const { getToggleExpandedHandler } = row;
       return (
         <div tw="flex items-center flex-grow justify-between min-w-0 min-h-0">
           <div tw="flex flex-grow items-center space-x-2 min-w-0 min-h-0">
-            <span
+            <button
+              type="button"
               tw="flex-shrink-0"
-              // eslint-disable-next-line react/jsx-props-no-spreading
-              {...row.getToggleRowExpandedProps()}
+              onClick={getToggleExpandedHandler()}
             >
-              {row.isExpanded ? (
+              {row.getIsExpanded() ? (
                 <ChevronDownIcon tw="h-4 w-4" />
               ) : (
                 <ChevronRightIcon tw="h-4 w-4" />
               )}
-            </span>
-            {cell.render('Cell', { ...cell.column.cellProps })}
+            </button>
+            {flexRender(cell.column.columnDef.cell, cell)}
           </div>
           <div tw="ml-2">({row.subRows.length})</div>
         </div>
       );
     }
 
-    if (cell.isAggregated) {
-      return cell.render('Aggregated', {
-        setAggregation,
-      });
+    if (cell.cell.getIsAggregated()) {
+      return flexRender(
+        cell.column.columnDef.aggregatedCell ?? cell.column.columnDef.cell,
+        cell,
+      );
     }
 
-    if (cell.isPlaceholder) {
+    if (cell.cell.getIsPlaceholder()) {
       return null;
     }
 
-    return cell.render('Cell', { ...cell.column.cellProps });
+    return flexRender(cell.column.columnDef.cell, cell);
   };
 
   return (
     <StyledRow
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...row.getRowProps([{ style: { minWidth: '100%' } }])}
       size={size}
       start={start}
       onClick={(e: React.MouseEvent) => {
         e.preventDefault();
-        onItemClick(row);
+        onItemClick(row.original);
       }}
       // onContextMenu={(e: React.MouseEvent) => {
       //   console.log(e);
@@ -78,27 +77,19 @@ export default function Row<T extends object>({
       //   // show actions in Popup
       // }}
     >
-      {row.cells
-        .filter((cell) => !cell.column.isPrivate)
+      {row
+        .getVisibleCells()
+        .filter((cell) => !cell.column.columnDef.meta?.isPrivate)
         .map((cell, index) => (
           <Td
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...cell.getCellProps([
-              {
-                style: {
-                  left: index === 0 ? 0 : '56px',
-                  ...(cell.column.isSorted
-                    ? { backgroundColor: theme`colors.yellow.50` }
-                    : {}),
-                  ...cell.column.cellStyle,
-                },
-              },
-            ])}
-            pinned={cell.column.pinned}
+            key={cell.column.id}
+            width={cell.column.getSize()}
+            isSorted={cell.column.getIsSorted()}
+            pinned={cell.column.columnDef.meta?.pinned}
             index={index}
             height={rowHeight}
           >
-            {renderCell(cell)}
+            {renderCell(cell.getContext())}
           </Td>
         ))}
     </StyledRow>

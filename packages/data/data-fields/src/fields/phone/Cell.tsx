@@ -1,17 +1,25 @@
+import { CellContext } from '@tanstack/react-table';
 import React from 'react';
 // import { groupRenderer } from '../../groups';
 
-export default (params) => {
+export default function Cell<T>({ getValue }: CellContext<T, string>) {
   // create the cell
-  // if (params.row.isGrouped) {
-  //   return groupRenderer(params);
+  // if (props.row.isGrouped) {
+  //   return groupRenderer(props);
   // }
+
+  const value = getValue();
 
   return (
     <span tw="flex items-center justify-between w-full">
-      <span tw="flex-grow truncate mr-2.5">{params.value || '-'}</span>
-      {params.value ? (
-        <a href={`tel:${params.value}`} target="_blank" tw="p-1 ml-auto flex">
+      <span tw="flex-grow truncate mr-2.5">{value || '-'}</span>
+      {value ? (
+        <a
+          href={`tel:${value}`}
+          target="_blank"
+          tw="p-1 ml-auto flex"
+          rel="noopener noreferrer"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
@@ -32,4 +40,4 @@ export default (params) => {
       )}
     </span>
   );
-};
+}

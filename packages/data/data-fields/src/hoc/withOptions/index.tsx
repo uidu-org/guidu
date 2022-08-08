@@ -1,11 +1,13 @@
 import loadable from '@loadable/component';
-import { Field } from '../../types';
+import { ColumnDef } from '@tanstack/react-table';
 
 const Filter = loadable(
   () => import('../../components/filters/SelectFilterForm'),
 );
 
-const WithOptions = (props: Partial<Field>): Partial<Field> => ({
+const WithOptions = (
+  props: Partial<ColumnDef<unknown>>,
+): Partial<ColumnDef<unknown>> => ({
   ...props,
   Filter,
 });

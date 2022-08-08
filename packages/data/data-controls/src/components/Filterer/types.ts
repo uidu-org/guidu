@@ -6,7 +6,5 @@ export type FiltererProps = {
 };
 
 export type FiltererFormProps = {
-  tableInstance: any;
-  filters: Array<any>;
-  filtersCount: number;
+  closePopup: () => void;
 };
