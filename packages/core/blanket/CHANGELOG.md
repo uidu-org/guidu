@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.6.6
+
+### Patch Changes
+
+- 074f55362: Bump react-table and typed all data-manager related components
+
 ## 0.6.5
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 3.0.0
+
+### Major Changes
+
+- 074f55362: Bump react-table and typed all data-manager related components
+
+### Patch Changes
+
+- Updated dependencies [074f55362]
+  - @uidu/board@1.0.0
+  - @uidu/data-controls@3.0.0
+  - @uidu/data-fields@2.0.0
+  - @uidu/data-views@2.0.0
+  - @uidu/gallery@2.0.0
+  - @uidu/list@2.0.0
+  - @uidu/table@2.0.0
+
 ## 2.4.16
 
 ### Patch Changes

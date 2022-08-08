@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.6.12
+
+### Patch Changes
+
+- 074f55362: Bump react-table and typed all data-manager related components
+- Updated dependencies [074f55362]
+  - @uidu/list@2.0.0
+  - @uidu/table@2.0.0
+
 ## 0.6.11
 
 ### Patch Changes

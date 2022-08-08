@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.35
+
+### Patch Changes
+
+- 074f55362: Bump react-table and typed all data-manager related components
+- Updated dependencies [074f55362]
+  - @uidu/media-card@0.6.21
+
 ## 0.5.34
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.4.17
+
+### Patch Changes
+
+- 074f55362: Bump react-table and typed all data-manager related components
+- Updated dependencies [074f55362]
+  - @uidu/payments@1.4.10
+
 ## 0.4.16
 
 ### Patch Changes

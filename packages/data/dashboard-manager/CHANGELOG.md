@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 2.0.0
+
+### Major Changes
+
+- 074f55362: Bump react-table and typed all data-manager related components
+
+### Patch Changes
+
+- Updated dependencies [074f55362]
+  - @uidu/dashlets@2.0.0
+
 ## 1.4.8
 
 ### Patch Changes
