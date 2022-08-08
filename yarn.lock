@@ -6675,7 +6675,7 @@ __metadata:
     "@uidu/data-fields": ^1.5.30
     "@uidu/docs": ^0.5.18
     "@uidu/spinner": ^0.5.17
-    "@uidu/table": 1.4.20
+    "@uidu/table": 1.4.21
     "@uidu/tooltip": ^0.5.22
     d3-array: ^3.2.0
     gql-query-builder: ^3.7.0
@@ -6695,7 +6695,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-controls@^2.1.22, @uidu/data-controls@^2.1.23, @uidu/data-controls@^2.1.24, @uidu/data-controls@workspace:packages/data/data-controls":
+"@uidu/data-controls@^2.1.22, @uidu/data-controls@^2.1.23, @uidu/data-controls@^2.1.25, @uidu/data-controls@workspace:packages/data/data-controls":
   version: 0.0.0-use.local
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
@@ -8829,7 +8829,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@1.4.20, @uidu/table@^1.4.19, @uidu/table@workspace:packages/data/table":
+"@uidu/table@1.4.21, @uidu/table@^1.4.19, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -8843,7 +8843,7 @@ __metadata:
     "@tanstack/react-table": ^8.5.11
     "@uidu/button": 1.3.25
     "@uidu/checkbox": ^1.4.5
-    "@uidu/data-controls": ^2.1.24
+    "@uidu/data-controls": ^2.1.25
     "@uidu/data-fields": ^1.5.30
     "@uidu/data-manager": 2.4.16
     "@uidu/docs": ^0.5.18
