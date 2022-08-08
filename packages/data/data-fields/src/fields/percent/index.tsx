@@ -23,7 +23,9 @@ const Percent: ColumnDef<unknown, number> = {
     color: 'darkkhaki',
     valueFormatter: (value) => `${value}%`,
   },
-  cell: (props) => <div tw="flex justify-end flex-grow">>{props.getValue()}</div>,
+  cell: (props) => (
+    <div tw="flex justify-end flex-grow">{props.getValue()}</div>
+  ),
   aggregate: 'average',
 };
 
