@@ -1,5 +1,13 @@
 # @uidu/breadcrumbs
 
+## 1.0.23
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+- Updated dependencies [41cac6d20]
+  - @uidu/button@1.3.26
+
 ## 1.0.22
 
 ### Patch Changes

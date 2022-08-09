@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 1.2.8
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+
 ## 1.2.7
 
 ### Patch Changes

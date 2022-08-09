@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 1.0.0
+
+### Major Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+
 ## 0.7.13
 
 ### Patch Changes

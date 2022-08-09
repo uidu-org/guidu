@@ -1,5 +1,14 @@
 # @uidu/field-image-uploader
 
+## 2.0.17
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+- Updated dependencies [41cac6d20]
+  - @uidu/media-core@1.0.0
+  - @uidu/button@1.3.26
+
 ## 2.0.16
 
 ### Patch Changes

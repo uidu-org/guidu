@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 1.1.21
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+
 ## 1.1.20
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.26
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+
 ## 2.1.25
 
 ### Patch Changes

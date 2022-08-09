@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 1.6.11
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+- Updated dependencies [41cac6d20]
+  - @uidu/form@1.2.28
+
 ## 1.6.10
 
 ### Patch Changes

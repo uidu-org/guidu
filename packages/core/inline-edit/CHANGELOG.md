@@ -1,5 +1,14 @@
 # @uidu/inline-edit
 
+## 0.3.24
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+- Updated dependencies [41cac6d20]
+  - @uidu/button@1.3.26
+  - @uidu/form@1.2.28
+
 ## 0.3.23
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.15
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+
 ## 0.1.14
 
 ### Patch Changes

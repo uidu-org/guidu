@@ -1,5 +1,23 @@
 # @uidu/editor-core
 
+## 0.15.13
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+- Updated dependencies [41cac6d20]
+  - @uidu/media-core@1.0.0
+  - @uidu/button@1.3.26
+  - @uidu/menu@0.7.16
+  - @uidu/modal-dialog@1.0.9
+  - @uidu/mentions@0.4.17
+  - @uidu/field-date@1.2.8
+  - @uidu/form@1.2.28
+  - @uidu/select@1.6.11
+  - @uidu/media-card@0.6.22
+  - @uidu/media-picker@0.7.20
+  - @uidu/media-filmstrip@0.5.6
+
 ## 0.15.12
 
 ### Patch Changes
