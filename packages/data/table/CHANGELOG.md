@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 2.0.1
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+- Updated dependencies [41cac6d20]
+  - @uidu/button@1.3.26
+  - @uidu/menu@0.7.16
+  - @uidu/data-fields@2.0.1
+  - @uidu/data-manager@3.0.1
+
 ## 2.0.0
 
 ### Major Changes

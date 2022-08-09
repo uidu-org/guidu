@@ -1,5 +1,18 @@
 # @uidu/data-fields
 
+## 2.0.1
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+- Updated dependencies [41cac6d20]
+  - @uidu/button@1.3.26
+  - @uidu/menu@0.7.16
+  - @uidu/field-date@1.2.8
+  - @uidu/form@1.2.28
+  - @uidu/select@1.6.11
+  - @uidu/field-color-picker@2.2.5
+
 ## 2.0.0
 
 ### Major Changes

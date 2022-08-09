@@ -1,5 +1,13 @@
 # @uidu/chat-window
 
+## 0.4.22
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+- Updated dependencies [41cac6d20]
+  - @uidu/message@0.5.36
+
 ## 0.4.21
 
 ### Patch Changes

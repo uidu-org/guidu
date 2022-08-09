@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.7.20
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+- Updated dependencies [41cac6d20]
+  - @uidu/media-core@1.0.0
+
 ## 0.7.19
 
 ### Patch Changes

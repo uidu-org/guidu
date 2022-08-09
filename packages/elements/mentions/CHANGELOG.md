@@ -1,5 +1,13 @@
 # @uidu/mentions
 
+## 0.4.17
+
+### Patch Changes
+
+- 41cac6d20: Media core upload options url -> endpoint
+- Updated dependencies [41cac6d20]
+  - @uidu/button@1.3.26
+
 ## 0.4.16
 
 ### Patch Changes

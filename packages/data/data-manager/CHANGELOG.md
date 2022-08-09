@@ -1,5 +1,20 @@
 # @uidu/data-manager
 
+## 3.0.1
+
+### Patch Changes
+
+- Updated dependencies [41cac6d20]
+  - @uidu/button@1.3.26
+  - @uidu/menu@0.7.16
+  - @uidu/board@1.0.1
+  - @uidu/data-fields@2.0.1
+  - @uidu/table@2.0.1
+  - @uidu/shell@2.1.26
+  - @uidu/calendar@0.4.15
+  - @uidu/data-controls@3.0.1
+  - @uidu/data-views@2.0.1
+
 ## 3.0.0
 
 ### Major Changes
