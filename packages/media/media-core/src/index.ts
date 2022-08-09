@@ -1,5 +1,5 @@
 import AwsS3 from '@uppy/aws-s3';
-import XHRUpload from '@uppy/xhr-upload';
+import XHRUpload, { XHRUploadOptions } from '@uppy/xhr-upload';
 import { FileType } from './types';
 export * from './constants';
 export * from './types';
@@ -12,11 +12,9 @@ export const isMediaBlobUrl = (url: string): boolean => {
   return url.indexOf(`${mediaBlobUrlIdentifier}=true`) > -1;
 };
 
-export const localUploadOptions = ({ url: endpoint }) => ({
+export const localUploadOptions = (options: XHRUploadOptions) => ({
   module: XHRUpload,
-  options: {
-    endpoint,
-  },
+  options,
   responseHandler: ({ response: { body } }) => body,
 });
 

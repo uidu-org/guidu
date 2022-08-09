@@ -1,5 +1,5 @@
-import { AwsS3Options } from '@uppy/aws-s3';
-import { XHRUploadOptions } from '@uppy/xhr-upload';
+import AwsS3, { AwsS3Options } from '@uppy/aws-s3';
+import XHRUpload, { XHRUploadOptions } from '@uppy/xhr-upload';
 
 export type FileMetadata = {
   extension?: string;
@@ -23,7 +23,7 @@ export type FileIdentifier = {
 export type MediaClientConfig = any;
 
 export type MediaUploadOptions = {
-  module: any;
+  module: AwsS3 | XHRUpload;
   options: Partial<XHRUploadOptions> | Partial<AwsS3Options>;
   responseHandler: (response) => FileIdentifier;
 };

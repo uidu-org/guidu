@@ -57,7 +57,7 @@ export default class Avatar extends Component<any, any> {
             // onFocus={this.onFocus}
             label={null}
             uploadOptions={localUploadOptions({
-              url: 'https://uidu.uidu.local:8443/upload',
+              endpoint: 'https://uidu.uidu.local:8443/upload',
             })}
           />
         </div>

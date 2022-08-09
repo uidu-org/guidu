@@ -21,7 +21,7 @@ export default class Example extends Component {
             open={isOpen}
             onRequestClose={this.close}
             uploadOptions={localUploadOptions({
-              url: 'https://uidu.local:8443/upload',
+              endpoint: 'https://uidu.local:8443/upload',
             })}
           />
         )}

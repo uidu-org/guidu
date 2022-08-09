@@ -14,12 +14,25 @@ export default class Basic extends PureComponent {
       <Form {...formDefaultProps}>
         <FieldFileUploader
           {...inputDefaultProps}
+          options={{
+            autoProceed: true,
+            allowMultipleUploadBatches: false,
+          }}
+          moduleOptions={{
+            width: '100%',
+            hideProgressAfterFinish: true,
+          }}
           uploadOptions={localUploadOptions({
-            url: 'https://uidufundraising.uidu.local:8443/upload',
+            endpoint: 'https://uidu.uidu.local:8443/upload',
           })}
         />
         <FieldFileUploader
           {...inputDefaultProps}
+          options={{
+            restrictions: {
+              allowedFileTypes: ['image/jpeg', 'image/png'],
+            },
+          }}
           uploadOptions={s3UploadOptions({
             url: 'https://uidu.dev',
             type: 'file',

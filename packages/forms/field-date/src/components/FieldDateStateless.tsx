@@ -32,6 +32,7 @@ function FieldDate({
   name,
   className = 'form-control',
   onChange,
+  onFocus,
   disabled,
   required,
   min,
@@ -94,6 +95,7 @@ function FieldDate({
       name={name}
       className={className}
       onChange={onChange}
+      onFocus={onFocus}
       required={required}
       min={min}
       max={max}

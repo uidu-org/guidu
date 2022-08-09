@@ -198,14 +198,14 @@ const Playground: React.FunctionComponent<Props> = ({
         <FieldGeosuggest name="geosuggest" label="Geosuggest" />
         <FieldImageUploader
           uploadOptions={localUploadOptions({
-            url: 'https://uidufundraising.uidu.local:8443/upload',
+            endpoint: 'https://uidufundraising.uidu.local:8443/upload',
           })}
           name="image-uploader"
           label="Image"
         />
         <FieldFileUploader
           uploadOptions={localUploadOptions({
-            url: 'https://uidufundraising.uidu.local:8443/upload',
+            endpoint: 'https://uidufundraising.uidu.local:8443/upload',
           })}
           name="file-uploader"
           label="File"

@@ -23,7 +23,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@atlaskit/tag": "^11.3.4",
+    "@atlaskit/tag": "^11.3.5",
     "@atlaskit/tag-group": "^10.0.13",
     "@uidu/docs": "^0.5.18",
     "@uidu/field-textarea": "^1.2.5",

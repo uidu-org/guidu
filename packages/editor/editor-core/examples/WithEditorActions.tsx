@@ -54,7 +54,7 @@ export default function Basic({}) {
                     media={{
                       provider: Promise.resolve({
                         uploadOptions: localUploadOptions({
-                          url: 'https://uidu.local:8443/upload',
+                          endpoint: 'https://uidu.local:8443/upload',
                         }),
                         viewMediaClientConfig: Promise.resolve('test'),
                         uploadMediaClientConfig: Promise.resolve('test'),

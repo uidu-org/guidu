@@ -22,28 +22,30 @@ function FieldFileUploader({
   onSetValue,
   onChange,
   name,
-  options = defaultOptions,
+  options = {},
+  moduleOptions = {},
   uploadOptions,
   ...rest
 }: FieldFileUploaderProps) {
+  const handleChange = (results) => {
+    onSetValue(results);
+    onChange(name, results);
+  };
+
   const uppy = useMemo(
     () =>
-      new Uppy(options)
-        .use(uploadOptions.module, uploadOptions.options)
+      new Uppy({
+        ...defaultOptions,
+        ...options,
+      })
+        .use(uploadOptions.module, moduleOptions)
         .on('complete', (result) => {
           handleChange(result.successful.map(uploadOptions.responseHandler));
         }),
     [],
   );
 
-  useEffect(() => {
-    return () => uppy.close();
-  }, []);
-
-  const handleChange = (results) => {
-    onSetValue(results);
-    onChange(name, results);
-  };
+  useEffect(() => () => uppy.close({ reason: 'unmount' }), [uppy]);
 
   return (
     <Wrapper {...rest}>
@@ -59,7 +61,8 @@ function FieldFileUploader({
             browse: 'browse',
           },
         }}
-        {...rest}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...moduleOptions}
       />
     </Wrapper>
   );
