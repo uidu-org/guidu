@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.0.1
+
+### Patch Changes
+
+- e4c004566: CubeManagerCube fix
+- Updated dependencies [e4c004566]
+  - @uidu/dashlets@2.0.2
+
 ## 2.0.0
 
 ### Major Changes

@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.0.2
+
+### Patch Changes
+
+- e4c004566: CubeManagerCube fix
+
 ## 2.0.1
 
 ### Patch Changes

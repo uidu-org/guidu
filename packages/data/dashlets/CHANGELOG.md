@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 2.0.2
+
+### Patch Changes
+
+- e4c004566: CubeManagerCube fix
+- Updated dependencies [e4c004566]
+  - @uidu/dashboard-manager@2.0.1
+  - @uidu/data-fields@2.0.2
+  - @uidu/table@2.0.2
+
 ## 2.0.1
 
 ### Patch Changes

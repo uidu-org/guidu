@@ -1,5 +1,16 @@
 # @uidu/data-manager
 
+## 3.0.2
+
+### Patch Changes
+
+- e4c004566: CubeManagerCube fix
+- Updated dependencies [e4c004566]
+  - @uidu/data-fields@2.0.2
+  - @uidu/table@2.0.2
+  - @uidu/data-controls@3.0.2
+  - @uidu/data-views@2.0.2
+
 ## 3.0.1
 
 ### Patch Changes

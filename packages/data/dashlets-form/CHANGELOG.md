@@ -1,5 +1,13 @@
 # @uidu/dashlets-form
 
+## 1.0.25
+
+### Patch Changes
+
+- e4c004566: CubeManagerCube fix
+- Updated dependencies [e4c004566]
+  - @uidu/dashlets@2.0.2
+
 ## 1.0.24
 
 ### Patch Changes
