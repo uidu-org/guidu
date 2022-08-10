@@ -57,8 +57,8 @@ export { default as uidField } from './uid';
 export { default as urlField } from './url';
 export { default as voteField } from './vote';
 
-export const byName = {
-  addField: addField,
+export const byName: Record<string, Partial<ColumnDef<unknown>>> = {
+  addField,
   address: addressField,
   appointment: appointmentField,
   attachments: attachmentsField,
