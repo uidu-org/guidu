@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.27
+
+### Patch Changes
+
+- e4c004566: CubeManagerCube fix
+
 ## 3.1.26
 
 ### Patch Changes
