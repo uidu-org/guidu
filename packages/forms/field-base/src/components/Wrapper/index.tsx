@@ -67,7 +67,7 @@ export default function Wrapper({
   }
 
   if (layout === 'elementOnly') {
-    return <>{control}</>;
+    return control;
   }
 
   return (

@@ -1,5 +1,6 @@
 import { Form } from '@uidu/form';
 import React, { useRef, useState } from 'react';
+import { UseFormReturn } from 'react-hook-form';
 import { formDefaultProps } from '../../form/examples-utils';
 
 export const inputDefaultProps = {
@@ -26,10 +27,12 @@ function FieldExampleEvents({ component: Component, defaultValue, ...rest }) {
   );
 
   const onChange = (name, value) => {
+    console.log(name, value);
     setEventResults(`onChange called with value: ${value}`);
   };
 
   const onBlur = () => {
+    console.log('onBlur called from fieldbase above');
     setEventResults('onBlur called from FieldBase above');
   };
 
@@ -38,7 +41,7 @@ function FieldExampleEvents({ component: Component, defaultValue, ...rest }) {
   };
 
   return (
-    <Form {...formDefaultProps} footerRenderer={() => null}>
+    <Form<{ foo: string }> {...formDefaultProps}>
       <Component
         {...inputDefaultProps}
         onChange={onChange}
@@ -68,22 +71,29 @@ function FieldExampleAppearance({
   ...rest
 }) {
   return (
-    <Form {...formDefaultProps} footerRenderer={() => null}>
+    <Form {...formDefaultProps}>
       <Component
         {...inputDefaultProps}
         value={defaultValue}
         label="With default value"
       />
-      <Component {...inputDefaultProps} disabled label="disabled" />
-      <Component {...inputDefaultProps} required label="Required field" />
-      <Component {...inputDefaultProps} isInvalid label="Invalid" />
+      <Component {...inputDefaultProps} name="foo1" disabled label="disabled" />
+      <Component
+        {...inputDefaultProps}
+        name="foo2"
+        required
+        label="Required field"
+      />
+      <Component {...inputDefaultProps} name="foo3" isInvalid label="Invalid" />
       <Component
         {...inputDefaultProps}
         label="With help"
+        name="foo4"
         help={<span className="text-primary">This is a node help</span>}
       />
       <Component
         {...inputDefaultProps}
+        name="foo5"
         label={null}
         floatLabel="Test floating label"
       />
@@ -92,17 +102,17 @@ function FieldExampleAppearance({
 }
 
 export function FieldExampleRefs({ component: Component, ...rest }) {
-  const ref = useRef(null);
+  const ref = useRef<UseFormReturn>(null);
+
   return (
-    <Form {...formDefaultProps} footerRenderer={() => null}>
-      <Component {...inputDefaultProps} componentRef={ref} />
+    <Form {...formDefaultProps} ref={ref}>
+      <Component {...inputDefaultProps} ref={ref} />
       <div>
         <button
           className="btn"
           onClick={(e) => {
             e.preventDefault();
-            console.log(ref);
-            ref.current.focus();
+            ref.current?.setFocus('foo');
           }}
         >
           Focus component

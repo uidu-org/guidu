@@ -1,32 +1,50 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
-import { FieldTextProps } from '../types';
+import React, { ChangeEvent } from 'react';
+import {
+  Path,
+  RegisterOptions,
+  useController,
+  useFormContext,
+} from 'react-hook-form';
+import { FieldTextStatelessProps } from '../types';
 import FieldTextStateless from './FieldTextStateless';
 
-function FieldText({
-  onChange,
-  onSetValue,
-  name,
-  forwardedRef,
-  ...rest
-}: FieldTextProps) {
-  const handleChange = (event) => {
-    const { value } = event.currentTarget;
-    onChange(name, value);
-    onSetValue(value);
-  };
+type FieldTextProps<T> = FieldTextStatelessProps & {
+  name: Path<T>;
+  options: RegisterOptions;
+  onChange: (name: string, value: T) => void;
+};
+
+export default function FieldText<T>(props: FieldTextProps<T>) {
+  const { name, onChange: handleChange, value: defaultValue } = props;
+
+  console.log(defaultValue);
+
+  const { control } = useFormContext<T>();
+  const {
+    field: { onChange, onBlur, value, ref },
+    fieldState: { invalid, isTouched, isDirty, error },
+    formState: { touchedFields, dirtyFields },
+  } = useController<T>({
+    name,
+    control,
+    defaultValue: defaultValue || '',
+  });
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...props}>
       <FieldTextStateless
-        {...rest}
-        onChange={handleChange}
-        ref={forwardedRef}
+        {...props}
+        ref={ref}
+        name={name}
+        value={value}
+        onChange={(e: ChangeEvent) => {
+          onChange(e.currentTarget.value);
+          handleChange(name, e.currentTarget.value);
+        }}
+        onBlur={onBlur}
       />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldTextProps, ref) => (
-  <FieldText {...props} forwardedRef={ref} />
-));

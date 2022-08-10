@@ -1,7 +1,7 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
+import { HTMLAttributes } from 'react';
 
-export type FieldTextStatelessProps = {
+export type FieldTextStatelessProps = HTMLAttributes<HTMLInputElement> & {
   /** Standard HTML input autocomplete attribute. */
   autoComplete?: string;
   /** Sets whether to apply spell checking to the content. */
@@ -18,13 +18,12 @@ export type FieldTextStatelessProps = {
   /** Function that is called whenever the state of the checkbox changes. It will
    be called with an object containing the react synthetic event. Use currentTarget to get value, name and checked */
   onChange?: (name, value, otherProps?: any) => void;
-  onBlur?: (name, value) => void;
   onSetValue?: (value, validate?: boolean) => void;
 
   forwardedRef?: any;
   // /** Handler to be called when the input loses focus. */
   componentRef?: React.RefObject<any>;
-  // onBlur?: (e: React.FocusEvent) => any;
+  onBlur?: (e: React.FocusEvent) => any;
   // /** Handler to be called when the input changes. */
   // onChange?: (e: React.ChangeEvent) => any;
   /** Handler to be called when the input receives focus. */
@@ -52,6 +51,6 @@ export type FieldTextStatelessProps = {
   value?: any;
   className?: string;
   disabled?: boolean;
-} & WithAnalyticsEventsProps;
+};
 
 export type FieldTextProps = FieldTextStatelessProps & FieldBaseProps;

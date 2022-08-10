@@ -1,6 +1,7 @@
 import { ClassValue } from 'classnames/types';
 import Formsy from 'formsy-react';
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
 import styled, { css } from 'styled-components';
 import { FormProps, LayoutType } from '../types';
 import FormContext from './FormContext';
@@ -15,9 +16,9 @@ const Loading = styled.div<{ isLoading: boolean }>`
     `};
 `;
 
-function Form({
+function Form<T>({
   footerRenderer = () => {},
-  handleSubmit = async (model) => {},
+  handleSubmit: onSubmit = async (model: T) => {},
   inputsWrapperProps = {},
   withLoader = true,
   children,
@@ -31,13 +32,16 @@ function Form({
   disabled = false,
   overrides = {},
   ...rest
-}: FormProps & { forwardedRef: React.Ref<any> }) {
+}: FormProps) {
+  const methods = useForm<T>({ mode: 'onChange', ...rest });
+  const { handleSubmit, formState, clearErrors, reset } = methods;
+
   const form: React.RefObject<Formsy> = useRef(null);
   const isMounted = useRef(false);
   const [canSubmit, setCanSubmit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  useImperativeHandle(forwardedRef, () => form.current);
+  useImperativeHandle(forwardedRef, () => methods);
 
   useEffect(() => {
     isMounted.current = true;
@@ -50,9 +54,9 @@ function Form({
 
   const disableButton = () => setCanSubmit(false);
 
-  const onValidSubmit = (model, resetForm) => {
+  const onValidSubmit = (model) => {
     setIsLoading(true);
-    handleSubmit(model, resetForm).then(() => {
+    return onSubmit(model, reset).then(() => {
       if (isMounted.current) {
         setIsLoading(false);
       }
@@ -66,6 +70,19 @@ function Form({
     validatePristine,
     overrides,
   };
+
+  return (
+    <FormProvider {...methods}>
+      <form onSubmit={handleSubmit(async (model) => onValidSubmit(model))}>
+        {children}
+        {footerRenderer(
+          { loading: isLoading, canSubmit: formState.isValid },
+          form.current,
+          onValidSubmit,
+        )}
+      </form>
+    </FormProvider>
+  );
 
   return (
     <FormContext.Provider value={contextProps}>
