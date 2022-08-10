@@ -2320,9 +2320,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cubejs-client/core@npm:^0.30.29":
-  version: 0.30.29
-  resolution: "@cubejs-client/core@npm:0.30.29"
+"@cubejs-client/core@npm:^0.30.46":
+  version: 0.30.46
+  resolution: "@cubejs-client/core@npm:0.30.46"
   dependencies:
     "@babel/plugin-transform-runtime": ^7.17.0
     "@babel/runtime": ^7.1.2
@@ -2332,36 +2332,36 @@ __metadata:
     ramda: ^0.27.0
     url-search-params-polyfill: ^7.0.0
     uuid: ^8.3.2
-  checksum: b3db4ab7f49e0b9280e4cedd4e385954e61e9487b62d11be3a27aaf46b5427e1a032fbf3a823693c763acfed8aef28d3ee85bb1602fb9687416722f0eafec874
+  checksum: 77263b7194c679fbce4a281f8f97cfbe91ad8887ff828509c5201d26928cee65ac4f80c128294d80d7910d86f2f90813fe11cd4351dd54d494cd9110635e0c22
   languageName: node
   linkType: hard
 
-"@cubejs-client/react@npm:^0.30.40":
-  version: 0.30.40
-  resolution: "@cubejs-client/react@npm:0.30.40"
+"@cubejs-client/react@npm:^0.30.46":
+  version: 0.30.46
+  resolution: "@cubejs-client/react@npm:0.30.46"
   dependencies:
     "@babel/runtime": ^7.1.2
-    "@cubejs-client/core": ^0.30.29
+    "@cubejs-client/core": ^0.30.46
     anser: ^2.0.1
     core-js: ^3.6.5
     html-entities: ^2.3.2
     ramda: ^0.27.0
   peerDependencies:
     react: ">=16.10.2"
-  checksum: f35d3c44d428746989bdf56c30f0928f0c146a32c41448108843aa969989235c79a77111fa99bcaaa60ae40260bff1559225b048534538b3cc23037fe3b2a6ee
+  checksum: 2aca34b52189b7666e9ce6fb2f0eecbc6ddde31082a0196d85f82c77beb4ac3564300d25b219220fd53f9ec3461f4dc850779dc00441d9583217fcb613f71527
   languageName: node
   linkType: hard
 
-"@cubejs-client/ws-transport@npm:^0.30.29":
-  version: 0.30.29
-  resolution: "@cubejs-client/ws-transport@npm:0.30.29"
+"@cubejs-client/ws-transport@npm:^0.30.46":
+  version: 0.30.46
+  resolution: "@cubejs-client/ws-transport@npm:0.30.46"
   dependencies:
     "@babel/runtime": ^7.1.2
-    "@cubejs-client/core": ^0.30.29
+    "@cubejs-client/core": ^0.30.46
     core-js: ^3.6.5
     isomorphic-ws: ^4.0.1
     ws: ^7.3.1
-  checksum: b12365a39b8877f3d8b69637bfd7bc4ce0ab5856e80bfbbd4c3acd8f5cde7ec2db58ea450601436f4e56360d64ab2c80f7afe2748e86a121b087628b8e8b5824
+  checksum: d0f07b81afe183998219ec6e973791ca7451c2d8ec9ca2e070ad027b92f878a3bd614fa31e0cb8e1b610886f4166684f57482fcdb93f809dd1815902c096ecaf
   languageName: node
   linkType: hard
 
@@ -5878,10 +5878,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/semver@npm:^7.0.0, @types/semver@npm:^7.3.10":
-  version: 7.3.10
-  resolution: "@types/semver@npm:7.3.10"
-  checksum: 7047c2822b1759b2b950f39cfcf261f2b9dca47b4b55bdebba0905a8553631f1531eb0f59264ffe4834d1198c8331c8e0010a4cd742f4e0b60abbf399d134364
+"@types/semver@npm:^7.0.0, @types/semver@npm:^7.3.11":
+  version: 7.3.11
+  resolution: "@types/semver@npm:7.3.11"
+  checksum: 20c3fcc6247ce2382d41cd54e735db1d8de341ee2a75a211fe4218da153b73ccfd050177b0f2b54979912e1d4942e2767ea4dc124ef12a4deef291a43c10d55f
   languageName: node
   linkType: hard
 
@@ -5920,14 +5920,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/styled-components@npm:^5.1.25":
-  version: 5.1.25
-  resolution: "@types/styled-components@npm:5.1.25"
+"@types/styled-components@npm:^5.1.26":
+  version: 5.1.26
+  resolution: "@types/styled-components@npm:5.1.26"
   dependencies:
     "@types/hoist-non-react-statics": "*"
     "@types/react": "*"
     csstype: ^3.0.2
-  checksum: 60ce64f13283b01da54fd3a4c5703769d8575c979d5ec6b67ad124c2d4df980c9b96bb91af87e03f6447a816a5d2b0270c63eefad60cfa885091b594984525f5
+  checksum: 84f53b3101739b20d1731554fb7735bc2f3f5d050a8b392e9845403c8c8bbd729737d033978649f9195a97b557875b010d46e35a4538564a2d0dbcce661dbf76
   languageName: node
   linkType: hard
 
@@ -6601,8 +6601,8 @@ __metadata:
   resolution: "@uidu/dashboard-manager@workspace:packages/data/dashboard-manager"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@cubejs-client/core": ^0.30.29
-    "@cubejs-client/react": ^0.30.40
+    "@cubejs-client/core": ^0.30.46
+    "@cubejs-client/react": ^0.30.46
     "@tanstack/react-table": ^8.5.11
     "@types/react-grid-layout": ^1.3.2
     "@uidu/dashboard-controls": ^1.0.32
@@ -6644,8 +6644,8 @@ __metadata:
   resolution: "@uidu/dashlets-form@workspace:packages/data/dashlets-form"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@cubejs-client/core": ^0.30.29
-    "@cubejs-client/react": ^0.30.40
+    "@cubejs-client/core": ^0.30.46
+    "@cubejs-client/react": ^0.30.46
     "@uidu/accordion": ^0.6.16
     "@uidu/dashlets": ^2.0.0
     "@uidu/docs": ^0.5.18
@@ -6667,8 +6667,8 @@ __metadata:
     "@amcharts/amcharts4": ^4.10.26
     "@amcharts/amcharts4-geodata": ^4.1.23
     "@babel/runtime": ^7.18.9
-    "@cubejs-client/core": ^0.30.29
-    "@cubejs-client/react": ^0.30.40
+    "@cubejs-client/core": ^0.30.46
+    "@cubejs-client/react": ^0.30.46
     "@loadable/component": ^5.15.2
     "@tanstack/react-table": ^8.5.11
     "@uidu/dashboard-manager": ^2.0.0
@@ -6776,9 +6776,9 @@ __metadata:
   resolution: "@uidu/data-manager@workspace:packages/data/data-manager"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@cubejs-client/core": ^0.30.29
-    "@cubejs-client/react": ^0.30.40
-    "@cubejs-client/ws-transport": ^0.30.29
+    "@cubejs-client/core": ^0.30.46
+    "@cubejs-client/react": ^0.30.46
+    "@cubejs-client/ws-transport": ^0.30.46
     "@loadable/component": ^5.15.2
     "@tanstack/match-sorter-utils": ^8.1.1
     "@tanstack/react-table": ^8.5.11
@@ -7215,7 +7215,7 @@ __metadata:
     "@babel/runtime": ^7.18.9
     "@uidu/form": "*"
     classnames: ^2.3.1
-    nanoid: ^4.0.0
+    nanoid: ^3.3.4
     react: ^18.2.0
     react-feather: ^2.0.10
     styled-components: ^5.3.5
@@ -17500,8 +17500,8 @@ __metadata:
     "@babel/register": ^7.18.9
     "@babel/runtime": ^7.18.9
     "@changesets/cli": ^2.24.2
-    "@cubejs-client/core": ^0.30.29
-    "@cubejs-client/react": ^0.30.40
+    "@cubejs-client/core": ^0.30.46
+    "@cubejs-client/react": ^0.30.46
     "@emotion/react": ^11.10.0
     "@emotion/styled": ^11.10.0
     "@faker-js/faker": ^7.4.0
@@ -17563,8 +17563,8 @@ __metadata:
     "@types/react-table": ^7.7.12
     "@types/react-transition-group": ^4.4.5
     "@types/react-virtualized": ^9.21.21
-    "@types/semver": ^7.3.10
-    "@types/styled-components": ^5.1.25
+    "@types/semver": ^7.3.11
+    "@types/styled-components": ^5.1.26
     "@types/swiper": ^5.4.3
     "@types/url-parse": ^1.4.8
     "@types/url-search-params": ^1.1.0
@@ -22516,15 +22516,6 @@ __metadata:
   bin:
     nanoid: bin/nanoid.cjs
   checksum: 2fddd6dee994b7676f008d3ffa4ab16035a754f4bb586c61df5a22cf8c8c94017aadd360368f47d653829e0569a92b129979152ff97af23a558331e47e37cd9c
-  languageName: node
-  linkType: hard
-
-"nanoid@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "nanoid@npm:4.0.0"
-  bin:
-    nanoid: bin/nanoid.js
-  checksum: 7d5946df5c6d383694195b781ae7b5067c149d164ec71e910d6b06676309c3459b68af570b944fb5ecd5065d19df464f05700d141d70bb712ff8ca06642fd8df
   languageName: node
   linkType: hard
 

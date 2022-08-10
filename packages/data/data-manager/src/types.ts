@@ -1,3 +1,4 @@
+import { ResultSet } from '@cubejs-client/core';
 import {
   ColumnDef,
   ColumnPinningPosition,
@@ -75,7 +76,8 @@ export type DataManagerProps<T> = {
 };
 
 export type DataManagerCubeProps<T> = DataManagerProps<T> & {
-  resultSet: any;
+  resultSet: ResultSet;
+  columnDefs: Record<string, ColumnDef<T, any>>;
   query: any;
   onReady?: (resultSet: any) => void;
   subscribe: boolean;

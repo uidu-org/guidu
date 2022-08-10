@@ -56,6 +56,12 @@ export const columnDefsNext: Record<string, ColumnDef<unknown>> = {
       name: 'First name',
     },
   },
+  'Users.avatar': {
+    id: 'Users.avatar',
+    meta: {
+      isPrivate: true,
+    },
+  },
   'Users.email': {
     id: 'Users.email',
     meta: {

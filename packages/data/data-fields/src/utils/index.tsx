@@ -31,7 +31,7 @@ import {
 } from '../fields';
 import { FieldGroup, FieldKind } from '../types';
 
-const getColumnType = (kind: FieldKind) => {
+export const getColumnType = (kind: FieldKind) => {
   switch (kind) {
     case 'addField':
       return addField;

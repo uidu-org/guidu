@@ -107,9 +107,7 @@ export default function DataManager<T>({
     getFilteredRowModel: getFilteredRowModel(),
     // getPaginationRowModel: getPaginationRowModel(),
     //
-    debugTable: true,
-    debugHeaders: true,
-    debugColumns: true,
+    debugAll: true,
     ...options,
   });
 

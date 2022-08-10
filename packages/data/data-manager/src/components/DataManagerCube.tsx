@@ -1,39 +1,45 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import { CubeContext, useCubeQuery } from '@cubejs-client/react';
-import { buildColumns } from '@uidu/data-fields';
+import { ColumnDef } from '@tanstack/react-table';
+import { getColumnType } from '@uidu/data-fields';
 import React, { useContext, useEffect, useMemo } from 'react';
 import { DataManagerCubeProps } from '../types';
 import DataManagerComponent from './DataManager';
 
-function DataManagerResults({
+function DataManagerResults<T>({
   resultSet,
   columnDefs,
   ...rest
-}: DataManagerCubeProps) {
-  const columns = useMemo(() => {
+}: DataManagerCubeProps<T>) {
+  const columns: ColumnDef<T>[] = useMemo(() => {
     if (resultSet) {
-      return buildColumns([
-        {
-          kind: 'default',
-          name: 'Default fields',
-          columns: resultSet.tableColumns().map((c) => {
-            return {
-              ...c,
-              field: c.key,
-              id: c.key,
-              accessor: (row) => row[c.key],
-              name: c.title,
-              kind: c.meta ? c.meta.kind : 'string',
-              fieldGroup: 'default',
-              ...columnDefs[c.key],
+      return resultSet.tableColumns().map((c) => {
+        const columnDef = columnDefs[c.key]?.meta?.kind
+          ? getColumnType(columnDefs[c.key].meta?.kind)
+          : {
+              meta: {
+                kind: 'string',
+              },
             };
-          }),
-        },
-      ]);
+        return {
+          ...c,
+          id: c.key,
+          accessorKey: c.key,
+          accessorFn: (row) => row[c.key],
+          ...columnDef,
+          ...columnDefs[c.key],
+          meta: {
+            ...c.meta,
+            ...columnDef?.meta,
+            name: c.title,
+            ...columnDefs[c.key]?.meta,
+          },
+        };
+      });
     }
     return [];
-  }, [resultSet]);
+  }, [resultSet, columnDefs]);
 
   const data = useMemo(() => {
     if (resultSet) {
@@ -42,10 +48,10 @@ function DataManagerResults({
     return [];
   }, [resultSet]);
 
-  return <DataManagerComponent {...rest} columnDefs={columns} rowData={data} />;
+  return <DataManagerComponent {...rest} columns={columns} rowData={data} />;
 }
 
-export default function DataManager({
+export default function DataManager<T>({
   columnDefs,
   currentView,
   children,
@@ -54,7 +60,7 @@ export default function DataManager({
   onReady = (resultSet: any) => null,
   subscribe = false,
   ...rest
-}: DataManagerCubeProps) {
+}: DataManagerCubeProps<T>) {
   const { cubejsApi } = useContext(CubeContext);
   const { query } = currentView;
 

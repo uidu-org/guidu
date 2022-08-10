@@ -138,9 +138,10 @@ function Table<T extends object>({
     <div tw="h-full" role="table">
       <div ref={parentRef} tw="h-full w-full overflow-auto">
         <div
-        // style={{
-        //   width: tableInstance.getTotalSize(),
-        // }}
+          style={{
+            // width: tableInstance.getTotalSize(),
+            minWidth: '100%',
+          }}
         >
           <div tw="background[rgb(var(--body-on-primary-bg))] flex flex-col min-w-full top-0 sticky z-10 w-max">
             {headerGroups.map((headerGroup) => {
