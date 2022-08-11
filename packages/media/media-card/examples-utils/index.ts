@@ -6,7 +6,7 @@ export const fakeImage = () => ({
   description: faker.lorem.sentence(),
   author: {
     avatar: faker.image.avatar(),
-    name: faker.name.findName(),
+    name: faker.name.fullName(),
     email: faker.internet.email(),
   },
   file: {
@@ -25,7 +25,7 @@ export const fakeVideo = () => ({
   description: faker.lorem.sentence(),
   author: {
     avatar: faker.image.avatar(),
-    name: faker.name.findName(),
+    name: faker.name.fullName(),
   },
   createdAt: faker.date.recent(),
   file: {
@@ -54,7 +54,7 @@ export const fakeFile = () => ({
   description: faker.lorem.sentence(),
   author: {
     avatar: faker.image.avatar(),
-    name: faker.name.findName(),
+    name: faker.name.fullName(),
   },
   createdAt: faker.date.recent(),
   file: {
@@ -73,7 +73,7 @@ export const fakeLink = () => ({
   description: faker.lorem.sentence(),
   author: {
     avatar: faker.image.avatar(),
-    name: faker.name.findName(),
+    name: faker.name.fullName(),
   },
   createdAt: faker.date.recent(),
   file: {

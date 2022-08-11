@@ -359,11 +359,11 @@ export const fetchContacts = () => {
           id: faker.datatype.uuid(),
           avatar: `https://i.pravatar.cc/150?img=${i}`,
           email: faker.internet.email(),
-          displayName: faker.name.findName(),
+          displayName: faker.name.fullName(),
           cover: faker.image.imageUrl(),
           donationCampaign: {
             id: faker.datatype.uuid(),
-            name: faker.name.findName(),
+            name: faker.name.fullName(),
             path: '/foo/bar',
             scope: 'donations',
           },
@@ -385,7 +385,7 @@ export const fetchContacts = () => {
           paymentMethod: Math.floor(Math.random() * 3) + 1,
           member: {
             avatar: faker.image.avatar(),
-            name: faker.name.findName(),
+            name: faker.name.fullName(),
             email: faker.internet.email(),
           },
           phone: faker.phone.number(),

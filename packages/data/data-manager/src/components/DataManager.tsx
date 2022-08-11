@@ -63,7 +63,12 @@ export default function DataManager<T>({
       minSize: 56,
       size: 56,
       maxSize: 56,
-      meta: { pinned: 'right' },
+      meta: {
+        pinned: 'right',
+        cellProps: {
+          style: { padding: 0 },
+        },
+      },
     } as Partial<ColumnDef<T>>);
   }
 

@@ -21,11 +21,15 @@ export const Td = styled.div.attrs<{
   pinned?: string;
   index: number;
   width: number;
+  minWidth?: number;
+  maxWidth?: number;
   isSorted: false | SortDirection;
 }>((props) => ({
   style: {
     height: `${props.height}px`,
     width: `${props.width}px`,
+    ...(props.minWidth && { minWidth: `${props.minWidth}px` }),
+    ...(props.maxWidth && { maxWidth: `${props.maxWidth}px` }),
     flex: '1 0 auto',
     ...(props.isSorted ? { backgroundColor: theme`colors.yellow.50` } : {}),
   },
@@ -41,6 +45,8 @@ export const Td = styled.div.attrs<{
 type ThProps = {
   height: number;
   width: number;
+  minWidth?: number;
+  maxWidth?: number;
   pinned?: string;
   index: number;
   isSorted?: boolean;
@@ -50,6 +56,8 @@ export const Th = styled.div.attrs<ThProps>((props: ThProps) => ({
   style: {
     height: `${props.height}px`,
     width: `${props.width}px`,
+    ...(props.minWidth && { minWidth: `${props.minWidth}px` }),
+    ...(props.maxWidth && { maxWidth: `${props.maxWidth}px` }),
     flex: '1 0 auto',
     ...(props.isSorted ? { backgroundColor: theme`colors.yellow.50` } : {}),
   },

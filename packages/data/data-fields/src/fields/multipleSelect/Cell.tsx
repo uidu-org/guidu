@@ -21,6 +21,7 @@ export default function Cell<T>(props: CellContext<T, string[]>) {
     <div tw="truncate -mb-1.5">
       {values.map((v) => (
         <span
+          key={v.id}
           tw="rounded px-2 py-1 inline-flex text-sm mr-1.5 mb-1.5"
           style={{
             backgroundColor: v.color || '#f1f3f5',

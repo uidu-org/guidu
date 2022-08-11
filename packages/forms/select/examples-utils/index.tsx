@@ -4,7 +4,7 @@ import 'twin.macro';
 
 export const defaultUsers = Array.from(Array(10)).map((x) => ({
   avatar: faker.image.avatar(),
-  name: faker.name.findName(),
+  name: faker.name.fullName(),
   email: faker.internet.email(),
 }));
 

@@ -20,7 +20,7 @@ export const generateMentionItem = (
 export const randomMentions = () =>
   Array.from(Array(10)).map((x) => ({
     avatar: faker.image.avatar(),
-    name: faker.name.findName(),
+    name: faker.name.fullName(),
     email: faker.internet.email(),
   }));
 

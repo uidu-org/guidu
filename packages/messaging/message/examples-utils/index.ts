@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 
 export const messagerFactory = () => ({
-  name: faker.name.findName(),
+  name: faker.name.fullName(),
   email: faker.internet.email(),
   avatar: {
     thumb: `https://api.adorable.io/avatars/80/${faker.internet.email()}.png`,
@@ -10,7 +10,7 @@ export const messagerFactory = () => ({
 
 export const messageFactory = () => ({
   messager: {
-    name: faker.name.findName(),
+    name: faker.name.fullName(),
     email: faker.internet.email(),
     avatar: {
       thumb: `https://api.adorable.io/avatars/80/${faker.internet.email()}.png`,
@@ -22,7 +22,7 @@ export const messageFactory = () => ({
 
 export const messageLogFactory = () => ({
   messager: {
-    name: faker.name.findName(),
+    name: faker.name.fullName(),
     email: faker.internet.email(),
     avatar: {
       thumb: `https://api.adorable.io/avatars/80/${faker.internet.email()}.png`,

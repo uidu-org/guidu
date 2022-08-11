@@ -1,6 +1,6 @@
 import { Row, Table } from '@tanstack/react-table';
+import { useVirtualizer } from '@tanstack/react-virtual';
 import React, { useCallback, useRef } from 'react';
-import { useVirtual } from 'react-virtual';
 import Header from './Header';
 import Item from './Item';
 
@@ -23,9 +23,9 @@ export default function List<T>({
   const headerGroups = getHeaderGroups();
   const { rows } = getRowModel();
 
-  const rowVirtualizer = useVirtual({
-    size: rows.length,
-    parentRef,
+  const rowVirtualizer = useVirtualizer({
+    count: rows.length,
+    getScrollElement: () => parentRef.current,
     estimateSize: useCallback(() => rowHeight, [rowHeight]),
     overscan: 5,
   });
@@ -34,6 +34,9 @@ export default function List<T>({
   // const cover = getCover(columns);
   // const avatar = getAvatar(columns);
 
+  const totalSize = rowVirtualizer.getTotalSize();
+  const virtualRows = rowVirtualizer.getVirtualItems();
+
   return (
     <div tw="h-full">
       <div ref={parentRef} tw="h-full w-full overflow-auto xl:px-4 px-3">
@@ -41,11 +44,11 @@ export default function List<T>({
         <div
           tw="relative"
           style={{
-            height: `${rowVirtualizer.totalSize}px`,
+            height: `${totalSize}px`,
             minHeight: `calc(100% - ${rowHeight * 2 - 8 - 16}px)`,
           }}
         >
-          {rowVirtualizer.virtualItems.map((virtualRow) => {
+          {virtualRows.map((virtualRow) => {
             const row = rows[virtualRow.index];
             return (
               <div

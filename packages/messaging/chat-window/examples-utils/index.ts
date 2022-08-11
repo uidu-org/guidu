@@ -35,7 +35,7 @@ export const message: () => MessageProps = () => ({
   createdAt: moment().toDate(),
   updatedAt: faker.date.recent(),
   messager: {
-    name: faker.name.findName(),
+    name: faker.name.fullName(),
     id: faker.random.boolean() ? '1306' : '1206',
     avatar: faker.image.avatar(),
   },

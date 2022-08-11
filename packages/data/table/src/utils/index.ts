@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, StyledComponent } from 'styled-components';
 import tw from 'twin.macro';
 
 export function getPinnedStyled({ pinned = 'left', index }) {
@@ -16,4 +16,18 @@ export function getPinnedStyled({ pinned = 'left', index }) {
       ${tw`border-l border-opacity-50 z-10 sticky!`}
     `;
   }
+}
+
+export function getComponents(
+  components: Record<string, StyledComponent<any, any>>,
+  overrides: Record<string, StyledComponent<any, any>> = {},
+) {
+  return Object.keys(components).reduce((acc, name) => {
+    const override = overrides[name] || {};
+    acc[name] = {
+      component: override.component || components[name],
+      props: { $style: override.style, ...override.props },
+    };
+    return acc;
+  }, {});
 }

@@ -1,8 +1,8 @@
 import { Column, Row } from '@tanstack/react-table';
+import { useVirtualizer } from '@tanstack/react-virtual';
 import { getAvatar, getCover } from '@uidu/data-fields';
 import { ScrollableContainer, ShellBody } from '@uidu/shell';
 import React, { useCallback, useMemo, useRef } from 'react';
-import { useVirtual } from 'react-virtual';
 import { GalleryProps } from '../types';
 import GalleryItem from './GalleryItem';
 
@@ -76,9 +76,9 @@ export default function Gallery<T>({
     [rows, columnCount],
   );
 
-  const rowVirtualizer = useVirtual({
-    size: items.length,
-    parentRef,
+  const rowVirtualizer = useVirtualizer({
+    count: items.length,
+    getScrollElement: () => parentRef.current,
     estimateSize,
     overscan: 5,
   });

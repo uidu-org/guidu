@@ -24,10 +24,18 @@ declare module '@tanstack/table-core' {
     isPrivate?: boolean;
     pinned?: ColumnPinningPosition;
     valueFormatter?: (value: TValue) => React.ReactNode;
+    cellProps?: {
+      style?: React.CSSProperties;
+      [key: string]: any;
+    };
+    headerProps?: {
+      style?: React.CSSProperties;
+      [key: string]: any;
+    };
     // editing mode
     enableEditing?: boolean;
     // renderers
-    filter: ({
+    filter?: ({
       columnDef,
     }: {
       columnDef: ColumnDef<TData, TValue>;

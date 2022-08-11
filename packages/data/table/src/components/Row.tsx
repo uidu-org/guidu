@@ -10,7 +10,6 @@ export default function Row<T extends object>({
   onItemClick,
   size,
   start,
-  setAggregation,
 }: {
   components: {
     StyledRow: StyledComponent<any, {}>;
@@ -21,7 +20,6 @@ export default function Row<T extends object>({
   row: RowType<T>;
   size: number;
   start: number;
-  setAggregation: (aggregation: string) => void;
 }) {
   const { StyledRow, Td } = components;
 
@@ -84,10 +82,14 @@ export default function Row<T extends object>({
           <Td
             key={cell.column.id}
             width={cell.column.getSize()}
+            minWidth={cell.column.columnDef.minSize}
+            maxWidth={cell.column.columnDef.maxSize}
             isSorted={cell.column.getIsSorted()}
             pinned={cell.column.columnDef.meta?.pinned}
             index={index}
             height={rowHeight}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...(cell.column.columnDef.meta.cellProps || {})}
           >
             {renderCell(cell.getContext())}
           </Td>

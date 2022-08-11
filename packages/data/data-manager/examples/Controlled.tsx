@@ -196,70 +196,82 @@ export default function Basic({}) {
 
   const columnHelper = createColumnHelper<any>();
 
-  const columns: ColumnDef<any>[] = [
-    // Display Column
-    columnHelper.display({
-      id: 'selection',
-      size: 64,
-      maxSize: 64,
-      header: (props) => <HeaderSelection {...props} />,
-      cell: (props) => <RowSelection {...props} />,
-      meta: { pinned: 'left' },
-    }),
-    // Accessor Column
-    columnHelper.accessor('displayName', {
-      footer: (props) => props.column.id,
-      meta: {
-        name: 'Display name',
-        kind: 'string',
-      },
-    }),
-    // Accessor Column
-    columnHelper.accessor((row) => row.email, {
-      id: 'email',
-      meta: { name: 'Email', kind: 'email' },
-      footer: (props) => props.column.id,
-    }),
-    // Accessor Column
-    columnHelper.accessor('age', {
-      footer: (props) => props.column.id,
-      meta: {
-        kind: 'number',
-        name: 'Age',
-        valueFormatter: (value) => value / 100,
-      },
-    }),
-    columnHelper.accessor('phone', {
-      footer: (props) => props.column.id,
-      meta: { kind: 'phone', name: 'phone' },
-    }),
-    columnHelper.accessor('gender', {
-      enableGrouping: true,
-      meta: {
-        kind: 'singleSelect',
-        name: 'Gender',
-        options: [
-          { id: 'male', name: 'male' },
-          { id: 'female', name: 'female' },
-        ],
-      },
-    }),
-    // Accessor Column
-    columnHelper.accessor('country', {
-      meta: { name: 'Country', kind: 'country' },
-      footer: (props) => props.column.id,
-    }),
-    // Accessor Column
-    columnHelper.accessor('status', {
-      meta: { name: 'Status', kind: 'string' },
-      footer: (props) => props.column.id,
-    }),
-    // Accessor Column
-    columnHelper.accessor('progress', {
-      meta: { name: 'Profile progress', kind: 'progress' },
-      footer: (props) => props.column.id,
-    }),
-  ];
+  const columnDefs: ColumnDef<any>[] = useMemo(
+    () => [
+      // Display Column
+      columnHelper.display({
+        id: 'selection',
+        size: 64,
+        minSize: 64,
+        maxSize: 64,
+        header: (props) => <HeaderSelection {...props} />,
+        cell: (props) => <RowSelection {...props} />,
+        meta: {
+          pinned: 'left',
+          headerProps: {
+            style: { padding: 0 },
+          },
+          cellProps: {
+            style: { padding: 0 },
+          },
+        },
+      }),
+      // Accessor Column
+      columnHelper.accessor('displayName', {
+        footer: (props) => props.column.id,
+        meta: {
+          name: 'Display name',
+          kind: 'string',
+        },
+      }),
+      // Accessor Column
+      columnHelper.accessor((row) => row.email, {
+        id: 'email',
+        meta: { name: 'Email', kind: 'email' },
+        footer: (props) => props.column.id,
+      }),
+      // Accessor Column
+      columnHelper.accessor('age', {
+        footer: (props) => props.column.id,
+        meta: {
+          kind: 'number',
+          name: 'Age',
+          valueFormatter: (value) => value / 100,
+        },
+      }),
+      columnHelper.accessor('phone', {
+        footer: (props) => props.column.id,
+        meta: { kind: 'phone', name: 'phone' },
+      }),
+      columnHelper.accessor('gender', {
+        enableGrouping: true,
+        meta: {
+          kind: 'singleSelect',
+          name: 'Gender',
+          options: [
+            { id: 'male', name: 'male' },
+            { id: 'female', name: 'female' },
+          ],
+        },
+      }),
+      // Accessor Column
+      columnHelper.accessor('country', {
+        meta: { name: 'Country', kind: 'country' },
+        footer: (props) => props.column.id,
+      }),
+      // Accessor Column
+      columnHelper.accessor('status', {
+        meta: { name: 'Status', kind: 'string' },
+        footer: (props) => props.column.id,
+      }),
+      // Accessor Column
+      columnHelper.accessor('progress', {
+        meta: { name: 'Profile progress', kind: 'progress' },
+        footer: (props) => props.column.id,
+      }),
+    ],
+    [],
+  );
 
   useEffect(() => {
     fetchContacts().then((response) => {
@@ -311,6 +323,18 @@ export default function Basic({}) {
     }
   };
 
+  const columns = useMemo(
+    () =>
+      buildNextColumns([
+        {
+          kind: 'default',
+          name: 'Default fields',
+          columns,
+        },
+      ]),
+    [columnDefs],
+  );
+
   return (
     <IntlProvider locale="en">
       <Router>
@@ -336,13 +360,7 @@ export default function Basic({}) {
           }}
           isAutoSaving={isAutoSaving}
           key={`table-for-${currentView.id}`}
-          columns={buildNextColumns([
-            {
-              kind: 'default',
-              name: 'Default fields',
-              columns,
-            },
-          ])}
+          columns={columns}
           rowData={data}
           currentView={currentView}
           // updateView={onViewUpdate}
