@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 2.0.4
+
+### Patch Changes
+
+- 7bf143667: Bump dependencies
+- Updated dependencies [7bf143667]
+  - @uidu/data-fields@2.0.4
+  - @uidu/table@2.0.4
+
 ## 2.0.3
 
 ### Patch Changes
