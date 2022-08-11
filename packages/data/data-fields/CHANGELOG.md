@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.0.3
+
+### Patch Changes
+
+- b690cc1f2: Exposed mergeByKind from data-fields
+
 ## 2.0.2
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 2.0.3
+
+### Patch Changes
+
+- b690cc1f2: Exposed mergeByKind from data-fields
+- Updated dependencies [b690cc1f2]
+  - @uidu/data-fields@2.0.3
+  - @uidu/table@2.0.3
+
 ## 2.0.2
 
 ### Patch Changes
