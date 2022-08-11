@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 2.0.1
+
+### Patch Changes
+
+- 7bf143667: Bump dependencies
+- Updated dependencies [7bf143667]
+  - @uidu/data-fields@2.0.4
+  - @uidu/data-controls@3.0.4
+
 ## 2.0.0
 
 ### Major Changes

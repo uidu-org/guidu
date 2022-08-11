@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.6.23
+
+### Patch Changes
+
+- 7bf143667: Bump dependencies
+
 ## 0.6.22
 
 ### Patch Changes
