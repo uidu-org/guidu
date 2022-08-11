@@ -109,8 +109,8 @@ function Table<T extends object>({
                         key={header.id}
                         height={headerHeight}
                         width={header.getSize()}
-                        minWidth={cell.column.columnDef.minSize}
-                        maxWidth={cell.column.columnDef.maxSize}
+                        minWidth={header.column.columnDef.minSize}
+                        maxWidth={header.column.columnDef.maxSize}
                         isSorted={header.column.getIsSorted()}
                         pinned={header?.column.columnDef.meta?.pinned}
                         index={index}
@@ -134,8 +134,8 @@ function Table<T extends object>({
         </div>
         <Body height={totalSize} verticalPadding={rowHeight * 2 - 8 - 16}>
           {/* {paddingTop > 0 && <div style={{ height: `${paddingTop}px` }} />} */}
-          {virtualRows.map(({ size, start, index }) => (
-            <Row key={index} size={size} start={start} index={index} />
+          {virtualRows.map(({ size, start, index, key }) => (
+            <Row key={key} size={size} start={start} index={index} />
           ))}
           {/* {paddingBottom > 0 && (
             <div style={{ height: `${paddingBottom}px` }} />
