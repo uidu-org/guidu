@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 3.0.5
+
+### Patch Changes
+
+- Updated dependencies [32a692bd5]
+  - @uidu/data-manager@3.0.5
+  - @uidu/data-views@2.0.5
+
 ## 3.0.4
 
 ### Patch Changes

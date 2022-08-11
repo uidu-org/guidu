@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 2.0.6
+
+### Patch Changes
+
+- 32a692bd5: Include virtualizer options in table
+- f0947be37: Fix virtual item key
+- Updated dependencies [32a692bd5]
+  - @uidu/data-manager@3.0.5
+
 ## 2.0.5
 
 ### Patch Changes
