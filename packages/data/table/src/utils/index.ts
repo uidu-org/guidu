@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 export function getPinnedStyled({ pinned = 'left', index }) {
   if (pinned === 'left') {
     return css`
-      left: ${index === 0 ? 0 : '56px'};
+      left: ${index === 0 ? 0 : 'var(--table-pinned-column-width, 56px)'};
       background: rgb(var(--body-on-primary-bg));
       ${tw`border-r border-opacity-50 z-10 sticky!`}
     `;
@@ -16,6 +16,7 @@ export function getPinnedStyled({ pinned = 'left', index }) {
       ${tw`border-l border-opacity-50 z-10 sticky!`}
     `;
   }
+  return css``;
 }
 
 export function getComponents(

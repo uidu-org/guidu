@@ -26,6 +26,7 @@ export default function List<T>({
   const rowVirtualizer = useVirtualizer({
     count: rows.length,
     getScrollElement: () => parentRef.current,
+    getItemKey: (index) => rows[index].original.id,
     estimateSize: useCallback(() => rowHeight, [rowHeight]),
     overscan: 5,
   });

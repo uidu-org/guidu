@@ -171,6 +171,9 @@ function App({ currentView, setCurrentView }) {
                     includeFooter: false,
                     headerHeight: 48,
                     rowHeight: 48,
+                    virtualizerOptions: {
+                      overscan: 100,
+                    },
                   },
                 }}
               />

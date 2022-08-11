@@ -137,6 +137,17 @@ function Table<T extends object>({
           })}
         </div>
         <Body height={totalSize} verticalPadding={rowHeight * 2 - 8 - 16}>
+          {/* <div tw="absolute z-09 top-0 left-0 right-0 bottom-0">
+            {rows.map((row) => (
+              <div
+                key={`fake-${row.original.id}`}
+                style={{ height: rowHeight }}
+                tw="border-b border-opacity-50 p-4"
+              >
+                <div tw="bg-gray-50 w-full h-full rounded" />
+              </div>
+            ))}
+          </div> */}
           {/* {paddingTop > 0 && <div style={{ height: `${paddingTop}px` }} />} */}
           {virtualRows.map(({ size, start, index, key }) => (
             <Row key={key} size={size} start={start} index={index} />
