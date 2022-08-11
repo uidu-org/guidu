@@ -1,5 +1,16 @@
 # @uidu/data-manager
 
+## 3.0.5
+
+### Patch Changes
+
+- 32a692bd5: Include virtualizer options in table
+- Updated dependencies [32a692bd5]
+- Updated dependencies [f0947be37]
+  - @uidu/table@2.0.6
+  - @uidu/data-controls@3.0.5
+  - @uidu/data-views@2.0.5
+
 ## 3.0.4
 
 ### Patch Changes
