@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.0.5
+
+### Patch Changes
+
+- ddfddbd88: Fix header size in table
+
 ## 2.0.4
 
 ### Patch Changes

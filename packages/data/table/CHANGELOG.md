@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 2.0.5
+
+### Patch Changes
+
+- ddfddbd88: Fix header size in table
+- Updated dependencies [ddfddbd88]
+  - @uidu/data-fields@2.0.5
+
 ## 2.0.4
 
 ### Patch Changes
