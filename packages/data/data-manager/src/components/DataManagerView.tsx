@@ -86,6 +86,10 @@ function DefaultEmptyState() {
   );
 }
 
+export type DataManagerViewProps = {
+  table: any;
+};
+
 function DataManagerView<T>({
   onItemClick,
   viewProps,

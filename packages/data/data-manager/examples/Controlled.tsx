@@ -329,7 +329,7 @@ export default function Basic({}) {
         {
           kind: 'default',
           name: 'Default fields',
-          columns,
+          columns: columnDefs,
         },
       ]),
     [columnDefs],

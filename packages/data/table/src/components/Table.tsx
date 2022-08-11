@@ -6,7 +6,7 @@ import {
   Row as RowType,
   Table as TableType,
 } from '@tanstack/react-table';
-import { useVirtualizer } from '@tanstack/react-virtual';
+import { useVirtualizer, VirtualizerOptions } from '@tanstack/react-virtual';
 import React, { useCallback } from 'react';
 import * as defaultComponents from '../styled';
 import { getComponents } from '../utils';
@@ -21,6 +21,7 @@ function Table<T extends object>({
   tableInstance,
   onItemClick,
   overrides = {},
+  virtualizerOptions,
 }: {
   includeFooter?: boolean;
   rowHeight?: number;
@@ -28,6 +29,7 @@ function Table<T extends object>({
   tableInstance: TableType<T>;
   onItemClick: (row: T) => void;
   overrides?: Record<string, any>;
+  virtualizerOptions?: VirtualizerOptions;
 }) {
   const { getHeaderGroups, getFooterGroups, getRowModel } = tableInstance;
 
@@ -73,8 +75,10 @@ function Table<T extends object>({
   const rowVirtualizer = useVirtualizer({
     count: rows.length,
     getScrollElement: () => parentRef.current,
-    overscan: 5,
+    overscan: 10,
     estimateSize: () => rowHeight,
+    getItemKey: (index) => rows[index].original.id,
+    ...(virtualizerOptions || {}),
   });
 
   const virtualRows = rowVirtualizer.getVirtualItems();
