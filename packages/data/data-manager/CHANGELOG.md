@@ -1,5 +1,18 @@
 # @uidu/data-manager
 
+## 3.0.4
+
+### Patch Changes
+
+- 7bf143667: Bump dependencies
+- Updated dependencies [7bf143667]
+  - @uidu/data-fields@2.0.4
+  - @uidu/gallery@2.0.1
+  - @uidu/list@2.0.1
+  - @uidu/table@2.0.4
+  - @uidu/data-controls@3.0.4
+  - @uidu/data-views@2.0.4
+
 ## 3.0.3
 
 ### Patch Changes
