@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.4.6
+
+### Patch Changes
+
+- b690cc1f2: Exposed mergeByKind from data-fields
+
 ## 1.4.5
 
 ### Patch Changes
