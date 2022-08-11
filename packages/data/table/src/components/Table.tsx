@@ -109,6 +109,8 @@ function Table<T extends object>({
                         key={header.id}
                         height={headerHeight}
                         width={header.getSize()}
+                        minWidth={cell.column.columnDef.minSize}
+                        maxWidth={cell.column.columnDef.maxSize}
                         isSorted={header.column.getIsSorted()}
                         pinned={header?.column.columnDef.meta?.pinned}
                         index={index}

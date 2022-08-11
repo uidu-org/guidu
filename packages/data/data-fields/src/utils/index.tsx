@@ -105,7 +105,7 @@ export const getFieldFromColumnDef = (columnDef) =>
   byName[columnDef.meta?.kind];
 
 export function mergeByKind<T>(passedMeta: ColumnMeta<T, unknown>) {
-  const { meta, ...rest } = byName[passedMeta.kind];
+  const { meta, ...rest } = byName[passedMeta.kind || 'string'];
   return {
     ...rest,
     meta: {
