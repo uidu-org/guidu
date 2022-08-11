@@ -26,6 +26,12 @@ declare module '@tanstack/table-core' {
     valueFormatter?: (value: TValue) => React.ReactNode;
     // editing mode
     enableEditing?: boolean;
+    // renderers
+    filter: ({
+      columnDef,
+    }: {
+      columnDef: ColumnDef<TData, TValue>;
+    }) => React.ReactNode;
     // specific field kinds
     options?: Array<{
       id: string | number | null;

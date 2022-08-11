@@ -1,102 +1,15 @@
-import { Column, ColumnDef } from '@tanstack/react-table';
+import { Column, ColumnDef, ColumnMeta } from '@tanstack/react-table';
 import numeral from 'numeral';
-import {
-  addField,
-  addressField,
-  attachmentsField,
-  avatarField,
-  byName,
-  checkboxField,
-  collectionField,
-  contactField,
-  countryField,
-  coverField,
-  currencyField,
-  dateField,
-  emailField,
-  memberField,
-  multipleSelectField,
-  numberField,
-  paymentMethodField,
-  percentField,
-  phoneField,
-  progressField,
-  ratingField,
-  singleSelectField,
-  stringField,
-  textField,
-  uidField,
-  urlField,
-  voteField,
-} from '../fields';
-import { FieldGroup, FieldKind } from '../types';
-
-export const getColumnType = (kind: FieldKind) => {
-  switch (kind) {
-    case 'addField':
-      return addField;
-    case 'address':
-      return addressField;
-    case 'attachments':
-      return attachmentsField;
-    case 'avatar':
-      return avatarField;
-    case 'checkbox':
-      return checkboxField;
-    case 'collection':
-      return collectionField;
-    case 'contact':
-      return contactField;
-    case 'country':
-      return countryField;
-    case 'cover':
-      return coverField;
-    case 'currency':
-      return currencyField;
-    case 'date':
-      return dateField;
-    case 'email':
-      return emailField;
-    case 'member':
-      return memberField;
-    case 'multipleSelect':
-      return multipleSelectField;
-    case 'number':
-      return numberField;
-    case 'paymentMethod':
-      return paymentMethodField;
-    case 'percent':
-      return percentField;
-    case 'phone':
-      return phoneField;
-    case 'progress':
-      return progressField;
-    case 'rating':
-      return ratingField;
-    case 'singleSelect':
-      return singleSelectField;
-    case 'string':
-      return stringField;
-    case 'text':
-      return textField;
-    case 'uid':
-      return uidField;
-    case 'url':
-      return urlField;
-    case 'vote':
-      return voteField;
-    default:
-      return {};
-  }
-};
+import { byName } from '../fields';
+import { FieldGroup } from '../types';
 
 export function buildNextColumn<T>({
   columns,
 }: {
-  columns: ColumnDef<T, unknown>[];
-}): ColumnDef<T, unknown>[] {
+  columns: Partial<ColumnDef<T, unknown>>[];
+}): Partial<ColumnDef<T, unknown>>[] {
   return columns.map((column) => {
-    const columnType = getColumnType(column.meta?.kind);
+    const columnType = byName[column.meta?.kind];
     return {
       id: column.accessorKey,
       accessor: column.id,
@@ -116,7 +29,7 @@ export const buildColumn = ({ columns, ...fieldGroup }: FieldGroup) => {
       fieldGroup,
       id: column.id,
       accessor: column.id,
-      ...(kind ? { ...getColumnType(kind) } : {}),
+      ...(kind ? { ...byName[kind] } : {}),
       ...(primary
         ? {
             canMove: false,
@@ -188,4 +101,16 @@ export const numericComparator = (number1, number2) => {
 export const getColumnDef = (columnDefs, filterOrGrouperOrSorter) =>
   columnDefs.filter((c) => c.id === filterOrGrouperOrSorter.id)[0];
 
-export const getFieldFromColumnDef = (columnDef) => byName[columnDef.kind];
+export const getFieldFromColumnDef = (columnDef) =>
+  byName[columnDef.meta?.kind];
+
+export function mergeByKind<T>(passedMeta: ColumnMeta<T, unknown>) {
+  const { meta, ...rest } = byName[passedMeta.kind];
+  return {
+    ...rest,
+    meta: {
+      ...meta,
+      ...passedMeta,
+    },
+  };
+}

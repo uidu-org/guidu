@@ -28,7 +28,7 @@ export default function Footer<T>({
                 height={rowHeight}
                 style={{
                   width: header.getSize(),
-                  flex: `${header.getSize()} 0 auto`,
+                  flex: '1 0 auto',
                 }}
               >
                 {flexRender(

@@ -9,7 +9,7 @@ const WithOptions = (
   props: Partial<ColumnDef<unknown>>,
 ): Partial<ColumnDef<unknown>> => ({
   ...props,
-  Filter,
+  Filter: Filter,
 });
 
 export default WithOptions;

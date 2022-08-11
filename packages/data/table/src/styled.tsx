@@ -26,7 +26,7 @@ export const Td = styled.div.attrs<{
   style: {
     height: `${props.height}px`,
     width: `${props.width}px`,
-    flex: `${props.width} 0 auto`,
+    flex: '1 0 auto',
     ...(props.isSorted ? { backgroundColor: theme`colors.yellow.50` } : {}),
   },
 }))`
@@ -50,7 +50,7 @@ export const Th = styled.div.attrs<ThProps>((props: ThProps) => ({
   style: {
     height: `${props.height}px`,
     width: `${props.width}px`,
-    flex: `${props.width} 0 auto`,
+    flex: '1 0 auto',
     ...(props.isSorted ? { backgroundColor: theme`colors.yellow.50` } : {}),
   },
 }))`

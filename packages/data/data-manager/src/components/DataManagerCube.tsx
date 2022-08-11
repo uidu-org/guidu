@@ -2,7 +2,7 @@
 
 import { CubeContext, useCubeQuery } from '@cubejs-client/react';
 import { ColumnDef } from '@tanstack/react-table';
-import { getColumnType } from '@uidu/data-fields';
+import { byName } from '@uidu/data-fields';
 import React, { useContext, useEffect, useMemo } from 'react';
 import { DataManagerCubeProps } from '../types';
 import DataManagerComponent from './DataManager';
@@ -16,7 +16,7 @@ function DataManagerResults<T>({
     if (resultSet) {
       return resultSet.tableColumns().map((c) => {
         const columnDef = columnDefs[c.key]?.meta?.kind
-          ? getColumnType(columnDefs[c.key].meta?.kind)
+          ? byName[columnDefs[c.key].meta?.kind]
           : {
               meta: {
                 kind: 'string',

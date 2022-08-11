@@ -1,4 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table';
+import { FieldKind } from '../types';
 import addField from './addField';
 import addressField from './address';
 import appointmentField from './appointment';
@@ -57,7 +58,7 @@ export { default as uidField } from './uid';
 export { default as urlField } from './url';
 export { default as voteField } from './vote';
 
-export const byName: Record<string, Partial<ColumnDef<unknown>>> = {
+export const byName: Record<FieldKind, Partial<ColumnDef<unknown>>> = {
   addField,
   address: addressField,
   appointment: appointmentField,

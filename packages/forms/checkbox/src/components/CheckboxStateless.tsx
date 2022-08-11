@@ -66,11 +66,13 @@ function Checkbox({
           ref={element}
         />
       </div>
-      <div tw="ml-2">
-        <label tw="mb-0" htmlFor={id}>
-          {label}
-        </label>
-      </div>
+      {label && (
+        <div tw="ml-2">
+          <label tw="mb-0" htmlFor={id}>
+            {label}
+          </label>
+        </div>
+      )}
     </div>
   );
 }

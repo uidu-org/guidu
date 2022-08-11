@@ -38,7 +38,7 @@ export default function TableStateless<T>({ values, keys, onItemClick }) {
 
   const data = useMemo(() => values, [values]);
 
-  const defaultColumn: ColumnDef<T> = React.useMemo(
+  const defaultColumn: Partial<ColumnDef<T>> = React.useMemo(
     () => ({
       minSize: 80,
       size: 150,
@@ -52,8 +52,8 @@ export default function TableStateless<T>({ values, keys, onItemClick }) {
         </div>
       ),
       cell: ({ column, getValue }) =>
-        column.columnDef.meta.valueFormatter ? (
-          <>{column.valueFormatter(getValue())}</>
+        column.columnDef.meta?.valueFormatter ? (
+          <>{column.columnDef.meta?.valueFormatter(getValue())}</>
         ) : (
           getValue() || null
         ),
