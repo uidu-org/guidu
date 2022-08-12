@@ -61,6 +61,7 @@ export default function DataManager<T>({
               footer: (props) => null,
               cell: RowActionsCell,
               // suppressMenu: true,
+              enableHiding: false,
               enableResizing: false,
               minSize: 56,
               size: 56,

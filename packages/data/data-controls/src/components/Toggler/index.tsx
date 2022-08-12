@@ -38,24 +38,31 @@ export default function TogglerForm<T>(props: TogglerProps) {
     <div tw="flow-root">
       <div tw="py-3">
         <AnimateHeight height={isOpen ? 'auto' : 0}>
-          {columns.map((column) => (
-            <div key={column.id} tw="px-3 xl:px-4 border-0 py-2 block relative">
-              <button
-                type="button"
-                tw="absolute inset-0"
-                onClick={(e) => {
-                  e.preventDefault();
-                  column.toggleVisibility(!column.getIsVisible());
-                }}
-              />
-              <div tw="flex items-center justify-between">
-                <span tw="mr-2">
-                  <CheckboxStateless checked={column.getIsVisible()} />
-                </span>
-                <div tw="truncate flex-grow">{column.columnDef.meta?.name}</div>
+          {columns
+            .filter((column) => column.columnDef.enableHiding)
+            .map((column) => (
+              <div
+                key={column.id}
+                tw="px-3 xl:px-4 border-0 py-2 block relative"
+              >
+                <button
+                  type="button"
+                  tw="absolute inset-0"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    column.toggleVisibility(!column.getIsVisible());
+                  }}
+                />
+                <div tw="flex items-center justify-between">
+                  <span tw="mr-2">
+                    <CheckboxStateless checked={column.getIsVisible()} />
+                  </span>
+                  <div tw="truncate flex-grow">
+                    {column.columnDef.meta?.name}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </AnimateHeight>
       </div>
       <div tw="px-3 xl:px-4 border-t py-3">

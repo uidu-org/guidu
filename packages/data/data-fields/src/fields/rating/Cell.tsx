@@ -5,7 +5,7 @@ import { StyledRating } from './utils';
 
 export default function Cell(props: CellContext<any, number>) {
   const { getValue, column } = props;
-  const value = getValue();
+  const value = getValue() || 0;
 
   const max = column.columnDef?.meta?.max || 5;
 

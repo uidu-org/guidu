@@ -26,13 +26,18 @@ export default function Row<T extends object>({
   const renderCell = (cell: CellContext<T, unknown>) => {
     if (cell.cell.getIsGrouped()) {
       const { getToggleExpandedHandler } = row;
+      const toggleExpandedHandler = getToggleExpandedHandler();
       return (
         <div tw="flex items-center flex-grow justify-between min-w-0 min-h-0">
           <div tw="flex flex-grow items-center space-x-2 min-w-0 min-h-0">
             <button
               type="button"
               tw="flex-shrink-0"
-              onClick={getToggleExpandedHandler()}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleExpandedHandler();
+              }}
             >
               {row.getIsExpanded() ? (
                 <ChevronDownIcon tw="h-4 w-4" />
@@ -69,11 +74,6 @@ export default function Row<T extends object>({
         e.preventDefault();
         onItemClick(row.original);
       }}
-      // onContextMenu={(e: React.MouseEvent) => {
-      //   console.log(e);
-      //   e.preventDefault();
-      //   // show actions in Popup
-      // }}
     >
       {row
         .getVisibleCells()

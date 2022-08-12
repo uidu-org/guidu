@@ -209,6 +209,7 @@ export default function Basic({}) {
         maxSize: 64,
         header: HeaderSelection,
         cell: RowSelection,
+        enableHiding: false,
         meta: {
           pinned: 'left',
           headerProps: {

@@ -53,145 +53,158 @@ export default function Header({
 
   const Content = useCallback(
     () => (
-      <MenuGroup>
-        {column.columnDef.canEdit && (
-          <Section hasSeparator>
-            <ButtonItem
-              onClick={() => console.log('Edit field')}
-              iconBefore={<Edit2 size={14} />}
-            >
-              <FormattedMessage
-                defaultMessage="Edit this column"
-                id="uidu.table.header.edit"
-              />
-            </ButtonItem>
-          </Section>
-        )}
-        {header.column.columnDef.enableResizing && (
-          <Section hasSeparator>
-            <ButtonItem
-              onClick={() => {
-                setIsOpen(false);
-                // setColumnWidth(column, getColumnWidth(column));
-              }}
-              iconBefore={<AlignJustify size={14} />}
-            >
-              <FormattedMessage
-                defaultMessage="Autosize this column"
-                id="uidu.table.header.autosize"
-              />
-            </ButtonItem>
-            {/* <ButtonItem onClick={() => autosizeAllColumns()}>
+      <div style={{ width: column.getSize() }}>
+        <MenuGroup>
+          {column.columnDef.canEdit && (
+            <Section hasSeparator>
+              <ButtonItem
+                onClick={() => console.log('Edit field')}
+                iconBefore={<Edit2 size={14} />}
+              >
+                <FormattedMessage
+                  defaultMessage="Edit this column"
+                  id="uidu.table.header.edit"
+                />
+              </ButtonItem>
+            </Section>
+          )}
+          {false && header.column.columnDef.enableResizing && (
+            <Section hasSeparator>
+              <ButtonItem
+                onClick={() => {
+                  setIsOpen(false);
+                  // setColumnWidth(column, getColumnWidth(column));
+                }}
+                iconBefore={<AlignJustify size={14} />}
+              >
+                <FormattedMessage
+                  defaultMessage="Autosize this column"
+                  id="uidu.table.header.autosize"
+                />
+              </ButtonItem>
+              {/* <ButtonItem onClick={() => autosizeAllColumns()}>
                 Autosize all columns
               </ButtonItem> */}
+            </Section>
+          )}
+          <Section>
+            {column.getIsSorted() && (
+              <ButtonItem
+                onClick={(e) => {
+                  setIsOpen(false);
+                  setSorting(state.sorting.filter((s) => s.id !== column.id));
+                }}
+                iconBefore={<ArrowRight size={14} />}
+              >
+                <FormattedMessage
+                  defaultMessage="Unsort"
+                  id="uidu.table.header.unsort"
+                />
+              </ButtonItem>
+            )}
+            <ButtonItem
+              isDisabled={column.getIsSorted() && !column.getFirstSortDir()}
+              onClick={(e) => {
+                setIsOpen(false);
+                updateSortBy(column.id, false);
+              }}
+              iconBefore={<ArrowDownRight size={14} />}
+            >
+              <span tw="flex items-center">
+                <FormattedMessage
+                  defaultMessage="Sort A {icon} Z"
+                  values={{ icon: <ArrowRight tw="mx-1" size={14} /> }}
+                  id="uidu.table.header.sort_a_z"
+                />
+              </span>
+            </ButtonItem>
+            <ButtonItem
+              isDisabled={
+                column.getIsSorted() && column.getFirstSortDir() !== 'desc'
+              }
+              onClick={() => {
+                setIsOpen(false);
+                updateSortBy(column.id, true);
+              }}
+              iconBefore={<ArrowUpRight size={14} />}
+            >
+              <span tw="flex items-center">
+                <FormattedMessage
+                  defaultMessage="Sort Z {icon} A"
+                  values={{ icon: <ArrowRight tw="mx-1" size={14} /> }}
+                  id="uidu.table.header.sort_z_a"
+                />
+              </span>
+            </ButtonItem>
+            {column.getCanFilter() && (
+              <ButtonItem
+                onClick={() => console.log('Add filter')}
+                iconBefore={<Filter size={14} />}
+              >
+                <FormattedMessage
+                  defaultMessage="Add filter"
+                  id="uidu.table.header.add_filter"
+                />
+              </ButtonItem>
+            )}
+            {column.getCanGroup() &&
+              (column.getIsGrouped() ? (
+                <ButtonItem
+                  onClick={() => {
+                    setIsOpen(false);
+                    setGrouping(state.grouping.filter((g) => g !== column.id));
+                  }}
+                  iconBefore={<Server size={14} />}
+                >
+                  <FormattedMessage
+                    defaultMessage="Remove grouping"
+                    id="uidu.table.header.remove_grouping"
+                  />
+                </ButtonItem>
+              ) : (
+                <ButtonItem
+                  onClick={() => {
+                    setIsOpen(false);
+                    setGrouping([...state.grouping, column.id]);
+                  }}
+                  iconBefore={<Server size={14} />}
+                >
+                  <FormattedMessage
+                    defaultMessage="Group by this field"
+                    id="uidu.table.header.add_grouping"
+                  />
+                </ButtonItem>
+              ))}
+            {column.columnDef.enableHiding && (
+              <ButtonItem
+                onClick={(e) => {
+                  setIsOpen(false);
+                  setColumnVisibility({
+                    ...state.columnVisibility,
+                    [column.id]: false,
+                  });
+                }}
+                iconBefore={<EyeOff size={14} />}
+              >
+                <FormattedMessage
+                  defaultMessage="Hide this column"
+                  id="uidu.table.header.hide"
+                />
+              </ButtonItem>
+            )}
           </Section>
-        )}
-        <Section>
-          {column.getIsSorted() && (
-            <ButtonItem
-              onClick={(e) => {
-                setIsOpen(false);
-                setSorting(state.sorting.filter((s) => s.id !== column.id));
-              }}
-              iconBefore={<ArrowRight size={14} />}
-            >
-              <FormattedMessage
-                defaultMessage="Unsort"
-                id="uidu.table.header.unsort"
-              />
-            </ButtonItem>
-          )}
-          <ButtonItem
-            isDisabled={column.getIsSorted() && !column.getFirstSortDir()}
-            onClick={(e) => {
-              setIsOpen(false);
-              updateSortBy(column.id, false);
-            }}
-            iconBefore={<ArrowDownRight size={14} />}
-          >
-            <span tw="flex items-center">
-              <FormattedMessage
-                defaultMessage="Sort A {icon} Z"
-                values={{ icon: <ArrowRight tw="mx-1" size={14} /> }}
-                id="uidu.table.header.sort_a_z"
-              />
-            </span>
-          </ButtonItem>
-          <ButtonItem
-            isDisabled={
-              column.getIsSorted() && column.getFirstSortDir() !== 'desc'
-            }
-            onClick={() => {
-              setIsOpen(false);
-              updateSortBy(column.id, true);
-            }}
-            iconBefore={<ArrowUpRight size={14} />}
-          >
-            <span tw="flex items-center">
-              <FormattedMessage
-                defaultMessage="Sort Z {icon} A"
-                values={{ icon: <ArrowRight tw="mx-1" size={14} /> }}
-                id="uidu.table.header.sort_z_a"
-              />
-            </span>
-          </ButtonItem>
-          {column.getCanFilter() && (
-            <ButtonItem
-              onClick={() => console.log('Add filter')}
-              iconBefore={<Filter size={14} />}
-            >
-              <FormattedMessage
-                defaultMessage="Add filter"
-                id="uidu.table.header.add_filter"
-              />
-            </ButtonItem>
-          )}
-          {column.getCanGroup() &&
-            (column.getIsGrouped() ? (
-              <ButtonItem
-                onClick={() => {
-                  setIsOpen(false);
-                  setGrouping(state.grouping.filter((g) => g !== column.id));
-                }}
-                iconBefore={<Server size={14} />}
-              >
-                <FormattedMessage
-                  defaultMessage="Remove grouping"
-                  id="uidu.table.header.remove_grouping"
-                />
-              </ButtonItem>
-            ) : (
-              <ButtonItem
-                onClick={() => {
-                  setIsOpen(false);
-                  setGrouping([...state.grouping, column.id]);
-                }}
-                iconBefore={<Server size={14} />}
-              >
-                <FormattedMessage
-                  defaultMessage="Group by this field"
-                  id="uidu.table.header.add_grouping"
-                />
-              </ButtonItem>
-            ))}
-          {column.columnDef.enableHiding && (
-            <ButtonItem
-              onClick={(e) => {
-                setIsOpen(false);
-                setColumnVisibility([...state.columnVisibility, column.id]);
-              }}
-              iconBefore={<EyeOff size={14} />}
-            >
-              <FormattedMessage
-                defaultMessage="Hide this column"
-                id="uidu.table.header.hide"
-              />
-            </ButtonItem>
-          )}
-        </Section>
-      </MenuGroup>
+        </MenuGroup>
+      </div>
     ),
-    [column, state, setColumnVisibility, setGrouping, setSorting, updateSortBy],
+    [
+      column,
+      state,
+      setColumnVisibility,
+      setGrouping,
+      setSorting,
+      updateSortBy,
+      header.column.columnDef.enableResizing,
+    ],
   );
 
   const Trigger = useCallback(
@@ -230,6 +243,7 @@ export default function Header({
             placement="bottom-end"
             rootBoundary="document"
             onClose={() => setIsOpen(false)}
+            offset={[16, 8]}
             content={Content}
             trigger={Trigger}
           />
