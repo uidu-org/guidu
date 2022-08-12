@@ -1,6 +1,6 @@
 {
   "name": "@uidu/popper",
-  "version": "0.5.18",
+  "version": "0.5.19",
   "description": "Wrapper for react-popper with common config and some helpers",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/popper",
   "license": "ISC",

@@ -1,5 +1,18 @@
 # @uidu/data-manager
 
+## 3.0.8
+
+### Patch Changes
+
+- 398f9a1b8: Bump react-virtual, added react-rating
+- Updated dependencies [398f9a1b8]
+  - @uidu/data-fields@2.0.8
+  - @uidu/gallery@2.0.2
+  - @uidu/list@2.0.2
+  - @uidu/table@2.0.9
+  - @uidu/data-controls@3.0.8
+  - @uidu/data-views@2.0.8
+
 ## 3.0.7
 
 ### Patch Changes

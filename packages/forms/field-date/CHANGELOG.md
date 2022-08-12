@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 1.2.9
+
+### Patch Changes
+
+- 398f9a1b8: Bump react-virtual, added react-rating
+
 ## 1.2.8
 
 ### Patch Changes
