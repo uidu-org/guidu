@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 2.0.10
+
+### Patch Changes
+
+- 575a214ad: Bump columnDef checks on List and Gallery
+- Updated dependencies [575a214ad]
+  - @uidu/data-manager@3.0.9
+
 ## 2.0.9
 
 ### Patch Changes
