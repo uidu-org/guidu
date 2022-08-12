@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.6.24
+
+### Patch Changes
+
+- 398f9a1b8: Bump react-virtual, added react-rating
+
 ## 0.6.23
 
 ### Patch Changes

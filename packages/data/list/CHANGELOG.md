@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 2.0.2
+
+### Patch Changes
+
+- 398f9a1b8: Bump react-virtual, added react-rating
+- Updated dependencies [398f9a1b8]
+  - @uidu/data-fields@2.0.8
+
 ## 2.0.1
 
 ### Patch Changes
