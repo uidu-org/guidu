@@ -1,5 +1,15 @@
 # @uidu/data-controls
 
+## 3.0.10
+
+### Patch Changes
+
+- 3956cada2: Fix hiding columns and group toggling
+- Updated dependencies [3956cada2]
+  - @uidu/data-fields@2.0.9
+  - @uidu/data-manager@3.0.10
+  - @uidu/data-views@2.0.10
+
 ## 3.0.9
 
 ### Patch Changes

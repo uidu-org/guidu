@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.0.9
+
+### Patch Changes
+
+- 3956cada2: Fix hiding columns and group toggling
+
 ## 2.0.8
 
 ### Patch Changes
