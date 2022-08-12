@@ -1,30 +1,22 @@
-import { StarIcon } from '@heroicons/react/solid';
 import { CellContext } from '@tanstack/react-table';
 import React from 'react';
-import tw from 'twin.macro';
 import EditableCell from './EditableCell';
+import { StyledRating } from './utils';
 
 export default function Cell(props: CellContext<any, number>) {
-  const { getValue, column, row } = props;
+  const { getValue, column } = props;
   const value = getValue();
 
   const max = column.columnDef?.meta?.max || 5;
 
-  if (column?.editable) {
+  if (column?.columnDef.meta.enableEditing) {
     // eslint-disable-next-line react/jsx-props-no-spreading
     return <EditableCell {...props} />;
   }
 
   return (
     <div tw="flex items-center">
-      {Array.from(Array(max).keys()).map((i) => (
-        <div
-          key={`${row.id}-${column.id}-rating-${i}`}
-          css={[value >= i + 1 ? tw`text-yellow-300` : tw`text-gray-200`]}
-        >
-          <StarIcon tw="fill-current h-5 w-5" />
-        </div>
-      ))}
+      <StyledRating value={value} readOnly items={max} />
     </div>
   );
 }

@@ -1,7 +1,6 @@
-import { StarIcon } from '@heroicons/react/solid';
 import { CellContext } from '@tanstack/react-table';
 import React, { useEffect, useState } from 'react';
-import tw from 'twin.macro';
+import { StyledRating } from './utils';
 
 export default function EditableCell(props: CellContext<any, number>) {
   const { getValue, column } = props;
@@ -9,18 +8,14 @@ export default function EditableCell(props: CellContext<any, number>) {
 
   const [value, setValue] = useState(getValue());
 
-  const onChange = (e) => {
-    e.preventDefault();
-    // setValue(i + 1);
-  };
-
   useEffect(() => {
     setValue(getValue());
   }, [getValue]);
 
   return (
     <div tw="flex items-center">
-      {Array.from(Array(max).keys()).map((i) => (
+      <StyledRating value={value} onChange={setValue} items={max} />
+      {/* {Array.from(Array(max).keys()).map((i) => (
         <button
           key={i}
           type="button"
@@ -33,7 +28,7 @@ export default function EditableCell(props: CellContext<any, number>) {
         >
           <StarIcon tw="fill-current h-5 w-5" />
         </button>
-      ))}
+      ))} */}
     </div>
   );
 }

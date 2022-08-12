@@ -18,7 +18,7 @@
     "@uidu/slider": "^1.7.18",
     "@uidu/spinner": "^0.5.17",
     "@uidu/stepper": "^0.4.19",
-    "dayjs": "^1.11.4",
+    "dayjs": "^1.11.5",
     "react": "^18.2.0",
     "react-intl": "^6.0.5",
     "tslib": "^2.4.0"

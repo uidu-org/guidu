@@ -1,13 +1,22 @@
+import { CellContext } from '@tanstack/react-table';
 import Form from '@uidu/form';
 import { CustomItem, MenuGroup, Section } from '@uidu/menu';
 import Select from '@uidu/select';
 import React, { useRef } from 'react';
 
-export default function SelectEditor(params) {
+export default function SelectEditor(
+  props: CellContext<unknown, string> & {
+    option;
+    multiple?: boolean;
+    onChange;
+  },
+) {
   const select = useRef(null);
-  const { value, onChange, option: Option } = params;
+  const { getValue, option: Option, onChange } = props;
+  const value = getValue();
 
-  const { column, options, node, multiple } = params;
+  const { column, multiple } = props;
+  const options = column.columnDef.meta?.options || [];
 
   return (
     <MenuGroup>
@@ -15,18 +24,18 @@ export default function SelectEditor(params) {
         {options.map((option) => (
           <CustomItem
             component={(componentProps) => (
-              <>
-                <button
-                  {...componentProps}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    onChange(option.id);
-                  }}
-                >
-                  <Option value={option} />
-                </button>
-              </>
+              <button
+                type="button"
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                {...componentProps}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onChange(option.id);
+                }}
+              >
+                <Option value={option} />
+              </button>
             )}
           />
         ))}
