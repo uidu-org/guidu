@@ -3316,17 +3316,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/trace-mapping@npm:^0.3.0, @jridgewell/trace-mapping@npm:^0.3.7, @jridgewell/trace-mapping@npm:^0.3.8, @jridgewell/trace-mapping@npm:^0.3.9":
-  version: 0.3.13
-  resolution: "@jridgewell/trace-mapping@npm:0.3.13"
-  dependencies:
-    "@jridgewell/resolve-uri": ^3.0.3
-    "@jridgewell/sourcemap-codec": ^1.4.10
-  checksum: e38254e830472248ca10a6ed1ae75af5e8514f0680245a5e7b53bc3c030fd8691d4d3115d80595b45d3badead68269769ed47ecbbdd67db1343a11f05700e75a
-  languageName: node
-  linkType: hard
-
-"@jridgewell/trace-mapping@npm:^0.3.14":
+"@jridgewell/trace-mapping@npm:^0.3.0, @jridgewell/trace-mapping@npm:^0.3.14, @jridgewell/trace-mapping@npm:^0.3.8, @jridgewell/trace-mapping@npm:^0.3.9":
   version: 0.3.15
   resolution: "@jridgewell/trace-mapping@npm:0.3.15"
   dependencies:
@@ -4073,14 +4063,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@netlify/plugins-list@npm:^6.36.0":
-  version: 6.36.0
-  resolution: "@netlify/plugins-list@npm:6.36.0"
-  checksum: eca6708b98c6dd99550d78a2e44ad80413f7f4a815a7cd4ce734b8b339aabc64fc6a9b23c59c7f49a36b98a1cd72ef0b3539e07d6a3a085afef1944b5e2bac28
-  languageName: node
-  linkType: hard
-
-"@netlify/plugins-list@npm:^6.38.0":
+"@netlify/plugins-list@npm:^6.36.0, @netlify/plugins-list@npm:^6.38.0":
   version: 6.39.0
   resolution: "@netlify/plugins-list@npm:6.39.0"
   checksum: 8ca294d2166b73322ea53e816231b48a3db8d429d712859fab142a37cf99361802b14b17f5d7c017b81930b2132a8830eb89f01919d5d37e5fa0685e32470dd2
@@ -4356,17 +4339,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.11.6":
+"@popperjs/core@npm:^2.11.6, @popperjs/core@npm:^2.8.6":
   version: 2.11.6
   resolution: "@popperjs/core@npm:2.11.6"
   checksum: 47fb328cec1924559d759b48235c78574f2d71a8a6c4c03edb6de5d7074078371633b91e39bbf3f901b32aa8af9b9d8f82834856d2f5737a23475036b16817f0
-  languageName: node
-  linkType: hard
-
-"@popperjs/core@npm:^2.8.6":
-  version: 2.11.5
-  resolution: "@popperjs/core@npm:2.11.5"
-  checksum: fd7f9dca3fb716d7426332b6ee283f88d2724c0ab342fb678865a640bad403dfb9eeebd8204a406986162f7e2b33394f104320008b74d0e9066d7322f70ea35d
   languageName: node
   linkType: hard
 
@@ -5545,14 +5521,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.0.0":
-  version: 16.11.47
-  resolution: "@types/node@npm:16.11.47"
-  checksum: 26811000753fd1bb9a90a563fc72942ac3ad5d5b6c97609a090c1e24210e040597ba060e55a7a46cb22cc84dafee112d741f45652139c6166e8ce0c970b4f05a
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^16.11.48":
+"@types/node@npm:^16.0.0, @types/node@npm:^16.11.48":
   version: 16.11.48
   resolution: "@types/node@npm:16.11.48"
   checksum: 10cd539cb2cf5a8f51f3c2bd761c093b752e534b1f2dc0d7193debd7986145b68db2a5fd48498af641e8641fb8d24b7c4851ea3e30fb8f56cc13ac719cad1e1f
@@ -5900,14 +5869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/semver@npm:^7.0.0":
-  version: 7.3.11
-  resolution: "@types/semver@npm:7.3.11"
-  checksum: 20c3fcc6247ce2382d41cd54e735db1d8de341ee2a75a211fe4218da153b73ccfd050177b0f2b54979912e1d4942e2767ea4dc124ef12a4deef291a43c10d55f
-  languageName: node
-  linkType: hard
-
-"@types/semver@npm:^7.3.12":
+"@types/semver@npm:^7.0.0, @types/semver@npm:^7.3.12":
   version: 7.3.12
   resolution: "@types/semver@npm:7.3.12"
   checksum: 35536b2fc5602904f21cae681f6c9498e177dab3f54ae37c92f9a1b7e43c35f18bcd81e1c98c1cf0d33ee046bb06c771e9928c1c00a401d56a03f56549252a15
@@ -6702,10 +6664,10 @@ __metadata:
     "@tanstack/react-table": ^8.5.11
     "@uidu/dashboard-manager": ^2.0.1
     "@uidu/dashlet-controls": ^1.0.33
-    "@uidu/data-fields": ^2.0.6
+    "@uidu/data-fields": ^2.0.7
     "@uidu/docs": ^0.5.18
     "@uidu/spinner": ^0.5.17
-    "@uidu/table": 2.0.7
+    "@uidu/table": 2.0.8
     "@uidu/tooltip": ^0.5.22
     d3-array: ^3.2.0
     gql-query-builder: ^3.7.0
@@ -6724,7 +6686,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-controls@^3.0.4, @uidu/data-controls@^3.0.6, @uidu/data-controls@workspace:packages/data/data-controls":
+"@uidu/data-controls@^3.0.4, @uidu/data-controls@^3.0.7, @uidu/data-controls@workspace:packages/data/data-controls":
   version: 0.0.0-use.local
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
@@ -6733,9 +6695,9 @@ __metadata:
     "@tanstack/react-table": ^8.5.11
     "@uidu/button": 1.3.26
     "@uidu/checkbox": ^1.4.6
-    "@uidu/data-fields": ^2.0.6
-    "@uidu/data-manager": 3.0.6
-    "@uidu/data-views": ^2.0.6
+    "@uidu/data-fields": ^2.0.7
+    "@uidu/data-manager": 3.0.7
+    "@uidu/data-views": ^2.0.7
     "@uidu/docs": ^0.5.18
     "@uidu/drawer": ^0.7.23
     "@uidu/dropdown-menu": ^0.6.22
@@ -6761,7 +6723,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-fields@^2.0.4, @uidu/data-fields@^2.0.6, @uidu/data-fields@workspace:packages/data/data-fields":
+"@uidu/data-fields@^2.0.4, @uidu/data-fields@^2.0.7, @uidu/data-fields@workspace:packages/data/data-fields":
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
@@ -6800,7 +6762,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-manager@3.0.6, @uidu/data-manager@workspace:packages/data/data-manager":
+"@uidu/data-manager@3.0.7, @uidu/data-manager@workspace:packages/data/data-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/data-manager@workspace:packages/data/data-manager"
   dependencies:
@@ -6814,9 +6776,9 @@ __metadata:
     "@uidu/board": ^1.0.1
     "@uidu/button": 1.3.26
     "@uidu/calendar": ^0.4.15
-    "@uidu/data-controls": ^3.0.6
-    "@uidu/data-fields": ^2.0.6
-    "@uidu/data-views": ^2.0.6
+    "@uidu/data-controls": ^3.0.7
+    "@uidu/data-fields": ^2.0.7
+    "@uidu/data-views": ^2.0.7
     "@uidu/docs": ^0.5.18
     "@uidu/dropdown-menu": ^0.6.22
     "@uidu/gallery": ^2.0.1
@@ -6828,7 +6790,7 @@ __metadata:
     "@uidu/shell": ^2.1.26
     "@uidu/side-navigation": 1.0.23
     "@uidu/spinner": ^0.5.17
-    "@uidu/table": ^2.0.7
+    "@uidu/table": ^2.0.8
     d3-array: ^3.2.0
     dayjs: ^1.11.5
     lodash: ^4.17.21
@@ -6844,15 +6806,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-views@^2.0.6, @uidu/data-views@workspace:packages/data/data-views":
+"@uidu/data-views@^2.0.7, @uidu/data-views@workspace:packages/data/data-views":
   version: 0.0.0-use.local
   resolution: "@uidu/data-views@workspace:packages/data/data-views"
   dependencies:
     "@babel/runtime": ^7.18.9
     "@loadable/component": ^5.15.2
     "@uidu/button": 1.3.26
-    "@uidu/data-controls": ^3.0.6
-    "@uidu/data-manager": 3.0.6
+    "@uidu/data-controls": ^3.0.7
+    "@uidu/data-manager": 3.0.7
     "@uidu/docs": ^0.5.18
     "@uidu/field-counter": ^1.2.5
     "@uidu/field-number": ^1.0.19
@@ -8860,7 +8822,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@2.0.7, @uidu/table@^2.0.1, @uidu/table@^2.0.7, @uidu/table@workspace:packages/data/table":
+"@uidu/table@2.0.8, @uidu/table@^2.0.1, @uidu/table@^2.0.8, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -8875,9 +8837,9 @@ __metadata:
     "@tanstack/react-virtual": ^3.0.0-beta.18
     "@uidu/button": 1.3.26
     "@uidu/checkbox": ^1.4.6
-    "@uidu/data-controls": ^3.0.6
-    "@uidu/data-fields": ^2.0.6
-    "@uidu/data-manager": 3.0.6
+    "@uidu/data-controls": ^3.0.7
+    "@uidu/data-fields": ^2.0.7
+    "@uidu/data-manager": 3.0.7
     "@uidu/docs": ^0.5.18
     "@uidu/menu": ^0.7.16
     "@uidu/popup": ^0.7.0
@@ -13795,14 +13757,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.10.4":
-  version: 1.11.4
-  resolution: "dayjs@npm:1.11.4"
-  checksum: 478c8a2db9e3fc752db9f02ef23f00e12308eebbeb85569913731ea78e8d5616f2335e14f25af48e9f16bbcbd796653092eca4d2f42c0218a948402c31735f59
-  languageName: node
-  linkType: hard
-
-"dayjs@npm:^1.11.5":
+"dayjs@npm:^1.10.4, dayjs@npm:^1.11.5":
   version: 1.11.5
   resolution: "dayjs@npm:1.11.5"
   checksum: e3bbaa7b4883b31be4bf75a181f1447fbb19800c29b332852125aab96baeff3ac232dcba8b88c4ea17d3b636c99dac5fb9d1af4bb6ae26615698bbc4a852dffb
@@ -28598,7 +28553,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map@npm:^0.7.0, source-map@npm:^0.7.3, source-map@npm:~0.7.2":
+"source-map@npm:^0.7.0, source-map@npm:^0.7.3":
   version: 0.7.4
   resolution: "source-map@npm:0.7.4"
   checksum: 01cc5a74b1f0e1d626a58d36ad6898ea820567e87f18dfc9d24a9843a351aaa2ec09b87422589906d6ff1deed29693e176194dc88bcae7c9a852dc74b311dbf5
@@ -29696,29 +29651,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser-webpack-plugin@npm:^5.1.3":
-  version: 5.3.3
-  resolution: "terser-webpack-plugin@npm:5.3.3"
-  dependencies:
-    "@jridgewell/trace-mapping": ^0.3.7
-    jest-worker: ^27.4.5
-    schema-utils: ^3.1.1
-    serialize-javascript: ^6.0.0
-    terser: ^5.7.2
-  peerDependencies:
-    webpack: ^5.1.0
-  peerDependenciesMeta:
-    "@swc/core":
-      optional: true
-    esbuild:
-      optional: true
-    uglify-js:
-      optional: true
-  checksum: 4b8d508d8a0f6e604addb286975f1fa670f8c3964a67abc03a7cfcfd4cdeca4b07dda6655e1c4425427fb62e4d2b0ca59d84f1b2cd83262ff73616d5d3ccdeb5
-  languageName: node
-  linkType: hard
-
-"terser-webpack-plugin@npm:^5.3.4":
+"terser-webpack-plugin@npm:^5.1.3, terser-webpack-plugin@npm:^5.3.4":
   version: 5.3.4
   resolution: "terser-webpack-plugin@npm:5.3.4"
   dependencies:
@@ -29740,25 +29673,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser@npm:^5.10.0, terser@npm:^5.2.1, terser@npm:^5.7.2":
-  version: 5.10.0
-  resolution: "terser@npm:5.10.0"
-  dependencies:
-    commander: ^2.20.0
-    source-map: ~0.7.2
-    source-map-support: ~0.5.20
-  peerDependencies:
-    acorn: ^8.5.0
-  peerDependenciesMeta:
-    acorn:
-      optional: true
-  bin:
-    terser: bin/terser
-  checksum: 1080faeb6d5cd155bb39d9cc41d20a590eafc9869560d5285f255f6858604dcd135311e344188a106f87fedb12d096ad3799cfc2e65acd470b85d468b1c7bd4c
-  languageName: node
-  linkType: hard
-
-"terser@npm:^5.14.1":
+"terser@npm:^5.10.0, terser@npm:^5.14.1, terser@npm:^5.2.1":
   version: 5.14.2
   resolution: "terser@npm:5.14.2"
   dependencies:
