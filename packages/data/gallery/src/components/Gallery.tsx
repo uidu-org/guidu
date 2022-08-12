@@ -62,8 +62,8 @@ export default function Gallery<T>({
             (column) =>
               column.columnDef?.meta?.kind !== 'uid' &&
               column.columnDef?.meta?.kind !== 'selection' &&
-              !column.isPrivate &&
-              !column.isPrimary &&
+              !column.columnDef?.meta.isPrivate &&
+              !column.columnDef?.meta.isPrimary &&
               column.columnDef?.meta?.kind !== 'addField',
           ).length +
       // ITEM_PADDING +
@@ -89,10 +89,10 @@ export default function Gallery<T>({
         <div
           tw="w-full relative"
           style={{
-            height: `${rowVirtualizer.totalSize}px`,
+            height: `${rowVirtualizer.getTotalSize()}px`,
           }}
         >
-          {rowVirtualizer.virtualItems.map((virtualRow) => {
+          {rowVirtualizer.getVirtualItems().map((virtualRow) => {
             const gridRow = items[virtualRow.index];
             if (!gridRow) {
               return null;

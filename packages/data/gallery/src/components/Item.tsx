@@ -31,10 +31,10 @@ export default function Item<T>({
 
   const visibleCells = cells.filter(
     (cell) =>
-      cell.column.kind !== 'uid' &&
-      !cell.column.isPrimary &&
-      !cell.column.isPrivate &&
-      cell.column.kind !== 'addField',
+      cell.column.columnDef.meta?.kind !== 'uid' &&
+      !cell.column.columnDef.meta?.isPrimary &&
+      !cell.column.columnDef.meta?.isPrivate &&
+      cell.column.columnDef.meta?.kind !== 'addField',
   );
 
   const cover = cells.find(
@@ -50,8 +50,8 @@ export default function Item<T>({
       <ItemWrapper>
         <ItemHeader primary={primary} item={item} />
         <ItemFields>
-          {cells.map((cell) => (
-            <ItemField cell={cell} key={`${item.id}-${cell.column.id}-name`} />
+          {visibleCells.map((cell) => (
+            <ItemField cell={cell} key={cell.id} />
           ))}
         </ItemFields>
       </ItemWrapper>

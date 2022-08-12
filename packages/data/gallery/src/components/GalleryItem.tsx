@@ -9,7 +9,7 @@ export default function GalleryItem<T>({
 }: {
   item: Row<T>;
   tableInstance: Table<T>;
-  onItemClick: (item: Row<T>) => void;
+  onItemClick: (item: T) => void;
 }) {
   if (!item) {
     return null;

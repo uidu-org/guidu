@@ -8,25 +8,30 @@ const StyledItem = styled.div`
 `;
 
 export default function Item<T>({
-  row: item,
+  row,
   gutterSize = 32,
   onItemClick,
   style = {},
 }: {
   row: Row<T>;
   gutterSize?: number;
-  onItemClick?: (item: Row<T>) => void;
+  onItemClick?: (item: T) => void;
   style?: React.CSSProperties;
 }) {
-  const primary = item.getVisibleCells().find((cell) => cell.column.isPrimary);
-  const cover = item
+  const item = row.original;
+  const primary = row
     .getVisibleCells()
-    .find((cell) => cell.column.kind === 'cover');
-  const uid = item.getVisibleCells().find((cell) => cell.column.kind === 'uid');
+    .find((cell) => cell.column.columnDef.meta?.isPrimary);
+  const cover = row
+    .getVisibleCells()
+    .find((cell) => cell.column.columnDef.meta?.kind === 'cover');
+  const uid = row
+    .getVisibleCells()
+    .find((cell) => cell.column.columnDef.meta?.kind === 'uid');
 
   return (
     <StyledItem
-      key={item.id}
+      key={row.id}
       onClick={(e) => {
         e.preventDefault();
         onItemClick(item);
@@ -74,17 +79,17 @@ export default function Item<T>({
           </div>
         )}
         <div tw="flex items-center">
-          {item
+          {row
             .getVisibleCells()
             .filter(
               (cell) =>
                 cell.column.columnDef.meta?.kind !== 'uid' &&
-                !cell.column.isPrivate &&
-                !cell.column.isPrimary,
+                !cell.column.columnDef.meta?.isPrivate &&
+                !cell.column.columnDef.meta?.isPrimary,
             )
             .map((cell) => (
               <div
-                key={`${item.id}-${cell.column.id}-value`}
+                key={cell.id}
                 tw="truncate px-3 xl:px-4 flex"
                 style={{
                   width: cell.column.getSize() || '150px',

@@ -33,35 +33,34 @@ export default function Header<T>({
               Cover
             </div>
           )}
-          <div tw="flex flex-col">
-            <div tw="flex">
-              {headerGroup.headers
-                .filter(
-                  (header) =>
-                    !header.column.isPrivate && !header.column.isPrimary,
-                )
-                .map((header) => {
-                  const { column } = header;
-                  return (
-                    <div
-                      key={`${column.id}-label`}
-                      tw="truncate flex items-center px-3 xl:px-4"
-                      style={{
-                        width: column.getSize() || '150px',
-                        minWidth: column.columnDef.minSize || 'auto',
-                        maxWidth: column.columnDef.maxSize || 'auto',
-                        ...(column.getIsSorted()
-                          ? {
-                              backgroundColor: 'rgb(254, 248, 244)',
-                            }
-                          : {}),
-                      }}
-                    >
-                      {flexRender(column.columnDef.header, header.getContext())}
-                    </div>
-                  );
-                })}
-            </div>
+          <div tw="flex h-full">
+            {headerGroup.headers
+              .filter(
+                (header) =>
+                  !header.column.columnDef.meta?.isPrivate &&
+                  !header.column.columnDef.meta?.isPrimary,
+              )
+              .map((header) => {
+                const { column } = header;
+                return (
+                  <div
+                    key={`${column.id}-label`}
+                    tw="truncate flex items-center px-3 xl:px-4"
+                    style={{
+                      width: column.getSize() || '150px',
+                      minWidth: column.columnDef.minSize || 'auto',
+                      maxWidth: column.columnDef.maxSize || 'auto',
+                      ...(column.getIsSorted()
+                        ? {
+                            backgroundColor: 'rgb(254, 248, 244)',
+                          }
+                        : {}),
+                    }}
+                  >
+                    {flexRender(column.columnDef.header, header.getContext())}
+                  </div>
+                );
+              })}
           </div>
         </div>
       ))}

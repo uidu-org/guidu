@@ -22,7 +22,9 @@ export default function DataCard<T>({ item }: { item: T }) {
         cell.column.columnDef.meta?.kind !== 'addField',
     );
 
-  const primary = row.getVisibleCells().find((cell) => cell.column.isPrimary);
+  const primary = row
+    .getVisibleCells()
+    .find((cell) => cell.column.columnDef.meta?.isPrimary);
 
   return (
     <div key={item.id} tw="relative">

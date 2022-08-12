@@ -29,7 +29,7 @@ function Table<T extends object>({
   tableInstance: TableType<T>;
   onItemClick: (row: T) => void;
   overrides?: Record<string, any>;
-  virtualizerOptions?: VirtualizerOptions;
+  virtualizerOptions?: Partial<VirtualizerOptions>;
 }) {
   const { getHeaderGroups, getFooterGroups, getRowModel } = tableInstance;
 

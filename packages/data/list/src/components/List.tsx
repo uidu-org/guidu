@@ -1,5 +1,5 @@
 import { Row, Table } from '@tanstack/react-table';
-import { useVirtualizer } from '@tanstack/react-virtual';
+import { useVirtualizer, VirtualizerOptions } from '@tanstack/react-virtual';
 import React, { useCallback, useRef } from 'react';
 import Header from './Header';
 import Item from './Item';
@@ -9,12 +9,13 @@ export default function List<T>({
   gutterSize = 16,
   tableInstance,
   onItemClick,
+  virtualizerOptions,
 }: {
   rowHeight: number;
-  headerIcons: any;
   gutterSize: number;
   tableInstance: Table<T>;
   onItemClick: (item: Row<T>) => void;
+  virtualizerOptions?: Partial<VirtualizerOptions>;
 }) {
   const parentRef = useRef();
 
@@ -29,6 +30,7 @@ export default function List<T>({
     getItemKey: (index) => rows[index].original.id,
     estimateSize: useCallback(() => rowHeight, [rowHeight]),
     overscan: 5,
+    ...(virtualizerOptions || {}),
   });
 
   // const primary = getPrimary(columns);

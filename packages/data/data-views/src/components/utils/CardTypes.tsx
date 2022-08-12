@@ -3,7 +3,7 @@ import Select from '@uidu/select';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export default function CardTypes({}) {
+export default function CardTypes() {
   const {
     tableInstance: { getAllColumns, getState, setColumnVisibility },
   } = useDataManagerContext();
@@ -12,8 +12,12 @@ export default function CardTypes({}) {
   const { columnVisibility } = getState();
 
   const options = [{ id: 'basic', name: 'Basic' }];
-  const coverField = columns.filter((column) => column.kind === 'cover')[0];
-  const avatarField = columns.filter((column) => column.kind === 'avatar')[0];
+  const coverField = columns.filter(
+    (column) => column.columnDef.meta?.kind === 'cover',
+  )[0];
+  const avatarField = columns.filter(
+    (column) => column.columnDef.meta?.kind === 'avatar',
+  )[0];
 
   if (avatarField) {
     options.push({ id: 'with-avatar', name: 'With avatar only' });
