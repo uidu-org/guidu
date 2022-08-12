@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.0.10
+
+### Patch Changes
+
+- 05a919297: Rating cell value strings
+
 ## 2.0.9
 
 ### Patch Changes
