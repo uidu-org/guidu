@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 3.0.6
+
+### Patch Changes
+
+- Updated dependencies [c5e313460]
+  - @uidu/data-fields@2.0.6
+  - @uidu/data-manager@3.0.6
+  - @uidu/data-views@2.0.6
+
 ## 3.0.5
 
 ### Patch Changes
