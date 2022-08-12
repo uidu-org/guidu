@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 2.0.8
+
+### Patch Changes
+
+- Updated dependencies [cfd2580cc]
+  - @uidu/data-fields@2.0.7
+  - @uidu/table@2.0.8
+
 ## 2.0.7
 
 ### Patch Changes

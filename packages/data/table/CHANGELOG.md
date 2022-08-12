@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 2.0.8
+
+### Patch Changes
+
+- cfd2580cc: SuppressMenu in meta, memoize defaultColumns in DataManager, fix localFileUpload options
+- Updated dependencies [cfd2580cc]
+  - @uidu/data-fields@2.0.7
+  - @uidu/data-manager@3.0.7
+
 ## 2.0.7
 
 ### Patch Changes
