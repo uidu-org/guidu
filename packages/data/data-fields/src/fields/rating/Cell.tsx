@@ -16,7 +16,11 @@ export default function Cell(props: CellContext<any, number>) {
 
   return (
     <div tw="flex items-center">
-      <StyledRating value={value} readOnly items={max} />
+      <StyledRating
+        value={typeof value === 'string' ? Number(value) : value}
+        readOnly
+        items={max}
+      />
     </div>
   );
 }

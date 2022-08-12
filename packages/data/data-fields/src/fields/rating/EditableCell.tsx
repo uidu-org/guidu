@@ -6,7 +6,11 @@ export default function EditableCell(props: CellContext<any, number>) {
   const { getValue, column } = props;
   const max = column.columnDef?.meta?.max || 5;
 
-  const [value, setValue] = useState(getValue());
+  const defaultValue = getValue() || 0;
+
+  const [value, setValue] = useState(
+    typeof defaultValue === 'string' ? Number(defaultValue) : defaultValue,
+  );
 
   useEffect(() => {
     setValue(getValue());
