@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 1.1.22
+
+### Patch Changes
+
+- cfd2580cc: SuppressMenu in meta, memoize defaultColumns in DataManager, fix localFileUpload options
+
 ## 1.1.21
 
 ### Patch Changes
