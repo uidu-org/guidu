@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 3.0.9
+
+### Patch Changes
+
+- 575a214ad: Bump columnDef checks on List and Gallery
+- Updated dependencies [575a214ad]
+  - @uidu/data-views@2.0.9
+  - @uidu/gallery@2.0.3
+  - @uidu/list@2.0.3
+  - @uidu/table@2.0.10
+  - @uidu/data-controls@3.0.9
+
 ## 3.0.8
 
 ### Patch Changes

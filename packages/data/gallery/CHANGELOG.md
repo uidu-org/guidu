@@ -1,5 +1,12 @@
 # @uidu/gallery
 
+## 2.0.3
+
+### Patch Changes
+
+- 575a214ad: Bump columnDef checks on List and Gallery
+  - @uidu/data-controls@3.0.9
+
 ## 2.0.2
 
 ### Patch Changes
