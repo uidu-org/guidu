@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.19
+
+### Patch Changes
+
+- 398f9a1b8: Bump react-virtual, added react-rating
+
 ## 0.5.18
 
 ### Patch Changes

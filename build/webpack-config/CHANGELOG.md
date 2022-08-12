@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.30
+
+### Patch Changes
+
+- 398f9a1b8: Bump react-virtual, added react-rating
+
 ## 0.3.29
 
 ### Patch Changes

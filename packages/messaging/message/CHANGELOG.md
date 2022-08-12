@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.38
+
+### Patch Changes
+
+- 398f9a1b8: Bump react-virtual, added react-rating
+- Updated dependencies [398f9a1b8]
+  - @uidu/media-card@0.6.24
+
 ## 0.5.37
 
 ### Patch Changes

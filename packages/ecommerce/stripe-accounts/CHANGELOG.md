@@ -1,5 +1,11 @@
 # @uidu/stripe-accounts
 
+## 0.4.18
+
+### Patch Changes
+
+- 398f9a1b8: Bump react-virtual, added react-rating
+
 ## 0.4.17
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/field-downshift
 
+## 1.4.17
+
+### Patch Changes
+
+- 398f9a1b8: Bump react-virtual, added react-rating
+
 ## 1.4.16
 
 ### Patch Changes

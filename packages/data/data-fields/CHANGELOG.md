@@ -1,5 +1,14 @@
 # @uidu/data-fields
 
+## 2.0.8
+
+### Patch Changes
+
+- 398f9a1b8: Bump react-virtual, added react-rating
+- Updated dependencies [398f9a1b8]
+  - @uidu/field-date@1.2.9
+  - @uidu/field-downshift@1.4.17
+
 ## 2.0.7
 
 ### Patch Changes

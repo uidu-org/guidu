@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.6.14
+
+### Patch Changes
+
+- 398f9a1b8: Bump react-virtual, added react-rating
+- Updated dependencies [398f9a1b8]
+  - @uidu/list@2.0.2
+  - @uidu/table@2.0.9
+
 ## 0.6.13
 
 ### Patch Changes
