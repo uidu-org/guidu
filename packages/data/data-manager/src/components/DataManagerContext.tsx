@@ -1,23 +1,22 @@
 import { Column, Table } from '@tanstack/react-table';
 import React, { createContext, useContext, useMemo } from 'react';
 
-interface DataManagerContextProps<T> {
-  tableInstance: Table<T>;
-  columns: Column<T, unknown>[];
-  onItemClick: (item: T) => void;
-  currentView?: any;
+interface DataManagerContextProps<TTable, TView extends {}> {
+  tableInstance: Table<TTable>;
+  columns: Column<TTable, unknown>[];
+  onItemClick: (item: TTable) => void;
+  currentView?: TView;
   updateView?: (name: string, value: any) => Promise<any>;
-  rowData?: Array<T>;
-  onAddField?: () => void;
+  rowData?: Array<TTable>;
   columnCount?: number;
   setAggregation?: () => void;
   setColumnWidth?: () => void;
 }
 
 export const DataManagerContext =
-  createContext<DataManagerContextProps<T>>(null);
+  createContext<DataManagerContextProps<T, unknown>>(null);
 
-function DataManagerProvider<T>({
+function DataManagerProvider<TTable, TView extends {}>({
   children,
   rowData = [],
   columns,
@@ -27,12 +26,12 @@ function DataManagerProvider<T>({
   onItemClick,
 }: {
   children: React.ReactNode;
-  rowData?: T[];
-  columns: Column<T, unknown>[];
-  currentView?: any;
+  rowData?: TTable[];
+  columns: Column<TTable, unknown>[];
+  currentView?: TView;
   updateView?: (name: string, value: any) => Promise<any>;
-  tableInstance: Table<T>;
-  onItemClick: (item: T) => void;
+  tableInstance: Table<TTable>;
+  onItemClick: (item: TTable) => void;
 }) {
   const setColumnCount = (columnCount) => {
     updateView('preferences', { ...currentView.preferences, columnCount }).then(

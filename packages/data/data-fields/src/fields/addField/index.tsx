@@ -21,15 +21,15 @@ const AddField: ColumnDef<unknown, string> = {
         id="uidu.data-fields.add_field.description"
       />
     ),
+    suppressMenu: true,
+    enableEditing: false,
   },
   enableColumnFilter: false,
   enableHiding: false,
   enableSorting: false,
   enableResizing: false,
-  enableEditing: false,
   rowDrag: false,
   editable: false,
-  suppressMenu: true,
 };
 
 export default AddField;

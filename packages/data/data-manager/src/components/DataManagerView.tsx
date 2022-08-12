@@ -270,7 +270,6 @@ function DataManagerView<T>({
                 onItemClick={onItemClick}
                 columnDefs={columns}
                 rowData={rowData}
-                // onAddField={onAddField}
                 // onSortChanged={onSortChanged}
                 // onFilterChanged={onFilterChanged}
                 // onColumnRowGroupChanged={onColumnRowGroupChanged}

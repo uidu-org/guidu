@@ -67,23 +67,25 @@ export default function Header({
             </ButtonItem>
           </Section>
         )}
-        <Section hasSeparator>
-          <ButtonItem
-            onClick={() => {
-              setIsOpen(false);
-              // setColumnWidth(column, getColumnWidth(column));
-            }}
-            iconBefore={<AlignJustify size={14} />}
-          >
-            <FormattedMessage
-              defaultMessage="Autosize this column"
-              id="uidu.table.header.autosize"
-            />
-          </ButtonItem>
-          {/* <ButtonItem onClick={() => autosizeAllColumns()}>
+        {header.column.columnDef.enableResizing && (
+          <Section hasSeparator>
+            <ButtonItem
+              onClick={() => {
+                setIsOpen(false);
+                // setColumnWidth(column, getColumnWidth(column));
+              }}
+              iconBefore={<AlignJustify size={14} />}
+            >
+              <FormattedMessage
+                defaultMessage="Autosize this column"
+                id="uidu.table.header.autosize"
+              />
+            </ButtonItem>
+            {/* <ButtonItem onClick={() => autosizeAllColumns()}>
                 Autosize all columns
               </ButtonItem> */}
-        </Section>
+          </Section>
+        )}
         <Section>
           {column.getIsSorted() && (
             <ButtonItem
@@ -221,7 +223,7 @@ export default function Header({
         )}
         {column.columnDef.meta?.name}
       </div>
-      {!column.suppressMenu && (
+      {!column.columnDef.meta?.suppressMenu && (
         <div tw="ml-4 font-weight[initial]">
           <Popup
             isOpen={isOpen}

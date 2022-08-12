@@ -38,7 +38,7 @@ function FieldFileUploader({
         ...defaultOptions,
         ...options,
       })
-        .use(uploadOptions.module, moduleOptions)
+        .use(uploadOptions.module, uploadOptions.options)
         .on('complete', (result) => {
           handleChange(result.successful.map(uploadOptions.responseHandler));
         }),

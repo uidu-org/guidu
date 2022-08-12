@@ -13,7 +13,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import { Aggregated, Header, RowActions } from '@uidu/table';
-import React, { useCallback, useImperativeHandle } from 'react';
+import React, { useCallback, useImperativeHandle, useMemo } from 'react';
 import { DataManagerProps } from '../types';
 import { fuzzyFilter } from '../utils';
 import { DataManagerProvider } from './DataManagerContext';
@@ -50,33 +50,38 @@ export default function DataManager<T>({
     [actions],
   );
 
-  const defaultColumns = [...columns];
-
-  if (actions.length > 0) {
-    defaultColumns.push({
-      id: 'actions',
-      header: (props) => null,
-      footer: (props) => null,
-      cell: RowActionsCell,
-      // suppressMenu: true,
-      enableResizing: false,
-      minSize: 56,
-      size: 56,
-      maxSize: 56,
-      meta: {
-        pinned: 'right',
-        cellProps: {
-          style: { padding: 0 },
-        },
-      },
-    } as Partial<ColumnDef<T>>);
-  }
+  const defaultColumns = useMemo(
+    () => [
+      ...columns,
+      ...(actions.length > 0
+        ? [
+            {
+              id: 'actions',
+              header: (props) => null,
+              footer: (props) => null,
+              cell: RowActionsCell,
+              // suppressMenu: true,
+              enableResizing: false,
+              minSize: 56,
+              size: 56,
+              maxSize: 56,
+              meta: {
+                pinned: 'right',
+                cellProps: {
+                  style: { padding: 0 },
+                },
+              },
+            } as Partial<ColumnDef<T>>,
+          ]
+        : []),
+    ],
+    [columns, actions, RowActionsCell],
+  );
 
   const defaultColumn: Partial<ColumnDef<T>> = React.useMemo(
     () => ({
       minSize: 80,
       size: 240,
-      maxSize: 400,
       enableResizing: true,
       enableHiding: true,
       enableColumnFilter: true,
@@ -115,97 +120,6 @@ export default function DataManager<T>({
     debugAll: true,
     ...options,
   });
-
-  // const tableInstance = useTable(
-  //   {
-  //     columns,
-  //     data: rowData,
-  //     defaultColumn,
-  //     initialState: {
-  //       pageSize,
-  //       ...(currentView?.state || {}),
-  //     },
-  //     // useControlledState: (state) => {
-  //     //   return React.useMemo(
-  //     //     () => ({
-  //     //       ...state,
-  //     //       columnDefinitions,
-  //     //     }),
-  //     //     [state],
-  //     //   );
-  //     // },
-  //     getExportFileBlob,
-  //     getExportFileName,
-  //   },
-  //   useFlexLayout,
-  //   useFilters,
-  //   useGlobalFilter,
-  //   useGroupBy,
-  //   useSortBy,
-  //   useResizeColumns,
-  //   useExpanded,
-  //   usePagination,
-  //   useRowSelect,
-  //   useExportData,
-  //   (hooks) => {
-  //     hooks.visibleColumns.push((columns) => [
-  //       // Let's make a column for selection
-  //       ...(canSelectRows
-  //         ? [
-  //             {
-  //               id: 'uid',
-  //               kind: 'uid',
-  //               field: 'id',
-  //               disableResizing: true,
-  //               minWidth: 56,
-  //               width: 56,
-  //               maxWidth: 56,
-  //               pinned: 'left',
-  //               groupByBoundary: true,
-  //               cellStyle: {
-  //                 padding: 0,
-  //               },
-  //               // The header can use the table's getToggleAllRowsSelectedProps method
-  //               // to render a checkbox
-  //               Header: (props) =>
-  //                 props.headerGroups.length > 1 ? null : (
-  //                   <HeaderSelection {...props} />
-  //                 ),
-  //               // The cell can use the individual row's getToggleRowSelectedProps method
-  //               // to the render a checkbox
-  //               Cell: RowSelection,
-  //               Aggregated: AggregatedSelection,
-  //               Footer: (info) => {
-  //                 // Only calculate total visits if rows change
-
-  //                 return <>Total: {info.rows.length}</>;
-  //               },
-  //             },
-  //           ]
-  //         : []),
-  //       ...columns,
-  //       ...(actions.length > 0
-  //         ? [
-  //             {
-  //               id: 'actions',
-  //               kind: 'actions',
-  //               suppressMenu: true,
-  //               disableResizing: true,
-  //               minWidth: 56,
-  //               width: 56,
-  //               maxWidth: 56,
-  //               pinned: 'right',
-  //               Cell: RowActionsCell,
-  //               groupByBoundary: true,
-  //               cellStyle: {
-  //                 padding: 0,
-  //               },
-  //             },
-  //           ]
-  //         : []),
-  //     ]);
-  //   },
-  // );
 
   useImperativeHandle(forwardedRef, () => table, [table]);
 

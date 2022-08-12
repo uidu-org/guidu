@@ -19,6 +19,7 @@ const Uid: ColumnDef<unknown, string> = {
     ),
     color: 'cornflowerblue',
     pinned: 'left',
+    suppressMenu: true,
   },
   enableHiding: false,
   enableResizing: false,
@@ -27,7 +28,6 @@ const Uid: ColumnDef<unknown, string> = {
   maxSize: 56,
   enableSorting: false,
   // do not export to CSV/Excel the global ID field
-  suppressMenu: true,
   disableExport: true,
   lockPosition: true,
 };

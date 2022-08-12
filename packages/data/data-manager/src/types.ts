@@ -22,6 +22,7 @@ declare module '@tanstack/table-core' {
     // column behaviors
     isPrimary?: boolean;
     isPrivate?: boolean;
+    suppressMenu?: boolean;
     pinned?: ColumnPinningPosition;
     valueFormatter?: (value: TValue) => React.ReactNode;
     cellProps?: {
@@ -71,8 +72,7 @@ export type DataManagerProps<T> = {
   onViewUpdate?: (state: any) => void;
   updateView?: (name: string, value: any) => Promise<any>;
   isAutoSaving?: string;
-  rowData?: Array<T>;
-  onAddField?: () => void;
+  rowData?: T[];
   onItemClick: (item: T) => void;
   canSelectRows?: boolean;
   getExportFileBlob?: any;
