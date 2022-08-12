@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.0.6
+
+### Patch Changes
+
+- c5e313460: More memoization
+
 ## 2.0.5
 
 ### Patch Changes
