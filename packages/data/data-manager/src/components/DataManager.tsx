@@ -55,8 +55,8 @@ export default function DataManager<T>({
   if (actions.length > 0) {
     defaultColumns.push({
       id: 'actions',
-      header: (props) => <div />,
-      footer: (props) => <div />,
+      header: (props) => null,
+      footer: (props) => null,
       cell: RowActionsCell,
       // suppressMenu: true,
       enableResizing: false,

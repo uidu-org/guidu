@@ -207,8 +207,8 @@ export default function Basic({}) {
         size: 64,
         minSize: 64,
         maxSize: 64,
-        header: (props) => <HeaderSelection {...props} />,
-        cell: (props) => <RowSelection {...props} />,
+        header: HeaderSelection,
+        cell: RowSelection,
         meta: {
           pinned: 'left',
           headerProps: {

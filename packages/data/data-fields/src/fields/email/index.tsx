@@ -4,6 +4,7 @@ import loadable from '@loadable/component';
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import Cell from './Cell';
 
 const Filter = loadable(
   () => import('../../components/filters/TextFilterForm'),
@@ -27,7 +28,7 @@ const Email: ColumnDef<unknown, string> = {
     ),
     color: '#5AAA8F',
   },
-  cell: (props) => <div tw="truncate">{props.getValue()}</div>,
+  cell: Cell,
   Filter,
   mocks: {
     value: 'info@uidu.org',

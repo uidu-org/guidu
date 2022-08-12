@@ -4,6 +4,7 @@ import loadable from '@loadable/component';
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import Cell from './Cell';
 
 const Filter = loadable(
   () => import('../../components/filters/NumberFilterForm'),
@@ -27,13 +28,7 @@ const Number: ColumnDef<unknown, number> = {
     icon: <FontAwesomeIcon icon={faHashtag} />,
     color: '#9291D0',
   },
-  cell: ({ getValue, column }) => (
-    <div tw="flex flex-grow justify-end">
-      {column.columnDef.meta?.valueFormatter
-        ? column.columnDef.meta?.valueFormatter(getValue())
-        : getValue()}
-    </div>
-  ),
+  cell: Cell,
   Filter,
 };
 

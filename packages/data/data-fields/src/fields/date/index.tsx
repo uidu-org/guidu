@@ -7,6 +7,7 @@ import localizedFormat from 'dayjs/plugin/localizedFormat';
 import utc from 'dayjs/plugin/utc';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import Cell from './Cell';
 
 dayjs.extend(localizedFormat);
 dayjs.extend(utc);
@@ -31,22 +32,7 @@ const Date: ColumnDef<unknown, string> = {
     ),
     color: '#EF8A78',
   },
-  cell: ({ getValue, column }) => {
-    if (!getValue()) {
-      return null;
-    }
-
-    // we should ensure value is an utc date, if not force it
-    const cleaned = getValue().endsWith('Z') ? getValue() : `${getValue()}Z`;
-    const convertedIntoUTC = dayjs(cleaned).utc().format();
-
-    return (
-      <div tw="flex w-full justify-between">
-        {dayjs(convertedIntoUTC).format('L')}
-        <span>{dayjs(convertedIntoUTC).format('LT')}</span>
-      </div>
-    );
-  },
+  cell: Cell,
   Filter,
   Grouper,
   // cellEditorFramework: Editor,

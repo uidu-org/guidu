@@ -80,7 +80,7 @@ export default function Row<T extends object>({
         .filter((cell) => !cell.column.columnDef.meta?.isPrivate)
         .map((cell, index) => (
           <Td
-            key={cell.column.id}
+            key={cell.id}
             width={cell.column.getSize()}
             minWidth={cell.column.columnDef.minSize}
             maxWidth={cell.column.columnDef.maxSize}

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import Cell from './Cell';
 
 const Percent: ColumnDef<unknown, number> = {
   meta: {
@@ -23,9 +24,7 @@ const Percent: ColumnDef<unknown, number> = {
     color: 'darkkhaki',
     valueFormatter: (value) => `${value}%`,
   },
-  cell: (props) => (
-    <div tw="flex justify-end flex-grow">{props.getValue()}</div>
-  ),
+  cell: Cell,
   aggregate: 'average',
 };
 
