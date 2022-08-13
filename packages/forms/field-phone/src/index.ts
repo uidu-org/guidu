@@ -1,11 +1,4 @@
-import { ComponentHOC } from '@uidu/field-base';
-import { withFormsy } from 'formsy-react';
-import FieldPhoneComponent from './components/FieldPhone';
-export {
-  default as FieldPhoneStateless,
-  FieldPhoneStatelessWithoutAnalytics,
-} from './components/FieldPhoneStateless';
-
-export const FieldPhone = withFormsy(ComponentHOC(FieldPhoneComponent));
+import FieldPhone from './components/FieldPhone';
+export { default as FieldPhoneStateless } from './components/FieldPhoneStateless';
 
 export default FieldPhone;

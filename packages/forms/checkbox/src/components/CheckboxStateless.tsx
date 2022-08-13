@@ -1,8 +1,3 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import React, {
   forwardRef,
   RefObject,
@@ -11,7 +6,6 @@ import React, {
   useRef,
 } from 'react';
 import tw from 'twin.macro';
-import pkg from '../version.json';
 
 type CheckboxStatelessProps = {
   label?: string | React.ReactNode;
@@ -83,35 +77,4 @@ const CheckboxStateless = forwardRef(
   ),
 );
 
-export { CheckboxStateless as CheckboxStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'fieldRadio',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'radioField',
-
-      attributes: {
-        componentName: 'fieldRadio',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'radioField',
-
-      attributes: {
-        componentName: 'fieldRadio',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(CheckboxStateless),
-);
+export default CheckboxStateless;

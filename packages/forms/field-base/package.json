@@ -14,6 +14,7 @@
     "classnames": "^2.3.1",
     "nanoid": "^3.3.4",
     "react-feather": "^2.0.10",
+    "react-hook-form": "^7.34.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },

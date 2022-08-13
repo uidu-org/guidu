@@ -1,8 +1,3 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import Select from '@uidu/select';
 import React, {
   forwardRef,
@@ -12,7 +7,6 @@ import React, {
   useState,
 } from 'react';
 import { FieldTimeStatelessProps } from '../types';
-import pkg from '../version.json';
 
 function zero(a) {
   return a < 10 ? '0' : '';
@@ -138,35 +132,4 @@ const FieldTimeStateless = forwardRef((props: FieldTimeStatelessProps, ref) => (
   <FieldTime {...props} forwardedRef={ref} />
 ));
 
-export { FieldTimeStateless as FieldTimeStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'fieldNumber',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'numberField',
-
-      attributes: {
-        componentName: 'fieldNumber',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'numberField',
-
-      attributes: {
-        componentName: 'fieldNumber',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(FieldTimeStateless),
-);
+export default FieldTimeStateless;

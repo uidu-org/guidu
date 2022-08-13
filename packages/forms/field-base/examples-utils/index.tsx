@@ -112,6 +112,7 @@ export function FieldExampleRefs({ component: Component, ...rest }) {
           className="btn"
           onClick={(e) => {
             e.preventDefault();
+            console.log(ref);
             ref.current?.setFocus('foo');
           }}
         >

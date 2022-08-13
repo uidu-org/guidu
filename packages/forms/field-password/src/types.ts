@@ -1,10 +1,8 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
 
 export type FieldPasswordStatelessProps = {
   isPasswordVisible?: boolean;
-} & WithAnalyticsEventsProps &
-  FieldBaseProps;
+} & FieldBaseProps;
 
 export type FieldPasswordProps = {
   measurePasswordStrength?: boolean;

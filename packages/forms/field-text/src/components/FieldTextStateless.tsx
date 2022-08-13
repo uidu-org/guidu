@@ -24,6 +24,7 @@ const getInputMode = ({
       return null;
   }
 };
+
 const FieldTextStateless = forwardRef((props: FieldTextStatelessProps, ref) => {
   const { inputMode, type } = props;
 

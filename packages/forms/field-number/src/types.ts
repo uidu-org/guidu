@@ -1,4 +1,3 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
 import { NumberFormatProps } from 'react-number-format';
 
@@ -10,7 +9,7 @@ export type FieldNumberStatelessProps = {
   /** React-numeric-input options */
   onValueChange?: (values) => void;
   forwardedRef?: any;
-} & WithAnalyticsEventsProps;
+};
 
 export type FieldNumberType = 'text' | 'tel';
 

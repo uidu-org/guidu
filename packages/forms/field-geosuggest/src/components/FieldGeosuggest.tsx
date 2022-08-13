@@ -1,15 +1,19 @@
 import { StyledRow, Wrapper } from '@uidu/field-base';
 import { ButtonItem, MenuGroup } from '@uidu/menu';
 import React, {
+  ChangeEvent,
   forwardRef,
   KeyboardEvent,
+  useCallback,
   useEffect,
   useImperativeHandle,
   useRef,
   useState,
 } from 'react';
+import { useController, useFormContext } from 'react-hook-form';
 import tw from 'twin.macro';
 import usePlacesAutocomplete, {
+  GeoArgs,
   getGeocode,
   getLatLng,
   RequestOptions,
@@ -19,7 +23,7 @@ import { FieldGeosuggestProps } from '../types';
 import FieldGeosuggestCurrentPosition from './FieldGeosuggestCurrentPosition';
 import FieldGeosuggestItem from './FieldGeosuggestItem';
 
-function FieldGeosuggest({
+function FieldGeosuggest<T>({
   onSuggestSelect = () => {},
   onGeocode,
   name,
@@ -32,16 +36,22 @@ function FieldGeosuggest({
   geocoderType,
   bounds,
   countryRestricted,
-  onSetValue,
   onChange,
   forwardedRef,
   geolocationEnabled = true,
   option: OptionRenderer = FieldGeosuggestItem,
   valueGetter,
-  filterOption = (_option: Suggestion) => true,
+  filterOption = (option: Suggestion) => true,
   value: propValue,
   ...rest
-}: FieldGeosuggestProps) {
+}: FieldGeosuggestProps<T>) {
+  const { control } = useFormContext<T>();
+  const { field } = useController<T>({
+    name,
+    control,
+    defaultValue: propValue || '',
+  });
+
   const element = useRef<HTMLInputElement>(null);
   const [activeSuggestion, setActiveSuggestion] = useState<Suggestion | null>(
     null,
@@ -51,15 +61,9 @@ function FieldGeosuggest({
 
   const requestOptions: RequestOptions = {
     types: geocoderType || ['geocode', 'establishment'],
+    ...(bounds ? { bounds } : {}),
+    ...(countryRestricted ? { country: countryRestricted } : {}),
   };
-  if (bounds) {
-    requestOptions.bounds = bounds;
-  }
-  if (countryRestricted) {
-    requestOptions.componentRestrictions = {
-      country: countryRestricted,
-    };
-  }
 
   const {
     ready,
@@ -89,11 +93,11 @@ function FieldGeosuggest({
     }
   }, [geolocationEnabled]);
 
-  const activateSuggestion = (direction: string) => {
+  const activateSuggestion = (direction: string): void => {
     const suggestsCount = data.length - 1;
     const next = direction === 'next';
 
-    let newActiveSuggest = null;
+    let newActiveSuggest: Suggestion = null;
     let newIndex = 0;
     let i = 0;
 
@@ -114,7 +118,11 @@ function FieldGeosuggest({
     setActiveSuggestion(newActiveSuggest);
   };
 
-  const geocodeSuggestion = ({ description }) => {
+  const geocodeSuggestion = ({
+    description,
+  }: {
+    description: GeoArgs['address'];
+  }) => {
     getGeocode({ address: description })
       .then((results) => getLatLng(results[0]))
       .then(onGeocode)
@@ -123,7 +131,7 @@ function FieldGeosuggest({
       });
   };
 
-  const selectSuggestion = (suggestion: Suggestion) => {
+  const selectSuggestion = (suggestion: Suggestion): undefined => {
     if (!suggestion) return null;
 
     const { description } = suggestion;
@@ -132,8 +140,7 @@ function FieldGeosuggest({
       v = valueGetter(suggestion);
     }
     setValue(v, false);
-    // formsy
-    onSetValue(v);
+    field.onChange(v);
     onChange(name, v, suggestion);
     // callbacks
     if (onGeocode) {
@@ -172,13 +179,25 @@ function FieldGeosuggest({
     element.current?.setSelectionRange(0, 9999);
   };
 
-  const onInputChange = (e) => setValue(e.target.value);
+  const onInputChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setValue(e.target.value);
+
+  const CachedStyledRow = useCallback(
+    (props) => (
+      <StyledRow
+        tw="relative"
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
+      />
+    ),
+    [],
+  );
 
   return (
     <Wrapper
       overrides={{
         StyledRow: {
-          component: (props) => <StyledRow tw="relative" {...props} />,
+          component: CachedStyledRow,
         },
       }}
       // eslint-disable-next-line react/jsx-props-no-spreading
@@ -220,11 +239,11 @@ function FieldGeosuggest({
             {data.filter(filterOption).map((suggestion) => {
               const isActive =
                 activeSuggestion &&
-                suggestion.reference === activeSuggestion.reference;
+                suggestion.place_id === activeSuggestion.place_id;
 
               return (
                 <ButtonItem
-                  key={suggestion.reference}
+                  key={suggestion.place_id}
                   onClick={() => selectSuggestion(suggestion)}
                   isSelected={isActive}
                 >

@@ -1,4 +1,3 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import {
   ActionMeta,
   ControlProps,
@@ -49,9 +48,7 @@ export interface OptionProps<Option = OptionType>
   isSelected: boolean;
 }
 
-export interface SelectProps<OptionType>
-  extends ReactSelectProps<OptionType>,
-    WithAnalyticsEventsProps {
+export interface SelectProps<OptionType> extends ReactSelectProps<OptionType> {
   /* This prop affects the height of the select control. Compact is gridSize() * 4, default is gridSize * 5  */
   spacing?: 'compact' | 'default';
   /* The state of validation if used in a form */

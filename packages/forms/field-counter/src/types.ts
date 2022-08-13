@@ -1,4 +1,3 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
 import NumericInput from 'react-numeric-input';
 
@@ -11,5 +10,4 @@ export type FieldCounterStatelessProps = {
   placeholder?: string | React.ReactNode;
   forwardedRef?: any;
   mobile?: 'auto' | boolean;
-} & NumericInput &
-  WithAnalyticsEventsProps;
+} & NumericInput;

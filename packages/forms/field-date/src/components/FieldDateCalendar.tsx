@@ -1,13 +1,7 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import moment from 'moment';
 import React, { forwardRef } from 'react';
 import DayPicker from 'react-day-picker';
 import { FieldDateCalendarStatelessProps } from '../types';
-import pkg from '../version.json';
 
 function FieldDateCalendar({
   value,
@@ -34,35 +28,4 @@ const FieldDateCalendarStateless = forwardRef(
   ),
 );
 
-export { FieldDateCalendarStateless as FieldDateCalendarStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'fieldDate',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'dateField',
-
-      attributes: {
-        componentName: 'fieldDate',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'dateField',
-
-      attributes: {
-        componentName: 'fieldDate',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(FieldDateCalendarStateless),
-);
+export default FieldDateCalendarStateless;

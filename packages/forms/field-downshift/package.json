@@ -15,9 +15,9 @@
     "@uidu/field-text": "^1.2.5",
     "classnames": "^2.3.1",
     "downshift": "^6.1.9",
-    "formsy-react": "^2.2.7",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
+    "react-hook-form": "^7.34.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

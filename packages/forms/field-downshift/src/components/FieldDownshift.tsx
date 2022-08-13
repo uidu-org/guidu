@@ -1,16 +1,20 @@
 import { Wrapper as FieldWrapper } from '@uidu/field-base';
 import Downshift from 'downshift';
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useController, useFormContext } from 'react-hook-form';
 import { FieldDownshiftProps } from '../types';
 
-function FieldDownshift({
+function FieldDownshift<
+  T,
+  TOption extends { id: string | number; name: string },
+>({
   wrapper: WrapperComponent = FieldWrapper,
   multiple = false,
   input = null,
   onChange = () => {},
-  getOptionValue = ({ id }) => id,
-  getOptionLabel = ({ name }) => name,
-  filterOptions = ({ options }) => options,
+  getOptionValue = (option) => option.id,
+  getOptionLabel = (option) => option.name,
+  filterOptions = (props) => props.options,
   option: itemRenderer = ({ item, ...rest }) => (
     <div {...rest}>{item.name}</div>
   ),
@@ -18,71 +22,81 @@ function FieldDownshift({
   options,
   value,
   scope,
-  onSetValue,
   name,
   ...otherProps
-}: FieldDownshiftProps) {
-  const getValue = () => {
-    if (value === undefined) return undefined;
+}: FieldDownshiftProps<T, TOption>) {
+  const { control } = useFormContext();
+  const { field } = useController({
+    name,
+    control,
+    defaultValue: value || multiple ? [] : '',
+  });
+
+  const getValue = useCallback(() => {
+    if (field.value === undefined) return undefined;
 
     const cleanedValue = multiple
-      ? options.filter((o) => value.includes(getOptionValue(o)))
-      : options.find((o) => getOptionValue(o) === value);
+      ? options.filter((o) => field.value.includes(getOptionValue(o)))
+      : options.find((o) => getOptionValue(o) === field.value);
 
     return cleanedValue;
-  };
+  }, [field.value, multiple, options, getOptionValue]);
 
-  const onSelect = (selectedItem) => {
+  const onSelect = (selectedItem: TOption) => {
     if (multiple) {
-      if (value && value.indexOf(getOptionValue(selectedItem)) >= 0) {
-        const newValue = value.filter(
+      if (
+        field.value &&
+        field.value.indexOf(getOptionValue(selectedItem)) >= 0
+      ) {
+        const newValue = field.value.filter(
           (v) => v !== getOptionValue(selectedItem),
         );
-        onSetValue(newValue);
+        field.onChange(newValue);
         onChange(name, newValue, { option: selectedItem });
-      } else {
-        // add item
-        const newValue = [
-          ...options
-            .filter((o) => value.indexOf(getOptionValue(o)) >= 0)
-            .map(getOptionValue),
-          getOptionValue(selectedItem),
-        ];
-        onSetValue(newValue);
-        onChange(name, newValue, { option: selectedItem });
+        return undefined;
       }
-    } else {
-      if (selectedItem === '') {
-        onSetValue('');
-        onChange(name, '');
-      } else {
-        onSetValue(getOptionValue(selectedItem));
-        onChange(name, getOptionValue(selectedItem), { option: selectedItem });
-      }
+      // add item
+      const newValue = [
+        ...options
+          .filter((o) => field.value.indexOf(getOptionValue(o)) >= 0)
+          .map(getOptionValue),
+        getOptionValue(selectedItem),
+      ];
+      field.onChange(newValue);
+      onChange(name, newValue, { option: selectedItem });
+      return undefined;
     }
+    if (selectedItem === '') {
+      field.onChange('');
+      onChange(name, '');
+      return undefined;
+    }
+
+    field.onChange(getOptionValue(selectedItem));
+    onChange(name, getOptionValue(selectedItem), { option: selectedItem });
+    return undefined;
   };
 
-  const isSelected = ({ item }) => {
+  const isSelected = (item: TOption) => {
     if (multiple) {
-      if (value) {
-        return value.indexOf(getOptionValue(item)) >= 0;
+      if (field.value) {
+        return field.value.indexOf(getOptionValue(item)) >= 0;
       }
       return null;
     }
-    if (value) {
-      return value === getOptionValue(item);
+    if (field.value) {
+      return field.value === getOptionValue(item);
     }
     return null;
   };
 
-  const renderItem = ({ item, index, ...rest }) => {
-    return itemRenderer({
+  const renderItem = ({ item, index, ...rest }) =>
+    itemRenderer({
       ...rest,
       item,
       index,
-      isSelected: isSelected({ item }),
+      isSelected: isSelected(item),
     });
-  };
 
   const selectedItem = getValue();
 
@@ -101,32 +115,32 @@ function FieldDownshift({
         isOpen,
         inputValue,
         ...rest
-      }) => {
-        return (
-          <WrapperComponent
-            {...otherProps}
-            {...getRootProps({ refKey: 'componentRef' })}
-          >
-            {input && input({ ...getInputProps() })}
-            {menu({
-              ...getMenuProps({}),
-              ...rest,
-              isOpen,
-              selectedItem,
-              children: filterOptions({ options, inputValue, isOpen }).map(
-                (item, index) =>
-                  renderItem({
-                    ...rest,
-                    item,
-                    index,
-                    scope,
-                    getItemProps,
-                  }),
-              ),
-            })}
-          </WrapperComponent>
-        );
-      }}
+      }) => (
+        <WrapperComponent
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...otherProps}
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...getRootProps({ refKey: 'componentRef' })}
+        >
+          {input && input({ ...getInputProps() })}
+          {menu({
+            ...getMenuProps({}),
+            ...rest,
+            isOpen,
+            selectedItem,
+            children: filterOptions({ options, inputValue, isOpen }).map(
+              (item, index) =>
+                renderItem({
+                  ...rest,
+                  item,
+                  index,
+                  scope,
+                  getItemProps,
+                }),
+            ),
+          })}
+        </WrapperComponent>
+      )}
     </Downshift>
   );
 }

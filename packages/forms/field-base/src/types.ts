@@ -1,8 +1,9 @@
+import { Path } from 'react-hook-form';
 import { WrapperProps } from './components/Wrapper/types';
 
 export type FieldBaseLayout = 'horizontal' | 'vertical' | 'elementOnly';
 
-export type FieldBaseProps = WrapperProps & {
+export type FieldBaseProps<T> = WrapperProps & {
   validateBeforeSubmit?: boolean;
   validatePristine?: boolean;
   // value?: ComponentValue;
@@ -27,7 +28,7 @@ export type FieldBaseProps = WrapperProps & {
   /** The name of the submitted field. */
   value?: any;
   /** The name of the submitted field. */
-  name: string;
+  name: Path<T>;
   /** Text to display in the input if the input is empty. */
   placeholder?: string | React.ReactNode;
 
@@ -50,7 +51,6 @@ export type FieldBaseProps = WrapperProps & {
    be called with an object containing the react synthetic event. Use currentTarget to get value, name and checked */
   onChange?: (name, value, otherProps?: any) => void;
   onBlur?: (name, value) => void;
-  onSetValue?: (value) => void;
 
   forwardedRef?: any;
   // /** Handler to be called when the input loses focus. */

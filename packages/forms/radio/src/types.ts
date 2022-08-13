@@ -1,4 +1,3 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
 
 export type RadioOption = {
@@ -21,4 +20,4 @@ export type RadioStatelessProps = {
   onChange?: (event: any) => void;
   disabled?: boolean;
   defaultChecked?: boolean;
-} & WithAnalyticsEventsProps;
+};

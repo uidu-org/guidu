@@ -1,4 +1,3 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { mergeStyles, Props } from 'react-select';
@@ -22,9 +21,7 @@ export type CreateSelectProps = Props & {
 const createSelect = <TOriginalProps extends {}>(
   Component: React.ComponentType<TOriginalProps>,
 ) => {
-  type ResultProps = TOriginalProps &
-    CreateSelectProps &
-    WithAnalyticsEventsProps;
+  type ResultProps = TOriginalProps & CreateSelectProps;
   const result = class UiduSelect extends React.Component<ResultProps> {
     components: {};
     select: any;

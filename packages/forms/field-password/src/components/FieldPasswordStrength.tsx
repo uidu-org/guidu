@@ -8,17 +8,21 @@ export default function FieldPasswordStrength({
   passwordStrengths,
   instructions,
   value,
+}: {
+  passwordStrengths: Record<string, number>;
+  instructions: string;
+  value: string;
 }) {
-  const zxcvbn: React.RefObject<any> = useRef();
+  const zxcvbnRef: React.RefObject = useRef();
 
   const passwordStrength =
-    value && value !== '' && zxcvbn.current
-      ? zxcvbn.current.default(value).score
+    value && value !== '' && zxcvbnRef.current
+      ? zxcvbnRef.current.default(value).score
       : null;
 
   return (
     <>
-      <Zxcvbn ref={zxcvbn} />
+      <Zxcvbn ref={zxcvbnRef} />
       <small className="form-text text-muted d-flex align-items-center">
         <span>
           {instructions}{' '}
@@ -29,7 +33,7 @@ export default function FieldPasswordStrength({
           )}
         </span>
         {!!passwordStrength && (
-          <div className="progress rounded w-25 ml-2" style={{ height: '2px' }}>
+          <div className="ml-2 rounded progress w-25" style={{ height: '2px' }}>
             <div
               className={classNames('progress-bar', {
                 'bg-warning': passwordStrength <= 2,

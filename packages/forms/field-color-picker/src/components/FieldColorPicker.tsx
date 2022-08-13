@@ -1,8 +1,16 @@
 import Button from '@uidu/button';
 import { Wrapper } from '@uidu/field-base';
-import Popup from '@uidu/popup';
-import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import Popup, { TriggerProps } from '@uidu/popup';
+import React, {
+  forwardRef,
+  Key,
+  MouseEvent,
+  useCallback,
+  useImperativeHandle,
+  useState,
+} from 'react';
 import { HexColorInput, HexColorPicker } from 'react-colorful';
+import { useController, useFormContext } from 'react-hook-form';
 // import 'react-colorful/dist/index.css';
 import styled from 'styled-components';
 import { FieldColorPickerProps } from '../types';
@@ -36,9 +44,8 @@ const DefaulTriggerRef = forwardRef((props: FieldColorPickerProps, ref) => (
   <DefaultTrigger {...props} consumerRef={ref} />
 ));
 
-function FieldColorPicker({
-  onSetValue,
-  onChange,
+function FieldColorPicker<T>({
+  onChange = () => {},
   name,
   value,
   trigger: Trigger = DefaulTriggerRef,
@@ -58,30 +65,54 @@ function FieldColorPicker({
   showInput = true,
   popupProps = {},
   ...rest
-}: FieldColorPickerProps) {
+}: FieldColorPickerProps<T>) {
+  const { control } = useFormContext();
+  const { field } = useController({ control, name, defaultValue: value || '' });
   const [dialogOpen, setDialogOpen] = useState(false);
 
-  const handleChange = ({ hex }) => {
-    onSetValue(hex);
-    onChange(name, hex);
-  };
+  const handleChange = useCallback(
+    ({ hex }) => {
+      field.onChange(hex);
+      onChange(name, hex);
+    },
+    [field, name, onChange],
+  );
 
-  const content = (
-    <div style={{ width: 208, padding: 4 }} className="ignore-onclickoutside">
-      <HexColorPicker
-        color={value}
-        onChange={(c) => handleChange({ hex: c })}
-      />
-      <div tw="grid grid-cols-4 my-1 gap-1 h-24">
-        {colors.map((color, index) => (
-          <Swatch
-            key={index}
-            color={color as string}
-            onClick={() => handleChange({ hex: color })}
-          />
-        ))}
+  const Content = useCallback(
+    () => (
+      <div style={{ width: 208, padding: 4 }} className="ignore-onclickoutside">
+        <HexColorPicker
+          color={field.value}
+          onChange={(c) => handleChange({ hex: c })}
+        />
+        <div tw="grid grid-cols-4 my-1 gap-1 h-24">
+          {colors.map((color) => (
+            <Swatch
+              key={color as Key}
+              color={color as string}
+              onClick={() => handleChange({ hex: color })}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    ),
+    [colors, handleChange, field.value],
+  );
+
+  const CachedTrigger = useCallback(
+    (triggerProps: TriggerProps) => (
+      <Trigger
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...triggerProps}
+        value={field.value}
+        forwardedRef={forwardedRef}
+        toggleDialog={(e: MouseEvent) => {
+          e.preventDefault();
+          setDialogOpen(!dialogOpen);
+        }}
+      />
+    ),
+    [Trigger, forwardedRef, field.value, dialogOpen, setDialogOpen],
   );
 
   return (
@@ -90,20 +121,11 @@ function FieldColorPicker({
         <Popup
           isOpen={dialogOpen}
           onClose={() => setDialogOpen(false)}
+          // eslint-disable-next-line react/jsx-props-no-spreading
           {...popupProps}
           zIndex={999}
-          content={() => <>{content}</>}
-          trigger={(triggerProps) => (
-            <Trigger
-              {...triggerProps}
-              value={value}
-              forwardedRef={forwardedRef}
-              toggleDialog={(e) => {
-                e.preventDefault();
-                setDialogOpen(!dialogOpen);
-              }}
-            />
-          )}
+          content={Content}
+          trigger={CachedTrigger}
         />
         {showInput && (
           <div tw="relative">
@@ -112,7 +134,7 @@ function FieldColorPicker({
             </span>
             <HexColorInput
               tw="background[rgb(var(--body-on-primary-bg))] shadow-sm focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))] block w-full border border-color[rgb(var(--field-border, var(--border)))] rounded py-3 px-4 placeholder-gray-400 disabled:opacity-50 disabled:background[rgba(var(--brand-subtle), .4)] pl-20"
-              color={value}
+              color={field.value}
               onChange={(c) => handleChange({ hex: c })}
             />
           </div>

@@ -16,12 +16,10 @@
   "types": "dist/uidu-field-text.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@uidu/analytics": "^0.6.5",
     "@uidu/field-base": "^3.1.26",
     "@uidu/form": "^1.2.27",
     "@uidu/theme": "^0.6.18",
     "classnames": "^2.3.1",
-    "formsy-react": "^2.2.7",
     "react-hook-form": "^7.34.0",
     "tslib": "^2.4.0"
   },

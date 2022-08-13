@@ -1,13 +1,7 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
-import { FieldTextStatelessWithoutAnalytics } from '@uidu/field-text';
+import { FieldTextStateless } from '@uidu/field-text';
 import React, { forwardRef } from 'react';
 import NumberFormat from 'react-number-format';
 import { FieldNumberStatelessProps } from '../types';
-import pkg from '../version.json';
 
 function FieldNumber({
   options,
@@ -17,7 +11,7 @@ function FieldNumber({
   ...rest
 }: FieldNumberStatelessProps) {
   return (
-    <FieldTextStatelessWithoutAnalytics
+    <FieldTextStateless
       inputMode="numeric"
       as={NumberFormat}
       options={{
@@ -41,35 +35,4 @@ const FieldNumberStateless = forwardRef(
   ),
 );
 
-export { FieldNumberStateless as FieldNumberStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'fieldNumber',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'numberField',
-
-      attributes: {
-        componentName: 'fieldNumber',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'numberField',
-
-      attributes: {
-        componentName: 'fieldNumber',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(FieldNumberStateless),
-);
+export default FieldNumberStateless;

@@ -1,12 +1,6 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import React, { forwardRef, useImperativeHandle, useMemo, useRef } from 'react';
 import Switch from 'react-switch';
 import { FieldToggleStatelessProps } from '../types';
-import pkg from '../version.json';
 
 function FieldToggle({
   id,
@@ -57,46 +51,4 @@ const FieldToggleStateless = forwardRef(
   ),
 );
 
-export { FieldToggleStateless as ToggleStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'toggle',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'toggle',
-
-      attributes: {
-        componentName: 'toggle',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onChange: createAndFireEventOnGuidu({
-      action: 'changed',
-      actionSubject: 'toggle',
-
-      attributes: {
-        componentName: 'toggle',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'toggle',
-
-      attributes: {
-        componentName: 'toggle',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(FieldToggleStateless),
-);
+export default FieldToggleStateless;

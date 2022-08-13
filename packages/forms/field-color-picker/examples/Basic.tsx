@@ -1,6 +1,6 @@
 import Button from '@uidu/button';
 import { Form } from '@uidu/form';
-import { forwardRef, PureComponent, useImperativeHandle } from 'react';
+import React, { forwardRef, PureComponent, useImperativeHandle } from 'react';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 import FieldColorPicker from '../src';
@@ -8,7 +8,6 @@ import { FieldColorPickerProps } from '../src/types';
 
 function Trigger(props) {
   const { toggleDialog, value, consumerRef, forwardedRef, ...rest } = props;
-  console.log(props);
 
   useImperativeHandle(forwardedRef, () => consumerRef.current);
 
@@ -37,6 +36,7 @@ export default class Basic extends PureComponent {
         <FieldColorPicker {...inputDefaultProps} />
         <FieldColorPicker
           {...inputDefaultProps}
+          name="foo1"
           value="#006688"
           // trigger={({ value, toggleDialog }) => (
           //   <div onClick={toggleDialog}>
@@ -47,6 +47,7 @@ export default class Basic extends PureComponent {
         <div className="form-group">
           <FieldColorPicker
             {...inputDefaultProps}
+            name="foo2"
             layout="elementOnly"
             trigger={TriggerRef}
             showInput={false}

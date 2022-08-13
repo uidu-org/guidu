@@ -1,8 +1,3 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import { Wrapper } from '@uidu/field-base';
 import { FieldTextStateless } from '@uidu/field-text';
 import React, {
@@ -12,7 +7,6 @@ import React, {
   useRef,
 } from 'react';
 import { FieldPasswordStatelessProps } from '../types';
-import pkg from '../version.json';
 
 function FieldPassword({
   isPasswordVisible = false,
@@ -43,35 +37,4 @@ const FieldPasswordStateless = forwardRef(
   ),
 );
 
-export { FieldPasswordStateless as FieldPasswordStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'fieldPassword',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'numberField',
-
-      attributes: {
-        componentName: 'fieldPassword',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'numberField',
-
-      attributes: {
-        componentName: 'fieldPassword',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(FieldPasswordStateless),
-);
+export default FieldPasswordStateless;

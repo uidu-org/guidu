@@ -14,10 +14,10 @@ export default class Basic extends PureComponent {
           geolocationEnabled={false}
           // geocoderType={['(cities)']}
           countryRestricted="it"
-          valueGetter={(suggestion) => {
-            console.log(suggestion);
-            return suggestion.structured_formatting.main_text;
-          }}
+          // valueGetter={(suggestion) => {
+          //   console.log(suggestion);
+          //   return suggestion.structured_formatting.main_text;
+          // }}
         />
       </Form>
     );

@@ -12,7 +12,6 @@
   "dependencies": {
     "@atlaskit/icon": "^21.10.7",
     "@babel/runtime": "^7.18.9",
-    "@uidu/analytics": "^0.6.5",
     "@uidu/checkbox": "^1.4.5",
     "@uidu/field-base": "^3.1.26",
     "@uidu/form": "^1.2.28",
@@ -20,7 +19,6 @@
     "@uidu/theme": "^0.6.19",
     "@uidu/tooltip": "^0.5.22",
     "focus-trap": "^6.9.4",
-    "formsy-react": "^2.2.7",
     "memoize-one": "^6.0.0",
     "react-dom": "^18.2.0",
     "react-fast-compare": "^3.2.0",

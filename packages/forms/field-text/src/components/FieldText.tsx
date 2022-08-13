@@ -17,9 +17,11 @@ type FieldTextProps<T> = FieldTextStatelessProps & {
 };
 
 export default function FieldText<T>(props: FieldTextProps<T>) {
-  const { name, onChange: handleChange, value: defaultValue } = props;
-
-  console.log(defaultValue);
+  const {
+    name,
+    onChange: handleChange = () => {},
+    value: defaultValue,
+  } = props;
 
   const { control } = useFormContext<T>();
   const {
@@ -39,7 +41,7 @@ export default function FieldText<T>(props: FieldTextProps<T>) {
         ref={ref}
         name={name}
         value={value}
-        onChange={(e: ChangeEvent) => {
+        onChange={(e: ChangeEvent<HTMLInputElement>) => {
           onChange(e.currentTarget.value);
           handleChange(name, e.currentTarget.value);
         }}

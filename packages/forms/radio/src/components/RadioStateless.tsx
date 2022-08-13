@@ -1,12 +1,6 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import React from 'react';
 import tw from 'twin.macro';
 import { RadioStatelessProps } from '../types';
-import pkg from '../version.json';
 
 function RadioStateless({
   value,
@@ -45,35 +39,4 @@ function RadioStateless({
   );
 }
 
-export { RadioStateless as RadioStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'fieldRadio',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'radioField',
-
-      attributes: {
-        componentName: 'fieldRadio',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'radioField',
-
-      attributes: {
-        componentName: 'fieldRadio',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(RadioStateless),
-);
+export default RadioStateless;

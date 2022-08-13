@@ -1,6 +1,7 @@
 import Tooltip from '@uidu/tooltip';
 import React, { forwardRef, useState } from 'react';
 import { Eye, EyeOff } from 'react-feather';
+import { useFormContext } from 'react-hook-form';
 import { FieldPasswordProps } from '../types';
 import FieldPasswordStateless from './FieldPasswordStateless';
 import FieldPasswordStrength from './FieldPasswordStrength';
@@ -20,6 +21,17 @@ function FieldPassword({
   forwardedRef,
   ...rest
 }: FieldPasswordProps) {
+  const { control } = useFormContext<T>();
+  // const {
+  //   field: { onChange, onBlur, value, ref },
+  //   fieldState: { invalid, isTouched, isDirty, error },
+  //   formState: { touchedFields, dirtyFields },
+  // } = useController<T>({
+  //   name,
+  //   control,
+  //   defaultValue: defaultValue || '',
+  // });
+
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
 

@@ -1,8 +1,3 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import autosize from 'autosize';
 import React, {
   forwardRef,
@@ -11,7 +6,6 @@ import React, {
   useRef,
 } from 'react';
 import { FieldTextareaStatelessProps } from '../types';
-import pkg from '../version.json';
 
 function FieldTextarea({
   id,
@@ -70,35 +64,4 @@ const FieldTextareaStateless = forwardRef(
   ),
 );
 
-export { FieldTextareaStateless as FieldTextareaStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'fieldTextarea',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'textareaField',
-
-      attributes: {
-        componentName: 'fieldTextarea',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'textareaField',
-
-      attributes: {
-        componentName: 'fieldTextarea',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(FieldTextareaStateless),
-);
+export default FieldTextareaStateless;

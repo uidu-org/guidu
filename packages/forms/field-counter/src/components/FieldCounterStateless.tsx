@@ -1,8 +1,3 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import React, {
   forwardRef,
   RefObject,
@@ -11,7 +6,6 @@ import React, {
 } from 'react';
 import NumericInput from 'react-numeric-input';
 import { FieldCounterStatelessProps } from '../types';
-import pkg from '../version.json';
 
 function FieldCounter({
   className = 'form-control',
@@ -89,35 +83,4 @@ const FieldCounterStateless = forwardRef(
   ),
 );
 
-export { FieldCounterStateless as FieldNumberStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'fieldNumeric',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'numericField',
-
-      attributes: {
-        componentName: 'fieldNumeric',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'numericField',
-
-      attributes: {
-        componentName: 'fieldNumeric',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(FieldCounterStateless),
-);
+export default FieldCounterStateless;

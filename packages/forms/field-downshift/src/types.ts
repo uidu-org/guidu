@@ -1,15 +1,24 @@
 import { FieldBaseProps } from '@uidu/field-base';
+import { DownshiftState } from 'downshift';
 import * as React from 'react';
 
-export type FieldDownshiftProps = FieldBaseProps & {
+export type FieldDownshiftProps<T, TOption> = FieldBaseProps<T> & {
   menu?: (props) => void;
   option?: (props) => void;
-  filterOptions?: (props) => Array<any>;
-  options: Array<any>;
-  wrapper?: React.ComponentClass;
   input?: (props) => void;
+  filterOptions?: ({
+    options,
+    inputValue,
+    isOpen,
+  }: {
+    options: TOption[];
+    inputValue: DownshiftState['inputValue'];
+    isOpen: DownshiftState['isOpen'];
+  }) => TOption[];
+  options: TOption[];
+  wrapper?: React.ComponentClass;
   scope?: string;
   multiple?: boolean;
-  getOptionLabel?: (option: any) => string;
-  getOptionValue?: (option: any) => string;
+  getOptionLabel?: (option: TOption) => any;
+  getOptionValue?: (option: TOption) => any;
 };

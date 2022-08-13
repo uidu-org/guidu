@@ -1,5 +1,6 @@
 import { Wrapper } from '@uidu/field-base';
 import React, { forwardRef } from 'react';
+import { useFormContext } from 'react-hook-form';
 import { CheckboxProps } from '../types';
 import InputControl from './CheckboxStateless';
 
@@ -12,7 +13,9 @@ function Checkbox({
   forwardedRef,
   ...rest
 }: CheckboxProps & { forwardedRef: any }) {
-  const handleChange = e => {
+  const { control } = useFormContext();
+
+  const handleChange = (e) => {
     const value = e.currentTarget.checked;
     onSetValue(value);
     onChange(name, value);

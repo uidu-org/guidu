@@ -6535,12 +6535,11 @@ __metadata:
   resolution: "@uidu/checkbox@workspace:packages/forms/checkbox"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/form": ^1.2.27
-    formsy-react: ^2.2.7
     react: ^18.2.0
+    react-hook-form: ^7.34.0
     styled-components: ^5.3.5
     tslib: ^2.4.0
   peerDependencies:
@@ -7208,6 +7207,7 @@ __metadata:
     nanoid: ^3.3.4
     react: ^18.2.0
     react-feather: ^2.0.10
+    react-hook-form: ^7.34.0
     styled-components: ^5.3.5
     tslib: ^2.4.0
   peerDependencies:
@@ -7226,9 +7226,9 @@ __metadata:
     "@uidu/field-base": ^3.1.26
     "@uidu/form": ^1.2.28
     "@uidu/popup": ^0.7.0
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-colorful: ^5.5.1
+    react-hook-form: ^7.34.0
     styled-components: ^5.3.5
     tslib: ^2.4.0
   languageName: unknown
@@ -7239,11 +7239,9 @@ __metadata:
   resolution: "@uidu/field-counter@workspace:packages/forms/field-counter"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/form": ^1.2.27
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-numeric-input: ^2.2.3
     styled-components: ^5.3.5
@@ -7258,12 +7256,10 @@ __metadata:
   resolution: "@uidu/field-date-range@workspace:packages/forms/field-date-range"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/field-date": ^1.2.7
     "@uidu/form": ^1.2.27
-    formsy-react: ^2.2.7
     moment: ^2.29.4
     react: ^18.2.0
     react-day-picker: ^7.4.10
@@ -7281,13 +7277,11 @@ __metadata:
   resolution: "@uidu/field-date@workspace:packages/forms/field-date"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/field-text": ^1.2.5
     "@uidu/form": ^1.2.28
     dayjs: ^1.11.5
-    formsy-react: ^2.2.7
     moment: ^2.29.4
     react: ^18.2.0
     react-day-picker: ^7.4.10
@@ -7318,9 +7312,9 @@ __metadata:
     "@uidu/shell": ^2.1.26
     classnames: ^2.3.1
     downshift: ^6.1.9
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-feather: ^2.0.10
+    react-hook-form: ^7.34.0
     styled-components: ^5.3.5
     tslib: ^2.4.0
   peerDependencies:
@@ -7340,7 +7334,6 @@ __metadata:
     "@uppy/dashboard": ^2.4.1
     "@uppy/react": ^2.2.2
     "@uppy/xhr-upload": ^2.1.2
-    formsy-react: ^2.2.7
     react: ^18.2.0
     tslib: ^2.4.0
   languageName: unknown
@@ -7356,11 +7349,9 @@ __metadata:
     "@uidu/form": ^1.2.28
     "@uidu/menu": 0.7.16
     "@uidu/spinner": ^0.5.17
-    classnames: ^2.3.1
-    downshift: ^6.1.9
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-feather: ^2.0.10
+    react-hook-form: ^7.34.0
     styled-components: ^5.3.5
     tslib: ^2.4.0
     use-places-autocomplete: ^4.0.0
@@ -7374,7 +7365,6 @@ __metadata:
   resolution: "@uidu/field-image-uploader@workspace:packages/forms/field-image-uploader"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/button": ^1.3.26
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
@@ -7390,7 +7380,6 @@ __metadata:
     "@uppy/xhr-upload": ^2.1.2
     axios: ^0.27.2
     classnames: ^2.3.1
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-avatar-editor: ^13.0.0
     react-dropzone: ^11.7.1
@@ -7405,14 +7394,12 @@ __metadata:
   resolution: "@uidu/field-mentions@workspace:packages/forms/field-mentions"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/button": ^1.3.25
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/form": ^1.2.27
     "@uidu/theme": ^0.6.18
     classnames: ^2.3.1
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-dom: ^18.2.0
     react-mentions: ^4.4.7
@@ -7428,14 +7415,12 @@ __metadata:
   resolution: "@uidu/field-month@workspace:packages/forms/field-month"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/button": ^1.3.25
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/form": ^1.2.27
     "@uidu/theme": ^0.6.18
     classnames: ^2.3.1
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-dom: ^18.2.0
     styled-components: ^5.3.5
@@ -7448,14 +7433,12 @@ __metadata:
   resolution: "@uidu/field-number@workspace:packages/forms/field-number"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/button": ^1.3.25
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/field-text": ^1.2.5
     "@uidu/form": ^1.2.27
     "@uidu/theme": ^0.6.18
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-dom: ^18.2.0
     react-number-format: ^4.9.3
@@ -7473,7 +7456,6 @@ __metadata:
     "@babel/runtime": ^7.18.9
     "@loadable/component": ^5.15.2
     "@types/zxcvbn": ^4.4.1
-    "@uidu/analytics": ^0.6.5
     "@uidu/button": ^1.3.25
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
@@ -7482,7 +7464,6 @@ __metadata:
     "@uidu/theme": ^0.6.18
     "@uidu/tooltip": ^0.5.21
     classnames: ^2.3.1
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
@@ -7500,12 +7481,10 @@ __metadata:
   resolution: "@uidu/field-phone@workspace:packages/forms/field-phone"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/field-text": ^1.2.5
     "@uidu/form": ^1.2.27
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-phone-number-input: ^3.2.7
     tslib: ^2.4.0
@@ -7521,7 +7500,6 @@ __metadata:
     "@uidu/field-base": ^3.1.26
     "@uidu/form": ^1.2.27
     "@uidu/theme": ^0.6.18
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-dom: ^18.2.0
     styled-components: ^5.3.5
@@ -7537,14 +7515,12 @@ __metadata:
   resolution: "@uidu/field-text@workspace:packages/forms/field-text"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/button": ^1.3.25
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/form": ^1.2.27
     "@uidu/theme": ^0.6.18
     classnames: ^2.3.1
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-dom: ^18.2.0
     react-hook-form: ^7.34.0
@@ -7561,12 +7537,10 @@ __metadata:
   resolution: "@uidu/field-textarea@workspace:packages/forms/field-textarea"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/form": ^1.2.27
     autosize: ^5.0.1
-    formsy-react: ^2.2.7
     react: ^18.2.0
     styled-components: ^5.3.5
     tslib: ^2.4.0
@@ -7580,7 +7554,6 @@ __metadata:
   resolution: "@uidu/field-time@workspace:packages/forms/field-time"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/button": ^1.3.25
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
@@ -7588,7 +7561,6 @@ __metadata:
     "@uidu/form": ^1.2.27
     "@uidu/select": ^1.6.9
     "@uidu/theme": ^0.6.18
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-dom: ^18.2.0
     styled-components: ^5.3.5
@@ -7603,12 +7575,10 @@ __metadata:
   resolution: "@uidu/field-toggle@workspace:packages/forms/field-toggle"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/button": ^1.3.25
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/form": ^1.2.27
-    formsy-react: ^2.2.7
     react: ^18.2.0
     react-dom: ^18.2.0
     react-switch: ^7.0.0
@@ -8525,11 +8495,9 @@ __metadata:
   resolution: "@uidu/radio@workspace:packages/forms/radio"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@uidu/analytics": ^0.6.5
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^3.1.26
     "@uidu/form": ^1.2.27
-    formsy-react: ^2.2.7
     react: ^18.2.0
     styled-components: ^5.3.5
     tslib: ^2.4.0
@@ -8627,7 +8595,6 @@ __metadata:
     "@atlaskit/icon": ^21.10.7
     "@babel/runtime": ^7.18.9
     "@faker-js/faker": ^7.4.0
-    "@uidu/analytics": ^0.6.5
     "@uidu/button": ^1.3.26
     "@uidu/checkbox": ^1.4.5
     "@uidu/docs": ^0.5.18
@@ -8638,7 +8605,6 @@ __metadata:
     "@uidu/theme": ^0.6.19
     "@uidu/tooltip": ^0.5.22
     focus-trap: ^6.9.4
-    formsy-react: ^2.2.7
     memoize-one: ^6.0.0
     react: ^18.2.0
     react-dom: ^18.2.0

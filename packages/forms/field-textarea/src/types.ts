@@ -1,4 +1,3 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
 
 export type FieldTextareaStatelessProps = {
@@ -19,7 +18,7 @@ export type FieldTextareaStatelessProps = {
   /** Add asterisk to label. Set required for form that the field is part of. */
   required?: boolean;
   forwardedRef?: any;
-} & WithAnalyticsEventsProps;
+};
 
 export type FieldTextareaProps = {} & Omit<
   FieldTextareaStatelessProps,
