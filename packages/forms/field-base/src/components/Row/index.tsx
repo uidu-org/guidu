@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { ReactElement } from 'react';
+import React from 'react';
 import tw from 'twin.macro';
 import * as defaultComponents from '../../styled';
 import { getComponents } from '../../utils';
@@ -8,7 +8,6 @@ import { RowProps } from './types';
 
 export default function Row({
   label = null,
-  elementWrapperClassName = '',
   required = false,
   showErrors = false,
   fakeLabel = false,
@@ -16,19 +15,16 @@ export default function Row({
   children,
   htmlFor,
   overrides,
-}: RowProps): ReactElement {
+}: RowProps) {
   const {
     StyledRow: { component: StyledRow, props: rowProps },
     Label: { component: Label, props: labelProps },
-  } = getComponents(
-    { ...defaultComponents, Label: DefaultLabel },
-    overrides,
-  ) as any;
+  } = getComponents({ ...defaultComponents, Label: DefaultLabel }, overrides);
 
   let element = children;
 
   if (layout === 'elementOnly') {
-    return <>{element}</>;
+    return element;
   }
 
   const cssClasses = {
@@ -50,8 +46,6 @@ export default function Row({
     if (!shouldRenderLabel) {
       cssClasses.elementWrapper.push('col-sm-offset-3');
     }
-
-    cssClasses.elementWrapper.push(elementWrapperClassName);
 
     element = (
       <div css={[tw`w-9/12`]} className={classNames(cssClasses.elementWrapper)}>

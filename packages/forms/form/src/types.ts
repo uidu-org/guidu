@@ -22,7 +22,6 @@ export type FormProps = {
   autoComplete?: string;
   className?: Value;
   // formsy
-  elementWrapperClassName?: Value;
   layout?: LayoutType;
   rowClassName?: Value;
   validateBeforeSubmit?: boolean;

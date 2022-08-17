@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { forwardRef, useId } from 'react';
 import tw from 'twin.macro';
 import { RadioStatelessProps } from '../types';
 
-function RadioStateless({
+function FieldRadio({
   value,
   label,
-  id,
   name,
   onChange,
   disabled,
   defaultChecked,
   isInline,
   className,
+  forwardedRef,
 }: RadioStatelessProps) {
+  const id = useId();
   return (
     <div
       css={[tw`relative items-start`, isInline ? tw`inline-flex` : tw`flex`]}
     >
       <div tw="flex items-center h-5">
         <input
+          ref={forwardedRef}
           type="radio"
           id={id}
           name={name}
@@ -38,5 +40,9 @@ function RadioStateless({
     </div>
   );
 }
+
+const RadioStateless = forwardRef((props: RadioStatelessProps, ref) => (
+  <FieldRadio {...props} forwardedRef={ref} />
+));
 
 export default RadioStateless;

@@ -3,7 +3,7 @@ import type { TimeZone } from 'timezones-list';
 import Option from './components/Option';
 import { CreateSelectProps } from './createSelect';
 import timezones from './data/timezones';
-import Select from './FormsySelect';
+import Select from './Select';
 
 // return the country name; used for searching
 const getOptionLabel = (opt: TimeZone) => opt.label;
@@ -11,7 +11,7 @@ const getOptionLabel = (opt: TimeZone) => opt.label;
 // set the country's abbreviation for the option value, (also searchable)
 const getOptionValue = (opt: TimeZone) => opt.tzCode;
 
-const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
+function SingleValue({ innerProps, data, getStyles, ...otherProps }) {
   return (
     <div
       {...innerProps}
@@ -31,7 +31,7 @@ const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
       {data.label}
     </div>
   );
-};
+}
 
 // put it all together
 function TimeZoneSelect({ components, ...otherProps }: CreateSelectProps) {

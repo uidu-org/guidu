@@ -3,7 +3,7 @@ import { WrapperProps } from './components/Wrapper/types';
 
 export type FieldBaseLayout = 'horizontal' | 'vertical' | 'elementOnly';
 
-export type FieldBaseProps<T> = WrapperProps & {
+export type FieldBaseProps<T = unknown> = WrapperProps & {
   validateBeforeSubmit?: boolean;
   validatePristine?: boolean;
   // value?: ComponentValue;
@@ -49,7 +49,7 @@ export type FieldBaseProps<T> = WrapperProps & {
 
   /** Function that is called whenever the state of the checkbox changes. It will
    be called with an object containing the react synthetic event. Use currentTarget to get value, name and checked */
-  onChange?: (name, value, otherProps?: any) => void;
+  onChange?: (name: string, value, otherProps?: any) => void;
   onBlur?: (name, value) => void;
 
   forwardedRef?: any;

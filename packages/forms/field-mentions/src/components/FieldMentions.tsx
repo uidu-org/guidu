@@ -1,21 +1,28 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
+import { useController, Wrapper } from '@uidu/field-base';
+import React from 'react';
 import { FieldMentionsProps } from '../types';
 import FieldMentionsStateless from './FieldMentionsStateless';
 
-function FieldMentions({
-  onSetValue,
-  onChange,
+export default function FieldMentions({
+  onChange = () => {},
+  value: defaultValue,
   name,
   forwardedRef,
   ...rest
 }: FieldMentionsProps) {
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
   const handleChange = (_event, value, plainTextValue, mentions) => {
     if (value === '') {
-      onSetValue('');
+      field.onChange('');
       onChange(name, '');
     } else {
-      onSetValue({
+      field.onChange({
         value,
         plainTextValue,
         mentions,
@@ -29,16 +36,12 @@ function FieldMentions({
   };
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...wrapperProps}>
       <FieldMentionsStateless
         {...rest}
+        {...inputProps}
         onChange={handleChange}
-        ref={forwardedRef}
       />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldMentionsProps, ref) => (
-  <FieldMentions {...props} forwardedRef={ref} />
-));

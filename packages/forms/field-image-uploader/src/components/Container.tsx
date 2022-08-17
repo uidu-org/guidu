@@ -7,18 +7,11 @@ export interface ContainerProps {
 }
 
 const Container = forwardRef<HTMLDivElement, ContainerProps>(
-  ({ borderRadius, children, className }, ref) => {
-    return (
-      <div
-        style={{ borderRadius }}
-        ref={ref}
-        tw="relative"
-        className={className}
-      >
-        {children}
-      </div>
-    );
-  },
+  ({ borderRadius, children, className }, ref) => (
+    <div style={{ borderRadius }} ref={ref} tw="relative" className={className}>
+      {children}
+    </div>
+  ),
 );
 
 export default Container;

@@ -1,15 +1,17 @@
 import React from 'react';
 import { CheckboxOption } from './components/input-options';
-import Select from './FormsySelect';
+import Select from './Select';
 
-const CheckboxSelect = ({ components, ...props }: any) => (
-  <Select
-    closeMenuOnSelect={false}
-    hideSelectedOptions={false}
-    isMulti
-    components={{ ...components, Option: CheckboxOption }}
-    {...props}
-  />
-);
+function CheckboxSelect({ components, ...props }: any) {
+  return (
+    <Select
+      closeMenuOnSelect={false}
+      hideSelectedOptions={false}
+      multiple
+      components={{ ...components, Option: CheckboxOption }}
+      {...props}
+    />
+  );
+}
 
 export default CheckboxSelect;

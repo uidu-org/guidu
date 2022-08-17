@@ -1,7 +1,6 @@
-import { Wrapper as FieldWrapper } from '@uidu/field-base';
+import { useController, Wrapper as FieldWrapper } from '@uidu/field-base';
 import Downshift from 'downshift';
 import React, { useCallback } from 'react';
-import { useController, useFormContext } from 'react-hook-form';
 import { FieldDownshiftProps } from '../types';
 
 function FieldDownshift<
@@ -25,11 +24,11 @@ function FieldDownshift<
   name,
   ...otherProps
 }: FieldDownshiftProps<T, TOption>) {
-  const { control } = useFormContext();
-  const { field } = useController({
+  const { field, wrapperProps } = useController({
     name,
-    control,
     defaultValue: value || multiple ? [] : '',
+    onChange,
+    ...otherProps,
   });
 
   const getValue = useCallback(() => {
@@ -105,6 +104,7 @@ function FieldDownshift<
       onSelect={onSelect}
       itemToString={(item) => getOptionLabel({ item })}
       initialSelectedItem={selectedItem}
+      inputValue={field.value}
       // selectedItem={selectedItem}
     >
       {({
@@ -118,7 +118,7 @@ function FieldDownshift<
       }) => (
         <WrapperComponent
           // eslint-disable-next-line react/jsx-props-no-spreading
-          {...otherProps}
+          {...wrapperProps}
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...getRootProps({ refKey: 'componentRef' })}
         >

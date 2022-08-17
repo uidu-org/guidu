@@ -153,10 +153,10 @@ const truncateCSS: any = () => ({
   whiteSpace: 'nowrap',
 });
 
-export const CheckboxOption = (props: any) => (
-  <ControlOption Icon={CheckboxIcon} {...props} />
-);
+export function CheckboxOption(props: any) {
+  return <ControlOption Icon={CheckboxIcon} {...props} />;
+}
 
-export const RadioOption = (props: any) => (
-  <ControlOption Icon={RadioIcon} {...props} />
-);
+export function RadioOption(props: any) {
+  return <ControlOption Icon={RadioIcon} {...props} />;
+}

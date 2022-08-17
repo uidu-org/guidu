@@ -3,10 +3,13 @@ import React, {
   forwardRef,
   useEffect,
   useImperativeHandle,
+  useMemo,
   useRef,
   useState,
 } from 'react';
+import { useIntl } from 'react-intl';
 import { FieldTimeStatelessProps } from '../types';
+import { generateTimeSlots } from '../utils';
 
 function zero(a) {
   return a < 10 ? '0' : '';
@@ -28,6 +31,13 @@ function populateMinutes() {
   return options;
 }
 
+function populateIntervals() {
+  const options = [];
+  for (var i = 0; i <= 23; i++) {
+    options.push({ id: i, name: `${zero(i)}${i}` });
+  }
+}
+
 function FieldTime({
   name,
   className,
@@ -38,8 +48,11 @@ function FieldTime({
   min,
   max,
   disabled,
+  asSelect = false,
+  ...rest
 }: FieldTimeStatelessProps) {
-  const [isFallback, setIsFallback] = useState(false);
+  const intl = useIntl();
+  const [isFallback, setIsFallback] = useState(asSelect);
 
   const element = useRef(null);
 
@@ -55,59 +68,22 @@ function FieldTime({
 
   useImperativeHandle(forwardedRef, () => element.current);
 
+  const timeSlots = useMemo(
+    () => generateTimeSlots({ interval: 15, start: 0, end: 24 }),
+    [],
+  );
+
   if (isFallback) {
     return (
-      <div className="px-2 d-flex align-items-center form-control">
-        <Select
-          styles={{
-            control: (base) => ({
-              width: 32,
-            }),
-            valueContainer: (base) => ({
-              ...base,
-              padding: '.75rem 0',
-              justifyContent: 'center',
-            }),
-            menu: (base) => ({
-              ...base,
-              width: 100,
-            }),
-          }}
-          placeholder="00"
-          name="hours"
-          options={populateHours()}
-          layout="elementOnly"
-          isClearable={false}
-          components={{
-            DropdownIndicator: null,
-          }}
-        />
-        <span>:</span>
-        <Select
-          styles={{
-            control: (base) => ({
-              width: 32,
-            }),
-            valueContainer: (base) => ({
-              ...base,
-              padding: '.75rem 0',
-              justifyContent: 'center',
-            }),
-            menu: (base) => ({
-              ...base,
-              width: 100,
-            }),
-          }}
-          placeholder="00"
-          name="minutes"
-          options={populateMinutes()}
-          layout="elementOnly"
-          isClearable={false}
-          components={{
-            DropdownIndicator: null,
-          }}
-        />
-      </div>
+      <Select
+        placeholder="00:00"
+        name={name}
+        options={timeSlots.map((time) => ({
+          id: intl.formatTime(time, { hour: 'numeric', minute: 'numeric' }),
+          name: intl.formatTime(time, { hour: 'numeric', minute: 'numeric' }),
+        }))}
+        // onChange={(name, value) => onChange(value)}
+      />
     );
   }
 
@@ -124,6 +100,7 @@ function FieldTime({
       required={required}
       min={min}
       max={max}
+      {...rest}
     />
   );
 }

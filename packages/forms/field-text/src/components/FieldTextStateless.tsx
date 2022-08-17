@@ -26,7 +26,7 @@ const getInputMode = ({
 };
 
 const FieldTextStateless = forwardRef((props: FieldTextStatelessProps, ref) => {
-  const { inputMode, type } = props;
+  const { inputMode, type, options } = props;
 
   return (
     <StyledInput
@@ -38,6 +38,7 @@ const FieldTextStateless = forwardRef((props: FieldTextStatelessProps, ref) => {
       {...(getInputMode({ inputMode, type })
         ? { inputMode: getInputMode({ inputMode, type }) }
         : {})}
+      {...options}
     />
   );
 });

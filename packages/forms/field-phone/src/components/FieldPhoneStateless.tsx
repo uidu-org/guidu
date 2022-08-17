@@ -4,7 +4,6 @@ import Input from 'react-phone-number-input/input';
 import { FieldPhoneStatelessProps } from '../types';
 
 function FieldPhone({
-  id,
   className,
   value,
   forwardedRef,

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MultiValueLabel = ({ innerProps, data }) => {
+function MultiValueLabel({ innerProps, data }) {
   return (
     <div
       {...innerProps}
@@ -16,6 +16,6 @@ const MultiValueLabel = ({ innerProps, data }) => {
       </div>
     </div>
   );
-};
+}
 
 export default MultiValueLabel;

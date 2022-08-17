@@ -14,7 +14,7 @@ type MenuProps = {
   style?: any;
 };
 
-export const MenuDialog = ({ maxWidth, minWidth, ...props }: MenuProps) => {
+export function MenuDialog({ maxWidth, minWidth, ...props }: MenuProps) {
   const shadow = colors.N40A;
   return (
     <div
@@ -29,42 +29,49 @@ export const MenuDialog = ({ maxWidth, minWidth, ...props }: MenuProps) => {
       {...props}
     />
   );
-};
+}
 
 // ==============================
 // Custom Components
 // ==============================
 
-const DropdownIndicator = () => (
-  <div style={{ marginRight: 2, textAlign: 'center', width: 32 }}>
-    <SearchIcon />
-  </div>
-);
+function DropdownIndicator() {
+  return (
+    <div style={{ marginRight: 2, textAlign: 'center', width: 32 }}>
+      <SearchIcon />
+    </div>
+  );
+}
 
-const Control = ({ innerRef, innerProps, ...props }: any) => (
-  <div ref={innerRef} style={{ padding: '8px 8px 4px' }}>
-    <components.Control {...props} innerProps={innerProps} />
-  </div>
-);
-export const DummyControl = (props: any) => (
-  <div
-    style={{
-      border: 0,
-      clip: 'rect(1px, 1px, 1px, 1px)',
-      height: 1,
-      overflow: 'hidden',
-      padding: 0,
-      position: 'absolute',
-      whiteSpace: 'nowrap',
-      width: 1,
-    }}
-  >
-    <components.Control {...props} />
-  </div>
-);
+function Control({ innerRef, innerProps, ...props }: any) {
+  return (
+    <div ref={innerRef} style={{ padding: '8px 8px 4px' }}>
+      <components.Control {...props} innerProps={innerProps} />
+    </div>
+  );
+}
+
+export function DummyControl(props: any) {
+  return (
+    <div
+      style={{
+        border: 0,
+        clip: 'rect(1px, 1px, 1px, 1px)',
+        height: 1,
+        overflow: 'hidden',
+        padding: 0,
+        position: 'absolute',
+        whiteSpace: 'nowrap',
+        width: 1,
+      }}
+    >
+      <components.Control {...props} />
+    </div>
+  );
+}
 // NOTE `props` intentionally omitted from `Fragment`
-// eslint-disable-next-line
-const Menu = ({ key, children, innerProps, ...props }) => (
-  <div {...innerProps}>{children}</div>
-);
+
+function Menu({ key, children, innerProps, ...props }) {
+  return <div {...innerProps}>{children}</div>;
+}
 export const defaultComponents = { Control, DropdownIndicator, Menu };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Option = ({ innerProps, data, getStyles, ...otherProps }) => {
+function Option({ innerProps, data, getStyles, ...otherProps }) {
   return (
     <div
       {...innerProps}
@@ -19,6 +19,6 @@ const Option = ({ innerProps, data, getStyles, ...otherProps }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Option;

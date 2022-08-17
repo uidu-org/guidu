@@ -1,6 +1,7 @@
 import { ModalTransition } from '@uidu/modal-dialog';
 import Shell, { ShellMain, ShellSidebar } from '@uidu/shell';
 import * as React from 'react';
+import { IntlProvider } from 'react-intl';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import AnalyticsListeners from '../components/Analytics/AnalyticsListeners';
@@ -76,7 +77,7 @@ export default class App extends React.Component<{}, State> {
   };
   render() {
     return (
-      <>
+      <IntlProvider defaultLocale="en">
         <GlobalStyles />
         <BrowserRouter>
           <AnalyticsListeners>
@@ -153,7 +154,7 @@ export default class App extends React.Component<{}, State> {
             </Switch>
           </AnalyticsListeners>
         </BrowserRouter>
-      </>
+      </IntlProvider>
     );
   }
 }

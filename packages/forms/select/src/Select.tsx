@@ -1,6 +1,6 @@
-import Select from 'react-select';
+import ReactSelect from 'react-select';
 import createSelect from './createSelect';
 
-const SelectWithoutAnalytics = createSelect(Select);
+const Select = createSelect(ReactSelect);
 
-export default SelectWithoutAnalytics;
+export default Select;

@@ -1,4 +1,3 @@
-import { Wrapper } from '@uidu/field-base';
 import { FieldTextStateless } from '@uidu/field-text';
 import React, {
   forwardRef,
@@ -18,17 +17,9 @@ function FieldPassword({
   useImperativeHandle(forwardedRef, () => element.current);
 
   if (isPasswordVisible) {
-    return (
-      <Wrapper {...rest}>
-        <FieldTextStateless {...rest} type="text" ref={element} />
-      </Wrapper>
-    );
+    return <FieldTextStateless {...rest} type="text" ref={element} />;
   }
-  return (
-    <Wrapper {...rest}>
-      <FieldTextStateless {...rest} type="password" ref={element} />
-    </Wrapper>
-  );
+  return <FieldTextStateless {...rest} type="password" ref={element} />;
 }
 
 const FieldPasswordStateless = forwardRef(

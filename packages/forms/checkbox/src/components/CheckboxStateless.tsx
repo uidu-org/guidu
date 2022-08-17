@@ -2,6 +2,7 @@ import React, {
   forwardRef,
   RefObject,
   useEffect,
+  useId,
   useImperativeHandle,
   useRef,
 } from 'react';
@@ -22,7 +23,6 @@ type CheckboxStatelessProps = {
 function Checkbox({
   isIndeterminate,
   label,
-  id,
   name,
   onChange,
   disabled,
@@ -31,6 +31,8 @@ function Checkbox({
   forwardedRef,
   className,
 }: CheckboxStatelessProps) {
+  const id = useId();
+
   const element: RefObject<HTMLInputElement> = useRef();
 
   useImperativeHandle(forwardedRef, () => element.current);
@@ -54,7 +56,7 @@ function Checkbox({
           id={id}
           name={name}
           onChange={onChange}
-          value={id}
+          value={name}
           disabled={disabled}
           checked={checked}
           ref={element}

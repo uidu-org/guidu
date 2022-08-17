@@ -1,29 +1,38 @@
-import React, { forwardRef } from 'react';
+import { useController } from '@uidu/field-base';
+import { useFormContext } from '@uidu/form';
+import React from 'react';
 import { FieldToggleProps } from '../types';
 import FieldToggleStateless from './FieldToggleStateless';
 
-function FieldToggle({
+export default function FieldToggle({
   onChange,
-  onSetValue,
   name,
-  value = false,
+  value: defaultValue = false,
   id,
   label,
   className,
-  forwardedRef,
   size,
   onColor,
   offColor,
 }: FieldToggleProps) {
+  const { control } = useFormContext();
+  const { field } = useController({
+    control,
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
   const handleChange = (value) => {
-    onSetValue(value);
+    field.onChange(value);
     onChange(name, value);
   };
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    onSetValue(!value);
-    onChange(name, !value);
+    field.onChange(!field.value);
+    onChange(name, !field.value);
   };
 
   return (
@@ -35,18 +44,14 @@ function FieldToggle({
         </label>
       )}
       <FieldToggleStateless
+        {...field}
         id={id}
         size={size}
         onColor={onColor}
         offColor={offColor}
-        checked={value}
+        checked={field.value}
         onChange={handleChange}
-        ref={forwardedRef}
       />
     </div>
   );
 }
-
-export default forwardRef((props: FieldToggleProps, ref) => (
-  <FieldToggle {...props} forwardedRef={ref} />
-));

@@ -1,4 +1,4 @@
-import { Wrapper } from '@uidu/field-base';
+import { useController, Wrapper } from '@uidu/field-base';
 import Uppy from '@uppy/core';
 import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
@@ -19,16 +19,22 @@ const defaultOptions = {
 };
 
 function FieldFileUploader({
-  onSetValue,
-  onChange,
+  onChange = () => {},
   name,
+  value: defaultValue,
   options = {},
   moduleOptions = {},
   uploadOptions,
   ...rest
 }: FieldFileUploaderProps) {
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
   const handleChange = (results) => {
-    onSetValue(results);
+    field.onChange(results);
     onChange(name, results);
   };
 
@@ -48,8 +54,9 @@ function FieldFileUploader({
   useEffect(() => () => uppy.close({ reason: 'unmount' }), [uppy]);
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...wrapperProps}>
       <Dashboard
+        {...inputProps}
         uppy={uppy}
         height={350}
         locale={{

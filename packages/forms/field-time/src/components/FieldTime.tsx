@@ -1,32 +1,29 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
+import { useController, Wrapper } from '@uidu/field-base';
+import React, { ChangeEvent } from 'react';
 import { FieldTimeProps } from '../types';
 import FieldTimeStateless from './FieldTimeStateless';
 
-function FieldTime({
-  onChange,
-  onSetValue,
+export default function FieldTime({
+  onChange = () => {},
   name,
-  forwardedRef,
+  value: defaultValue,
   ...rest
 }: FieldTimeProps) {
-  const handleChange = (e) => {
-    onSetValue(e.target.value);
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    field.onChange(e.target.value);
     onChange(name, e.target.value);
   };
 
   return (
-    <Wrapper {...rest}>
-      <FieldTimeStateless
-        {...rest}
-        name={name}
-        onChange={handleChange}
-        ref={forwardedRef}
-      />
+    <Wrapper {...wrapperProps}>
+      <FieldTimeStateless {...rest} {...inputProps} onChange={handleChange} />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldTimeProps, ref) => (
-  <FieldTime {...props} forwardedRef={ref} />
-));

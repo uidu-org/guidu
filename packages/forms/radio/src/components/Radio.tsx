@@ -1,21 +1,31 @@
-import { Wrapper } from '@uidu/field-base';
-import React from 'react';
+import { useController, Wrapper } from '@uidu/field-base';
+import React, { ChangeEvent } from 'react';
 import { RadioProps } from '../types';
 import RadioStateless from './RadioStateless';
 
-function Radio({ onChange, onSetValue, name, ...rest }: RadioProps) {
-  const handleChange = event => {
+export default function Radio({
+  onChange,
+  value: defaultValue,
+  name,
+  ...rest
+}: RadioProps) {
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const {
       target: { value },
     } = event;
-    onSetValue(value);
+    field.onChange(value);
     onChange(name, value);
   };
   return (
-    <Wrapper {...rest}>
-      <RadioStateless {...rest} onChange={handleChange} />
+    <Wrapper {...wrapperProps}>
+      <RadioStateless {...rest} {...inputProps} onChange={handleChange} />
     </Wrapper>
   );
 }
-
-export default Radio;

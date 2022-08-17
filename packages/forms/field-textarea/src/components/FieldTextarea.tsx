@@ -1,35 +1,32 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
+import { useController, Wrapper } from '@uidu/field-base';
+import React, { ChangeEvent } from 'react';
 import { FieldTextareaProps } from '../types';
 import InputControl from './FieldTextareaStateless';
 
-function FieldTextarea({
-  onChange,
-  onSetValue,
+export default function FieldTextarea({
+  onChange = () => {},
   name,
-  forwardedRef,
+  value: defaultValue,
   ...rest
 }: FieldTextareaProps) {
-  const handleChange = event => {
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
+  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const {
       target: { value },
     } = event;
-    onSetValue(value);
+    field.onChange(value);
     onChange(name, value);
   };
 
   return (
-    <Wrapper {...rest}>
-      <InputControl
-        {...rest}
-        onChange={handleChange}
-        ref={forwardedRef}
-        // ref={this.element}
-      />
+    <Wrapper {...wrapperProps}>
+      <InputControl {...rest} {...inputProps} onChange={handleChange} />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldTextareaProps, ref) => (
-  <FieldTextarea {...props} forwardedRef={ref} />
-));

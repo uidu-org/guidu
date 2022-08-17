@@ -1,44 +1,41 @@
+import { useController, Wrapper } from '@uidu/field-base';
+import { useFormContext } from '@uidu/form';
 import Tooltip from '@uidu/tooltip';
-import React, { forwardRef, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { Eye, EyeOff } from 'react-feather';
-import { useFormContext } from 'react-hook-form';
 import { FieldPasswordProps } from '../types';
 import FieldPasswordStateless from './FieldPasswordStateless';
 import FieldPasswordStrength from './FieldPasswordStrength';
 
-function FieldPassword({
+export default function FieldPassword({
   tooltipProps = {
     content: 'Show/Hide password',
   },
   measurePasswordStrength = true,
   instructions = 'Use at least 8 character. Password strength:',
   passwordStrengths = ['Worst', 'Bad', 'Weak', 'Good', 'Strong'],
-  onSetValue,
-  onChange,
+  onChange = () => {},
   name,
-  value,
+  value: defaultValue,
   disabled,
-  forwardedRef,
   ...rest
 }: FieldPasswordProps) {
   const { control } = useFormContext<T>();
-  // const {
-  //   field: { onChange, onBlur, value, ref },
-  //   fieldState: { invalid, isTouched, isDirty, error },
-  //   formState: { touchedFields, dirtyFields },
-  // } = useController<T>({
-  //   name,
-  //   control,
-  //   defaultValue: defaultValue || '',
-  // });
+  const { field, wrapperProps, inputProps } = useController<T>({
+    name,
+    control,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
-    onSetValue(value);
-    onChange(name, value);
+    field.onChange(value);
+    onChange(field.name, value);
   };
 
   const handleVisiblity = () => {
@@ -50,17 +47,8 @@ function FieldPassword({
   };
 
   return (
-    <FieldPasswordStateless
-      {...rest}
-      disabled={disabled}
-      ref={forwardedRef}
-      name={name}
-      value={value}
-      isPasswordVisible={isPasswordVisible}
-      onChange={handleChange}
-      onFocus={handleFocus}
-      //  ref={this.initElementRef}
-      tw="pr-14"
+    <Wrapper
+      {...wrapperProps}
       addonAfter={
         <Tooltip {...tooltipProps} className="input-group-append">
           <button
@@ -77,16 +65,22 @@ function FieldPassword({
         measurePasswordStrength &&
         showInstructions && (
           <FieldPasswordStrength
-            value={value}
+            value={field.value}
             passwordStrengths={passwordStrengths}
             instructions={instructions}
           />
         )
       }
-    />
+    >
+      <FieldPasswordStateless
+        {...rest}
+        {...inputProps}
+        disabled={disabled}
+        isPasswordVisible={isPasswordVisible}
+        onChange={handleChange}
+        onFocus={handleFocus}
+        tw="pr-14"
+      />
+    </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldPasswordProps, ref) => (
-  <FieldPassword {...props} forwardedRef={ref} />
-));

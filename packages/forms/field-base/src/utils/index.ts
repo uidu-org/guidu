@@ -1,3 +1,5 @@
+import { StyledComponent } from 'styled-components';
+
 export const getDisplayName = (component: any): string =>
   component.displayName ||
   component.name ||
@@ -67,12 +69,18 @@ export const getId = (
   ].join('-');
 };
 
-export function getComponents(defaultComponents, overrides = {}) {
-  return Object.keys(defaultComponents).reduce((acc, name) => {
-    const override = overrides[name] || {};
+export function getComponents(
+  components: Record<string, StyledComponent<any, any>>,
+  overrides: Record<
+    string,
+    { component: StyledComponent<any, any>; props?: {}; style?: {} }
+  > = {},
+) {
+  return Object.keys(components).reduce((acc, name) => {
+    const override = overrides[name];
     acc[name] = {
-      component: override.component || defaultComponents[name],
-      props: { $style: override.style, ...override.props },
+      component: override?.component || components[name],
+      props: { $style: override?.style, ...override?.props },
     };
     return acc;
   }, {});

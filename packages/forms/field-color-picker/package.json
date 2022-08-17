@@ -15,7 +15,7 @@
     "@uidu/popup": "^0.7.0",
     "react": "^18.2.0",
     "react-colorful": "^5.5.1",
-    "react-hook-form": "^7.34.0",
+    "react-hook-form": "^7.34.2",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },

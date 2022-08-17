@@ -3,7 +3,7 @@ import React from 'react';
 import { ChevronDown, X } from 'react-feather';
 
 // indicators
-export const ClearIndicator = (props: any) => {
+export function ClearIndicator(props: any) {
   const {
     getStyles,
     innerProps: { ref, ...restInnerProps },
@@ -18,9 +18,9 @@ export const ClearIndicator = (props: any) => {
       <X size={16} />
     </div>
   );
-};
+}
 
-export const DropdownIndicator = (props: any) => {
+export function DropdownIndicator(props: any) {
   const {
     getStyles,
     innerProps: { ref, ...restInnerProps },
@@ -35,10 +35,15 @@ export const DropdownIndicator = (props: any) => {
       <ChevronDown size={18} />
     </div>
   );
-};
+}
 
-export const LoadingIndicator = (props: any) => (
-  <div style={props.getStyles('loadingIndicator', props)} {...props.innerProps}>
-    <Spinner size="small" />
-  </div>
-);
+export function LoadingIndicator(props: any) {
+  return (
+    <div
+      style={props.getStyles('loadingIndicator', props)}
+      {...props.innerProps}
+    >
+      <Spinner size="small" />
+    </div>
+  );
+}

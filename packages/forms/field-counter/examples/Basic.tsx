@@ -1,8 +1,8 @@
 import { Form } from '@uidu/form';
 import React, { Component } from 'react';
-import FieldCounter from '../src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
+import FieldCounter from '../src';
 
 export default class Basic extends Component<any, any> {
   state = {
@@ -45,6 +45,7 @@ export default class Basic extends Component<any, any> {
           // onBlur={this.onBlur}
           // onFocus={this.onFocus}
           label="With change, blur & focus handlers"
+          name="foo1"
           mobile
         />
 

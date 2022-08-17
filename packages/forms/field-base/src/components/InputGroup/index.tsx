@@ -16,13 +16,13 @@ type InputGroupPropsWithChildren = InputGroupProps & {
 /**
  * Wraps an input to implement a Bootstrap [Input Group](http://getbootstrap.com/components/#input-groups)
  */
-const InputGroup = ({
+function InputGroup({
   children,
   addonBefore = null,
   addonAfter = null,
   buttonBefore = null,
   buttonAfter = null,
-}: InputGroupPropsWithChildren): JSX.Element => {
+}: InputGroupPropsWithChildren): JSX.Element {
   const renderAddon = (
     addon: React.ReactNode,
     position: InputGroupPosition,
@@ -42,7 +42,7 @@ const InputGroup = ({
       {renderAddon(buttonAfter, 'append')}
     </div>
   );
-};
+}
 
 export type { InputGroupProps };
 export default InputGroup;

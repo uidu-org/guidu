@@ -35,7 +35,7 @@ function FieldTextarea({
     return () => {
       autosize.destroy(element.current);
     };
-  }, []);
+  }, [autoSize]);
 
   return (
     <textarea

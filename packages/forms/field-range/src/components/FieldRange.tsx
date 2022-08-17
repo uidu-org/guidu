@@ -1,32 +1,30 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
+import { useController, Wrapper } from '@uidu/field-base';
+import React from 'react';
 import { FieldRangeProps } from '../types';
 import FieldRangeStateless from './FieldRangeStateless';
 
-function FieldRange({
+export default function FieldRange({
   name,
-  onSetValue,
-  onChange,
-  forwardedRef,
+  value: defaultValue,
+  onChange = () => {},
   ...rest
 }: FieldRangeProps) {
-  const handleChange = value => {
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
+  const handleChange = (value) => {
     const formattedValue = parseFloat(value);
-    onSetValue(formattedValue);
+    field.onChange(formattedValue);
     onChange(name, formattedValue);
   };
 
   return (
-    <Wrapper {...rest}>
-      <FieldRangeStateless
-        {...rest}
-        onChange={handleChange}
-        ref={forwardedRef}
-      />
+    <Wrapper {...wrapperProps}>
+      <FieldRangeStateless {...rest} {...inputProps} onChange={handleChange} />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldRangeProps, ref: any) => (
-  <FieldRange {...props} forwardedRef={ref} />
-));

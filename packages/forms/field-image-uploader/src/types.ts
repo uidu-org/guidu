@@ -8,7 +8,7 @@ import { ProgressProps } from './components/Progress';
 import { PromptProps } from './components/Prompt';
 import { ToolbarProps } from './components/Toolbar';
 
-export type FieldImageUploaderProps = FieldBaseProps & {
+export type FieldImageUploaderProps<T> = FieldBaseProps<T> & {
   uploadOptions: MediaUploadOptions;
   toolbar?: FC<ToolbarProps>;
   existing?: FC<ExistingProps>;

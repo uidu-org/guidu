@@ -1,26 +1,29 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
+import { useController, Wrapper } from '@uidu/field-base';
+import React from 'react';
 import { FieldPhoneProps } from '../types';
 import InputControl from './FieldPhoneStateless';
 
-function FieldPhone({
-  onSetValue,
-  onChange,
-  forwardedRef,
+export default function FieldPhone({
+  name,
+  value: defaultValue,
+  onChange = () => {},
   ...rest
-}: FieldPhoneProps & { forwardedRef: any }) {
+}: FieldPhoneProps) {
+  const { field, inputProps, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
   const handleChange = (value: string) => {
-    onSetValue(value);
-    onChange(name, value);
+    field.onChange(value);
+    onChange(field.name, value);
   };
 
   return (
-    <Wrapper {...rest}>
-      <InputControl {...rest} onChange={handleChange} ref={forwardedRef} />
+    <Wrapper {...wrapperProps}>
+      <InputControl {...rest} {...inputProps} onChange={handleChange} />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldPhoneProps, ref) => (
-  <FieldPhone {...props} forwardedRef={ref} />
-));

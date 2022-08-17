@@ -1,5 +1,5 @@
 import Button from '@uidu/button';
-import { Wrapper } from '@uidu/field-base';
+import { useController, Wrapper } from '@uidu/field-base';
 import Popup, { TriggerProps } from '@uidu/popup';
 import React, {
   forwardRef,
@@ -10,7 +10,6 @@ import React, {
   useState,
 } from 'react';
 import { HexColorInput, HexColorPicker } from 'react-colorful';
-import { useController, useFormContext } from 'react-hook-form';
 // import 'react-colorful/dist/index.css';
 import styled from 'styled-components';
 import { FieldColorPickerProps } from '../types';
@@ -44,10 +43,9 @@ const DefaulTriggerRef = forwardRef((props: FieldColorPickerProps, ref) => (
   <DefaultTrigger {...props} consumerRef={ref} />
 ));
 
-function FieldColorPicker<T>({
-  onChange = () => {},
+export default function FieldColorPicker<T>({
   name,
-  value,
+  value: defaultValue,
   trigger: Trigger = DefaulTriggerRef,
   colors = [
     '#FF6900',
@@ -61,13 +59,15 @@ function FieldColorPicker<T>({
     '#F78DA7',
     '#9900EF',
   ],
-  forwardedRef,
   showInput = true,
   popupProps = {},
   ...rest
 }: FieldColorPickerProps<T>) {
-  const { control } = useFormContext();
-  const { field } = useController({ control, name, defaultValue: value || '' });
+  const { field, wrapperProps, onChange } = useController({
+    name,
+    defaultValue,
+  });
+
   const [dialogOpen, setDialogOpen] = useState(false);
 
   const handleChange = useCallback(
@@ -105,18 +105,18 @@ function FieldColorPicker<T>({
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...triggerProps}
         value={field.value}
-        forwardedRef={forwardedRef}
+        forwardedRef={field.ref}
         toggleDialog={(e: MouseEvent) => {
           e.preventDefault();
           setDialogOpen(!dialogOpen);
         }}
       />
     ),
-    [Trigger, forwardedRef, field.value, dialogOpen, setDialogOpen],
+    [Trigger, field.ref, field.value, dialogOpen, setDialogOpen],
   );
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...rest} {...wrapperProps}>
       <div tw="relative flex">
         <Popup
           isOpen={dialogOpen}
@@ -143,7 +143,3 @@ function FieldColorPicker<T>({
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldColorPickerProps, ref) => (
-  <FieldColorPicker {...props} forwardedRef={ref} />
-));

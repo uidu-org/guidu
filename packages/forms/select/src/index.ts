@@ -1,7 +1,7 @@
 import AsyncCreatableSelect from './AsyncCreatableSelect';
 import AsyncSelect from './AsyncSelect';
 import CreatableSelect from './CreatableSelect';
-import Select from './FormsySelect';
+import Select from './Select';
 
 export { components, createFilter, mergeStyles } from 'react-select';
 export { default as useAsync } from 'react-select/async';

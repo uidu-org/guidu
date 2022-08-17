@@ -1,19 +1,23 @@
 import { ClassValue } from 'classnames/types';
 import Formsy from 'formsy-react';
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import styled, { css } from 'styled-components';
 import { FormProps, LayoutType } from '../types';
-import FormContext from './FormContext';
+import FormContext, { FormContextProvider } from './FormContext';
 
 const Loading = styled.div<{ isLoading: boolean }>`
-  opacity: ${({ isLoading }) => (isLoading ? 0.4 : 1)};
+  opacity: ${({ isLoading }) => (isLoading ? 1 : 0)};
   transition: opacity 0.3ms ease-in;
   ${({ isLoading }) =>
-    isLoading &&
-    css`
-      pointer-events: none;
-    `};
+    isLoading
+      ? css`
+          z-index: 100;
+          pointer-events: none;
+        `
+      : css`
+          z-index: -1;
+        `};
 `;
 
 function Form<T>({
@@ -26,7 +30,6 @@ function Form<T>({
   // formsy
   layout = 'vertical' as LayoutType,
   className = '' as ClassValue,
-  elementWrapperClassName = '' as ClassValue,
   validateBeforeSubmit = true,
   validatePristine = false,
   disabled = false,
@@ -64,7 +67,6 @@ function Form<T>({
   };
 
   const contextProps = {
-    elementWrapperClassName,
     layout,
     validateBeforeSubmit,
     validatePristine,
@@ -72,8 +74,17 @@ function Form<T>({
   };
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(async (model) => onValidSubmit(model))}>
+    <FormContextProvider form={methods} layout={layout}>
+      <form
+        onSubmit={handleSubmit(async (model) => onValidSubmit(model))}
+        tw="relative"
+        className={className}
+      >
+        <Loading
+          {...inputsWrapperProps}
+          tw="absolute inset-0 flex items-center justify-center bg-white bg-opacity-50"
+          isLoading={isLoading || false}
+        />
         {children}
         {footerRenderer(
           { loading: isLoading, canSubmit: formState.isValid },
@@ -81,7 +92,7 @@ function Form<T>({
           onValidSubmit,
         )}
       </form>
-    </FormProvider>
+    </FormContextProvider>
   );
 
   return (

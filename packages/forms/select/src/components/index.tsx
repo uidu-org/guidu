@@ -8,10 +8,12 @@ export {
   LoadingIndicator,
 } from './indicators';
 
-export const MultiValueRemove = (props: any) => (
-  <components.MultiValueRemove {...props}>
-    <X size={16} />
-  </components.MultiValueRemove>
-);
+export function MultiValueRemove(props: any) {
+  return (
+    <components.MultiValueRemove {...props}>
+      <X size={16} />
+    </components.MultiValueRemove>
+  );
+}
 
 export const IndicatorSeparator = null;

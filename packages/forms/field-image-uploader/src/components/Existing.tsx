@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import React, { ReactNode } from 'react';
 import { DropzoneOptions, useDropzone } from 'react-dropzone';
 
@@ -35,13 +37,13 @@ export default function Existing({
         src={value}
       />
       <div
-        {...(getRootProps() as any)}
+        {...getRootProps()}
         tw="h-full"
         style={{
           borderRadius,
         }}
       >
-        <input {...(getInputProps() as any)} />
+        <input {...getInputProps()} />
         {children}
       </div>
     </>

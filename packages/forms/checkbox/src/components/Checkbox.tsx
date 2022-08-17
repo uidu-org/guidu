@@ -1,40 +1,35 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
-import { useFormContext } from 'react-hook-form';
+import { useController, Wrapper } from '@uidu/field-base';
+import React, { ChangeEvent } from 'react';
 import { CheckboxProps } from '../types';
 import InputControl from './CheckboxStateless';
 
-function Checkbox({
+export default function Checkbox({
   isIndeterminate = false,
-  onSetValue,
-  onChange,
+  onChange = () => {},
   name,
-  value,
-  forwardedRef,
+  value: defaultValue,
   ...rest
-}: CheckboxProps & { forwardedRef: any }) {
-  const { control } = useFormContext();
+}: CheckboxProps) {
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue,
+  });
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.currentTarget.checked;
-    onSetValue(value);
+    field.onChange(value);
     onChange(name, value);
   };
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...rest} {...wrapperProps}>
       <InputControl
         {...rest}
-        name={name}
+        {...inputProps}
         isIndeterminate={isIndeterminate}
-        checked={!!value}
+        checked={!!field.value}
         onChange={handleChange}
-        ref={forwardedRef}
       />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: CheckboxProps, ref) => (
-  <Checkbox {...props} forwardedRef={ref} />
-));

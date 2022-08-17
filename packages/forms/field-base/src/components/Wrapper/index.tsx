@@ -1,4 +1,5 @@
-import React, { ReactElement } from 'react';
+import { useFormContext } from '@uidu/form';
+import React, { ReactNode } from 'react';
 import FloatLabel from '../../styled/FloatLabel';
 import ErrorMessages from '../ErrorMessages';
 import Help from '../Help';
@@ -18,18 +19,20 @@ export default function Wrapper({
   floatLabel = false,
   help,
   id,
-  layout,
+  layout: inputLayout,
   type,
   showErrors,
   required,
   label,
-  elementWrapperClassName,
   overrides,
-}: WrapperProps): ReactElement {
-  let control = children;
+}: WrapperProps): ReactNode {
+  const { layout: formLayout } = useFormContext();
+  const layout = inputLayout || formLayout;
+
+  let input = children;
 
   if (type === 'hidden') {
-    return <>{control}</>;
+    return input;
   }
 
   const inputGroupProps = {
@@ -40,7 +43,7 @@ export default function Wrapper({
   };
 
   if (addonBefore || addonAfter || buttonBefore || buttonAfter) {
-    control = <InputGroup {...inputGroupProps}>{control}</InputGroup>;
+    input = <InputGroup {...inputGroupProps}>{input}</InputGroup>;
   }
 
   if (floatLabel) {
@@ -53,7 +56,7 @@ export default function Wrapper({
         overrides={overrides}
       >
         <FloatLabel htmlFor={id} className="has-float-label">
-          {control}
+          {input}
           {showErrors ? <ErrorMessages messages={errorMessages} /> : null}
           <span>
             {floatLabel}
@@ -67,21 +70,19 @@ export default function Wrapper({
   }
 
   if (layout === 'elementOnly') {
-    return control;
+    return input;
   }
 
   return (
     <Row
       htmlFor={id}
       label={label}
-      elementWrapperClassName={elementWrapperClassName}
       required={required}
       showErrors={showErrors}
-      fakeLabel={false}
       layout={layout}
       overrides={overrides}
     >
-      {control}
+      {input}
       {showErrors ? <ErrorMessages messages={errorMessages} /> : null}
       {help ? <Help id={id} help={help} /> : null}
       {showErrors ? (

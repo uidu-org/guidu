@@ -1,5 +1,5 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { memo } from 'react';
+import { useController, Wrapper } from '@uidu/field-base';
+import React, { ChangeEvent, memo } from 'react';
 import tw from 'twin.macro';
 import { RadioGroupProps } from '../types';
 import RadioStateless from './RadioStateless';
@@ -7,22 +7,28 @@ import RadioStateless from './RadioStateless';
 function RadioGroup({
   isInline = false,
   onChange,
-  onSetValue,
   options,
   name,
-  value,
+  value: defaultValue,
   ...rest
 }: RadioGroupProps) {
-  const handleChange = (event) => {
+  const { field, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const {
       target: { value },
     } = event;
-    onSetValue(value);
+    field.onChange(value);
     onChange(name, value);
   };
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...wrapperProps}>
       <div css={[isInline ? tw`space-x-6` : tw`space-y-2`]}>
         {options.map((option) => (
           <RadioStateless
@@ -33,7 +39,7 @@ function RadioGroup({
             name={name}
             onChange={handleChange}
             isInline={isInline}
-            {...(option.id === value && { defaultChecked: true })}
+            {...(option.id === field.value && { defaultChecked: true })}
           />
         ))}
       </div>

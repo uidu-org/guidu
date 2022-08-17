@@ -16,6 +16,7 @@
     "react-day-picker": "^7.4.10",
     "react-feather": "^2.0.10",
     "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.34.2",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

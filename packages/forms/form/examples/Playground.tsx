@@ -365,7 +365,6 @@ const Playground: React.FunctionComponent<Props> = ({
             },
           }}
           labelClassName={[{ 'col-sm-3': false }, 'col-sm-5']}
-          elementWrapperClassName={[{ 'col-sm-9': false }, 'col-sm-7']}
           help="The label and element-wrapper classes can be changed."
           required
         />

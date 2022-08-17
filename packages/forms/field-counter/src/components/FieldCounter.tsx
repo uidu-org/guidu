@@ -1,27 +1,27 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
+import { useController, Wrapper } from '@uidu/field-base';
+import React from 'react';
 import { FieldCounterProps } from '../types';
 import InputControl from './FieldCounterStateless';
 
-function FieldCounter({
-  onChange,
-  onSetValue,
+export default function FieldCounter({
   name,
-  forwardedRef,
+  value: defaultValue,
   ...rest
-}: FieldCounterProps & { forwardedRef: any }) {
-  const handleChange = value => {
-    onSetValue(value);
+}: FieldCounterProps) {
+  const { field, inputProps, wrapperProps, onChange } = useController({
+    name,
+    defaultValue,
+    ...rest,
+  });
+
+  const handleChange = (value) => {
+    field.onChange(value);
     onChange(name, value);
   };
 
   return (
-    <Wrapper {...rest}>
-      <InputControl {...rest} onChange={handleChange} ref={forwardedRef} />
+    <Wrapper {...wrapperProps}>
+      <InputControl {...rest} {...inputProps} onChange={handleChange} />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldCounterProps, ref) => (
-  <FieldCounter {...props} forwardedRef={ref} />
-));

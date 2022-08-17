@@ -1,12 +1,16 @@
+import { StyledComponent } from 'styled-components';
 import { FieldBaseLayout } from '../../types';
 
 export type RowProps = {
   children?: React.ReactNode;
   htmlFor?: string;
   layout?: FieldBaseLayout;
-  label?: React.ReactNode;
+  label?: React.ReactNode | string;
   fakeLabel?: boolean;
   required?: boolean;
   showErrors?: boolean;
-  elementWrapperClassName?: string;
+  overrides: Record<
+    string,
+    { component: StyledComponent<any, any>; props?: {}; style?: {} }
+  >;
 };
