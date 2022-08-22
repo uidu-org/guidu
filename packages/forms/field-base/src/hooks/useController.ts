@@ -1,44 +1,31 @@
 import { useFormContext } from '@uidu/form';
 import { useId, useMemo } from 'react';
 import {
-  Control,
-  ControllerRenderProps,
+  FieldValues,
   useController as useReactHookFormController,
-  UseControllerProps as UseReactHookControllerProps,
-  UseControllerReturn as UseReactHookControllerReturn,
 } from 'react-hook-form';
-import { WrapperProps } from '../components/Wrapper/types';
+import { UseControllerProps, UseControllerReturn } from '../types';
 
-export interface UseControllerProps<T> extends UseReactHookControllerProps<T> {
-  onChange: (name, value: any) => void;
-}
-
-export interface UseControllerReturn<T>
-  extends UseReactHookControllerReturn<T> {
-  onChange: (name, value: any) => void;
-  control: Control<T>;
-  id: string;
-  wrapperProps: Partial<WrapperProps>;
-  inputProps: ControllerRenderProps<T> & { id: string };
-}
-
-export default function useController<T>({
+export default function useController<
+  TFieldValues extends FieldValues = FieldValues,
+>({
   onChange = () => {},
   name,
   defaultValue,
-  rules,
+  rules = {},
   ...props
-}: UseControllerProps<T>): UseControllerReturn<T> {
-  const { control } = useFormContext<T>();
-  const { field, fieldState, formState } = useReactHookFormController<T>({
-    control,
-    name,
-    rules,
-    defaultValue,
-  });
+}: UseControllerProps<TFieldValues>): UseControllerReturn<TFieldValues> {
+  const { control } = useFormContext<TFieldValues>();
+  const { field, fieldState, formState } =
+    useReactHookFormController<TFieldValues>({
+      control,
+      name,
+      rules,
+      defaultValue,
+    });
   const id = useId();
 
-  const wrapperProps = useMemo(
+  const wrapperProps: UseControllerReturn['wrapperProps'] = useMemo(
     () => ({
       id,
       fieldState,
@@ -47,12 +34,14 @@ export default function useController<T>({
     [id, fieldState, props],
   );
 
-  const inputProps = useMemo(
+  const inputProps: UseControllerReturn['inputProps'] = useMemo(
     () => ({
       ...field,
+      fieldState,
+      hasError: !!fieldState?.error,
       id,
     }),
-    [field, id],
+    [field, id, fieldState],
   );
 
   return {

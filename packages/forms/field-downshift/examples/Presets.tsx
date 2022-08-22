@@ -1,9 +1,9 @@
 import { Form } from '@uidu/form';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Columns, Feather, GitHub, Gitlab, Map } from 'react-feather';
 import { ScrollableContainer } from '../../../navigation/shell/src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
-import { formDefaultProps } from '../../form/examples-utils';
+import useDefaultForm from '../../form/examples-utils';
 import FieldDownshift, {
   DownshiftCheckbox,
   DownshiftHorizontalCard,
@@ -45,56 +45,55 @@ const iconItems = [
   },
 ];
 
-export default class Basic extends PureComponent {
-  render() {
-    return (
-      <ScrollableContainer>
-        <div tw="container py-4">
-          <Form {...formDefaultProps} footerRenderer={() => null}>
-            <FieldDownshift
-              {...inputDefaultProps}
-              scope="donations"
-              value={iconItems[2].id}
-              onChange={console.log}
-              label="HorizontalCard"
-              menu={(props) => <div tw="flex flex-col space-y-4" {...props} />}
-              option={DownshiftHorizontalCard}
-              options={iconItems}
-            />
-            <FieldDownshift
-              {...inputDefaultProps}
-              scope="teams"
-              value={iconItems[2].id}
-              onChange={console.log}
-              label="VerticalCard"
-              menu={(props) => <div tw="grid gap-4 grid-cols-3" {...props} />}
-              option={DownshiftVerticalCard}
-              options={iconItems}
-            />
-            <FieldDownshift
-              {...inputDefaultProps}
-              scope="donations"
-              value={[iconItems[2].id]}
-              onChange={console.log}
-              label="Checkbox"
-              menu={(props) => <div {...props} />}
-              option={DownshiftCheckbox}
-              options={iconItems}
-              multiple
-            />
-            <FieldDownshift
-              {...inputDefaultProps}
-              scope="secondary"
-              value={iconItems[2].id}
-              onChange={console.log}
-              label="Radio"
-              menu={(props) => <div {...props} />}
-              option={DownshiftRadio}
-              options={iconItems}
-            />
-          </Form>
-        </div>
-      </ScrollableContainer>
-    );
-  }
+export default function Basic() {
+  const defaultForm = useDefaultForm();
+  return (
+    <ScrollableContainer>
+      <div tw="container py-4">
+        <Form {...defaultForm} footerRenderer={() => null}>
+          <FieldDownshift
+            {...inputDefaultProps}
+            scope="donations"
+            value={iconItems[2].id}
+            onChange={console.log}
+            label="HorizontalCard"
+            menu={(props) => <div tw="flex flex-col space-y-4" {...props} />}
+            option={DownshiftHorizontalCard}
+            options={iconItems}
+          />
+          <FieldDownshift
+            {...inputDefaultProps}
+            scope="teams"
+            value={iconItems[2].id}
+            onChange={console.log}
+            label="VerticalCard"
+            menu={(props) => <div tw="grid gap-4 grid-cols-3" {...props} />}
+            option={DownshiftVerticalCard}
+            options={iconItems}
+          />
+          <FieldDownshift
+            {...inputDefaultProps}
+            scope="donations"
+            value={[iconItems[2].id]}
+            onChange={console.log}
+            label="Checkbox"
+            menu={(props) => <div {...props} />}
+            option={DownshiftCheckbox}
+            options={iconItems}
+            multiple
+          />
+          <FieldDownshift
+            {...inputDefaultProps}
+            scope="secondary"
+            value={iconItems[2].id}
+            onChange={console.log}
+            label="Radio"
+            menu={(props) => <div {...props} />}
+            option={DownshiftRadio}
+            options={iconItems}
+          />
+        </Form>
+      </div>
+    </ScrollableContainer>
+  );
 }

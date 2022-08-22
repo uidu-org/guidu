@@ -1,25 +1,22 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
-import { Path, RegisterOptions } from 'react-hook-form';
-import { FieldTextStatelessProps } from '../types';
+import { FieldTextProps } from '../types';
 import FieldTextStateless from './FieldTextStateless';
 
-type FieldTextProps<T> = FieldTextStatelessProps & {
-  name: Path<T>;
-  options: RegisterOptions;
-  onChange: (name: string, value: T) => void;
-};
-
-export default function FieldText<T>({
+export default function FieldText({
   name,
   onChange = () => {},
   value: defaultValue,
+  rules,
   ...rest
-}: FieldTextProps<T>) {
-  const { field, inputProps, wrapperProps } = useController<T>({
+}: FieldTextProps<string>) {
+  const { field, inputProps, wrapperProps } = useController({
     name,
     defaultValue: defaultValue || '',
+    onChange,
+    rules,
+    ...rest,
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +25,7 @@ export default function FieldText<T>({
   };
 
   return (
-    <Wrapper {...rest} {...wrapperProps}>
+    <Wrapper {...wrapperProps}>
       <FieldTextStateless {...rest} {...inputProps} onChange={handleChange} />
     </Wrapper>
   );

@@ -1,5 +1,6 @@
-import Button from '@uidu/button';
-import { useController, Wrapper } from '@uidu/field-base';
+import { XIcon } from '@heroicons/react/outline';
+import Button, { ButtonProps } from '@uidu/button';
+import { StyledInput, useController, Wrapper } from '@uidu/field-base';
 import Popup, { TriggerProps } from '@uidu/popup';
 import React, {
   forwardRef,
@@ -10,9 +11,21 @@ import React, {
   useState,
 } from 'react';
 import { HexColorInput, HexColorPicker } from 'react-colorful';
+import { AnyColor } from 'react-colorful/dist/types';
 // import 'react-colorful/dist/index.css';
 import styled from 'styled-components';
+import tw from 'twin.macro';
 import { FieldColorPickerProps } from '../types';
+
+const HexColorPickerWrapper = styled.div`
+  ${tw`p-1`}
+  .react-colorful__saturation {
+    ${tw`rounded-t`}
+  }
+  .react-colorful__last-control {
+    ${tw`rounded-b`}
+  }
+`;
 
 const Swatch = styled.div<{ color: string }>`
   background-color: ${({ color }) => color};
@@ -20,7 +33,10 @@ const Swatch = styled.div<{ color: string }>`
   height: 100%;
 `;
 
-function DefaultTrigger(props) {
+function DefaultTrigger(
+  props: TriggerProps &
+    FieldColorPickerProps & { toggleDialog: ButtonProps['onClick'] },
+) {
   const { toggleDialog, value, consumerRef, forwardedRef, ...rest } = props;
 
   useImperativeHandle(forwardedRef, () => consumerRef.current);
@@ -28,10 +44,11 @@ function DefaultTrigger(props) {
   return (
     <Button
       {...rest}
+      tabIndex={-1}
       ref={consumerRef}
       type="button"
       onClick={toggleDialog}
-      tw="absolute left[2px] inset-y-0.5 flex items-center w-12 z-50 rounded-r-none"
+      tw="absolute left[2px] top[2px] bottom[2px] flex items-center w-12 z-50 focus:(outline-none ring-0)"
       style={{
         backgroundColor: value,
       }}
@@ -43,9 +60,10 @@ const DefaulTriggerRef = forwardRef((props: FieldColorPickerProps, ref) => (
   <DefaultTrigger {...props} consumerRef={ref} />
 ));
 
-export default function FieldColorPicker<T>({
+export default function FieldColorPicker({
   name,
   value: defaultValue,
+  onChange = () => {},
   trigger: Trigger = DefaulTriggerRef,
   colors = [
     '#FF6900',
@@ -61,17 +79,20 @@ export default function FieldColorPicker<T>({
   ],
   showInput = true,
   popupProps = {},
+  label,
   ...rest
-}: FieldColorPickerProps<T>) {
-  const { field, wrapperProps, onChange } = useController({
+}: FieldColorPickerProps) {
+  const { field, fieldState, wrapperProps, id } = useController({
     name,
-    defaultValue,
+    defaultValue: defaultValue || '',
+    onChange,
+    ...rest,
   });
 
   const [dialogOpen, setDialogOpen] = useState(false);
 
   const handleChange = useCallback(
-    ({ hex }) => {
+    ({ hex }: { hex: AnyColor }) => {
       field.onChange(hex);
       onChange(name, hex);
     },
@@ -80,14 +101,25 @@ export default function FieldColorPicker<T>({
 
   const Content = useCallback(
     () => (
-      <div style={{ width: 208, padding: 4 }} className="ignore-onclickoutside">
-        <HexColorPicker
-          color={field.value}
-          onChange={(c) => handleChange({ hex: c })}
-        />
-        <div tw="grid grid-cols-4 my-1 gap-1 h-24">
+      <div style={{ width: 208 }} className="ignore-onclickoutside">
+        <div tw="flex items-center justify-between border-b py-1 px-2">
+          <div>{label}</div>
+          <Button
+            onClick={() => setDialogOpen(false)}
+            iconBefore={<XIcon tw="h-4 w-4" />}
+            appearance="link"
+          />
+        </div>
+        <HexColorPickerWrapper>
+          <HexColorPicker
+            color={field.value}
+            onChange={(c: AnyColor) => handleChange({ hex: c })}
+          />
+        </HexColorPickerWrapper>
+        <div tw="grid grid-cols-4 gap-1 h-24 p-1 border-t">
           {colors.map((color) => (
             <Swatch
+              tw="rounded"
               key={color as Key}
               color={color as string}
               onClick={() => handleChange({ hex: color })}
@@ -96,7 +128,7 @@ export default function FieldColorPicker<T>({
         </div>
       </div>
     ),
-    [colors, handleChange, field.value],
+    [colors, handleChange, field.value, label],
   );
 
   const CachedTrigger = useCallback(
@@ -116,7 +148,7 @@ export default function FieldColorPicker<T>({
   );
 
   return (
-    <Wrapper {...rest} {...wrapperProps}>
+    <Wrapper {...wrapperProps} label={label}>
       <div tw="relative flex">
         <Popup
           isOpen={dialogOpen}
@@ -132,9 +164,14 @@ export default function FieldColorPicker<T>({
             <span tw="absolute left-11 inset-y-0 px-5 flex items-center text-gray-500">
               #
             </span>
-            <HexColorInput
-              tw="background[rgb(var(--body-on-primary-bg))] shadow-sm focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))] block w-full border border-color[rgb(var(--field-border, var(--border)))] rounded py-3 px-4 placeholder-gray-400 disabled:opacity-50 disabled:background[rgba(var(--brand-subtle), .4)] pl-20"
+            <StyledInput
+              {...field}
+              type="text"
+              hasError={!!fieldState?.error}
+              as={HexColorInput}
+              tw="pl-20"
               color={field.value}
+              id={id}
               onChange={(c) => handleChange({ hex: c })}
             />
           </div>

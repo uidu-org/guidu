@@ -1,16 +1,18 @@
-import { useController, Wrapper } from '@uidu/field-base';
-import Uppy from '@uppy/core';
+import { StyledInput, useController, Wrapper } from '@uidu/field-base';
+import { useFormContext } from '@uidu/form';
+import { FileIdentifier } from '@uidu/media-core';
+import Uppy, { UppyOptions } from '@uppy/core';
 import '@uppy/core/dist/style.css';
-import '@uppy/dashboard/dist/style.css';
-import { Dashboard } from '@uppy/react';
-import React, { useEffect, useMemo } from 'react';
+// import '@uppy/dashboard/dist/style.css';
+import { useUppy } from '@uppy/react';
+import React, { ChangeEvent, useCallback, useEffect, useMemo } from 'react';
 import { FieldFileUploaderProps } from '../types';
 
 const defaultOptions = {
-  debug: true,
+  debug: process.env.NODE_ENV === 'development',
   allowMultipleUploadBatches: true,
   restrictions: {
-    maxNumberOfFiles: null,
+    maxNumberOfFiles: 1,
     minNumberOfFiles: null,
     maxFileSize: null,
     allowedFileTypes: null,
@@ -21,41 +23,92 @@ const defaultOptions = {
 function FieldFileUploader({
   onChange = () => {},
   name,
-  value: defaultValue,
+  value: defaultValue = '',
   options = {},
-  moduleOptions = {},
   uploadOptions,
   ...rest
 }: FieldFileUploaderProps) {
+  const { setError, clearErrors } = useFormContext();
   const { field, wrapperProps, inputProps } = useController({
     name,
-    defaultValue,
+    defaultValue: '',
     onChange,
     ...rest,
   });
-  const handleChange = (results) => {
-    field.onChange(results);
-    onChange(name, results);
-  };
-
-  const uppy = useMemo(
-    () =>
-      new Uppy({
-        ...defaultOptions,
-        ...options,
-      })
-        .use(uploadOptions.module, uploadOptions.options)
-        .on('complete', (result) => {
-          handleChange(result.successful.map(uploadOptions.responseHandler));
-        }),
-    [],
+  const handleChange = useCallback(
+    (results: FileIdentifier | FileIdentifier[]) => {
+      field.onChange(results);
+      onChange(name, results);
+    },
+    [onChange, name, field],
   );
 
-  useEffect(() => () => uppy.close({ reason: 'unmount' }), [uppy]);
+  const mergeOptions: UppyOptions = useMemo(
+    () => ({
+      ...defaultOptions,
+      ...options,
+    }),
+    [options],
+  );
+
+  const uppy = useUppy(() =>
+    new Uppy(mergeOptions)
+      .use(uploadOptions.module, uploadOptions.options)
+      .on('file-added', () => {
+        clearErrors(name);
+      })
+      .on('complete', (result) => {
+        if (result.failed.length > 0) {
+          setError(name, { type: 'custom', message: result.failed[0].error });
+        } else {
+          if (mergeOptions.restrictions?.maxNumberOfFiles === 1) {
+            handleChange(
+              result.successful.map(uploadOptions.responseHandler)[0],
+            );
+          } else {
+            handleChange(result.successful.map(uploadOptions.responseHandler));
+          }
+        }
+      })
+      .on('error', (error) => {
+        setError(name, { type: 'custom', message: error.message });
+      })
+      .on('upload-error', (file, error) => {
+        setError(name, { type: 'custom', message: error.message });
+      })
+      .on('file-removed', (file) => {
+        field.onChange('');
+        onChange(name, '');
+      })
+      .on('restriction-failed', (file, error) => {
+        setError(name, { type: 'custom', message: error.message });
+      }),
+  );
+
+  useEffect(() => () => uppy.close(), [uppy]);
+
+  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files);
+
+    files.forEach((file) => {
+      try {
+        uppy.addFile({
+          source: 'file input',
+          name: file.name,
+          type: file.type,
+          data: file,
+        });
+      } catch (error) {
+        setError(name, { type: 'custom', message: error.message });
+      }
+    });
+  };
 
   return (
-    <Wrapper {...wrapperProps}>
-      <Dashboard
+    <Wrapper {...wrapperProps} floatLabel={false}>
+      <StyledInput {...inputProps} type="file" onChange={onInputChange} />
+
+      {/* <Dashboard
         {...inputProps}
         uppy={uppy}
         height={350}
@@ -70,7 +123,7 @@ function FieldFileUploader({
         }}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...moduleOptions}
-      />
+      /> */}
     </Wrapper>
   );
 }

@@ -1,6 +1,7 @@
 import Checkbox from './components/Checkbox';
-import CheckboxGroup from './components/CheckboxGroup';
+
+export { default as CheckboxGroup } from './components/CheckboxGroup';
 export { default as CheckboxStateless } from './components/CheckboxStateless';
-export { CheckboxGroup, Checkbox };
+export * from './types';
 
 export default Checkbox;

@@ -1,0 +1,160 @@
+Notes:
+
+- [V] what to do for radio and checbox groups
+- [V] add layout to form context
+- [V] fix types for field-base
+- [ ] add field-rating
+
+- Fix types for stateless fields
+- [V] add errors to checkboxes
+- add errors to radios
+- field-time interval for select
+
+- [ ] errors
+
+Hook form migration
+
+- [V] checkbox
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [-] field - @deprecated
+  - [-] types
+  - [-] dependencies
+  - [-] examples
+  - [-] refs
+  - [-] errors
+- [ ] field-base
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [V] field-color-picker
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [ ] refs: SEE: https://github.com/omgovich/react-colorful/issues/157
+  - [V] errors
+- [V] field-counter
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-date
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [ ] field-date-range - @deprecated
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-downshift
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-file-uploader
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-geosuggest
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-image-uploader
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-mentions - @deprecated (editor-core/mini)
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-month - @deprecated
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-number
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-password
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-phone
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-range
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-text
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-textarea
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-time
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] field-toggle
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] form
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors
+- [ ] radio
+  - [ ] types
+  - [V] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [V] errors
+- [ ] select
+  - [ ] types
+  - [ ] dependencies
+  - [ ] examples
+  - [ ] refs
+  - [ ] errors

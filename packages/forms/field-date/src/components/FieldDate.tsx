@@ -1,46 +1,27 @@
-import { useController, Wrapper } from '@uidu/field-base';
-import moment from 'moment';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FieldDateProps } from '../types';
 import FieldDateCalendar from './FieldDateCalendar';
-import FieldDateStateless from './FieldDateStateless';
+import FieldDateNative from './FieldDateNative';
 
 export default function FieldDate({
-  formatSubmit = 'YYYY-MM-DD',
-  onChange = () => {},
   withCalendar = false,
-  name,
-  defaultValue,
   ...rest
 }: FieldDateProps) {
-  const { field, inputProps, wrapperProps } = useController({
-    name,
-    defaultValue,
-  });
+  const [isFallback, setIsFallback] = useState(false);
 
-  const handleFallbackChange = (date: any) => {
-    const value = date ? moment(date).format(formatSubmit) : '';
-    field.onChange(value);
-    onChange(name, value);
-  };
+  useEffect(() => {
+    const test = document.createElement('input');
 
-  const handleChange = (e) => {
-    const date = e.target.value;
-    const value = date ? moment(date).format(formatSubmit) : '';
-    field.onChange(value);
-    onChange(name, value);
-  };
+    try {
+      test.type = 'date';
+    } catch (e) {
+      setIsFallback(true);
+    }
+  }, []);
 
-  const InputControl = withCalendar ? FieldDateCalendar : FieldDateStateless;
+  if (withCalendar || isFallback) {
+    return <FieldDateCalendar {...rest} />;
+  }
 
-  return (
-    <Wrapper {...rest} {...wrapperProps}>
-      <InputControl
-        {...rest}
-        {...inputProps}
-        onDayChange={handleFallbackChange}
-        onChange={handleChange}
-      />
-    </Wrapper>
-  );
+  return <FieldDateNative {...rest} />;
 }

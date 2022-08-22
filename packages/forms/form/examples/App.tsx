@@ -66,7 +66,6 @@ class App extends React.Component<{}, State> {
             layoutChoice={layout}
             sectionLayoutChoice={sectionLayout}
             validateBeforeSubmitChoice={validateBeforeSubmit}
-            validatePristineChoice={validatePristine}
             showing={showingOptions}
             disabledChoice={disabled}
             onChangeOption={this.handleChangeOption}

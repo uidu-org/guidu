@@ -1,8 +1,8 @@
 import Button from '@uidu/button';
 import { Form } from '@uidu/form';
-import React, { forwardRef, PureComponent, useImperativeHandle } from 'react';
+import React, { forwardRef, useImperativeHandle } from 'react';
 import { inputDefaultProps } from '../../field-base/examples-utils';
-import { formDefaultProps } from '../../form/examples-utils';
+import { useDefaultForm } from '../../form/examples-utils';
 import FieldColorPicker from '../src';
 import { FieldColorPickerProps } from '../src/types';
 
@@ -29,31 +29,30 @@ const TriggerRef = forwardRef((props: FieldColorPickerProps, ref) => (
   <Trigger {...props} consumerRef={ref} />
 ));
 
-export default class Basic extends PureComponent {
-  render() {
-    return (
-      <Form {...formDefaultProps}>
-        <FieldColorPicker {...inputDefaultProps} />
+export default function Basic() {
+  const defaultForm = useDefaultForm();
+  return (
+    <Form {...defaultForm}>
+      <FieldColorPicker {...inputDefaultProps} />
+      <FieldColorPicker
+        {...inputDefaultProps}
+        name="foo1"
+        value="#006688"
+        // trigger={({ value, toggleDialog }) => (
+        //   <div onClick={toggleDialog}>
+        //     <p style={{ color: value }}>Ciaoone</p>
+        //   </div>
+        // )}
+      />
+      <div className="form-group">
         <FieldColorPicker
           {...inputDefaultProps}
-          name="foo1"
-          value="#006688"
-          // trigger={({ value, toggleDialog }) => (
-          //   <div onClick={toggleDialog}>
-          //     <p style={{ color: value }}>Ciaoone</p>
-          //   </div>
-          // )}
+          name="foo2"
+          layout="elementOnly"
+          trigger={TriggerRef}
+          showInput={false}
         />
-        <div className="form-group">
-          <FieldColorPicker
-            {...inputDefaultProps}
-            name="foo2"
-            layout="elementOnly"
-            trigger={TriggerRef}
-            showInput={false}
-          />
-        </div>
-      </Form>
-    );
-  }
+      </div>
+    </Form>
+  );
 }

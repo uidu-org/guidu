@@ -1,5 +1,8 @@
+import { ExclamationCircleIcon } from '@heroicons/react/solid';
 import { useFormContext } from '@uidu/form';
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { ControllerFieldState } from 'react-hook-form';
+import { StyledAddon } from '../../styled';
 import FloatLabel from '../../styled/FloatLabel';
 import ErrorMessages from '../ErrorMessages';
 import Help from '../Help';
@@ -9,13 +12,10 @@ import RequiredSymbol from '../RequiredSymbol';
 import Row from '../Row';
 import { WrapperProps } from './types';
 
-export default function Wrapper({
-  addonAfter,
-  addonBefore,
-  buttonAfter,
-  buttonBefore,
+export default function Wrapper<T>({
+  addonsAfter,
+  addonsBefore,
   children,
-  errorMessages,
   floatLabel = false,
   help,
   id,
@@ -25,7 +25,10 @@ export default function Wrapper({
   required,
   label,
   overrides,
-}: WrapperProps): ReactNode {
+  fieldState,
+}: WrapperProps & {
+  fieldState?: ControllerFieldState;
+}) {
   const { layout: formLayout } = useFormContext();
   const layout = inputLayout || formLayout;
 
@@ -35,20 +38,26 @@ export default function Wrapper({
     return input;
   }
 
-  const inputGroupProps = {
-    addonAfter,
-    addonBefore,
-    buttonAfter,
-    buttonBefore,
-  };
-
-  if (addonBefore || addonAfter || buttonBefore || buttonAfter) {
-    input = <InputGroup {...inputGroupProps}>{input}</InputGroup>;
-  }
+  input = (
+    <InputGroup
+      addonsAfter={[
+        ...(fieldState?.error
+          ? [
+              <StyledAddon key={fieldState.error.type}>
+                <ExclamationCircleIcon tw="h-5 text-red-500 px-4" />
+              </StyledAddon>,
+            ].concat(addonsAfter || [])
+          : addonsAfter || []),
+      ]}
+      addonsBefore={addonsBefore}
+    >
+      {input}
+    </InputGroup>
+  );
 
   if (floatLabel) {
     return (
-      <Row
+      <Row<T>
         label={() => null} // so that shouldRenderLabel return false in Row.js
         required={false} // so that shouldRenderLabel return false in Row.js
         htmlFor={id}
@@ -57,7 +66,7 @@ export default function Wrapper({
       >
         <FloatLabel htmlFor={id} className="has-float-label">
           {input}
-          {showErrors ? <ErrorMessages messages={errorMessages} /> : null}
+          {fieldState.error && <ErrorMessages messages={[fieldState.error]} />}
           <span>
             {floatLabel}
             {required && ' '}
@@ -74,7 +83,7 @@ export default function Wrapper({
   }
 
   return (
-    <Row
+    <Row<T>
       htmlFor={id}
       label={label}
       required={required}
@@ -83,11 +92,11 @@ export default function Wrapper({
       overrides={overrides}
     >
       {input}
-      {showErrors ? <ErrorMessages messages={errorMessages} /> : null}
+      {fieldState.error && <ErrorMessages messages={[fieldState.error]} />}
       {help ? <Help id={id} help={help} /> : null}
-      {showErrors ? (
+      {fieldState.error && (
         <Icon symbol="remove" className="form-control-feedback" />
-      ) : null}
+      )}
     </Row>
   );
 }

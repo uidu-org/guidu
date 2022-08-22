@@ -3,8 +3,8 @@ import { Form } from '@uidu/form';
 import React, { useState } from 'react';
 import tw from 'twin.macro';
 import { inputDefaultProps } from '../../field-base/examples-utils';
-import { formDefaultProps } from '../../form/examples-utils';
-import FieldDownshift from '../src';
+import useDefaultForm from '../../form/examples-utils';
+import FieldDownshift, { FieldDownshiftMenuProps } from '../src';
 
 const options = [
   { value: 'apple' },
@@ -14,9 +14,11 @@ const options = [
   { value: 'banana' },
 ];
 
-const Menu = (props) => <div tw="space-y-4 flex flex-col" {...props} />;
+function Menu(props: FieldDownshiftMenuProps<T>) {
+  return <div tw="space-y-4 flex flex-col" ref={props.innerRef} {...props} />;
+}
 
-const Item = ({ item, highlightedIndex, index, isSelected, getItemProps }) => {
+function Item({ item, highlightedIndex, index, isSelected, getItemProps }) {
   const { onClick, ...rest } = getItemProps({ item, index });
   return (
     <a
@@ -36,15 +38,16 @@ const Item = ({ item, highlightedIndex, index, isSelected, getItemProps }) => {
       {item.value}
     </a>
   );
-};
+}
 
 const Input = (props) => <FieldTextStateless type="search" {...props} />;
 
 export default function Basic({}) {
+  const defaultForm = useDefaultForm();
   const [oneValue, setOneValue] = useState(options[0].value);
 
   return (
-    <Form {...formDefaultProps} onChange={console.log}>
+    <Form {...defaultForm} onChange={console.log}>
       <FieldDownshift
         {...inputDefaultProps}
         label="Enter a fruit"

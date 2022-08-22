@@ -1,10 +1,8 @@
-import { ClassValue } from 'classnames/types';
 import Formsy from 'formsy-react';
-import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FormProps, LayoutType } from '../types';
-import FormContext, { FormContextProvider } from './FormContext';
+import { FormContextProvider } from './FormContext';
 
 const Loading = styled.div<{ isLoading: boolean }>`
   opacity: ${({ isLoading }) => (isLoading ? 1 : 0)};
@@ -20,31 +18,23 @@ const Loading = styled.div<{ isLoading: boolean }>`
         `};
 `;
 
-function Form<T>({
+export default function Form<T>({
+  form,
   footerRenderer = () => {},
   handleSubmit: onSubmit = async (model: T) => {},
-  inputsWrapperProps = {},
   withLoader = true,
   children,
-  forwardedRef,
   // formsy
   layout = 'vertical' as LayoutType,
-  className = '' as ClassValue,
-  validateBeforeSubmit = true,
-  validatePristine = false,
-  disabled = false,
+  className = '',
   overrides = {},
   ...rest
-}: FormProps) {
-  const methods = useForm<T>({ mode: 'onChange', ...rest });
-  const { handleSubmit, formState, clearErrors, reset } = methods;
+}: FormProps<T>) {
+  const { handleSubmit, formState, clearErrors, reset } = form;
 
-  const form: React.RefObject<Formsy> = useRef(null);
   const isMounted = useRef(false);
   const [canSubmit, setCanSubmit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  useImperativeHandle(forwardedRef, () => methods);
 
   useEffect(() => {
     isMounted.current = true;
@@ -66,29 +56,22 @@ function Form<T>({
     });
   };
 
-  const contextProps = {
-    layout,
-    validateBeforeSubmit,
-    validatePristine,
-    overrides,
-  };
-
   return (
-    <FormContextProvider form={methods} layout={layout}>
+    <FormContextProvider<T> form={form} layout={layout} overrides={overrides}>
       <form
         onSubmit={handleSubmit(async (model) => onValidSubmit(model))}
         tw="relative"
         className={className}
       >
         <Loading
-          {...inputsWrapperProps}
           tw="absolute inset-0 flex items-center justify-center bg-white bg-opacity-50"
+          hidden
           isLoading={isLoading || false}
         />
         {children}
         {footerRenderer(
           { loading: isLoading, canSubmit: formState.isValid },
-          form.current,
+          form,
           onValidSubmit,
         )}
       </form>
@@ -107,9 +90,7 @@ function Form<T>({
         className={className as string}
         // noValidate
       >
-        <Loading {...inputsWrapperProps} isLoading={isLoading || false}>
-          {children}
-        </Loading>
+        <Loading isLoading={isLoading || false}>{children}</Loading>
         {footerRenderer(
           { loading: isLoading, canSubmit },
           form.current,
@@ -119,11 +100,3 @@ function Form<T>({
     </FormContext.Provider>
   );
 }
-
-export default React.forwardRef(
-  ({ children, ...otherProps }: FormProps, ref: React.Ref<any>) => (
-    <Form forwardedRef={ref} {...otherProps}>
-      {children}
-    </Form>
-  ),
-);

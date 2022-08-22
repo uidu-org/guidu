@@ -24,10 +24,11 @@ const createSelect = <TOriginalProps extends { id: string; name: string }>(
   type ResultProps = TOriginalProps & CreateSelectProps<TOriginalProps>;
 
   const useSelect = (props: ResultProps) => {
-    const { field, wrapperProps } = useController({
+    const { field, fieldState, wrapperProps } = useController({
       name: props.name,
-      defaultValue: props.value,
+      defaultValue: props.value || '',
       onChange: props.onChange,
+      rules: props.rules,
       ...props,
     });
 
@@ -108,7 +109,7 @@ const createSelect = <TOriginalProps extends { id: string; name: string }>(
             ...defaultComponents,
             ...components,
           }}
-          styles={mergeStyles(baseStyles(validationState, isCompact), styles)}
+          styles={mergeStyles(baseStyles(fieldState, isCompact), styles)}
           onChange={(option, actionMeta) => {
             if (multiple) {
               return handleChange(

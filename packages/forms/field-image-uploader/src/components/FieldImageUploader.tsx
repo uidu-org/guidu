@@ -32,7 +32,7 @@ export function debounce(func: Function, timeout?: number) {
   };
 }
 
-function FieldImageUploaderStateless<T>({
+function FieldImageUploaderStateless({
   toolbar: ToolbarComponent = Toolbar,
   existing: ExistingComponent = Existing,
   empty: EmptyComponent = Empty,
@@ -53,7 +53,7 @@ function FieldImageUploaderStateless<T>({
   uploadOptions,
   className,
   ...rest
-}: FieldImageUploaderProps<T>) {
+}: FieldImageUploaderProps) {
   const { control: formControl } = useFormContext();
   const { field, wrapperProps } = useController({
     name,

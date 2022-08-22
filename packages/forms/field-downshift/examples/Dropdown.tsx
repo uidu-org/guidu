@@ -6,8 +6,11 @@ import { ButtonItem, Section } from '@uidu/menu';
 import Popup from '@uidu/popup';
 import classNames from 'classnames';
 import React, { useState } from 'react';
-import { formDefaultProps } from '../../form/examples-utils';
-import FieldDownshift from '../src';
+import useDefaultForm from '../../form/examples-utils';
+import FieldDownshift, {
+  FieldDownshiftMenuProps,
+  FieldDownshiftOptionProps,
+} from '../src';
 
 const items = [
   { value: 'Stuck', bg: 'rgb(226, 68, 92)' },
@@ -17,11 +20,15 @@ const items = [
   { value: '', bg: 'rgb(196, 196, 196)' },
 ];
 
-const DPMenu = ({ selectedItem, children, ref, ...rest }) => {
+function DPMenu<T>({
+  selectedItem,
+  children,
+  ...rest
+}: FieldDownshiftMenuProps<T>) {
   console.log(rest);
   return (
     <DropdownMenu
-      ref={ref}
+      ref={rest.innerRef}
       trigger={
         <div
           className="d-flex align-items-center justify-content-center"
@@ -42,9 +49,13 @@ const DPMenu = ({ selectedItem, children, ref, ...rest }) => {
       <div className="p-3 border-top">Aggiungi uno status</div>
     </DropdownMenu>
   );
-};
+}
 
-const PopupMenu = ({ selectedItem, children, ref, ...rest }) => {
+function PopupMenu({
+  selectedItem,
+  children,
+  ...rest
+}: FieldDownshiftMenuProps) {
   const { isOpen, toggleMenu } = rest;
   return (
     <Popup
@@ -67,22 +78,27 @@ const PopupMenu = ({ selectedItem, children, ref, ...rest }) => {
         </Button>
       )}
       content={() => (
-        <div ref={ref} tw="w-36">
+        <div tw="w-36">
           <Section>
             <div style={{ padding: '0 4px 0' }}>{children}</div>
             <div className="p-3 border-top">Aggiungi uno status</div>
           </Section>
         </div>
       )}
-    ></Popup>
+    />
   );
-};
+}
 
-const Item = ({ item, index, isSelected, getItemProps }) => {
+function Item({
+  item,
+  index,
+  isSelected,
+  getItemProps,
+}: FieldDownshiftOptionProps<any>) {
   const { onClick, ...rest } = getItemProps({ item, index });
   return (
     <DropdownItem
-      key={index}
+      key={item.value}
       className={classNames(
         'd-flex align-items-center justify-content-center',
         {
@@ -104,9 +120,14 @@ const Item = ({ item, index, isSelected, getItemProps }) => {
       {item.value}
     </DropdownItem>
   );
-};
+}
 
-const PopupItem = ({ item, index, isSelected, getItemProps }) => {
+function PopupItem({
+  item,
+  index,
+  isSelected,
+  getItemProps,
+}: FieldDownshiftOptionProps<any>) {
   const { onClick, ...rest } = getItemProps({ item, index });
   return (
     <ButtonItem
@@ -118,7 +139,9 @@ const PopupItem = ({ item, index, isSelected, getItemProps }) => {
         },
       )}
       onClick={(e) => {
+        console.log(e);
         e.preventDefault();
+        e.stopPropagation();
         onClick(e);
       }}
       style={{
@@ -132,12 +155,13 @@ const PopupItem = ({ item, index, isSelected, getItemProps }) => {
       {item.value}
     </ButtonItem>
   );
-};
+}
 
-export default function Basic({}) {
+export default function Basic() {
+  const defaultForm = useDefaultForm();
   const [selectedValue, setSelectedValue] = useState(items[2].value);
   return (
-    <Form {...formDefaultProps} footerRenderer={() => null}>
+    <Form {...defaultForm} footerRenderer={() => null}>
       <FieldDownshift
         {...inputDefaultProps}
         value={selectedValue}
@@ -150,6 +174,7 @@ export default function Basic({}) {
       />
       <FieldDownshift
         {...inputDefaultProps}
+        name="foo2"
         value={selectedValue}
         onChange={(name, value) => setSelectedValue(value)}
         layout="elementOnly"

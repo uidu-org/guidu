@@ -13,6 +13,7 @@ export default function Label({
   fakeLabel = false,
   required = false,
   overrides,
+  field,
 }: LabelProps) {
   const { layout: formLayout } = useFormContext();
   const layout = inputLayout || formLayout;

@@ -1,27 +1,36 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useController, Wrapper } from '@uidu/field-base';
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { FieldCounterProps } from '../types';
-import InputControl from './FieldCounterStateless';
+import FieldCounterStateless from './FieldCounterStateless';
 
 export default function FieldCounter({
   name,
-  value: defaultValue,
+  value: defaultValue = '',
+  onChange = () => {},
+  rules,
   ...rest
 }: FieldCounterProps) {
-  const { field, inputProps, wrapperProps, onChange } = useController({
+  const { field, inputProps, wrapperProps } = useController({
     name,
     defaultValue,
+    onChange,
+    rules,
     ...rest,
   });
 
-  const handleChange = (value) => {
-    field.onChange(value);
-    onChange(name, value);
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    field.onChange(Number(e.target.value));
+    onChange(name, Number(e.target.value));
   };
 
   return (
     <Wrapper {...wrapperProps}>
-      <InputControl {...rest} {...inputProps} onChange={handleChange} />
+      <FieldCounterStateless
+        {...rest}
+        {...inputProps}
+        onChange={handleChange}
+      />
     </Wrapper>
   );
 }

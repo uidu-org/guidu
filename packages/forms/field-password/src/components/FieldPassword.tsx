@@ -1,4 +1,4 @@
-import { useController, Wrapper } from '@uidu/field-base';
+import { StyledAddon, useController, Wrapper } from '@uidu/field-base';
 import { useFormContext } from '@uidu/form';
 import Tooltip from '@uidu/tooltip';
 import React, { ChangeEvent, useState } from 'react';
@@ -49,18 +49,20 @@ export default function FieldPassword({
   return (
     <Wrapper
       {...wrapperProps}
-      addonAfter={
-        <Tooltip {...tooltipProps} className="input-group-append">
-          <button
-            tw="absolute right-0 inset-y-0 px-5 flex items-center"
-            type="button"
-            onClick={handleVisiblity}
-            disabled={disabled}
-          >
-            {isPasswordVisible ? <EyeOff size={16} /> : <Eye size={16} />}
-          </button>
-        </Tooltip>
-      }
+      addonsAfter={[
+        <StyledAddon>
+          <Tooltip {...tooltipProps} tw="w-full h-full">
+            <button
+              tw="h-full w-full px-4"
+              type="button"
+              onClick={handleVisiblity}
+              disabled={disabled}
+            >
+              {isPasswordVisible ? <EyeOff size={16} /> : <Eye size={16} />}
+            </button>
+          </Tooltip>
+        </StyledAddon>,
+      ]}
       help={
         measurePasswordStrength &&
         showInstructions && (

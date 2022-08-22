@@ -24,8 +24,13 @@ export default function Radio({
     onChange(name, value);
   };
   return (
-    <Wrapper {...wrapperProps}>
-      <RadioStateless {...rest} {...inputProps} onChange={handleChange} />
+    <Wrapper {...wrapperProps} label={null} floatLabel={false}>
+      <RadioStateless
+        {...rest}
+        {...inputProps}
+        value={name}
+        onChange={handleChange}
+      />
     </Wrapper>
   );
 }

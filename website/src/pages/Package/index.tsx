@@ -166,7 +166,7 @@ class Package extends React.Component<Props> {
           <ShellMain>
             <ScrollableContainer>
               <PageHeader
-                tw="px-4 py-8 max-w-7xl mx-auto"
+                tw="px-4 pt-8 max-w-6xl mx-auto"
                 actions={
                   examplePath && (
                     <Media query={{ maxWidth: 768 }}>
@@ -244,7 +244,7 @@ class Package extends React.Component<Props> {
             ></Button> */}
                 {title}
               </PageHeader>
-              <div tw="max-w-7xl mx-auto px-4 py-8">
+              <div tw="max-w-6xl mx-auto px-4 pb-8">
                 {doc || <NoDocs name={pkgId} />}
               </div>
             </ScrollableContainer>

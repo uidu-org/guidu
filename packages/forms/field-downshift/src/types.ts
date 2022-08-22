@@ -1,10 +1,26 @@
 import { FieldBaseProps } from '@uidu/field-base';
-import { DownshiftState } from 'downshift';
+import { DownshiftState, PropGetters } from 'downshift';
 import * as React from 'react';
 
-export type FieldDownshiftProps<T, TOption> = FieldBaseProps<T> & {
-  menu?: (props) => void;
-  option?: (props) => void;
+export type FieldDownshiftMenuProps<TOption> = {
+  isOpen: boolean;
+  selectedItem: TOption;
+  children: React.ReactNode;
+  getMenuProps: PropGetters<TOption>['getMenuProps'];
+};
+
+export type FieldDownshiftOptionProps<TOption> = {
+  item: TOption;
+  index: number;
+  isSelected: boolean;
+  highlightedIndex?: number;
+  scope?: string;
+  getItemProps: PropGetters<TOption>['getItemProps'];
+};
+
+export type FieldDownshiftProps<TOption> = FieldBaseProps<string | string[]> & {
+  menu?: React.FC<FieldDownshiftMenuProps<TOption>>;
+  option?: React.FC<FieldDownshiftOptionProps<TOption>>;
   input?: (props) => void;
   filterOptions?: ({
     options,
@@ -12,13 +28,13 @@ export type FieldDownshiftProps<T, TOption> = FieldBaseProps<T> & {
     isOpen,
   }: {
     options: TOption[];
-    inputValue: DownshiftState['inputValue'];
-    isOpen: DownshiftState['isOpen'];
+    inputValue: DownshiftState<TOption>['inputValue'];
+    isOpen: DownshiftState<TOption>['isOpen'];
   }) => TOption[];
   options: TOption[];
   wrapper?: React.ComponentClass;
   scope?: string;
   multiple?: boolean;
-  getOptionLabel?: (option: TOption) => any;
-  getOptionValue?: (option: TOption) => any;
+  getOptionLabel?: (option: TOption) => string;
+  getOptionValue?: (option: TOption) => string | number;
 };

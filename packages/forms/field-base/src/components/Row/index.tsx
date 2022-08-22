@@ -1,12 +1,13 @@
 import classNames from 'classnames';
 import React from 'react';
+import { ControllerFieldState, ControllerRenderProps } from 'react-hook-form';
 import tw from 'twin.macro';
 import * as defaultComponents from '../../styled';
 import { getComponents } from '../../utils';
 import DefaultLabel from '../Label';
 import { RowProps } from './types';
 
-export default function Row({
+export default function Row<T>({
   label = null,
   required = false,
   showErrors = false,
@@ -15,7 +16,10 @@ export default function Row({
   children,
   htmlFor,
   overrides,
-}: RowProps) {
+}: RowProps & {
+  field?: ControllerRenderProps<T>;
+  fieldState?: ControllerFieldState;
+}) {
   const {
     StyledRow: { component: StyledRow, props: rowProps },
     Label: { component: Label, props: labelProps },
@@ -39,7 +43,7 @@ export default function Row({
 
   // We should render the label if there is label text defined, or if the
   // component is required (so a required symbol is displayed in the label tag)
-  const shouldRenderLabel = label !== null || required;
+  const shouldRenderLabel = label !== null;
 
   if (layout === 'horizontal') {
     // Horizontal layout needs a 'row' class for Bootstrap 4

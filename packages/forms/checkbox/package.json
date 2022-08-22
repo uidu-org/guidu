@@ -13,16 +13,17 @@
     "@babel/runtime": "^7.18.9",
     "@uidu/field-base": "^3.1.26",
     "react": "^18.2.0",
-    "react-hook-form": "^7.34.2",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.18",
     "@uidu/form": "^1.2.27",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "twin.macro": "^2.8.2"
   },
   "peerDependencies": {
-    "styled-components": "*"
+    "styled-components": "*",
+    "twin.macro": "*"
   },
   "publishConfig": {
     "access": "public"

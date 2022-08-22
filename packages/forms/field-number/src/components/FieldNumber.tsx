@@ -7,11 +7,15 @@ import InputControl from './FieldNumberStateless';
 export default function FieldNumber({
   name,
   value: defaultValue,
+  onChange = () => {},
+  rules,
   ...rest
 }: FieldNumberProps) {
-  const { field, wrapperProps, inputProps, onChange } = useController({
+  const { field, wrapperProps, inputProps } = useController({
     name,
     defaultValue,
+    onChange,
+    rules,
     ...rest,
   });
 

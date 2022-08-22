@@ -23,7 +23,6 @@
     "react-avatar-editor": "^13.0.0",
     "react-dropzone": "^11.7.1",
     "react-feather": "^2.0.10",
-    "react-hook-form": "^7.34.2",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },

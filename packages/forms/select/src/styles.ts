@@ -1,7 +1,35 @@
 import { colors } from '@uidu/theme';
+import { ControllerFieldState } from 'react-hook-form';
+import { StylesConfig } from 'react-select';
 import { theme } from 'twin.macro';
 
-export default function baseStyles(validationState, isCompact) {
+function getBoxShadow(fieldState: ControllerFieldState, isFocused: boolean) {
+  if (fieldState.error) {
+    return '0 0 0, 0 0 0 2px rgb(239 68 68 / 5%), 0 1px 2px 0 rgb(0 0 0 / 5%)';
+  }
+  if (isFocused) {
+    return '0 0 0 1px rgba(var(--brand-primary), 0.1)';
+  }
+  return 'none';
+}
+
+function getBorderColor(fieldState: ControllerFieldState, isFocused: boolean) {
+  if (fieldState.error) {
+    if (isFocused) {
+      return theme`colors.red.400`;
+    }
+    return theme`colors.red.500`;
+  }
+  if (isFocused) {
+    return 'rgb(var(--brand-primary))';
+  }
+  return 'rgb(var(--field-border, var(--border)))';
+}
+
+export default function baseStyles(
+  fieldState: ControllerFieldState,
+  isCompact: boolean,
+): StylesConfig {
   return {
     // control: (base, { isFocused, isDisabled }) => {
     //   let borderColor = isFocused ? colors.B100 : colors.N20;
@@ -58,22 +86,16 @@ export default function baseStyles(validationState, isCompact) {
       ...base,
       backgroundColor: 'rgb(var(--body-on-primary-bg))',
       borderRadius: '.25rem',
-      borderColor: state.isFocused
-        ? 'rgb(var(--brand-primary))'
-        : 'rgb(var(--field-border, var(--border)))',
-      boxShadow: state.isFocused
-        ? '0 0 0 0.2rem rgba(var(--brand-primary), .25)'
-        : 'none',
+      borderColor: getBorderColor(fieldState, state.isFocused),
+      boxShadow: getBoxShadow(fieldState, state.isFocused),
       '&:hover': {
-        borderColor: state.isFocused
-          ? 'rgb(var(--brand-primary))'
-          : 'rgb(var(--field-border, var(--border)))',
+        borderColor: getBorderColor(fieldState, state.isFocused),
         ...(state.isFocused && {}),
       },
     }),
     placeholder: (base, state) => ({
       ...base,
-      color: theme`colors.gray.400`,
+      color: fieldState.error ? theme`colors.red.400` : theme`colors.gray.400`,
     }),
     valueContainer: (base, state) => {
       if (state.isMulti) {

@@ -1,15 +1,21 @@
 import React from 'react';
 import { CheckCircle, Circle } from 'react-feather';
 import tw from 'twin.macro';
+import { FieldDownshiftOptionProps } from '../../types';
 
-export default function Checkbox({ item, index, isSelected, getItemProps }) {
+export default function Checkbox({
+  item,
+  index,
+  isSelected,
+  getItemProps,
+}: FieldDownshiftOptionProps<unknown>) {
   const { onClick, ...rest } = getItemProps({ item, index });
   return (
     <button
       type="button"
       key={item.id}
       css={[
-        tw`flex border px-4 py-3 mb-2 items-center justify-start text-left flex-row w-full rounded`,
+        tw`flex flex-row items-center justify-start w-full px-4 py-3 mb-2 text-left border rounded`,
         !!isSelected && tw`text-white background[rgb(var(--brand-primary))]`,
       ]}
       onClick={(e) => {

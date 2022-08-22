@@ -3,6 +3,7 @@
 import Button from '@uidu/button';
 import { ScrollableContainer, ShellBody, ShellHeader } from '@uidu/shell';
 import * as React from 'react';
+import { useForm } from 'react-hook-form';
 import { CheckboxGroup } from '../../checkbox/src';
 import { RadioGroup } from '../../radio/src';
 import Form from '../src';
@@ -18,18 +19,17 @@ interface Props {
   onToggle: () => void;
 }
 
-const Options = ({
+function Options({
   disabledChoice,
   sectionLayoutChoice,
   layoutChoice,
   onChangeOption,
   onToggle,
   showing,
-  validateBeforeSubmitChoice,
-  validatePristineChoice,
-}: Props): JSX.Element => {
+}: Props): JSX.Element {
+  const form = useForm({ mode: 'all' });
   const optionsForm = (
-    <Form>
+    <Form form={form}>
       <RadioGroup
         name="layout"
         label="Layout"
@@ -52,7 +52,7 @@ const Options = ({
         ]}
         onChange={onChangeOption}
       />
-      <CheckboxGroup
+      {/* <CheckboxGroup
         name="validationOptions"
         options={[
           { id: 'validatePristine', name: 'validatePristine' },
@@ -64,7 +64,7 @@ const Options = ({
         ]}
         label="Validation options"
         onChange={onChangeOption}
-      />
+      /> */}
       <CheckboxGroup
         name="elementOptions"
         options={[{ id: 'disabled', name: 'disabled' }]}
@@ -90,6 +90,6 @@ const Options = ({
       </ShellBody>
     </>
   );
-};
+}
 
 export default Options;

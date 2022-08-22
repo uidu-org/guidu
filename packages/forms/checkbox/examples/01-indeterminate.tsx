@@ -1,102 +1,83 @@
 import { Form } from '@uidu/form';
-import React, { PureComponent } from 'react';
-import { Checkbox } from '../src/index';
+import React from 'react';
+import { useDefaultForm } from '../../form/examples-utils';
+import Checkbox from '../src/index';
 
-const getCheckedChildrenCount = checkedItems => {
-  const childItems = Object.keys(checkedItems).filter(i => i !== 'parent');
+type FieldValues = {
+  parent: boolean;
+  'child-1': boolean;
+  'child-2': boolean;
+};
+
+const getCheckedChildrenCount = (checkedItems: FieldValues) => {
+  const childItems = Object.keys(checkedItems).filter((i) => i !== 'parent');
   return childItems.reduce(
     (count, i) => (checkedItems[i] ? count + 1 : count),
     0,
   );
 };
 
-const getIsParentIndeterminate = checkedItems => {
+const getIsParentIndeterminate = (checkedItems: FieldValues) => {
   const checkedChildrenCount = getCheckedChildrenCount(checkedItems);
   return checkedChildrenCount > 0 && checkedChildrenCount < 2;
 };
 
-export default class IndeterminateExample extends PureComponent {
-  state = {
-    checkedItems: {
-      parent: false,
-      'child-1': false,
-      'child-2': false,
-    },
-  };
+export default function IndeterminateExample() {
+  const defaultForm = useDefaultForm<FieldValues>();
+  const {
+    form: { setValue, resetField, getValues },
+  } = defaultForm;
 
-  onChange = (name, value) => {
-    const { checkedItems } = this.state;
-
+  const onChange = (name: keyof FieldValues, value: boolean) => {
     if (name === 'parent') {
-      this.setState({
-        // Set all items to the checked state of the parent
-        checkedItems: {
-          parent: value,
-          'child-1': value,
-          'child-2': value,
-        },
-      });
+      setValue(name, value);
+      setValue('child-1', value);
+      setValue('child-2', value);
     } else {
-      const newCheckedItems = {
-        ...checkedItems,
-        [name]: !checkedItems[name],
-      };
-      this.setState({
-        // Set all items to the checked state of the parent
-        checkedItems: {
-          ...newCheckedItems,
-          parent: getCheckedChildrenCount(newCheckedItems) > 0,
-        },
+      setValue(name, value);
+      resetField('parent', {
+        defaultValue: getCheckedChildrenCount(getValues()) > 0,
       });
     }
   };
 
-  render() {
-    const { checkedItems } = this.state;
-
-    console.log(checkedItems);
-
-    return (
-      <Form>
-        <p style={{ marginBottom: '8px' }}>
-          An indeterminate checkbox can be used to show partially checked
-          states. The parent checkbox below will be indeterminate until all
-          its&#39; children are checked.
-        </p>
+  return (
+    <Form {...defaultForm}>
+      <p style={{ marginBottom: '8px' }}>
+        An indeterminate checkbox can be used to show partially checked states.
+        The parent checkbox below will be indeterminate until all its&#39;
+        children are checked.
+      </p>
+      <Checkbox
+        isIndeterminate={getIsParentIndeterminate(getValues())}
+        onChange={onChange}
+        layout="elementOnly"
+        label="Parent Checkbox"
+        id="parent"
+        name="parent"
+      />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          paddingLeft: '24px',
+        }}
+      >
         <Checkbox
-          value={checkedItems.parent}
-          isIndeterminate={getIsParentIndeterminate(checkedItems)}
-          onChange={this.onChange}
+          onChange={onChange}
           layout="elementOnly"
-          label="Parent Checkbox"
-          id="parent"
-          name="parent"
+          label="Child Checkbox 1"
+          id="child-1"
+          name="child-1"
         />
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            paddingLeft: '24px',
-          }}
-        >
-          <Checkbox
-            value={checkedItems['child-1']}
-            onChange={this.onChange}
-            layout="elementOnly"
-            label="Child Checkbox 1"
-            id="child-1"
-            name="child-1"
-          />
-          <Checkbox
-            value={checkedItems['child-2']}
-            onChange={this.onChange}
-            layout="elementOnly"
-            label="Child Checkbox 2"
-            id="child-2"
-            name="child-2"
-          />
-        </div>
-      </Form>
-    );
-  }
+        <Checkbox
+          onChange={onChange}
+          layout="elementOnly"
+          label="Child Checkbox 2"
+          id="child-2"
+          name="child-2"
+        />
+      </div>
+    </Form>
+  );
 }

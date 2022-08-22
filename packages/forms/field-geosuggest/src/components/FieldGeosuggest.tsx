@@ -1,4 +1,10 @@
-import { StyledRow, useController, Wrapper } from '@uidu/field-base';
+import {
+  StyledAddon,
+  StyledInput,
+  StyledRow,
+  useController,
+  Wrapper,
+} from '@uidu/field-base';
 import { ButtonItem, MenuGroup } from '@uidu/menu';
 import React, {
   ChangeEvent,
@@ -20,7 +26,7 @@ import { FieldGeosuggestProps } from '../types';
 import FieldGeosuggestCurrentPosition from './FieldGeosuggestCurrentPosition';
 import FieldGeosuggestItem from './FieldGeosuggestItem';
 
-export default function FieldGeosuggest<T>({
+export default function FieldGeosuggest({
   onSuggestSelect = () => {},
   onGeocode,
   name,
@@ -33,7 +39,7 @@ export default function FieldGeosuggest<T>({
   geocoderType,
   bounds,
   countryRestricted,
-  onChange,
+  onChange = () => {},
   forwardedRef,
   geolocationEnabled = true,
   option: OptionRenderer = FieldGeosuggestItem,
@@ -41,11 +47,12 @@ export default function FieldGeosuggest<T>({
   filterOption = (option: Suggestion) => true,
   value: defaultValue = '',
   ...rest
-}: FieldGeosuggestProps<T>) {
-  const { field, wrapperProps, inputProps } = useController<T>({
+}: FieldGeosuggestProps) {
+  const { field, wrapperProps, inputProps, fieldState } = useController({
     name,
     defaultValue,
     onChange,
+    ...rest,
   });
 
   const element = useRef<HTMLInputElement>(null);
@@ -175,8 +182,13 @@ export default function FieldGeosuggest<T>({
     element.current?.setSelectionRange(0, 9999);
   };
 
-  const onInputChange = (e: ChangeEvent<HTMLInputElement>) =>
+  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value === '') {
+      field.onChange(e.target.value);
+    }
+
     setValue(e.target.value);
+  };
 
   const CachedStyledRow = useCallback(
     (props) => (
@@ -203,50 +215,53 @@ export default function FieldGeosuggest<T>({
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...(isGeolocationAvailable
         ? {
-            addonAfter: (
-              <FieldGeosuggestCurrentPosition onGeocode={onGeocode} />
-            ),
+            addonsAfter: [
+              <StyledAddon>
+                <FieldGeosuggestCurrentPosition onGeocode={onGeocode} />
+              </StyledAddon>,
+            ],
           }
         : {})}
       required={required}
     >
-      <input
-        {...inputProps}
-        className={className}
-        css={[
-          tw`background[rgb(var(--body-on-primary-bg))] shadow-sm focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))] block w-full border border-color[rgb(var(--field-border, var(--border)))] rounded py-3 px-4 placeholder-gray-400 disabled:opacity-50 disabled:background[rgba(var(--brand-subtle), .4)]`,
-          isGeolocationAvailable && tw`pr-14`,
-        ]}
-        disabled={!ready || disabled}
-        type="search"
-        autoComplete="off"
-        autoFocus={autoFocus}
-        placeholder={placeholder as string}
-        onFocus={onInputFocus}
-        onKeyDown={onInputKeyDown}
-        onChange={onInputChange}
-        required={required}
-      />
-      <div tw="absolute overflow-y-scroll p-0 z-30 w-full rounded-b bg-white shadow max-h-72 divide-y top-full">
-        {status === 'OK' && (
-          <MenuGroup>
-            {data.filter(filterOption).map((suggestion) => {
-              const isActive =
-                activeSuggestion &&
-                suggestion.place_id === activeSuggestion.place_id;
+      <div tw="relative w-full">
+        <StyledInput
+          {...inputProps}
+          hasError={!!fieldState?.error}
+          value={value}
+          className={className}
+          css={[isGeolocationAvailable && tw`pr-14`]}
+          disabled={!ready || disabled}
+          type="search"
+          autoComplete="off"
+          autoFocus={autoFocus}
+          placeholder={placeholder as string}
+          onFocus={onInputFocus}
+          onKeyDown={onInputKeyDown}
+          onChange={onInputChange}
+          required={required}
+        />
+        <div tw="absolute overflow-y-scroll p-0 z-30 w-full rounded-b bg-white shadow max-h-72 divide-y top-full">
+          {status === 'OK' && (
+            <MenuGroup>
+              {data.filter(filterOption).map((suggestion) => {
+                const isActive =
+                  activeSuggestion &&
+                  suggestion.place_id === activeSuggestion.place_id;
 
-              return (
-                <ButtonItem
-                  key={suggestion.place_id}
-                  onClick={() => selectSuggestion(suggestion)}
-                  isSelected={isActive}
-                >
-                  <OptionRenderer suggestion={suggestion} />
-                </ButtonItem>
-              );
-            })}
-          </MenuGroup>
-        )}
+                return (
+                  <ButtonItem
+                    key={suggestion.place_id}
+                    onClick={() => selectSuggestion(suggestion)}
+                    isSelected={isActive}
+                  >
+                    <OptionRenderer suggestion={suggestion} />
+                  </ButtonItem>
+                );
+              })}
+            </MenuGroup>
+          )}
+        </div>
       </div>
     </Wrapper>
   );

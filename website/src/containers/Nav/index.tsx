@@ -69,10 +69,10 @@ export default class Nav extends React.Component<{}, State> {
                   {
                     type: 'InlineComponent',
                     component: () => (
-                      <div tw="px-3 md:px-4 mb-2">
+                      <div tw="px-3 md:px-5 mb-2">
                         <input
                           type="search"
-                          tw="shadow mb-4 border border-gray-300 border-opacity-30 py-2.5 w-full rounded bg-gray-200 bg-opacity-30"
+                          tw="shadow-md mb-4 border border-gray-300 border-opacity-30 py-2.5 w-full rounded"
                           autoComplete="off"
                           placeholder="Cerca tra i contatti.."
                         />

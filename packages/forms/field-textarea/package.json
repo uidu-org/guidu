@@ -13,7 +13,6 @@
     "@uidu/field-base": "^3.1.26",
     "autosize": "^5.0.1",
     "react": "^18.2.0",
-    "react-hook-form": "^7.34.2",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

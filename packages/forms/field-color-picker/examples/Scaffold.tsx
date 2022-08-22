@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  FieldExampleRefs,
+  FieldExampleScaffold,
   inputDefaultProps,
 } from '../../field-base/examples-utils';
 import FieldColorPicker from '../src';
 
-export default function TestRef() {
+export default function Scaffold() {
   return (
-    <FieldExampleRefs {...inputDefaultProps} component={FieldColorPicker} />
+    <FieldExampleScaffold {...inputDefaultProps} component={FieldColorPicker} />
   );
 }

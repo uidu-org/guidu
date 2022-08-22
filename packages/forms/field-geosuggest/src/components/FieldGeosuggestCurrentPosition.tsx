@@ -1,6 +1,6 @@
+import { LocationMarkerIcon } from '@heroicons/react/outline';
 import Spinner from '@uidu/spinner';
 import React, { MouseEvent, useState } from 'react';
-import { MapPin } from 'react-feather';
 
 export default function FieldGeosuggestCurrentPosition({
   onGeocode,
@@ -29,11 +29,15 @@ export default function FieldGeosuggestCurrentPosition({
   };
   return (
     <button
-      tw="absolute right-0 inset-y-0 px-5 flex items-center"
+      tw="px-4 flex items-center h-full"
       type="button"
       onClick={fetchCurrentPosition}
     >
-      {isLoading ? <Spinner size="small" /> : <MapPin size={16} />}
+      {isLoading ? (
+        <Spinner size="small" />
+      ) : (
+        <LocationMarkerIcon tw="h-5 w-5" />
+      )}
     </button>
   );
 }

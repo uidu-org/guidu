@@ -1,29 +1,30 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useController, Wrapper as FieldWrapper } from '@uidu/field-base';
 import Downshift from 'downshift';
 import React, { useCallback } from 'react';
 import { FieldDownshiftProps } from '../types';
 
 function FieldDownshift<
-  T,
-  TOption extends { id: string | number; name: string },
+  TOption extends { id: string | number; name: string; [key: string]: any } = {
+    id: string | number;
+    name: string;
+  },
 >({
   wrapper: WrapperComponent = FieldWrapper,
   multiple = false,
-  input = null,
   onChange = () => {},
   getOptionValue = (option) => option.id,
   getOptionLabel = (option) => option.name,
   filterOptions = (props) => props.options,
-  option: itemRenderer = ({ item, ...rest }) => (
-    <div {...rest}>{item.name}</div>
-  ),
-  menu = ({ children, ...rest }) => <div {...rest}>{children}</div>,
+  option: Option = ({ item, ...rest }) => <div {...rest}>{item.name}</div>,
+  input: Input = null,
+  menu: Menu = ({ children, ...rest }) => <div {...rest}>{children}</div>,
   options,
   value,
   scope,
   name,
   ...otherProps
-}: FieldDownshiftProps<T, TOption>) {
+}: FieldDownshiftProps<TOption>) {
   const { field, wrapperProps } = useController({
     name,
     defaultValue: value || multiple ? [] : '',
@@ -89,18 +90,10 @@ function FieldDownshift<
     return null;
   };
 
-  const renderItem = ({ item, index, ...rest }) =>
-    itemRenderer({
-      ...rest,
-      item,
-      index,
-      isSelected: isSelected(item),
-    });
-
   const selectedItem = getValue();
 
   return (
-    <Downshift
+    <Downshift<TOption>
       onSelect={onSelect}
       itemToString={(item) => getOptionLabel({ item })}
       initialSelectedItem={selectedItem}
@@ -114,6 +107,7 @@ function FieldDownshift<
         getMenuProps,
         isOpen,
         inputValue,
+        highlightedIndex,
         ...rest
       }) => (
         <WrapperComponent
@@ -122,23 +116,29 @@ function FieldDownshift<
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...getRootProps({ refKey: 'componentRef' })}
         >
-          {input && input({ ...getInputProps() })}
-          {menu({
-            ...getMenuProps({}),
-            ...rest,
-            isOpen,
-            selectedItem,
-            children: filterOptions({ options, inputValue, isOpen }).map(
-              (item, index) =>
-                renderItem({
-                  ...rest,
-                  item,
-                  index,
-                  scope,
-                  getItemProps,
-                }),
-            ),
-          })}
+          {Input && <Input {...getInputProps()} />}
+          <Menu
+            {...getMenuProps({ refKey: 'innerRef' })}
+            getMenuProps={getMenuProps}
+            isOpen={isOpen}
+            selectedItem={selectedItem}
+            {...rest}
+          >
+            {filterOptions({ options, inputValue, isOpen }).map(
+              (item, index) => (
+                <Option
+                  {...rest}
+                  key={getOptionValue(item)}
+                  highlightedIndex={highlightedIndex}
+                  index={index}
+                  item={item}
+                  isSelected={isSelected(item)}
+                  scope={scope}
+                  getItemProps={getItemProps}
+                />
+              ),
+            )}
+          </Menu>
         </WrapperComponent>
       )}
     </Downshift>

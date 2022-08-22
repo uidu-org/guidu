@@ -13,8 +13,14 @@ function CheckboxGroup({
   name,
   ...rest
 }: CheckboxGroupProps) {
-  const elements = {};
-  const { field, wrapperProps } = useController({ name, defaultValue });
+  const elements: Record<string, HTMLInputElement> = {};
+
+  const { field, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
 
   const handleChange = () => {
     const checkedOptions = options.filter(
@@ -26,7 +32,7 @@ function CheckboxGroup({
   };
 
   return (
-    <Wrapper {...rest} {...wrapperProps}>
+    <Wrapper {...wrapperProps} floatLabel={false}>
       <div
         css={[isInline ? tw`space-x-6` : tw`space-y-2`]}
         className={className}
@@ -34,14 +40,15 @@ function CheckboxGroup({
         {options.map((option) => (
           <CheckboxStateless
             key={`${name}-${option.id}`}
-            id={`${name}-${option.id}`}
-            ref={(c: any) => {
+            ref={(c) => {
               if (c) {
                 elements[option.id] = c;
               }
             }}
-            isInline={isInline}
+            id={option.id}
+            value={option.id}
             label={option.name}
+            isInline={isInline}
             name={name}
             checked={field.value.indexOf(option.id) >= 0}
             onChange={handleChange}

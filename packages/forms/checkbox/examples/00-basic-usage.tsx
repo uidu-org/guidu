@@ -1,68 +1,9 @@
-import { Form } from '@uidu/form';
-import React, { PureComponent } from 'react';
+import { FieldExampleScaffold } from '@uidu/field-base/examples-utils';
+import React from 'react';
 import Checkbox from '../src';
 
-const BasicUsageExample = class extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      onChangeResult: 'Check & Uncheck to trigger onChange',
-    };
-  }
-
-  onChange = (name, value) => {
-    this.setState({
-      onChangeResult: `onChange called with value: ${value} isChecked: ${name}`,
-    });
-  };
-
-  render() {
-    return (
-      <Form>
-        <Checkbox
-          label="Basic checkbox"
-          onChange={this.onChange}
-          layout="elementOnly"
-          id="test"
-          name="checkbox-basic"
-        />
-        <Checkbox
-          defaultChecked
-          label="Checked by default"
-          onChange={this.onChange}
-          name="checkbox-checked"
-          layout="elementOnly"
-          value={true}
-        />
-        <Checkbox
-          label="Disabled"
-          onChange={this.onChange}
-          name="checkbox-disabled"
-          layout="elementOnly"
-          disabled
-        />
-        <Checkbox
-          label="Invalid"
-          onChange={this.onChange}
-          name="checkbox-invalid"
-          layout="elementOnly"
-          isInvalid
-        />
-        <div
-          style={{
-            borderStyle: 'dashed',
-            borderWidth: '1px',
-            borderColor: '#ccc',
-            padding: '0.5em',
-            color: '#ccc',
-            margin: '0.5em',
-          }}
-        >
-          {this.state.onChangeResult}
-        </div>
-      </Form>
-    );
-  }
-};
+function BasicUsageExample() {
+  return <FieldExampleScaffold component={Checkbox} defaultValue={true} />;
+}
 
 export default BasicUsageExample;

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useMemo } from 'react';
 import { FieldValues, FormProviderProps, UseFormReturn } from 'react-hook-form';
-import { LayoutType } from '../types';
+import { LayoutType, Overrides } from '../types';
 
 const defaultContextValue = {
   layout: 'vertical' as LayoutType,
@@ -15,19 +15,17 @@ interface FormContextProps<T> extends FormProviderProps<T> {
 export const FormContext =
   createContext<FormContextProps<unknown>>(defaultContextValue);
 
-function FormContextProvider({
+function FormContextProvider<T>({
   overrides,
   layout,
   children,
   form,
 }: {
-  overrides: any;
+  overrides?: Overrides;
   layout: LayoutType;
   children: React.ReactNode;
-  form: UseFormReturn;
+  form: UseFormReturn<T>;
 }) {
-  console.log(layout);
-
   const value = useMemo(
     () => ({
       ...form,

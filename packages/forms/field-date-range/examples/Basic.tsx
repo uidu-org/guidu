@@ -1,9 +1,9 @@
 import { Form } from '@uidu/form';
 import React, { Component } from 'react';
-import 'react-day-picker/lib/style.css';
-import FieldDateRange from '../src';
+import 'react-day-picker/dist/style.css';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
+import FieldDateRange from '../src';
 
 export default class Basic extends Component<any, any> {
   state = {

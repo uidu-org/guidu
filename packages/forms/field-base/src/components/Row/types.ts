@@ -1,16 +1,12 @@
-import { StyledComponent } from 'styled-components';
-import { FieldBaseLayout } from '../../types';
+import { LayoutType, Overrides } from '@uidu/form';
 
 export type RowProps = {
   children?: React.ReactNode;
   htmlFor?: string;
-  layout?: FieldBaseLayout;
+  layout?: LayoutType;
   label?: React.ReactNode | string;
   fakeLabel?: boolean;
   required?: boolean;
   showErrors?: boolean;
-  overrides: Record<
-    string,
-    { component: StyledComponent<any, any>; props?: {}; style?: {} }
-  >;
+  overrides?: Overrides;
 };

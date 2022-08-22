@@ -7,7 +7,6 @@ export default function FieldMentions({
   onChange = () => {},
   value: defaultValue,
   name,
-  forwardedRef,
   ...rest
 }: FieldMentionsProps) {
   const { field, wrapperProps, inputProps } = useController({

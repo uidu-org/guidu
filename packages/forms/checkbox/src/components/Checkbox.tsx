@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
 import { CheckboxProps } from '../types';
-import InputControl from './CheckboxStateless';
+import CheckboxStateless from './CheckboxStateless';
 
 export default function Checkbox({
   isIndeterminate = false,
@@ -13,6 +14,8 @@ export default function Checkbox({
   const { field, wrapperProps, inputProps } = useController({
     name,
     defaultValue,
+    onChange,
+    ...rest,
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -22,11 +25,12 @@ export default function Checkbox({
   };
 
   return (
-    <Wrapper {...rest} {...wrapperProps}>
-      <InputControl
+    <Wrapper {...wrapperProps} label={null} floatLabel={false}>
+      <CheckboxStateless
         {...rest}
         {...inputProps}
         isIndeterminate={isIndeterminate}
+        value={name}
         checked={!!field.value}
         onChange={handleChange}
       />

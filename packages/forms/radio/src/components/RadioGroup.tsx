@@ -1,5 +1,5 @@
 import { useController, Wrapper } from '@uidu/field-base';
-import React, { ChangeEvent, memo } from 'react';
+import React, { ChangeEvent } from 'react';
 import tw from 'twin.macro';
 import { RadioGroupProps } from '../types';
 import RadioStateless from './RadioStateless';
@@ -47,4 +47,4 @@ function RadioGroup({
   );
 }
 
-export default memo(RadioGroup);
+export default RadioGroup;

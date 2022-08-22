@@ -1,7 +1,7 @@
 import { FieldBaseProps } from '@uidu/field-base/src';
 import { LatLng, RequestOptions, Suggestion } from 'use-places-autocomplete';
 
-export type FieldGeosuggestProps<T> = {
+export type FieldGeosuggestProps = {
   onSuggestSelect?: (suggestion: Suggestion) => void;
   onGeocode?: (props: LatLng) => void;
   geocoderType?: RequestOptions['types'];
@@ -14,7 +14,7 @@ export type FieldGeosuggestProps<T> = {
   valueGetter?: (suggestion: Suggestion) => string;
   /** Filter options to further customize google places autocomplete results */
   filterOption?: (suggestion: Suggestion) => boolean;
-} & FieldBaseProps<T>;
+} & FieldBaseProps;
 
 export type FieldGeosuggestItemProps = {
   suggestion: Suggestion;

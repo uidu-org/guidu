@@ -7,9 +7,9 @@ export default function ErrorMessages({ messages = [] }: ErrorMessagesProps) {
   }
 
   return (
-    <div className="invalid-feedback">
-      {messages.map((message, key) => (
-        <p tw="mt-2 text-sm text-red-600" key={`input-error-${key}`}>
+    <div tw="mt-3 space-y-2">
+      {messages.map(({ message, type, ref }) => (
+        <p tw="text-sm text-red-600" key={`${ref.name}-${type}`}>
           {message}
         </p>
       ))}
