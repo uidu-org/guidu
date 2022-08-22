@@ -25,7 +25,7 @@ export default function FieldRange({
   };
 
   return (
-    <Wrapper {...wrapperProps}>
+    <Wrapper {...wrapperProps} errorIcon={() => null}>
       <FieldRangeStateless {...rest} {...inputProps} onChange={handleChange} />
     </Wrapper>
   );

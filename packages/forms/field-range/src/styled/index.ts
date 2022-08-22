@@ -187,6 +187,7 @@ export const rangeInputStyle = css`
   background: transparent; /* Otherwise white in Chrome */
   height: ${overallHeight}px; /* Otherwise thumb will collide with previous box element */
   width: 100%; /* Specific width is required for Firefox. */
+  display: flex;
 
   &:focus {
     outline: none;

@@ -68,12 +68,12 @@ Hook form migration
   - [ ] examples
   - [ ] refs
   - [ ] errors
-- [ ] field-geosuggest
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
+- [V] field-geosuggest
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
 - [ ] field-image-uploader
   - [ ] types
   - [ ] dependencies
@@ -115,7 +115,7 @@ Hook form migration
   - [ ] dependencies
   - [V] examples
   - [V] refs
-  - [ ] errors
+  - [V] errors
 - [V] field-text
   - [V] types
   - [V] dependencies
@@ -140,12 +140,12 @@ Hook form migration
   - [V] examples
   - [V] refs
   - [V] errors
-- [ ] form
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
+- [V] form
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
 - [ ] radio
   - [ ] types
   - [V] dependencies
@@ -156,5 +156,5 @@ Hook form migration
   - [ ] types
   - [ ] dependencies
   - [ ] examples
-  - [ ] refs
-  - [ ] errors
+  - [V] refs
+  - [V] errors

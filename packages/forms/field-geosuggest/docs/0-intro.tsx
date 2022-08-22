@@ -21,15 +21,6 @@ export default md`
   )}
 
   ${(
-    <Example
-      packageName="@uidu/field-geosuggest"
-      Component={require('../examples/Scaffold').default}
-      title="Scaffold"
-      source={require('!!raw-loader!../examples/Scaffold').default}
-    />
-  )}
-
-  ${(
     <Props
       heading="Field Geosuggest Props"
       props={require('!!extract-react-types-loader!../src/components/FieldGeosuggest')}
