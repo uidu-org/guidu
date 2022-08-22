@@ -5,14 +5,16 @@ import FieldRangeStateless from './FieldRangeStateless';
 
 export default function FieldRange({
   name,
-  value: defaultValue,
+  value: defaultValue = '',
   onChange = () => {},
+  rules,
   ...rest
 }: FieldRangeProps) {
   const { field, wrapperProps, inputProps } = useController({
     name,
     defaultValue,
     onChange,
+    rules,
     ...rest,
   });
 

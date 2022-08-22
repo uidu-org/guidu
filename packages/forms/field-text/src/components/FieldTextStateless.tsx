@@ -21,18 +21,19 @@ const getInputMode = ({
     case 'url':
       return 'url';
     default:
-      return null;
+      return undefined;
   }
 };
 
 const FieldTextStateless = forwardRef(
   (props: FieldTextStatelessProps & FieldBaseStatelessProps, ref) => {
-    const { inputMode, type, options, fieldState } = props;
+    const { inputMode, type = 'text', options, fieldState } = props;
 
     return (
       <StyledInput
         hasError={!!fieldState?.error}
         ref={ref}
+        type={type}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
         // eslint-disable-next-line react/jsx-props-no-spreading

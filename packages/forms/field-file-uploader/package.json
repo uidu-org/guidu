@@ -12,8 +12,8 @@
     "@babel/runtime": "^7.18.9",
     "@uidu/field-base": "^3.1.26",
     "@uidu/media-core": "1.0.0",
-    "@uppy/core": "^2.3.3",
-    "@uppy/react": "^2.2.3",
+    "@uppy/core": "^3.0.0",
+    "@uppy/react": "^3.0.0",
     "react": "^18.2.0",
     "tslib": "^2.4.0"
   },

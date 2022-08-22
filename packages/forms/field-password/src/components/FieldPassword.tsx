@@ -1,8 +1,8 @@
+import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
 import { StyledAddon, useController, Wrapper } from '@uidu/field-base';
 import { useFormContext } from '@uidu/form';
 import Tooltip from '@uidu/tooltip';
 import React, { ChangeEvent, useState } from 'react';
-import { Eye, EyeOff } from 'react-feather';
 import { FieldPasswordProps } from '../types';
 import FieldPasswordStateless from './FieldPasswordStateless';
 import FieldPasswordStrength from './FieldPasswordStrength';
@@ -16,12 +16,12 @@ export default function FieldPassword({
   passwordStrengths = ['Worst', 'Bad', 'Weak', 'Good', 'Strong'],
   onChange = () => {},
   name,
-  value: defaultValue,
+  value: defaultValue = '',
   disabled,
   ...rest
 }: FieldPasswordProps) {
-  const { control } = useFormContext<T>();
-  const { field, wrapperProps, inputProps } = useController<T>({
+  const { control } = useFormContext();
+  const { field, wrapperProps, inputProps } = useController({
     name,
     control,
     defaultValue,
@@ -58,7 +58,11 @@ export default function FieldPassword({
               onClick={handleVisiblity}
               disabled={disabled}
             >
-              {isPasswordVisible ? <EyeOff size={16} /> : <Eye size={16} />}
+              {isPasswordVisible ? (
+                <EyeOffIcon tw="h-5 w-5" />
+              ) : (
+                <EyeIcon tw="h-5 w-5" />
+              )}
             </button>
           </Tooltip>
         </StyledAddon>,

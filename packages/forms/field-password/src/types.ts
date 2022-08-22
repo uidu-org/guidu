@@ -1,8 +1,10 @@
 import { FieldBaseProps } from '@uidu/field-base';
+import { AllHTMLAttributes } from 'react';
 
-export type FieldPasswordStatelessProps = {
-  isPasswordVisible?: boolean;
-} & FieldBaseProps;
+export type FieldPasswordStatelessProps =
+  AllHTMLAttributes<HTMLInputElement> & {
+    isPasswordVisible?: boolean;
+  };
 
 export type FieldPasswordProps = {
   measurePasswordStrength?: boolean;
@@ -11,4 +13,4 @@ export type FieldPasswordProps = {
   tooltipProps?: {
     content: string;
   };
-} & FieldPasswordStatelessProps;
+} & FieldBaseProps<string>;

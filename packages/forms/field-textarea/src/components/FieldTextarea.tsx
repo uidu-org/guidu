@@ -1,18 +1,21 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
 import { FieldTextareaProps } from '../types';
-import InputControl from './FieldTextareaStateless';
+import FieldTextareaStateless from './FieldTextareaStateless';
 
 export default function FieldTextarea({
   onChange = () => {},
   name,
-  value: defaultValue,
+  value: defaultValue = '',
+  rules,
   ...rest
 }: FieldTextareaProps) {
   const { field, wrapperProps, inputProps } = useController({
     name,
     defaultValue,
     onChange,
+    rules,
     ...rest,
   });
 
@@ -26,7 +29,11 @@ export default function FieldTextarea({
 
   return (
     <Wrapper {...wrapperProps}>
-      <InputControl {...rest} {...inputProps} onChange={handleChange} />
+      <FieldTextareaStateless
+        {...rest}
+        {...inputProps}
+        onChange={handleChange}
+      />
     </Wrapper>
   );
 }

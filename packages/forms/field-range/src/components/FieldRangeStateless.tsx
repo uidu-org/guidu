@@ -1,4 +1,5 @@
-import React, { forwardRef, useMemo } from 'react';
+import { FieldBaseStatelessProps } from '@uidu/field-base';
+import React, { ChangeEvent, forwardRef, useMemo } from 'react';
 import { Input } from '../styled';
 import { FieldRangeStatelessProps } from '../types';
 
@@ -10,41 +11,48 @@ const getPercentValue = (value: number, min: number, max: number): string => {
   return percent;
 };
 
-function FieldRangeStateless({
-  id,
-  value,
-  min = 0,
-  max = 100,
-  step = 1,
-  disabled = false,
-  onChange,
-  forwardedRef,
-}: FieldRangeStatelessProps) {
-  const valuePercent = useMemo(
-    () => getPercentValue(value, min, max),
-    [value, min, max],
-  );
+const FieldRangeStateless = forwardRef<
+  HTMLInputElement,
+  FieldRangeStatelessProps & FieldBaseStatelessProps
+>(
+  (
+    {
+      id,
+      value,
+      min = 0,
+      max = 100,
+      step = 1,
+      disabled = false,
+      onChange,
+      ...rest
+    }: FieldRangeStatelessProps,
+    ref,
+  ) => {
+    const valuePercent = useMemo(
+      () => getPercentValue(value, min, max),
+      [value, min, max],
+    );
 
-  const handleChange = (e) => {
-    onChange(e.target.value);
-  };
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+      onChange(e.target.value);
+    };
 
-  return (
-    <Input
-      id={id}
-      ref={forwardedRef}
-      type="range"
-      value={value}
-      min={min}
-      max={max}
-      step={step}
-      onChange={handleChange}
-      disabled={disabled}
-      valuePercent={valuePercent}
-    />
-  );
-}
+    return (
+      <Input
+        id={id}
+        ref={ref}
+        type="range"
+        value={value}
+        min={min}
+        max={max}
+        step={step}
+        onChange={handleChange}
+        disabled={disabled}
+        valuePercent={valuePercent}
+        {...rest}
+      />
+    );
+  },
+);
 
-export default forwardRef((props: FieldRangeStatelessProps, ref: any) => (
-  <FieldRangeStateless {...props} forwardedRef={ref} />
-));
+export default FieldRangeStateless;

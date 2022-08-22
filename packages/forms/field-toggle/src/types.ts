@@ -1,10 +1,9 @@
+import { SwitchProps } from '@radix-ui/react-switch';
 import { FieldBaseProps } from '@uidu/field-base';
-import { ReactSwitchProps } from 'react-switch';
 
-export type FieldToggleStatelessProps = {
-  id?: string;
+export type FieldToggleStatelessProps = SwitchProps & {
   size?: 'xsmall' | 'small' | 'large';
-} & ReactSwitchProps;
+};
 
-export type FieldToggleProps = {} & FieldBaseProps &
+export type FieldToggleProps = FieldBaseProps<boolean> &
   Omit<FieldToggleStatelessProps, 'checked'>;

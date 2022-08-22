@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { NumberFormatValues } from 'react-number-format';
 import { FieldNumberProps } from '../types';
-import InputControl from './FieldNumberStateless';
+import FieldNumberStateless from './FieldNumberStateless';
 
 export default function FieldNumber({
   name,
@@ -26,12 +27,9 @@ export default function FieldNumber({
   };
 
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
     <Wrapper {...wrapperProps}>
-      <InputControl
-        // eslint-disable-next-line react/jsx-props-no-spreading
+      <FieldNumberStateless
         {...rest}
-        // eslint-disable-next-line react/jsx-props-no-spreading
         {...inputProps}
         onValueChange={handleChange}
       />

@@ -1,4 +1,3 @@
-import { FormsyProps } from 'formsy-react/dist/Formsy';
 import { FC, ReactNode } from 'react';
 import { IconProps } from 'react-feather';
 import { UseFormReturn } from 'react-hook-form';
@@ -16,7 +15,6 @@ export type FormHandleSubmit = (model, resetForm) => Promise<any>;
 export type FormProps<T> = {
   form: UseFormReturn<T>;
   children: ReactNode;
-  onChange?: FormsyProps['onChange'];
   handleSubmit: FormHandleSubmit;
   footerRenderer: (
     { loading, canSubmit }: { loading: boolean; canSubmit: boolean },

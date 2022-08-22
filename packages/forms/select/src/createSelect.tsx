@@ -1,6 +1,6 @@
 import { FieldBaseProps, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
-import { mergeStyles, Props } from 'react-select';
+import ReactSelect, { mergeStyles, Props } from 'react-select';
 import * as defaultComponents from './components';
 import MultiValueLabel from './components/MultiValueLabel';
 import Option from './components/Option';
@@ -11,7 +11,7 @@ export type CreateSelectProps<T> = Props<T> & {
   enableAnimation?: boolean;
   components?: any;
   multiple?: boolean;
-} & FieldBaseProps<unknown> & {
+} & FieldBaseProps<string | string[]> & {
     /* This prop affects the height of the select control. Compact is gridSize() * 4, default is gridSize * 5  */
     spacing?: 'compact' | 'default';
     /* The state of validation if used in a form */
@@ -19,7 +19,7 @@ export type CreateSelectProps<T> = Props<T> & {
   };
 
 const createSelect = <TOriginalProps extends { id: string; name: string }>(
-  Component: React.ComponentType<TOriginalProps>,
+  Component: React.ComponentType<TOriginalProps> = ReactSelect,
 ) => {
   type ResultProps = TOriginalProps & CreateSelectProps<TOriginalProps>;
 

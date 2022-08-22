@@ -2,6 +2,7 @@ import AsyncCreatableSelect from './AsyncCreatableSelect';
 import AsyncSelect from './AsyncSelect';
 import CreatableSelect from './CreatableSelect';
 import Select from './Select';
+import SelectStateless from './SelectStateless';
 
 export { components, createFilter, mergeStyles } from 'react-select';
 export { default as useAsync } from 'react-select/async';
@@ -13,6 +14,12 @@ export { allCountries } from './data/countries';
 export { default as PopupSelect } from './PopupSelect';
 export { default as RadioSelect } from './RadioSelect';
 export { default as TimeZoneSelect } from './TimeZoneSelect';
-export { AsyncSelect, CreatableSelect, Select, AsyncCreatableSelect };
+export {
+  AsyncSelect,
+  CreatableSelect,
+  Select,
+  AsyncCreatableSelect,
+  SelectStateless,
+};
 
 export default Select;

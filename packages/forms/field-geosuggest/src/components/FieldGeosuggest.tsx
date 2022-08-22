@@ -60,8 +60,6 @@ export default function FieldGeosuggest({
     null,
   );
 
-  // useImperativeHandle(forwardedRef, () => element.current);
-
   const requestOptions: RequestOptions = {
     types: geocoderType || ['geocode', 'establishment'],
     ...(bounds ? { bounds } : {}),

@@ -1,16 +1,9 @@
 import { FieldBaseProps } from '@uidu/field-base';
+import { AllHTMLAttributes } from 'react';
 
-export type FieldRangeStatelessProps = {
-  id?: string;
-  value?: number;
-  min?: number;
-  max?: number;
-  step?: number;
-  onChange?: (e: React.ChangeEvent) => void;
-  disabled?: boolean;
+export type FieldRangeStatelessProps = AllHTMLAttributes<HTMLInputElement> & {
   valuePercent?: number;
-  forwardedRef?: React.RefObject<any>;
 };
 
-export type FieldRangeProps = {} & FieldBaseProps &
-  Omit<FieldRangeStatelessProps, 'onChange'>;
+export type FieldRangeProps = {} & FieldBaseProps<string | number> &
+  FieldRangeStatelessProps;

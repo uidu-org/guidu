@@ -26,12 +26,12 @@ Hook form migration
   - [-] examples
   - [-] refs
   - [-] errors
-- [ ] field-base
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
+- [V] field-base
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
 - [V] field-color-picker
   - [V] types
   - [V] dependencies
@@ -50,12 +50,12 @@ Hook form migration
   - [V] examples
   - [V] refs
   - [V] errors
-- [ ] field-date-range - @deprecated
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
+- [-] field-date-range - @deprecated
+  - [-] types
+  - [-] dependencies
+  - [-] examples
+  - [-] refs
+  - [-] errors
 - [ ] field-downshift
   - [ ] types
   - [ ] dependencies
@@ -80,66 +80,66 @@ Hook form migration
   - [ ] examples
   - [ ] refs
   - [ ] errors
-- [ ] field-mentions - @deprecated (editor-core/mini)
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
-- [ ] field-month - @deprecated
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
-- [ ] field-number
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
-- [ ] field-password
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
-- [ ] field-phone
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
+- [-] field-mentions - @deprecated (editor-core/mini)
+  - [-] types
+  - [-] dependencies
+  - [-] examples
+  - [-] refs
+  - [-] errors
+- [-] field-month - @deprecated
+  - [-] types
+  - [-] dependencies
+  - [-] examples
+  - [-] refs
+  - [-] errors
+- [V] field-number
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-password
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [ ] field-phone - TODO: Add country select
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
 - [ ] field-range
-  - [ ] types
+  - [V] types
   - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
+  - [V] examples
+  - [V] refs
   - [ ] errors
-- [ ] field-text
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
-- [ ] field-textarea
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
-- [ ] field-time
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
-- [ ] field-toggle
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
+- [V] field-text
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-textarea
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-time
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-toggle
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
 - [ ] form
   - [ ] types
   - [ ] dependencies

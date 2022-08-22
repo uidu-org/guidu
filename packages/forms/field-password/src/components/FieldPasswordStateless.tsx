@@ -1,31 +1,16 @@
+import { FieldBaseStatelessProps } from '@uidu/field-base';
 import { FieldTextStateless } from '@uidu/field-text';
-import React, {
-  forwardRef,
-  RefObject,
-  useImperativeHandle,
-  useRef,
-} from 'react';
+import React, { forwardRef } from 'react';
 import { FieldPasswordStatelessProps } from '../types';
 
-function FieldPassword({
-  isPasswordVisible = false,
-  forwardedRef,
-  ...rest
-}: FieldPasswordStatelessProps) {
-  const element: RefObject<HTMLInputElement> = useRef();
-
-  useImperativeHandle(forwardedRef, () => element.current);
-
+const FieldPasswordStateless = forwardRef<
+  HTMLInputElement,
+  FieldPasswordStatelessProps & FieldBaseStatelessProps
+>(({ isPasswordVisible = false, ...rest }, ref) => {
   if (isPasswordVisible) {
-    return <FieldTextStateless {...rest} type="text" ref={element} />;
+    return <FieldTextStateless {...rest} type="text" ref={ref} />;
   }
-  return <FieldTextStateless {...rest} type="password" ref={element} />;
-}
-
-const FieldPasswordStateless = forwardRef(
-  (props: FieldPasswordStatelessProps, ref) => (
-    <FieldPassword {...props} forwardedRef={ref} />
-  ),
-);
+  return <FieldTextStateless {...rest} type="password" ref={ref} />;
+});
 
 export default FieldPasswordStateless;

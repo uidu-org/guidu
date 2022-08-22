@@ -229,7 +229,7 @@ function Playground({
           label="Mentions"
           items={[{ trigger: '@', data: [] }]}
         />
-        <FieldPhone name="month" label="Phone number" />
+        <FieldPhone name="phone" label="Phone number" country="US" />
         <FieldTime
           name="time"
           label="Time"

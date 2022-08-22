@@ -1,7 +1,8 @@
-import {
+import ReactSelect, {
   ActionMeta,
   ControlProps,
   FormatOptionLabelMeta,
+  GroupBase,
   GroupProps,
   GroupType,
   IndicatorComponentType,
@@ -13,6 +14,7 @@ import {
   OptionProps as ReactSelectOptionProps,
   OptionsType as RSOptionsType,
   PlaceholderProps,
+  Props,
   Props as ReactSelectProps,
   SelectComponentsConfig,
   SingleValueProps,
@@ -21,6 +23,17 @@ import {
   ValueType,
 } from 'react-select';
 import { AsyncProps as ReactAsyncSelectProps } from 'react-select/async';
+
+export type SelectStatelessProps<
+  TOption,
+  IsMulti extends boolean = boolean,
+  Group extends GroupBase<TOption> = GroupBase<TOption>,
+> = Props<TOption, IsMulti, Group> & {
+  isCompact?: boolean;
+  multiple?: boolean;
+  disabled?: boolean;
+  Component?: typeof ReactSelect;
+};
 
 export type ValidationState = 'default' | 'error' | 'success';
 

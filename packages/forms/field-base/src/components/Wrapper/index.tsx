@@ -1,12 +1,10 @@
-import { ExclamationCircleIcon } from '@heroicons/react/solid';
 import { useFormContext } from '@uidu/form';
 import React from 'react';
 import { ControllerFieldState } from 'react-hook-form';
-import { StyledAddon } from '../../styled';
 import FloatLabel from '../../styled/FloatLabel';
+import DefaultErrorIcon from '../ErrorIcon';
 import ErrorMessages from '../ErrorMessages';
 import Help from '../Help';
-import Icon from '../Icon';
 import InputGroup from '../InputGroup';
 import RequiredSymbol from '../RequiredSymbol';
 import Row from '../Row';
@@ -26,6 +24,7 @@ export default function Wrapper<T>({
   label,
   overrides,
   fieldState,
+  errorIcon: ErrorIcon = DefaultErrorIcon,
 }: WrapperProps & {
   fieldState?: ControllerFieldState;
 }) {
@@ -42,11 +41,7 @@ export default function Wrapper<T>({
     <InputGroup
       addonsAfter={[
         ...(fieldState?.error
-          ? [
-              <StyledAddon key={fieldState.error.type}>
-                <ExclamationCircleIcon tw="h-5 text-red-500 px-4" />
-              </StyledAddon>,
-            ].concat(addonsAfter || [])
+          ? [<ErrorIcon fieldState={fieldState} />].concat(addonsAfter || [])
           : addonsAfter || []),
       ]}
       addonsBefore={addonsBefore}
@@ -58,7 +53,7 @@ export default function Wrapper<T>({
   if (floatLabel) {
     return (
       <Row<T>
-        label={() => null} // so that shouldRenderLabel return false in Row.js
+        label={null} // so that shouldRenderLabel return false in Row.js
         required={false} // so that shouldRenderLabel return false in Row.js
         htmlFor={id}
         layout={layout}
@@ -94,9 +89,6 @@ export default function Wrapper<T>({
       {input}
       {fieldState.error && <ErrorMessages messages={[fieldState.error]} />}
       {help ? <Help id={id} help={help} /> : null}
-      {fieldState.error && (
-        <Icon symbol="remove" className="form-control-feedback" />
-      )}
     </Row>
   );
 }

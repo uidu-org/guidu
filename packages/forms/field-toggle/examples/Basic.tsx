@@ -1,9 +1,7 @@
 import React from 'react';
-import FieldPhone from '../src';
 import { FieldExampleScaffold } from '../../field-base/examples-utils';
+import FieldToggle from '../src';
 
 export default function Basic() {
-  return (
-    <FieldExampleScaffold component={FieldPhone} defaultValue="+393803306560" />
-  );
+  return <FieldExampleScaffold component={FieldToggle} defaultValue={true} />;
 }

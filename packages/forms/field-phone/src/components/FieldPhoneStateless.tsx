@@ -1,35 +1,25 @@
+import { FieldBaseStatelessProps } from '@uidu/field-base';
 import { FieldTextStateless } from '@uidu/field-text';
 import React, { forwardRef } from 'react';
 import Input from 'react-phone-number-input/input';
 import { FieldPhoneStatelessProps } from '../types';
 
-function FieldPhone({
-  className,
-  value,
-  forwardedRef,
-  country = 'IT',
-  onChange,
-  ...rest
-}: FieldPhoneStatelessProps) {
-  return (
-    <FieldTextStateless
-      as={Input}
-      options={{
-        ref: forwardedRef,
-        defaultCountry: country,
-        value,
-        onChange,
-        className,
-      }}
-      {...rest}
-    />
-  );
-}
-
-const FieldPhoneStateless = forwardRef(
-  (props: FieldPhoneStatelessProps, ref: any) => (
-    <FieldPhone {...props} forwardedRef={ref} />
-  ),
-);
+const FieldPhoneStateless = forwardRef<
+  HTMLInputElement,
+  FieldPhoneStatelessProps & FieldBaseStatelessProps
+>(({ className, value, country = 'IT', onChange, ...rest }, ref) => (
+  <FieldTextStateless
+    as={Input}
+    options={{
+      ref,
+      country,
+      defaultCountry: country,
+      value,
+      onChange,
+      className,
+    }}
+    {...rest}
+  />
+));
 
 export default FieldPhoneStateless;

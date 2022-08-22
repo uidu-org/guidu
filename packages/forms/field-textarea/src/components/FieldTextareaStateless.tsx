@@ -1,72 +1,70 @@
-import { StyledInput } from '@uidu/field-base';
+import { FieldBaseStatelessProps, StyledInput } from '@uidu/field-base';
 import autosize from 'autosize';
-import React, {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-} from 'react';
+import React, { forwardRef, useEffect, useRef } from 'react';
 import { FieldTextareaStatelessProps } from '../types';
 
-function FieldTextarea({
-  id,
-  className,
-  autoSize = true,
-  rows = 4,
-  cols = 0,
-  value,
-  placeholder,
-  onFocus,
-  onBlur,
-  onChange,
-  onKeyDown,
-  onKeyUp,
-  disabled,
-  required,
-  forwardedRef,
-  fieldState,
-  ...rest
-}: FieldTextareaStatelessProps) {
-  const element = useRef(null);
+const FieldTextareaStateless = forwardRef<
+  HTMLTextAreaElement,
+  FieldTextareaStatelessProps & FieldBaseStatelessProps
+>(
+  (
+    {
+      id,
+      className,
+      autoSize = true,
+      rows = 4,
+      cols = 0,
+      value,
+      placeholder,
+      onFocus,
+      onBlur,
+      onChange,
+      onKeyDown,
+      onKeyUp,
+      disabled,
+      required,
+      forwardedRef,
+      fieldState,
+      ...rest
+    },
+    ref,
+  ) => {
+    const element = useRef<HTMLTextAreaElement>(null);
 
-  useImperativeHandle(forwardedRef, () => element.current);
+    useEffect(() => {
+      if (autoSize) {
+        autosize(element.current);
+      }
+      return () => {
+        autosize.destroy(element.current);
+      };
+    }, [autoSize]);
 
-  useEffect(() => {
-    if (autoSize) {
-      autosize(element.current);
-    }
-    return () => {
-      autosize.destroy(element.current);
-    };
-  }, [autoSize]);
-
-  return (
-    <StyledInput
-      as="textarea"
-      id={id}
-      hasError={!!fieldState?.error}
-      className={className}
-      rows={rows}
-      cols={cols}
-      ref={element}
-      placeholder={placeholder}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      onChange={onChange}
-      onKeyDown={onKeyDown}
-      onKeyUp={onKeyUp}
-      defaultValue={value}
-      disabled={disabled}
-      required={required}
-      {...rest}
-    />
-  );
-}
-
-const FieldTextareaStateless = forwardRef(
-  (props: FieldTextareaStatelessProps, ref) => (
-    <FieldTextarea {...props} forwardedRef={ref} />
-  ),
+    return (
+      <StyledInput
+        as="textarea"
+        id={id}
+        hasError={!!fieldState?.error}
+        className={className}
+        rows={rows}
+        cols={cols}
+        ref={(e) => {
+          ref(e);
+          element.current = e;
+        }}
+        placeholder={placeholder}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
+        onKeyUp={onKeyUp}
+        value={value}
+        disabled={disabled}
+        required={required}
+        {...rest}
+      />
+    );
+  },
 );
 
 export default FieldTextareaStateless;

@@ -13,9 +13,9 @@ export default md`
   ${(
     <Example
       packageName="@uidu/field-toggle"
-      Component={require('../examples/0-stateful').default}
+      Component={require('../examples/Basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/0-stateful').default}
+      source={require('!!raw-loader!../examples/Basic').default}
     />
   )}
 

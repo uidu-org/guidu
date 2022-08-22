@@ -1,4 +1,3 @@
-import Formsy from 'formsy-react';
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FormProps, LayoutType } from '../types';
@@ -76,27 +75,5 @@ export default function Form<T>({
         )}
       </form>
     </FormContextProvider>
-  );
-
-  return (
-    <FormContext.Provider value={contextProps}>
-      <Formsy
-        {...rest}
-        ref={form}
-        onValidSubmit={onValidSubmit}
-        onValid={enableButton}
-        onInvalid={disableButton}
-        disabled={disabled}
-        className={className as string}
-        // noValidate
-      >
-        <Loading isLoading={isLoading || false}>{children}</Loading>
-        {footerRenderer(
-          { loading: isLoading, canSubmit },
-          form.current,
-          onValidSubmit,
-        )}
-      </Formsy>
-    </FormContext.Provider>
   );
 }

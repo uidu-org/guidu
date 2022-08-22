@@ -7,13 +7,13 @@ import FieldTextStateless from './FieldTextStateless';
 export default function FieldText({
   name,
   onChange = () => {},
-  value: defaultValue,
+  value: defaultValue = '',
   rules,
   ...rest
-}: FieldTextProps<string>) {
+}: FieldTextProps) {
   const { field, inputProps, wrapperProps } = useController({
     name,
-    defaultValue: defaultValue || '',
+    defaultValue,
     onChange,
     rules,
     ...rest,

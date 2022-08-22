@@ -1,29 +1,24 @@
-import { useController, Wrapper } from '@uidu/field-base';
-import React, { ChangeEvent } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FieldTimeProps } from '../types';
-import FieldTimeStateless from './FieldTimeStateless';
+import FieldTimeNative from './FieldTimeNative';
+import FieldTimeSelect from './FieldTimeSelect';
 
-export default function FieldTime({
-  onChange = () => {},
-  name,
-  value: defaultValue,
-  ...rest
-}: FieldTimeProps) {
-  const { field, wrapperProps, inputProps } = useController({
-    name,
-    defaultValue,
-    onChange,
-    ...rest,
-  });
+export default function FieldTime({ asSelect, ...rest }: FieldTimeProps) {
+  const [isFallback, setIsFallback] = useState(false);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    field.onChange(e.target.value);
-    onChange(name, e.target.value);
-  };
+  useEffect(() => {
+    const test = document.createElement('input');
 
-  return (
-    <Wrapper {...wrapperProps}>
-      <FieldTimeStateless {...rest} {...inputProps} onChange={handleChange} />
-    </Wrapper>
-  );
+    try {
+      test.type = 'time';
+    } catch (e) {
+      setIsFallback(true);
+    }
+  }, []);
+
+  if (asSelect || isFallback) {
+    return <FieldTimeSelect {...rest} />;
+  }
+
+  return <FieldTimeNative {...rest} />;
 }

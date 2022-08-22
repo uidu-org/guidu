@@ -1,15 +1,12 @@
-import { FieldBaseProps, FieldBaseStatelessProps } from '@uidu/field-base';
-import { HTMLAttributes } from 'react';
+import { FieldBaseProps } from '@uidu/field-base';
+import { AllHTMLAttributes } from 'react';
 
-export type FieldTextareaStatelessProps = FieldBaseStatelessProps &
-  HTMLAttributes<HTMLTextAreaElement> & {
+export type FieldTextareaStatelessProps =
+  AllHTMLAttributes<HTMLTextAreaElement> & {
     autoSize?: boolean;
     rows?: number;
     cols?: number;
   };
 
-export type FieldTextareaProps = {} & Omit<
-  FieldTextareaStatelessProps,
-  'onChange'
-> &
-  FieldBaseProps;
+export type FieldTextareaProps = FieldBaseProps<string> &
+  Omit<FieldTextareaStatelessProps, 'onChange'>;
