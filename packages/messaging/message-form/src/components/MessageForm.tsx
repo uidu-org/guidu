@@ -29,7 +29,7 @@ function MessageSender({
   if (handleThumb) {
     return (
       <button
-        className="btn-sm btn-teams ml-2 d-flex align-items-center"
+        className="ml-2 btn-sm btn-teams d-flex align-items-center"
         type="button"
         onClick={handleThumb}
       >
@@ -40,7 +40,7 @@ function MessageSender({
 
   return (
     <FormSubmit
-      className="btn-sm btn-teams ml-2 d-flex align-items-center"
+      className="ml-2 btn-sm btn-teams d-flex align-items-center"
       label={label || <Send className="d-flex" size={18} />}
       loading={loading}
       canSubmit={canSubmit}
@@ -158,9 +158,6 @@ function MessagesForm({
           className={classNames('', {
             'd-flex': !message.body,
           })}
-          inputsWrapperProps={{
-            className: 'd-flex flex-grow-1',
-          }}
           footerRenderer={({
             loading,
             canSubmit,
@@ -196,7 +193,7 @@ function MessagesForm({
             return (
               <div className="d-flex align-items-center align-self-center">
                 <button
-                  className="btn btn-sm d-none d-md-flex align-items-center mb-0 text-muted px-2 shadow-none"
+                  className="px-2 mb-0 shadow-none btn btn-sm d-none d-md-flex align-items-center text-muted"
                   type="button"
                   onClick={() => {
                     setEmojiPicker(!emojiPicker);

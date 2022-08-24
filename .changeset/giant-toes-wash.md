@@ -1,0 +1,62 @@
+---
+'@uidu/checkbox': major
+'@uidu/field-base': major
+'@uidu/field-color-picker': major
+'@uidu/field-counter': major
+'@uidu/field-date': major
+'@uidu/field-date-range': major
+'@uidu/field-downshift': major
+'@uidu/field-file-uploader': major
+'@uidu/field-geosuggest': major
+'@uidu/field-image-uploader': major
+'@uidu/field-mentions': major
+'@uidu/field-month': major
+'@uidu/field-number': major
+'@uidu/field-password': major
+'@uidu/field-phone': major
+'@uidu/field-range': major
+'@uidu/field-text': major
+'@uidu/field-textarea': major
+'@uidu/field-time': major
+'@uidu/field-toggle': major
+'@uidu/form': major
+'@uidu/radio': major
+'@uidu/select': major
+'@uidu/menu': minor
+'@uidu/dashboard-controls': minor
+'@uidu/dashlet-controls': minor
+'@uidu/dashlets': minor
+'@uidu/data-controls': minor
+'@uidu/data-fields': minor
+'@uidu/data-manager': minor
+'@uidu/data-views': minor
+'@uidu/table': minor
+'@uidu/payments': minor
+'@uidu/stripe-accounts': minor
+'@uidu/media-card': minor
+'@uidu/media-core': minor
+'@uidu/media-picker': minor
+'@uidu/media-viewer': minor
+'@uidu/webpack-config': patch
+'@uidu/devise': patch
+'eslint-config-uidu': patch
+'@uidu/section-message': patch
+'@uidu/editor-common': patch
+'@uidu/editor-core': patch
+'@uidu/renderer': patch
+'@uidu/date': patch
+'@uidu/elements-test-helpers': patch
+'@uidu/emoji': patch
+'@uidu/mentions': patch
+'@uidu/profilecard': patch
+'@uidu/status': patch
+'@uidu/task-decision': patch
+'@uidu/util-data-test': patch
+'@uidu/message': patch
+'@uidu/message-form': patch
+'@uidu/shell': patch
+'@uidu/guidu-website': patch
+---
+
+Revamped Form components, abandoned formsy to react-hook-form, and new components. Forms API now has changed significantly.
+One should initiate react-hook-form outside <Form> and pass it as prop. This allows for greater control of both types and validation schemas, as well as more flexibility in external state management.

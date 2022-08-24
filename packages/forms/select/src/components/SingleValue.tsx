@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
+function SingleValue({ innerProps, data, getStyles, ...otherProps }) {
   return (
     <div
       {...innerProps}
@@ -18,6 +18,6 @@ const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
       </div>
     </div>
   );
-};
+}
 
 export default SingleValue;

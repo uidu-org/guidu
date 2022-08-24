@@ -1,16 +1,11 @@
+import { SliderProps } from '@radix-ui/react-slider';
 import { FieldBaseProps } from '@uidu/field-base';
+import { AllHTMLAttributes } from 'react';
 
-export type FieldRangeStatelessProps = {
-  id?: string;
-  value?: number;
-  min?: number;
-  max?: number;
-  step?: number;
-  onChange?: (e: React.ChangeEvent) => void;
-  disabled?: boolean;
-  valuePercent?: number;
-  forwardedRef?: React.RefObject<any>;
-};
+export type FieldRangeStatelessProps = AllHTMLAttributes<HTMLInputElement> &
+  SliderProps & {
+    valuePercent?: number;
+  };
 
-export type FieldRangeProps = {} & FieldBaseProps &
-  Omit<FieldRangeStatelessProps, 'onChange'>;
+export type FieldRangeProps = FieldBaseProps<number[]> &
+  FieldRangeStatelessProps;

@@ -1,28 +1,35 @@
-import { Wrapper } from '@uidu/field-base';
+import { useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { FieldDateRangeProps } from '../types';
 import InputControl from './FieldDateRangeStateless';
 
-function FieldDateRange({
+export default function FieldDateRange({
   formatSubmit = 'YYYY-MM-DD',
-  onSetValue,
-  onChange,
+  onChange = () => {},
+  name,
+  value: defaultValue,
   ...rest
 }: FieldDateRangeProps) {
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
   const handleChange = (value: any) => {
-    onSetValue(value);
+    field.onChange(value);
     onChange(name, value);
   };
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...wrapperProps}>
       <InputControl
         {...rest}
+        {...inputProps}
         onChange={handleChange}
         // ref={this.element}
       />
     </Wrapper>
   );
 }
-
-export default FieldDateRange;

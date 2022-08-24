@@ -1,4 +1,4 @@
-type Country = {
+export type Country = {
   id: string;
   code: string;
   before: string;
@@ -20,6 +20,7 @@ export const allCountries: Array<Country> = [
   { before: '🇦🇷', name: 'Argentina', id: 'AR', code: '54' },
   { before: '🇦🇲', name: 'Armenia', id: 'AM', code: '374' },
   { before: '🇦🇼', name: 'Aruba', id: 'AW', code: '297' },
+  { before: '🇦🇨', name: 'Ascension Island', id: 'AC', code: '247' },
   { before: '🇦🇺', name: 'Australia', id: 'AU', code: '61', suggested: true },
   { before: '🇦🇹', name: 'Austria', id: 'AT', code: '43' },
   { before: '🇦🇿', name: 'Azerbaijan', id: 'AZ', code: '994' },
@@ -338,6 +339,12 @@ export const allCountries: Array<Country> = [
   { before: '🇿🇼', name: 'Zimbabwe', id: 'ZW', code: '263' },
 ];
 
+export const allCountriesByCountryCode: Record<string, Country> =
+  allCountries.reduce((acc, item) => {
+    acc[item.id] = item;
+    return acc;
+  }, {});
+
 // separate countries into groups
 export const groupedCountries: Array<{
   label: string;
@@ -345,10 +352,10 @@ export const groupedCountries: Array<{
 }> = [
   {
     label: 'Suggested',
-    options: allCountries.filter(c => c.suggested),
+    options: allCountries.filter((c) => c.suggested),
   },
   {
     label: 'All Countries',
-    options: allCountries.filter(c => !c.suggested),
+    options: allCountries.filter((c) => !c.suggested),
   },
 ];

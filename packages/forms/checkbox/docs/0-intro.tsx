@@ -43,11 +43,9 @@ ${(
   />
 )}
 
+${(
+  <Props
+    props={require('!!extract-react-types-loader!../src/components/CheckboxGroup')}
+  />
+)}
 `;
-
-// #### CheckboxGroup Props
-// ${(
-//   <Props
-//     props={require('!!extract-react-types-loader!../src/components/CheckboxGroup')}
-//   />
-// )}

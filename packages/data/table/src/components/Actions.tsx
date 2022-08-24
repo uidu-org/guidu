@@ -1,4 +1,4 @@
-import { DotsHorizontalIcon } from '@heroicons/react/solid';
+import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
 import { CellContext, Row } from '@tanstack/react-table';
 import Button from '@uidu/button';
 import { RowActions } from '@uidu/data-manager';
@@ -32,7 +32,7 @@ export default function Actions<T>({
         type="button"
         tw="cursor-pointer"
       >
-        <DotsHorizontalIcon tw="h-4 w-4" />
+        <EllipsisHorizontalIcon tw="h-4 w-4" />
       </Button>
     ),
     [],

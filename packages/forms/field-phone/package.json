@@ -9,16 +9,18 @@
   "types": "dist/uidu-field-phone.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@uidu/analytics": "^0.6.5",
     "@uidu/field-base": "^3.1.26",
     "@uidu/field-text": "^1.2.5",
-    "formsy-react": "^2.2.7",
+    "@uidu/select": "workspace:^",
     "react": "^18.2.0",
-    "react-phone-number-input": "^3.2.7",
+    "react-phone-number-input": "^3.2.9",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.18",
     "@uidu/form": "^1.2.27"
+  },
+  "peerDependencies": {
+    "twin.macro": "*"
   }
 }

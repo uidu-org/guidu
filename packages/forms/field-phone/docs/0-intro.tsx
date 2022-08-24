@@ -19,18 +19,9 @@ export default md`
   )}
 
   ${(
-    <Example
-      packageName="@uidu/field-phone"
-      Component={require('../examples/Scaffold').default}
-      title="Scaffold"
-      source={require('!!raw-loader!../examples/Scaffold').default}
-    />
-  )}
-
-  ${(
     <Props
       heading="FieldPhone Props"
-      props={require('!!extract-react-types-loader!../src/components/FieldPhoneStateless')}
+      props={require('!!extract-react-types-loader!../src/components/FieldPhone')}
     />
   )}
   `;

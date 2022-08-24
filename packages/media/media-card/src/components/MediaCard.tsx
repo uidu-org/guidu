@@ -1,12 +1,9 @@
-import { initializeFileTypeIcons } from '@uifabric/file-type-icons';
 import React from 'react';
 import { MediaCardProps } from '../types';
 import File from './File';
 import Image from './Image';
 import MediaCardViewer from './MediaCardViewer';
 import Video from './Video';
-
-initializeFileTypeIcons();
 
 const NotFound = () => <p>File not found</p>;
 

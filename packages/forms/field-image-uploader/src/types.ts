@@ -1,5 +1,6 @@
 import { FieldBaseProps } from '@uidu/field-base';
-import { MediaUploadOptions } from '@uidu/media-core';
+import { FileIdentifier, MediaUploadOptions } from '@uidu/media-core';
+import { UppyOptions } from '@uppy/core';
 import { FC } from 'react';
 import { ContainerProps } from './components/Container';
 import { EmptyProps } from './components/Empty';
@@ -8,8 +9,11 @@ import { ProgressProps } from './components/Progress';
 import { PromptProps } from './components/Prompt';
 import { ToolbarProps } from './components/Toolbar';
 
-export type FieldImageUploaderProps = FieldBaseProps & {
+export type FieldImageUploaderProps = FieldBaseProps<
+  FileIdentifier | string
+> & {
   uploadOptions: MediaUploadOptions;
+  options?: Partial<UppyOptions>;
   toolbar?: FC<ToolbarProps>;
   existing?: FC<ExistingProps>;
   empty?: FC<EmptyProps>;

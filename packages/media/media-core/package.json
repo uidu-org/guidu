@@ -10,10 +10,11 @@
   "types": "dist/uidu-media-core.cjs.d.ts",
   "dependencies": {
     "@uidu/docs": "^0.5.17",
-    "@uppy/aws-s3": "^2.2.1",
-    "@uppy/core": "^2.3.2",
-    "@uppy/dashboard": "^2.4.1",
-    "@uppy/xhr-upload": "^2.1.2",
+    "@uppy/aws-s3": "^3.0.0",
+    "@uppy/core": "^3.0.0",
+    "@uppy/dashboard": "^3.0.0",
+    "@uppy/xhr-upload": "^3.0.0",
+    "react-dropzone": "^14.2.2",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

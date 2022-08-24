@@ -18,14 +18,6 @@ export default md`
     />
   )}
 
-  ${(
-    <Example
-      packageName="@uidu/field-date"
-      Component={require('../examples/Scaffold').default}
-      title="Basic"
-      source={require('!!raw-loader!../examples/Scaffold').default}
-    />
-  )}
 
   ${(
     <Props

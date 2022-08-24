@@ -14,7 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@mdx-js/loader": "^2.1.2",
+    "@mdx-js/loader": "^2.1.3",
     "@uidu/changelog-loader": "^0.1.33",
     "@uidu/fs-loader": "^0.1.51",
     "@uidu/nav-info-loader": "^0.2.5",
@@ -34,16 +34,16 @@
     "minimatch": "^5.1.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^7.0.1",
-    "postcss-preset-env": "^7.7.2",
+    "postcss-preset-env": "^7.8.0",
     "postcss-safe-parser": "^6.0.0",
     "raw-loader": "^4.0.2",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
     "svg-url-loader": "^7.1.1",
-    "terser-webpack-plugin": "^5.3.4",
+    "terser-webpack-plugin": "^5.3.5",
     "url-loader": "^4.1.1",
     "webpack": "^5.74.0",
-    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-bundle-analyzer": "^4.6.1",
     "webpack-dev-server": "^4.10.0",
     "webpack-manifest-plugin": "^5.0.0"
   },

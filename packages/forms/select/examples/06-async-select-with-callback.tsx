@@ -1,7 +1,8 @@
-import { Form } from '@uidu/form';
 import React from 'react';
-import { inputDefaultProps } from '../../field-base/examples-utils';
-import { formDefaultProps } from '../../form/examples-utils';
+import {
+  FieldExampleScaffold,
+  inputDefaultProps,
+} from '../../field-base/examples-utils';
 import { AsyncSelect } from '../src';
 import { cities } from './common/data';
 
@@ -16,19 +17,17 @@ const loadOptions = (inputValue, callback) => {
   }, 1000);
 };
 
-const AsyncExample = () => (
-  <Form {...formDefaultProps}>
-    <AsyncSelect
+function AsyncExample() {
+  return (
+    <FieldExampleScaffold
+      component={AsyncSelect}
       {...inputDefaultProps}
-      className="async-select-with-callback"
-      classNamePrefix="react-select"
-      // defaultOptions
       loadOptions={loadOptions}
       options={cities}
       value={cities[0].id}
       placeholder="Choose a City"
     />
-  </Form>
-);
+  );
+}
 
 export default AsyncExample;

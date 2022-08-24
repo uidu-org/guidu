@@ -1,32 +1,32 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import { useController, Wrapper } from '@uidu/field-base';
+import React, { ChangeEvent } from 'react';
 import { FieldTextProps } from '../types';
 import FieldTextStateless from './FieldTextStateless';
 
-function FieldText({
-  onChange,
-  onSetValue,
+export default function FieldText({
   name,
-  forwardedRef,
+  onChange = () => {},
+  value: defaultValue = '',
+  rules,
   ...rest
 }: FieldTextProps) {
-  const handleChange = (event) => {
-    const { value } = event.currentTarget;
-    onChange(name, value);
-    onSetValue(value);
+  const { field, inputProps, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    rules,
+    ...rest,
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    field.onChange(e.currentTarget.value);
+    onChange(name, e.currentTarget.value);
   };
 
   return (
-    <Wrapper {...rest}>
-      <FieldTextStateless
-        {...rest}
-        onChange={handleChange}
-        ref={forwardedRef}
-      />
+    <Wrapper {...wrapperProps}>
+      <FieldTextStateless {...rest} {...inputProps} onChange={handleChange} />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldTextProps, ref) => (
-  <FieldText {...props} forwardedRef={ref} />
-));

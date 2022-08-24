@@ -1,5 +1,6 @@
+import { FieldBaseStatelessProps } from '@uidu/field-base';
 import React, { forwardRef, useMemo } from 'react';
-import { Input } from '../styled';
+import { StyledRange, StyledSlider, StyledThumb, StyledTrack } from '../styled';
 import { FieldRangeStatelessProps } from '../types';
 
 const getPercentValue = (value: number, min: number, max: number): string => {
@@ -10,41 +11,47 @@ const getPercentValue = (value: number, min: number, max: number): string => {
   return percent;
 };
 
-function FieldRangeStateless({
-  id,
-  value,
-  min = 0,
-  max = 100,
-  step = 1,
-  disabled = false,
-  onChange,
-  forwardedRef,
-}: FieldRangeStatelessProps) {
-  const valuePercent = useMemo(
-    () => getPercentValue(value, min, max),
-    [value, min, max],
-  );
+const FieldRangeStateless = forwardRef<
+  HTMLInputElement,
+  FieldRangeStatelessProps & FieldBaseStatelessProps
+>(
+  (
+    {
+      id,
+      value,
+      min = 0,
+      max = 100,
+      step = 1,
+      disabled = false,
+      onChange,
+      fieldState,
+      ...rest
+    },
+    ref,
+  ) => {
+    const valuePercent = useMemo(
+      () => getPercentValue(value, min, max),
+      [value, min, max],
+    );
 
-  const handleChange = (e) => {
-    onChange(e.target.value);
-  };
+    return (
+      <StyledSlider
+        name={rest.name}
+        defaultValue={[value]}
+        aria-label={rest.name}
+        onValueChange={onChange}
+        min={min}
+        max={max}
+        step={step}
+        disabled={disabled}
+      >
+        <StyledTrack $hasError={!!fieldState?.error}>
+          <StyledRange />
+        </StyledTrack>
+        <StyledThumb ref={ref} id={id} onBlur={rest.onBlur} />
+      </StyledSlider>
+    );
+  },
+);
 
-  return (
-    <Input
-      id={id}
-      ref={forwardedRef}
-      type="range"
-      value={value}
-      min={min}
-      max={max}
-      step={step}
-      onChange={handleChange}
-      disabled={disabled}
-      valuePercent={valuePercent}
-    />
-  );
-}
-
-export default forwardRef((props: FieldRangeStatelessProps, ref: any) => (
-  <FieldRangeStateless {...props} forwardedRef={ref} />
-));
+export default FieldRangeStateless;

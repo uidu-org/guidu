@@ -27,7 +27,7 @@ const CustomStyles = createGlobalStyle`
 
 
   html {
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 
   #app {

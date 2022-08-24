@@ -1,8 +1,12 @@
-import { Wrapper } from '@uidu/field-base';
+import { useController, Wrapper } from '@uidu/field-base';
+import { useFormContext } from '@uidu/form';
+import { FileIdentifier } from '@uidu/media-core';
 import Spinner from '@uidu/spinner';
-import Uppy from '@uppy/core';
+import Uppy, { UppyOptions } from '@uppy/core';
+import { useUppy } from '@uppy/react';
 import ThumbnailGenerator from '@uppy/thumbnail-generator';
 import React, {
+  MouseEvent,
   useCallback,
   useEffect,
   useMemo,
@@ -29,57 +33,81 @@ export function debounce(func: Function, timeout?: number) {
   };
 }
 
+const defaultOptions: Partial<UppyOptions> = {
+  autoProceed: true,
+  restrictions: {
+    maxNumberOfFiles: 1,
+    allowedFileTypes: ['.png', '.jpg', '.jpeg'],
+  },
+};
+
 function FieldImageUploaderStateless({
   toolbar: ToolbarComponent = Toolbar,
   existing: ExistingComponent = Existing,
   empty: EmptyComponent = Empty,
   prompt: PromptComponent = Prompt,
   progress: ProgressComponent = Progress,
-  container: ContainerComponent = Container,
+  // container: ContainerComponent = Container,
   label,
   help,
   borderRadius = 0,
   max = 20000000, // 20 MB
-  dropzoneProps = {
-    multiple: false,
-  },
+  // dropzoneProps = {
+  //   multiple: false,
+  // },
   name,
   defaultImageUrl,
-  value,
-  onChange,
-  onSetValue,
+  value: defaultValue,
+  rules,
+  onChange = () => {},
   uploadOptions,
   className,
+  options,
   ...rest
 }: FieldImageUploaderProps) {
-  const canvas: React.RefObject<HTMLDivElement> = useRef(null);
-  const editor: React.RefObject<AvatarEditor> = useRef(null);
-  const defaultValue = useRef(value);
+  const { setError, clearErrors } = useFormContext();
+  const { field, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    rules,
+    ...rest,
+  });
 
-  const handleMouseOut = () => setIsHovered(false);
-  const handleMouseOver = () => setIsHovered(true);
-  const calculateWidth = useCallback(() => canvas.current?.offsetWidth, []);
-  const calculateHeight = useCallback(() => canvas.current?.offsetHeight, []);
-
-  const [controlledValue, setControlledValue] = useState(value);
+  const canvas = useRef<HTMLDivElement>(null);
+  const editor = useRef<AvatarEditor>(null);
 
   const [isLoading, setIsLoading] = useState(false);
   const [scale, setScale] = useState(1);
-  const [crop, setCrop] = useState(null);
+  const [crop, setCrop] = useState<FileIdentifier['metadata']['crop']>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [data, setData] = useState([]);
   const [imageUrl, setImageUrl] = useState(defaultImageUrl);
   const [errors, setErrors] = useState([]);
-  const [progress, setProgress] = useState(null);
+  const [progress, setProgress] = useState(0);
 
-  const uppy = useMemo(() => {
-    return new Uppy({
-      autoProceed: true,
-      restrictions: {
-        maxNumberOfFiles: 1,
-      },
-    })
+  const handleMouseOut = () => setIsHovered(false);
+  const handleMouseOver = () => setIsHovered(true);
+
+  const calculateWidth = useCallback(() => canvas.current?.offsetWidth, []);
+  const calculateHeight = useCallback(() => canvas.current?.offsetHeight, []);
+
+  const [value, setValue] = useState<FileIdentifier>(field.value);
+
+  const mergeOptions: UppyOptions = useMemo(
+    () => ({
+      ...defaultOptions,
+      ...options,
+    }),
+    [options],
+  );
+
+  const uppy = useUppy(() =>
+    new Uppy(mergeOptions)
       .use(uploadOptions.module, uploadOptions.options)
+      .on('file-added', () => {
+        clearErrors(name);
+      })
       .use(ThumbnailGenerator, {
         thumbnailWidth: calculateWidth(),
         thumbnailType: 'image/png',
@@ -92,53 +120,78 @@ function FieldImageUploaderStateless({
         setErrors([]);
       })
       .on('upload', () => setProgress(0))
-      .on('upload-progress', (_file, progress) => {
-        setProgress(progress.bytesUploaded / progress.bytesTotal);
+      .on('upload-progress', (_file, prgrss) => {
+        setProgress(prgrss.bytesUploaded / prgrss.bytesTotal);
       })
 
       .on('complete', (result) => {
         setProgress(null);
-        const response = result.successful.map(
-          uploadOptions.responseHandler,
-        )[0];
-        setControlledValue(response);
-        onSetValue(response);
-        onChange(name, response);
-      });
-  }, [
-    calculateWidth,
-    name,
-    onChange,
-    onSetValue,
-    uploadOptions.module,
-    uploadOptions.responseHandler,
-    uploadOptions.options,
-  ]);
-
-  useEffect(() => {
-    return () => uppy.close();
-  }, [uppy]);
+        if (result.failed.length > 0) {
+          setError(name, { type: 'custom', message: result.failed[0].error });
+        } else {
+          const response = result.successful.map(
+            uploadOptions.responseHandler,
+          )[0];
+          setValue(response);
+          field.onChange(response);
+          onChange(name, response);
+        }
+      })
+      .on('error', (error) => {
+        setError(name, { type: 'custom', message: error.message });
+      })
+      .on('upload-error', (_file, error) => {
+        setError(name, { type: 'custom', message: error.message });
+      })
+      .on('file-removed', () => {
+        field.onChange('');
+        onChange(name, '');
+      })
+      .on('restriction-failed', (_file, error) => {
+        setError(name, { type: 'custom', message: error.message });
+      }),
+  );
 
   useEffect(() => {
     uppy.getPlugin('ThumbnailGenerator').setOptions({
       thumbnailWidth: calculateWidth() * 2, // max scale
     });
-    return () => null;
   }, [uppy, calculateWidth]);
 
   const mergeValueWithMetadata = useCallback(() => {
-    if (controlledValue) {
+    if (value) {
       return {
-        ...controlledValue,
+        ...value,
         metadata: {
-          ...controlledValue.metadata,
+          ...value.metadata,
           crop,
         },
       };
     }
-  }, [crop, controlledValue]);
+    return value;
+  }, [crop, value]);
 
-  const handleDrop = (files) => {
+  const validate = (file: File) => {
+    if (file.size < max) {
+      return {
+        isValid: true,
+      };
+    }
+    return {
+      isValid: false,
+      errors: ['maxFileSize'],
+    };
+  };
+
+  const evaluate = (file: File) => {
+    uppy.addFile({
+      name: file.name,
+      type: file.type,
+      data: file,
+    });
+  };
+
+  const handleDrop = (files: File[]) => {
     setIsLoading(true);
     const validationResults = validate(files[0]);
     if (validationResults.isValid) {
@@ -149,69 +202,46 @@ function FieldImageUploaderStateless({
     }
   };
 
-  const validate = (file) => {
-    const errors = [];
-    if (file.size < max) {
-      return {
-        isValid: true,
-      };
-    } else {
-      errors.push('maxFileSize');
-    }
-    return {
-      isValid: false,
-      errors,
-    };
-  };
-
-  const evaluate = async (file: File) => {
-    uppy.addFile({
-      name: file.name,
-      type: file.type,
-      data: file,
-    });
-  };
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedChange = useCallback(
     debounce((v) => {
       onChange(name, v);
-      onSetValue(v);
+      field.onChange(v);
     }, 300),
-    [name, onSetValue, onChange],
+    [name, field.onChange, onChange],
   );
 
   useEffect(() => {
-    debouncedChange(controlledValue);
-  }, [controlledValue, debouncedChange]);
+    debouncedChange(value);
+  }, [value, debouncedChange]);
 
   const handleScale = (newScale: number) => {
     setScale(newScale);
     setCrop(editor.current?.getCroppingRect());
-    setControlledValue(mergeValueWithMetadata());
+    setValue(mergeValueWithMetadata());
   };
 
   const handlePositionChange = () => {
     setCrop(editor.current?.getCroppingRect());
-    setControlledValue(mergeValueWithMetadata);
+    setValue(mergeValueWithMetadata);
   };
 
-  const dismiss = (e) => {
+  const dismiss = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    uppy.reset();
+    uppy.cancelAll();
     setIsLoading(false);
     setData([]);
     setScale(1);
-    onSetValue(defaultValue.current || null);
-    onChange(name, defaultValue.current || null);
+    field.onChange(defaultValue || null);
+    onChange(name, defaultValue || null);
     setImageUrl(defaultImageUrl);
   };
 
-  const destroy = (e) => {
+  const destroy = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    onSetValue(null);
+    field.onChange(null);
     onChange(name, null);
     setImageUrl(null);
   };
@@ -220,7 +250,7 @@ function FieldImageUploaderStateless({
   let toolbar = null;
 
   if (data.length === 0) {
-    if (value) {
+    if (field.value) {
       toolbar = (
         <ToolbarComponent
           scale={scale}
@@ -234,6 +264,7 @@ function FieldImageUploaderStateless({
           borderRadius={borderRadius}
           onDrop={handleDrop}
           isHovered={isHovered}
+          restrictions={mergeOptions.restrictions}
         />
       );
     } else {
@@ -246,6 +277,7 @@ function FieldImageUploaderStateless({
           help={help}
           prompt={PromptComponent}
           isHovered={isHovered}
+          restrictions={mergeOptions.restrictions}
         />
       );
     }
@@ -274,11 +306,24 @@ function FieldImageUploaderStateless({
   }
 
   return (
-    <Wrapper label={label} {...rest}>
+    <Wrapper
+      label={label}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...wrapperProps}
+      errorIcon={() => null}
+    >
       <div
+        tabIndex={0}
+        role="button"
         tw="relative"
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
+        onFocus={handleMouseOver}
+        ref={field.ref}
+        onBlur={() => {
+          field.onBlur();
+          handleMouseOut();
+        }}
       >
         <Container
           borderRadius={borderRadius}

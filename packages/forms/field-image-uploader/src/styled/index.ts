@@ -7,3 +7,5 @@ export const StyledProgress = styled.div`
   border-radius: 0;
   width: 100%;
 `;
+
+export default StyledProgress;

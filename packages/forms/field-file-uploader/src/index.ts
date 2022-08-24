@@ -1,9 +1,5 @@
-import { ComponentHOC } from '@uidu/field-base';
-import { withFormsy } from 'formsy-react';
-import FieldFileUploaderComponent from './components/FieldFileUploader';
+import FieldFileUploader from './components/FieldFileUploader';
 
-export const FieldFileUploader = withFormsy(
-  ComponentHOC(FieldFileUploaderComponent),
-);
+export * from './types';
 
 export default FieldFileUploader;

@@ -1,37 +1,39 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import { useController, Wrapper } from '@uidu/field-base';
+import React, { ChangeEvent } from 'react';
 import { CheckboxProps } from '../types';
-import InputControl from './CheckboxStateless';
+import CheckboxStateless from './CheckboxStateless';
 
-function Checkbox({
+export default function Checkbox({
   isIndeterminate = false,
-  onSetValue,
-  onChange,
+  onChange = () => {},
   name,
-  value,
-  forwardedRef,
+  value: defaultValue,
   ...rest
-}: CheckboxProps & { forwardedRef: any }) {
-  const handleChange = e => {
+}: CheckboxProps) {
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.currentTarget.checked;
-    onSetValue(value);
+    field.onChange(value);
     onChange(name, value);
   };
 
   return (
-    <Wrapper {...rest}>
-      <InputControl
+    <Wrapper {...wrapperProps} label={null} floatLabel={false}>
+      <CheckboxStateless
         {...rest}
-        name={name}
+        {...inputProps}
         isIndeterminate={isIndeterminate}
-        checked={!!value}
+        value={name}
+        checked={!!field.value}
         onChange={handleChange}
-        ref={forwardedRef}
       />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: CheckboxProps, ref) => (
-  <Checkbox {...props} forwardedRef={ref} />
-));

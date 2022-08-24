@@ -1,13 +1,12 @@
-import { XIcon } from '@heroicons/react/solid';
+import { XMarkIcon } from '@heroicons/react/24/solid';
 import Button from '@uidu/button';
 import { useDataManagerContext } from '@uidu/data-manager';
 import Form from '@uidu/form';
 import { MenuGroup, Section } from '@uidu/menu';
-import Select from '@uidu/select';
+import Select, { OptionProps, SingleValueProps } from '@uidu/select';
 import React, { Fragment, useRef } from 'react';
 import { ArrowDown, ArrowRight, ArrowUp } from 'react-feather';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { OptionProps, SingleValueProps } from 'react-select';
 import { PickField } from '../../utils';
 import ColumnsList from '../../utils/ColumnsList';
 import { SorterFormProps } from './types';
@@ -211,7 +210,7 @@ export default function SorterForm({ closePopup }: SorterFormProps) {
                         closePopup();
                       }
                     }}
-                    iconBefore={<XIcon tw="h-4 w-4" />}
+                    iconBefore={<XMarkIcon tw="h-4 w-4" />}
                   />
                 </Fragment>
               ))}

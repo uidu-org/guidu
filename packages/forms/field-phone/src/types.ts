@@ -1,13 +1,16 @@
 import { FieldBaseProps } from '@uidu/field-base';
+import { AllHTMLAttributes } from 'react';
+import { Country, LabelKey, Props } from 'react-phone-number-input';
 
-export type FieldPhoneProps = FieldBaseProps &
-  Omit<FieldPhoneStatelessProps, 'forwardedRef'>;
+export type CountryLabels = { [key in LabelKey]: string };
 
-export type FieldPhoneStatelessProps = {
-  id?: string;
-  country?: string;
+export type FieldPhoneProps = FieldBaseProps<string> & {
+  withCountrySelect?: boolean;
+  // countryLabels: CountryLabels;
+} & Props<{}> &
+  Omit<FieldPhoneStatelessProps, 'onChange'>;
+
+export type FieldPhoneStatelessProps = AllHTMLAttributes<HTMLInputElement> & {
+  country?: Country;
   onChange?: (value: string) => void;
-  className?: string;
-  value?: string;
-  forwardedRef?: React.RefObject<any>;
 };

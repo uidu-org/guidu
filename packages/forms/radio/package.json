@@ -10,15 +10,17 @@
   "types": "dist/uidu-radio.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@uidu/analytics": "^0.6.5",
     "@uidu/field-base": "^3.1.26",
-    "formsy-react": "^2.2.7",
     "react": "^18.2.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.18",
-    "@uidu/form": "^1.2.27"
+    "@uidu/form": "^1.2.27",
+    "twin.macro": "^2.8.2"
+  },
+  "peerDependencies": {
+    "twin.macro": "*"
   }
 }

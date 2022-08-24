@@ -1,47 +1,27 @@
-import { Wrapper } from '@uidu/field-base';
-import moment from 'moment';
-import React, { forwardRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FieldDateProps } from '../types';
 import FieldDateCalendar from './FieldDateCalendar';
-import FieldDateStateless from './FieldDateStateless';
+import FieldDateNative from './FieldDateNative';
 
-function FieldDate({
-  formatSubmit = 'YYYY-MM-DD',
-  onSetValue,
-  onChange,
-  forwardedRef,
+export default function FieldDate({
   withCalendar = false,
-  name,
   ...rest
-}: FieldDateProps & { forwardedRef: any }) {
-  const handleFallbackChange = (date: any) => {
-    const value = date ? moment(date).format(formatSubmit) : '';
-    onSetValue(value);
-    onChange(name, value);
-  };
+}: FieldDateProps) {
+  const [isFallback, setIsFallback] = useState(false);
 
-  const handleChange = (e) => {
-    const date = e.target.value;
-    const value = date ? moment(date).format(formatSubmit) : '';
-    onSetValue(value);
-    onChange(name, value);
-  };
+  useEffect(() => {
+    const test = document.createElement('input');
 
-  const InputControl = withCalendar ? FieldDateCalendar : FieldDateStateless;
+    try {
+      test.type = 'date';
+    } catch (e) {
+      setIsFallback(true);
+    }
+  }, []);
 
-  return (
-    <Wrapper {...rest}>
-      <InputControl
-        {...rest}
-        name={name}
-        onDayChange={handleFallbackChange}
-        onChange={handleChange}
-        ref={forwardedRef}
-      />
-    </Wrapper>
-  );
+  if (withCalendar || isFallback) {
+    return <FieldDateCalendar {...rest} />;
+  }
+
+  return <FieldDateNative {...rest} />;
 }
-
-export default forwardRef((props: FieldDateProps, ref) => (
-  <FieldDate {...props} forwardedRef={ref} />
-));

@@ -1,32 +1,24 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FieldTimeProps } from '../types';
-import FieldTimeStateless from './FieldTimeStateless';
+import FieldTimeNative from './FieldTimeNative';
+import FieldTimeSelect from './FieldTimeSelect';
 
-function FieldTime({
-  onChange,
-  onSetValue,
-  name,
-  forwardedRef,
-  ...rest
-}: FieldTimeProps) {
-  const handleChange = (e) => {
-    onSetValue(e.target.value);
-    onChange(name, e.target.value);
-  };
+export default function FieldTime({ asSelect, ...rest }: FieldTimeProps) {
+  const [isFallback, setIsFallback] = useState(false);
 
-  return (
-    <Wrapper {...rest}>
-      <FieldTimeStateless
-        {...rest}
-        name={name}
-        onChange={handleChange}
-        ref={forwardedRef}
-      />
-    </Wrapper>
-  );
+  useEffect(() => {
+    const test = document.createElement('input');
+
+    try {
+      test.type = 'time';
+    } catch (e) {
+      setIsFallback(true);
+    }
+  }, []);
+
+  if (asSelect || isFallback) {
+    return <FieldTimeSelect {...rest} />;
+  }
+
+  return <FieldTimeNative {...rest} />;
 }
-
-export default forwardRef((props: FieldTimeProps, ref) => (
-  <FieldTime {...props} forwardedRef={ref} />
-));

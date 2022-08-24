@@ -6,11 +6,7 @@ export default function RequiredSymbol({
   required,
 }: RequiredSymbolProps) {
   if (required === true) {
-    return (
-      <>
-        <small className="text-muted">{symbol}</small>
-      </>
-    );
+    return <small tw="text-gray-500">{symbol}</small>;
   }
   return null;
 }

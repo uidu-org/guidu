@@ -1,52 +1,71 @@
-import React, { forwardRef } from 'react';
+import { SwitchProps } from '@radix-ui/react-switch';
+import { useController, Wrapper } from '@uidu/field-base';
+import React from 'react';
+import tw from 'twin.macro';
 import { FieldToggleProps } from '../types';
 import FieldToggleStateless from './FieldToggleStateless';
 
-function FieldToggle({
+export default function FieldToggle({
   onChange,
-  onSetValue,
   name,
-  value = false,
+  value: defaultValue = false,
   id,
   label,
   className,
-  forwardedRef,
   size,
-  onColor,
-  offColor,
+  disabled,
+  ...rest
 }: FieldToggleProps) {
-  const handleChange = (value) => {
-    onSetValue(value);
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
+  const handleChange: SwitchProps['onCheckedChange'] = (value: boolean) => {
+    field.onChange(value);
     onChange(name, value);
   };
 
   const handleClick = (e: React.MouseEvent) => {
+    if (disabled) {
+      return null;
+    }
     e.preventDefault();
-    onSetValue(!value);
-    onChange(name, !value);
+    field.onChange(!field.value);
+    onChange(name, !field.value);
   };
 
   return (
-    <div tw="flex items-center justify-between relative" className={className}>
-      <button type="button" onClick={handleClick} tw="inset-0 absolute" />
-      {label && (
-        <label htmlFor={id} tw="mb-0 mr-5">
-          {label}
-        </label>
-      )}
-      <FieldToggleStateless
-        id={id}
-        size={size}
-        onColor={onColor}
-        offColor={offColor}
-        checked={value}
-        onChange={handleChange}
-        ref={forwardedRef}
-      />
-    </div>
+    <Wrapper
+      {...wrapperProps}
+      label={null}
+      floatLabel={false}
+      errorIcon={({ fieldState }) => null}
+    >
+      <div
+        css={[
+          tw`relative flex items-center justify-between`,
+          disabled ? tw`opacity-50` : tw`opacity-100`,
+        ]}
+        className={className}
+      >
+        <button type="button" onClick={handleClick} tw="inset-0 absolute" />
+        {label && (
+          <label htmlFor={id} tw="mb-0 mr-5">
+            {label}
+          </label>
+        )}
+        <FieldToggleStateless
+          {...inputProps}
+          id={id}
+          size={size}
+          checked={field.value}
+          disabled={disabled}
+          onChange={handleChange}
+        />
+      </div>
+    </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldToggleProps, ref) => (
-  <FieldToggle {...props} forwardedRef={ref} />
-));

@@ -4,12 +4,12 @@ import { HelpProps } from './types';
 
 export default function Help({ help, id }: HelpProps) {
   return (
-    <p
+    <div
       tw="mt-2 text-sm"
       css={{ color: `var(--form-hint-color, ${theme`colors.gray.400`})` }}
       id={`${id}-desc`}
     >
       {help}
-    </p>
+    </div>
   );
 }

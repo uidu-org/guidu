@@ -1,9 +1,19 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
-import { HTMLProps, RefObject } from 'react';
+import { AllHTMLAttributes, ReactNode } from 'react';
 
-export type FieldTimeProps = FieldBaseProps & WithAnalyticsEventsProps;
-
-export type FieldTimeStatelessProps = HTMLProps<HTMLInputElement> & {
-  forwardedRef: RefObject<HTMLInputElement>;
+export type FieldTimeIntervalOption = {
+  id: string;
+  name: string;
+  [key: string]: string | ReactNode;
 };
+
+export type FieldTimeProps = {
+  asSelect?: boolean;
+  interval?: number;
+  start?: number;
+  end?: number;
+  options?: FieldTimeIntervalOption[];
+} & FieldBaseProps<string> &
+  FieldTimeStatelessProps;
+
+export type FieldTimeStatelessProps = AllHTMLAttributes<HTMLInputElement>;

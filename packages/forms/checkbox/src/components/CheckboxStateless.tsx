@@ -1,117 +1,85 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
-import React, {
-  forwardRef,
-  RefObject,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-} from 'react';
+import { FieldBaseStatelessProps } from '@uidu/field-base';
+import React, { forwardRef, useEffect, useRef } from 'react';
 import tw from 'twin.macro';
-import pkg from '../version.json';
+import { CheckboxStatelessProps } from '../types';
 
-type CheckboxStatelessProps = {
-  label?: string | React.ReactNode;
-  id?: string;
-  name?: string;
-  disabled?: boolean;
-  isIndeterminate?: boolean;
-  onChange?: (e) => void;
-  checked?: boolean;
-  isInline?: boolean;
-  forwardedRef?: any;
-};
+const CheckboxStateless = forwardRef<
+  HTMLInputElement,
+  CheckboxStatelessProps & FieldBaseStatelessProps
+>(
+  (
+    {
+      isIndeterminate,
+      isInline,
+      id,
+      label,
+      name,
+      value,
+      onChange,
+      className,
+      fieldState,
+      disabled,
+      checked,
+    },
+    ref,
+  ) => {
+    const element = useRef<HTMLInputElement | null>(null);
 
-function Checkbox({
-  isIndeterminate,
-  label,
-  id,
-  name,
-  onChange,
-  disabled,
-  checked,
-  isInline,
-  forwardedRef,
-  className,
-}: CheckboxStatelessProps) {
-  const element: RefObject<HTMLInputElement> = useRef();
+    useEffect(() => {
+      if (element) {
+        element.current.indeterminate = !!isIndeterminate;
+      }
+    }, [isIndeterminate]);
 
-  useImperativeHandle(forwardedRef, () => element.current);
-
-  useEffect(() => {
-    if (element) {
-      element.current.indeterminate = !!isIndeterminate;
-    }
-    return () => null;
-  }, [isIndeterminate]);
-
-  return (
-    <div
-      css={[tw`relative items-start`, isInline ? tw`inline-flex` : tw`flex`]}
-    >
-      <div tw="flex items-center h-5">
-        <input
-          type="checkbox"
-          className={className}
-          tw="focus:--tw-ring-color[rgba(var(--brand-primary), .5)] h-5 w-5 border-color[rgb(var(--checkbox-border, var(--border)))] rounded color[rgba(var(--brand-primary), 1)]"
-          id={id}
-          name={name}
-          onChange={onChange}
-          value={id}
-          disabled={disabled}
-          checked={checked}
-          ref={element}
-        />
-      </div>
-      {label && (
-        <div tw="ml-2">
-          <label tw="mb-0" htmlFor={id}>
-            {label}
-          </label>
+    return (
+      <div
+        css={[
+          tw`relative items-start`,
+          isInline ? tw`inline-flex` : tw`flex`,
+          disabled ? tw`opacity-50` : tw`opacity-100`,
+        ]}
+      >
+        <div tw="flex items-center h-5">
+          <input
+            aria-label={name}
+            aria-checked={checked}
+            aria-disabled={disabled}
+            type="checkbox"
+            className={className}
+            css={[
+              tw`focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))] h-5 w-5 border-color[rgb(var(--checkbox-border, var(--border)))] rounded color[rgba(var(--brand-primary), 1)]`,
+              fieldState?.error
+                ? tw`border-red-300 focus:outline-none focus:ring-red-50 focus:border-red-400`
+                : tw``,
+            ]}
+            id={id}
+            name={name}
+            value={value as string}
+            onChange={onChange}
+            disabled={disabled}
+            checked={checked}
+            ref={(e) => {
+              ref(e);
+              element.current = e;
+            }}
+          />
         </div>
-      )}
-    </div>
-  );
-}
-
-const CheckboxStateless = forwardRef(
-  (props: CheckboxStatelessProps, ref: any) => (
-    <Checkbox {...props} forwardedRef={ref} />
-  ),
+        {label && (
+          <div tw="ml-2">
+            <label
+              css={[
+                tw`mb-0 select-none`,
+                fieldState?.error ? tw`text-red-900` : tw``,
+              ]}
+              htmlFor={id}
+            >
+              {label}
+            </label>
+          </div>
+        )}
+      </div>
+    );
+  },
 );
 
-export { CheckboxStateless as CheckboxStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'fieldRadio',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'radioField',
-
-      attributes: {
-        componentName: 'fieldRadio',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'radioField',
-
-      attributes: {
-        componentName: 'fieldRadio',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(CheckboxStateless),
-);
+export default CheckboxStateless;

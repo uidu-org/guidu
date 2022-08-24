@@ -1,5 +1,5 @@
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import React from 'react';
-import { X } from 'react-feather';
 import { components } from 'react-select';
 
 export {
@@ -8,10 +8,12 @@ export {
   LoadingIndicator,
 } from './indicators';
 
-export const MultiValueRemove = (props: any) => (
-  <components.MultiValueRemove {...props}>
-    <X size={16} />
-  </components.MultiValueRemove>
-);
+export function MultiValueRemove(props: any) {
+  return (
+    <components.MultiValueRemove {...props}>
+      <XMarkIcon tw="h-5 w-5" />
+    </components.MultiValueRemove>
+  );
+}
 
-export const IndicatorSeparator = null;
+// export const IndicatorSeparator = null;

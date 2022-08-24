@@ -1,4 +1,4 @@
-import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/solid';
+import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import { CellContext, flexRender, Row as RowType } from '@tanstack/react-table';
 import React from 'react';
 import { StyledComponent } from 'styled-components';

@@ -1,12 +1,6 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import classNames from 'classnames';
 import React, { Component } from 'react';
 import Input from '../styled/Input';
-import pkg from '../version.json';
 
 class FieldMonthStateless extends Component<any> {
   static defaultProps = {
@@ -83,35 +77,4 @@ class FieldMonthStateless extends Component<any> {
   }
 }
 
-export { FieldMonthStateless as FieldMonthStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'fieldMonth',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'textField',
-
-      attributes: {
-        componentName: 'fieldMonth',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'textField',
-
-      attributes: {
-        componentName: 'fieldMonth',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(FieldMonthStateless),
-);
+export default FieldMonthStateless;

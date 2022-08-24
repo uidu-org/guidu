@@ -1,9 +1,9 @@
 import { Form } from '@uidu/form';
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import { Columns, Feather, GitHub, Gitlab, Map } from 'react-feather';
 import { ScrollableContainer } from '../../../navigation/shell/src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
-import { formDefaultProps } from '../../form/examples-utils';
+import useDefaultForm from '../../form/examples-utils';
 import FieldDownshift, {
   DownshiftCheckbox,
   DownshiftHorizontalCard,
@@ -45,56 +45,56 @@ const iconItems = [
   },
 ];
 
-export default class Basic extends PureComponent {
-  render() {
-    return (
-      <ScrollableContainer>
-        <div tw="container py-4">
-          <Form {...formDefaultProps} footerRenderer={() => null}>
+const presets = {
+  HorizontalCard: {
+    option: DownshiftHorizontalCard,
+    menu: (props) => <div tw="flex flex-col space-y-4" {...props} />,
+  },
+  VerticalCard: {
+    option: DownshiftVerticalCard,
+    menu: (props) => <div tw="grid gap-4 grid-cols-3" {...props} />,
+  },
+  Checkbox: {
+    option: DownshiftCheckbox,
+    menu: (props) => <div {...props} />,
+  },
+  Radio: {
+    option: DownshiftRadio,
+    menu: (props) => <div {...props} />,
+  },
+};
+
+export default function Basic() {
+  const defaultForm = useDefaultForm();
+  const [preset, setPreset] = useState('HorizontalCard');
+
+  const currentPreset = presets[preset];
+
+  return (
+    <ScrollableContainer>
+      <div tw="container py-4">
+        <Form {...defaultForm} footerRenderer={() => null}>
+          <select
+            tw="w-full"
+            name="status"
+            onChange={(e) => setPreset(e.target.value)}
+          >
+            {Object.keys(presets).map((p) => (
+              <option value={p}>{p}</option>
+            ))}
+          </select>
+          <div tw="mt-4">
             <FieldDownshift
               {...inputDefaultProps}
-              scope="donations"
               value={iconItems[2].id}
-              onChange={console.log}
-              label="HorizontalCard"
-              menu={(props) => <div tw="flex flex-col space-y-4" {...props} />}
-              option={DownshiftHorizontalCard}
+              layout="elementOnly"
+              menu={currentPreset.menu}
+              option={currentPreset.option}
               options={iconItems}
             />
-            <FieldDownshift
-              {...inputDefaultProps}
-              scope="teams"
-              value={iconItems[2].id}
-              onChange={console.log}
-              label="VerticalCard"
-              menu={(props) => <div tw="grid gap-4 grid-cols-3" {...props} />}
-              option={DownshiftVerticalCard}
-              options={iconItems}
-            />
-            <FieldDownshift
-              {...inputDefaultProps}
-              scope="donations"
-              value={[iconItems[2].id]}
-              onChange={console.log}
-              label="Checkbox"
-              menu={(props) => <div {...props} />}
-              option={DownshiftCheckbox}
-              options={iconItems}
-              multiple
-            />
-            <FieldDownshift
-              {...inputDefaultProps}
-              scope="secondary"
-              value={iconItems[2].id}
-              onChange={console.log}
-              label="Radio"
-              menu={(props) => <div {...props} />}
-              option={DownshiftRadio}
-              options={iconItems}
-            />
-          </Form>
-        </div>
-      </ScrollableContainer>
-    );
-  }
+          </div>
+        </Form>
+      </div>
+    </ScrollableContainer>
+  );
 }

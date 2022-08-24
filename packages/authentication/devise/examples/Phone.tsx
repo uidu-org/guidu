@@ -1,4 +1,5 @@
 import Avatar from '@uidu/avatar';
+import { StyledAddon } from '@uidu/field-base';
 import FieldPassword from '@uidu/field-password';
 import FieldPhone from '@uidu/field-phone';
 import * as React from 'react';
@@ -31,7 +32,7 @@ export default function App() {
             render={(routeProps) => (
               <DeviseWrapper
                 header={
-                  <div className="d-flex justify-content-center w-100 mb-4">
+                  <div className="mb-4 d-flex justify-content-center w-100">
                     <Avatar
                       src="https://scontent.fmxp3-1.fna.fbcdn.net/v/t1.0-9/10355745_938423579521141_7227343713995220766_n.png?_nc_cat=105&_nc_ht=scontent.fmxp3-1.fna&oh=66654a015e27a67bd622f455ea95cb70&oe=5D53E472"
                       size="large"
@@ -39,7 +40,7 @@ export default function App() {
                   </div>
                 }
                 footer={
-                  <ul className="nav mt-2 small mx-n3">
+                  <ul className="mt-2 nav small mx-n3">
                     <li className="nav-item dropdown">
                       <a
                         className="nav-link dropdown-toggle"
@@ -67,7 +68,7 @@ export default function App() {
                         </a>
                       </div>
                     </li>
-                    <li className="nav-item ml-auto">
+                    <li className="ml-auto nav-item">
                       <a className="nav-link" href="#">
                         Guida
                       </a>
@@ -140,11 +141,13 @@ export default function App() {
                         name="user[email]"
                         autoComplete="email"
                         value={phone || ''}
-                        addonBefore={
-                          <span className="input-group-text bg-white">
-                            <Smartphone size={16} />
-                          </span>
-                        }
+                        addonsBefore={[
+                          <StyledAddon>
+                            <span className="bg-white input-group-text">
+                              <Smartphone size={16} />
+                            </span>
+                          </StyledAddon>,
+                        ]}
                         required
                       />
                       {!identity && (

@@ -1,29 +1,38 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import { useController, Wrapper } from '@uidu/field-base';
+import React from 'react';
 import { NumberFormatValues } from 'react-number-format';
 import { FieldNumberProps } from '../types';
-import InputControl from './FieldNumberStateless';
+import FieldNumberStateless from './FieldNumberStateless';
 
-function FieldNumber({
-  onChange,
-  onSetValue,
+export default function FieldNumber({
   name,
-  forwardedRef,
+  value: defaultValue,
+  onChange = () => {},
+  rules,
   ...rest
 }: FieldNumberProps) {
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    rules,
+    ...rest,
+  });
+
   const handleChange = (values: NumberFormatValues) => {
     const { value } = values;
-    onSetValue(value);
-    onChange(name, value);
+    field.onChange(value);
+    onChange(field.name, value);
   };
 
   return (
-    <Wrapper {...rest}>
-      <InputControl {...rest} onValueChange={handleChange} ref={forwardedRef} />
+    <Wrapper {...wrapperProps}>
+      <FieldNumberStateless
+        {...rest}
+        {...inputProps}
+        onValueChange={handleChange}
+      />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldNumberProps, ref) => (
-  <FieldNumber {...props} forwardedRef={ref} />
-));

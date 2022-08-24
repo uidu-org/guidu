@@ -105,11 +105,3 @@ export default md`
 For further documentation regarding props, please refer to the react-select [documentation](https://react-select.com).
 
 `;
-
-/* TODO: Add the proper props on the documentation - AK-4705
-${(
-  //   <Props
-  //     heading="Select Props"
-  //     props={require('!!extract-react-types-loader!../src/createSelect')}
-  //   />
- )}*/

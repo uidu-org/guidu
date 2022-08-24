@@ -1,11 +1,15 @@
+import { MapPinIcon } from '@heroicons/react/24/outline';
 import Spinner from '@uidu/spinner';
-import React, { useState } from 'react';
-import { MapPin } from 'react-feather';
+import React, { MouseEvent, useState } from 'react';
 
-export default function FieldGeosuggestCurrentPosition({ onGeocode }) {
+export default function FieldGeosuggestCurrentPosition({
+  onGeocode,
+}: {
+  onGeocode: (geocode: GeolocationPosition['coords']) => void;
+}) {
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchCurrentPosition = (e) => {
+  const fetchCurrentPosition = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsLoading(true);
     navigator.geolocation.getCurrentPosition(
@@ -24,11 +28,12 @@ export default function FieldGeosuggestCurrentPosition({ onGeocode }) {
     );
   };
   return (
-    <span
-      tw="absolute right-0 inset-y-0 px-5 flex items-center"
+    <button
+      tw="px-4 flex items-center h-full"
+      type="button"
       onClick={fetchCurrentPosition}
     >
-      {isLoading ? <Spinner size="small" /> : <MapPin size={16} />}
-    </span>
+      {isLoading ? <Spinner size="small" /> : <MapPinIcon tw="h-5 w-5" />}
+    </button>
   );
 }

@@ -1,5 +1,6 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { memo } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import { useController, Wrapper } from '@uidu/field-base';
+import React, { ChangeEvent } from 'react';
 import tw from 'twin.macro';
 import { RadioGroupProps } from '../types';
 import RadioStateless from './RadioStateless';
@@ -7,33 +8,41 @@ import RadioStateless from './RadioStateless';
 function RadioGroup({
   isInline = false,
   onChange,
-  onSetValue,
   options,
   name,
-  value,
+  value: defaultValue,
   ...rest
 }: RadioGroupProps) {
-  const handleChange = (event) => {
+  const { field, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const {
       target: { value },
     } = event;
-    onSetValue(value);
+    field.onChange(value);
     onChange(name, value);
   };
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...wrapperProps} floatLabel={false}>
       <div css={[isInline ? tw`space-x-6` : tw`space-y-2`]}>
         {options.map((option) => (
           <RadioStateless
+            {...rest}
+            {...field}
             key={`${name}-${option.id}`}
             id={`${name}-${option.id}`}
             value={option.id}
             label={option.name}
             name={name}
-            onChange={handleChange}
             isInline={isInline}
-            {...(option.id === value && { defaultChecked: true })}
+            onChange={handleChange}
+            {...(option.id === field.value && { checked: true })}
           />
         ))}
       </div>
@@ -41,4 +50,4 @@ function RadioGroup({
   );
 }
 
-export default memo(RadioGroup);
+export default RadioGroup;

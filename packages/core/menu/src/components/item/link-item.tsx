@@ -1,6 +1,5 @@
 import React, { DragEventHandler, forwardRef, Ref } from 'react';
 import { LinkItemProps } from '../types';
-import { useBlurOnMouseDown } from '../utils/use-blur-on-mouse-down';
 import BaseItem from './base-item';
 import { BaseItemWrapper } from './styled';
 
@@ -24,7 +23,7 @@ const LinkItem = forwardRef<HTMLElement, LinkItemProps>(
       onMouseDown,
       ...others
     } = rest;
-    const onMouseDownHandler = useBlurOnMouseDown(onMouseDown);
+    const onMouseDownHandler = onMouseDown;
 
     if (!children) {
       return null;

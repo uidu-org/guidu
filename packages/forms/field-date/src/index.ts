@@ -1,11 +1,6 @@
-import { ComponentHOC } from '@uidu/field-base';
-import { withFormsy } from 'formsy-react';
-import FieldDateComponent from './components/FieldDate';
-export {
-  default as FieldDateStateless,
-  FieldDateStatelessWithoutAnalytics,
-} from './components/FieldDateStateless';
+import FieldDate from './components/FieldDate';
 
-export const FieldDate = withFormsy(ComponentHOC(FieldDateComponent));
+export { default as FieldDateStateless } from './components/FieldDateStateless';
+export * from './types';
 
 export default FieldDate;

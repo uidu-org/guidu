@@ -194,11 +194,11 @@ export default class Providers extends PureComponent<any, any> {
                     )}
                   </label>
                   <FieldPhone
-                    addonBefore={
+                    addonsBefore={[
                       <span className="bg-white input-group-text">
                         <Smartphone size={16} />
-                      </span>
-                    }
+                      </span>,
+                    ]}
                     layout="elementOnly"
                     name="user[phone]"
                     autoComplete="phone"

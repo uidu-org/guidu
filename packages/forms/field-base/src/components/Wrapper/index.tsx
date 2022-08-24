@@ -1,60 +1,67 @@
-import React, { ReactElement } from 'react';
+import { useFormContext } from '@uidu/form';
+import React from 'react';
+import { ControllerFieldState } from 'react-hook-form';
 import FloatLabel from '../../styled/FloatLabel';
+import DefaultErrorIcon from '../ErrorIcon';
 import ErrorMessages from '../ErrorMessages';
 import Help from '../Help';
-import Icon from '../Icon';
 import InputGroup from '../InputGroup';
 import RequiredSymbol from '../RequiredSymbol';
 import Row from '../Row';
 import { WrapperProps } from './types';
 
-export default function Wrapper({
-  addonAfter,
-  addonBefore,
-  buttonAfter,
-  buttonBefore,
+export default function Wrapper<T>({
+  addonsAfter,
+  addonsBefore,
   children,
-  errorMessages,
   floatLabel = false,
   help,
   id,
-  layout,
+  layout: inputLayout,
   type,
   showErrors,
   required,
   label,
-  elementWrapperClassName,
   overrides,
-}: WrapperProps): ReactElement {
-  let control = children;
+  fieldState,
+  errorIcon: ErrorIcon = DefaultErrorIcon,
+}: WrapperProps & {
+  fieldState?: ControllerFieldState;
+}) {
+  const { layout: formLayout } = useFormContext();
+  const layout = inputLayout || formLayout;
+
+  let input = <>{children}</>;
 
   if (type === 'hidden') {
-    return <>{control}</>;
+    return input;
   }
 
-  const inputGroupProps = {
-    addonAfter,
-    addonBefore,
-    buttonAfter,
-    buttonBefore,
-  };
-
-  if (addonBefore || addonAfter || buttonBefore || buttonAfter) {
-    control = <InputGroup {...inputGroupProps}>{control}</InputGroup>;
-  }
+  input = (
+    <InputGroup
+      addonsAfter={[
+        ...(fieldState?.error
+          ? [<ErrorIcon fieldState={fieldState} />].concat(addonsAfter || [])
+          : addonsAfter || []),
+      ]}
+      addonsBefore={addonsBefore}
+    >
+      {input}
+    </InputGroup>
+  );
 
   if (floatLabel) {
     return (
-      <Row
-        label={() => null} // so that shouldRenderLabel return false in Row.js
+      <Row<T>
+        label={null} // so that shouldRenderLabel return false in Row.js
         required={false} // so that shouldRenderLabel return false in Row.js
         htmlFor={id}
         layout={layout}
         overrides={overrides}
       >
         <FloatLabel htmlFor={id} className="has-float-label">
-          {control}
-          {showErrors ? <ErrorMessages messages={errorMessages} /> : null}
+          {input}
+          {fieldState?.error && <ErrorMessages messages={[fieldState.error]} />}
           <span>
             {floatLabel}
             {required && ' '}
@@ -67,26 +74,21 @@ export default function Wrapper({
   }
 
   if (layout === 'elementOnly') {
-    return <>{control}</>;
+    return input;
   }
 
   return (
-    <Row
+    <Row<T>
       htmlFor={id}
       label={label}
-      elementWrapperClassName={elementWrapperClassName}
       required={required}
       showErrors={showErrors}
-      fakeLabel={false}
       layout={layout}
       overrides={overrides}
     >
-      {control}
-      {showErrors ? <ErrorMessages messages={errorMessages} /> : null}
+      {input}
+      {fieldState?.error && <ErrorMessages messages={[fieldState.error]} />}
       {help ? <Help id={id} help={help} /> : null}
-      {showErrors ? (
-        <Icon symbol="remove" className="form-control-feedback" />
-      ) : null}
     </Row>
   );
 }

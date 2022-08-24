@@ -1,29 +1,42 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
-import Select from 'react-select';
-import createSelect from './createSelect';
-import pkg from './version.json';
+import { useController, Wrapper } from '@uidu/field-base';
+import React from 'react';
+import ReactSelect from 'react-select';
+import { useSelect } from './hooks/useSelect';
+import { CreateSelectProps } from './types';
 
-export const SelectWithoutAnalytics = createSelect(Select);
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
+// put it all together
+function Select({
+  name,
+  onChange,
+  value: defaultValue = '',
+  rules,
+  ...rest
+}: CreateSelectProps<unknown>) {
+  const { field, fieldState, inputProps, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    rules,
+    ...rest,
+  });
 
-export default (withAnalyticsContext({
-  componentName: 'select',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onChange: createAndFireEventOnGuidu({
-      action: 'changed',
-      actionSubject: 'option',
-      attributes: {
-        componentName: 'select',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(SelectWithoutAnalytics),
-) as unknown) as ReturnType<typeof createSelect>;
+  const handleChange = (value, option, actionMeta) => {
+    field.onChange(value);
+    onChange(name, value, { option, actionMeta });
+  };
+
+  const selectProps = useSelect<unknown, false>({
+    value: field.value,
+    handleChange,
+    fieldState,
+    ...rest,
+  });
+
+  return (
+    <Wrapper {...wrapperProps}>
+      <ReactSelect {...inputProps} {...selectProps} />
+    </Wrapper>
+  );
+}
+
+export default Select;

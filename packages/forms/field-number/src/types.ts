@@ -1,16 +1,14 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
-import { NumberFormatProps } from 'react-number-format';
+import { NumberFormatProps, NumberFormatValues } from 'react-number-format';
 
 export type FieldNumberStatelessProps = {
   /** React-numeric-input options */
-  value?: number | string;
+  value?: number;
   /** React-numeric-input options */
   options?: NumberFormatProps;
   /** React-numeric-input options */
-  onValueChange?: (values) => void;
-  forwardedRef?: any;
-} & WithAnalyticsEventsProps;
+  onValueChange?: (values: NumberFormatValues) => void;
+};
 
 export type FieldNumberType = 'text' | 'tel';
 
@@ -22,4 +20,4 @@ export type FieldNumberProps = {
   /** Standard input max attribute, to be used with type="number" */
   max?: number;
 } & FieldNumberStatelessProps &
-  FieldBaseProps;
+  FieldBaseProps<string | number>;

@@ -1,9 +1,5 @@
-import { ComponentHOC } from '@uidu/field-base';
-import { withFormsy } from 'formsy-react';
-import FieldColorPickerComponent from './components/FieldColorPicker';
+import FieldColorPicker from './components/FieldColorPicker';
 
-export const FieldColorPicker = withFormsy(
-  ComponentHOC(FieldColorPickerComponent),
-);
+export * from './types';
 
 export default FieldColorPicker;

@@ -1,0 +1,158 @@
+Notes:
+
+- [V] what to do for radio and checbox groups
+- [V] add layout to form context
+- [V] fix types for field-base
+- [V] add errors to checkboxes
+- [V] errors
+- [V] Fix types for stateless fields
+- [V] field-time interval for select
+
+- [ ] add field-rating
+
+Hook form migration
+
+- [V] checkbox
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [-] field - @deprecated
+  - [-] types
+  - [-] dependencies
+  - [-] examples
+  - [-] refs
+  - [-] errors
+- [V] field-base
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-color-picker
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs: SEE: https://github.com/omgovich/react-colorful/issues/157
+  - [V] errors
+- [V] field-counter
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-date
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [-] field-date-range - @deprecated
+  - [-] types
+  - [-] dependencies
+  - [-] examples
+  - [-] refs
+  - [-] errors
+- [V] field-downshift
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-file-uploader
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-geosuggest
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-image-uploader
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [-] field-mentions - @deprecated (editor-core/mini)
+  - [-] types
+  - [-] dependencies
+  - [-] examples
+  - [-] refs
+  - [-] errors
+- [-] field-month - @deprecated
+  - [-] types
+  - [-] dependencies
+  - [-] examples
+  - [-] refs
+  - [-] errors
+- [V] field-number
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-password
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-phone - TODO: Add country select
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-range
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-text
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-textarea
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-time: TODO: time intervals or default
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-toggle
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] form
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] radio
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] select
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors

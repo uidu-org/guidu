@@ -1,8 +1,3 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import { FieldDateStateless } from '@uidu/field-date';
 import moment from 'moment';
 import React, { RefObject, useRef, useState } from 'react';
@@ -11,7 +6,6 @@ import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { ArrowRight } from 'react-feather';
 import { Helmet } from 'react-helmet';
 import { FieldDateRangeStatelessProps } from '../types';
-import pkg from '../version.json';
 
 function FieldDateRangeStateless({
   locale = 'it',
@@ -22,7 +16,7 @@ function FieldDateRangeStateless({
   },
   from: propFrom,
   to: propTo,
-  className = 'InputFromTo d-flex form-control align-items-center px-0',
+  className = 'px-0 InputFromTo d-flex form-control align-items-center',
   onChange,
   ...rest
 }: FieldDateRangeStatelessProps) {
@@ -131,35 +125,4 @@ function FieldDateRangeStateless({
   );
 }
 
-export { FieldDateRangeStateless as FieldDateRangeStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'fieldDate',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'dateField',
-
-      attributes: {
-        componentName: 'fieldDate',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'dateField',
-
-      attributes: {
-        componentName: 'fieldDate',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(FieldDateRangeStateless),
-);
+export default FieldDateRangeStateless;

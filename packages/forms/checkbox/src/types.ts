@@ -1,29 +1,25 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
+import { AllHTMLAttributes } from 'react';
 
 export type CheckboxGroupOptionsProps = {
   id: string;
-  name: string | React.ReactNode;
-  label?: string | React.ReactNode;
+  name: string;
+  label?: string;
   disabled?: boolean;
 };
 
-export type CheckboxGroupProps = FieldBaseProps &
-  WithAnalyticsEventsProps & {
-    options: Array<CheckboxGroupOptionsProps>;
-  };
+export type CheckboxGroupProps = FieldBaseProps<string[]> & {
+  isInline?: boolean;
+  options: Array<CheckboxGroupOptionsProps>;
+};
 
-export type CheckboxProps = FieldBaseProps &
-  WithAnalyticsEventsProps & {
-    /** Sets whether the checkbox is checked or unchecked. */
-    isChecked?: boolean;
-    /** Sets whether the checkbox is disabled. */
-    isDisabled?: boolean;
-    /** Sets whether the checkbox is indeterminate. This only affects the
-   style and does not modify the isChecked property. */
-    isIndeterminate?: boolean;
-    /** Marks the field as invalid. Changes style of unchecked component. */
-    isInvalid?: boolean;
-    /** Marks the field as required & changes the label style. */
-    isRequired?: boolean;
-  };
+export type CheckboxProps = FieldBaseProps<boolean> &
+  Omit<CheckboxStatelessProps, 'onChange'>;
+
+export type CheckboxStatelessProps = AllHTMLAttributes<HTMLInputElement> & {
+  /** Sets whether the checkbox is indeterminate. This only affects the
+     style and does not modify the isChecked property. */
+  isIndeterminate?: boolean;
+  /** When rendered within CheckboxGroup. */
+  isInline?: boolean;
+};

@@ -1,15 +1,39 @@
-import { FieldBaseProps } from '@uidu/field-base';
+import { FieldBaseProps, WrapperProps } from '@uidu/field-base';
+import { ControllerStateAndHelpers, DownshiftState } from 'downshift';
 import * as React from 'react';
+import { ControllerRenderProps } from 'react-hook-form';
 
-export type FieldDownshiftProps = FieldBaseProps & {
-  menu?: (props) => void;
-  option?: (props) => void;
-  filterOptions?: (props) => Array<any>;
-  options: Array<any>;
-  wrapper?: React.ComponentClass;
+export type FieldDownshiftMenuProps<TOption> = Partial<
+  ControllerStateAndHelpers<TOption>
+> & {
+  children: React.ReactNode;
+  field?: ControllerRenderProps;
+};
+
+export type FieldDownshiftOptionProps<TOption> = Partial<
+  ControllerStateAndHelpers<TOption>
+> & {
+  item: TOption;
+  index: number;
+  isSelected: boolean;
+};
+
+export type FieldDownshiftProps<TOption> = FieldBaseProps<string | string[]> & {
+  menu?: React.FC<FieldDownshiftMenuProps<TOption>>;
+  option?: React.FC<FieldDownshiftOptionProps<TOption>>;
   input?: (props) => void;
-  scope?: string;
+  filterOptions?: ({
+    options,
+    inputValue,
+    isOpen,
+  }: {
+    options: TOption[];
+    inputValue: DownshiftState<TOption>['inputValue'];
+    isOpen: DownshiftState<TOption>['isOpen'];
+  }) => TOption[];
+  options: TOption[];
+  wrapper?: React.FC<WrapperProps>;
   multiple?: boolean;
-  getOptionLabel?: (option: any) => string;
-  getOptionValue?: (option: any) => string;
+  getOptionLabel?: (option: TOption) => string;
+  getOptionValue?: (option: TOption) => string;
 };

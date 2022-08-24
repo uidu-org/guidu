@@ -1,11 +1,11 @@
-import { StyledLabel, StyledRow } from '@uidu/field-base';
+import { StyledAddon, StyledLabel, StyledRow } from '@uidu/field-base';
 import { localUploadOptions } from '@uidu/media-core';
 import * as React from 'react';
 import { Calendar } from 'react-feather';
+import { useForm } from 'react-hook-form';
 import Checkbox, { CheckboxGroup } from '../../checkbox/src';
 import FieldColorPicker from '../../field-color-picker/src';
 import FieldCounter from '../../field-counter/src';
-import FieldDateRange from '../../field-date-range/src';
 import FieldDate from '../../field-date/src';
 import FieldDownshift, {
   DownshiftCheckbox,
@@ -32,16 +32,13 @@ interface Props {
   layoutChoice: LayoutChoice;
   sectionLayoutChoice: LayoutChoice;
   validateBeforeSubmitChoice: boolean;
-  validatePristineChoice: boolean;
 }
 
-const Playground: React.FunctionComponent<Props> = ({
+function Playground({
   disabledChoice,
   layoutChoice,
   sectionLayoutChoice,
-  validateBeforeSubmitChoice,
-  validatePristineChoice,
-}) => {
+}: Props) {
   const formRef = React.createRef<Form>();
 
   const resetForm = (): void => {
@@ -93,19 +90,19 @@ const Playground: React.FunctionComponent<Props> = ({
   ];
 
   const singleSelectOptions = [
-    { id: '', name: 'Please select…' },
+    // { id: '', name: 'Please select…' },
     ...selectOptions,
   ];
+
+  const form = useForm({ mode: 'all' });
 
   return (
     <Form
       handleSubmit={submitForm}
       layout={layoutChoice}
       className="custom-classname-is-rendered"
-      validateBeforeSubmit={validateBeforeSubmitChoice}
-      validatePristine={validatePristineChoice}
-      disabled={disabledChoice}
       ref={formRef}
+      form={form}
       footerRenderer={(props) => (
         <FormSubmit {...props} canSubmit label="Submit" />
       )}
@@ -137,9 +134,12 @@ const Playground: React.FunctionComponent<Props> = ({
           autoComplete="off"
           placeholder="This is an email input."
           help="This email field should not autocomplete."
-          validations="isEmail"
-          validationErrors={{
-            isEmail: 'This doesn’t look like a valid email address.',
+          rules={{
+            required: 'This is a required field.',
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+              message: 'This is not a valid email address.',
+            },
           }}
         />
         <FieldPassword
@@ -167,8 +167,13 @@ const Playground: React.FunctionComponent<Props> = ({
           name="colour1"
           label="Colour input"
           value="#000000"
-          validations="equals:#000000"
-          validationError="You can have any color, as long as it's black."
+          rules={{
+            validate: {
+              equals: (v) =>
+                v === '#000000' ||
+                "You can have any color, as long as it's black.",
+            },
+          }}
         />
         <FieldRange
           type="range"
@@ -184,16 +189,25 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Date"
           type="date"
           placeholder="This is a date input."
+          rules={{
+            required: { value: true, message: 'This is a required field.' },
+          }}
         />
-        <FieldDateRange
+        {/* <FieldDateRange
           name="date"
           value=""
           label="Date"
           type="date"
           placeholder="This is a date input."
-          required
+        /> */}
+        <FieldCounter
+          name="counter"
+          label="Counter"
+          rules={{
+            required: { value: true, message: 'Required field' },
+            max: { value: 5, message: 'No more than 5' },
+          }}
         />
-        <FieldCounter name="counter" label="Counter" />
         <FieldNumber name="number" label="Number" />
         <FieldGeosuggest name="geosuggest" label="Geosuggest" />
         <FieldImageUploader
@@ -215,8 +229,14 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Mentions"
           items={[{ trigger: '@', data: [] }]}
         />
-        <FieldPhone name="month" label="Phone number" />
-        <FieldTime name="time" label="Time" />
+        <FieldPhone name="phone" label="Phone number" country="US" />
+        <FieldTime
+          name="time"
+          label="Time"
+          rules={{
+            required: { value: true, message: 'This field is required' },
+          }}
+        />
       </FormSection>
       <FormSection
         name="Textarea"
@@ -230,9 +250,12 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Textarea"
           placeholder="This field requires 10 characters."
           help="This is some help text for the textarea."
-          validations="minLength:10"
-          validationErrors={{
-            minLength: 'Please provide at least 10 characters.',
+          rules={{
+            required: { value: true, message: 'This is a required field.' },
+            minLength: {
+              value: 10,
+              message: 'This field requires 10 characters.',
+            },
           }}
         />
       </FormSection>
@@ -247,7 +270,12 @@ const Playground: React.FunctionComponent<Props> = ({
           name="select1"
           label="Select"
           help="This is a required select element."
+          placeholder="Please select…"
           options={singleSelectOptions}
+          isClearable
+          rules={{
+            required: { value: true, message: 'This is a required field.' },
+          }}
         />
         <Select
           name="select2"
@@ -255,6 +283,7 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Select (multiple)"
           help="Here, “Option A” and “Option C” are initially selected."
           options={selectOptions}
+          isClearable
           multiple
         />
         <FieldDownshift
@@ -278,6 +307,11 @@ const Playground: React.FunctionComponent<Props> = ({
         }
         layout={sectionLayoutChoice}
       >
+        <Checkbox
+          name="checkbox123"
+          label="Checkbox"
+          help="This is a required checkbox element."
+        />
         <Checkbox
           name="checkbox1"
           value
@@ -365,7 +399,6 @@ const Playground: React.FunctionComponent<Props> = ({
             },
           }}
           labelClassName={[{ 'col-sm-3': false }, 'col-sm-5']}
-          elementWrapperClassName={[{ 'col-sm-9': false }, 'col-sm-7']}
           help="The label and element-wrapper classes can be changed."
           required
         />
@@ -409,18 +442,24 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Add-on before"
           type="text"
           tw="pl-10"
-          addonBefore={
-            <span tw="absolute inset-y-0 left-0 flex items-center pointer-events-none w-5 h-5">
-              @
-            </span>
-          }
+          addonsBefore={[
+            <StyledAddon>
+              <span tw="absolute inset-y-0 left-0 flex items-center pointer-events-none w-5 h-5">
+                @
+              </span>
+            </StyledAddon>,
+          ]}
         />
         <FieldText
           name="addon-after"
           value=""
           label="Add-on after"
           type="text"
-          addonAfter={<span className="input-group-text">@example.com</span>}
+          addonsAfter={[
+            <StyledAddon>
+              <span className="input-group-text">@example.com</span>
+            </StyledAddon>,
+          ]}
         />
         <FieldText
           name="button-before"
@@ -447,6 +486,6 @@ const Playground: React.FunctionComponent<Props> = ({
       </FormSection>
     </Form>
   );
-};
+}
 
 export default Playground;

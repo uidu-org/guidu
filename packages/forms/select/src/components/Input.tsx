@@ -9,7 +9,6 @@ const StyledInput = styled.div`
 `;
 
 export default function Input(props) {
-  console.log(components);
   if (props.isHidden) {
     return <components.Input {...props} />;
   }

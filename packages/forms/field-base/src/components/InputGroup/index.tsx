@@ -1,48 +1,43 @@
-import * as React from 'react';
-
-interface InputGroupProps {
-  addonAfter?: React.ReactNode;
-  addonBefore?: React.ReactNode;
-  buttonAfter?: React.ReactNode;
-  buttonBefore?: React.ReactNode;
-}
-
-type InputGroupPosition = 'prepend' | 'append';
-
-type InputGroupPropsWithChildren = InputGroupProps & {
-  children: React.ReactNode;
-};
+import React, { Children, Fragment, ReactElement, ReactNode } from 'react';
+import { StyledAddonWrapper } from '../../styled';
+import { InputGroupPosition, InputGroupPropsWithChildren } from './types';
 
 /**
  * Wraps an input to implement a Bootstrap [Input Group](http://getbootstrap.com/components/#input-groups)
  */
-const InputGroup = ({
+function InputGroup({
   children,
-  addonBefore = null,
-  addonAfter = null,
-  buttonBefore = null,
-  buttonAfter = null,
-}: InputGroupPropsWithChildren): JSX.Element => {
-  const renderAddon = (
-    addon: React.ReactNode,
+  addonsBefore,
+  addonsAfter,
+}: InputGroupPropsWithChildren): JSX.Element {
+  const renderAddons = (
+    addons: [ReactElement],
     position: InputGroupPosition,
-  ): React.ReactNode => {
-    if (addon === null) {
+  ): ReactNode => {
+    if (!addons) {
       return null;
     }
-    return <span className={`input-group-${position}`}>{addon}</span>;
+
+    if (Children.toArray(addons).length === 0) {
+      return null;
+    }
+
+    return (
+      <StyledAddonWrapper position={position}>
+        {addons.map((addon) => (
+          <Fragment key={addon.key}>{addon}</Fragment>
+        ))}
+      </StyledAddonWrapper>
+    );
   };
 
   return (
-    <div tw="flex relative">
-      {renderAddon(addonBefore, 'prepend')}
-      {renderAddon(buttonBefore, 'prepend')}
+    <div tw="relative">
+      {renderAddons(addonsBefore, 'before')}
       {children}
-      {renderAddon(addonAfter, 'append')}
-      {renderAddon(buttonAfter, 'append')}
+      {renderAddons(addonsAfter, 'after')}
     </div>
   );
-};
+}
 
-export type { InputGroupProps };
 export default InputGroup;

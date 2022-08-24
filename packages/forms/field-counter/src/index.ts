@@ -1,8 +1,6 @@
-import { ComponentHOC } from '@uidu/field-base';
-import { withFormsy } from 'formsy-react';
-import FieldCounterComponent from './components/FieldCounter';
-export { default as FieldCounterStatelesss } from './components/FieldCounterStateless';
+import FieldCounter from './components/FieldCounter';
 
-export const FieldCounter = withFormsy(ComponentHOC(FieldCounterComponent));
+export { default as FieldCounterStatelesss } from './components/FieldCounterStateless';
+export * from './types';
 
 export default FieldCounter;

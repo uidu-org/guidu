@@ -1,13 +1,11 @@
 import FieldCounter from '@uidu/field-counter';
 import FieldDate from '@uidu/field-date';
 import FieldTime from '@uidu/field-time';
-import { Form } from '@uidu/form';
 import { RadioStateless } from '@uidu/radio';
 import classNames from 'classnames';
 import React from 'react';
-import { inputDefaultProps } from '../../field-base/examples-utils';
-import { formDefaultProps } from '../../form/examples-utils';
-import FieldDownshift from '../src';
+import { FieldExampleScaffold } from '../../field-base/examples-utils';
+import FieldDownshift, { FieldDownshiftProps } from '../src';
 
 const DurationItem = ({
   item,
@@ -43,7 +41,7 @@ const DurationItem = ({
         <RadioStateless label={item.name} defaultChecked={isSelected} />
       </div>
       {isSelected && (
-        <div className="card-body p-3 p-md-4">{item.children}</div>
+        <div className="p-3 card-body p-md-4">{item.children}</div>
       )}
     </div>
   );
@@ -51,46 +49,37 @@ const DurationItem = ({
 
 export default function WithChildren() {
   return (
-    <Form {...formDefaultProps}>
-      <FieldDownshift
-        {...inputDefaultProps}
-        name="duration"
-        label="Campaign's duration"
-        options={[
-          {
-            id: 'fixed',
-            name: 'Fixed number of days (1-60)',
-            children: (
-              <>
-                <FieldCounter
-                  rowClassName="mb-3"
-                  name="durationInDays"
-                  min={1}
-                  max={60}
-                  value={30}
-                  label="Insert the number of days"
-                />
-              </>
-            ),
-          },
-          {
-            id: 'choose',
-            name: 'End at a specific date and time',
-            children: (
-              <>
-                <FieldDate name="endDate" label="End date" />
-                <FieldTime
-                  name="endTime"
-                  rowClassName="mb-3"
-                  label="End time"
-                />
-              </>
-            ),
-          },
-        ]}
-        option={DurationItem}
-        // required
-      />
-    </Form>
+    <FieldExampleScaffold<FieldDownshiftProps<any>>
+      component={FieldDownshift}
+      name="duration"
+      label="Campaign's duration"
+      options={[
+        {
+          id: 'fixed',
+          name: 'Fixed number of days (1-60)',
+          children: (
+            <FieldCounter
+              rowClassName="mb-3"
+              name="durationInDays"
+              min={1}
+              max={60}
+              value={30}
+              label="Insert the number of days"
+            />
+          ),
+        },
+        {
+          id: 'choose',
+          name: 'End at a specific date and time',
+          children: (
+            <>
+              <FieldDate name="endDate" label="End date" />
+              <FieldTime name="endTime" rowClassName="mb-3" label="End time" />
+            </>
+          ),
+        },
+      ]}
+      option={DurationItem}
+    />
   );
 }

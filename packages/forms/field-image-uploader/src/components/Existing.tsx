@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
+import { uppyRestrictionsToDropzoneProps } from '@uidu/media-core';
+import { Restrictions } from '@uppy/core';
 import React, { ReactNode } from 'react';
 import { DropzoneOptions, useDropzone } from 'react-dropzone';
 
@@ -8,6 +12,7 @@ export interface ExistingProps {
   children?: ReactNode;
   onDrop: DropzoneOptions['onDrop'];
   isHovered: boolean;
+  restrictions: Restrictions;
 }
 
 export default function Existing({
@@ -17,10 +22,18 @@ export default function Existing({
   children,
   onDrop,
   isHovered,
+  restrictions,
 }: ExistingProps) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
+    ...uppyRestrictionsToDropzoneProps({
+      restrictions,
+      ...(restrictions.allowedFileTypes
+        ? { accept: { 'image/*': restrictions.allowedFileTypes } }
+        : {}),
+    }),
   });
+
   return (
     <>
       <img
@@ -35,13 +48,13 @@ export default function Existing({
         src={value}
       />
       <div
-        {...(getRootProps() as any)}
+        {...getRootProps()}
         tw="h-full"
         style={{
           borderRadius,
         }}
       >
-        <input {...(getInputProps() as any)} />
+        <input {...getInputProps()} />
         {children}
       </div>
     </>

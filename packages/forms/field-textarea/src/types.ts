@@ -1,28 +1,12 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
+import { AllHTMLAttributes } from 'react';
 
-export type FieldTextareaStatelessProps = {
-  id?: string;
-  className?: string;
-  autoSize?: boolean;
-  rows?: number;
-  cols?: number;
-  value?: string;
-  onChange?: (e: any) => void;
-  placeholder?: string;
-  onFocus?: (e: any) => void;
-  onBlur?: (e: any) => void;
-  onKeyDown?: (e: any) => void;
-  onKeyUp?: (e: any) => void;
-  /** Sets the field as uneditable, with a changed hover state. */
-  disabled?: boolean;
-  /** Add asterisk to label. Set required for form that the field is part of. */
-  required?: boolean;
-  forwardedRef?: any;
-} & WithAnalyticsEventsProps;
+export type FieldTextareaStatelessProps =
+  AllHTMLAttributes<HTMLTextAreaElement> & {
+    autoSize?: boolean;
+    rows?: number;
+    cols?: number;
+  };
 
-export type FieldTextareaProps = {} & Omit<
-  FieldTextareaStatelessProps,
-  'onChange'
-> &
-  FieldBaseProps;
+export type FieldTextareaProps = FieldBaseProps<string> &
+  Omit<FieldTextareaStatelessProps, 'onChange'>;

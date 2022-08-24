@@ -1,6 +1,6 @@
 export { default, default as Form } from './components/Form';
 export { default as FormActions } from './components/FormActions';
-export { default as FormContext } from './components/FormContext';
+export * from './components/FormContext';
 export { default as FormFooter } from './components/FormFooter';
 export { default as FormHeader } from './components/FormHeader';
 export { default as FormMeta } from './components/FormMeta';

@@ -1,27 +1,36 @@
-import { Wrapper } from '@uidu/field-base';
-import React, { forwardRef } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import { useController, Wrapper } from '@uidu/field-base';
+import React, { ChangeEvent } from 'react';
 import { FieldCounterProps } from '../types';
-import InputControl from './FieldCounterStateless';
+import FieldCounterStateless from './FieldCounterStateless';
 
-function FieldCounter({
-  onChange,
-  onSetValue,
+export default function FieldCounter({
   name,
-  forwardedRef,
+  value: defaultValue = '',
+  onChange = () => {},
+  rules,
   ...rest
-}: FieldCounterProps & { forwardedRef: any }) {
-  const handleChange = value => {
-    onSetValue(value);
-    onChange(name, value);
+}: FieldCounterProps) {
+  const { field, inputProps, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    rules,
+    ...rest,
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    field.onChange(Number(e.target.value));
+    onChange(name, Number(e.target.value));
   };
 
   return (
-    <Wrapper {...rest}>
-      <InputControl {...rest} onChange={handleChange} ref={forwardedRef} />
+    <Wrapper {...wrapperProps}>
+      <FieldCounterStateless
+        {...rest}
+        {...inputProps}
+        onChange={handleChange}
+      />
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldCounterProps, ref) => (
-  <FieldCounter {...props} forwardedRef={ref} />
-));

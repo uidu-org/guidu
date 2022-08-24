@@ -1,23 +1,35 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
-import React, { forwardRef, useImperativeHandle, useMemo, useRef } from 'react';
-import Switch from 'react-switch';
+import { Root, Switch, Thumb } from '@radix-ui/react-switch';
+import { FieldBaseStatelessProps } from '@uidu/field-base';
+import React, { forwardRef, useMemo } from 'react';
+import styled, { css } from 'styled-components';
+import tw from 'twin.macro';
 import { FieldToggleStatelessProps } from '../types';
-import pkg from '../version.json';
 
-function FieldToggle({
-  id,
-  checked,
-  onChange,
-  size,
-  onColor = '#1DD189',
-  offColor = '#E9ECF0',
-  forwardedRef,
-}: FieldToggleStatelessProps & { forwardedRef?: any }) {
-  const element = useRef(null);
+const StyledSwitchRoot = styled(Root)<{ $hasError: boolean }>`
+  ${tw`bg-gray-200 flex items-center flex items-center transition-all duration-200 rounded-3xl focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))]`}
+  ${({ $hasError }) =>
+    $hasError &&
+    tw`bg-red-400 border-red-500 focus:outline-none focus:ring-red-50 focus:border-red-400`}
+  &[data-state='checked'] {
+    ${tw`bg-green-400`}
+  }
+`;
+const StyledSwitchThumb = styled(Thumb)<{ $size: number }>`
+  ${tw`block transition-all duration-200 ease-in-out`}
+  ${({ $size }) =>
+    css`
+      width: ${$size}px;
+      height: ${$size}px;
+    `}
+  &[data-state='checked'] {
+    transform: ${({ $size }) => `translateX(${$size}px)`};
+  }
+`;
+
+const FieldToggleStateless = forwardRef<
+  typeof Switch,
+  FieldToggleStatelessProps & FieldBaseStatelessProps
+>(({ id, checked, onChange, size, disabled, fieldState, ...rest }, ref) => {
   const sizes = useMemo(() => {
     switch (size) {
       case 'xsmall':
@@ -27,76 +39,26 @@ function FieldToggle({
       case 'large':
         return [46, 22];
       default:
-        return [38, 18];
+        return [42, 21];
     }
   }, [size]);
 
-  useImperativeHandle(forwardedRef, () => element.current.$inputRef);
-
   return (
-    <Switch
-      ref={element}
-      id={id}
-      boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-      activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-      onChange={onChange}
+    <StyledSwitchRoot
+      $hasError={!!fieldState?.error}
       checked={checked}
-      uncheckedIcon={false}
-      checkedIcon={false}
-      offColor={offColor}
-      onColor={onColor}
-      height={sizes[1]}
-      width={sizes[0]}
-    />
+      style={{ width: sizes[0], height: sizes[1] }}
+      ref={ref}
+      onCheckedChange={onChange}
+      disabled={disabled}
+      {...rest}
+    >
+      <StyledSwitchThumb
+        tw="bg-white border border-gray-300 rounded-full shadow-lg"
+        $size={sizes[0] / 2}
+      />
+    </StyledSwitchRoot>
   );
-}
+});
 
-const FieldToggleStateless = forwardRef(
-  (props: FieldToggleStatelessProps, ref) => (
-    <FieldToggle {...props} forwardedRef={ref} />
-  ),
-);
-
-export { FieldToggleStateless as ToggleStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'toggle',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnGuidu({
-      action: 'blurred',
-      actionSubject: 'toggle',
-
-      attributes: {
-        componentName: 'toggle',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onChange: createAndFireEventOnGuidu({
-      action: 'changed',
-      actionSubject: 'toggle',
-
-      attributes: {
-        componentName: 'toggle',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnGuidu({
-      action: 'focused',
-      actionSubject: 'toggle',
-
-      attributes: {
-        componentName: 'toggle',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(FieldToggleStateless),
-);
+export default FieldToggleStateless;

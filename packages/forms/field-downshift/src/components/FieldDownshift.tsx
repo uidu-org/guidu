@@ -1,97 +1,108 @@
-import { Wrapper as FieldWrapper } from '@uidu/field-base';
+/* eslint-disable react/jsx-props-no-spreading */
+import { useController, Wrapper as FieldWrapper } from '@uidu/field-base';
 import Downshift from 'downshift';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { FieldDownshiftProps } from '../types';
 
-function FieldDownshift({
+function FieldDownshift<
+  TOption extends {
+    id: string | number;
+    name: string;
+  },
+>({
   wrapper: WrapperComponent = FieldWrapper,
   multiple = false,
-  input = null,
   onChange = () => {},
-  getOptionValue = ({ id }) => id,
-  getOptionLabel = ({ name }) => name,
-  filterOptions = ({ options }) => options,
-  option: itemRenderer = ({ item, ...rest }) => (
-    <div {...rest}>{item.name}</div>
-  ),
-  menu = ({ children, ...rest }) => <div {...rest}>{children}</div>,
+  getOptionValue = (option) => String(option.id),
+  getOptionLabel = (option) => option.name,
+  filterOptions = (props) => props.options,
+  option: Option = ({ item, ...rest }) => <div {...rest}>{item.name}</div>,
+  input: Input = null,
+  menu: Menu = ({ children, ...rest }) => <div {...rest}>{children}</div>,
   options,
-  value,
-  scope,
-  onSetValue,
+  value: defaultValue = '',
   name,
   ...otherProps
-}: FieldDownshiftProps) {
-  const getValue = () => {
-    if (value === undefined) return undefined;
+}: FieldDownshiftProps<TOption>) {
+  const { field, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...otherProps,
+  });
+
+  const getValue = useCallback(() => {
+    if (field.value === undefined) return undefined;
 
     const cleanedValue = multiple
-      ? options.filter((o) => value.includes(getOptionValue(o)))
-      : options.find((o) => getOptionValue(o) === value);
+      ? options.filter((o) =>
+          (field.value as string[]).includes(getOptionValue(o)),
+        )
+      : options.find((o) => getOptionValue(o) === field.value);
 
     return cleanedValue;
-  };
+  }, [field.value, multiple, options, getOptionValue]);
 
-  const onSelect = (selectedItem) => {
+  const onSelect = (selectedItem: TOption) => {
     if (multiple) {
-      if (value && value.indexOf(getOptionValue(selectedItem)) >= 0) {
-        const newValue = value.filter(
+      if (
+        ((field.value as string[]) || []).indexOf(
+          getOptionValue(selectedItem),
+        ) >= 0
+      ) {
+        const newValue = ((field.value as string[]) || []).filter(
           (v) => v !== getOptionValue(selectedItem),
         );
-        onSetValue(newValue);
+        field.onChange(newValue);
         onChange(name, newValue, { option: selectedItem });
-      } else {
-        // add item
-        const newValue = [
-          ...options
-            .filter((o) => value.indexOf(getOptionValue(o)) >= 0)
-            .map(getOptionValue),
-          getOptionValue(selectedItem),
-        ];
-        onSetValue(newValue);
-        onChange(name, newValue, { option: selectedItem });
+        return undefined;
       }
-    } else {
-      if (selectedItem === '') {
-        onSetValue('');
-        onChange(name, '');
-      } else {
-        onSetValue(getOptionValue(selectedItem));
-        onChange(name, getOptionValue(selectedItem), { option: selectedItem });
-      }
+      // add item
+      const newValue = [
+        ...options
+          .filter(
+            (o) =>
+              ((field.value as string[]) || []).indexOf(getOptionValue(o)) >= 0,
+          )
+          .map(getOptionValue),
+        getOptionValue(selectedItem),
+      ];
+      field.onChange(newValue);
+      onChange(name, newValue, { option: selectedItem });
+      return undefined;
     }
+
+    field.onChange(getOptionValue(selectedItem));
+    onChange(name, getOptionValue(selectedItem), { option: selectedItem });
+    return undefined;
   };
 
-  const isSelected = ({ item }) => {
+  const isSelected = (item: TOption) => {
     if (multiple) {
-      if (value) {
-        return value.indexOf(getOptionValue(item)) >= 0;
+      if (field.value) {
+        return (field.value as string[]).indexOf(getOptionValue(item)) >= 0;
       }
       return null;
     }
-    if (value) {
-      return value === getOptionValue(item);
+    if (field.value) {
+      return field.value === getOptionValue(item);
     }
     return null;
-  };
-
-  const renderItem = ({ item, index, ...rest }) => {
-    return itemRenderer({
-      ...rest,
-      item,
-      index,
-      isSelected: isSelected({ item }),
-    });
   };
 
   const selectedItem = getValue();
 
   return (
-    <Downshift
+    <Downshift<TOption | TOption[]>
       onSelect={onSelect}
-      itemToString={(item) => getOptionLabel({ item })}
+      itemToString={(item) => {
+        if (item) {
+          return getOptionLabel(item);
+        }
+        return '';
+      }}
       initialSelectedItem={selectedItem}
-      // selectedItem={selectedItem}
+      inputValue={field.value as string}
     >
       {({
         getRootProps,
@@ -101,32 +112,36 @@ function FieldDownshift({
         isOpen,
         inputValue,
         ...rest
-      }) => {
-        return (
-          <WrapperComponent
-            {...otherProps}
-            {...getRootProps({ refKey: 'componentRef' })}
+      }) => (
+        <WrapperComponent
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...wrapperProps}
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...getRootProps({ refKey: 'componentRef' })}
+        >
+          {Input && <Input {...getInputProps()} />}
+          <Menu
+            getMenuProps={getMenuProps}
+            isOpen={isOpen}
+            selectedItem={selectedItem}
+            field={field}
+            {...rest}
           >
-            {input && input({ ...getInputProps() })}
-            {menu({
-              ...getMenuProps({}),
-              ...rest,
-              isOpen,
-              selectedItem,
-              children: filterOptions({ options, inputValue, isOpen }).map(
-                (item, index) =>
-                  renderItem({
-                    ...rest,
-                    item,
-                    index,
-                    scope,
-                    getItemProps,
-                  }),
+            {filterOptions({ options, inputValue, isOpen }).map(
+              (item, index) => (
+                <Option
+                  getItemProps={getItemProps}
+                  key={getOptionValue(item)}
+                  index={index}
+                  item={item}
+                  isSelected={isSelected(item)}
+                  {...rest}
+                />
               ),
-            })}
-          </WrapperComponent>
-        );
-      }}
+            )}
+          </Menu>
+        </WrapperComponent>
+      )}
     </Downshift>
   );
 }

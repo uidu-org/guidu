@@ -1,13 +1,14 @@
 import Button from '@uidu/button';
-import DropdownMenu, { DropdownItem } from '@uidu/dropdown-menu';
-import { inputDefaultProps } from '@uidu/field-base/examples-utils';
-import { Form } from '@uidu/form';
 import { ButtonItem, Section } from '@uidu/menu';
-import Popup from '@uidu/popup';
+import Popup, { TriggerProps } from '@uidu/popup';
 import classNames from 'classnames';
-import React, { useState } from 'react';
-import { formDefaultProps } from '../../form/examples-utils';
-import FieldDownshift from '../src';
+import React from 'react';
+import { FieldExampleScaffold } from '../../field-base/examples-utils';
+import FieldDownshift, {
+  FieldDownshiftMenuProps,
+  FieldDownshiftOptionProps,
+  FieldDownshiftProps,
+} from '../src';
 
 const items = [
   { value: 'Stuck', bg: 'rgb(226, 68, 92)' },
@@ -17,42 +18,30 @@ const items = [
   { value: '', bg: 'rgb(196, 196, 196)' },
 ];
 
-const DPMenu = ({ selectedItem, children, ref, ...rest }) => {
-  console.log(rest);
-  return (
-    <DropdownMenu
-      ref={ref}
-      trigger={
-        <div
-          className="d-flex align-items-center justify-content-center"
-          style={{
-            backgroundColor: selectedItem
-              ? selectedItem.bg
-              : 'rgb(196, 196, 196)',
-            color: 'white',
-            height: 48,
-            width: 160,
-          }}
-        >
-          {selectedItem ? selectedItem.value : 'Ciao'}
-        </div>
-      }
-    >
-      <div style={{ padding: '0 4px 0' }}>{children}</div>
-      <div className="p-3 border-top">Aggiungi uno status</div>
-    </DropdownMenu>
-  );
-};
+function PopupMenu({
+  selectedItem,
+  children,
+  getMenuProps,
+  field,
+  ...rest
+}: FieldDownshiftMenuProps<{ value: string; bg: string }>) {
+  const { isOpen, toggleMenu, closeMenu } = rest;
 
-const PopupMenu = ({ selectedItem, children, ref, ...rest }) => {
-  const { isOpen, toggleMenu } = rest;
   return (
     <Popup
       isOpen={isOpen}
+      onClose={closeMenu}
       placement="bottom"
-      trigger={(triggerProps) => (
+      trigger={(triggerProps: TriggerProps) => (
         <Button
           {...triggerProps}
+          ref={(e) => {
+            if (e) {
+              triggerProps.ref(e);
+              field.ref(e);
+            }
+          }}
+          onBlur={field.onBlur}
           onClick={toggleMenu}
           style={{
             backgroundColor: selectedItem
@@ -67,49 +56,28 @@ const PopupMenu = ({ selectedItem, children, ref, ...rest }) => {
         </Button>
       )}
       content={() => (
-        <div ref={ref} tw="w-36">
+        <div tw="w-36" {...getMenuProps({})}>
           <Section>
             <div style={{ padding: '0 4px 0' }}>{children}</div>
             <div className="p-3 border-top">Aggiungi uno status</div>
           </Section>
         </div>
       )}
-    ></Popup>
+    />
   );
-};
+}
 
-const Item = ({ item, index, isSelected, getItemProps }) => {
+function PopupItem({
+  item,
+  index,
+  isSelected,
+  getItemProps,
+}: FieldDownshiftOptionProps<{ value: string; bg: string }>) {
   const { onClick, ...rest } = getItemProps({ item, index });
-  return (
-    <DropdownItem
-      key={index}
-      className={classNames(
-        'd-flex align-items-center justify-content-center',
-        {
-          'border border-primary': isSelected,
-        },
-      )}
-      onClick={(e) => {
-        e.preventDefault();
-        onClick(e);
-      }}
-      style={{
-        backgroundColor: item.bg,
-        color: 'white',
-        height: '48px',
-        marginBottom: 4,
-      }}
-      {...rest}
-    >
-      {item.value}
-    </DropdownItem>
-  );
-};
 
-const PopupItem = ({ item, index, isSelected, getItemProps }) => {
-  const { onClick, ...rest } = getItemProps({ item, index });
   return (
     <ButtonItem
+      {...rest}
       key={index}
       className={classNames(
         'd-flex align-items-center justify-content-center',
@@ -118,7 +86,9 @@ const PopupItem = ({ item, index, isSelected, getItemProps }) => {
         },
       )}
       onClick={(e) => {
+        console.log(e);
         e.preventDefault();
+        e.stopPropagation();
         onClick(e);
       }}
       style={{
@@ -127,37 +97,22 @@ const PopupItem = ({ item, index, isSelected, getItemProps }) => {
         height: '48px',
         marginBottom: 4,
       }}
-      {...rest}
     >
       {item.value}
     </ButtonItem>
   );
-};
+}
 
-export default function Basic({}) {
-  const [selectedValue, setSelectedValue] = useState(items[2].value);
+export default function Basic() {
   return (
-    <Form {...formDefaultProps} footerRenderer={() => null}>
-      <FieldDownshift
-        {...inputDefaultProps}
-        value={selectedValue}
-        onChange={(name, value) => setSelectedValue(value)}
-        layout="elementOnly"
-        menu={DPMenu}
-        option={Item}
-        getOptionValue={({ value }) => value}
-        options={items}
-      />
-      <FieldDownshift
-        {...inputDefaultProps}
-        value={selectedValue}
-        onChange={(name, value) => setSelectedValue(value)}
-        layout="elementOnly"
-        menu={PopupMenu}
-        option={PopupItem}
-        getOptionValue={({ value }) => value}
-        options={items}
-      />
-    </Form>
+    <FieldExampleScaffold<FieldDownshiftProps<any>>
+      component={FieldDownshift}
+      defaultValue={items[2].value}
+      layout="elementOnly"
+      menu={PopupMenu}
+      option={PopupItem}
+      getOptionValue={({ value }) => value}
+      options={items}
+    />
   );
 }

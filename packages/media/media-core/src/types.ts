@@ -7,6 +7,12 @@ export type FileMetadata = {
   width?: number;
   height?: number;
   size?: number;
+  crop?: {
+    x?: number;
+    y?: number;
+    width?: number;
+    height?: number;
+  };
 };
 
 export type FileType = 'image' | 'video' | 'link' | 'file' | 'smart';
@@ -23,7 +29,7 @@ export type FileIdentifier = {
 export type MediaClientConfig = any;
 
 export type MediaUploadOptions = {
-  module: AwsS3 | XHRUpload;
+  module: typeof AwsS3 | typeof XHRUpload;
   options: Partial<XHRUploadOptions> | Partial<AwsS3Options>;
   responseHandler: (response) => FileIdentifier;
 };

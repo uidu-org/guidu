@@ -1,7 +1,8 @@
-import { Form } from '@uidu/form';
-import React, { Component } from 'react';
-import { inputDefaultProps } from '../../field-base/examples-utils';
-import { formDefaultProps } from '../../form/examples-utils';
+import React, { useState } from 'react';
+import {
+  FieldExampleScaffold,
+  inputDefaultProps,
+} from '../../field-base/examples-utils';
 import { AsyncSelect } from '../src';
 import { cities } from './common/data';
 
@@ -19,43 +20,43 @@ const promiseOptions = async (inputValue) => {
   return response.json();
 };
 
-export default class WithPromises extends Component<any, State> {
-  state = { inputValue: '', value: '', options: [] };
-  handleInputChange = (newValue: string) => {
+export default function WithPromisesExample() {
+  const [inputValue, setInputValue] = useState('');
+  const [value, setValue] = useState('');
+  const [options, setOptions] = useState([]);
+
+  const handleInputChange = (newValue: string) => {
     const inputValue = newValue.replace(/\W/g, '');
-    this.setState({ inputValue });
+    setInputValue(inputValue);
     return inputValue;
   };
 
-  setValue = (option) => {
+  const handleSetValue = (option) => {
     console.log(option);
-    this.setState({
-      value: { name: option.name, id: option.id },
-      options: [option],
-    });
+    setValue({ ...option });
+    setOptions([option]);
   };
 
-  render() {
-    const { inputValue, value, options } = this.state;
-    return (
-      <Form {...formDefaultProps}>
-        <AsyncSelect
-          {...inputDefaultProps}
-          value={value.id}
-          objValue={value}
-          inputValue={inputValue}
-          onInputChange={(v) => {
-            console.log(v);
-            this.setState({ inputValue: v });
-          }}
-          cacheOptions
-          loadOptions={promiseOptions}
-          onChange={(_name, _value, { option }) => {
-            console.log(_value);
-            this.setValue(option);
-          }}
-        />
-      </Form>
-    );
-  }
+  return (
+    <FieldExampleScaffold
+      component={AsyncSelect}
+      {...inputDefaultProps}
+      options={[]}
+      value={value.id}
+      objValue={value}
+      inputValue={inputValue}
+      onInputChange={(v) => {
+        console.log(v);
+        setInputValue(v);
+        // this.setState({ inputValue: v });
+      }}
+      cacheOptions
+      loadOptions={promiseOptions}
+      onChange={(_name, _value, { option }) => {
+        console.log(_value);
+        handleSetValue(option);
+        // this.setValue(option);
+      }}
+    />
+  );
 }

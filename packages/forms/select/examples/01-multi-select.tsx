@@ -1,16 +1,13 @@
-import { Form } from '@uidu/form';
 import React from 'react';
-import { inputDefaultProps } from '../../field-base/examples-utils';
-import { formDefaultProps } from '../../form/examples-utils';
+import { FieldExampleScaffold } from '../../field-base/examples-utils';
 import { selectDefaultProps } from '../examples-utils';
 import Select from '../src';
 import { cities } from './common/data';
 
-// data imported for brevity; equal to the options from Single Select example
-const MultiExample = () => (
-  <Form {...formDefaultProps}>
-    <Select
-      {...inputDefaultProps}
+export default function MultiExample() {
+  return (
+    <FieldExampleScaffold
+      component={Select}
       {...selectDefaultProps}
       className="multi-select"
       // options={cities}
@@ -18,9 +15,7 @@ const MultiExample = () => (
       isSearchable={false}
       placeholder="Choose a City"
       options={cities}
-      value={[cities[0].id]}
+      defaultValue={[cities[0].id]}
     />
-  </Form>
-);
-
-export default MultiExample;
+  );
+}

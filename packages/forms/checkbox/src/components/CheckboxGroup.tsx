@@ -1,4 +1,4 @@
-import { Wrapper } from '@uidu/field-base';
+import { useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import tw from 'twin.macro';
 import { CheckboxGroupProps } from '../types';
@@ -8,25 +8,31 @@ function CheckboxGroup({
   isInline = false,
   className = null,
   options = [],
-  value = [],
-  onSetValue,
-  onChange,
+  value: defaultValue = [],
+  onChange = () => {},
   name,
   ...rest
 }: CheckboxGroupProps) {
-  const elements = {};
+  const elements: Record<string, HTMLInputElement> = {};
+
+  const { field, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
 
   const handleChange = () => {
     const checkedOptions = options.filter(
       (option) => elements[option.id].checked,
     );
     const value = checkedOptions.map((option) => option.id);
-    onSetValue(value);
+    field.onChange(value);
     onChange(name, value);
   };
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...wrapperProps} floatLabel={false}>
       <div
         css={[isInline ? tw`space-x-6` : tw`space-y-2`]}
         className={className}
@@ -34,16 +40,17 @@ function CheckboxGroup({
         {options.map((option) => (
           <CheckboxStateless
             key={`${name}-${option.id}`}
-            id={`${name}-${option.id}`}
-            ref={(c: any) => {
+            ref={(c) => {
               if (c) {
                 elements[option.id] = c;
               }
             }}
-            isInline={isInline}
+            id={option.id}
+            value={option.id}
             label={option.name}
+            isInline={isInline}
             name={name}
-            checked={value.indexOf(option.id) >= 0}
+            checked={field.value.indexOf(option.id) >= 0}
             onChange={handleChange}
           />
         ))}

@@ -1,8 +1,5 @@
-import { ComponentHOC } from '@uidu/field-base';
-import { withFormsy } from 'formsy-react';
-import FieldToggleComponent from './components/FieldToggle';
-export { default as FieldToggleStateless } from './components/FieldToggleStateless';
+import FieldToggle from './components/FieldToggle';
 
-export const FieldToggle = withFormsy(ComponentHOC(FieldToggleComponent));
+export { default as FieldToggleStateless } from './components/FieldToggleStateless';
 
 export default FieldToggle;

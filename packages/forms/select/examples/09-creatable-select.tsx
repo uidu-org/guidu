@@ -1,7 +1,9 @@
-import { Form } from '@uidu/form';
-import React, { Component } from 'react';
-import { inputDefaultProps } from '../../field-base/examples-utils';
-import { formDefaultProps } from '../../form/examples-utils';
+import React, { useState } from 'react';
+import { CreatableProps } from 'react-select/creatable';
+import {
+  FieldExampleScaffold,
+  inputDefaultProps,
+} from '../../field-base/examples-utils';
 import { CreatableSelect } from '../src';
 
 const defaultOptions = [
@@ -20,65 +22,44 @@ const createOption = (name) => ({
   id: name.toLowerCase().replace(/\W/g, ''),
 });
 
-type State = {
-  isLoading: boolean;
-  options: Array<{ name: string; id: string }>;
-  value?: {};
-};
+export default function CreatableAdvanced() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [options, setOptions] = useState(defaultOptions);
+  const [value, setValue] = useState(null);
 
-export default class CreatableAdvanced extends Component<any, State> {
-  state: State = {
-    isLoading: false,
-    options: defaultOptions,
-    value: undefined,
-  };
-
-  handleChange = (newValue: any, actionMeta: any) => {
+  const handleChange = (newValue: any, actionMeta: any) => {
     console.group('Value Changed');
     console.log(newValue);
     console.log(`action: ${actionMeta.action}`);
     console.groupEnd();
     // this.setState({ value: newValue });
   };
-  handleCreate = (inputValue: any) => {
+
+  const handleCreate = (inputValue: any) => {
     // We do not assume how users would like to add newly created options to the existing options list.
     // Instead we pass users through the new value in the onCreate prop
-    this.setState({ isLoading: true });
+    setIsLoading(true);
     console.group('Option created');
     console.log('Wait a moment...');
-    const { options } = this.state;
     const newOption = createOption(inputValue);
     console.log(newOption);
     console.groupEnd();
-    this.setState({
-      isLoading: false,
-      options: [...options, newOption],
-      value: newOption.id,
-    });
+    setIsLoading(false);
+    setOptions([...options, newOption]);
+    setValue(newOption.id);
   };
-  render() {
-    const { isLoading, options, value } = this.state;
-    return (
-      <Form {...formDefaultProps}>
-        <CreatableSelect
-          {...inputDefaultProps}
-          isClearable
-          isDisabled={isLoading}
-          isLoading={isLoading}
-          onChange={this.handleChange}
-          onCreateOption={this.handleCreate}
-          options={options}
-          formatCreateLabel={(inputText?: string) => {
-            console.log(inputText);
-            if (inputText) {
-              return `Crea new ${inputText.trim()}`;
-            }
-            return '';
-          }}
-          isValidNewOption={() => true}
-          value={value}
-        />
-      </Form>
-    );
-  }
+
+  return (
+    <FieldExampleScaffold<CreatableProps<any, false, any>>
+      component={CreatableSelect}
+      {...inputDefaultProps}
+      isClearable
+      isDisabled={isLoading}
+      isLoading={isLoading}
+      onChange={handleChange}
+      onCreateOption={handleCreate}
+      options={options}
+      value={value}
+    />
+  );
 }

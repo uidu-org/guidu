@@ -1,8 +1,5 @@
-import { ComponentHOC } from '@uidu/field-base';
-import { withFormsy } from 'formsy-react';
-import FieldRangeComponent from './components/FieldRange';
-export { default as FieldRangeStateless } from './components/FieldRangeStateless';
+import FieldRange from './components/FieldRange';
 
-export const FieldRange = withFormsy(ComponentHOC(FieldRangeComponent));
+export { default as FieldRangeStateless } from './components/FieldRangeStateless';
 
 export default FieldRange;

@@ -1,15 +1,22 @@
-import { StyledRow, Wrapper } from '@uidu/field-base';
+import {
+  StyledAddon,
+  StyledInput,
+  StyledRow,
+  useController,
+  Wrapper,
+} from '@uidu/field-base';
 import { ButtonItem, MenuGroup } from '@uidu/menu';
 import React, {
-  forwardRef,
+  ChangeEvent,
   KeyboardEvent,
+  useCallback,
   useEffect,
-  useImperativeHandle,
   useRef,
   useState,
 } from 'react';
 import tw from 'twin.macro';
 import usePlacesAutocomplete, {
+  GeoArgs,
   getGeocode,
   getLatLng,
   RequestOptions,
@@ -19,7 +26,7 @@ import { FieldGeosuggestProps } from '../types';
 import FieldGeosuggestCurrentPosition from './FieldGeosuggestCurrentPosition';
 import FieldGeosuggestItem from './FieldGeosuggestItem';
 
-function FieldGeosuggest({
+export default function FieldGeosuggest({
   onSuggestSelect = () => {},
   onGeocode,
   name,
@@ -32,34 +39,32 @@ function FieldGeosuggest({
   geocoderType,
   bounds,
   countryRestricted,
-  onSetValue,
-  onChange,
+  onChange = () => {},
   forwardedRef,
   geolocationEnabled = true,
   option: OptionRenderer = FieldGeosuggestItem,
   valueGetter,
-  filterOption = (_option: Suggestion) => true,
-  value: propValue,
+  filterOption = (option: Suggestion) => true,
+  value: defaultValue = '',
   ...rest
 }: FieldGeosuggestProps) {
+  const { field, wrapperProps, inputProps, fieldState } = useController({
+    name,
+    defaultValue,
+    onChange,
+    ...rest,
+  });
+
   const element = useRef<HTMLInputElement>(null);
   const [activeSuggestion, setActiveSuggestion] = useState<Suggestion | null>(
     null,
   );
 
-  useImperativeHandle(forwardedRef, () => element.current);
-
   const requestOptions: RequestOptions = {
     types: geocoderType || ['geocode', 'establishment'],
+    ...(bounds ? { bounds } : {}),
+    ...(countryRestricted ? { country: countryRestricted } : {}),
   };
-  if (bounds) {
-    requestOptions.bounds = bounds;
-  }
-  if (countryRestricted) {
-    requestOptions.componentRestrictions = {
-      country: countryRestricted,
-    };
-  }
 
   const {
     ready,
@@ -70,7 +75,7 @@ function FieldGeosuggest({
   } = usePlacesAutocomplete({
     requestOptions,
     debounce: 300,
-    defaultValue: propValue,
+    defaultValue,
   });
 
   const [isGeolocationAvailable, setIsGeolocationAvailable] = useState(false);
@@ -89,11 +94,11 @@ function FieldGeosuggest({
     }
   }, [geolocationEnabled]);
 
-  const activateSuggestion = (direction: string) => {
+  const activateSuggestion = (direction: string): void => {
     const suggestsCount = data.length - 1;
     const next = direction === 'next';
 
-    let newActiveSuggest = null;
+    let newActiveSuggest: Suggestion = null;
     let newIndex = 0;
     let i = 0;
 
@@ -114,7 +119,11 @@ function FieldGeosuggest({
     setActiveSuggestion(newActiveSuggest);
   };
 
-  const geocodeSuggestion = ({ description }) => {
+  const geocodeSuggestion = ({
+    description,
+  }: {
+    description: GeoArgs['address'];
+  }) => {
     getGeocode({ address: description })
       .then((results) => getLatLng(results[0]))
       .then(onGeocode)
@@ -123,7 +132,7 @@ function FieldGeosuggest({
       });
   };
 
-  const selectSuggestion = (suggestion: Suggestion) => {
+  const selectSuggestion = (suggestion: Suggestion): undefined => {
     if (!suggestion) return null;
 
     const { description } = suggestion;
@@ -132,8 +141,7 @@ function FieldGeosuggest({
       v = valueGetter(suggestion);
     }
     setValue(v, false);
-    // formsy
-    onSetValue(v);
+    field.onChange(v);
     onChange(name, v, suggestion);
     // callbacks
     if (onGeocode) {
@@ -172,74 +180,87 @@ function FieldGeosuggest({
     element.current?.setSelectionRange(0, 9999);
   };
 
-  const onInputChange = (e) => setValue(e.target.value);
+  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value === '') {
+      field.onChange(e.target.value);
+    }
+
+    setValue(e.target.value);
+  };
+
+  const CachedStyledRow = useCallback(
+    (props) => (
+      <StyledRow
+        tw="relative"
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
+      />
+    ),
+    [],
+  );
 
   return (
     <Wrapper
       overrides={{
         StyledRow: {
-          component: (props) => <StyledRow tw="relative" {...props} />,
+          component: CachedStyledRow,
         },
       }}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
       // eslint-disable-next-line react/jsx-props-no-spreading
+      {...wrapperProps}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...(isGeolocationAvailable
         ? {
-            addonAfter: (
-              <FieldGeosuggestCurrentPosition onGeocode={onGeocode} />
-            ),
+            addonsAfter: [
+              <StyledAddon>
+                <FieldGeosuggestCurrentPosition onGeocode={onGeocode} />
+              </StyledAddon>,
+            ],
           }
         : {})}
       required={required}
-      id={id}
     >
-      <input
-        className={className}
-        css={[
-          tw`background[rgb(var(--body-on-primary-bg))] shadow-sm focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))] block w-full border border-color[rgb(var(--field-border, var(--border)))] rounded py-3 px-4 placeholder-gray-400 disabled:opacity-50 disabled:background[rgba(var(--brand-subtle), .4)]`,
-          isGeolocationAvailable && tw`pr-14`,
-        ]}
-        disabled={!ready || disabled}
-        name={name}
-        ref={element}
-        type="search"
-        id={id}
-        value={value}
-        autoComplete="off"
-        autoFocus={autoFocus}
-        placeholder={placeholder as string}
-        onFocus={onInputFocus}
-        onKeyDown={onInputKeyDown}
-        onChange={onInputChange}
-        required={required}
-      />
-      <div tw="absolute overflow-y-scroll p-0 z-30 w-full rounded-b bg-white shadow max-h-72 divide-y top-full">
-        {status === 'OK' && (
-          <MenuGroup>
-            {data.filter(filterOption).map((suggestion) => {
-              const isActive =
-                activeSuggestion &&
-                suggestion.reference === activeSuggestion.reference;
+      <div tw="relative w-full">
+        <StyledInput
+          {...inputProps}
+          $hasError={!!fieldState?.error}
+          value={value}
+          className={className}
+          css={[isGeolocationAvailable && tw`pr-14`]}
+          disabled={!ready || disabled}
+          type="search"
+          autoComplete="off"
+          autoFocus={autoFocus}
+          placeholder={placeholder as string}
+          onFocus={onInputFocus}
+          onKeyDown={onInputKeyDown}
+          onChange={onInputChange}
+          required={required}
+        />
+        <div tw="absolute overflow-y-scroll p-0 z-30 w-full rounded-b bg-white shadow max-h-72 divide-y top-full">
+          {status === 'OK' && (
+            <MenuGroup>
+              {data.filter(filterOption).map((suggestion) => {
+                const isActive =
+                  activeSuggestion &&
+                  suggestion.place_id === activeSuggestion.place_id;
 
-              return (
-                <ButtonItem
-                  key={suggestion.reference}
-                  onClick={() => selectSuggestion(suggestion)}
-                  isSelected={isActive}
-                >
-                  <OptionRenderer suggestion={suggestion} />
-                </ButtonItem>
-              );
-            })}
-          </MenuGroup>
-        )}
+                return (
+                  <ButtonItem
+                    key={suggestion.place_id}
+                    onClick={() => selectSuggestion(suggestion)}
+                    isSelected={isActive}
+                  >
+                    <OptionRenderer suggestion={suggestion} />
+                  </ButtonItem>
+                );
+              })}
+            </MenuGroup>
+          )}
+        </div>
       </div>
     </Wrapper>
   );
 }
-
-export default forwardRef((props: FieldGeosuggestProps, ref) => (
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  <FieldGeosuggest {...props} forwardedRef={ref} />
-));

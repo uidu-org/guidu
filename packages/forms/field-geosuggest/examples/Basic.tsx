@@ -1,25 +1,7 @@
-import { inputDefaultProps } from '@uidu/field-base/examples-utils';
-import { Form } from '@uidu/form';
-import React, { PureComponent } from 'react';
-import { formDefaultProps } from '../../form/examples-utils';
-import FieldGeosuggest from '../src';
+import React from 'react';
+import FieldText from '../src';
+import { FieldExampleScaffold } from '../../field-base/examples-utils';
 
-export default class Basic extends PureComponent {
-  render() {
-    return (
-      <Form {...formDefaultProps}>
-        <FieldGeosuggest
-          {...inputDefaultProps}
-          label="Enter a fruit"
-          geolocationEnabled={false}
-          // geocoderType={['(cities)']}
-          countryRestricted="it"
-          valueGetter={(suggestion) => {
-            console.log(suggestion);
-            return suggestion.structured_formatting.main_text;
-          }}
-        />
-      </Form>
-    );
-  }
+export default function Basic() {
+  return <FieldExampleScaffold component={FieldText} defaultValue="Milano" />;
 }

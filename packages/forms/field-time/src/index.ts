@@ -1,8 +1,7 @@
-import { ComponentHOC } from '@uidu/field-base';
-import { withFormsy } from 'formsy-react';
-import FieldTimeComponent from './components/FieldTime';
-export { default as FieldTimeStateless } from './components/FieldTimeStateless';
+import FieldTime from './components/FieldTime';
 
-export const FieldTime = withFormsy(ComponentHOC(FieldTimeComponent));
+export { default as FieldTimeStateless } from './components/FieldTimeStateless';
+export * from './types';
+export * from './utils';
 
 export default FieldTime;

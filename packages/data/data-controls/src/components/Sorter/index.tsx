@@ -1,4 +1,4 @@
-import { SwitchVerticalIcon } from '@heroicons/react/solid';
+import { SwitchVerticalIcon } from '@heroicons/react/24/solid';
 import { useDataManagerContext } from '@uidu/data-manager';
 import Popup, { TriggerProps } from '@uidu/popup';
 import React, { useCallback, useState } from 'react';
