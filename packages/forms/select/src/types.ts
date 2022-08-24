@@ -9,7 +9,7 @@ import ReactSelect, {
   InputProps,
   MenuProps,
   MultiValueProps,
-  OptionProps as ReactSelectOptionProps,
+  OptionProps,
   OptionsType as RSOptionsType,
   PlaceholderProps,
   Props,
@@ -54,22 +54,6 @@ export interface OptionType {
 
 export type OptionsType<Option = OptionType> = RSOptionsType<Option>;
 
-export interface OptionProps<Option = OptionType>
-  extends ReactSelectOptionProps<Option> {
-  [key: string]: any;
-  Icon?: React.ComponentType<{
-    label: string;
-    // label?: string;
-    size?: 'small' | 'medium' | 'large' | 'xlarge';
-    onClick?: (e: MouseEvent) => void;
-    primaryColor?: string;
-    secondaryColor?: string;
-  }>;
-  isDisabled: boolean;
-  isFocused: boolean;
-  isSelected: boolean;
-}
-
 export interface SelectProps<TOptionType>
   extends ReactSelectProps<TOptionType> {
   /* This prop affects the height of the select control. Compact is gridSize() * 4, default is gridSize * 5  */
@@ -82,8 +66,10 @@ export type {
   ActionMeta,
   ControlProps,
   FormatOptionLabelMeta,
+  GroupBase,
   GroupProps,
   InputProps,
+  OptionProps,
   MenuProps,
   MultiValueProps,
   PlaceholderProps,

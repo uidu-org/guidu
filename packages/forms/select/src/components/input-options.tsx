@@ -1,8 +1,8 @@
 import { CheckIcon } from '@heroicons/react/24/outline';
 import { ButtonItem, ButtonItemProps } from '@uidu/menu';
 import React from 'react';
-import { OptionProps } from 'react-select';
 import tw from 'twin.macro';
+import { OptionProps } from '../types';
 
 function ControlOption(
   props: OptionProps & { iconBefore: ButtonItemProps['iconBefore'] },

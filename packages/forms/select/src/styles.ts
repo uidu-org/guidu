@@ -6,7 +6,7 @@ function getBoxShadow(
   fieldState: ControllerFieldState,
   { isFocused }: ControlProps,
 ) {
-  if (fieldState.error) {
+  if (fieldState?.error) {
     return '0 0 0, 0 0 0 2px rgb(239 68 68 / 5%), 0 1px 2px 0 rgb(0 0 0 / 5%)';
   }
   if (isFocused) {
@@ -19,7 +19,7 @@ function getBorderColor(
   fieldState: ControllerFieldState,
   { isFocused, isDisabled }: ControlProps,
 ) {
-  if (fieldState.error) {
+  if (fieldState?.error) {
     if (isFocused) {
       return theme`colors.red.400`;
     }
@@ -34,7 +34,7 @@ function getBorderColor(
   return 'rgb(var(--field-border, var(--border)))';
 }
 
-export function baseStyles(fieldState: ControllerFieldState): StylesConfig {
+export function baseStyles(fieldState?: ControllerFieldState): StylesConfig {
   return {
     control: (base, state) => ({
       ...base,
@@ -49,7 +49,7 @@ export function baseStyles(fieldState: ControllerFieldState): StylesConfig {
     }),
     placeholder: (base, state) => ({
       ...base,
-      color: fieldState.error ? theme`colors.red.400` : theme`colors.gray.400`,
+      color: fieldState?.error ? theme`colors.red.400` : theme`colors.gray.400`,
     }),
     valueContainer: (base, state) => {
       if (state.isMulti) {

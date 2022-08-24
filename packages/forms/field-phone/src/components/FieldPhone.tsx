@@ -1,36 +1,26 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useController, Wrapper } from '@uidu/field-base';
-import React from 'react';
-// import {
-//   getCountries,
-//   getCountryCallingCode,
-// } from 'react-phone-number-input/input';
-// import en from 'react-phone-number-input/locale/en.json';
+import { useFormContext } from '@uidu/form';
+import React, { useState } from 'react';
+import { getCountries } from 'react-phone-number-input';
+import en from 'react-phone-number-input/locale/en.json';
+import tw from 'twin.macro';
 import { FieldPhoneProps } from '../types';
+import CountrySelect from './CountrySelect';
 import FieldPhoneStateless from './FieldPhoneStateless';
-
-// const CountrySelect = ({ value, onChange, labels, ...rest }) => (
-//   <select
-//     {...rest}
-//     value={value}
-//     onChange={(event) => onChange(event.target.value || undefined)}
-//   >
-//     <option value="">{labels['ZZ']}</option>
-//     {getCountries().map((country) => (
-//       <option key={country} value={country}>
-//         {labels[country]} +{getCountryCallingCode(country)}
-//       </option>
-//     ))}
-//   </select>
-// );
 
 export default function FieldPhone({
   name,
   value: defaultValue,
   onChange = () => {},
   rules,
+  country: defaultCountry = 'IT',
+  countryLabels = en,
+  countries = getCountries(),
+  withCountrySelect,
   ...rest
 }: FieldPhoneProps) {
+  const { setFocus } = useFormContext();
   const { field, inputProps, wrapperProps } = useController({
     name,
     defaultValue,
@@ -38,6 +28,8 @@ export default function FieldPhone({
     rules,
     ...rest,
   });
+
+  const [country, setCountry] = useState(defaultCountry);
 
   const handleChange = (value: string) => {
     field.onChange(value);
@@ -47,13 +39,29 @@ export default function FieldPhone({
   return (
     <Wrapper
       {...wrapperProps}
-      // addonsBefore={[
-      //   <div>
-      //     <CountrySelect labels={en} onChange={onChange} />
-      //   </div>,
-      // ]}
+      addonsBefore={
+        withCountrySelect && [
+          <div>
+            <CountrySelect
+              countries={countries}
+              labels={countryLabels}
+              value={country}
+              onChange={(value) => {
+                setCountry(value);
+                setFocus(name);
+              }}
+            />
+          </div>,
+        ]
+      }
     >
-      <FieldPhoneStateless {...rest} {...inputProps} onChange={handleChange} />
+      <FieldPhoneStateless
+        {...rest}
+        {...inputProps}
+        css={[withCountrySelect && tw`pl-32`]}
+        country={country}
+        onChange={handleChange}
+      />
     </Wrapper>
   );
 }

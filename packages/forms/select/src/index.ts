@@ -10,7 +10,7 @@ export { default as useCreatable } from 'react-select/creatable';
 export { default as CheckboxSelect } from './CheckboxSelect';
 export { CheckboxOption, RadioOption } from './components/input-options';
 export { default as CountrySelect } from './CountrySelect';
-export { allCountries } from './data/countries';
+export * from './data/countries';
 export { default as RadioSelect } from './RadioSelect';
 export * from './styles';
 export { default as TimeZoneSelect } from './TimeZoneSelect';

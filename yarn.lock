@@ -7681,9 +7681,12 @@ __metadata:
     "@uidu/field-base": ^3.1.26
     "@uidu/field-text": ^1.2.5
     "@uidu/form": ^1.2.27
+    "@uidu/select": "workspace:^"
     react: ^18.2.0
     react-phone-number-input: ^3.2.9
     tslib: ^2.4.0
+  peerDependencies:
+    twin.macro: "*"
   languageName: unknown
   linkType: soft
 
@@ -8785,7 +8788,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/select@1.6.12, @uidu/select@^1.6.10, @uidu/select@^1.6.11, @uidu/select@^1.6.12, @uidu/select@^1.6.9, @uidu/select@workspace:packages/forms/select":
+"@uidu/select@1.6.12, @uidu/select@^1.6.10, @uidu/select@^1.6.11, @uidu/select@^1.6.12, @uidu/select@^1.6.9, @uidu/select@workspace:^, @uidu/select@workspace:packages/forms/select":
   version: 0.0.0-use.local
   resolution: "@uidu/select@workspace:packages/forms/select"
   dependencies:

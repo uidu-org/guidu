@@ -1,14 +1,9 @@
 import { useController, Wrapper } from '@uidu/field-base';
-
 import React from 'react';
-import ReactSelect, {
-  GroupBase,
-  OptionProps,
-  SingleValueProps,
-} from 'react-select';
+import ReactSelect, { GroupBase } from 'react-select';
 import { Country, groupedCountries } from './data/countries';
 import { useSelect } from './hooks/useSelect';
-import { CreateSelectProps } from './types';
+import { CreateSelectProps, OptionProps, SingleValueProps } from './types';
 
 const flagCSS = () => ({
   fontSize: '18px',
@@ -27,7 +22,7 @@ function Option<TIsMulti extends boolean>(
       }}
     >
       <div tw="flex items-center mr-auto min-w-0 w-auto">
-        <div tw="absolute w-5 h-5 flex items-center" style={flagCSS()}>
+        <div tw="absolute w-5 h-5 flex items-center mr-2 text-lg">
           {data.before}
         </div>
         <div tw="min-w-0 flex-1 pl-8">
@@ -60,7 +55,7 @@ function SingleValue<TIsMulti extends boolean>(
       }}
     >
       {data.before && (
-        <div tw="absolute w-5 h-5 flex items-center" style={flagCSS()}>
+        <div tw="absolute w-5 h-5 flex items-center mr-2 text-lg">
           {data.before}
         </div>
       )}

@@ -102,7 +102,7 @@ Hook form migration
   - [V] examples
   - [V] refs
   - [V] errors
-- [ ] field-phone - TODO: Add country select
+- [V] field-phone - TODO: Add country select
   - [V] types
   - [V] dependencies
   - [V] examples
