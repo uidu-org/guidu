@@ -34,7 +34,7 @@ const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
         isDisabled={isDisabled}
         data-testid={testId}
         onClick={isDisabled ? undefined : onClick}
-        // onMouseDown={onMouseDownHandler}
+        onMouseDown={onMouseDownHandler}
         ref={ref}
         {...others}
       >
