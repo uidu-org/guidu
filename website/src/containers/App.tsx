@@ -1,5 +1,6 @@
 import { ModalTransition } from '@uidu/modal-dialog';
 import Shell, { ShellBody, ShellMain, ShellSidebar } from '@uidu/shell';
+import { initializeFileTypeIcons } from '@uifabric/file-type-icons';
 import * as React from 'react';
 import { IntlProvider } from 'react-intl';
 import { RouteComponentProps, withRouter } from 'react-router';
@@ -17,6 +18,8 @@ import ExamplesModal from '../pages/Package/ExamplesModal';
 import PackageDocument from '../pages/PackageDocument';
 import PackagesList from '../pages/PackagesList';
 import Nav from './Nav';
+
+initializeFileTypeIcons();
 
 type ScrollToTopProps = RouteComponentProps<any>;
 

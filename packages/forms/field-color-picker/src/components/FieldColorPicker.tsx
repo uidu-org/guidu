@@ -1,4 +1,4 @@
-import { XIcon } from '@heroicons/react/outline';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import Button, { ButtonProps } from '@uidu/button';
 import { StyledInput, useController, Wrapper } from '@uidu/field-base';
 import Popup, { TriggerProps } from '@uidu/popup';
@@ -7,7 +7,6 @@ import React, {
   Key,
   MouseEvent,
   useCallback,
-  useImperativeHandle,
   useState,
 } from 'react';
 import { HexColorInput, HexColorPicker } from 'react-colorful';
@@ -33,38 +32,28 @@ const Swatch = styled.div<{ color: string }>`
   height: 100%;
 `;
 
-function DefaultTrigger(
-  props: TriggerProps &
-    FieldColorPickerProps & { toggleDialog: ButtonProps['onClick'] },
-) {
-  const { toggleDialog, value, consumerRef, forwardedRef, ...rest } = props;
-
-  useImperativeHandle(forwardedRef, () => consumerRef.current);
-
-  return (
-    <Button
-      {...rest}
-      tabIndex={-1}
-      ref={consumerRef}
-      type="button"
-      onClick={toggleDialog}
-      tw="absolute left[2px] top[2px] bottom[2px] flex items-center w-12 z-50 focus:(outline-none ring-0)"
-      style={{
-        backgroundColor: value,
-      }}
-    />
-  );
-}
-
-const DefaulTriggerRef = forwardRef((props: FieldColorPickerProps, ref) => (
-  <DefaultTrigger {...props} consumerRef={ref} />
+const DefaulTrigger = forwardRef<
+  HTMLButtonElement,
+  FieldColorPickerProps & { toggleDialog: ButtonProps['onClick'] }
+>(({ toggleDialog, value, ...rest }, ref) => (
+  <Button
+    {...rest}
+    ref={ref}
+    tabIndex={-1}
+    type="button"
+    onClick={toggleDialog}
+    tw="absolute left[2px] top[2px] bottom[2px] flex items-center w-12 z-50 focus:(outline-none ring-0)"
+    style={{
+      backgroundColor: value,
+    }}
+  />
 ));
 
 export default function FieldColorPicker({
   name,
   value: defaultValue,
   onChange = () => {},
-  trigger: Trigger = DefaulTriggerRef,
+  trigger: Trigger = DefaulTrigger,
   colors = [
     '#FF6900',
     '#FCB900',
@@ -106,7 +95,7 @@ export default function FieldColorPicker({
           <div>{label}</div>
           <Button
             onClick={() => setDialogOpen(false)}
-            iconBefore={<XIcon tw="h-4 w-4" />}
+            iconBefore={<XMarkIcon tw="h-4 w-4" />}
             appearance="link"
           />
         </div>
@@ -137,14 +126,19 @@ export default function FieldColorPicker({
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...triggerProps}
         value={field.value}
-        forwardedRef={field.ref}
+        ref={(e) => {
+          if (e) {
+            triggerProps.ref(e);
+            field.ref(e);
+          }
+        }}
         toggleDialog={(e: MouseEvent) => {
           e.preventDefault();
           setDialogOpen(!dialogOpen);
         }}
       />
     ),
-    [Trigger, field.ref, field.value, dialogOpen, setDialogOpen],
+    [Trigger, field, dialogOpen, setDialogOpen],
   );
 
   return (
@@ -167,7 +161,7 @@ export default function FieldColorPicker({
             <StyledInput
               {...field}
               type="text"
-              hasError={!!fieldState?.error}
+              $hasError={!!fieldState?.error}
               as={HexColorInput}
               tw="pl-20"
               color={field.value}

@@ -16,20 +16,21 @@
   "types": "dist/uidu-field-range.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
+    "@radix-ui/react-slider": "^1.0.0",
     "@uidu/field-base": "^3.1.26",
-    "@uidu/form": "^1.2.27",
-    "@uidu/theme": "^0.6.18",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "twin.macro": "^2.8.2"
   },
   "peerDependencies": {
     "react": "^18.0.0",
-    "styled-components": "*"
+    "styled-components": "*",
+    "twin.macro": "*"
   },
   "publishConfig": {
     "access": "public"

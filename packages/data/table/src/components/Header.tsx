@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@heroicons/react/solid';
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { HeaderContext } from '@tanstack/react-table';
 import Button from '@uidu/button';
 import { ButtonItem, MenuGroup, Section } from '@uidu/menu';

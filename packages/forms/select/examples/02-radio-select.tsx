@@ -1,28 +1,26 @@
-import { Form } from '@uidu/form';
 import React from 'react';
-import { inputDefaultProps } from '../../field-base/examples-utils';
-import { formDefaultProps } from '../../form/examples-utils';
+import { FieldExampleScaffold } from '../../field-base/examples-utils';
+import { selectDefaultProps } from '../examples-utils';
 import { RadioSelect } from '../src';
 import { cities } from './common/data';
 
-// data imported for brevity; equal to the options from Single Select example
-const RadioExample = () => (
-  <Form {...formDefaultProps}>
-    <RadioSelect
-      {...inputDefaultProps}
+export default function RadioExample() {
+  return (
+    <FieldExampleScaffold
+      component={RadioSelect}
+      {...selectDefaultProps}
+      className="multi-select"
+      // options={cities}
       className="radio-select"
       classNamePrefix="react-select"
       options={[
         ...cities,
         {
-          name:
-            "super long name that noone will ever read because it's way too long",
+          name: "super long name that noone will ever read because it's way too long",
           id: 'test',
         },
       ]}
       placeholder="Choose a City"
     />
-  </Form>
-);
-
-export default RadioExample;
+  );
+}

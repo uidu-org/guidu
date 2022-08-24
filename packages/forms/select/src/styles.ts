@@ -1,9 +1,11 @@
-import { colors } from '@uidu/theme';
 import { ControllerFieldState } from 'react-hook-form';
-import { StylesConfig } from 'react-select';
+import { ControlProps, StylesConfig } from 'react-select';
 import { theme } from 'twin.macro';
 
-function getBoxShadow(fieldState: ControllerFieldState, isFocused: boolean) {
+function getBoxShadow(
+  fieldState: ControllerFieldState,
+  { isFocused }: ControlProps,
+) {
   if (fieldState.error) {
     return '0 0 0, 0 0 0 2px rgb(239 68 68 / 5%), 0 1px 2px 0 rgb(0 0 0 / 5%)';
   }
@@ -13,12 +15,18 @@ function getBoxShadow(fieldState: ControllerFieldState, isFocused: boolean) {
   return 'none';
 }
 
-function getBorderColor(fieldState: ControllerFieldState, isFocused: boolean) {
+function getBorderColor(
+  fieldState: ControllerFieldState,
+  { isFocused, isDisabled }: ControlProps,
+) {
   if (fieldState.error) {
     if (isFocused) {
       return theme`colors.red.400`;
     }
     return theme`colors.red.500`;
+  }
+  if (isDisabled) {
+    return 'rgba(var(--field-border, var(--border)), .5)';
   }
   if (isFocused) {
     return 'rgb(var(--brand-primary))';
@@ -26,70 +34,16 @@ function getBorderColor(fieldState: ControllerFieldState, isFocused: boolean) {
   return 'rgb(var(--field-border, var(--border)))';
 }
 
-export default function baseStyles(
-  fieldState: ControllerFieldState,
-  isCompact: boolean,
-): StylesConfig {
+export function baseStyles(fieldState: ControllerFieldState): StylesConfig {
   return {
-    // control: (base, { isFocused, isDisabled }) => {
-    //   let borderColor = isFocused ? colors.B100 : colors.N20;
-    //   let backgroundColor = isFocused ? colors.N0 : colors.N20;
-    //   if (isDisabled) {
-    //     backgroundColor = colors.N20;
-    //   }
-    //   if (validationState === 'error') borderColor = colors.R400;
-    //   if (validationState === 'success') borderColor = colors.G400;
-
-    //   let borderColorHover = isFocused ? colors.B100 : colors.N30;
-    //   if (validationState === 'error') borderColorHover = colors.R400;
-    //   if (validationState === 'success') borderColorHover = colors.G400;
-
-    //   const transitionDuration = '200ms';
-
-    //   return {
-    //     ...base,
-    //     backgroundColor,
-    //     borderColor,
-    //     borderStyle: 'solid',
-    //     borderRadius: '3px',
-    //     borderWidth: '2px',
-    //     boxShadow: 'none',
-    //     minHeight: isCompact ? gridSize() * 4 : gridSize() * 5,
-    //     padding: 0,
-    //     transition: `background-color ${transitionDuration} ease-in-out,
-    //     border-color ${transitionDuration} ease-in-out`,
-
-    //     '-ms-overflow-style': '-ms-autohiding-scrollbar',
-    //     '::-webkit-scrollbar': {
-    //       height: gridSize(),
-    //       width: gridSize(),
-    //     },
-    //     '::-webkit-scrollbar-corner': {
-    //       display: 'none',
-    //     },
-
-    //     ':hover': {
-    //       '::-webkit-scrollbar-thumb': {
-    //         backgroundColor: 'rgba(0,0,0,0.2)',
-    //       },
-    //       cursor: 'pointer',
-    //       backgroundColor: isFocused ? colors.N0 : colors.N30,
-    //       borderColor: borderColorHover,
-    //     },
-    //     '::-webkit-scrollbar-thumb:hover': {
-    //       backgroundColor: 'rgba(0,0,0,0.4)',
-    //     },
-    //   };
-    // },
     control: (base, state) => ({
-      // none of react-selects styles are passed to <View />
       ...base,
       backgroundColor: 'rgb(var(--body-on-primary-bg))',
       borderRadius: '.25rem',
-      borderColor: getBorderColor(fieldState, state.isFocused),
-      boxShadow: getBoxShadow(fieldState, state.isFocused),
+      borderColor: getBorderColor(fieldState, state),
+      boxShadow: getBoxShadow(fieldState, state),
       '&:hover': {
-        borderColor: getBorderColor(fieldState, state.isFocused),
+        borderColor: getBorderColor(fieldState, state),
         ...(state.isFocused && {}),
       },
     }),
@@ -126,34 +80,28 @@ export default function baseStyles(
     },
     clearIndicator: (base) => ({
       ...base,
-      color: colors.N70,
-      paddingLeft: '2px',
-      paddingRight: '2px',
-      paddingBottom: isCompact ? 0 : 6,
-      paddingTop: isCompact ? 0 : 6,
+      color: theme`colors.gray.500`,
+      padding: 6,
       ':hover': {
-        color: colors.N500,
+        color: theme`colors.gray.700`,
       },
     }),
     loadingIndicator: (base) => ({
       ...base,
-      paddingBottom: isCompact ? 0 : 6,
-      paddingTop: isCompact ? 0 : 6,
+      paddingBottom: 6,
+      paddingTop: 6,
     }),
     dropdownIndicator: (base, { isDisabled }) => {
-      let color = colors.N500;
+      let color = theme`colors.gray.500`;
       if (isDisabled) {
-        color = colors.N70;
+        color = theme`colors.gray.300`;
       }
       return {
         ...base,
         color,
-        paddingBottom: isCompact ? 0 : 6,
-        paddingTop: isCompact ? 0 : 6,
-        paddingLeft: '6px',
-        paddingRight: '6px',
+        padding: 6,
         ':hover': {
-          color: colors.N200,
+          color: theme`colors.gray.700`,
         },
       };
     },
@@ -164,7 +112,6 @@ export default function baseStyles(
       'input:focus': {
         boxShadow: 'none',
       },
-      // margin: '0 2px',
     }),
     option: (base, { isSelected, isFocused, isDisabled }) => ({
       ...base,
@@ -194,21 +141,10 @@ export default function baseStyles(
       ...base,
       color: 'rgb(var(--brand-on-primary))',
     }),
-    // multiValueRemove: (base, { isFocused }) => ({
-    //   ...base,
-    //   backgroundColor: isFocused && colors.R75,
-    //   color: isFocused && colors.R400,
-    //   paddingLeft: '2px',
-    //   paddingRight: '2px',
-    //   borderRadius: '0px 2px 2px 0px',
-    //   ':hover': {
-    //     color: colors.R400,
-    //     backgroundColor: colors.R75,
-    //   },
-    // }),
     indicatorSeparator: (base) => ({
       ...base,
       margin: '.75rem 0',
+      backgroundColor: 'rgba(var(--border), .8)',
     }),
     indicatorsContainer: (base) => ({
       ...base,
@@ -216,6 +152,7 @@ export default function baseStyles(
     }),
     menu: (base) => ({
       ...base,
+      zIndex: 9999,
       boxShadow: 'none',
       border: '1px solid rgb(var(--border))',
     }),
@@ -225,3 +162,5 @@ export default function baseStyles(
     }),
   };
 }
+
+export default baseStyles;

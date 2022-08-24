@@ -1,7 +1,6 @@
 import { CSSObject } from '@emotion/react';
 import React, { DragEventHandler, forwardRef } from 'react';
 import { CustomItemComponentProps, CustomItemProps } from '../types';
-import { useBlurOnMouseDown } from '../utils/use-blur-on-mouse-down';
 import BaseItem from './base-item';
 import { BaseItemWrapper } from './styled';
 
@@ -39,7 +38,7 @@ const CustomItem: CustomItemType = forwardRef<HTMLElement, CustomItemProps>(
     CustomItemProps,
     ref,
   ) => {
-    const onMouseDownHandler = useBlurOnMouseDown(onMouseDown);
+    const onMouseDownHandler = onMouseDown;
 
     if (!Component) {
       return null;

@@ -1,5 +1,4 @@
-import { FC, ReactNode } from 'react';
-import { IconProps } from 'react-feather';
+import { ReactNode } from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { StyledComponent } from 'styled-components';
 
@@ -33,7 +32,6 @@ export type FormProps<T> = {
 export type FormSectionProps = {
   children?: ReactNode;
   name: string | ReactNode;
-  icon?: FC<IconProps>;
   layout?: LayoutType;
   description?: string | ReactNode;
   isFirst?: boolean;

@@ -1,7 +1,11 @@
+import {
+  MagnifyingGlassMinusIcon,
+  MagnifyingGlassPlusIcon,
+  TrashIcon,
+} from '@heroicons/react/24/outline';
 import Button, { ButtonGroup, ButtonProps } from '@uidu/button';
 import { FieldRangeStateless } from '@uidu/field-range';
 import React from 'react';
-import { Trash, ZoomIn, ZoomOut } from 'react-feather';
 import { zoom, ZoomDirectionType } from '../../utils';
 import StyledToolbar from './styled';
 
@@ -35,7 +39,7 @@ export default function Toolbar({
         <div tw="space-x-3 flex items-center">
           <Button
             isDisabled={scale <= 1}
-            iconBefore={<ZoomOut size={16} />}
+            iconBefore={<MagnifyingGlassMinusIcon tw="h-5 w-5" />}
             onClick={() =>
               zoom({
                 direction: ZoomDirectionType.OUT,
@@ -47,18 +51,20 @@ export default function Toolbar({
               })
             }
           />
-          <FieldRangeStateless
-            min={min}
-            max={max}
-            step={0.01}
-            value={scale}
-            onChange={(value) => {
-              handleScale(parseFloat(value));
-            }}
-          />
+          <div tw="w-20">
+            <FieldRangeStateless
+              min={min}
+              max={max}
+              step={0.01}
+              value={[scale]}
+              onChange={(value) => {
+                handleScale(parseFloat(value));
+              }}
+            />
+          </div>
           <Button
             isDisabled={scale >= 2}
-            iconBefore={<ZoomIn size={16} />}
+            iconBefore={<MagnifyingGlassPlusIcon tw="h-5 w-5" />}
             onClick={() => {
               zoom({
                 direction: ZoomDirectionType.IN,
@@ -74,7 +80,7 @@ export default function Toolbar({
       )}
       <div tw="ml-auto flex items-center">
         <ButtonGroup>
-          <Button onClick={dismiss} iconBefore={<Trash size={16} />} />
+          <Button onClick={dismiss} iconBefore={<TrashIcon tw="h-5 w-5" />} />
           {label && (
             <Button onClick={confirm} appearance="primary">
               {label}

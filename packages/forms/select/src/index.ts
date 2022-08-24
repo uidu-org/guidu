@@ -11,9 +11,10 @@ export { default as CheckboxSelect } from './CheckboxSelect';
 export { CheckboxOption, RadioOption } from './components/input-options';
 export { default as CountrySelect } from './CountrySelect';
 export { allCountries } from './data/countries';
-export { default as PopupSelect } from './PopupSelect';
 export { default as RadioSelect } from './RadioSelect';
+export * from './styles';
 export { default as TimeZoneSelect } from './TimeZoneSelect';
+export * from './types';
 export {
   AsyncSelect,
   CreatableSelect,

@@ -42,9 +42,9 @@ const FieldTextareaStateless = forwardRef<
 
     return (
       <StyledInput
+        $hasError={!!fieldState?.error}
         as="textarea"
         id={id}
-        hasError={!!fieldState?.error}
         className={className}
         rows={rows}
         cols={cols}

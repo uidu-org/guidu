@@ -1,4 +1,4 @@
-import { XIcon } from '@heroicons/react/solid';
+import { XMarkIcon } from '@heroicons/react/24/solid';
 import Button from '@uidu/button';
 import { useDataManagerContext } from '@uidu/data-manager';
 import Form from '@uidu/form';
@@ -211,7 +211,7 @@ export default function SorterForm({ closePopup }: SorterFormProps) {
                         closePopup();
                       }
                     }}
-                    iconBefore={<XIcon tw="h-4 w-4" />}
+                    iconBefore={<XMarkIcon tw="h-4 w-4" />}
                   />
                 </Fragment>
               ))}

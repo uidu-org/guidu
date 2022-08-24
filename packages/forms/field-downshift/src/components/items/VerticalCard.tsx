@@ -1,5 +1,5 @@
+import { CheckIcon } from '@heroicons/react/24/outline';
 import React from 'react';
-import { Check } from 'react-feather';
 import tw from 'twin.macro';
 import { FieldDownshiftOptionProps } from '../../types';
 
@@ -11,9 +11,9 @@ export default function HorizontalCard({
 }: FieldDownshiftOptionProps<unknown>) {
   const { onClick, ...rest } = getItemProps({ item, index });
   return (
-    <a
+    <button
+      type="button"
       key={index}
-      href="#"
       css={[isSelected && tw`border-primary`, tw`relative p-4 border rounded`]}
       onClick={(e) => {
         e.preventDefault();
@@ -31,7 +31,7 @@ export default function HorizontalCard({
             tw`flex items-center justify-center w-6 h-6 ml-auto rounded-full`,
           ]}
         >
-          {isSelected && <Check size={16} />}
+          {isSelected && <CheckIcon tw="h-4 w-4" />}
         </span>
       </div>
       <div tw="p-3 md:p-4 flex items-center">
@@ -47,6 +47,6 @@ export default function HorizontalCard({
           </div>
         </div>
       </div>
-    </a>
+    </button>
   );
 }

@@ -34,7 +34,7 @@ export const StyledAddon = styled.span`
   ${tw`flex items-center h-full`}
 `;
 
-export const StyledInput = styled.input<{ hasError?: boolean }>`
+export const StyledInput = styled.input<{ $hasError?: boolean }>`
   /* background: transparent; */
   min-width: 0;
 
@@ -60,7 +60,7 @@ export const StyledInput = styled.input<{ hasError?: boolean }>`
   }
 
   ${tw`background[rgb(var(--body-on-primary-bg))] shadow-sm focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))] block w-full border border-color[rgb(var(--field-border, var(--border)))] rounded py-3 px-4 placeholder-gray-400 disabled:opacity-50 disabled:background[rgba(var(--brand-subtle), .4)]`}
-  ${({ hasError }) =>
-    hasError &&
+  ${({ $hasError }) =>
+    $hasError &&
     tw`text-red-900 placeholder-red-400 border-red-300 focus:outline-none focus:ring-red-50 focus:border-red-400`}
 `;

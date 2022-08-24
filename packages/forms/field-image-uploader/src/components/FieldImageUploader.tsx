@@ -2,7 +2,8 @@ import { useController, Wrapper } from '@uidu/field-base';
 import { useFormContext } from '@uidu/form';
 import { FileIdentifier } from '@uidu/media-core';
 import Spinner from '@uidu/spinner';
-import Uppy from '@uppy/core';
+import Uppy, { UppyOptions } from '@uppy/core';
+import { useUppy } from '@uppy/react';
 import ThumbnailGenerator from '@uppy/thumbnail-generator';
 import React, {
   MouseEvent,
@@ -32,39 +33,49 @@ export function debounce(func: Function, timeout?: number) {
   };
 }
 
+const defaultOptions: Partial<UppyOptions> = {
+  autoProceed: true,
+  restrictions: {
+    maxNumberOfFiles: 1,
+    allowedFileTypes: ['.png', '.jpg', '.jpeg'],
+  },
+};
+
 function FieldImageUploaderStateless({
   toolbar: ToolbarComponent = Toolbar,
   existing: ExistingComponent = Existing,
   empty: EmptyComponent = Empty,
   prompt: PromptComponent = Prompt,
   progress: ProgressComponent = Progress,
-  container: ContainerComponent = Container,
+  // container: ContainerComponent = Container,
   label,
   help,
   borderRadius = 0,
   max = 20000000, // 20 MB
-  dropzoneProps = {
-    multiple: false,
-  },
+  // dropzoneProps = {
+  //   multiple: false,
+  // },
   name,
   defaultImageUrl,
   value: defaultValue,
+  rules,
   onChange = () => {},
   uploadOptions,
   className,
+  options,
   ...rest
 }: FieldImageUploaderProps) {
-  const { control: formControl } = useFormContext();
+  const { setError, clearErrors } = useFormContext();
   const { field, wrapperProps } = useController({
     name,
-    control: formControl,
     defaultValue,
     onChange,
+    rules,
     ...rest,
   });
 
-  const canvas: React.RefObject<HTMLDivElement> = useRef(null);
-  const editor: React.RefObject<AvatarEditor> = useRef(null);
+  const canvas = useRef<HTMLDivElement>(null);
+  const editor = useRef<AvatarEditor>(null);
 
   const [isLoading, setIsLoading] = useState(false);
   const [scale, setScale] = useState(1);
@@ -83,52 +94,63 @@ function FieldImageUploaderStateless({
 
   const [value, setValue] = useState<FileIdentifier>(field.value);
 
-  const uppy = useMemo(
-    () =>
-      new Uppy({
-        autoProceed: true,
-        restrictions: {
-          maxNumberOfFiles: 1,
-        },
-      })
-        .use(uploadOptions.module, uploadOptions.options)
-        .use(ThumbnailGenerator, {
-          thumbnailWidth: calculateWidth(),
-          thumbnailType: 'image/png',
-        })
-        .on('thumbnail:generated', (file, preview) => {
-          setIsLoading(false);
-          setScale(1);
-          setImageUrl(preview);
-          setData([file]);
-          setErrors([]);
-        })
-        .on('upload', () => setProgress(0))
-        .on('upload-progress', (_file, prgrss) => {
-          setProgress(prgrss.bytesUploaded / prgrss.bytesTotal);
-        })
+  const mergeOptions: UppyOptions = useMemo(
+    () => ({
+      ...defaultOptions,
+      ...options,
+    }),
+    [options],
+  );
 
-        .on('complete', (result) => {
-          setProgress(null);
+  const uppy = useUppy(() =>
+    new Uppy(mergeOptions)
+      .use(uploadOptions.module, uploadOptions.options)
+      .on('file-added', () => {
+        clearErrors(name);
+      })
+      .use(ThumbnailGenerator, {
+        thumbnailWidth: calculateWidth(),
+        thumbnailType: 'image/png',
+      })
+      .on('thumbnail:generated', (file, preview) => {
+        setIsLoading(false);
+        setScale(1);
+        setImageUrl(preview);
+        setData([file]);
+        setErrors([]);
+      })
+      .on('upload', () => setProgress(0))
+      .on('upload-progress', (_file, prgrss) => {
+        setProgress(prgrss.bytesUploaded / prgrss.bytesTotal);
+      })
+
+      .on('complete', (result) => {
+        setProgress(null);
+        if (result.failed.length > 0) {
+          setError(name, { type: 'custom', message: result.failed[0].error });
+        } else {
           const response = result.successful.map(
             uploadOptions.responseHandler,
           )[0];
           setValue(response);
           field.onChange(response);
           onChange(name, response);
-        }),
-    [
-      calculateWidth,
-      field.onChange,
-      name,
-      onChange,
-      uploadOptions.module,
-      uploadOptions.responseHandler,
-      uploadOptions.options,
-    ],
+        }
+      })
+      .on('error', (error) => {
+        setError(name, { type: 'custom', message: error.message });
+      })
+      .on('upload-error', (_file, error) => {
+        setError(name, { type: 'custom', message: error.message });
+      })
+      .on('file-removed', () => {
+        field.onChange('');
+        onChange(name, '');
+      })
+      .on('restriction-failed', (_file, error) => {
+        setError(name, { type: 'custom', message: error.message });
+      }),
   );
-
-  useEffect(() => () => uppy.close(), [uppy]);
 
   useEffect(() => {
     uppy.getPlugin('ThumbnailGenerator').setOptions({
@@ -207,7 +229,7 @@ function FieldImageUploaderStateless({
   const dismiss = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    uppy.reset();
+    uppy.cancelAll();
     setIsLoading(false);
     setData([]);
     setScale(1);
@@ -242,6 +264,7 @@ function FieldImageUploaderStateless({
           borderRadius={borderRadius}
           onDrop={handleDrop}
           isHovered={isHovered}
+          restrictions={mergeOptions.restrictions}
         />
       );
     } else {
@@ -254,6 +277,7 @@ function FieldImageUploaderStateless({
           help={help}
           prompt={PromptComponent}
           isHovered={isHovered}
+          restrictions={mergeOptions.restrictions}
         />
       );
     }
@@ -286,13 +310,20 @@ function FieldImageUploaderStateless({
       label={label}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...wrapperProps}
+      errorIcon={() => null}
     >
       <div
+        tabIndex={0}
+        role="button"
         tw="relative"
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
         onFocus={handleMouseOver}
-        onBlur={handleMouseOut}
+        ref={field.ref}
+        onBlur={() => {
+          field.onBlur();
+          handleMouseOut();
+        }}
       >
         <Container
           borderRadius={borderRadius}

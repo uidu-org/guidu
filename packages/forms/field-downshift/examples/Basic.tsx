@@ -1,6 +1,6 @@
 import { FieldTextStateless } from '@uidu/field-text';
 import { Form } from '@uidu/form';
-import React, { useState } from 'react';
+import React from 'react';
 import tw from 'twin.macro';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import useDefaultForm from '../../form/examples-utils';
@@ -14,8 +14,27 @@ const options = [
   { value: 'banana' },
 ];
 
-function Menu(props: FieldDownshiftMenuProps<T>) {
-  return <div tw="space-y-4 flex flex-col" ref={props.innerRef} {...props} />;
+function Menu({
+  field,
+  getMenuProps,
+  ...props
+}: FieldDownshiftMenuProps<{ value: string }>) {
+  return (
+    <div
+      tw="space-y-4 flex flex-col"
+      onBlur={field.onBlur}
+      {...getMenuProps({
+        ref: (e) => {
+          console.log(e);
+          if (e) {
+            field.ref(e);
+            return e.current;
+          }
+        },
+      })}
+      {...props}
+    />
+  );
 }
 
 function Item({ item, highlightedIndex, index, isSelected, getItemProps }) {
@@ -42,12 +61,11 @@ function Item({ item, highlightedIndex, index, isSelected, getItemProps }) {
 
 const Input = (props) => <FieldTextStateless type="search" {...props} />;
 
-export default function Basic({}) {
+export default function Basic() {
   const defaultForm = useDefaultForm();
-  const [oneValue, setOneValue] = useState(options[0].value);
 
   return (
-    <Form {...defaultForm} onChange={console.log}>
+    <Form {...defaultForm}>
       <FieldDownshift
         {...inputDefaultProps}
         label="Enter a fruit"
@@ -55,11 +73,10 @@ export default function Basic({}) {
         menu={Menu}
         option={Item}
         options={options}
-        value={oneValue}
+        value={options[0].value}
         getOptionValue={({ value }) => value}
-        onChange={(name, value) => setOneValue(value)}
-        input={(props) => <input {...props} />}
-        required
+        onChange={console.log}
+        rules={{ required: { value: true, message: 'Field is required' } }}
       />
       <br />
       <h6>Multiple</h6>
@@ -73,8 +90,9 @@ export default function Basic({}) {
         options={options}
         value={[options[0].value, options[2].value]}
         getOptionValue={({ value }) => value}
+        onChange={console.log}
         multiple
-        required
+        rules={{ required: { value: true, message: 'Field is required' } }}
       />
       <br />
       <h6>With search</h6>

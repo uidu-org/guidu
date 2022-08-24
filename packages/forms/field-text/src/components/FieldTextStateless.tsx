@@ -31,7 +31,7 @@ const FieldTextStateless = forwardRef(
 
     return (
       <StyledInput
-        hasError={!!fieldState?.error}
+        $hasError={!!fieldState?.error}
         ref={ref}
         type={type}
         // eslint-disable-next-line react/jsx-props-no-spreading

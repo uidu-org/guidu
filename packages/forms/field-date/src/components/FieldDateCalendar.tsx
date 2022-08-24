@@ -1,4 +1,4 @@
-import { CalendarIcon } from '@heroicons/react/outline';
+import { CalendarDaysIcon } from '@heroicons/react/24/outline';
 import {
   FieldBaseProps,
   StyledAddon,
@@ -119,14 +119,14 @@ export default function FieldDateCalendar({
                 setIsDialogOpen(true);
               }}
             >
-              <CalendarIcon tw="h-5 w-5" />
+              <CalendarDaysIcon tw="h-5 w-5" />
             </button>
           </StyledAddon>,
         ]}
       >
         <StyledInput
           {...inputProps}
-          hasError={!!fieldState?.error}
+          $hasError={!!fieldState?.error}
           type="text"
           value={inputValue}
           onChange={handleInputChange}

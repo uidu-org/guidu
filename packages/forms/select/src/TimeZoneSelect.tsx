@@ -1,15 +1,17 @@
+import { useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
-import type { TimeZone } from 'timezones-list';
+import ReactSelect from 'react-select';
+import TimeZone from 'timezones-list';
 import Option from './components/Option';
-import { CreateSelectProps } from './createSelect';
 import timezones from './data/timezones';
-import Select from './Select';
+import { useSelect } from './hooks/useSelect';
+import { CreateSelectProps } from './types';
 
 // return the country name; used for searching
-const getOptionLabel = (opt: TimeZone) => opt.label;
+const getOptionLabel = (opt: typeof TimeZone[number]) => opt.label;
 
 // set the country's abbreviation for the option value, (also searchable)
-const getOptionValue = (opt: TimeZone) => opt.tzCode;
+const getOptionValue = (opt: typeof TimeZone[number]) => opt.tzCode;
 
 function SingleValue({ innerProps, data, getStyles, ...otherProps }) {
   return (
@@ -34,28 +36,52 @@ function SingleValue({ innerProps, data, getStyles, ...otherProps }) {
 }
 
 // put it all together
-function TimeZoneSelect({ components, ...otherProps }: CreateSelectProps) {
+function TimeZoneSelect({
+  name,
+  onChange,
+  value: defaultValue = '',
+  rules,
+  components: propComponents = {},
+  ...rest
+}: CreateSelectProps<typeof TimeZone[number]>) {
+  const { field, fieldState, inputProps, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    rules,
+    ...rest,
+  });
+
+  const handleChange = (value, option, actionMeta) => {
+    console.log(option);
+    field.onChange(value);
+    onChange(name, value, { option, actionMeta });
+  };
+
+  const selectProps = useSelect<typeof TimeZone[number], false>({
+    value: field.value,
+    handleChange,
+    fieldState,
+    isClearable: false,
+    getOptionLabel,
+    getOptionValue,
+    options: timezones,
+    styles: {
+      container: (css) => ({ ...css }),
+      dropdownIndicator: (css) => ({ ...css, paddingLeft: 0 }),
+      menu: (css) => ({ ...css, width: 300 }),
+    },
+    components: {
+      ...propComponents,
+      Option,
+      SingleValue,
+    },
+  });
+
   return (
-    // @ts-ignore
-    <Select
-      {...otherProps}
-      isClearable={false}
-      // formatOptionLabel={formatOptionLabel}
-      getOptionLabel={getOptionLabel}
-      getOptionValue={getOptionValue}
-      // isMulti={false}
-      options={timezones}
-      styles={{
-        container: (css) => ({ ...css }),
-        dropdownIndicator: (css) => ({ ...css, paddingLeft: 0 }),
-        menu: (css) => ({ ...css, width: 300 }),
-      }}
-      components={{
-        ...components,
-        Option,
-        SingleValue: SingleValue,
-      }}
-    />
+    <Wrapper {...wrapperProps}>
+      <ReactSelect {...inputProps} {...selectProps} />
+    </Wrapper>
   );
 }
 

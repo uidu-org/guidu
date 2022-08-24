@@ -1,6 +1,6 @@
 import { FieldBaseStatelessProps } from '@uidu/field-base';
-import React, { ChangeEvent, forwardRef, useMemo } from 'react';
-import { Input } from '../styled';
+import React, { forwardRef, useMemo } from 'react';
+import { StyledRange, StyledSlider, StyledThumb, StyledTrack } from '../styled';
 import { FieldRangeStatelessProps } from '../types';
 
 const getPercentValue = (value: number, min: number, max: number): string => {
@@ -24,8 +24,9 @@ const FieldRangeStateless = forwardRef<
       step = 1,
       disabled = false,
       onChange,
+      fieldState,
       ...rest
-    }: FieldRangeStatelessProps,
+    },
     ref,
   ) => {
     const valuePercent = useMemo(
@@ -33,24 +34,22 @@ const FieldRangeStateless = forwardRef<
       [value, min, max],
     );
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      onChange(e.target.value);
-    };
-
     return (
-      <Input
-        id={id}
-        ref={ref}
-        type="range"
-        value={value}
+      <StyledSlider
+        name={rest.name}
+        defaultValue={[value]}
+        aria-label={rest.name}
+        onValueChange={onChange}
         min={min}
         max={max}
         step={step}
-        onChange={handleChange}
         disabled={disabled}
-        valuePercent={valuePercent}
-        {...rest}
-      />
+      >
+        <StyledTrack $hasError={!!fieldState?.error}>
+          <StyledRange />
+        </StyledTrack>
+        <StyledThumb ref={ref} id={id} onBlur={rest.onBlur} />
+      </StyledSlider>
     );
   },
 );

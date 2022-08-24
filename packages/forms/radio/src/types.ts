@@ -1,23 +1,18 @@
 import { FieldBaseProps } from '@uidu/field-base';
+import { AllHTMLAttributes } from 'react';
 
 export type RadioOption = {
   id: string;
   name: string;
 };
 
-export type RadioProps = {} & FieldBaseProps;
+export type RadioProps = FieldBaseProps<string> & RadioStatelessProps;
+
 export type RadioGroupProps = {
   isInline?: boolean;
   options: Array<RadioOption>;
 } & FieldBaseProps;
 
-export type RadioStatelessProps = {
+export type RadioStatelessProps = AllHTMLAttributes<HTMLInputElement> & {
   isInline?: boolean;
-  value?: any;
-  label?: string | React.ReactNode;
-  id?: string;
-  name?: string;
-  onChange?: (event: any) => void;
-  disabled?: boolean;
-  defaultChecked?: boolean;
 };

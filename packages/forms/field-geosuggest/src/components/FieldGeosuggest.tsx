@@ -225,7 +225,7 @@ export default function FieldGeosuggest({
       <div tw="relative w-full">
         <StyledInput
           {...inputProps}
-          hasError={!!fieldState?.error}
+          $hasError={!!fieldState?.error}
           value={value}
           className={className}
           css={[isGeolocationAvailable && tw`pr-14`]}

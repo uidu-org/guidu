@@ -35,7 +35,7 @@ const FieldDateStateless = forwardRef<
 
     return (
       <StyledInput
-        hasError={!!fieldState?.error}
+        $hasError={!!fieldState?.error}
         id={id}
         value={isValid(date) ? format(date, displayFormat) : ''}
         ref={ref}

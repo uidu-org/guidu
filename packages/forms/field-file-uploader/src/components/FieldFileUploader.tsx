@@ -1,18 +1,24 @@
-import { StyledInput, useController, Wrapper } from '@uidu/field-base';
+/* eslint-disable react/jsx-props-no-spreading */
+import { useController, Wrapper } from '@uidu/field-base';
 import { useFormContext } from '@uidu/form';
-import { FileIdentifier } from '@uidu/media-core';
+import {
+  FileIdentifier,
+  uppyRestrictionsToDropzoneProps,
+} from '@uidu/media-core';
 import Uppy, { UppyOptions } from '@uppy/core';
-import '@uppy/core/dist/style.css';
-// import '@uppy/dashboard/dist/style.css';
 import { useUppy } from '@uppy/react';
-import React, { ChangeEvent, useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
+import { useDropzone } from 'react-dropzone';
+import { StyledRoot } from '../styled';
 import { FieldFileUploaderProps } from '../types';
+import DefaultFileList from './FileList';
+import DefaultPrompt from './Prompt';
 
 const defaultOptions = {
   debug: process.env.NODE_ENV === 'development',
   allowMultipleUploadBatches: true,
   restrictions: {
-    maxNumberOfFiles: 1,
+    maxNumberOfFiles: null,
     minNumberOfFiles: null,
     maxFileSize: null,
     allowedFileTypes: null,
@@ -24,15 +30,20 @@ function FieldFileUploader({
   onChange = () => {},
   name,
   value: defaultValue = '',
+  rules,
   options = {},
   uploadOptions,
+  className,
+  prompt: Prompt = DefaultPrompt,
+  fileList: FileList = DefaultFileList,
   ...rest
 }: FieldFileUploaderProps) {
   const { setError, clearErrors } = useFormContext();
-  const { field, wrapperProps, inputProps } = useController({
+  const { field, wrapperProps, inputProps, fieldState } = useController({
     name,
-    defaultValue: '',
+    defaultValue,
     onChange,
+    rules,
     ...rest,
   });
   const handleChange = useCallback(
@@ -60,70 +71,98 @@ function FieldFileUploader({
       .on('complete', (result) => {
         if (result.failed.length > 0) {
           setError(name, { type: 'custom', message: result.failed[0].error });
+        } else if (mergeOptions.restrictions?.maxNumberOfFiles === 1) {
+          handleChange(result.successful.map(uploadOptions.responseHandler)[0]);
         } else {
-          if (mergeOptions.restrictions?.maxNumberOfFiles === 1) {
-            handleChange(
-              result.successful.map(uploadOptions.responseHandler)[0],
-            );
-          } else {
-            handleChange(result.successful.map(uploadOptions.responseHandler));
-          }
+          handleChange(result.successful.map(uploadOptions.responseHandler));
         }
       })
       .on('error', (error) => {
         setError(name, { type: 'custom', message: error.message });
       })
-      .on('upload-error', (file, error) => {
+      .on('upload-error', (_file, error) => {
         setError(name, { type: 'custom', message: error.message });
       })
-      .on('file-removed', (file) => {
-        field.onChange('');
-        onChange(name, '');
+      .on('file-removed', () => {
+        field.onChange(uppy.getFiles().map(uploadOptions.responseHandler));
+        onChange(name, uppy.getFiles().map(uploadOptions.responseHandler));
       })
-      .on('restriction-failed', (file, error) => {
+      .on('restriction-failed', (_file, error) => {
         setError(name, { type: 'custom', message: error.message });
       }),
   );
 
-  useEffect(() => () => uppy.close(), [uppy]);
+  const evaluate = (file: File) => {
+    uppy.addFile({
+      name: file.name,
+      type: file.type,
+      data: file,
+    });
+  };
 
-  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files);
-
+  const onDrop = (files: File[]) => {
     files.forEach((file) => {
       try {
-        uppy.addFile({
-          source: 'file input',
-          name: file.name,
-          type: file.type,
-          data: file,
-        });
+        evaluate(file);
       } catch (error) {
         setError(name, { type: 'custom', message: error.message });
       }
     });
+
+    // setIsLoading(true);
+    // const validationResults = validate(files[0]);
+    // if (validationResults.isValid) {
+    //   evaluate(files[0]);
+    // } else {
+    //   setIsLoading(false);
+    //   setErrors(validationResults.errors);
+    // }
   };
 
-  return (
-    <Wrapper {...wrapperProps} floatLabel={false}>
-      <StyledInput {...inputProps} type="file" onChange={onInputChange} />
+  const {
+    getRootProps,
+    getInputProps,
+    open,
+    rootRef,
+    isDragActive,
+    isDragAccept,
+    isFocused,
+    isFileDialogActive,
+    isDragReject,
+  } = useDropzone({
+    onDrop,
+    ...uppyRestrictionsToDropzoneProps({
+      restrictions: mergeOptions.restrictions,
+      // ...(mergeOptions.restrictions.allowedFileTypes
+      //   ? { accept: { 'image/*': mergeOptions.restrictions.allowedFileTypes } }
+      //   : {}),
+    }),
+  });
 
-      {/* <Dashboard
-        {...inputProps}
-        uppy={uppy}
-        height={350}
-        locale={{
-          strings: {
-            // Text to show on the droppable area.
-            // `%{browse}` is replaced with a link that opens the system file selection dialog.
-            dropPaste: 'Drop here or %{browse}',
-            // Used as the label for the link that opens the system file selection dialog.
-            browse: 'browse',
-          },
-        }}
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        {...moduleOptions}
-      /> */}
+  useEffect(() => {
+    if (rootRef.current) {
+      field.ref(rootRef.current);
+    }
+  }, [field, rootRef]);
+
+  return (
+    <Wrapper {...wrapperProps} floatLabel={false} errorIcon={() => null}>
+      <StyledRoot
+        {...getRootProps({
+          onBlur: field.onBlur,
+        })}
+        className={className}
+        $hasError={!!fieldState.error}
+        $isDragActive={isDragActive}
+        $isDragAccept={isDragAccept}
+        $isFocused={isFocused}
+        $isFileDialogActive={isFileDialogActive}
+        $isDragReject={isDragReject}
+      >
+        <input {...getInputProps({ id: inputProps.id })} />
+        <Prompt open={open} {...wrapperProps} />
+      </StyledRoot>
+      <FileList uppy={uppy} />
     </Wrapper>
   );
 }

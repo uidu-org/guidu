@@ -3,14 +3,12 @@ Notes:
 - [V] what to do for radio and checbox groups
 - [V] add layout to form context
 - [V] fix types for field-base
-- [ ] add field-rating
-
-- Fix types for stateless fields
 - [V] add errors to checkboxes
-- add errors to radios
-- field-time interval for select
+- [V] errors
+- [V] Fix types for stateless fields
+- [V] field-time interval for select
 
-- [ ] errors
+- [ ] add field-rating
 
 Hook form migration
 
@@ -36,7 +34,7 @@ Hook form migration
   - [V] types
   - [V] dependencies
   - [V] examples
-  - [ ] refs: SEE: https://github.com/omgovich/react-colorful/issues/157
+  - [V] refs: SEE: https://github.com/omgovich/react-colorful/issues/157
   - [V] errors
 - [V] field-counter
   - [V] types
@@ -56,30 +54,30 @@ Hook form migration
   - [-] examples
   - [-] refs
   - [-] errors
-- [ ] field-downshift
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
-- [ ] field-file-uploader
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
+- [V] field-downshift
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
+- [V] field-file-uploader
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
 - [V] field-geosuggest
   - [V] types
   - [V] dependencies
   - [V] examples
   - [V] refs
   - [V] errors
-- [ ] field-image-uploader
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
-  - [ ] refs
-  - [ ] errors
+- [V] field-image-uploader
+  - [V] types
+  - [V] dependencies
+  - [V] examples
+  - [V] refs
+  - [V] errors
 - [-] field-mentions - @deprecated (editor-core/mini)
   - [-] types
   - [-] dependencies
@@ -110,9 +108,9 @@ Hook form migration
   - [V] examples
   - [V] refs
   - [V] errors
-- [ ] field-range
+- [V] field-range
   - [V] types
-  - [ ] dependencies
+  - [V] dependencies
   - [V] examples
   - [V] refs
   - [V] errors
@@ -128,7 +126,7 @@ Hook form migration
   - [V] examples
   - [V] refs
   - [V] errors
-- [V] field-time
+- [V] field-time: TODO: time intervals or default
   - [V] types
   - [V] dependencies
   - [V] examples
@@ -146,15 +144,15 @@ Hook form migration
   - [V] examples
   - [V] refs
   - [V] errors
-- [ ] radio
-  - [ ] types
+- [V] radio
+  - [V] types
   - [V] dependencies
-  - [ ] examples
-  - [ ] refs
+  - [V] examples
+  - [V] refs
   - [V] errors
-- [ ] select
-  - [ ] types
-  - [ ] dependencies
-  - [ ] examples
+- [V] select
+  - [V] types
+  - [V] dependencies
+  - [V] examples
   - [V] refs
   - [V] errors

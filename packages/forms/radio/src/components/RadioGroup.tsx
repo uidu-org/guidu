@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
 import tw from 'twin.macro';
@@ -28,18 +29,20 @@ function RadioGroup({
   };
 
   return (
-    <Wrapper {...wrapperProps}>
+    <Wrapper {...wrapperProps} floatLabel={false}>
       <div css={[isInline ? tw`space-x-6` : tw`space-y-2`]}>
         {options.map((option) => (
           <RadioStateless
+            {...rest}
+            {...field}
             key={`${name}-${option.id}`}
             id={`${name}-${option.id}`}
             value={option.id}
             label={option.name}
             name={name}
-            onChange={handleChange}
             isInline={isInline}
-            {...(option.id === field.value && { defaultChecked: true })}
+            onChange={handleChange}
+            {...(option.id === field.value && { checked: true })}
           />
         ))}
       </div>

@@ -1,34 +1,33 @@
-import { Root, Thumb } from '@radix-ui/react-switch';
+import { Root, Switch, Thumb } from '@radix-ui/react-switch';
 import { FieldBaseStatelessProps } from '@uidu/field-base';
 import React, { forwardRef, useMemo } from 'react';
-import Switch from 'react-switch';
 import styled, { css } from 'styled-components';
 import tw from 'twin.macro';
 import { FieldToggleStatelessProps } from '../types';
 
-const StyledSwitchRoot = styled(Root)<{ hasError: boolean }>`
+const StyledSwitchRoot = styled(Root)<{ $hasError: boolean }>`
   ${tw`bg-gray-200 flex items-center flex items-center transition-all duration-200 rounded-3xl focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))]`}
-  ${({ hasError }) =>
-    hasError &&
+  ${({ $hasError }) =>
+    $hasError &&
     tw`bg-red-400 border-red-500 focus:outline-none focus:ring-red-50 focus:border-red-400`}
   &[data-state='checked'] {
     ${tw`bg-green-400`}
   }
 `;
-const StyledSwitchThumb = styled(Thumb)<{ size: number }>`
+const StyledSwitchThumb = styled(Thumb)<{ $size: number }>`
   ${tw`block transition-all duration-200 ease-in-out`}
-  ${({ size }) =>
+  ${({ $size }) =>
     css`
-      width: ${size}px;
-      height: ${size}px;
+      width: ${$size}px;
+      height: ${$size}px;
     `}
   &[data-state='checked'] {
-    transform: ${({ size }) => `translateX(${size}px)`};
+    transform: ${({ $size }) => `translateX(${$size}px)`};
   }
 `;
 
 const FieldToggleStateless = forwardRef<
-  Switch,
+  typeof Switch,
   FieldToggleStatelessProps & FieldBaseStatelessProps
 >(({ id, checked, onChange, size, disabled, fieldState, ...rest }, ref) => {
   const sizes = useMemo(() => {
@@ -46,7 +45,7 @@ const FieldToggleStateless = forwardRef<
 
   return (
     <StyledSwitchRoot
-      hasError={!!fieldState?.error}
+      $hasError={!!fieldState?.error}
       checked={checked}
       style={{ width: sizes[0], height: sizes[1] }}
       ref={ref}
@@ -56,7 +55,7 @@ const FieldToggleStateless = forwardRef<
     >
       <StyledSwitchThumb
         tw="bg-white border border-gray-300 rounded-full shadow-lg"
-        size={sizes[0] / 2}
+        $size={sizes[0] / 2}
       />
     </StyledSwitchRoot>
   );

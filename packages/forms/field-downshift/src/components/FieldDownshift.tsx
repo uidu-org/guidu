@@ -5,7 +5,7 @@ import React, { useCallback } from 'react';
 import { FieldDownshiftProps } from '../types';
 
 function FieldDownshift<
-  TOption extends { id: string | number; name: string; [key: string]: any } = {
+  TOption extends {
     id: string | number;
     name: string;
   },
@@ -13,21 +13,20 @@ function FieldDownshift<
   wrapper: WrapperComponent = FieldWrapper,
   multiple = false,
   onChange = () => {},
-  getOptionValue = (option) => option.id,
+  getOptionValue = (option) => String(option.id),
   getOptionLabel = (option) => option.name,
   filterOptions = (props) => props.options,
   option: Option = ({ item, ...rest }) => <div {...rest}>{item.name}</div>,
   input: Input = null,
   menu: Menu = ({ children, ...rest }) => <div {...rest}>{children}</div>,
   options,
-  value,
-  scope,
+  value: defaultValue = '',
   name,
   ...otherProps
 }: FieldDownshiftProps<TOption>) {
   const { field, wrapperProps } = useController({
     name,
-    defaultValue: value || multiple ? [] : '',
+    defaultValue,
     onChange,
     ...otherProps,
   });
@@ -36,7 +35,9 @@ function FieldDownshift<
     if (field.value === undefined) return undefined;
 
     const cleanedValue = multiple
-      ? options.filter((o) => field.value.includes(getOptionValue(o)))
+      ? options.filter((o) =>
+          (field.value as string[]).includes(getOptionValue(o)),
+        )
       : options.find((o) => getOptionValue(o) === field.value);
 
     return cleanedValue;
@@ -45,10 +46,11 @@ function FieldDownshift<
   const onSelect = (selectedItem: TOption) => {
     if (multiple) {
       if (
-        field.value &&
-        field.value.indexOf(getOptionValue(selectedItem)) >= 0
+        ((field.value as string[]) || []).indexOf(
+          getOptionValue(selectedItem),
+        ) >= 0
       ) {
-        const newValue = field.value.filter(
+        const newValue = ((field.value as string[]) || []).filter(
           (v) => v !== getOptionValue(selectedItem),
         );
         field.onChange(newValue);
@@ -58,17 +60,15 @@ function FieldDownshift<
       // add item
       const newValue = [
         ...options
-          .filter((o) => field.value.indexOf(getOptionValue(o)) >= 0)
+          .filter(
+            (o) =>
+              ((field.value as string[]) || []).indexOf(getOptionValue(o)) >= 0,
+          )
           .map(getOptionValue),
         getOptionValue(selectedItem),
       ];
       field.onChange(newValue);
       onChange(name, newValue, { option: selectedItem });
-      return undefined;
-    }
-    if (selectedItem === '') {
-      field.onChange('');
-      onChange(name, '');
       return undefined;
     }
 
@@ -80,7 +80,7 @@ function FieldDownshift<
   const isSelected = (item: TOption) => {
     if (multiple) {
       if (field.value) {
-        return field.value.indexOf(getOptionValue(item)) >= 0;
+        return (field.value as string[]).indexOf(getOptionValue(item)) >= 0;
       }
       return null;
     }
@@ -93,12 +93,16 @@ function FieldDownshift<
   const selectedItem = getValue();
 
   return (
-    <Downshift<TOption>
+    <Downshift<TOption | TOption[]>
       onSelect={onSelect}
-      itemToString={(item) => getOptionLabel({ item })}
+      itemToString={(item) => {
+        if (item) {
+          return getOptionLabel(item);
+        }
+        return '';
+      }}
       initialSelectedItem={selectedItem}
-      inputValue={field.value}
-      // selectedItem={selectedItem}
+      inputValue={field.value as string}
     >
       {({
         getRootProps,
@@ -107,7 +111,6 @@ function FieldDownshift<
         getMenuProps,
         isOpen,
         inputValue,
-        highlightedIndex,
         ...rest
       }) => (
         <WrapperComponent
@@ -118,23 +121,21 @@ function FieldDownshift<
         >
           {Input && <Input {...getInputProps()} />}
           <Menu
-            {...getMenuProps({ refKey: 'innerRef' })}
             getMenuProps={getMenuProps}
             isOpen={isOpen}
             selectedItem={selectedItem}
+            field={field}
             {...rest}
           >
             {filterOptions({ options, inputValue, isOpen }).map(
               (item, index) => (
                 <Option
-                  {...rest}
+                  getItemProps={getItemProps}
                   key={getOptionValue(item)}
-                  highlightedIndex={highlightedIndex}
                   index={index}
                   item={item}
                   isSelected={isSelected(item)}
-                  scope={scope}
-                  getItemProps={getItemProps}
+                  {...rest}
                 />
               ),
             )}

@@ -1,20 +1,29 @@
+import { useController, Wrapper } from '@uidu/field-base';
+
 import React from 'react';
-import { CreateSelectProps } from './createSelect';
-// import Option from './components/Option';
-import { groupedCountries } from './data/countries';
-import Select from './Select';
+import ReactSelect, {
+  GroupBase,
+  OptionProps,
+  SingleValueProps,
+} from 'react-select';
+import { Country, groupedCountries } from './data/countries';
+import { useSelect } from './hooks/useSelect';
+import { CreateSelectProps } from './types';
 
 const flagCSS = () => ({
   fontSize: '18px',
   marginRight: '8px',
 });
 
-function Option({ innerProps, data, getStyles, ...otherProps }) {
+function Option<TIsMulti extends boolean>(
+  props: OptionProps<Country, TIsMulti, GroupBase<Country>>,
+) {
+  const { innerProps, data, getStyles } = props;
   return (
     <div
       {...innerProps}
       style={{
-        ...getStyles('option', otherProps),
+        ...getStyles('option', props),
       }}
     >
       <div tw="flex items-center mr-auto min-w-0 w-auto">
@@ -30,18 +39,21 @@ function Option({ innerProps, data, getStyles, ...otherProps }) {
 }
 
 // return the country name; used for searching
-const getOptionLabel = (opt: any) => opt.name;
+const getOptionLabel = (opt: Country) => opt.name;
 
 // set the country's abbreviation for the option value, (also searchable)
-const getOptionValue = (opt: any) => opt.id;
+const getOptionValue = (opt: Country) => opt.id;
 
-function SingleValue({ innerProps, data, getStyles, ...otherProps }) {
+function SingleValue<TIsMulti extends boolean>(
+  props: SingleValueProps<Country, TIsMulti, GroupBase<Country>>,
+) {
+  const { data, getStyles, innerProps } = props;
   return (
     <div
       {...innerProps}
       tw="flex items-center mr-auto"
       style={{
-        ...getStyles('singleValue', otherProps),
+        ...getStyles('singleValue', props),
         // padding: '1rem',
         minWidth: 0,
         width: 'auto',
@@ -60,28 +72,48 @@ function SingleValue({ innerProps, data, getStyles, ...otherProps }) {
 }
 
 // put it all together
-function CountrySelect({ components, ...otherProps }: CreateSelectProps) {
+function CountrySelect({
+  name,
+  onChange,
+  value: defaultValue = '',
+  rules,
+  ...rest
+}: CreateSelectProps<Country>) {
+  const { field, fieldState, inputProps, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    rules,
+    ...rest,
+  });
+
+  const handleChange = (value, option, actionMeta) => {
+    field.onChange(option.id);
+    onChange(name, option.id, { option, actionMeta });
+  };
+
+  const selectProps = useSelect<Country, false>({
+    value: field.value,
+    components: {
+      Option,
+      SingleValue,
+    },
+    options: groupedCountries,
+    handleChange,
+    styles: {
+      container: (css) => ({ ...css }),
+      dropdownIndicator: (css) => ({ ...css, paddingLeft: 0 }),
+      menu: (css) => ({ ...css, width: 300 }),
+    },
+    isClearable: false,
+    fieldState,
+    ...rest,
+  });
+
   return (
-    // @ts-ignore
-    <Select
-      {...otherProps}
-      isClearable={false}
-      // formatOptionLabel={formatOptionLabel}
-      getOptionLabel={getOptionLabel}
-      getOptionValue={getOptionValue}
-      // isMulti={false}
-      options={groupedCountries}
-      styles={{
-        container: (css) => ({ ...css }),
-        dropdownIndicator: (css) => ({ ...css, paddingLeft: 0 }),
-        menu: (css) => ({ ...css, width: 300 }),
-      }}
-      components={{
-        ...components,
-        Option,
-        SingleValue: SingleValue,
-      }}
-    />
+    <Wrapper {...wrapperProps}>
+      <ReactSelect {...inputProps} {...selectProps} />
+    </Wrapper>
   );
 }
 

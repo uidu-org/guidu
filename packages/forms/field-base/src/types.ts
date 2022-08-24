@@ -34,7 +34,7 @@ export interface UseControllerReturn<
   wrapperProps: Partial<WrapperProps>;
   inputProps: ControllerRenderProps<TFieldValues> & {
     id: string;
-    hasError?: boolean;
+    $hasError?: boolean;
     fieldState: ControllerFieldState;
   };
 }
@@ -60,3 +60,5 @@ export type FieldBaseProps<TValue = unknown> = WrapperProps & {
    be called with an object containing the react synthetic event. Use currentTarget to get value, name and checked */
   onChange?: (name: string, value: TValue, otherProps?: any) => void;
 };
+
+export type { WrapperProps };

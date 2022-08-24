@@ -1,4 +1,4 @@
-type Country = {
+export type Country = {
   id: string;
   code: string;
   before: string;
@@ -345,10 +345,10 @@ export const groupedCountries: Array<{
 }> = [
   {
     label: 'Suggested',
-    options: allCountries.filter(c => c.suggested),
+    options: allCountries.filter((c) => c.suggested),
   },
   {
     label: 'All Countries',
-    options: allCountries.filter(c => !c.suggested),
+    options: allCountries.filter((c) => !c.suggested),
   },
 ];

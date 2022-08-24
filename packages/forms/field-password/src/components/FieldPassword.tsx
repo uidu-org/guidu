@@ -1,4 +1,4 @@
-import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 import { StyledAddon, useController, Wrapper } from '@uidu/field-base';
 import { useFormContext } from '@uidu/form';
 import Tooltip from '@uidu/tooltip';
@@ -59,7 +59,7 @@ export default function FieldPassword({
               disabled={disabled}
             >
               {isPasswordVisible ? (
-                <EyeOffIcon tw="h-5 w-5" />
+                <EyeSlashIcon tw="h-5 w-5" />
               ) : (
                 <EyeIcon tw="h-5 w-5" />
               )}

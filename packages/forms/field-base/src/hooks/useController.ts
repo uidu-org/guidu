@@ -38,7 +38,7 @@ export default function useController<
     () => ({
       ...field,
       fieldState,
-      hasError: !!fieldState?.error,
+      $hasError: !!fieldState?.error,
       id,
     }),
     [field, id, fieldState],

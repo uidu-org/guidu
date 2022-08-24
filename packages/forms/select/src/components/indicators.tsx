@@ -1,6 +1,6 @@
+import { ChevronDownIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import Spinner from '@uidu/spinner';
 import React from 'react';
-import { ChevronDown, X } from 'react-feather';
 
 // indicators
 export function ClearIndicator(props: any) {
@@ -15,7 +15,7 @@ export function ClearIndicator(props: any) {
       style={getStyles('clearIndicator', props)}
       tw="flex items-center mx-2"
     >
-      <X size={16} />
+      <XMarkIcon tw="h-5 w-5" />
     </div>
   );
 }
@@ -32,7 +32,7 @@ export function DropdownIndicator(props: any) {
       tw="flex items-center mx-2"
       style={getStyles('dropdownIndicator', props)}
     >
-      <ChevronDown size={18} />
+      <ChevronDownIcon tw="h-5 w-5" />
     </div>
   );
 }

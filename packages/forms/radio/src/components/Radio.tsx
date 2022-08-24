@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
 import { RadioProps } from '../types';
@@ -7,12 +8,14 @@ export default function Radio({
   onChange,
   value: defaultValue,
   name,
+  rules,
   ...rest
 }: RadioProps) {
   const { field, wrapperProps, inputProps } = useController({
     name,
     defaultValue,
     onChange,
+    rules,
     ...rest,
   });
 

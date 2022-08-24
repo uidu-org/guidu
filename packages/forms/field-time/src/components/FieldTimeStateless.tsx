@@ -7,19 +7,7 @@ const FieldTimeStateless = forwardRef<
   FieldTimeStatelessProps
 >(
   (
-    {
-      name,
-      className,
-      forwardedRef,
-      onChange,
-      value = '',
-      required,
-      disabled,
-      interval,
-      start,
-      end,
-      ...rest
-    },
+    { name, className, onChange, value = '', required, disabled, ...rest },
     ref,
   ) => (
     <StyledInput

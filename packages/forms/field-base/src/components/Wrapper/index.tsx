@@ -31,7 +31,7 @@ export default function Wrapper<T>({
   const { layout: formLayout } = useFormContext();
   const layout = inputLayout || formLayout;
 
-  let input = children;
+  let input = <>{children}</>;
 
   if (type === 'hidden') {
     return input;
@@ -61,7 +61,7 @@ export default function Wrapper<T>({
       >
         <FloatLabel htmlFor={id} className="has-float-label">
           {input}
-          {fieldState.error && <ErrorMessages messages={[fieldState.error]} />}
+          {fieldState?.error && <ErrorMessages messages={[fieldState.error]} />}
           <span>
             {floatLabel}
             {required && ' '}
@@ -87,7 +87,7 @@ export default function Wrapper<T>({
       overrides={overrides}
     >
       {input}
-      {fieldState.error && <ErrorMessages messages={[fieldState.error]} />}
+      {fieldState?.error && <ErrorMessages messages={[fieldState.error]} />}
       {help ? <Help id={id} help={help} /> : null}
     </Row>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
-import FieldRange from '../src';
 import { FieldExampleScaffold } from '../../field-base/examples-utils';
+import FieldRange from '../src';
 
 export default function Basic() {
   return (
@@ -9,6 +9,7 @@ export default function Basic() {
       defaultValue={40}
       min={0}
       max={100}
+      step={1}
     />
   );
 }

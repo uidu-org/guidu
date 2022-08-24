@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+import { SliderProps } from '@radix-ui/react-slider';
 import { useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { FieldRangeProps } from '../types';
@@ -18,10 +20,9 @@ export default function FieldRange({
     ...rest,
   });
 
-  const handleChange = (value) => {
-    const formattedValue = parseFloat(value);
-    field.onChange(formattedValue);
-    onChange(name, formattedValue);
+  const handleChange: SliderProps['onValueChange'] = (value) => {
+    field.onChange(value);
+    onChange(name, value);
   };
 
   return (

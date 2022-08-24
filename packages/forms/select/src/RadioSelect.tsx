@@ -1,14 +1,47 @@
+import { useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
+import ReactSelect from 'react-select';
 import { RadioOption } from './components/input-options';
-import Select from './Select';
+import { useSelect } from './hooks/useSelect';
+import { CreateSelectProps } from './types';
 
-function RadioSelect({ components, ...props }: any) {
+// put it all together
+function RadioSelect({
+  name,
+  onChange,
+  value: defaultValue = '',
+  rules,
+  ...rest
+}: CreateSelectProps<unknown, false>) {
+  const { field, fieldState, inputProps, wrapperProps } = useController({
+    name,
+    defaultValue,
+    onChange,
+    rules,
+    ...rest,
+  });
+
+  const handleChange = (value, option, actionMeta) => {
+    field.onChange(value);
+    onChange(name, value, { option, actionMeta });
+  };
+
+  const selectProps = useSelect<unknown, true>({
+    value: field.value,
+    handleChange,
+    fieldState,
+    hideSelectedOptions: false,
+    components: {
+      Option: RadioOption,
+    },
+    multiple: false,
+    ...rest,
+  });
+
   return (
-    <Select
-      {...props}
-      isMulti={false}
-      components={{ ...components, Option: RadioOption }}
-    />
+    <Wrapper {...wrapperProps}>
+      <ReactSelect {...inputProps} {...selectProps} />
+    </Wrapper>
   );
 }
 

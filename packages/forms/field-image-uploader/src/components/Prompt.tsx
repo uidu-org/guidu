@@ -1,5 +1,5 @@
+import { CloudArrowUpIcon } from '@heroicons/react/24/outline';
 import React, { ReactNode } from 'react';
-import { UploadCloud } from 'react-feather';
 
 export interface PromptProps {
   label: ReactNode;
@@ -12,7 +12,7 @@ export default function Prompt({ label, help, errors }: PromptProps) {
     <>
       <div tw="flex flex-col items-center">
         <div>
-          <UploadCloud size={48} strokeWidth={1} />
+          <CloudArrowUpIcon tw="h-12 w-12" />
         </div>
         {label && <p tw="font-bold mb-0 mt-2">{label}</p>}
         {help && <p tw="text-sm text-muted mt-2">{help}</p>}

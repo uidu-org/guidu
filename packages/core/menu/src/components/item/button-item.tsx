@@ -1,6 +1,5 @@
-import React, { forwardRef, Ref } from 'react';
+import React, { forwardRef } from 'react';
 import { ButtonItemProps } from '../types';
-import { useBlurOnMouseDown } from '../utils/use-blur-on-mouse-down';
 import BaseItem from './base-item';
 import { BaseItemWrapper } from './styled';
 
@@ -20,7 +19,7 @@ const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
       onMouseDown,
       ...others
     } = props;
-    const onMouseDownHandler = useBlurOnMouseDown(onMouseDown);
+    const onMouseDownHandler = onMouseDown;
 
     if (!children) {
       return null;
@@ -35,8 +34,8 @@ const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
         isDisabled={isDisabled}
         data-testid={testId}
         onClick={isDisabled ? undefined : onClick}
-        onMouseDown={onMouseDownHandler}
-        ref={ref as Ref<HTMLButtonElement>}
+        // onMouseDown={onMouseDownHandler}
+        ref={ref}
         {...others}
       >
         <BaseItem

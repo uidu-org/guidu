@@ -134,7 +134,7 @@ export function FieldExampleRefs({ component: Component, ...rest }) {
           type="button"
           onClick={(e) => {
             e.preventDefault();
-            defaultForm.form.setFocus('foo');
+            defaultForm.form.setFocus(inputDefaultProps.name);
           }}
         >
           Focus component
@@ -153,7 +153,14 @@ export function FieldExampleWithSubmit({ component: Component, ...rest }) {
   );
 }
 
-export function FieldExampleScaffold({ component, defaultValue, ...rest }) {
+export function FieldExampleScaffold<TProps>({
+  component,
+  defaultValue,
+  ...rest
+}: {
+  component: any;
+  defaultValue?: any;
+} & TProps) {
   return (
     <ShellMain>
       <ShellBody>

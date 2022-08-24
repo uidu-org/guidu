@@ -1,10 +1,10 @@
 import {
   CheckCircleIcon,
-  ExclamationIcon,
+  ExclamationTriangleIcon,
   InformationCircleIcon,
   QuestionMarkCircleIcon,
   XCircleIcon,
-} from '@heroicons/react/solid';
+} from '@heroicons/react/24/solid';
 import Button from '@uidu/button';
 import React from 'react';
 import { Appearance } from '../types';
@@ -64,7 +64,7 @@ interface Props {
 
 export const baseIcons: { [key: Appearance]: React.FC<any> } = {
   info: () => <InformationCircleIcon tw="h-6 w-6 text-blue-500" />,
-  warning: () => <ExclamationIcon tw="h-6 w-6 text-yellow-500" />,
+  warning: () => <ExclamationTriangleIcon tw="h-6 w-6 text-yellow-500" />,
   error: () => <XCircleIcon tw="h-6 w-6 text-red-500" />,
   confirmation: () => <CheckCircleIcon tw="h-6 w-6 text-green-500" />,
   change: () => <QuestionMarkCircleIcon tw="h-6 w-6 text-purple-500" />,
