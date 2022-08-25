@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.21
+
+### Patch Changes
+
+- bc476a732: Revamped Form components, abandoned formsy to react-hook-form, and new components. Forms API now has changed significantly.
+  One should initiate react-hook-form outside <Form> and pass it as prop. This allows for greater control of both types and validation schemas, as well as more flexibility in external state management.
+- Updated dependencies [bc476a732]
+  - @uidu/emoji@0.6.18
+  - @uidu/mentions@0.4.19
+  - @uidu/task-decision@0.4.24
+
 ## 0.4.20
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/navigation
 
+## 1.0.24
+
+### Patch Changes
+
+- Updated dependencies [bc476a732]
+  - @uidu/menu@0.8.0
+  - @uidu/shell@2.1.27
+  - @uidu/theme@0.6.20
+
 ## 1.0.23
 
 ### Patch Changes

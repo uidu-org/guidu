@@ -1,5 +1,20 @@
 # @uidu/renderer
 
+## 0.8.17
+
+### Patch Changes
+
+- bc476a732: Revamped Form components, abandoned formsy to react-hook-form, and new components. Forms API now has changed significantly.
+  One should initiate react-hook-form outside <Form> and pass it as prop. This allows for greater control of both types and validation schemas, as well as more flexibility in external state management.
+- Updated dependencies [bc476a732]
+  - @uidu/media-card@0.7.0
+  - @uidu/editor-common@0.7.19
+  - @uidu/mentions@0.4.19
+  - @uidu/status@0.5.15
+  - @uidu/task-decision@0.4.24
+  - @uidu/theme@0.6.20
+  - @uidu/media-filmstrip@0.5.7
+
 ## 0.8.16
 
 ### Patch Changes

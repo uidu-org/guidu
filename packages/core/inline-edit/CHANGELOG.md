@@ -1,5 +1,15 @@
 # @uidu/inline-edit
 
+## 0.3.25
+
+### Patch Changes
+
+- Updated dependencies [bc476a732]
+  - @uidu/field-text@2.0.0
+  - @uidu/form@2.0.0
+  - @uidu/field@1.0.16
+  - @uidu/theme@0.6.20
+
 ## 0.3.24
 
 ### Patch Changes
