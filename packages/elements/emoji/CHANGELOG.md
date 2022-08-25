@@ -1,5 +1,15 @@
 # @uidu/emoji
 
+## 0.6.18
+
+### Patch Changes
+
+- bc476a732: Revamped Form components, abandoned formsy to react-hook-form, and new components. Forms API now has changed significantly.
+  One should initiate react-hook-form outside <Form> and pass it as prop. This allows for greater control of both types and validation schemas, as well as more flexibility in external state management.
+- Updated dependencies [bc476a732]
+  - @uidu/field-text@2.0.0
+  - @uidu/theme@0.6.20
+
 ## 0.6.17
 
 ### Patch Changes

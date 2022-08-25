@@ -1,5 +1,17 @@
 # @uidu/media-picker
 
+## 0.8.0
+
+### Minor Changes
+
+- bc476a732: Revamped Form components, abandoned formsy to react-hook-form, and new components. Forms API now has changed significantly.
+  One should initiate react-hook-form outside <Form> and pass it as prop. This allows for greater control of both types and validation schemas, as well as more flexibility in external state management.
+
+### Patch Changes
+
+- Updated dependencies [bc476a732]
+  - @uidu/media-core@1.1.0
+
 ## 0.7.20
 
 ### Patch Changes

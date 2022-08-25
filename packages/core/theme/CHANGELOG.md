@@ -1,5 +1,12 @@
 # @uidu/theme
 
+## 0.6.20
+
+### Patch Changes
+
+- Updated dependencies [bc476a732]
+  - @uidu/form@2.0.0
+
 ## 0.6.19
 
 ### Patch Changes

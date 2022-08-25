@@ -1,5 +1,29 @@
 # @uidu/editor-core
 
+## 0.15.14
+
+### Patch Changes
+
+- bc476a732: Revamped Form components, abandoned formsy to react-hook-form, and new components. Forms API now has changed significantly.
+  One should initiate react-hook-form outside <Form> and pass it as prop. This allows for greater control of both types and validation schemas, as well as more flexibility in external state management.
+- Updated dependencies [bc476a732]
+  - @uidu/field-date@2.0.0
+  - @uidu/form@2.0.0
+  - @uidu/select@2.0.0
+  - @uidu/menu@0.8.0
+  - @uidu/media-card@0.7.0
+  - @uidu/media-core@1.1.0
+  - @uidu/media-picker@0.8.0
+  - @uidu/editor-common@0.7.19
+  - @uidu/date@0.4.20
+  - @uidu/emoji@0.6.18
+  - @uidu/mentions@0.4.19
+  - @uidu/profilecard@0.3.16
+  - @uidu/status@0.5.15
+  - @uidu/task-decision@0.4.24
+  - @uidu/theme@0.6.20
+  - @uidu/media-filmstrip@0.5.7
+
 ## 0.15.13
 
 ### Patch Changes

@@ -11,7 +11,7 @@
     "@babel/runtime": "^7.18.9",
     "@uidu/analytics": "^0.6.5",
     "@uidu/spinner": "^0.5.16",
-    "@uidu/theme": "^0.6.18",
+    "@uidu/theme": "^0.6.20",
     "memoize-one": "^6.0.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
@@ -19,9 +19,9 @@
   "devDependencies": {
     "@atlaskit/icon": "^21.10.7",
     "@atlaskit/logo": "^13.8.1",
-    "@uidu/checkbox": "^1.4.5",
+    "@uidu/checkbox": "^2.0.0",
     "@uidu/docs": "^0.5.18",
-    "@uidu/form": "^1.2.28",
+    "@uidu/form": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.3"

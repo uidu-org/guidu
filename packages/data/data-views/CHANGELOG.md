@@ -1,5 +1,22 @@
 # @uidu/data-views
 
+## 2.1.0
+
+### Minor Changes
+
+- bc476a732: Revamped Form components, abandoned formsy to react-hook-form, and new components. Forms API now has changed significantly.
+  One should initiate react-hook-form outside <Form> and pass it as prop. This allows for greater control of both types and validation schemas, as well as more flexibility in external state management.
+
+### Patch Changes
+
+- Updated dependencies [bc476a732]
+  - @uidu/field-counter@2.0.0
+  - @uidu/field-number@2.0.0
+  - @uidu/form@2.0.0
+  - @uidu/select@2.0.0
+  - @uidu/data-controls@3.1.0
+  - @uidu/data-manager@3.1.0
+
 ## 2.0.10
 
 ### Patch Changes

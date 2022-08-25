@@ -1,5 +1,19 @@
 # @uidu/devise
 
+## 0.7.15
+
+### Patch Changes
+
+- bc476a732: Revamped Form components, abandoned formsy to react-hook-form, and new components. Forms API now has changed significantly.
+  One should initiate react-hook-form outside <Form> and pass it as prop. This allows for greater control of both types and validation schemas, as well as more flexibility in external state management.
+- Updated dependencies [bc476a732]
+  - @uidu/checkbox@2.0.0
+  - @uidu/field-password@2.0.0
+  - @uidu/field-phone@2.0.0
+  - @uidu/field-text@2.0.0
+  - @uidu/form@2.0.0
+  - @uidu/shell@2.1.27
+
 ## 0.7.14
 
 ### Patch Changes
