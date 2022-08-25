@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Form } from '@uidu/form';
 import { FieldTextStateless } from '@uidu/field-text';
+import Form from '@uidu/form';
 import debounce from 'lodash/debounce';
+import React, { Component } from 'react';
 
 import LinkPreview, { extractFirstUrl } from '../src';
 
@@ -10,11 +10,11 @@ export default class Basic extends Component<any> {
     url: null,
   };
 
-  handleSubmit = async model => {
+  handleSubmit = async (model) => {
     await this.setState({ url: model.url });
   };
 
-  debounceExtractUrl = debounce(e => {
+  debounceExtractUrl = debounce((e) => {
     const { url } = this.state;
     const nextUrl = extractFirstUrl(e.target.value);
     if (url !== nextUrl) {
@@ -24,7 +24,7 @@ export default class Basic extends Component<any> {
     }
   }, 500);
 
-  onKeyUp = event => {
+  onKeyUp = (event) => {
     event.persist();
     this.debounceExtractUrl(event);
   };

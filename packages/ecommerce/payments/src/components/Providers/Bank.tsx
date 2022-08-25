@@ -1,4 +1,4 @@
-import Form from '@uidu/form';
+import Form, { FormProps, useForm } from '@uidu/form';
 import SectionMessage from '@uidu/section-message';
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
@@ -21,14 +21,23 @@ export default function Bank({
   providerProps = {},
   formProps = {},
   children,
+}: {
+  label?: React.ReactNode;
+  error?: React.ReactNode;
+  handleSubmit: (model: any) => Promise<any>;
+  footerRenderer?: FormProps['footerRenderer'];
 }) {
   const [isLoading, setIsLoading] = useState(true);
+
+  const form = useForm({ mode: 'onChange' });
+
   return (
     <>
       <style>{`#iban-element { display: flex; flex-direction: column; justify-content: center; }`}</style>
       <Form
+        form={form}
         handleSubmit={async (model) => handleSubmit(provider, model)}
-        footerRenderer={() => footerRenderer({ loading, canSubmit })}
+        footerRenderer={footerRenderer}
         {...formProps}
       >
         <div css={[tw`relative`, isLoading ? tw`invisible` : tw`visible`]}>

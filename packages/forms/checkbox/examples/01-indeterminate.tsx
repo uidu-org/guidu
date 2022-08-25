@@ -1,4 +1,4 @@
-import { Form } from '@uidu/form';
+import Form from '@uidu/form';
 import React from 'react';
 import { useDefaultForm } from '../../form/examples-utils';
 import Checkbox from '../src/index';

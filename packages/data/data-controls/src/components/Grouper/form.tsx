@@ -1,7 +1,7 @@
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import Button from '@uidu/button';
 import { useDataManagerContext } from '@uidu/data-manager';
-import { Form } from '@uidu/form';
+import Form from '@uidu/form';
 import { MenuGroup, Section } from '@uidu/menu';
 import Select from '@uidu/select';
 import React, { Fragment, useRef } from 'react';

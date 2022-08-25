@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Form, FormSubmit } from '@uidu/form';
 import FieldText from '@uidu/field-text';
+import Form, { FormSubmit } from '@uidu/form';
+import React, { Component } from 'react';
 import LinkPreview from '../src';
 
 export default class Basic extends Component<any> {
@@ -8,7 +8,7 @@ export default class Basic extends Component<any> {
     url: null,
   };
 
-  handleSubmit = async model => {
+  handleSubmit = async (model) => {
     await this.setState({ url: model.url });
   };
 

@@ -1,5 +1,5 @@
 import { CardElement, Elements } from '@stripe/react-stripe-js';
-import { Form } from '@uidu/form';
+import Form from '@uidu/form';
 import { createCardElementOptions } from '@uidu/payments';
 import classNames from 'classnames';
 import React, { PureComponent } from 'react';
@@ -77,7 +77,7 @@ class PaymentSources extends PureComponent<any, any> {
               return -1;
             })
             .map((stripeSource) => (
-              <div className="card p-3 mb-3">
+              <div className="p-3 mb-3 card">
                 <div className="media align-items-center">
                   <img
                     // src={require(`payment-icons/min/flat/${stripeSource.stripeCard.brand.toLowerCase()}.svg`)}
@@ -87,7 +87,7 @@ class PaymentSources extends PureComponent<any, any> {
                   />
                   <div className="media-body">
                     {stripeSource.kind === 'default' && (
-                      <p className="text-muted mb-0 small">
+                      <p className="mb-0 text-muted small">
                         Questo account è associato a
                       </p>
                     )}
@@ -99,7 +99,7 @@ class PaymentSources extends PureComponent<any, any> {
                       - scadenza {stripeSource.stripeCard.exp_month}/
                       {stripeSource.stripeCard.exp_year}
                     </p>
-                    <p className="small mb-0">
+                    <p className="mb-0 small">
                       {stripeSource.kind !== 'default' && [
                         <a className="mr-3" href="#">
                           Rendi default
@@ -109,7 +109,7 @@ class PaymentSources extends PureComponent<any, any> {
                     </p>
                   </div>
                   {stripeSource.kind === 'default' && (
-                    <a className="badge badge-light mr-2">DEFAULT</a>
+                    <a className="mr-2 badge badge-light">DEFAULT</a>
                   )}
                 </div>
               </div>
@@ -124,7 +124,7 @@ class PaymentSources extends PureComponent<any, any> {
               footerRenderer={(props) => <button>Invia</button>}
             >
               {(formError || paymentFormError) && (
-                <div className="alert alert-danger animated zoomIn mb-3">
+                <div className="mb-3 alert alert-danger animated zoomIn">
                   {formError || paymentFormError}
                 </div>
               )}

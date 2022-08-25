@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { UseFormReturn } from 'react-hook-form';
+import { FieldValues, UseFormReturn } from 'react-hook-form';
 import { StyledComponent } from 'styled-components';
 
 export type Overrides = Record<
@@ -11,7 +11,7 @@ export type LayoutType = 'horizontal' | 'vertical' | 'elementOnly';
 
 export type FormHandleSubmit = (model, resetForm) => Promise<any>;
 
-export type FormProps<T> = {
+export type FormProps<T extends FieldValues = FieldValues> = {
   form: UseFormReturn<T>;
   children: ReactNode;
   handleSubmit: FormHandleSubmit;

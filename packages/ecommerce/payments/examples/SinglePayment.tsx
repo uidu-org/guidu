@@ -23,7 +23,7 @@ const createPaymentIntent = (amount: number) => {
     .then((res) => res.data);
 };
 
-export default function Basic({}) {
+export default function Basic() {
   const [paymentIntent, setPaymentIntent] = useState(null);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function Basic({}) {
 
   return (
     <IntlProvider locale="en">
-      <ShellSidebar className="d-flex border-right align-items-center justify-content-center p-5">
+      <ShellSidebar className="p-5 d-flex border-right align-items-center justify-content-center">
         <div>
           <h5>Buying a single product or donate once with amount of 30 €</h5>
           <p>

@@ -1,4 +1,4 @@
-import { Form } from '@uidu/form';
+import Form from '@uidu/form';
 import React, { Component } from 'react';
 import 'react-day-picker/dist/style.css';
 import { inputDefaultProps } from '../../field-base/examples-utils';

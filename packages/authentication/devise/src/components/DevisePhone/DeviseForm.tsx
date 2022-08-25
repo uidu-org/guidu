@@ -1,9 +1,10 @@
-import { Form, FormSubmit } from '@uidu/form';
+import Form, { FormSubmit } from '@uidu/form';
 import queryString from 'query-string';
 import React from 'react';
 import { ArrowLeft } from 'react-feather';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
+, FormSubmit } from '@uidu/form';
 
 export const messages = defineMessages({
   phone_sessions_phone_title: {

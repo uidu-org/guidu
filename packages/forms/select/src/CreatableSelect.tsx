@@ -2,6 +2,7 @@ import { useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import ReactSelectCreatable from 'react-select/creatable';
 import { useSelect } from './hooks/useSelect';
+import { CreateSelectProps } from './types';
 
 // put it all together
 function CreatableSelect<TOption, TIsMulti extends boolean = false>({

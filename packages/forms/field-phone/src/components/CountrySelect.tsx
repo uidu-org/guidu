@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import {
+  allCountriesByCountryCode,
   GroupBase,
   OptionProps,
   SelectStateless,
   SingleValueProps,
 } from '@uidu/select';
-import { allCountriesByCountryCode } from '@uidu/select/src/data/countries';
 import React, { useMemo } from 'react';
 import { Country, getCountryCallingCode } from 'react-phone-number-input/input';
 import { CountryLabels } from '../types';

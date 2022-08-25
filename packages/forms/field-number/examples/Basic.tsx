@@ -1,4 +1,4 @@
-import { Form } from '@uidu/form';
+import Form from '@uidu/form';
 import React, { useEffect, useState } from 'react';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';

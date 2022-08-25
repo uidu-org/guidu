@@ -1,4 +1,4 @@
-import { Form, FormSubmit } from '@uidu/form';
+import Form, { FormSubmit } from '@uidu/form';
 import queryString from 'query-string';
 import React from 'react';
 import { ArrowLeft } from 'react-feather';

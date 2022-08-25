@@ -1,4 +1,4 @@
-import Form from '@uidu/form';
+import Form, { useForm } from '@uidu/form';
 import SectionMessage from '@uidu/section-message';
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
@@ -26,6 +26,7 @@ export default function CardSplit({
   ),
 }) {
   const [isLoading, setIsLoading] = useState(true);
+  const form = useForm({ mode: 'onChange' });
 
   return (
     <>
@@ -33,6 +34,7 @@ export default function CardSplit({
       <Form
         handleSubmit={async (model) => handleSubmit(provider, model)}
         footerRenderer={() => footerRenderer({ loading, canSubmit })}
+        form={form}
         {...formProps}
       >
         <div css={[tw`relative`, isLoading ? tw`invisible` : tw`visible`]}>

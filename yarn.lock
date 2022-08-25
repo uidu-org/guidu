@@ -7680,10 +7680,11 @@ __metadata:
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^4.0.0
     "@uidu/field-text": ^2.0.0
-    "@uidu/form": ^2.0.0
+    "@uidu/form": "workspace:^"
     "@uidu/select": 2.0.0
     react: ^18.2.0
     react-phone-number-input: ^3.2.9
+    styled-components: ^5.3.5
     tslib: ^2.4.0
     twin.macro: ^2.8.2
   peerDependencies:
@@ -7835,7 +7836,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/form@2.0.0, @uidu/form@^2.0.0, @uidu/form@workspace:packages/forms/form":
+"@uidu/form@2.0.0, @uidu/form@^2.0.0, @uidu/form@workspace:^, @uidu/form@workspace:packages/forms/form":
   version: 0.0.0-use.local
   resolution: "@uidu/form@workspace:packages/forms/form"
   dependencies:
@@ -8156,6 +8157,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/media-core@workspace:packages/media/media-core"
   dependencies:
+    "@babel/runtime": ^7.18.9
     "@uidu/docs": ^0.5.17
     "@uidu/section-message": ^0.6.18
     "@uppy/aws-s3": ^3.0.0

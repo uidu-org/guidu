@@ -1,5 +1,5 @@
 import Button from '@uidu/button';
-import { Form } from '@uidu/form';
+import Form from '@uidu/form';
 import Select from '@uidu/select';
 import Tooltip from '@uidu/tooltip';
 import PropTypes from 'prop-types';

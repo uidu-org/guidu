@@ -1,4 +1,4 @@
-import { Form } from '@uidu/form';
+import Form from '@uidu/form';
 import { ScrollableContainer, ShellBody, ShellMain } from '@uidu/shell';
 import React, { useState } from 'react';
 import { useDefaultForm } from '../../form/examples-utils';

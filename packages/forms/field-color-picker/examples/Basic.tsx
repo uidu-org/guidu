@@ -1,5 +1,5 @@
 import Button from '@uidu/button';
-import { Form } from '@uidu/form';
+import Form from '@uidu/form';
 import React, { forwardRef, useImperativeHandle } from 'react';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { useDefaultForm } from '../../form/examples-utils';

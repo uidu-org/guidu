@@ -1,4 +1,4 @@
-import { Form } from '@uidu/form';
+import Form from '@uidu/form';
 import React, { Component } from 'react';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
@@ -15,7 +15,7 @@ export default class FormExample extends Component<void, void> {
       <div>
         <Form
           {...formDefaultProps}
-          handleSubmit={model => this.setState({ value: model })}
+          handleSubmit={(model) => this.setState({ value: model })}
         >
           <FieldText
             {...inputDefaultProps}

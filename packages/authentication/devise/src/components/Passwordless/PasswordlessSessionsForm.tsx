@@ -1,5 +1,5 @@
 import FieldText from '@uidu/field-text';
-import { Form, FormSubmit } from '@uidu/form';
+import Form, { FormSubmit } from '@uidu/form';
 import React, { PureComponent } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 

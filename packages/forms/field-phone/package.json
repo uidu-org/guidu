@@ -18,7 +18,8 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.18",
-    "@uidu/form": "^2.0.0",
+    "@uidu/form": "workspace:^",
+    "styled-components": "^5.3.5",
     "twin.macro": "^2.8.2"
   },
   "peerDependencies": {

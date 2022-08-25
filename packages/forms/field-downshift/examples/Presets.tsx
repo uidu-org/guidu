@@ -1,4 +1,4 @@
-import { Form } from '@uidu/form';
+import Form from '@uidu/form';
 import React, { useState } from 'react';
 import { Columns, Feather, GitHub, Gitlab, Map } from 'react-feather';
 import { ScrollableContainer } from '../../../navigation/shell/src';

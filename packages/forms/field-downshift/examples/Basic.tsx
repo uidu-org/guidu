@@ -1,5 +1,5 @@
 import { FieldTextStateless } from '@uidu/field-text';
-import { Form } from '@uidu/form';
+import Form from '@uidu/form';
 import React from 'react';
 import tw from 'twin.macro';
 import { inputDefaultProps } from '../../field-base/examples-utils';

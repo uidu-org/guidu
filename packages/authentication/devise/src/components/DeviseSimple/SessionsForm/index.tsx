@@ -1,10 +1,11 @@
 import { Checkbox } from '@uidu/checkbox';
 import FieldPassword from '@uidu/field-password';
 import FieldText from '@uidu/field-text';
-import { Form, FormSubmit } from '@uidu/form';
+import Form, { FormSubmit } from '@uidu/form';
 import React, { PureComponent } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
+, FormSubmit } from '@uidu/form';
 
 export const messages = defineMessages({
   simple_sessions_title: {

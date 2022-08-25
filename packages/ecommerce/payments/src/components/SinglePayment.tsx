@@ -13,7 +13,7 @@ import { SinglePaymentProps } from '../types';
 // https://stripe.com/docs/payments/save-during-payment#web
 // https://github.com/stripe/react-stripe-js/blob/master/examples/hooks/1-Card-Detailed.js
 
-function SinglePayment({
+function StatelessSinglePayment({
   children,
   amount,
   clientSecret,
@@ -153,7 +153,7 @@ function SinglePayment({
     setCardComplete(value.complete);
   };
 
-  return (children as any)({
+  return children({
     handleSubmit,
     loading,
     error,
@@ -164,23 +164,25 @@ function SinglePayment({
   });
 }
 
-export default ({
+export default function SinglePayment({
   stripe,
   stripeOptions = {},
   ...rest
-}: SinglePaymentProps) => (
-  <Elements
-    stripe={stripe}
-    options={{
-      fonts: [
-        {
-          cssSrc:
-            'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap',
-        },
-      ],
-      ...stripeOptions,
-    }}
-  >
-    <SinglePayment {...(rest as SinglePaymentProps)} />
-  </Elements>
-);
+}: SinglePaymentProps) {
+  return (
+    <Elements
+      stripe={stripe}
+      options={{
+        fonts: [
+          {
+            cssSrc:
+              'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap',
+          },
+        ],
+        ...stripeOptions,
+      }}
+    >
+      <StatelessSinglePayment {...(rest as SinglePaymentProps)} />
+    </Elements>
+  );
+}

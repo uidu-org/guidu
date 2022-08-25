@@ -1,4 +1,4 @@
-import Form from '@uidu/form';
+import Form, { useForm } from '@uidu/form';
 import SectionMessage from '@uidu/section-message';
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
@@ -24,11 +24,13 @@ export default function Card({
   ),
 }) {
   const [isLoading, setIsLoading] = useState(true);
+  const form = useForm({ mode: 'onChange' });
 
   return (
     <>
       <style>{`#credit-card { display: flex; flex-direction: column; justify-content: center; }`}</style>
       <Form
+        form={form}
         handleSubmit={async (model) => handleSubmit(provider, model)}
         footerRenderer={() => footerRenderer({ loading, canSubmit })}
         {...formProps}

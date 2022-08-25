@@ -1,6 +1,5 @@
 import { CardNumberElement } from '@stripe/react-stripe-js';
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
-import { withFormsy } from 'formsy-react';
+import { Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { FieldBase } from '../../styled';
 import { createCardElementOptions } from '../../utils';
@@ -32,4 +31,4 @@ function FieldCardNumber({
   );
 }
 
-export default withFormsy(ComponentHOC(FieldCardNumber));
+export default FieldCardNumber;

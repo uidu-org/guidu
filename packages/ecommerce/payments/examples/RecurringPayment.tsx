@@ -6,16 +6,15 @@ import { PaymentMethods, RecurringPayment } from '../src';
 
 const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
 
-const createSubscription = (payload) => {
-  return axios
+const createSubscription = (payload) =>
+  axios
     .post('https://uidu.local:8443/create-customer', {
       payment_method_id: payload.paymentMethod.id,
       plan: 1,
     })
     .then((res) => res.data);
-};
 
-export default function RecurringPaymentExample({}) {
+export default function RecurringPaymentExample() {
   const [provider, setProvider] = useState('card');
 
   return (
