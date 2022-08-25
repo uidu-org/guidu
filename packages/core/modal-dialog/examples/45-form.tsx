@@ -1,5 +1,5 @@
 import Button from '@uidu/button';
-import { Checkbox } from '@uidu/checkbox';
+import Checkbox from '@uidu/checkbox';
 import FieldText from '@uidu/field-text';
 import Form, { FormSubmit } from '@uidu/form';
 import { RadioGroup } from '@uidu/radio';

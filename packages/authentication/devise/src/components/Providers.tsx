@@ -1,4 +1,4 @@
-import { Checkbox } from '@uidu/checkbox';
+import Checkbox from '@uidu/checkbox';
 import FieldPassword from '@uidu/field-password';
 import FieldText from '@uidu/field-text';
 import Form, { FormSubmit } from '@uidu/form';

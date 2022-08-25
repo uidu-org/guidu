@@ -1,4 +1,4 @@
-import { Checkbox } from '@uidu/checkbox';
+import Checkbox from '@uidu/checkbox';
 import Form from '@uidu/form';
 import * as React from 'react';
 import Button, { ButtonAppearances } from '../src';

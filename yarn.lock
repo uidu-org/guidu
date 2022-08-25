@@ -7680,7 +7680,7 @@ __metadata:
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^4.0.0
     "@uidu/field-text": ^2.0.0
-    "@uidu/form": "workspace:^"
+    "@uidu/form": 2.0.0
     "@uidu/select": 2.0.0
     react: ^18.2.0
     react-phone-number-input: ^3.2.9
@@ -7836,7 +7836,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/form@2.0.0, @uidu/form@^2.0.0, @uidu/form@workspace:^, @uidu/form@workspace:packages/forms/form":
+"@uidu/form@2.0.0, @uidu/form@^2.0.0, @uidu/form@workspace:packages/forms/form":
   version: 0.0.0-use.local
   resolution: "@uidu/form@workspace:packages/forms/form"
   dependencies:
