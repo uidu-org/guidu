@@ -1,5 +1,11 @@
 # @uidu/field-textarea
 
+## 2.0.1
+
+### Patch Changes
+
+- 2ce79c935: Optional ref calls in stateless checkboxes and textareas
+
 ## 2.0.0
 
 ### Major Changes
