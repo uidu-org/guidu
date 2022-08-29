@@ -23,7 +23,6 @@ const FieldTextareaStateless = forwardRef<
       onKeyUp,
       disabled,
       required,
-      forwardedRef,
       fieldState,
       ...rest
     },
@@ -49,7 +48,7 @@ const FieldTextareaStateless = forwardRef<
         rows={rows}
         cols={cols}
         ref={(e) => {
-          ref(e);
+          if (ref && typeof ref === 'function') ref(e);
           element.current = e;
         }}
         placeholder={placeholder}

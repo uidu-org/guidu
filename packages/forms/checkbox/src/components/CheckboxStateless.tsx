@@ -59,7 +59,7 @@ const CheckboxStateless = forwardRef<
             disabled={disabled}
             checked={checked}
             ref={(e) => {
-              ref(e);
+              if (ref && typeof ref === 'function') ref(e);
               element.current = e;
             }}
           />
