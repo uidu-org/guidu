@@ -1,4 +1,4 @@
-import { SwitchVerticalIcon } from '@heroicons/react/24/solid';
+import { ArrowsUpDownIcon } from '@heroicons/react/24/solid';
 import { useDataManagerContext } from '@uidu/data-manager';
 import Popup, { TriggerProps } from '@uidu/popup';
 import React, { useCallback, useState } from 'react';
@@ -25,7 +25,7 @@ export default function Sorter(props: SorterProps) {
         activeBg="#fee2d5"
         active={!!sortersCount}
         onClick={() => setIsDialogOpen((prevIsDialogOpen) => !prevIsDialogOpen)}
-        iconBefore={<SwitchVerticalIcon tw="h-4 w-4" />}
+        iconBefore={<ArrowsUpDownIcon tw="h-4 w-4" />}
       >
         <span tw="hidden xl:block">
           <FormattedMessage
