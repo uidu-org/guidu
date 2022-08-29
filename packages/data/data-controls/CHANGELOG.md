@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 3.1.1
+
+### Patch Changes
+
+- da98426b8: FIX Sorter icon
+
 ## 3.1.0
 
 ### Minor Changes
