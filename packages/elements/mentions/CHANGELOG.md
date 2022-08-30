@@ -1,5 +1,13 @@
 # @uidu/mentions
 
+## 0.4.20
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+- Updated dependencies [065c49b28]
+  - @uidu/button@1.3.27
+
 ## 0.4.19
 
 ### Patch Changes

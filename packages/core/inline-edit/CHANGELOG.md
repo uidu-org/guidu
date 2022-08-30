@@ -1,5 +1,14 @@
 # @uidu/inline-edit
 
+## 0.3.26
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+- Updated dependencies [065c49b28]
+  - @uidu/button@1.3.27
+  - @uidu/form@2.0.1
+
 ## 0.3.25
 
 ### Patch Changes

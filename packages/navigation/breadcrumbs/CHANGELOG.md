@@ -1,5 +1,13 @@
 # @uidu/breadcrumbs
 
+## 1.0.24
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+- Updated dependencies [065c49b28]
+  - @uidu/button@1.3.27
+
 ## 1.0.23
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.3.27
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+
 ## 1.3.26
 
 ### Patch Changes

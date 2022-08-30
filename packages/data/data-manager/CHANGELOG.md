@@ -1,5 +1,20 @@
 # @uidu/data-manager
 
+## 3.1.1
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+- Updated dependencies [065c49b28]
+  - @uidu/button@1.3.27
+  - @uidu/board@1.0.2
+  - @uidu/data-controls@3.1.2
+  - @uidu/data-fields@2.1.1
+  - @uidu/data-views@2.1.1
+  - @uidu/table@2.1.1
+  - @uidu/shell@2.1.28
+  - @uidu/calendar@0.4.16
+
 ## 3.1.0
 
 ### Minor Changes

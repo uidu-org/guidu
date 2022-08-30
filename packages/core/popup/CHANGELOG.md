@@ -1,5 +1,11 @@
 # @uidu/popup
 
+## 0.7.1
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+
 ## 0.7.0
 
 ### Minor Changes

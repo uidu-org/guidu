@@ -1,5 +1,13 @@
 # @uidu/media-card
 
+## 0.7.1
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+- Updated dependencies [065c49b28]
+  - @uidu/button@1.3.27
+
 ## 0.7.0
 
 ### Minor Changes

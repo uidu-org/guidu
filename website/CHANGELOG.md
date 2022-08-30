@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.6.16
+
+### Patch Changes
+
+- Updated dependencies [065c49b28]
+  - @uidu/button@1.3.27
+  - @uidu/modal-dialog@1.0.10
+  - @uidu/table@2.1.1
+  - @uidu/form@2.0.1
+  - @uidu/select@2.0.1
+  - @uidu/breadcrumbs@1.0.24
+  - @uidu/navigation@1.0.25
+  - @uidu/shell@2.1.28
+
 ## 0.6.15
 
 ### Patch Changes
