@@ -1,5 +1,14 @@
 # @uidu/onboarding
 
+## 1.3.10
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+- Updated dependencies [065c49b28]
+  - @uidu/button@1.3.27
+  - @uidu/modal-dialog@1.0.10
+
 ## 1.3.9
 
 ### Patch Changes

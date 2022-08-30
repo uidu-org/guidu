@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.5.16
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+
 ## 0.5.15
 
 ### Patch Changes

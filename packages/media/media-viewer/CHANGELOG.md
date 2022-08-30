@@ -1,5 +1,14 @@
 # @uidu/media-viewer
 
+## 0.5.1
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+- Updated dependencies [065c49b28]
+  - @uidu/button@1.3.27
+  - @uidu/shell@2.1.28
+
 ## 0.5.0
 
 ### Minor Changes

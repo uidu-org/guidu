@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 1.0.25
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+- Updated dependencies [065c49b28]
+  - @uidu/shell@2.1.28
+
 ## 1.0.24
 
 ### Patch Changes

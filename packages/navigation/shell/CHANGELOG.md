@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.28
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+
 ## 2.1.27
 
 ### Patch Changes

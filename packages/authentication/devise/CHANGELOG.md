@@ -1,5 +1,16 @@
 # @uidu/devise
 
+## 0.7.16
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+- Updated dependencies [065c49b28]
+  - @uidu/field-password@2.0.1
+  - @uidu/field-phone@2.0.1
+  - @uidu/form@2.0.1
+  - @uidu/shell@2.1.28
+
 ## 0.7.15
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 1.0.2
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+
 ## 1.0.1
 
 ### Patch Changes

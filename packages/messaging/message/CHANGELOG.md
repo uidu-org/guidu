@@ -1,5 +1,17 @@
 # @uidu/message
 
+## 0.5.40
+
+### Patch Changes
+
+- 065c49b28: Bump dependencies
+- Updated dependencies [065c49b28]
+  - @uidu/button@1.3.27
+  - @uidu/popup@0.7.1
+  - @uidu/media-card@0.7.1
+  - @uidu/media-viewer@0.5.1
+  - @uidu/message-form@0.4.24
+
 ## 0.5.39
 
 ### Patch Changes
