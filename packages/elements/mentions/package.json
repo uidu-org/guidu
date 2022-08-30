@@ -11,7 +11,7 @@
   "types": "dist/uidu-mentions.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.10.7",
-    "@atlaskit/util-service-support": "^6.1.1",
+    "@atlaskit/util-service-support": "^6.1.2",
     "@babel/runtime": "^7.18.9",
     "@uidu/analytics": "^0.6.5",
     "@uidu/analytics-gas-types": "^0.3.4",
@@ -22,13 +22,13 @@
     "@uidu/tooltip": "^0.5.22",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.0.8",
+    "react-intl": "^6.1.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.4.0",
+    "@faker-js/faker": "^7.5.0",
     "@uidu/docs": "^0.5.18"
   },
   "publishConfig": {

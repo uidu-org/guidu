@@ -23,7 +23,6 @@ export default function Form<T>({
   handleSubmit: onSubmit = async (model: T) => {},
   withLoader = true,
   children,
-  // formsy
   layout = 'vertical' as LayoutType,
   className = '',
   overrides = {},

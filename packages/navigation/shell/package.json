@@ -20,12 +20,12 @@
     "overlayscrollbars-react": "^0.3.0",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
-    "react-intl": "^6.0.8",
+    "react-intl": "^6.1.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.4.0",
+    "@faker-js/faker": "^7.5.0",
     "@uidu/docs": "^0.5.18",
     "@uidu/navigation": "^1.0.24",
     "react-router-dom": "^5.3.3",

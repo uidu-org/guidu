@@ -14,7 +14,7 @@
     "@uidu/form": "2.0.0",
     "@uidu/select": "2.0.0",
     "react": "^18.2.0",
-    "react-phone-number-input": "^3.2.9",
+    "react-phone-number-input": "^3.2.10",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },

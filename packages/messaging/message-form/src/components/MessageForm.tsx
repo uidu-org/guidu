@@ -5,7 +5,6 @@ import { Form, FormFooter, FormMeta, FormSubmit } from '@uidu/form';
 import MediaFilmstrip from '@uidu/media-filmstrip';
 import Spinner from '@uidu/spinner';
 import classNames from 'classnames';
-import Formsy from 'formsy-react';
 import React, {
   forwardRef,
   useEffect,
@@ -61,7 +60,7 @@ function MessagesForm({
   onReplyDismiss,
   forwardedRef,
 }: MessageFormProps) {
-  const form: React.RefObject<Formsy> = useRef(null);
+  const form: React.RefObject<any> = useRef(null);
   const suggestionsPortal: React.RefObject<any> = useRef(null);
   const mentionsInput: React.RefObject<any> = useRef(null);
 

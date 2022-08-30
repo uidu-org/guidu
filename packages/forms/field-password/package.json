@@ -16,7 +16,7 @@
   "types": "dist/uidu-field-password.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@heroicons/react": "^2.0.4",
+    "@heroicons/react": "^2.0.8",
     "@loadable/component": "^5.15.2",
     "@types/zxcvbn": "^4.4.1",
     "@uidu/field-base": "^4.0.0",

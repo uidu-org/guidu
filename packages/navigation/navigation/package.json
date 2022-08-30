@@ -22,7 +22,7 @@
     "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-animate-height": "^3.0.4",
-    "react-beautiful-dnd": "^13.1.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-content-loader": "^6.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.3",

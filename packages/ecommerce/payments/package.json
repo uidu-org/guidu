@@ -10,7 +10,7 @@
   "types": "dist/uidu-payments.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@heroicons/react": "^2.0.4",
+    "@heroicons/react": "^2.0.8",
     "@stripe/react-stripe-js": "^1.10.0",
     "@stripe/stripe-js": "^1.35.0",
     "@uidu/field-base": "^4.0.0",
@@ -19,10 +19,9 @@
     "@uidu/slider": "^1.7.18",
     "@uidu/theme": "^0.6.20",
     "axios": "^0.27.2",
-    "formsy-react": "^2.2.7",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
-    "react-intl": "^6.0.8",
+    "react-intl": "^6.1.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0",
     "uuid": "^8.3.2"

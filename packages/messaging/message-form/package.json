@@ -22,7 +22,6 @@
     "@uidu/spinner": "^0.5.16",
     "classnames": "^2.3.1",
     "emoji-mart": "^3.0.1",
-    "formsy-react": "^2.2.7",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-mentions": "^4.4.7",

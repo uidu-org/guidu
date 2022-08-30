@@ -23,7 +23,6 @@ export type FormProps<T extends FieldValues = FieldValues> = {
   withLoader?: boolean;
   autoComplete?: string;
   className?: string;
-  // formsy
   layout?: LayoutType;
   overrides?: Overrides;
   id?: string;

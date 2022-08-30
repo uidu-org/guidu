@@ -11,7 +11,7 @@
   "types": "dist/uidu-field-base.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@heroicons/react": "^2.0.4",
+    "@heroicons/react": "^2.0.8",
     "@uidu/form": "2.0.0",
     "react-hook-form": "^7.34.2",
     "styled-components": "^5.3.5",

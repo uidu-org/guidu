@@ -23,7 +23,7 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.4.0",
+    "@faker-js/faker": "^7.5.0",
     "@uidu/docs": "^0.5.18",
     "@uidu/shell": "^2.1.26",
     "use-clipboard-copy": "^0.2.0"
