@@ -19,6 +19,7 @@ const FieldNumberStateless = forwardRef<
       disabled,
       onBlur,
       name,
+      className,
       ...rest
     },
     ref,
@@ -32,6 +33,7 @@ const FieldNumberStateless = forwardRef<
       disabled={disabled}
       name={name}
       onBlur={onBlur}
+      className={className}
       options={{
         thousandSeparator: '.',
         decimalSeparator: ',',
