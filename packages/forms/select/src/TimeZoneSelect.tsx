@@ -38,7 +38,7 @@ function SingleValue({ innerProps, data, getStyles, ...otherProps }) {
 // put it all together
 function TimeZoneSelect({
   name,
-  onChange,
+  onChange = () => {},
   value: defaultValue = '',
   rules,
   components: propComponents = {},

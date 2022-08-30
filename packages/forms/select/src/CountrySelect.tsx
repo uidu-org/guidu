@@ -69,7 +69,7 @@ function SingleValue<TIsMulti extends boolean>(
 // put it all together
 function CountrySelect({
   name,
-  onChange,
+  onChange = () => {},
   value: defaultValue = '',
   rules,
   ...rest

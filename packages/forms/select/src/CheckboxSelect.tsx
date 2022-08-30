@@ -8,7 +8,7 @@ import { CreateSelectProps } from './types';
 // put it all together
 function CheckboxSelect({
   name,
-  onChange,
+  onChange = () => {},
   value: defaultValue = '',
   rules,
   ...rest

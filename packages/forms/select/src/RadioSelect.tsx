@@ -8,7 +8,7 @@ import { CreateSelectProps } from './types';
 // put it all together
 function RadioSelect({
   name,
-  onChange,
+  onChange = () => {},
   value: defaultValue = '',
   rules,
   ...rest

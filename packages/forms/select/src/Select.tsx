@@ -7,7 +7,7 @@ import { CreateSelectProps } from './types';
 // put it all together
 function Select({
   name,
-  onChange,
+  onChange = () => {},
   value: defaultValue = '',
   rules,
   ...rest
