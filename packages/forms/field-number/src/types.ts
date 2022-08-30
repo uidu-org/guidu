@@ -1,7 +1,8 @@
 import { FieldBaseProps } from '@uidu/field-base';
+import { AllHTMLAttributes } from 'react';
 import { NumberFormatProps, NumberFormatValues } from 'react-number-format';
 
-export type FieldNumberStatelessProps = {
+export type FieldNumberStatelessProps = AllHTMLAttributes<HTMLInputElement> & {
   /** React-numeric-input options */
   value?: number;
   /** React-numeric-input options */
@@ -20,4 +21,4 @@ export type FieldNumberProps = {
   /** Standard input max attribute, to be used with type="number" */
   max?: number;
 } & FieldNumberStatelessProps &
-  FieldBaseProps<string | number>;
+  FieldBaseProps<number>;

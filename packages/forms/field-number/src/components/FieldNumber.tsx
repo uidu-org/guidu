@@ -7,7 +7,7 @@ import FieldNumberStateless from './FieldNumberStateless';
 
 export default function FieldNumber({
   name,
-  value: defaultValue,
+  value: defaultValue = '',
   onChange = () => {},
   rules,
   ...rest
@@ -21,9 +21,9 @@ export default function FieldNumber({
   });
 
   const handleChange = (values: NumberFormatValues) => {
-    const { value } = values;
-    field.onChange(value);
-    onChange(field.name, value);
+    const { floatValue } = values;
+    field.onChange(floatValue);
+    onChange(field.name, floatValue);
   };
 
   return (

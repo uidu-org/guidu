@@ -112,7 +112,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/ds-lib@npm:^1.4.2":
+"@atlaskit/ds-lib@npm:< 2":
   version: 1.4.2
   resolution: "@atlaskit/ds-lib@npm:1.4.2"
   dependencies:
@@ -2512,7 +2512,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.10.0, @emotion/react@npm:^11.4.0, @emotion/react@npm:^11.8.1":
+"@emotion/react@npm:^11.10.4":
+  version: 11.10.4
+  resolution: "@emotion/react@npm:11.10.4"
+  dependencies:
+    "@babel/runtime": ^7.18.3
+    "@emotion/babel-plugin": ^11.10.0
+    "@emotion/cache": ^11.10.0
+    "@emotion/serialize": ^1.1.0
+    "@emotion/use-insertion-effect-with-fallbacks": ^1.0.0
+    "@emotion/utils": ^1.2.0
+    "@emotion/weak-memoize": ^0.3.0
+    hoist-non-react-statics: ^3.3.1
+  peerDependencies:
+    "@babel/core": ^7.0.0
+    react: ">=16.8.0"
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    "@types/react":
+      optional: true
+  checksum: 7555f6a1840c71d841386be2ec98ebfd6399923bd6a61247c7b07283f9a056f57e83c4fdd9ea7a7fcc3d88e5e04bb03168b4f0557934bcd501c88af4db16e1e0
+  languageName: node
+  linkType: hard
+
+"@emotion/react@npm:^11.4.0, @emotion/react@npm:^11.8.1":
   version: 11.10.0
   resolution: "@emotion/react@npm:11.10.0"
   dependencies:
@@ -2575,14 +2599,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:^11.10.0, @emotion/styled@npm:^11.3.0":
-  version: 11.10.0
-  resolution: "@emotion/styled@npm:11.10.0"
+"@emotion/styled@npm:^11.10.4, @emotion/styled@npm:^11.3.0":
+  version: 11.10.4
+  resolution: "@emotion/styled@npm:11.10.4"
   dependencies:
     "@babel/runtime": ^7.18.3
     "@emotion/babel-plugin": ^11.10.0
     "@emotion/is-prop-valid": ^1.2.0
     "@emotion/serialize": ^1.1.0
+    "@emotion/use-insertion-effect-with-fallbacks": ^1.0.0
     "@emotion/utils": ^1.2.0
   peerDependencies:
     "@babel/core": ^7.0.0
@@ -2593,7 +2618,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: f2a3e9798f807713d12771320cde9c2fa17ea6f008da605055496bd3522d81c120321240c8a1dae49c7272fea11361e1f47938ee069f678038b6836820c01243
+  checksum: d56cbf48f30c5a36d618adf2c4d7d9440b5059373a96964fa2a6e832ce9b9ae8cee11b5292b444264b3acbfdd6a8f6c9050e197a35c8dea7e9b9cc78f55ac31c
   languageName: node
   linkType: hard
 
@@ -2615,6 +2640,15 @@ __metadata:
   version: 0.8.0
   resolution: "@emotion/unitless@npm:0.8.0"
   checksum: 176141117ed23c0eb6e53a054a69c63e17ae532ec4210907a20b2208f91771821835f1c63dd2ec63e30e22fcc984026d7f933773ee6526dd038e0850919fae7a
+  languageName: node
+  linkType: hard
+
+"@emotion/use-insertion-effect-with-fallbacks@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@emotion/use-insertion-effect-with-fallbacks@npm:1.0.0"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 4f06a3b48258c832aa8022a262572061a31ff078d377e9164cccc99951309d70f4466e774fe704461b2f8715007a82ed625a54a5c7a127c89017d3ce3187d4f1
   languageName: node
   linkType: hard
 
@@ -3082,35 +3116,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-common-types@npm:6.1.2":
-  version: 6.1.2
-  resolution: "@fortawesome/fontawesome-common-types@npm:6.1.2"
-  checksum: 16ba97f73256adef5cd680a027e6dbd3e76f34ba9227f7bd9e8c372cb4f337c7ccbf41f35dcfbc22b11320bbb579d01daccf1aa7ae47df5d0b17260c0097bb30
+"@fortawesome/fontawesome-common-types@npm:6.2.0":
+  version: 6.2.0
+  resolution: "@fortawesome/fontawesome-common-types@npm:6.2.0"
+  checksum: 1d0a3340dc2d2798609195cf77f1b0db98f0d87144044eb7cd3d78745baac8509705c6ebc7cce3d9bb36c7d7358ca064f77f39d86478ab1e7aa7aadc344cfd91
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-free@npm:^6.1.2":
-  version: 6.1.2
-  resolution: "@fortawesome/fontawesome-free@npm:6.1.2"
-  checksum: 0d3c9d60ffbb9c1fa4041051eff6542adc1fc29653501399d0235c077a2195a35f286d979da42fe021f73649032f9eeae2c9a0511eaacda2896559155d40a0fc
+"@fortawesome/fontawesome-free@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "@fortawesome/fontawesome-free@npm:6.2.0"
+  checksum: fd3fcc0a963b907110922b5ac0ca67633aea20b5034102a1f5d285830f7f7a27f9c9de0c4a30228ccd2579bd8f95581a1bbef9519c7b74632e7012d60dd57bb7
   languageName: node
   linkType: hard
 
-"@fortawesome/fontawesome-svg-core@npm:^6.1.2":
-  version: 6.1.2
-  resolution: "@fortawesome/fontawesome-svg-core@npm:6.1.2"
+"@fortawesome/fontawesome-svg-core@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "@fortawesome/fontawesome-svg-core@npm:6.2.0"
   dependencies:
-    "@fortawesome/fontawesome-common-types": 6.1.2
-  checksum: bb82ed1e79ade9977746b4bb28ac0d03de7557e7c923446adec78cb3447740aca0859e91d6310007d758055a1b8f3a6f740915f04cac738931135c9bdbfe5d32
+    "@fortawesome/fontawesome-common-types": 6.2.0
+  checksum: 3bae680cba4098bc3a6aee04e655e0c6b6bab2d78e6709dc0a44d106f57a09bc2fd979310108777a373df301273a2a276739056f8984cd8bc5a50d37338c5380
   languageName: node
   linkType: hard
 
-"@fortawesome/free-solid-svg-icons@npm:^6.1.2":
-  version: 6.1.2
-  resolution: "@fortawesome/free-solid-svg-icons@npm:6.1.2"
+"@fortawesome/free-solid-svg-icons@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "@fortawesome/free-solid-svg-icons@npm:6.2.0"
   dependencies:
-    "@fortawesome/fontawesome-common-types": 6.1.2
-  checksum: b7258cd092304f9bd1e557cd3a59e9ff560165631b04f16785da14ce3148873fa8e688d62f95d68f668be32e1207c47a1fe556978ae7e9573a5b0fec09fc0f0c
+    "@fortawesome/fontawesome-common-types": 6.2.0
+  checksum: b5edf24be491e8493028b7fd2158fb73f3a76491087970609c0ef6a4449fd4744312fe768bfcffc90a5ef86b9980f9ab8ebb36927ba8d9854c2fa638ceadb0ac
   languageName: node
   linkType: hard
 
@@ -3142,12 +3176,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@heroicons/react@npm:^2.0.8":
-  version: 2.0.8
-  resolution: "@heroicons/react@npm:2.0.8"
+"@heroicons/react@npm:^2.0.10":
+  version: 2.0.10
+  resolution: "@heroicons/react@npm:2.0.10"
   peerDependencies:
     react: ">= 16"
-  checksum: 178d850a80a30aa3da371de0e3e090b7de1c16c82ce2c678f0ae21b27bc66b7ac0a9e9a5bd7817debf5121b9f8550921f51f9f771293348ea14cc0a524c493c1
+  checksum: 40e0fc0289f7b12239e307d887d3cdbf80c5157a42e5b1c313b291800e9a30a191f6310c2dcc08a8a0132b238ff37e62ecd2f6b1696cf81043d48154566b8643
   languageName: node
   linkType: hard
 
@@ -5993,14 +6027,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:16 || 17 || 18, @types/react@npm:>=16.9.11, @types/react@npm:^18.0.17":
-  version: 18.0.17
-  resolution: "@types/react@npm:18.0.17"
+"@types/react@npm:*, @types/react@npm:16 || 17 || 18, @types/react@npm:>=16.9.11, @types/react@npm:^18.0.18":
+  version: 18.0.18
+  resolution: "@types/react@npm:18.0.18"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 18cae64f5bfd6bb58fbd8ee2ba52ec82de844f114254e26de7b513e4b86621f643f9b71d7066958cd571b0d78cb86cbceda449c5289f9349ca573df29ab69252
+  checksum: 6d72d35ab3eecf382a5e0f225923f5a2c753045fce02e4e29713f36c99a24f0f770666a49dde96167f37c86271f93339d1b7e2b8969d011b137a9ebd24ee6806
   languageName: node
   linkType: hard
 
@@ -6238,13 +6272,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.36.0":
-  version: 5.36.0
-  resolution: "@typescript-eslint/eslint-plugin@npm:5.36.0"
+"@typescript-eslint/eslint-plugin@npm:^5.36.1":
+  version: 5.36.1
+  resolution: "@typescript-eslint/eslint-plugin@npm:5.36.1"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.36.0
-    "@typescript-eslint/type-utils": 5.36.0
-    "@typescript-eslint/utils": 5.36.0
+    "@typescript-eslint/scope-manager": 5.36.1
+    "@typescript-eslint/type-utils": 5.36.1
+    "@typescript-eslint/utils": 5.36.1
     debug: ^4.3.4
     functional-red-black-tree: ^1.0.1
     ignore: ^5.2.0
@@ -6257,43 +6291,43 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 0509eb64de8697269b9d23ddd698349b7ec67ba62c313d760481b62d2f939bfba1e7d7f70744bdf9b7b8d69fb68083939c8a7bebefbfd1a5d95db82a09bb732a
+  checksum: a4c555688d840c3ff0d3d71ceca583291e206cc523eade45c56fb8e1c8af84ae50ef8d344cdf8e3f9c38f430bc03c95eb8d49870094e0e5b57e0fa3e61c0ec91
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.36.0":
-  version: 5.36.0
-  resolution: "@typescript-eslint/parser@npm:5.36.0"
+"@typescript-eslint/parser@npm:^5.36.1":
+  version: 5.36.1
+  resolution: "@typescript-eslint/parser@npm:5.36.1"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.36.0
-    "@typescript-eslint/types": 5.36.0
-    "@typescript-eslint/typescript-estree": 5.36.0
+    "@typescript-eslint/scope-manager": 5.36.1
+    "@typescript-eslint/types": 5.36.1
+    "@typescript-eslint/typescript-estree": 5.36.1
     debug: ^4.3.4
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 788658ecb7437e47e835dbaab30428a98ecd8f4cfd895645648a8265274a7bd90c022f13a4111eddb52009d4d788d4e74aa6c2c29d84454c38058228972fb856
+  checksum: 0f0f94e56ae1d55b6e7223ce5a2b0c93e5cc082ef2951a2b24ae4b22bb8ffbeb90d2d16682bfa8bc972ba2c7fb4703aedd79b7dbd09bcee397e1ab90d11506d9
   languageName: node
   linkType: hard
 
-"@typescript-eslint/scope-manager@npm:5.36.0":
-  version: 5.36.0
-  resolution: "@typescript-eslint/scope-manager@npm:5.36.0"
+"@typescript-eslint/scope-manager@npm:5.36.1":
+  version: 5.36.1
+  resolution: "@typescript-eslint/scope-manager@npm:5.36.1"
   dependencies:
-    "@typescript-eslint/types": 5.36.0
-    "@typescript-eslint/visitor-keys": 5.36.0
-  checksum: 7d8b9082683eb198213777c3b10d76e5471426b6708d157db7d4a938a18f759519bed7ba895de24a67de3e784f979d784c8c8440c471cf1e76cfae0e2715e6bc
+    "@typescript-eslint/types": 5.36.1
+    "@typescript-eslint/visitor-keys": 5.36.1
+  checksum: c46497226af75baed7458838ec0bfbddf19f8084115d78b915b46a8ceb4c05619ac61da127dfd3c8ee11bc916896d57bf8b9f936b0306ce69658160f910e3ad0
   languageName: node
   linkType: hard
 
-"@typescript-eslint/type-utils@npm:5.36.0":
-  version: 5.36.0
-  resolution: "@typescript-eslint/type-utils@npm:5.36.0"
+"@typescript-eslint/type-utils@npm:5.36.1":
+  version: 5.36.1
+  resolution: "@typescript-eslint/type-utils@npm:5.36.1"
   dependencies:
-    "@typescript-eslint/typescript-estree": 5.36.0
-    "@typescript-eslint/utils": 5.36.0
+    "@typescript-eslint/typescript-estree": 5.36.1
+    "@typescript-eslint/utils": 5.36.1
     debug: ^4.3.4
     tsutils: ^3.21.0
   peerDependencies:
@@ -6301,23 +6335,23 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 7829ef7ef8d8783182b1819fe347183a82ed6225bb450a840f1fcd47940145e77d9368b54d1b7933b5b88b3d7d5044f2ef085c51c63715f8c211ed786e29b1ed
+  checksum: d2905289e253a83a9eacbad765cfba03440663086c8beb1b19345b46593c9053fb051ee13d3cc27ccd800fe95ffbf3be2b1273b0f0ac6a59452fc94e6460898b
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:5.36.0":
-  version: 5.36.0
-  resolution: "@typescript-eslint/types@npm:5.36.0"
-  checksum: ff1b94032eecc23e41a19155ff5f966d6458284a81a3cae3702c938078ee7f83f54cb0be58be8a2dc180f62df8e2af87cfad3fc097765409c25893dbd9af4a54
+"@typescript-eslint/types@npm:5.36.1":
+  version: 5.36.1
+  resolution: "@typescript-eslint/types@npm:5.36.1"
+  checksum: 10c8965c64e16bc6920dc0c62aae2b139062aca945d03df2ad6fe7c299d2faa684621d571f8d9807a67643d4e9fa5217c69d5f538f9936fc757f9df5ded57623
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:5.36.0, @typescript-eslint/typescript-estree@npm:^5.13.0, @typescript-eslint/typescript-estree@npm:^5.9.1":
-  version: 5.36.0
-  resolution: "@typescript-eslint/typescript-estree@npm:5.36.0"
+"@typescript-eslint/typescript-estree@npm:5.36.1, @typescript-eslint/typescript-estree@npm:^5.13.0, @typescript-eslint/typescript-estree@npm:^5.9.1":
+  version: 5.36.1
+  resolution: "@typescript-eslint/typescript-estree@npm:5.36.1"
   dependencies:
-    "@typescript-eslint/types": 5.36.0
-    "@typescript-eslint/visitor-keys": 5.36.0
+    "@typescript-eslint/types": 5.36.1
+    "@typescript-eslint/visitor-keys": 5.36.1
     debug: ^4.3.4
     globby: ^11.1.0
     is-glob: ^4.0.3
@@ -6326,33 +6360,33 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: e0cd3ab2499eecdbc59cb352031166210fcbf4e4f91767e4b9eb6691212d923c47f48d0789a11cedad3ada9f167784cf5b81a5759c9de50db0ddc6ef33ede28d
+  checksum: acaf2938001673918dbbe690a353cf92e2cfabc79f74cd5946e303a8c24eb9c08ae2053dd261810ed0c9c471ebe879f386564c1b01dd2504dc84f4ce5f4dc696
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:5.36.0":
-  version: 5.36.0
-  resolution: "@typescript-eslint/utils@npm:5.36.0"
+"@typescript-eslint/utils@npm:5.36.1":
+  version: 5.36.1
+  resolution: "@typescript-eslint/utils@npm:5.36.1"
   dependencies:
     "@types/json-schema": ^7.0.9
-    "@typescript-eslint/scope-manager": 5.36.0
-    "@typescript-eslint/types": 5.36.0
-    "@typescript-eslint/typescript-estree": 5.36.0
+    "@typescript-eslint/scope-manager": 5.36.1
+    "@typescript-eslint/types": 5.36.1
+    "@typescript-eslint/typescript-estree": 5.36.1
     eslint-scope: ^5.1.1
     eslint-utils: ^3.0.0
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: 7db66c298b15f8f2ccfeb12b8d6d5b69ab1d505db797f8d3427d3655075b4ad12c1f771b8bd8326a7febfddb3db14ba0791140c0980394aaea4fb0f9222e3126
+  checksum: 77853d526af86ac508d7938916046ed4ad6374c7414981064c5122a2baa96fa234751137f481ac264a07387fd4dcec1cd26b33e29732cc58e855aae77a001d7c
   languageName: node
   linkType: hard
 
-"@typescript-eslint/visitor-keys@npm:5.36.0":
-  version: 5.36.0
-  resolution: "@typescript-eslint/visitor-keys@npm:5.36.0"
+"@typescript-eslint/visitor-keys@npm:5.36.1":
+  version: 5.36.1
+  resolution: "@typescript-eslint/visitor-keys@npm:5.36.1"
   dependencies:
-    "@typescript-eslint/types": 5.36.0
+    "@typescript-eslint/types": 5.36.1
     eslint-visitor-keys: ^3.3.0
-  checksum: e2b79dfbc5ae6830f757674a6d70c6ceb8cbf9e6ceb31e2406142786183e20d2e823cf2fc0b6fd195d55ac9cf12623d6d9af46a1be974651ff460c755d3c1ed6
+  checksum: 45ab7c2fd455a8e4beff418bed6c9e7e1f9f66bcaad3bfaed868f97a3f8cfec1fa4faa45948af1a1c32ce573a7b1c6d10427119c257622445b06b488fefd8b49
   languageName: node
   linkType: hard
 
@@ -6884,7 +6918,7 @@ __metadata:
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@tanstack/react-table": ^8.5.11
     "@uidu/button": 1.3.27
     "@uidu/checkbox": ^2.0.0
@@ -6922,10 +6956,10 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.18.9
     "@faker-js/faker": ^7.5.0
-    "@fortawesome/fontawesome-svg-core": ^6.1.2
-    "@fortawesome/free-solid-svg-icons": ^6.1.2
+    "@fortawesome/fontawesome-svg-core": ^6.2.0
+    "@fortawesome/free-solid-svg-icons": ^6.2.0
     "@fortawesome/react-fontawesome": ^0.2.0
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@loadable/component": ^5.15.2
     "@smastrom/react-rating": ^1.0.5
     "@tanstack/react-table": ^8.5.11
@@ -7396,7 +7430,7 @@ __metadata:
   resolution: "@uidu/field-base@workspace:packages/forms/field-base"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@uidu/form": 2.0.1
     react: ^18.2.0
     react-hook-form: ^7.34.2
@@ -7413,7 +7447,7 @@ __metadata:
   resolution: "@uidu/field-color-picker@workspace:packages/forms/field-color-picker"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@uidu/button": 1.3.27
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^4.0.1
@@ -7470,7 +7504,7 @@ __metadata:
   resolution: "@uidu/field-date@workspace:packages/forms/field-date"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@uidu/button": 1.3.27
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": 4.0.1
@@ -7492,7 +7526,7 @@ __metadata:
   resolution: "@uidu/field-downshift@workspace:packages/forms/field-downshift"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@uidu/button": 1.3.27
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^4.0.1
@@ -7524,14 +7558,14 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.18.9
     "@fluentui/react": 8.93.0
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@uidu/button": 1.3.27
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^4.0.1
     "@uidu/form": 2.0.1
     "@uidu/media-core": 1.1.0
     "@uidu/menu": 0.8.0
-    "@uifabric/file-type-icons": ^7.9.2
+    "@uifabric/file-type-icons": ^7.9.3
     "@uppy/core": ^3.0.0
     "@uppy/react": ^3.0.0
     react: ^18.2.0
@@ -7548,7 +7582,7 @@ __metadata:
   resolution: "@uidu/field-geosuggest@workspace:packages/forms/field-geosuggest"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^4.0.1
     "@uidu/form": ^2.0.1
@@ -7569,7 +7603,7 @@ __metadata:
   resolution: "@uidu/field-image-uploader@workspace:packages/forms/field-image-uploader"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@uidu/button": ^1.3.27
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^4.0.1
@@ -7653,7 +7687,7 @@ __metadata:
   resolution: "@uidu/field-password@workspace:packages/forms/field-password"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@loadable/component": ^5.15.2
     "@types/zxcvbn": ^4.4.1
     "@uidu/button": ^1.3.27
@@ -8148,7 +8182,7 @@ __metadata:
     "@uidu/spinner": ^0.5.17
     "@uidu/theme": ^0.6.20
     "@uidu/tooltip": ^0.5.22
-    "@uifabric/file-type-icons": ^7.9.2
+    "@uifabric/file-type-icons": ^7.9.3
     react: ^18.2.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
@@ -8275,7 +8309,7 @@ __metadata:
     "@atlaskit/icon-file-type": ^6.3.4
     "@atlaskit/icon-object": ^6.2.7
     "@babel/runtime": ^7.18.9
-    "@emotion/react": ^11.10.0
+    "@emotion/react": ^11.10.4
     "@uidu/avatar": ^0.9.14
     "@uidu/button": ^1.3.26
     "@uidu/docs": ^0.5.18
@@ -8357,7 +8391,7 @@ __metadata:
     "@uidu/popup": 0.7.1
     "@uidu/shell": ^2.1.28
     "@uidu/tooltip": ^0.5.22
-    "@uifabric/file-type-icons": ^7.9.2
+    "@uifabric/file-type-icons": ^7.9.3
     classnames: ^2.3.1
     emoji-regex: ^10.1.0
     moment: ^2.29.4
@@ -8375,7 +8409,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:
-    "@atlaskit/ds-lib": ^1.4.2
+    "@atlaskit/ds-lib": < 2
     "@atlaskit/focus-ring": ^1.0.6
     "@atlaskit/icon": ^21.10.7
     "@atlaskit/motion": ^1.2.2
@@ -8550,7 +8584,7 @@ __metadata:
   resolution: "@uidu/payments@workspace:packages/ecommerce/payments"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@stripe/react-stripe-js": ^1.10.0
     "@stripe/stripe-js": ^1.35.0
     "@uidu/docs": ^0.5.18
@@ -8595,7 +8629,7 @@ __metadata:
   dependencies:
     "@atlaskit/icon": ^21.10.7
     "@babel/runtime": ^7.18.9
-    "@emotion/react": ^11.10.0
+    "@emotion/react": ^11.10.4
     "@uidu/button": ^1.3.27
     "@uidu/docs": ^0.5.18
     "@uidu/menu": ^0.8.0
@@ -8678,7 +8712,7 @@ __metadata:
   resolution: "@uidu/progress-bar@workspace:packages/core/progress-bar"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@emotion/react": ^11.10.0
+    "@emotion/react": ^11.10.4
     "@uidu/button": ^1.3.25
     "@uidu/docs": ^0.5.18
     "@uidu/theme": ^0.6.19
@@ -8777,7 +8811,7 @@ __metadata:
   resolution: "@uidu/section-message@workspace:packages/core/section-message"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@uidu/button": ^1.3.27
     "@uidu/code": ^0.5.17
     "@uidu/docs": ^0.5.18
@@ -8799,7 +8833,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.18.9
     "@faker-js/faker": ^7.5.0
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@uidu/button": ^1.3.27
     "@uidu/docs": ^0.5.18
     "@uidu/field-base": ^4.0.1
@@ -8992,11 +9026,11 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.18.9
     "@faker-js/faker": ^7.5.0
-    "@fortawesome/fontawesome-free": ^6.1.2
-    "@fortawesome/fontawesome-svg-core": ^6.1.2
-    "@fortawesome/free-solid-svg-icons": ^6.1.2
+    "@fortawesome/fontawesome-free": ^6.2.0
+    "@fortawesome/fontawesome-svg-core": ^6.2.0
+    "@fortawesome/free-solid-svg-icons": ^6.2.0
     "@fortawesome/react-fontawesome": ^0.2.0
-    "@heroicons/react": ^2.0.8
+    "@heroicons/react": ^2.0.10
     "@tanstack/react-table": ^8.5.11
     "@tanstack/react-virtual": ^3.0.0-beta.18
     "@uidu/button": 1.3.27
@@ -9090,7 +9124,7 @@ __metadata:
   resolution: "@uidu/theme@workspace:packages/core/theme"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@emotion/react": ^11.10.0
+    "@emotion/react": ^11.10.4
     "@uidu/button": ^1.3.25
     "@uidu/docs": ^0.5.18
     "@uidu/field-date": ^2.0.0
@@ -9237,29 +9271,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uifabric/file-type-icons@npm:^7.9.2":
-  version: 7.9.2
-  resolution: "@uifabric/file-type-icons@npm:7.9.2"
+"@uifabric/file-type-icons@npm:^7.9.3":
+  version: 7.9.3
+  resolution: "@uifabric/file-type-icons@npm:7.9.3"
   dependencies:
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.21.3
+    "@uifabric/styling": ^7.22.0
     tslib: ^1.10.0
   peerDependencies:
     "@types/react": ">=16.8.0 <18.0.0"
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: b864c121b8ce216661b6924b4238ceb5b50b07e823a8d3479105d04e4b8d4226a1ef4ceb9300f4efce81d231ed2c3195e902f9f29790aa6a01441c123a783f01
+  checksum: 71ea2574a403746f958c6142b7e88cf3df4ea0599f32623c311c9991879f14d6881a45f344b66ffde3760117990da4456aeeba6841344291e989f5e434963f45
   languageName: node
   linkType: hard
 
-"@uifabric/foundation@npm:^7.10.7":
-  version: 7.10.7
-  resolution: "@uifabric/foundation@npm:7.10.7"
+"@uifabric/foundation@npm:^7.10.8":
+  version: 7.10.8
+  resolution: "@uifabric/foundation@npm:7.10.8"
   dependencies:
     "@uifabric/merge-styles": ^7.19.2
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.21.3
+    "@uifabric/styling": ^7.22.0
     "@uifabric/utilities": ^7.36.0
     tslib: ^1.10.0
   peerDependencies:
@@ -9267,19 +9301,19 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: 54d713bc41ddb58befa8ef56b6b142ea93fc78ef3b8d490ceb77b926ed7e5988be9839e8fe5cbeb888775981bf416a65d724fdda9697de4ff03f09f1b122701d
+  checksum: a5c5aca6572d08663f2754f51531a53a696b9cdc77857f6c7639ecdfaa5986c2aec9c8a4ad8c1a69d4f829707d4189dc6733f6843a0364ddd91764db3bf2de9b
   languageName: node
   linkType: hard
 
-"@uifabric/icons@npm:^7.7.6":
-  version: 7.7.6
-  resolution: "@uifabric/icons@npm:7.7.6"
+"@uifabric/icons@npm:^7.8.0":
+  version: 7.8.0
+  resolution: "@uifabric/icons@npm:7.8.0"
   dependencies:
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.21.3
+    "@uifabric/styling": ^7.22.0
     "@uifabric/utilities": ^7.36.0
     tslib: ^1.10.0
-  checksum: 757ea40f4923515cfb3d9a5c780968fd6fd5ee6c8265619f4732a9bc6682f096f4fb696b6b49059396325f6804ac4e4df4bfb48192bb42a66fc4bef80129a6c4
+  checksum: 4c66d58beeafd5d1124d3ced61fb9f5cdd015f1bffc498a76360d68ea13f8690fa1debd3301753ebb17cf0d2eced5abca9391bcbcc0219bfb462ee5e10550ac4
   languageName: node
   linkType: hard
 
@@ -9319,9 +9353,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uifabric/styling@npm:^7.21.3":
-  version: 7.21.3
-  resolution: "@uifabric/styling@npm:7.21.3"
+"@uifabric/styling@npm:^7.22.0":
+  version: 7.22.0
+  resolution: "@uifabric/styling@npm:7.22.0"
   dependencies:
     "@fluentui/theme": ^1.7.8
     "@microsoft/load-themed-styles": ^1.10.26
@@ -9329,7 +9363,7 @@ __metadata:
     "@uifabric/set-version": ^7.0.24
     "@uifabric/utilities": ^7.36.0
     tslib: ^1.10.0
-  checksum: e40debeef90366aa9032f6eb1badb6f6722a5a05b84ce3a9555993d89dc462a018e7b334fbf634ca97e2f3c16a142030a0ebede38c8f89765c276d54fb935cdf
+  checksum: 90243ca046228eec019ac2780de6e7fbe68af170641b4b903ff2c10425316e247ef098b51d5b34113d25fd2bf7d8a6cdac7c830279ccf7b0a346f613e5724e79
   languageName: node
   linkType: hard
 
@@ -14725,10 +14759,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.0.0, dotenv@npm:^16.0.1":
-  version: 16.0.1
-  resolution: "dotenv@npm:16.0.1"
-  checksum: f459ffce07b977b7f15d8cc4ee69cdff77d4dd8c5dc8c85d2d485ee84655352c2415f9dd09d42b5b5985ced3be186130871b34e2f3e2569ebc72fbc2e8096792
+"dotenv@npm:^16.0.0, dotenv@npm:^16.0.2":
+  version: 16.0.2
+  resolution: "dotenv@npm:16.0.2"
+  checksum: ca8f9ca2d67929c7771069f4c31b4e46b9932621009e658e5afd655dde2d69b77642bf36dbc9e72bc170523dfd908a9ee41c26f034c1fdc605ace3b1b4b10faf
   languageName: node
   linkType: hard
 
@@ -15366,8 +15400,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "eslint-config-uidu@workspace:packages/core/eslint-config"
   dependencies:
-    "@typescript-eslint/eslint-plugin": ^5.36.0
-    "@typescript-eslint/parser": ^5.36.0
+    "@typescript-eslint/eslint-plugin": ^5.36.1
+    "@typescript-eslint/parser": ^5.36.1
     eslint-config-airbnb: ^19.0.4
     eslint-config-airbnb-typescript: ^17.0.0
     eslint-config-prettier: ^8.5.0
@@ -17682,14 +17716,14 @@ __metadata:
     "@changesets/cli": ^2.24.4
     "@cubejs-client/core": ^0.30.60
     "@cubejs-client/react": ^0.30.60
-    "@emotion/react": ^11.10.0
-    "@emotion/styled": ^11.10.0
+    "@emotion/react": ^11.10.4
+    "@emotion/styled": ^11.10.4
     "@faker-js/faker": ^7.5.0
     "@fluentui/react": 8.93.0
     "@formatjs/cli": 5.1.0
-    "@fortawesome/fontawesome-free": ^6.1.2
-    "@fortawesome/fontawesome-svg-core": ^6.1.2
-    "@fortawesome/free-solid-svg-icons": ^6.1.2
+    "@fortawesome/fontawesome-free": ^6.2.0
+    "@fortawesome/fontawesome-svg-core": ^6.2.0
+    "@fortawesome/free-solid-svg-icons": ^6.2.0
     "@fortawesome/react-fontawesome": ^0.2.0
     "@loadable/babel-plugin": ^5.13.2
     "@loadable/component": ^5.15.2
@@ -17731,7 +17765,7 @@ __metadata:
     "@types/prosemirror-state": ^1.3.0
     "@types/prosemirror-transform": ^1.4.2
     "@types/prosemirror-view": ^1.23.3
-    "@types/react": ^18.0.17
+    "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
     "@types/react-grid-layout": ^1.3.2
     "@types/react-helmet": ^6.1.5
@@ -17750,13 +17784,13 @@ __metadata:
     "@types/url-search-params": ^1.1.0
     "@types/uuid": ^8.3.4
     "@types/zxcvbn": ^4.4.1
-    "@typescript-eslint/eslint-plugin": ^5.36.0
-    "@typescript-eslint/parser": ^5.36.0
+    "@typescript-eslint/eslint-plugin": ^5.36.1
+    "@typescript-eslint/parser": ^5.36.1
     "@uidu/field-base": 4.0.1
     "@uidu/field-time": 2.0.1
     "@uidu/form": 2.0.1
     "@uidu/profilecard": ^0.3.0
-    "@uifabric/file-type-icons": ^7.9.2
+    "@uifabric/file-type-icons": ^7.9.3
     "@uppy/aws-s3": ^3.0.0
     "@uppy/core": ^3.0.0
     "@uppy/drag-drop": ^3.0.0
@@ -17812,7 +17846,7 @@ __metadata:
     d3-collection: ^1.0.7
     date-fns: ^2.29.2
     debounce: ^1.2.1
-    dotenv: ^16.0.1
+    dotenv: ^16.0.2
     dotenv-cli: ^5.1.0
     dotenv-expand: ^8.0.3
     downshift: ^6.1.9
@@ -17867,7 +17901,7 @@ __metadata:
     npm-run: ^5.0.1
     npm-run-all: ^4.1.5
     numeral: ^2.0.6
-    office-ui-fabric-react: ^7.197.0
+    office-ui-fabric-react: ^7.197.1
     overlayscrollbars: ^1.13.3
     overlayscrollbars-react: ^0.3.0
     p-wait-for: ^4.1.0
@@ -23487,20 +23521,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"office-ui-fabric-react@npm:^7.197.0":
-  version: 7.197.0
-  resolution: "office-ui-fabric-react@npm:7.197.0"
+"office-ui-fabric-react@npm:^7.197.1":
+  version: 7.197.1
+  resolution: "office-ui-fabric-react@npm:7.197.1"
   dependencies:
     "@fluentui/date-time-utilities": ^7.9.1
-    "@fluentui/react-focus": ^7.18.8
+    "@fluentui/react-focus": ^7.18.9
     "@fluentui/react-window-provider": ^1.0.3
     "@microsoft/load-themed-styles": ^1.10.26
-    "@uifabric/foundation": ^7.10.7
-    "@uifabric/icons": ^7.7.6
+    "@uifabric/foundation": ^7.10.8
+    "@uifabric/icons": ^7.8.0
     "@uifabric/merge-styles": ^7.19.2
     "@uifabric/react-hooks": ^7.15.2
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.21.3
+    "@uifabric/styling": ^7.22.0
     "@uifabric/utilities": ^7.36.0
     prop-types: ^15.7.2
     tslib: ^1.10.0
@@ -23509,7 +23543,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: 39d13d4eac5e2dee5a203865be4b6294ec9b0c48bded3cb6492a58929cefcfc41cc0f039011b082aa7f5d56fef0a356ac3c48307492442116dc51d66a2a6f20d
+  checksum: dc40f25cb6e2162b6ba1689d881ecbe20f2180ab85c7dc9c71ff605ff76bf4b146aa42c6670e40a2847d5ed2b6569931d419f3783322fcaaca637a4aba5e2213
   languageName: node
   linkType: hard
 

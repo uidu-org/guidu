@@ -53,7 +53,6 @@ function TimeZoneSelect({
   });
 
   const handleChange = (value, option, actionMeta) => {
-    console.log(option);
     field.onChange(value);
     onChange(name, value, { option, actionMeta });
   };

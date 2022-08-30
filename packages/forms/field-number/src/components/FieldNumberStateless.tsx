@@ -7,23 +7,43 @@ import { FieldNumberStatelessProps } from '../types';
 const FieldNumberStateless = forwardRef<
   HTMLInputElement,
   FieldNumberStatelessProps & FieldBaseStatelessProps
->(({ options, onValueChange, value, fieldState, ...rest }, ref) => (
-  <FieldTextStateless
-    inputMode="numeric"
-    fieldState={fieldState}
-    as={NumberFormat}
-    options={{
-      thousandSeparator: '.',
-      decimalSeparator: ',',
-      // isNumericString: true,
-      decimalScale: 2,
+>(
+  (
+    {
+      options,
       onValueChange,
-      getInputRef: ref,
       value,
-      ...options,
-    }}
-    {...rest}
-  />
-));
+      fieldState,
+      placeholder,
+      required,
+      disabled,
+      onBlur,
+      name,
+      ...rest
+    },
+    ref,
+  ) => (
+    <FieldTextStateless
+      inputMode="numeric"
+      fieldState={fieldState}
+      as={NumberFormat}
+      placeholder={placeholder}
+      required={required}
+      disabled={disabled}
+      name={name}
+      onBlur={onBlur}
+      options={{
+        thousandSeparator: '.',
+        decimalSeparator: ',',
+        // isNumericString: true,
+        decimalScale: 2,
+        onValueChange,
+        getInputRef: ref,
+        value,
+        ...options,
+      }}
+    />
+  ),
+);
 
 export default FieldNumberStateless;
