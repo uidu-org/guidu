@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 2.0.2
+
+### Patch Changes
+
+- 14db4a4bd: Field number should return numbers not strings
+- Updated dependencies [14db4a4bd]
+  - @uidu/theme@0.6.21
+  - @uidu/field-base@4.0.2
+
 ## 2.0.1
 
 ### Patch Changes

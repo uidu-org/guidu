@@ -1,6 +1,6 @@
 {
   "name": "@uidu/section-message",
-  "version": "0.6.19",
+  "version": "0.6.20",
   "description": "A react component used to alert users of a particular screen area that needs user action",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/section-message",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "@uidu/code": "^0.5.17",
     "@uidu/docs": "^0.5.18",
     "@uidu/field-range": "^2.0.0",
-    "@uidu/theme": "^0.6.20",
+    "@uidu/theme": "^0.6.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.5"

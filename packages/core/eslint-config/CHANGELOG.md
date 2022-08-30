@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.24
+
+### Patch Changes
+
+- 14db4a4bd: Field number should return numbers not strings
+
 ## 0.1.23
 
 ### Patch Changes

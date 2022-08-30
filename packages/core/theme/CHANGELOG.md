@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.6.21
+
+### Patch Changes
+
+- 14db4a4bd: Field number should return numbers not strings
+
 ## 0.6.20
 
 ### Patch Changes

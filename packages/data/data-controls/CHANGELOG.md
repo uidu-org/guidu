@@ -1,5 +1,19 @@
 # @uidu/data-controls
 
+## 3.1.3
+
+### Patch Changes
+
+- 14db4a4bd: Field number should return numbers not strings
+- Updated dependencies [14db4a4bd]
+- Updated dependencies [bdc21048c]
+  - @uidu/menu@0.8.1
+  - @uidu/popup@0.7.2
+  - @uidu/data-fields@2.1.2
+  - @uidu/select@2.0.2
+  - @uidu/data-manager@3.1.2
+  - @uidu/data-views@2.1.2
+
 ## 3.1.2
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/menu
 
+## 0.8.1
+
+### Patch Changes
+
+- 14db4a4bd: Field number should return numbers not strings
+- Updated dependencies [14db4a4bd]
+  - @uidu/theme@0.6.21
+
 ## 0.8.0
 
 ### Minor Changes
