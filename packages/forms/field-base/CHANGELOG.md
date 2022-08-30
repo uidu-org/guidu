@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.0.2
+
+### Patch Changes
+
+- 14db4a4bd: Field number should return numbers not strings
+
 ## 4.0.1
 
 ### Patch Changes
