@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FormProps, LayoutType } from '../types';
+import { stripEmpty } from '../utils';
 import { FormContextProvider } from './FormContext';
 
 const Loading = styled.div<{ isLoading: boolean }>`
@@ -17,21 +18,22 @@ const Loading = styled.div<{ isLoading: boolean }>`
         `};
 `;
 
+const defaultOverrides = {};
+const defaultFooterRenderer = () => {};
+const defaultHandleSubmit = async () => {};
+
 export default function Form<T>({
   form,
-  footerRenderer = () => {},
-  handleSubmit: onSubmit = async (model: T) => {},
-  withLoader = true,
+  footerRenderer = defaultFooterRenderer,
+  handleSubmit: onSubmit = defaultHandleSubmit,
   children,
   layout = 'vertical' as LayoutType,
   className = '',
-  overrides = {},
-  ...rest
+  overrides = defaultOverrides,
 }: FormProps<T>) {
-  const { handleSubmit, formState, clearErrors, reset } = form;
+  const { handleSubmit, formState } = form;
 
   const isMounted = useRef(false);
-  const [canSubmit, setCanSubmit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -41,13 +43,9 @@ export default function Form<T>({
     };
   }, []);
 
-  const enableButton = () => setCanSubmit(true);
-
-  const disableButton = () => setCanSubmit(false);
-
-  const onValidSubmit = (model) => {
+  const onValidSubmit = async (model: T) => {
     setIsLoading(true);
-    return onSubmit(model, reset).then(() => {
+    return onSubmit(stripEmpty<T>(model)).then(() => {
       if (isMounted.current) {
         setIsLoading(false);
       }
@@ -57,7 +55,7 @@ export default function Form<T>({
   return (
     <FormContextProvider<T> form={form} layout={layout} overrides={overrides}>
       <form
-        onSubmit={handleSubmit(async (model) => onValidSubmit(model))}
+        onSubmit={handleSubmit(onValidSubmit)}
         tw="relative"
         className={className}
       >
@@ -67,11 +65,11 @@ export default function Form<T>({
           isLoading={isLoading || false}
         />
         {children}
-        {footerRenderer(
-          { loading: isLoading, canSubmit: formState.isValid },
-          form,
-          onValidSubmit,
-        )}
+        {footerRenderer &&
+          footerRenderer(
+            { loading: isLoading, canSubmit: formState.isValid },
+            onValidSubmit,
+          )}
       </form>
     </FormContextProvider>
   );

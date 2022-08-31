@@ -9,16 +9,15 @@ export type Overrides = Record<
 
 export type LayoutType = 'horizontal' | 'vertical' | 'elementOnly';
 
-export type FormHandleSubmit = (model, resetForm) => Promise<any>;
+export type FormHandleSubmit<T> = (model: T) => Promise<any>;
 
 export type FormProps<T extends FieldValues = FieldValues> = {
   form: UseFormReturn<T>;
   children: ReactNode;
-  handleSubmit: FormHandleSubmit;
+  handleSubmit: FormHandleSubmit<T>;
   footerRenderer: (
     { loading, canSubmit }: { loading: boolean; canSubmit: boolean },
-    form: UseFormReturn<T>,
-    handleSubmit: (model, resetForm) => void,
+    handleSubmit: FormHandleSubmit<T>,
   ) => void;
   withLoader?: boolean;
   autoComplete?: string;
