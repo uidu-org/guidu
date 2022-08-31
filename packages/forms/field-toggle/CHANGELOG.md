@@ -1,5 +1,11 @@
 # @uidu/toggle
 
+## 2.0.7
+
+### Patch Changes
+
+- @uidu/field-base@4.0.6
+
 ## 2.0.6
 
 ### Patch Changes
