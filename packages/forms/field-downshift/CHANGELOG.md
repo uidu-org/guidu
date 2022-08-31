@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 2.0.3
+
+### Patch Changes
+
+- 356ad2d44: Add noop as default onChange parameter to avoid re-rendering
+- Updated dependencies [356ad2d44]
+  - @uidu/field-base@4.0.4
+  - @uidu/field-text@2.0.1
+
 ## 2.0.2
 
 ### Patch Changes

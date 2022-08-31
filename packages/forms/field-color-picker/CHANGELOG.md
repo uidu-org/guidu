@@ -1,5 +1,13 @@
 # @uidu/field-color-picker
 
+## 3.0.3
+
+### Patch Changes
+
+- 356ad2d44: Add noop as default onChange parameter to avoid re-rendering
+- Updated dependencies [356ad2d44]
+  - @uidu/field-base@4.0.4
+
 ## 3.0.2
 
 ### Patch Changes
