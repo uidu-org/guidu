@@ -1,5 +1,13 @@
 # @uidu/field-image-uploader
 
+## 3.0.3
+
+### Patch Changes
+
+- 7de4e8a24: Maybe fix field-image-uploader onChange (for autosave)
+- Updated dependencies [7de4e8a24]
+  - @uidu/field-base@4.0.3
+
 ## 3.0.2
 
 ### Patch Changes
