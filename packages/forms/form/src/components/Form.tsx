@@ -24,12 +24,14 @@ const defaultHandleSubmit = async () => {};
 
 export default function Form<T>({
   form,
+  id,
   footerRenderer = defaultFooterRenderer,
   handleSubmit: onSubmit = defaultHandleSubmit,
   children,
   layout = 'vertical' as LayoutType,
   className = '',
   overrides = defaultOverrides,
+  ...rest
 }: FormProps<T>) {
   const { handleSubmit, formState } = form;
 
@@ -58,6 +60,8 @@ export default function Form<T>({
         onSubmit={handleSubmit(onValidSubmit)}
         tw="relative"
         className={className}
+        id={id}
+        {...rest}
       >
         <Loading
           tw="absolute inset-0 flex items-center justify-center bg-white bg-opacity-50"
