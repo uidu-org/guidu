@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 2.0.4
+
+### Patch Changes
+
+- a071e62a5: Add missing onChange default
+- Updated dependencies [a071e62a5]
+  - @uidu/select@2.0.3
+
 ## 2.0.3
 
 ### Patch Changes

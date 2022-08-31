@@ -1,5 +1,11 @@
 # @uidu/radio
 
+## 2.0.1
+
+### Patch Changes
+
+- a071e62a5: Add missing onChange default
+
 ## 2.0.0
 
 ### Major Changes
