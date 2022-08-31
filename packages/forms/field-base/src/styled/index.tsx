@@ -50,10 +50,10 @@ export const StyledInput = styled.input<{ $hasError?: boolean }>`
     /* box-shadow: none; */
   }
 
-  &:-webkit-autofill::first-line {
-    font-family: var(--font-family-sans-serif);
-    font-size: 1rem;
-  }
+  // &:-webkit-autofill::first-line {
+  //   font-family: var(--font-family-sans-serif);
+  //   font-size: 1rem;
+  // }
 
   &::-webkit-inner-spin-button {
     opacity: 1;

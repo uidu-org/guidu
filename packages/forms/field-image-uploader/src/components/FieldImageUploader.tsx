@@ -57,7 +57,7 @@ function FieldImageUploaderStateless({
   // },
   name,
   defaultImageUrl,
-  value: defaultValue,
+  value: defaultValue = '',
   rules,
   onChange = () => {},
   uploadOptions,
