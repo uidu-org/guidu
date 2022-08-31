@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.0.3
+
+### Patch Changes
+
+- 7de4e8a24: Maybe fix field-image-uploader onChange (for autosave)
+
 ## 4.0.2
 
 ### Patch Changes

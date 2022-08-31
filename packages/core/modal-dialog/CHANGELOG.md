@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 1.0.12
+
+### Patch Changes
+
+- 9de218c57: Bump deps
+
 ## 1.0.11
 
 ### Patch Changes

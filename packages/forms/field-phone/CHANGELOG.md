@@ -1,5 +1,13 @@
 # @uidu/field-date
 
+## 2.0.4
+
+### Patch Changes
+
+- 9de218c57: Bump deps
+- Updated dependencies [7de4e8a24]
+  - @uidu/field-base@4.0.3
+
 ## 2.0.3
 
 ### Patch Changes
