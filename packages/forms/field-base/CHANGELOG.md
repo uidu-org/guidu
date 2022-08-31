@@ -1,5 +1,12 @@
 # Change Log
 
+## 4.0.5
+
+### Patch Changes
+
+- Updated dependencies [0bd326397]
+  - @uidu/form@2.0.2
+
 ## 4.0.4
 
 ### Patch Changes
