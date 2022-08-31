@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.0.2
+
+### Patch Changes
+
+- 0bd326397: Fix types
+
 ## 2.0.1
 
 ### Patch Changes
