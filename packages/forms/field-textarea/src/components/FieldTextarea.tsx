@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
 import { FieldTextareaProps } from '../types';
 import FieldTextareaStateless from './FieldTextareaStateless';
 
 export default function FieldTextarea({
-  onChange = () => {},
+  onChange = noop,
   name,
   value: defaultValue = '',
   rules,

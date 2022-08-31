@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import { useFormContext } from '@uidu/form';
 import {
   FileIdentifier,
@@ -27,7 +27,7 @@ const defaultOptions = {
 };
 
 function FieldFileUploader({
-  onChange = () => {},
+  onChange = noop,
   name,
   value: defaultValue = '',
   rules,

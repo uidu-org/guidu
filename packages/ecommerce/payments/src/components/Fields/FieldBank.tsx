@@ -1,11 +1,11 @@
 import { IbanElement } from '@stripe/react-stripe-js';
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { FieldBase } from '../../styled';
 import { createIbanElementOptions } from '../../utils';
 
 function FieldBank({
-  onChange = () => {},
+  onChange = noop,
   providerProps,
   onReady,
   onSetValue,

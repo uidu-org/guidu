@@ -1,4 +1,4 @@
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import ReactSelectAsyncCreatable from 'react-select/async-creatable';
 import { useSelect } from './hooks/useSelect';
@@ -7,7 +7,7 @@ import { CreateSelectProps } from './types';
 // put it all together
 function AsyncCreatableSelect<TOption, TIsMulti extends boolean = false>({
   name,
-  onChange = () => {},
+  onChange = noop,
   value: defaultValue = '',
   rules,
   ...rest

@@ -1,6 +1,7 @@
 import { CalendarDaysIcon } from '@heroicons/react/24/outline';
 import {
   FieldBaseProps,
+  noop,
   StyledAddon,
   StyledInput,
   useController,
@@ -17,7 +18,7 @@ import { FieldDateCalendarProps } from '../types';
 export default function FieldDateCalendar({
   name,
   value: defaultValue,
-  onChange = () => {},
+  onChange = noop,
   dayPickerProps,
   onDayChange,
   formatSubmit = 'yyyy-MM-dd',

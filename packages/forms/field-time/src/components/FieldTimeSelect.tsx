@@ -1,4 +1,4 @@
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import { SelectStateless } from '@uidu/select';
 import React from 'react';
 import { useIntl } from 'react-intl';
@@ -8,7 +8,7 @@ import { generateTimeSlots } from '../utils';
 function FieldTimeSelect({
   name,
   className,
-  onChange = () => {},
+  onChange = noop,
   value: defaultValue = '',
   required,
   min,

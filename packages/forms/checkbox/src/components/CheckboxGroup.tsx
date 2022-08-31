@@ -1,4 +1,4 @@
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import tw from 'twin.macro';
 import { CheckboxGroupProps } from '../types';
@@ -9,7 +9,7 @@ function CheckboxGroup({
   className = null,
   options = [],
   value: defaultValue = [],
-  onChange = () => {},
+  onChange = noop,
   name,
   ...rest
 }: CheckboxGroupProps) {

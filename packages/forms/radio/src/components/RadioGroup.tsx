@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
 import tw from 'twin.macro';
 import { RadioGroupProps } from '../types';
@@ -7,7 +7,7 @@ import RadioStateless from './RadioStateless';
 
 function RadioGroup({
   isInline = false,
-  onChange = () => {},
+  onChange = noop,
   options,
   name,
   value: defaultValue,

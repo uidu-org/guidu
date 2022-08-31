@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
 import { FieldCounterProps } from '../types';
 import FieldCounterStateless from './FieldCounterStateless';
@@ -7,7 +7,7 @@ import FieldCounterStateless from './FieldCounterStateless';
 export default function FieldCounter({
   name,
   value: defaultValue = '',
-  onChange = () => {},
+  onChange = noop,
   rules,
   ...rest
 }: FieldCounterProps) {

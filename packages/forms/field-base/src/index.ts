@@ -9,3 +9,4 @@ export { default as useController } from './hooks/useController';
 export * from './styled';
 export { default as FloatLabel } from './styled/FloatLabel';
 export * from './types';
+export * from './utils';

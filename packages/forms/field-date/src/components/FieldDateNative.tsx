@@ -1,4 +1,4 @@
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import { isValid, parse } from 'date-fns';
 import React, { ChangeEvent } from 'react';
 import { FieldDateProps } from '../types';
@@ -7,7 +7,7 @@ import FieldDateStateless from './FieldDateStateless';
 export default function FieldDateNative({
   formatSubmit = 'yyyy-MM-dd',
   displayFormat = 'yyyy-MM-dd',
-  onChange = () => {},
+  onChange = noop,
   name,
   value: defaultValue = '',
   ...rest

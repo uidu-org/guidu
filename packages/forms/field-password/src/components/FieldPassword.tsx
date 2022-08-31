@@ -1,5 +1,5 @@
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
-import { StyledAddon, useController, Wrapper } from '@uidu/field-base';
+import { noop, StyledAddon, useController, Wrapper } from '@uidu/field-base';
 import { useFormContext } from '@uidu/form';
 import Tooltip from '@uidu/tooltip';
 import React, { ChangeEvent, useState } from 'react';
@@ -14,7 +14,7 @@ export default function FieldPassword({
   measurePasswordStrength = true,
   instructions = 'Use at least 8 character. Password strength:',
   passwordStrengths = ['Worst', 'Bad', 'Weak', 'Good', 'Strong'],
-  onChange = () => {},
+  onChange = noop,
   name,
   value: defaultValue = '',
   disabled,

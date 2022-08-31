@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import { useFormContext } from '@uidu/form';
 import React, { useState } from 'react';
 import { getCountries } from 'react-phone-number-input';
@@ -12,7 +12,7 @@ import FieldPhoneStateless from './FieldPhoneStateless';
 export default function FieldPhone({
   name,
   value: defaultValue,
-  onChange = () => {},
+  onChange = noop,
   rules,
   country: defaultCountry = 'IT',
   countryLabels = en,

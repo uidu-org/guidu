@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
 import { FieldTimeProps } from '../types';
 import FieldTimeStateless from './FieldTimeStateless';
 
 export default function FieldTimeNative({
-  onChange = () => {},
+  onChange = noop,
   name,
   value: defaultValue,
   rules,

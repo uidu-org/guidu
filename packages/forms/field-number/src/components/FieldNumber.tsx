@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { NumberFormatValues } from 'react-number-format';
 import { FieldNumberProps } from '../types';
@@ -8,7 +8,7 @@ import FieldNumberStateless from './FieldNumberStateless';
 export default function FieldNumber({
   name,
   value: defaultValue = '',
-  onChange = () => {},
+  onChange = noop,
   rules,
   ...rest
 }: FieldNumberProps) {

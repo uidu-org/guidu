@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
 import { RadioProps } from '../types';
 import RadioStateless from './RadioStateless';
 
 export default function Radio({
-  onChange = () => {},
+  onChange = noop,
   value: defaultValue,
   name,
   rules,

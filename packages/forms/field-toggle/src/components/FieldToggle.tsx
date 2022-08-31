@@ -1,12 +1,12 @@
 import { SwitchProps } from '@radix-ui/react-switch';
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import tw from 'twin.macro';
 import { FieldToggleProps } from '../types';
 import FieldToggleStateless from './FieldToggleStateless';
 
 export default function FieldToggle({
-  onChange = () => {},
+  onChange = noop,
   name,
   value: defaultValue = false,
   id,

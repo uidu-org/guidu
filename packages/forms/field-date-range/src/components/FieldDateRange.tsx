@@ -1,11 +1,11 @@
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { FieldDateRangeProps } from '../types';
 import InputControl from './FieldDateRangeStateless';
 
 export default function FieldDateRange({
   formatSubmit = 'YYYY-MM-DD',
-  onChange = () => {},
+  onChange = noop,
   name,
   value: defaultValue,
   ...rest

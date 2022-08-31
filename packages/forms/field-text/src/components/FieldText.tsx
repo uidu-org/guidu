@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
 import { FieldTextProps } from '../types';
 import FieldTextStateless from './FieldTextStateless';
 
 export default function FieldText({
   name,
-  onChange = () => {},
+  onChange = noop,
   value: defaultValue = '',
   rules,
   ...rest

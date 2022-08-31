@@ -1,10 +1,10 @@
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { FieldMentionsProps } from '../types';
 import FieldMentionsStateless from './FieldMentionsStateless';
 
 export default function FieldMentions({
-  onChange = () => {},
+  onChange = noop,
   value: defaultValue,
   name,
   ...rest

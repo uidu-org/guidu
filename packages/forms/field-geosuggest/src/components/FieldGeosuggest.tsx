@@ -1,4 +1,5 @@
 import {
+  noop,
   StyledAddon,
   StyledInput,
   StyledRow,
@@ -39,7 +40,7 @@ export default function FieldGeosuggest({
   geocoderType,
   bounds,
   countryRestricted,
-  onChange = () => {},
+  onChange = noop,
   forwardedRef,
   geolocationEnabled = true,
   option: OptionRenderer = FieldGeosuggestItem,

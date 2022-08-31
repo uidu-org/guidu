@@ -1,6 +1,6 @@
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import Button, { ButtonProps } from '@uidu/button';
-import { StyledInput, useController, Wrapper } from '@uidu/field-base';
+import { noop, StyledInput, useController, Wrapper } from '@uidu/field-base';
 import Popup, { TriggerProps } from '@uidu/popup';
 import React, {
   forwardRef,
@@ -52,7 +52,7 @@ const DefaulTrigger = forwardRef<
 export default function FieldColorPicker({
   name,
   value: defaultValue,
-  onChange = () => {},
+  onChange = noop,
   trigger: Trigger = DefaulTrigger,
   colors = [
     '#FF6900',

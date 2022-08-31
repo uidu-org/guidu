@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React, { ChangeEvent } from 'react';
 import { CheckboxProps } from '../types';
 import CheckboxStateless from './CheckboxStateless';
 
 export default function Checkbox({
   isIndeterminate = false,
-  onChange = () => {},
+  onChange = noop,
   name,
   value: defaultValue,
   ...rest

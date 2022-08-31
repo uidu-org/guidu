@@ -9,7 +9,7 @@ import { UseControllerProps, UseControllerReturn } from '../types';
 export default function useController<
   TFieldValues extends FieldValues = FieldValues,
 >({
-  onChange = () => {},
+  onChange,
   name,
   defaultValue,
   rules = {},

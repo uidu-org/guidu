@@ -1,4 +1,4 @@
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import ReactSelect from 'react-select';
 import { CheckboxOption } from './components/input-options';
@@ -8,7 +8,7 @@ import { CreateSelectProps } from './types';
 // put it all together
 function CheckboxSelect({
   name,
-  onChange = () => {},
+  onChange = noop,
   value: defaultValue = '',
   rules,
   ...rest

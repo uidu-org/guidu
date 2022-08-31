@@ -1,4 +1,4 @@
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import { useFormContext } from '@uidu/form';
 import { FileIdentifier } from '@uidu/media-core';
 import Spinner from '@uidu/spinner';
@@ -59,7 +59,7 @@ function FieldImageUploaderStateless({
   defaultImageUrl,
   value: defaultValue = '',
   rules,
-  onChange = () => {},
+  onChange = noop,
   uploadOptions,
   className,
   options,

@@ -1,4 +1,4 @@
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import ReactSelect, { GroupBase } from 'react-select';
 import { Country, groupedCountries } from './data/countries';
@@ -69,7 +69,7 @@ function SingleValue<TIsMulti extends boolean>(
 // put it all together
 function CountrySelect({
   name,
-  onChange = () => {},
+  onChange = noop,
   value: defaultValue = '',
   rules,
   ...rest

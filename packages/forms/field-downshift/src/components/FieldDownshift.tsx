@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useController, Wrapper as FieldWrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper as FieldWrapper } from '@uidu/field-base';
 import Downshift from 'downshift';
 import React, { useCallback } from 'react';
 import { FieldDownshiftProps } from '../types';
@@ -12,7 +12,7 @@ function FieldDownshift<
 >({
   wrapper: WrapperComponent = FieldWrapper,
   multiple = false,
-  onChange = () => {},
+  onChange = noop,
   getOptionValue = (option) => String(option.id),
   getOptionLabel = (option) => option.name,
   filterOptions = (props) => props.options,

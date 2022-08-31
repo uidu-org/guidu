@@ -1,4 +1,4 @@
-import { useController, Wrapper } from '@uidu/field-base';
+import { noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import ReactSelect from 'react-select';
 import TimeZone from 'timezones-list';
@@ -38,7 +38,7 @@ function SingleValue({ innerProps, data, getStyles, ...otherProps }) {
 // put it all together
 function TimeZoneSelect({
   name,
-  onChange = () => {},
+  onChange = noop,
   value: defaultValue = '',
   rules,
   components: propComponents = {},
