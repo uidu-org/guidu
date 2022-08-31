@@ -112,7 +112,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/ds-lib@npm:< 2":
+"@atlaskit/ds-lib@npm:^1.4.2":
   version: 1.4.2
   resolution: "@atlaskit/ds-lib@npm:1.4.2"
   dependencies:
@@ -7698,7 +7698,7 @@ __metadata:
     "@uidu/form": 2.0.1
     "@uidu/select": 2.0.2
     react: ^18.2.0
-    react-phone-number-input: ^3.2.10
+    react-phone-number-input: ^3.2.11
     styled-components: ^5.3.5
     tslib: ^2.4.0
     twin.macro: ^2.8.2
@@ -8386,7 +8386,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:
-    "@atlaskit/ds-lib": < 2
+    "@atlaskit/ds-lib": ^1.4.2
     "@atlaskit/focus-ring": ^1.0.6
     "@atlaskit/icon": ^21.10.7
     "@atlaskit/motion": ^1.2.2
@@ -17954,7 +17954,7 @@ __metadata:
     react-mentions: ^4.4.7
     react-node-resolver: ^2.0.1
     react-number-format: ^4.9.3
-    react-phone-number-input: ^3.2.10
+    react-phone-number-input: ^3.2.11
     react-popper: ^2.3.0
     react-resizable: ^3.0.4
     react-router: ^5.3.3
@@ -17970,7 +17970,7 @@ __metadata:
     react-use-gesture: ^8.0.1
     react-virtualized: ^9.22.3
     resolve: ^1.22.1
-    sass: ^1.54.6
+    sass: ^1.54.7
     sass-loader: ^13.0.2
     scroll-into-view-if-needed: ^2.2.29
     scrollparent: ^2.0.1
@@ -26608,9 +26608,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-phone-number-input@npm:^3.2.10":
-  version: 3.2.10
-  resolution: "react-phone-number-input@npm:3.2.10"
+"react-phone-number-input@npm:^3.2.11":
+  version: 3.2.11
+  resolution: "react-phone-number-input@npm:3.2.11"
   dependencies:
     classnames: ^2.3.1
     country-flag-icons: ^1.5.4
@@ -26620,7 +26620,7 @@ __metadata:
   peerDependencies:
     react: ">=16.8"
     react-dom: ">=16.8"
-  checksum: a7787f1f6d4640560381ca926b4e8bbc609461ceae24c5b86f4f287db0f9dc45354b61dd7c15f84576ebe609ceb9ab4a5d57f949df8c630ed4469ec02cbfef5f
+  checksum: e3e2c4b0b7eaa92d06efd80d57457cbba646f7399d9e4c7ae6d6563b9fb3560c7a93905cd2e9201569bd056e3edb99abc937ff2701d2851f176e26e60b08dd80
   languageName: node
   linkType: hard
 
@@ -27973,16 +27973,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.54.6":
-  version: 1.54.6
-  resolution: "sass@npm:1.54.6"
+"sass@npm:^1.54.7":
+  version: 1.54.7
+  resolution: "sass@npm:1.54.7"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 0cfd3e1b5d3c79a53cdd84bf0d3bd3160c99a87e9ea948f8d025a93477e058ecf80d64f45127d5e23c62ed2e34279b9672198f640d10e48a6cbd5ccebc5df899
+  checksum: 4b6a10e93387e65dcbad2683d46b4249453ab8777c1bafab7a73ac3900a21fa91fa31d68df7a1b982c7e332a99b5574b1adc6168eb1ac6d7ebb28e18a65c4198
   languageName: node
   linkType: hard
 

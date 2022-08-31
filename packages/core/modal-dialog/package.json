@@ -10,7 +10,7 @@
   "module": "dist/uidu-modal-dialog.esm.js",
   "types": "dist/uidu-modal-dialog.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/ds-lib": "< 2",
+    "@atlaskit/ds-lib": "^1.4.2",
     "@atlaskit/focus-ring": "^1.0.6",
     "@atlaskit/icon": "^21.10.7",
     "@atlaskit/motion": "^1.2.2",
