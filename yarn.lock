@@ -7696,7 +7696,7 @@ __metadata:
     "@uidu/field-base": ^4.0.3
     "@uidu/field-text": ^2.0.0
     "@uidu/form": 2.0.1
-    "@uidu/select": 2.0.2
+    "@uidu/select": 2.0.3
     react: ^18.2.0
     react-phone-number-input: ^3.2.11
     styled-components: ^5.3.5
@@ -7762,7 +7762,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-time@2.0.3, @uidu/field-time@^2.0.2, @uidu/field-time@workspace:packages/forms/field-time":
+"@uidu/field-time@2.0.4, @uidu/field-time@^2.0.2, @uidu/field-time@workspace:packages/forms/field-time":
   version: 0.0.0-use.local
   resolution: "@uidu/field-time@workspace:packages/forms/field-time"
   dependencies:
@@ -7772,7 +7772,7 @@ __metadata:
     "@uidu/field-base": 4.0.3
     "@uidu/field-text": ^2.0.0
     "@uidu/form": ^2.0.1
-    "@uidu/select": 2.0.2
+    "@uidu/select": 2.0.3
     date-fns: ^2.29.2
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -8804,7 +8804,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/select@2.0.2, @uidu/select@^2.0.0, @uidu/select@^2.0.1, @uidu/select@^2.0.2, @uidu/select@workspace:packages/forms/select":
+"@uidu/select@2.0.3, @uidu/select@^2.0.0, @uidu/select@^2.0.1, @uidu/select@^2.0.2, @uidu/select@workspace:packages/forms/select":
   version: 0.0.0-use.local
   resolution: "@uidu/select@workspace:packages/forms/select"
   dependencies:
@@ -17764,7 +17764,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.36.1
     "@typescript-eslint/parser": ^5.36.1
     "@uidu/field-base": 4.0.3
-    "@uidu/field-time": 2.0.3
+    "@uidu/field-time": 2.0.4
     "@uidu/form": 2.0.1
     "@uidu/profilecard": ^0.3.0
     "@uifabric/file-type-icons": ^7.9.3
