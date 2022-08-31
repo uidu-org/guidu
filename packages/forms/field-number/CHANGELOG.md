@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 2.0.3
+
+### Patch Changes
+
+- 9a846cd8c: Fix field-phone props, add classname to field-number
+
 ## 2.0.2
 
 ### Patch Changes
