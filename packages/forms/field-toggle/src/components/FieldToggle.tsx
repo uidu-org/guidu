@@ -6,7 +6,7 @@ import { FieldToggleProps } from '../types';
 import FieldToggleStateless from './FieldToggleStateless';
 
 export default function FieldToggle({
-  onChange,
+  onChange = () => {},
   name,
   value: defaultValue = false,
   id,

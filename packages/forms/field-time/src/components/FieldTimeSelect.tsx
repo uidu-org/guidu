@@ -8,7 +8,7 @@ import { generateTimeSlots } from '../utils';
 function FieldTimeSelect({
   name,
   className,
-  onChange,
+  onChange = () => {},
   value: defaultValue = '',
   required,
   min,

@@ -5,7 +5,7 @@ import { RadioProps } from '../types';
 import RadioStateless from './RadioStateless';
 
 export default function Radio({
-  onChange,
+  onChange = () => {},
   value: defaultValue,
   name,
   rules,

@@ -7,7 +7,7 @@ import RadioStateless from './RadioStateless';
 
 function RadioGroup({
   isInline = false,
-  onChange,
+  onChange = () => {},
   options,
   name,
   value: defaultValue,

@@ -7,7 +7,7 @@ import { CreateSelectProps } from './types';
 // put it all together
 function CreatableSelect<TOption, TIsMulti extends boolean = false>({
   name,
-  onChange,
+  onChange = () => {},
   value: defaultValue = '',
   rules,
   ...rest
