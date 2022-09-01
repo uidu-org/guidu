@@ -1,12 +1,16 @@
 import { Toggler } from '@uidu/data-controls';
 import { useDataManagerContext } from '@uidu/data-manager';
-import Form from '@uidu/form';
+import Form, { useForm } from '@uidu/form';
 import Select from '@uidu/select';
 import React from 'react';
 
 export default function Configurator({ onDragEnd }) {
   const { columns, currentView, updateView } = useDataManagerContext();
+
   const primaryField = currentView.preferences?.primaryField || 'status';
+
+  const form = useForm({ mode: 'all' });
+
   return (
     <>
       <div className="mb-3 list-group">
@@ -14,7 +18,7 @@ export default function Configurator({ onDragEnd }) {
           <h6 className="m-0">Choose columns</h6>
         </div>
         <div className="px-3 px-xl-4">
-          <Form handleSubmit={() => {}} footerRenderer={() => null}>
+          <Form form={form} handleSubmit={() => {}} footerRenderer={() => null}>
             <Select
               name="primaryField"
               value={primaryField}

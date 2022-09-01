@@ -5021,15 +5021,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-table@npm:^8.5.11":
-  version: 8.5.11
-  resolution: "@tanstack/react-table@npm:8.5.11"
+"@tanstack/react-table@npm:^8.5.13":
+  version: 8.5.13
+  resolution: "@tanstack/react-table@npm:8.5.13"
   dependencies:
-    "@tanstack/table-core": 8.5.11
+    "@tanstack/table-core": 8.5.13
   peerDependencies:
     react: ">=16"
     react-dom: ">=16"
-  checksum: 7ab4bfb6c6f2ea3d7a17332297cf77cdd3ca231fde8cb61be94dec603e3e7316bd7661c08c4430b02fd4cb7e7b42f733d854e8a872bb094529dc5d32f9dd2acc
+  checksum: 97f5947e1d5e12ac44e6cb9a88c5a3f4003b36e1accd16abf67abb84df2c0ec40bfc4bc882ab391024e1fadb35c8d2e17da277aaf004a23f5167a1e889a78b1c
   languageName: node
   linkType: hard
 
@@ -5044,10 +5044,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/table-core@npm:8.5.11":
-  version: 8.5.11
-  resolution: "@tanstack/table-core@npm:8.5.11"
-  checksum: f518ba072f0098e9cc2e609bb9da060e2c94c3aed09484effd9e2acb26a512e9566a00fabebb3fe5300763c715132464c4494307774d9a2e5ffc8ea3b7aa3f49
+"@tanstack/table-core@npm:8.5.13":
+  version: 8.5.13
+  resolution: "@tanstack/table-core@npm:8.5.13"
+  checksum: 980e3e547161cc21e681d9db4335e5a636bca63c68898e73ec475bca3043c4a8940f535a9d47df7728b9ae464598cc2cb4daccefa04a10539aace6fa4f369c71
   languageName: node
   linkType: hard
 
@@ -6611,7 +6611,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.18.9
     "@faker-js/faker": ^7.5.0
-    "@tanstack/react-table": ^8.5.11
+    "@tanstack/react-table": ^8.5.13
     "@uidu/badge": ^0.5.16
     "@uidu/docs": ^0.5.18
     "@uidu/shell": ^2.1.28
@@ -6798,7 +6798,7 @@ __metadata:
     "@babel/runtime": ^7.18.9
     "@cubejs-client/core": ^0.30.60
     "@cubejs-client/react": ^0.30.60
-    "@tanstack/react-table": ^8.5.11
+    "@tanstack/react-table": ^8.5.13
     "@types/react-grid-layout": ^1.3.2
     "@uidu/dashboard-controls": ^1.1.1
     "@uidu/dashlets": ^2.1.1
@@ -6865,7 +6865,7 @@ __metadata:
     "@cubejs-client/core": ^0.30.60
     "@cubejs-client/react": ^0.30.60
     "@loadable/component": ^5.15.2
-    "@tanstack/react-table": ^8.5.11
+    "@tanstack/react-table": ^8.5.13
     "@uidu/dashboard-manager": ^2.0.2
     "@uidu/dashlet-controls": ^1.1.1
     "@uidu/data-fields": ^2.1.2
@@ -6896,7 +6896,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.18.9
     "@heroicons/react": ^2.0.10
-    "@tanstack/react-table": ^8.5.11
+    "@tanstack/react-table": ^8.5.13
     "@uidu/button": 1.3.27
     "@uidu/checkbox": ^2.0.0
     "@uidu/data-fields": ^2.1.2
@@ -6939,7 +6939,7 @@ __metadata:
     "@heroicons/react": ^2.0.10
     "@loadable/component": ^5.15.2
     "@smastrom/react-rating": ^1.0.5
-    "@tanstack/react-table": ^8.5.11
+    "@tanstack/react-table": ^8.5.13
     "@uidu/button": 1.3.27
     "@uidu/docs": ^0.5.18
     "@uidu/field-color-picker": ^3.0.2
@@ -6976,7 +6976,7 @@ __metadata:
     "@cubejs-client/ws-transport": ^0.30.60
     "@loadable/component": ^5.15.2
     "@tanstack/match-sorter-utils": ^8.1.1
-    "@tanstack/react-table": ^8.5.11
+    "@tanstack/react-table": ^8.5.13
     "@uidu/board": ^1.0.2
     "@uidu/button": 1.3.27
     "@uidu/calendar": ^0.4.16
@@ -7882,7 +7882,7 @@ __metadata:
   resolution: "@uidu/gallery@workspace:packages/data/gallery"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@tanstack/react-table": ^8.5.11
+    "@tanstack/react-table": ^8.5.13
     "@tanstack/react-virtual": ^3.0.0-beta.18
     "@uidu/data-controls": ^3.0.9
     "@uidu/data-fields": ^2.0.8
@@ -8100,7 +8100,7 @@ __metadata:
   resolution: "@uidu/list@workspace:packages/data/list"
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@tanstack/react-table": ^8.5.11
+    "@tanstack/react-table": ^8.5.13
     "@tanstack/react-virtual": ^3.0.0-beta.18
     "@uidu/data-fields": ^2.0.8
     "@uidu/docs": ^0.5.18
@@ -9008,7 +9008,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.2.0
     "@fortawesome/react-fontawesome": ^0.2.0
     "@heroicons/react": ^2.0.10
-    "@tanstack/react-table": ^8.5.11
+    "@tanstack/react-table": ^8.5.13
     "@tanstack/react-virtual": ^3.0.0-beta.18
     "@uidu/button": 1.3.27
     "@uidu/checkbox": ^2.0.0
@@ -17887,7 +17887,7 @@ __metadata:
     popper.js: ^1.16.1
     postcss: ^8.4.16
     postcss-flexbugs-fixes: ^5.0.2
-    postcss-import: ^14.1.0
+    postcss-import: ^15.0.0
     postcss-loader: ^7.0.1
     postcss-preset-env: ^7.8.0
     postcss-safe-parser: ^6.0.0
@@ -24767,16 +24767,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-import@npm:^14.1.0":
-  version: 14.1.0
-  resolution: "postcss-import@npm:14.1.0"
+"postcss-import@npm:^15.0.0":
+  version: 15.0.0
+  resolution: "postcss-import@npm:15.0.0"
   dependencies:
     postcss-value-parser: ^4.0.0
     read-cache: ^1.0.0
     resolve: ^1.1.7
   peerDependencies:
     postcss: ^8.0.0
-  checksum: cd45d406e90f67cdab9524352e573cc6b4462b790934a05954e929a6653ebd31288ceebc8ce3c3ed7117ae672d9ebbec57df0bceec0a56e9b259c2e71d47ca86
+  checksum: e5048072514f33520348c0c5aaedb5db92da72188e72a7367c26a8d851b9cf92e56aeda30d9c7b4ed1a34f84a58959da1b4b27b4aa23d41fc0ce36efe00bf1d1
   languageName: node
   linkType: hard
 
@@ -30508,7 +30508,7 @@ __metadata:
 
 "typescript@patch:typescript@npm%3A^4.0.2#~builtin<compat/typescript>":
   version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"
+  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver

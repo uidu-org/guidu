@@ -1,7 +1,7 @@
 import { Toggler } from '@uidu/data-controls';
 import { useDataManagerContext } from '@uidu/data-manager';
 import FieldCounter from '@uidu/field-counter';
-import Form from '@uidu/form';
+import Form, { useForm } from '@uidu/form';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import CardTypes from '../utils/CardTypes';
@@ -11,6 +11,8 @@ export default function Configurator({}) {
 
   const handleSubmit = async (model) => console.log(model);
 
+  const form = useForm({ mode: 'all' });
+
   return (
     <>
       <div className="mb-3 list-group">
@@ -18,7 +20,11 @@ export default function Configurator({}) {
           <h6 className="m-0">Card preferences</h6>
         </div>
         <div className="px-3 px-xl-4">
-          <Form handleSubmit={handleSubmit} footerRenderer={() => null}>
+          <Form
+            form={form}
+            handleSubmit={handleSubmit}
+            footerRenderer={() => null}
+          >
             <div tw="grid grid-cols-2 gap-6">
               <FieldCounter
                 name="columnCount"

@@ -75,18 +75,14 @@ export type DataManagerProps<T> = {
   rowData?: T[];
   onItemClick: (item: T) => void;
   canSelectRows?: boolean;
-  getExportFileBlob?: any;
-  getExportFileName?: ({
-    fileType,
-    all,
-  }: {
-    fileType?: string;
-    all?: boolean;
-  }) => string;
   actions?: (row: RowType<T>) => RowActions<T>[];
-  pageSize?: number;
   forwardedRef: React.Ref<any>;
   options?: Partial<TableOptions<T>>;
+  pagination?: {
+    isLoadingNext?: boolean;
+    loadNext?: () => void;
+    hasNext?: boolean;
+  };
 };
 
 export type DataManagerCubeProps<T> = DataManagerProps<T> & {

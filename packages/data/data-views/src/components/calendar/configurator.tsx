@@ -1,5 +1,5 @@
 import { useDataManagerContext } from '@uidu/data-manager';
-import Form from '@uidu/form';
+import Form, { useForm } from '@uidu/form';
 import Select from '@uidu/select';
 import React from 'react';
 
@@ -10,6 +10,8 @@ export default function Configurator({}) {
 
   const handleSubmit = async (model) => console.log(model);
 
+  const form = useForm({ mode: 'all' });
+
   return (
     <>
       <div className="mb-3 list-group">
@@ -17,7 +19,11 @@ export default function Configurator({}) {
           <h6 className="m-0">Select date range fields</h6>
         </div>
         <div className="px-3 px-xl-4">
-          <Form handleSubmit={handleSubmit} footerRenderer={() => null}>
+          <Form
+            form={form}
+            handleSubmit={handleSubmit}
+            footerRenderer={() => null}
+          >
             <Select
               name="foo"
               options={columns

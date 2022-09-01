@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
-
 import loadable from '@loadable/component';
 import { Row } from '@tanstack/react-table';
 import { ShellBodyWithSpinner } from '@uidu/shell';
+import { OverrideableTableProps } from '@uidu/table';
 import dayjs from 'dayjs';
 import React from 'react';
 import Media from 'react-media';
@@ -86,8 +86,10 @@ function DefaultEmptyState() {
   );
 }
 
+export interface DataManagerTableViewProps extends OverrideableTableProps {}
+
 export type DataManagerViewProps = {
-  table: any;
+  table: DataManagerTableViewProps;
 };
 
 function DataManagerView<T>({
@@ -96,12 +98,12 @@ function DataManagerView<T>({
   emptyState: EmptyState = DefaultEmptyState,
 }: {
   onItemClick?: (item: Row<T>) => void;
-  viewProps: {
+  viewProps?: {
     board?: any;
     calendar?: any;
     gallery?: any;
     list?: any;
-    table?: any;
+    table?: DataManagerTableViewProps;
   };
   emptyState?: React.FC<any>;
 }) {
@@ -113,7 +115,8 @@ function DataManagerView<T>({
     columnCount,
     setAggregation,
     setColumnWidth,
-  } = useDataManagerContext();
+    pagination,
+  } = useDataManagerContext<T>();
   const renderResponsiveView = ({ mobileView, desktopView }) => (
     <Media query={{ maxWidth: 768 }}>
       {(matches) => {
@@ -270,6 +273,7 @@ function DataManagerView<T>({
                 onItemClick={onItemClick}
                 columnDefs={columns}
                 rowData={rowData}
+                pagination={pagination}
                 // onSortChanged={onSortChanged}
                 // onFilterChanged={onFilterChanged}
                 // onColumnRowGroupChanged={onColumnRowGroupChanged}

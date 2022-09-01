@@ -1,23 +1,21 @@
-import { Field } from '@uidu/data-fields';
-import React from 'react';
+import { Table as TableType } from '@tanstack/react-table';
+import { VirtualizerOptions } from '@tanstack/react-virtual';
 
-export type ColumnGroupIdentifier = {
-  kind: string;
-  name: any;
-};
+export interface OverrideableTableProps {
+  includeFooter?: boolean;
+  rowHeight?: number;
+  headerHeight?: number;
+  virtualizerOptions?: Partial<VirtualizerOptions>;
+}
 
-export type ColumnGroup = ColumnGroupIdentifier & {
-  columns: Column[];
-};
-
-export type Column = Field & {
-  primary?: boolean;
-  fieldGroup?: ColumnGroupIdentifier;
-};
-
-export type TableProps = {
-  theme: string;
-  columnDefs: Array<Column>;
-  innerRef?: React.RefObject<any>;
-  rowData: Array<any>;
-};
+export interface TableProps<T> extends OverrideableTableProps {
+  tableInstance: TableType<T>;
+  onItemClick: (row: T) => void;
+  overrides?: Record<string, any>;
+  // pagination
+  pagination?: {
+    isLoadingNext?: boolean;
+    loadNext?: () => void;
+    hasNext?: boolean;
+  };
+}

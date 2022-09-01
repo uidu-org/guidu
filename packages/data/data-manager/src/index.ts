@@ -9,6 +9,7 @@ export { default as DataManagerFooter } from './components/DataManagerFooter';
 export { default as DataManagerPagination } from './components/DataManagerPagination';
 export { default as DataManagerSidebar } from './components/DataManagerSidebar';
 export { default as DataManagerView } from './components/DataManagerView';
+export { default as useReactTable } from './hooks/useReactTable';
 export * from './types';
 
 export default DataManager;

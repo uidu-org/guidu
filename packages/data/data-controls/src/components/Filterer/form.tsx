@@ -3,10 +3,10 @@ import { ColumnFilter } from '@tanstack/react-table';
 import Button from '@uidu/button';
 import { getFieldFromColumnDef } from '@uidu/data-fields';
 import { useDataManagerContext } from '@uidu/data-manager';
-import Form from '@uidu/form';
+import Form, { useForm } from '@uidu/form';
 import { MenuGroup, Section } from '@uidu/menu';
 import Select from '@uidu/select';
-import React, { Fragment, useRef } from 'react';
+import React, { Fragment } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import ColumnsList from '../../utils/ColumnsList';
 import PickField from '../../utils/PickField';
@@ -29,7 +29,7 @@ export default function FiltererForm({ closePopup }: FiltererFormProps) {
 
   const columns = getAllFlatColumns();
   const { columnFilters } = getState();
-  const form = useRef(null);
+  const form = useForm({ mode: 'all' });
 
   const handleSubmit = async (model: { filters: ColumnFilter[] }) => {
     setColumnFilters(model.filters);
@@ -62,7 +62,7 @@ export default function FiltererForm({ closePopup }: FiltererFormProps) {
 
   return (
     <div tw="py-4">
-      <Form ref={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
+      <Form form={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
         <div tw="space-y-4">
           <div tw="grid grid-template-columns[max-content 1fr 2fr min-content] gap-4 px-4">
             {columnFilters.map((filter, index) => {
@@ -121,7 +121,7 @@ export default function FiltererForm({ closePopup }: FiltererFormProps) {
                         columnDef={columnDef}
                         onChange={() =>
                           setTimeout(() => {
-                            (form.current as any).submit();
+                            form.handleSubmit(console.log, console.error);
                           }, 300)
                         }
                       />

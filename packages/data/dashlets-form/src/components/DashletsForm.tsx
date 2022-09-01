@@ -1,7 +1,7 @@
 import { CubeContext, QueryBuilder } from '@cubejs-client/react';
 import { renderDashlet } from '@uidu/dashlets';
 import FieldDownshift, { DownshiftVerticalCard } from '@uidu/field-downshift';
-import Form, { FormSubmit } from '@uidu/form';
+import Form, { FormSubmit, useForm } from '@uidu/form';
 import React, { useContext, useState } from 'react';
 import { DashletsFormProps } from '../types';
 import {
@@ -20,6 +20,8 @@ export default function DashletsForm({
   handleSubmit,
 }: DashletsFormProps) {
   const { cubejsApi } = useContext(CubeContext);
+
+  const form = useForm({ mode: 'all' });
 
   const [config, setConfig] = useState({});
   const [query, setQuery] = useState({});
@@ -55,6 +57,7 @@ export default function DashletsForm({
       }) => {
         return (
           <Form
+            form={form}
             handleSubmit={async (model) =>
               handleSubmit({
                 kind,
@@ -108,7 +111,7 @@ export default function DashletsForm({
             </div>
             <div className="container-fluid">
               <div className="row">
-                <div className="col-lg-8 py-3" style={{ height: 400 }}>
+                <div className="py-3 col-lg-8" style={{ height: 400 }}>
                   {isQueryPresent ? (
                     renderDashlet({
                       label: 'Default label',
@@ -126,7 +129,7 @@ export default function DashletsForm({
                     <div>Empty state</div>
                   )}
                 </div>
-                <div className="col-lg-4 py-3 border-left">
+                <div className="py-3 col-lg-4 border-left">
                   {!!isQueryPresent && (
                     <>
                       <FieldDownshift
@@ -135,9 +138,9 @@ export default function DashletsForm({
                         scope="primary"
                         menu={(props) => <div className="d-flex" {...props} />}
                         option={DownshiftVerticalCard}
-                        options={chartTypeToDashletKinds(
-                          chartType,
-                        ).map((k) => ({ id: k, name: k }))}
+                        options={chartTypeToDashletKinds(chartType).map(
+                          (k) => ({ id: k, name: k }),
+                        )}
                         onChange={(name, value) => setKind(value)}
                       />
                       <hr style={{ borderTopWidth: 2 }} />

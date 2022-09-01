@@ -1,16 +1,31 @@
 import { Column, Table } from '@tanstack/react-table';
-import React, { createContext, useContext, useMemo } from 'react';
+import React, { createContext, useCallback, useContext, useMemo } from 'react';
 
-interface DataManagerContextProps<TTable, TView extends {}> {
+interface DataManagerPassedDownProps<TTable, TView extends {}> {
   tableInstance: Table<TTable>;
   columns: Column<TTable, unknown>[];
   onItemClick: (item: TTable) => void;
   currentView?: TView;
   updateView?: (name: string, value: any) => Promise<any>;
   rowData?: Array<TTable>;
+  pagination?: {
+    isLoadingNext?: boolean;
+    loadNext?: () => void;
+    hasNext?: boolean;
+  };
+}
+
+interface DataManagerContextProps<TTable, TView extends {}>
+  extends DataManagerPassedDownProps<TTable, TView> {
   columnCount?: number;
   setAggregation?: () => void;
-  setColumnWidth?: () => void;
+  setColumnCount?: (columnCount: number) => void;
+  setColumnWidth?: (column: any) => void;
+}
+
+interface DataManagerProviderProps<TTable, TView extends {}>
+  extends DataManagerPassedDownProps<TTable, TView> {
+  children: React.ReactNode;
 }
 
 export const DataManagerContext =
@@ -24,25 +39,23 @@ function DataManagerProvider<TTable, TView extends {}>({
   updateView,
   tableInstance,
   onItemClick,
-}: {
-  children: React.ReactNode;
-  rowData?: TTable[];
-  columns: Column<TTable, unknown>[];
-  currentView?: TView;
-  updateView?: (name: string, value: any) => Promise<any>;
-  tableInstance: Table<TTable>;
-  onItemClick: (item: TTable) => void;
-}) {
-  const setColumnCount = (columnCount) => {
-    updateView('preferences', { ...currentView.preferences, columnCount }).then(
-      () => {
-        setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
-      },
-    );
-  };
+  pagination,
+}: DataManagerProviderProps<TTable, TView>) {
+  const setColumnCount = useCallback(
+    (columnCount: number) => {
+      updateView('preferences', {
+        ...currentView.preferences,
+        columnCount,
+      })
+        .then(() => {
+          setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
+        })
+        .catch(() => {});
+    },
+    [updateView, currentView],
+  );
 
-  const setAggregation = (column, aggregate) => {
-    console.log(column);
+  const setAggregation = () => {
     // const index = columnDefinitions.findIndex(({ id }) => id === column.id);
     // setColumnDefinitions([
     //   ...columnDefinitions.slice(0, index),
@@ -54,17 +67,8 @@ function DataManagerProvider<TTable, TView extends {}>({
     // ]);
   };
 
-  const setColumnWidth = (column, width: number) => {
+  const setColumnWidth = (column) => {
     console.log(column);
-    // const index = columnDefinitions.findIndex(({ id }) => id === column.id);
-    // setColumnDefinitions([
-    //   ...columnDefinitions.slice(0, index),
-    //   {
-    //     ...columnDefinitions[index],
-    //     width,
-    //   },
-    //   ...columnDefinitions.slice(index + 1),
-    // ]);
   };
 
   const value = useMemo(
@@ -79,6 +83,7 @@ function DataManagerProvider<TTable, TView extends {}>({
       setAggregation,
       setColumnWidth,
       onItemClick,
+      pagination,
     }),
     [
       tableInstance,
@@ -88,6 +93,7 @@ function DataManagerProvider<TTable, TView extends {}>({
       rowData,
       setColumnCount,
       onItemClick,
+      pagination,
     ],
   );
 

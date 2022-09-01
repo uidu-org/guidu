@@ -18,20 +18,22 @@ import { DataManagerProps } from '../types';
 import { fuzzyFilter } from '../utils';
 import { DataManagerProvider } from './DataManagerContext';
 
+const defaultRowData = [];
+const defaultOptions = {};
+const defaultOnViewUpdate = () => {};
+
 export default function DataManager<T>({
   children,
   columns,
-  rowData = [],
+  rowData = defaultRowData as T[],
   onItemClick,
-  onViewUpdate = (state) => {},
+  onViewUpdate = defaultOnViewUpdate,
   currentView,
   updateView,
   actions = () => [],
   forwardedRef,
-  getExportFileBlob,
-  getExportFileName,
-  pageSize = 50,
-  options = {},
+  options = defaultOptions,
+  pagination,
 }: DataManagerProps<T>) {
   const Cell = useCallback(
     ({ column, getValue }: CellContext<any, unknown>) =>
@@ -118,7 +120,7 @@ export default function DataManager<T>({
     getFilteredRowModel: getFilteredRowModel(),
     // getPaginationRowModel: getPaginationRowModel(),
     //
-    debugAll: true,
+    debugAll: process.env.NODE_ENV === 'development',
     ...options,
   });
 
@@ -146,8 +148,7 @@ export default function DataManager<T>({
       updateView={updateView}
       actions={actions}
       forwardedRef={forwardedRef}
-      getExportFileBlob={getExportFileBlob}
-      getExportFileName={getExportFileName}
+      pagination={pagination}
     >
       {children}
     </DataManagerProvider>
