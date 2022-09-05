@@ -8,19 +8,25 @@ import * as defaultComponents from '../styled';
 import { TableProps } from '../types';
 import { getComponents } from '../utils';
 import Footer from './Footer';
+import DefaultLoadingRow from './LoadingRow';
+import DefaultLoadingSkeleton from './LoadingSkeleton';
 import Resizer from './Resizer';
 import RowSingle from './Row';
 
-function Table<T extends object>({
+const defaultOverrides = {};
+
+function Table<T extends { id: string }>({
   // overrideable props
   includeFooter = true,
   rowHeight = 32,
   headerHeight = 48,
   virtualizerOptions,
+  loadingRow: LoadingRow = DefaultLoadingRow,
+  loadingSkeleton: LoadingSkeleton = DefaultLoadingSkeleton,
   //
   tableInstance,
   onItemClick,
-  overrides = {},
+  overrides = defaultOverrides,
   // pagination
   pagination,
 }: TableProps<T>) {
@@ -54,11 +60,7 @@ function Table<T extends object>({
 
       if (isLoaderRow) {
         return (
-          <StyledRow start={start} size={size}>
-            <div tw="h-full w-full bg-gray-50 flex items-center p-4">
-              Loading...
-            </div>
-          </StyledRow>
+          <LoadingRow components={{ StyledRow }} start={start} size={size} />
         );
       }
 
@@ -73,7 +75,7 @@ function Table<T extends object>({
         />
       );
     },
-    [rows, rowHeight, onItemClick, StyledRow, Td],
+    [rows, rowHeight, onItemClick, StyledRow, Td, LoadingRow],
   );
 
   const parentRef = useRef<HTMLDivElement>();
@@ -160,27 +162,7 @@ function Table<T extends object>({
           })}
         </div>
         <Body height={totalSize} verticalPadding={rowHeight * 2 - 8 - 16}>
-          <div tw="absolute z-0 top-0 left-0 right-0 bottom-0">
-            {rows.map((row) => (
-              <div
-                key={`fake-${row.original.id}`}
-                style={{ height: rowHeight }}
-                tw="flex flex-row"
-              >
-                {row
-                  .getVisibleCells()
-                  .filter((cell) => !cell.column.columnDef.meta?.isPrivate)
-                  .map((cell, index) => (
-                    <div
-                      tw="border-b border-r border-opacity-50 p-4 flex[1 0 auto]"
-                      style={{ width: cell.column.getSize() }}
-                    >
-                      <div tw="bg-gray-50 w-full h-full rounded" />
-                    </div>
-                  ))}
-              </div>
-            ))}
-          </div>
+          <LoadingSkeleton rows={rows} rowHeight={rowHeight} />
           {/* {paddingTop > 0 && <div style={{ height: `${paddingTop}px` }} />} */}
           {virtualRows.map(({ size, start, index, key }) => (
             <Row key={key} size={size} start={start} index={index} />

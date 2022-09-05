@@ -1,11 +1,6 @@
 import { flexRender, Row } from '@tanstack/react-table';
 import React from 'react';
-import styled from 'styled-components';
-
-const StyledItem = styled.div`
-  cursor: pointer;
-  font-size: 0.95rem;
-`;
+import { StyledCell, StyledItem } from '../styled';
 
 export default function Item<T>({
   row,
@@ -31,50 +26,31 @@ export default function Item<T>({
 
   return (
     <StyledItem
+      $gutterSize={gutterSize}
       key={row.id}
       onClick={(e) => {
         e.preventDefault();
         onItemClick(item);
       }}
-      style={{
-        ...style,
-        minWidth: `calc(100% - ${gutterSize * 2}px)`,
-        left: style.left + gutterSize,
-        // top: style.top + gutterSize,
-        top: 0,
-        transform: `translate3d(0px,${style.top}px, 0px)`,
-        willChange: 'transform',
-        height: style.height,
-      }}
       tw="top-0 flex items-center w-auto"
     >
       {uid && (
-        <div tw="truncate px-3 xl:px-4 h-full border-r">
+        <div tw="truncate px-4 h-full border-r">
           {flexRender(uid.column.columnDef.cell, uid.getContext())}
         </div>
       )}
-      {/* {cover && (
+      {cover && (
         <div
+          tw="h-full flex-shrink-0 bg-center bg-cover bg-red-200"
           style={{
-            width: cover.width || '138px',
-            backgroundSize: 'cover',
-            backgroundPosition: '50% 50%',
-            backgroundImage: `url(${valueRenderer(item, cover)})`,
-            height: '100%',
-            flexShrink: 0,
+            width: cover.column.getSize() || '138px',
+            backgroundImage: `url(${cover.getValue() as string})`,
           }}
         />
-      )} */}
+      )}
       <div tw="flex flex-col">
         {primary && (
-          <div
-            className={`mb-2${cover ? ' px-3 px-xl-4' : ''}`}
-            style={{
-              maxWidth: `calc('100vw - 100px')`,
-              fontWeight: 500,
-            }}
-            tw="sticky width[fit-content] -left-6"
-          >
+          <div tw="sticky width[fit-content] -left-4 px-4 font-medium max-width[calc(100vw - 100px)]">
             {flexRender(primary.column.columnDef.cell, primary.getContext())}
           </div>
         )}
@@ -88,17 +64,14 @@ export default function Item<T>({
                 !cell.column.columnDef.meta?.isPrimary,
             )
             .map((cell) => (
-              <div
+              <StyledCell
                 key={cell.id}
-                tw="truncate px-3 xl:px-4 flex"
-                style={{
-                  width: cell.column.getSize() || '150px',
-                  minWidth: cell.column.columnDef.minSize || 'auto',
-                  maxWidth: cell.column.columnDef.maxSize || 'auto',
-                }}
+                $size={cell.column.getSize()}
+                $minSize={cell.column.columnDef.minSize}
+                $maxSize={cell.column.columnDef.maxSize}
               >
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </div>
+              </StyledCell>
             ))}
         </div>
       </div>

@@ -1,1 +1,2 @@
-export { default } from './components/List';
+export { default as List } from './components/List';
+export * from './types';
