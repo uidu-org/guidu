@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.6.18
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/avatar@0.9.15
+  - @uidu/dropdown-menu@0.6.23
+  - @uidu/theme@0.6.22
+  - @uidu/tooltip@0.5.23
+
 ## 2.6.17
 
 ### Patch Changes

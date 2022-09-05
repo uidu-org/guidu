@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.8.1
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/media-core@1.1.1
+
 ## 0.8.0
 
 ### Minor Changes

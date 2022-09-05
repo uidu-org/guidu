@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.7.17
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/avatar@0.9.15
+  - @uidu/slider@1.7.19
+  - @uidu/spinner@0.5.18
+  - @uidu/checkbox@2.0.3
+  - @uidu/field-password@2.0.4
+  - @uidu/field-phone@2.0.9
+  - @uidu/field-text@2.0.2
+  - @uidu/form@2.1.1
+  - @uidu/shell@2.1.29
+
 ## 0.7.16
 
 ### Patch Changes

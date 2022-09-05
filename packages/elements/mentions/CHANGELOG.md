@@ -1,5 +1,18 @@
 # @uidu/mentions
 
+## 0.4.21
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/avatar@0.9.15
+  - @uidu/button@1.3.28
+  - @uidu/lozenge@0.5.17
+  - @uidu/theme@0.6.22
+  - @uidu/tooltip@0.5.23
+
 ## 0.4.20
 
 ### Patch Changes

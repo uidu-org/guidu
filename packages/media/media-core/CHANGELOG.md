@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 1.1.1
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/docs@0.5.19
+
 ## 1.1.0
 
 ### Minor Changes

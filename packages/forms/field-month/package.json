@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-month",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Field Month Component",
   "keywords": [
     "react",
@@ -16,17 +16,17 @@
   "types": "dist/uidu-field-month.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.19.0",
-    "@uidu/field-base": "^4.0.0",
-    "@uidu/form": "^2.0.0",
-    "@uidu/theme": "^0.6.20",
+    "@uidu/field-base": "^4.0.7",
+    "@uidu/form": "^2.1.1",
+    "@uidu/theme": "^0.6.22",
     "classnames": "^2.3.1",
     "react": "^18.2.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "@uidu/button": "^1.3.25",
-    "@uidu/docs": "^0.5.18",
+    "@uidu/button": "^1.3.28",
+    "@uidu/docs": "^0.5.19",
     "react-dom": "^18.2.0"
   },
   "publishConfig": {

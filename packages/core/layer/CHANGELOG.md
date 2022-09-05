@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.5.17
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
 ## 0.5.16
 
 ### Patch Changes

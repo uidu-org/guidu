@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.9.14
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
 ## 0.9.13
 
 ### Patch Changes

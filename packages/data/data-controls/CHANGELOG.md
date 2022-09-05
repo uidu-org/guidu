@@ -1,5 +1,28 @@
 # @uidu/data-controls
 
+## 3.1.4
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/button@1.3.28
+  - @uidu/drawer@0.7.24
+  - @uidu/dropdown-menu@0.6.23
+  - @uidu/inline-dialog@0.5.22
+  - @uidu/menu@0.8.2
+  - @uidu/popup@0.7.3
+  - @uidu/spinner@0.5.18
+  - @uidu/tooltip@0.5.23
+  - @uidu/data-fields@2.1.3
+  - @uidu/data-manager@3.1.3
+  - @uidu/data-views@2.1.3
+  - @uidu/checkbox@2.0.3
+  - @uidu/field-text@2.0.2
+  - @uidu/form@2.1.1
+  - @uidu/select@2.0.5
+  - @uidu/shell@2.1.29
+
 ## 3.1.3
 
 ### Patch Changes

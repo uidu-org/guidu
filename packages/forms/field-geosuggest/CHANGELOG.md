@@ -1,5 +1,15 @@
 # @uidu/field-geosuggest
 
+## 2.0.4
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/menu@0.8.2
+  - @uidu/spinner@0.5.18
+  - @uidu/field-base@4.0.7
+
 ## 2.0.3
 
 ### Patch Changes

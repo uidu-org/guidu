@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.6.21
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/button@1.3.28
+
 ## 0.6.20
 
 ### Patch Changes

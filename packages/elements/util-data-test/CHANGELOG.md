@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.23
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/emoji@0.6.20
+  - @uidu/mentions@0.4.21
+  - @uidu/task-decision@0.4.26
+
 ## 0.4.22
 
 ### Patch Changes

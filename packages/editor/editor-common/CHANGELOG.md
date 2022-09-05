@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.7.21
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/theme@0.6.22
+  - @uidu/adf-schema@0.9.14
+  - @uidu/adf-utils@0.8.11
+  - @uidu/analytics-namespaced-context@0.4.17
+  - @uidu/emoji@0.6.20
+  - @uidu/mentions@0.4.21
+  - @uidu/profilecard@0.3.18
+
 ## 0.7.20
 
 ### Patch Changes

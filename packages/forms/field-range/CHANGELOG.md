@@ -1,5 +1,13 @@
 # @uidu/field-range
 
+## 2.0.2
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/field-base@4.0.7
+
 ## 2.0.1
 
 ### Patch Changes

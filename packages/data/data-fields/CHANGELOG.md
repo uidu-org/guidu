@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 2.1.3
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/button@1.3.28
+  - @uidu/map@0.6.19
+  - @uidu/menu@0.8.2
+  - @uidu/popup@0.7.3
+  - @uidu/field-color-picker@3.0.4
+  - @uidu/field-date@2.0.7
+  - @uidu/field-downshift@2.0.4
+  - @uidu/field-number@2.0.8
+  - @uidu/field-text@2.0.2
+  - @uidu/field-time@2.0.8
+  - @uidu/field-toggle@2.0.8
+  - @uidu/form@2.1.1
+  - @uidu/select@2.0.5
+
 ## 2.1.2
 
 ### Patch Changes

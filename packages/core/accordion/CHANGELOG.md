@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.17
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/docs@0.5.19
+
 ## 0.6.16
 
 ### Patch Changes

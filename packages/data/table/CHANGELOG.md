@@ -1,5 +1,21 @@
 # @uidu/table
 
+## 2.2.0
+
+### Minor Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
+### Patch Changes
+
+- Updated dependencies [37bf04997]
+  - @uidu/button@1.3.28
+  - @uidu/menu@0.8.2
+  - @uidu/popup@0.7.3
+  - @uidu/data-fields@2.1.3
+  - @uidu/data-manager@3.1.3
+  - @uidu/checkbox@2.0.3
+
 ## 2.1.2
 
 ### Patch Changes

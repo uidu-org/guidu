@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.4.25
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/message@0.5.42
+  - @uidu/message-form@0.4.25
+  - @uidu/message-renderer@0.4.21
+
 ## 0.4.24
 
 ### Patch Changes

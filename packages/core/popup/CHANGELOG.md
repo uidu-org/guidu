@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.7.3
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/popper@0.5.20
+  - @uidu/portal@0.5.22
+  - @uidu/theme@0.6.22
+
 ## 0.7.2
 
 ### Patch Changes

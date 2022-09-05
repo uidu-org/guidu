@@ -1,5 +1,18 @@
 # @uidu/onboarding
 
+## 1.3.11
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/button@1.3.28
+  - @uidu/modal-dialog@1.0.13
+  - @uidu/popper@0.5.20
+  - @uidu/portal@0.5.22
+  - @uidu/theme@0.6.22
+
 ## 1.3.10
 
 ### Patch Changes

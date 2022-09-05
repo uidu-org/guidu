@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.0.26
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/avatar@0.9.15
+  - @uidu/dropdown-menu@0.6.23
+  - @uidu/inline-dialog@0.5.22
+  - @uidu/menu@0.8.2
+  - @uidu/theme@0.6.22
+  - @uidu/tooltip@0.5.23
+  - @uidu/animated-menu@1.0.19
+  - @uidu/shell@2.1.29
+
 ## 1.0.25
 
 ### Patch Changes

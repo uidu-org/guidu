@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.5.8
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/theme@0.6.22
+  - @uidu/media-card@0.7.3
+  - @uidu/media-core@1.1.1
+  - @uidu/media-viewer@0.5.2
+
 ## 0.5.7
 
 ### Patch Changes

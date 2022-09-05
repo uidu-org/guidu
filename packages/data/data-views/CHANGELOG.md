@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 2.1.3
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/button@1.3.28
+  - @uidu/data-controls@3.1.4
+  - @uidu/data-manager@3.1.3
+  - @uidu/field-counter@2.0.2
+  - @uidu/field-number@2.0.8
+  - @uidu/form@2.1.1
+  - @uidu/select@2.0.5
+
 ## 2.1.2
 
 ### Patch Changes

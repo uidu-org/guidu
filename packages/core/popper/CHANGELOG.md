@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.20
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
 ## 0.5.19
 
 ### Patch Changes

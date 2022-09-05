@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.0.7
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/form@2.1.1
+
 ## 4.0.6
 
 ### Patch Changes

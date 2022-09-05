@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.3.20
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
 ## 0.3.19
 
 ### Patch Changes

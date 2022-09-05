@@ -1,5 +1,13 @@
 # @uidu/lozenge
 
+## 0.5.17
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/theme@0.6.22
+
 ## 0.5.16
 
 ### Patch Changes

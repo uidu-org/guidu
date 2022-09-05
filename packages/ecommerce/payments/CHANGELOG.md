@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 1.5.4
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/section-message@0.6.21
+  - @uidu/slider@1.7.19
+  - @uidu/theme@0.6.22
+  - @uidu/field-base@4.0.7
+  - @uidu/form@2.1.1
+
 ## 1.5.3
 
 ### Patch Changes

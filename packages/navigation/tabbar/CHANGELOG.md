@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.4.18
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/shell@2.1.29
+
 ## 0.4.17
 
 ### Patch Changes

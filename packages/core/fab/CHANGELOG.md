@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.5.18
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
 ## 0.5.17
 
 ### Patch Changes

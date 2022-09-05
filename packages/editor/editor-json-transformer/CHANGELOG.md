@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.7.14
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/adf-schema@0.9.14
+
 ## 0.7.13
 
 ### Patch Changes

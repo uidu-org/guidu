@@ -1,5 +1,18 @@
 # @uidu/field-image-uploader
 
+## 3.0.7
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/button@1.3.28
+  - @uidu/spinner@0.5.18
+  - @uidu/field-base@4.0.7
+  - @uidu/field-range@2.0.2
+  - @uidu/form@2.1.1
+  - @uidu/media-core@1.1.1
+
 ## 3.0.6
 
 ### Patch Changes

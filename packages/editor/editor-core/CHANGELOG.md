@@ -1,5 +1,42 @@
 # @uidu/editor-core
 
+## 0.15.16
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/avatar@0.9.15
+  - @uidu/avatar-group@2.6.18
+  - @uidu/button@1.3.28
+  - @uidu/droplist@0.5.23
+  - @uidu/menu@0.8.2
+  - @uidu/modal-dialog@1.0.13
+  - @uidu/spinner@0.5.18
+  - @uidu/theme@0.6.22
+  - @uidu/tooltip@0.5.23
+  - @uidu/adf-schema@0.9.14
+  - @uidu/adf-utils@0.8.11
+  - @uidu/editor-common@0.7.21
+  - @uidu/editor-json-transformer@0.7.14
+  - @uidu/editor-markdown-transformer@0.8.13
+  - @uidu/analytics-listeners@0.4.17
+  - @uidu/analytics-namespaced-context@0.4.17
+  - @uidu/date@0.4.21
+  - @uidu/emoji@0.6.20
+  - @uidu/mentions@0.4.21
+  - @uidu/profilecard@0.3.18
+  - @uidu/status@0.5.17
+  - @uidu/task-decision@0.4.26
+  - @uidu/field-date@2.0.7
+  - @uidu/form@2.1.1
+  - @uidu/select@2.0.5
+  - @uidu/media-card@0.7.3
+  - @uidu/media-core@1.1.1
+  - @uidu/media-filmstrip@0.5.8
+  - @uidu/media-picker@0.8.1
+
 ## 0.15.15
 
 ### Patch Changes

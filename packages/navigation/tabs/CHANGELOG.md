@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.3.19
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/docs@0.5.19
+  - @uidu/analytics@0.6.6
+  - @uidu/theme@0.6.22
+
 ## 0.3.18
 
 ### Patch Changes
