@@ -9,7 +9,7 @@
   "module": "dist/uidu-data-fields.esm.js",
   "types": "dist/uidu-data-fields.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.0",
     "@faker-js/faker": "^7.5.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",

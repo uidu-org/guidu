@@ -10,7 +10,7 @@
   "module": "dist/uidu-table.esm.js",
   "types": "dist/uidu-table.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.0",
     "@heroicons/react": "^2.0.10",
     "@tanstack/react-table": "^8.5.13",
     "@tanstack/react-virtual": "^3.0.0-beta.18",

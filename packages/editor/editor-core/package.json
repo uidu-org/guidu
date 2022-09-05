@@ -10,7 +10,7 @@
     "@atlaskit/icon": "^21.10.7",
     "@atlaskit/util-service-support": "^6.1.2",
     "@atlaskit/width-detector": "^4.0.2",
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.0",
     "@loadable/component": "^5.15.2",
     "@uidu/adf-schema": "^0.9.13",
     "@uidu/adf-utils": "^0.8.10",

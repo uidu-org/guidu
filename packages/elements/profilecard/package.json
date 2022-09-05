@@ -11,7 +11,7 @@
   "types": "dist/uidu-profilecard.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.10.7",
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.0",
     "@uidu/avatar": "^0.9.14",
     "@uidu/button": "^1.3.27",
     "@uidu/lozenge": "^0.5.16",

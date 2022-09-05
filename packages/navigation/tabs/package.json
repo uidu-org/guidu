@@ -7,7 +7,7 @@
   "author": "uidu",
   "main": "dist/uidu-tabs.cjs.js",
   "dependencies": {
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.0",
     "@uidu/analytics": "^0.6.5",
     "@uidu/docs": "^0.5.18",
     "@uidu/theme": "^0.6.18",

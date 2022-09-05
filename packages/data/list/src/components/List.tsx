@@ -1,10 +1,12 @@
 import { Row } from '@tanstack/react-table';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { StyledRow } from '../styled';
 import { ListProps } from '../types';
 import Header from './Header';
 import ItemSingle from './Item';
+import DefaultLoadingRow from './LoadingRow';
+import DefaultLoadingSkeleton from './LoadingSkeleton';
 
 export default function List<T>({
   rowHeight = 48,
@@ -12,18 +14,23 @@ export default function List<T>({
   tableInstance,
   onItemClick,
   virtualizerOptions,
+  loadingRow: LoadingRow = DefaultLoadingRow,
+  loadingSkeleton: LoadingSkeleton = DefaultLoadingSkeleton,
+  // pagination
+  pagination,
 }: ListProps<T>) {
   const parentRef = useRef();
 
   const { getHeaderGroups, getRowModel } = tableInstance;
+  const { loadNext, isLoadingNext, hasNext } = pagination || {};
 
   const headerGroups = getHeaderGroups();
   const { rows } = getRowModel();
 
   const rowVirtualizer = useVirtualizer({
-    count: rows.length,
+    count: hasNext ? rows.length + 1 : rows.length,
     getScrollElement: () => parentRef.current,
-    getItemKey: (index) => rows[index].original.id,
+    getItemKey: (index) => rows[index]?.original?.id,
     estimateSize: useCallback(() => rowHeight, [rowHeight]),
     overscan: 5,
     ...(virtualizerOptions || {}),
@@ -41,13 +48,11 @@ export default function List<T>({
     }) => {
       const row: Row<T> = rows[index];
 
-      // const isLoaderRow = index > rows.length - 1;
+      const isLoaderRow = hasNext && index > rows.length - 1;
 
-      // if (isLoaderRow) {
-      //   return (
-      //     <LoadingRow components={{ StyledRow }} start={start} size={size} />
-      //   );
-      // }
+      if (isLoaderRow) {
+        return null;
+      }
 
       return (
         <StyledRow $gutterSize={gutterSize} $size={size} $start={start}>
@@ -55,7 +60,7 @@ export default function List<T>({
         </StyledRow>
       );
     },
-    [rows, onItemClick, gutterSize],
+    [rows, onItemClick, gutterSize, hasNext],
   );
 
   // const primary = getPrimary(columns);
@@ -64,6 +69,23 @@ export default function List<T>({
 
   const totalSize = rowVirtualizer.getTotalSize();
   const virtualRows = rowVirtualizer.getVirtualItems();
+
+  useEffect(() => {
+    // This makes effect optional, if we passed in a loadNext function then it should trigger it when we scroll to the bottom
+    if (!loadNext) {
+      return;
+    }
+
+    const [lastItem] = [...virtualRows].reverse();
+
+    if (!lastItem) {
+      return;
+    }
+
+    if (lastItem.index >= rows.length - 1 && hasNext && !isLoadingNext) {
+      loadNext();
+    }
+  }, [loadNext, hasNext, rows.length, virtualRows, isLoadingNext]);
 
   return (
     <div tw="h-full">
@@ -76,6 +98,11 @@ export default function List<T>({
             minHeight: `calc(100% - ${rowHeight * 2 - 8 - 16}px)`,
           }}
         >
+          <LoadingSkeleton
+            rows={rows}
+            rowHeight={rowHeight}
+            gutterSize={gutterSize}
+          />
           {virtualRows.map(({ index, key, start, size }) => (
             <Item index={index} key={key} start={start} size={size} />
           ))}

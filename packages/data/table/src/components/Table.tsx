@@ -56,7 +56,7 @@ function Table<T extends { id: string }>({
     }) => {
       const row: RowType<T> = rows[index];
 
-      const isLoaderRow = index > rows.length - 1;
+      const isLoaderRow = hasNext && index > rows.length - 1;
 
       if (isLoaderRow) {
         return (
@@ -75,7 +75,7 @@ function Table<T extends { id: string }>({
         />
       );
     },
-    [rows, rowHeight, onItemClick, StyledRow, Td, LoadingRow],
+    [rows, rowHeight, onItemClick, StyledRow, Td, LoadingRow, hasNext],
   );
 
   const parentRef = useRef<HTMLDivElement>();

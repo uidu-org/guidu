@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import loadable from '@loadable/component';
 import { Row } from '@tanstack/react-table';
+import { OverrideableListProps } from '@uidu/list';
 import { ShellBodyWithSpinner } from '@uidu/shell';
 import { OverrideableTableProps } from '@uidu/table';
 import dayjs from 'dayjs';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Media from 'react-media';
 import DataCard from './DataCard';
 import { useDataManagerContext } from './DataManagerContext';
@@ -86,10 +87,13 @@ function DefaultEmptyState() {
   );
 }
 
-export interface DataManagerTableViewProps extends OverrideableTableProps {}
+export interface DataManagerTableViewProps<T>
+  extends OverrideableTableProps<T> {}
+export interface DataManagerListViewProps<T> extends OverrideableListProps<T> {}
 
-export type DataManagerViewProps = {
-  table: DataManagerTableViewProps;
+export type DataManagerViewProps<T> = {
+  list: DataManagerListViewProps<T>;
+  table: DataManagerTableViewProps<T>;
 };
 
 function DataManagerView<T>({
@@ -102,8 +106,8 @@ function DataManagerView<T>({
     board?: any;
     calendar?: any;
     gallery?: any;
-    list?: any;
-    table?: DataManagerTableViewProps;
+    list?: DataManagerListViewProps<T>;
+    table?: DataManagerTableViewProps<T>;
   };
   emptyState?: React.FC<any>;
 }) {
@@ -117,7 +121,13 @@ function DataManagerView<T>({
     setColumnWidth,
     pagination,
   } = useDataManagerContext<T>();
-  const renderResponsiveView = ({ mobileView, desktopView }) => (
+  const renderResponsiveView = ({
+    mobileView,
+    desktopView,
+  }: {
+    mobileView: ReactNode;
+    desktopView: ReactNode;
+  }) => (
     <Media query={{ maxWidth: 768 }}>
       {(matches) => {
         if (matches) {
@@ -254,6 +264,7 @@ function DataManagerView<T>({
               tableInstance={tableInstance}
               onItemClick={onItemClick}
               columnDefs={columns}
+              pagination={pagination}
             />
           )}
         </LoadableList>

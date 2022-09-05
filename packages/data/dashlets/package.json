@@ -11,7 +11,7 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.27",
     "@amcharts/amcharts4-geodata": "^4.1.23",
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.0",
     "@cubejs-client/core": "^0.30.60",
     "@cubejs-client/react": "^0.30.60",
     "@loadable/component": "^5.15.2",
@@ -23,7 +23,7 @@
     "@uidu/table": "2.1.2",
     "@uidu/tooltip": "^0.5.22",
     "d3-array": "^3.2.0",
-    "gql-query-builder": "^3.7.0",
+    "gql-query-builder": "^3.7.1",
     "lodash": "^4.17.21",
     "numeral": "^2.0.6",
     "react": "^18.2.0",

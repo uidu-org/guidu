@@ -10,7 +10,7 @@
   "module": "dist/uidu-editor-markdown-transformer.esm.js",
   "types": "dist/uidu-editor-markdown-transformer.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.0",
     "@uidu/adf-schema": "^0.9.13",
     "@uidu/editor-common": "^0.7.18",
     "markdown-it": "^13.0.1",

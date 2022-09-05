@@ -11,7 +11,7 @@
   "types": "dist/uidu-editor-common.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.10.7",
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.0",
     "@uidu/adf-schema": "^0.9.13",
     "@uidu/adf-utils": "^0.8.10",
     "@uidu/analytics": "^0.6.5",

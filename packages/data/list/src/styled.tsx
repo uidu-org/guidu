@@ -17,9 +17,11 @@ export const StyledRow = styled.div.attrs<{
 
 export const StyledItem = styled.div.attrs<{ $gutterSize: number }>(
   (props) => ({
-    minWidth: `calc(100% - ${props.$gutterSize * 2}px)`,
-    top: 0,
-    willChange: 'transform',
+    style: {
+      minWidth: `calc(100% - ${props.$gutterSize * 2}px)`,
+      top: 0,
+      willChange: 'transform',
+    },
   }),
 )`
   font-size: 0.95rem;
@@ -31,9 +33,11 @@ export const StyledCell = styled.div.attrs<{
   $minSize: number;
   $maxSize: number;
 }>((props) => ({
-  width: props.$size || '150px',
-  minWidth: props.$minSize || 'auto',
-  maxWidth: props.$maxSize || 'auto',
+  style: {
+    width: props.$size ? `${props.$size}px` : '150px',
+    minWidth: props.$minSize ? `${props.$minSize}px` : 'auto',
+    maxWidth: props.$maxSize ? `${props.$maxSize}px` : 'auto',
+  },
 }))`
   ${tw`flex px-4 truncate`}
 `;
