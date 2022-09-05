@@ -1,37 +1,37 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable react/jsx-props-no-spreading */
 
-import {
-  flexRender,
-  Row as RowType,
-  Table as TableType,
-} from '@tanstack/react-table';
-import { useVirtualizer, VirtualizerOptions } from '@tanstack/react-virtual';
-import React, { useCallback } from 'react';
+import { flexRender, Row as RowType } from '@tanstack/react-table';
+import { useVirtualizer } from '@tanstack/react-virtual';
+import React, { useCallback, useEffect, useRef } from 'react';
 import * as defaultComponents from '../styled';
+import { TableProps } from '../types';
 import { getComponents } from '../utils';
 import Footer from './Footer';
+import DefaultLoadingRow from './LoadingRow';
+import DefaultLoadingSkeleton from './LoadingSkeleton';
 import Resizer from './Resizer';
 import RowSingle from './Row';
 
-function Table<T extends object>({
+const defaultOverrides = {};
+
+function Table<T extends { id: string }>({
+  // overrideable props
   includeFooter = true,
   rowHeight = 32,
   headerHeight = 48,
+  virtualizerOptions,
+  loadingRow: LoadingRow = DefaultLoadingRow,
+  loadingSkeleton: LoadingSkeleton = DefaultLoadingSkeleton,
+  //
   tableInstance,
   onItemClick,
-  overrides = {},
-  virtualizerOptions,
-}: {
-  includeFooter?: boolean;
-  rowHeight?: number;
-  headerHeight?: number;
-  tableInstance: TableType<T>;
-  onItemClick: (row: T) => void;
-  overrides?: Record<string, any>;
-  virtualizerOptions?: Partial<VirtualizerOptions>;
-}) {
+  overrides = defaultOverrides,
+  // pagination
+  pagination,
+}: TableProps<T>) {
   const { getHeaderGroups, getFooterGroups, getRowModel } = tableInstance;
+  const { loadNext, isLoadingNext, hasNext } = pagination || {};
 
   const headerGroups = getHeaderGroups();
   const footerGroups = getFooterGroups();
@@ -56,6 +56,14 @@ function Table<T extends object>({
     }) => {
       const row: RowType<T> = rows[index];
 
+      const isLoaderRow = hasNext && index > rows.length - 1;
+
+      if (isLoaderRow) {
+        return (
+          <LoadingRow components={{ StyledRow }} start={start} size={size} />
+        );
+      }
+
       return (
         <RowSingle<T>
           row={row}
@@ -67,22 +75,39 @@ function Table<T extends object>({
         />
       );
     },
-    [rows, rowHeight, onItemClick, StyledRow, Td],
+    [rows, rowHeight, onItemClick, StyledRow, Td, LoadingRow, hasNext],
   );
 
-  const parentRef = React.useRef<HTMLDivElement>();
+  const parentRef = useRef<HTMLDivElement>();
 
   const rowVirtualizer = useVirtualizer({
-    count: rows.length,
+    count: hasNext ? rows.length + 1 : rows.length,
     getScrollElement: () => parentRef.current,
     overscan: 10,
     estimateSize: () => rowHeight,
-    getItemKey: (index) => rows[index].original.id,
+    getItemKey: (index) => rows[index]?.original?.id,
     ...(virtualizerOptions || {}),
   });
 
   const virtualRows = rowVirtualizer.getVirtualItems();
   const totalSize = rowVirtualizer.getTotalSize();
+
+  useEffect(() => {
+    // This makes effect optional, if we passed in a loadNext function then it should trigger it when we scroll to the bottom
+    if (!loadNext) {
+      return;
+    }
+
+    const [lastItem] = [...virtualRows].reverse();
+
+    if (!lastItem) {
+      return;
+    }
+
+    if (lastItem.index >= rows.length - 1 && hasNext && !isLoadingNext) {
+      loadNext();
+    }
+  }, [loadNext, hasNext, rows.length, virtualRows, isLoadingNext]);
 
   const paddingTop = virtualRows.length > 0 ? virtualRows?.[0]?.start || 0 : 0;
   const paddingBottom =
@@ -137,17 +162,7 @@ function Table<T extends object>({
           })}
         </div>
         <Body height={totalSize} verticalPadding={rowHeight * 2 - 8 - 16}>
-          {/* <div tw="absolute z-09 top-0 left-0 right-0 bottom-0">
-            {rows.map((row) => (
-              <div
-                key={`fake-${row.original.id}`}
-                style={{ height: rowHeight }}
-                tw="border-b border-opacity-50 p-4"
-              >
-                <div tw="bg-gray-50 w-full h-full rounded" />
-              </div>
-            ))}
-          </div> */}
+          <LoadingSkeleton rows={rows} rowHeight={rowHeight} />
           {/* {paddingTop > 0 && <div style={{ height: `${paddingTop}px` }} />} */}
           {virtualRows.map(({ size, start, index, key }) => (
             <Row key={key} size={size} start={start} index={index} />

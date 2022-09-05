@@ -350,7 +350,7 @@ export const availableColumns: ColumnDef<unknown>[] = [
   // },
 ];
 
-export const fetchContacts = () => {
+export const fetchContacts = (timeout = 300) => {
   return new Promise((resolve, reject) => {
     let wait = setTimeout(() => {
       clearTimeout(wait);
@@ -392,6 +392,6 @@ export const fetchContacts = () => {
           progress: Math.random(),
         })),
       );
-    }, 300);
+    }, timeout);
   });
 };

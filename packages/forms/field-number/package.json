@@ -15,11 +15,11 @@
   "module": "dist/uidu-field-number.esm.js",
   "types": "dist/uidu-field-number.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.0",
     "@uidu/field-base": "4.0.6",
     "@uidu/field-text": "^2.0.1",
     "@uidu/form": "^2.1.0",
-    "react-number-format": "^4.9.3",
+    "react-number-format": "^4.9.4",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

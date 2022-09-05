@@ -1,6 +1,6 @@
 import loadable from '@loadable/component';
 import React, { Component } from 'react';
-import 'react-day-picker/lib/style.css';
+import 'react-day-picker/dist/style.css';
 
 const DayPicker = (loadable as any).lib(() => import('react-day-picker'));
 

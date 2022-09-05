@@ -8,7 +8,7 @@ import {
   ShellMain,
 } from '@uidu/shell';
 import React, { useState } from 'react';
-import 'react-day-picker/lib/style.css';
+import 'react-day-picker/dist/style.css';
 import { IntlProvider } from 'react-intl';
 import { columnDefsNext } from '../../table/examples-utils';
 import { dashlets } from '../examples-utils';

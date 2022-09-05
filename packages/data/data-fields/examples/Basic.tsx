@@ -10,7 +10,9 @@ import {
 import React, { Suspense, useCallback, useEffect, useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import { HashRouter, Route, Switch, useParams } from 'react-router-dom';
-import { formDefaultProps } from '../../../forms/form/examples-utils';
+import useDefaultForm, {
+  formDefaultProps,
+} from '../../../forms/form/examples-utils';
 import fields, { Field } from '../src';
 
 function CurrentField({ fields }) {
@@ -37,6 +39,8 @@ function CurrentField({ fields }) {
     setIsLoadingMocks(true);
     fetchMocks();
   }, [fetchMocks]);
+
+  const defaultForm = useDefaultForm();
 
   if (isLoadingMocks) {
     return null;
@@ -75,7 +79,7 @@ function CurrentField({ fields }) {
               </div>
               <div tw="p-4">
                 {Filter ? (
-                  <Form {...formDefaultProps}>
+                  <Form {...defaultForm}>
                     <div tw="mb-4">
                       <Filter
                         columnDef={{
@@ -139,7 +143,7 @@ function CurrentField({ fields }) {
   );
 }
 
-function Basic({}) {
+function Basic() {
   return (
     <>
       <style>

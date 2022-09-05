@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-
 import loadable from '@loadable/component';
 import { Row } from '@tanstack/react-table';
+import { OverrideableListProps } from '@uidu/list';
 import { ShellBodyWithSpinner } from '@uidu/shell';
+import { OverrideableTableProps } from '@uidu/table';
 import dayjs from 'dayjs';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Media from 'react-media';
 import DataCard from './DataCard';
 import { useDataManagerContext } from './DataManagerContext';
@@ -86,8 +87,13 @@ function DefaultEmptyState() {
   );
 }
 
-export type DataManagerViewProps = {
-  table: any;
+export interface DataManagerTableViewProps<T>
+  extends OverrideableTableProps<T> {}
+export interface DataManagerListViewProps<T> extends OverrideableListProps<T> {}
+
+export type DataManagerViewProps<T> = {
+  list: DataManagerListViewProps<T>;
+  table: DataManagerTableViewProps<T>;
 };
 
 function DataManagerView<T>({
@@ -96,12 +102,12 @@ function DataManagerView<T>({
   emptyState: EmptyState = DefaultEmptyState,
 }: {
   onItemClick?: (item: Row<T>) => void;
-  viewProps: {
+  viewProps?: {
     board?: any;
     calendar?: any;
     gallery?: any;
-    list?: any;
-    table?: any;
+    list?: DataManagerListViewProps<T>;
+    table?: DataManagerTableViewProps<T>;
   };
   emptyState?: React.FC<any>;
 }) {
@@ -113,8 +119,15 @@ function DataManagerView<T>({
     columnCount,
     setAggregation,
     setColumnWidth,
-  } = useDataManagerContext();
-  const renderResponsiveView = ({ mobileView, desktopView }) => (
+    pagination,
+  } = useDataManagerContext<T>();
+  const renderResponsiveView = ({
+    mobileView,
+    desktopView,
+  }: {
+    mobileView: ReactNode;
+    desktopView: ReactNode;
+  }) => (
     <Media query={{ maxWidth: 768 }}>
       {(matches) => {
         if (matches) {
@@ -251,6 +264,7 @@ function DataManagerView<T>({
               tableInstance={tableInstance}
               onItemClick={onItemClick}
               columnDefs={columns}
+              pagination={pagination}
             />
           )}
         </LoadableList>
@@ -270,6 +284,7 @@ function DataManagerView<T>({
                 onItemClick={onItemClick}
                 columnDefs={columns}
                 rowData={rowData}
+                pagination={pagination}
                 // onSortChanged={onSortChanged}
                 // onFilterChanged={onFilterChanged}
                 // onColumnRowGroupChanged={onColumnRowGroupChanged}

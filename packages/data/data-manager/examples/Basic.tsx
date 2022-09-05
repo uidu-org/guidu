@@ -5,7 +5,7 @@ import DropdownMenu, {
   DropdownItem,
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
-import Form from '@uidu/form';
+import Form, { useForm } from '@uidu/form';
 import { ButtonItem } from '@uidu/menu';
 import Select from '@uidu/select';
 import {
@@ -17,7 +17,6 @@ import {
 } from '@uidu/shell';
 import Navigation from '@uidu/side-navigation';
 import { isEqual } from 'lodash';
-import Papa from 'papaparse';
 import React, {
   useCallback,
   useEffect,
@@ -39,59 +38,6 @@ import { availableColumns, fetchContacts } from '../../table/examples-utils';
 import '../../table/themes/uidu.scss';
 import { defaultDataViews } from '../examples-utils';
 
-function getExportFileBlob({ columns, data, fileType, fileName }) {
-  if (fileType === 'csv') {
-    // CSV example
-    const headerNames = columns.map((col) => col.exportValue);
-    const csvString = Papa.unparse({ fields: headerNames, data });
-    return new Blob([csvString], { type: 'text/csv' });
-  }
-  //  else if (fileType === 'xlsx') {
-  //   // XLSX example
-
-  //   const header = columns.map((c) => c.exportValue);
-  //   const compatibleData = data.map((row) => {
-  //     const obj = {};
-  //     header.forEach((col, index) => {
-  //       obj[col] = row[index];
-  //     });
-  //     return obj;
-  //   });
-
-  //   let wb = XLSX.utils.book_new();
-  //   let ws1 = XLSX.utils.json_to_sheet(compatibleData, {
-  //     header,
-  //   });
-  //   XLSX.utils.book_append_sheet(wb, ws1, 'React Table Data');
-  //   XLSX.writeFile(wb, `${fileName}.xlsx`);
-
-  //   // Returning false as downloading of file is already taken care of
-  //   return false;
-  // }
-  // //PDF example
-  // if (fileType === 'pdf') {
-  //   const headerNames = columns.map((column) => column.exportValue);
-  //   const doc = new JsPDF();
-  //   doc.autoTable({
-  //     head: [headerNames],
-  //     body: data,
-  //     margin: { top: 20 },
-  //     styles: {
-  //       minCellHeight: 9,
-  //       halign: 'left',
-  //       valign: 'center',
-  //       fontSize: 11,
-  //     },
-  //   });
-  //   doc.save(`${fileName}.pdf`);
-
-  //   return false;
-  // }
-
-  // Other formats goes here
-  return false;
-}
-
 export default function Basic({}) {
   const tableInstance = useRef(null);
   const [dataViews, setDataViews] = useState(defaultDataViews);
@@ -100,6 +46,9 @@ export default function Basic({}) {
   const [loaded, setLoaded] = useState(false);
   const [rendered, setRendered] = useState(false);
   const [isAutoSaving, setIsAutoSaving] = useState(null);
+  const [isLoadingNext, setIsLoadingNext] = useState(false);
+
+  const form = useForm({});
 
   const toggleView = (view) => {
     if (view.id !== currentView.id) {
@@ -125,6 +74,14 @@ export default function Basic({}) {
       setRowData(response);
     });
   }, []);
+
+  const loadNext = () => {
+    setIsLoadingNext(true);
+    fetchContacts(3000).then((response) => {
+      setIsLoadingNext(false);
+      setRowData((prev) => [...prev, ...response]);
+    });
+  };
 
   const onViewUpdate = async (name, value) => {
     console.log(name, value);
@@ -161,6 +118,12 @@ export default function Basic({}) {
         <DataManager
           forwardedRef={tableInstance}
           // query={query}
+          pagination={{
+            hasNext: true,
+            isLoadingNext,
+            loadNext,
+          }}
+          actions={() => []}
           actions={(row: any) => {
             return [
               {
@@ -217,7 +180,6 @@ export default function Basic({}) {
           rowData={data}
           currentView={currentView}
           updateView={onViewUpdate}
-          getExportFileBlob={getExportFileBlob}
         >
           <>
             <ShellSidebar tw="w-80 border-r">
@@ -320,18 +282,16 @@ export default function Basic({}) {
               {!loaded ? (
                 <ShellBodyWithSpinner />
               ) : (
-                <>
-                  <ShellBody>
-                    {!loaded ? (
-                      <ShellBodyWithSpinner />
-                    ) : (
-                      <>
-                        <ShellMain>
-                          <ShellHeader
-                            tw="px-4 bg-white border-b"
-                            style={{ zIndex: 30 }}
-                          >
-                            {/* <input
+                <ShellBody>
+                  {!loaded ? (
+                    <ShellBodyWithSpinner />
+                  ) : (
+                    <ShellMain>
+                      <ShellHeader
+                        tw="px-4 bg-white border-b"
+                        style={{ zIndex: 30 }}
+                      >
+                        {/* <input
                                   type="search"
                                   className="mr-2 form-control"
                                   placeholder="Search"
@@ -341,7 +301,7 @@ export default function Basic({}) {
                                     )
                                   }
                                 /> */}
-                            {/* <button
+                        {/* <button
                                   onClick={() => {
                                     tableInstance.current.exportData(
                                       'csv',
@@ -351,80 +311,78 @@ export default function Basic({}) {
                                 >
                                   Export All as CSV
                                 </button> */}
-                            <div style={{ width: 300, flexShrink: 0 }}>
-                              <Form>
-                                <Select
-                                  layout="elementOnly"
-                                  name="dataView"
-                                  isClearable={false}
-                                  value={currentView.id}
-                                  options={dataViews.map((dataView) => {
-                                    const d = byName[dataView.kind];
-                                    const { icon: Icon, color } = d;
-                                    return {
-                                      id: dataView.id,
-                                      name: dataView.name,
-                                      before: (
-                                        <div
-                                          style={{ background: color }}
-                                          tw="p-0.5 rounded flex items-center justify-center flex-grow"
-                                        >
-                                          <Icon size={12} color="#fff" />
-                                        </div>
-                                      ),
-                                      ...dataView,
-                                    };
-                                  })}
-                                  onChange={(name, value, { option }) => {
-                                    toggleView(option);
-                                  }}
-                                />
-                              </Form>
-                            </div>
-                            <More />
-                            <DataManagerControls />
-                          </ShellHeader>
-                          <ShellBody>
-                            <ShellMain>
-                              <DataManagerView
-                                onItemClick={(p) => console.log(p)}
-                                viewProps={{
-                                  gallery: {
-                                    gutterSize: 24,
+                        <div style={{ width: 300, flexShrink: 0 }}>
+                          <Form form={form}>
+                            <Select
+                              layout="elementOnly"
+                              name="dataView"
+                              isClearable={false}
+                              value={currentView.id}
+                              options={dataViews.map((dataView) => {
+                                const d = byName[dataView.kind];
+                                const { icon: Icon, color } = d;
+                                return {
+                                  id: dataView.id,
+                                  name: dataView.name,
+                                  before: (
+                                    <div
+                                      style={{ background: color }}
+                                      tw="p-0.5 rounded flex items-center justify-center flex-grow"
+                                    >
+                                      <Icon size={12} color="#fff" />
+                                    </div>
+                                  ),
+                                  ...dataView,
+                                };
+                              })}
+                              onChange={(name, value, { option }) => {
+                                toggleView(option);
+                              }}
+                            />
+                          </Form>
+                        </div>
+                        <More />
+                        <DataManagerControls />
+                      </ShellHeader>
+                      <ShellBody>
+                        <ShellMain>
+                          <DataManagerView
+                            onItemClick={(p) => console.log(p)}
+                            viewProps={{
+                              gallery: {
+                                gutterSize: 24,
+                              },
+                              list: {
+                                rowHeight: 104,
+                              },
+                              calendar: {
+                                components: {
+                                  event: (props) => (
+                                    <div tw="bg-red-500 my-0.5">Ciao</div>
+                                  ),
+                                  month: {
+                                    event: (props) => (
+                                      <div tw="bg-red-500 my-0.5">
+                                        {props.title}
+                                      </div>
+                                    ),
                                   },
-                                  list: {
-                                    rowHeight: 104,
-                                  },
-                                  calendar: {
-                                    components: {
-                                      event: (props) => (
-                                        <div tw="bg-red-500 my-0.5">Ciao</div>
-                                      ),
-                                      month: {
-                                        event: (props) => (
-                                          <div tw="bg-red-500 my-0.5">
-                                            {props.title}
-                                          </div>
-                                        ),
-                                      },
-                                    },
-                                  },
-                                  board: {},
-                                  table: {
-                                    includeFooter: false,
-                                    headerHeight: 48,
-                                    rowHeight: 48,
-                                  },
-                                }}
-                              />
-                            </ShellMain>
-                          </ShellBody>
-                          <DataManagerFooter />
+                                },
+                              },
+                              board: {},
+                              table: {
+                                includeFooter: false,
+                                headerHeight: 48,
+                                rowHeight: 48,
+                              },
+                            }}
+                          />
                         </ShellMain>
-                      </>
-                    )}
-                  </ShellBody>
-                </>
+                      </ShellBody>
+                      <DataManagerFooter />
+                    </ShellMain>
+                  )}
+                </ShellBody>
               )}
             </ShellMain>
           </>

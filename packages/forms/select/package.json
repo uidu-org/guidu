@@ -10,7 +10,7 @@
   "module": "dist/uidu-select.esm.js",
   "types": "dist/uidu-select.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.0",
     "@heroicons/react": "^2.0.10",
     "@uidu/field-base": "^4.0.4",
     "@uidu/menu": "0.8.1",

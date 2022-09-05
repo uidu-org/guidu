@@ -1,8 +1,12 @@
-import { Row, Table } from '@tanstack/react-table';
-import { useVirtualizer, VirtualizerOptions } from '@tanstack/react-virtual';
-import React, { useCallback, useRef } from 'react';
+import { Row } from '@tanstack/react-table';
+import { useVirtualizer } from '@tanstack/react-virtual';
+import React, { useCallback, useEffect, useRef } from 'react';
+import { StyledRow } from '../styled';
+import { ListProps } from '../types';
 import Header from './Header';
-import Item from './Item';
+import ItemSingle from './Item';
+import DefaultLoadingRow from './LoadingRow';
+import DefaultLoadingSkeleton from './LoadingSkeleton';
 
 export default function List<T>({
   rowHeight = 48,
@@ -10,28 +14,54 @@ export default function List<T>({
   tableInstance,
   onItemClick,
   virtualizerOptions,
-}: {
-  rowHeight: number;
-  gutterSize: number;
-  tableInstance: Table<T>;
-  onItemClick: (item: Row<T>) => void;
-  virtualizerOptions?: Partial<VirtualizerOptions>;
-}) {
+  loadingRow: LoadingRow = DefaultLoadingRow,
+  loadingSkeleton: LoadingSkeleton = DefaultLoadingSkeleton,
+  // pagination
+  pagination,
+}: ListProps<T>) {
   const parentRef = useRef();
 
   const { getHeaderGroups, getRowModel } = tableInstance;
+  const { loadNext, isLoadingNext, hasNext } = pagination || {};
 
   const headerGroups = getHeaderGroups();
   const { rows } = getRowModel();
 
   const rowVirtualizer = useVirtualizer({
-    count: rows.length,
+    count: hasNext ? rows.length + 1 : rows.length,
     getScrollElement: () => parentRef.current,
-    getItemKey: (index) => rows[index].original.id,
+    getItemKey: (index) => rows[index]?.original?.id,
     estimateSize: useCallback(() => rowHeight, [rowHeight]),
     overscan: 5,
     ...(virtualizerOptions || {}),
   });
+
+  const Item = useCallback(
+    ({
+      index,
+      size,
+      start,
+    }: {
+      index: number;
+      size: number;
+      start: number;
+    }) => {
+      const row: Row<T> = rows[index];
+
+      const isLoaderRow = hasNext && index > rows.length - 1;
+
+      if (isLoaderRow) {
+        return null;
+      }
+
+      return (
+        <StyledRow $gutterSize={gutterSize} $size={size} $start={start}>
+          <ItemSingle row={row} onItemClick={onItemClick} />
+        </StyledRow>
+      );
+    },
+    [rows, onItemClick, gutterSize, hasNext],
+  );
 
   // const primary = getPrimary(columns);
   // const cover = getCover(columns);
@@ -39,6 +69,23 @@ export default function List<T>({
 
   const totalSize = rowVirtualizer.getTotalSize();
   const virtualRows = rowVirtualizer.getVirtualItems();
+
+  useEffect(() => {
+    // This makes effect optional, if we passed in a loadNext function then it should trigger it when we scroll to the bottom
+    if (!loadNext) {
+      return;
+    }
+
+    const [lastItem] = [...virtualRows].reverse();
+
+    if (!lastItem) {
+      return;
+    }
+
+    if (lastItem.index >= rows.length - 1 && hasNext && !isLoadingNext) {
+      loadNext();
+    }
+  }, [loadNext, hasNext, rows.length, virtualRows, isLoadingNext]);
 
   return (
     <div tw="h-full">
@@ -51,23 +98,14 @@ export default function List<T>({
             minHeight: `calc(100% - ${rowHeight * 2 - 8 - 16}px)`,
           }}
         >
-          {virtualRows.map((virtualRow) => {
-            const row = rows[virtualRow.index];
-            return (
-              <div
-                key={virtualRow.index}
-                tw="border rounded absolute top-0 left-0 flex"
-                style={{
-                  background: 'white',
-                  margin: `${gutterSize}px 0`,
-                  height: `${virtualRow.size - gutterSize}px`,
-                  transform: `translateY(${virtualRow.start}px)`,
-                }}
-              >
-                <Item row={row} onItemClick={onItemClick} />
-              </div>
-            );
-          })}
+          <LoadingSkeleton
+            rows={rows}
+            rowHeight={rowHeight}
+            gutterSize={gutterSize}
+          />
+          {virtualRows.map(({ index, key, start, size }) => (
+            <Item index={index} key={key} start={start} size={size} />
+          ))}
         </div>
       </div>
     </div>

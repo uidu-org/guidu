@@ -1,17 +1,17 @@
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import Button from '@uidu/button';
 import { useDataManagerContext } from '@uidu/data-manager';
-import Form from '@uidu/form';
+import Form, { useForm } from '@uidu/form';
 import { MenuGroup, Section } from '@uidu/menu';
 import Select from '@uidu/select';
-import React, { Fragment, useRef } from 'react';
+import React, { Fragment } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { PickField } from '../../utils';
 import ColumnsList from '../../utils/ColumnsList';
 import { GrouperFormProps } from './types';
 
 export default function GrouperForm({ closePopup }: GrouperFormProps) {
-  const form = useRef(null);
+  const form = useForm({ mode: 'all' });
   const intl = useIntl();
   const {
     tableInstance: { setGrouping, getState, getAllFlatColumns },
@@ -44,7 +44,7 @@ export default function GrouperForm({ closePopup }: GrouperFormProps) {
 
   return (
     <div tw="py-4">
-      <Form ref={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
+      <Form form={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
         <div tw="space-y-4">
           <div tw="grid grid-template-columns[max-content 1fr min-content] gap-4 px-4">
             {grouping.map((grouper, index: number) => (
@@ -86,7 +86,7 @@ export default function GrouperForm({ closePopup }: GrouperFormProps) {
                   }))}
                   onChange={(name, value, { option }) => {
                     setTimeout(() => {
-                      (form.current as any).submit();
+                      form.handleSubmit(console.log, console.error);
                     }, 30);
                   }}
                 />

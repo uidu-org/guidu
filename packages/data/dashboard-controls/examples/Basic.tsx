@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'react-day-picker/lib/style.css';
+import 'react-day-picker/dist/style.css';
 import { More } from '../src';
 
 export default class Basic extends Component<any> {

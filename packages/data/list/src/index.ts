@@ -1,1 +1,5 @@
-export { default } from './components/List';
+import List from './components/List';
+
+export * from './types';
+
+export default List;

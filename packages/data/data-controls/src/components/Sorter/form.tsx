@@ -1,10 +1,10 @@
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import Button from '@uidu/button';
 import { useDataManagerContext } from '@uidu/data-manager';
-import Form from '@uidu/form';
+import Form, { useForm, useWatch } from '@uidu/form';
 import { MenuGroup, Section } from '@uidu/menu';
 import Select, { OptionProps, SingleValueProps } from '@uidu/select';
-import React, { Fragment, useRef } from 'react';
+import React, { Fragment, useCallback, useEffect } from 'react';
 import { ArrowDown, ArrowRight, ArrowUp } from 'react-feather';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { PickField } from '../../utils';
@@ -54,7 +54,7 @@ function SingleValue({
 
 export default function SorterForm({ closePopup }: SorterFormProps) {
   const intl = useIntl();
-  const form = useRef(null);
+
   const {
     tableInstance: { getState, setSorting, getAllFlatColumns },
   } = useDataManagerContext();
@@ -62,9 +62,37 @@ export default function SorterForm({ closePopup }: SorterFormProps) {
   const { sorting } = getState();
   const columns = getAllFlatColumns();
 
-  const handleSubmit = async (model) => {
-    setSorting(model.sorters || []);
-  };
+  const handleSubmit = useCallback(
+    async (model) => {
+      setSorting(model.sorters || []);
+    },
+    [setSorting],
+  );
+
+  const form = useForm({ mode: 'all' });
+  const { control, formState, reset } = form;
+
+  useEffect(() => {
+    reset({ sorters: sorting });
+  }, [reset, sorting, formState.isSubmitSuccessful]);
+
+  const watchedData = useWatch({
+    control,
+    defaultValue: sorting,
+  });
+
+  useEffect(() => {
+    async function update() {
+      const temp = JSON.stringify(watchedData);
+      const copiedValues = JSON.parse(temp);
+      if (formState.isDirty) {
+        return handleSubmit(copiedValues);
+      }
+      // eslint-disable-next-line compat/compat
+      return Promise.resolve();
+    }
+    update();
+  }, [watchedData, handleSubmit, formState.isDirty]);
 
   const sortableColumns = columns.filter((column) => column.getCanSort()); //.filter((c) => c.isVisible && c.canSortBy);
 
@@ -97,7 +125,7 @@ export default function SorterForm({ closePopup }: SorterFormProps) {
 
   return (
     <div tw="py-4">
-      <Form ref={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
+      <Form form={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
         <div tw="space-y-4">
           {sorting?.length > 0 && (
             <div tw="grid grid-template-columns[max-content 1fr min-content] gap-4 px-4">
@@ -132,7 +160,7 @@ export default function SorterForm({ closePopup }: SorterFormProps) {
                         components={{
                           DropdownIndicator: () => null,
                         }}
-                        name={`sorters[${index}][id]`}
+                        name={`sorters.${index}.id`}
                         value={sorter.id}
                         options={sortableColumns.map((column) => ({
                           id: column.id,
@@ -143,11 +171,6 @@ export default function SorterForm({ closePopup }: SorterFormProps) {
                               }
                             : {}),
                         }))}
-                        onChange={() => {
-                          setTimeout(() => {
-                            (form.current as any).submit();
-                          }, 30);
-                        }}
                       />
                     </div>
                     <div>
@@ -164,7 +187,7 @@ export default function SorterForm({ closePopup }: SorterFormProps) {
                           Option,
                           SingleValue,
                         }}
-                        name={`sorters[${index}][desc]`}
+                        name={`sorters.${index}.desc`}
                         value={sorter.desc}
                         options={[
                           {
@@ -190,11 +213,11 @@ export default function SorterForm({ closePopup }: SorterFormProps) {
                             before: <ArrowUp size={16} />,
                           },
                         ]}
-                        onChange={(name, value, { option }) => {
-                          setTimeout(() => {
-                            (form.current as any).submit();
-                          }, 30);
-                        }}
+                        // onChange={(name, value, { option }) => {
+                        //   setTimeout(() => {
+                        //     return handleSubmit(form.getValues());
+                        //   }, 30);
+                        // }}
                       />
                     </div>
                   </div>

@@ -1,7 +1,7 @@
 import cubejs from '@cubejs-client/core';
 import { CubeProvider } from '@cubejs-client/react';
 import { More } from '@uidu/data-controls';
-import Form from '@uidu/form';
+import Form, { useForm } from '@uidu/form';
 import Select from '@uidu/select';
 import { ShellBody, ShellHeader, ShellMain } from '@uidu/shell';
 import { isEqual } from 'lodash';
@@ -157,6 +157,8 @@ function CubeExample() {
   const [rendered, setRendered] = useState(false);
   const [isAutoSaving, setIsAutoSaving] = useState(null);
 
+  const form = useForm({});
+
   const toggleView = (view) => {
     if (view.id !== currentView.id) {
       setRendered(false);
@@ -219,7 +221,7 @@ function CubeExample() {
               <ShellMain>
                 <ShellHeader tw="border-b px-3" style={{ zIndex: 30 }}>
                   <div style={{ width: 300 }}>
-                    <Form>
+                    <Form form={form}>
                       <Select
                         layout="elementOnly"
                         name="dataView"
