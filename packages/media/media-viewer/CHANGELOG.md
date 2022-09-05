@@ -1,5 +1,18 @@
 # @uidu/media-viewer
 
+## 0.5.2
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/avatar@0.9.15
+  - @uidu/button@1.3.28
+  - @uidu/spinner@0.5.18
+  - @uidu/theme@0.6.22
+  - @uidu/media-core@1.1.1
+  - @uidu/shell@2.1.29
+
 ## 0.5.1
 
 ### Patch Changes

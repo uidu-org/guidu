@@ -1,5 +1,15 @@
 # @uidu/inline-dialog
 
+## 0.5.22
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/popper@0.5.20
+  - @uidu/theme@0.6.22
+
 ## 0.5.21
 
 ### Patch Changes

@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 3.1.3
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/list@2.1.0
+  - @uidu/table@2.2.0
+  - @uidu/button@1.3.28
+  - @uidu/menu@0.8.2
+  - @uidu/pagination@0.5.21
+  - @uidu/spinner@0.5.18
+  - @uidu/board@1.0.3
+  - @uidu/calendar@0.4.17
+  - @uidu/data-controls@3.1.4
+  - @uidu/data-fields@2.1.3
+  - @uidu/data-views@2.1.3
+  - @uidu/gallery@2.0.4
+  - @uidu/shell@2.1.29
+
 ## 3.1.2
 
 ### Patch Changes

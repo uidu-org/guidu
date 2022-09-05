@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.8.19
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/code@0.5.18
+  - @uidu/theme@0.6.22
+  - @uidu/tooltip@0.5.23
+  - @uidu/adf-schema@0.9.14
+  - @uidu/adf-utils@0.8.11
+  - @uidu/editor-common@0.7.21
+  - @uidu/editor-json-transformer@0.7.14
+  - @uidu/analytics-listeners@0.4.17
+  - @uidu/analytics-namespaced-context@0.4.17
+  - @uidu/mentions@0.4.21
+  - @uidu/status@0.5.17
+  - @uidu/task-decision@0.4.26
+  - @uidu/media-card@0.7.3
+  - @uidu/media-filmstrip@0.5.8
+
 ## 0.8.18
 
 ### Patch Changes

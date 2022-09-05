@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.5.23
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/item@0.5.20
+  - @uidu/layer@0.5.17
+  - @uidu/spinner@0.5.18
+  - @uidu/theme@0.6.22
+  - @uidu/tooltip@0.5.23
+
 ## 0.5.22
 
 ### Patch Changes

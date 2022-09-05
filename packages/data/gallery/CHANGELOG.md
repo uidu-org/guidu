@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 2.0.4
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/spinner@0.5.18
+  - @uidu/data-controls@3.1.4
+  - @uidu/data-fields@2.1.3
+  - @uidu/shell@2.1.29
+
 ## 2.0.3
 
 ### Patch Changes

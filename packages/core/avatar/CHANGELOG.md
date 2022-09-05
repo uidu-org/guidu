@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.9.15
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/theme@0.6.22
+  - @uidu/tooltip@0.5.23
+
 ## 0.9.14
 
 ### Patch Changes

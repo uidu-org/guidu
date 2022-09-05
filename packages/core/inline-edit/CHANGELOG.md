@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.3.27
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/button@1.3.28
+  - @uidu/inline-dialog@0.5.22
+  - @uidu/theme@0.6.22
+  - @uidu/field@1.0.17
+  - @uidu/field-text@2.0.2
+  - @uidu/form@2.1.1
+
 ## 0.3.26
 
 ### Patch Changes

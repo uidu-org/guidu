@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.7.3
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/button@1.3.28
+  - @uidu/dropdown-menu@0.6.23
+  - @uidu/spinner@0.5.18
+  - @uidu/theme@0.6.22
+  - @uidu/tooltip@0.5.23
+  - @uidu/media-core@1.1.1
+
 ## 0.7.2
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.5.2
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/slider@1.7.19
+  - @uidu/spinner@0.5.18
+  - @uidu/payments@1.5.4
+  - @uidu/field-text@2.0.2
+  - @uidu/form@2.1.1
+  - @uidu/stepper@0.4.20
+
 ## 0.5.1
 
 ### Patch Changes

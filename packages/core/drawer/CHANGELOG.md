@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.7.24
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/docs@0.5.19
+  - @uidu/analytics@0.6.6
+  - @uidu/item@0.5.20
+  - @uidu/theme@0.6.22
+  - @uidu/blanket@0.6.7
+
 ## 0.7.23
 
 ### Patch Changes

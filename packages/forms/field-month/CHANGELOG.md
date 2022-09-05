@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.0.1
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/theme@0.6.22
+  - @uidu/field-base@4.0.7
+  - @uidu/form@2.1.1
+
 ## 2.0.0
 
 ### Major Changes

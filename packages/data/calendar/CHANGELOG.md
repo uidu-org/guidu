@@ -1,5 +1,15 @@
 # @uidu/calendar
 
+## 0.4.17
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/button@1.3.28
+  - @uidu/dropdown-menu@0.6.23
+  - @uidu/shell@2.1.29
+
 ## 0.4.16
 
 ### Patch Changes

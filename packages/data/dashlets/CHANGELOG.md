@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 2.1.3
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/table@2.2.0
+  - @uidu/spinner@0.5.18
+  - @uidu/tooltip@0.5.23
+  - @uidu/dashboard-manager@2.0.3
+  - @uidu/dashlet-controls@1.1.2
+  - @uidu/data-fields@2.1.3
+
 ## 2.1.2
 
 ### Patch Changes

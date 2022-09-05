@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.16
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
 ## 0.1.15
 
 ### Patch Changes

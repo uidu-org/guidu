@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.4.16
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/shell@2.1.29
+
 ## 0.4.15
 
 ### Patch Changes

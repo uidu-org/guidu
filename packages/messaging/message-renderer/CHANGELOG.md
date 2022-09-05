@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.21
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/dropdown-menu@0.6.23
+  - @uidu/theme@0.6.22
+
 ## 0.4.20
 
 ### Patch Changes

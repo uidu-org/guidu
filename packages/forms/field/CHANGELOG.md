@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.0.17
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/checkbox@2.0.3
+  - @uidu/field-number@2.0.8
+  - @uidu/field-text@2.0.2
+  - @uidu/field-textarea@2.0.3
+  - @uidu/select@2.0.5
+
 ## 1.0.16
 
 ### Patch Changes

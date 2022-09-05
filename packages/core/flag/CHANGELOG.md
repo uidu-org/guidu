@@ -1,5 +1,16 @@
 # @uidu/flag
 
+## 0.5.20
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/button@1.3.28
+  - @uidu/portal@0.5.22
+  - @uidu/theme@0.6.22
+
 ## 0.5.19
 
 ### Patch Changes

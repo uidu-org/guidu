@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.8.13
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/adf-schema@0.9.14
+  - @uidu/editor-common@0.7.21
+
 ## 0.8.12
 
 ### Patch Changes

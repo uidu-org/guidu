@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.7.19
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
 ## 1.7.18
 
 ### Patch Changes

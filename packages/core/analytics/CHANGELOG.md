@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.6.6
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
 ## 0.6.5
 
 ### Patch Changes

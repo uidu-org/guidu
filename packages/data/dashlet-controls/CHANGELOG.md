@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.1.2
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/avatar@0.9.15
+  - @uidu/avatar-group@2.6.18
+  - @uidu/button@1.3.28
+  - @uidu/dropdown-menu@0.6.23
+  - @uidu/field-date-range@2.0.3
+  - @uidu/form@2.1.1
+
 ## 1.1.1
 
 ### Patch Changes

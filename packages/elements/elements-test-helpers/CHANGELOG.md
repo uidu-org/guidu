@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.26
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
 ## 0.4.25
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.4.25
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/dropdown-menu@0.6.23
+  - @uidu/spinner@0.5.18
+  - @uidu/field-mentions@2.0.2
+  - @uidu/field-text@2.0.2
+  - @uidu/form@2.1.1
+  - @uidu/media-filmstrip@0.5.8
+  - @uidu/message@0.5.42
+
 ## 0.4.24
 
 ### Patch Changes

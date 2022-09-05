@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 3.0.4
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/button@1.3.28
+  - @uidu/popup@0.7.3
+  - @uidu/field-base@4.0.7
+
 ## 3.0.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.1.29
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/spinner@0.5.18
+
 ## 2.1.28
 
 ### Patch Changes

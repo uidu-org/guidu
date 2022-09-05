@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.25
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
 ## 0.1.24
 
 ### Patch Changes

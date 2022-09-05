@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.0.19
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
 ## 1.0.18
 
 ### Patch Changes

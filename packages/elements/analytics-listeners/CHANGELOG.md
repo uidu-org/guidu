@@ -1,5 +1,14 @@
 # @uidu/analytics-listeners
 
+## 0.4.17
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/analytics-namespaced-context@0.4.17
+
 ## 0.4.16
 
 ### Patch Changes

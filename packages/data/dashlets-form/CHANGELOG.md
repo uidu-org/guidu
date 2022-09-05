@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 1.0.28
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/accordion@0.6.17
+  - @uidu/dropdown-menu@0.6.23
+  - @uidu/dashlets@2.1.3
+  - @uidu/field-downshift@2.0.4
+  - @uidu/field-toggle@2.0.8
+  - @uidu/form@2.1.1
+  - @uidu/select@2.0.5
+  - @uidu/shell@2.1.29
+
 ## 1.0.27
 
 ### Patch Changes

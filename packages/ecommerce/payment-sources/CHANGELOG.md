@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.26
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/payments@1.5.4
+  - @uidu/form@2.1.1
+
 ## 0.3.25
 
 ### Patch Changes

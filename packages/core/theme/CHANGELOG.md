@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.6.22
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/form@2.1.1
+
 ## 0.6.21
 
 ### Patch Changes

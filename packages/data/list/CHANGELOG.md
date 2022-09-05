@@ -1,5 +1,16 @@
 # @uidu/list
 
+## 2.1.0
+
+### Minor Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+
+### Patch Changes
+
+- Updated dependencies [37bf04997]
+  - @uidu/data-fields@2.1.3
+
 ## 2.0.3
 
 ### Patch Changes

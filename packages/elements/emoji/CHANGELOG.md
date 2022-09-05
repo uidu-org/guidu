@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.6.20
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/analytics@0.6.6
+  - @uidu/button@1.3.28
+  - @uidu/code@0.5.18
+  - @uidu/spinner@0.5.18
+  - @uidu/theme@0.6.22
+  - @uidu/tooltip@0.5.23
+  - @uidu/field-text@2.0.2
+
 ## 0.6.19
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 2.0.3
+
+### Patch Changes
+
+- 37bf04997: Adding loading skeletons to tables and lists
+- Updated dependencies [37bf04997]
+  - @uidu/dashboard-controls@1.1.2
+  - @uidu/dashlets@2.1.3
+
 ## 2.0.2
 
 ### Patch Changes
