@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.1.4
+
+### Patch Changes
+
+- f1277d5ee: Editable rating field with no broken useEffect
+
 ## 2.1.3
 
 ### Patch Changes
