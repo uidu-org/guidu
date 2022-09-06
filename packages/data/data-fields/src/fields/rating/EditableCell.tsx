@@ -1,5 +1,5 @@
 import { CellContext } from '@tanstack/react-table';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { StyledRating } from './utils';
 
 export default function EditableCell(props: CellContext<any, number>) {
@@ -12,9 +12,9 @@ export default function EditableCell(props: CellContext<any, number>) {
     typeof defaultValue === 'string' ? Number(defaultValue) : defaultValue,
   );
 
-  useEffect(() => {
-    setValue(getValue());
-  }, [getValue]);
+  // useEffect(() => {
+  //   setValue(getValue());
+  // }, [getValue]);
 
   return (
     <div tw="flex items-center">
