@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.4.22
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 0.4.21
 
 ### Patch Changes

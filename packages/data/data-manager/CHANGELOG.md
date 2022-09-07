@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 3.1.4
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+- Updated dependencies [c5e63cbf9]
+  - @uidu/data-controls@3.1.5
+  - @uidu/data-fields@2.1.5
+  - @uidu/data-views@2.1.4
+  - @uidu/table@2.2.1
+  - @uidu/shell@2.1.30
+
 ## 3.1.3
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 2.0.4
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+- Updated dependencies [c5e63cbf9]
+  - @uidu/dashboard-controls@1.1.3
+  - @uidu/dashlets@2.1.4
+
 ## 2.0.3
 
 ### Patch Changes

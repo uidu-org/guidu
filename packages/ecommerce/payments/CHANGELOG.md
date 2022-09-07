@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.5.5
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 1.5.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.27
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 0.4.26
 
 ### Patch Changes

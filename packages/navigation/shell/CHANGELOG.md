@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.30
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 2.1.29
 
 ### Patch Changes

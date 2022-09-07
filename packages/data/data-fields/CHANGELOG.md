@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 2.1.5
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+- Updated dependencies [c5e63cbf9]
+  - @uidu/field-time@2.0.9
+
 ## 2.1.4
 
 ### Patch Changes

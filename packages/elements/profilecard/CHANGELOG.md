@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.3.19
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 0.3.18
 
 ### Patch Changes

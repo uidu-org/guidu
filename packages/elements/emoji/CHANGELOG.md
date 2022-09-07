@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.6.21
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 0.6.20
 
 ### Patch Changes
