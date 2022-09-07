@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.7.4
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 0.7.3
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/editor-core
 
+## 0.15.17
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+- Updated dependencies [c5e63cbf9]
+  - @uidu/editor-common@0.7.22
+  - @uidu/emoji@0.6.21
+  - @uidu/mentions@0.4.22
+  - @uidu/profilecard@0.3.19
+  - @uidu/status@0.5.18
+  - @uidu/media-card@0.7.4
+
 ## 0.15.16
 
 ### Patch Changes

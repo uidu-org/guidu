@@ -1,5 +1,13 @@
 # @uidu/devise
 
+## 0.7.18
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+- Updated dependencies [c5e63cbf9]
+  - @uidu/shell@2.1.30
+
 ## 0.7.17
 
 ### Patch Changes
