@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 2.1.4
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+- Updated dependencies [c5e63cbf9]
+  - @uidu/dashboard-manager@2.0.4
+  - @uidu/dashlet-controls@1.1.3
+  - @uidu/data-fields@2.1.5
+  - @uidu/table@2.2.1
+
 ## 2.1.3
 
 ### Patch Changes

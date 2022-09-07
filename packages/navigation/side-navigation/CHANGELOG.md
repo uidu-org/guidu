@@ -1,5 +1,16 @@
 # @uidu/navigation
 
+## 1.1.0
+
+### Minor Changes
+
+- c5e63cbf9: Sidenavigation with border
+
+### Patch Changes
+
+- Updated dependencies [c5e63cbf9]
+  - @uidu/shell@2.1.30
+
 ## 1.0.25
 
 ### Patch Changes

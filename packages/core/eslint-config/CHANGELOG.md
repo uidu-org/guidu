@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.26
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 0.1.25
 
 ### Patch Changes

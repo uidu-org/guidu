@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 2.0.9
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 2.0.8
 
 ### Patch Changes

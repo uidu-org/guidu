@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 2.2.1
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+- Updated dependencies [c5e63cbf9]
+  - @uidu/data-fields@2.1.5
+  - @uidu/data-manager@3.1.4
+
 ## 2.2.0
 
 ### Minor Changes

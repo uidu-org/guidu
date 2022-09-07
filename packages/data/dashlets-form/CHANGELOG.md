@@ -1,5 +1,14 @@
 # @uidu/dashlets-form
 
+## 1.0.29
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+- Updated dependencies [c5e63cbf9]
+  - @uidu/dashlets@2.1.4
+  - @uidu/shell@2.1.30
+
 ## 1.0.28
 
 ### Patch Changes

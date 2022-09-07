@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.5.18
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 0.5.17
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.0.7
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 2.0.6
 
 ### Patch Changes

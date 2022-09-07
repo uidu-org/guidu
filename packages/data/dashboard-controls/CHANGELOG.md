@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 1.1.3
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 1.1.2
 
 ### Patch Changes

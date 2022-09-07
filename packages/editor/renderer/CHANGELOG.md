@@ -1,5 +1,16 @@
 # @uidu/renderer
 
+## 0.8.20
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+- Updated dependencies [c5e63cbf9]
+  - @uidu/editor-common@0.7.22
+  - @uidu/mentions@0.4.22
+  - @uidu/status@0.5.18
+  - @uidu/media-card@0.7.4
+
 ## 0.8.19
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.5.3
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+- Updated dependencies [c5e63cbf9]
+  - @uidu/payments@1.5.5
+
 ## 0.5.2
 
 ### Patch Changes

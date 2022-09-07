@@ -1,5 +1,13 @@
 # @uidu/media-viewer
 
+## 0.5.3
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+- Updated dependencies [c5e63cbf9]
+  - @uidu/shell@2.1.30
+
 ## 0.5.2
 
 ### Patch Changes

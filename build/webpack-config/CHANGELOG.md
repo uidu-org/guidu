@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.33
+
+### Patch Changes
+
+- c5e63cbf9: Sidenavigation with border
+
 ## 0.3.32
 
 ### Patch Changes
