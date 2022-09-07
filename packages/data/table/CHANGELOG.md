@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 2.2.2
+
+### Patch Changes
+
+- 3f24d9901: Try better perf for table
+- Updated dependencies [3f24d9901]
+  - @uidu/button@1.3.29
+  - @uidu/data-fields@2.1.6
+  - @uidu/data-manager@3.1.5
+
 ## 2.2.1
 
 ### Patch Changes

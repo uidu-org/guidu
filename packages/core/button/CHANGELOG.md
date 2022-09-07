@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.3.29
+
+### Patch Changes
+
+- 3f24d9901: Try better perf for table
+
 ## 1.3.28
 
 ### Patch Changes

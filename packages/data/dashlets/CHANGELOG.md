@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 2.1.5
+
+### Patch Changes
+
+- Updated dependencies [3f24d9901]
+  - @uidu/data-fields@2.1.6
+  - @uidu/table@2.2.2
+  - @uidu/dashlet-controls@1.1.4
+
 ## 2.1.4
 
 ### Patch Changes

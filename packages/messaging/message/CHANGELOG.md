@@ -1,5 +1,12 @@
 # @uidu/message
 
+## 0.5.44
+
+### Patch Changes
+
+- Updated dependencies [3f24d9901]
+  - @uidu/button@1.3.29
+
 ## 0.5.43
 
 ### Patch Changes
