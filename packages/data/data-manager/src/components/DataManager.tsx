@@ -120,7 +120,7 @@ export default function DataManager<T>({
     getFilteredRowModel: getFilteredRowModel(),
     // getPaginationRowModel: getPaginationRowModel(),
     //
-    debugAll: process.env.NODE_ENV === 'development',
+    // debugAll: process.env.NODE_ENV === 'development',
     ...options,
   });
 

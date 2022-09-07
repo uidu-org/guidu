@@ -1,16 +1,16 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable react/jsx-props-no-spreading */
 
-import { flexRender, Row as RowType } from '@tanstack/react-table';
+import { Row as RowType } from '@tanstack/react-table';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import * as defaultComponents from '../styled';
 import { TableProps } from '../types';
 import { getComponents } from '../utils';
 import Footer from './Footer';
+import Headers from './Headers';
 import DefaultLoadingRow from './LoadingRow';
 import DefaultLoadingSkeleton from './LoadingSkeleton';
-import Resizer from './Resizer';
 import RowSingle from './Row';
 
 const defaultOverrides = {};
@@ -30,19 +30,25 @@ function Table<T extends { id: string }>({
   // pagination
   pagination,
 }: TableProps<T>) {
-  const { getHeaderGroups, getFooterGroups, getRowModel } = tableInstance;
+  const { getHeaderGroups, getFooterGroups, getRowModel, getState } =
+    tableInstance;
   const { loadNext, isLoadingNext, hasNext } = pagination || {};
 
   const headerGroups = getHeaderGroups();
   const footerGroups = getFooterGroups();
   const { rows } = getRowModel();
 
+  const { columnSizingInfo } = getState();
+
   const {
     Th: { component: Th, props: trProps },
     Td: { component: Td, props: tdProps },
     StyledRow: { component: StyledRow, props: rowProps },
     Body: { component: Body, props: bodyProps },
-  } = getComponents(defaultComponents, overrides);
+  } = useMemo(() => getComponents(defaultComponents, overrides), [overrides]);
+
+  const headerComponents = useMemo(() => ({ Th }), [Th]);
+  const rowComponents = useMemo(() => ({ Td, StyledRow }), [Td, StyledRow]);
 
   const Row = useCallback(
     ({
@@ -60,7 +66,7 @@ function Table<T extends { id: string }>({
 
       if (isLoaderRow) {
         return (
-          <LoadingRow components={{ StyledRow }} start={start} size={size} />
+          <LoadingRow components={rowComponents} start={start} size={size} />
         );
       }
 
@@ -70,12 +76,12 @@ function Table<T extends { id: string }>({
           rowHeight={rowHeight}
           size={size}
           start={start}
-          components={{ Td, StyledRow }}
-          onItemClick={onItemClick}
+          components={rowComponents}
+          // onItemClick={onItemClick}
         />
       );
     },
-    [rows, rowHeight, onItemClick, StyledRow, Td, LoadingRow, hasNext],
+    [rows, rowHeight, rowComponents, LoadingRow, hasNext],
   );
 
   const parentRef = useRef<HTMLDivElement>();
@@ -83,7 +89,7 @@ function Table<T extends { id: string }>({
   const rowVirtualizer = useVirtualizer({
     count: hasNext ? rows.length + 1 : rows.length,
     getScrollElement: () => parentRef.current,
-    overscan: 10,
+    overscan: 20,
     estimateSize: () => rowHeight,
     getItemKey: (index) => rows[index]?.original?.id,
     ...(virtualizerOptions || {}),
@@ -125,44 +131,14 @@ function Table<T extends { id: string }>({
           }}
           tw="h-full overflow-auto"
         > */}
-        <div tw="background[rgb(var(--body-on-primary-bg))] flex flex-col min-w-full top-0 sticky z-10 w-max">
-          {headerGroups.map((headerGroup) => {
-            return (
-              <div tw="flex min-w-full" key={headerGroup.id}>
-                {headerGroup.headers
-                  .filter((header) => !header.column.columnDef.meta?.isPrivate)
-                  // eslint-disable-next-line arrow-body-style
-                  .map((header, index) => {
-                    return (
-                      <Th
-                        key={header.id}
-                        height={headerHeight}
-                        width={header.getSize()}
-                        minWidth={header.column.columnDef.minSize}
-                        maxWidth={header.column.columnDef.maxSize}
-                        isSorted={header.column.getIsSorted()}
-                        pinned={header?.column.columnDef.meta?.pinned}
-                        index={index}
-                        {...(header.column.columnDef.meta?.headerProps || {})}
-                      >
-                        {header.isPlaceholder
-                          ? null
-                          : flexRender(
-                              header.column.columnDef.header,
-                              header.getContext(),
-                            )}
-                        {header.column.columnDef.enableResizing && (
-                          <Resizer table={tableInstance} header={header} />
-                        )}
-                      </Th>
-                    );
-                  })}
-              </div>
-            );
-          })}
-        </div>
-        <Body height={totalSize} verticalPadding={rowHeight * 2 - 8 - 16}>
-          <LoadingSkeleton rows={rows} rowHeight={rowHeight} />
+        <Headers
+          headerGroups={headerGroups}
+          components={headerComponents}
+          headerHeight={headerHeight}
+          columnSizingInfo={columnSizingInfo}
+        />
+        <Body height={totalSize} verticalPadding={headerHeight}>
+          {/* <LoadingSkeleton rows={rows} rowHeight={rowHeight} /> */}
           {/* {paddingTop > 0 && <div style={{ height: `${paddingTop}px` }} />} */}
           {virtualRows.map(({ size, start, index, key }) => (
             <Row key={key} size={size} start={start} index={index} />

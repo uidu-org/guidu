@@ -1,8 +1,3 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import memoize from 'memoize-one';
 import React, {
   FocusEventHandler,
@@ -15,7 +10,6 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { buttonVariants } from '../theme';
 import { ButtonAppearances, ButtonProps } from '../types';
-import pkg from '../version.json';
 import Content from './Content';
 import IconWrapper from './IconWrapper';
 import InnerWrapper from './InnerWrapper';
@@ -244,7 +238,6 @@ function Button(props: ButtonProps) {
   );
 }
 
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 const ButtonWithRef = React.forwardRef<HTMLElement, ButtonProps>(
   // @ts-ignore
   (props, ref) => <Button {...props} consumerRef={ref} />,
@@ -252,20 +245,4 @@ const ButtonWithRef = React.forwardRef<HTMLElement, ButtonProps>(
 ButtonWithRef.displayName = 'Button';
 
 // @ts-ignore
-export default withAnalyticsContext({
-  componentName: 'button',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onClick: createAndFireEventOnGuidu({
-      action: 'clicked',
-      actionSubject: 'button',
-      attributes: {
-        componentName: 'button',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(ButtonWithRef),
-) as React.ComponentType<ButtonProps>;
+export default ButtonWithRef;

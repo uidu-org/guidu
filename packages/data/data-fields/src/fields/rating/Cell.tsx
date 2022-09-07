@@ -1,6 +1,5 @@
 import { CellContext } from '@tanstack/react-table';
 import React from 'react';
-import EditableCell from './EditableCell';
 import { StyledRating } from './utils';
 
 export default function Cell(props: CellContext<any, number>) {
@@ -9,10 +8,10 @@ export default function Cell(props: CellContext<any, number>) {
 
   const max = column.columnDef?.meta?.max || 5;
 
-  if (column?.columnDef.meta.enableEditing) {
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    return <EditableCell {...props} />;
-  }
+  // if (column?.columnDef.meta.enableEditing) {
+  //   // eslint-disable-next-line react/jsx-props-no-spreading
+  //   return <EditableCell {...props} />;
+  // }
 
   return (
     <div tw="flex items-center">

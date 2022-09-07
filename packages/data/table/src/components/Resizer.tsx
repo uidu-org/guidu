@@ -1,4 +1,4 @@
-import { Header, Table } from '@tanstack/react-table';
+import { ColumnSizingInfoState, Header } from '@tanstack/react-table';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -12,10 +12,10 @@ const StyledResizer = styled.div<{ isResizing: boolean }>`
 `;
 
 export default function Resizer<T>({
-  table,
+  columnSizingInfo,
   header,
 }: {
-  table: Table<T>;
+  columnSizingInfo: ColumnSizingInfoState;
   header: Header<T, unknown>;
 }) {
   return (
@@ -26,7 +26,7 @@ export default function Resizer<T>({
       className={`resizer ${header.column.getIsResizing() ? 'isResizing' : ''}`}
       style={{
         transform: header.column.getIsResizing()
-          ? `translateX(${table.getState().columnSizingInfo.deltaOffset}px)`
+          ? `translateX(${columnSizingInfo.deltaOffset}px)`
           : '',
       }}
     />

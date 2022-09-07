@@ -111,6 +111,7 @@ export default function Basic({}) {
   const data = useMemo(() => rowData, [rowData]);
 
   const onItemSelect = useCallback((rows) => {}, []);
+  const onItemClick = useCallback((row) => {}, []);
 
   return (
     <IntlProvider locale="en">
@@ -347,7 +348,7 @@ export default function Basic({}) {
                       <ShellBody>
                         <ShellMain>
                           <DataManagerView
-                            onItemClick={(p) => console.log(p)}
+                            onItemClick={onItemClick}
                             viewProps={{
                               gallery: {
                                 gutterSize: 24,
