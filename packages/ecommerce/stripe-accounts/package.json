@@ -20,7 +20,7 @@
     "@uidu/stepper": "^0.4.20",
     "dayjs": "^1.11.5",
     "react": "^18.2.0",
-    "react-intl": "^6.1.0",
+    "react-intl": "^6.1.1",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

@@ -10,9 +10,9 @@
   "types": "dist/uidu-data-manager.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.19.0",
-    "@cubejs-client/core": "^0.30.60",
-    "@cubejs-client/react": "^0.30.60",
-    "@cubejs-client/ws-transport": "^0.30.60",
+    "@cubejs-client/core": "^0.30.64",
+    "@cubejs-client/react": "^0.30.64",
+    "@cubejs-client/ws-transport": "^0.30.64",
     "@loadable/component": "^5.15.2",
     "@tanstack/match-sorter-utils": "^8.1.1",
     "@tanstack/react-table": "^8.5.13",
@@ -47,6 +47,6 @@
     "@uidu/navigation": "^1.0.26",
     "@uidu/page-header": "^1.0.7",
     "@uidu/side-navigation": "1.0.25",
-    "react-intl": "^6.1.0"
+    "react-intl": "^6.1.1"
   }
 }

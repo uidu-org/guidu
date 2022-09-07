@@ -25,7 +25,7 @@
     "react-facebook": "^8.1.4",
     "react-feather": "^2.0.10",
     "react-google-login": "^5.2.2",
-    "react-intl": "^6.1.0",
+    "react-intl": "^6.1.1",
     "react-router-dom": "^5.3.3",
     "styled-components": "^5.3.5"
   },

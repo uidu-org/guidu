@@ -1,28 +1,25 @@
-import React, { PureComponent } from 'react';
+import React, { memo } from 'react';
 import StyledNavigationHeader, {
   StyledNavigationHeaderAfter,
   StyledNavigationHeaderBefore,
   StyledNavigationHeaderText,
 } from './styled';
 
-export default class NavigationHeader extends PureComponent<any> {
-  render() {
-    const { before, text, after, description } = this.props;
-    return (
-      <StyledNavigationHeader>
-        {!!before && (
-          <StyledNavigationHeaderBefore>{before}</StyledNavigationHeaderBefore>
-        )}
-        <StyledNavigationHeaderText>
-          <h5 className="mb-0 font-weight-bold">{text}</h5>
-          {description && (
-            <p className="mb-0 text-muted small">{description}</p>
-          )}
-        </StyledNavigationHeaderText>
-        {!!after && (
-          <StyledNavigationHeaderAfter>{after}</StyledNavigationHeaderAfter>
-        )}
-      </StyledNavigationHeader>
-    );
-  }
+function NavigationHeader({ before, after, text, description }) {
+  return (
+    <StyledNavigationHeader tw="border-b">
+      {!!before && (
+        <StyledNavigationHeaderBefore>{before}</StyledNavigationHeaderBefore>
+      )}
+      <StyledNavigationHeaderText>
+        <h5 tw="text-xl font-bold">{text}</h5>
+        {description && <p tw="mb-0 text-gray-500 text-sm">{description}</p>}
+      </StyledNavigationHeaderText>
+      {!!after && (
+        <StyledNavigationHeaderAfter>{after}</StyledNavigationHeaderAfter>
+      )}
+    </StyledNavigationHeader>
+  );
 }
+
+export default memo(NavigationHeader);

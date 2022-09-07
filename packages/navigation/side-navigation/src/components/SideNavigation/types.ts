@@ -37,4 +37,5 @@ export type SideNavigationSchema = {
 export type NavigationProps = {
   schema?: SideNavigationSchema[];
   position: 'absolute' | 'relative';
+  children?: ReactNode;
 };
