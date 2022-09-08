@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.31
+
+### Patch Changes
+
+- 794cb877a: Fix onItemClick and ShellHeader height
+
 ## 2.1.30
 
 ### Patch Changes
