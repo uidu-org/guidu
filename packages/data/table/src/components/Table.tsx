@@ -77,7 +77,7 @@ function Table<T extends { id: string }>({
           size={size}
           start={start}
           components={rowComponents}
-          // onItemClick={onItemClick}
+          onItemClick={onItemClick}
         />
       );
     },

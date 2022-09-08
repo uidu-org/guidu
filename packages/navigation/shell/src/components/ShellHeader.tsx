@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const ShellHeader = styled.header`
   display: flex;
   align-items: center;
-  height: 4.5rem;
+  height: 4rem;
   flex-shrink: 0;
 `;
 
