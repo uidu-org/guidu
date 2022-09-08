@@ -1,5 +1,13 @@
 # @uidu/field-color-picker
 
+## 3.0.5
+
+### Patch Changes
+
+- Updated dependencies [3f24d9901]
+  - @uidu/button@1.3.29
+  - @uidu/field-base@4.0.8
+
 ## 3.0.4
 
 ### Patch Changes

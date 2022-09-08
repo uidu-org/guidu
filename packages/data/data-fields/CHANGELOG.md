@@ -1,5 +1,19 @@
 # @uidu/data-fields
 
+## 2.1.6
+
+### Patch Changes
+
+- 3f24d9901: Try better perf for table
+- Updated dependencies [3f24d9901]
+  - @uidu/button@1.3.29
+  - @uidu/field-color-picker@3.0.5
+  - @uidu/field-date@2.0.8
+  - @uidu/form@2.1.2
+  - @uidu/field-number@2.0.9
+  - @uidu/field-time@2.0.10
+  - @uidu/field-toggle@2.0.9
+
 ## 2.1.5
 
 ### Patch Changes

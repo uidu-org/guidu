@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.6.18
+
+### Patch Changes
+
+- 3f24d9901: Try better perf for table
+- Updated dependencies [3f24d9901]
+  - @uidu/button@1.3.29
+  - @uidu/table@2.2.2
+  - @uidu/form@2.1.2
+
 ## 0.6.17
 
 ### Patch Changes
