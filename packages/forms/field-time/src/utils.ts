@@ -17,7 +17,7 @@ export const generateTimeSlots = ({
   end: number;
   interval: number;
   timeFormat?: string;
-}): string[] => {
+}): Date[] => {
   const setTime = (x: Date, h = 0, m = 0, s = 0, ms = 0): Date =>
     setHours(setMinutes(setSeconds(setMilliseconds(x, ms), s), m), h);
 
@@ -34,7 +34,7 @@ export const generateTimeSlots = ({
     cursor = step(cursor);
   }
 
-  return blocks as string[];
+  return blocks as Date[];
 };
 
 export default generateTimeSlots;
