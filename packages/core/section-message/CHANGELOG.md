@@ -1,5 +1,11 @@
 # @uidu/section-message
 
+## 0.6.22
+
+### Patch Changes
+
+- 5e9331564: Bump dependencies
+
 ## 0.6.21
 
 ### Patch Changes

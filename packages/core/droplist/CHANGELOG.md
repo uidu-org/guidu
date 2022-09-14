@@ -1,5 +1,11 @@
 # @uidu/droplist
 
+## 0.5.24
+
+### Patch Changes
+
+- 5e9331564: Bump dependencies
+
 ## 0.5.23
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/message-form
 
+## 0.4.26
+
+### Patch Changes
+
+- 5e9331564: Bump dependencies
+- Updated dependencies [5e9331564]
+  - @uidu/field-mentions@2.0.3
+  - @uidu/form@2.1.3
+  - @uidu/message@0.5.45
+
 ## 0.4.25
 
 ### Patch Changes

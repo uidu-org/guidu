@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.4.19
+
+### Patch Changes
+
+- 5e9331564: Bump dependencies
+
 ## 0.4.18
 
 ### Patch Changes

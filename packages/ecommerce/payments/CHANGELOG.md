@@ -1,5 +1,16 @@
 # @uidu/payments
 
+## 1.5.6
+
+### Patch Changes
+
+- 5e9331564: Bump dependencies
+- Updated dependencies [5e9331564]
+  - @uidu/section-message@0.6.22
+  - @uidu/slider@1.7.20
+  - @uidu/field-base@4.0.9
+  - @uidu/form@2.1.3
+
 ## 1.5.5
 
 ### Patch Changes

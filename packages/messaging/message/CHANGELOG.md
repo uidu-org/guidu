@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.5.45
+
+### Patch Changes
+
+- 5e9331564: Bump dependencies
+- Updated dependencies [5e9331564]
+  - @uidu/media-card@0.7.5
+  - @uidu/message-form@0.4.26
+
 ## 0.5.44
 
 ### Patch Changes

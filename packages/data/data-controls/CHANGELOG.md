@@ -1,5 +1,17 @@
 # @uidu/data-controls
 
+## 3.1.7
+
+### Patch Changes
+
+- 5e9331564: Bump dependencies
+- Updated dependencies [5e9331564]
+  - @uidu/data-fields@2.1.7
+  - @uidu/data-manager@3.1.6
+  - @uidu/form@2.1.3
+  - @uidu/select@2.0.6
+  - @uidu/data-views@2.1.6
+
 ## 3.1.6
 
 ### Patch Changes

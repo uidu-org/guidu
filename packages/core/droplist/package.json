@@ -1,6 +1,6 @@
 {
   "name": "@uidu/droplist",
-  "version": "0.5.23",
+  "version": "0.5.24",
   "description": "Droplist component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/droplist",
   "license": "ISC",
@@ -23,7 +23,7 @@
   "devDependencies": {
     "@uidu/button": "^1.3.28",
     "@uidu/docs": "^0.5.19",
-    "@uidu/field-base": "^4.0.7",
+    "@uidu/field-base": "^4.0.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.5"
