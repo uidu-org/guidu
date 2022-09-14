@@ -18,7 +18,7 @@
     "@uidu/popup": "^0.7.3",
     "@uidu/spinner": "^0.5.18",
     "@uidu/theme": "^0.6.22",
-    "date-fns": "^2.29.2",
+    "date-fns": "^2.29.3",
     "es6-promise": "^4.2.8",
     "lru-fast": "^0.2.2",
     "react": "^18.2.0",
@@ -34,7 +34,7 @@
     "loader-utils": "^2.0.2",
     "lodash": "^4.17.21",
     "sinon": "^14.0.0",
-    "typescript": "^4.8.2",
+    "typescript": "^4.8.3",
     "uid": "^2.0.0"
   },
   "supportedLocales": [

@@ -13,7 +13,7 @@
     "@amcharts/amcharts4-geodata": "^4.1.23",
     "@babel/runtime": "^7.19.0",
     "@cubejs-client/core": "^0.30.64",
-    "@cubejs-client/react": "^0.30.64",
+    "@cubejs-client/react": "^0.30.69",
     "@loadable/component": "^5.15.2",
     "@tanstack/react-table": "^8.5.13",
     "@uidu/dashboard-manager": "^2.0.4",

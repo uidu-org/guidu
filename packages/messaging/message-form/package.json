@@ -20,7 +20,7 @@
     "@uidu/media-filmstrip": "^0.5.8",
     "@uidu/message": "^0.5.42",
     "@uidu/spinner": "^0.5.18",
-    "classnames": "^2.3.1",
+    "classnames": "^2.3.2",
     "emoji-mart": "^3.0.1",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",

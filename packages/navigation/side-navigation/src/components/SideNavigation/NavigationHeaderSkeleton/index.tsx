@@ -38,7 +38,7 @@ export default class NavigationHeaderSkeleton extends PureComponent<any> {
     const { hasBefore, ...otherProps } = this.props;
 
     return (
-      <StyledNavigationHeader>
+      <StyledNavigationHeader tw="border-b">
         <NavigationItemLoader hasBefore={hasBefore} />
       </StyledNavigationHeader>
     );

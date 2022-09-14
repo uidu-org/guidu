@@ -1,0 +1,47 @@
+---
+'@uidu/droplist': patch
+'eslint-config-uidu': patch
+'@uidu/section-message': patch
+'@uidu/slider': patch
+'@uidu/calendar': patch
+'@uidu/dashboard-manager': patch
+'@uidu/dashlets': patch
+'@uidu/dashlets-form': patch
+'@uidu/data-controls': patch
+'@uidu/data-fields': patch
+'@uidu/data-manager': patch
+'@uidu/table': patch
+'@uidu/payment-sources': patch
+'@uidu/payments': patch
+'@uidu/stripe-accounts': patch
+'@uidu/editor-common': patch
+'@uidu/editor-core': patch
+'@uidu/json-schema-generator': patch
+'@uidu/date': patch
+'@uidu/emoji': patch
+'@uidu/profilecard': patch
+'@uidu/task-decision': patch
+'@uidu/util-data-test': patch
+'@uidu/field-base': patch
+'@uidu/field-color-picker': patch
+'@uidu/field-date': patch
+'@uidu/field-date-range': patch
+'@uidu/field-downshift': patch
+'@uidu/field-file-uploader': patch
+'@uidu/field-geosuggest': patch
+'@uidu/field-image-uploader': patch
+'@uidu/field-mentions': patch
+'@uidu/field-month': patch
+'@uidu/field-password': patch
+'@uidu/field-time': patch
+'@uidu/form': patch
+'@uidu/select': patch
+'@uidu/media-card': patch
+'@uidu/message': patch
+'@uidu/message-form': patch
+'@uidu/animated-menu': patch
+'@uidu/side-navigation': patch
+'@uidu/stepper': patch
+---
+
+Bump dependencies

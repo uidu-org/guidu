@@ -19,7 +19,7 @@ Implementing a function like this that spreads meta and column definition
 
 ```jsx
 const mergeByName = (passedMeta) => {
-  const { meta, ...rest } = byName(passedMeta.kind);
+  const { meta, ...rest } = byName[passedMeta.kind];
   return {
     ...rest,
     meta: {

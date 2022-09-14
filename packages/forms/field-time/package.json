@@ -15,7 +15,7 @@
     "@uidu/field-text": "^2.0.2",
     "@uidu/form": "^2.1.2",
     "@uidu/select": "2.0.5",
-    "date-fns": "^2.29.2",
+    "date-fns": "^2.29.3",
     "react": "^18.2.0",
     "react-intl": "^6.1.1",
     "tslib": "^2.4.0"
