@@ -1,5 +1,11 @@
 # @uidu/stepper
 
+## 0.4.21
+
+### Patch Changes
+
+- 5e9331564: Bump dependencies
+
 ## 0.4.20
 
 ### Patch Changes

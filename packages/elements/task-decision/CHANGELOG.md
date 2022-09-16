@@ -1,5 +1,11 @@
 # @uidu/task-decision
 
+## 0.4.27
+
+### Patch Changes
+
+- 5e9331564: Bump dependencies
+
 ## 0.4.26
 
 ### Patch Changes

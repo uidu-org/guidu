@@ -1,5 +1,11 @@
 # @uidu/date
 
+## 0.4.22
+
+### Patch Changes
+
+- 5e9331564: Bump dependencies
+
 ## 0.4.21
 
 ### Patch Changes

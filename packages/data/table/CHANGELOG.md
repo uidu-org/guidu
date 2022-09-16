@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 2.2.4
+
+### Patch Changes
+
+- 5e9331564: Bump dependencies
+- Updated dependencies [5e9331564]
+  - @uidu/data-fields@2.1.7
+  - @uidu/data-manager@3.1.6
+
 ## 2.2.3
 
 ### Patch Changes
