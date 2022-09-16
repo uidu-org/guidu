@@ -50,7 +50,7 @@
     "lodash.debounce": "^4.0.8",
     "netlify-cli": "^10.18.0",
     "node-fetch": "^3.2.10",
-    "prismjs": "^1.28.0",
+    "prismjs": "^1.29.0",
     "query-string": "^7.1.1",
     "react": "^18.2.0",
     "react-addons-text-content": "^0.0.4",
