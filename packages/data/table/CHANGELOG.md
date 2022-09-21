@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 2.2.6
+
+### Patch Changes
+
+- 489ee943a: Remove console.log
+
 ## 2.2.5
 
 ### Patch Changes
