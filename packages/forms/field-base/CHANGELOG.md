@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.0.10
+
+### Patch Changes
+
+- 37c87bc85: Fixed data-manager state updates
+- Updated dependencies [37c87bc85]
+  - @uidu/form@2.1.4
+
 ## 4.0.9
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 2.1.8
+
+### Patch Changes
+
+- 37c87bc85: Fixed data-manager state updates
+- Updated dependencies [37c87bc85]
+  - @uidu/dashboard-manager@2.0.6
+  - @uidu/table@2.2.5
+
 ## 2.1.7
 
 ### Patch Changes

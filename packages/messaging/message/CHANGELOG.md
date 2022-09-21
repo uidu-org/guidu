@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.46
+
+### Patch Changes
+
+- 37c87bc85: Fixed data-manager state updates
+- Updated dependencies [37c87bc85]
+  - @uidu/media-card@0.7.6
+
 ## 0.5.45
 
 ### Patch Changes

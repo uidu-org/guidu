@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 2.0.7
+
+### Patch Changes
+
+- 37c87bc85: Fixed data-manager state updates
+- Updated dependencies [37c87bc85]
+  - @uidu/field-base@4.0.10
+
 ## 2.0.6
 
 ### Patch Changes

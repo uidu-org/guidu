@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.28
+
+### Patch Changes
+
+- 37c87bc85: Fixed data-manager state updates
+
 ## 0.1.27
 
 ### Patch Changes
