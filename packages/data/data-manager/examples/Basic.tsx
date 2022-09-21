@@ -124,7 +124,6 @@ export default function Basic({}) {
             isLoadingNext,
             loadNext,
           }}
-          actions={() => []}
           actions={(row: any) => {
             return [
               {

@@ -71,6 +71,8 @@ function DataManagerProvider<TTable, TView extends {}>({
     console.log(column);
   };
 
+  const tableInstanceState = tableInstance.getState();
+
   const value = useMemo(
     () => ({
       tableInstance,
@@ -86,7 +88,7 @@ function DataManagerProvider<TTable, TView extends {}>({
       pagination,
     }),
     [
-      tableInstance,
+      tableInstanceState,
       currentView,
       updateView,
       columns,

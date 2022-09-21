@@ -39,6 +39,7 @@ function Table<T extends { id: string }>({
   const { rows } = getRowModel();
 
   const { columnSizingInfo } = getState();
+  console.log('state in table', getState());
 
   const {
     Th: { component: Th, props: trProps },
@@ -81,7 +82,7 @@ function Table<T extends { id: string }>({
         />
       );
     },
-    [rows, rowHeight, rowComponents, LoadingRow, hasNext],
+    [rows, rowHeight, rowComponents, LoadingRow, hasNext, onItemClick],
   );
 
   const parentRef = useRef<HTMLDivElement>();

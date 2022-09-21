@@ -279,6 +279,7 @@ function DataManagerView<T>({
                 setAggregation={setAggregation}
                 setColumnWidth={setColumnWidth}
                 tableInstance={tableInstance}
+                state={tableInstance.getState()}
                 {...viewProps.table}
                 rowHeight={(viewProps.table || {}).rowHeight || 56}
                 onItemClick={onItemClick}
