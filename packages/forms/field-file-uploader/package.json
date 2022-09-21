@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-file-uploader",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "A file uploader",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-file-uploader",
   "license": "MIT",
@@ -13,8 +13,8 @@
     "@fluentui/react": "8.96.0",
     "@heroicons/react": "^2.0.11",
     "@uidu/button": "1.3.29",
-    "@uidu/field-base": "^4.0.9",
-    "@uidu/form": "2.1.3",
+    "@uidu/field-base": "^4.0.10",
+    "@uidu/form": "2.1.4",
     "@uidu/media-core": "1.1.1",
     "@uidu/menu": "0.8.2",
     "@uifabric/file-type-icons": "^7.10.3",

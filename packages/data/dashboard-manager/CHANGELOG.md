@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.0.6
+
+### Patch Changes
+
+- 37c87bc85: Fixed data-manager state updates
+- Updated dependencies [37c87bc85]
+  - @uidu/dashlets@2.1.8
+
 ## 2.0.5
 
 ### Patch Changes

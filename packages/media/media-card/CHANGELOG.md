@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.7.6
+
+### Patch Changes
+
+- 37c87bc85: Fixed data-manager state updates
+
 ## 0.7.5
 
 ### Patch Changes

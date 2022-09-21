@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.4
+
+### Patch Changes
+
+- 37c87bc85: Fixed data-manager state updates
+
 ## 2.1.3
 
 ### Patch Changes

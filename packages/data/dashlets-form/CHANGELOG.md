@@ -1,5 +1,17 @@
 # @uidu/dashlets-form
 
+## 1.0.31
+
+### Patch Changes
+
+- 37c87bc85: Fixed data-manager state updates
+- Updated dependencies [37c87bc85]
+  - @uidu/dashlets@2.1.8
+  - @uidu/field-downshift@2.0.6
+  - @uidu/form@2.1.4
+  - @uidu/select@2.0.7
+  - @uidu/field-toggle@2.0.11
+
 ## 1.0.30
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 3.1.7
+
+### Patch Changes
+
+- 37c87bc85: Fixed data-manager state updates
+- Updated dependencies [37c87bc85]
+  - @uidu/table@2.2.5
+  - @uidu/data-controls@3.1.8
+  - @uidu/data-views@2.1.7
+
 ## 3.1.6
 
 ### Patch Changes
