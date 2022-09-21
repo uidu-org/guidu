@@ -39,7 +39,6 @@ function Table<T extends { id: string }>({
   const { rows } = getRowModel();
 
   const { columnSizingInfo } = getState();
-  console.log('state in table', getState());
 
   const {
     Th: { component: Th, props: trProps },
