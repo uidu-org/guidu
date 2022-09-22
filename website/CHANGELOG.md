@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.6.19
+
+### Patch Changes
+
+- Updated dependencies [e08bca953]
+  - @uidu/list@3.0.0
+  - @uidu/table@3.0.0
+
 ## 0.6.18
 
 ### Patch Changes

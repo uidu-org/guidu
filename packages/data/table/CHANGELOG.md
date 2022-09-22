@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 3.0.0
+
+### Major Changes
+
+- e08bca953: Table instance should be passed to data-manager
+
+### Patch Changes
+
+- Updated dependencies [e08bca953]
+  - @uidu/data-manager@4.0.0
+
 ## 2.2.6
 
 ### Patch Changes

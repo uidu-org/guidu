@@ -1,5 +1,11 @@
 # @uidu/list
 
+## 3.0.0
+
+### Major Changes
+
+- e08bca953: Table instance should be passed to data-manager
+
 ## 2.1.0
 
 ### Minor Changes

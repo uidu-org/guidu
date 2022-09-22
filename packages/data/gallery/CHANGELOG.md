@@ -1,5 +1,12 @@
 # @uidu/gallery
 
+## 2.0.5
+
+### Patch Changes
+
+- Updated dependencies [e08bca953]
+  - @uidu/data-controls@4.0.0
+
 ## 2.0.4
 
 ### Patch Changes
