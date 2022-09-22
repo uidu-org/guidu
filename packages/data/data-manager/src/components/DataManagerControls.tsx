@@ -1,7 +1,7 @@
+import { Table } from '@tanstack/react-table';
 import { ControlsSkeleton, Finder } from '@uidu/data-controls';
 import { byName } from '@uidu/data-views';
 import React from 'react';
-import { useDataManagerContext } from './DataManagerContext';
 
 const defaultAvailableControls = {
   calendarToolbar: {
@@ -34,8 +34,17 @@ const defaultAvailableControls = {
   },
 };
 
-export default function DataManagerControls({ controls }: { controls: any }) {
-  const { currentView } = useDataManagerContext();
+export default function DataManagerControls<T>({
+  controls,
+  tableInstance,
+  currentView,
+  updateView,
+}: {
+  controls: any;
+  tableInstance: Table<T>;
+  currentView;
+  updateView;
+}) {
   const availableControls = {
     ...defaultAvailableControls,
     ...controls,
@@ -52,9 +61,14 @@ export default function DataManagerControls({ controls }: { controls: any }) {
       <Controls
         isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
         availableControls={availableControls}
+        tableInstance={tableInstance}
+        currentView={currentView}
       />
       {availableControls.finder.visible && (
-        <Finder {...availableControls.finder.props} />
+        <Finder
+          tableInstance={tableInstance}
+          {...availableControls.finder.props}
+        />
       )}
     </>
   );

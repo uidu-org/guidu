@@ -10,6 +10,7 @@ import {
   getFilteredRowModel,
   getGroupedRowModel,
   getSortedRowModel,
+  Table,
   TableOptions,
   useReactTable as useReactTableOriginal,
 } from '@tanstack/react-table';
@@ -17,7 +18,7 @@ import { Aggregated, Header } from '@uidu/table';
 import React, { useCallback, useMemo } from 'react';
 import { fuzzyFilter } from '../utils';
 
-export default function useReactTable<T>(props: TableOptions<T>) {
+export default function useReactTable<T>(props: TableOptions<T>): Table<T> {
   const Cell = useCallback(
     ({ column, getValue }: CellContext<any, unknown>) =>
       column.columnDef.meta?.valueFormatter ? (
@@ -59,7 +60,6 @@ export default function useReactTable<T>(props: TableOptions<T>) {
     getFacetedUniqueValues: getFacetedUniqueValues(),
     getFacetedMinMaxValues: getFacetedMinMaxValues(),
     getFilteredRowModel: getFilteredRowModel(),
-    // getPaginationRowModel: getPaginationRowModel(),
     //
     debugAll: process.env.NODE_ENV === 'development',
     ...props,

@@ -1,4 +1,4 @@
-import { Table as TableType } from '@tanstack/react-table';
+import { Table } from '@tanstack/react-table';
 import { VirtualizerOptions } from '@tanstack/react-virtual';
 import { FC } from 'react';
 import { LoadingRowProps } from './components/LoadingRow';
@@ -16,7 +16,7 @@ export interface OverrideableListProps<T> {
 }
 
 export interface ListProps<T> extends OverrideableListProps<T> {
-  tableInstance: TableType<T>;
+  tableInstance: Table<T>;
   onItemClick: (item: T) => void;
   overrides?: Record<string, any>;
   // pagination

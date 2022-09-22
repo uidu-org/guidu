@@ -1,12 +1,16 @@
+import { Table } from '@tanstack/react-table';
+
 export type Group = {
   id: string;
   index?: number;
 };
 
 export type GrouperProps = {
+  tableInstance: Table<T>;
   groupers?: Array<Group>;
 };
 
-export type GrouperFormProps = {
+export type GrouperFormProps<T> = {
+  tableInstance: Table<T>;
   closePopup: () => void;
 };

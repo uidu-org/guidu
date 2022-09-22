@@ -19,7 +19,6 @@
     "@uidu/data-manager": "3.1.7",
     "@uidu/data-views": "^2.1.7",
     "@uidu/drawer": "^0.7.24",
-    "@uidu/dropdown-menu": "^0.6.23",
     "@uidu/field-text": "^2.0.2",
     "@uidu/form": "^2.1.4",
     "@uidu/inline-dialog": "^0.5.22",

@@ -1,4 +1,3 @@
-import { useDataManagerContext } from '@uidu/data-manager';
 import Popup, { TriggerProps } from '@uidu/popup';
 import React, { useCallback, useState } from 'react';
 import { Server } from 'react-feather';
@@ -7,11 +6,9 @@ import { Trigger as StyledTrigger } from '../../styled';
 import GrouperForm from './form';
 import { GrouperProps } from './types';
 
-export default function Grouper(props: GrouperProps) {
+export default function Grouper({ tableInstance }: GrouperProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const {
-    tableInstance: { getState },
-  } = useDataManagerContext();
+  const { getState } = tableInstance;
   const { grouping } = getState();
   const groupersCount = grouping?.length || 0;
 
@@ -44,10 +41,13 @@ export default function Grouper(props: GrouperProps) {
   const Content = useCallback(
     () => (
       <div tw="w-screen sm:width[500px]">
-        <GrouperForm closePopup={() => setIsDialogOpen(false)} />
+        <GrouperForm
+          tableInstance={tableInstance}
+          closePopup={() => setIsDialogOpen(false)}
+        />
       </div>
     ),
-    [],
+    [tableInstance],
   );
 
   return (

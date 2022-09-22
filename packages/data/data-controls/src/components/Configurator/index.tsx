@@ -3,13 +3,14 @@ import React, { useCallback, useState } from 'react';
 import { Trigger as StyledTrigger } from '../../styled';
 import { ConfiguratorProps } from './types';
 
-export default function Configurator({
+export default function Configurator<T>({
   isConfiguratorOpen = false,
   active,
   configurator: ConfiguratorForm,
   icon: Icon,
   name,
-}: ConfiguratorProps) {
+  tableInstance,
+}: ConfiguratorProps<T>) {
   const [isDialogOpen, setIsDialogOpen] = useState(isConfiguratorOpen);
 
   const Trigger = useCallback(
@@ -31,10 +32,13 @@ export default function Configurator({
   const Content = useCallback(
     () => (
       <div tw="w-screen sm:max-width[400px]">
-        <ConfiguratorForm fallback={<div>Loading...</div>} />
+        <ConfiguratorForm
+          tableInstance={tableInstance}
+          fallback={<div>Loading...</div>}
+        />
       </div>
     ),
-    [ConfiguratorForm],
+    [ConfiguratorForm, tableInstance],
   );
 
   return (

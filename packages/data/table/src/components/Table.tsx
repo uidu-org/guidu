@@ -137,6 +137,7 @@ function Table<T extends { id: string }>({
           headerHeight={headerHeight}
           columnSizingInfo={columnSizingInfo}
         />
+        {/* Here we should insert the pagination fragment, and manage data  */}
         <Body height={totalSize} verticalPadding={headerHeight}>
           {/* <LoadingSkeleton rows={rows} rowHeight={rowHeight} /> */}
           {/* {paddingTop > 0 && <div style={{ height: `${paddingTop}px` }} />} */}

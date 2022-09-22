@@ -1,4 +1,3 @@
-import { useDataManagerContext } from '@uidu/data-manager';
 import Popup, { TriggerProps } from '@uidu/popup';
 import React, { useCallback, useState } from 'react';
 import { Filter } from 'react-feather';
@@ -7,11 +6,9 @@ import { Trigger as StyledTrigger } from '../../styled';
 import FiltererForm from './form';
 import { FiltererProps } from './types';
 
-export default function Filterer(props: FiltererProps) {
+export default function Filterer<T>({ tableInstance }: FiltererProps<T>) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const {
-    tableInstance: { getState },
-  } = useDataManagerContext();
+  const { getState } = tableInstance;
   const { columnFilters } = getState();
   const filtersCount = columnFilters?.length || 0;
 
@@ -44,10 +41,13 @@ export default function Filterer(props: FiltererProps) {
   const Content = useCallback(
     () => (
       <div tw="w-screen sm:width[500px]">
-        <FiltererForm closePopup={() => setIsDialogOpen(false)} />
+        <FiltererForm
+          tableInstance={tableInstance}
+          closePopup={() => setIsDialogOpen(false)}
+        />
       </div>
     ),
-    [],
+    [tableInstance],
   );
 
   return (

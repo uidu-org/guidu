@@ -1,7 +1,6 @@
-import { Column, HeaderGroup } from '@tanstack/react-table';
+import { Column, HeaderGroup, Table } from '@tanstack/react-table';
 import Button, { ButtonGroup } from '@uidu/button';
 import { CheckboxStateless } from '@uidu/checkbox';
-import { useDataManagerContext } from '@uidu/data-manager';
 import React, { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { useIntl } from 'react-intl';
@@ -10,18 +9,18 @@ export default function ColumnGroup<T>({
   columns,
   columnGroupObj,
   checkedColumnsCount,
+  tableInstance,
 }: {
   columns: Column<T, unknown>[];
   columnGroupObj: HeaderGroup<T>;
+  tableInstance: Table<T>;
 }) {
   console.log(columnGroupObj);
   const intl = useIntl();
   const { headers } = columnGroupObj;
 
   const [isOpen, setIsOpen] = useState(true);
-  const {
-    tableInstance: { setColumnVisibility, getState },
-  } = useDataManagerContext();
+  const { setColumnVisibility, getState } = tableInstance;
 
   const { columnVisibility } = getState();
 

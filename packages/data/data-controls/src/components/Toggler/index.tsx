@@ -1,23 +1,20 @@
 import Button, { ButtonGroup } from '@uidu/button';
 import { CheckboxStateless } from '@uidu/checkbox';
-import { useDataManagerContext } from '@uidu/data-manager';
 import React, { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { useIntl } from 'react-intl';
 import { TogglerProps } from './types';
 
-export default function TogglerForm<T>(props: TogglerProps) {
+export default function TogglerForm<T>({ tableInstance }: TogglerProps<T>) {
   const intl = useIntl();
   const [isOpen, setIsOpen] = useState(true);
 
   const {
-    tableInstance: {
-      getState,
-      getAllLeafColumns,
-      getIsAllColumnsVisible,
-      setColumnVisibility,
-    },
-  } = useDataManagerContext();
+    getState,
+    getAllLeafColumns,
+    getIsAllColumnsVisible,
+    setColumnVisibility,
+  } = tableInstance;
   const { columnVisibility } = getState();
   const columns = getAllLeafColumns();
 

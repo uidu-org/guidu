@@ -5,16 +5,30 @@ import { Calendar } from 'react-feather';
 
 const ConfiguratorForm = loadable(() => import('./configurator'));
 
-export default function Controls({ availableControls }) {
+export default function Controls({
+  availableControls,
+  tableInstance,
+  currentView,
+  setCurrentView,
+}) {
   return (
     <>
       <Configurator
         configurator={ConfiguratorForm}
         name="Using field created at"
         icon={Calendar}
+        currentView={currentView}
+        setCurrentView={setCurrentView}
+        tableInstance={tableInstance}
       />
-      <Filterer {...availableControls.filterer.props} />
-      <Sorter {...availableControls.sorter.props} />
+      <Filterer
+        tableInstance={tableInstance}
+        {...availableControls.filterer.props}
+      />
+      <Sorter
+        tableInstance={tableInstance}
+        {...availableControls.sorter.props}
+      />
     </>
   );
 }
