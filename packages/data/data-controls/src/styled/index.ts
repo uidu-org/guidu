@@ -14,3 +14,5 @@ export const Trigger = styled(Button)<{ active?: boolean; activeBg: string }>`
     background-color: ${({ activeBg }) => activeBg};
   }
 `;
+
+export default Trigger;

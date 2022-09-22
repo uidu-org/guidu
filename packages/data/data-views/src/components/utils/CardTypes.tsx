@@ -1,12 +1,14 @@
-import { useDataManagerContext } from '@uidu/data-manager';
+import { Table } from '@tanstack/react-table';
 import Select from '@uidu/select';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export default function CardTypes() {
-  const {
-    tableInstance: { getAllColumns, getState, setColumnVisibility },
-  } = useDataManagerContext();
+export default function CardTypes<T>({
+  tableInstance,
+}: {
+  tableInstance: Table<T>;
+}) {
+  const { getAllColumns, getState, setColumnVisibility } = tableInstance;
 
   const columns = getAllColumns();
   const { columnVisibility } = getState();

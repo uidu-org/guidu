@@ -2,7 +2,6 @@ import { XMarkIcon } from '@heroicons/react/24/solid';
 import { ColumnFilter } from '@tanstack/react-table';
 import Button from '@uidu/button';
 import { getFieldFromColumnDef } from '@uidu/data-fields';
-import { useDataManagerContext } from '@uidu/data-manager';
 import Form, { useForm } from '@uidu/form';
 import { MenuGroup, Section } from '@uidu/menu';
 import Select from '@uidu/select';
@@ -12,19 +11,18 @@ import ColumnsList from '../../utils/ColumnsList';
 import PickField from '../../utils/PickField';
 import { FiltererFormProps } from './types';
 
-export default function FiltererForm({ closePopup }: FiltererFormProps) {
+export default function FiltererForm<T>({
+  closePopup,
+  tableInstance,
+}: FiltererFormProps<T>) {
   const {
-    tableInstance: {
-      getAllColumns,
-      getAllFlatColumns,
-      getState,
-      setColumnFilters,
-      setGlobalFilter,
-      getColumn,
-      // setFilter,
-      // setAllFilters,
-    },
-  } = useDataManagerContext();
+    getAllFlatColumns,
+    getState,
+    setColumnFilters,
+    getColumn,
+    // setFilter,
+    // setAllFilters,
+  } = tableInstance;
   const intl = useIntl();
 
   const columns = getAllFlatColumns();

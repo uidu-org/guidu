@@ -1,6 +1,5 @@
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import Button from '@uidu/button';
-import { useDataManagerContext } from '@uidu/data-manager';
 import Form, { useForm } from '@uidu/form';
 import { MenuGroup, Section } from '@uidu/menu';
 import Select from '@uidu/select';
@@ -10,12 +9,13 @@ import { PickField } from '../../utils';
 import ColumnsList from '../../utils/ColumnsList';
 import { GrouperFormProps } from './types';
 
-export default function GrouperForm({ closePopup }: GrouperFormProps) {
+export default function GrouperForm<T>({
+  closePopup,
+  tableInstance,
+}: GrouperFormProps<T>) {
   const form = useForm({ mode: 'all' });
   const intl = useIntl();
-  const {
-    tableInstance: { setGrouping, getState, getAllFlatColumns },
-  } = useDataManagerContext();
+  const { setGrouping, getState, getAllFlatColumns } = tableInstance;
 
   const { grouping } = getState();
   const columns = getAllFlatColumns();

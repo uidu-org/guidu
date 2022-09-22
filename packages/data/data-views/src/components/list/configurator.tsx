@@ -1,7 +1,7 @@
 import { Toggler } from '@uidu/data-controls';
 import React from 'react';
 
-export default function Configurator({ onDragEnd }) {
+export default function Configurator({ onDragEnd, tableInstance }) {
   return (
     <>
       <div className="list-group">
@@ -9,7 +9,7 @@ export default function Configurator({ onDragEnd }) {
           <h6 className="m-0">Visible fields</h6>
         </div>
       </div>
-      <Toggler onDragEnd={onDragEnd} />
+      <Toggler onDragEnd={onDragEnd} tableInstance={tableInstance} />
     </>
   );
 }

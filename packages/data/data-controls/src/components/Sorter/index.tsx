@@ -1,5 +1,4 @@
 import { ArrowsUpDownIcon } from '@heroicons/react/24/solid';
-import { useDataManagerContext } from '@uidu/data-manager';
 import Popup, { TriggerProps } from '@uidu/popup';
 import React, { useCallback, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
@@ -7,11 +6,9 @@ import { Trigger as StyledTrigger } from '../../styled';
 import SorterForm from './form';
 import { SorterProps } from './types';
 
-export default function Sorter(props: SorterProps) {
+export default function Sorter<T>({ tableInstance }: SorterProps<T>) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const {
-    tableInstance: { getState },
-  } = useDataManagerContext();
+  const { getState } = tableInstance;
 
   const { sorting } = getState();
 
@@ -46,10 +43,13 @@ export default function Sorter(props: SorterProps) {
   const Content = useCallback(
     () => (
       <div tw="w-screen sm:width[500px]">
-        <SorterForm closePopup={() => setIsDialogOpen(false)} />
+        <SorterForm
+          tableInstance={tableInstance}
+          closePopup={() => setIsDialogOpen(false)}
+        />
       </div>
     ),
-    [],
+    [tableInstance],
   );
 
   return (

@@ -1,4 +1,3 @@
-import { useDataManagerContext } from '@uidu/data-manager';
 import InlineDialog from '@uidu/inline-dialog';
 import Tooltip from '@uidu/tooltip';
 import React, { useEffect, useRef, useState } from 'react';
@@ -6,14 +5,12 @@ import { Search } from 'react-feather';
 import { Trigger } from '../../styled';
 import { FinderProps } from './types';
 
-export default function Finder({}: FinderProps) {
+export default function Finder<T>({ tableInstance }: FinderProps<T>) {
   const node: React.RefObject<HTMLDivElement> = useRef();
   const input: React.RefObject<HTMLInputElement> = useRef();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const {
-    tableInstance: { setGlobalFilter },
-  } = useDataManagerContext();
+  const { setGlobalFilter } = tableInstance;
 
   const handleClick = (e) => {
     if (node.current.contains(e.target)) {

@@ -1,17 +1,21 @@
 import loadable from '@loadable/component';
+import { Table } from '@tanstack/react-table';
 import { ButtonGroup } from '@uidu/button';
 import { Configurator, Filterer, Grouper, Sorter } from '@uidu/data-controls';
-import { useDataManagerContext } from '@uidu/data-manager';
 import React from 'react';
 import { EyeOff } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 
 const ConfiguratorForm = loadable(() => import('./configurator'));
 
-export default function Controls({ availableControls }) {
-  const {
-    tableInstance: { getState },
-  } = useDataManagerContext();
+export default function Controls<T>({
+  availableControls,
+  tableInstance,
+}: {
+  availableControls: any;
+  tableInstance: Table<T>;
+}) {
+  const { getState } = tableInstance;
   const { columnVisibility } = getState();
 
   const hiddenCount =
@@ -34,15 +38,25 @@ export default function Controls({ availableControls }) {
           />
         }
         configurator={ConfiguratorForm}
+        tableInstance={tableInstance}
       />
       {availableControls.filterer.visible && (
-        <Filterer {...availableControls.filterer.props} />
+        <Filterer
+          tableInstance={tableInstance}
+          {...availableControls.filterer.props}
+        />
       )}
       {availableControls.sorter.visible && (
-        <Sorter {...availableControls.sorter.props} />
+        <Sorter
+          tableInstance={tableInstance}
+          {...availableControls.sorter.props}
+        />
       )}
       {availableControls.grouper.visible && (
-        <Grouper {...availableControls.grouper.props} />
+        <Grouper
+          tableInstance={tableInstance}
+          {...availableControls.grouper.props}
+        />
       )}
     </ButtonGroup>
   );

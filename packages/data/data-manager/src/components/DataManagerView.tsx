@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import loadable from '@loadable/component';
 import { Row } from '@tanstack/react-table';
-import { OverrideableListProps } from '@uidu/list';
+import { GalleryProps } from '@uidu/gallery/src/types';
+import { ListProps, OverrideableListProps } from '@uidu/list';
 import { ShellBodyWithSpinner } from '@uidu/shell';
-import { OverrideableTableProps } from '@uidu/table';
+import { OverrideableTableProps, TableProps } from '@uidu/table';
 import dayjs from 'dayjs';
-import React, { ReactNode } from 'react';
+import React, { FC, ReactNode, Suspense } from 'react';
 import Media from 'react-media';
 import DataCard from './DataCard';
 import { useDataManagerContext } from './DataManagerContext';
@@ -22,7 +23,7 @@ const Column = React.forwardRef<HTMLDivElement, any>((props, ref) => (
   </div>
 ));
 
-const ColumnHeader = ({ title, items, ...rest }) => {
+function ColumnHeader({ title, items, ...rest }) {
   return (
     <div tw="bg-transparent flex items-center justify-between" {...rest}>
       <div>
@@ -39,7 +40,7 @@ const ColumnHeader = ({ title, items, ...rest }) => {
       </div> */}
     </div>
   );
-};
+}
 
 function Item({ item, provided, ...rest }) {
   return (
@@ -97,11 +98,9 @@ export type DataManagerViewProps<T> = {
 };
 
 function DataManagerView<T>({
-  onItemClick,
   viewProps,
   emptyState: EmptyState = DefaultEmptyState,
 }: {
-  onItemClick?: (item: Row<T>) => void;
   viewProps?: {
     board?: any;
     calendar?: any;
@@ -114,12 +113,11 @@ function DataManagerView<T>({
   const {
     currentView,
     tableInstance,
-    rowData,
-    columns,
     columnCount,
-    setAggregation,
-    setColumnWidth,
+    // setAggregation,
+    // setColumnWidth,
     pagination,
+    onItemClick,
   } = useDataManagerContext<T>();
   const renderResponsiveView = ({
     mobileView,
@@ -139,16 +137,12 @@ function DataManagerView<T>({
     </Media>
   );
 
-  if (!rowData) {
-    return <ShellBodyWithSpinner />;
-  }
+  let desktopView: React.ReactNode = null;
+  let mobileView: React.ReactNode = null;
 
-  // if (rowData.length === 0) {
-  //   return <EmptyState />;
-  // }
-
-  let desktopView = null;
-  let mobileView = null;
+  const rowData = tableInstance
+    .getRowModel()
+    .rows.map((row) => row.original as T);
 
   switch (currentView?.kind) {
     case 'calendar': {
@@ -167,7 +161,9 @@ function DataManagerView<T>({
             <div tw="h-full">
               <Calendar
                 onSelectEvent={onItemClick}
-                events={rowData}
+                events={tableInstance
+                  .getRowModel()
+                  .rows.map((row) => row.original)}
                 startAccessor={(item: Row<T>) =>
                   dayjs(item[startDateField]).toDate()
                 }
@@ -177,7 +173,7 @@ function DataManagerView<T>({
                     ? dayjs(item[endDateField]).toDate()
                     : dayjs(item[startDateField]).add(3, 'hour').toDate()
                 }
-                columnDefs={columns}
+                columnDefs={tableInstance.getAllColumns()}
                 components={{
                   toolbar: Toolbar,
                   ...calendarComponents,
@@ -229,25 +225,23 @@ function DataManagerView<T>({
     case 'gallery': {
       mobileView = (
         <LoadableList fallback={<ShellBodyWithSpinner />}>
-          {({ default: List }) => (
+          {({ default: List }: { default: FC<ListProps<T>> }) => (
             <List
               {...viewProps.list}
               tableInstance={tableInstance}
               onItemClick={onItemClick}
-              columnDefs={columns}
             />
           )}
         </LoadableList>
       );
       desktopView = (
         <LoadableGallery fallback={<ShellBodyWithSpinner />}>
-          {({ default: Gallery }) => (
+          {({ default: Gallery }: { default: FC<GalleryProps<T>> }) => (
             <Gallery
               {...viewProps.gallery}
               tableInstance={tableInstance}
               columnCount={columnCount}
               onItemClick={onItemClick}
-              columnDefs={columns}
             />
           )}
         </LoadableGallery>
@@ -258,12 +252,11 @@ function DataManagerView<T>({
       // eslint-disable-next-line no-multi-assign
       desktopView = mobileView = (
         <LoadableList fallback={<ShellBodyWithSpinner />}>
-          {({ default: List }) => (
+          {({ default: List }: { default: FC<ListProps<T>> }) => (
             <List
               {...viewProps.list}
               tableInstance={tableInstance}
               onItemClick={onItemClick}
-              columnDefs={columns}
               pagination={pagination}
             />
           )}
@@ -272,40 +265,31 @@ function DataManagerView<T>({
       break;
     default:
       desktopView = (
-        <LoadableTable fallback={<ShellBodyWithSpinner />}>
-          {({ default: Table }) => (
-            <div tw="h-full">
-              <Table
-                setAggregation={setAggregation}
-                setColumnWidth={setColumnWidth}
-                tableInstance={tableInstance}
-                state={tableInstance.getState()}
-                {...viewProps.table}
-                rowHeight={(viewProps.table || {}).rowHeight || 56}
-                onItemClick={onItemClick}
-                columnDefs={columns}
-                rowData={rowData}
-                pagination={pagination}
-                // onSortChanged={onSortChanged}
-                // onFilterChanged={onFilterChanged}
-                // onColumnRowGroupChanged={onColumnRowGroupChanged}
-                // onColumnVisible={onColumnVisible}
-                // onDragStopped={onDragStopped}
-                // onColumnResized={onColumnResized}
-                // onRowGroupOpened={onRowGroupOpened}
-              />
-            </div>
-          )}
-        </LoadableTable>
+        <Suspense fallback={<ShellBodyWithSpinner />}>
+          <LoadableTable fallback={<ShellBodyWithSpinner />}>
+            {({ default: Table }: { default: FC<TableProps<T>> }) => (
+              <div tw="h-full">
+                <Table
+                  // setAggregation={setAggregation}
+                  // setColumnWidth={setColumnWidth}
+                  rowHeight={(viewProps.table || {}).rowHeight || 56}
+                  onItemClick={onItemClick}
+                  pagination={pagination}
+                  tableInstance={tableInstance}
+                  {...viewProps.table}
+                />
+              </div>
+            )}
+          </LoadableTable>
+        </Suspense>
       );
       mobileView = (
         <LoadableList fallback={<ShellBodyWithSpinner />}>
-          {({ default: List }) => (
+          {({ default: List }: { default: FC<ListProps<T>> }) => (
             <List
               {...viewProps.list}
               tableInstance={tableInstance}
               onItemClick={onItemClick}
-              columnDefs={columns}
             />
           )}
         </LoadableList>

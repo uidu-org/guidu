@@ -1,11 +1,22 @@
+import { Table } from '@tanstack/react-table';
 import { Toggler } from '@uidu/data-controls';
-import { useDataManagerContext } from '@uidu/data-manager';
 import Form, { useForm } from '@uidu/form';
 import Select from '@uidu/select';
 import React from 'react';
 
-export default function Configurator({ onDragEnd }) {
-  const { columns, currentView, updateView } = useDataManagerContext();
+export default function Configurator<T>({
+  onDragEnd,
+  tableInstance,
+  currentView,
+  updateView,
+}: {
+  onDragEnd;
+  tableInstance: Table<T>;
+  currentView;
+  updateView;
+}) {
+  const { getAllColumns } = tableInstance;
+  const columns = getAllColumns();
 
   const primaryField = currentView.preferences?.primaryField || 'status';
 
@@ -52,7 +63,7 @@ export default function Configurator({ onDragEnd }) {
           <h6 className="m-0">Visible fields</h6>
         </div>
       </div>
-      <Toggler onDragEnd={onDragEnd} />
+      <Toggler onDragEnd={onDragEnd} tableInstance={tableInstance} />
     </>
   );
 }

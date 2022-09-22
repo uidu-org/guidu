@@ -5,16 +5,23 @@ import { Settings } from 'react-feather';
 
 const ConfiguratorForm = loadable(() => import('./configurator'));
 
-export default function Controls({ availableControls }) {
+export default function Controls({ availableControls, tableInstance }) {
   return (
     <>
       <Configurator
         icon={Settings}
         configurator={ConfiguratorForm}
         name="Customize cards"
+        tableInstance={tableInstance}
       />
-      <Filterer {...availableControls.filterer.props} />
-      <Sorter {...availableControls.sorter.props} />
+      <Filterer
+        tableInstance={tableInstance}
+        {...availableControls.filterer.props}
+      />
+      <Sorter
+        tableInstance={tableInstance}
+        {...availableControls.sorter.props}
+      />
     </>
   );
 }

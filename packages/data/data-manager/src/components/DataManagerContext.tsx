@@ -7,7 +7,6 @@ interface DataManagerPassedDownProps<TTable, TView extends {}> {
   onItemClick: (item: TTable) => void;
   currentView?: TView;
   updateView?: (name: string, value: any) => Promise<any>;
-  rowData?: Array<TTable>;
   pagination?: {
     isLoadingNext?: boolean;
     loadNext?: () => void;
@@ -33,7 +32,6 @@ export const DataManagerContext =
 
 function DataManagerProvider<TTable, TView extends {}>({
   children,
-  rowData = [],
   columns,
   currentView,
   updateView,
@@ -67,32 +65,23 @@ function DataManagerProvider<TTable, TView extends {}>({
     // ]);
   };
 
-  const setColumnWidth = (column) => {
-    console.log(column);
-  };
-
-  const tableInstanceState = tableInstance.getState();
-
   const value = useMemo(
     () => ({
       tableInstance,
       currentView,
       updateView,
       columns,
-      rowData,
       columnCount: currentView.preferences?.columnCount,
       setColumnCount,
-      setAggregation,
-      setColumnWidth,
+      // setAggregation,
       onItemClick,
       pagination,
     }),
     [
-      tableInstanceState,
+      tableInstance,
       currentView,
       updateView,
       columns,
-      rowData,
       setColumnCount,
       onItemClick,
       pagination,

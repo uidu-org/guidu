@@ -1,14 +1,20 @@
+import { Table } from '@tanstack/react-table';
 import { Toggler } from '@uidu/data-controls';
-import { useDataManagerContext } from '@uidu/data-manager';
 import FieldCounter from '@uidu/field-counter';
 import Form, { useForm } from '@uidu/form';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import CardTypes from '../utils/CardTypes';
 
-export default function Configurator({}) {
-  const { columnCount, setColumnCount } = useDataManagerContext();
-
+export default function Configurator<T>({
+  tableInstance,
+  currentView,
+  setColumnCount,
+  columnCount,
+}: {
+  currentView;
+  tableInstance: Table<T>;
+}) {
   const handleSubmit = async (model) => console.log(model);
 
   const form = useForm({ mode: 'all' });
@@ -39,7 +45,7 @@ export default function Configurator({}) {
                 min={1}
                 max={5}
               />
-              <CardTypes />
+              <CardTypes tableInstance={tableInstance} />
             </div>
           </Form>
         </div>
@@ -49,7 +55,7 @@ export default function Configurator({}) {
           <h6 className="m-0">Visible fields</h6>
         </div>
       </div>
-      <Toggler onDragEnd={console.log} />
+      <Toggler onDragEnd={console.log} tableInstance={tableInstance} />
     </>
   );
 }

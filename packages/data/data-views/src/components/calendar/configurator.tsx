@@ -1,12 +1,20 @@
-import { useDataManagerContext } from '@uidu/data-manager';
+import { Table } from '@tanstack/react-table';
 import Form, { useForm } from '@uidu/form';
 import Select from '@uidu/select';
 import React from 'react';
 
-export default function Configurator({}) {
-  const { columns, currentView, updateView } = useDataManagerContext();
+export default function Configurator<T>({
+  tableInstance,
+  currentView,
+  updatedView,
+}: {
+  tableInstance: Table<T>;
+}) {
+  const { getAllColumns } = tableInstance;
+  const columns = getAllColumns();
 
-  const startDateField = currentView.preferences?.startDateField || 'createdAt';
+  const startDateField =
+    currentView?.preferences?.startDateField || 'createdAt';
 
   const handleSubmit = async (model) => console.log(model);
 

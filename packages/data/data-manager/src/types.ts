@@ -1,10 +1,9 @@
-import { ResultSet } from '@cubejs-client/core';
 import {
   ColumnDef,
   ColumnPinningPosition,
   Row as RowType,
   RowData,
-  TableOptions,
+  Table,
 } from '@tanstack/react-table';
 import { FieldKind } from '@uidu/data-fields';
 import { DataView } from '@uidu/data-views';
@@ -66,29 +65,18 @@ export type RowActions<T> = {
 };
 
 export type DataManagerProps<T> = {
-  columns: ColumnDef<T>[];
+  tableInstance: Table<T>;
   children: React.ReactElement;
   currentView?: DataView;
   onViewUpdate?: (state: any) => void;
   updateView?: (name: string, value: any) => Promise<any>;
   isAutoSaving?: string;
-  rowData?: T[];
   onItemClick: (item: T) => void;
   canSelectRows?: boolean;
   actions?: (row: RowType<T>) => RowActions<T>[];
-  forwardedRef: React.Ref<any>;
-  options?: Partial<TableOptions<T>>;
   pagination?: {
     isLoadingNext?: boolean;
     loadNext?: () => void;
     hasNext?: boolean;
   };
-};
-
-export type DataManagerCubeProps<T> = DataManagerProps<T> & {
-  resultSet: ResultSet;
-  columnDefs: Record<string, ColumnDef<T, any>>;
-  query: any;
-  onReady?: (resultSet: any) => void;
-  subscribe: boolean;
 };

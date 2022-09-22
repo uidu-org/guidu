@@ -1,6 +1,5 @@
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import Button from '@uidu/button';
-import { useDataManagerContext } from '@uidu/data-manager';
 import Form, { useForm, useWatch } from '@uidu/form';
 import { MenuGroup, Section } from '@uidu/menu';
 import Select, { OptionProps, SingleValueProps } from '@uidu/select';
@@ -52,12 +51,13 @@ function SingleValue({
   );
 }
 
-export default function SorterForm({ closePopup }: SorterFormProps) {
+export default function SorterForm<T>({
+  closePopup,
+  tableInstance,
+}: SorterFormProps<T>) {
   const intl = useIntl();
 
-  const {
-    tableInstance: { getState, setSorting, getAllFlatColumns },
-  } = useDataManagerContext();
+  const { getState, setSorting, getAllFlatColumns } = tableInstance;
 
   const { sorting } = getState();
   const columns = getAllFlatColumns();

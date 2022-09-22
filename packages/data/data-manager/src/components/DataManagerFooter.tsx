@@ -2,20 +2,7 @@ import React from 'react';
 import { useDataManagerContext } from './DataManagerContext';
 
 export default function DataManagerFooter() {
-  const {
-    currentView,
-    tableInstance,
-    tableInstance: {
-      getState,
-      previousPage,
-      nextPage,
-      canPreviousPage,
-      canNextPage,
-      pageOptions,
-      gotoPage,
-    },
-  } = useDataManagerContext();
-  const { pagination } = getState();
+  const { currentView } = useDataManagerContext();
 
   switch (currentView.kind) {
     case 'calendar':
