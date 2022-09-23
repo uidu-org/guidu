@@ -5,7 +5,7 @@ export type Group = {
   index?: number;
 };
 
-export type GrouperProps = {
+export type GrouperProps<T> = {
   tableInstance: Table<T>;
   groupers?: Array<Group>;
 };
