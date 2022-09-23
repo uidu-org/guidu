@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message",
-  "version": "0.5.46",
+  "version": "0.5.47",
   "description": "A React component that renders a message",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/messaging/message",
   "license": "ISC",
@@ -23,8 +23,8 @@
     "@uidu/menu": "0.8.2",
     "@uidu/message-form": "^0.4.26",
     "@uidu/message-renderer": "^0.4.21",
-    "@uidu/popup": "0.7.3",
-    "@uidu/tooltip": "^0.5.23",
+    "@uidu/popup": "0.7.4",
+    "@uidu/tooltip": "^0.5.24",
     "@uifabric/file-type-icons": "^7.10.3",
     "classnames": "^2.3.2",
     "emoji-regex": "^10.1.0",

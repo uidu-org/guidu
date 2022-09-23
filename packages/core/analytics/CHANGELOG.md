@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.6.7
+
+### Patch Changes
+
+- b3b350b21: Release portal, migrated to latest version
+
 ## 0.6.6
 
 ### Patch Changes
