@@ -29,6 +29,8 @@ function Table<T extends { id: string }>({
   overrides = defaultOverrides,
   // pagination
   pagination,
+  // pending
+  isPending = false,
 }: TableProps<T>) {
   const { getHeaderGroups, getFooterGroups, getRowModel, getState } =
     tableInstance;
@@ -110,10 +112,15 @@ function Table<T extends { id: string }>({
       return;
     }
 
-    if (lastItem.index >= rows.length - 1 && hasNext && !isLoadingNext) {
+    if (
+      lastItem.index >= rows.length - 1 &&
+      hasNext &&
+      !isLoadingNext &&
+      !isPending
+    ) {
       loadNext();
     }
-  }, [loadNext, hasNext, rows.length, virtualRows, isLoadingNext]);
+  }, [loadNext, hasNext, rows.length, virtualRows, isLoadingNext, isPending]);
 
   const paddingTop = virtualRows.length > 0 ? virtualRows?.[0]?.start || 0 : 0;
   const paddingBottom =
@@ -138,12 +145,20 @@ function Table<T extends { id: string }>({
           columnSizingInfo={columnSizingInfo}
         />
         {/* Here we should insert the pagination fragment, and manage data  */}
-        <Body height={totalSize} verticalPadding={headerHeight}>
-          {/* <LoadingSkeleton rows={rows} rowHeight={rowHeight} /> */}
+        <Body $height={totalSize} $verticalPadding={headerHeight}>
           {/* {paddingTop > 0 && <div style={{ height: `${paddingTop}px` }} />} */}
-          {virtualRows.map(({ size, start, index, key }) => (
-            <Row key={key} size={size} start={start} index={index} />
-          ))}
+          {isPending ? (
+            <LoadingSkeleton
+              components={rowComponents}
+              columns={tableInstance.getAllColumns()}
+              count={50}
+              rowHeight={rowHeight}
+            />
+          ) : (
+            virtualRows.map(({ size, start, index, key }) => (
+              <Row key={key} size={size} start={start} index={index} />
+            ))
+          )}
           {/* {paddingBottom > 0 && (
             <div style={{ height: `${paddingBottom}px` }} />
           )} */}

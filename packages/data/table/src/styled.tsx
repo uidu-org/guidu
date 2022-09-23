@@ -4,12 +4,13 @@ import tw, { theme } from 'twin.macro';
 import { getPinnedStyled } from './utils';
 
 export const Body = styled.div.attrs<{
-  height: number;
-  verticalPadding: number;
+  $height: number;
+  $verticalPadding: number;
 }>((props) => ({
   style: {
-    height: `${props.height}px`,
-    minHeight: `calc(100% - ${props.verticalPadding}px)`,
+    height: `${props.$height}px`,
+    minHeight: `calc(100% - ${props.$verticalPadding}px)`,
+    width: 'fit-content',
   },
 }))`
   background: rgb(var(--body-on-primary-bg));

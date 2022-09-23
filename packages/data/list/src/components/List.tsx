@@ -18,6 +18,8 @@ export default function List<T>({
   loadingSkeleton: LoadingSkeleton = DefaultLoadingSkeleton,
   // pagination
   pagination,
+  // pending
+  isPending = false,
 }: ListProps<T>) {
   const parentRef = useRef();
 
@@ -82,10 +84,15 @@ export default function List<T>({
       return;
     }
 
-    if (lastItem.index >= rows.length - 1 && hasNext && !isLoadingNext) {
+    if (
+      lastItem.index >= rows.length - 1 &&
+      hasNext &&
+      !isLoadingNext &&
+      !isPending
+    ) {
       loadNext();
     }
-  }, [loadNext, hasNext, rows.length, virtualRows, isLoadingNext]);
+  }, [loadNext, hasNext, rows.length, virtualRows, isLoadingNext, isPending]);
 
   return (
     <div tw="h-full">
@@ -98,14 +105,17 @@ export default function List<T>({
             minHeight: `calc(100% - ${rowHeight * 2 - 8 - 16}px)`,
           }}
         >
-          <LoadingSkeleton
-            rows={rows}
-            rowHeight={rowHeight}
-            gutterSize={gutterSize}
-          />
-          {virtualRows.map(({ index, key, start, size }) => (
-            <Item index={index} key={key} start={start} size={size} />
-          ))}
+          {isPending ? (
+            <LoadingSkeleton
+              count={50}
+              rowHeight={rowHeight}
+              gutterSize={gutterSize}
+            />
+          ) : (
+            virtualRows.map(({ index, key, start, size }) => (
+              <Item index={index} key={key} start={start} size={size} />
+            ))
+          )}
         </div>
       </div>
     </div>

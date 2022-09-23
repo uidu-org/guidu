@@ -12,6 +12,8 @@ export interface OverrideableTableProps<T> {
   // components
   loadingRow?: FC<LoadingRowProps>;
   loadingSkeleton?: FC<LoadingSkeletonProps<T>>;
+  // pending
+  isPending?: boolean;
 }
 
 export interface TableProps<T> extends OverrideableTableProps<T> {

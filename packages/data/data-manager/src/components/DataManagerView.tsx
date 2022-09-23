@@ -100,6 +100,7 @@ export type DataManagerViewProps<T> = {
 function DataManagerView<T>({
   viewProps,
   emptyState: EmptyState = DefaultEmptyState,
+  isPending = false,
 }: {
   viewProps?: {
     board?: any;
@@ -109,6 +110,7 @@ function DataManagerView<T>({
     table?: DataManagerTableViewProps<T>;
   };
   emptyState?: React.FC<any>;
+  isPending?: boolean;
 }) {
   const {
     currentView,
@@ -178,6 +180,7 @@ function DataManagerView<T>({
                   toolbar: Toolbar,
                   ...calendarComponents,
                 }}
+                isPending={isPending}
                 {...calendarViewProps}
               />
             </div>
@@ -215,6 +218,7 @@ function DataManagerView<T>({
                   columnHeader: ColumnHeader,
                   item: Item,
                 }}
+                isPending={isPending}
               />
             );
           }}
@@ -230,6 +234,7 @@ function DataManagerView<T>({
               {...viewProps.list}
               tableInstance={tableInstance}
               onItemClick={onItemClick}
+              isPending={isPending}
             />
           )}
         </LoadableList>
@@ -242,6 +247,7 @@ function DataManagerView<T>({
               tableInstance={tableInstance}
               columnCount={columnCount}
               onItemClick={onItemClick}
+              isPending={isPending}
             />
           )}
         </LoadableGallery>
@@ -258,6 +264,7 @@ function DataManagerView<T>({
               tableInstance={tableInstance}
               onItemClick={onItemClick}
               pagination={pagination}
+              isPending={isPending}
             />
           )}
         </LoadableList>
@@ -276,6 +283,7 @@ function DataManagerView<T>({
                   onItemClick={onItemClick}
                   pagination={pagination}
                   tableInstance={tableInstance}
+                  isPending={isPending}
                   {...viewProps.table}
                 />
               </div>
@@ -290,6 +298,7 @@ function DataManagerView<T>({
               {...viewProps.list}
               tableInstance={tableInstance}
               onItemClick={onItemClick}
+              isPending={isPending}
             />
           )}
         </LoadableList>

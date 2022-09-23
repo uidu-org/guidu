@@ -13,6 +13,8 @@ export interface OverrideableListProps<T> {
   // components
   loadingRow?: FC<LoadingRowProps>;
   loadingSkeleton?: FC<LoadingSkeletonProps<T>>;
+  // pending
+  isPending?: boolean;
 }
 
 export interface ListProps<T> extends OverrideableListProps<T> {

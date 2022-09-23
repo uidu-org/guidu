@@ -19,7 +19,7 @@ export default function Headers<T>({
 }) {
   const { Th } = components;
   return (
-    <div tw="background[rgb(var(--body-on-primary-bg))] flex flex-col min-w-full top-0 sticky z-10 w-max">
+    <div tw="background[rgb(var(--body-on-primary-bg))] flex flex-col min-w-full top-0 sticky z-50 w-max">
       {headerGroups.map((headerGroup) => (
         <div tw="flex min-w-full" key={headerGroup.id}>
           {headerGroup.headers
