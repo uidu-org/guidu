@@ -1,5 +1,12 @@
 # @uidu/message
 
+## 0.5.47
+
+### Patch Changes
+
+- @uidu/popup@0.7.4
+- @uidu/tooltip@0.5.24
+
 ## 0.5.46
 
 ### Patch Changes

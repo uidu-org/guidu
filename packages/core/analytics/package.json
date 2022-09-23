@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "description": "The uidu component analytics framework",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/analytics",
   "license": "ISC",

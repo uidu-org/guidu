@@ -1,5 +1,12 @@
 # @uidu/popup
 
+## 0.7.4
+
+### Patch Changes
+
+- Updated dependencies [b3b350b21]
+  - @uidu/portal@1.0.0
+
 ## 0.7.3
 
 ### Patch Changes
