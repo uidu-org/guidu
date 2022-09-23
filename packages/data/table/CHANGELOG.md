@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 3.1.0
+
+### Minor Changes
+
+- b744de576: Adding isPending boolean to show skeleton when changing data-controls
+
+### Patch Changes
+
+- Updated dependencies [b744de576]
+  - @uidu/data-manager@4.1.0
+
 ## 3.0.0
 
 ### Major Changes
