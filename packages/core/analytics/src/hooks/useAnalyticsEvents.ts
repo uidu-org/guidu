@@ -24,14 +24,12 @@ export function useAnalyticsEvents(): UseAnalyticsEventsHook {
   }
 
   const createAnalyticsEvent = useCallback(
-    (payload: AnalyticsEventPayload): UIAnalyticsEvent => {
-      console.log(AnalyticsReactContext);
-      return new UIAnalyticsEvent({
+    (payload: AnalyticsEventPayload): UIAnalyticsEvent =>
+      new UIAnalyticsEvent({
         context: getAnalyticsContext(),
         handlers: getAnalyticsEventHandlers(),
         payload,
-      });
-    },
+      }),
     [getAnalyticsEventHandlers, getAnalyticsContext],
   );
 

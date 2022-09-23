@@ -18,6 +18,7 @@ const StackingContextExample = () => (
           position: 'absolute',
           top: 24,
           left: 24,
+          // eslint-disable-next-line @atlaskit/design-system/ensure-design-token-usage
           background: 'lightpink',
           padding: '24px',
           borderRadius: '3px',
@@ -35,6 +36,7 @@ const StackingContextExample = () => (
           position: 'absolute',
           top: 100,
           left: 100,
+          // eslint-disable-next-line @atlaskit/design-system/ensure-design-token-usage
           background: 'aquamarine',
           padding: '24px',
           borderRadius: '3px',
