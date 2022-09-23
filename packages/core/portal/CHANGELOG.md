@@ -1,5 +1,11 @@
 # @uidu/portal
 
+## 1.0.0
+
+### Major Changes
+
+- b3b350b21: Release portal, migrated to latest version
+
 ## 0.5.22
 
 ### Patch Changes

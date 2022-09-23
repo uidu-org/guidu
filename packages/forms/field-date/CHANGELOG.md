@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 2.0.11
+
+### Patch Changes
+
+- @uidu/popup@0.7.4
+
 ## 2.0.10
 
 ### Patch Changes

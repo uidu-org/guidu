@@ -1,5 +1,14 @@
 # @uidu/onboarding
 
+## 1.3.12
+
+### Patch Changes
+
+- Updated dependencies [b3b350b21]
+  - @uidu/portal@1.0.0
+  - @uidu/analytics@0.6.7
+  - @uidu/modal-dialog@1.0.14
+
 ## 1.3.11
 
 ### Patch Changes
