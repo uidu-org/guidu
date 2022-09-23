@@ -1,7 +1,5 @@
-import DropdownMenu, {
-  DropdownItem,
-  DropdownItemGroup,
-} from '@uidu/dropdown-menu';
+import { ButtonItem, MenuGroup } from '@uidu/menu';
+import Popup from '@uidu/popup';
 import React, { Component } from 'react';
 import { Share } from 'react-feather';
 import { Trigger } from '../../styled';
@@ -12,19 +10,25 @@ export default class Sharer extends Component<any> {
   render() {
     const { onChange } = this.props;
     return (
-      <DropdownMenu
-        trigger={
-          <Trigger activeBg="#fee2d5" className="btn" active={false}>
+      <Popup
+        trigger={(triggerProps) => (
+          <Trigger
+            activeBg="#fee2d5"
+            className="btn"
+            active={false}
+            {...triggerProps}
+          >
             <Share strokeWidth={2} size={14} />
           </Trigger>
-        }
+        )}
         position="bottom left"
-      >
-        <DropdownItemGroup>
-          <DropdownItem>Create a shareable view</DropdownItem>
-          <DropdownItem>Create a form view</DropdownItem>
-        </DropdownItemGroup>
-      </DropdownMenu>
+        content={() => (
+          <MenuGroup>
+            <ButtonItem>Create a shareable view</ButtonItem>
+            <ButtonItem>Create a form view</ButtonItem>
+          </MenuGroup>
+        )}
+      />
     );
   }
 }

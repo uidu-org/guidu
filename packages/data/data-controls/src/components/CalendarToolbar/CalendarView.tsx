@@ -1,9 +1,7 @@
-import DropdownMenu, {
-  DropdownItem,
-  DropdownItemGroup,
-} from '@uidu/dropdown-menu';
+import { ButtonItem, MenuGroup } from '@uidu/menu';
+import Popup from '@uidu/popup';
 import Tooltip from '@uidu/tooltip';
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckCircle, Layout } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
@@ -50,9 +48,35 @@ export default function CalendarView({
     },
   ],
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <DropdownMenu
-      trigger={
+    <Popup
+      isOpen={isOpen}
+      onClose={() => setIsOpen(false)}
+      content={() => (
+        <MenuGroup>
+          {views.map((calendarView) => (
+            <ButtonItem
+              key={calendarView.id}
+              onClick={(e) => {
+                e.preventDefault();
+                onView(calendarView);
+              }}
+              {...(calendarView === view
+                ? {
+                    elemBefore: (
+                      <CheckCircle size={14} className="text-success" />
+                    ),
+                  }
+                : null)}
+            >
+              <span tw="capitalize">{calendarView}</span>
+            </ButtonItem>
+          ))}
+        </MenuGroup>
+      )}
+      trigger={(triggerProps) => (
         <Tooltip
           content={
             <FormattedMessage
@@ -65,32 +89,13 @@ export default function CalendarView({
           <Trigger
             activeBg="#d1f7c4"
             iconBefore={<Layout strokeWidth={2} size={14} />}
+            {...triggerProps}
+            onClick={() => setIsOpen((prev) => !prev)}
           >
             <span tw="text-transform[capitalize]">{view}</span>
           </Trigger>
         </Tooltip>
-      }
-    >
-      <DropdownItemGroup>
-        {views.map((calendarView) => (
-          <DropdownItem
-            key={calendarView.id}
-            onClick={(e) => {
-              e.preventDefault();
-              onView(calendarView);
-            }}
-            {...(calendarView === view
-              ? {
-                  elemBefore: (
-                    <CheckCircle size={14} className="text-success" />
-                  ),
-                }
-              : null)}
-          >
-            <span tw="capitalize">{calendarView}</span>
-          </DropdownItem>
-        ))}
-      </DropdownItemGroup>
-    </DropdownMenu>
+      )}
+    />
   );
 }
