@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 3.1.1
+
+### Patch Changes
+
+- 16c110196: Bump deps
+
 ## 3.1.0
 
 ### Minor Changes

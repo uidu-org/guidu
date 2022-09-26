@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-base",
-  "version": "4.0.10",
+  "version": "4.0.11",
   "description": "Inputs using Formsy",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-base",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.19.0",
     "@heroicons/react": "^2.0.11",
-    "@uidu/form": "2.1.4",
+    "@uidu/form": "2.1.5",
     "react-hook-form": "^7.36.1",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0",

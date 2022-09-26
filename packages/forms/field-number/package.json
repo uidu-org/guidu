@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-number",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "Field Number Component",
   "keywords": [
     "react",
@@ -16,9 +16,9 @@
   "types": "dist/uidu-field-number.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.19.0",
-    "@uidu/field-base": "4.0.10",
+    "@uidu/field-base": "4.0.11",
     "@uidu/field-text": "^2.0.2",
-    "@uidu/form": "^2.1.4",
+    "@uidu/form": "^2.1.5",
     "react-number-format": "^4.9.4",
     "tslib": "^2.4.0"
   },
