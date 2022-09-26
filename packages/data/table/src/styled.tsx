@@ -10,7 +10,7 @@ export const Body = styled.div.attrs<{
   style: {
     height: `${props.$height}px`,
     minHeight: `calc(100% - ${props.$verticalPadding}px)`,
-    width: 'fit-content',
+    minWidth: 'fit-content',
   },
 }))`
   background: rgb(var(--body-on-primary-bg));
