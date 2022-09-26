@@ -35,7 +35,7 @@ export default function LoadingSkeleton<T extends { id: string }>({
             $height={rowHeight}
             // style={{ width: column.getSize() }}
           >
-            <div tw="bg-gray-100 w-full height[50%] rounded" />
+            <div tw="bg-gray-100 w-full height[30%] rounded" />
           </Td>
         ))}
     </div>

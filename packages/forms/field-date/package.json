@@ -21,7 +21,7 @@
     "@uidu/popup": "0.7.4",
     "date-fns": "^2.29.3",
     "react": "^18.2.0",
-    "react-day-picker": "^8.2.1",
+    "react-day-picker": "^8.3.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
