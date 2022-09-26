@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.5
+
+### Patch Changes
+
+- 16c110196: Bump deps
+
 ## 2.1.4
 
 ### Patch Changes
