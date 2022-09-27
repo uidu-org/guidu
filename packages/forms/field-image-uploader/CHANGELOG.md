@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 3.0.12
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/spinner@0.5.19
+  - @uidu/field-base@4.0.12
+  - @uidu/field-range@2.0.3
+  - @uidu/form@2.1.6
+
 ## 3.0.11
 
 ### Patch Changes

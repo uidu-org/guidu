@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 4.0.2
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/drawer@0.7.25
+  - @uidu/inline-dialog@0.5.23
+  - @uidu/menu@0.8.3
+  - @uidu/popup@0.7.5
+  - @uidu/spinner@0.5.19
+  - @uidu/tooltip@0.5.25
+  - @uidu/data-fields@2.1.9
+  - @uidu/data-manager@4.1.1
+  - @uidu/data-views@3.0.2
+  - @uidu/checkbox@2.0.4
+  - @uidu/field-text@2.0.3
+  - @uidu/form@2.1.6
+  - @uidu/select@2.0.9
+  - @uidu/shell@2.1.32
+
 ## 4.0.1
 
 ### Patch Changes

@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 4.1.1
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/table@3.2.0
+  - @uidu/button@1.3.30
+  - @uidu/menu@0.8.3
+  - @uidu/pagination@0.5.22
+  - @uidu/spinner@0.5.19
+  - @uidu/board@1.0.4
+  - @uidu/calendar@0.4.20
+  - @uidu/data-controls@4.0.2
+  - @uidu/data-fields@2.1.9
+  - @uidu/data-views@3.0.2
+  - @uidu/gallery@2.0.6
+  - @uidu/list@3.1.1
+  - @uidu/shell@2.1.32
+
 ## 4.1.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # @uidu/inline-edit
 
+## 0.3.28
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/inline-dialog@0.5.23
+  - @uidu/theme@0.6.23
+  - @uidu/field-text@2.0.3
+  - @uidu/form@2.1.6
+
 ## 0.3.27
 
 ### Patch Changes

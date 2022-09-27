@@ -1,5 +1,11 @@
 # @uidu/editor-json-transformer
 
+## 0.7.15
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+
 ## 0.7.14
 
 ### Patch Changes

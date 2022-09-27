@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.6.9
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+
 ## 0.6.8
 
 ### Patch Changes

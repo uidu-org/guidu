@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 2.1.13
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/table@3.2.0
+  - @uidu/spinner@0.5.19
+  - @uidu/tooltip@0.5.25
+  - @uidu/dashboard-manager@2.0.7
+  - @uidu/dashlet-controls@1.1.5
+  - @uidu/data-fields@2.1.9
+
 ## 2.1.12
 
 ### Patch Changes

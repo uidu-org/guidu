@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.7.5
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/popper@0.5.21
+  - @uidu/portal@1.0.1
+  - @uidu/theme@0.6.23
+
 ## 0.7.4
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.7.19
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/avatar@0.9.16
+  - @uidu/slider@1.7.21
+  - @uidu/spinner@0.5.19
+  - @uidu/checkbox@2.0.4
+  - @uidu/field-password@2.0.6
+  - @uidu/field-phone@2.0.14
+  - @uidu/field-text@2.0.3
+  - @uidu/form@2.1.6
+  - @uidu/shell@2.1.32
+
 ## 0.7.18
 
 ### Patch Changes

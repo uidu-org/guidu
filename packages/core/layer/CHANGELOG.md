@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.5.18
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+
 ## 0.5.17
 
 ### Patch Changes

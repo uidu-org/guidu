@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.0.12
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/form@2.1.6
+
 ## 4.0.11
 
 ### Patch Changes

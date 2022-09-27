@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 2.0.6
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/spinner@0.5.19
+  - @uidu/data-controls@4.0.2
+  - @uidu/data-fields@2.1.9
+  - @uidu/shell@2.1.32
+
 ## 2.0.5
 
 ### Patch Changes

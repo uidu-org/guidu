@@ -1,5 +1,17 @@
 # @uidu/droplist
 
+## 0.5.25
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/item@0.5.21
+  - @uidu/layer@0.5.18
+  - @uidu/spinner@0.5.19
+  - @uidu/theme@0.6.23
+  - @uidu/tooltip@0.5.25
+
 ## 0.5.24
 
 ### Patch Changes

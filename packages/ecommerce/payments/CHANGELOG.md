@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 1.5.8
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/section-message@0.6.23
+  - @uidu/slider@1.7.21
+  - @uidu/theme@0.6.23
+  - @uidu/field-base@4.0.12
+  - @uidu/form@2.1.6
+
 ## 1.5.7
 
 ### Patch Changes

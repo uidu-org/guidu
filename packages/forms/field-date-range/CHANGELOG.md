@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 2.0.6
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/field-base@4.0.12
+  - @uidu/field-date@2.0.13
+
 ## 2.0.5
 
 ### Patch Changes

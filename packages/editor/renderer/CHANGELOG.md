@@ -1,5 +1,22 @@
 # @uidu/renderer
 
+## 0.8.21
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/code@0.5.19
+  - @uidu/theme@0.6.23
+  - @uidu/tooltip@0.5.25
+  - @uidu/editor-common@0.7.24
+  - @uidu/editor-json-transformer@0.7.15
+  - @uidu/mentions@0.4.23
+  - @uidu/status@0.5.19
+  - @uidu/task-decision@0.4.28
+  - @uidu/media-card@0.7.8
+  - @uidu/media-filmstrip@0.5.9
+
 ## 0.8.20
 
 ### Patch Changes

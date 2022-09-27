@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.3.21
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/avatar@0.9.16
+  - @uidu/button@1.3.30
+  - @uidu/lozenge@0.5.18
+  - @uidu/popup@0.7.5
+  - @uidu/spinner@0.5.19
+  - @uidu/theme@0.6.23
+
 ## 0.3.20
 
 ### Patch Changes

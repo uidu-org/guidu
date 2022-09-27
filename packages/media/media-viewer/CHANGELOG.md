@@ -1,5 +1,17 @@
 # @uidu/media-viewer
 
+## 0.5.4
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/avatar@0.9.16
+  - @uidu/button@1.3.30
+  - @uidu/spinner@0.5.19
+  - @uidu/theme@0.6.23
+  - @uidu/shell@2.1.32
+
 ## 0.5.3
 
 ### Patch Changes

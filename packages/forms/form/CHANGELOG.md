@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.1.6
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+
 ## 2.1.5
 
 ### Patch Changes

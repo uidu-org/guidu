@@ -1,5 +1,13 @@
 # @uidu/editor-markdown-transformer
 
+## 0.8.14
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/editor-common@0.7.24
+
 ## 0.8.13
 
 ### Patch Changes

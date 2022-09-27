@@ -1,5 +1,16 @@
 # @uidu/task-decision
 
+## 0.4.28
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/avatar-group@2.6.19
+  - @uidu/button@1.3.30
+  - @uidu/spinner@0.5.19
+  - @uidu/theme@0.6.23
+
 ## 0.4.27
 
 ### Patch Changes

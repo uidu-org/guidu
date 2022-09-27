@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.22
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+
 ## 0.3.21
 
 ### Patch Changes

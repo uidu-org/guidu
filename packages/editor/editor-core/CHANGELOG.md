@@ -1,5 +1,34 @@
 # @uidu/editor-core
 
+## 0.15.19
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/avatar@0.9.16
+  - @uidu/avatar-group@2.6.19
+  - @uidu/button@1.3.30
+  - @uidu/droplist@0.5.25
+  - @uidu/menu@0.8.3
+  - @uidu/modal-dialog@1.0.15
+  - @uidu/spinner@0.5.19
+  - @uidu/theme@0.6.23
+  - @uidu/tooltip@0.5.25
+  - @uidu/editor-common@0.7.24
+  - @uidu/editor-json-transformer@0.7.15
+  - @uidu/editor-markdown-transformer@0.8.14
+  - @uidu/date@0.4.23
+  - @uidu/mentions@0.4.23
+  - @uidu/profilecard@0.3.21
+  - @uidu/status@0.5.19
+  - @uidu/task-decision@0.4.28
+  - @uidu/field-date@2.0.13
+  - @uidu/form@2.1.6
+  - @uidu/select@2.0.9
+  - @uidu/media-card@0.7.8
+  - @uidu/media-filmstrip@0.5.9
+
 ## 0.15.18
 
 ### Patch Changes

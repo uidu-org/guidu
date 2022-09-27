@@ -1,5 +1,15 @@
 # @uidu/breadcrumbs
 
+## 1.0.26
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/theme@0.6.23
+  - @uidu/tooltip@0.5.25
+
 ## 1.0.25
 
 ### Patch Changes

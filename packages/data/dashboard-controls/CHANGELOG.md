@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.1.5
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/avatar@0.9.16
+  - @uidu/avatar-group@2.6.19
+  - @uidu/button@1.3.30
+  - @uidu/dropdown-menu@0.6.24
+  - @uidu/field-date-range@2.0.6
+  - @uidu/form@2.1.6
+
 ## 1.1.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.29
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+
 ## 0.1.28
 
 ### Patch Changes

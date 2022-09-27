@@ -1,5 +1,11 @@
 # @uidu/analytics-viewer
 
+## 0.4.19
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+
 ## 0.4.18
 
 ### Patch Changes
