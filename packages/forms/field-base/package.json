@@ -14,7 +14,7 @@
     "@heroicons/react": "^2.0.11",
     "@uidu/form": "2.1.5",
     "react-hook-form": "^7.36.1",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.6",
     "tslib": "^2.4.0",
     "twin.macro": "^2.8.2"
   },

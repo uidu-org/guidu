@@ -14,7 +14,7 @@
     "@uidu/analytics": "^0.6.6",
     "@uidu/theme": "^0.6.22",
     "@uidu/tooltip": "^0.5.23",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.6",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

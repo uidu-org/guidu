@@ -31,7 +31,7 @@
     "@uidu/radio": "^2.0.3",
     "@uidu/shell": "^2.1.29",
     "react-feather": "^2.0.10",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.6",
     "twin.macro": "^2.8.2"
   },
   "peerDependencies": {

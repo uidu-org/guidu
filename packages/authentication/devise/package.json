@@ -27,7 +27,7 @@
     "react-google-login": "^5.2.2",
     "react-intl": "^6.1.1",
     "react-router-dom": "^5.3.3",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.19"

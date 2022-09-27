@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.19.0",
     "@heroicons/react": "^2.0.11",
-    "@stripe/react-stripe-js": "^1.11.0",
+    "@stripe/react-stripe-js": "^1.12.0",
     "@stripe/stripe-js": "^1.38.1",
     "@uidu/field-base": "^4.0.11",
     "@uidu/form": "^2.1.5",
@@ -22,7 +22,7 @@
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-intl": "^6.1.1",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.6",
     "tslib": "^2.4.0",
     "uuid": "^8.3.2"
   },

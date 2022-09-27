@@ -13,7 +13,7 @@
     "@babel/runtime": "^7.19.0",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.6",
     "swiper": "^6.8.4",
     "tslib": "^2.4.0",
     "uuid": "^8.3.2"

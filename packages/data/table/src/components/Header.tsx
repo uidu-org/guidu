@@ -120,7 +120,7 @@ export default function Header({
             </ButtonItem>
             <ButtonItem
               isDisabled={
-                column.getIsSorted() && column.getFirstSortDir() !== 'desc'
+                column.getIsSorted() && column.getFirstSortDir() === 'desc'
               }
               onClick={() => {
                 setIsOpen(false);

@@ -21,7 +21,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.5.19",
     "@uidu/form": "^2.1.5",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.6"
   },
   "peerDependencies": {
     "styled-components": "*"

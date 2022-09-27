@@ -1,6 +1,6 @@
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import { CellContext, flexRender, Row as RowType } from '@tanstack/react-table';
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { StyledComponent } from 'styled-components';
 
 function Row<T extends object>({
@@ -101,4 +101,4 @@ function Row<T extends object>({
   );
 }
 
-export default memo(Row);
+export default Row;

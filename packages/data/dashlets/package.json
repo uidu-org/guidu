@@ -23,7 +23,7 @@
     "@uidu/table": "3.1.1",
     "@uidu/tooltip": "^0.5.23",
     "d3-array": "^3.2.0",
-    "gql-query-builder": "^3.7.1",
+    "gql-query-builder": "^3.7.2",
     "lodash": "^4.17.21",
     "numeral": "^2.0.6",
     "react": "^18.2.0",
@@ -32,7 +32,7 @@
     "react-countup": "^6.3.1",
     "react-feather": "^2.0.10",
     "react-intl": "^6.1.1",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.6",
     "tslib": "^2.4.0",
     "twin.macro": "^2.8.2",
     "uuid": "^8.3.2"
