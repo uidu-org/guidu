@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.29
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/payments@1.5.8
+  - @uidu/form@2.1.6
+
 ## 0.3.28
 
 ### Patch Changes

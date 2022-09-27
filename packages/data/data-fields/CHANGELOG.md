@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 2.1.9
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/map@0.6.20
+  - @uidu/menu@0.8.3
+  - @uidu/popup@0.7.5
+  - @uidu/field-color-picker@3.0.7
+  - @uidu/field-date@2.0.13
+  - @uidu/field-downshift@2.0.8
+  - @uidu/field-number@2.0.13
+  - @uidu/field-text@2.0.3
+  - @uidu/field-time@2.0.14
+  - @uidu/field-toggle@2.0.13
+  - @uidu/form@2.1.6
+  - @uidu/select@2.0.9
+
 ## 2.1.8
 
 ### Patch Changes

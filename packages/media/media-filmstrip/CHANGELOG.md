@@ -1,5 +1,15 @@
 # @uidu/media-filmstrip
 
+## 0.5.9
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/theme@0.6.23
+  - @uidu/media-card@0.7.8
+  - @uidu/media-viewer@0.5.4
+
 ## 0.5.8
 
 ### Patch Changes

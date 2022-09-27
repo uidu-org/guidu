@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 2.0.7
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/dashboard-controls@1.1.5
+  - @uidu/dashlets@2.1.13
+
 ## 2.0.6
 
 ### Patch Changes

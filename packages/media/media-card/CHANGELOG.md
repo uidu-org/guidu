@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.7.8
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/dropdown-menu@0.6.24
+  - @uidu/spinner@0.5.19
+  - @uidu/theme@0.6.23
+  - @uidu/tooltip@0.5.25
+
 ## 0.7.7
 
 ### Patch Changes

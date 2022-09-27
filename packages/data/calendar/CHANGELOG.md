@@ -1,5 +1,15 @@
 # @uidu/calendar
 
+## 0.4.20
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/dropdown-menu@0.6.24
+  - @uidu/shell@2.1.32
+
 ## 0.4.19
 
 ### Patch Changes

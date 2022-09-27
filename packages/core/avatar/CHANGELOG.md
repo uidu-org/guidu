@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.9.16
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/theme@0.6.23
+  - @uidu/tooltip@0.5.25
+
 ## 0.9.15
 
 ### Patch Changes

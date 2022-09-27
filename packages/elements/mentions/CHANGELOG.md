@@ -1,5 +1,17 @@
 # @uidu/mentions
 
+## 0.4.23
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/avatar@0.9.16
+  - @uidu/button@1.3.30
+  - @uidu/lozenge@0.5.18
+  - @uidu/theme@0.6.23
+  - @uidu/tooltip@0.5.25
+
 ## 0.4.22
 
 ### Patch Changes

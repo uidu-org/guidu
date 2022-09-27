@@ -1,5 +1,14 @@
 # @uidu/inline-dialog
 
+## 0.5.23
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/popper@0.5.21
+  - @uidu/theme@0.6.23
+
 ## 0.5.22
 
 ### Patch Changes

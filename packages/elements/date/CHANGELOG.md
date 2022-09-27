@@ -1,5 +1,13 @@
 # @uidu/date
 
+## 0.4.23
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/theme@0.6.23
+
 ## 0.4.22
 
 ### Patch Changes

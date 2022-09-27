@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.0.8
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/theme@0.6.23
+  - @uidu/shell@2.1.32
+
 ## 1.0.7
 
 ### Patch Changes

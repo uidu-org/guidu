@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.21
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+
 ## 0.5.20
 
 ### Patch Changes

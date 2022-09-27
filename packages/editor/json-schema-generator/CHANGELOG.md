@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.2.29
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+
 ## 0.2.28
 
 ### Patch Changes

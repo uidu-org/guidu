@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.1.1
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/data-fields@2.1.9
+
 ## 3.1.0
 
 ### Minor Changes

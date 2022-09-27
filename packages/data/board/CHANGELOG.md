@@ -1,5 +1,13 @@
 # @uidu/board
 
+## 1.0.4
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/theme@0.6.23
+
 ## 1.0.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.5.19
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+
 ## 0.5.18
 
 ### Patch Changes

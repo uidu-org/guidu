@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 2.0.8
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/field-base@4.0.12
+  - @uidu/field-text@2.0.3
+
 ## 2.0.7
 
 ### Patch Changes

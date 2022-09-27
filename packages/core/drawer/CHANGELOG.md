@@ -1,5 +1,16 @@
 # @uidu/drawer
 
+## 0.7.25
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/docs@0.5.20
+  - @uidu/blanket@0.6.9
+  - @uidu/item@0.5.21
+  - @uidu/theme@0.6.23
+
 ## 0.7.24
 
 ### Patch Changes

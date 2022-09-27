@@ -1,5 +1,13 @@
 # @uidu/portal
 
+## 1.0.1
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/theme@0.6.23
+
 ## 1.0.0
 
 ### Major Changes

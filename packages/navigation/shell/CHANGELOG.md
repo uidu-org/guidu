@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.1.32
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/spinner@0.5.19
+
 ## 2.1.31
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/button
 
+## 1.3.30
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/spinner@0.5.19
+  - @uidu/theme@0.6.23
+
 ## 1.3.29
 
 ### Patch Changes

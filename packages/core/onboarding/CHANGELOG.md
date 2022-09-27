@@ -1,5 +1,17 @@
 # @uidu/onboarding
 
+## 1.3.13
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/modal-dialog@1.0.15
+  - @uidu/popper@0.5.21
+  - @uidu/portal@1.0.1
+  - @uidu/theme@0.6.23
+
 ## 1.3.12
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/modal-dialog
 
+## 1.0.15
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/blanket@0.6.9
+  - @uidu/portal@1.0.1
+  - @uidu/theme@0.6.23
+
 ## 1.0.14
 
 ### Patch Changes

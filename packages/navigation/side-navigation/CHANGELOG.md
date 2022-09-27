@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 1.1.2
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/avatar@0.9.16
+  - @uidu/dropdown-menu@0.6.24
+  - @uidu/inline-dialog@0.5.23
+  - @uidu/theme@0.6.23
+  - @uidu/tooltip@0.5.25
+  - @uidu/shell@2.1.32
+
 ## 1.1.1
 
 ### Patch Changes

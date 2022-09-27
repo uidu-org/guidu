@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.5.21
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/avatar@0.9.16
+  - @uidu/theme@0.6.23
+
 ## 0.5.20
 
 ### Patch Changes

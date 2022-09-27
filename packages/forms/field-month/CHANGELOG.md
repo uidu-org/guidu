@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.0.3
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/theme@0.6.23
+  - @uidu/field-base@4.0.12
+  - @uidu/form@2.1.6
+
 ## 2.0.2
 
 ### Patch Changes

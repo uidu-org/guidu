@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.5.6
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/slider@1.7.21
+  - @uidu/spinner@0.5.19
+  - @uidu/payments@1.5.8
+  - @uidu/field-text@2.0.3
+  - @uidu/form@2.1.6
+  - @uidu/stepper@0.4.22
+
 ## 0.5.5
 
 ### Patch Changes

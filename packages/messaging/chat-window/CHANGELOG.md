@@ -1,5 +1,14 @@
 # @uidu/chat-window
 
+## 0.4.26
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/message@0.5.49
+  - @uidu/message-renderer@0.4.22
+
 ## 0.4.25
 
 ### Patch Changes

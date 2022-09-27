@@ -1,5 +1,15 @@
 # @uidu/editor-common
 
+## 0.7.24
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/theme@0.6.23
+  - @uidu/mentions@0.4.23
+  - @uidu/profilecard@0.3.21
+
 ## 0.7.23
 
 ### Patch Changes

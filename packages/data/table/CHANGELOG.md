@@ -1,5 +1,21 @@
 # @uidu/table
 
+## 3.2.0
+
+### Minor Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+
+### Patch Changes
+
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/menu@0.8.3
+  - @uidu/popup@0.7.5
+  - @uidu/data-fields@2.1.9
+  - @uidu/data-manager@4.1.1
+  - @uidu/checkbox@2.0.4
+
 ## 3.1.1
 
 ### Patch Changes

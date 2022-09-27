@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.18
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/docs@0.5.20
+
 ## 0.6.17
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/message
 
+## 0.5.49
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/avatar@0.9.16
+  - @uidu/button@1.3.30
+  - @uidu/drawer@0.7.25
+  - @uidu/dropdown-menu@0.6.24
+  - @uidu/menu@0.8.3
+  - @uidu/popup@0.7.5
+  - @uidu/tooltip@0.5.25
+  - @uidu/media-card@0.7.8
+  - @uidu/media-viewer@0.5.4
+  - @uidu/message-renderer@0.4.22
+
 ## 0.5.48
 
 ### Patch Changes

@@ -1,5 +1,32 @@
 # Change Log
 
+## 0.6.20
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/table@3.2.0
+  - @uidu/docs@0.5.20
+  - @uidu/badge@0.5.18
+  - @uidu/button@1.3.30
+  - @uidu/code@0.5.19
+  - @uidu/drawer@0.7.25
+  - @uidu/lozenge@0.5.18
+  - @uidu/modal-dialog@1.0.15
+  - @uidu/spinner@0.5.19
+  - @uidu/theme@0.6.23
+  - @uidu/tooltip@0.5.25
+  - @uidu/list@3.1.1
+  - @uidu/checkbox@2.0.4
+  - @uidu/field-text@2.0.3
+  - @uidu/form@2.1.6
+  - @uidu/select@2.0.9
+  - @uidu/breadcrumbs@1.0.26
+  - @uidu/navigation@1.0.27
+  - @uidu/page-header@1.0.8
+  - @uidu/shell@2.1.32
+
 ## 0.6.19
 
 ### Patch Changes

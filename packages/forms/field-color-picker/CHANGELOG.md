@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 3.0.7
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/popup@0.7.5
+  - @uidu/field-base@4.0.12
+
 ## 3.0.6
 
 ### Patch Changes

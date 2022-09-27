@@ -1,5 +1,16 @@
 # @uidu/dropdown-menu
 
+## 0.6.24
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/droplist@0.5.25
+  - @uidu/item@0.5.21
+  - @uidu/theme@0.6.23
+
 ## 0.6.23
 
 ### Patch Changes

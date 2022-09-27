@@ -1,5 +1,15 @@
 # @uidu/flag
 
+## 0.5.22
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/button@1.3.30
+  - @uidu/portal@1.0.1
+  - @uidu/theme@0.6.23
+
 ## 0.5.21
 
 ### Patch Changes

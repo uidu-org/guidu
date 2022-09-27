@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.7.21
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+
 ## 1.7.20
 
 ### Patch Changes

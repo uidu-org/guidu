@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.0.9
+
+### Patch Changes
+
+- cdc204bd7: Fix table toggler, bump deps
+- Updated dependencies [cdc204bd7]
+  - @uidu/menu@0.8.3
+  - @uidu/spinner@0.5.19
+  - @uidu/field-base@4.0.12
+
 ## 2.0.8
 
 ### Patch Changes
