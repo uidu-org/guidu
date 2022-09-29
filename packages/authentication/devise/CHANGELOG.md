@@ -1,5 +1,13 @@
 # @uidu/devise
 
+## 0.7.20
+
+### Patch Changes
+
+- 238569929: Bump deps
+- Updated dependencies [238569929]
+  - @uidu/shell@2.1.33
+
 ## 0.7.19
 
 ### Patch Changes

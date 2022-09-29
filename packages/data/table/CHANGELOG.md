@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 3.2.1
+
+### Patch Changes
+
+- 238569929: Bump deps
+- Updated dependencies [238569929]
+  - @uidu/data-fields@2.1.10
+  - @uidu/data-manager@4.1.2
+
 ## 3.2.0
 
 ### Minor Changes

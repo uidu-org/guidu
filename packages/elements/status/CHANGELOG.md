@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.5.20
+
+### Patch Changes
+
+- 238569929: Bump deps
+
 ## 0.5.19
 
 ### Patch Changes

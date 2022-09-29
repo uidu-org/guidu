@@ -1,5 +1,16 @@
 # @uidu/data-controls
 
+## 4.0.3
+
+### Patch Changes
+
+- 238569929: Bump deps
+- Updated dependencies [238569929]
+  - @uidu/data-fields@2.1.10
+  - @uidu/data-manager@4.1.2
+  - @uidu/data-views@3.0.3
+  - @uidu/shell@2.1.33
+
 ## 4.0.2
 
 ### Patch Changes

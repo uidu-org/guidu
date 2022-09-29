@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.0.13
+
+### Patch Changes
+
+- 238569929: Bump deps
+
 ## 2.0.12
 
 ### Patch Changes

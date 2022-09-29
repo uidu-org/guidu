@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.3.22
+
+### Patch Changes
+
+- 238569929: Bump deps
+
 ## 0.3.21
 
 ### Patch Changes

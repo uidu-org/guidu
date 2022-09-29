@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 1.1.6
+
+### Patch Changes
+
+- 238569929: Bump deps
+
 ## 1.1.5
 
 ### Patch Changes
