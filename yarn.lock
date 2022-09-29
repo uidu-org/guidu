@@ -2115,13 +2115,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/types@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@changesets/types@npm:0.4.0"
-  checksum: 7d5584f0bc924e0259fb92e0b0d88d0480f3648da38de3246897ce77677d96ee02909b6ced5a8c208d1f467b3c5421a4a6dbc4ad1ac9609473450a4f4794a979
-  languageName: node
-  linkType: hard
-
 "@changesets/types@npm:^4.0.1":
   version: 4.1.0
   resolution: "@changesets/types@npm:4.1.0"
@@ -2841,9 +2834,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:8.96.1":
-  version: 8.96.1
-  resolution: "@fluentui/react@npm:8.96.1"
+"@fluentui/react@npm:8.96.3":
+  version: 8.96.3
+  resolution: "@fluentui/react@npm:8.96.3"
   dependencies:
     "@fluentui/date-time-utilities": ^8.5.2
     "@fluentui/font-icons-mdl2": ^8.4.13
@@ -2864,7 +2857,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: 2ea3d59c30d514310d0a5a9578f9c955abea20f81de358f6dcd68b52865ca2552e932876c9708f35b9ec4b318e6e496609caa3fec90034aad465cc9e9d16a274
+  checksum: 0e3b5129a56234416b8983df770a2e41a750260e912ccde1c3dea48b5c829ead9cc5213ed67698a386aa3f4a0348df5bbaecae105f5b401b26df5081b03a1397
   languageName: node
   linkType: hard
 
@@ -2969,9 +2962,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/cli@npm:5.1.0":
-  version: 5.1.0
-  resolution: "@formatjs/cli@npm:5.1.0"
+"@formatjs/cli@npm:5.1.1":
+  version: 5.1.1
+  resolution: "@formatjs/cli@npm:5.1.1"
   peerDependencies:
     "@vue/compiler-sfc": ^3.2.34
   peerDependenciesMeta:
@@ -2979,7 +2972,7 @@ __metadata:
       optional: true
   bin:
     formatjs: bin/formatjs
-  checksum: 8db7efd03bffee5eac1129ff9a5fbaabdfc5c6fb313d65c73ad11cf4a5bc884d0ba69191c6cca34822afe9452acfdabe15172d09f4f505bbdb33f7c0fc567f1c
+  checksum: ea29b052a5a486afe4e20c7c9c72bc405f8e3aa2b76f746979120362dcef258db6f565d251469c31b64bf8af7240afba584f0da4dab9b4bea1fe96654758fc20
   languageName: node
   linkType: hard
 
@@ -3002,14 +2995,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/icu-messageformat-parser@npm:2.1.7":
-  version: 2.1.7
-  resolution: "@formatjs/icu-messageformat-parser@npm:2.1.7"
+"@formatjs/icu-messageformat-parser@npm:2.1.8":
+  version: 2.1.8
+  resolution: "@formatjs/icu-messageformat-parser@npm:2.1.8"
   dependencies:
     "@formatjs/ecma402-abstract": 1.12.0
     "@formatjs/icu-skeleton-parser": 1.3.13
     tslib: 2.4.0
-  checksum: 4a7e7b3628852c2379bd30b540c87fd1a84d0878ddd221b7b0fbad317263626d4ba063bf1be104aa9779bad3b819cfaf41f51cda0573787bdbea7acc607025cf
+  checksum: 2cb12a404dc9e02f94bac1907a3e0ced5018c56e053177e893757f51703559a241051badf9970edde7780ea9f10389f2458c5c6de83b3e97905b48892b916d67
   languageName: node
   linkType: hard
 
@@ -3054,31 +3047,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/intl@npm:2.4.1":
-  version: 2.4.1
-  resolution: "@formatjs/intl@npm:2.4.1"
+"@formatjs/intl@npm:2.4.2":
+  version: 2.4.2
+  resolution: "@formatjs/intl@npm:2.4.2"
   dependencies:
     "@formatjs/ecma402-abstract": 1.12.0
     "@formatjs/fast-memoize": 1.2.6
-    "@formatjs/icu-messageformat-parser": 2.1.7
+    "@formatjs/icu-messageformat-parser": 2.1.8
     "@formatjs/intl-displaynames": 6.1.3
     "@formatjs/intl-listformat": 7.1.2
-    intl-messageformat: 10.1.4
+    intl-messageformat: 10.1.5
     tslib: 2.4.0
   peerDependencies:
     typescript: ^4.7
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 14f68d02a09c229e73373ae04accce215153180bdf393b89109ac406cf7bd69ce865d6353b945977612a632ed8b1d5ea527fd4d1ee6538901d3a670b297337bf
+  checksum: 93f7a80af9788c57989e3eac3bb782e42f7b9a18e037e4c2fadbb452061b15d1bae8069a7b94d219559d940b7485cf8b4ce39f6b422e502a6d5e6fc54e72350f
   languageName: node
   linkType: hard
 
-"@formatjs/ts-transformer@npm:3.10.0":
-  version: 3.10.0
-  resolution: "@formatjs/ts-transformer@npm:3.10.0"
+"@formatjs/ts-transformer@npm:3.10.1":
+  version: 3.10.1
+  resolution: "@formatjs/ts-transformer@npm:3.10.1"
   dependencies:
-    "@formatjs/icu-messageformat-parser": 2.1.7
+    "@formatjs/icu-messageformat-parser": 2.1.8
     "@types/json-stable-stringify": ^1.0.32
     "@types/node": 14 || 16 || 17
     chalk: ^4.0.0
@@ -3090,7 +3083,7 @@ __metadata:
   peerDependenciesMeta:
     ts-jest:
       optional: true
-  checksum: 7154bae703170a8b8fab223b3d390ee50acf49f6bb14f70865fd5d2f2b2775c38e68718e1ce0d4d6b690e355e9bfdd21ab55e1c6cc7873733aa8b61905247a94
+  checksum: aa389d3c4efa2aa0cb60d1dc9251d88787865c79eff3b031d84dfee3ab1795efc997023ac394054b72fdb14dc637af18def71b1160521a9ec8bbd6a2cb996db8
   languageName: node
   linkType: hard
 
@@ -3346,9 +3339,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@manypkg/cli@npm:^0.19.1":
-  version: 0.19.1
-  resolution: "@manypkg/cli@npm:0.19.1"
+"@manypkg/cli@npm:^0.19.2":
+  version: 0.19.2
+  resolution: "@manypkg/cli@npm:0.19.2"
   dependencies:
     "@babel/runtime": ^7.5.5
     "@manypkg/get-packages": ^1.1.3
@@ -3356,7 +3349,6 @@ __metadata:
     detect-indent: ^6.0.0
     find-up: ^4.1.0
     fs-extra: ^8.1.0
-    get-workspaces: ^0.6.0
     normalize-path: ^3.0.0
     p-limit: ^2.2.1
     package-json: ^6.5.0
@@ -3367,7 +3359,7 @@ __metadata:
     validate-npm-package-name: ^3.0.0
   bin:
     manypkg: bin.js
-  checksum: 6dbb944a1111f9cdbe37de487a038fde279d01674194e5d5964002083da184976a7e97da57ffe69b0a2c689de0d373fcee18fc7efa88a69257a9330ee2616e48
+  checksum: b40e9bff3aaccdfe85b4bfc08aee3b50ccde6c62bbe81ccf9c11e159e7adf26a0ebb990efa68c8fbd05b03ac9da5d6301b362c40c319e6ff6be45489361bd5c9
   languageName: node
   linkType: hard
 
@@ -4318,9 +4310,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@preconstruct/cli@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "@preconstruct/cli@npm:2.2.1"
+"@preconstruct/cli@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "@preconstruct/cli@npm:2.2.2"
   dependencies:
     "@babel/code-frame": ^7.5.5
     "@babel/core": ^7.7.7
@@ -4361,7 +4353,7 @@ __metadata:
     v8-compile-cache: ^2.1.1
   bin:
     preconstruct: bin.js
-  checksum: 9c43cb57ee307e718f5da1c3470dbc8abe1984c4c622bb7c22fd22c26a3c52a40c3385904fbf1eeb5aac65f6aabdeb3bbaf938ff60fb3420810f6e1cf1e38628
+  checksum: 6cc89bd472d7d95dc97e447f6b01923217bdc7af8b7361183c33904018600d30daa5956d79bdbfe54fdbd5b17b8b70f4ca62f6f9fc9daa0c8234558438721acf
   languageName: node
   linkType: hard
 
@@ -6794,7 +6786,7 @@ __metadata:
     "@uidu/form": ^2.1.6
     react: ^18.2.0
     react-feather: ^2.0.10
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
   languageName: unknown
@@ -6837,7 +6829,7 @@ __metadata:
     "@uidu/form": ^2.1.6
     react: ^18.2.0
     react-feather: ^2.0.10
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
   languageName: unknown
@@ -6891,7 +6883,7 @@ __metadata:
     react-content-loader: ^6.2.0
     react-countup: ^6.3.1
     react-feather: ^2.0.10
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
     twin.macro: ^2.8.2
@@ -6929,7 +6921,7 @@ __metadata:
     react-content-loader: ^6.2.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
   languageName: unknown
@@ -6967,7 +6959,7 @@ __metadata:
     react: ^18.2.0
     react-beautiful-dnd: ^13.1.1
     react-feather: ^2.0.10
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
     twin.macro: ^2.8.2
@@ -7009,7 +7001,7 @@ __metadata:
     papaparse: ^5.3.2
     react: ^18.2.0
     react-feather: ^2.0.10
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     react-media: ^1.10.0
     react-table-plugins: ^1.3.2
     react-transition-group: ^4.4.5
@@ -7035,7 +7027,7 @@ __metadata:
     "@uidu/select": ^2.0.9
     react: ^18.2.0
     react-feather: ^2.0.10
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
   languageName: unknown
@@ -7079,7 +7071,7 @@ __metadata:
     react-facebook: ^8.1.4
     react-feather: ^2.0.10
     react-google-login: ^5.2.2
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     react-router-dom: ^5.3.3
     styled-components: ^5.3.6
   languageName: unknown
@@ -7216,7 +7208,7 @@ __metadata:
     raf-schd: ^4.0.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     react-loadable: ^5.5.0
     styled-components: ^5.3.6
     tslib: ^2.4.0
@@ -7289,7 +7281,7 @@ __metadata:
     re-resizable: ^6.9.9
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     react-loadable: ^5.5.0
     styled-components: ^5.3.6
     tslib: ^2.4.0
@@ -7348,7 +7340,7 @@ __metadata:
     exenv: ^1.2.2
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     tslib: ^2.4.0
   peerDependencies:
     react: ^18.0.0
@@ -7385,7 +7377,7 @@ __metadata:
     prop-types: ^15.8.1
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     react-virtualized: ^9.22.3
     tslib: ^2.4.0
     typestyle: ^2.4.0
@@ -7543,7 +7535,7 @@ __metadata:
   resolution: "@uidu/field-file-uploader@workspace:packages/forms/field-file-uploader"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@fluentui/react": 8.96.1
+    "@fluentui/react": 8.96.3
     "@heroicons/react": ^2.0.11
     "@uidu/button": 1.3.30
     "@uidu/docs": ^0.5.20
@@ -7551,7 +7543,7 @@ __metadata:
     "@uidu/form": 2.1.6
     "@uidu/media-core": 1.1.1
     "@uidu/menu": 0.8.3
-    "@uifabric/file-type-icons": ^7.10.3
+    "@uifabric/file-type-icons": ^7.10.4
     "@uppy/core": ^3.0.0
     "@uppy/react": ^3.0.0
     react: ^18.2.0
@@ -7785,7 +7777,7 @@ __metadata:
     date-fns: ^2.29.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
   peerDependencies:
@@ -8160,7 +8152,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.19.0
     "@faker-js/faker": ^7.5.0
-    "@fluentui/react": 8.96.1
+    "@fluentui/react": 8.96.3
     "@uidu/button": ^1.3.30
     "@uidu/docs": ^0.5.20
     "@uidu/dropdown-menu": ^0.6.24
@@ -8168,7 +8160,7 @@ __metadata:
     "@uidu/spinner": ^0.5.19
     "@uidu/theme": ^0.6.23
     "@uidu/tooltip": ^0.5.25
-    "@uifabric/file-type-icons": ^7.10.3
+    "@uifabric/file-type-icons": ^7.10.4
     react: ^18.2.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
@@ -8256,7 +8248,7 @@ __metadata:
     react-dom: ^18.2.0
     react-feather: ^2.0.10
     react-images: ^1.2.0-beta.7
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
   languageName: unknown
@@ -8280,7 +8272,7 @@ __metadata:
     "@uidu/tooltip": ^0.5.25
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
     uuid: ^8.3.2
@@ -8361,7 +8353,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.19.0
     "@faker-js/faker": ^7.5.0
-    "@fluentui/react": 8.96.1
+    "@fluentui/react": 8.96.3
     "@loadable/component": ^5.15.2
     "@uidu/avatar": ^0.9.16
     "@uidu/button": 1.3.30
@@ -8377,9 +8369,9 @@ __metadata:
     "@uidu/popup": 0.7.5
     "@uidu/shell": ^2.1.32
     "@uidu/tooltip": ^0.5.25
-    "@uifabric/file-type-icons": ^7.10.3
+    "@uifabric/file-type-icons": ^7.10.4
     classnames: ^2.3.2
-    emoji-regex: ^10.1.0
+    emoji-regex: ^10.2.1
     moment: ^2.29.4
     prop-types: ^15.8.1
     react: ^18.2.0
@@ -8582,7 +8574,7 @@ __metadata:
     axios: ^0.27.2
     react: ^18.2.0
     react-feather: ^2.0.10
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
     uuid: ^8.3.2
@@ -8682,12 +8674,12 @@ __metadata:
     lru-fast: ^0.2.2
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     react-node-resolver: ^2.0.1
     sinon: ^14.0.0
     styled-components: ^5.3.6
     typescript: ^4.8.4
-    uid: ^2.0.0
+    uid: ^2.0.1
   languageName: unknown
   linkType: soft
 
@@ -8768,7 +8760,7 @@ __metadata:
     raf-schd: ^4.0.3
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
     url-parse: ^1.5.10
@@ -8855,7 +8847,7 @@ __metadata:
     overlayscrollbars-react: ^0.3.0
     react: ^18.2.0
     react-feather: ^2.0.10
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     react-router-dom: ^5.3.3
     react-scroll: ^1.8.7
     styled-components: ^5.3.6
@@ -8941,7 +8933,7 @@ __metadata:
     "@uidu/lozenge": ^0.5.18
     "@uidu/theme": ^0.6.23
     react: ^18.2.0
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
   peerDependencies:
@@ -8986,7 +8978,7 @@ __metadata:
     "@uidu/stepper": ^0.4.22
     dayjs: ^1.11.5
     react: ^18.2.0
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     tslib: ^2.4.0
   languageName: unknown
   linkType: soft
@@ -9030,7 +9022,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     styled-components: ^5.3.6
     tslib: ^2.4.0
     twin.macro: ^2.8.2
@@ -9256,19 +9248,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uifabric/file-type-icons@npm:^7.10.3":
-  version: 7.10.3
-  resolution: "@uifabric/file-type-icons@npm:7.10.3"
+"@uifabric/file-type-icons@npm:^7.10.4":
+  version: 7.10.4
+  resolution: "@uifabric/file-type-icons@npm:7.10.4"
   dependencies:
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.22.3
+    "@uifabric/styling": ^7.23.0
     tslib: ^1.10.0
   peerDependencies:
     "@types/react": ">=16.8.0 <18.0.0"
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: e0a0662b5f24d87600a4d085908e3abb23218e667694bd09f85d91f1afab56ee5fe72ac5f6f8dc04d5718d619c037982fa8da27b6cb7db7fbce83abdc9deaab4
+  checksum: 2200430de62055c8f482b6475c384356e8856ad63bb7625ceb279942140ada91aeae199397de6cb11b46552941674fd25cdff528b99380c93330a93d7c5a8056
   languageName: node
   linkType: hard
 
@@ -9338,9 +9330,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uifabric/styling@npm:^7.22.3":
-  version: 7.22.3
-  resolution: "@uifabric/styling@npm:7.22.3"
+"@uifabric/styling@npm:^7.22.3, @uifabric/styling@npm:^7.23.0":
+  version: 7.23.0
+  resolution: "@uifabric/styling@npm:7.23.0"
   dependencies:
     "@fluentui/theme": ^1.7.11
     "@microsoft/load-themed-styles": ^1.10.26
@@ -9348,7 +9340,7 @@ __metadata:
     "@uifabric/set-version": ^7.0.24
     "@uifabric/utilities": ^7.38.0
     tslib: ^1.10.0
-  checksum: 248712f57f0a35a0f6d8cfc342b57995df8f25b8e490bea16007ba3277a3025e12e2dc6b38fab4f22e40f35951ed55b45fbee158d06af56dc0c5283e37110704
+  checksum: 623b7a4de8a3976f90c7cc6a3fd18b2713de0eb1d7357788e6897be5ffb15bb09233806beed4ae56972bfdbe8b8d5a4c4342a0571d6b6989b702215462d77f98
   languageName: node
   linkType: hard
 
@@ -11031,22 +11023,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-formatjs@npm:^10.3.28":
-  version: 10.3.28
-  resolution: "babel-plugin-formatjs@npm:10.3.28"
+"babel-plugin-formatjs@npm:^10.3.29":
+  version: 10.3.29
+  resolution: "babel-plugin-formatjs@npm:10.3.29"
   dependencies:
     "@babel/core": ^7.10.4
     "@babel/helper-plugin-utils": ^7.10.4
     "@babel/plugin-syntax-jsx": 7
     "@babel/traverse": 7
     "@babel/types": ^7.12.11
-    "@formatjs/icu-messageformat-parser": 2.1.7
-    "@formatjs/ts-transformer": 3.10.0
+    "@formatjs/icu-messageformat-parser": 2.1.8
+    "@formatjs/ts-transformer": 3.10.1
     "@types/babel__core": ^7.1.7
     "@types/babel__helper-plugin-utils": ^7.10.0
     "@types/babel__traverse": ^7.1.7
     tslib: 2.4.0
-  checksum: 53abf3ad7f4b286e117bc6e16a38f4ee9a9657f33b52b6542d56268e13cc9041ad796083f91ca1f2ee6d9b0cd123bb7175549d60e82fab8236d3141073855ab7
+  checksum: 4e89c4bd43938b397692a12a7eb2c6f61c1ee620fe4e0f03a323632de68b1d0cacc1f0e6d169e4ad5c6edd780f600102df3e96cf480960cb9f42e999f9b17eb6
   languageName: node
   linkType: hard
 
@@ -14743,10 +14735,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.0.0, dotenv@npm:^16.0.2":
-  version: 16.0.2
-  resolution: "dotenv@npm:16.0.2"
-  checksum: ca8f9ca2d67929c7771069f4c31b4e46b9932621009e658e5afd655dde2d69b77642bf36dbc9e72bc170523dfd908a9ee41c26f034c1fdc605ace3b1b4b10faf
+"dotenv@npm:^16.0.0, dotenv@npm:^16.0.3":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
   languageName: node
   linkType: hard
 
@@ -14863,10 +14855,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"emoji-regex@npm:^10.0.0, emoji-regex@npm:^10.1.0":
-  version: 10.1.0
-  resolution: "emoji-regex@npm:10.1.0"
-  checksum: 5bc780fc4d75f89369155a87c55f7e83a0bf72bcccda7df7f2c570cde4738d8b17d112d12afdadfec16647d1faef6501307b4304f81d35c823a938fe6547df0f
+"emoji-regex@npm:^10.0.0, emoji-regex@npm:^10.2.1":
+  version: 10.2.1
+  resolution: "emoji-regex@npm:10.2.1"
+  checksum: 1aa2d16881c56531fdfc03d0b36f5c2b6221cc4097499a5665b88b711dc3fb4d5b8804f0ca6f00c56e5dcf89bac75f0487eee85da1da77df3a33accc6ecbe426
   languageName: node
   linkType: hard
 
@@ -15391,7 +15383,7 @@ __metadata:
     eslint-config-prettier: ^8.5.0
     eslint-plugin-babel: ^5.3.1
     eslint-plugin-compat: ^4.0.2
-    eslint-plugin-formatjs: ^4.3.1
+    eslint-plugin-formatjs: ^4.3.2
     eslint-plugin-import: ^2.26.0
     eslint-plugin-jsx-a11y: ^6.6.1
     eslint-plugin-prettier: ^4.2.1
@@ -15452,12 +15444,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-formatjs@npm:^4.3.1":
-  version: 4.3.1
-  resolution: "eslint-plugin-formatjs@npm:4.3.1"
+"eslint-plugin-formatjs@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "eslint-plugin-formatjs@npm:4.3.2"
   dependencies:
-    "@formatjs/icu-messageformat-parser": 2.1.7
-    "@formatjs/ts-transformer": 3.10.0
+    "@formatjs/icu-messageformat-parser": 2.1.8
+    "@formatjs/ts-transformer": 3.10.1
     "@types/eslint": 7 || 8
     "@types/picomatch": ^2.3.0
     "@typescript-eslint/typescript-estree": ^5.9.1
@@ -15467,7 +15459,7 @@ __metadata:
     typescript: ^4.7
   peerDependencies:
     eslint: 7 || 8
-  checksum: be64f3ee59f03fa9c9c436f098a181b25e0d102e6b350e3a416d96ed186c53e993cadff32b59ffbae594d98eb10fed8f9a41ac41fa7efa2a7b65e02feceee5f2
+  checksum: 5f311a6cc721439e596164161132296b0ac852a761cb7a61a4c9da0fd4810b732305ff9b1da6e9f237d558479127f8aebddbb0de29df4a65a9208e0ce9a67cf8
   languageName: node
   linkType: hard
 
@@ -17195,18 +17187,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-workspaces@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "get-workspaces@npm:0.6.0"
-  dependencies:
-    "@changesets/types": ^0.4.0
-    fs-extra: ^7.0.1
-    globby: ^9.2.0
-    read-yaml-file: ^1.1.0
-  checksum: 893b689d8927117750c8ff5a9e81d5373569f0ecb24501bb28d77359c69c215e8e07f23856861787753b7d880e4140b646a7fc2e79d94bd7eb91fcf32e7f851f
-  languageName: node
-  linkType: hard
-
 "gh-release-fetch@npm:^3.0.0":
   version: 3.0.2
   resolution: "gh-release-fetch@npm:3.0.2"
@@ -17696,18 +17676,18 @@ __metadata:
     "@emotion/react": ^11.10.4
     "@emotion/styled": ^11.10.4
     "@faker-js/faker": ^7.5.0
-    "@fluentui/react": 8.96.1
-    "@formatjs/cli": 5.1.0
+    "@fluentui/react": 8.96.3
+    "@formatjs/cli": 5.1.1
     "@fortawesome/fontawesome-free": ^6.2.0
     "@fortawesome/fontawesome-svg-core": ^6.2.0
     "@fortawesome/free-solid-svg-icons": ^6.2.0
     "@fortawesome/react-fontawesome": ^0.2.0
     "@loadable/babel-plugin": ^5.13.2
     "@loadable/component": ^5.15.2
-    "@manypkg/cli": ^0.19.1
+    "@manypkg/cli": ^0.19.2
     "@mdx-js/loader": ^2.1.3
     "@popperjs/core": ^2.11.6
-    "@preconstruct/cli": ^2.2.1
+    "@preconstruct/cli": ^2.2.2
     "@researchgate/react-intersection-observer": ^1.3.5
     "@stripe/react-stripe-js": ^1.12.0
     "@stripe/stripe-js": ^1.38.1
@@ -17767,7 +17747,7 @@ __metadata:
     "@uidu/field-time": 2.0.14
     "@uidu/form": 2.1.6
     "@uidu/profilecard": ^0.3.0
-    "@uifabric/file-type-icons": ^7.10.3
+    "@uifabric/file-type-icons": ^7.10.4
     "@uppy/aws-s3": ^3.0.0
     "@uppy/core": ^3.0.0
     "@uppy/drag-drop": ^3.0.0
@@ -17790,7 +17770,7 @@ __metadata:
     axios: ^0.27.2
     babel-loader: ^8.2.5
     babel-plugin-add-module-exports: ^1.0.4
-    babel-plugin-formatjs: ^10.3.28
+    babel-plugin-formatjs: ^10.3.29
     babel-plugin-import: ^1.13.5
     babel-plugin-lodash: ^3.3.4
     babel-plugin-macros: ^3.1.0
@@ -17823,12 +17803,12 @@ __metadata:
     d3-collection: ^1.0.7
     date-fns: ^2.29.3
     debounce: ^1.2.1
-    dotenv: ^16.0.2
+    dotenv: ^16.0.3
     dotenv-cli: ^5.1.0
     dotenv-expand: ^8.0.3
     downshift: ^6.1.12
     emoji-mart: ^3.0.1
-    emoji-regex: ^10.1.0
+    emoji-regex: ^10.2.1
     eslint: ^8.24.0
     eslint-config-uidu: ^0.1.2
     eventemitter2: ^6.4.9
@@ -17945,7 +17925,7 @@ __metadata:
     react-hook-form: ^7.36.1
     react-images: ^1.2.0-beta.7
     react-intersection-observer: ^9.4.0
-    react-intl: ^6.1.1
+    react-intl: ^6.1.2
     react-loadable: ^5.5.0
     react-lorem-component: ^0.13.0
     react-markdown: ^6.0.3
@@ -17991,13 +17971,13 @@ __metadata:
     tailwindcss: ^2.2.19
     terser-webpack-plugin: ^5.3.6
     thread-loader: ^3.0.4
-    tiny-invariant: ^1.2.0
+    tiny-invariant: ^1.3.1
     ts-node: ^10.9.1
     tslib: ^2.4.0
     tti-polyfill: ^0.2.2
     typescript: ^4.8.4
     typestyle: ^2.4.0
-    uid: ^2.0.0
+    uid: ^2.0.1
     url: ^0.11.0
     url-loader: ^4.1.1
     url-parse: ^1.5.10
@@ -19019,15 +18999,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"intl-messageformat@npm:10.1.4":
-  version: 10.1.4
-  resolution: "intl-messageformat@npm:10.1.4"
+"intl-messageformat@npm:10.1.5":
+  version: 10.1.5
+  resolution: "intl-messageformat@npm:10.1.5"
   dependencies:
     "@formatjs/ecma402-abstract": 1.12.0
     "@formatjs/fast-memoize": 1.2.6
-    "@formatjs/icu-messageformat-parser": 2.1.7
+    "@formatjs/icu-messageformat-parser": 2.1.8
     tslib: 2.4.0
-  checksum: 09c2cba0d64b9b9c99b9630b3f32661dd25886461eea5e8b6e0dac6b13b8ab0eb8bf2646bc73baa8b47501544f6cdb255d888617e22d056cce686849e05e2699
+  checksum: 0e95843c74f099c5f3c9e21812f929c392a39b37f0c7b0102f15b1608dc20bbf94dc39d4f42d5146d1c5036841ba3195d9c3cf4cbd13eb0b335c74b47c71cdd3
   languageName: node
   linkType: hard
 
@@ -26405,19 +26385,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-intl@npm:^6.1.1":
-  version: 6.1.1
-  resolution: "react-intl@npm:6.1.1"
+"react-intl@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "react-intl@npm:6.1.2"
   dependencies:
     "@formatjs/ecma402-abstract": 1.12.0
-    "@formatjs/icu-messageformat-parser": 2.1.7
-    "@formatjs/intl": 2.4.1
+    "@formatjs/icu-messageformat-parser": 2.1.8
+    "@formatjs/intl": 2.4.2
     "@formatjs/intl-displaynames": 6.1.3
     "@formatjs/intl-listformat": 7.1.2
     "@types/hoist-non-react-statics": ^3.3.1
     "@types/react": 16 || 17 || 18
     hoist-non-react-statics: ^3.3.2
-    intl-messageformat: 10.1.4
+    intl-messageformat: 10.1.5
     tslib: 2.4.0
   peerDependencies:
     react: ^16.6.0 || 17 || 18
@@ -26425,7 +26405,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: a465612c6dfdfa47e53763f4b8f951d7ed506500b066ae5cc89d1102d935fa05dcac6af9561727bbe7b6eb4ed223c08c8e5825d5280975457cff2e75202af43f
+  checksum: ba4a0c6cdd23294565993204cc094a1d842d1cbd6a75f6ce098a2e91cbd19367c16e1a58488234b8f7683ba089e348cf2d74a27a743baee25361cf3515232424
   languageName: node
   linkType: hard
 
@@ -29965,10 +29945,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tiny-invariant@npm:^1.0.2, tiny-invariant@npm:^1.0.6, tiny-invariant@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "tiny-invariant@npm:1.2.0"
-  checksum: e09a718a7c4a499ba592cdac61f015d87427a0867ca07f50c11fd9b623f90cdba18937b515d4a5e4f43dac92370498d7bdaee0d0e7a377a61095e02c4a92eade
+"tiny-invariant@npm:^1.0.2, tiny-invariant@npm:^1.0.6, tiny-invariant@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "tiny-invariant@npm:1.3.1"
+  checksum: 872dbd1ff20a21303a2fd20ce3a15602cfa7fcf9b228bd694a52e2938224313b5385a1078cb667ed7375d1612194feaca81c4ecbe93121ca1baebe344de4f84c
   languageName: node
   linkType: hard
 
@@ -30575,12 +30555,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uid@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "uid@npm:2.0.0"
+"uid@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "uid@npm:2.0.1"
   dependencies:
     "@lukeed/csprng": ^1.0.0
-  checksum: c9333014d9ecc33d6c92ca8e9af8c52f172704b07af3a142879af368b7636f6ffff48cf87bc6021d4c85c7a0b255665ff0fe733f4b4a842f7bfd75638d31dd48
+  checksum: 0a3c697d8dd1f3b647afa35c411b11fd8fa2fb6dbd8a49fe109a4aa5214068c2c58781aa6e4516dfd16f0fc524fb7bba0833e9c1dc1ed3f1965b520349be9ad5
   languageName: node
   linkType: hard
 

@@ -23,7 +23,7 @@
     "lru-fast": "^0.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.1.1",
+    "react-intl": "^6.1.2",
     "react-node-resolver": "^2.0.1",
     "styled-components": "^5.3.6"
   },
@@ -35,7 +35,7 @@
     "lodash": "^4.17.21",
     "sinon": "^14.0.0",
     "typescript": "^4.8.4",
-    "uid": "^2.0.0"
+    "uid": "^2.0.1"
   },
   "supportedLocales": [
     "it",
