@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 2.1.10
+
+### Patch Changes
+
+- 238569929: Bump deps
+- Updated dependencies [238569929]
+  - @uidu/field-time@2.0.15
+
 ## 2.1.9
 
 ### Patch Changes

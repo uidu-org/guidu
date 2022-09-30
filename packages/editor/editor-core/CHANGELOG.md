@@ -1,5 +1,18 @@
 # @uidu/editor-core
 
+## 0.15.20
+
+### Patch Changes
+
+- 238569929: Bump deps
+- Updated dependencies [238569929]
+  - @uidu/editor-common@0.7.25
+  - @uidu/emoji@0.6.23
+  - @uidu/mentions@0.4.24
+  - @uidu/profilecard@0.3.22
+  - @uidu/status@0.5.20
+  - @uidu/media-card@0.7.9
+
 ## 0.15.19
 
 ### Patch Changes

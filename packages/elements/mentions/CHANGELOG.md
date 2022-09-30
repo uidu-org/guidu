@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.4.24
+
+### Patch Changes
+
+- 238569929: Bump deps
+
 ## 0.4.23
 
 ### Patch Changes

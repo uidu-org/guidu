@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.6.23
+
+### Patch Changes
+
+- 238569929: Bump deps
+
 ## 0.6.22
 
 ### Patch Changes

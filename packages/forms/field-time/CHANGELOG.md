@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 2.0.15
+
+### Patch Changes
+
+- 238569929: Bump deps
+
 ## 2.0.14
 
 ### Patch Changes

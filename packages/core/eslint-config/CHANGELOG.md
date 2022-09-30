@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.30
+
+### Patch Changes
+
+- 238569929: Bump deps
+
 ## 0.1.29
 
 ### Patch Changes
