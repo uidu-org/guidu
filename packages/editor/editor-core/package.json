@@ -28,6 +28,7 @@
     "@uidu/editor-markdown-transformer": "^1.0.0",
     "@uidu/emoji": "^0.6.23",
     "@uidu/field-date": "^2.0.14",
+    "@uidu/field-text": "workspace:^",
     "@uidu/form": "^2.1.7",
     "@uidu/media-card": "^0.7.10",
     "@uidu/media-core": "^1.1.1",

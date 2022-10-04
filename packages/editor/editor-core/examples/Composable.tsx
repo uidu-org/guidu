@@ -8,6 +8,7 @@ import { story as document } from '../../renderer/examples/helper/story-data';
 import { Editor, EditorContext, WithEditorActions } from '../src';
 import {
   insertBlockPlugin,
+  mentionsPlugin,
   quickInsertPlugin,
   starterKitPlugin,
   videoPlugin,
@@ -64,6 +65,7 @@ export default function Composable({}) {
                       }),
                       quickInsertPlugin(),
                       videoPlugin(),
+                      mentionsPlugin(),
                       // tablesPlugin({ tableOptions: {} }),
                       // datePlugin(),
                       // mediaPlugin({

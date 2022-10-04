@@ -41,8 +41,6 @@ export default function VideoNodeView(props) {
 
   const intl = useIntl();
 
-  console.log(props);
-
   // const handleClick = (event: React.SyntheticEvent<any>) => {
   //   event.nativeEvent.stopImmediatePropagation();
   //   const { state, dispatch } = view;
