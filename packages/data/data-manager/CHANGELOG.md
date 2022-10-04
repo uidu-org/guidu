@@ -1,5 +1,24 @@
 # @uidu/data-manager
 
+## 4.1.3
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/button@1.3.31
+  - @uidu/menu@0.8.4
+  - @uidu/pagination@0.5.23
+  - @uidu/board@1.0.5
+  - @uidu/data-controls@4.0.4
+  - @uidu/data-fields@2.1.11
+  - @uidu/data-views@3.0.4
+  - @uidu/gallery@2.0.7
+  - @uidu/list@3.1.2
+  - @uidu/table@3.2.2
+  - @uidu/shell@2.1.34
+  - @uidu/calendar@0.4.21
+
 ## 4.1.2
 
 ### Patch Changes

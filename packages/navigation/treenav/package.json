@@ -1,6 +1,6 @@
 {
   "name": "@uidu/treenav",
-  "version": "0.3.20",
+  "version": "0.3.21",
   "description": "Treenav component allows nested card navigation for mobile and desktop (eg: settings page)",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/treenav",
   "license": "MIT",
@@ -18,6 +18,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.19",
-    "@uidu/shell": "^2.1.29"
+    "@uidu/shell": "^2.1.34"
   }
 }

@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.0.0
+
+### Major Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+
 ## 0.2.29
 
 ### Patch Changes

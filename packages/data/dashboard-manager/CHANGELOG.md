@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 2.0.8
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/dashlets@2.1.15
+  - @uidu/dashboard-controls@1.1.7
+
 ## 2.0.7
 
 ### Patch Changes

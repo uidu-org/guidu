@@ -1,5 +1,16 @@
 # @uidu/editor-json-transformer
 
+## 1.0.0
+
+### Major Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+
+### Patch Changes
+
+- Updated dependencies [bad65fd45]
+  - @uidu/adf-schema@1.0.0
+
 ## 0.7.15
 
 ### Patch Changes

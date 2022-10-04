@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.8.4
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+
 ## 0.8.3
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.6.21
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/button@1.3.31
+  - @uidu/list@3.1.2
+  - @uidu/table@3.2.2
+  - @uidu/breadcrumbs@1.0.27
+  - @uidu/navigation@1.0.28
+  - @uidu/shell@2.1.34
+  - @uidu/form@2.1.7
+  - @uidu/select@2.0.10
+
 ## 0.6.20
 
 ### Patch Changes

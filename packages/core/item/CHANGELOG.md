@@ -1,5 +1,11 @@
 # @uidu/item
 
+## 0.5.22
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+
 ## 0.5.21
 
 ### Patch Changes

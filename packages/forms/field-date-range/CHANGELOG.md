@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 2.0.7
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/field-date@2.0.14
+  - @uidu/field-base@4.0.13
+
 ## 2.0.6
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/field-date
 
+## 2.0.15
+
+### Patch Changes
+
+- @uidu/form@2.1.7
+- @uidu/select@2.0.10
+- @uidu/field-base@4.0.13
+
 ## 2.0.14
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/media-card
 
+## 0.7.10
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/button@1.3.31
+
 ## 0.7.9
 
 ### Patch Changes

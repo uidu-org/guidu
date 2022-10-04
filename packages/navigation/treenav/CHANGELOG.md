@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.3.21
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+
 ## 0.3.20
 
 ### Patch Changes

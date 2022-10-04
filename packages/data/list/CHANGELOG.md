@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.1.2
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/data-fields@2.1.11
+
 ## 3.1.1
 
 ### Patch Changes

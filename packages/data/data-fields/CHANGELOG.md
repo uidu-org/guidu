@@ -1,5 +1,21 @@
 # @uidu/data-fields
 
+## 2.1.11
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/button@1.3.31
+  - @uidu/menu@0.8.4
+  - @uidu/field-date@2.0.14
+  - @uidu/field-color-picker@3.0.8
+  - @uidu/form@2.1.7
+  - @uidu/select@2.0.10
+  - @uidu/field-time@2.0.16
+  - @uidu/field-number@2.0.14
+  - @uidu/field-toggle@2.0.14
+
 ## 2.1.10
 
 ### Patch Changes

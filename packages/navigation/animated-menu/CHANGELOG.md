@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.0.22
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+
 ## 1.0.21
 
 ### Patch Changes

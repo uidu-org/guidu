@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 2.1.15
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/dashboard-manager@2.0.8
+  - @uidu/data-fields@2.1.11
+  - @uidu/table@3.2.2
+  - @uidu/dashlet-controls@1.1.7
+
 ## 2.1.14
 
 ### Patch Changes
