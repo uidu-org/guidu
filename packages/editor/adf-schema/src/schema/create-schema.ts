@@ -63,6 +63,7 @@ import {
   unknownBlock,
   unsupportedBlock,
   unsupportedInline,
+  video,
 } from './nodes';
 
 function addItems(
@@ -174,6 +175,7 @@ const nodesInOrder: SchemaBuiltInItem[] = [
   { name: 'unknownBlock', spec: unknownBlock },
   { name: 'unsupportedBlock', spec: unsupportedBlock },
   { name: 'unsupportedInline', spec: unsupportedInline },
+  { name: 'video', spec: video },
 ];
 
 const marksInOrder: SchemaBuiltInItem[] = [

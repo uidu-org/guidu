@@ -11,7 +11,7 @@ import * as React from 'react';
 // @ts-ignore: unused variable
 // prettier-ignore
 import { ComponentType } from 'react';
-import { Serializer } from '../';
+import { Serializer } from '..';
 import { AnalyticsEventPayload } from '../analytics/events';
 import { RendererAppearance } from '../ui/Renderer/types';
 import { generateIdFromString } from '../utils';
@@ -60,9 +60,7 @@ function mergeMarks(marksAndNodes: Array<MarkWithContent | Node>) {
       Array.isArray(prev.content) &&
       isSameMark(prev as Mark, markOrNode as Mark)
     ) {
-      prev.content = mergeMarks(
-        prev.content.concat((markOrNode as MarkWithContent).content),
-      );
+      prev.content = mergeMarks(prev.content.concat(markOrNode.content));
     } else {
       acc.push(markOrNode);
     }
@@ -73,16 +71,27 @@ function mergeMarks(marksAndNodes: Array<MarkWithContent | Node>) {
 
 export default class ReactSerializer implements Serializer<JSX.Element> {
   private providers?: ProviderFactory;
+
   private eventHandlers?: EventHandlers;
+
   private extensionHandlers?: ExtensionHandlers;
+
   private portal?: HTMLElement;
+
   private rendererContext?: RendererContext;
+
   private appearance?: RendererAppearance;
+
   private disableHeadingIDs?: boolean;
+
   private headingIds: string[] = [];
+
   private allowDynamicTextSizing?: boolean;
+
   private allowHeadingAnchorLinks?: boolean;
+
   private allowColumnSorting?: boolean;
+
   private fireAnalyticsEvent?: (event: AnalyticsEventPayload) => void;
 
   constructor({
@@ -147,13 +156,16 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
           props = this.getProps(node);
         }
 
-        let currentPath = (parentInfo && parentInfo.path) || [];
+        console.log('node', node);
+        console.log('props', props);
+
+        const currentPath = (parentInfo && parentInfo.path) || [];
         currentPath.push(node);
 
         const parentIsIncompleteTask =
           node.type.name === 'taskItem' && node.attrs.state !== 'DONE';
 
-        let pInfo = {
+        const pInfo = {
           parentIsIncompleteTask,
           path: currentPath,
         };
@@ -170,14 +182,16 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
           return ([] as Array<Mark>)
             .concat(node.marks)
             .reverse()
-            .reduce((acc, mark) => {
-              return this.renderMark(
-                markToReact(mark),
-                this.getMarkProps(mark),
-                `${mark.type.name}-${index}`,
-                acc,
-              );
-            }, serializedContent);
+            .reduce(
+              (acc, mark) =>
+                this.renderMark(
+                  markToReact(mark),
+                  this.getMarkProps(mark),
+                  `${mark.type.name}-${index}`,
+                  acc,
+                ),
+              serializedContent,
+            );
         }
 
         return serializedContent;
@@ -198,9 +212,9 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
       return (mark as any).text;
     }
 
-    const content = (
-      (mark as any).content || []
-    ).map((child: Mark, index: number) => this.serializeMark(child, index));
+    const content = ((mark as any).content || []).map(
+      (child: Mark, index: number) => this.serializeMark(child, index),
+    );
     return this.renderMark(
       markToReact(mark),
       this.getMarkProps(mark),
@@ -309,7 +323,8 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
     if (counter === 0 && this.headingIds.indexOf(baseId) === -1) {
       this.headingIds.push(baseId);
       return baseId;
-    } else if (counter !== 0) {
+    }
+    if (counter !== 0) {
       const headingId = `${baseId}.${counter}`;
       if (this.headingIds.indexOf(headingId) === -1) {
         this.headingIds.push(headingId);

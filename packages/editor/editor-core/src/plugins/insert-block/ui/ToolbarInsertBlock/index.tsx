@@ -1,6 +1,7 @@
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import ExpandNodeIcon from '@atlaskit/icon/glyph/chevron-right-circle';
 import AddIcon from '@atlaskit/icon/glyph/editor/add';
+import VideoIcon from '@atlaskit/icon/glyph/editor/attachment';
 import CodeIcon from '@atlaskit/icon/glyph/editor/code';
 import DateIcon from '@atlaskit/icon/glyph/editor/date';
 import DecisionIcon from '@atlaskit/icon/glyph/editor/decision';
@@ -25,7 +26,7 @@ import ReactDOM from 'react-dom';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import {
   analyticsService as analytics,
-  withAnalytics
+  withAnalytics,
 } from '../../../../analytics';
 import {
   addLink,
@@ -33,7 +34,7 @@ import {
   findShortcutByDescription,
   renderTooltipContent,
   toggleTable,
-  tooltip
+  tooltip,
 } from '../../../../keymaps';
 import DropdownMenu from '../../../../ui/DropdownMenu';
 import { MenuItem } from '../../../../ui/DropdownMenu/types';
@@ -41,7 +42,7 @@ import {
   ButtonGroup,
   ExpandIconWrapper,
   Shortcut,
-  Wrapper
+  Wrapper,
 } from '../../../../ui/styles';
 import ToolbarButton from '../../../../ui/ToolbarButton';
 import {
@@ -50,7 +51,7 @@ import {
   ACTION_SUBJECT_ID,
   EVENT_TYPE,
   INPUT_METHOD,
-  withAnalytics as commandWithAnalytics
+  withAnalytics as commandWithAnalytics,
 } from '../../../analytics';
 import { BlockType } from '../../../block-type/types';
 import { DropdownItem } from '../../../block-type/ui/ToolbarBlockType';
@@ -65,6 +66,7 @@ import { createHorizontalRule } from '../../../rule/pm-plugins/input-rule';
 import { updateStatusWithAnalytics } from '../../../status/actions';
 import { createTable } from '../../../table/commands';
 import { insertTaskDecision } from '../../../tasks-and-decisions/commands';
+import { setVideoPickerAt } from '../../../video/actions';
 import { messages } from './messages';
 import { TriggerWrapper } from './styles';
 import { Props, State, TOOLBAR_MENU_TYPE } from './types';
@@ -363,6 +365,7 @@ class ToolbarInsertBlock extends React.PureComponent<
       horizontalRuleEnabled,
       layoutSectionEnabled,
       expandEnabled,
+      videoEnabled,
       intl: { formatMessage },
     } = this.props;
     let items: MenuItem[] = [];
@@ -514,6 +517,17 @@ class ToolbarInsertBlock extends React.PureComponent<
       });
     }
 
+    if (videoEnabled) {
+      const labelVideo = formatMessage(messages.video);
+      items.push({
+        content: labelVideo,
+        value: { name: 'video' },
+        elemBefore: <VideoIcon label={labelVideo} />,
+        elemAfter: <Shortcut>/V</Shortcut>,
+        shortcut: '/V',
+      });
+    }
+
     if (placeholderTextEnabled) {
       const labelPlaceholderText = formatMessage(messages.placeholderText);
       items.push({
@@ -586,6 +600,16 @@ class ToolbarInsertBlock extends React.PureComponent<
       const { editorView } = this.props;
       insertDate(undefined, inputMethod)(editorView.state, editorView.dispatch);
       openDatePicker()(editorView.state, editorView.dispatch);
+      return true;
+    },
+  );
+
+  private createVideo = withAnalytics(
+    'uidu.editor-core.format.video.button',
+    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
+      console.log('createVideo');
+      const { editorView } = this.props;
+      setVideoPickerAt(true)(editorView.state, editorView.dispatch);
       return true;
     },
   );
@@ -776,6 +800,9 @@ class ToolbarInsertBlock extends React.PureComponent<
         break;
       case 'date':
         this.createDate();
+        break;
+      case 'video':
+        this.createVideo();
         break;
       case 'placeholder text':
         this.createPlaceholderText();

@@ -89,27 +89,25 @@ const textFormatting = (options: TextFormattingOptions = {}): EditorPlugin => ({
           textFormattingState: textFormattingPluginKey,
           clearFormattingState: clearFormattingPluginKey,
         }}
-        render={({ textFormattingState, clearFormattingState }): any => {
-          return (
-            <ButtonGroup width={isToolbarReducedSpacing ? 'small' : 'large'}>
-              <ToolbarTextFormatting
-                disabled={disabled}
-                editorView={editorView}
-                textFormattingState={textFormattingState}
-                isReducedSpacing={isToolbarReducedSpacing}
-              />
-              <ToolbarAdvancedTextFormatting
-                editorView={editorView}
-                isDisabled={disabled}
-                isReducedSpacing={isToolbarReducedSpacing}
-                textFormattingState={textFormattingState}
-                clearFormattingState={clearFormattingState}
-                popupsMountPoint={popupsMountPoint}
-                popupsScrollableElement={popupsScrollableElement}
-              />
-            </ButtonGroup>
-          );
-        }}
+        render={({ textFormattingState, clearFormattingState }): any => (
+          <ButtonGroup width={isToolbarReducedSpacing ? 'small' : 'large'}>
+            <ToolbarTextFormatting
+              disabled={disabled}
+              editorView={editorView}
+              textFormattingState={textFormattingState}
+              isReducedSpacing={isToolbarReducedSpacing}
+            />
+            <ToolbarAdvancedTextFormatting
+              editorView={editorView}
+              isDisabled={disabled}
+              isReducedSpacing={isToolbarReducedSpacing}
+              textFormattingState={textFormattingState}
+              clearFormattingState={clearFormattingState}
+              popupsMountPoint={popupsMountPoint}
+              popupsScrollableElement={popupsScrollableElement}
+            />
+          </ButtonGroup>
+        )}
       />
     );
   },

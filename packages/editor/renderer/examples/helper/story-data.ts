@@ -78,6 +78,12 @@ export const story = {
       ],
     },
     {
+      type: 'video',
+      attrs: {
+        url: 'https://www.youtube.com/watch?v=JGwWNGJdvx8',
+      },
+    },
+    {
       type: 'layoutSection',
       content: [
         {

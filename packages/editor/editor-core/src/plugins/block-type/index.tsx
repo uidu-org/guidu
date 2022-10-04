@@ -131,20 +131,18 @@ const blockTypePlugin = (options?: BlockTypePluginOptions): EditorPlugin => ({
         plugins={{
           pluginState: pluginKey,
         }}
-        render={({ pluginState }) => {
-          return (
-            <ToolbarBlockType
-              isSmall={isSmall}
-              isDisabled={disabled}
-              isReducedSpacing={isToolbarReducedSpacing}
-              setBlockType={boundSetBlockType}
-              pluginState={pluginState}
-              popupsMountPoint={popupsMountPoint}
-              popupsBoundariesElement={popupsBoundariesElement}
-              popupsScrollableElement={popupsScrollableElement}
-            />
-          );
-        }}
+        render={({ pluginState }) => (
+          <ToolbarBlockType
+            isSmall={isSmall}
+            isDisabled={disabled}
+            isReducedSpacing={isToolbarReducedSpacing}
+            setBlockType={boundSetBlockType}
+            pluginState={pluginState}
+            popupsMountPoint={popupsMountPoint}
+            popupsBoundariesElement={popupsBoundariesElement}
+            popupsScrollableElement={popupsScrollableElement}
+          />
+        )}
       />
     );
   },

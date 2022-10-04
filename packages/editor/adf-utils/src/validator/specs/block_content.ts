@@ -19,4 +19,5 @@ export default [
   'extension',
   'bodiedExtension',
   'expand_with_no_mark',
+  'video',
 ];

@@ -17,10 +17,7 @@ import { createRoot } from 'react-dom/client';
 import analyticsService from '../../../analytics/service';
 import { Dispatch } from '../../../event-dispatcher';
 import { ProsemirrorGetPosHandler } from '../../../nodeviews';
-import {
-  InputMethodInsertMedia,
-  INPUT_METHOD,
-} from '../../../plugins/analytics';
+import { InputMethodInsertMedia, INPUT_METHOD } from '../../analytics';
 import { updateMediaNodeAttrs } from '../commands';
 import * as helpers from '../commands/helpers';
 import { MediaPluginOptions } from '../media-plugin-options';
@@ -60,39 +57,66 @@ const MEDIA_RESOLVED_STATES = ['ready', 'error', 'cancelled'];
 
 export class MediaPluginStateImplementation implements MediaPluginState {
   allowsUploads: boolean = false;
+
   mediaClientConfig?: MediaClientConfig;
+
   uploadMediaClientConfig?: MediaClientConfig;
+
   ignoreLinks: boolean = false;
+
   waitForMediaUpload: boolean = true;
+
   allUploadsFinished: boolean = true;
+
   showDropzone: boolean = false;
+
   element?: HTMLElement;
+
   layout: MediaSingleLayout = 'center';
+
   mediaNodes: MediaNodeWithPosHandler[] = [];
+
   mediaGroupNodes: Record<string, any> = {};
+
   mobileUploadComplete: Record<string, boolean> = {};
+
   options: MediaPluginOptions;
+
   mediaProvider?: MediaProvider;
 
   private pendingTask = Promise.resolve<MediaState | null>(null);
+
   private view!: EditorView;
+
   private destroyed = false;
+
   private contextIdentifierProvider?: ContextIdentifierProvider;
+
   private errorReporter: ErrorReporter;
+
   private popupPicker?: any;
+
   // @ts-ignore
   private customPicker?: any;
+
   private removeOnCloseListener: () => void = () => {};
+
   private openMediaPickerBrowser?: () => void;
+
   private onPopupToogleCallback: (isOpen: boolean) => void = () => {};
+
   private reactContext: () => {};
 
   pickers: [] = [];
+
   pickerPromises: Array<Promise<any>> = [];
 
   editingMediaSinglePos?: number;
+
   showEditingDialog?: boolean;
+
   mediaOptions?: MediaOptions;
+
   dispatch?: Dispatch;
 
   constructor(
@@ -161,11 +185,10 @@ export class MediaPluginStateImplementation implements MediaPluginState {
       this.mediaProvider = await mediaProvider;
 
       if (!this.mediaProvider.viewMediaClientConfig) {
-        const viewMediaClientConfig = this.mediaProvider.viewMediaClientConfig;
+        const { viewMediaClientConfig } = this.mediaProvider;
 
         if (viewMediaClientConfig) {
-          (this.mediaProvider as MediaProvider).viewMediaClientConfig =
-            viewMediaClientConfig;
+          this.mediaProvider.viewMediaClientConfig = viewMediaClientConfig;
         }
       }
 
@@ -203,7 +226,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     const { view, allowsUploads } = this;
 
     // make sure editable DOM node is mounted
-    if (!this.destroyed && view.dom.parentNode) {
+    if (!this.destroyed && view && view.dom.parentNode) {
       // make PM plugin aware of the state change to update UI during 'apply' hook
       view.dispatch(view.state.tr.setMeta(stateKey, { allowsUploads }));
     }
@@ -315,7 +338,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
   handleMediaNodeRemoval = (node: PMNode, getPos: ProsemirrorGetPosHandler) => {
     let getNode = node;
     if (!getNode) {
-      getNode = this.view.state.doc.nodeAt(getPos()) as PMNode;
+      getNode = this.view.state.doc.nodeAt(getPos());
     }
     removeMediaNode(this.view, getNode, getPos);
   };
@@ -349,9 +372,8 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     this.destroyPickers();
   }
 
-  findMediaNode = (id: string): MediaNodeWithPosHandler | null => {
-    return helpers.findMediaSingleNode(this, id);
-  };
+  findMediaNode = (id: string): MediaNodeWithPosHandler | null =>
+    helpers.findMediaSingleNode(this, id);
 
   private destroyAllPickers = (pickers: Array<any>) => {
     // pickers.forEach((picker) => picker.destroy());
@@ -465,8 +487,8 @@ export class MediaPluginStateImplementation implements MediaPluginState {
       return false;
     }
 
-    let { from } = view.state.selection;
-    removeMediaNode(view, selectedNode.firstChild!, () => from + 1);
+    const { from } = view.state.selection;
+    removeMediaNode(view, selectedNode.firstChild, () => from + 1);
     return true;
   };
 
@@ -574,7 +596,7 @@ export const createPlugin = (
 
         // When a media is already selected
         if (state.selection instanceof NodeSelection) {
-          const node = state.selection.node;
+          const { node } = state.selection;
 
           if (node.type === schema.nodes.mediaSingle) {
             const deco = Decoration.node(
@@ -591,7 +613,7 @@ export const createPlugin = (
           return undefined;
         }
 
-        let pos: number | null | void = $anchor.pos;
+        let { pos } = $anchor;
         if (
           $anchor.parent.type !== schema.nodes.paragraph &&
           $anchor.parent.type !== schema.nodes.codeBlock

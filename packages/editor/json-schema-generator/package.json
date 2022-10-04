@@ -19,7 +19,7 @@
     "@types/meow": "^6.0.0",
     "@types/mkdirp": "^1.0.2",
     "@types/prettier": "^2.7.1",
-    "meow": "^10.1.4",
+    "meow": "^9.0.0",
     "mkdirp": "^1.0.4",
     "prettier": "^2.7.1",
     "ts-node": "^10.9.1",

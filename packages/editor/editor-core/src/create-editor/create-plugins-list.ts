@@ -1,34 +1,11 @@
 import { CreateUIAnalyticsEvent } from '@uidu/analytics';
 import {
-  alignmentPlugin,
-  analyticsPlugin,
   basePlugin,
-  blockTypePlugin,
   clearMarksOnChangeToEmptyDocumentPlugin,
-  contextPanelPlugin,
-  datePlugin,
   editorDisabledPlugin,
-  extensionPlugin,
   fakeTextCursorPlugin,
-  feedbackDialogPlugin,
-  floatingToolbarPlugin,
   gapCursorPlugin,
-  gridPlugin,
-  historyPlugin,
-  hyperlinkPlugin,
-  indentationPlugin,
-  insertBlockPlugin,
-  layoutPlugin,
-  listsPlugin,
-  mediaPlugin,
   pastePlugin,
-  placeholderPlugin,
-  placeholderTextPlugin,
-  quickInsertPlugin,
-  rulePlugin,
-  tablesPlugin,
-  textColorPlugin,
-  textFormattingPlugin,
   typeAheadPlugin,
   unsupportedContentPlugin,
   widthPlugin,
@@ -36,55 +13,6 @@ import {
 import { ScrollGutterPluginOptions } from '../plugins/base/pm-plugins/scroll-gutter';
 import { EditorPlugin, EditorProps } from '../types';
 import { isFullPage as fullPageCheck } from '../utils/is-full-page';
-
-/**
- * Returns list of plugins that are absolutely necessary for editor to work
- */
-export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
-  const {
-    appearance,
-    textFormatting,
-    placeholder,
-    placeholderHints,
-    placeholderBracketHint,
-  } = props;
-  const isFullPage = fullPageCheck(appearance);
-
-  return [
-    pastePlugin({
-      cardOptions: props.UNSAFE_cards,
-      sanitizePrivateContent: props.sanitizePrivateContent,
-    }),
-    basePlugin({
-      allowInlineCursorTarget: appearance !== 'mobile',
-      allowScrollGutter: getScrollGutterOptions(props),
-      addRunTimePerformanceCheck: isFullPage,
-      inputSamplingLimit: props.inputSamplingLimit,
-    }),
-    blockTypePlugin({
-      lastNodeMustBeParagraph: appearance === 'comment',
-      allowBlockType: props.allowBlockType,
-    }),
-    placeholderPlugin({
-      placeholder,
-      // placeholderHints,
-      // placeholderBracketHint,
-    }),
-    clearMarksOnChangeToEmptyDocumentPlugin(),
-    hyperlinkPlugin(),
-    textFormattingPlugin(textFormatting || {}),
-    widthPlugin(),
-    typeAheadPlugin(),
-    unsupportedContentPlugin(),
-    editorDisabledPlugin(),
-    gapCursorPlugin(),
-    gridPlugin({ shouldCalcBreakoutGridLines: isFullPage }),
-    // submitEditorPlugin(),
-    fakeTextCursorPlugin(),
-    floatingToolbarPlugin(),
-    contextPanelPlugin(),
-  ];
-}
 
 function getScrollGutterOptions(
   props: EditorProps,
@@ -108,6 +36,33 @@ function getScrollGutterOptions(
 }
 
 /**
+ * Returns list of plugins that are absolutely necessary for editor to work
+ */
+export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
+  const { appearance } = props;
+
+  return [
+    basePlugin({
+      allowInlineCursorTarget: appearance !== 'mobile',
+      allowScrollGutter: getScrollGutterOptions(props),
+      addRunTimePerformanceCheck: false,
+      inputSamplingLimit: props.inputSamplingLimit,
+    }),
+    pastePlugin({
+      cardOptions: props.UNSAFE_cards,
+      sanitizePrivateContent: props.sanitizePrivateContent,
+    }),
+    clearMarksOnChangeToEmptyDocumentPlugin(),
+    widthPlugin(),
+    typeAheadPlugin(),
+    unsupportedContentPlugin(),
+    editorDisabledPlugin(),
+    gapCursorPlugin(),
+    fakeTextCursorPlugin(),
+  ];
+}
+
+/**
  * Maps EditorProps to EditorPlugins
  */
 export default function createPluginsList(
@@ -115,13 +70,12 @@ export default function createPluginsList(
   prevProps?: EditorProps,
   createAnalyticsEvent?: CreateUIAnalyticsEvent,
 ): EditorPlugin[] {
-  const isMobile = props.appearance === 'mobile';
-  const isFullPage = fullPageCheck(props.appearance);
-  const plugins = getDefaultPluginsList(props);
+  // const isMobile = props.appearance === 'mobile';
+  const plugins = [...getDefaultPluginsList(props), ...(props.plugins || [])];
 
-  if (props.allowAnalyticsGASV3) {
-    plugins.push(analyticsPlugin(createAnalyticsEvent));
-  }
+  // if (props.allowAnalyticsGASV3) {
+  //   plugins.push(analyticsPlugin(createAnalyticsEvent));
+  // }
 
   // if (props.allowBreakout && isFullPage) {
   //   plugins.push(
@@ -129,40 +83,40 @@ export default function createPluginsList(
   //   );
   // }
 
-  if (props.allowTextAlignment) {
-    plugins.push(alignmentPlugin());
-  }
+  // if (props.allowTextAlignment) {
+  //   plugins.push(alignmentPlugin());
+  // }
 
-  if (props.allowTextColor) {
-    plugins.push(textColorPlugin());
-  }
+  // if (props.allowTextColor) {
+  //   plugins.push(textColorPlugin());
+  // }
 
-  plugins.push(listsPlugin());
+  // plugins.push(listsPlugin());
 
-  if (props.allowRule) {
-    plugins.push(rulePlugin());
-  }
+  // if (props.allowRule) {
+  //   plugins.push(rulePlugin());
+  // }
 
-  if (props.media) {
-    plugins.push(
-      mediaPlugin({
-        ...props.media,
-        allowLazyLoading: !isMobile,
-        allowBreakoutSnapPoints: isFullPage,
-        allowAdvancedToolBarOptions: isFullPage,
-        allowDropzoneDropLine: isFullPage,
-        allowMediaSingleEditable: !isMobile,
-        allowRemoteDimensionsFetch: !isMobile,
-        // This is a wild one. I didnt quite understand what the code was doing
-        // so a bit of guess for now.
-        allowMarkingUploadsAsIncomplete: isMobile,
-        fullWidthEnabled: props.appearance === 'full-width',
-        uploadErrorHandler: props.uploadErrorHandler,
-        waitForMediaUpload: props.waitForMediaUpload,
-        isCopyPasteEnabled: !isMobile,
-      }),
-    );
-  }
+  // if (props.media) {
+  //   plugins.push(
+  //     mediaPlugin({
+  //       ...props.media,
+  //       allowLazyLoading: !isMobile,
+  //       allowBreakoutSnapPoints: isFullPage,
+  //       allowAdvancedToolBarOptions: isFullPage,
+  //       allowDropzoneDropLine: isFullPage,
+  //       allowMediaSingleEditable: !isMobile,
+  //       allowRemoteDimensionsFetch: !isMobile,
+  //       // This is a wild one. I didnt quite understand what the code was doing
+  //       // so a bit of guess for now.
+  //       allowMarkingUploadsAsIncomplete: isMobile,
+  //       fullWidthEnabled: props.appearance === 'full-width',
+  //       uploadErrorHandler: props.uploadErrorHandler,
+  //       waitForMediaUpload: props.waitForMediaUpload,
+  //       isCopyPasteEnabled: !isMobile,
+  //     }),
+  //   );
+  // }
 
   // if (props.allowCodeBlocks) {
   //   const options = props.allowCodeBlocks !== true ? props.allowCodeBlocks : {};
@@ -191,30 +145,30 @@ export default function createPluginsList(
   //   );
   // }
 
-  if (props.allowTables) {
-    const tableOptions =
-      !props.allowTables || typeof props.allowTables === 'boolean'
-        ? {}
-        : props.allowTables;
-    plugins.push(
-      tablesPlugin({
-        tableOptions,
-        breakoutEnabled: props.appearance === 'full-page',
-        allowContextualMenu: !isMobile,
-        fullWidthEnabled: props.appearance === 'full-width',
-        wasFullWidthEnabled: prevProps && prevProps.appearance === 'full-width',
-        dynamicSizingEnabled: props.allowDynamicTextSizing,
-      }),
-    );
-  }
+  // if (props.allowTables) {
+  //   const tableOptions =
+  //     !props.allowTables || typeof props.allowTables === 'boolean'
+  //       ? {}
+  //       : props.allowTables;
+  //   plugins.push(
+  //     tablesPlugin({
+  //       tableOptions,
+  //       breakoutEnabled: props.appearance === 'full-page',
+  //       allowContextualMenu: !isMobile,
+  //       fullWidthEnabled: props.appearance === 'full-width',
+  //       wasFullWidthEnabled: prevProps && prevProps.appearance === 'full-width',
+  //       dynamicSizingEnabled: props.allowDynamicTextSizing,
+  //     }),
+  //   );
+  // }
 
   // if (props.allowTasksAndDecisions || props.taskDecisionProvider) {
   //   plugins.push(tasksAndDecisionsPlugin());
   // }
 
-  if (props.feedbackInfo) {
-    plugins.push(feedbackDialogPlugin(props.feedbackInfo));
-  }
+  // if (props.feedbackInfo) {
+  //   plugins.push(feedbackDialogPlugin(props.feedbackInfo));
+  // }
 
   // if (props.allowHelpDialog) {
   //   plugins.push(helpDialogPlugin());
@@ -242,20 +196,20 @@ export default function createPluginsList(
   //   plugins.push(panelPlugin());
   // }
 
-  if (props.allowExtension) {
-    const extensionConfig =
-      typeof props.allowExtension === 'object' ? props.allowExtension : {};
-    plugins.push(
-      extensionPlugin({
-        breakoutEnabled:
-          props.appearance === 'full-page' &&
-          extensionConfig.allowBreakout !== false,
-        stickToolbarToBottom: extensionConfig.stickToolbarToBottom,
-        allowNewConfigPanel: extensionConfig.allowNewConfigPanel,
-        extensionHandlers: props.extensionHandlers,
-      }),
-    );
-  }
+  // if (props.allowExtension) {
+  //   const extensionConfig =
+  //     typeof props.allowExtension === 'object' ? props.allowExtension : {};
+  //   plugins.push(
+  //     extensionPlugin({
+  //       breakoutEnabled:
+  //         props.appearance === 'full-page' &&
+  //         extensionConfig.allowBreakout !== false,
+  //       stickToolbarToBottom: extensionConfig.stickToolbarToBottom,
+  //       allowNewConfigPanel: extensionConfig.allowNewConfigPanel,
+  //       extensionHandlers: props.extensionHandlers,
+  //     }),
+  //   );
+  // }
 
   // if (props.macroProvider) {
   //   plugins.push(macroPlugin());
@@ -265,21 +219,21 @@ export default function createPluginsList(
   //   plugins.push(annotationPlugin(props.annotationProvider));
   // }
 
-  if (props.allowDate) {
-    plugins.push(datePlugin());
-  }
+  // if (props.allowDate) {
+  //   plugins.push(datePlugin());
+  // }
 
-  if (props.allowTemplatePlaceholders) {
-    const options =
-      props.allowTemplatePlaceholders !== true
-        ? props.allowTemplatePlaceholders
-        : {};
-    plugins.push(placeholderTextPlugin(options));
-  }
+  // if (props.allowTemplatePlaceholders) {
+  //   const options =
+  //     props.allowTemplatePlaceholders !== true
+  //       ? props.allowTemplatePlaceholders
+  //       : {};
+  //   plugins.push(placeholderTextPlugin(options));
+  // }
 
-  if (props.allowLayouts) {
-    plugins.push(layoutPlugin());
-  }
+  // if (props.allowLayouts) {
+  //   plugins.push(layoutPlugin());
+  // }
 
   // if (props.UNSAFE_cards) {
   //   plugins.push(cardPlugin());
@@ -289,7 +243,7 @@ export default function createPluginsList(
   //   plugins.push(customAutoformatPlugin());
   // }
 
-  let statusMenuDisabled = true;
+  // let statusMenuDisabled = true;
   // if (props.allowStatus) {
   //   statusMenuDisabled =
   //     typeof props.allowStatus === 'object'
@@ -304,27 +258,27 @@ export default function createPluginsList(
   //   );
   // }
 
-  if (props.allowIndentation) {
-    plugins.push(indentationPlugin());
-  }
+  // if (props.allowIndentation) {
+  //   plugins.push(indentationPlugin());
+  // }
 
   // UI only plugins
-  plugins.push(
-    insertBlockPlugin({
-      allowTables: !!props.allowTables,
-      insertMenuItems: props.insertMenuItems,
-      horizontalRuleEnabled: props.allowRule,
-      nativeStatusSupported: !statusMenuDisabled,
-    }),
-  );
+  // plugins.push(
+  //   insertBlockPlugin({
+  //     allowTables: !!props.allowTables,
+  //     insertMenuItems: props.insertMenuItems,
+  //     horizontalRuleEnabled: props.allowRule,
+  //     nativeStatusSupported: !statusMenuDisabled,
+  //   }),
+  // );
 
-  if (!isMobile) {
-    plugins.push(quickInsertPlugin());
-  }
+  // if (!isMobile) {
+  //   plugins.push(quickInsertPlugin());
+  // }
 
-  if (isMobile) {
-    plugins.push(historyPlugin());
-  }
+  // if (isMobile) {
+  //   plugins.push(historyPlugin());
+  // }
 
-  return plugins;
+  return plugins.flat();
 }

@@ -27,9 +27,12 @@ import { MediaPluginState } from '../media/pm-plugins/types';
 import { mentionPluginKey } from '../mentions';
 import { pluginKey as placeholderTextStateKey } from '../placeholder-text/plugin-key';
 import { PluginState as PlaceholderPluginState } from '../placeholder-text/types';
+import { pluginKey as tableStateKey } from '../table/pm-plugins/plugin-factory';
 import { TablePluginState } from '../table/types';
 import { TypeAheadPluginState } from '../type-ahead';
 import { pluginKey as typeAheadPluginKey } from '../type-ahead/pm-plugins/main';
+import { pluginKey as videoPluginKey } from '../video/pm-plugins/plugin-key';
+import { VideoState } from '../video/pm-plugins/types';
 import ToolbarInsertBlock from './ui/ToolbarInsertBlock';
 
 const toolbarSizeToButtons = (toolbarSize: ToolbarSize) => {
@@ -49,7 +52,6 @@ const toolbarSizeToButtons = (toolbarSize: ToolbarSize) => {
 };
 
 export interface InsertBlockOptions {
-  allowTables?: boolean;
   allowExpand?: boolean;
   insertMenuItems?: any;
   horizontalRuleEnabled?: boolean;
@@ -80,94 +82,97 @@ const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
     isToolbarReducedSpacing,
   }) {
     const buttons = toolbarSizeToButtons(toolbarSize);
-    const renderNode = (providers: Providers) => {
-      return (
-        <WithPluginState
-          plugins={{
-            typeAheadState: typeAheadPluginKey,
-            blockTypeState: blockTypeStateKey,
-            mediaState: mediaStateKey,
-            mentionState: mentionPluginKey,
-            macroState: macroStateKey,
-            hyperlinkState: hyperlinkPluginKey,
-            emojiState: emojiPluginKey,
-            dateState: dateStateKey,
-            placeholderTextState: placeholderTextStateKey,
-            layoutState: layoutStateKey,
-          }}
-          render={({
-            typeAheadState,
-            mentionState,
-            blockTypeState,
-            mediaState,
-            macroState = {} as MacroState,
-            hyperlinkState,
-            emojiState,
-            dateState,
-            placeholderTextState,
-            layoutState,
-          }: {
-            typeAheadState: TypeAheadPluginState | undefined;
-            mentionState: MentionPluginState | undefined;
-            blockTypeState: BlockTypeState | undefined;
-            mediaState: MediaPluginState | undefined;
-            tablesState: TablePluginState | undefined;
-            macroState: MacroState | undefined;
-            hyperlinkState: HyperlinkState | undefined;
-            emojiState: EmojiPluginState | undefined;
-            dateState: DateState | undefined;
-            placeholderTextState: PlaceholderPluginState | undefined;
-            layoutState: LayoutState | undefined;
-          }) => (
-            <ToolbarInsertBlock
-              buttons={buttons}
-              isReducedSpacing={isToolbarReducedSpacing}
-              isDisabled={disabled}
-              isTypeAheadAllowed={typeAheadState && typeAheadState.isAllowed}
-              editorView={editorView}
-              tableSupported={options.allowTables}
-              actionSupported={!!editorView.state.schema.nodes.taskItem}
-              mentionsSupported={
-                !!(mentionState && mentionState.mentionProvider)
-              }
-              mentionsEnabled={!!mentionState}
-              decisionSupported={!!editorView.state.schema.nodes.decisionItem}
-              dateEnabled={!!dateState}
-              placeholderTextEnabled={
-                placeholderTextState && placeholderTextState.allowInserting
-              }
-              layoutSectionEnabled={!!layoutState}
-              expandEnabled={!!options.allowExpand}
-              mediaUploadsEnabled={mediaState && mediaState.allowsUploads}
-              onShowMediaPicker={mediaState && mediaState.showMediaPicker}
-              mediaSupported={!!mediaState}
-              availableWrapperBlockTypes={
-                blockTypeState && blockTypeState.availableWrapperBlockTypes
-              }
-              linkSupported={!!hyperlinkState}
-              linkDisabled={
-                !hyperlinkState ||
-                !hyperlinkState.canInsertLink ||
-                !!hyperlinkState.activeLinkMark
-              }
-              emojiDisabled={!emojiState || !emojiState.emojiProvider}
-              emojiProvider={providers.emojiProvider}
-              nativeStatusSupported={options.nativeStatusSupported}
-              horizontalRuleEnabled={options.horizontalRuleEnabled}
-              onInsertBlockType={handleInsertBlockType}
-              onInsertMacroFromMacroBrowser={insertMacroFromMacroBrowser}
-              macroProvider={macroState.macroProvider}
-              popupsMountPoint={popupsMountPoint}
-              popupsBoundariesElement={popupsBoundariesElement}
-              popupsScrollableElement={popupsScrollableElement}
-              insertMenuItems={options.insertMenuItems}
-              editorActions={editorActions}
-              dispatchAnalyticsEvent={dispatchAnalyticsEvent}
-            />
-          )}
-        />
-      );
-    };
+
+    const renderNode = (providers: Providers) => (
+      <WithPluginState
+        plugins={{
+          typeAheadState: typeAheadPluginKey,
+          blockTypeState: blockTypeStateKey,
+          mediaState: mediaStateKey,
+          mentionState: mentionPluginKey,
+          macroState: macroStateKey,
+          hyperlinkState: hyperlinkPluginKey,
+          emojiState: emojiPluginKey,
+          dateState: dateStateKey,
+          videoState: videoPluginKey,
+          placeholderTextState: placeholderTextStateKey,
+          layoutState: layoutStateKey,
+          tablesState: tableStateKey,
+        }}
+        render={({
+          typeAheadState,
+          mentionState,
+          blockTypeState,
+          mediaState,
+          macroState = {} as MacroState,
+          hyperlinkState,
+          emojiState,
+          dateState,
+          videoState,
+          placeholderTextState,
+          layoutState,
+          tablesState,
+        }: {
+          typeAheadState: TypeAheadPluginState | undefined;
+          mentionState: MentionPluginState | undefined;
+          blockTypeState: BlockTypeState | undefined;
+          mediaState: MediaPluginState | undefined;
+          tablesState: TablePluginState | undefined;
+          macroState: MacroState | undefined;
+          hyperlinkState: HyperlinkState | undefined;
+          emojiState: EmojiPluginState | undefined;
+          videoState: VideoState | undefined;
+          dateState: DateState | undefined;
+          placeholderTextState: PlaceholderPluginState | undefined;
+          layoutState: LayoutState | undefined;
+        }) => (
+          <ToolbarInsertBlock
+            buttons={buttons}
+            isReducedSpacing={isToolbarReducedSpacing}
+            isDisabled={disabled}
+            isTypeAheadAllowed={typeAheadState && typeAheadState.isAllowed}
+            editorView={editorView}
+            tableSupported={!!tablesState}
+            actionSupported={!!editorView.state.schema.nodes.taskItem}
+            mentionsSupported={!!(mentionState && mentionState.mentionProvider)}
+            mentionsEnabled={!!mentionState}
+            decisionSupported={!!editorView.state.schema.nodes.decisionItem}
+            dateEnabled={!!dateState}
+            videoEnabled={!!videoState}
+            placeholderTextEnabled={
+              placeholderTextState && placeholderTextState.allowInserting
+            }
+            layoutSectionEnabled={!!layoutState}
+            expandEnabled={!!options.allowExpand}
+            mediaUploadsEnabled={mediaState && mediaState.allowsUploads}
+            onShowMediaPicker={mediaState && mediaState.showMediaPicker}
+            mediaSupported={!!mediaState}
+            availableWrapperBlockTypes={
+              blockTypeState && blockTypeState.availableWrapperBlockTypes
+            }
+            linkSupported={!!hyperlinkState}
+            linkDisabled={
+              !hyperlinkState ||
+              !hyperlinkState.canInsertLink ||
+              !!hyperlinkState.activeLinkMark
+            }
+            emojiDisabled={!emojiState || !emojiState.emojiProvider}
+            emojiProvider={providers.emojiProvider}
+            nativeStatusSupported={options.nativeStatusSupported}
+            horizontalRuleEnabled={options.horizontalRuleEnabled}
+            onInsertBlockType={handleInsertBlockType}
+            onInsertMacroFromMacroBrowser={insertMacroFromMacroBrowser}
+            macroProvider={macroState.macroProvider}
+            popupsMountPoint={popupsMountPoint}
+            popupsBoundariesElement={popupsBoundariesElement}
+            popupsScrollableElement={popupsScrollableElement}
+            insertMenuItems={options.insertMenuItems}
+            editorActions={editorActions}
+            dispatchAnalyticsEvent={dispatchAnalyticsEvent}
+          />
+        )}
+      />
+    );
 
     return (
       <WithProviders

@@ -21,17 +21,12 @@ export type Highlights = Array<'wide' | 'full-width' | number>;
 
 export const createDisplayGrid = (eventDispatcher: EventDispatcher) => {
   const dispatch = createDispatch(eventDispatcher);
-  return (
-    show: boolean,
-    type: GridType,
-    highlight: number[] | string[] = [],
-  ) => {
-    return dispatch(stateKey, {
+  return (show: boolean, type: GridType, highlight: number[] | string[] = []) =>
+    dispatch(stateKey, {
       visible: show,
       gridType: type,
-      highlight: highlight,
+      highlight,
     } as GridPluginState);
-  };
 };
 
 export const gridTypeForLayout = (layout: MediaSingleLayout): GridType =>
@@ -63,13 +58,12 @@ const overflowHighlight = (
       minHighlight <= -start &&
       (typeof size === 'number' ? minHighlight >= -(start + size) : true)
     );
-  } else {
-    return (
-      maxHighlight > GRID_SIZE &&
-      maxHighlight >= GRID_SIZE + start &&
-      (typeof size === 'number' ? maxHighlight <= GRID_SIZE + size : true)
-    );
   }
+  return (
+    maxHighlight > GRID_SIZE &&
+    maxHighlight >= GRID_SIZE + start &&
+    (typeof size === 'number' ? maxHighlight <= GRID_SIZE + size : true)
+  );
 };
 
 const gutterGridLines = (
@@ -99,7 +93,7 @@ const gutterGridLines = (
 
     gridLines.push(
       <div
-        key={side + '-bk'}
+        key={`${side}-bk`}
         className={classnames(
           'gridLine',
           highlights.indexOf('full-width') > -1 ? 'highlight' : '',
@@ -164,7 +158,7 @@ class Grid extends React.Component<Props> {
     } = this.props;
     const editorMaxWidth = theme.layoutMaxWidth;
 
-    let gridLines = [
+    const gridLines = [
       ...lineLengthGridLines(highlight),
       ...gutterGridLines(
         editorMaxWidth,
@@ -202,38 +196,36 @@ interface GridPluginOptions {
 const gridPlugin = (options?: GridPluginOptions): EditorPlugin => ({
   name: 'grid',
 
-  contentComponent: ({ editorView }) => {
-    return (
-      <WithPluginState
-        plugins={{
-          grid: stateKey,
-          widthState: widthPlugin,
-        }}
-        render={({
-          grid,
-          widthState = { width: akEditorFullPageMaxWidth },
-        }: {
-          grid?: GridPluginState;
-          widthState?: WidthPluginState;
-        }) => {
-          if (!grid) {
-            return null;
-          }
+  contentComponent: ({ editorView }) => (
+    <WithPluginState
+      plugins={{
+        grid: stateKey,
+        widthState: widthPlugin,
+      }}
+      render={({
+        grid,
+        widthState = { width: akEditorFullPageMaxWidth },
+      }: {
+        grid?: GridPluginState;
+        widthState?: WidthPluginState;
+      }) => {
+        if (!grid) {
+          return null;
+        }
 
-          return (
-            <ThemedGrid
-              shouldCalcBreakoutGridLines={
-                options && options.shouldCalcBreakoutGridLines
-              }
-              editorWidth={widthState.width}
-              containerElement={editorView.dom as HTMLElement}
-              {...grid}
-            />
-          );
-        }}
-      />
-    );
-  },
+        return (
+          <ThemedGrid
+            shouldCalcBreakoutGridLines={
+              options && options.shouldCalcBreakoutGridLines
+            }
+            editorWidth={widthState.width}
+            containerElement={editorView.dom}
+            {...grid}
+          />
+        );
+      }}
+    />
+  ),
 });
 
 export default gridPlugin;

@@ -6,6 +6,7 @@ import { IconProps } from '../types';
 export const IconAction = loadable(() => import('./action'));
 export const IconCode = loadable(() => import('./code'));
 export const IconDate = loadable(() => import('./date'));
+export const IconVideo = loadable(() => import('./video'));
 export const IconDecision = loadable(() => import('./decision'));
 export const IconDivider = loadable(() => import('./divider'));
 export const IconEmoji = loadable(() => import('./emoji'));

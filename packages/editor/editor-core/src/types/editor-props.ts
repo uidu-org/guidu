@@ -15,20 +15,15 @@ import { ReactElement } from 'react';
 import EditorActions from '../actions';
 import { AnalyticsHandler } from '../analytics/handler';
 import { AnnotationProvider } from '../plugins/annotation/types';
-import { BlockTypePluginOptions } from '../plugins/block-type/types';
 import { CardOptions } from '../plugins/card/types';
 import { CollabEditOptions } from '../plugins/collab-edit/types';
-import { LayoutsConfig } from '../plugins/layout/types';
 import { MediaOptions, MediaState } from '../plugins/media/types';
-import { PlaceholderTextOptions } from '../plugins/placeholder-text/types';
 import { QuickInsertOptions } from '../plugins/quick-insert/types';
-import { PluginConfig as TablesPluginConfig } from '../plugins/table/types';
-import { TextColorPluginConfig } from '../plugins/text-color/pm-plugins/main';
 import { TextFormattingOptions } from '../plugins/text-formatting/types';
 import { MenuItem } from '../ui/DropdownMenu/types';
 import { EditorAppearance } from './editor-appearance';
 import { EditorOnChangeHandler } from './editor-onchange';
-import { ExtensionConfig } from './extension-config';
+import { EditorPlugin } from './editor-plugin';
 
 export type ReactComponents = ReactElement<any> | ReactElement<any>[];
 
@@ -57,92 +52,9 @@ export interface EditorProps {
   contentComponents?: ReactComponents;
   primaryToolbarComponents?: ReactComponents;
   secondaryToolbarComponents?: ReactComponents;
-  allowAnalyticsGASV3?: boolean;
-  // Configure allowed blocks in the editor, currently only supports `heading`, `blockquote`, `hardBreak` and `codeBlock`.
-  allowBlockType?: BlockTypePluginOptions['allowBlockType'];
 
-  // Whether or not you want to allow Action and Decision elements in the editor. You can currently only enable both or disable both.
-  // To enable, you need to also provide a `taskDecisionProvider`. You will most likely need backend ADF storage for this feature.
-  allowTasksAndDecisions?: boolean;
-
-  // Enables new breakout mark.
-  // This mark is being used for making code-blocks breakout.
-  allowBreakout?: boolean;
-
-  // Enables horizontal rules.
-  allowRule?: boolean;
-
-  // Enables text colour. Ew are you sure you want to enable this?
-  allowTextColor?: boolean | TextColorPluginConfig;
-
-  // Enables tables. You can enable individual table features like table header rows and cell background colour.
-  // You will most likely need backend ADF storage for the advanced table features.
-  allowTables?: boolean | TablesPluginConfig;
-
-  // Enable the editor help dialog.
-  allowHelpDialog?: boolean;
-
-  // Information required for editor to display the feedback modal.
-  // This is also required to enable quick insert plugin for feedback modal.
-  feedbackInfo?: FeedbackInfo;
-
-  // This is a temporary setting for Confluence until we ship smart cards. **Please do not use.**
-  allowJiraIssue?: boolean;
-
-  // Deprecated. Defaults to true.
-  // Anything it doesn’t understand it will wrap in an unsupported block or inline node.
-  // It will render a gray non editable box.
-  allowUnsupportedContent?: boolean;
-
-  // Enable panel blocks, the thing that displays a coloured box with icons aka info, warning macros.
-  // You will most likely need backend ADF storage for this feature.
-  allowPanel?: boolean;
-
-  // Enable extensions. Extensions let products and the ecosystem extend ADF and render their own things.
-  // Similar to macros in Confluence. You will most likely need backend ADF storage for this feature.
-  allowExtension?: boolean | ExtensionConfig;
-
-  allowConfluenceInlineComment?: boolean;
-
-  // Enable placeholder text which is handy for things like a template editor.
-  // Placeholder text is an inline text element that is removed when a user clicks on it.
-  // You can also disable the inserts for this feature so users can never insert such placeholder
-  // elements in the editor but you could load the initial content in the editor with them.
-  allowTemplatePlaceholders?: boolean | PlaceholderTextOptions;
-
-  // Enable dates. You will most likely need backend ADF storage for this feature.
-  allowDate?: boolean;
-
-  // Temporary flag to enable layouts while it's under development
-  // Use object form to enable breakout for layouts, and to enable the newer layouts - left sidebar & right sidebar
-  allowLayouts?: boolean | LayoutsConfig;
-
-  // Enable status, if menuDisabled is passed then plugin is enabled by default
-  allowStatus?:
-    | boolean
-    | {
-        menuDisabled: boolean;
-      };
-
-  allowDynamicTextSizing?: boolean;
-
-  // Enable text alignment support inside `heading` and `paragraph`
-  allowTextAlignment?: boolean;
-
-  // Enable indentation support for `heading` and `paragraph`
-  allowIndentation?: boolean;
-
-  /**
-   * This enables new insertion behaviour only for horizontal rule and media single in certain conditions.
-   * The idea of this new behaviour is to have a consistent outcome regardless of the insertion method.
-   **/
-  allowNewInsertionBehaviour?: boolean;
-
-  /**
-   * Set this to false to opt out of the default behaviour of auto scrolling into view
-   * whenever the document is changed
-   */
-  autoScrollIntoView?: boolean;
+  // Plugins
+  plugins?: (EditorPlugin[] | EditorPlugin)[];
 
   // Set to enable the quick insert menu i.e. '/' key trigger.
   // You can also provide your own insert menu options that will be shown in addition to the enabled

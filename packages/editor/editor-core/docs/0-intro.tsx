@@ -14,9 +14,9 @@ export default md`
   ${(
     <Example
       packageName="@uidu/editor-core"
-      Component={require('../examples/WithEditorActions').default}
+      Component={require('../examples/Composable').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/WithEditorActions').default}
+      source={require('!!raw-loader!../examples/Composable').default}
     />
   )}
 `;

@@ -16,26 +16,20 @@ export class ADFEncoder<T> {
   }
 }
 
-export const getText = (node: PMNode | ADNode): string => {
-  return (
-    node.text ||
-    (node.attrs && (node.attrs.text || node.attrs.shortName)) ||
-    `[${typeof node.type === 'string' ? node.type : node.type.name}]`
-  );
-};
+export const getText = (node: PMNode | ADNode): string =>
+  node.text ||
+  (node.attrs && (node.attrs.text || node.attrs.shortName)) ||
+  `[${typeof node.type === 'string' ? node.type : node.type.name}]`;
 
 export const getEventHandler = (
   eventHandlers?: EventHandlers,
   type?: keyof EventHandlers,
   eventName: string = 'onClick',
-): any => {
-  return (
-    eventHandlers &&
-    type &&
-    eventHandlers[type] &&
-    (eventHandlers as any)[type][eventName]
-  );
-};
+): any =>
+  eventHandlers &&
+  type &&
+  eventHandlers[type] &&
+  (eventHandlers as any)[type][eventName];
 
 // The IDs for html must start with a letter (a-z or A-Z),
 // and all subsequent characters can be:

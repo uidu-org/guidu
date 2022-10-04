@@ -1,5 +1,5 @@
-import meow from 'meow';
-import app from './';
+import meow, { Options } from 'meow';
+import app from '.';
 
 const cli = meow(
   `
@@ -31,7 +31,7 @@ const cli = meow(
         type: 'string',
       },
     },
-  } as meow.Options<any>,
+  } as Options<any>,
 );
 
 const { input, flags } = cli;

@@ -28,6 +28,7 @@ import { TableCell, TableHeader } from './tableCell';
 import TableRow from './tableRow';
 import TaskList from './taskList';
 import UnknownBlock from './unknownBlock';
+import Video from './video';
 
 const CodeBlock = loadable(
   () =>
@@ -131,11 +132,11 @@ export const nodeToReact: { [key: string]: React.ComponentType<any> } = {
   tableHeader: TableHeader,
   tableRow: TableRow,
   unknownBlock: UnknownBlock,
+  video: Video,
 };
 
-export const toReact = (node: Node): React.ComponentType<any> => {
-  return nodeToReact[node.type.name];
-};
+export const toReact = (node: Node): React.ComponentType<any> =>
+  nodeToReact[node.type.name];
 
 export interface TextWrapper {
   type: {
@@ -194,8 +195,8 @@ export interface NodeSimple {
  *    }
  *  ]
  */
-export const mergeTextNodes = (nodes: (Node | NodeSimple)[]) => {
-  return nodes.reduce<(TextWrapper | Node | NodeSimple)[]>((acc, current) => {
+export const mergeTextNodes = (nodes: (Node | NodeSimple)[]) =>
+  nodes.reduce<(TextWrapper | Node | NodeSimple)[]>((acc, current) => {
     if (!isText(current.type.name)) {
       acc.push(current);
       return acc;
@@ -203,7 +204,7 @@ export const mergeTextNodes = (nodes: (Node | NodeSimple)[]) => {
 
     // Append node to previous node, if it was a text wrapper
     if (acc.length > 0 && isTextWrapper(acc[acc.length - 1])) {
-      (acc[acc.length - 1] as TextWrapper).content!.push(current as Node);
+      (acc[acc.length - 1] as TextWrapper).content.push(current as Node);
     } else {
       acc.push({
         type: {
@@ -215,17 +216,12 @@ export const mergeTextNodes = (nodes: (Node | NodeSimple)[]) => {
 
     return acc;
   }, []);
-};
 
-export const isText = (type: string): type is 'text' => {
-  return type === 'text';
-};
+export const isText = (type: string): type is 'text' => type === 'text';
 
 export const isTextWrapper = (
   node: Node | TextWrapper | NodeSimple,
-): node is TextWrapper => {
-  return node.type.name === 'textWrapper';
-};
+): node is TextWrapper => node.type.name === 'textWrapper';
 
 const whitespaceRegex = /^\s*$/;
 
@@ -308,5 +304,6 @@ export {
   TableCell,
   TableRow,
   UnknownBlock,
+  Video,
 };
 export type { BodiedExtensionProps, ExtensionProps, InlineExtensionProps };

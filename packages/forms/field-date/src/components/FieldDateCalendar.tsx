@@ -86,7 +86,7 @@ export default function FieldDateCalendar({
   const Content = useCallback(() => {
     const classNames: ClassNames = {
       ...styles,
-      ...dayPickerProps.classNames,
+      ...(dayPickerProps?.classNames || {}),
     };
     return (
       <div tw="p-3">

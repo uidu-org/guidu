@@ -274,6 +274,15 @@ export const getValidNode = (
         }
         break;
       }
+      case 'video': {
+        if (attrs && attrs.url) {
+          return {
+            type,
+            attrs,
+          };
+        }
+        break;
+      }
       case 'status': {
         if (attrs && attrs.text && attrs.color) {
           return {

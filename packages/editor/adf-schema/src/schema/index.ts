@@ -136,6 +136,7 @@ export {
   unknownBlock,
   unsupportedBlock,
   unsupportedInline,
+  video,
 } from './nodes';
 export type {
   BlockCardDefinition,
@@ -218,5 +219,6 @@ export type {
   TaskListDefinition,
   TextDefinition,
   UrlType,
+  VideoDefinition,
 } from './nodes';
 export { unsupportedNodeTypesForMediaCards } from './unsupported';

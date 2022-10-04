@@ -37,6 +37,7 @@ export interface Props {
   availableWrapperBlockTypes?: BlockType[];
   linkSupported?: boolean;
   linkDisabled?: boolean;
+  videoEnabled?: boolean;
   emojiDisabled?: boolean;
   nativeStatusSupported?: boolean;
   popupsMountPoint?: HTMLElement;
