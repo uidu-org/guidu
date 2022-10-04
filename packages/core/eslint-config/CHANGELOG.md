@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.31
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+
 ## 0.1.30
 
 ### Patch Changes

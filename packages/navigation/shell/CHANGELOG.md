@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.34
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+
 ## 2.1.33
 
 ### Patch Changes

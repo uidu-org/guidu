@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.17
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+
 ## 0.1.16
 
 ### Patch Changes

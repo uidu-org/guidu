@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.5.51
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/button@1.3.31
+  - @uidu/menu@0.8.4
+  - @uidu/media-card@0.7.10
+
 ## 0.5.50
 
 ### Patch Changes

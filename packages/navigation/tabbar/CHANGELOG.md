@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.4.19
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/shell@2.1.34
+
 ## 0.4.18
 
 ### Patch Changes

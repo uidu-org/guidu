@@ -1,5 +1,17 @@
 # @uidu/editor-markdown-transformer
 
+## 1.0.0
+
+### Major Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+
+### Patch Changes
+
+- Updated dependencies [bad65fd45]
+  - @uidu/adf-schema@1.0.0
+  - @uidu/editor-common@1.0.0
+
 ## 0.8.14
 
 ### Patch Changes

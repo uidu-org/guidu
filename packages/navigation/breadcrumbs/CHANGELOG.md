@@ -1,5 +1,13 @@
 # @uidu/breadcrumbs
 
+## 1.0.27
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/button@1.3.31
+
 ## 1.0.26
 
 ### Patch Changes

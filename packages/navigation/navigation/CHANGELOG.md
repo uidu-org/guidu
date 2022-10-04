@@ -1,5 +1,15 @@
 # @uidu/navigation
 
+## 1.0.28
+
+### Patch Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+- Updated dependencies [bad65fd45]
+  - @uidu/menu@0.8.4
+  - @uidu/animated-menu@1.0.22
+  - @uidu/shell@2.1.34
+
 ## 1.0.27
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @uidu/editor-core
 
+## 1.0.0
+
+### Major Changes
+
+- bad65fd45: Editor is now composable from the outside, added videoPlugin, still WIP"
+
+### Patch Changes
+
+- Updated dependencies [bad65fd45]
+  - @uidu/adf-schema@1.0.0
+  - @uidu/adf-utils@1.0.0
+  - @uidu/editor-common@1.0.0
+  - @uidu/editor-json-transformer@1.0.0
+  - @uidu/editor-markdown-transformer@1.0.0
+  - @uidu/button@1.3.31
+  - @uidu/menu@0.8.4
+  - @uidu/profilecard@0.3.23
+  - @uidu/field-date@2.0.14
+  - @uidu/media-card@0.7.10
+  - @uidu/form@2.1.7
+  - @uidu/select@2.0.10
+
 ## 0.15.20
 
 ### Patch Changes
