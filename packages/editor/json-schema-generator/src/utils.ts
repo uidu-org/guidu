@@ -6,27 +6,44 @@ export type TagInfo = {
 };
 
 export function getTags(tagInfo: ts.JSDocTagInfo[]): TagInfo {
-  return tagInfo.reduce(
-    (obj, { name, text = '' }) => {
-      // TODO: Fix any
-      let val: any = text;
-      if (/^\d+$/.test(text)) {
+  return tagInfo.reduce((obj, { name, text }) => {
+    // TODO: Fix any
+    // let val = text[0] as string;
+    // if (/^\d+$/.test(val.text)) {
+    //   // Number
+    //   val = text;
+    // } else if (text[0].text) {
+    //   val = text[0].text;
+    // } else if (text[0] === '"') {
+    //   // " wrapped string
+    //   val = JSON.parse(text as string);
+    // } else if (text === 'true') {
+    //   val = true;
+    // } else if (text === 'false') {
+    //   val = false;
+    // }
+
+    // TODO: Fix any
+    if (text && text.length > 0) {
+      const val = text[0];
+      if (/^\d+$/.test(val.text)) {
         // Number
-        val = +text;
-      } else if (text[0] === '"') {
+        obj[name] = Number(val.text);
+      } else if (val.text) {
+        obj[name] = val.text;
+      } else if (val.text === '"') {
         // " wrapped string
-        val = JSON.parse(text);
-      } else if (text === 'true') {
-        val = true;
-      } else if (text === 'false') {
-        val = false;
+        obj[name] = JSON.parse(val.text);
+      } else if (val.text === 'true') {
+        obj[name] = true;
+      } else if (val.text === 'false') {
+        obj[name] = false;
       }
-      // TODO: Fix any
-      (obj as any)[name] = val;
-      return obj;
-    },
-    {} as TagInfo,
-  );
+    } else {
+      obj[name] = undefined;
+    }
+    return obj;
+  }, {} as TagInfo);
 }
 
 export type PrimitiveType = number | boolean | string;
@@ -36,7 +53,7 @@ export type LiteralType = {
     | number
     | ts.PseudoBigInt
     ? PrimitiveType
-    : ts.LiteralType[k]
+    : ts.LiteralType[k];
 };
 export function extractLiteralValue(typ: ts.Type): PrimitiveType {
   /* eslint-disable no-bitwise */

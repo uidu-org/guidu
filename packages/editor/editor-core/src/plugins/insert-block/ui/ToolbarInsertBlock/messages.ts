@@ -164,4 +164,16 @@ export const messages = defineMessages({
     defaultMessage: 'Browse all the keyboard shortcuts and markdown options',
     description: 'Browse all the keyboard shortcuts and markdown options',
   },
+  video: {
+    id: 'uidu.editor-core.video',
+    defaultMessage: 'Video',
+    description: 'Insert a video',
+  },
+  videoDescription: {
+    id: 'uidu.editor-core.video.description',
+    defaultMessage: 'Insert a video from youtube embed',
+    description: 'Insert a video',
+  },
 });
+
+export default messages;

@@ -16,59 +16,61 @@ export enum ACTIONS {
   DECORATION_REMOVE,
 }
 
-export const hoverDecoration = (
-  nodeType: NodeType | Array<NodeType>,
-  add: boolean,
-  className: string = 'danger',
-): Command => (state, dispatch) => {
-  let parentNode: Node;
-  let from: number;
-  if (state.selection instanceof NodeSelection) {
-    parentNode = state.selection.node;
-    const nodeTypes = Array.isArray(nodeType) ? nodeType : [nodeType];
-    if (nodeTypes.indexOf(parentNode.type) < 0) {
+export const hoverDecoration =
+  (
+    nodeType: NodeType | Array<NodeType>,
+    add: boolean,
+    className: string = 'danger',
+  ): Command =>
+  (state, dispatch) => {
+    let parentNode: Node;
+    let from: number;
+    if (state.selection instanceof NodeSelection) {
+      parentNode = state.selection.node;
+      const nodeTypes = Array.isArray(nodeType) ? nodeType : [nodeType];
+      if (nodeTypes.indexOf(parentNode.type) < 0) {
+        return false;
+      }
+      from = state.selection.from;
+    } else {
+      const foundParentNode = findParentNodeOfType(nodeType)(state.selection);
+      if (!foundParentNode) {
+        return false;
+      }
+      from = foundParentNode.pos;
+      parentNode = foundParentNode.node;
+    }
+
+    if (!parentNode) {
       return false;
     }
-    from = state.selection.from;
-  } else {
-    const foundParentNode = findParentNodeOfType(nodeType)(state.selection);
-    if (!foundParentNode) {
-      return false;
+
+    if (dispatch) {
+      dispatch(
+        state.tr
+          .setMeta(decorationStateKey, {
+            action: add ? ACTIONS.DECORATION_ADD : ACTIONS.DECORATION_REMOVE,
+            data: Decoration.node(
+              from,
+              from + parentNode.nodeSize,
+              {
+                class: className,
+              },
+              { key: 'decorationNode' },
+            ),
+          })
+          .setMeta('addToHistory', false),
+      );
     }
-    from = foundParentNode.pos;
-    parentNode = foundParentNode.node;
-  }
-
-  if (!parentNode) {
-    return false;
-  }
-
-  if (dispatch) {
-    dispatch(
-      state.tr
-        .setMeta(decorationStateKey, {
-          action: add ? ACTIONS.DECORATION_ADD : ACTIONS.DECORATION_REMOVE,
-          data: Decoration.node(
-            from,
-            from + parentNode.nodeSize,
-            {
-              class: className,
-            },
-            { key: 'decorationNode' },
-          ),
-        })
-        .setMeta('addToHistory', false),
-    );
-  }
-  return true;
-};
+    return true;
+  };
 
 export type DecorationState = {
   decoration?: Decoration;
 };
 
-export default () => {
-  return new Plugin({
+export default () =>
+  new Plugin({
     key: decorationStateKey,
     state: {
       init: (): DecorationState => ({ decoration: undefined }),
@@ -111,4 +113,3 @@ export default () => {
       },
     },
   });
-};

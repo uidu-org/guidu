@@ -9,7 +9,7 @@ export default function Basic({}) {
   return (
     <IntlProvider locale="en">
       <ShellMain>
-        <Editor appearance="full-page">
+        <Editor>
           {({ renderToolbar, renderEditor, view }) => (
             <>
               <ShellHeader tw="border-b">{renderToolbar({})}</ShellHeader>

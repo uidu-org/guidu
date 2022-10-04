@@ -144,19 +144,15 @@ const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
 
   contentComponent({ editorView, eventDispatcher }) {
     return (
-      <>
-        <WithPluginState
-          editorView={editorView}
-          plugins={{
-            mediaState: pluginKey,
-          }}
-          render={({ mediaState }) => (
-            <>
-              <ClipboardMediaPickerWrapper mediaState={mediaState} />
-            </>
-          )}
-        />
-      </>
+      <WithPluginState
+        editorView={editorView}
+        plugins={{
+          mediaState: pluginKey,
+        }}
+        render={({ mediaState }) => (
+          <ClipboardMediaPickerWrapper mediaState={mediaState} />
+        )}
+      />
     );
   },
 

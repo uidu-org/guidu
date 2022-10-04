@@ -31,6 +31,7 @@ import { Provider as SmartCardStorageProvider } from '../SmartCardStorage';
 import { Wrapper } from './style';
 import { TruncatedWrapper } from './truncated-wrapper';
 import { RendererAppearance } from './types';
+
 export interface Extension<T> {
   extensionKey: string;
   parameters?: T;

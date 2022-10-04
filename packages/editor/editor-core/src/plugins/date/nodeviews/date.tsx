@@ -6,11 +6,10 @@ import {
   timestampToTaskContext,
 } from '@uidu/editor-common';
 import { borderRadius, colors } from '@uidu/theme';
-import { Node as PMNode } from 'prosemirror-model';
-import { EditorView } from 'prosemirror-view';
 import React from 'react';
-import { injectIntl, WrappedComponentProps } from 'react-intl';
+import { useIntl } from 'react-intl';
 import styled from 'styled-components';
+import { InlineNodeViewComponentProps } from '../../../nodeviews/getInlineNodeViewProducer';
 import { setDatePickerAt } from '../actions';
 
 const SelectableDate = styled(Date)`
@@ -36,50 +35,44 @@ const Span = styled.span`
   line-height: initial;
 `;
 
-export interface Props {
-  children?: React.ReactNode;
-  view: EditorView;
-  node: PMNode;
-}
+export default function DateNodeView(props: InlineNodeViewComponentProps) {
+  const {
+    node: {
+      attrs: { timestamp },
+    },
+    view,
+    view: {
+      state: { schema, selection },
+    },
+    getPos,
+  } = props;
 
-class DateNodeView extends React.Component<Props & WrappedComponentProps> {
-  render() {
-    const {
-      node: {
-        attrs: { timestamp },
-      },
-      view: {
-        state: { schema, selection },
-      },
-      intl,
-    } = this.props;
+  const intl = useIntl();
 
-    const parent = selection.$from.parent;
-    const withinIncompleteTask =
-      parent.type === schema.nodes.taskItem && parent.attrs.state !== 'DONE';
-
-    const color =
-      withinIncompleteTask && isPastDate(timestamp) ? 'red' : undefined;
-
-    return (
-      <Span
-        className={DateSharedCssClassName.DATE_WRAPPER}
-        onClick={this.handleClick}
-      >
-        <SelectableDate color={color} value={timestamp}>
-          {withinIncompleteTask
-            ? timestampToTaskContext(timestamp, intl)
-            : timestampToString(timestamp, intl)}
-        </SelectableDate>
-      </Span>
-    );
-  }
-
-  private handleClick = (event: React.SyntheticEvent<any>) => {
+  const handleClick = (event: React.SyntheticEvent<any>) => {
     event.nativeEvent.stopImmediatePropagation();
-    const { state, dispatch } = this.props.view;
+    const { state, dispatch } = view;
     setDatePickerAt(state.selection.from)(state, dispatch);
   };
-}
 
-export default injectIntl(DateNodeView);
+  // We fall back to selection.$from even though it does not cover all use cases
+  // eg. upon Editor init, selection is at the start, not at the Date node
+  const $nodePos =
+    typeof getPos === 'function' ? doc.resolve(getPos()) : selection.$from;
+
+  const parent = $nodePos.parent;
+  const withinIncompleteTask =
+    parent.type === schema.nodes.taskItem && parent.attrs.state !== 'DONE';
+  const color =
+    withinIncompleteTask && isPastDate(timestamp) ? 'red' : undefined;
+
+  return (
+    <Span className={DateSharedCssClassName.DATE_WRAPPER} onClick={handleClick}>
+      <SelectableDate color={color} value={timestamp}>
+        {withinIncompleteTask
+          ? timestampToTaskContext(timestamp, intl)
+          : timestampToString(timestamp, intl)}
+      </SelectableDate>
+    </Span>
+  );
+}

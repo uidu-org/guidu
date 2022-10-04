@@ -1,11 +1,11 @@
+import { buildAction } from './manifest-helpers';
 import {
   ExtensionManifest,
-  MenuItem,
   ExtensionModule,
   ExtensionModuleType,
+  MenuItem,
   MenuItemMap,
 } from './types';
-import { buildAction } from './manifest-helpers';
 
 export const groupBy = <T>(
   arr: T[],
@@ -47,7 +47,7 @@ export const filterByModule = (
 ): MenuItem[] => {
   const modules = manifest.modules[moduleType] || [];
 
-  return modules.map(extensionModule =>
+  return modules.map((extensionModule) =>
     buildMenuItem(manifest, extensionModule),
   );
 };
@@ -55,16 +55,15 @@ export const filterByModule = (
 const getGroupedMenuItems = (
   extensions: ExtensionManifest[],
   moduleType: ExtensionModuleType,
-): MenuItemMap => {
-  return extensions.reduce<MenuItemMap>((acc, extension) => {
+): MenuItemMap =>
+  extensions.reduce<MenuItemMap>((acc, extension) => {
     const items = filterByModule(extension, moduleType);
 
     return {
       ...acc,
-      ...groupBy(items, 'key', key => key as string),
+      ...groupBy(items, 'key', (key) => key as string),
     };
   }, {});
-};
 
 export const getItemsFromModule = <T>(
   extensions: ExtensionManifest[],
@@ -73,7 +72,7 @@ export const getItemsFromModule = <T>(
 ): T[] => {
   const groupedMenuItems = getGroupedMenuItems(extensions, moduleType);
 
-  return Object.keys(groupedMenuItems).map((key, index) => {
-    return transformFunction(groupedMenuItems[key], index);
-  });
+  return Object.keys(groupedMenuItems).map((key, index) =>
+    transformFunction(groupedMenuItems[key], index),
+  );
 };

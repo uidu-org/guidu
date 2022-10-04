@@ -47,6 +47,7 @@ export const defaultSchemaConfig: SchemaConfig = {
     'blockCard',
     'unsupportedBlock',
     'unsupportedInline',
+    'video',
   ],
   marks: [
     'link',
@@ -67,8 +68,7 @@ export const defaultSchemaConfig: SchemaConfig = {
   ],
 };
 
-export const getSchemaBasedOnStage = (stage = 'final') => {
-  return createSchema(defaultSchemaConfig);
-};
+export const getSchemaBasedOnStage = (stage = 'final') =>
+  createSchema(defaultSchemaConfig);
 
 export const defaultSchema: Schema = getSchemaBasedOnStage();

@@ -1,9 +1,12 @@
 import { Node as PMNode, NodeSpec } from 'prosemirror-model';
 import { ExtensionContent } from './extension';
+
 export type ExtensionLayout = 'default' | 'wide' | 'full-width';
+
 /**
  * @name bodiedExtension_node
  */
+
 export interface BodiedExtensionDefinition {
   type: 'bodiedExtension';
   attrs: {

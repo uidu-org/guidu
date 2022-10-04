@@ -12,8 +12,8 @@
     "@babel/runtime": "^7.19.0",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
-    "react-flip-toolkit": "^7.0.16",
-    "react-router-dom": "^5.3.3",
+    "react-flip-toolkit": "^7.0.17",
+    "react-router-dom": "^5.3.4",
     "styled-components": "^5.3.6",
     "tslib": "^2.4.0"
   },

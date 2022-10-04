@@ -7,9 +7,8 @@ export function reducer(pluginState: DateState, meta: DateMeta) {
   // but if a different node-view is clicked, calendar should open next the that node-view.
   if (meta.showDatePickerAt === pluginState.showDatePickerAt) {
     return { ...pluginState, showDatePickerAt: null };
-  } else {
-    return { ...pluginState, ...meta };
   }
+  return { ...pluginState, ...meta };
 }
 export function mapping(tr: Transaction, pluginState: DateState) {
   if (!pluginState.showDatePickerAt) {

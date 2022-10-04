@@ -155,3 +155,5 @@ export type { MarksObject, NoMark } from './types/mark';
 export { default as unknownBlock } from './unknown-block';
 export { unsupportedBlock } from './unsupported-block';
 export { unsupportedInline } from './unsupported-inline';
+export { video } from './video';
+export type { VideoDefinition } from './video';

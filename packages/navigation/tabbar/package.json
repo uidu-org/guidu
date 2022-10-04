@@ -13,7 +13,7 @@
     "@uidu/shell": "^2.1.29",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^5.3.3",
+    "react-router-dom": "^5.3.4",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

@@ -22,6 +22,7 @@ import {
 import { RuleDefinition as Rule } from '../rule';
 import { TableDefinition as Table } from '../tableNodes';
 import { TaskListDefinition as TaskList } from '../task-list';
+import { VideoDefinition as Video } from '../video';
 
 /**
  * @name block_content
@@ -45,4 +46,5 @@ export type BlockContent =
   | Expand
   | Extension
   | BodiedExtension
-  | BlockCard;
+  | BlockCard
+  | Video;

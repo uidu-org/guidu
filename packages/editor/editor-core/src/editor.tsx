@@ -192,6 +192,7 @@ export default class Editor extends PureComponent<EditorProps> {
       'contextIdentifierProvider',
       contextIdentifierProvider,
     );
+
     this.providerFactory.setProvider('mediaProvider', media && media.provider);
     this.providerFactory.setProvider(
       'collabEditProvider',
@@ -268,7 +269,6 @@ export default class Editor extends PureComponent<EditorProps> {
   renderToolbar = ({ view, eventDispatcher, config }) => {
     return (
       <Toolbar
-        appearance={this.props.appearance}
         disabled={this.props.disabled}
         editorView={view!}
         editorActions={this.editorActions}
@@ -296,7 +296,6 @@ export default class Editor extends PureComponent<EditorProps> {
         eventDispatcher={eventDispatcher}
         dispatchAnalyticsEvent={dispatchAnalyticsEvent}
         providerFactory={this.providerFactory}
-        appearance={this.props.appearance}
         items={config.contentComponents}
         popupsMountPoint={this.props.popupsMountPoint}
         popupsBoundariesElement={this.props.popupsBoundariesElement}
@@ -319,12 +318,11 @@ export default class Editor extends PureComponent<EditorProps> {
               <ReactEditorView
                 editorProps={{
                   appearance: 'full-page',
-                  allowTextAlignment: true,
                   allowTextColor: true,
                   allowTables: true,
                   quickInsert: true,
-                  allowLayouts: true,
                   allowIndentation: true,
+                  plugins: this.props.plugins,
                   ...otherProps,
                 }}
                 // createAnalyticsEvent={createAnalyticsEvent}

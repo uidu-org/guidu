@@ -29,6 +29,7 @@ export default {
           'bodiedExtension',
           'expand_with_no_mark',
           'expand_with_breakout_definition',
+          'video',
           'layoutSection',
         ],
       ],

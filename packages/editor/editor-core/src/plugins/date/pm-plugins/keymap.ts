@@ -8,7 +8,7 @@ export function keymapPlugin(): Plugin {
   const list = {};
 
   keymaps.bindKeymapWithCommand(
-    keymaps.enter.common!,
+    keymaps.enter.common,
     (state, dispatch) => {
       const datePlugin = getPluginState(state);
       const isDateNode =
