@@ -7241,7 +7241,7 @@ __metadata:
     "@uidu/editor-markdown-transformer": ^1.0.0
     "@uidu/emoji": ^0.6.23
     "@uidu/field-date": ^2.0.14
-    "@uidu/field-text": "workspace:^"
+    "@uidu/field-text": 2.0.3
     "@uidu/form": ^2.1.7
     "@uidu/media-card": ^0.7.10
     "@uidu/media-core": ^1.1.1
@@ -7729,7 +7729,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-text@^2.0.2, @uidu/field-text@^2.0.3, @uidu/field-text@workspace:^, @uidu/field-text@workspace:packages/forms/field-text":
+"@uidu/field-text@2.0.3, @uidu/field-text@^2.0.2, @uidu/field-text@^2.0.3, @uidu/field-text@workspace:packages/forms/field-text":
   version: 0.0.0-use.local
   resolution: "@uidu/field-text@workspace:packages/forms/field-text"
   dependencies:
