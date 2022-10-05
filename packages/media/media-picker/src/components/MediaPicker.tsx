@@ -1,29 +1,30 @@
-import { companionUrl } from '@uidu/media-core';
-import Uppy from '@uppy/core';
+import { companionUrl, MediaUploadOptions } from '@uidu/media-core';
+import Uppy, { UploadResult } from '@uppy/core';
 import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
 import '@uppy/drag-drop/dist/style.css';
 import Dropbox from '@uppy/dropbox';
 import GoogleDrive from '@uppy/google-drive';
-import { DashboardModal } from '@uppy/react';
+import { DashboardModal, useUppy } from '@uppy/react';
 import Url from '@uppy/url';
 import '@uppy/url/dist/style.css';
 import Webcam from '@uppy/webcam';
 import '@uppy/webcam/dist/style.css';
-import React, { PureComponent } from 'react';
+import React from 'react';
 
-export default class MediaPicker extends PureComponent<any> {
-  static defaultProps = {
-    onComplete: console.log,
-    open: false,
-  };
+const defaultOnComplete = () => {};
 
-  private uppy;
-
-  constructor(props) {
-    super(props);
-    const { onComplete, uploadOptions } = props;
-    this.uppy = new Uppy({
+export default function MediaPicker({
+  uploadOptions,
+  onComplete = defaultOnComplete,
+  open = false,
+}: {
+  onComplete: (result: UploadResult) => void;
+  open: boolean;
+  uploadOptions: MediaUploadOptions;
+}) {
+  const uppy = useUppy(() =>
+    new Uppy({
       debug: true,
       allowMultipleUploadBatches: true,
       restrictions: {
@@ -33,8 +34,7 @@ export default class MediaPicker extends PureComponent<any> {
         allowedFileTypes: null,
       },
       autoProceed: true,
-    });
-    this.uppy
+    })
       .use(Webcam)
       .use(uploadOptions.module, uploadOptions.options)
       .use(Url, {
@@ -47,33 +47,30 @@ export default class MediaPicker extends PureComponent<any> {
         companionUrl,
       })
       .on('file-added', (file) => {
-        console.log(file);
-        this.uppy.setFileMeta(file.id, {
+        uppy.setFileMeta(file.id, {
           size: file.size,
         });
       })
       .on('complete', (result) => {
         onComplete(result);
-      });
-  }
+      }),
+  );
 
-  render() {
-    return (
-      <DashboardModal
-        uppy={this.uppy}
-        // plugins={[
-        //   'XHRUpload',
-        //   'Webcam',
-        //   'Url',
-        //   'Dropbox',
-        //   'GoogleDrive',
-        //   'ThumbnailGenerator',
-        // ]}
-        proudlyDisplayPoweredByUppy={false}
-        // closeAfterFinish
-        closeModalOnClickOutside
-        {...this.props}
-      />
-    );
-  }
+  return (
+    <DashboardModal
+      uppy={uppy}
+      // plugins={[
+      //   'XHRUpload',
+      //   'Webcam',
+      //   'Url',
+      //   'Dropbox',
+      //   'GoogleDrive',
+      //   'ThumbnailGenerator',
+      // ]}
+      proudlyDisplayPoweredByUppy={false}
+      // closeAfterFinish
+      closeModalOnClickOutside
+      open={open}
+    />
+  );
 }
