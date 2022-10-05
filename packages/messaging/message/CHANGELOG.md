@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.5.52
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+- Updated dependencies [c20ec5bb2]
+  - @uidu/media-card@0.7.11
+  - @uidu/media-core@1.1.2
+
 ## 0.5.51
 
 ### Patch Changes

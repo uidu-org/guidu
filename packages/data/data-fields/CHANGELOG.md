@@ -1,5 +1,19 @@
 # @uidu/data-fields
 
+## 2.1.12
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+- Updated dependencies [c20ec5bb2]
+  - @uidu/field-color-picker@3.0.9
+  - @uidu/field-date@2.0.15
+  - @uidu/field-downshift@2.0.9
+  - @uidu/select@2.0.11
+  - @uidu/field-number@2.0.15
+  - @uidu/field-time@2.0.17
+  - @uidu/field-toggle@2.0.15
+
 ## 2.1.11
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 4.0.5
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+- Updated dependencies [c20ec5bb2]
+  - @uidu/data-fields@2.1.12
+  - @uidu/select@2.0.11
+
 ## 4.0.4
 
 ### Patch Changes

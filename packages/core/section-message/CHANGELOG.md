@@ -1,5 +1,11 @@
 # @uidu/section-message
 
+## 0.6.24
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+
 ## 0.6.23
 
 ### Patch Changes

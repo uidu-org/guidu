@@ -1,5 +1,13 @@
 # @uidu/field-date
 
+## 2.0.15
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+- Updated dependencies [c20ec5bb2]
+  - @uidu/field-base@4.0.14
+
 ## 2.0.14
 
 ### Patch Changes

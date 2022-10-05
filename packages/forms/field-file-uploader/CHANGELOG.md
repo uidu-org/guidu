@@ -1,5 +1,14 @@
 # @uidu/field-file-uploader
 
+## 2.0.15
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+- Updated dependencies [c20ec5bb2]
+  - @uidu/field-base@4.0.14
+  - @uidu/media-core@1.1.2
+
 ## 2.0.14
 
 ### Patch Changes

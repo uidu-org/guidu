@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-password",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Field Password Component",
   "keywords": [
     "react",
@@ -19,7 +19,7 @@
     "@heroicons/react": "^2.0.12",
     "@loadable/component": "^5.15.2",
     "@types/zxcvbn": "^4.4.1",
-    "@uidu/field-base": "^4.0.12",
+    "@uidu/field-base": "^4.0.14",
     "@uidu/field-text": "^2.0.3",
     "@uidu/form": "^2.1.6",
     "@uidu/theme": "^0.6.23",

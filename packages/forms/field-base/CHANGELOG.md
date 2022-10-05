@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.0.14
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+
 ## 4.0.13
 
 ### Patch Changes
