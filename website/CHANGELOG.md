@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.6.22
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+- Updated dependencies [c20ec5bb2]
+  - @uidu/table@3.2.3
+  - @uidu/select@2.0.11
+
 ## 0.6.21
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 1.0.1
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+
 ## 1.0.0
 
 ### Major Changes

@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 3.2.3
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+- Updated dependencies [c20ec5bb2]
+  - @uidu/data-fields@2.1.12
+
 ## 3.2.2
 
 ### Patch Changes

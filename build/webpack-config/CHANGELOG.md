@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.35
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+
 ## 0.3.34
 
 ### Patch Changes

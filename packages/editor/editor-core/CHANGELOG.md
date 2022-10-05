@@ -1,5 +1,20 @@
 # @uidu/editor-core
 
+## 1.0.2
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+- Updated dependencies [c20ec5bb2]
+  - @uidu/adf-schema@1.0.1
+  - @uidu/editor-json-transformer@1.0.1
+  - @uidu/editor-markdown-transformer@1.0.1
+  - @uidu/field-date@2.0.15
+  - @uidu/select@2.0.11
+  - @uidu/media-card@0.7.11
+  - @uidu/media-core@1.1.2
+  - @uidu/media-picker@0.9.1
+
 ## 1.0.1
 
 ### Patch Changes

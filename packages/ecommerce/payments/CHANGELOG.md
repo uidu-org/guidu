@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 1.5.10
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+- Updated dependencies [c20ec5bb2]
+  - @uidu/section-message@0.6.24
+  - @uidu/field-base@4.0.14
+
 ## 1.5.9
 
 ### Patch Changes

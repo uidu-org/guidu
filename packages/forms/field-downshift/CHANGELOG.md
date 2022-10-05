@@ -1,5 +1,13 @@
 # @uidu/field-downshift
 
+## 2.0.9
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+- Updated dependencies [c20ec5bb2]
+  - @uidu/field-base@4.0.14
+
 ## 2.0.8
 
 ### Patch Changes

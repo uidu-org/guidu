@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 1.1.2
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+
 ## 1.1.1
 
 ### Patch Changes

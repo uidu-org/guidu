@@ -1,5 +1,13 @@
 # @uidu/media-card
 
+## 0.7.11
+
+### Patch Changes
+
+- c20ec5bb2: Bump @uppy deps
+- Updated dependencies [c20ec5bb2]
+  - @uidu/media-core@1.1.2
+
 ## 0.7.10
 
 ### Patch Changes
