@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.9.0
+
+### Minor Changes
+
+- 452e283df: Migrate to function component
+
 ## 0.8.1
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @uidu/editor-core
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [452e283df]
+  - @uidu/media-picker@0.9.0
+
 ## 1.0.0
 
 ### Major Changes

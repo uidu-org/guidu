@@ -29,6 +29,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.19",
-    "@uidu/media-picker": "^0.8.1"
+    "@uidu/media-picker": "^0.9.0"
   }
 }
