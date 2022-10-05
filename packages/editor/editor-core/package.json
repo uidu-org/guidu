@@ -63,7 +63,7 @@
     "prosemirror-tables": "^1.2.5",
     "prosemirror-transform": "^1.7.0",
     "prosemirror-utils": "^0.9.6",
-    "prosemirror-view": "^1.28.2",
+    "prosemirror-view": "^1.28.3",
     "raf-schd": "^4.0.3",
     "re-resizable": "^6.9.9",
     "react": "^18.2.0",

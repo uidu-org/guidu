@@ -11,7 +11,7 @@
   "types": "dist/uidu-field-geosuggest.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.19.0",
-    "@heroicons/react": "^2.0.11",
+    "@heroicons/react": "^2.0.12",
     "@uidu/field-base": "^4.0.13",
     "@uidu/menu": "0.8.4",
     "@uidu/spinner": "^0.5.19",

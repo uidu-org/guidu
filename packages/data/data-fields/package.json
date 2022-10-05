@@ -14,7 +14,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@heroicons/react": "^2.0.11",
+    "@heroicons/react": "^2.0.12",
     "@loadable/component": "^5.15.2",
     "@smastrom/react-rating": "^1.1.0",
     "@tanstack/react-table": "^8.5.15",

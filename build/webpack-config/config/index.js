@@ -70,6 +70,13 @@ module.exports = async function createWebpackConfig(
     devtool: isProduction ? false : 'cheap-module-source-map',
     module: {
       rules: [
+        // https://github.com/react-dnd/react-dnd/issues/3425
+        {
+          test: /\.m?js$/,
+          resolve: {
+            fullySpecified: false,
+          },
+        },
         {
           test: /SITE_DATA$/,
           loader: require.resolve('@uidu/fs-loader'),
@@ -223,6 +230,7 @@ module.exports = async function createWebpackConfig(
       fallback: {
         path: false,
         assert: false,
+        // 'process/browser': require.resolve('process/browser')
       },
       ...(webpackOptions ? webpackOptions.resolve : {}),
     },

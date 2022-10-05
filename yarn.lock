@@ -2834,9 +2834,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:8.97.1":
-  version: 8.97.1
-  resolution: "@fluentui/react@npm:8.97.1"
+"@fluentui/react@npm:8.97.2":
+  version: 8.97.2
+  resolution: "@fluentui/react@npm:8.97.2"
   dependencies:
     "@fluentui/date-time-utilities": ^8.5.2
     "@fluentui/font-icons-mdl2": ^8.5.0
@@ -2857,7 +2857,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: c82939a2445ea400a4b40ee1603d0fb2543c0c26bb46c09f1e2257d6ca79c72a0eb444ec5ae119e0530e4836ab2b15ba419ac76b6410d9e916b49f1f48a9a0ab
+  checksum: e30d81965064b298bbbfd7e0738ef694c7bc779d792d4c5b0915e9d5d83df6d33cb71bf6da27dbc1697009a860f1e2d9324c75fac527f558b5f951d52547e3b6
   languageName: node
   linkType: hard
 
@@ -3147,12 +3147,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@heroicons/react@npm:^2.0.11":
-  version: 2.0.11
-  resolution: "@heroicons/react@npm:2.0.11"
+"@heroicons/react@npm:^2.0.12":
+  version: 2.0.12
+  resolution: "@heroicons/react@npm:2.0.12"
   peerDependencies:
     react: ">= 16"
-  checksum: 9049e12bdb9bb1cc2ebc555877f538055ae01828bda781f0a7f3b2fe17aff8b6337d8562c5984bfe09ee77e95befd4e62854a58c9900c2e2650798b15ab807c3
+  checksum: d8e52410890db3337c3c82dcc223eeb3d88badcf96438e38fd9f4cc7aaafa41eb3653dcea6d9f1a8cac55e1076ac3b7a53fb87bfae71b5b202abf0e85066d004
   languageName: node
   linkType: hard
 
@@ -5719,10 +5719,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.0.0, @types/node@npm:^16.11.63":
-  version: 16.11.63
-  resolution: "@types/node@npm:16.11.63"
-  checksum: d0c905916560fea680cadca356418016bd07d0227b7374139b6342191e11cc0fa2251400453d08c49f111bd88c58728113271573b8ce8d90796d220b7d3a9b39
+"@types/node@npm:^16.0.0, @types/node@npm:^16.11.64":
+  version: 16.11.64
+  resolution: "@types/node@npm:16.11.64"
+  checksum: 3634477efbeb586f8cdc1baf7670d8ea89c1eba1beac0354fa9123ca193d794da84ec40d4f8a54f694587ba5469e4124ebbba37542ed88eca95a3980ec45551a
   languageName: node
   linkType: hard
 
@@ -6400,7 +6400,7 @@ __metadata:
     linkify-it: ^4.0.1
     prosemirror-model: ^1.18.1
     prosemirror-state: ^1.4.1
-    prosemirror-view: ^1.28.2
+    prosemirror-view: ^1.28.3
     tslib: ^2.4.0
   languageName: unknown
   linkType: soft
@@ -6896,7 +6896,7 @@ __metadata:
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@tanstack/react-table": ^8.5.15
     "@uidu/button": 1.3.31
     "@uidu/checkbox": ^2.0.4
@@ -6936,7 +6936,7 @@ __metadata:
     "@fortawesome/fontawesome-svg-core": ^6.2.0
     "@fortawesome/free-solid-svg-icons": ^6.2.0
     "@fortawesome/react-fontawesome": ^0.2.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@loadable/component": ^5.15.2
     "@smastrom/react-rating": ^1.1.0
     "@tanstack/react-table": ^8.5.15
@@ -7246,7 +7246,7 @@ __metadata:
     "@uidu/media-card": ^0.7.10
     "@uidu/media-core": ^1.1.1
     "@uidu/media-filmstrip": ^0.5.9
-    "@uidu/media-picker": ^0.8.1
+    "@uidu/media-picker": ^0.9.0
     "@uidu/mentions": ^0.4.24
     "@uidu/menu": ^0.8.4
     "@uidu/modal-dialog": ^1.0.15
@@ -7277,7 +7277,7 @@ __metadata:
     prosemirror-tables: ^1.2.5
     prosemirror-transform: ^1.7.0
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.28.2
+    prosemirror-view: ^1.28.3
     raf-schd: ^4.0.3
     re-resizable: ^6.9.9
     react: ^18.2.0
@@ -7302,7 +7302,7 @@ __metadata:
     "@uidu/editor-common": ^1.0.0
     "@uidu/editor-core": ^1.0.0
     prosemirror-model: ^1.18.1
-    prosemirror-view: ^1.28.2
+    prosemirror-view: ^1.28.3
     react: ^18.2.0
     styled-components: ^5.3.6
     tslib: ^2.4.0
@@ -7322,7 +7322,7 @@ __metadata:
     "@uidu/editor-core": ^1.0.0
     markdown-it: ^13.0.1
     markdown-it-table: ^2.0.4
-    prosemirror-markdown: ^1.9.4
+    prosemirror-markdown: ^1.10.0
     prosemirror-model: ^1.18.1
     react: ^18.2.0
     styled-components: ^5.3.6
@@ -7409,7 +7409,7 @@ __metadata:
   resolution: "@uidu/field-base@workspace:packages/forms/field-base"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@uidu/form": 2.1.7
     react: ^18.2.0
     react-hook-form: ^7.36.1
@@ -7426,7 +7426,7 @@ __metadata:
   resolution: "@uidu/field-color-picker@workspace:packages/forms/field-color-picker"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@uidu/button": 1.3.31
     "@uidu/docs": ^0.5.20
     "@uidu/field-base": ^4.0.13
@@ -7483,7 +7483,7 @@ __metadata:
   resolution: "@uidu/field-date@workspace:packages/forms/field-date"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@uidu/button": 1.3.31
     "@uidu/docs": ^0.5.20
     "@uidu/field-base": 4.0.13
@@ -7505,7 +7505,7 @@ __metadata:
   resolution: "@uidu/field-downshift@workspace:packages/forms/field-downshift"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@uidu/button": 1.3.31
     "@uidu/docs": ^0.5.20
     "@uidu/field-base": ^4.0.13
@@ -7536,17 +7536,17 @@ __metadata:
   resolution: "@uidu/field-file-uploader@workspace:packages/forms/field-file-uploader"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@fluentui/react": 8.97.1
-    "@heroicons/react": ^2.0.11
+    "@fluentui/react": 8.97.2
+    "@heroicons/react": ^2.0.12
     "@uidu/button": 1.3.31
     "@uidu/docs": ^0.5.20
     "@uidu/field-base": ^4.0.13
     "@uidu/form": 2.1.7
     "@uidu/media-core": 1.1.1
     "@uidu/menu": 0.8.4
-    "@uifabric/file-type-icons": ^7.10.5
-    "@uppy/core": ^3.0.0
-    "@uppy/react": ^3.0.0
+    "@uifabric/file-type-icons": ^7.10.7
+    "@uppy/core": ^3.0.2
+    "@uppy/react": ^3.0.2
     react: ^18.2.0
     react-dropzone: ^14.2.2
     styled-components: ^5.3.6
@@ -7561,7 +7561,7 @@ __metadata:
   resolution: "@uidu/field-geosuggest@workspace:packages/forms/field-geosuggest"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@uidu/docs": ^0.5.20
     "@uidu/field-base": ^4.0.13
     "@uidu/form": ^2.1.7
@@ -7582,7 +7582,7 @@ __metadata:
   resolution: "@uidu/field-image-uploader@workspace:packages/forms/field-image-uploader"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@uidu/button": ^1.3.31
     "@uidu/docs": ^0.5.20
     "@uidu/field-base": ^4.0.13
@@ -7590,9 +7590,9 @@ __metadata:
     "@uidu/form": 2.1.7
     "@uidu/media-core": ^1.1.1
     "@uidu/spinner": ^0.5.19
-    "@uppy/core": ^3.0.0
-    "@uppy/react": ^3.0.0
-    "@uppy/thumbnail-generator": ^3.0.0
+    "@uppy/core": ^3.0.2
+    "@uppy/react": ^3.0.2
+    "@uppy/thumbnail-generator": ^3.0.2
     axios: ^0.27.2
     react: ^18.2.0
     react-avatar-editor: ^13.0.0
@@ -7666,7 +7666,7 @@ __metadata:
   resolution: "@uidu/field-password@workspace:packages/forms/field-password"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@loadable/component": ^5.15.2
     "@types/zxcvbn": ^4.4.1
     "@uidu/button": ^1.3.30
@@ -7951,7 +7951,7 @@ __metadata:
     react-router-dom: ^5.3.4
     react-transition-group: ^4.4.5
     resolve: ^1.22.1
-    semver: ^7.3.7
+    semver: ^7.3.8
     sentence-case: ^3.0.4
     snake-case: ^3.0.4
     styled-components: ^5.3.6
@@ -8153,7 +8153,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.19.0
     "@faker-js/faker": ^7.5.0
-    "@fluentui/react": 8.97.1
+    "@fluentui/react": 8.97.2
     "@uidu/button": ^1.3.31
     "@uidu/docs": ^0.5.20
     "@uidu/dropdown-menu": ^0.6.24
@@ -8161,7 +8161,7 @@ __metadata:
     "@uidu/spinner": ^0.5.19
     "@uidu/theme": ^0.6.23
     "@uidu/tooltip": ^0.5.25
-    "@uifabric/file-type-icons": ^7.10.5
+    "@uifabric/file-type-icons": ^7.10.7
     react: ^18.2.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
@@ -8177,10 +8177,10 @@ __metadata:
     "@babel/runtime": ^7.19.0
     "@uidu/docs": ^0.5.19
     "@uidu/section-message": ^0.6.21
-    "@uppy/aws-s3": ^3.0.0
-    "@uppy/core": ^3.0.0
-    "@uppy/dashboard": ^3.0.0
-    "@uppy/xhr-upload": ^3.0.0
+    "@uppy/aws-s3": ^3.0.2
+    "@uppy/core": ^3.0.2
+    "@uppy/dashboard": ^3.1.0
+    "@uppy/xhr-upload": ^3.0.2
     react: ^18.2.0
     react-dropzone: ^14.2.2
     tslib: ^2.4.0
@@ -8206,7 +8206,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-picker@^0.8.1, @uidu/media-picker@workspace:packages/media/media-picker":
+"@uidu/media-picker@^0.9.0, @uidu/media-picker@workspace:packages/media/media-picker":
   version: 0.0.0-use.local
   resolution: "@uidu/media-picker@workspace:packages/media/media-picker"
   dependencies:
@@ -8215,15 +8215,15 @@ __metadata:
     "@uidu/docs": ^0.5.19
     "@uidu/media-core": ^1.1.1
     "@uidu/modal-dialog": ^1.0.13
-    "@uppy/core": ^3.0.0
-    "@uppy/dashboard": ^3.0.0
-    "@uppy/drag-drop": ^3.0.0
-    "@uppy/dropbox": ^3.0.0
-    "@uppy/google-drive": ^3.0.0
-    "@uppy/react": ^3.0.0
-    "@uppy/url": ^3.0.0
-    "@uppy/webcam": ^3.0.0
-    "@uppy/xhr-upload": ^3.0.0
+    "@uppy/core": ^3.0.2
+    "@uppy/dashboard": ^3.1.0
+    "@uppy/drag-drop": ^3.0.1
+    "@uppy/dropbox": ^3.0.1
+    "@uppy/google-drive": ^3.0.1
+    "@uppy/react": ^3.0.2
+    "@uppy/url": ^3.0.1
+    "@uppy/webcam": ^3.2.0
+    "@uppy/xhr-upload": ^3.0.2
     exenv: ^1.2.2
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -8319,7 +8319,7 @@ __metadata:
     "@uidu/field-text": ^2.0.2
     "@uidu/form": ^2.1.3
     "@uidu/media-filmstrip": ^0.5.8
-    "@uidu/media-picker": ^0.8.1
+    "@uidu/media-picker": ^0.9.0
     "@uidu/message": ^0.5.45
     "@uidu/spinner": ^0.5.18
     classnames: ^2.3.2
@@ -8354,7 +8354,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.19.0
     "@faker-js/faker": ^7.5.0
-    "@fluentui/react": 8.97.1
+    "@fluentui/react": 8.97.2
     "@loadable/component": ^5.15.2
     "@uidu/avatar": ^0.9.16
     "@uidu/button": 1.3.31
@@ -8370,7 +8370,7 @@ __metadata:
     "@uidu/popup": 0.7.5
     "@uidu/shell": ^2.1.34
     "@uidu/tooltip": ^0.5.25
-    "@uifabric/file-type-icons": ^7.10.5
+    "@uifabric/file-type-icons": ^7.10.7
     classnames: ^2.3.2
     emoji-regex: ^10.2.1
     moment: ^2.29.4
@@ -8563,7 +8563,7 @@ __metadata:
   resolution: "@uidu/payments@workspace:packages/ecommerce/payments"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@stripe/react-stripe-js": ^1.12.0
     "@stripe/stripe-js": ^1.38.1
     "@uidu/docs": ^0.5.20
@@ -8788,7 +8788,7 @@ __metadata:
   resolution: "@uidu/section-message@workspace:packages/core/section-message"
   dependencies:
     "@babel/runtime": ^7.19.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@uidu/button": ^1.3.30
     "@uidu/code": ^0.5.19
     "@uidu/docs": ^0.5.20
@@ -8810,7 +8810,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.19.0
     "@faker-js/faker": ^7.5.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@uidu/button": ^1.3.31
     "@uidu/docs": ^0.5.20
     "@uidu/field-base": ^4.0.13
@@ -9008,7 +9008,7 @@ __metadata:
     "@fortawesome/fontawesome-svg-core": ^6.2.0
     "@fortawesome/free-solid-svg-icons": ^6.2.0
     "@fortawesome/react-fontawesome": ^0.2.0
-    "@heroicons/react": ^2.0.11
+    "@heroicons/react": ^2.0.12
     "@tanstack/react-table": ^8.5.15
     "@tanstack/react-virtual": ^3.0.0-beta.18
     "@uidu/button": 1.3.31
@@ -9249,29 +9249,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uifabric/file-type-icons@npm:^7.10.5":
-  version: 7.10.5
-  resolution: "@uifabric/file-type-icons@npm:7.10.5"
+"@uifabric/file-type-icons@npm:^7.10.7":
+  version: 7.10.7
+  resolution: "@uifabric/file-type-icons@npm:7.10.7"
   dependencies:
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.23.1
+    "@uifabric/styling": ^7.25.0
     tslib: ^1.10.0
   peerDependencies:
     "@types/react": ">=16.8.0 <18.0.0"
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: 3962eb97d44bdf2935cdf75127781cd12fbc19c52ad9a183d9d90a4f544450b3454ee9b160ccd08a89d106f5c7564fd972a157d9d5f531ce86468bb606b425f6
+  checksum: 103107af978e6ed18dfd7688eb14e1b45abf8e082169664cbce1321bad23116dda7b932a9cbfee9cffe30e2ceda4b4e810b0e698178766efe088a9c13dc57dd7
   languageName: node
   linkType: hard
 
-"@uifabric/foundation@npm:^7.10.13":
-  version: 7.10.13
-  resolution: "@uifabric/foundation@npm:7.10.13"
+"@uifabric/foundation@npm:^7.10.15":
+  version: 7.10.15
+  resolution: "@uifabric/foundation@npm:7.10.15"
   dependencies:
     "@uifabric/merge-styles": ^7.20.1
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.23.1
+    "@uifabric/styling": ^7.25.0
     "@uifabric/utilities": ^7.38.1
     tslib: ^1.10.0
   peerDependencies:
@@ -9279,19 +9279,19 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: f7b30b12b1f77d6a4c72d79c3e2dd28ece79ca6d3a68815ad7662e18602ffd74e7de998f5242b05934b1a54a967654a1dee65ee9620c77a8559adbde7755fad8
+  checksum: 8abe70b74682d23b0efd015aec80bb44180a3062614b2605fda3a08a553f7d623c7c9d8889cf3050a9d2f4712feb874bfdae33aff5da135b425a135c84df5521
   languageName: node
   linkType: hard
 
-"@uifabric/icons@npm:^7.9.2":
-  version: 7.9.2
-  resolution: "@uifabric/icons@npm:7.9.2"
+"@uifabric/icons@npm:^7.9.4":
+  version: 7.9.4
+  resolution: "@uifabric/icons@npm:7.9.4"
   dependencies:
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.23.1
+    "@uifabric/styling": ^7.25.0
     "@uifabric/utilities": ^7.38.1
     tslib: ^1.10.0
-  checksum: 11da170f59fd9840fcd93bb2f0d7926d92e1f1478a14f95c2fa5d13c785c35e6d375a73db247e9e94d02733b490071591e3e9895f671125c54152cd3e685005a
+  checksum: 158e510a31d22270d4a01c5e5ca2654717d9131c367fed490fb58f1f96284a408d2bdab9151399d489fac77cbc27b64457b3eca547017dab85116c5914c40372
   languageName: node
   linkType: hard
 
@@ -9331,9 +9331,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uifabric/styling@npm:^7.23.1":
-  version: 7.23.1
-  resolution: "@uifabric/styling@npm:7.23.1"
+"@uifabric/styling@npm:^7.25.0":
+  version: 7.25.0
+  resolution: "@uifabric/styling@npm:7.25.0"
   dependencies:
     "@fluentui/theme": ^1.7.12
     "@microsoft/load-themed-styles": ^1.10.26
@@ -9341,7 +9341,7 @@ __metadata:
     "@uifabric/set-version": ^7.0.24
     "@uifabric/utilities": ^7.38.1
     tslib: ^1.10.0
-  checksum: 5de88b4ff4ef6898feeb1ffcb37caf86a1c52aef3cb601d096c86fa544dcd1ebc6edeaf1b2d94c71e8c9f3a8b46fc7a5ada4e4c31a8d34e2dd60985b966a6458
+  checksum: 66d417e78f7eae3cfd40aed14f0c3e3dd31c14522971eae327604947b6dec01d22386a80f2bf867bb14722c6e573ce81a59f4e1445e6ec172f76549820c1f360
   languageName: node
   linkType: hard
 
@@ -9363,56 +9363,56 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uppy/aws-s3@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/aws-s3@npm:3.0.0"
+"@uppy/aws-s3@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@uppy/aws-s3@npm:3.0.2"
   dependencies:
-    "@uppy/companion-client": ^3.0.0
-    "@uppy/utils": ^5.0.0
-    "@uppy/xhr-upload": ^3.0.0
+    "@uppy/companion-client": ^3.0.2
+    "@uppy/utils": ^5.0.2
+    "@uppy/xhr-upload": ^3.0.2
     nanoid: ^4.0.0
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: f3418c51e0d59e0d9a0ce5a77fb7479f2fb664c1c9bdd0898d6bcc9a31eaf64936ec2457f6952b39a21b12a9a5972c32e1d83c9196af613cc4d24cc3b5f7115a
+    "@uppy/core": ^3.0.2
+  checksum: bc2c34ed604df33811a2e82e37b826de71ee2fc66bbfeefb8ee14aaeb2ca3d4efbecb4a6a6a1d6194446e36cdeeb019c9d8dac197b93a45c41c3e100690c4e11
   languageName: node
   linkType: hard
 
-"@uppy/companion-client@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/companion-client@npm:3.0.0"
+"@uppy/companion-client@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@uppy/companion-client@npm:3.0.2"
   dependencies:
-    "@uppy/utils": ^5.0.0
+    "@uppy/utils": ^5.0.2
     namespace-emitter: ^2.0.1
-  checksum: 8f127e3feb6e9568f50eb39fd6009003b292807d60ee19bcf804015e70eb2cd2e232c42c4b19cc74eee1cff68db53baa7dea0856e0b04d9e522fbdcbfcc9ab6a
+  checksum: 93fedd69eed8607b83523dcab2606ccc60516a9869438549dbaddde23a7c4352fe4e30fb57db24b6e5fb31b219a22d4582cf40606d8841d790e46b80c12a03fa
   languageName: node
   linkType: hard
 
-"@uppy/core@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/core@npm:3.0.0"
+"@uppy/core@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@uppy/core@npm:3.0.2"
   dependencies:
     "@transloadit/prettier-bytes": 0.0.9
-    "@uppy/store-default": ^3.0.0
-    "@uppy/utils": ^5.0.0
+    "@uppy/store-default": ^3.0.2
+    "@uppy/utils": ^5.0.2
     lodash.throttle: ^4.1.1
     mime-match: ^1.0.2
     namespace-emitter: ^2.0.1
     nanoid: ^4.0.0
     preact: ^10.5.13
-  checksum: 47bb39c0614423e00e65419d3ff83118e693b9538b1dd149c714aafb7257d7c61eb331ca6e365ab6034b5728997853a72fbc1553d1121f2513d054606f8e6a89
+  checksum: 4e61292ce5b56f195429b3d5c3c6d3bb9232f29e03edf82e138ce7ecbebc6572aaa30792952ba9f7ef58b84122f9f943ae681696355e457d9dcfd0830886b91b
   languageName: node
   linkType: hard
 
-"@uppy/dashboard@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/dashboard@npm:3.0.0"
+"@uppy/dashboard@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@uppy/dashboard@npm:3.1.0"
   dependencies:
     "@transloadit/prettier-bytes": 0.0.7
-    "@uppy/informer": ^3.0.0
-    "@uppy/provider-views": ^3.0.0
-    "@uppy/status-bar": ^3.0.0
-    "@uppy/thumbnail-generator": ^3.0.0
-    "@uppy/utils": ^5.0.0
+    "@uppy/informer": ^3.0.1
+    "@uppy/provider-views": ^3.0.1
+    "@uppy/status-bar": ^3.0.1
+    "@uppy/thumbnail-generator": ^3.0.2
+    "@uppy/utils": ^5.0.2
     classnames: ^2.2.6
     is-shallow-equal: ^1.0.1
     lodash.debounce: ^4.0.8
@@ -9420,113 +9420,113 @@ __metadata:
     nanoid: ^4.0.0
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: 4ddffd5b80743bf68eae3c9c9135566fc54f98eb0172ed4c35aa30a05933f867fb96b2b199bfad38d0c63a62dd1bfab40209e019db2d1c58bdc8f8b0a52cc86a
+    "@uppy/core": ^3.0.2
+  checksum: 0953fc2fb5d439ed0e42376e82648af7c0ab4adf87554d344ff0177009a27fa6a5e2a90b434bdd340e2143a71e0dcbf849c5f4fb106e79c06be438e91aa1c72d
   languageName: node
   linkType: hard
 
-"@uppy/drag-drop@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/drag-drop@npm:3.0.0"
+"@uppy/drag-drop@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@uppy/drag-drop@npm:3.0.1"
   dependencies:
-    "@uppy/utils": ^5.0.0
+    "@uppy/utils": ^5.0.2
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: 3b6bd254d6479493b305a229729558c6cea895acb96f1cc7a515a7b7b682f543760d8c33ffd87a430f15038390a1bea9ceaa084017d6c2150278b697b1f3cd01
+    "@uppy/core": ^3.0.2
+  checksum: 92f65b1ee7ddb13111ad45aed550cb65f66581d1550cbe0f624387263e8ce5739d6f711dc9d050b06fc8f50b671eafd6c88004790e8db2846c057960c53ce732
   languageName: node
   linkType: hard
 
-"@uppy/dropbox@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/dropbox@npm:3.0.0"
+"@uppy/dropbox@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@uppy/dropbox@npm:3.0.1"
   dependencies:
-    "@uppy/companion-client": ^3.0.0
-    "@uppy/provider-views": ^3.0.0
-    "@uppy/utils": ^5.0.0
+    "@uppy/companion-client": ^3.0.2
+    "@uppy/provider-views": ^3.0.1
+    "@uppy/utils": ^5.0.2
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: 102c6d7520d9f5a2f71e7b6a8d4655350f8cca895394bc39e26309881a34e41eaa5b8d36e642b3c01c3e43836694541c6631ca6f024b1029be0271c5cc460be3
+    "@uppy/core": ^3.0.2
+  checksum: 866ca0a5e227a9a91a1ddf57fe6a5f034445397c317de07bf74c7b107f4ee94cb8f5342924b1f62b2ae2f6186a131528726a0f940028852805d2e3f924e1448e
   languageName: node
   linkType: hard
 
-"@uppy/file-input@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/file-input@npm:3.0.0"
+"@uppy/file-input@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@uppy/file-input@npm:3.0.1"
   dependencies:
-    "@uppy/utils": ^5.0.0
+    "@uppy/utils": ^5.0.2
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: a258b629be86b223ec1d5bbb1603e67d73837011d270aa4d1fcc80f7adfb3c4e503b6cac652e21667127b1f815a39ed9c36ce7b72c7e3748dd477dc247a42911
+    "@uppy/core": ^3.0.2
+  checksum: 65af3c2b32e538e6aa0fba6c394d20c0e3b5fbaef0bce733b6bfebc87bd2440b0b777508e8e9225e73eb0185ebf2bf8f5212496bce0c5979226376284005a8e7
   languageName: node
   linkType: hard
 
-"@uppy/google-drive@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/google-drive@npm:3.0.0"
+"@uppy/google-drive@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@uppy/google-drive@npm:3.0.1"
   dependencies:
-    "@uppy/companion-client": ^3.0.0
-    "@uppy/provider-views": ^3.0.0
-    "@uppy/utils": ^5.0.0
+    "@uppy/companion-client": ^3.0.2
+    "@uppy/provider-views": ^3.0.1
+    "@uppy/utils": ^5.0.2
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: eff84d8e3f90d84dfab2ff241c414d425115c8e858a78b3c29e39ed75f11fcddb7bd70271092a4df3ba517f4b9a06e269164284437f5642d9f1a877c813108c8
+    "@uppy/core": ^3.0.2
+  checksum: 2641d1a154d67ac76edbe595456b411168557baff0dcf8e038257dc947b55ce97bcee9293ae342ed44cce33049df2d210000b0b70d7b72843773922b1ffdc6c6
   languageName: node
   linkType: hard
 
-"@uppy/informer@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/informer@npm:3.0.0"
+"@uppy/informer@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@uppy/informer@npm:3.0.1"
   dependencies:
-    "@uppy/utils": ^5.0.0
+    "@uppy/utils": ^5.0.2
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: ca2d368b43e24528f3282723bb34a8b904aab4f6a666afaa434564bb5d0d38c0d47efad272be7da08f22aebb5da2683a51d53fb988e3791840b94184275136d6
+    "@uppy/core": ^3.0.2
+  checksum: ebbd0ac82a421898c9287efa070f150f317361f0000bad0d51fafd9f2bc6e07be181800e41cd8474e9ac686bb0f955071104826ad4b54dd2519de93d08bdb3c8
   languageName: node
   linkType: hard
 
-"@uppy/progress-bar@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/progress-bar@npm:3.0.0"
+"@uppy/progress-bar@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@uppy/progress-bar@npm:3.0.1"
   dependencies:
-    "@uppy/utils": ^5.0.0
+    "@uppy/utils": ^5.0.2
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: a92f8d62dfccf461aaeaa078ce6ab0b50f52cc0d81ca0b1d89b85a7c9ad5ce18373821c8e4d28188ef417f6c6b3f62f4e18ca43f58c010998624e77af49ac0ff
+    "@uppy/core": ^3.0.2
+  checksum: b57756de29e4fb7a2c2aedba6f090b8799e21fc2ff298831b22c7ea5bda472c1af99464020bcaba2fe1a0089dc18f2a5d83248b405fd6f336125ac29c971ea63
   languageName: node
   linkType: hard
 
-"@uppy/provider-views@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/provider-views@npm:3.0.0"
+"@uppy/provider-views@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@uppy/provider-views@npm:3.0.1"
   dependencies:
-    "@uppy/utils": ^5.0.0
+    "@uppy/utils": ^5.0.2
     classnames: ^2.2.6
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: cc5849f0829ff356d68ce560da1e9081a96e7967ca017b0b7f738239e9cdbc7a7cb53e76c0deb7afbd09e2d31916260ab26d4339e200c32181b7c56d4bb95b22
+    "@uppy/core": ^3.0.2
+  checksum: 8f444515263c17243513608d53480dee0610c1bc8a7573ca1c2e55c844a9f8a7239a8ee13d80fca24cefcf72f5c9ec76a954f87a739c1f71133be578c1ac402d
   languageName: node
   linkType: hard
 
-"@uppy/react@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/react@npm:3.0.0"
+"@uppy/react@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@uppy/react@npm:3.0.2"
   dependencies:
-    "@uppy/utils": ^5.0.0
+    "@uppy/utils": ^5.0.2
     prop-types: ^15.6.1
   peerDependencies:
-    "@uppy/core": ^3.0.0
-    "@uppy/dashboard": ^3.0.0
-    "@uppy/drag-drop": ^3.0.0
-    "@uppy/file-input": ^3.0.0
-    "@uppy/progress-bar": ^3.0.0
-    "@uppy/status-bar": ^3.0.0
+    "@uppy/core": ^3.0.2
+    "@uppy/dashboard": ^3.1.0
+    "@uppy/drag-drop": ^3.0.1
+    "@uppy/file-input": ^3.0.1
+    "@uppy/progress-bar": ^3.0.1
+    "@uppy/status-bar": ^3.0.1
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
   peerDependenciesMeta:
     "@uppy/dashboard":
@@ -9539,89 +9539,89 @@ __metadata:
       optional: true
     "@uppy/status-bar":
       optional: true
-  checksum: ffe62246f0a7ea7db1eae0f33997690d5fca043cd7d27bad0114bda7ebcf91e65025a05d4d56c1f404fe915c7394a8957a1e02e1e46fdbeb91cb9321b5fd1e53
+  checksum: 70e7a08223a34a82d036e5fce6e716f8749707bfc373ad6daf417cec535cad9b47af7efcf93966b67d827f15daa2bcaa070584fcb2d0c9039223fa8a91e0042b
   languageName: node
   linkType: hard
 
-"@uppy/status-bar@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/status-bar@npm:3.0.0"
+"@uppy/status-bar@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@uppy/status-bar@npm:3.0.1"
   dependencies:
     "@transloadit/prettier-bytes": 0.0.9
-    "@uppy/utils": ^5.0.0
+    "@uppy/utils": ^5.0.2
     classnames: ^2.2.6
     lodash.throttle: ^4.1.1
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: cf3d7a293d6ebf86215b379dbf58292b3aec85ef28709be4687516112e8f2d995a4162391f64aea098d040c0a902004a081e96c00522711767e74c78f4c1c0a9
+    "@uppy/core": ^3.0.2
+  checksum: 1c1d61b6e4ee35872fd90c3ab8e73fd99471d6fcaf4d56eb6c0853eb8e9768dc90fc928cdf59ade4b5091a3fca087a2af696c16aa84584a935928fc468c9110b
   languageName: node
   linkType: hard
 
-"@uppy/store-default@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/store-default@npm:3.0.0"
-  checksum: ac38483fc1baef1ce9b591b9e6b39abb25c0a00188b2b32ca31cf2a88e356650313cb142f5baf49f8b4ba580e2df4329531b3f423cebaa05e65b0724a6f43ffd
+"@uppy/store-default@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@uppy/store-default@npm:3.0.2"
+  checksum: 9cd5bd8c559866e267c166eab502f699064a91eeeaab21b32e3164ce8b33cb819841b8ad4283a4b42f9e7c8ce60c97d93228652b0f5a9086e43f1cb0b5379221
   languageName: node
   linkType: hard
 
-"@uppy/thumbnail-generator@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/thumbnail-generator@npm:3.0.0"
+"@uppy/thumbnail-generator@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@uppy/thumbnail-generator@npm:3.0.2"
   dependencies:
-    "@uppy/utils": ^5.0.0
+    "@uppy/utils": ^5.0.2
     exifr: ^7.0.0
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: a7b00d0eab29406a88687dd9ba54b337eea400b20085c0b8c2339b4f3248856aa9271f61b30219c7b044e99790a398d251f8c8a5f389f098b70917a5e22dcb01
+    "@uppy/core": ^3.0.2
+  checksum: c7be1b67986d447eee438b63af70cdef3fec851723d9715aac3f6046ff67bf556f53c3410fc34977fe8c7b36739618dee1e26c7022e6dae4fe873424905f3e61
   languageName: node
   linkType: hard
 
-"@uppy/url@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/url@npm:3.0.0"
+"@uppy/url@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@uppy/url@npm:3.0.1"
   dependencies:
-    "@uppy/companion-client": ^3.0.0
-    "@uppy/utils": ^5.0.0
+    "@uppy/companion-client": ^3.0.2
+    "@uppy/utils": ^5.0.2
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: e99725bb2b92ee6e50f23db4433625ac5f9f893aa4ca3410200e0864d2bcf9ddd53b31e0dce4ca08a0d8d2b1d21ac1fa92d4d39bfaf6034d898759751b5d8195
+    "@uppy/core": ^3.0.2
+  checksum: 18e770fef02c16048eb237dfd815759d4e8ab762cb66b78f7ab73c97a5b721c4161660981c805de835c7dfe9a7a7141bd7f544ddbbb7326a6fa614c525586560
   languageName: node
   linkType: hard
 
-"@uppy/utils@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "@uppy/utils@npm:5.0.0"
+"@uppy/utils@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "@uppy/utils@npm:5.0.2"
   dependencies:
     lodash.throttle: ^4.1.1
-  checksum: c7eb3d2a899928d8eab647b8868a5f57bfe7bf623900f7ba79997803e75bd6ea78cde5190c2fec79a5cd39dba478890d4f2b364b5915c07d0bf24cb177268467
+  checksum: bac856170835fd162edaf3c51e010013c7a7c75431096d88100088265e9dab933f871e91e03a9faa1a1c92e875edb298b3264dd44cede50079232afc071699cc
   languageName: node
   linkType: hard
 
-"@uppy/webcam@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/webcam@npm:3.0.0"
+"@uppy/webcam@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@uppy/webcam@npm:3.2.0"
   dependencies:
-    "@uppy/utils": ^5.0.0
+    "@uppy/utils": ^5.0.2
     is-mobile: ^3.1.1
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: bab61938c0f743de3977e684f48a9886636ece5594118e7f91b71565782795ed02eaed0bbb36195e0244456036ec3b0a484fd79bf2933330bc23a19df7211377
+    "@uppy/core": ^3.0.2
+  checksum: f7d36e16f6e3d28d752085ddfb865b7c6fc58a924efb23955c0313752a3f6892475ecbf55745e55d6cec9da035d4c9537ba6760a83bd9358999b271062444172
   languageName: node
   linkType: hard
 
-"@uppy/xhr-upload@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@uppy/xhr-upload@npm:3.0.0"
+"@uppy/xhr-upload@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@uppy/xhr-upload@npm:3.0.2"
   dependencies:
-    "@uppy/companion-client": ^3.0.0
-    "@uppy/utils": ^5.0.0
+    "@uppy/companion-client": ^3.0.2
+    "@uppy/utils": ^5.0.2
     nanoid: ^4.0.0
   peerDependencies:
-    "@uppy/core": ^3.0.0
-  checksum: 0d722509475f38273356ec5435713ee299eaf4ee77a33f347f4bea29d27b560c0b75fec16919cab22154d51da3bdc24947bd445b136fce6c42dd75b47b8ba01b
+    "@uppy/core": ^3.0.2
+  checksum: c705c1f52439f7473b0dc004870b762655842171284e57885bbfc8e21163226a687e6fb39470be8989d74f6f52be972740add47c5b97036ba745ae3146250010
   languageName: node
   linkType: hard
 
@@ -9841,7 +9841,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"abbrev@npm:1":
+"abbrev@npm:1, abbrev@npm:^1.0.0":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
   checksum: a4a97ec07d7ea112c517036882b2ac22f3109b7b19077dc656316d07d308438aac28e4d9746dc4d84bf6b1e75b4a7b0a5f3cb30592419f128ca9a8cee3bcfa17
@@ -11550,12 +11550,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "bootstrap@npm:5.2.1"
+"bootstrap@npm:^5.2.2":
+  version: 5.2.2
+  resolution: "bootstrap@npm:5.2.2"
   peerDependencies:
     "@popperjs/core": ^2.11.6
-  checksum: f7d733ae5d27177d813adb2ac2158f08069a558d8f664b3db8857aba0ab07423d83b4276dba6123dde52309e707bb06ec13e040fb905eaa293c53453110bb802
+  checksum: 14e6df28feb975dc10702cac0a6c2a21132a6e4e5562e31cdae1db3970e287ed29001020066b61d96b2cea2a45ecf44c08c8c26bc84a31cdeabec0a9be6b9389
   languageName: node
   linkType: hard
 
@@ -17677,7 +17677,7 @@ __metadata:
     "@emotion/react": ^11.10.4
     "@emotion/styled": ^11.10.4
     "@faker-js/faker": ^7.5.0
-    "@fluentui/react": 8.97.1
+    "@fluentui/react": 8.97.2
     "@formatjs/cli": 5.1.1
     "@fortawesome/fontawesome-free": ^6.2.0
     "@fortawesome/fontawesome-svg-core": ^6.2.0
@@ -17709,7 +17709,7 @@ __metadata:
     "@types/markdown-it": ^12.2.3
     "@types/markerclustererplus": ^2.1.33
     "@types/mkdirp": ^1.0.2
-    "@types/node": ^16.11.63
+    "@types/node": ^16.11.64
     "@types/overlayscrollbars": ^1.12.1
     "@types/prettier": ^2.7.1
     "@types/prismjs": ^1.26.0
@@ -17748,19 +17748,19 @@ __metadata:
     "@uidu/field-time": 2.0.16
     "@uidu/form": 2.1.7
     "@uidu/profilecard": ^0.3.0
-    "@uifabric/file-type-icons": ^7.10.5
-    "@uppy/aws-s3": ^3.0.0
-    "@uppy/core": ^3.0.0
-    "@uppy/drag-drop": ^3.0.0
-    "@uppy/dropbox": ^3.0.0
-    "@uppy/file-input": ^3.0.0
-    "@uppy/google-drive": ^3.0.0
-    "@uppy/progress-bar": ^3.0.0
-    "@uppy/react": ^3.0.0
-    "@uppy/thumbnail-generator": ^3.0.0
-    "@uppy/url": ^3.0.0
-    "@uppy/webcam": ^3.0.0
-    "@uppy/xhr-upload": ^3.0.0
+    "@uifabric/file-type-icons": ^7.10.7
+    "@uppy/aws-s3": ^3.0.2
+    "@uppy/core": ^3.0.2
+    "@uppy/drag-drop": ^3.0.1
+    "@uppy/dropbox": ^3.0.1
+    "@uppy/file-input": ^3.0.1
+    "@uppy/google-drive": ^3.0.1
+    "@uppy/progress-bar": ^3.0.1
+    "@uppy/react": ^3.0.2
+    "@uppy/thumbnail-generator": ^3.0.2
+    "@uppy/url": ^3.0.1
+    "@uppy/webcam": ^3.2.0
+    "@uppy/xhr-upload": ^3.0.2
     "@welldone-software/why-did-you-render": ^7.0.1
     abortcontroller-polyfill: ^1.7.3
     add: ^2.0.6
@@ -17781,7 +17781,7 @@ __metadata:
     babel-plugin-twin: ^1.0.2
     body-scroll-lock: ^4.0.0-beta.0
     bolt: ^0.24.10
-    bootstrap: ^5.2.1
+    bootstrap: ^5.2.2
     buffer: ^6.0.3
     bundlesize: ^0.18.1
     bytes: ^3.1.2
@@ -17855,11 +17855,11 @@ __metadata:
     nanoclamp: ^1.4.1
     netlify-cli: ^10.18.0
     node-fetch: ^3.2.10
-    node-gyp: ^9.1.0
+    node-gyp: ^9.2.0
     npm-run: ^5.0.1
     npm-run-all: ^4.1.5
     numeral: ^2.0.6
-    office-ui-fabric-react: ^7.199.1
+    office-ui-fabric-react: ^7.199.3
     overlayscrollbars: ^1.13.3
     overlayscrollbars-react: ^0.3.0
     p-wait-for: ^4.1.0
@@ -17883,14 +17883,14 @@ __metadata:
     prosemirror-history: ^1.3.0
     prosemirror-inputrules: ^1.2.0
     prosemirror-keymap: ^1.2.0
-    prosemirror-markdown: ^1.9.4
+    prosemirror-markdown: ^1.10.0
     prosemirror-model: ^1.18.1
     prosemirror-schema-list: ^1.2.2
     prosemirror-state: ^1.4.1
     prosemirror-tables: ^1.2.5
     prosemirror-transform: ^1.7.0
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.28.2
+    prosemirror-view: ^1.28.3
     query-string: ^7.1.1
     raf-schd: ^4.0.3
     raw-loader: ^4.0.2
@@ -17955,7 +17955,7 @@ __metadata:
     sass-loader: ^13.0.2
     scroll-into-view-if-needed: ^2.2.29
     scrollparent: ^2.0.1
-    semver: ^7.3.7
+    semver: ^7.3.8
     sentence-case: ^3.0.4
     sinon: ^14.0.1
     snake-case: ^3.0.4
@@ -23009,7 +23009,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-gyp@npm:^9.0.0, node-gyp@npm:^9.1.0, node-gyp@npm:latest":
+"node-gyp@npm:^9.0.0, node-gyp@npm:^9.2.0":
+  version: 9.2.0
+  resolution: "node-gyp@npm:9.2.0"
+  dependencies:
+    env-paths: ^2.2.0
+    glob: ^7.1.4
+    graceful-fs: ^4.2.6
+    make-fetch-happen: ^10.0.3
+    nopt: ^6.0.0
+    npmlog: ^6.0.0
+    rimraf: ^3.0.2
+    semver: ^7.3.5
+    tar: ^6.1.2
+    which: ^2.0.2
+  bin:
+    node-gyp: bin/node-gyp.js
+  checksum: 91f0589eabbd37f0d4e3fe9918f1f9e25afc707f6e107f0133be19c5aac62e731d92abdc2b106258665a4487b18cc2878d3fcd3dc2c6cffd68da1cb2a5ccf450
+  languageName: node
+  linkType: hard
+
+"node-gyp@npm:latest":
   version: 9.1.0
   resolution: "node-gyp@npm:9.1.0"
   dependencies:
@@ -23097,6 +23117,17 @@ __metadata:
   bin:
     nopt: bin/nopt.js
   checksum: d35fdec187269503843924e0114c0c6533fb54bbf1620d0f28b4b60ba01712d6687f62565c55cc20a504eff0fbe5c63e22340c3fad549ad40469ffb611b04f2f
+  languageName: node
+  linkType: hard
+
+"nopt@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "nopt@npm:6.0.0"
+  dependencies:
+    abbrev: ^1.0.0
+  bin:
+    nopt: bin/nopt.js
+  checksum: 82149371f8be0c4b9ec2f863cc6509a7fd0fa729929c009f3a58e4eb0c9e4cae9920e8f1f8eb46e7d032fec8fb01bede7f0f41a67eb3553b7b8e14fa53de1dac
   languageName: node
   linkType: hard
 
@@ -23493,20 +23524,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"office-ui-fabric-react@npm:^7.199.1":
-  version: 7.199.1
-  resolution: "office-ui-fabric-react@npm:7.199.1"
+"office-ui-fabric-react@npm:^7.199.3":
+  version: 7.199.3
+  resolution: "office-ui-fabric-react@npm:7.199.3"
   dependencies:
     "@fluentui/date-time-utilities": ^7.9.1
-    "@fluentui/react-focus": ^7.18.14
+    "@fluentui/react-focus": ^7.18.16
     "@fluentui/react-window-provider": ^1.0.5
     "@microsoft/load-themed-styles": ^1.10.26
-    "@uifabric/foundation": ^7.10.13
-    "@uifabric/icons": ^7.9.2
+    "@uifabric/foundation": ^7.10.15
+    "@uifabric/icons": ^7.9.4
     "@uifabric/merge-styles": ^7.20.1
     "@uifabric/react-hooks": ^7.16.3
     "@uifabric/set-version": ^7.0.24
-    "@uifabric/styling": ^7.23.1
+    "@uifabric/styling": ^7.25.0
     "@uifabric/utilities": ^7.38.1
     prop-types: ^15.7.2
     tslib: ^1.10.0
@@ -23515,7 +23546,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: 0c57b2262804adda5c08ce17c64811386d74034e64031bf6106e69d02badf1736215c061d0770fba2cf610ae0d40ec0720da7d3aea34a1d92b637dcae09be5b6
+  checksum: 921a5492e19195088c5b911dafb84af798f14448b1f5657c6ba4750f211e6d0202b0c152906709438d0ad83a37eea40630925ed027afcd27cefd7b29ef3e20a1
   languageName: node
   linkType: hard
 
@@ -25503,13 +25534,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-markdown@npm:^1.9.4":
-  version: 1.9.4
-  resolution: "prosemirror-markdown@npm:1.9.4"
+"prosemirror-markdown@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "prosemirror-markdown@npm:1.10.0"
   dependencies:
     markdown-it: ^13.0.1
     prosemirror-model: ^1.0.0
-  checksum: d227a11661490f0acfcd63c21a55c5b214fefaa7ecef82d5626ef73c2066935c4a2d9343fbf55c53c5bea600d434c3e5644c1c4497f171236de52db05f56d2c8
+  checksum: 8af87b3c62e3ca227e79bdd83f06a23ceb802452c9df62d656c1dfdef8da427362691de5cdaff38e4383b5c0ef7f4cb957054e4032bed011c63a86e2bc0472b8
   languageName: node
   linkType: hard
 
@@ -25576,14 +25607,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.28.2":
-  version: 1.28.2
-  resolution: "prosemirror-view@npm:1.28.2"
+"prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.28.3":
+  version: 1.28.3
+  resolution: "prosemirror-view@npm:1.28.3"
   dependencies:
     prosemirror-model: ^1.16.0
     prosemirror-state: ^1.0.0
     prosemirror-transform: ^1.1.0
-  checksum: a14bee6f1d3533d9ce165082eed03487fff996f13e4d0893934674d879d1a30bf5866999e6ddc5932c1dc936d265b2456fb3cdd45aeee33b6d01496438cf3e04
+  checksum: cf6ad45cbd582c4312ce8f6a4782edd4dfa009a8dd7a4b0f69576d46d4a585452ea50b5d48cd25fffd7bf3ce27e3137c8d45e439aab15257e55f4a4ed17c2bd5
   languageName: node
   linkType: hard
 
@@ -28175,14 +28206,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.0.0, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7":
-  version: 7.3.7
-  resolution: "semver@npm:7.3.7"
+"semver@npm:^7.0.0, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8":
+  version: 7.3.8
+  resolution: "semver@npm:7.3.8"
   dependencies:
     lru-cache: ^6.0.0
   bin:
     semver: bin/semver.js
-  checksum: 2fa3e877568cd6ce769c75c211beaed1f9fce80b28338cadd9d0b6c40f2e2862bafd62c19a6cff42f3d54292b7c623277bcab8816a2b5521cf15210d43e75232
+  checksum: ba9c7cbbf2b7884696523450a61fee1a09930d888b7a8d7579025ad93d459b2d1949ee5bbfeb188b2be5f4ac163544c5e98491ad6152df34154feebc2cc337c1
   languageName: node
   linkType: hard
 

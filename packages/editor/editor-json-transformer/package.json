@@ -20,7 +20,7 @@
     "@uidu/docs": "^0.5.20",
     "@uidu/editor-common": "^1.0.0",
     "@uidu/editor-core": "^1.0.0",
-    "prosemirror-view": "^1.28.2",
+    "prosemirror-view": "^1.28.3",
     "react": "^18.2.0",
     "styled-components": "^5.3.6"
   },
