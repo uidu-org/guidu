@@ -8,9 +8,12 @@ import { story as document } from '../../renderer/examples/helper/story-data';
 import { Editor, EditorContext, WithEditorActions } from '../src';
 import {
   insertBlockPlugin,
+  layoutPlugin,
+  mediaPlugin,
   mentionsPlugin,
   quickInsertPlugin,
   starterKitPlugin,
+  tablesPlugin,
   videoPlugin,
 } from '../src/plugins';
 
@@ -58,6 +61,7 @@ export default function Composable({}) {
                     containerElement={element.current}
                     onChange={handleChange(actions)}
                     plugins={[
+                      layoutPlugin(),
                       starterKitPlugin({}),
                       // blockTypePlugin(),
                       insertBlockPlugin({
@@ -66,22 +70,22 @@ export default function Composable({}) {
                       quickInsertPlugin(),
                       videoPlugin(),
                       mentionsPlugin(),
-                      // tablesPlugin({ tableOptions: {} }),
+                      tablesPlugin({ tableOptions: {} }),
                       // datePlugin(),
-                      // mediaPlugin({
-                      //   provider: Promise.resolve({
-                      //     uploadOptions: localUploadOptions({
-                      //       endpoint: 'https://uidu.local:8443/upload',
-                      //     }),
-                      //     viewMediaClientConfig: Promise.resolve('test'),
-                      //     uploadMediaClientConfig: Promise.resolve('test'),
-                      //   }),
-                      //   allowMediaGroup: true,
-                      //   allowMediaSingle: true,
-                      //   allowAltTextOnImages: true,
-                      //   allowLinking: true,
-                      //   allowResizing: true,
-                      // }),
+                      mediaPlugin({
+                        provider: Promise.resolve({
+                          uploadOptions: localUploadOptions({
+                            endpoint: 'https://uidu.local:8443/upload',
+                          }),
+                          viewMediaClientConfig: Promise.resolve('test'),
+                          uploadMediaClientConfig: Promise.resolve('test'),
+                        }),
+                        allowMediaGroup: true,
+                        allowMediaSingle: true,
+                        allowAltTextOnImages: true,
+                        allowLinking: true,
+                        allowResizing: true,
+                      }),
                     ]}
                     media={{
                       provider: Promise.resolve({

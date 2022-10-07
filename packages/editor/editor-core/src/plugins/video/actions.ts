@@ -14,10 +14,8 @@ export const insertVideo =
   (video?: VideoType, inputMethod?: TOOLBAR_MENU_TYPE) =>
   (state: EditorState, dispatch: (tr: Transaction) => void): boolean => {
     const { schema, tr } = state;
-    console.log(state.tr);
 
     const videoNode = state.schema.nodes.video.createChecked(video);
-    console.log(videoNode);
 
     if (dispatch) {
       dispatch(safeInsert(videoNode)(state.tr));
@@ -65,7 +63,7 @@ export const closeVideoPicker = (): Command => (state, dispatch) => {
 export const openVideoPicker = (): Command => (state, dispatch) => {
   const { $from } = state.selection;
   const node = state.doc.nodeAt($from.pos);
-  console.log(node);
+
   if (node && node.type.name === state.schema.nodes.video.name) {
     const showVideoPickerAt = $from.pos;
     if (dispatch) {

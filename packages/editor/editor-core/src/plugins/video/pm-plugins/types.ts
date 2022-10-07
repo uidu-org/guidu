@@ -1,7 +1,7 @@
 export type VideoState = {
-  showDatePickerAt: number | null;
+  showVideoPickerAt: number | null;
 };
 
 export interface VideoMeta {
-  showDatePickerAt: number;
+  showVideoPickerAt: number;
 }

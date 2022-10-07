@@ -77,13 +77,21 @@ export const getSelectedLayout = (
 export const createDefaultLayoutSection = (state: EditorState) => {
   const { layoutSection, layoutColumn } = state.schema.nodes;
 
+  console.log(state.schema);
+  console.log(state.schema.nodes);
+
+  console.log('layoutSection', layoutSection);
+  console.log('layoutColumn', layoutColumn);
+
   // create a 50-50 layout by default
   const columns = Fragment.fromArray([
-    layoutColumn.createAndFill({ width: 50 }) as Node,
-    layoutColumn.createAndFill({ width: 50 }) as Node,
+    layoutColumn.createAndFill({ width: 50 }),
+    layoutColumn.createAndFill({ width: 50 }),
   ]);
 
-  return layoutSection.createAndFill(undefined, columns) as Node;
+  console.log('columns', columns);
+
+  return layoutSection.createAndFill(undefined, columns);
 };
 
 export const insertLayoutColumns: Command = (state, dispatch) => {
@@ -146,7 +154,7 @@ function forceColumnStructure(
     tr.replaceWith(
       tr.mapping.map(insideRightEdgeOfLayoutSection),
       tr.mapping.map(insideRightEdgeOfLayoutSection),
-      state.schema.nodes.layoutColumn.createAndFill() as Node,
+      state.schema.nodes.layoutColumn.createAndFill(),
     );
   }
 

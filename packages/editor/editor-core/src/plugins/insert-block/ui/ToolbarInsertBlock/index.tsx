@@ -1,7 +1,6 @@
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import ExpandNodeIcon from '@atlaskit/icon/glyph/chevron-right-circle';
 import AddIcon from '@atlaskit/icon/glyph/editor/add';
-import VideoIcon from '@atlaskit/icon/glyph/editor/attachment';
 import CodeIcon from '@atlaskit/icon/glyph/editor/code';
 import DateIcon from '@atlaskit/icon/glyph/editor/date';
 import DecisionIcon from '@atlaskit/icon/glyph/editor/decision';
@@ -10,7 +9,6 @@ import HorizontalRuleIcon from '@atlaskit/icon/glyph/editor/horizontal-rule';
 import EditorImageIcon from '@atlaskit/icon/glyph/editor/image';
 import InfoIcon from '@atlaskit/icon/glyph/editor/info';
 import LayoutTwoEqualIcon from '@atlaskit/icon/glyph/editor/layout-two-equal';
-import LinkIcon from '@atlaskit/icon/glyph/editor/link';
 import MentionIcon from '@atlaskit/icon/glyph/editor/mention';
 import EditorMoreIcon from '@atlaskit/icon/glyph/editor/more';
 import TableIcon from '@atlaskit/icon/glyph/editor/table';
@@ -18,6 +16,8 @@ import TaskIcon from '@atlaskit/icon/glyph/editor/task';
 import PlaceholderTextIcon from '@atlaskit/icon/glyph/media-services/text';
 import QuoteIcon from '@atlaskit/icon/glyph/quote';
 import StatusIcon from '@atlaskit/icon/glyph/status';
+import { faLink, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { akEditorMenuZIndex, Popup } from '@uidu/editor-common';
 import { EmojiPicker as AkEmojiPicker } from '@uidu/emoji/picker';
 import { EmojiId } from '@uidu/emoji/types';
@@ -388,7 +388,9 @@ class ToolbarInsertBlock extends React.PureComponent<
         content: labelLink,
         value: { name: 'link' },
         isDisabled: linkDisabled,
-        elemBefore: <LinkIcon label={labelLink} />,
+        elemBefore: (
+          <FontAwesomeIcon tw="h-4 w-4" icon={faLink} label={labelLink} />
+        ),
         elemAfter: shortcutLink ? (
           <Shortcut>{shortcutLink}</Shortcut>
         ) : undefined,
@@ -522,7 +524,9 @@ class ToolbarInsertBlock extends React.PureComponent<
       items.push({
         content: labelVideo,
         value: { name: 'video' },
-        elemBefore: <VideoIcon label={labelVideo} />,
+        elemBefore: (
+          <FontAwesomeIcon tw="h-4 w-4" icon={faVideo} label={labelVideo} />
+        ),
         elemAfter: <Shortcut>/V</Shortcut>,
         shortcut: '/V',
       });

@@ -1,6 +1,4 @@
 import {
-  confluenceUnsupportedBlock,
-  confluenceUnsupportedInline,
   unsupportedBlock,
   unsupportedInline,
   unsupportedMark,
@@ -28,14 +26,6 @@ const createPlugin: PMPluginFactory = ({ schema, portalProviderAPI }) => {
     key: pluginKey,
     props: {
       nodeViews: {
-        confluenceUnsupportedBlock: ReactNodeView.fromComponent(
-          ReactUnsupportedBlockNode,
-          portalProviderAPI,
-        ),
-        confluenceUnsupportedInline: ReactNodeView.fromComponent(
-          ReactUnsupportedInlineNode,
-          portalProviderAPI,
-        ),
         unsupportedBlock: ReactNodeView.fromComponent(
           ReactUnsupportedBlockNode,
           portalProviderAPI,
@@ -61,14 +51,6 @@ const unsupportedContentPlugin = (): EditorPlugin => ({
 
   nodes() {
     return [
-      {
-        name: 'confluenceUnsupportedBlock',
-        node: confluenceUnsupportedBlock,
-      },
-      {
-        name: 'confluenceUnsupportedInline',
-        node: confluenceUnsupportedInline,
-      },
       {
         name: 'unsupportedBlock',
         node: unsupportedBlock,

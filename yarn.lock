@@ -3110,6 +3110,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/free-regular-svg-icons@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "@fortawesome/free-regular-svg-icons@npm:6.2.0"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": 6.2.0
+  checksum: 1b68a25590b273653c7adfa18bd6ef0ee533710687a46ef21c7b5395deae280a2faaff0b024717d9e54fdaedb8165769f281342704821777f86316223d5264ba
+  languageName: node
+  linkType: hard
+
 "@fortawesome/free-solid-svg-icons@npm:^6.2.0":
   version: 6.2.0
   resolution: "@fortawesome/free-solid-svg-icons@npm:6.2.0"
@@ -3119,7 +3128,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/react-fontawesome@npm:^0.2.0":
+"@fortawesome/react-fontawesome@npm:^0.2.0, @fortawesome/react-fontawesome@npm:latest":
   version: 0.2.0
   resolution: "@fortawesome/react-fontawesome@npm:0.2.0"
   dependencies:
@@ -3429,15 +3438,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/loader@npm:^2.1.3":
-  version: 2.1.3
-  resolution: "@mdx-js/loader@npm:2.1.3"
+"@mdx-js/loader@npm:^2.1.4":
+  version: 2.1.4
+  resolution: "@mdx-js/loader@npm:2.1.4"
   dependencies:
     "@mdx-js/mdx": ^2.0.0
     source-map: ^0.7.0
   peerDependencies:
     webpack: ">=4"
-  checksum: 087ec51548d194631d2df9d6ae7ebd45000e9a5d67d71068487036edb1d24848a6198574745af7f57916d1e32bdeec4e256cb842296a2f02e75180221e54bc45
+  checksum: 2753254fe79eee44c3a887e050fa1ca9b08582c1aaacb336dadc44506af64a6443acb61a8fd5172dd2d98b6bd6d97fdd05e480801a7476e8e201615383320d6b
   languageName: node
   linkType: hard
 
@@ -4932,13 +4941,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@smastrom/react-rating@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@smastrom/react-rating@npm:1.1.0"
+"@smastrom/react-rating@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@smastrom/react-rating@npm:1.1.1"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
     react-dom: ^16.8.0 || ^17 || ^18
-  checksum: 49b8d5752293bcad0b28379275f0e368d104c9f618b844f0aa56e51a5f1396b95c47a7833b8841c6d49fa3d56cc976e1722fa10fec89f312824f426227479014
+  checksum: 0fbdfa5549a292587f4babae8e0fb98b5b5e34ab077919b0fbf5a90b26e537f2251d0b2ee1f33d3e5a282d56f3e234d72002a3dc5a398dde05033bb70891715f
   languageName: node
   linkType: hard
 
@@ -5406,10 +5415,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/google.maps@npm:*, @types/google.maps@npm:^3.50.2":
-  version: 3.50.2
-  resolution: "@types/google.maps@npm:3.50.2"
-  checksum: 7c54a735eb9c808ec90f5cc80791baaf6ed3d1b80d07470f0bdeb41488b0f8a26536d4883b693d9378d54d1c3ce12cdc6c1176734d90659cf2aa99b31ae9fb78
+"@types/google.maps@npm:*, @types/google.maps@npm:^3.50.3":
+  version: 3.50.3
+  resolution: "@types/google.maps@npm:3.50.3"
+  checksum: 7881c18191720c9cb8f70c61c464faacc433c69250ac3c0040ef48d4aa35973f6e76013ac0146dd3c9c54029053cc086737794a4f9dbfba02fecb263692ebfea
   languageName: node
   linkType: hard
 
@@ -6938,7 +6947,7 @@ __metadata:
     "@fortawesome/react-fontawesome": ^0.2.0
     "@heroicons/react": ^2.0.12
     "@loadable/component": ^5.15.2
-    "@smastrom/react-rating": ^1.1.0
+    "@smastrom/react-rating": ^1.1.1
     "@tanstack/react-table": ^8.5.15
     "@uidu/button": 1.3.31
     "@uidu/docs": ^0.5.20
@@ -7223,6 +7232,10 @@ __metadata:
     "@atlaskit/util-service-support": ^6.1.2
     "@atlaskit/width-detector": ^4.0.2
     "@babel/runtime": ^7.19.0
+    "@fortawesome/fontawesome-svg-core": ^6.2.0
+    "@fortawesome/free-regular-svg-icons": ^6.2.0
+    "@fortawesome/free-solid-svg-icons": ^6.2.0
+    "@fortawesome/react-fontawesome": latest
     "@loadable/component": ^5.15.2
     "@uidu/adf-schema": ^1.0.1
     "@uidu/adf-utils": ^1.0.0
@@ -7249,7 +7262,7 @@ __metadata:
     "@uidu/media-picker": ^0.9.1
     "@uidu/mentions": ^0.4.24
     "@uidu/menu": ^0.8.4
-    "@uidu/modal-dialog": ^1.0.15
+    "@uidu/modal-dialog": "workspace:^"
     "@uidu/profilecard": ^0.3.23
     "@uidu/select": ^2.0.11
     "@uidu/shell": ^2.1.34
@@ -7262,6 +7275,7 @@ __metadata:
     chromatism: ^3.0.0
     classnames: ^2.3.2
     eventemitter2: ^6.4.9
+    get-video-id: ^3.6.5
     linkify-it: ^4.0.1
     markdown-it: ^13.0.1
     memoize-one: ^6.0.0
@@ -7412,7 +7426,7 @@ __metadata:
     "@heroicons/react": ^2.0.12
     "@uidu/form": 2.1.7
     react: ^18.2.0
-    react-hook-form: ^7.36.1
+    react-hook-form: ^7.37.0
     styled-components: ^5.3.6
     tslib: ^2.4.0
     twin.macro: ^2.8.2
@@ -7861,8 +7875,9 @@ __metadata:
     "@uidu/button": 1.3.31
     "@uidu/docs": ^0.5.20
     react: ^18.2.0
+    react-dom: ^18.2.0
     react-feather: ^2.0.10
-    react-hook-form: ^7.36.1
+    react-hook-form: ^7.37.0
     react-media: ^1.10.0
     styled-components: ^5.3.6
     tslib: ^2.4.0
@@ -8384,7 +8399,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/modal-dialog@^1.0.13, @uidu/modal-dialog@^1.0.15, @uidu/modal-dialog@workspace:packages/core/modal-dialog":
+"@uidu/modal-dialog@^1.0.13, @uidu/modal-dialog@^1.0.15, @uidu/modal-dialog@workspace:^, @uidu/modal-dialog@workspace:packages/core/modal-dialog":
   version: 0.0.0-use.local
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:
@@ -8818,7 +8833,7 @@ __metadata:
     "@uidu/modal-dialog": ^1.0.15
     "@uidu/spinner": ^0.5.19
     react: ^18.2.0
-    react-hook-form: ^7.36.1
+    react-hook-form: ^7.37.0
     react-select: ^5.4.0
     styled-components: ^5.3.6
     timezones-list: ^3.0.1
@@ -9211,7 +9226,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/webpack-config@workspace:build/webpack-config"
   dependencies:
-    "@mdx-js/loader": ^2.1.3
+    "@mdx-js/loader": ^2.1.4
     "@uidu/changelog-loader": ^0.1.33
     "@uidu/fs-loader": ^0.1.51
     "@uidu/nav-info-loader": ^0.2.5
@@ -9234,7 +9249,7 @@ __metadata:
     postcss-preset-env: ^7.8.2
     postcss-safe-parser: ^6.0.0
     raw-loader: ^4.0.2
-    sass-loader: ^13.0.2
+    sass-loader: ^13.1.0
     style-loader: ^3.3.1
     svg-url-loader: ^7.1.1
     terser-webpack-plugin: ^5.3.6
@@ -17188,6 +17203,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"get-video-id@npm:^3.6.5":
+  version: 3.6.5
+  resolution: "get-video-id@npm:3.6.5"
+  checksum: 9fb5e7f2251984ec7c93079fb58b25c077b2fda9d769cdaa00fb2136e8c62d7b5ef4972ba1172ee4aa34d164fb104ee153e0e394e9e045de1aa03239f1d96d4e
+  languageName: node
+  linkType: hard
+
 "gh-release-fetch@npm:^3.0.0":
   version: 3.0.2
   resolution: "gh-release-fetch@npm:3.0.2"
@@ -17686,7 +17708,7 @@ __metadata:
     "@loadable/babel-plugin": ^5.13.2
     "@loadable/component": ^5.15.2
     "@manypkg/cli": ^0.19.2
-    "@mdx-js/loader": ^2.1.3
+    "@mdx-js/loader": ^2.1.4
     "@popperjs/core": ^2.11.6
     "@preconstruct/cli": ^2.2.2
     "@researchgate/react-intersection-observer": ^1.3.5
@@ -17700,7 +17722,7 @@ __metadata:
     "@types/emoji-mart": ^3.0.9
     "@types/exenv": ^1.2.0
     "@types/google-map-react": ^2.1.7
-    "@types/google.maps": ^3.50.2
+    "@types/google.maps": ^3.50.3
     "@types/js-search": ^1.4.0
     "@types/linkify-it": ^3.0.2
     "@types/lodash.chunk": ^4.2.7
@@ -17923,7 +17945,7 @@ __metadata:
     react-google-maps: ^9.4.5
     react-grid-layout: ^1.3.4
     react-helmet: ^6.1.0
-    react-hook-form: ^7.36.1
+    react-hook-form: ^7.37.0
     react-images: ^1.2.0-beta.7
     react-intersection-observer: ^9.4.0
     react-intl: ^6.1.2
@@ -17952,7 +17974,7 @@ __metadata:
     react-virtualized: ^9.22.3
     resolve: ^1.22.1
     sass: ^1.55.0
-    sass-loader: ^13.0.2
+    sass-loader: ^13.1.0
     scroll-into-view-if-needed: ^2.2.29
     scrollparent: ^2.0.1
     semver: ^7.3.8
@@ -26385,12 +26407,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.36.1":
-  version: 7.36.1
-  resolution: "react-hook-form@npm:7.36.1"
+"react-hook-form@npm:^7.37.0":
+  version: 7.37.0
+  resolution: "react-hook-form@npm:7.37.0"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
-  checksum: d41951685fe7d345997c1ac489ccc1a44d11cfa6021b0a39a449029ba3cd8e5824afe5f6464e8ff6fb7c01d1915627b53ec1e1bfee63a6b722b6855794dc0df9
+  checksum: 9dedc9a419c1f4cff35bc4e5d1cc39fa019e2c72401af04ac456dc1d5b87070156ee97070834d7d308293470bac45f652e12ab3cc86f36abd0e0a3ed32e89628
   languageName: node
   linkType: hard
 
@@ -27976,9 +27998,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:^13.0.2":
-  version: 13.0.2
-  resolution: "sass-loader@npm:13.0.2"
+"sass-loader@npm:^13.1.0":
+  version: 13.1.0
+  resolution: "sass-loader@npm:13.1.0"
   dependencies:
     klona: ^2.0.4
     neo-async: ^2.6.2
@@ -27997,7 +28019,7 @@ __metadata:
       optional: true
     sass-embedded:
       optional: true
-  checksum: 6306712cc75bd4b4260ce67178778c92110089485f358b5956b6b12aba15a55e5c7287154daaf8b32678891df915b7bcda7356991afe8bf08ca7356ed30eb448
+  checksum: 6b3b6c0e070a32c594001cee98c85a72afb6081c46d56a4283269e6c1802b0e26128bc8363fcd8d8c941abe1f9e441e3efcd401fcf3ef436e1f1fbeb6e0a1374
   languageName: node
   linkType: hard
 

@@ -18,7 +18,6 @@ export const video: NodeSpec = {
   inline: false,
   group: 'block',
   selectable: true,
-  atom: true,
   attrs: {
     url: { default: '' },
   },
@@ -26,27 +25,16 @@ export const video: NodeSpec = {
     {
       tag: 'div[data-node-type="video"]',
       getAttrs: (dom) => ({
-        layout: (dom as HTMLElement).getAttribute('data-layout') || 'center',
-        width: Number((dom as HTMLElement).getAttribute('data-width')) || null,
+        url: (dom as HTMLElement).getAttribute('data-url') || '',
       }),
     },
   ],
   toDOM(node: Node) {
-    const { layout, width } = node.attrs;
+    const { url } = node.attrs;
     const attrs = {
-      'data-node-type': 'mediaSingle',
-      'data-layout': layout,
-      'data-width': '',
+      'data-node-type': 'video',
+      'data-url': url,
     };
-
-    if (width) {
-      attrs['data-width'] =
-        isFinite(width) && Math.floor(width) === width
-          ? width
-          : width.toFixed(2);
-    }
-
-    console.log(attrs, 'attrs');
 
     return ['div', attrs, 0];
   },

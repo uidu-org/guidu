@@ -109,8 +109,6 @@ export default {
     'rule',
     'panel',
     'mention',
-    'confluenceUnsupportedBlock',
-    'confluenceUnsupportedInline',
     'unsupportedBlock',
     'unsupportedInline',
     'confluenceJiraIssue',
@@ -138,6 +136,7 @@ export default {
     'layoutColumn',
     'inlineCard',
     'blockCard',
+    'video',
   ],
   marks: [
     // Inline marks

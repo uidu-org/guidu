@@ -13,7 +13,7 @@ export function keymapPlugin(): Plugin {
       const videoPlugin = getPluginState(state);
       const isVideoNode =
         state.selection instanceof NodeSelection
-          ? state.selection.node.type === state.schema.nodes.date
+          ? state.selection.node.type === state.schema.nodes.video
           : false;
 
       if (!isVideoNode) {

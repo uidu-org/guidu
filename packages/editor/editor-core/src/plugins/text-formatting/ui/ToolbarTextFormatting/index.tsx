@@ -1,5 +1,6 @@
-import BoldIcon from '@atlaskit/icon/glyph/editor/bold';
-import ItalicIcon from '@atlaskit/icon/glyph/editor/italic';
+import { faBold, faItalic } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
@@ -69,7 +70,9 @@ class ToolbarTextFormatting extends PureComponent<
             selected={strongActive}
             disabled={disabled || strongDisabled}
             title={renderTooltipContent(labelBold, toggleBold)}
-            iconBefore={<BoldIcon label={labelBold} />}
+            iconBefore={
+              <FontAwesomeIcon icon={faBold} tw="h-4 w-4" label={labelBold} />
+            }
           />
         )}
 
@@ -80,7 +83,13 @@ class ToolbarTextFormatting extends PureComponent<
             selected={emActive}
             disabled={disabled || emDisabled}
             title={renderTooltipContent(labelItalic, toggleItalic)}
-            iconBefore={<ItalicIcon label={labelItalic} />}
+            iconBefore={
+              <FontAwesomeIcon
+                icon={faItalic}
+                tw="h-4 w-4"
+                label={labelItalic}
+              />
+            }
           />
         )}
       </ButtonGroup>

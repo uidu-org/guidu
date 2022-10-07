@@ -29,8 +29,6 @@ export default createSchema({
     'image',
     'media',
     'mediaGroup',
-    'confluenceUnsupportedBlock',
-    'confluenceUnsupportedInline',
     'confluenceJiraIssue',
     'mediaSingle',
     'plain',

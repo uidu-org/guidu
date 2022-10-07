@@ -19,8 +19,6 @@ export const defaultSchemaConfig: SchemaConfig = {
     'media',
     'mediaGroup',
     'mediaSingle',
-    'confluenceUnsupportedBlock',
-    'confluenceUnsupportedInline',
     'confluenceJiraIssue',
     'expand',
     'nestedExpand',

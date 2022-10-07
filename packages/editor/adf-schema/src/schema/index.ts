@@ -1,8 +1,3 @@
-export { bitbucketSchema } from './bitbucket-schema';
-export {
-  confluenceSchema,
-  confluenceSchemaWithMediaSingle,
-} from './confluence-schema';
 export { createSchema, sanitizeNodes } from './create-schema';
 export {
   defaultSchema,
@@ -10,20 +5,6 @@ export {
   getSchemaBasedOnStage,
 } from './default-schema';
 export { inlineNodes } from './inline-nodes';
-export {
-  default as createJIRASchema,
-  isSchemaWithAdvancedTextFormattingMarks,
-  isSchemaWithBlockQuotes,
-  isSchemaWithCodeBlock,
-  isSchemaWithEmojis,
-  isSchemaWithLinks,
-  isSchemaWithLists,
-  isSchemaWithMedia,
-  isSchemaWithMentions,
-  isSchemaWithSubSupMark,
-  isSchemaWithTables,
-  isSchemaWithTextColor,
-} from './jira-schema';
 export {
   alignment,
   alignmentPositionMap,
@@ -78,8 +59,6 @@ export {
   codeBlock,
   codeBlockToJSON,
   confluenceJiraIssue,
-  confluenceUnsupportedBlock,
-  confluenceUnsupportedInline,
   copyPrivateMediaAttributes,
   date,
   decisionItem,

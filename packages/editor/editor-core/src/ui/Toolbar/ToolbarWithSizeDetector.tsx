@@ -4,9 +4,9 @@ import { Toolbar } from './Toolbar';
 import { widthToToolbarSize } from './toolbar-size';
 import { ToolbarWithSizeDetectorProps } from './toolbar-types';
 
-export const ToolbarWithSizeDetector: React.FunctionComponent<ToolbarWithSizeDetectorProps> = (
-  props,
-) => {
+export default function ToolbarWithSizeDetector(
+  props: ToolbarWithSizeDetectorProps,
+) {
   const [width, setWidth] = React.useState<number | undefined>(undefined);
   const toolbarSize = widthToToolbarSize(width || 0, props.appearance);
 
@@ -18,4 +18,4 @@ export const ToolbarWithSizeDetector: React.FunctionComponent<ToolbarWithSizeDet
       )}
     </div>
   );
-};
+}

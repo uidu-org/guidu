@@ -22,8 +22,6 @@ export type {
   CodeBlockWithMarksDefinition,
 } from './code-block';
 export { confluenceJiraIssue } from './confluence-jira-issue';
-export { confluenceUnsupportedBlock } from './confluence-unsupported-block';
-export { confluenceUnsupportedInline } from './confluence-unsupported-inline';
 export { date } from './date';
 export type { DateDefinition } from './date';
 export { decisionItem } from './decision-item';

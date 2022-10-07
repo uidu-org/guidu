@@ -1,3 +1,5 @@
+import { RefCallback, useCallback, useState } from 'react';
+import { createPortal } from 'react-dom';
 import {
   FieldValues,
   useFieldArray,
@@ -5,8 +7,6 @@ import {
   useFormState,
   useWatch,
 } from 'react-hook-form';
-
-export { useForm, useFormState, useFieldArray, useWatch };
 
 type ObjPrimitiveValue = string | number | boolean | null | object;
 type ObjValue = ObjPrimitiveValue | ObjPrimitiveValue[];
@@ -61,3 +61,33 @@ export function stripEmpty<T extends FieldValues>(model: T) {
     },
   });
 }
+
+export interface UseFormFooterReturn {
+  formFooterRef: RefCallback<HTMLDivElement>;
+  renderFormFooter: (i: React.ReactNode) => void;
+}
+
+/**
+ *
+ * Used to create a portal for a form footer.
+ *
+ */
+export function useFormFooter(): UseFormFooterReturn {
+  const [container, setContainer] = useState<HTMLElement | null>(null);
+  const formFooterRef: RefCallback<HTMLElement> = useCallback((node) => {
+    if (node) {
+      setContainer(node);
+    }
+    return null;
+  }, []);
+
+  const renderFormFooter = (i: React.ReactNode) =>
+    container && createPortal(i, container);
+
+  return {
+    formFooterRef,
+    renderFormFooter,
+  };
+}
+
+export { useForm, useFormState, useFieldArray, useWatch };

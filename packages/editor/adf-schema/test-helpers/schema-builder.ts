@@ -7,12 +7,12 @@ import {
   Slice /*MediaAttributes */,
 } from 'prosemirror-model';
 import { MediaAttributes } from '../src/schema/nodes/media';
+import {
+  CellAttributes,
+  TableAttributes,
+} from '../src/schema/nodes/tableNodes';
 import matches from './matches';
 import sampleSchema from './schema';
-import {
-  TableAttributes,
-  CellAttributes,
-} from '../src/schema/nodes/tableNodes';
 
 /**
  * Represents a ProseMirror "position" in a document.
@@ -188,7 +188,7 @@ export function flatten<T>(deep: (T | T[])[]): T[] {
  * Coerce builder content into ref nodes.
  */
 export function coerce(content: BuilderContent[], schema: Schema) {
-  const refsContent = content.map(item =>
+  const refsContent = content.map((item) =>
     typeof item === 'string' ? text(item, schema) : item,
   ) as (RefsContentItem | RefsContentItem[])[];
   return sequence(...flatten<RefsContentItem>(refsContent));
@@ -198,7 +198,7 @@ export function coerce(content: BuilderContent[], schema: Schema) {
  * Create a factory for nodes.
  */
 export function nodeFactory(type: NodeType, attrs = {}) {
-  return function(...content: BuilderContent[]): RefsNode {
+  return function (...content: BuilderContent[]): RefsNode {
     const { nodes, refs } = coerce(content, type.schema);
     const node = type.create(attrs, nodes) as RefsNode;
     node.refs = refs;
@@ -213,7 +213,7 @@ export function markFactory(type: MarkType, attrs = {}) {
   const mark = type.create(attrs);
   return (...content: BuilderContent[]): RefsNode[] => {
     const { nodes } = coerce(content, type.schema);
-    return nodes.map(node => {
+    return nodes.map((node) => {
       if (mark.type.isInSet(node.marks)) {
         return node;
       } else {
@@ -309,10 +309,6 @@ export const decisionList = nodeFactory(sampleSchema.nodes.decisionList, {});
 export const decisionItem = nodeFactory(sampleSchema.nodes.decisionItem, {});
 export const taskList = nodeFactory(sampleSchema.nodes.taskList, {});
 export const taskItem = nodeFactory(sampleSchema.nodes.taskItem, {});
-export const confluenceUnsupportedBlock = (cxhtml: string) =>
-  nodeFactory(sampleSchema.nodes.confluenceUnsupportedBlock, { cxhtml })();
-export const confluenceUnsupportedInline = (cxhtml: string) =>
-  nodeFactory(sampleSchema.nodes.confluenceUnsupportedInline, { cxhtml })();
 export const confluenceJiraIssue = (attrs: {
   issueKey?: string;
   macroId?: string;

@@ -1,13 +1,6 @@
 import React from 'react';
-import { unmountComponentAtNode } from 'react-dom';
 import { EventDispatcher } from '../../event-dispatcher';
 import { FireAnalyticsCallback } from '../../plugins/analytics/fire-analytics-event';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-} from '../../plugins/analytics/types/enums';
 import { MountedPortal } from './types';
 
 export default class PortalProviderAPI extends EventDispatcher {
@@ -60,34 +53,35 @@ export default class PortalProviderAPI extends EventDispatcher {
   remove(container: HTMLElement) {
     this.portals.delete(container);
 
-    // There is a race condition that can happen caused by Prosemirror vs React,
-    // where Prosemirror removes the container from the DOM before React gets
-    // around to removing the child from the container
-    // This will throw a NotFoundError: The node to be removed is not a child of this node
-    // Both Prosemirror and React remove the elements asynchronously, and in edge
-    // cases Prosemirror beats React
-    try {
-      unmountComponentAtNode(container);
-    } catch (error) {
-      if (this.onAnalyticsEvent) {
-        this.onAnalyticsEvent({
-          payload: {
-            action: ACTION.FAILED_TO_UNMOUNT,
-            actionSubject: ACTION_SUBJECT.EDITOR,
-            actionSubjectId: ACTION_SUBJECT_ID.REACT_NODE_VIEW,
-            attributes: {
-              error,
-              domNodes: {
-                container: container ? container.className : undefined,
-                child: container.firstElementChild
-                  ? container.firstElementChild.className
-                  : undefined,
-              },
-            },
-            eventType: EVENT_TYPE.OPERATIONAL,
-          },
-        });
-      }
-    }
+    // // There is a race condition that can happen caused by Prosemirror vs React,
+    // // where Prosemirror removes the container from the DOM before React gets
+    // // around to removing the child from the container
+    // // This will throw a NotFoundError: The node to be removed is not a child of this node
+    // // Both Prosemirror and React remove the elements asynchronously, and in edge
+    // // cases Prosemirror beats React
+    // try {
+    //   unmountComponentAtNode(container);
+    // } catch (error) {
+    //   console.log(error);
+    //   if (this.onAnalyticsEvent) {
+    //     this.onAnalyticsEvent({
+    //       payload: {
+    //         action: ACTION.FAILED_TO_UNMOUNT,
+    //         actionSubject: ACTION_SUBJECT.EDITOR,
+    //         actionSubjectId: ACTION_SUBJECT_ID.REACT_NODE_VIEW,
+    //         attributes: {
+    //           error,
+    //           domNodes: {
+    //             container: container ? container.className : undefined,
+    //             child: container.firstElementChild
+    //               ? container.firstElementChild.className
+    //               : undefined,
+    //           },
+    //         },
+    //         eventType: EVENT_TYPE.OPERATIONAL,
+    //       },
+    //     });
+    //   }
+    // }
   }
 }
