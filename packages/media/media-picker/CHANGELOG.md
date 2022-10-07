@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.9.2
+
+### Patch Changes
+
+- 58e0fd6ea: Try fix mediaPlugin
+
 ## 0.9.1
 
 ### Patch Changes
