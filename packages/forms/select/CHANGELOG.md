@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 2.0.12
+
+### Patch Changes
+
+- 3ae75e14c: Fix video plugin rank, was breaking other plugins
+- Updated dependencies [3ae75e14c]
+  - @uidu/field-base@4.0.15
+
 ## 2.0.11
 
 ### Patch Changes

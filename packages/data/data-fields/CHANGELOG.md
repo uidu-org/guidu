@@ -1,5 +1,18 @@
 # @uidu/data-fields
 
+## 2.1.13
+
+### Patch Changes
+
+- 3ae75e14c: Fix video plugin rank, was breaking other plugins
+- Updated dependencies [3ae75e14c]
+  - @uidu/form@2.1.8
+  - @uidu/select@2.0.12
+  - @uidu/field-date@2.0.16
+  - @uidu/field-number@2.0.16
+  - @uidu/field-time@2.0.18
+  - @uidu/field-toggle@2.0.16
+
 ## 2.1.12
 
 ### Patch Changes

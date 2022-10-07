@@ -1,5 +1,16 @@
 # @uidu/renderer
 
+## 1.1.0
+
+### Minor Changes
+
+- 46399f1d5: Added get-video-id to catch youtube urls
+
+### Patch Changes
+
+- Updated dependencies [3ae75e14c]
+  - @uidu/adf-schema@1.0.2
+
 ## 1.0.0
 
 ### Major Changes

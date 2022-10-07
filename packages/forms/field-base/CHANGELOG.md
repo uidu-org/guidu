@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.0.15
+
+### Patch Changes
+
+- 3ae75e14c: Fix video plugin rank, was breaking other plugins
+- Updated dependencies [3ae75e14c]
+  - @uidu/form@2.1.8
+
 ## 4.0.14
 
 ### Patch Changes

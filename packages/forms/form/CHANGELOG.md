@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.8
+
+### Patch Changes
+
+- 3ae75e14c: Fix video plugin rank, was breaking other plugins
+
 ## 2.1.7
 
 ### Patch Changes

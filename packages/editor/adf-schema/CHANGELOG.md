@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 1.0.2
+
+### Patch Changes
+
+- 3ae75e14c: Fix video plugin rank, was breaking other plugins
+
 ## 1.0.1
 
 ### Patch Changes
