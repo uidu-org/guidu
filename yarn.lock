@@ -3128,7 +3128,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/react-fontawesome@npm:^0.2.0, @fortawesome/react-fontawesome@npm:latest":
+"@fortawesome/react-fontawesome@npm:^0.2.0":
   version: 0.2.0
   resolution: "@fortawesome/react-fontawesome@npm:0.2.0"
   dependencies:
@@ -7235,7 +7235,7 @@ __metadata:
     "@fortawesome/fontawesome-svg-core": ^6.2.0
     "@fortawesome/free-regular-svg-icons": ^6.2.0
     "@fortawesome/free-solid-svg-icons": ^6.2.0
-    "@fortawesome/react-fontawesome": latest
+    "@fortawesome/react-fontawesome": ^0.2.0
     "@loadable/component": ^5.15.2
     "@uidu/adf-schema": ^1.0.2
     "@uidu/adf-utils": ^1.0.0

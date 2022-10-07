@@ -293,8 +293,6 @@ export class MediaPluginStateImplementation implements MediaPluginState {
   insertFile = (files) => {
     this.allUploadsFinished = true;
 
-    console.log(files);
-
     if (files.length === 1) {
       insertMediaSingleNode(this.view, files[0]);
     } else {

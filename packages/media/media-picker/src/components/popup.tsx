@@ -81,8 +81,8 @@ export function PopupImpl({
     if (!exenv.canUseDOM) {
       return null;
     }
-    const container = document.createElement('div');
-    container.id = 'uppy-uploader';
+    const uppyContainer = document.createElement('div');
+    uppyContainer.id = 'uppy-uploader';
 
     render(
       <MediaPicker
@@ -91,10 +91,12 @@ export function PopupImpl({
         onComplete={onComplete}
         open
       />,
-      container,
+      uppyContainer,
     );
-    return container;
+    return uppyContainer;
   };
 
   return { show, hide };
 }
+
+export default PopupImpl;

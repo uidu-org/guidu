@@ -127,6 +127,7 @@ export const insertMediaAsMediaSingle = (
   // if not an image type media node
   if (
     node.type !== media ||
+    // eslint-disable-next-line no-underscore-dangle
     (!isImage(node.attrs.__fileMimeType) && node.attrs.type !== 'external')
   ) {
     return false;
@@ -136,6 +137,7 @@ export const insertMediaAsMediaSingle = (
   const nodes = [mediaSingleNode];
   const analyticsAttributes = {
     inputMethod,
+    // eslint-disable-next-line no-underscore-dangle
     fileExtension: node.attrs.__fileMimeType,
   };
   return insertNodesWithOptionalParagraph(nodes, analyticsAttributes)(
@@ -143,6 +145,34 @@ export const insertMediaAsMediaSingle = (
     dispatch,
   );
 };
+
+export const createMediaSingleNode =
+  (schema: Schema) => (mediaState: MediaSingleState) => {
+    const { id, url, metadata, scaleFactor = 1 } = mediaState;
+    const { width, height } = metadata || {
+      height: undefined,
+      width: undefined,
+    };
+    const { media, mediaSingle } = schema.nodes;
+
+    const mediaNode = media.create({
+      id,
+      type: 'file',
+      file: {
+        id,
+        type: 'image',
+        metadata,
+        width: width && Math.round(width / scaleFactor),
+        height: height && Math.round(height / scaleFactor),
+        url,
+      },
+    });
+
+    copyOptionalAttrsFromMediaState(mediaState, mediaNode);
+    console.log('schema', schema);
+    console.log('mediaSingle', mediaSingle);
+    return mediaSingle.createChecked({}, mediaNode);
+  };
 
 export const insertMediaSingleNode = (
   view: EditorView,
@@ -195,33 +225,6 @@ export const insertMediaSingleNode = (
   }
 
   return true;
-};
-
-export const createMediaSingleNode = (schema: Schema) => (
-  mediaState: MediaSingleState,
-) => {
-  const { id, url, metadata, scaleFactor = 1 } = mediaState;
-  const { width, height } = metadata || {
-    height: undefined,
-    width: undefined,
-  };
-  const { media, mediaSingle } = schema.nodes;
-
-  const mediaNode = media.create({
-    id,
-    type: 'file',
-    file: {
-      id,
-      type: 'image',
-      metadata,
-      width: width && Math.round(width / scaleFactor),
-      height: height && Math.round(height / scaleFactor),
-      url,
-    },
-  });
-
-  copyOptionalAttrsFromMediaState(mediaState, mediaNode);
-  return mediaSingle.createChecked({}, mediaNode);
 };
 
 export function transformSliceForMedia(slice: Slice, schema: Schema) {

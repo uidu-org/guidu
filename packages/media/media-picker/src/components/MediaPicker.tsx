@@ -25,7 +25,7 @@ export default function MediaPicker({
 }) {
   const uppy = useUppy(() =>
     new Uppy({
-      debug: true,
+      debug: false,
       allowMultipleUploadBatches: true,
       restrictions: {
         maxNumberOfFiles: null,
