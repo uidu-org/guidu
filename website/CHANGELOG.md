@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.23
+
+### Patch Changes
+
+- 58e0fd6ea: Try fix mediaPlugin
+
 ## 0.6.22
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 1.1.1
+
+### Patch Changes
+
+- 58e0fd6ea: Try fix mediaPlugin
+- Updated dependencies [58e0fd6ea]
+  - @uidu/media-picker@0.9.2
+
 ## 1.1.0
 
 ### Minor Changes
