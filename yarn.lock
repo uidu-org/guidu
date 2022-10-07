@@ -8772,6 +8772,7 @@ __metadata:
     "@uidu/theme": ^0.6.23
     "@uidu/tooltip": ^0.5.25
     "@uidu/util-data-test": ^0.4.23
+    get-video-id: ^3.6.5
     prosemirror-model: ^1.18.1
     raf-schd: ^4.0.3
     react: ^18.2.0
