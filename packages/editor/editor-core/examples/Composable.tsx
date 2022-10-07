@@ -63,7 +63,7 @@ export default function Composable({}) {
                     plugins={[
                       layoutPlugin(),
                       starterKitPlugin({
-                        placeholder: 'Insert text',
+                        placeholder: 'Insert something...',
                       }),
                       // blockTypePlugin(),
                       insertBlockPlugin({
@@ -103,7 +103,7 @@ export default function Composable({}) {
                       allowLinking: true,
                       allowResizing: true,
                     }}
-                    // defaultValue={value}
+                    defaultValue={value}
                     placeholder="Start typing..."
                   >
                     {({ renderToolbar, renderEditor }) => (
