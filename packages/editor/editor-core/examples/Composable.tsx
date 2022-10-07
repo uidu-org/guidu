@@ -62,7 +62,9 @@ export default function Composable({}) {
                     onChange={handleChange(actions)}
                     plugins={[
                       layoutPlugin(),
-                      starterKitPlugin({}),
+                      starterKitPlugin({
+                        placeholder: 'Insert text',
+                      }),
                       // blockTypePlugin(),
                       insertBlockPlugin({
                         insertMenuItems: [],
@@ -101,7 +103,8 @@ export default function Composable({}) {
                       allowLinking: true,
                       allowResizing: true,
                     }}
-                    defaultValue={value}
+                    // defaultValue={value}
+                    placeholder="Start typing..."
                   >
                     {({ renderToolbar, renderEditor }) => (
                       <>

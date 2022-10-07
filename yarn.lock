@@ -7262,7 +7262,7 @@ __metadata:
     "@uidu/media-picker": ^0.9.1
     "@uidu/mentions": ^0.4.24
     "@uidu/menu": ^0.8.4
-    "@uidu/modal-dialog": "workspace:^"
+    "@uidu/modal-dialog": 1.0.15
     "@uidu/profilecard": ^0.3.23
     "@uidu/select": ^2.0.11
     "@uidu/shell": ^2.1.34
@@ -8399,7 +8399,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/modal-dialog@^1.0.13, @uidu/modal-dialog@^1.0.15, @uidu/modal-dialog@workspace:^, @uidu/modal-dialog@workspace:packages/core/modal-dialog":
+"@uidu/modal-dialog@1.0.15, @uidu/modal-dialog@^1.0.13, @uidu/modal-dialog@^1.0.15, @uidu/modal-dialog@workspace:packages/core/modal-dialog":
   version: 0.0.0-use.local
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:

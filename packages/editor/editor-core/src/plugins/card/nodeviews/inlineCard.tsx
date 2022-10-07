@@ -4,7 +4,6 @@ import * as PropTypes from 'prop-types';
 import rafSchedule from 'raf-schd';
 import * as React from 'react';
 import { SelectionBasedNodeView } from '../../../nodeviews/ReactNodeView';
-import { ZeroWidthSpace } from '../../../utils';
 import UnsupportedInlineNode from '../../unsupported-content/nodeviews/unsupported-inline';
 import { registerCard } from '../pm-plugins/actions';
 import { Card, SmartCardProps } from './genericCard';
@@ -50,7 +49,6 @@ export class InlineCardComponent extends React.PureComponent<SmartCardProps> {
 
     const card = (
       <span>
-        <span>{ZeroWidthSpace}</span>
         <span className="card">
           <MediaCard
             file={{

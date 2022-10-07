@@ -68,6 +68,10 @@ const ContentArea = styled(ContentStyles)`
   /** Hack for tables controlls. Otherwise marging collapse and controlls are misplaced. **/
   .ProseMirror {
     margin: -1rem 0rem 1rem;
+
+    .ProseMirror-separator {
+      margin: 0;
+    }
   }
 
   .gridParent {

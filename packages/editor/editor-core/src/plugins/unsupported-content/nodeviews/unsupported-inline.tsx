@@ -1,7 +1,6 @@
 import { borderRadius, colors, fontSize } from '@uidu/theme';
 import React from 'react';
 import styled from 'styled-components';
-import { ZeroWidthSpace } from '../../../utils';
 
 const InlineNode = styled.span`
   align-items: center;
@@ -29,7 +28,6 @@ export default function UnsupportedInlineNode() {
   return (
     <span>
       <InlineNode>Unsupported content</InlineNode>
-      {ZeroWidthSpace}
     </span>
   );
 }

@@ -5,7 +5,6 @@ import * as React from 'react';
 import { getPosHandler, ReactNodeView } from '../../../nodeviews';
 import { ForwardRef } from '../../../nodeviews/ReactNodeView';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
-import { ZeroWidthSpace } from '../../../utils';
 import Extension from '../ui/Extension';
 
 export interface Props {
@@ -49,7 +48,6 @@ class ExtensionNode extends ReactNodeView {
           handleContentDOMRef={forwardRef}
           extensionHandlers={props.extensionHandlers}
         />
-        {this.node.type.name === 'inlineExtension' && ZeroWidthSpace}
       </span>
     );
   }
