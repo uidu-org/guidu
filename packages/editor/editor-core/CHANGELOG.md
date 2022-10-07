@@ -1,5 +1,19 @@
 # @uidu/editor-core
 
+## 1.1.0
+
+### Minor Changes
+
+- 3ae75e14c: Fix video plugin rank, was breaking other plugins
+
+### Patch Changes
+
+- Updated dependencies [3ae75e14c]
+  - @uidu/adf-schema@1.0.2
+  - @uidu/form@2.1.8
+  - @uidu/select@2.0.12
+  - @uidu/field-date@2.0.16
+
 ## 1.0.2
 
 ### Patch Changes

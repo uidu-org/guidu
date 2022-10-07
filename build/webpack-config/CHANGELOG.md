@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.36
+
+### Patch Changes
+
+- 3ae75e14c: Fix video plugin rank, was breaking other plugins
+
 ## 0.3.35
 
 ### Patch Changes

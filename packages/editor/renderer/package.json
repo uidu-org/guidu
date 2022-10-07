@@ -1,6 +1,6 @@
 {
   "name": "@uidu/renderer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Renderer component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/renderer",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "@atlaskit/icon": "^21.10.7",
     "@babel/runtime": "^7.19.0",
     "@loadable/component": "^5.15.2",
-    "@uidu/adf-schema": "^1.0.0",
+    "@uidu/adf-schema": "^1.0.2",
     "@uidu/adf-utils": "^1.0.0",
     "@uidu/analytics": "^0.6.6",
     "@uidu/analytics-listeners": "^0.4.17",
