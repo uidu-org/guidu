@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 1.0.3
+
+### Patch Changes
+
+- 10c395f62: Try some debugging
+
 ## 1.0.2
 
 ### Patch Changes

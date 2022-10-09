@@ -1,5 +1,13 @@
 # @uidu/renderer
 
+## 1.1.1
+
+### Patch Changes
+
+- 10c395f62: Try some debugging
+- Updated dependencies [10c395f62]
+  - @uidu/adf-schema@1.0.3
+
 ## 1.1.0
 
 ### Minor Changes
