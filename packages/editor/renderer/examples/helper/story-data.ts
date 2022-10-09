@@ -50,6 +50,33 @@ export const story = {
     },
     {
       type: 'mediaSingle',
+      attrs: { layout: 'center' },
+      content: [
+        {
+          type: 'media',
+          attrs: {
+            id: '3faa99da742d1e5cf85684770075568b.png',
+            file: {
+              id: '3faa99da742d1e5cf85684770075568b.png',
+              url: 'https://me.uidu.local:8443/uploads/cache/3faa99da742d1e5cf85684770075568b.png',
+              type: 'image',
+              width: 1711,
+              height: 1299,
+              metadata: {
+                size: 334036,
+                width: 1711,
+                height: 1299,
+                filename: 'Screenshot 2022-09-16 alle 17.51.27.png',
+              },
+            },
+            type: 'file',
+          },
+        },
+      ],
+    },
+    { type: 'paragraph', content: [{ text: 'Holacracy', type: 'text' }] },
+    {
+      type: 'mediaSingle',
       attrs: {
         layout: 'center',
       },

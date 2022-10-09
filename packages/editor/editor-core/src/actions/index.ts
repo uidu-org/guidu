@@ -29,9 +29,13 @@ export interface EditorActionsOptions {
 
 export default class EditorActions implements EditorActionsOptions {
   private editorView?: EditorView;
+
   private contentTransformer?: Transformer<any>;
+
   private contentEncode?: Transformer<any>['encode'];
+
   private eventDispatcher?: EventDispatcher;
+
   private listeners: Array<ContextUpdateHandler> = [];
 
   static from(
@@ -115,7 +119,7 @@ export default class EditorActions implements EditorActionsOptions {
       return false;
     }
 
-    (this.editorView.dom as HTMLElement).blur();
+    this.editorView.dom.blur();
     return true;
   }
 
@@ -124,7 +128,7 @@ export default class EditorActions implements EditorActionsOptions {
       return false;
     }
 
-    const editorView = this.editorView;
+    const { editorView } = this;
     const { state } = editorView;
     const tr = editorView.state.tr
       .setSelection(TextSelection.create(state.doc, 0, state.doc.nodeSize - 2))
@@ -145,9 +149,7 @@ export default class EditorActions implements EditorActionsOptions {
     return compose(
       (doc) =>
         this.contentEncode
-          ? this.contentEncode(
-              Node.fromJSON(this.editorView!.state.schema, doc),
-            )
+          ? this.contentEncode(Node.fromJSON(this.editorView.state.schema, doc))
           : doc,
       sanitizeNode,
       toJSON,
@@ -171,7 +173,7 @@ export default class EditorActions implements EditorActionsOptions {
       rawValue,
       undefined,
       undefined,
-      this.contentTransformer as Transformer<any>,
+      this.contentTransformer,
     );
 
     if (!content) {
@@ -234,7 +236,7 @@ export default class EditorActions implements EditorActionsOptions {
     }
 
     const { state } = this.editorView;
-    const lastChild = state.doc.lastChild;
+    const { lastChild } = state.doc;
 
     if (lastChild && lastChild.type !== state.schema.nodes.paragraph) {
       return false;

@@ -6403,6 +6403,7 @@ __metadata:
     "@types/prosemirror-view": ^1.23.3
     "@uidu/editor-json-transformer": ^1.0.1
     "@uidu/json-schema-generator": ^1.0.0
+    "@uidu/media-core": 1.1.2
     axios: ^0.27.2
     css-color-names: ^1.0.1
     json-schema-diff-validator: ^0.4.1

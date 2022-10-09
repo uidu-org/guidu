@@ -24,3 +24,5 @@ export function createSchema(editorConfig: {
 
   return new Schema({ nodes, marks });
 }
+
+export default createSchema;

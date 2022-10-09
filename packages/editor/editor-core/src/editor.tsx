@@ -97,7 +97,9 @@ export default class Editor extends PureComponent<EditorProps> {
   };
 
   private editorActions: EditorActions;
+
   private providerFactory: ProviderFactory;
+
   private createAnalyticsEvent?: CreateUIAnalyticsEvent;
 
   constructor(props: EditorProps, context: Context) {
@@ -259,9 +261,9 @@ export default class Editor extends PureComponent<EditorProps> {
     // the document, force a DOM sync before calling onSave
     // if we've already started typing
     // @ts-ignore
-    if (view['inDOMChange']) {
+    if (view.inDOMChange) {
       // @ts-ignore
-      view['inDOMChange'].finish(true);
+      view.inDOMChange.finish(true);
     }
 
     return this.props.onSave(view);
@@ -270,21 +272,19 @@ export default class Editor extends PureComponent<EditorProps> {
   handleAnalyticsEvent: FireAnalyticsCallback = (data) =>
     fireAnalyticsEvent(this.createAnalyticsEvent)(data);
 
-  renderToolbar = ({ view, eventDispatcher, config }) => {
-    return (
-      <Toolbar
-        disabled={this.props.disabled}
-        editorView={view!}
-        editorActions={this.editorActions}
-        eventDispatcher={eventDispatcher}
-        items={config.primaryToolbarComponents}
-        providerFactory={this.providerFactory}
-        popupsMountPoint={this.props.popupsMountPoint}
-        // popupsBoundariesElement={this.props.popupsBoundariesElement}
-        // popupsScrollableElement={this.props.popupsScrollableElement}
-      ></Toolbar>
-    );
-  };
+  renderToolbar = ({ view, eventDispatcher, config }) => (
+    <Toolbar
+      disabled={this.props.disabled}
+      editorView={view}
+      editorActions={this.editorActions}
+      eventDispatcher={eventDispatcher}
+      items={config.primaryToolbarComponents}
+      providerFactory={this.providerFactory}
+      popupsMountPoint={this.props.popupsMountPoint}
+      // popupsBoundariesElement={this.props.popupsBoundariesElement}
+      // popupsScrollableElement={this.props.popupsScrollableElement}
+    />
+  );
 
   renderEditor = ({
     view,
@@ -295,7 +295,7 @@ export default class Editor extends PureComponent<EditorProps> {
   }) => (
     <ContentArea>
       <PluginSlot
-        editorView={view!}
+        editorView={view}
         editorActions={this.editorActions}
         eventDispatcher={eventDispatcher}
         dispatchAnalyticsEvent={dispatchAnalyticsEvent}
@@ -312,7 +312,7 @@ export default class Editor extends PureComponent<EditorProps> {
   );
 
   render() {
-    const { children, ...otherProps } = this.props;
+    const { children, plugins, ...otherProps } = this.props;
 
     return (
       <EditorContext editorActions={this.editorActions}>
@@ -326,7 +326,7 @@ export default class Editor extends PureComponent<EditorProps> {
                   allowTables: true,
                   quickInsert: true,
                   allowIndentation: true,
-                  plugins: this.props.plugins,
+                  plugins,
                   ...otherProps,
                 }}
                 // createAnalyticsEvent={createAnalyticsEvent}

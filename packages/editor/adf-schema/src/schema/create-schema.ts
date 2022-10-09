@@ -194,31 +194,6 @@ const marksInOrder: SchemaBuiltInItem[] = [
   { name: 'unsupportedNodeAttribute', spec: unsupportedNodeAttribute },
 ];
 
-/**
- * Creates a schema preserving order of marks and nodes.
- */
-export function createSchema(config: SchemaConfig): Schema {
-  const { customNodeSpecs, customMarkSpecs } = config;
-  const nodesConfig = Object.keys(customNodeSpecs || {}).concat(config.nodes);
-  const marksConfig = Object.keys(customMarkSpecs || {})
-    .concat(config.marks || [])
-    .concat(markGroupDeclarationsNames);
-
-  let nodes = addItems(nodesInOrder, nodesConfig, customNodeSpecs) as Record<
-    string,
-    NodeSpec
-  >;
-  let marks = addItems(marksInOrder, marksConfig, customMarkSpecs) as Record<
-    string,
-    MarkSpec
-  >;
-  nodes = sanitizeNodes(nodes, marks);
-  return new Schema<string, string>({
-    nodes,
-    marks,
-  });
-}
-
 export function sanitizeNodes(
   nodes: { [key: string]: NodeSpec },
   supportedMarks: { [key: string]: MarkSpec },
@@ -246,6 +221,31 @@ export function sanitizeNodes(
     nodes[nodeKey] = nodeSpec;
   });
   return nodes;
+}
+
+/**
+ * Creates a schema preserving order of marks and nodes.
+ */
+export function createSchema(config: SchemaConfig): Schema {
+  const { customNodeSpecs, customMarkSpecs } = config;
+  const nodesConfig = Object.keys(customNodeSpecs || {}).concat(config.nodes);
+  const marksConfig = Object.keys(customMarkSpecs || {})
+    .concat(config.marks || [])
+    .concat(markGroupDeclarationsNames);
+
+  let nodes = addItems(nodesInOrder, nodesConfig, customNodeSpecs) as Record<
+    string,
+    NodeSpec
+  >;
+  const marks = addItems(marksInOrder, marksConfig, customMarkSpecs) as Record<
+    string,
+    MarkSpec
+  >;
+  nodes = sanitizeNodes(nodes, marks);
+  return new Schema<string, string>({
+    nodes,
+    marks,
+  });
 }
 
 function sanitizedContent(

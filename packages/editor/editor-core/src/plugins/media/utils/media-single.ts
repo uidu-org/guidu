@@ -169,8 +169,6 @@ export const createMediaSingleNode =
     });
 
     copyOptionalAttrsFromMediaState(mediaState, mediaNode);
-    console.log('schema', schema);
-    console.log('mediaSingle', mediaSingle);
     return mediaSingle.createChecked({}, mediaNode);
   };
 

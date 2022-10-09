@@ -137,6 +137,17 @@ export function bracketTyped(state: EditorState) {
   return false;
 }
 
+const maySanitizePrivateContent = (
+  entity: JSONDocNode,
+  providerFactory?: ProviderFactory,
+  sanitizePrivateContent?: boolean,
+): JSONDocNode => {
+  if (sanitizePrivateContent && providerFactory) {
+    return sanitizeNodeForPrivacy(entity, providerFactory);
+  }
+  return entity;
+};
+
 export function processRawValue(
   schema: Schema,
   value?: string | object,
@@ -204,14 +215,17 @@ export function processRawValue(
       dispatchAnalyticsEvent,
     );
 
-    let newEntity = maySanitizePrivateContent(
+    const newEntity = maySanitizePrivateContent(
       entity as JSONDocNode,
       providerFactory,
       sanitizePrivateContent,
     );
 
+    console.log('newEntity', newEntity);
+
     const parsedDoc = Node.fromJSON(schema, newEntity);
 
+    console.log('parsedDoc', parsedDoc);
     // throws an error if the document is invalid
     parsedDoc.check();
 
@@ -233,17 +247,6 @@ export function processRawValue(
     return;
   }
 }
-
-const maySanitizePrivateContent = (
-  entity: JSONDocNode,
-  providerFactory?: ProviderFactory,
-  sanitizePrivateContent?: boolean,
-): JSONDocNode => {
-  if (sanitizePrivateContent && providerFactory) {
-    return sanitizeNodeForPrivacy(entity, providerFactory);
-  }
-  return entity;
-};
 
 export const getStepRange = (
   transaction: Transaction,

@@ -15,7 +15,7 @@ export interface MediaGroupDefinition {
 export const mediaGroup: NodeSpec = {
   inline: false,
   group: 'block',
-  content: 'media+',
+  content: '(media|unsupportedBlock)+',
   attrs: {},
   marks: 'unsupportedMark unsupportedNodeAttribute',
   selectable: false,
