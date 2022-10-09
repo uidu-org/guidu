@@ -30,6 +30,7 @@ export interface MediaBaseAttributes {
   file: FileIdentifier;
   height?: number;
   width?: number;
+  url?: string;
   /**
    * @minLength 1
    */
@@ -72,6 +73,7 @@ export const defaultAttrs: DefaultAttributes<MediaADFAttrs> = {
   alt: { default: null },
   width: { default: null },
   height: { default: null },
+  url: { default: '' },
   __fileName: { default: null },
   __fileSize: { default: null },
   __fileMimeType: { default: null },

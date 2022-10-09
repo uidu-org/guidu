@@ -7,6 +7,7 @@ export type FileMetadata = {
   width?: number;
   height?: number;
   size?: number;
+  mime_type?: string;
   crop?: {
     x?: number;
     y?: number;
@@ -23,6 +24,8 @@ export type FileIdentifier = {
   storage?: string;
   type: FileType;
   metadata: FileMetadata;
+  width?: number;
+  height?: number;
   url?: string | undefined;
 };
 

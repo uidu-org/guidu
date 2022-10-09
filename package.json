@@ -28,7 +28,7 @@
     "website"
   ],
   "scripts": {
-    "build": "                               yarn preconstruct build && build:adf-schema:json-schema && yarn build:pkg",
+    "build": "                               yarn preconstruct build && yarn build:adf-schema:json-schema && yarn build:pkg",
     "build:adf-schema:checkuptodate": "      cd packages/editor/adf-schema && yarn run generate:json-schema && git diff --exit-code",
     "build:adf-schema:json-schema": "        cd packages/editor/adf-schema && yarn run build:json-schema && echo 'Done.'",
     "build:editor-mobile-bridge": "          cd packages/editor/editor-mobile-bridge && yarn build:minimize",
