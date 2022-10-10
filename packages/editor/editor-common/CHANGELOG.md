@@ -1,5 +1,17 @@
 # @uidu/editor-common
 
+## 1.1.0
+
+### Minor Changes
+
+- 667689555: Fix media node spec
+
+### Patch Changes
+
+- Updated dependencies [667689555]
+  - @uidu/adf-schema@1.1.0
+  - @uidu/adf-utils@1.1.0
+
 ## 1.0.0
 
 ### Major Changes

@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 1.1.0
+
+### Minor Changes
+
+- 667689555: Fix media node spec
+
 ## 1.0.3
 
 ### Patch Changes
