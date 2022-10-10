@@ -17,7 +17,7 @@ import {
   videoPlugin,
 } from '../src/plugins';
 
-export default function Composable({}) {
+export default function Composable() {
   const element = useRef(null);
   const [value, setValue] = useState(document);
 

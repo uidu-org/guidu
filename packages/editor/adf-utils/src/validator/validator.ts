@@ -29,7 +29,7 @@ import {
 
 function mapMarksItems(spec: ValidatorSpec, fn = (x: any) => x) {
   if (spec.props && spec.props.marks) {
-    const { items, ...rest } = spec.props!.marks!;
+    const { items, ...rest } = spec.props.marks;
     return {
       ...spec,
       props: {
@@ -48,9 +48,8 @@ function mapMarksItems(spec: ValidatorSpec, fn = (x: any) => x) {
         },
       },
     };
-  } else {
-    return spec;
   }
+  return spec;
 }
 
 const partitionObject = <T extends { [key: string]: any }>(
@@ -205,12 +204,12 @@ export function validateAttrs<T>(spec: AttributesSpec, value: T): boolean {
     case 'string':
       return (
         isString(value) &&
-        (isDefined(spec.minLength) ? spec.minLength! <= value.length : true) &&
+        (isDefined(spec.minLength) ? spec.minLength <= value.length : true) &&
         (spec.pattern ? new RegExp(spec.pattern).test(value) : true)
       );
     case 'object':
       return isPlainObject(value);
-    case 'array':
+    case 'array': {
       const types = spec.items;
       const lastTypeIndex = types.length - 1;
       if (Array.isArray(value)) {
@@ -221,12 +220,13 @@ export function validateAttrs<T>(spec: AttributesSpec, value: T): boolean {
         );
       }
       return false;
-
+    }
     case 'enum':
       return isString(value) && spec.values.indexOf(value) > -1;
-  }
 
-  return false;
+    default:
+      return false;
+  }
 }
 
 const errorMessageFor = (type: string, message: string) =>
@@ -346,7 +346,7 @@ export function validator(
     isMark: boolean = false,
   ): NodeValidationResult => {
     const { type } = entity;
-    let newEntity: ADFEntity = { ...entity };
+    const newEntity: ADFEntity = { ...entity };
 
     const err = <T extends ValidationErrorType>(
       code: T,
@@ -363,9 +363,8 @@ export function validator(
             getUnsupportedOptions(parentSpec),
           ),
         };
-      } else {
-        throw new Error(message);
       }
+      throw new Error(message);
     };
 
     if (type) {
@@ -451,7 +450,7 @@ export function validator(
       ...typeOptions,
       // options with props can override props of spec
       ...(spec.props
-        ? { props: { ...spec.props, ...(typeOptions['props'] || {}) } }
+        ? { props: { ...spec.props, ...(typeOptions.props || {}) } }
         : {}),
     };
   }
@@ -479,7 +478,7 @@ export function validator(
             }
             // this checks for mark level attribute errors
             // and propagates error code and message
-            else if (
+            if (
               finalResult.marksValidationOutput &&
               finalResult.marksValidationOutput.length
             ) {
@@ -489,26 +488,24 @@ export function validator(
                 errorCode: finalResult.marksValidationOutput[0].errorCode,
                 message: finalResult.marksValidationOutput[0].message,
               };
-            } else {
-              return {
-                valid: false,
-                originalMark: mark,
-                errorCode: 'INVALID_TYPE',
-              };
             }
-          } else {
             return {
               valid: false,
               originalMark: mark,
-              errorCode: 'INVALID_CONTENT',
+              errorCode: 'INVALID_TYPE',
             };
           }
+          return {
+            valid: false,
+            originalMark: mark,
+            errorCode: 'INVALID_CONTENT',
+          };
         })
       : [];
   }
 
   function allowedMarksFor(validator: ValidatorSpec) {
-    const { items } = validator.props!.marks!;
+    const { items } = validator.props.marks;
     const marksSet = items.length
       ? Array.isArray(items[0])
         ? items[0]
@@ -536,11 +533,10 @@ export function validator(
     if (newMarks.length) {
       newEntity.marks = newMarks;
       return { valid: true, entity: newEntity };
-    } else {
-      return err('REDUNDANT_MARKS', 'redundant marks', {
-        marks: Object.keys(currentMarks),
-      });
     }
+    return err('REDUNDANT_MARKS', 'redundant marks', {
+      marks: Object.keys(currentMarks),
+    });
   }
 
   function requiredPropertyValidationFor(
@@ -567,10 +563,10 @@ export function validator(
     err: Err,
   ) {
     let result: NodeValidationResult = { valid: true, entity: prevEntity };
-    if (validatorSpec.props!.text) {
+    if (validatorSpec.props.text) {
       if (
         isDefined(prevEntity.text) &&
-        !validateAttrs(validatorSpec.props!.text, prevEntity.text)
+        !validateAttrs(validatorSpec.props.text, prevEntity.text)
       ) {
         result = err('INVALID_TEXT', `'text' validation failed`);
       }
@@ -584,9 +580,9 @@ export function validator(
     err: Err,
   ) {
     let result: NodeValidationResult = { valid: true, entity: prevEntity };
-    if (validatorSpec.props!.content && prevEntity.content) {
-      const { minItems, maxItems } = validatorSpec.props!.content;
-      const length = prevEntity.content.length;
+    if (validatorSpec.props.content && prevEntity.content) {
+      const { minItems, maxItems } = validatorSpec.props.content;
+      const { length } = prevEntity.content;
       if (isDefined(minItems) && minItems > length) {
         result = err(
           'INVALID_CONTENT_LENGTH',
@@ -612,17 +608,18 @@ export function validator(
     let validatorAttrs: Record<string, any> = {};
     if (validatorSpec.props && validatorSpec.props.attrs) {
       const attrOptions = makeArray(validatorSpec.props.attrs);
+
       /**
        * Attrs can be union type so try each path
        * attrs: [{ props: { url: { type: 'string' } } }, { props: { data: {} } }],
        * Gotcha: It will always report the last failure.
        */
-      for (let i = 0, length = attrOptions.length; i < length; ++i) {
+      for (let i = 0, { length } = attrOptions; i < length; ++i) {
         const attrOption = attrOptions[i];
         if (attrOption && attrOption.props) {
-          [, invalidAttrs] = partitionObject(attrOption.props, (k, v) => {
-            return validateAttrs(v, (prevEntity.attrs as any)[k]);
-          });
+          [, invalidAttrs] = partitionObject(attrOption.props, (k, v) =>
+            validateAttrs(v, (prevEntity.attrs as any)[k]),
+          );
         }
         validatorAttrs = attrOption!;
         if (!invalidAttrs.length) {
@@ -643,9 +640,9 @@ export function validator(
   ): NodeValidationResult {
     let validatorAttrs: Record<string, any> = {};
     let result: NodeValidationResult = { valid: true, entity: prevEntity };
-
     const hasValidatorSpecAttrs =
       validatorSpec.props && validatorSpec.props.attrs;
+
     if (prevEntity.attrs) {
       if (isMark && !hasValidatorSpecAttrs) {
         const message = errorMessageFor(
@@ -656,8 +653,8 @@ export function validator(
         const markValidationResult = {
           valid: true,
           originalMark: prevEntity,
-          errorCode: errorCode,
-          message: message,
+          errorCode,
+          message,
         };
         return {
           valid: false,
@@ -665,11 +662,11 @@ export function validator(
         };
       }
 
-      let invalidAttributesResult = invalidAttributesFor(
+      const invalidAttributesResult = invalidAttributesFor(
         validatorSpec,
         prevEntity,
       );
-      let { invalidAttrs } = invalidAttributesResult;
+      const { invalidAttrs } = invalidAttributesResult;
       validatorAttrs = invalidAttributesResult.validatorAttrs;
 
       const attrs = Object.keys(prevEntity.attrs).filter(
@@ -678,7 +675,7 @@ export function validator(
 
       const hasRedundantAttrs =
         !validatorAttrs || !attrs.every((a) => !!validatorAttrs.props[a]);
-      let hasUnsupportedAttrs = invalidAttrs.length || hasRedundantAttrs;
+      const hasUnsupportedAttrs = invalidAttrs.length || hasRedundantAttrs;
 
       if (hasUnsupportedAttrs) {
         const redundantAttrs = attrs.filter((a) => !validatorAttrs.props![a]);
@@ -704,29 +701,25 @@ export function validator(
           const markValidationResult = {
             valid: true,
             originalMark: prevEntity,
-            errorCode: errorCode,
-            message: message,
+            errorCode,
+            message,
           };
           return {
             valid: false,
             marksValidationOutput: [markValidationResult],
           };
-        } else {
-          message = errorMessageFor(
-            prevEntity.type,
-            `'attrs' validation failed`,
-          );
-          errorCode = 'UNSUPPORTED_ATTRIBUTES';
-          newEntity.marks = wrapUnSupportedNodeAttributes(
-            prevEntity,
-            newEntity,
-            attr,
-            errorCode,
-            message,
-            errorCallback,
-          );
-          result = { valid: true, entity: newEntity };
         }
+        message = errorMessageFor(prevEntity.type, `'attrs' validation failed`);
+        errorCode = 'UNSUPPORTED_ATTRIBUTES';
+        newEntity.marks = wrapUnSupportedNodeAttributes(
+          prevEntity,
+          newEntity,
+          attr,
+          errorCode,
+          message,
+          errorCallback,
+        );
+        result = { valid: true, entity: newEntity };
       }
     }
     return result;
@@ -740,8 +733,8 @@ export function validator(
     message: string,
     errorCallback: ErrorCallback | undefined,
   ) {
-    let invalidValues: ADFEntity['attrs'] = {};
-    for (let invalidAttr in invalidAttrs) {
+    const invalidValues: ADFEntity['attrs'] = {};
+    for (const invalidAttr in invalidAttrs) {
       invalidValues[invalidAttrs[invalidAttr]] =
         prevEntity.attrs && prevEntity.attrs[invalidAttrs[invalidAttr]];
       if (newEntity.attrs) {
@@ -761,9 +754,8 @@ export function validator(
       unsupportedNodeAttributeValues &&
         finalEntity.marks.push(unsupportedNodeAttributeValues);
       return finalEntity.marks;
-    } else {
-      return [unsupportedNodeAttributeValues] as ADFEntityMark[];
     }
+    return [unsupportedNodeAttributeValues] as ADFEntityMark[];
   }
 
   function extraPropsValidationFor(
@@ -773,7 +765,7 @@ export function validator(
     newEntity: ADFEntity,
     type: string,
   ): NodeValidationResult {
-    let result: NodeValidationResult = { valid: true, entity: prevEntity };
+    const result: NodeValidationResult = { valid: true, entity: prevEntity };
     const [requiredProps, redundantProps] = partitionObject(prevEntity, (k) =>
       isDefined((validatorSpec.props as any)[k]),
     );
@@ -781,16 +773,14 @@ export function validator(
       if (mode === 'loose') {
         newEntity = { type };
         requiredProps.reduce((acc, p) => copy(prevEntity, acc, p), newEntity);
-      } else {
-        if (
-          !(redundantProps.indexOf('marks') > -1 && redundantProps.length === 1)
-        ) {
-          return err(
-            'REDUNDANT_PROPERTIES',
-            `redundant props found: ${redundantProps.join(', ')}`,
-            { props: redundantProps },
-          );
-        }
+      } else if (
+        !(redundantProps.indexOf('marks') > -1 && redundantProps.length === 1)
+      ) {
+        return err(
+          'REDUNDANT_PROPERTIES',
+          `redundant props found: ${redundantProps.join(', ')}`,
+          { props: redundantProps },
+        );
       }
     }
     return result;
@@ -806,7 +796,7 @@ export function validator(
     errorCallback: ErrorCallback | undefined,
     isMark: boolean,
   ): SpecValidatorResult {
-    let specBasedValidationResult: SpecValidatorResult = {
+    const specBasedValidationResult: SpecValidatorResult = {
       hasValidated: false,
     };
     const validatorSpec: ValidatorSpec = validatorFor(spec, typeOptions);
@@ -944,29 +934,27 @@ export function validator(
               const validMarks = marksValidationOutput.filter(
                 (mark) => mark.valid,
               );
-              const finalMarks = marksValidationOutput!
+              const finalMarks = marksValidationOutput
                 .map((mr) => {
                   if (mr.valid) {
                     return mr.newMark;
-                  } else {
-                    if (
-                      validMarks.length ||
-                      isLastValidationSpec ||
-                      isParentTupleLike ||
-                      mr.errorCode === 'REDUNDANT_ATTRIBUTES' ||
-                      mr.errorCode === 'INVALID_ATTRIBUTES'
-                    ) {
-                      return unsupportedMarkContent(
-                        mr.errorCode!,
-                        mr.originalMark,
-                        errorCallback,
-                        mr.message,
-                      );
-                    }
-                    return;
+                  }
+                  if (
+                    validMarks.length ||
+                    isLastValidationSpec ||
+                    isParentTupleLike ||
+                    mr.errorCode === 'REDUNDANT_ATTRIBUTES' ||
+                    mr.errorCode === 'INVALID_ATTRIBUTES'
+                  ) {
+                    return unsupportedMarkContent(
+                      mr.errorCode,
+                      mr.originalMark,
+                      errorCallback,
+                      mr.message,
+                    );
                   }
                 })
-                .filter(Boolean) as ADFEntityMark[];
+                .filter(Boolean);
               if (finalMarks.length) {
                 childEntity.marks = finalMarks;
               } else {
@@ -1058,9 +1046,8 @@ export function validator(
                   );
                   if (marksAreValid) {
                     return entity;
-                  } else {
-                    firstChild = firstChild || newChildEntity;
                   }
+                  firstChild = firstChild || newChildEntity;
                 } else {
                   firstChild = firstChild || newChildEntity;
                 }

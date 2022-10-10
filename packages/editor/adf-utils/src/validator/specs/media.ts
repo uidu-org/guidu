@@ -6,6 +6,7 @@ export default {
         type: { type: 'enum', values: ['link', 'file'] },
         id: { type: 'string', minLength: 1 },
         file: {
+          type: 'object',
           props: {
             id: [{ type: 'string' }, { type: 'number' }],
             storage: { type: 'string', optional: true },

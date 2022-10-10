@@ -32,7 +32,7 @@ export const grinEmojiId = toEmojiId(emojiTestData.grinEmoji);
 export const evilburnsEmojiId = toEmojiId(emojiTestData.evilburnsEmoji);
 
 export const lorem = emojiStoryData.lorem;
-export const story = {
+export const story2 = {
   version: 1,
   type: 'doc',
   content: [
@@ -404,8 +404,44 @@ export const story = {
     },
   ],
 };
+export const story = {
+  version: 1,
+  type: 'doc',
+  content: [
+    { type: 'paragraph', content: [{ type: 'text', text: 'a' }] },
+    {
+      type: 'mediaSingle',
+      attrs: { layout: 'center' },
+      content: [
+        {
+          type: 'media',
+          attrs: {
+            id: '184ef6b8417d85b75752cac44e3c7f15.jpg',
+            type: 'file',
+            foo: 'bar',
+            file: {
+              id: '184ef6b8417d85b75752cac44e3c7f15.jpg',
+              type: 'image',
+              metadata: {
+                filename: '232736274_226533902772534_6120448366188471115_n.jpg',
+                size: 68382,
+                mime_type: 'image/jpeg',
+                width: 640,
+                height: 640,
+              },
+              width: 640,
+              height: 640,
+              url: 'https://me.uidu.local:8443/uploads/cache/184ef6b8417d85b75752cac44e3c7f15.jpg',
+            },
+          },
+        },
+      ],
+    },
+    { type: 'paragraph', content: [] },
+  ],
+};
 
-export const document = {
+export const document2 = {
   type: 'doc',
   content: [
     {

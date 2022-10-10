@@ -156,6 +156,7 @@ class Grid extends React.Component<Props> {
       gridType,
       visible,
     } = this.props;
+    console.log('theme', theme.layoutMaxWidth);
     const editorMaxWidth = theme.layoutMaxWidth;
 
     const gridLines = [

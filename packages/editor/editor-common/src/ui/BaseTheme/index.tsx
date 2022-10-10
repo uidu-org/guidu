@@ -63,7 +63,7 @@ export function BaseTheme({ children, dynamicTextSizing }: BaseThemeProps) {
           dynamicTextSizing={dynamicTextSizing}
           breakpoint={breakpoint}
         >
-          <>{children}</>
+          {children}
         </BaseThemeWrapper>
       )}
     </WidthConsumer>

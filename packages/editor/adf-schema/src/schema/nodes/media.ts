@@ -156,6 +156,7 @@ export const createMediaSpec = (
       'data-height': node.attrs.height,
       'data-url': node.attrs.url,
       'data-alt': node.attrs.alt,
+      'data-file': JSON.stringify(node.attrs.file) || {},
       // toDOM is used for static rendering as well as editor rendering. This comes into play for
       // emails, copy/paste, etc, so the title and styling here *is* useful (despite a React-based
       // node view being used for editing).

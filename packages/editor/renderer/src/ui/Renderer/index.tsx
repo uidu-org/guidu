@@ -21,7 +21,7 @@ import { Schema } from 'prosemirror-model';
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { IntlProvider } from 'react-intl';
-import { ReactSerializer, renderDocument, RendererContext } from '../../';
+import { ReactSerializer, renderDocument, RendererContext } from '../..';
 import AnalyticsContext from '../../analytics/analyticsContext';
 import { ACTION, ACTION_SUBJECT, EVENT_TYPE } from '../../analytics/enums';
 import { AnalyticsEventPayload, MODE, PLATFORM } from '../../analytics/events';
@@ -60,7 +60,9 @@ export interface Props {
 
 export class Renderer extends PureComponent<Props, {}> {
   private providerFactory: ProviderFactory;
+
   private serializer?: ReactSerializer;
+
   private rafID: number | undefined;
 
   constructor(props: Props) {
@@ -188,7 +190,7 @@ export class Renderer extends PureComponent<Props, {}> {
     try {
       const { result, stat } = renderDocument(
         document,
-        this.serializer!,
+        this.serializer,
         schema || defaultSchema,
         adfStage,
       );
@@ -250,17 +252,19 @@ export class Renderer extends PureComponent<Props, {}> {
   }
 }
 
-const RendererWithAnalytics = (props: Props) => (
-  <FabricEditorAnalyticsContext
-    data={{ appearance: getAnalyticsAppearance(props.appearance) }}
-  >
-    <WithCreateAnalyticsEvent
-      render={(createAnalyticsEvent) => (
-        <Renderer {...props} createAnalyticsEvent={createAnalyticsEvent} />
-      )}
-    />
-  </FabricEditorAnalyticsContext>
-);
+function RendererWithAnalytics(props: Props) {
+  return (
+    <FabricEditorAnalyticsContext
+      data={{ appearance: getAnalyticsAppearance(props.appearance) }}
+    >
+      <WithCreateAnalyticsEvent
+        render={(createAnalyticsEvent) => (
+          <Renderer {...props} createAnalyticsEvent={createAnalyticsEvent} />
+        )}
+      />
+    </FabricEditorAnalyticsContext>
+  );
+}
 
 export default RendererWithAnalytics;
 

@@ -8,7 +8,7 @@ import {
   pastePlugin,
   typeAheadPlugin,
   unsupportedContentPlugin,
-  widthPlugin,
+  widthPlugin
 } from '../plugins';
 import { ScrollGutterPluginOptions } from '../plugins/base/pm-plugins/scroll-gutter';
 import { EditorPlugin, EditorProps } from '../types';
