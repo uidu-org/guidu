@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.7.12
+
+### Patch Changes
+
+- 4e1af7f54: Bump dependencies
+- Updated dependencies [4e1af7f54]
+  - @uidu/button@1.3.32
+  - @uidu/dropdown-menu@0.6.25
+  - @uidu/spinner@0.5.20
+  - @uidu/theme@0.6.24
+  - @uidu/tooltip@0.5.26
+  - @uidu/media-core@1.1.3
+
 ## 0.7.11
 
 ### Patch Changes

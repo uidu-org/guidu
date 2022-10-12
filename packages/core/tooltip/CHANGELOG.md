@@ -1,5 +1,16 @@
 # @uidu/tooltip
 
+## 0.5.26
+
+### Patch Changes
+
+- 4e1af7f54: Bump dependencies
+- Updated dependencies [4e1af7f54]
+  - @uidu/analytics@0.6.8
+  - @uidu/popper@0.5.22
+  - @uidu/portal@1.0.2
+  - @uidu/theme@0.6.24
+
 ## 0.5.25
 
 ### Patch Changes
