@@ -9,7 +9,7 @@
   "module": "dist/uidu-analytics.esm.js",
   "types": "dist/uidu-analytics.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.0",
+    "@babel/runtime": "^7.19.4",
     "prop-types": "^15.8.1",
     "tslib": "^2.4.0"
   },

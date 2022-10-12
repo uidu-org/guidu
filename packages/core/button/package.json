@@ -8,7 +8,7 @@
   "main": "dist/uidu-button.cjs.js",
   "module": "dist/uidu-button.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.19.0",
+    "@babel/runtime": "^7.19.4",
     "@uidu/analytics": "^0.6.6",
     "@uidu/spinner": "^0.5.19",
     "@uidu/theme": "^0.6.23",

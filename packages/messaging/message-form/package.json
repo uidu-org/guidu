@@ -9,7 +9,7 @@
   "module": "dist/uidu-message-form.esm.js",
   "types": "dist/uidu-message-form.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.0",
+    "@babel/runtime": "^7.19.4",
     "@loadable/component": "^5.15.2",
     "@types/emoji-mart": "^3.0.9",
     "@types/react-mentions": "^4.1.6",

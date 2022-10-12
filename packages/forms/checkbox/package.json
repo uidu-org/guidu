@@ -10,7 +10,7 @@
   "module": "dist/uidu-checkbox.esm.js",
   "types": "dist/uidu-checkbox.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.0",
+    "@babel/runtime": "^7.19.4",
     "@uidu/field-base": "^4.0.12",
     "react": "^18.2.0",
     "tslib": "^2.4.0"

@@ -9,7 +9,7 @@
   "module": "dist/uidu-stepper.esm.js",
   "types": "dist/uidu-stepper.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.0",
+    "@babel/runtime": "^7.19.4",
     "@uidu/theme": "^0.6.23",
     "classnames": "^2.3.2",
     "query-string": "^7.1.1",

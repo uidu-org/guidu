@@ -9,7 +9,7 @@
   "module": "dist/uidu-gallery.esm.js",
   "types": "dist/uidu-gallery.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.0",
+    "@babel/runtime": "^7.19.4",
     "@tanstack/react-table": "^8.5.15",
     "@tanstack/react-virtual": "^3.0.0-beta.18",
     "@uidu/data-controls": "^4.0.4",

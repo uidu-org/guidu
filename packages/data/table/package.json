@@ -10,7 +10,7 @@
   "module": "dist/uidu-table.esm.js",
   "types": "dist/uidu-table.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.0",
+    "@babel/runtime": "^7.19.4",
     "@heroicons/react": "^2.0.12",
     "@tanstack/react-table": "^8.5.15",
     "@tanstack/react-virtual": "^3.0.0-beta.18",
@@ -30,7 +30,7 @@
     "twin.macro": "^2.8.2"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.5.0",
+    "@faker-js/faker": "^7.6.0",
     "@fortawesome/fontawesome-free": "^6.2.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",

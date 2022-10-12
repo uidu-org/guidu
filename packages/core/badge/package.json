@@ -9,7 +9,7 @@
   "main": "dist/uidu-badge.cjs.js",
   "module": "dist/uidu-badge.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.19.0",
+    "@babel/runtime": "^7.19.4",
     "@uidu/theme": "^0.6.23",
     "tslib": "^2.4.0"
   },
