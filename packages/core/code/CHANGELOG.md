@@ -1,5 +1,13 @@
 # @uidu/code
 
+## 0.5.20
+
+### Patch Changes
+
+- 4e1af7f54: Bump dependencies
+- Updated dependencies [4e1af7f54]
+  - @uidu/theme@0.6.24
+
 ## 0.5.19
 
 ### Patch Changes

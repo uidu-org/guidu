@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 1.1.1
+
+### Patch Changes
+
+- 4e1af7f54: Bump dependencies
+- Updated dependencies [4e1af7f54]
+  - @uidu/analytics@0.6.8
+  - @uidu/theme@0.6.24
+  - @uidu/adf-schema@1.1.1
+  - @uidu/adf-utils@1.1.1
+  - @uidu/analytics-namespaced-context@0.4.18
+  - @uidu/emoji@0.6.24
+  - @uidu/mentions@0.4.25
+  - @uidu/profilecard@0.3.24
+
 ## 1.1.0
 
 ### Minor Changes
