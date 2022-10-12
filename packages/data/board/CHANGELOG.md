@@ -1,5 +1,13 @@
 # @uidu/board
 
+## 1.0.6
+
+### Patch Changes
+
+- 4e1af7f54: Bump dependencies
+- Updated dependencies [4e1af7f54]
+  - @uidu/theme@0.6.24
+
 ## 1.0.5
 
 ### Patch Changes

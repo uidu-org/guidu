@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.6.8
+
+### Patch Changes
+
+- 4e1af7f54: Bump dependencies
+
 ## 0.6.7
 
 ### Patch Changes

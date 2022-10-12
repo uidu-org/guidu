@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 2.0.9
+
+### Patch Changes
+
+- 4e1af7f54: Bump dependencies
+- Updated dependencies [4e1af7f54]
+  - @uidu/dashboard-controls@1.1.8
+  - @uidu/dashlets@2.1.17
+
 ## 2.0.8
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/pagination
 
+## 0.5.24
+
+### Patch Changes
+
+- 4e1af7f54: Bump dependencies
+- Updated dependencies [4e1af7f54]
+  - @uidu/analytics@0.6.8
+  - @uidu/button@1.3.32
+  - @uidu/theme@0.6.24
+
 ## 0.5.23
 
 ### Patch Changes

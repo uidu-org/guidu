@@ -1,5 +1,15 @@
 # @uidu/calendar
 
+## 0.4.22
+
+### Patch Changes
+
+- 4e1af7f54: Bump dependencies
+- Updated dependencies [4e1af7f54]
+  - @uidu/button@1.3.32
+  - @uidu/dropdown-menu@0.6.25
+  - @uidu/shell@2.1.35
+
 ## 0.4.21
 
 ### Patch Changes

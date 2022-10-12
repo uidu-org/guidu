@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.9.17
+
+### Patch Changes
+
+- 4e1af7f54: Bump dependencies
+- Updated dependencies [4e1af7f54]
+  - @uidu/analytics@0.6.8
+  - @uidu/theme@0.6.24
+  - @uidu/tooltip@0.5.26
+
 ## 0.9.16
 
 ### Patch Changes
