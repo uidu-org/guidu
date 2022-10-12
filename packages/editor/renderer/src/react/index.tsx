@@ -156,9 +156,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
           props = this.getProps(node);
         }
 
-        console.log('node', node);
-        console.log('props', props);
-
         const currentPath = (parentInfo && parentInfo.path) || [];
         currentPath.push(node);
 
