@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.36
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+
 ## 2.1.35
 
 ### Patch Changes

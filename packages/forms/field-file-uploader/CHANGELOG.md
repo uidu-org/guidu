@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.0.18
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+
 ## 2.0.17
 
 ### Patch Changes

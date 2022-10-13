@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.6.25
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+
 ## 0.6.24
 
 ### Patch Changes

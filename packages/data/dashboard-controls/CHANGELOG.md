@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 1.1.9
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+
 ## 1.1.8
 
 ### Patch Changes

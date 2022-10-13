@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.33
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+
 ## 0.1.32
 
 ### Patch Changes

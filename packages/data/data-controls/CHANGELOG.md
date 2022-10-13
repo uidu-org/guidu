@@ -1,5 +1,17 @@
 # @uidu/data-controls
 
+## 4.0.7
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+- Updated dependencies [e6b84a169]
+  - @uidu/select@2.1.0
+  - @uidu/data-fields@2.1.15
+  - @uidu/data-manager@4.1.5
+  - @uidu/data-views@3.0.6
+  - @uidu/shell@2.1.36
+
 ## 4.0.6
 
 ### Patch Changes

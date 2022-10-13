@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.30
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+
 ## 0.4.29
 
 ### Patch Changes

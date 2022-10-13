@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.3.25
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+
 ## 0.3.24
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/editor-core
 
+## 1.2.2
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+- Updated dependencies [e6b84a169]
+  - @uidu/select@2.1.0
+  - @uidu/editor-common@1.1.2
+  - @uidu/emoji@0.6.25
+  - @uidu/mentions@0.4.26
+  - @uidu/profilecard@0.3.25
+  - @uidu/status@0.5.22
+  - @uidu/media-card@0.7.13
+
 ## 1.2.1
 
 ### Patch Changes
