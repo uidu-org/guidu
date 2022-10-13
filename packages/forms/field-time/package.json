@@ -17,7 +17,7 @@
     "@uidu/select": "2.0.13",
     "date-fns": "^2.29.3",
     "react": "^18.2.0",
-    "react-intl": "^6.1.2",
+    "react-intl": "^6.2.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

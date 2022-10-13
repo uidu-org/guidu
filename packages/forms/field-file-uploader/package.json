@@ -10,7 +10,7 @@
   "types": "dist/uidu-field-file-uploader.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.19.4",
-    "@fluentui/react": "8.98.0",
+    "@fluentui/react": "8.98.1",
     "@heroicons/react": "^2.0.12",
     "@uidu/button": "1.3.32",
     "@uidu/field-base": "^4.0.16",

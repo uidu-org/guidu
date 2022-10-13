@@ -11,7 +11,7 @@ export type RadioProps = FieldBaseProps<string> & RadioStatelessProps;
 export type RadioGroupProps = {
   isInline?: boolean;
   options: Array<RadioOption>;
-} & FieldBaseProps;
+} & FieldBaseProps<string>;
 
 export type RadioStatelessProps = AllHTMLAttributes<HTMLInputElement> & {
   isInline?: boolean;

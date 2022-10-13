@@ -42,7 +42,7 @@ function RadioGroup({
             name={name}
             isInline={isInline}
             onChange={handleChange}
-            {...(option.id === field.value && { checked: true })}
+            {...(option.id === field.value && { defaultChecked: true })}
           />
         ))}
       </div>

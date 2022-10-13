@@ -1,9 +1,17 @@
 import React from 'react';
+import { OptionProps } from 'react-select';
 
-function Option({ innerProps, data, getStyles, ...otherProps }) {
+function Option<T>({
+  innerProps,
+  data,
+  getStyles,
+  innerRef,
+  ...otherProps
+}: OptionProps<T>) {
   return (
     <div
       {...innerProps}
+      ref={innerRef}
       style={{
         ...getStyles('option', otherProps),
         // padding: '1rem',

@@ -6,7 +6,7 @@ export default function Group() {
   return (
     <FieldExampleScaffold
       component={RadioGroup}
-      defaultValue={[]}
+      defaultValue={'inline'}
       options={[
         {
           id: 'inline',
