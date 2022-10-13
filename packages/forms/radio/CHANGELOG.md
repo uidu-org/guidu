@@ -1,5 +1,11 @@
 # @uidu/radio
 
+## 2.1.0
+
+### Minor Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+
 ## 2.0.5
 
 ### Patch Changes

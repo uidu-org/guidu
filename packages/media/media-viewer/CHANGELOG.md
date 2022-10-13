@@ -1,5 +1,13 @@
 # @uidu/media-viewer
 
+## 0.5.7
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+- Updated dependencies [e6b84a169]
+  - @uidu/shell@2.1.36
+
 ## 0.5.6
 
 ### Patch Changes

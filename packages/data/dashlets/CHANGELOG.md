@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 2.1.18
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+- Updated dependencies [e6b84a169]
+  - @uidu/dashlet-controls@1.1.9
+  - @uidu/data-fields@2.1.15
+  - @uidu/table@3.2.5
+
 ## 2.1.17
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.5.9
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+- Updated dependencies [e6b84a169]
+  - @uidu/payments@1.5.12
+
 ## 0.5.8
 
 ### Patch Changes

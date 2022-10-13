@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 2.0.20
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+- Updated dependencies [e6b84a169]
+  - @uidu/select@2.1.0
+
 ## 2.0.19
 
 ### Patch Changes

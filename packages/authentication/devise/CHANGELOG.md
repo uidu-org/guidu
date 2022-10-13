@@ -1,5 +1,14 @@
 # @uidu/devise
 
+## 0.7.23
+
+### Patch Changes
+
+- e6b84a169: CU-306rr8d[review] and fix select menu scroll updates
+- Updated dependencies [e6b84a169]
+  - @uidu/shell@2.1.36
+  - @uidu/field-phone@2.0.19
+
 ## 0.7.22
 
 ### Patch Changes
