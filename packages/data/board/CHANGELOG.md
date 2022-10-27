@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 1.0.7
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 1.0.6
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 2.0.10
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/dashboard-controls@1.1.10
+  - @uidu/dashlets@2.1.19
+
 ## 2.0.9
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/field-range
 
+## 2.0.5
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/field-base@4.0.17
+
 ## 2.0.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.6.26
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 0.6.25
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.1.4
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/data-fields@2.1.16
+
 ## 3.1.3
 
 ### Patch Changes

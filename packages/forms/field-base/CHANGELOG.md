@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.0.17
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/form@2.1.10
+
 ## 4.0.16
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/message
 
+## 0.5.55
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/menu@0.8.6
+  - @uidu/media-card@0.7.14
+  - @uidu/media-core@1.1.4
+  - @uidu/media-viewer@0.5.8
+  - @uidu/message-form@0.4.28
+
 ## 0.5.54
 
 ### Patch Changes

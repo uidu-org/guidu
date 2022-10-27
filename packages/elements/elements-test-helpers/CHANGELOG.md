@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.31
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 0.4.30
 
 ### Patch Changes

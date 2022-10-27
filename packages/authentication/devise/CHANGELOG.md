@@ -1,5 +1,15 @@
 # @uidu/devise
 
+## 0.7.24
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/field-phone@2.0.20
+  - @uidu/form@2.1.10
+  - @uidu/shell@2.1.37
+
 ## 0.7.23
 
 ### Patch Changes

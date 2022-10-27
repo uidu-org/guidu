@@ -1,5 +1,19 @@
 # @uidu/renderer
 
+## 1.2.3
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/adf-schema@1.1.2
+  - @uidu/editor-common@1.1.3
+  - @uidu/editor-json-transformer@1.0.3
+  - @uidu/mentions@0.4.27
+  - @uidu/status@0.5.23
+  - @uidu/task-decision@0.4.30
+  - @uidu/media-card@0.7.14
+
 ## 1.2.2
 
 ### Patch Changes

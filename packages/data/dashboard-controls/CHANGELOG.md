@@ -1,5 +1,13 @@
 # @uidu/dashboard-controls
 
+## 1.1.10
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/form@2.1.10
+
 ## 1.1.9
 
 ### Patch Changes

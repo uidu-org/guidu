@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 3.0.7
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/data-manager@4.2.0
+  - @uidu/data-controls@4.0.8
+  - @uidu/form@2.1.10
+  - @uidu/select@2.1.1
+  - @uidu/field-number@2.0.18
+
 ## 3.0.6
 
 ### Patch Changes

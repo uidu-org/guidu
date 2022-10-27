@@ -1,5 +1,13 @@
 # @uidu/onboarding
 
+## 1.3.15
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/modal-dialog@1.1.0
+
 ## 1.3.14
 
 ### Patch Changes

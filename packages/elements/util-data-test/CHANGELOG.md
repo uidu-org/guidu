@@ -1,5 +1,15 @@
 # @uidu/util-data-test
 
+## 0.4.26
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/emoji@0.6.26
+  - @uidu/mentions@0.4.27
+  - @uidu/task-decision@0.4.30
+
 ## 0.4.25
 
 ### Patch Changes

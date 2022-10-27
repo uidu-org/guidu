@@ -1,5 +1,24 @@
 # @uidu/data-manager
 
+## 4.2.0
+
+### Minor Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
+### Patch Changes
+
+- Updated dependencies [0031cc678]
+  - @uidu/menu@0.8.6
+  - @uidu/board@1.0.7
+  - @uidu/data-controls@4.0.8
+  - @uidu/data-fields@2.1.16
+  - @uidu/data-views@3.0.7
+  - @uidu/gallery@2.0.9
+  - @uidu/list@3.1.4
+  - @uidu/table@3.2.6
+  - @uidu/shell@2.1.37
+
 ## 4.1.5
 
 ### Patch Changes

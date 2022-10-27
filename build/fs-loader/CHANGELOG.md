@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.52
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 0.1.51
 
 ### Patch Changes

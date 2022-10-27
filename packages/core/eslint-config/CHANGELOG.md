@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.34
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 0.1.33
 
 ### Patch Changes

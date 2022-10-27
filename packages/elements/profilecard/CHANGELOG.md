@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.3.26
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 0.3.25
 
 ### Patch Changes

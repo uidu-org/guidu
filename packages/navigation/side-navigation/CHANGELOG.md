@@ -1,5 +1,17 @@
 # @uidu/navigation
 
+## 1.2.0
+
+### Minor Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
+### Patch Changes
+
+- Updated dependencies [0031cc678]
+  - @uidu/menu@0.8.6
+  - @uidu/shell@2.1.37
+
 ## 1.1.4
 
 ### Patch Changes
