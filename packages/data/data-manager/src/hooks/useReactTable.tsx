@@ -2,6 +2,7 @@
 import {
   CellContext,
   ColumnDef,
+  FilterFn,
   getCoreRowModel,
   getExpandedRowModel,
   getFacetedMinMaxValues,
@@ -17,6 +18,13 @@ import {
 import { Aggregated, Header } from '@uidu/table';
 import React, { useCallback, useMemo } from 'react';
 import { fuzzyFilter } from '../utils';
+
+const filterFn: FilterFn<any> = (row, columnId, filterValue: string) => {
+  const search = filterValue.toLowerCase();
+  return row.getValue<string>(columnId)?.toLowerCase().includes(search);
+};
+
+filterFn.autoRemove = () => false;
 
 export default function useReactTable<T>(props: TableOptions<T>): Table<T> {
   const Cell = useCallback(
@@ -40,6 +48,7 @@ export default function useReactTable<T>(props: TableOptions<T>): Table<T> {
       header: Header,
       aggregatedCell: Aggregated,
       cell: Cell,
+      filterFn,
     }),
     [Cell],
   );
@@ -53,8 +62,8 @@ export default function useReactTable<T>(props: TableOptions<T>): Table<T> {
     },
     // Pipeline
     getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
     getExpandedRowModel: getExpandedRowModel(),
+    getSortedRowModel: getSortedRowModel(),
     getGroupedRowModel: getGroupedRowModel(),
     getFacetedRowModel: getFacetedRowModel(),
     getFacetedUniqueValues: getFacetedUniqueValues(),

@@ -12,7 +12,7 @@
     "@babel/runtime": "^7.19.4",
     "@loadable/component": "^5.15.2",
     "@types/emoji-mart": "^3.0.9",
-    "@types/react-mentions": "^4.1.6",
+    "@types/react-mentions": "^4.1.7",
     "@uidu/dropdown-menu": "^0.6.25",
     "@uidu/field-mentions": "^2.0.5",
     "@uidu/field-text": "^2.0.4",

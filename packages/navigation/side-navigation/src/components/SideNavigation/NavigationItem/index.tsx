@@ -14,9 +14,10 @@ import NavigationSubItemSkeleton from '../NavigationSubItemSkeleton';
 
 const StyledNavigationActions = styled.div<{ $isActionOpen: boolean }>`
   position: absolute;
-  right: 0.25rem;
+  right: 0rem;
+  padding: 0.375rem;
+  height: 100%;
   display: flex;
-  transition: opacity linear 300ms;
   opacity: ${({ $isActionOpen }) => ($isActionOpen ? 1 : 0)};
 `;
 
@@ -28,7 +29,7 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   display: flex;
   border-radius: 0.375rem;
   color: rgb(var(--body-secondary-color));
-  padding: 0.5rem 0.5rem;
+  padding: 0.375rem 0.5rem;
   position: relative;
 
   &:hover,
@@ -38,9 +39,14 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   }
 
   &:hover ${StyledNavigationActions} {
-    transition: opacity linear 300ms;
     opacity: 1;
+    background-color: rgb(var(--body-on-secondary-bg));
   }
+
+  // &:hover ${StyledNavigationAfter} {
+  //   transition: opacity linear 300ms;
+  //   opacity: 0;
+  // }
 
   &:hover ${StyledNavigationText} {
     padding-right: ${({ $actionsCount }) => `${$actionsCount * 2}rem`};
@@ -120,6 +126,7 @@ export default function NavigationItem({
           >
             {text}
           </StyledNavigationText>
+          {!!after && <StyledNavigationAfter>{after}</StyledNavigationAfter>}
           {actions.length > 0 && (
             <StyledNavigationActions
               onClick={(e) => e.stopPropagation()}
@@ -131,7 +138,6 @@ export default function NavigationItem({
               />
             </StyledNavigationActions>
           )}
-          {!!after && <StyledNavigationAfter>{after}</StyledNavigationAfter>}
         </StyledNavigationLink>
       </StyledNavigationItem>
       {items.length > 0 && renderSubItems()}

@@ -22,7 +22,7 @@ export const StyledSection = styled.div<{
   &:after {
     content: '';
     display: block;
-    height: 0.75rem;
+    height: 0.375rem;
   }
   /**
   NOTE: Firefox allows elements that have "overflow: auto" to gain focus (as if it had tab-index="0")

@@ -23,54 +23,66 @@ import NavigationSubItem from './SideNavigation/NavigationSubItem';
  */
 
 // Header
-const NavigationHeader = ({ text, after, before }) => (
-  <ShellHeader>
-    <NavigationHeaderComponent text={text} after={after} before={before} />
-  </ShellHeader>
-);
+export function NavigationHeader({ text, after, before }) {
+  return (
+    <ShellHeader>
+      <NavigationHeaderComponent text={text} after={after} before={before} />
+    </ShellHeader>
+  );
+}
 
-const NavigationHeaderMultiline = ({ children }) => (
-  <NavigationHeaderMultilineComponent>
-    {children}
-  </NavigationHeaderMultilineComponent>
-);
+export function NavigationHeaderMultiline({ children }) {
+  return (
+    <NavigationHeaderMultilineComponent>
+      {children}
+    </NavigationHeaderMultilineComponent>
+  );
+}
 
-const NavigationHeaderSkeleton = ({ text, after, before }) => (
-  <ShellHeader>
-    <NavigationHeaderSkeletonComponent
-      text={text}
-      after={after}
-      before={before}
-    />
-  </ShellHeader>
-);
+export function NavigationHeaderSkeleton({ text, after, before }) {
+  return (
+    <ShellHeader>
+      <NavigationHeaderSkeletonComponent
+        text={text}
+        after={after}
+        before={before}
+      />
+    </ShellHeader>
+  );
+}
 
 // Section
-const NavigationSection = ({ items, ...props }) => (
-  <ShellBody>
-    <ShellMain>
-      <ScrollableContainer {...props}>
-        <ItemsRenderer items={items} />
-      </ScrollableContainer>
-    </ShellMain>
-  </ShellBody>
-);
+export function NavigationSection({ items, ...props }) {
+  return (
+    <ShellBody>
+      <ShellMain>
+        <ScrollableContainer {...props}>
+          <ItemsRenderer items={items} />
+        </ScrollableContainer>
+      </ShellMain>
+    </ShellBody>
+  );
+}
 
 // Footer
-const NavigationFooter = ({ items, ...props }) => (
-  <ShellFooter {...props}>
-    <ItemsRenderer items={items} />
-  </ShellFooter>
-);
+export function NavigationFooter({ items, ...props }) {
+  return (
+    <ShellFooter {...props}>
+      <ItemsRenderer items={items} />
+    </ShellFooter>
+  );
+}
 
 // Group
-const NavigationGroupHeading = ({ text, ...props }) => (
-  <NavigationGroupHeadingComponent {...props}>
-    {text}
-  </NavigationGroupHeadingComponent>
-);
+export function NavigationGroupHeading({ text, ...props }) {
+  return (
+    <NavigationGroupHeadingComponent {...props}>
+      {text}
+    </NavigationGroupHeadingComponent>
+  );
+}
 
-const NavigationGroup = ({
+function NavigationGroup({
   heading,
   separator,
   items,
@@ -80,8 +92,8 @@ const NavigationGroup = ({
   withMargin,
   className,
   ...props
-}) =>
-  items.length ? (
+}) {
+  return items.length ? (
     <NavigationGroupComponent
       heading={heading}
       before={before}
@@ -94,6 +106,7 @@ const NavigationGroup = ({
       <ItemsRenderer items={items} {...props} />
     </NavigationGroupComponent>
   ) : null;
+}
 
 const Debug = (props: any) => (
   <pre

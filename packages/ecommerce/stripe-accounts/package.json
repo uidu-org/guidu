@@ -10,17 +10,17 @@
   "types": "dist/uidu-stripe-accounts.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.19.4",
-    "@stripe/react-stripe-js": "^1.13.0",
-    "@stripe/stripe-js": "^1.41.0",
+    "@stripe/react-stripe-js": "^1.14.0",
+    "@stripe/stripe-js": "^1.42.0",
     "@uidu/field-text": "^2.0.4",
     "@uidu/form": "^2.1.9",
     "@uidu/payments": "^1.5.12",
     "@uidu/slider": "^1.7.22",
     "@uidu/spinner": "^0.5.20",
     "@uidu/stepper": "^0.4.24",
-    "dayjs": "^1.11.5",
+    "dayjs": "^1.11.6",
     "react": "^18.2.0",
-    "react-intl": "^6.2.0",
+    "react-intl": "^6.2.1",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

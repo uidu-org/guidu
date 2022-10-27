@@ -133,6 +133,7 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
                             });
                           },
                           isOpen: true,
+                          after: <Badge max={10}>{20}</Badge>,
                           actions: [
                             {
                               icon: <MoreHorizontal size={14} />,

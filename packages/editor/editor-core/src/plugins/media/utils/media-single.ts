@@ -185,11 +185,11 @@ export const insertMediaSingleNode = (
   const shouldSplit =
     grandParent && grandParent.type.validContent(Fragment.from(node));
   let fileExtension: string | undefined;
-  if (mediaState.metadata.filename) {
-    const extensionIdx = mediaState.metadata.filename.lastIndexOf('.');
+  if (mediaState.metadata?.filename) {
+    const extensionIdx = mediaState.metadata?.filename.lastIndexOf('.');
     fileExtension =
       extensionIdx >= 0
-        ? mediaState.metadata.filename.substring(extensionIdx + 1)
+        ? mediaState.metadata?.filename.substring(extensionIdx + 1)
         : undefined;
   }
 

@@ -16,7 +16,7 @@
   "types": "dist/uidu-field-range.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.19.4",
-    "@radix-ui/react-slider": "^1.0.0",
+    "@radix-ui/react-slider": "^1.1.0",
     "@uidu/field-base": "^4.0.16",
     "tslib": "^2.4.0"
   },

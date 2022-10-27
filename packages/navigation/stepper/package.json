@@ -16,7 +16,7 @@
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-router-dom": "^5.3.4",
-    "react-scroll": "^1.8.7",
+    "react-scroll": "^1.8.8",
     "styled-components": "^5.3.6",
     "tslib": "^2.4.0"
   },

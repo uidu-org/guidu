@@ -48,6 +48,11 @@ export interface ModalTitleProps {
   isMultiline?: boolean;
 
   /**
+   * Apply classnames to the title.
+   */
+  className?: string;
+
+  /**
    * A `testId` prop is provided for specified elements,
    * which is a unique string that appears as a data attribute `data-testid` in the rendered code,
    * serving as a hook for automated tests.
@@ -61,6 +66,7 @@ function ModalTitle(props: ModalTitleProps) {
     children,
     isMultiline = true,
     testId: userDefinedTestId,
+    className,
   } = props;
   const { titleId, testId: modalTestId } = useModal();
 
@@ -70,6 +76,7 @@ function ModalTitle(props: ModalTitleProps) {
     <h1
       tw="flex min-w-0 m-0 items-center text-2xl font-medium"
       data-testid={testId}
+      className={className}
     >
       {appearance && (
         <TitleIcon appearance={appearance} isMultiline={isMultiline} />

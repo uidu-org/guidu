@@ -1,71 +1,81 @@
-import DropdownMenu, {
-  DropdownItem,
-  DropdownItemGroup,
-} from '@uidu/dropdown-menu';
-import React, { useState } from 'react';
+import { ButtonItem, MenuGroup, Section } from '@uidu/menu';
+import Popup, { TriggerProps } from '@uidu/popup';
+import React, { useCallback, useState } from 'react';
 import { StyledNavigationAction } from './styled';
 
-const DropdownActions = ({
-  onToggle,
-  isCollapsed,
-  action: { icon, actions },
-}) => {
+function DropdownActions({ onToggle, isCollapsed, action: { icon, actions } }) {
   const [isOpen, setIsOpen] = useState(false);
-  return (
-    <DropdownMenu
-      boundariesElement="scrollParent"
-      position="bottom right"
-      isOpen={isOpen}
-      onOpenChange={(params) => {
-        setIsOpen(params.isOpen);
-        onToggle(params);
-      }}
-      trigger={
-        <StyledNavigationAction
-          type="button"
-          onClick={(e) => {
-            e.preventDefault();
-            setIsOpen(!isOpen);
-          }}
-          className="btn btn-sm px-2"
-          isCollapsed={isCollapsed}
-        >
-          {icon}
-        </StyledNavigationAction>
-      }
-    >
-      {actions.map((action) => {
-        if (action.actions) {
-          return (
-            <DropdownItemGroup title={action.text}>
-              {action.actions.map(({ onClick, text, icon }) => (
-                <DropdownItem
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onClick(e);
-                  }}
-                  elemBefore={icon}
-                >
-                  {text}
-                </DropdownItem>
-              ))}
-            </DropdownItemGroup>
-          );
-        }
-        return (
-          <DropdownItem
-            onClick={(e) => {
-              e.preventDefault();
-              action.onClick(e);
-            }}
-            elemBefore={action.icon}
-          >
-            {action.text}
-          </DropdownItem>
-        );
-      })}
-    </DropdownMenu>
+
+  const Trigger = useCallback(
+    (triggerProps: TriggerProps) => (
+      <StyledNavigationAction
+        {...triggerProps}
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          setIsOpen(!isOpen);
+        }}
+        tw="p-0.5"
+        isCollapsed={isCollapsed}
+      >
+        {icon}
+      </StyledNavigationAction>
+    ),
+    [icon, isCollapsed, isOpen],
   );
-};
+
+  const Content = useCallback(
+    () => (
+      <MenuGroup>
+        {actions.map((action) => {
+          if (action.actions) {
+            return (
+              <Section title={action.text}>
+                {action.actions.map(({ onClick, text, icon }) => (
+                  <ButtonItem
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onClick(e);
+                    }}
+                    iconBefore={icon}
+                  >
+                    {text}
+                  </ButtonItem>
+                ))}
+              </Section>
+            );
+          }
+          return (
+            <ButtonItem
+              onClick={(e) => {
+                e.preventDefault();
+                action.onClick(e);
+              }}
+              iconBefore={action.icon}
+            >
+              {action.text}
+            </ButtonItem>
+          );
+        })}
+      </MenuGroup>
+    ),
+    [actions],
+  );
+
+  return (
+    <Popup
+      // boundariesElement="scrollParent"
+      // position="bottom right"
+      isOpen={isOpen}
+      onClose={() => setIsOpen(false)}
+      // onOpenChange={(params) => {
+      //   setIsOpen(params.isOpen);
+      //   onToggle(params);
+      // }}
+      trigger={Trigger}
+      content={Content}
+    />
+  );
+}
 
 export default DropdownActions;

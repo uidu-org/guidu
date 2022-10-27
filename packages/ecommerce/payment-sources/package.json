@@ -10,13 +10,13 @@
   "types": "dist/uidu-payment-sources.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.19.4",
-    "@stripe/react-stripe-js": "^1.13.0",
-    "@stripe/stripe-js": "^1.41.0",
+    "@stripe/react-stripe-js": "^1.14.0",
+    "@stripe/stripe-js": "^1.42.0",
     "@uidu/form": "^2.1.9",
     "@uidu/payments": "^1.5.12",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
-    "react-scroll": "^1.8.7",
+    "react-scroll": "^1.8.8",
     "tslib": "^2.4.0"
   },
   "devDependencies": {

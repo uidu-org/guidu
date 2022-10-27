@@ -11,9 +11,9 @@
   "types": "dist/uidu-modal-dialog.cjs.d.ts",
   "dependencies": {
     "@atlaskit/ds-lib": "^1.4.2",
-    "@atlaskit/focus-ring": "^1.0.6",
+    "@atlaskit/focus-ring": "^1.1.0",
     "@atlaskit/icon": "^21.10.7",
-    "@atlaskit/motion": "^1.2.2",
+    "@atlaskit/motion": "^1.2.3",
     "@babel/runtime": "^7.19.4",
     "@uidu/analytics": "^0.6.8",
     "@uidu/blanket": "^0.6.10",

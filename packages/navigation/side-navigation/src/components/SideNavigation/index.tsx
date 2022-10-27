@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import ItemsRenderer from '../ItemsRenderer';
 import { NavigationProps } from './types';
 
@@ -19,7 +19,15 @@ function SideNavigation({
     );
   }
 
+  if (children) {
+    return (
+      <div tw="overflow-hidden flex flex-col w-full h-full absolute">
+        {children}
+      </div>
+    );
+  }
+
   return children;
 }
 
-export default memo(SideNavigation);
+export default SideNavigation;

@@ -1,3 +1,4 @@
+import Button from '@uidu/button';
 import styled, { css } from 'styled-components';
 
 export const StyledNavigationActions = styled.div`
@@ -5,7 +6,7 @@ export const StyledNavigationActions = styled.div`
   align-items: center;
 `;
 
-export const StyledNavigationAction = styled.button<{ isCollapsed?: boolean }>`
+export const StyledNavigationAction = styled(Button)<{ isCollapsed?: boolean }>`
   border-radius: 0.25rem;
 
   &:hover {

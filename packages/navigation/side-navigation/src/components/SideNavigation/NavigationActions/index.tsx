@@ -1,7 +1,7 @@
 import Tooltip from '@uidu/tooltip';
 import React from 'react';
 import DropdownActions from './DropdownActions';
-import { StyledNavigationAction, StyledNavigationActions } from './styled';
+import { StyledNavigationAction } from './styled';
 
 export default function NavigationActions({
   actions = [],
@@ -9,7 +9,7 @@ export default function NavigationActions({
   isCollapsed = false,
 }) {
   return (
-    <StyledNavigationActions>
+    <div tw="space-x-1 flex">
       {actions.map((action) => {
         if (action.actions) {
           return (
@@ -28,7 +28,7 @@ export default function NavigationActions({
               e.preventDefault();
               action.onClick(e);
             }}
-            className="btn btn-sm px-2"
+            tw="p-0.5"
             isCollapsed={isCollapsed}
           >
             {action.tooltip ? (
@@ -41,6 +41,6 @@ export default function NavigationActions({
           </StyledNavigationAction>
         );
       })}
-    </StyledNavigationActions>
+    </div>
   );
 }
