@@ -1,5 +1,16 @@
 # @uidu/field-image-uploader
 
+## 3.0.17
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/field-base@4.0.17
+  - @uidu/field-range@2.0.5
+  - @uidu/form@2.1.10
+  - @uidu/media-core@1.1.4
+
 ## 3.0.16
 
 ### Patch Changes

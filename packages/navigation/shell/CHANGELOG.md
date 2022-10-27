@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.37
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 2.1.36
 
 ### Patch Changes

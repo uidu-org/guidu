@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 1.1.4
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 1.1.3
 
 ### Patch Changes

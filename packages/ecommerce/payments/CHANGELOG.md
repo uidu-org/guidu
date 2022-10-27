@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 1.5.13
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/field-base@4.0.17
+  - @uidu/form@2.1.10
+
 ## 1.5.12
 
 ### Patch Changes

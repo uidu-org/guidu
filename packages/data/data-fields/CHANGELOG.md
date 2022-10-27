@@ -1,5 +1,19 @@
 # @uidu/data-fields
 
+## 2.1.16
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/menu@0.8.6
+  - @uidu/field-time@2.0.21
+  - @uidu/field-toggle@2.0.18
+  - @uidu/form@2.1.10
+  - @uidu/select@2.1.1
+  - @uidu/field-date@2.0.18
+  - @uidu/field-number@2.0.18
+
 ## 2.1.15
 
 ### Patch Changes

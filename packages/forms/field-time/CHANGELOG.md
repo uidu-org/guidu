@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.0.21
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/field-base@4.0.17
+  - @uidu/form@2.1.10
+  - @uidu/select@2.1.1
+
 ## 2.0.20
 
 ### Patch Changes

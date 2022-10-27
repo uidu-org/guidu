@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.8.6
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 0.8.5
 
 ### Patch Changes

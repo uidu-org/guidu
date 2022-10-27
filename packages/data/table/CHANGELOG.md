@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 3.2.6
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/data-manager@4.2.0
+  - @uidu/menu@0.8.6
+  - @uidu/data-fields@2.1.16
+
 ## 3.2.5
 
 ### Patch Changes

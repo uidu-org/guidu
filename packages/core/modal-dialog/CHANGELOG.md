@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 1.1.0
+
+### Minor Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 1.0.16
 
 ### Patch Changes

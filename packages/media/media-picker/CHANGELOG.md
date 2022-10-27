@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.9.4
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/media-core@1.1.4
+
 ## 0.9.3
 
 ### Patch Changes

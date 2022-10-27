@@ -1,5 +1,14 @@
 # @uidu/message-form
 
+## 0.4.28
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/form@2.1.10
+  - @uidu/message@0.5.55
+
 ## 0.4.27
 
 ### Patch Changes

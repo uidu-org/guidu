@@ -1,5 +1,28 @@
 # @uidu/editor-core
 
+## 1.2.3
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/modal-dialog@1.1.0
+  - @uidu/menu@0.8.6
+  - @uidu/adf-schema@1.1.2
+  - @uidu/editor-common@1.1.3
+  - @uidu/editor-json-transformer@1.0.3
+  - @uidu/emoji@0.6.26
+  - @uidu/mentions@0.4.27
+  - @uidu/profilecard@0.3.26
+  - @uidu/status@0.5.23
+  - @uidu/task-decision@0.4.30
+  - @uidu/form@2.1.10
+  - @uidu/select@2.1.1
+  - @uidu/media-card@0.7.14
+  - @uidu/media-core@1.1.4
+  - @uidu/media-picker@0.9.4
+  - @uidu/field-date@2.0.18
+
 ## 1.2.2
 
 ### Patch Changes

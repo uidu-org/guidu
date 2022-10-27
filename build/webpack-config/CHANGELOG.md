@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.3.38
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/fs-loader@0.1.52
+  - @uidu/nav-info-loader@0.2.6
+
 ## 0.3.37
 
 ### Patch Changes

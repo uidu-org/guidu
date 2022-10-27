@@ -1,5 +1,13 @@
 # @uidu/inline-edit
 
+## 0.3.30
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/form@2.1.10
+
 ## 0.3.29
 
 ### Patch Changes

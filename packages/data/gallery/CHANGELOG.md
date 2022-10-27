@@ -1,5 +1,15 @@
 # @uidu/gallery
 
+## 2.0.9
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/data-controls@4.0.8
+  - @uidu/data-fields@2.1.16
+  - @uidu/shell@2.1.37
+
 ## 2.0.8
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.5.23
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 0.5.22
 
 ### Patch Changes

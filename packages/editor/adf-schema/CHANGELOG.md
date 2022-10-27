@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 1.1.2
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/media-core@1.1.4
+
 ## 1.1.1
 
 ### Patch Changes

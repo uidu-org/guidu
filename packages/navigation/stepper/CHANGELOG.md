@@ -1,5 +1,11 @@
 # @uidu/stepper
 
+## 0.4.25
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 0.4.24
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.4.27
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 0.4.26
 
 ### Patch Changes

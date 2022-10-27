@@ -1,5 +1,14 @@
 # @uidu/media-viewer
 
+## 0.5.8
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/media-core@1.1.4
+  - @uidu/shell@2.1.37
+
 ## 0.5.7
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/task-decision
 
+## 0.4.30
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+
 ## 0.4.29
 
 ### Patch Changes

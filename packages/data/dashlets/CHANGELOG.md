@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 2.1.19
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/dashboard-manager@2.0.10
+  - @uidu/dashlet-controls@1.1.10
+  - @uidu/data-fields@2.1.16
+  - @uidu/table@3.2.6
+
 ## 2.1.18
 
 ### Patch Changes

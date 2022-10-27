@@ -1,5 +1,13 @@
 # @uidu/media-card
 
+## 0.7.14
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/media-core@1.1.4
+
 ## 0.7.13
 
 ### Patch Changes

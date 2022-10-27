@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 1.0.3
+
+### Patch Changes
+
+- 0031cc678: Side navigation spacing, modal classnames
+- Updated dependencies [0031cc678]
+  - @uidu/adf-schema@1.1.2
+
 ## 1.0.2
 
 ### Patch Changes
