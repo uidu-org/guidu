@@ -28,9 +28,10 @@
     "website"
   ],
   "scripts": {
-    "build": "                               yarn preconstruct build && yarn build:adf-schema:json-schema && yarn build:pkg",
+    "build": "                               yarn preconstruct build && yarn build:adf-schema:json-schema && yarn build:email-renderer:styles && yarn build:pkg",
     "build:adf-schema:checkuptodate": "      cd packages/editor/adf-schema && yarn run generate:json-schema && git diff --exit-code",
     "build:adf-schema:json-schema": "        cd packages/editor/adf-schema && yarn run build:json-schema && echo 'Done.'",
+    "build:email-renderer:styles": "         cd packages/editor/email-renderer && yarn run build:styles",
     "build:editor-mobile-bridge": "          cd packages/editor/editor-mobile-bridge && yarn build:minimize",
     "build:pkg": "                           bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects",
     "build:website": "                       yarn install --pure-lockfile && cd website && yarn build",

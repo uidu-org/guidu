@@ -30,7 +30,7 @@ function DropdownActions({ onToggle, isCollapsed, action: { icon, actions } }) {
         {actions.map((action) => {
           if (action.actions) {
             return (
-              <Section title={action.text}>
+              <Section title={action.text} hasSeparator>
                 {action.actions.map(({ onClick, text, icon }) => (
                   <ButtonItem
                     onClick={(e) => {
