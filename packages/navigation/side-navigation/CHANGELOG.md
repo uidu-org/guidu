@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 1.2.1
+
+### Patch Changes
+
+- 0236c7bcf: Initial email renderer
+
 ## 1.2.0
 
 ### Minor Changes
