@@ -153,7 +153,7 @@
     "@types/markdown-it": "^12.2.3",
     "@types/markerclustererplus": "^2.1.33",
     "@types/mkdirp": "^1.0.2",
-    "@types/node": "^16.18.3",
+    "@types/node": "^18.11.9",
     "@types/overlayscrollbars": "^1.12.1",
     "@types/prettier": "^2.7.1",
     "@types/prismjs": "^1.26.0",
@@ -188,9 +188,9 @@
     "@types/zxcvbn": "^4.4.1",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
-    "@uidu/field-base": "4.0.17",
-    "@uidu/field-time": "2.0.21",
-    "@uidu/form": "2.1.10",
+    "@uidu/field-base": "4.0.18",
+    "@uidu/field-time": "2.0.22",
+    "@uidu/form": "2.1.11",
     "@uidu/profilecard": "^0.3.0",
     "@uifabric/file-type-icons": "^7.10.10",
     "@uppy/aws-s3": "^3.0.4",
@@ -440,7 +440,7 @@
     "zxcvbn": "^4.4.2"
   },
   "engines": {
-    "node": "^15.0.0",
+    "node": "^18.0.0",
     "npm": "^6.1.0",
     "yarn": "^1.9.2"
   },
