@@ -11,6 +11,10 @@ export default function Basic() {
       options={{
         autoProceed: true,
         allowMultipleUploadBatches: false,
+        restrictions: {
+          maxNumberOfFiles: 1,
+          allowedFileTypes: ['.csv', '.txt'],
+        },
       }}
       moduleOptions={{
         width: '100%',

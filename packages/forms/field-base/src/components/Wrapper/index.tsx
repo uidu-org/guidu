@@ -37,18 +37,20 @@ export default function Wrapper<T>({
     return input;
   }
 
-  input = (
-    <InputGroup
-      addonsAfter={[
-        ...(fieldState?.error
-          ? [<ErrorIcon fieldState={fieldState} />].concat(addonsAfter || [])
-          : addonsAfter || []),
-      ]}
-      addonsBefore={addonsBefore}
-    >
-      {input}
-    </InputGroup>
-  );
+  if (addonsBefore || addonsAfter || fieldState?.error) {
+    input = (
+      <InputGroup
+        addonsAfter={[
+          ...(fieldState?.error
+            ? [<ErrorIcon fieldState={fieldState} />].concat(addonsAfter || [])
+            : addonsAfter || []),
+        ]}
+        addonsBefore={addonsBefore}
+      >
+        {input}
+      </InputGroup>
+    );
+  }
 
   if (floatLabel) {
     return (

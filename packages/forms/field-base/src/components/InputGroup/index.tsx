@@ -32,7 +32,7 @@ function InputGroup({
   };
 
   return (
-    <div tw="relative w-full">
+    <div tw="relative w-full h-full">
       {renderAddons(addonsBefore, 'before')}
       {children}
       {renderAddons(addonsAfter, 'after')}
