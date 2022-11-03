@@ -125,6 +125,7 @@ function FieldImageUploaderStateless({
       })
 
       .on('complete', (result) => {
+        setIsLoading(false);
         setProgress(null);
         if (result.failed.length > 0) {
           setError(name, { type: 'custom', message: result.failed[0].error });
@@ -138,9 +139,11 @@ function FieldImageUploaderStateless({
         }
       })
       .on('error', (error) => {
+        setIsLoading(false);
         setError(name, { type: 'custom', message: error.message });
       })
       .on('upload-error', (_file, error) => {
+        setIsLoading(false);
         setError(name, { type: 'custom', message: error.message });
       })
       .on('file-removed', () => {
@@ -148,15 +151,21 @@ function FieldImageUploaderStateless({
         onChange(name, '');
       })
       .on('restriction-failed', (_file, error) => {
+        setIsLoading(false);
         setError(name, { type: 'custom', message: error.message });
       }),
   );
 
+  const thumbnailPlugin = useMemo(
+    () => uppy.getPlugin('ThumbnailGenerator'),
+    [uppy],
+  );
+
   useEffect(() => {
-    uppy.getPlugin('ThumbnailGenerator').setOptions({
+    thumbnailPlugin?.setOptions({
       thumbnailWidth: calculateWidth() * 2, // max scale
     });
-  }, [uppy, calculateWidth]);
+  }, [calculateWidth, thumbnailPlugin]);
 
   const mergeValueWithMetadata = useCallback(() => {
     if (value) {

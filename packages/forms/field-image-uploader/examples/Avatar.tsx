@@ -61,10 +61,10 @@ export default function Avatar() {
       // onFocus={this.onFocus}
       label={null}
       uploadOptions={localUploadOptions({
-        endpoint: 'https://uidu.uidu.local:8443/upload',
+        endpoint: 'https://uidu.local:8443/upload',
       })}
       {...inputDefaultProps}
-      tw="aspect-w-1 aspect-h-1"
+      tw="w-40 h-40 border rounded"
     />
   );
 }
