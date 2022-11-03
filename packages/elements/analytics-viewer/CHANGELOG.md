@@ -1,5 +1,13 @@
 # @uidu/analytics-viewer
 
+## 0.4.21
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/analytics@0.6.9
+
 ## 0.4.20
 
 ### Patch Changes

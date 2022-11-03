@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.4.31
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/analytics@0.6.9
+  - @uidu/avatar-group@2.6.21
+  - @uidu/button@1.3.33
+  - @uidu/spinner@0.5.21
+  - @uidu/theme@0.6.25
+  - @uidu/analytics-namespaced-context@0.4.19
+
 ## 0.4.30
 
 ### Patch Changes

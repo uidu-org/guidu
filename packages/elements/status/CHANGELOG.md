@@ -1,5 +1,17 @@
 # @uidu/status
 
+## 0.5.24
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/analytics@0.6.9
+  - @uidu/lozenge@0.5.20
+  - @uidu/theme@0.6.25
+  - @uidu/analytics-gas-types@0.3.5
+  - @uidu/field-text@2.0.5
+
 ## 0.5.23
 
 ### Patch Changes

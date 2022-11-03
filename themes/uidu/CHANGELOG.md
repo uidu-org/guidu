@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.4
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+
 ## 0.4.3
 
 ### Patch Changes

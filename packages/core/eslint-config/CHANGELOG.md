@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.35
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+
 ## 0.1.34
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics-listeners",
-  "version": "0.4.18",
+  "version": "0.4.19",
   "description": "Fabric analytics listeners to be used by the products",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/analytics-listeners",
   "license": "Apache-2.0",
@@ -13,16 +13,16 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.1",
-    "@uidu/analytics": "^0.6.8",
-    "@uidu/analytics-gas-types": "^0.3.4",
-    "@uidu/analytics-namespaced-context": "^0.4.18",
+    "@uidu/analytics": "^0.6.9",
+    "@uidu/analytics-gas-types": "^0.3.5",
+    "@uidu/analytics-namespaced-context": "^0.4.19",
     "lodash.last": "^3.0.0",
     "lodash.merge": "^4.6.2",
     "tslib": "^2.4.1"
   },
   "devDependencies": {
-    "@uidu/button": "^1.3.32",
-    "@uidu/docs": "^0.5.21",
+    "@uidu/button": "^1.3.33",
+    "@uidu/docs": "^0.5.22",
     "react": "^18.2.0"
   },
   "peerDependencies": {

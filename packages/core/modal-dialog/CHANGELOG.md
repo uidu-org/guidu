@@ -1,5 +1,16 @@
 # @uidu/modal-dialog
 
+## 1.1.1
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/analytics@0.6.9
+  - @uidu/blanket@0.6.11
+  - @uidu/portal@1.0.3
+  - @uidu/theme@0.6.25
+
 ## 1.1.0
 
 ### Minor Changes

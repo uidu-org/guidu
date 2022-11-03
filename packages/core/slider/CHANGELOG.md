@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.7.23
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+
 ## 1.7.22
 
 ### Patch Changes

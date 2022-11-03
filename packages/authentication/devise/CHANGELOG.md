@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.7.25
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/avatar@0.9.18
+  - @uidu/slider@1.7.23
+  - @uidu/spinner@0.5.21
+  - @uidu/checkbox@2.0.6
+  - @uidu/field-password@2.0.9
+  - @uidu/field-phone@2.0.21
+  - @uidu/field-text@2.0.5
+  - @uidu/form@2.1.11
+  - @uidu/shell@2.1.38
+
 ## 0.7.24
 
 ### Patch Changes

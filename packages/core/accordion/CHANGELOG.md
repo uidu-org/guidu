@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.20
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/docs@0.5.22
+
 ## 0.6.19
 
 ### Patch Changes

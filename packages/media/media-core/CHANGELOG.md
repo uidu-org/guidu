@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 1.1.5
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/docs@0.5.22
+
 ## 1.1.4
 
 ### Patch Changes

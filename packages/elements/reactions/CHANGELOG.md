@@ -1,5 +1,11 @@
 # @uidu/reactions
 
+## 0.3.4
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+
 ## 0.3.3
 
 ### Patch Changes

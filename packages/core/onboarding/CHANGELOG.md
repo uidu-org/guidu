@@ -1,5 +1,18 @@
 # @uidu/onboarding
 
+## 1.3.16
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/analytics@0.6.9
+  - @uidu/button@1.3.33
+  - @uidu/modal-dialog@1.1.1
+  - @uidu/popper@0.5.23
+  - @uidu/portal@1.0.3
+  - @uidu/theme@0.6.25
+
 ## 1.3.15
 
 ### Patch Changes

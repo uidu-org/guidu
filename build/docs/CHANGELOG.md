@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.5.22
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/button@1.3.33
+  - @uidu/code@0.5.21
+  - @uidu/section-message@0.6.26
+  - @uidu/theme@0.6.25
+  - @uidu/tooltip@0.5.27
+
 ## 0.5.21
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/blanket
 
+## 0.6.11
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/analytics@0.6.9
+
 ## 0.6.10
 
 ### Patch Changes
