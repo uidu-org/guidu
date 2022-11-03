@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.1.0
+
+### Minor Changes
+
+- f7144997e: InputGroup is now rendered optionally
+
 ## 4.0.18
 
 ### Patch Changes
