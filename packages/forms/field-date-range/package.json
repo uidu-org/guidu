@@ -8,7 +8,7 @@
   "module": "dist/uidu-field-date-range.esm.js",
   "types": "dist/uidu-field-date-range.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "@uidu/field-base": "^4.0.16",
     "@uidu/field-date": "^2.0.17",
     "moment": "^2.29.4",
@@ -16,7 +16,7 @@
     "react-day-picker": "^8.3.5",
     "react-feather": "^2.0.10",
     "react-helmet": "^6.1.0",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.21",

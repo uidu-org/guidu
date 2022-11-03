@@ -8,13 +8,13 @@
   "main": "dist/uidu-button.cjs.js",
   "module": "dist/uidu-button.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "@uidu/analytics": "^0.6.8",
     "@uidu/spinner": "^0.5.20",
     "@uidu/theme": "^0.6.24",
     "memoize-one": "^6.0.0",
     "styled-components": "^5.3.6",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.10.7",

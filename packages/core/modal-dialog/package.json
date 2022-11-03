@@ -14,7 +14,7 @@
     "@atlaskit/focus-ring": "^1.1.0",
     "@atlaskit/icon": "^21.10.7",
     "@atlaskit/motion": "^1.2.3",
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "@uidu/analytics": "^0.6.8",
     "@uidu/blanket": "^0.6.10",
     "@uidu/portal": "^1.0.2",
@@ -22,7 +22,7 @@
     "raf-schd": "^4.0.3",
     "react-focus-lock": "^2.9.1",
     "react-scrolllock": "^5.0.1",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/avatar": "^0.9.17",

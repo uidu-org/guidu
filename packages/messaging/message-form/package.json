@@ -9,10 +9,10 @@
   "module": "dist/uidu-message-form.esm.js",
   "types": "dist/uidu-message-form.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "@loadable/component": "^5.15.2",
     "@types/emoji-mart": "^3.0.9",
-    "@types/react-mentions": "^4.1.7",
+    "@types/react-mentions": "^4.1.8",
     "@uidu/dropdown-menu": "^0.6.25",
     "@uidu/field-mentions": "^2.0.5",
     "@uidu/field-text": "^2.0.4",
@@ -25,7 +25,7 @@
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-mentions": "^4.4.7",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.21",

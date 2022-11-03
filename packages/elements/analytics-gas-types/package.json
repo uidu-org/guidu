@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@uidu/analytics": "^0.6.4",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.17"

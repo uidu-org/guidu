@@ -9,7 +9,7 @@
   "module": "dist/uidu-stepper.esm.js",
   "types": "dist/uidu-stepper.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "@uidu/theme": "^0.6.24",
     "classnames": "^2.3.2",
     "query-string": "^7.1.1",
@@ -18,7 +18,7 @@
     "react-router-dom": "^5.3.4",
     "react-scroll": "^1.8.8",
     "styled-components": "^5.3.6",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.21",

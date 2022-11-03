@@ -9,13 +9,13 @@
   "module": "dist/uidu-data-manager.esm.js",
   "types": "dist/uidu-data-manager.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
-    "@cubejs-client/core": "^0.31.0",
-    "@cubejs-client/react": "^0.31.0",
-    "@cubejs-client/ws-transport": "^0.31.0",
+    "@babel/runtime": "^7.20.1",
+    "@cubejs-client/core": "^0.31.9",
+    "@cubejs-client/react": "^0.31.9",
+    "@cubejs-client/ws-transport": "^0.31.9",
     "@loadable/component": "^5.15.2",
     "@tanstack/match-sorter-utils": "^8.5.14",
-    "@tanstack/react-table": "^8.5.17",
+    "@tanstack/react-table": "^8.5.22",
     "@uidu/board": "^1.0.7",
     "@uidu/button": "1.3.32",
     "@uidu/calendar": "^0.4.22",
@@ -39,7 +39,7 @@
     "react-table-plugins": "^1.3.2",
     "react-transition-group": "^4.4.5",
     "styled-components": "^5.3.6",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.21",

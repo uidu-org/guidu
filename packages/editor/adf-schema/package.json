@@ -17,7 +17,7 @@
     "postbuild": "yarn build:json-schema"
   },
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "@types/linkify-it": "^3.0.2",
     "@types/prosemirror-model": "^1.17.0",
     "@types/prosemirror-state": "^1.4.0",
@@ -27,7 +27,7 @@
     "linkify-it": "^4.0.1",
     "prosemirror-model": "^1.18.1",
     "prosemirror-view": "^1.29.0",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/editor-json-transformer": "^1.0.3",

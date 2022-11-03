@@ -9,7 +9,7 @@
   "module": "dist/uidu-navigation.esm.js",
   "types": "dist/uidu-navigation.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "@uidu/animated-menu": "^1.0.23",
     "@uidu/avatar": "^0.9.17",
     "@uidu/dropdown-menu": "^0.6.25",
@@ -28,7 +28,7 @@
     "react-router-dom": "^5.3.4",
     "react-transition-group": "^4.4.5",
     "styled-components": "^5.3.6",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/badge": "^0.5.19",

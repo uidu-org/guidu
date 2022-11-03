@@ -10,10 +10,10 @@
   "module": "dist/uidu-map.esm.js",
   "types": "dist/uidu-map.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "@uidu/theme": "^0.6.24",
     "google-map-react": "^2.2.0",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.21",

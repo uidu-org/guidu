@@ -11,9 +11,9 @@
   "module": "dist/uidu-elements-test-helpers.esm.js",
   "types": "dist/uidu-elements-test-helpers.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "exenv": "^1.2.2",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.21",

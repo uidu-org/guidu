@@ -10,12 +10,12 @@
   "module": "dist/uidu-field-base.esm.js",
   "types": "dist/uidu-field-base.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
-    "@heroicons/react": "^2.0.12",
+    "@babel/runtime": "^7.20.1",
+    "@heroicons/react": "^2.0.13",
     "@uidu/form": "2.1.10",
-    "react-hook-form": "^7.38.0",
+    "react-hook-form": "^7.39.1",
     "styled-components": "^5.3.6",
-    "tslib": "^2.4.0",
+    "tslib": "^2.4.1",
     "twin.macro": "^2.8.2"
   },
   "devDependencies": {

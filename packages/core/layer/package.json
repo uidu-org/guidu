@@ -9,11 +9,11 @@
   "main": "dist/uidu-layer.cjs.js",
   "module": "dist/uidu-layer.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.19.4",
+    "@babel/runtime": "^7.20.1",
     "popper.js": "^1.16.1",
     "raf-schd": "^4.0.3",
     "react-scrolllock": "^5.0.1",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.21",
