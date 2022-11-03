@@ -1,5 +1,16 @@
 # @uidu/field-file-uploader
 
+## 2.1.0
+
+### Minor Changes
+
+- f7144997e: InputGroup is now rendered optionally
+
+### Patch Changes
+
+- Updated dependencies [f7144997e]
+  - @uidu/field-base@4.1.0
+
 ## 2.0.20
 
 ### Patch Changes
