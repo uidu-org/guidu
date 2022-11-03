@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.0.18
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/form@2.1.11
+
 ## 4.0.17
 
 ### Patch Changes

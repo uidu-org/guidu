@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.0.19
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/field-base@4.0.18
+  - @uidu/field-text@2.0.5
+  - @uidu/form@2.1.11
+
 ## 2.0.18
 
 ### Patch Changes

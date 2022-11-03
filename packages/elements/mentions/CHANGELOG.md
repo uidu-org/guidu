@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.4.28
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/analytics@0.6.9
+  - @uidu/avatar@0.9.18
+  - @uidu/button@1.3.33
+  - @uidu/lozenge@0.5.20
+  - @uidu/theme@0.6.25
+  - @uidu/tooltip@0.5.27
+  - @uidu/analytics-gas-types@0.3.5
+
 ## 0.4.27
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.0.9
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/theme@0.6.25
+  - @uidu/shell@2.1.38
+
 ## 1.0.8
 
 ### Patch Changes

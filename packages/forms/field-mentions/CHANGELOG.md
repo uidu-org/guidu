@@ -1,5 +1,15 @@
 # @uidu/field-mentions
 
+## 2.0.6
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/theme@0.6.25
+  - @uidu/field-base@4.0.18
+  - @uidu/form@2.1.11
+
 ## 2.0.5
 
 ### Patch Changes

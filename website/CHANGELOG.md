@@ -1,5 +1,33 @@
 # Change Log
 
+## 0.6.25
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/docs@0.5.22
+  - @uidu/badge@0.5.20
+  - @uidu/button@1.3.33
+  - @uidu/code@0.5.21
+  - @uidu/drawer@0.7.27
+  - @uidu/lozenge@0.5.20
+  - @uidu/modal-dialog@1.1.1
+  - @uidu/spinner@0.5.21
+  - @uidu/theme@0.6.25
+  - @uidu/tooltip@0.5.27
+  - @uidu/list@3.1.5
+  - @uidu/table@3.2.7
+  - @uidu/checkbox@2.0.6
+  - @uidu/field-text@2.0.5
+  - @uidu/form@2.1.11
+  - @uidu/select@2.1.2
+  - @uidu/breadcrumbs@1.0.29
+  - @uidu/navigation@1.0.30
+  - @uidu/page-header@1.0.9
+  - @uidu/shell@2.1.38
+  - @uidu/themes-uidu@0.4.4
+
 ## 0.6.24
 
 ### Patch Changes

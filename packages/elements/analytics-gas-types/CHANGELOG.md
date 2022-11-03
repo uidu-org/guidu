@@ -1,5 +1,13 @@
 # @uidu/analytics-gas-types
 
+## 0.3.5
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/analytics@0.6.9
+
 ## 0.3.4
 
 ### Patch Changes

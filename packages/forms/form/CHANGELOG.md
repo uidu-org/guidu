@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.1.11
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/button@1.3.33
+
 ## 2.1.10
 
 ### Patch Changes

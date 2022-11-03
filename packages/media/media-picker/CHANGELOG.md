@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.9.5
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/media-core@1.1.5
+
 ## 0.9.4
 
 ### Patch Changes

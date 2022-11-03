@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.7.15
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/button@1.3.33
+  - @uidu/dropdown-menu@0.6.26
+  - @uidu/spinner@0.5.21
+  - @uidu/theme@0.6.25
+  - @uidu/tooltip@0.5.27
+  - @uidu/media-core@1.1.5
+
 ## 0.7.14
 
 ### Patch Changes

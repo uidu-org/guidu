@@ -1,6 +1,6 @@
 {
   "name": "@uidu/payments",
-  "version": "1.5.13",
+  "version": "1.5.14",
   "description": "Payment form using Stripe",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/ecommerce/payments",
   "license": "MIT",
@@ -13,11 +13,11 @@
     "@heroicons/react": "^2.0.13",
     "@stripe/react-stripe-js": "^1.14.2",
     "@stripe/stripe-js": "^1.42.1",
-    "@uidu/field-base": "^4.0.17",
-    "@uidu/form": "^2.1.10",
-    "@uidu/section-message": "0.6.25",
-    "@uidu/slider": "^1.7.22",
-    "@uidu/theme": "^0.6.24",
+    "@uidu/field-base": "^4.0.18",
+    "@uidu/form": "^2.1.11",
+    "@uidu/section-message": "0.6.26",
+    "@uidu/slider": "^1.7.23",
+    "@uidu/theme": "^0.6.25",
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
@@ -27,7 +27,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.21"
+    "@uidu/docs": "^0.5.22"
   },
   "supportedLocales": [
     "it",

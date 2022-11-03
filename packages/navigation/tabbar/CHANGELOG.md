@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.4.21
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+- Updated dependencies [24cefc2cb]
+  - @uidu/shell@2.1.38
+
 ## 0.4.20
 
 ### Patch Changes

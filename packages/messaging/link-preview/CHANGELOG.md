@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.24
+
+### Patch Changes
+
+- 24cefc2cb: Bump dependencies
+
 ## 0.3.23
 
 ### Patch Changes
