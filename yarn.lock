@@ -6097,10 +6097,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/swiper@npm:^5.4.3":
-  version: 5.4.3
-  resolution: "@types/swiper@npm:5.4.3"
-  checksum: fae2b17e14871db4732b1b90153e8a9e16cf2d09dde59e630f33047a7a47afec8e3d1353ebd69ceb9c0e3b841a260626271363b25119b116124d304e1d7b6ecb
+"@types/swiper@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@types/swiper@npm:6.0.0"
+  dependencies:
+    swiper: "*"
+  checksum: 53688c7fd949895d24deff102679d1a1080cd876a7d493de263aff818666cfa06ccd043a8602e9ecabf581cd750815426aec544796f27d1bfa1d71b815a966e9
   languageName: node
   linkType: hard
 
@@ -8908,7 +8910,7 @@ __metadata:
     classnames: ^2.3.2
     react: ^18.2.0
     styled-components: ^5.3.6
-    swiper: ^6.8.4
+    swiper: ^8.4.4
     tslib: ^2.4.1
     uuid: ^8.3.2
   languageName: unknown
@@ -14640,12 +14642,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dom7@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "dom7@npm:3.0.0"
+"dom7@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "dom7@npm:4.0.4"
   dependencies:
-    ssr-window: ^3.0.0-alpha.1
-  checksum: 5a1b8979ed35afb9cc6714ff048ce4599a24fd8a11069bb52a61ccae1bdc0716c2bd6b07c4338856d5664d984c0bee9f6b7616a01ffa09daaebfe02fee016e66
+    ssr-window: ^4.0.0
+  checksum: b38604f74e915b4d05b6634f9ff239a708c468180f498a28ff67f2a61233697d9bd7192703b788a24541c3591e7f1a6e83a2cbf70bc871a85e033f82e19abc31
   languageName: node
   linkType: hard
 
@@ -17802,7 +17804,7 @@ __metadata:
     "@types/react-virtualized": ^9.21.21
     "@types/semver": ^7.3.13
     "@types/styled-components": ^5.1.26
-    "@types/swiper": ^5.4.3
+    "@types/swiper": ^6.0.0
     "@types/url-parse": ^1.4.8
     "@types/url-search-params": ^1.1.0
     "@types/uuid": ^8.3.4
@@ -18033,7 +18035,7 @@ __metadata:
     stylis-plugin-rtl: ^2.1.1
     svg-inline-react: ^3.2.1
     svg-url-loader: ^7.1.1
-    swiper: ^6.8.4
+    swiper: ^8.4.4
     tailwindcss: ^2.2.19
     terser-webpack-plugin: ^5.3.6
     thread-loader: ^3.0.4
@@ -29082,10 +29084,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ssr-window@npm:^3.0.0, ssr-window@npm:^3.0.0-alpha.1":
-  version: 3.0.0
-  resolution: "ssr-window@npm:3.0.0"
-  checksum: e619db7437874c89d2f4cea94ca8cbdfb4eed9f20d86fa193c29a17829c26d7ceefae344ac1699cc24ebb8d397fd0937a1043b5177a140c2504c9fda58bb5652
+"ssr-window@npm:^4.0.0, ssr-window@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "ssr-window@npm:4.0.2"
+  checksum: df182600927f4f3225224cf8c02338ea637c9750519505bbfb9a9236741a2a7ec088386fb948bca7b447b8303d9109e7dc7672e3de041c79ac2a0e03665af7d2
   languageName: node
   linkType: hard
 
@@ -29766,13 +29768,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swiper@npm:^6.8.4":
-  version: 6.8.4
-  resolution: "swiper@npm:6.8.4"
+"swiper@npm:*, swiper@npm:^8.4.4":
+  version: 8.4.4
+  resolution: "swiper@npm:8.4.4"
   dependencies:
-    dom7: ^3.0.0
-    ssr-window: ^3.0.0
-  checksum: 613239e71135b48378453a74abed9a33d56f147e704e3803f5ea960dbf9833a93e557ef0b75e7c2849328eb1b48fafab54f7ac5b88e8c3727283536c7740b13f
+    dom7: ^4.0.4
+    ssr-window: ^4.0.2
+  checksum: 1b016e2be22573f764d00963c919dc3338a47e261bce3d5b50d6e2abb5e1760c606441739b789c96a777675457e85595d76d851a80c3d34417e0c78c9886cb93
   languageName: node
   linkType: hard
 

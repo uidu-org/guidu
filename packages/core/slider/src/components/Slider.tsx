@@ -25,22 +25,21 @@ import Swiper, {
 import { v1 as uuid } from 'uuid';
 import { SliderProps } from '../types';
 
-Swiper.use([
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  History,
-  Keyboard,
-  Autoplay,
-]);
-
 const defaultSwiperOptions = (id: string): Partial<SwiperOptions> => ({
   direction: 'horizontal',
   initialSlide: 0,
   slidesPerView: 1,
   keyboard: true,
   simulateTouch: false,
+  modules: [
+    Navigation,
+    Pagination,
+    Scrollbar,
+    A11y,
+    History,
+    Keyboard,
+    Autoplay,
+  ],
   navigation: {
     nextEl: `#${id}-button-next`,
     prevEl: `#${id}-button-prev`,
@@ -53,7 +52,6 @@ const defaultSwiperOptions = (id: string): Partial<SwiperOptions> => ({
   },
   spaceBetween: 16,
   watchSlidesProgress: true,
-  watchSlidesVisibility: true,
   centeredSlides: false,
 });
 
@@ -99,7 +97,7 @@ function Slider({
 
   return (
     <div
-      className={classNames('swiper-container', className)}
+      className={classNames('swiper', className)}
       ref={setSlider}
       id={id.current}
     >

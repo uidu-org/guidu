@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+import 'swiper/css/bundle';
 import Slider from '../src';
 
 const Slide = styled.div`
