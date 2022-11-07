@@ -18,7 +18,7 @@
     "@uidu/changelog-loader": "^0.1.33",
     "@uidu/fs-loader": "^0.1.52",
     "@uidu/nav-info-loader": "^0.2.6",
-    "babel-loader": "^9.0.1",
+    "babel-loader": "^9.1.0",
     "bolt": "^0.24.10",
     "chalk": "^4.1.2",
     "compression-webpack-plugin": "^10.0.0",

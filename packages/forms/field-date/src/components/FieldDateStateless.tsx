@@ -1,6 +1,5 @@
 import { FieldBaseStatelessProps, StyledInput } from '@uidu/field-base';
-import { isValid, parse } from 'date-fns';
-import format from 'date-fns/format';
+import { format, isValid, parse } from 'date-fns';
 import React, { forwardRef } from 'react';
 
 import { FieldDateStatelessProps } from '../types';
@@ -26,6 +25,7 @@ const FieldDateStateless = forwardRef<
       displayFormat = 'yyyy-MM-dd',
       formatSubmit,
       locale,
+      ...rest
     },
     ref,
   ) => {
@@ -35,9 +35,10 @@ const FieldDateStateless = forwardRef<
 
     return (
       <StyledInput
+        {...rest}
         $hasError={!!fieldState?.error}
         id={id}
-        value={isValid(date) ? format(date, displayFormat) : ''}
+        defaultValue={isValid(date) ? format(date, displayFormat) : ''}
         ref={ref}
         type="date"
         name={name}
