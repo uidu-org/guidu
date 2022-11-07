@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 2.1.0
+
+### Minor Changes
+
+- bc824867d: Fix stateless date
+
 ## 2.0.20
 
 ### Patch Changes

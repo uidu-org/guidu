@@ -1,5 +1,13 @@
 # @uidu/field-date-range
 
+## 2.0.10
+
+### Patch Changes
+
+- bc824867d: Fix stateless date
+- Updated dependencies [bc824867d]
+  - @uidu/field-date@2.1.0
+
 ## 2.0.9
 
 ### Patch Changes

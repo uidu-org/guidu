@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.5.12
+
+### Patch Changes
+
+- Updated dependencies [f5a29e3a8]
+  - @uidu/slider@2.0.0
+  - @uidu/payments@1.5.15
+
 ## 0.5.11
 
 ### Patch Changes

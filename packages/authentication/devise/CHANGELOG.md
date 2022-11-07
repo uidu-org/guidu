@@ -1,5 +1,12 @@
 # @uidu/devise
 
+## 0.7.26
+
+### Patch Changes
+
+- Updated dependencies [f5a29e3a8]
+  - @uidu/slider@2.0.0
+
 ## 0.7.25
 
 ### Patch Changes

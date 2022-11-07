@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.40
+
+### Patch Changes
+
+- bc824867d: Fix stateless date
+
 ## 0.3.39
 
 ### Patch Changes
