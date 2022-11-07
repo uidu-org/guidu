@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.7.16
+
+### Patch Changes
+
+- bc824867d: Fix stateless date
+
 ## 0.7.15
 
 ### Patch Changes

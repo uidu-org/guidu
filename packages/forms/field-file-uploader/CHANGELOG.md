@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.1.1
+
+### Patch Changes
+
+- bc824867d: Fix stateless date
+
 ## 2.1.0
 
 ### Minor Changes

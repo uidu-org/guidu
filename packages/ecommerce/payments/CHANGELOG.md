@@ -1,5 +1,12 @@
 # @uidu/payments
 
+## 1.5.15
+
+### Patch Changes
+
+- Updated dependencies [f5a29e3a8]
+  - @uidu/slider@2.0.0
+
 ## 1.5.14
 
 ### Patch Changes

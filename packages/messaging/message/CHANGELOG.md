@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.57
+
+### Patch Changes
+
+- bc824867d: Fix stateless date
+- Updated dependencies [bc824867d]
+  - @uidu/media-card@0.7.16
+
 ## 0.5.56
 
 ### Patch Changes
