@@ -7045,7 +7045,7 @@ __metadata:
     "@uidu/field-text": ^2.0.5
     "@uidu/form": ^2.1.11
     "@uidu/shell": ^2.1.38
-    "@uidu/slider": ^1.7.23
+    "@uidu/slider": ^2.0.0
     "@uidu/spinner": ^0.5.21
     query-string: ^7.1.1
     react: ^18.2.0
@@ -7472,7 +7472,7 @@ __metadata:
     "@babel/runtime": ^7.20.1
     "@uidu/docs": ^0.5.22
     "@uidu/field-base": ^4.0.18
-    "@uidu/field-date": ^2.0.19
+    "@uidu/field-date": ^2.1.0
     "@uidu/form": ^2.1.11
     moment: ^2.29.4
     react: ^18.2.0
@@ -7486,7 +7486,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-date@^2.0.19, @uidu/field-date@workspace:packages/forms/field-date":
+"@uidu/field-date@^2.0.19, @uidu/field-date@^2.1.0, @uidu/field-date@workspace:packages/forms/field-date":
   version: 0.0.0-use.local
   resolution: "@uidu/field-date@workspace:packages/forms/field-date"
   dependencies:
@@ -8156,7 +8156,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-card@^0.7.15, @uidu/media-card@workspace:packages/media/media-card":
+"@uidu/media-card@^0.7.15, @uidu/media-card@^0.7.16, @uidu/media-card@workspace:packages/media/media-card":
   version: 0.0.0-use.local
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
@@ -8370,7 +8370,7 @@ __metadata:
     "@uidu/docs": ^0.5.22
     "@uidu/drawer": ^0.7.27
     "@uidu/dropdown-menu": ^0.6.26
-    "@uidu/media-card": ^0.7.15
+    "@uidu/media-card": ^0.7.16
     "@uidu/media-core": ^1.1.5
     "@uidu/media-viewer": ^0.5.9
     "@uidu/menu": 0.8.7
@@ -8567,7 +8567,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/payments@^1.5.14, @uidu/payments@workspace:packages/ecommerce/payments":
+"@uidu/payments@^1.5.14, @uidu/payments@^1.5.15, @uidu/payments@workspace:packages/ecommerce/payments":
   version: 0.0.0-use.local
   resolution: "@uidu/payments@workspace:packages/ecommerce/payments"
   dependencies:
@@ -8579,7 +8579,7 @@ __metadata:
     "@uidu/field-base": ^4.0.18
     "@uidu/form": ^2.1.11
     "@uidu/section-message": 0.6.26
-    "@uidu/slider": ^1.7.23
+    "@uidu/slider": ^2.0.0
     "@uidu/theme": ^0.6.25
     axios: ^0.27.2
     react: ^18.2.0
@@ -8898,7 +8898,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/slider@^1.7.23, @uidu/slider@workspace:packages/core/slider":
+"@uidu/slider@^2.0.0, @uidu/slider@workspace:packages/core/slider":
   version: 0.0.0-use.local
   resolution: "@uidu/slider@workspace:packages/core/slider"
   dependencies:
@@ -8984,9 +8984,9 @@ __metadata:
     "@uidu/docs": ^0.5.22
     "@uidu/field-text": ^2.0.5
     "@uidu/form": ^2.1.11
-    "@uidu/payments": ^1.5.14
+    "@uidu/payments": ^1.5.15
     "@uidu/shell": ^2.1.38
-    "@uidu/slider": ^1.7.23
+    "@uidu/slider": ^2.0.0
     "@uidu/spinner": ^0.5.21
     "@uidu/stepper": ^0.4.26
     dayjs: ^1.11.6
