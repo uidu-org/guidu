@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.0.0
+
+### Major Changes
+
+- f5a29e3a8: Bump swiper to latest
+
 ## 1.7.23
 
 ### Patch Changes
