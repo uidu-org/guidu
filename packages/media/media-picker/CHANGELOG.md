@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.10.0
+
+### Minor Changes
+
+- 0397a605a: Fix media uploader for production
+
 ## 0.9.5
 
 ### Patch Changes

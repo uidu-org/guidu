@@ -1,5 +1,16 @@
 # @uidu/editor-core
 
+## 1.3.0
+
+### Minor Changes
+
+- 0397a605a: Fix media uploader for production
+
+### Patch Changes
+
+- Updated dependencies [0397a605a]
+  - @uidu/media-picker@0.10.0
+
 ## 1.2.4
 
 ### Patch Changes
