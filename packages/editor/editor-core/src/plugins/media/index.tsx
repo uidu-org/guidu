@@ -18,7 +18,7 @@ import { ReactMediaGroupNode } from './nodeviews/mediaGroup';
 import { ReactMediaSingleNode } from './nodeviews/mediaSingle';
 import { createPlugin as createMediaAltTextPlugin } from './pm-plugins/alt-text';
 import keymapMediaAltTextPlugin from './pm-plugins/alt-text/keymap';
-import keymapPlugin from './pm-plugins/keymap';
+import { keymapPlugin } from './pm-plugins/keymap';
 import keymapMediaSinglePlugin from './pm-plugins/keymap-media-single';
 import linkingPlugin from './pm-plugins/linking';
 import keymapLinkingPlugin from './pm-plugins/linking/keymap';

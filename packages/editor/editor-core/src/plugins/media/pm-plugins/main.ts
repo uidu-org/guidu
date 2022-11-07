@@ -4,7 +4,7 @@ import type {
   MediaProvider,
 } from '@uidu/editor-common';
 import { ErrorReporter } from '@uidu/editor-common';
-import { MediaClientConfig } from '@uidu/media-core';
+import { MediaClientConfig, MediaUploadOptions } from '@uidu/media-core';
 import { MediaPickerFactoryClass } from '@uidu/media-picker';
 import assert from 'assert';
 import { Node, Node as PMNode, Schema } from 'prosemirror-model';
@@ -396,7 +396,10 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     this.customPicker = undefined;
   };
 
-  private async initPickers(uploadOptions: any, reactContext: () => {}) {
+  private async initPickers(
+    uploadOptions: MediaUploadOptions,
+    reactContext: () => {},
+  ) {
     if (this.destroyed) {
       return undefined;
     }
@@ -408,9 +411,8 @@ export class MediaPluginStateImplementation implements MediaPluginState {
         proxyReactContext: reactContext(),
         uploadOptions,
         onComplete: (result) => {
-          this.insertFile(
-            result.successful.map(({ response }) => response.body),
-          );
+          const files = result.successful.map(uploadOptions.responseHandler);
+          this.insertFile(files);
         },
         // onClose: () => this.onPopupPickerClose(),
       });

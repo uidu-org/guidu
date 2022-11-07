@@ -6,9 +6,7 @@ type Props = {
   mediaState: MediaPluginState;
 };
 
-export default class ClipboardMediaPickerWrapper extends React.Component<
-  Props
-> {
+export default class ClipboardMediaPickerWrapper extends React.Component<Props> {
   show = () => {};
 
   setUploadOptions = async () => {
