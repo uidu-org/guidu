@@ -10,8 +10,8 @@
   "types": "dist/uidu-dashlets-form.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.20.1",
-    "@cubejs-client/core": "^0.31.9",
-    "@cubejs-client/react": "^0.31.9",
+    "@cubejs-client/core": "^0.31.13",
+    "@cubejs-client/react": "^0.31.13",
     "@uidu/accordion": "^0.6.20",
     "@uidu/dashlets": "^2.1.20",
     "@uidu/dropdown-menu": "^0.6.26",

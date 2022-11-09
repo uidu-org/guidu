@@ -27,7 +27,7 @@
     "@uidu/docs": "^0.5.22",
     "@uidu/modal-dialog": "^1.1.1",
     "react": "^18.2.0",
-    "twin.macro": "^2.8.2"
+    "twin.macro": "^3.0.0"
   },
   "peerDependencies": {
     "react": "^18.0.0",

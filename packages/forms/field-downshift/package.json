@@ -32,7 +32,7 @@
     "@uidu/shell": "^2.1.38",
     "react-feather": "^2.0.10",
     "styled-components": "^5.3.6",
-    "twin.macro": "^2.8.2"
+    "twin.macro": "^3.0.0"
   },
   "peerDependencies": {
     "styled-components": "*",

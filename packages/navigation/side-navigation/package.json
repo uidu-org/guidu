@@ -35,6 +35,6 @@
     "@uidu/docs": "^0.5.22",
     "@uidu/lozenge": "^0.5.20",
     "react-feather": "^2.0.10",
-    "twin.macro": "^2.8.2"
+    "twin.macro": "^3.0.0"
   }
 }

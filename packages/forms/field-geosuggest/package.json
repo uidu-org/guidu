@@ -23,7 +23,7 @@
     "@uidu/docs": "^0.5.22",
     "@uidu/form": "^2.1.11",
     "styled-components": "^5.3.6",
-    "twin.macro": "^2.8.2"
+    "twin.macro": "^3.0.0"
   },
   "peerDependencies": {
     "styled-components": "*"
