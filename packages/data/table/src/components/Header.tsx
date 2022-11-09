@@ -230,14 +230,14 @@ export default function Header({
     >
       <div tw="flex-grow truncate">
         {headerIcons && column?.columnDef.meta?.icon && (
-          <span tw="mr-3 color[rgb(var(--body-secondary-color))] opacity-40">
+          <span tw="mr-3 [color:rgb(var(--body-secondary-color))] opacity-40">
             {column.columnDef.meta?.icon}
           </span>
         )}
         {column.columnDef.meta?.name}
       </div>
       {!column.columnDef.meta?.suppressMenu && (
-        <div tw="ml-4 font-weight[initial]">
+        <div tw="ml-4 [font-weight:initial]">
           <Popup
             isOpen={isOpen}
             placement="bottom-end"

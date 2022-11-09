@@ -64,7 +64,7 @@ export default function ShellResizer({
         <ResizerButton
           isHover={isHover}
           isCollapsed={isCollapsed}
-          tw="rounded-full items-center border justify-center absolute background[rgb(var(--body-secondary-bg))]"
+          tw="rounded-full items-center border justify-center absolute [background:rgb(var(--body-secondary-bg))]"
           className={className}
           onClick={(e) => {
             e.preventDefault();

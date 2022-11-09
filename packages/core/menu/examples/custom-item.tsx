@@ -6,7 +6,7 @@ import { CustomItem, CustomItemComponentProps } from '../src';
 import Slack from './icons/slack';
 
 const StyledCustomComponent = styled.a<{ isDisabled: boolean }>`
-  ${tw`relative overflow-hidden user-select[none]`}
+  ${tw`relative overflow-hidden [user-select:none]`}
   ${({ isDisabled }) => {
     if (isDisabled) {
       return tw``;

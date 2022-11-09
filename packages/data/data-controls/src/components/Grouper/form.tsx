@@ -46,7 +46,7 @@ export default function GrouperForm<T>({
     <div tw="py-4">
       <Form form={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
         <div tw="space-y-4">
-          <div tw="grid grid-template-columns[max-content 1fr min-content] gap-4 px-4">
+          <div tw="grid [grid-template-columns:max-content 1fr min-content] gap-4 px-4">
             {grouping.map((grouper, index: number) => (
               <Fragment key={grouper}>
                 <div tw="flex items-center">

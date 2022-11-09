@@ -48,7 +48,7 @@ function PaymentMethods({
     <div>
       {enablePaymentRequest && paymentRequest && (
         <>
-          <div tw="height[48px]">
+          <div tw="[height:48px]">
             {paymentRequest && (
               <PaymentRequest paymentRequest={paymentRequest} />
             )}

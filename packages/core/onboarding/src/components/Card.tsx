@@ -99,7 +99,7 @@ const Card: FC<Props> = ({
             <Container
               theme={container}
               ref={innerRef!}
-              tw="overflow-auto height[fit-content]"
+              tw="overflow-auto [height:fit-content]"
               className={className}
             >
               {typeof image === 'string' ? <img src={image} alt="" /> : image}

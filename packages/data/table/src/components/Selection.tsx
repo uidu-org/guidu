@@ -79,8 +79,8 @@ export function RowSelection<T>({ row }: CellContext<T, unknown>) {
         </>
       ) : (
         <RowIndex>
-          <span tw="flex flex-col justify-center min-w-0 line-height[initial]">
-            <span tw="color[rgb(var(--body-secondary-color))]">
+          <span tw="flex flex-col justify-center min-w-0 [line-height:initial]">
+            <span tw="[color:rgb(var(--body-secondary-color))]">
               {row.index + 1}
             </span>
           </span>

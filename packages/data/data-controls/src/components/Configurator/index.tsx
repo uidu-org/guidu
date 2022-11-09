@@ -31,7 +31,7 @@ export default function Configurator<T>({
 
   const Content = useCallback(
     () => (
-      <div tw="w-screen sm:max-width[400px]">
+      <div tw="w-screen sm:([max-width:400px])">
         <ConfiguratorForm
           tableInstance={tableInstance}
           fallback={<div>Loading...</div>}

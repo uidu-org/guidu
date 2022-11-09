@@ -8,7 +8,7 @@ import { iconColor } from './internal/constants';
 import { Appearance } from './types';
 
 const IconWrapper = styled.span<{ isMultiline: boolean }>`
-  ${tw`flex[0 0 auto] flex items-center mr-4`}
+  ${tw`[flex:0_0_auto] flex items-center mr-4`}
   ${({ isMultiline }) => {
     if (isMultiline) {
       return tw`mr-2`;
@@ -85,7 +85,7 @@ function ModalTitle(props: ModalTitleProps) {
         id={titleId}
         tw=""
         css={[
-          tw`min-w-0 flex[1 1 auto] word-wrap[break-word]`,
+          tw`min-w-0 [flex:1_1_auto] [word-wrap:break-word]`,
           !isMultiline && tw`truncate`,
         ]}
         data-testid={testId && `${testId}-text`}

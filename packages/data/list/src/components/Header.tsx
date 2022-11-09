@@ -20,7 +20,7 @@ export default function Header<T>({
             fontWeight: 500,
             zIndex: 20,
           }}
-          tw="sticky top-0 flex items-center background[rgb(var(--body-on-primary-bg))] min-w-full width[fit-content] border-b px-4 -mx-4"
+          tw="sticky top-0 flex items-center [background:rgb(var(--body-on-primary-bg))] min-w-full [width:fit-content] border-b px-4 -mx-4"
         >
           {cover && (
             <div

@@ -13,17 +13,17 @@ import Positioner from './positioner';
 
 const StyledDialog = styled.div<{ shouldScrollInViewport: boolean }>`
   ${tw`
-    flex w-full max-width[100vw] h-full min-h-0 max-height[100vh] flex[1 1 auto] flex-col bg-white pointer-events-auto
-    md:(width[var(--modal-dialog-width)] max-width[inherit] mx-auto rounded shadow-lg)
+    flex w-full [max-width:100vw] h-full min-h-0 [max-height:100vh] [flex:1_1_auto] flex-col bg-white pointer-events-auto
+    md:([width:var(--modal-dialog-width)] [max-width:inherit] mx-auto rounded shadow-lg)
   `}
   ${({ shouldScrollInViewport }) => {
     if (shouldScrollInViewport) {
       return tw`
-        min-height[100vh] max-height[none]
-        md:(min-height[var(--modal-dialog-height)])
+        [min-height:100vh] [max-height:none]
+        md:([min-height:var(--modal-dialog-height)])
       `;
     }
-    return tw`md:(height[var(--modal-dialog-height)] max-height[inherit])`;
+    return tw`md:([height:var(--modal-dialog-height)] [max-height:inherit])`;
   }}
 `;
 

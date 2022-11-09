@@ -15,7 +15,7 @@ const BaseItem = ({
   const Title = overrides?.Title || DefaultTitle;
 
   return (
-    <div tw="flex items-center w-full min-height[fit-content]">
+    <div tw="flex items-center w-full [min-height:fit-content]">
       {iconBefore && (
         <span tw="flex flex-shrink-0 mr-3" data-item-elem-before>
           {iconBefore}

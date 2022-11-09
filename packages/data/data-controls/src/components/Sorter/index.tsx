@@ -42,7 +42,7 @@ export default function Sorter<T>({ tableInstance }: SorterProps<T>) {
 
   const Content = useCallback(
     () => (
-      <div tw="w-screen sm:width[500px]">
+      <div tw="w-screen sm:[width:500px]">
         <SorterForm
           tableInstance={tableInstance}
           closePopup={() => setIsDialogOpen(false)}

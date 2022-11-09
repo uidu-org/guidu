@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const Tf = styled.div<{ height: number }>`
-  ${tw`flex items-center relative px-6 whitespace-nowrap border-t background[rgb(var(--body-on-primary-bg))]`}
+  ${tw`flex items-center relative px-6 whitespace-nowrap border-t [background:rgb(var(--body-on-primary-bg))]`}
   height: ${({ height }) => `${height - 16}px`};
   font-size: 0.9375rem;
   font-weight: 500;
@@ -18,7 +18,7 @@ export default function Footer<T>({
   rowHeight: number;
 }) {
   return (
-    <div tw="sticky bottom-0 -mt-px background[rgb(var(--body-on-primary-bg))] width[max-content] z-10 min-w-full">
+    <div tw="sticky bottom-0 -mt-px [background:rgb(var(--body-on-primary-bg))] [width:max-content] z-10 min-w-full">
       {footerGroups.map((group) => (
         <div tw="flex">
           {group.headers

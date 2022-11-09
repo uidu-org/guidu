@@ -15,7 +15,7 @@ export const StyledRoot = styled.div<{
   ${({ $isDragReject }) => $isDragReject && tw`border-red-500`}
   ${({ $isFocused }) =>
     $isFocused && tw`border-color[rgba(var(--brand-primary), 1)]`}
-  ${tw`focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))]`}
+  ${tw`focus:[--tw-ring-color:rgba(var(--brand-primary), .1)] focus:ring-2 focus:[border-color:rgb(var(--brand-primary))]`}
   ${tw`focus-visible:outline-none`}
   ${({ $isFileDialogActive }) => $isFileDialogActive && tw`cursor-pointer`}
   ${({ $hasError }) =>

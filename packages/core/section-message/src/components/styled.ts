@@ -3,11 +3,11 @@ import tw from 'twin.macro';
 import { Appearance } from '../types';
 
 const containerAppearances = {
-  info: tw`bg-blue-50 text-blue-800`,
-  warning: tw`bg-yellow-50 text-yellow-800`,
-  error: tw`bg-red-50 text-red-800`,
-  confirmation: tw`bg-green-50 text-green-800`,
-  change: tw`bg-purple-50 text-purple-800`,
+  info: tw`text-blue-800 bg-blue-50`,
+  warning: tw`text-yellow-800 bg-yellow-50`,
+  error: tw`text-red-800 bg-red-50`,
+  confirmation: tw`text-green-800 bg-green-50`,
+  change: tw`text-purple-800 bg-purple-50`,
 };
 
 export const Container = styled.section<{ appearance: Appearance }>`
@@ -37,12 +37,12 @@ export const Actions = styled.ul`
 `;
 
 export const Action = styled.li`
-  ${tw`m-0 flex items-center`}
+  ${tw`flex items-center m-0`}
   & + &::before {
     ${tw`w-4 inline-block text-center align-middle content[.] text-gray-300`}
   }
 `;
 
 export const IconWrapper = styled.div`
-  ${tw`flex[0 0 auto] mr-2.5`}
+  ${tw`[flex:0_0_auto] mr-2.5`}
 `;

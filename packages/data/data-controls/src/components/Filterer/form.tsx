@@ -62,7 +62,7 @@ export default function FiltererForm<T>({
     <div tw="py-4">
       <Form form={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
         <div tw="space-y-4">
-          <div tw="grid grid-template-columns[max-content 1fr 2fr min-content] gap-4 px-4">
+          <div tw="grid [grid-template-columns:max-content 1fr 2fr min-content] gap-4 px-4">
             {columnFilters.map((filter, index) => {
               const column = getColumn(filter.id);
               const { columnDef } = column;

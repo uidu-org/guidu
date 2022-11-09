@@ -10,7 +10,7 @@ const Div = styled.div<{
   isTinted: boolean;
   shouldAllowClickThrough: boolean;
 }>`
-  ${tw`fixed top-0 bottom-0 left-0 transition-opacity duration-200 background[rgba(var(--body-primary-color), .35)]`}
+  ${tw`fixed top-0 bottom-0 left-0 transition-opacity duration-200 [background:rgba(var(--body-primary-color), .35)]`}
   ${({ isTinted }) => (isTinted ? tw`opacity-100` : tw`opacity-0`)}
   ${({ shouldAllowClickThrough }) =>
     shouldAllowClickThrough ? tw`pointer-events-none` : tw`pointer-events-auto`}

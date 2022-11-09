@@ -69,10 +69,10 @@ export default function ItemField<T>({ cell }: { cell: Cell<T, unknown> }) {
       // isSorterActive={sorters.map((s) => s.id).includes(column.id)}
       // isFilterActive={!!filterModel[column.id]}
     >
-      <dt tw="text-sm color[rgb(var(--body-secondary-color))] truncate mb-2">
+      <dt tw="text-sm [color:rgb(var(--body-secondary-color))] truncate mb-2">
         <div tw="flex-grow truncate">
           {cell.column.columnDef.meta?.icon && (
-            <span tw="mr-2 color[rgb(var(--body-secondary-color))] opacity-40">
+            <span tw="mr-2 [color:rgb(var(--body-secondary-color))] opacity-40">
               {cell.column.columnDef.meta?.icon}
             </span>
           )}

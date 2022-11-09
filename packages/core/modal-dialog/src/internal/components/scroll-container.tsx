@@ -95,7 +95,7 @@ const ScrollContainer = forwardRef<HTMLElement | null, ScrollContainerProps>(
     return (
       <FocusRing isInset>
         <div
-          tw="display[inherit] m-0 flex[inherit] flex-direction[inherit] overflow-x-hidden overflow-y-auto md:(height[unset] overflow-y-auto)"
+          tw="[display:inherit] m-0 [flex:inherit] [flex-direction:inherit] overflow-x-hidden overflow-y-auto md:([height:unset] overflow-y-auto)"
           // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
           tabIndex={showContentFocus ? 0 : undefined}
           data-testid={testId && `${testId}--scrollable`}

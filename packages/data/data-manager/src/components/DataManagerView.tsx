@@ -45,7 +45,7 @@ function ColumnHeader({ title, items, ...rest }) {
 function Item({ item, provided, ...rest }) {
   return (
     <a
-      tw="block border rounded background[rgb(var(--body-on-primary-bg))] mb-3 p-4"
+      tw="block border rounded [background:rgb(var(--body-on-primary-bg))] mb-3 p-4"
       ref={provided.innerRef}
       {...rest}
     >

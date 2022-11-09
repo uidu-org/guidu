@@ -92,7 +92,7 @@ export default function CalendarView({
             {...triggerProps}
             onClick={() => setIsOpen((prev) => !prev)}
           >
-            <span tw="text-transform[capitalize]">{view}</span>
+            <span tw="[text-transform:capitalize]">{view}</span>
           </Trigger>
         </Tooltip>
       )}

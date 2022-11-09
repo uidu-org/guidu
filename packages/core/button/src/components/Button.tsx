@@ -163,8 +163,8 @@ function Button(props: ButtonProps) {
       onBlur={_onBlur}
       disabled={isDisabled}
       css={[
-        tw`align-baseline border-width[1px] border-transparent inline-flex max-w-full outline-none! text-center text-decoration[none] whitespace-nowrap font-size[inherit] font-style[normal] font-weight[normal]`,
-        tw`font-medium rounded appearance-none font-size[.975rem]`,
+        tw`align-baseline [border-width:1px] border-transparent inline-flex max-w-full outline-none! text-center [text-decoration:none] whitespace-nowrap [font-size:inherit] [font-style:normal] [font-weight:normal]`,
+        tw`font-medium rounded appearance-none [font-size:.975rem]`,
         isLoading && tw`pointer-events-none`,
         state === 'hover'
           ? {
@@ -178,9 +178,9 @@ function Button(props: ButtonProps) {
         state === 'hover' &&
         (appearance === 'link' || appearance === 'subtle-link')
           ? tw`hover:underline`
-          : tw`hover:text-decoration[none]`,
+          : tw`hover:[text-decoration:none]`,
         spacing === 'none' ? tw`p-0` : tw`px-1.5 py-2`,
-        tw`line-height[initial]`,
+        tw`[line-height:initial]`,
         state === 'hover' || state === 'active' || state === 'selected'
           ? tw`cursor-pointer`
           : state === 'disabled'
@@ -189,10 +189,10 @@ function Button(props: ButtonProps) {
         spacing === 'none' ? tw`align-baseline` : tw`align-middle`,
         shouldFitContainer ? tw`w-full` : tw`w-auto`,
         state === 'active'
-          ? tw`transition-duration[0s]`
+          ? tw`[transition-duration:0s]`
           : state === 'focus'
-          ? tw`transition-duration[0s, 0.2s]`
-          : tw`transition-duration[0.1s, 0.15s]`,
+          ? tw`[transition-duration:0s, 0.2s]`
+          : tw`[transition-duration:0.1s, 0.15s]`,
       ]}
       appearance={appearance}
       className={className}

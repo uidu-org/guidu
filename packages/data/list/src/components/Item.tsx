@@ -50,7 +50,7 @@ export default function Item<T>({
       )}
       <div tw="flex flex-col">
         {primary && (
-          <div tw="sticky width[fit-content] -left-4 px-4 font-medium max-width[calc(100vw - 100px)]">
+          <div tw="sticky [width:fit-content] -left-4 px-4 font-medium [max-width:calc(100vw - 100px)]">
             {flexRender(primary.column.columnDef.cell, primary.getContext())}
           </div>
         )}

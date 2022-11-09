@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const StyledResizer = styled.div<{ isResizing: boolean }>`
-  ${tw`w-1 h-full absolute top-0 right-0 user-select[none] cursor[col-resize] touch-action[none] hover:opacity-100 z-20`}
+  ${tw`w-1 h-full absolute top-0 right-0 [user-select:none] [cursor:col-resize] [touch-action:none] hover:opacity-100 z-20`}
   ${({ isResizing }) =>
     isResizing
-      ? tw`background-color[rgba(var(--brand-primary), .5)] opacity-100`
+      ? tw`[background-color:rgba(var(--brand-primary), .5)] opacity-100`
       : tw``}
 `;
 

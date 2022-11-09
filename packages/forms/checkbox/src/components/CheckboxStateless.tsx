@@ -47,7 +47,7 @@ const CheckboxStateless = forwardRef<
             type="checkbox"
             className={className}
             css={[
-              tw`focus:--tw-ring-color[rgba(var(--brand-primary), .1)] focus:ring-2 focus:border-color[rgb(var(--brand-primary))] h-5 w-5 border-color[rgb(var(--checkbox-border, var(--border)))] rounded color[rgba(var(--brand-primary), 1)]`,
+              tw`focus:[--tw-ring-color:rgba(var(--brand-primary), .1)] focus:ring-2 focus:[border-color:rgb(var(--brand-primary))] h-5 w-5 [border-color:rgb(var(--checkbox-border, var(--border)))] rounded [color:rgba(var(--brand-primary), 1)]`,
               fieldState?.error
                 ? tw`border-red-300 focus:outline-none focus:ring-red-50 focus:border-red-400`
                 : tw``,

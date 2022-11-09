@@ -13,19 +13,19 @@ const StyledPositioner = styled.div<{
   ${tw`fixed top-0 left-0 z-50 w-full h-full max-w-full`}
   ${({ shouldScrollInViewport }) => {
     if (shouldScrollInViewport) {
-      return tw`width[max-content] h-auto relative md:(mx-auto my-4)`;
+      return tw`[width:max-content] h-auto relative md:(mx-auto my-4)`;
     }
-    return tw`md:(width[max-content] mx-auto absolute right-0 top[var(--modal-dialog-gutter)] left-0 pointer-events-none)`;
+    return tw`md:([width:max-content] mx-auto absolute right-0 [top:var(--modal-dialog-gutter)] left-0 pointer-events-none)`;
   }}
   ${tw`transition duration-300 ease-in-out transform motion-reduce:(transition-none)`}
 
   ${({ stackIndex }) => {
     if (stackIndex > 0) {
-      return tw`transform[translateY(var(--modal-dialog-translate-y))]`;
+      return tw`[transform:translateY(var(--modal-dialog-translate-y))]`;
     }
-    return tw`transform[none]`;
+    return tw`[transform:none]`;
   }}
-  ${tw`md:(max-width[calc(100vw - var(--modal-dialog-gutter) * 2)] max-height[calc(100vh - var(--modal-dialog-gutter) * 2)])`}
+  ${tw`md:([max-width:calc(100vw - var(--modal-dialog-gutter) * 2)] [max-height:calc(100vh - var(--modal-dialog-gutter) * 2)])`}
 `;
 
 const bodyScrollStyles = {

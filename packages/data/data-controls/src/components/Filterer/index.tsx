@@ -40,7 +40,7 @@ export default function Filterer<T>({ tableInstance }: FiltererProps<T>) {
 
   const Content = useCallback(
     () => (
-      <div tw="w-screen sm:width[500px]">
+      <div tw="w-screen sm:[width:500px]">
         <FiltererForm
           tableInstance={tableInstance}
           closePopup={() => setIsDialogOpen(false)}

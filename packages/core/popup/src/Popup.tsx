@@ -12,7 +12,7 @@ import { useFocusManager } from './useFocusManager';
 const DefaultPopupComponent = forwardRef<HTMLDivElement, PopupComponentProps>(
   (props, ref) => (
     <div
-      tw="rounded block overflow-auto border border-opacity-50 shadow background[rgb(var(--body-primary-bg))] flex-auto"
+      tw="rounded block overflow-auto border border-opacity-50 shadow [background:rgb(var(--body-primary-bg))] flex-auto"
       css={popupCSS}
       ref={ref}
       {...props}

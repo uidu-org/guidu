@@ -29,7 +29,7 @@ function ModalBody(props: ModalBodyProps) {
 
   return shouldScrollInViewport ? (
     <div
-      tw="flex[1 1 auto] py-0 px-8"
+      tw="[flex:1_1_auto] py-0 px-8"
       className={className}
       data-testid={testId}
     >
@@ -39,7 +39,7 @@ function ModalBody(props: ModalBodyProps) {
     <TouchScrollable>
       <ScrollContainer testId={userDefinedTestId || modalTestId}>
         <div
-          tw="flex[1 1 auto] py-1 px-8"
+          tw="[flex:1_1_auto] py-1 px-8"
           className={className}
           data-testid={testId}
         >

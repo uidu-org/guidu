@@ -48,11 +48,11 @@ export default function DataCard<T>({ item }: { item: T }) {
         <div className={`${primary ? 'mt-n3' : ''} card-body pt-1`}>
           <dl>
             {visibleCells.map((cell) => (
-              <div tw="height[4.5rem]">
-                <dt tw="text-sm color[rgb(var(--body-secondary-color))] truncate mb-2">
+              <div tw="[height:4.5rem]">
+                <dt tw="text-sm [color:rgb(var(--body-secondary-color))] truncate mb-2">
                   <div tw="flex-grow truncate">
                     {cell.column.columnDef.meta?.icon && (
-                      <span tw="mr-2 color[rgb(var(--body-secondary-color))] opacity-40">
+                      <span tw="mr-2 [color:rgb(var(--body-secondary-color))] opacity-40">
                         {cell.column.columnDef.meta?.icon}
                       </span>
                     )}

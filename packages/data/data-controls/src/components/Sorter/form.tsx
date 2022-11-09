@@ -128,7 +128,7 @@ export default function SorterForm<T>({
       <Form form={form} footerRenderer={() => null} handleSubmit={handleSubmit}>
         <div tw="space-y-4">
           {sorting?.length > 0 && (
-            <div tw="grid grid-template-columns[max-content 1fr min-content] gap-4 px-4">
+            <div tw="grid [grid-template-columns:max-content 1fr min-content] gap-4 px-4">
               {sorting.map((sorter, index: number) => (
                 <Fragment
                   // tw="px-3 space-x-3 mb-0 flex items-center"
@@ -147,7 +147,7 @@ export default function SorterForm<T>({
                       />
                     </label>
                   </div>
-                  <div tw="grid grid-template-columns[1fr max-content] gap-x-4">
+                  <div tw="grid [grid-template-columns:1fr max-content] gap-x-4">
                     <div>
                       <Select
                         layout="elementOnly"

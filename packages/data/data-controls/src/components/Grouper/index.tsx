@@ -40,7 +40,7 @@ export default function Grouper({ tableInstance }: GrouperProps) {
 
   const Content = useCallback(
     () => (
-      <div tw="w-screen sm:width[500px]">
+      <div tw="w-screen sm:[width:500px]">
         <GrouperForm
           tableInstance={tableInstance}
           closePopup={() => setIsDialogOpen(false)}

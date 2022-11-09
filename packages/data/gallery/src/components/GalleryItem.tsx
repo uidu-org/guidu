@@ -23,7 +23,7 @@ export default function GalleryItem<T>({
       }}
       key={item.id}
     >
-      <div tw="border rounded background[rgb(var(--body-on-primary-bg))]">
+      <div tw="border rounded [background:rgb(var(--body-on-primary-bg))]">
         <Item tableInstance={tableInstance} item={item} />
       </div>
     </div>
