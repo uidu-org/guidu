@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 1.2.3
+
+### Patch Changes
+
+- 7e9f17e02: Bump dependencies
+
 ## 1.2.2
 
 ### Patch Changes

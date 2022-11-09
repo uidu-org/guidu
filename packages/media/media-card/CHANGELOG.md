@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.7.17
+
+### Patch Changes
+
+- 7e9f17e02: Bump dependencies
+
 ## 0.7.16
 
 ### Patch Changes

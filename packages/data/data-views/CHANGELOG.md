@@ -1,5 +1,15 @@
 # @uidu/data-views
 
+## 3.0.9
+
+### Patch Changes
+
+- Updated dependencies [7e9f17e02]
+  - @uidu/data-manager@4.2.2
+  - @uidu/select@2.1.3
+  - @uidu/data-controls@4.0.10
+  - @uidu/field-number@2.0.21
+
 ## 3.0.8
 
 ### Patch Changes
