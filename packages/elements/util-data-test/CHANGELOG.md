@@ -1,5 +1,12 @@
 # @uidu/util-data-test
 
+## 0.4.28
+
+### Patch Changes
+
+- Updated dependencies [e08b59a1d]
+  - @uidu/mentions@0.5.0
+
 ## 0.4.27
 
 ### Patch Changes

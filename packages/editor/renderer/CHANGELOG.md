@@ -1,5 +1,13 @@
 # @uidu/renderer
 
+## 1.2.5
+
+### Patch Changes
+
+- Updated dependencies [e08b59a1d]
+  - @uidu/mentions@0.5.0
+  - @uidu/editor-common@1.1.5
+
 ## 1.2.4
 
 ### Patch Changes

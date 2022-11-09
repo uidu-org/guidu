@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.5.0
+
+### Minor Changes
+
+- e08b59a1d: Added mentions to editor-core
+
 ## 0.4.28
 
 ### Patch Changes
