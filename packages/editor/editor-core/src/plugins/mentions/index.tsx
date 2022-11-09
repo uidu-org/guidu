@@ -30,12 +30,9 @@ import {
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   addAnalytics,
-  AnalyticsDispatch,
-  analyticsPluginKey,
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
-import { analyticsEventKey } from '../analytics/consts';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconMention } from '../quick-insert/assets';
 import {
@@ -176,22 +173,22 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
           tr,
           dispatch,
         ) {
-          if (!prevActive && queryChanged) {
-            analyticsService.trackEvent(
-              'uidu.editor-core.mention.picker.trigger.shortcut',
-            );
-            if (!tr.getMeta(analyticsPluginKey)) {
-              (dispatch as AnalyticsDispatch)(analyticsEventKey, {
-                payload: {
-                  action: ACTION.INVOKED,
-                  actionSubject: ACTION_SUBJECT.TYPEAHEAD,
-                  actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_MENTION,
-                  attributes: { inputMethod: INPUT_METHOD.KEYBOARD },
-                  eventType: EVENT_TYPE.UI,
-                },
-              });
-            }
-          }
+          // if (!prevActive && queryChanged) {
+          //   analyticsService.trackEvent(
+          //     'uidu.editor-core.mention.picker.trigger.shortcut',
+          //   );
+          //   if (!tr.getMeta(analyticsPluginKey)) {
+          //     (dispatch as AnalyticsDispatch)(analyticsEventKey, {
+          //       payload: {
+          //         action: ACTION.INVOKED,
+          //         actionSubject: ACTION_SUBJECT.TYPEAHEAD,
+          //         actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_MENTION,
+          //         attributes: { inputMethod: INPUT_METHOD.KEYBOARD },
+          //         eventType: EVENT_TYPE.UI,
+          //       },
+          //     });
+          //   }
+          // }
 
           const pluginState = getMentionPluginState(state);
           const mentions =
@@ -201,22 +198,23 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
             ...pluginState.contextIdentifierProvider,
             sessionId,
           };
+
           if (queryChanged && pluginState.mentionProvider) {
             pluginState.mentionProvider.filter(query || '', mentionContext);
           }
 
           return mentions.map(
-            (mention: MentionDescription): TypeAheadItem => ({
-              title: mention.id,
+            (m: MentionDescription): TypeAheadItem => ({
+              title: m.id,
               render: ({ isSelected, onClick, onHover }) => (
                 <MentionItem
-                  mention={mention}
+                  mention={m}
                   selected={isSelected}
                   onMouseEnter={onHover}
                   onSelection={onClick}
                 />
               ),
-              mention,
+              mention: m,
             }),
           );
         },

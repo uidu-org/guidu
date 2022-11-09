@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { CreateUIAnalyticsEvent } from '@uidu/analytics';
 import {
   combineExtensionProviders,

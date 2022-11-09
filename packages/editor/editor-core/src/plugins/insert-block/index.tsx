@@ -134,8 +134,8 @@ const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
             editorView={editorView}
             tableSupported={!!tablesState}
             actionSupported={!!editorView.state.schema.nodes.taskItem}
-            mentionsSupported={!!(mentionState && mentionState.mentionProvider)}
-            mentionsEnabled={!!mentionState}
+            // mentionsSupported={!!(mentionState && mentionState.mentionProvider)}
+            // mentionsEnabled={!!mentionState}
             decisionSupported={!!editorView.state.schema.nodes.decisionItem}
             dateEnabled={!!dateState}
             videoEnabled={!!videoState}

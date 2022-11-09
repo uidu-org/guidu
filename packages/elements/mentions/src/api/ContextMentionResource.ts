@@ -1,6 +1,7 @@
 import type { MentionDescription } from '../types';
 import { padArray } from '../utils';
 import { MentionContextIdentifier, MentionProvider } from './MentionResource';
+
 export type { MentionDescription };
 
 export type MentionProviderFunctions = {
@@ -14,6 +15,7 @@ export type MentionProviderFunctions = {
  */
 export default class ContextMentionResource implements MentionProvider {
   private mentionProvider: MentionProvider;
+
   private contextIdentifier: MentionContextIdentifier;
 
   constructor(
@@ -28,27 +30,29 @@ export default class ContextMentionResource implements MentionProvider {
     return this.contextIdentifier;
   }
 
-  callWithContextIds = <K extends keyof MentionProviderFunctions>(
-    f: K,
-    declaredArgs: number,
-  ): MentionProvider[K] => (...args: any[]) => {
-    const argsLength = args ? args.length : 0;
-    // cover the scenario where optional parameters are not passed
-    // by passing undefined instead to keep the contextIdentifiers parameter in the right position
-    const mentionArgs =
-      argsLength !== declaredArgs
-        ? padArray(args, declaredArgs - argsLength, undefined)
-        : args;
-    return (this.mentionProvider[f] as Function)(
-      ...mentionArgs,
-      this.contextIdentifier,
-    );
-  };
+  callWithContextIds =
+    <K extends keyof MentionProviderFunctions>(
+      f: K,
+      declaredArgs: number,
+    ): MentionProvider[K] =>
+    (...args: any[]) => {
+      const argsLength = args ? args.length : 0;
+      // cover the scenario where optional parameters are not passed
+      // by passing undefined instead to keep the contextIdentifiers parameter in the right position
+      const mentionArgs =
+        argsLength !== declaredArgs
+          ? padArray(args, declaredArgs - argsLength, undefined)
+          : args;
+      return (this.mentionProvider[f] as Function)(
+        ...mentionArgs,
+        this.contextIdentifier,
+      );
+    };
 
-  callDefault = <K extends keyof MentionProviderFunctions>(
-    f: K,
-  ): MentionProvider[K] => (...args: any[]) =>
-    (this.mentionProvider[f] as Function)(...args);
+  callDefault =
+    <K extends keyof MentionProviderFunctions>(f: K): MentionProvider[K] =>
+    (...args: any[]) =>
+      (this.mentionProvider[f] as Function)(...args);
 
   subscribe = this.callDefault('subscribe');
 

@@ -101,7 +101,7 @@ export default class MentionItem extends React.PureComponent<Props, {}> {
           <AvatarStyle restricted={restricted}>
             <Avatar
               src={avatarUrl}
-              size="medium"
+              size="small"
               presence={status}
               borderColor={borderColor}
             />
@@ -118,9 +118,11 @@ export default class MentionItem extends React.PureComponent<Props, {}> {
             <NoAccessTooltip name={name!}>
               <AccessSectionStyle>
                 <NoAccessLabel>
-                  {text => (
-                    <LockCircleIcon label={text as string} />
-                  ) /* safe to cast to string given there is no value binding */}
+                  {
+                    (text) => (
+                      <LockCircleIcon label={text as string} />
+                    ) /* safe to cast to string given there is no value binding */
+                  }
                 </NoAccessLabel>
               </AccessSectionStyle>
             </NoAccessTooltip>

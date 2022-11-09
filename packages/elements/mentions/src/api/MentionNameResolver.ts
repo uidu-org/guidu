@@ -14,12 +14,19 @@ export interface MentionNameResolver {
 
 export class DefaultMentionNameResolver implements MentionNameResolver {
   public static waitForBatch = 100; // ms
+
   private client: MentionNameClient;
+
   private nameCache: Map<string, MentionNameDetails> = new Map();
+
   private nameQueue: Map<string, Callback[]> = new Map();
+
   private nameStartTime: Map<string, number> = new Map();
+
   private processingQueue: Map<string, Callback[]> = new Map();
+
   private debounce: number = 0;
+
   private fireHydrationEvent: (
     action: string,
     userId: string,
@@ -32,9 +39,8 @@ export class DefaultMentionNameResolver implements MentionNameResolver {
     analyticsProps: WithAnalyticsEventsProps = {},
   ) {
     this.client = client;
-    this.fireHydrationEvent = fireAnalyticsMentionHydrationEvent(
-      analyticsProps,
-    );
+    this.fireHydrationEvent =
+      fireAnalyticsMentionHydrationEvent(analyticsProps);
   }
 
   lookupName(id: string): Promise<MentionNameDetails> | MentionNameDetails {
@@ -44,7 +50,8 @@ export class DefaultMentionNameResolver implements MentionNameResolver {
       return name;
     }
 
-    return new Promise(resolve => {
+    // eslint-disable-next-line compat/compat
+    return new Promise((resolve) => {
       const processingItems = this.processingQueue.get(id);
       if (processingItems) {
         this.processingQueue.set(id, [...processingItems, resolve]);
@@ -102,7 +109,7 @@ export class DefaultMentionNameResolver implements MentionNameResolver {
     if (resolvers) {
       this.processingQueue.delete(id);
       this.nameCache.set(id, mentionDetail);
-      resolvers.forEach(resolve => {
+      resolvers.forEach((resolve) => {
         try {
           resolve(mentionDetail);
         } catch {
@@ -123,8 +130,8 @@ export class DefaultMentionNameResolver implements MentionNameResolver {
     this.processingQueue = new Map([...this.processingQueue, ...queue]);
     this.client
       .lookupMentionNames(Array.from(queue.keys()))
-      .then(response => {
-        response.forEach(mentionDetail => {
+      .then((response) => {
+        response.forEach((mentionDetail) => {
           const { id } = mentionDetail;
           queue.delete(id);
           this.resolveQueueItem(mentionDetail);

@@ -24,10 +24,14 @@ const MAX_QUERY_TEAMS = 20;
  * In future we will have a new endpoint to return both users and teams, we can
  * remove this class at this point
  */
-export default class TeamMentionResource extends MentionResource
-  implements TeamMentionProvider {
+export default class TeamMentionResource
+  extends MentionResource
+  implements TeamMentionProvider
+{
   private readonly teamMentionConfig: TeamMentionResourceConfig;
+
   private lastSearchQuery?: string = '';
+
   private lastReturnedSearchTeam: number;
 
   constructor(
@@ -71,9 +75,8 @@ export default class TeamMentionResource extends MentionResource
     const emptyQuery = '';
     const getUserPromise = super.remoteInitialState(contextIdentifier);
 
-    const queryParams: KeyValues = this.getQueryParamsOfTeamMentionConfig(
-      contextIdentifier,
-    );
+    const queryParams: KeyValues =
+      this.getQueryParamsOfTeamMentionConfig(contextIdentifier);
     const options = {
       path: 'bootstrap',
       queryParams,
@@ -179,11 +182,11 @@ export default class TeamMentionResource extends MentionResource
     const configParams: KeyValues = {};
 
     if (this.teamMentionConfig.containerId) {
-      configParams['containerId'] = this.teamMentionConfig.containerId;
+      configParams.containerId = this.teamMentionConfig.containerId;
     }
 
     if (this.teamMentionConfig.productId) {
-      configParams['productIdentifier'] = this.teamMentionConfig.productId;
+      configParams.productIdentifier = this.teamMentionConfig.productId;
     }
 
     // if contextParams exist then it will override configParams for containerId

@@ -1,4 +1,5 @@
 import { traverse } from '@uidu/adf-utils';
+import { MentionResource } from '@uidu/mentions/src';
 import { ShellBody, ShellHeader, ShellMain, ShellSidebar } from '@uidu/shell';
 import { GuiduThemeProvider } from '@uidu/theme';
 import React, { useRef, useState } from 'react';
@@ -89,6 +90,14 @@ export default function Composable() {
                         allowResizing: true,
                       }),
                     ]}
+                    mentionProvider={Promise.resolve(
+                      new MentionResource({
+                        // Required attrib. Requests will happen natively.
+                        url: 'https://me.uidu.local:8443/api/mentions',
+                        shouldHighlightMention: (mention) =>
+                          accountId === mention.id,
+                      }),
+                    )}
                     media={{
                       provider: Promise.resolve({
                         uploadOptions: localUploadOptions({

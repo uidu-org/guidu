@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+// eslint-disable-next-line max-classes-per-file
 import {
   KeyValues,
   ServiceConfig,
@@ -103,12 +105,10 @@ export interface ResolvingMentionProvider extends MentionProvider {
   supportsMentionNameResolving(): boolean;
 }
 
-const emptySecurityProvider = () => {
-  return {
-    params: {},
-    headers: {},
-  };
-};
+const emptySecurityProvider = () => ({
+  params: {},
+  headers: {},
+});
 
 type SearchResponse = {
   mentions: Promise<MentionsResult>;
@@ -116,8 +116,11 @@ type SearchResponse = {
 
 class AbstractResource<Result> implements ResourceProvider<Result> {
   protected changeListeners: Map<string, ResultCallback<Result>>;
+
   protected errListeners: Map<string, ErrorCallback>;
+
   protected infoListeners: Map<string, InfoCallback>;
+
   protected allResultsListeners: Map<string, ResultCallback<Result>>;
 
   constructor() {
@@ -156,8 +159,10 @@ class AbstractResource<Result> implements ResourceProvider<Result> {
   }
 }
 
-class AbstractMentionResource extends AbstractResource<MentionDescription[]>
-  implements MentionProvider {
+class AbstractMentionResource
+  extends AbstractResource<MentionDescription[]>
+  implements MentionProvider
+{
   shouldHighlightMention(_mention: MentionDescription): boolean {
     return false;
   }
@@ -250,10 +255,14 @@ class AbstractMentionResource extends AbstractResource<MentionDescription[]>
 /**
  * Provides a Javascript API
  */
-export class MentionResource extends AbstractMentionResource
-  implements ResolvingMentionProvider {
+export class MentionResource
+  extends AbstractMentionResource
+  implements ResolvingMentionProvider
+{
   private config: MentionResourceConfig;
+
   private lastReturnedSearch: number;
+
   private activeSearches: Set<string>;
 
   constructor(config: MentionResourceConfig) {
@@ -300,18 +309,18 @@ export class MentionResource extends AbstractMentionResource
 
     if (!query) {
       this.initialState(contextIdentifier).then(
-        results => this.notify(searchTime, results, query),
-        error => this.notifyError(error, query),
+        (results) => this.notify(searchTime, results, query),
+        (error) => this.notifyError(error, query),
       );
     } else {
       this.activeSearches.add(query);
       const searchResponse = this.search(query, contextIdentifier);
 
       searchResponse.mentions.then(
-        results => {
+        (results) => {
           this.notify(searchTime, results, query);
         },
-        error => this.notifyError(error, query),
+        (error) => this.notifyError(error, query),
       );
     }
   }
@@ -322,7 +331,7 @@ export class MentionResource extends AbstractMentionResource
   ): Promise<void> {
     return this.recordSelection(mention, contextIdentifier).then(
       () => {},
-      error => debug(`error recording mention selection: ${error}`, error),
+      (error) => debug(`error recording mention selection: ${error}`, error),
     );
   }
 
@@ -380,11 +389,11 @@ export class MentionResource extends AbstractMentionResource
     const configParams: KeyValues = {};
 
     if (this.config.containerId) {
-      configParams['containerId'] = this.config.containerId;
+      configParams.containerId = this.config.containerId;
     }
 
     if (this.config.productId) {
-      configParams['productIdentifier'] = this.config.productId;
+      configParams.productIdentifier = this.config.productId;
     }
 
     // if contextParams exist then it will override configParams for containerId
@@ -409,7 +418,7 @@ export class MentionResource extends AbstractMentionResource
 
     return serviceUtils
       .requestService<MentionsResult>(this.config, options)
-      .then(result => this.transformServiceResponse(result, ''));
+      .then((result) => this.transformServiceResponse(result, ''));
   }
 
   private search(
@@ -436,14 +445,14 @@ export class MentionResource extends AbstractMentionResource
 
     return serviceUtils
       .requestService<MentionsResult>(this.config, options)
-      .then(result => this.transformServiceResponse(result, query));
+      .then((result) => this.transformServiceResponse(result, query));
   }
 
   private transformServiceResponse(
     result: MentionsResult,
     query: string,
   ): MentionsResult {
-    const mentions = result.mentions.map(mention => {
+    const mentions = result.mentions.map((mention) => {
       let lozenge: string | undefined;
       if (isAppMention(mention)) {
         lozenge = mention.userType;
@@ -478,8 +487,11 @@ export class MentionResource extends AbstractMentionResource
 
 export class HttpError implements Error {
   name: string;
+
   message: string;
+
   statusCode: number;
+
   stack?: string;
 
   constructor(statusCode: number, statusMessage: string) {

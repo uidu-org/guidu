@@ -6,17 +6,19 @@ import DateIcon from '@atlaskit/icon/glyph/editor/date';
 import DecisionIcon from '@atlaskit/icon/glyph/editor/decision';
 import EmojiIcon from '@atlaskit/icon/glyph/editor/emoji';
 import HorizontalRuleIcon from '@atlaskit/icon/glyph/editor/horizontal-rule';
-import EditorImageIcon from '@atlaskit/icon/glyph/editor/image';
 import InfoIcon from '@atlaskit/icon/glyph/editor/info';
 import LayoutTwoEqualIcon from '@atlaskit/icon/glyph/editor/layout-two-equal';
-import MentionIcon from '@atlaskit/icon/glyph/editor/mention';
 import EditorMoreIcon from '@atlaskit/icon/glyph/editor/more';
-import TableIcon from '@atlaskit/icon/glyph/editor/table';
 import TaskIcon from '@atlaskit/icon/glyph/editor/task';
 import PlaceholderTextIcon from '@atlaskit/icon/glyph/media-services/text';
 import QuoteIcon from '@atlaskit/icon/glyph/quote';
 import StatusIcon from '@atlaskit/icon/glyph/status';
-import { faLink, faVideo } from '@fortawesome/free-solid-svg-icons';
+import {
+  faImages,
+  faLink,
+  faTable,
+  faVideo,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { akEditorMenuZIndex, Popup } from '@uidu/editor-common';
 import { EmojiPicker as AkEmojiPicker } from '@uidu/emoji/picker';
@@ -60,7 +62,6 @@ import { insertEmoji } from '../../../emoji/commands/insert-emoji';
 import { insertExpand } from '../../../expand/commands';
 import { showLinkToolbar } from '../../../hyperlink/commands';
 import { insertLayoutColumnsWithAnalytics } from '../../../layout/actions';
-import { insertMentionQuery } from '../../../mentions/commands/insert-mention-query';
 import { showPlaceholderFloatingToolbar } from '../../../placeholder-text/actions';
 import { createHorizontalRule } from '../../../rule/pm-plugins/input-rule';
 import { updateStatusWithAnalytics } from '../../../status/actions';
@@ -349,7 +350,7 @@ class ToolbarInsertBlock extends React.PureComponent<
       mediaSupported,
       imageUploadSupported,
       imageUploadEnabled,
-      mentionsSupported,
+      // mentionsSupported,
       availableWrapperBlockTypes,
       actionSupported,
       decisionSupported,
@@ -402,7 +403,13 @@ class ToolbarInsertBlock extends React.PureComponent<
       items.push({
         content: labelFilesAndImages,
         value: { name: 'media' },
-        elemBefore: <EditorImageIcon label={labelFilesAndImages} />,
+        elemBefore: (
+          <FontAwesomeIcon
+            tw="h-4 w-4"
+            icon={faImages}
+            label={labelFilesAndImages}
+          />
+        ),
       });
     }
     if (imageUploadSupported) {
@@ -411,20 +418,22 @@ class ToolbarInsertBlock extends React.PureComponent<
         content: labelImage,
         value: { name: 'image upload' },
         isDisabled: !imageUploadEnabled,
-        elemBefore: <EditorImageIcon label={labelImage} />,
+        elemBefore: (
+          <FontAwesomeIcon tw="h-4 w-4" icon={faImages} label={labelImage} />
+        ),
       });
     }
-    if (mentionsSupported) {
-      const labelMention = formatMessage(messages.mention);
-      items.push({
-        content: labelMention,
-        value: { name: 'mention' },
-        isDisabled: !isTypeAheadAllowed,
-        elemBefore: <MentionIcon label={labelMention} />,
-        elemAfter: <Shortcut>@</Shortcut>,
-        shortcut: '@',
-      });
-    }
+    // if (mentionsSupported) {
+    //   const labelMention = formatMessage(messages.mention);
+    //   items.push({
+    //     content: labelMention,
+    //     value: { name: 'mention' },
+    //     isDisabled: !isTypeAheadAllowed,
+    //     elemBefore: <MentionIcon label={labelMention} />,
+    //     elemAfter: <Shortcut>@</Shortcut>,
+    //     shortcut: '@',
+    //   });
+    // }
     if (emojiProvider) {
       const labelEmoji = formatMessage(messages.emoji);
       items.push({
@@ -443,7 +452,9 @@ class ToolbarInsertBlock extends React.PureComponent<
       items.push({
         content: labelTable,
         value: { name: 'table' },
-        elemBefore: <TableIcon label={labelTable} />,
+        elemBefore: (
+          <FontAwesomeIcon tw="h-4 w-4" icon={faTable} label={labelTable} />
+        ),
         elemAfter: shortcutTable ? (
           <Shortcut>{shortcutTable}</Shortcut>
         ) : undefined,
@@ -575,14 +586,14 @@ class ToolbarInsertBlock extends React.PureComponent<
     },
   );
 
-  private insertMention = withAnalytics(
-    'uidu.editor-core.mention.picker.trigger.button',
-    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
-      const { editorView } = this.props;
-      insertMentionQuery(inputMethod)(editorView.state, editorView.dispatch);
-      return true;
-    },
-  );
+  // private insertMention = withAnalytics(
+  //   'uidu.editor-core.mention.picker.trigger.button',
+  //   (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
+  //     const { editorView } = this.props;
+  //     insertMentionQuery(inputMethod)(editorView.state, editorView.dispatch);
+  //     return true;
+  //   },
+  // );
 
   private insertTable = withAnalytics(
     'uidu.editor-core.format.table.button',
@@ -774,9 +785,9 @@ class ToolbarInsertBlock extends React.PureComponent<
       case 'media':
         this.openMediaPicker(inputMethod);
         break;
-      case 'mention':
-        this.insertMention(inputMethod);
-        break;
+      // case 'mention':
+      //   this.insertMention(inputMethod);
+      //   break;
       case 'emoji':
         this.toggleEmojiPicker(inputMethod);
         break;
