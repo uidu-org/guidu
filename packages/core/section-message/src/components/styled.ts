@@ -39,7 +39,7 @@ export const Actions = styled.ul`
 export const Action = styled.li`
   ${tw`flex items-center m-0`}
   & + &::before {
-    ${tw`w-4 inline-block text-center align-middle content[.] text-gray-300`}
+    ${tw`w-4 inline-block text-center align-middle [content:.] text-gray-300`}
   }
 `;
 

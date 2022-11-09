@@ -84,7 +84,7 @@ function ModalWrapper(props: ModalDialogProps) {
         {(fadeInProps) => (
           <div
             {...fadeInProps}
-            tw="w-screen h-screen fixed inset-0 overflow-y-auto overflow-scroll[touch]"
+            tw="w-screen h-screen fixed inset-0 overflow-y-auto [overflow-scroll:touch]"
             aria-hidden={!isForeground}
           >
             <FocusLock

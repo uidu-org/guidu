@@ -47,7 +47,7 @@ export const StyledSection = styled.div<{
   }
   ${({ isScrollable }) => {
     if (isScrollable) {
-      return tw`flex-shrink[1] overflow-auto`;
+      return tw`[flex-shrink:1] overflow-auto`;
     }
     return tw`flex-shrink`;
   }}
