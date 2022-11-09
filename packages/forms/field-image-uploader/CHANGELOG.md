@@ -4,6 +4,14 @@
 
 ### Patch Changes
 
+- Updated dependencies [7e9f17e02]
+  - @uidu/field-base@4.1.1
+  - @uidu/field-range@2.0.7
+
+## 3.0.19
+
+### Patch Changes
+
 - 542f83dff: Small fixes
 
 ## 3.0.18

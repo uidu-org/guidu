@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 3.2.8
+
+### Patch Changes
+
+- 7e9f17e02: Bump dependencies
+- Updated dependencies [7e9f17e02]
+  - @uidu/data-fields@2.1.18
+  - @uidu/data-manager@4.2.2
+  - @uidu/checkbox@2.0.7
+
 ## 3.2.7
 
 ### Patch Changes

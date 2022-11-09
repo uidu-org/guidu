@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.1.1
+
+### Patch Changes
+
+- 7e9f17e02: Bump dependencies
+
 ## 4.1.0
 
 ### Minor Changes

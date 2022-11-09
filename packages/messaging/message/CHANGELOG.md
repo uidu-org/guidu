@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.58
+
+### Patch Changes
+
+- 7e9f17e02: Bump dependencies
+- Updated dependencies [7e9f17e02]
+  - @uidu/media-card@0.7.17
+
 ## 0.5.57
 
 ### Patch Changes

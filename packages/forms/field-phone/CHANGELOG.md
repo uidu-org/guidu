@@ -1,5 +1,14 @@
 # @uidu/field-date
 
+## 2.0.22
+
+### Patch Changes
+
+- 7e9f17e02: Bump dependencies
+- Updated dependencies [7e9f17e02]
+  - @uidu/field-base@4.1.1
+  - @uidu/select@2.1.3
+
 ## 2.0.21
 
 ### Patch Changes
