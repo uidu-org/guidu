@@ -4883,7 +4883,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sinonjs/commons@npm:^1.6.0, @sinonjs/commons@npm:^1.7.0, @sinonjs/commons@npm:^1.8.3":
+"@sinonjs/commons@npm:^1.7.0":
   version: 1.8.3
   resolution: "@sinonjs/commons@npm:1.8.3"
   dependencies:
@@ -4892,7 +4892,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sinonjs/fake-timers@npm:>=5, @sinonjs/fake-timers@npm:^9.1.2":
+"@sinonjs/commons@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@sinonjs/commons@npm:2.0.0"
+  dependencies:
+    type-detect: 4.0.8
+  checksum: 5023ba17edf2b85ed58262313b8e9b59e23c6860681a9af0200f239fe939e2b79736d04a260e8270ddd57196851dde3ba754d7230be5c5234e777ae2ca8af137
+  languageName: node
+  linkType: hard
+
+"@sinonjs/fake-timers@npm:^7.0.4":
+  version: 7.1.2
+  resolution: "@sinonjs/fake-timers@npm:7.1.2"
+  dependencies:
+    "@sinonjs/commons": ^1.7.0
+  checksum: c84773d7973edad5511a31d2cc75023447b5cf714a84de9bb50eda45dda88a0d3bd2c30bf6e6e936da50a048d5352e2151c694e13e59b97d187ba1f329e9a00c
+  languageName: node
+  linkType: hard
+
+"@sinonjs/fake-timers@npm:^9.1.2":
   version: 9.1.2
   resolution: "@sinonjs/fake-timers@npm:9.1.2"
   dependencies:
@@ -4901,14 +4919,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sinonjs/samsam@npm:^6.1.1":
-  version: 6.1.1
-  resolution: "@sinonjs/samsam@npm:6.1.1"
+"@sinonjs/samsam@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@sinonjs/samsam@npm:7.0.1"
   dependencies:
-    "@sinonjs/commons": ^1.6.0
+    "@sinonjs/commons": ^2.0.0
     lodash.get: ^4.4.2
     type-detect: ^4.0.8
-  checksum: a09b0914bf573f0da82bd03c64ba413df81a7c173818dc3f0a90c2652240ac835ef583f4d52f0b215e626633c91a4095c255e0669f6ead97241319f34f05e7fc
+  checksum: 291efb158d54c67dee23ddabcb28873d22063449b692aaa3b2a4f1826d2f79d38695574063c92e9c17573cc805cd6acbf0ab0c66c9f3aed7afd0f12a2b905615
   languageName: node
   linkType: hard
 
@@ -6364,7 +6382,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/adf-schema@^1.1.3, @uidu/adf-schema@workspace:packages/editor/adf-schema":
+"@uidu/adf-schema@^2.0.0, @uidu/adf-schema@workspace:packages/editor/adf-schema":
   version: 0.0.0-use.local
   resolution: "@uidu/adf-schema@workspace:packages/editor/adf-schema"
   dependencies:
@@ -6373,7 +6391,7 @@ __metadata:
     "@types/prosemirror-model": ^1.17.0
     "@types/prosemirror-state": ^1.4.0
     "@types/prosemirror-view": ^1.24.0
-    "@uidu/editor-json-transformer": ^1.0.4
+    "@uidu/editor-json-transformer": ^1.0.5
     "@uidu/json-schema-generator": ^1.0.1
     "@uidu/media-core": 1.1.5
     axios: ^0.27.2
@@ -6387,12 +6405,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/adf-utils@^1.1.2, @uidu/adf-utils@workspace:packages/editor/adf-utils":
+"@uidu/adf-utils@^2.0.0, @uidu/adf-utils@workspace:packages/editor/adf-utils":
   version: 0.0.0-use.local
   resolution: "@uidu/adf-utils@workspace:packages/editor/adf-utils"
   dependencies:
     "@babel/runtime": ^7.20.1
-    "@uidu/adf-schema": ^1.1.3
+    "@uidu/adf-schema": ^2.0.0
     "@uidu/docs": ^0.5.22
     "@uidu/json-schema-generator": ^1.0.1
     react: ^18.2.0
@@ -6669,7 +6687,7 @@ __metadata:
     classnames: ^2.3.2
     moment: ^2.29.4
     react: ^18.2.0
-    react-big-calendar: ^1.5.0
+    react-big-calendar: ^1.5.2
     react-feather: ^2.0.10
     styled-components: ^5.3.6
     tslib: ^2.4.1
@@ -7096,7 +7114,7 @@ __metadata:
     "@uidu/dropdown-menu": ^0.6.26
     "@uidu/item": ^0.5.24
     "@uidu/shell": ^2.1.38
-    "@uidu/theme": ^0.6.25
+    "@uidu/theme": ^0.6.26
     exenv: ^1.2.2
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -7168,21 +7186,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-common@^1.1.4, @uidu/editor-common@^1.1.5, @uidu/editor-common@workspace:packages/editor/editor-common":
+"@uidu/editor-common@^2.0.0, @uidu/editor-common@workspace:packages/editor/editor-common":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
     "@atlaskit/icon": ^21.10.7
     "@babel/runtime": ^7.20.1
-    "@uidu/adf-schema": ^1.1.3
-    "@uidu/adf-utils": ^1.1.2
+    "@uidu/adf-schema": ^2.0.0
+    "@uidu/adf-utils": ^2.0.0
     "@uidu/analytics": ^0.6.9
     "@uidu/analytics-namespaced-context": ^0.4.19
-    "@uidu/editor-json-transformer": 1.0.4
+    "@uidu/editor-json-transformer": 1.0.5
     "@uidu/emoji": ^0.6.27
     "@uidu/mentions": ^0.5.0
     "@uidu/profilecard": ^0.3.27
-    "@uidu/theme": ^0.6.25
+    "@uidu/theme": ^0.6.26
     "@uidu/tooltip": 0.5.27
     chromatism: ^3.0.0
     classnames: ^2.3.2
@@ -7203,7 +7221,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@^1.2.4, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@^2.0.0, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -7216,8 +7234,8 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.2.0
     "@fortawesome/react-fontawesome": ^0.2.0
     "@loadable/component": ^5.15.2
-    "@uidu/adf-schema": ^1.1.3
-    "@uidu/adf-utils": ^1.1.2
+    "@uidu/adf-schema": ^2.0.0
+    "@uidu/adf-utils": ^2.0.0
     "@uidu/analytics": ^0.6.9
     "@uidu/analytics-gas-types": ^0.3.5
     "@uidu/analytics-listeners": ^0.4.19
@@ -7228,9 +7246,9 @@ __metadata:
     "@uidu/date": ^0.4.25
     "@uidu/docs": ^0.5.22
     "@uidu/droplist": ^0.5.27
-    "@uidu/editor-common": ^1.1.5
-    "@uidu/editor-json-transformer": ^1.0.4
-    "@uidu/editor-markdown-transformer": ^1.0.3
+    "@uidu/editor-common": ^2.0.0
+    "@uidu/editor-json-transformer": ^1.0.5
+    "@uidu/editor-markdown-transformer": ^1.0.4
     "@uidu/emoji": ^0.6.27
     "@uidu/field-date": ^2.0.19
     "@uidu/field-text": 2.0.5
@@ -7248,7 +7266,7 @@ __metadata:
     "@uidu/spinner": ^0.5.21
     "@uidu/status": ^0.5.24
     "@uidu/task-decision": ^0.4.31
-    "@uidu/theme": ^0.6.25
+    "@uidu/theme": ^0.6.26
     "@uidu/tooltip": ^0.5.27
     assert: ^2.0.0
     classnames: ^2.3.2
@@ -7284,16 +7302,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-json-transformer@1.0.4, @uidu/editor-json-transformer@^1.0.4, @uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer":
+"@uidu/editor-json-transformer@1.0.5, @uidu/editor-json-transformer@^1.0.5, @uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer"
   dependencies:
     "@babel/runtime": ^7.20.1
     "@types/prosemirror-model": ^1.17.0
-    "@uidu/adf-schema": ^1.1.3
+    "@uidu/adf-schema": ^2.0.0
     "@uidu/docs": ^0.5.22
-    "@uidu/editor-common": ^1.1.4
-    "@uidu/editor-core": ^1.2.4
+    "@uidu/editor-common": ^2.0.0
+    "@uidu/editor-core": ^2.0.0
     prosemirror-model: ^1.18.1
     prosemirror-view: ^1.29.0
     react: ^18.2.0
@@ -7304,15 +7322,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-markdown-transformer@^1.0.3, @uidu/editor-markdown-transformer@workspace:packages/editor/editor-markdown-transformer":
+"@uidu/editor-markdown-transformer@^1.0.4, @uidu/editor-markdown-transformer@workspace:packages/editor/editor-markdown-transformer":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-markdown-transformer@workspace:packages/editor/editor-markdown-transformer"
   dependencies:
     "@babel/runtime": ^7.20.1
-    "@uidu/adf-schema": ^1.1.3
+    "@uidu/adf-schema": ^2.0.0
     "@uidu/docs": ^0.5.22
-    "@uidu/editor-common": ^1.1.4
-    "@uidu/editor-core": ^1.2.4
+    "@uidu/editor-common": ^2.0.0
+    "@uidu/editor-core": ^2.0.0
     markdown-it: ^13.0.1
     markdown-it-table: ^2.0.4
     prosemirror-markdown: ^1.10.1
@@ -7348,7 +7366,7 @@ __metadata:
   resolution: "@uidu/email-renderer@workspace:packages/editor/email-renderer"
   dependencies:
     "@babel/runtime": ^7.20.1
-    "@uidu/adf-schema": ^1.1.3
+    "@uidu/adf-schema": ^2.0.0
     "@uidu/docs": "*"
     "@uidu/util-data-test": ^0.4.27
     date-fns: ^2.29.3
@@ -7426,7 +7444,7 @@ __metadata:
     "@heroicons/react": ^2.0.13
     "@uidu/form": 2.1.11
     react: ^18.2.0
-    react-hook-form: ^7.39.1
+    react-hook-form: ^7.39.2
     styled-components: ^5.3.6
     tslib: ^2.4.1
     twin.macro: ^3.0.0
@@ -7877,7 +7895,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
-    react-hook-form: ^7.39.1
+    react-hook-form: ^7.39.2
     react-media: ^1.10.0
     styled-components: ^5.3.6
     tslib: ^2.4.1
@@ -8194,7 +8212,7 @@ __metadata:
     "@uidu/section-message": ^0.6.26
     "@uppy/aws-s3": ^3.0.4
     "@uppy/core": ^3.0.4
-    "@uppy/dashboard": ^3.1.0
+    "@uppy/dashboard": ^3.2.0
     "@uppy/xhr-upload": ^3.0.4
     react: ^18.2.0
     react-dropzone: ^14.2.3
@@ -8231,7 +8249,7 @@ __metadata:
     "@uidu/media-core": ^1.1.5
     "@uidu/modal-dialog": ^1.1.1
     "@uppy/core": ^3.0.4
-    "@uppy/dashboard": ^3.1.0
+    "@uppy/dashboard": ^3.2.0
     "@uppy/drag-drop": ^3.0.1
     "@uppy/dropbox": ^3.0.1
     "@uppy/google-drive": ^3.0.1
@@ -8692,7 +8710,7 @@ __metadata:
     react-dom: ^18.2.0
     react-intl: ^6.2.1
     react-node-resolver: ^2.0.1
-    sinon: ^14.0.1
+    sinon: ^14.0.2
     styled-components: ^5.3.6
     typescript: ^4.8.4
     uid: ^2.0.1
@@ -8743,7 +8761,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/renderer@^1.2.4, @uidu/renderer@workspace:packages/editor/renderer":
+"@uidu/renderer@^1.2.6, @uidu/renderer@workspace:packages/editor/renderer":
   version: 0.0.0-use.local
   resolution: "@uidu/renderer@workspace:packages/editor/renderer"
   dependencies:
@@ -8751,8 +8769,8 @@ __metadata:
     "@babel/runtime": ^7.20.1
     "@loadable/component": ^5.15.2
     "@types/prosemirror-model": ^1.17.0
-    "@uidu/adf-schema": ^1.1.3
-    "@uidu/adf-utils": ^1.1.2
+    "@uidu/adf-schema": ^2.0.0
+    "@uidu/adf-utils": ^2.0.0
     "@uidu/analytics": ^0.6.9
     "@uidu/analytics-listeners": ^0.4.19
     "@uidu/analytics-namespaced-context": ^0.4.19
@@ -8760,8 +8778,8 @@ __metadata:
     "@uidu/button": ^1.3.33
     "@uidu/code": ^0.5.21
     "@uidu/docs": ^0.5.22
-    "@uidu/editor-common": ^1.1.5
-    "@uidu/editor-json-transformer": ^1.0.4
+    "@uidu/editor-common": ^2.0.0
+    "@uidu/editor-json-transformer": ^1.0.5
     "@uidu/field-range": ^2.0.6
     "@uidu/media-card": ^0.7.15
     "@uidu/media-filmstrip": ^0.5.11
@@ -8769,7 +8787,7 @@ __metadata:
     "@uidu/navigation": ^1.0.30
     "@uidu/status": ^0.5.24
     "@uidu/task-decision": ^0.4.31
-    "@uidu/theme": ^0.6.25
+    "@uidu/theme": ^0.6.26
     "@uidu/tooltip": ^0.5.27
     "@uidu/util-data-test": ^0.4.28
     get-video-id: ^3.6.5
@@ -8834,7 +8852,7 @@ __metadata:
     "@uidu/modal-dialog": ^1.1.1
     "@uidu/spinner": ^0.5.21
     react: ^18.2.0
-    react-hook-form: ^7.39.1
+    react-hook-form: ^7.39.2
     react-select: ^5.6.0
     styled-components: ^5.3.6
     timezones-list: ^3.0.1
@@ -9071,7 +9089,7 @@ __metadata:
     "@tailwindcss/forms": ^0.5.3
     "@tailwindcss/typography": ^0.5.8
     postcss: ^8.4.18
-    tailwindcss: ^3.2.2
+    tailwindcss: ^3.2.3
   peerDependencies:
     postcss: ^8.2.6
     tailwindcss: ^3.2.2
@@ -9093,11 +9111,11 @@ __metadata:
     "@uidu/avatar-group": ^2.6.21
     "@uidu/button": ^1.3.33
     "@uidu/docs": ^0.5.22
-    "@uidu/editor-common": ^1.1.4
+    "@uidu/editor-common": ^2.0.0
     "@uidu/elements-test-helpers": ^0.4.32
-    "@uidu/renderer": ^1.2.4
+    "@uidu/renderer": ^1.2.6
     "@uidu/spinner": ^0.5.21
-    "@uidu/theme": ^0.6.25
+    "@uidu/theme": ^0.6.26
     "@uidu/util-data-test": ^0.4.27
     date-fns: ^2.29.3
     lodash.debounce: ^4.0.8
@@ -9115,7 +9133,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/theme@^0.6.25, @uidu/theme@workspace:packages/core/theme":
+"@uidu/theme@^0.6.25, @uidu/theme@^0.6.26, @uidu/theme@workspace:packages/core/theme":
   version: 0.0.0-use.local
   resolution: "@uidu/theme@workspace:packages/core/theme"
   dependencies:
@@ -9252,12 +9270,12 @@ __metadata:
     postcss-preset-env: ^7.8.2
     postcss-safe-parser: ^6.0.0
     raw-loader: ^4.0.2
-    sass-loader: ^13.1.0
+    sass-loader: ^13.2.0
     style-loader: ^3.3.1
     svg-url-loader: ^7.1.1
     terser-webpack-plugin: ^5.3.6
     url-loader: ^4.1.1
-    webpack: ^5.74.0
+    webpack: ^5.75.0
     webpack-bundle-analyzer: ^4.7.0
     webpack-dev-server: ^4.11.1
     webpack-manifest-plugin: ^5.0.0
@@ -9421,16 +9439,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uppy/dashboard@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@uppy/dashboard@npm:3.1.0"
+"@uppy/dashboard@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@uppy/dashboard@npm:3.2.0"
   dependencies:
     "@transloadit/prettier-bytes": 0.0.7
     "@uppy/informer": ^3.0.1
-    "@uppy/provider-views": ^3.0.1
+    "@uppy/provider-views": ^3.0.2
     "@uppy/status-bar": ^3.0.1
     "@uppy/thumbnail-generator": ^3.0.2
-    "@uppy/utils": ^5.0.2
+    "@uppy/utils": ^5.1.0
     classnames: ^2.2.6
     is-shallow-equal: ^1.0.1
     lodash.debounce: ^4.0.8
@@ -9438,8 +9456,8 @@ __metadata:
     nanoid: ^4.0.0
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.2
-  checksum: 0953fc2fb5d439ed0e42376e82648af7c0ab4adf87554d344ff0177009a27fa6a5e2a90b434bdd340e2143a71e0dcbf849c5f4fb106e79c06be438e91aa1c72d
+    "@uppy/core": ^3.0.4
+  checksum: a77da0f230ca7d9593dd4dddfe24919b74a0eb18e6247617994e94aa1d48e769917bf3117bba58cecee6ffb548b2498483a5f25935bc336417a6a0b5068f99ea
   languageName: node
   linkType: hard
 
@@ -9519,16 +9537,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uppy/provider-views@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@uppy/provider-views@npm:3.0.1"
+"@uppy/provider-views@npm:^3.0.1, @uppy/provider-views@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@uppy/provider-views@npm:3.0.2"
   dependencies:
     "@uppy/utils": ^5.0.2
     classnames: ^2.2.6
     preact: ^10.5.13
   peerDependencies:
-    "@uppy/core": ^3.0.2
-  checksum: 8f444515263c17243513608d53480dee0610c1bc8a7573ca1c2e55c844a9f8a7239a8ee13d80fca24cefcf72f5c9ec76a954f87a739c1f71133be578c1ac402d
+    "@uppy/core": ^3.0.4
+  checksum: bc88b5142db78f632b4b8cda586d785f214f4bc4655007531a136367fbb678c99125ae1767841f1f56a7e37c712aee233f7acfa4b050a4c7d16e850c98e1a32f
   languageName: node
   linkType: hard
 
@@ -9608,12 +9626,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uppy/utils@npm:^5.0.2":
-  version: 5.0.2
-  resolution: "@uppy/utils@npm:5.0.2"
+"@uppy/utils@npm:^5.0.2, @uppy/utils@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "@uppy/utils@npm:5.1.0"
   dependencies:
     lodash.throttle: ^4.1.1
-  checksum: bac856170835fd162edaf3c51e010013c7a7c75431096d88100088265e9dab933f871e91e03a9faa1a1c92e875edb298b3264dd44cede50079232afc071699cc
+  checksum: 1e3740ef4f27ced760268d1c4d2b04ec2c126fc324c4611ede0af6eba5be16f992757520b8bbc0d1a77932f62baa312deb2fa9a7987decd373f955e98be182c5
   languageName: node
   linkType: hard
 
@@ -17935,7 +17953,7 @@ __metadata:
     react-animated-number: ^0.4.4
     react-avatar-editor: ^13.0.0
     react-beautiful-dnd: ^13.1.1
-    react-big-calendar: ^1.5.0
+    react-big-calendar: ^1.5.2
     react-chatview: ^0.2.5
     react-codesandboxer: ^3.1.5
     react-color: ^2.19.3
@@ -17956,7 +17974,7 @@ __metadata:
     react-google-maps: ^9.4.5
     react-grid-layout: ^1.3.4
     react-helmet: ^6.1.0
-    react-hook-form: ^7.39.1
+    react-hook-form: ^7.39.2
     react-images: ^1.2.0-beta.7
     react-intersection-observer: ^9.4.0
     react-intl: ^6.2.1
@@ -17984,13 +18002,13 @@ __metadata:
     react-use-gesture: ^8.0.1
     react-virtualized: ^9.22.3
     resolve: ^1.22.1
-    sass: ^1.56.0
-    sass-loader: ^13.1.0
+    sass: ^1.56.1
+    sass-loader: ^13.2.0
     scroll-into-view-if-needed: ^2.2.29
     scrollparent: ^2.0.1
     semver: ^7.3.8
     sentence-case: ^3.0.4
-    sinon: ^14.0.1
+    sinon: ^14.0.2
     snake-case: ^3.0.4
     spawndamnit: ^2.0.0
     standard-changelog: ^2.0.27
@@ -18002,7 +18020,7 @@ __metadata:
     svg-inline-react: ^3.2.1
     svg-url-loader: ^7.1.1
     swiper: ^8.4.4
-    tailwindcss: ^3.2.2
+    tailwindcss: ^3.2.3
     terser-webpack-plugin: ^5.3.6
     thread-loader: ^3.0.4
     tiny-invariant: ^1.3.1
@@ -18020,7 +18038,7 @@ __metadata:
     use-places-autocomplete: ^4.0.0
     uuid: ^8.3.2
     w3c-keyname: ^2.2.6
-    webpack: ^5.74.0
+    webpack: ^5.75.0
     webpack-bundle-analyzer: ^4.7.0
     webpack-dev-server: ^4.11.1
     webpack-manifest-plugin: ^5.0.0
@@ -22931,16 +22949,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nise@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "nise@npm:5.1.1"
+"nise@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "nise@npm:5.1.2"
   dependencies:
-    "@sinonjs/commons": ^1.8.3
-    "@sinonjs/fake-timers": ">=5"
+    "@sinonjs/commons": ^2.0.0
+    "@sinonjs/fake-timers": ^7.0.4
     "@sinonjs/text-encoding": ^0.7.1
     just-extend: ^4.0.2
     path-to-regexp: ^1.7.0
-  checksum: d8be29e84a014743c9a10f428fac86f294ac5f92bed1f606fe9b551e935f494d8e0ce1af8a12673c6014010ec7f771f2d48aa5c8e116f223eb4f40c5e1ab44b3
+  checksum: 688c557333dcbc5b41f4f1f1b0ea32fb0f8b424541a8958140bc61074980362c954b2aeb027c282de26b9ddcb4b230656f68ac4206777499e405dd7e716ec1f8
   languageName: node
   linkType: hard
 
@@ -26063,9 +26081,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-big-calendar@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "react-big-calendar@npm:1.5.0"
+"react-big-calendar@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "react-big-calendar@npm:1.5.2"
   dependencies:
     "@babel/runtime": ^7.18.6
     clsx: ^1.2.1
@@ -26085,7 +26103,7 @@ __metadata:
   peerDependencies:
     react: ^16.14.0 || ^17 || ^18
     react-dom: ^16.14.0 || ^17 || ^18
-  checksum: b9b426f7e504135df0274b7806d19f2280fb14644eb63d500f48fc44a9264d856b722df35851e8147a791e08ce5b0633ea5871290efcc315faec62c9e8e712f7
+  checksum: c4647cdb2e479278bedba948dbbef5bfd9e9e1492902a96239ea1989f914b038b8d327b4a924148db13a57f10ca8d5fe85878dc50f8e0258806f08fad2b91d1d
   languageName: node
   linkType: hard
 
@@ -26418,12 +26436,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.39.1":
-  version: 7.39.1
-  resolution: "react-hook-form@npm:7.39.1"
+"react-hook-form@npm:^7.39.2":
+  version: 7.39.2
+  resolution: "react-hook-form@npm:7.39.2"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
-  checksum: 5a5a5530451c337f0366ceb7884b376cc20dec4b667789cd9aab4a9e6c8286308449bd6ba03bd89096541a81051c83307c8b45cd90970fa3c7ffc58ef2e3da78
+  checksum: ca14950e69349b9f718fc4f1526c86f4df8b14b1e78fe5977dfd35d40dd9f1f75e77cf0dd0c9b649fe4c2e4418a4ff8c1bd1d69acb60de71f47f4f5a84653e9c
   languageName: node
   linkType: hard
 
@@ -27987,15 +28005,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:^13.1.0":
-  version: 13.1.0
-  resolution: "sass-loader@npm:13.1.0"
+"sass-loader@npm:^13.2.0":
+  version: 13.2.0
+  resolution: "sass-loader@npm:13.2.0"
   dependencies:
     klona: ^2.0.4
     neo-async: ^2.6.2
   peerDependencies:
     fibers: ">= 3.1.0"
-    node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+    node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
     sass: ^1.3.0
     sass-embedded: "*"
     webpack: ^5.0.0
@@ -28008,20 +28026,20 @@ __metadata:
       optional: true
     sass-embedded:
       optional: true
-  checksum: 6b3b6c0e070a32c594001cee98c85a72afb6081c46d56a4283269e6c1802b0e26128bc8363fcd8d8c941abe1f9e441e3efcd401fcf3ef436e1f1fbeb6e0a1374
+  checksum: ed6cdb5f5508e1a8a020d1451160a5e94805d0c2a97be5719c6a44ed28a258b5f37a1478d01b9d545f269367ae91ccb88adc93bd6202bfd609dbe3193228d51e
   languageName: node
   linkType: hard
 
-"sass@npm:^1.56.0":
-  version: 1.56.0
-  resolution: "sass@npm:1.56.0"
+"sass@npm:^1.56.1":
+  version: 1.56.1
+  resolution: "sass@npm:1.56.1"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 37fb48b838f7a12f3c3efbf27bfc5f2b7fba015ed4b11effe32bd9488e30e1d5cefcbfef1e5c5dbd95557889fe2c7ec72f33e898cfc76182ea34eae03b1a4fb1
+  checksum: 78e693e5992b149574c95d5adfe39ca3e5b97d80befa11191a20d1daa41fe201a98ac099beab726cd3095e2d2e7991a2c408ba0fcc3fa9f525879de7eee18dad
   languageName: node
   linkType: hard
 
@@ -28452,17 +28470,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sinon@npm:^14.0.1":
-  version: 14.0.1
-  resolution: "sinon@npm:14.0.1"
+"sinon@npm:^14.0.2":
+  version: 14.0.2
+  resolution: "sinon@npm:14.0.2"
   dependencies:
-    "@sinonjs/commons": ^1.8.3
+    "@sinonjs/commons": ^2.0.0
     "@sinonjs/fake-timers": ^9.1.2
-    "@sinonjs/samsam": ^6.1.1
+    "@sinonjs/samsam": ^7.0.1
     diff: ^5.0.0
-    nise: ^5.1.1
+    nise: ^5.1.2
     supports-color: ^7.2.0
-  checksum: 55dd8dc9f33bf714fcd4cf9af5b67a3ba854da9e94d4be70bfbc13fa1113db03bdccec21fe1ded1dbf750a21f35be9727c779178ac981e55eeac9245acfdaa74
+  checksum: de7730cd7785a457e42f9a93e955780c870296036a13816e3c0c5648360afae82fdc748e36c854cf26fb8abd117855a7211aee49265c334fa61439aae17a1b72
   languageName: node
   linkType: hard
 
@@ -29669,9 +29687,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "tailwindcss@npm:3.2.2"
+"tailwindcss@npm:^3.2.3":
+  version: 3.2.3
+  resolution: "tailwindcss@npm:3.2.3"
   dependencies:
     arg: ^5.0.2
     chokidar: ^3.5.3
@@ -29701,7 +29719,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: 4f29f9d7bed74f70cd90281c4068e20903cbe79949987aae7c6cf197df9c852caa0d9884c19547f55eac09c2468dfe30c25bc8e75482e2654e24ee40d74078f9
+  checksum: 5a31815c69d3ecfb6ed4882942d6e0dc3b79e5dbbadd758ccebe99d66d403b29d80b7b73dec0a81ee21ada4ec8e9d467dd1bc14b559726c5a19425030f29aea9
   languageName: node
   linkType: hard
 
