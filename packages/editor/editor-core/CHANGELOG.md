@@ -1,5 +1,17 @@
 # @uidu/editor-core
 
+## 1.4.0
+
+### Minor Changes
+
+- e08b59a1d: Added mentions to editor-core
+
+### Patch Changes
+
+- Updated dependencies [e08b59a1d]
+  - @uidu/mentions@0.5.0
+  - @uidu/editor-common@1.1.5
+
 ## 1.3.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/util-data-test",
-  "version": "0.4.27",
+  "version": "0.4.28",
   "description": "Shared test and story data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/util-data-test",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "@babel/runtime": "^7.20.1",
     "@uidu/analytics": "^0.6.9",
     "@uidu/emoji": "^0.6.27",
-    "@uidu/mentions": "^0.4.28",
+    "@uidu/mentions": "^0.5.0",
     "@uidu/task-decision": "^0.4.31",
     "date-fns": "^2.29.3",
     "lodash.sample": "^4.2.1",
