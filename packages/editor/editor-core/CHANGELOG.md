@@ -1,5 +1,21 @@
 # @uidu/editor-core
 
+## 2.0.0
+
+### Major Changes
+
+- 2f642d1af: Editor core bump in gap-cursor plugin and editor-common link
+
+### Patch Changes
+
+- Updated dependencies [2f642d1af]
+  - @uidu/adf-schema@2.0.0
+  - @uidu/adf-utils@2.0.0
+  - @uidu/editor-common@2.0.0
+  - @uidu/theme@0.6.26
+  - @uidu/editor-json-transformer@1.0.5
+  - @uidu/editor-markdown-transformer@1.0.4
+
 ## 1.4.0
 
 ### Minor Changes

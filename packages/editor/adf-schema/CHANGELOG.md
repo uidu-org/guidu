@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.0.0
+
+### Major Changes
+
+- 2f642d1af: Editor core bump in gap-cursor plugin and editor-common link
+
 ## 1.1.3
 
 ### Patch Changes

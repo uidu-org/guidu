@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.6.26
+
+### Patch Changes
+
+- 2f642d1af: Editor core bump in gap-cursor plugin and editor-common link
+
 ## 0.6.25
 
 ### Patch Changes

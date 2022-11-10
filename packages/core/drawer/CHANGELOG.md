@@ -1,5 +1,13 @@
 # @uidu/drawer
 
+## 0.7.28
+
+### Patch Changes
+
+- 2f642d1af: Editor core bump in gap-cursor plugin and editor-common link
+- Updated dependencies [2f642d1af]
+  - @uidu/theme@0.6.26
+
 ## 0.7.27
 
 ### Patch Changes
