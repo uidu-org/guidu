@@ -1,4 +1,4 @@
-import { ADFEntity } from '@uidu/adf-utils';
+import type { ADFEntity } from '@uidu/adf-utils/types';
 
 export type AutoformatReplacement = ADFEntity;
 

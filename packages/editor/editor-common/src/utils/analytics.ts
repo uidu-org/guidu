@@ -17,16 +17,47 @@ export const getAnalyticsAppearance = (
   }
 };
 
+export const getAnalyticsEventSeverity = (
+  duration: number,
+  normalThreshold: number,
+  degradedThreshold: number,
+) => {
+  if (duration > normalThreshold && duration <= degradedThreshold) {
+    return SEVERITY.DEGRADED;
+  }
+  if (duration > degradedThreshold) {
+    return SEVERITY.BLOCKING;
+  }
+
+  return SEVERITY.NORMAL;
+};
+
+export enum SEVERITY {
+  NORMAL = 'normal',
+  DEGRADED = 'degraded',
+  BLOCKING = 'blocking',
+}
+
+export {
+  getUnsupportedContentLevelData,
+  UNSUPPORTED_CONTENT_LEVEL_SEVERITY,
+  UNSUPPORTED_CONTENT_LEVEL_SEVERITY_THRESHOLD_DEFAULTS,
+} from './unsupportedContent/get-unsupported-content-level-data';
+export type { UnsupportedContentLevelsTracking } from './unsupportedContent/get-unsupported-content-level-data';
+
 export enum EVENT_TYPE {
   TRACK = 'track',
+  UI = 'ui',
 }
 
 export enum ACTION {
   UNSUPPORTED_CONTENT_ENCOUNTERED = 'unsupportedContentEncountered',
+  UNSUPPORTED_TOOLTIP_VIEWED = 'viewed',
 }
 
 export enum ACTION_SUBJECT {
   DOCUMENT = 'document',
+  TOOLTIP = 'tooltip',
 }
 
 export enum ACTION_SUBJECT_ID {
@@ -35,6 +66,8 @@ export enum ACTION_SUBJECT_ID {
   UNSUPPORTED_MARK = 'unsupportedMark',
   UNSUPPORTED_ERROR = 'unsupportedUnhandled',
   UNSUPPORTED_NODE_ATTRIBUTE = 'unsupportedNodeAttribute',
+  ON_UNSUPPORTED_INLINE = 'onUnsupportedInline',
+  ON_UNSUPPORTED_BLOCK = 'onUnsupportedBlock',
 }
 
 type AEP<Action, ActionSubject, ActionSubjectID, Attributes, EventType> = {
@@ -64,5 +97,16 @@ type UnsupportedContentEncounteredAEP = TrackAEP<
 >;
 
 export type UnsupportedContentPayload = UnsupportedContentEncounteredAEP;
+
+export type UnsupportedContentTooltipPayload = AEP<
+  ACTION.UNSUPPORTED_TOOLTIP_VIEWED,
+  ACTION_SUBJECT.TOOLTIP,
+  | ACTION_SUBJECT_ID.ON_UNSUPPORTED_BLOCK
+  | ACTION_SUBJECT_ID.ON_UNSUPPORTED_INLINE,
+  {
+    unsupportedNodeType: string | undefined;
+  },
+  EVENT_TYPE.UI
+>;
 
 export const analyticsEventKey = 'EDITOR_ANALYTICS_EVENT';

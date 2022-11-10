@@ -17,7 +17,7 @@ export default <P>(providers: (P | Promise<P>)[]) => {
 
   const getFulfilledProviders = async () => {
     const results = await waitForAllPromises<P>(
-      providers.map(result => Promise.resolve(result)),
+      providers.map((result) => Promise.resolve(result)),
     );
 
     return getOnlyFulfilled<P>(results);
@@ -26,22 +26,21 @@ export default <P>(providers: (P | Promise<P>)[]) => {
   const runInAllProviders = async <T>(
     mapFunction: (provider: P) => Promise<T>,
   ) => {
-    return (await getFulfilledProviders()).map(provider =>
+    return (await getFulfilledProviders()).map((provider) =>
       mapFunction(provider),
     );
   };
 
-  const createCallback = (methodName: keyof P, args?: any[]) => (
-    provider: P,
-  ) => {
-    const method = provider[methodName];
+  const createCallback =
+    (methodName: keyof P, args?: any[]) => (provider: P) => {
+      const method = provider[methodName];
 
-    if (typeof method === 'function') {
-      return method.apply(provider, args);
-    }
+      if (typeof method === 'function') {
+        return method.apply(provider, args);
+      }
 
-    throw new Error(`"${methodName}" isn't a function of the provider`);
-  };
+      throw new Error(`"${methodName}" isn't a function of the provider`);
+    };
 
   /**
    * Run a method from the provider which expects to return a single item
@@ -66,7 +65,7 @@ export default <P>(providers: (P | Promise<P>)[]) => {
     );
     const fulfilledResults = getOnlyFulfilled<T[]>(results);
 
-    return flatten<T>(fulfilledResults).filter(result => result);
+    return flatten<T>(fulfilledResults).filter((result) => result);
   };
 
   return {

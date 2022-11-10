@@ -1,1 +1,5 @@
-export { default as combineProviders } from './combine-providers';
+import combineProviders from './combine-providers';
+
+export { combineProviders };
+
+export default combineProviders;

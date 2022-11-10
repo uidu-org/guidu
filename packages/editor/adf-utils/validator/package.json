@@ -1,0 +1,4 @@
+{
+  "main": "dist/uidu-adf-utils-validator.cjs.js",
+  "module": "dist/uidu-adf-utils-validator.esm.js"
+}

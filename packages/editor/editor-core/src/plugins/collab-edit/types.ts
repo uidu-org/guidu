@@ -1,5 +1,5 @@
-import { ReactElement } from 'react';
 import { EditorState } from 'prosemirror-state';
+import { ReactElement } from 'react';
 import { CollabEditProvider } from './provider';
 
 export interface Participant {

@@ -1,0 +1,4 @@
+{
+  "main": "dist/uidu-editor-common-types.cjs.js",
+  "module": "dist/uidu-editor-common-types.esm.js"
+}

@@ -15,7 +15,6 @@
     "@uidu/docs": "^0.5.22",
     "@uidu/item": "^0.5.24",
     "@uidu/theme": "^0.6.25",
-    "chromatism": "^3.0.0",
     "exenv": "^1.2.2",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",

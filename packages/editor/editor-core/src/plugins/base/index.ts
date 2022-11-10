@@ -1,10 +1,21 @@
 import { doc, paragraph, text } from '@uidu/adf-schema';
+import { SafePlugin } from '@uidu/editor-common/safe-plugin';
+import { browser } from '@uidu/editor-common/utils';
 import { baseKeymap } from 'prosemirror-commands';
 import { history } from 'prosemirror-history';
 import { EditorPlugin, PMPluginFactory } from '../../types';
+import {
+  BrowserFreezetracking,
+  InputTracking,
+} from '../../types/performance-tracking';
 import { keymap } from '../../utils/keymap';
+import betterTypeHistoryPlugin from './pm-plugins/better-type-history';
+import compositionPlugin from './pm-plugins/composition';
+import contextIdentifierPlugin from './pm-plugins/context-identifier';
 import decorationPlugin from './pm-plugins/decoration';
+import disableSpellcheckingPlugin from './pm-plugins/disable-spell-checking';
 import filterStepsPlugin from './pm-plugins/filter-steps';
+import fixChrome88SelectionPlugin from './pm-plugins/fix-chrome-88-selection';
 import focusHandlerPlugin from './pm-plugins/focus-handler';
 import frozenEditor from './pm-plugins/frozen-editor';
 import inlineCursorTargetPlugin from './pm-plugins/inline-cursor-target';
@@ -14,12 +25,17 @@ import scrollGutter, {
   ScrollGutterPluginOptions,
 } from './pm-plugins/scroll-gutter';
 
-interface BasePluginOptions {
+export interface BasePluginOptions {
   allowScrollGutter?: ScrollGutterPluginOptions;
   allowInlineCursorTarget?: boolean;
-  addRunTimePerformanceCheck?: boolean;
-  inputSamplingLimit?: number;
+  inputTracking?: InputTracking;
+  browserFreezeTracking?: BrowserFreezetracking;
+  ufo?: boolean;
 }
+
+// Chrome >= 88
+export const isChromeWithSelectionBug =
+  browser.chrome && browser.chrome_version >= 88;
 
 const basePlugin = (options?: BasePluginOptions): EditorPlugin => ({
   name: 'base',
@@ -28,15 +44,28 @@ const basePlugin = (options?: BasePluginOptions): EditorPlugin => ({
     const plugins: { name: string; plugin: PMPluginFactory }[] = [
       {
         name: 'filterStepsPlugin',
-        plugin: () => filterStepsPlugin(),
+        plugin: ({ dispatchAnalyticsEvent }) =>
+          filterStepsPlugin(dispatchAnalyticsEvent),
       },
-      {
-        name: 'inlineCursorTargetPlugin',
-        plugin: () =>
-          options && options.allowInlineCursorTarget
-            ? inlineCursorTargetPlugin()
-            : undefined,
-      },
+    ];
+
+    // In Chrome, when the selection is placed between adjacent nodes which are not contenteditatble
+    // the cursor appears at the right most point of the parent container.
+    // In Firefox, when the selection is placed between adjacent nodes which are not contenteditatble
+    // no cursor is presented to users.
+    // In Safari, when the selection is placed between adjacent nodes which are not contenteditatble
+    // it is not possible to navigate with arrow keys.
+    // This plugin works around the issues by inserting decorations between
+    // inline nodes which are set as contenteditable, and have a zero width space.
+    plugins.push({
+      name: 'inlineCursorTargetPlugin',
+      plugin: () =>
+        options && options.allowInlineCursorTarget
+          ? inlineCursorTargetPlugin()
+          : undefined,
+    });
+
+    plugins.push(
       {
         name: 'focusHandlerPlugin',
         plugin: ({ dispatch }) => focusHandlerPlugin(dispatch),
@@ -49,12 +78,17 @@ const basePlugin = (options?: BasePluginOptions): EditorPlugin => ({
       {
         name: 'frozenEditor',
         plugin: ({ dispatchAnalyticsEvent }) =>
-          options && options.addRunTimePerformanceCheck
-            ? frozenEditor(dispatchAnalyticsEvent, options.inputSamplingLimit)
+          options?.inputTracking?.enabled || options?.ufo
+            ? frozenEditor(
+                dispatchAnalyticsEvent,
+                options.inputTracking,
+                options.browserFreezeTracking,
+                options.ufo,
+              )
             : undefined,
       },
       { name: 'decorationPlugin', plugin: () => decorationPlugin() },
-      { name: 'history', plugin: () => history() },
+      { name: 'history', plugin: () => history() as SafePlugin },
       // should be last :(
       {
         name: 'codeBlockIndent',
@@ -65,7 +99,16 @@ const basePlugin = (options?: BasePluginOptions): EditorPlugin => ({
             'Mod-]': () => true,
           }),
       },
-    ];
+      {
+        name: 'contextIdentifier',
+        plugin: ({ dispatch, providerFactory }) =>
+          contextIdentifierPlugin(dispatch, providerFactory),
+      },
+      {
+        name: 'betterTypeHistory',
+        plugin: ({ dispatch, providerFactory }) => betterTypeHistoryPlugin(),
+      },
+    );
 
     if (options && options.allowScrollGutter) {
       plugins.push({
@@ -73,6 +116,23 @@ const basePlugin = (options?: BasePluginOptions): EditorPlugin => ({
         plugin: () => scrollGutter(options.allowScrollGutter),
       });
     }
+
+    if (isChromeWithSelectionBug) {
+      plugins.push({
+        name: 'fixChrome88SelectionPlugin',
+        plugin: () => fixChrome88SelectionPlugin(),
+      });
+    }
+
+    plugins.push({
+      name: 'disableSpellcheckingPlugin',
+      plugin: () => disableSpellcheckingPlugin(),
+    });
+
+    plugins.push({
+      name: 'compositionPlugin',
+      plugin: () => compositionPlugin(),
+    });
 
     return plugins;
   },

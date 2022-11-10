@@ -1,0 +1,4 @@
+{
+  "main": "dist/uidu-editor-common-ui-color.cjs.js",
+  "module": "dist/uidu-editor-common-ui-color.esm.js"
+}

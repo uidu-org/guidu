@@ -1,13 +1,18 @@
-const result = {
+const result: { [key: string]: any } = {
   mac: false,
   ie: false,
   ie_version: 0,
   gecko: false,
+  gecko_version: 0,
   chrome: false,
   chrome_version: 0,
   android: false,
   ios: false,
   webkit: false,
+  safari: false,
+  safari_version: 0,
+  supportsIntersectionObserver: false,
+  supportsResizeObserver: false,
 };
 
 if (typeof navigator !== 'undefined') {
@@ -27,9 +32,14 @@ if (typeof navigator !== 'undefined') {
     ? +ieEdge[1]
     : null;
   result.gecko = !ie && /gecko\/\d/i.test(navigator.userAgent);
+  result.gecko_version = parseInt(
+    (navigator.userAgent.match(/Firefox\/(\d+)/) || [])[1],
+    10,
+  );
+
   result.chrome = !ie && /Chrome\//.test(navigator.userAgent);
   result.chrome_version = parseInt(
-    (navigator.userAgent.match(/Chrome\/(\d{2})/) || [])[1],
+    (navigator.userAgent.match(/Chrome\/(\d+)/) || [])[1],
     10,
   );
   result.android = /Android \d/.test(navigator.userAgent);
@@ -41,6 +51,29 @@ if (typeof navigator !== 'undefined') {
     !ie &&
     !!document.documentElement &&
     'WebkitAppearance' in document.documentElement.style;
+
+  result.safari = Boolean(
+    navigator.vendor &&
+      navigator.vendor.indexOf('Apple') > -1 &&
+      navigator.userAgent &&
+      navigator.userAgent.indexOf('CriOS') === -1 &&
+      navigator.userAgent.indexOf('FxiOS') === -1,
+  );
+  result.safari_version = parseInt(
+    (navigator.userAgent.match(/Version\/([0-9\._]+).*Safari/) || [])[1],
+    10,
+  );
+
+  result.supportsIntersectionObserver =
+    typeof window !== 'undefined' &&
+    'IntersectionObserver' in window &&
+    'IntersectionObserverEntry' in window &&
+    'intersectionRatio' in (window as any).IntersectionObserverEntry.prototype;
+
+  result.supportsResizeObserver =
+    typeof window !== 'undefined' &&
+    'ResizeObserver' in window &&
+    'ResizeObserverEntry' in window;
 }
 
 export default result;

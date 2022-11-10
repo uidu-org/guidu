@@ -1,10 +1,16 @@
 export { alignment, alignmentPositionMap } from './alignment';
 export type { AlignmentAttributes, AlignmentMarkDefinition } from './alignment';
-export { annotation, INLINE_COMMENT } from './annotation';
+export {
+  annotation,
+  AnnotationMarkStates,
+  AnnotationTypes,
+  buildDataAttributes as buildAnnotationMarkDataAttributes,
+} from './annotation';
 export type {
+  AnnotationDataAttributes,
+  AnnotationId,
   AnnotationMarkAttributes,
   AnnotationMarkDefinition,
-  AnnotationType,
 } from './annotation';
 export { breakout } from './breakout';
 export type { BreakoutMarkAttrs, BreakoutMarkDefinition } from './breakout';
@@ -26,11 +32,7 @@ export { strong } from './strong';
 export type { StrongDefinition } from './strong';
 export { subsup } from './subsup';
 export type { SubSupAttributes, SubSupDefinition } from './subsup';
-export {
-  colorPalette,
-  colorPaletteExperimental,
-  textColor,
-} from './text-color';
+export { colorPalette, colorPaletteExtended, textColor } from './text-color';
 export type { TextColorAttributes, TextColorDefinition } from './text-color';
 export { typeAheadQuery } from './type-ahead-query';
 export { underline } from './underline';

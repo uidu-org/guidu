@@ -2,12 +2,14 @@ import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import EditorBackgroundColorIcon from '@atlaskit/icon/glyph/editor/background-color';
 import Button from '@uidu/button';
 import { akEditorMenuZIndex } from '@uidu/editor-common';
+import {
+  ColorPalette,
+  textColorPalette as originalTextColors,
+} from '@uidu/editor-common/ui-color';
 import { EditorView } from 'prosemirror-view';
 import React from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { withAnalytics } from '../../../../analytics';
-import ColorPalette from '../../../../ui/ColorPalette';
-import { textColorPalette as originalTextColors } from '../../../../ui/ColorPalette/Palettes/textColorPalette';
 import Dropdown from '../../../../ui/Dropdown';
 import {
   ExpandIconWrapper,
@@ -42,7 +44,6 @@ import {
   TextColorIconBar,
   TextColorIconWrapper,
 } from './styles';
-
 const EXPERIMENT_NAME: string = 'editor.toolbarTextColor.moreColors';
 const EXPERIMENT_GROUP_CONTROL: string = 'control';
 const EXPERIMENT_GROUP_SUBJECT: string = 'subject';

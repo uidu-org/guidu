@@ -58,6 +58,7 @@ export default function Composable() {
               <WithEditorActions
                 render={(actions) => (
                   <Editor
+                    tw="bg-red-500 py-5"
                     shouldFocus
                     containerElement={element.current}
                     onChange={handleChange(actions)}

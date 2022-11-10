@@ -68,7 +68,7 @@ const ContentArea = styled(ContentStyles)`
   /** Hack for Bitbucket to ensure entire editorView gets drop event; see ED-3294 **/
   /** Hack for tables controlls. Otherwise marging collapse and controlls are misplaced. **/
   .ProseMirror {
-    margin: -1rem 0rem 1rem;
+    // margin: -1rem 0rem 1rem;
 
     .ProseMirror-separator {
       margin: 0;
@@ -81,7 +81,7 @@ const ContentArea = styled(ContentStyles)`
     width: calc(100% + ${CommentEditorMargin - GRID_GUTTER}px);
   }
 
-  padding: 1.5rem;
+  padding: 0 1.25rem;
 
   ${tableCommentEditorStyles};
 `;
@@ -294,7 +294,7 @@ export default class Editor extends PureComponent<EditorProps> {
     config,
     editor,
   }) => (
-    <ContentArea>
+    <ContentArea className={this.props.className}>
       <PluginSlot
         editorView={view}
         editorActions={this.editorActions}

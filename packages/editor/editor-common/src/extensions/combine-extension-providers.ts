@@ -1,5 +1,5 @@
-import { ExtensionProvider, ExtensionType, ExtensionKey } from './types';
 import { combineProviders } from '../provider-helpers';
+import { ExtensionKey, ExtensionProvider, ExtensionType } from './types';
 
 /**
  * Allow to run methods from the `ExtensionProvider` interface across all providers seamlessly.
@@ -8,9 +8,8 @@ import { combineProviders } from '../provider-helpers';
 export default (
   extensionProviders: (ExtensionProvider | Promise<ExtensionProvider>)[],
 ): ExtensionProvider => {
-  const { invokeSingle, invokeList } = combineProviders<ExtensionProvider>(
-    extensionProviders,
-  );
+  const { invokeSingle, invokeList } =
+    combineProviders<ExtensionProvider>(extensionProviders);
 
   return {
     getExtensions() {

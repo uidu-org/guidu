@@ -1,4 +1,5 @@
-import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
+import { SafePlugin } from '@uidu/editor-common/safe-plugin';
+import { EditorState, PluginKey, Transaction } from 'prosemirror-state';
 import { EditorPlugin } from '../../types';
 import { isEmptyDocument } from '../../utils';
 
@@ -6,8 +7,8 @@ export const pluginKey = new PluginKey(
   'clearMarksOnChangeToEmptyDocumentPlugin',
 );
 
-export function createPlugin(): Plugin | undefined {
-  return new Plugin({
+export function createPlugin(): SafePlugin {
+  return new SafePlugin({
     key: pluginKey,
     appendTransaction: (
       _transactions: Transaction[],

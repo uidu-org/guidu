@@ -1,0 +1,4 @@
+{
+  "main": "dist/uidu-adf-utils-traverse.cjs.js",
+  "module": "dist/uidu-adf-utils-traverse.esm.js"
+}

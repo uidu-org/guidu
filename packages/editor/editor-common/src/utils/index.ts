@@ -1,5 +1,16 @@
-export { getAnalyticsAppearance } from './analytics';
+export {
+  getAnalyticsAppearance,
+  getAnalyticsEventSeverity,
+  getUnsupportedContentLevelData,
+} from './analytics';
+export type {
+  UnsupportedContentLevelsTracking,
+  UnsupportedContentPayload,
+  UnsupportedContentTooltipPayload,
+} from './analytics';
 export { default as browser } from './browser';
+export { sniffUserBrowserExtensions } from './browser-extensions';
+export type { UserBrowserExtensionResults } from './browser-extensions';
 export {
   absoluteBreakoutWidth,
   calcBreakoutWidth,
@@ -16,6 +27,30 @@ export {
   todayTimestampInUTC,
 } from './date';
 export type { Date } from './date';
+export {
+  closest,
+  closestElement,
+  containsClassName,
+  mapElem,
+  maphElem,
+  parsePx,
+  removeNestedEmptyEls,
+  unwrap,
+  walkUpTreeUntil,
+} from './dom';
+export type { MapCallback } from './dom';
+export {
+  extractSliceFromStep,
+  isElementInTableCell,
+  isLastItemMediaGroup,
+  isTextSelection,
+  isValidPosition,
+  nonNullable,
+  setNodeSelection,
+  setTextSelection,
+  stepAddsOneOf,
+  stepHasSlice,
+} from './editor-core-utils';
 export { default as ErrorReporter } from './error-reporter';
 export type { ErrorReportingHandler } from './error-reporter';
 export { getExtensionRenderer } from './extension-handler';
@@ -60,3 +95,4 @@ export type {
   ADMarkSimple,
   ADNode,
 } from './validator';
+export { ZERO_WIDTH_JOINER, ZERO_WIDTH_SPACE } from './whitespace';

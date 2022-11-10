@@ -13,6 +13,7 @@ const gapCursorAnimation = () => css`
   ${gapCursorBlink} 1s step-end infinite
 `;
 
+export const hideCaretModifier = 'ProseMirror-hide-gapcursor';
 const gapCursor = '.ProseMirror-gapcursor';
 const prosemirrorwidget = '.ProseMirror-widget';
 const wrapLeft = '[layout="wrap-left"]';
@@ -86,7 +87,8 @@ export const gapCursorStyles = `
   ${wrapLeft} + ${gapCursor} + ${wrapRight},
   ${wrapLeft} + ${gapCursor} + span ${wrapRight},
   ${wrapRight} + ${gapCursor} + ${wrapLeft},
-  ${wrapRight} + ${gapCursor} + span + ${wrapLeft} {
+  ${wrapRight} + ${gapCursor} + span + ${wrapLeft},
+  ${wrapLeft} + ${gapCursor} {
     clear: none;
   }
 

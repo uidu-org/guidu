@@ -13,6 +13,7 @@ export {
   useProvider,
   useProviderFactory,
 } from './provider-factory/context';
+export type { ContextIdentifierProvider } from './provider-factory/context-identifier-provider';
 export type {
   ImageUploadProvider,
   InsertedImageProperties,
@@ -27,11 +28,21 @@ export { default as ProviderFactory } from './provider-factory/provider-factory'
 export type {
   QuickInsertActionInsert,
   QuickInsertItem,
+  QuickInsertItemId,
   QuickInsertProvider,
 } from './provider-factory/quick-insert-provider';
-export type { ProviderName, Providers } from './provider-factory/types';
+export type {
+  LinkContentType,
+  QuickSearchResult,
+  SearchProvider,
+} from './provider-factory/search-provider';
+export type {
+  ProviderHandler,
+  ProviderName,
+  Providers,
+} from './provider-factory/types';
 export { WithProviders } from './provider-factory/with-providers';
 export type {
   TypeAheadItem,
   TypeAheadItemRenderProps,
-} from './types/typeAhead';
+} from './types/type-ahead';

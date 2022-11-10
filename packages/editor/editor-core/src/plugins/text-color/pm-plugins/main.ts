@@ -1,11 +1,11 @@
-import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
-import { Dispatch } from '../../../event-dispatcher';
 import {
   DEFAULT_BORDER_COLOR,
+  PaletteColor,
   textColorPalette,
-  textColorPaletteExperimental,
-} from '../../../ui/ColorPalette/Palettes/textColorPalette';
-import { PaletteColor } from '../../../ui/ColorPalette/Palettes/type';
+  textColorPaletteExtended,
+} from '@uidu/editor-common/ui-color';
+import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
+import { Dispatch } from '../../../event-dispatcher';
 import { DEFAULT_COLOR, getActiveColor } from '../utils/color';
 import { getDisabledState } from '../utils/disabled';
 
@@ -55,7 +55,7 @@ export function createInitialPluginState(
       label: defaultColor.label,
       border: DEFAULT_BORDER_COLOR,
     },
-    ...(showMoreColorsToggle ? textColorPaletteExperimental : textColorPalette),
+    ...(showMoreColorsToggle ? textColorPaletteExtended : textColorPalette),
   ];
 
   const state = {

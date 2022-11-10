@@ -1,0 +1,4 @@
+{
+  "main": "dist/uidu-theme-types.cjs.js",
+  "module": "dist/uidu-theme-types.esm.js"
+}

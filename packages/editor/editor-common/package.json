@@ -16,14 +16,21 @@
     "@uidu/adf-utils": "^1.1.2",
     "@uidu/analytics": "^0.6.9",
     "@uidu/analytics-namespaced-context": "^0.4.19",
+    "@uidu/editor-json-transformer": "1.0.4",
     "@uidu/emoji": "^0.6.27",
     "@uidu/mentions": "^0.5.0",
     "@uidu/profilecard": "^0.3.27",
     "@uidu/theme": "^0.6.25",
+    "@uidu/tooltip": "0.5.27",
+    "chromatism": "^3.0.0",
     "classnames": "^2.3.2",
     "css-color-names": "^1.0.1",
     "date-fns": "^2.29.3",
     "prosemirror-model": "^1.18.1",
+    "prosemirror-state": "^1.4.2",
+    "prosemirror-transform": "^1.7.0",
+    "prosemirror-utils": "^0.9.6",
+    "prosemirror-view": "^1.29.0",
     "raf-schd": "^4.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -35,7 +42,13 @@
   "preconstruct": {
     "entrypoints": [
       "index.ts",
-      "provider-factory.ts"
+      "provider-factory.ts",
+      "safe-plugin/index.ts",
+      "selection/index.ts",
+      "type-ahead/index.ts",
+      "ui-color/index.ts",
+      "utils/index.ts",
+      "types/index.ts"
     ]
   }
 }

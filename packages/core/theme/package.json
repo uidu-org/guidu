@@ -40,7 +40,8 @@
       "constants.ts",
       "elevation.ts",
       "typography.ts",
-      "math.ts"
+      "math.ts",
+      "types.ts"
     ]
   }
 }

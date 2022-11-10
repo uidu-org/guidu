@@ -1,0 +1,4 @@
+{
+  "main": "dist/uidu-adf-utils-types.cjs.js",
+  "module": "dist/uidu-adf-utils-types.esm.js"
+}

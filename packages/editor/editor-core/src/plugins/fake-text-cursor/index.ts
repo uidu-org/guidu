@@ -1,11 +1,12 @@
-import { Plugin, PluginKey } from 'prosemirror-state';
+import { SafePlugin } from '@uidu/editor-common/safe-plugin';
+import { PluginKey } from 'prosemirror-state';
 import { EditorPlugin } from '../../types';
 import { drawFakeTextCursor } from './cursor';
 
 export const stateKey = new PluginKey('fakeTextCursorPlugin');
 
 export const createPlugin = () =>
-  new Plugin({
+  new SafePlugin({
     key: stateKey,
     props: {
       decorations: drawFakeTextCursor,

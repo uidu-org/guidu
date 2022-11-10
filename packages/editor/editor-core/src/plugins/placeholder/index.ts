@@ -1,5 +1,7 @@
-import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
-import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
+import { SafePlugin } from '@uidu/editor-common/safe-plugin';
+import { browser } from '@uidu/editor-common/utils';
+import { EditorState, PluginKey } from 'prosemirror-state';
+import { Decoration, DecorationSet } from 'prosemirror-view';
 import { EditorPlugin } from '../../types';
 import {
   bracketTyped,
@@ -7,7 +9,9 @@ import {
   isInEmptyLine,
 } from '../../utils/document';
 import { pluginKey as alignmentPluginKey } from '../alignment/pm-plugins/main';
+import { isComposing } from '../base/pm-plugins/composition';
 import { focusStateKey } from '../base/pm-plugins/focus-handler';
+import { isTypeAheadOpen } from '../type-ahead/utils';
 import { placeHolderClassName } from './styles';
 
 export const pluginKey = new PluginKey('placeholderPlugin');
@@ -40,46 +44,23 @@ export function createPlaceholderDecoration(
   const placeholderNode = document.createElement('span');
   placeholderNode.textContent = placeholderText;
   placeholderDecoration.appendChild(placeholderNode);
+
+  // ME-2289 Tapping on backspace in empty editor hides and displays the keyboard
+  // Add a editable buff node as the cursor moving forward is inevitable
+  // when backspace in GBoard composition
+  if (browser.android && browser.chrome) {
+    const buffNode = document.createElement('span');
+    buffNode.setAttribute('contenteditable', 'true');
+    buffNode.textContent = ' ';
+    placeholderDecoration.appendChild(buffNode);
+  }
+
   return DecorationSet.create(editorState.doc, [
     Decoration.widget(pos, placeholderDecoration, {
       side: -1,
       key: 'placeholder',
     }),
   ]);
-}
-
-function removePlaceholderIfData(view: EditorView, event: Event) {
-  const placeHolderState = getPlaceholderState(view.state);
-  const compositionEvent = event as CompositionEvent;
-
-  const hasData =
-    compositionEvent.type === 'compositionstart' ||
-    (compositionEvent.type === 'compositionupdate' && !!compositionEvent.data);
-
-  if (placeHolderState.hasPlaceholder && hasData) {
-    view.dispatch(
-      view.state.tr.setMeta(pluginKey, { removePlaceholder: true }),
-    );
-  }
-
-  return false;
-}
-
-function applyPlaceholderIfEmpty(view: EditorView, event: Event) {
-  const placeHolderState = getPlaceholderState(view.state);
-  const compositionEvent = event as CompositionEvent;
-
-  const emptyData = compositionEvent.data === '';
-
-  if (!placeHolderState.hasPlaceholder && emptyData) {
-    view.dispatch(
-      view.state.tr.setMeta(pluginKey, {
-        applyPlaceholderIfEmpty: true,
-      }),
-    );
-  }
-
-  return false;
 }
 
 function setPlaceHolderState(
@@ -102,6 +83,10 @@ function createPlaceHolderStateFrom(
   bracketPlaceholderText?: string,
 ): PlaceHolderState {
   const isEditorFocused = focusStateKey.getState(editorState);
+
+  if (isTypeAheadOpen(editorState)) {
+    return emptyPlaceholder;
+  }
 
   if (defaultPlaceholderText && isEmptyDocument(editorState.doc)) {
     return setPlaceHolderState(defaultPlaceholderText);
@@ -144,15 +129,14 @@ export function createPlugin(
   defaultPlaceholderText?: string,
   placeholderHints?: string[],
   bracketPlaceholderText?: string,
-): Plugin | undefined {
+): SafePlugin | undefined {
   if (!defaultPlaceholderText && !placeholderHints && !bracketPlaceholderText) {
     return undefined;
   }
-  const getPlaceholderHintMessage = createGetPlaceholderHintMessage(
-    placeholderHints,
-  );
+  const getPlaceholderHintMessage =
+    createGetPlaceholderHintMessage(placeholderHints);
 
-  return new Plugin<PlaceHolderState>({
+  return new SafePlugin<PlaceHolderState>({
     key: pluginKey,
     state: {
       init: (_, state) =>
@@ -190,30 +174,24 @@ export function createPlugin(
     },
     props: {
       decorations(editorState): DecorationSet | undefined {
-        const { hasPlaceholder, placeholderText, pos } = getPlaceholderState(
-          editorState,
-        );
+        const { hasPlaceholder, placeholderText, pos } =
+          getPlaceholderState(editorState);
 
-        if (hasPlaceholder && placeholderText && pos !== undefined) {
+        if (
+          hasPlaceholder &&
+          placeholderText &&
+          pos !== undefined &&
+          !isComposing(editorState)
+        ) {
           return createPlaceholderDecoration(editorState, placeholderText, pos);
         }
         return undefined;
-      },
-      // Workaround for ED-4063: On Mobile / Android, a user can start typing but it won't trigger
-      // an Editor state update so the placeholder will still be shown. We hook into the compositionstart
-      // and compositionend events instead, to make sure we show/hide the placeholder for these devices.
-      handleDOMEvents: {
-        compositionstart: removePlaceholderIfData,
-        compositionupdate: (view: EditorView, event: Event) =>
-          applyPlaceholderIfEmpty(view, event) ||
-          removePlaceholderIfData(view, event),
-        compositionend: applyPlaceholderIfEmpty,
       },
     },
   });
 }
 
-interface PlaceholderPluginOptions {
+export interface PlaceholderPluginOptions {
   placeholder?: string;
   placeholderHints?: string[];
   placeholderBracketHint?: string;

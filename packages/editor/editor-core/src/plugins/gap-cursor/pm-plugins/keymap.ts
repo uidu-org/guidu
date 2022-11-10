@@ -1,12 +1,12 @@
+import { SafePlugin } from '@uidu/editor-common/safe-plugin';
 import { createParagraphNear } from 'prosemirror-commands';
 import { keymap } from 'prosemirror-keymap';
-import { Plugin } from 'prosemirror-state';
 import * as keymaps from '../../../keymaps';
 import { arrow, deleteNode } from '../actions';
 import { Direction } from '../direction';
 import { GapCursorSelection } from '../selection';
 
-export default function keymapPlugin(): Plugin {
+export default function keymapPlugin(): SafePlugin {
   const map = {};
 
   keymaps.bindKeymapWithCommand(
@@ -72,5 +72,5 @@ export default function keymapPlugin(): Plugin {
     map,
   );
 
-  return keymap(map);
+  return keymap(map) as SafePlugin;
 }

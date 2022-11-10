@@ -7097,7 +7097,6 @@ __metadata:
     "@uidu/item": ^0.5.24
     "@uidu/shell": ^2.1.38
     "@uidu/theme": ^0.6.25
-    chromatism: ^3.0.0
     exenv: ^1.2.2
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -7169,7 +7168,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-common@^1.1.4, @uidu/editor-common@workspace:packages/editor/editor-common":
+"@uidu/editor-common@^1.1.4, @uidu/editor-common@^1.1.5, @uidu/editor-common@workspace:packages/editor/editor-common":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
@@ -7179,14 +7178,21 @@ __metadata:
     "@uidu/adf-utils": ^1.1.2
     "@uidu/analytics": ^0.6.9
     "@uidu/analytics-namespaced-context": ^0.4.19
+    "@uidu/editor-json-transformer": 1.0.4
     "@uidu/emoji": ^0.6.27
-    "@uidu/mentions": ^0.4.28
+    "@uidu/mentions": ^0.5.0
     "@uidu/profilecard": ^0.3.27
     "@uidu/theme": ^0.6.25
+    "@uidu/tooltip": 0.5.27
+    chromatism: ^3.0.0
     classnames: ^2.3.2
     css-color-names: ^1.0.1
     date-fns: ^2.29.3
     prosemirror-model: ^1.18.1
+    prosemirror-state: ^1.4.2
+    prosemirror-transform: ^1.7.0
+    prosemirror-utils: ^0.9.6
+    prosemirror-view: ^1.29.0
     raf-schd: ^4.0.3
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -7222,7 +7228,7 @@ __metadata:
     "@uidu/date": ^0.4.25
     "@uidu/docs": ^0.5.22
     "@uidu/droplist": ^0.5.27
-    "@uidu/editor-common": ^1.1.4
+    "@uidu/editor-common": ^1.1.5
     "@uidu/editor-json-transformer": ^1.0.4
     "@uidu/editor-markdown-transformer": ^1.0.3
     "@uidu/emoji": ^0.6.27
@@ -7233,7 +7239,7 @@ __metadata:
     "@uidu/media-core": ^1.1.5
     "@uidu/media-filmstrip": ^0.5.11
     "@uidu/media-picker": ^0.10.0
-    "@uidu/mentions": ^0.4.28
+    "@uidu/mentions": ^0.5.0
     "@uidu/menu": ^0.8.7
     "@uidu/modal-dialog": 1.1.1
     "@uidu/profilecard": ^0.3.27
@@ -7245,7 +7251,6 @@ __metadata:
     "@uidu/theme": ^0.6.25
     "@uidu/tooltip": ^0.5.27
     assert: ^2.0.0
-    chromatism: ^3.0.0
     classnames: ^2.3.2
     eventemitter2: ^6.4.9
     get-video-id: ^3.6.5
@@ -7273,12 +7278,13 @@ __metadata:
     react-loadable: ^5.5.0
     styled-components: ^5.3.6
     tslib: ^2.4.1
+    twin.macro: ^3.0.0
     uuid: ^8.3.2
     w3c-keyname: ^2.2.6
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-json-transformer@^1.0.4, @uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer":
+"@uidu/editor-json-transformer@1.0.4, @uidu/editor-json-transformer@^1.0.4, @uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer"
   dependencies:
@@ -8264,7 +8270,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/mentions@^0.4.28, @uidu/mentions@workspace:packages/elements/mentions":
+"@uidu/mentions@^0.5.0, @uidu/mentions@workspace:packages/elements/mentions":
   version: 0.0.0-use.local
   resolution: "@uidu/mentions@workspace:packages/elements/mentions"
   dependencies:
@@ -8754,18 +8760,18 @@ __metadata:
     "@uidu/button": ^1.3.33
     "@uidu/code": ^0.5.21
     "@uidu/docs": ^0.5.22
-    "@uidu/editor-common": ^1.1.4
+    "@uidu/editor-common": ^1.1.5
     "@uidu/editor-json-transformer": ^1.0.4
     "@uidu/field-range": ^2.0.6
     "@uidu/media-card": ^0.7.15
     "@uidu/media-filmstrip": ^0.5.11
-    "@uidu/mentions": ^0.4.28
+    "@uidu/mentions": ^0.5.0
     "@uidu/navigation": ^1.0.30
     "@uidu/status": ^0.5.24
     "@uidu/task-decision": ^0.4.31
     "@uidu/theme": ^0.6.25
     "@uidu/tooltip": ^0.5.27
-    "@uidu/util-data-test": ^0.4.27
+    "@uidu/util-data-test": ^0.4.28
     get-video-id: ^3.6.5
     prosemirror-model: ^1.18.1
     raf-schd: ^4.0.3
@@ -9153,7 +9159,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/tooltip@^0.5.27, @uidu/tooltip@workspace:packages/core/tooltip":
+"@uidu/tooltip@0.5.27, @uidu/tooltip@^0.5.27, @uidu/tooltip@workspace:packages/core/tooltip":
   version: 0.0.0-use.local
   resolution: "@uidu/tooltip@workspace:packages/core/tooltip"
   dependencies:
@@ -9194,7 +9200,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/util-data-test@^0.4.27, @uidu/util-data-test@workspace:packages/elements/util-data-test":
+"@uidu/util-data-test@^0.4.27, @uidu/util-data-test@^0.4.28, @uidu/util-data-test@workspace:packages/elements/util-data-test":
   version: 0.0.0-use.local
   resolution: "@uidu/util-data-test@workspace:packages/elements/util-data-test"
   dependencies:
@@ -9203,7 +9209,7 @@ __metadata:
     "@uidu/analytics": ^0.6.9
     "@uidu/docs": ^0.5.22
     "@uidu/emoji": ^0.6.27
-    "@uidu/mentions": ^0.4.28
+    "@uidu/mentions": ^0.5.0
     "@uidu/task-decision": ^0.4.31
     date-fns: ^2.29.3
     js-search: ^2.0.0

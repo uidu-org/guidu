@@ -1,3 +1,7 @@
+import {
+  cellBackgroundColorPalette,
+  ColorPalette,
+} from '@uidu/editor-common/ui-color';
 import { Rect, splitCell } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
 import React, { Component } from 'react';
@@ -8,8 +12,6 @@ import {
   backspace,
   tooltip,
 } from '../../../../keymaps';
-import ColorPalette from '../../../../ui/ColorPalette';
-import cellBackgroundColorPalette from '../../../../ui/ColorPalette/Palettes/cellBackgroundColorPalette';
 import DropdownMenu from '../../../../ui/DropdownMenu';
 import { Shortcut } from '../../../../ui/styles';
 import { closestElement } from '../../../../utils/dom';

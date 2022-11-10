@@ -15,6 +15,15 @@
   "scripts": {
     "generate:spec": "rm -rf ./src/validator/specs/ && ../json-schema-generator/bin.js --outDir=./src/validator/specs/ --mode=Spec --stage=0 ./src/validator/entry.ts"
   },
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts",
+      "builders.ts",
+      "traverse.ts",
+      "validator.ts",
+      "types/index.ts"
+    ]
+  },
   "dependencies": {
     "@babel/runtime": "^7.20.1",
     "@uidu/adf-schema": "^1.1.3",
