@@ -1,5 +1,12 @@
 # @uidu/editor-json-transformer
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies [2f642d1af]
+  - @uidu/adf-schema@2.0.0
+
 ## 1.0.4
 
 ### Patch Changes
