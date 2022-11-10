@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.1.2
+
+### Patch Changes
+
+- c96ed49ac: Bump dependencies
+- Updated dependencies [c96ed49ac]
+  - @uidu/form@2.1.12
+
 ## 4.1.1
 
 ### Patch Changes
