@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.4.24
+
+### Patch Changes
+
+- c96ed49ac: Bump dependencies
+
 ## 0.4.23
 
 ### Patch Changes

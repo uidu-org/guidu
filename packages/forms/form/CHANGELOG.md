@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.12
+
+### Patch Changes
+
+- c96ed49ac: Bump dependencies
+
 ## 2.1.11
 
 ### Patch Changes

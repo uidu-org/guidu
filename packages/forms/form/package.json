@@ -1,6 +1,6 @@
 {
   "name": "@uidu/form",
-  "version": "2.1.11",
+  "version": "2.1.12",
   "description": "Forms using Formsy",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/form",
   "license": "MIT",

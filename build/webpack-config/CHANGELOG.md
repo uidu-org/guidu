@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.41
+
+### Patch Changes
+
+- c96ed49ac: Bump dependencies
+
 ## 0.3.40
 
 ### Patch Changes

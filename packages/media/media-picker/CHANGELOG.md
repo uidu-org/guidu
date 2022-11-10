@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.10.1
+
+### Patch Changes
+
+- c96ed49ac: Bump dependencies
+- Updated dependencies [c96ed49ac]
+  - @uidu/media-core@1.1.6
+
 ## 0.10.0
 
 ### Minor Changes
