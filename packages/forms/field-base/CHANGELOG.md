@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.1.3
+
+### Patch Changes
+
+- 4dcf4b45d: Bump downshift
+- Updated dependencies [4dcf4b45d]
+  - @uidu/form@2.1.13
+
 ## 4.1.2
 
 ### Patch Changes

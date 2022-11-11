@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.22
+
+### Patch Changes
+
+- 4dcf4b45d: Bump downshift
+
 ## 0.1.21
 
 ### Patch Changes
