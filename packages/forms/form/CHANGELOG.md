@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.13
+
+### Patch Changes
+
+- 4dcf4b45d: Bump downshift
+
 ## 2.1.12
 
 ### Patch Changes
