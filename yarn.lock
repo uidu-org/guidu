@@ -7444,7 +7444,7 @@ __metadata:
     "@heroicons/react": ^2.0.13
     "@uidu/form": 2.1.12
     react: ^18.2.0
-    react-hook-form: ^7.39.2
+    react-hook-form: ^7.39.3
     styled-components: ^5.3.6
     tslib: ^2.4.1
     twin.macro: ^3.0.0
@@ -7551,7 +7551,7 @@ __metadata:
     "@uidu/radio": ^2.1.2
     "@uidu/shell": ^2.1.38
     classnames: ^2.3.2
-    downshift: ^6.1.12
+    downshift: ^7.0.1
     react: ^18.2.0
     react-feather: ^2.0.10
     styled-components: ^5.3.6
@@ -7895,7 +7895,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
-    react-hook-form: ^7.39.2
+    react-hook-form: ^7.39.3
     react-media: ^1.10.0
     styled-components: ^5.3.6
     tslib: ^2.4.1
@@ -8852,7 +8852,7 @@ __metadata:
     "@uidu/modal-dialog": ^1.1.1
     "@uidu/spinner": ^0.5.21
     react: ^18.2.0
-    react-hook-form: ^7.39.2
+    react-hook-form: ^7.39.3
     react-select: ^5.6.0
     styled-components: ^5.3.6
     timezones-list: ^3.0.1
@@ -9088,7 +9088,7 @@ __metadata:
     "@tailwindcss/aspect-ratio": ^0.4.2
     "@tailwindcss/forms": ^0.5.3
     "@tailwindcss/typography": ^0.5.8
-    postcss: ^8.4.18
+    postcss: ^8.4.19
     tailwindcss: ^3.2.3
   peerDependencies:
     postcss: ^8.2.6
@@ -14789,9 +14789,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"downshift@npm:^6.1.12":
-  version: 6.1.12
-  resolution: "downshift@npm:6.1.12"
+"downshift@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "downshift@npm:7.0.1"
   dependencies:
     "@babel/runtime": ^7.14.8
     compute-scroll-into-view: ^1.0.17
@@ -14800,7 +14800,7 @@ __metadata:
     tslib: ^2.3.0
   peerDependencies:
     react: ">=16.12.0"
-  checksum: c623dc436f332fefddc332b42ca4a267b3f5b47aaf1372a61212678d7ecbe22698fdb63f61373bcbd3773fa526eb4f210cf7f044cd5642b689dbd37ba27e9aaf
+  checksum: f2dc82171ee64777e82ad86ab8e08f1015bef289ab26799337f43a8465bd55f6b484cad4ab40030b57891e99ed3a7d41b27dd560a0929635133c41cee802bc32
   languageName: node
   linkType: hard
 
@@ -17858,7 +17858,7 @@ __metadata:
     dotenv: ^16.0.3
     dotenv-cli: ^5.1.0
     dotenv-expand: ^8.0.3
-    downshift: ^6.1.12
+    downshift: ^7.0.1
     emoji-mart: ^3.0.1
     emoji-regex: ^10.2.1
     eslint: ^8.27.0
@@ -17917,7 +17917,7 @@ __metadata:
     pdfjs-dist: ^2.14.305
     polished: ^4.2.2
     popper.js: ^1.16.1
-    postcss: ^8.4.18
+    postcss: ^8.4.19
     postcss-flexbugs-fixes: ^5.0.2
     postcss-import: ^15.0.0
     postcss-loader: ^7.0.1
@@ -17974,7 +17974,7 @@ __metadata:
     react-google-maps: ^9.4.5
     react-grid-layout: ^1.3.4
     react-helmet: ^6.1.0
-    react-hook-form: ^7.39.2
+    react-hook-form: ^7.39.3
     react-images: ^1.2.0-beta.7
     react-intersection-observer: ^9.4.0
     react-intl: ^6.2.1
@@ -25167,14 +25167,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.12, postcss@npm:^8.4.18, postcss@npm:^8.4.7":
-  version: 8.4.18
-  resolution: "postcss@npm:8.4.18"
+"postcss@npm:^8.4.12, postcss@npm:^8.4.18, postcss@npm:^8.4.19, postcss@npm:^8.4.7":
+  version: 8.4.19
+  resolution: "postcss@npm:8.4.19"
   dependencies:
     nanoid: ^3.3.4
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 9349fd99849b2e3d2e134ff949b7770ecb12375f352723ce2bcc06167eba3850ea7844c1b191a85cd915d6a396b4e8ee9a5267e6cc5d8d003d0cbc7a97555d39
+  checksum: 62782723a385f92b7525f66d29614624de7c5643855423db3a5efd9287e677650300192749adddbbb6734cea9b1d5f5fd4f6ea00ca3f9a95dbbb88f835f5ca64
   languageName: node
   linkType: hard
 
@@ -26436,12 +26436,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.39.2":
-  version: 7.39.2
-  resolution: "react-hook-form@npm:7.39.2"
+"react-hook-form@npm:^7.39.3":
+  version: 7.39.3
+  resolution: "react-hook-form@npm:7.39.3"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
-  checksum: ca14950e69349b9f718fc4f1526c86f4df8b14b1e78fe5977dfd35d40dd9f1f75e77cf0dd0c9b649fe4c2e4418a4ff8c1bd1d69acb60de71f47f4f5a84653e9c
+  checksum: 80dc880116af3455a1dcaddaa34b0a5bf1be8177deee180dfbd75e663458c1183625820a9292dcdbad9e5016daf94ee94e222fbe36a45d9455649d509936dd2c
   languageName: node
   linkType: hard
 

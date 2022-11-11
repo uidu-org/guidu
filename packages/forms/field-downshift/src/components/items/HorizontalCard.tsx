@@ -14,7 +14,10 @@ export default function HorizontalCard({
     <button
       type="button"
       key={index}
-      css={[isSelected && tw`border-primary`, tw`relative p-2 border rounded`]}
+      css={[
+        isSelected && tw`border-primary`,
+        tw`relative p-2 text-left border rounded`,
+      ]}
       onClick={(e) => {
         e.preventDefault();
         onClick(e);
