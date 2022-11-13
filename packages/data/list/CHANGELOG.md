@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.1.7
+
+### Patch Changes
+
+- f8f1f975b: Bump deps
+- Updated dependencies [f8f1f975b]
+  - @uidu/data-fields@2.1.19
+
 ## 3.1.6
 
 ### Patch Changes

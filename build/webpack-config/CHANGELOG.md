@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.42
+
+### Patch Changes
+
+- f8f1f975b: Bump deps
+
 ## 0.3.41
 
 ### Patch Changes

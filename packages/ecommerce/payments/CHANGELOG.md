@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.5.16
+
+### Patch Changes
+
+- f8f1f975b: Bump deps
+
 ## 1.5.15
 
 ### Patch Changes

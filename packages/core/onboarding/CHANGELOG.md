@@ -1,5 +1,13 @@
 # @uidu/onboarding
 
+## 1.3.17
+
+### Patch Changes
+
+- f8f1f975b: Bump deps
+- Updated dependencies [f8f1f975b]
+  - @uidu/modal-dialog@1.1.2
+
 ## 1.3.16
 
 ### Patch Changes
