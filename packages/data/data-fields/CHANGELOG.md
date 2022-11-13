@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.1.19
+
+### Patch Changes
+
+- f8f1f975b: Bump deps
+
 ## 2.1.18
 
 ### Patch Changes

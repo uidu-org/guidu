@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 4.2.3
+
+### Patch Changes
+
+- f8f1f975b: Bump deps
+- Updated dependencies [f8f1f975b]
+  - @uidu/board@1.0.9
+  - @uidu/data-controls@4.0.11
+  - @uidu/data-fields@2.1.19
+  - @uidu/data-views@3.0.10
+  - @uidu/gallery@2.0.12
+  - @uidu/list@3.1.7
+  - @uidu/table@3.2.9
+
 ## 4.2.2
 
 ### Patch Changes

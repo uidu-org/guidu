@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 1.0.9
+
+### Patch Changes
+
+- f8f1f975b: Bump deps
+
 ## 1.0.8
 
 ### Patch Changes

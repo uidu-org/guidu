@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 2.1.22
+
+### Patch Changes
+
+- f8f1f975b: Bump deps
+- Updated dependencies [f8f1f975b]
+  - @uidu/dashboard-manager@2.0.13
+  - @uidu/data-fields@2.1.19
+  - @uidu/table@3.2.9
+
 ## 2.1.21
 
 ### Patch Changes
