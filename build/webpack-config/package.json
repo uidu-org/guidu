@@ -23,7 +23,7 @@
     "chalk": "^4.1.2",
     "compression-webpack-plugin": "^10.0.0",
     "connect-history-api-fallback": "^2.0.0",
-    "css-loader": "^6.7.1",
+    "css-loader": "^6.7.2",
     "extract-react-types-loader": "^1.0.0",
     "file-loader": "^6.2.0",
     "gray-matter-loader": "^0.0.10",

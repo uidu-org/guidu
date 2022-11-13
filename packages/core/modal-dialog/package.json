@@ -20,7 +20,7 @@
     "@uidu/portal": "^1.0.3",
     "@uidu/theme": "^0.6.25",
     "raf-schd": "^4.0.3",
-    "react-focus-lock": "^2.9.1",
+    "react-focus-lock": "^2.9.2",
     "react-scrolllock": "^5.0.1",
     "tslib": "^2.4.1"
   },

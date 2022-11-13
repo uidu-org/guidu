@@ -4937,13 +4937,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@smastrom/react-rating@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@smastrom/react-rating@npm:1.1.1"
+"@smastrom/react-rating@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@smastrom/react-rating@npm:1.2.1"
   peerDependencies:
-    react: ^16.8.0 || ^17 || ^18
-    react-dom: ^16.8.0 || ^17 || ^18
-  checksum: 0fbdfa5549a292587f4babae8e0fb98b5b5e34ab077919b0fbf5a90b26e537f2251d0b2ee1f33d3e5a282d56f3e234d72002a3dc5a398dde05033bb70891715f
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 8f76e7b74712ba73d86b1327cfac2c06c282ee699b844583baeb1e6211db8cf3cb3c2934dadbb212c135dcf6d08c4a1a69f5f8efa28c68587996676fbcdbb0e0
   languageName: node
   linkType: hard
 
@@ -4960,10 +4960,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stripe/stripe-js@npm:^1.42.1":
-  version: 1.42.1
-  resolution: "@stripe/stripe-js@npm:1.42.1"
-  checksum: 81b0d77b59649f35199981f4e22392928906bc9337b50a8021761a39ce55318b8fae206a78fe457cbbb4281e1a28422d3b3c5cb7dccf1700bd7613a6b119011d
+"@stripe/stripe-js@npm:^1.44.1":
+  version: 1.44.1
+  resolution: "@stripe/stripe-js@npm:1.44.1"
+  checksum: f65476472ac7952c0c7c7c321ae64ace89e09fc13c4979f98f58db7be98a5e88e47cb2ef00f038402fd99c417706f0331cde2e1f4b131bd3a8c879dd1ab0e79d
   languageName: node
   linkType: hard
 
@@ -5028,15 +5028,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-table@npm:^8.5.22":
-  version: 8.5.22
-  resolution: "@tanstack/react-table@npm:8.5.22"
+"@tanstack/react-table@npm:^8.5.24":
+  version: 8.5.24
+  resolution: "@tanstack/react-table@npm:8.5.24"
   dependencies:
-    "@tanstack/table-core": 8.5.22
+    "@tanstack/table-core": 8.5.24
   peerDependencies:
     react: ">=16"
     react-dom: ">=16"
-  checksum: dc200b5a4e1a3c634b8d926574deb9290b23c7ac4b8ff53e3b760a6a7be8c44213f23aa8fa257c6b66cfff92ca7c88fd09b9389f001d0c49a24f1e59af5de9f8
+  checksum: 6734d04787298592c2a1ac4e41b5ceb3a4bc089368690f4183eda9a2b44825b47f6069693726d7768465b60e1ded72f6d80ee13358ec2e78663cd6c995679f58
   languageName: node
   linkType: hard
 
@@ -5051,10 +5051,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/table-core@npm:8.5.22":
-  version: 8.5.22
-  resolution: "@tanstack/table-core@npm:8.5.22"
-  checksum: ee273094b3257f21156a53523b6aa5a2f46a6c4b34a21b0989031c08d69f389205cade5811fe9d0ca744e9128d5f6046568050b649b3422ff52e18fd59cee2b0
+"@tanstack/table-core@npm:8.5.24":
+  version: 8.5.24
+  resolution: "@tanstack/table-core@npm:8.5.24"
+  checksum: ff9fca41aa47d6e56c9c2de0b9dff8825fa51dfb795928759029d67a157cfea7379b36bd6250382121249a059b46621ccc7d725f569e8476d3e0d51c61581af0
   languageName: node
   linkType: hard
 
@@ -6612,7 +6612,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@faker-js/faker": ^7.6.0
-    "@tanstack/react-table": ^8.5.22
+    "@tanstack/react-table": ^8.5.24
     "@uidu/badge": ^0.5.20
     "@uidu/docs": ^0.5.22
     "@uidu/shell": ^2.1.38
@@ -6799,7 +6799,7 @@ __metadata:
     "@babel/runtime": ^7.20.1
     "@cubejs-client/core": ^0.31.13
     "@cubejs-client/react": ^0.31.13
-    "@tanstack/react-table": ^8.5.22
+    "@tanstack/react-table": ^8.5.24
     "@types/react-grid-layout": ^1.3.2
     "@uidu/dashboard-controls": ^1.1.11
     "@uidu/dashlets": ^2.1.21
@@ -6866,7 +6866,7 @@ __metadata:
     "@cubejs-client/core": ^0.31.13
     "@cubejs-client/react": ^0.31.13
     "@loadable/component": ^5.15.2
-    "@tanstack/react-table": ^8.5.22
+    "@tanstack/react-table": ^8.5.24
     "@uidu/dashboard-manager": ^2.0.12
     "@uidu/dashlet-controls": ^1.1.11
     "@uidu/data-fields": ^2.1.18
@@ -6897,7 +6897,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@heroicons/react": ^2.0.13
-    "@tanstack/react-table": ^8.5.22
+    "@tanstack/react-table": ^8.5.24
     "@uidu/button": 1.3.33
     "@uidu/checkbox": ^2.0.7
     "@uidu/data-fields": ^2.1.18
@@ -6938,8 +6938,8 @@ __metadata:
     "@fortawesome/react-fontawesome": ^0.2.0
     "@heroicons/react": ^2.0.13
     "@loadable/component": ^5.15.2
-    "@smastrom/react-rating": ^1.1.1
-    "@tanstack/react-table": ^8.5.22
+    "@smastrom/react-rating": ^1.2.1
+    "@tanstack/react-table": ^8.5.24
     "@uidu/button": 1.3.33
     "@uidu/docs": ^0.5.22
     "@uidu/field-color-picker": ^3.0.12
@@ -6976,7 +6976,7 @@ __metadata:
     "@cubejs-client/ws-transport": ^0.31.13
     "@loadable/component": ^5.15.2
     "@tanstack/match-sorter-utils": ^8.5.14
-    "@tanstack/react-table": ^8.5.22
+    "@tanstack/react-table": ^8.5.24
     "@uidu/board": ^1.0.8
     "@uidu/button": 1.3.33
     "@uidu/calendar": ^0.4.23
@@ -7016,7 +7016,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@loadable/component": ^5.15.2
-    "@tanstack/react-table": ^8.5.22
+    "@tanstack/react-table": ^8.5.24
     "@uidu/button": 1.3.33
     "@uidu/data-controls": ^4.0.10
     "@uidu/data-manager": 4.2.2
@@ -7917,7 +7917,7 @@ __metadata:
   resolution: "@uidu/gallery@workspace:packages/data/gallery"
   dependencies:
     "@babel/runtime": ^7.20.1
-    "@tanstack/react-table": ^8.5.22
+    "@tanstack/react-table": ^8.5.24
     "@tanstack/react-virtual": ^3.0.0-beta.22
     "@uidu/data-controls": ^4.0.10
     "@uidu/data-fields": ^2.1.18
@@ -8135,7 +8135,7 @@ __metadata:
   resolution: "@uidu/list@workspace:packages/data/list"
   dependencies:
     "@babel/runtime": ^7.20.1
-    "@tanstack/react-table": ^8.5.22
+    "@tanstack/react-table": ^8.5.24
     "@tanstack/react-virtual": ^3.0.0-beta.22
     "@uidu/data-fields": ^2.1.18
     "@uidu/docs": ^0.5.22
@@ -8443,7 +8443,7 @@ __metadata:
     react: ^18.2.0
     react-beautiful-dnd: ^13.1.1
     react-dom: ^18.2.0
-    react-focus-lock: ^2.9.1
+    react-focus-lock: ^2.9.2
     react-lorem-component: ^0.13.0
     react-scrolllock: ^5.0.1
     styled-components: ^5.3.6
@@ -8513,7 +8513,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
-    react-focus-lock: ^2.9.1
+    react-focus-lock: ^2.9.2
     react-lorem-component: ^0.13.0
     react-node-resolver: ^2.0.1
     react-scrolllock: ^5.0.1
@@ -8580,7 +8580,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@stripe/react-stripe-js": ^1.14.2
-    "@stripe/stripe-js": ^1.42.1
+    "@stripe/stripe-js": ^1.44.1
     "@uidu/docs": ^0.5.22
     "@uidu/form": ^2.1.11
     "@uidu/payments": ^1.5.14
@@ -8598,7 +8598,7 @@ __metadata:
     "@babel/runtime": ^7.20.1
     "@heroicons/react": ^2.0.13
     "@stripe/react-stripe-js": ^1.14.2
-    "@stripe/stripe-js": ^1.42.1
+    "@stripe/stripe-js": ^1.44.1
     "@uidu/docs": ^0.5.22
     "@uidu/field-base": ^4.0.18
     "@uidu/form": ^2.1.11
@@ -9004,7 +9004,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@stripe/react-stripe-js": ^1.14.2
-    "@stripe/stripe-js": ^1.42.1
+    "@stripe/stripe-js": ^1.44.1
     "@uidu/docs": ^0.5.22
     "@uidu/field-text": ^2.0.5
     "@uidu/form": ^2.1.11
@@ -9045,7 +9045,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.2.0
     "@fortawesome/react-fontawesome": ^0.2.0
     "@heroicons/react": ^2.0.13
-    "@tanstack/react-table": ^8.5.22
+    "@tanstack/react-table": ^8.5.24
     "@tanstack/react-virtual": ^3.0.0-beta.22
     "@uidu/button": 1.3.33
     "@uidu/checkbox": ^2.0.7
@@ -9089,7 +9089,7 @@ __metadata:
     "@tailwindcss/forms": ^0.5.3
     "@tailwindcss/typography": ^0.5.8
     postcss: ^8.4.19
-    tailwindcss: ^3.2.3
+    tailwindcss: ^3.2.4
   peerDependencies:
     postcss: ^8.2.6
     tailwindcss: ^3.2.2
@@ -9256,7 +9256,7 @@ __metadata:
     chalk: ^4.1.2
     compression-webpack-plugin: ^10.0.0
     connect-history-api-fallback: ^2.0.0
-    css-loader: ^6.7.1
+    css-loader: ^6.7.2
     extract-react-types-loader: ^1.0.0
     file-loader: ^6.2.0
     gray-matter-loader: ^0.0.10
@@ -13590,21 +13590,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:^6.7.1":
-  version: 6.7.1
-  resolution: "css-loader@npm:6.7.1"
+"css-loader@npm:^6.7.2":
+  version: 6.7.2
+  resolution: "css-loader@npm:6.7.2"
   dependencies:
     icss-utils: ^5.1.0
-    postcss: ^8.4.7
+    postcss: ^8.4.18
     postcss-modules-extract-imports: ^3.0.0
     postcss-modules-local-by-default: ^4.0.0
     postcss-modules-scope: ^3.0.0
     postcss-modules-values: ^4.0.0
     postcss-value-parser: ^4.2.0
-    semver: ^7.3.5
+    semver: ^7.3.8
   peerDependencies:
     webpack: ^5.0.0
-  checksum: 170fdbc630a05a43679ef60fa97694766b568dbde37adccc0faafa964fc675f08b976bc68837bb73b61d60240e8d2cbcbf51540fe94ebc9dafc56e7c46ba5527
+  checksum: f3c980cc9c033a02e60df7e5a2f33a1e8c2c3dd552f017485d2d81b383be623ae8c4189404e7a4a7403b52744683ae4b516def0f7ccf125c2b198cb647e46543
   languageName: node
   linkType: hard
 
@@ -17742,7 +17742,7 @@ __metadata:
     "@preconstruct/cli": ^2.2.2
     "@researchgate/react-intersection-observer": ^1.3.5
     "@stripe/react-stripe-js": ^1.14.2
-    "@stripe/stripe-js": ^1.42.1
+    "@stripe/stripe-js": ^1.44.1
     "@tailwindcss/aspect-ratio": ^0.4.2
     "@tailwindcss/forms": ^0.5.3
     "@tailwindcss/typography": ^0.5.8
@@ -17850,7 +17850,7 @@ __metadata:
     connect-history-api-fallback: ^2.0.0
     copy-pkg: ^1.0.0
     css-color-names: ^1.0.1
-    css-loader: ^6.7.1
+    css-loader: ^6.7.2
     d3-array: ^3.2.0
     d3-collection: ^1.0.7
     date-fns: ^2.29.3
@@ -17968,7 +17968,7 @@ __metadata:
     react-fast-compare: ^3.2.0
     react-feather: ^2.0.10
     react-flip-toolkit: ^7.0.17
-    react-focus-lock: ^2.9.1
+    react-focus-lock: ^2.9.2
     react-ga: ^3.3.1
     react-google-login: ^5.2.2
     react-google-maps: ^9.4.5
@@ -18020,7 +18020,7 @@ __metadata:
     svg-inline-react: ^3.2.1
     svg-url-loader: ^7.1.1
     swiper: ^8.4.4
-    tailwindcss: ^3.2.3
+    tailwindcss: ^3.2.4
     terser-webpack-plugin: ^5.3.6
     thread-loader: ^3.0.4
     tiny-invariant: ^1.3.1
@@ -25167,7 +25167,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.12, postcss@npm:^8.4.18, postcss@npm:^8.4.19, postcss@npm:^8.4.7":
+"postcss@npm:^8.4.12, postcss@npm:^8.4.18, postcss@npm:^8.4.19":
   version: 8.4.19
   resolution: "postcss@npm:8.4.19"
   dependencies:
@@ -26306,9 +26306,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-focus-lock@npm:^2.9.0, react-focus-lock@npm:^2.9.1":
-  version: 2.9.1
-  resolution: "react-focus-lock@npm:2.9.1"
+"react-focus-lock@npm:^2.9.0, react-focus-lock@npm:^2.9.2":
+  version: 2.9.2
+  resolution: "react-focus-lock@npm:2.9.2"
   dependencies:
     "@babel/runtime": ^7.0.0
     focus-lock: ^0.11.2
@@ -26322,7 +26322,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 4dbc2166ac397d9e9340bd0722c6165c23f21629515f13e9cb96eaff82aa1543a2f7f3cccf15689821f19166e3a3ce59f380c43643099eb119b5f9c529b23181
+  checksum: f8db4d64aa5c983d15e80d0fd86d1d649e33744e7b6b70babb08c95f7828e38c2cce7068c0007cf3263eec8b738ebd317d24a613df7f75b472bad6529cf8d6b6
   languageName: node
   linkType: hard
 
@@ -29687,9 +29687,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.2.3":
-  version: 3.2.3
-  resolution: "tailwindcss@npm:3.2.3"
+"tailwindcss@npm:^3.2.4":
+  version: 3.2.4
+  resolution: "tailwindcss@npm:3.2.4"
   dependencies:
     arg: ^5.0.2
     chokidar: ^3.5.3
@@ -29719,7 +29719,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: 5a31815c69d3ecfb6ed4882942d6e0dc3b79e5dbbadd758ccebe99d66d403b29d80b7b73dec0a81ee21ada4ec8e9d467dd1bc14b559726c5a19425030f29aea9
+  checksum: ec187d180c722ec4f57537f2216c7b21269b525f12aaf353cea464d939c3e6286a1221eb3e1206e45d1f015f296171309ad4d9952899b0245cd07d9500a9401f
   languageName: node
   linkType: hard
 

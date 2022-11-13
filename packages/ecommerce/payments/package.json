@@ -12,7 +12,7 @@
     "@babel/runtime": "^7.20.1",
     "@heroicons/react": "^2.0.13",
     "@stripe/react-stripe-js": "^1.14.2",
-    "@stripe/stripe-js": "^1.42.1",
+    "@stripe/stripe-js": "^1.44.1",
     "@uidu/field-base": "^4.0.18",
     "@uidu/form": "^2.1.11",
     "@uidu/section-message": "0.6.26",
