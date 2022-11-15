@@ -1,5 +1,11 @@
 # @uidu/popup
 
+## 0.7.8
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+
 ## 0.7.7
 
 ### Patch Changes

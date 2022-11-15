@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- d30f69b79: Bump deps
+
+## 2.1.39
+
+### Patch Changes
+
 - 542f83dff: Small fixes
 
 ## 2.1.38

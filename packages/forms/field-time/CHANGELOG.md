@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 2.0.27
+
+### Patch Changes
+
+- Updated dependencies [d30f69b79]
+  - @uidu/field-base@4.1.4
+  - @uidu/form@2.1.14
+  - @uidu/select@2.1.6
+
 ## 2.0.26
 
 ### Patch Changes

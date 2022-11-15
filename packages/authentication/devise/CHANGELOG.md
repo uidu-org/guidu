@@ -1,5 +1,15 @@
 # @uidu/devise
 
+## 0.7.27
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+- Updated dependencies [d30f69b79]
+  - @uidu/form@2.1.14
+  - @uidu/shell@2.1.39
+  - @uidu/field-phone@2.0.25
+
 ## 0.7.26
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/field-date
 
+## 2.1.4
+
+### Patch Changes
+
+- Updated dependencies [d30f69b79]
+  - @uidu/popup@0.7.8
+  - @uidu/field-base@4.1.4
+
 ## 2.1.3
 
 ### Patch Changes

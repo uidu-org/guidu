@@ -1,5 +1,21 @@
 # @uidu/editor-core
 
+## 2.0.2
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+- Updated dependencies [d30f69b79]
+  - @uidu/adf-schema@2.0.2
+  - @uidu/editor-common@2.0.1
+  - @uidu/editor-json-transformer@1.0.6
+  - @uidu/editor-markdown-transformer@1.0.5
+  - @uidu/profilecard@0.3.29
+  - @uidu/form@2.1.14
+  - @uidu/select@2.1.6
+  - @uidu/media-card@0.7.18
+  - @uidu/field-date@2.1.4
+
 ## 2.0.1
 
 ### Patch Changes

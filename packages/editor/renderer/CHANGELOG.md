@@ -1,5 +1,16 @@
 # @uidu/renderer
 
+## 1.2.7
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+- Updated dependencies [d30f69b79]
+  - @uidu/adf-schema@2.0.2
+  - @uidu/editor-common@2.0.1
+  - @uidu/editor-json-transformer@1.0.6
+  - @uidu/media-card@0.7.18
+
 ## 1.2.6
 
 ### Patch Changes

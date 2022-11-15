@@ -1,5 +1,13 @@
 # @uidu/profilecard
 
+## 0.3.29
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+- Updated dependencies [d30f69b79]
+  - @uidu/popup@0.7.8
+
 ## 0.3.28
 
 ### Patch Changes

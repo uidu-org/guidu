@@ -1,5 +1,15 @@
 # @uidu/editor-common
 
+## 2.0.1
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+- Updated dependencies [d30f69b79]
+  - @uidu/adf-schema@2.0.2
+  - @uidu/editor-json-transformer@1.0.6
+  - @uidu/profilecard@0.3.29
+
 ## 2.0.0
 
 ### Major Changes

@@ -1,5 +1,15 @@
 # @uidu/gallery
 
+## 2.0.13
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+- Updated dependencies [d30f69b79]
+  - @uidu/data-controls@4.0.12
+  - @uidu/data-fields@2.1.20
+  - @uidu/shell@2.1.39
+
 ## 2.0.12
 
 ### Patch Changes

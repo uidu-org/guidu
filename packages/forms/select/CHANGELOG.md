@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 2.1.6
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+- Updated dependencies [d30f69b79]
+  - @uidu/field-base@4.1.4
+
 ## 2.1.5
 
 ### Patch Changes

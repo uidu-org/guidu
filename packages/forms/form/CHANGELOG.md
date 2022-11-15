@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.14
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+
 ## 2.1.13
 
 ### Patch Changes
