@@ -21,7 +21,7 @@
     "@uidu/spinner": "^0.5.21",
     "query-string": "^7.1.1",
     "react": "^18.2.0",
-    "react-animate-height": "^3.0.4",
+    "react-animate-height": "^3.0.5",
     "react-facebook": "^8.1.4",
     "react-feather": "^2.0.10",
     "react-google-login": "^5.2.2",

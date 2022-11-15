@@ -3,7 +3,7 @@ import Button, { ButtonGroup } from '@uidu/button';
 import Drawer from '@uidu/drawer';
 import PageHeader from '@uidu/page-header';
 import { ScrollableContainer, ShellBody, ShellMain } from '@uidu/shell';
-import 'overlayscrollbars/css/OverlayScrollbars.css';
+import 'overlayscrollbars/overlayscrollbars.css';
 import React, { Fragment } from 'react';
 import {
   GitHub,

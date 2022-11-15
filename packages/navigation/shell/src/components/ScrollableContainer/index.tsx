@@ -1,7 +1,7 @@
 import loadable from '@loadable/component';
 import Observer from '@researchgate/react-intersection-observer';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-// import 'overlayscrollbars/css/OverlayScrollbars.css';
+// import 'overlayscrollbars/overlayscrollbars.css';
 import React, {
   useCallback,
   useEffect,
@@ -30,11 +30,13 @@ function ScrollableContainer({
 
   useImperativeHandle(forwardedRef, () => element.current);
 
-  const getScrollable = useCallback(() => {
-    return enableCustomScrollbars && overlayScrollbar.current
-      ? element.current?.osInstance().getElements().viewport
-      : element.current;
-  }, [enableCustomScrollbars, overlayScrollbar]);
+  const getScrollable = useCallback(
+    () =>
+      enableCustomScrollbars && overlayScrollbar.current
+        ? element.current?.getElement()
+        : element.current,
+    [enableCustomScrollbars, overlayScrollbar],
+  );
 
   useEffect(() => {
     const scrollableElement = getScrollable();
@@ -102,18 +104,16 @@ export default React.forwardRef(
       customScrollbarProps = {},
     }: ShellBodyProps,
     ref: any,
-  ) => {
-    return (
-      <ScrollableContainer
-        id={id}
-        children={children}
-        shadowOnScroll={shadowOnScroll}
-        className={className}
-        innerClassName={innerClassName}
-        enableCustomScrollbars={enableCustomScrollbars}
-        customScrollbarProps={customScrollbarProps}
-        forwardedRef={ref}
-      />
-    );
-  },
+  ) => (
+    <ScrollableContainer
+      id={id}
+      children={children}
+      shadowOnScroll={shadowOnScroll}
+      className={className}
+      innerClassName={innerClassName}
+      enableCustomScrollbars={enableCustomScrollbars}
+      customScrollbarProps={customScrollbarProps}
+      forwardedRef={ref}
+    />
+  ),
 );
