@@ -1,6 +1,6 @@
 {
   "name": "@uidu/navigation",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/navigation",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "@uidu/dropdown-menu": "^0.6.26",
     "@uidu/inline-dialog": "^0.5.25",
     "@uidu/menu": "^0.8.7",
-    "@uidu/shell": "^2.1.38",
+    "@uidu/shell": "^2.1.39",
     "@uidu/theme": "^0.6.25",
     "@uidu/tooltip": "^0.5.27",
     "hoverintent": "^2.2.1",

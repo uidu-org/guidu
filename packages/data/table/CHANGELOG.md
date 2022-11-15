@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 3.2.10
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+- Updated dependencies [d30f69b79]
+  - @uidu/popup@0.7.8
+  - @uidu/data-fields@2.1.20
+  - @uidu/data-manager@4.2.4
+
 ## 3.2.9
 
 ### Patch Changes

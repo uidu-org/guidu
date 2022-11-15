@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 1.0.31
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+- Updated dependencies [d30f69b79]
+  - @uidu/shell@2.1.39
+
 ## 1.0.30
 
 ### Patch Changes

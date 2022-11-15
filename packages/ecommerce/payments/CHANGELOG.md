@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 1.5.17
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+- Updated dependencies [d30f69b79]
+  - @uidu/field-base@4.1.4
+  - @uidu/form@2.1.14
+
 ## 1.5.16
 
 ### Patch Changes

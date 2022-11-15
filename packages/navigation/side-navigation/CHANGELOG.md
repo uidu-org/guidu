@@ -1,5 +1,14 @@
 # @uidu/navigation
 
+## 1.2.4
+
+### Patch Changes
+
+- d30f69b79: Bump deps
+- Updated dependencies [d30f69b79]
+  - @uidu/popup@0.7.8
+  - @uidu/shell@2.1.39
+
 ## 1.2.3
 
 ### Patch Changes
