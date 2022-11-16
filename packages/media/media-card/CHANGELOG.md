@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.7.19
+
+### Patch Changes
+
+- 23652d36f: Table context menu should perform better
+
 ## 0.7.18
 
 ### Patch Changes

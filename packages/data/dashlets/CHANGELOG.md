@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 2.1.26
+
+### Patch Changes
+
+- 23652d36f: Table context menu should perform better
+- Updated dependencies [23652d36f]
+  - @uidu/table@3.4.0
+  - @uidu/dashboard-manager@2.0.15
+  - @uidu/data-fields@2.1.21
+
 ## 2.1.25
 
 ### Patch Changes

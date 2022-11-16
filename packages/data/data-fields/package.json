@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-fields",
-  "version": "2.1.20",
+  "version": "2.1.21",
   "description": "Data-fields contain all informations to render, edit and customize fields for custom entities",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/data-fields",
   "license": "MIT",

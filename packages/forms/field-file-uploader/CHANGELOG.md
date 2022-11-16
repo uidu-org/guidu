@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.1.6
+
+### Patch Changes
+
+- 23652d36f: Table context menu should perform better
+
 ## 2.1.5
 
 ### Patch Changes
