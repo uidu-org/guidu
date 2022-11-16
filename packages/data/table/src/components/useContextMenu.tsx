@@ -33,17 +33,13 @@ const useContextMenu = ({
     [setShow, setAnchorPoint],
   );
 
-  const handleClick = useCallback(() => (show ? setShow(false) : null), [show]);
-
   useEffect(() => {
     const target = targetRef.current;
-    target.addEventListener('click', handleClick);
     target.addEventListener('contextmenu', handleContextMenu);
     return () => {
-      target.removeEventListener('click', handleClick);
       target.removeEventListener('contextmenu', handleContextMenu);
     };
-  });
+  }, [targetRef, handleContextMenu]);
 
   useLayoutEffect(() => {
     const target = contextElement;
@@ -63,7 +59,7 @@ const useContextMenu = ({
     }
   }, [anchorPoint, contextElement]);
 
-  return { anchorPoint, show };
+  return { anchorPoint, show, setShow };
 };
 
 export default useContextMenu;

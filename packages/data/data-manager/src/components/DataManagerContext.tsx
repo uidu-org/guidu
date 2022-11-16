@@ -1,7 +1,9 @@
 import { Column, Row, Table } from '@tanstack/react-table';
 import React, {
   createContext,
+  Dispatch,
   FC,
+  SetStateAction,
   useCallback,
   useContext,
   useMemo,
@@ -13,7 +15,11 @@ interface DataManagerPassedDownProps<TTable, TView extends {}> {
   onItemClick: (item: TTable) => void;
   currentView?: TView;
   updateView?: (name: string, value: any) => Promise<any>;
-  contextMenu?: FC<{ row: Row<TTable> }>;
+  contextMenu?: FC<{
+    row: Row<TTable>;
+    show: boolean;
+    setShow: Dispatch<SetStateAction<boolean>>;
+  }>;
   pagination?: {
     isLoadingNext?: boolean;
     loadNext?: () => void;
@@ -45,7 +51,6 @@ function DataManagerProvider<TTable, TView extends {}>({
   tableInstance,
   onItemClick,
   pagination,
-  actions,
   contextMenu,
 }: DataManagerProviderProps<TTable, TView>) {
   const setColumnCount = useCallback(

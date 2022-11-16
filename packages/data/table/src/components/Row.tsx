@@ -90,7 +90,9 @@ function Row<T extends object>({
     >
       {rowRef.current && ContextMenuComponent && (
         <ContextMenu targetRef={rowRef}>
-          <ContextMenuComponent row={row} />
+          {({ show, setShow }) => (
+            <ContextMenuComponent row={row} show={show} setShow={setShow} />
+          )}
         </ContextMenu>
       )}
       {row

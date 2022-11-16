@@ -7,11 +7,20 @@ export default function ContextMenu({
   children,
 }: {
   targetRef: React.RefObject<HTMLElement>;
-  children: React.ReactNode;
+  children: ({
+    show,
+    setShow,
+  }: {
+    show: boolean;
+    setShow: (show: boolean) => void;
+  }) => React.ReactNode;
 }) {
   const [contextElement, setContextElement] = useState<HTMLDivElement>(null);
 
-  const { anchorPoint, show } = useContextMenu({ targetRef, contextElement });
+  const { anchorPoint, show, setShow } = useContextMenu({
+    targetRef,
+    contextElement,
+  });
 
   if (show) {
     return (
@@ -24,7 +33,7 @@ export default function ContextMenu({
           style={{ top: anchorPoint.y, left: anchorPoint.x }}
           className="ignore-onclickoutside"
         >
-          {children}
+          {children({ show, setShow })}
         </div>
       </Portal>
     );

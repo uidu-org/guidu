@@ -2848,9 +2848,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:8.101.1":
-  version: 8.101.1
-  resolution: "@fluentui/react@npm:8.101.1"
+"@fluentui/react@npm:8.101.2":
+  version: 8.101.2
+  resolution: "@fluentui/react@npm:8.101.2"
   dependencies:
     "@fluentui/date-time-utilities": ^8.5.3
     "@fluentui/font-icons-mdl2": ^8.5.4
@@ -2871,7 +2871,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <19.0.0"
     react: ">=16.8.0 <19.0.0"
     react-dom: ">=16.8.0 <19.0.0"
-  checksum: 8c6231e9866b8ecd6ea4be4366a594967f22b858c902ab2045e9dc9b2f4bd562a746fc35b62bed92698248eaf0e0ca4c0750ed2a220a3c1d7aaff32861898d02
+  checksum: 56aeded476d5838ebce77e26ebbef679b22b15bf51cb85b7181129cdd6658a5f9e4607c40c3e635ceb43e99a4301c9ebd7c78657445b70a53018dc0a245c9b8a
   languageName: node
   linkType: hard
 
@@ -5028,40 +5028,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-table@npm:^8.5.28":
-  version: 8.5.28
-  resolution: "@tanstack/react-table@npm:8.5.28"
+"@tanstack/react-table@npm:^8.5.30":
+  version: 8.5.30
+  resolution: "@tanstack/react-table@npm:8.5.30"
   dependencies:
-    "@tanstack/table-core": 8.5.28
+    "@tanstack/table-core": 8.5.30
   peerDependencies:
     react: ">=16"
     react-dom: ">=16"
-  checksum: 109d7c2fa31c7a55904e7eac08c4824dc65630fea72353b574a7f6f694b186c870d7f9cc322f25cac958c6010dced1fe974b417b4626e81efcea08c62c94f3cf
+  checksum: 0e61cd98bf68a8c5004dc80bf9ff097205ce5e48e48f72600cce0788db6987c4e770e0a97795a884c17f36647f8faf6cea5817399b1e74158c3c4ecf8c80c79a
   languageName: node
   linkType: hard
 
-"@tanstack/react-virtual@npm:^3.0.0-beta.22":
-  version: 3.0.0-beta.22
-  resolution: "@tanstack/react-virtual@npm:3.0.0-beta.22"
+"@tanstack/react-virtual@npm:^3.0.0-beta.23":
+  version: 3.0.0-beta.23
+  resolution: "@tanstack/react-virtual@npm:3.0.0-beta.23"
   dependencies:
-    "@tanstack/virtual-core": 3.0.0-beta.22
+    "@tanstack/virtual-core": 3.0.0-beta.23
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 6eacf8d5d458e5c9b3c85a3a5306c83de0a7d9812657441a8852fb95a9879fb27b0969268da760f7e3ec20c35965707684529554e26cf1e623eaa6d60d14b3e0
+  checksum: 07adb782da90f6bab08326d12cf711cebe7af1a54e675ab803e20826332a7e9da803b0a00a40ac8acf745b3cb6ecb6c4bf49055b98c26e0042b781dbb9b43ac0
   languageName: node
   linkType: hard
 
-"@tanstack/table-core@npm:8.5.28":
-  version: 8.5.28
-  resolution: "@tanstack/table-core@npm:8.5.28"
-  checksum: 309f40d474f639b70932e17e20282ef2f3a3ccc4927db3273e4e9b34e271d525cd802c3c3b546613e0123782768862cbede527b56f1803f780888fc213afd8b5
+"@tanstack/table-core@npm:8.5.30":
+  version: 8.5.30
+  resolution: "@tanstack/table-core@npm:8.5.30"
+  checksum: 05d5612ec417a665cb67c35eb94cada149884fc3377ec6b3850eff3081517a913a57b5725f9c609b9eada6de8b980d63bbb30a8d62111730d62aea80e184b997
   languageName: node
   linkType: hard
 
-"@tanstack/virtual-core@npm:3.0.0-beta.22":
-  version: 3.0.0-beta.22
-  resolution: "@tanstack/virtual-core@npm:3.0.0-beta.22"
-  checksum: 5d24994fb1eca7d46090c7f7ff63fffc52d1f009130414ed71f2ad20d83582f1e2a3cae79c018c0ac2b6d88c0b8c5e743177405748eb77ab59ef5bce110bd518
+"@tanstack/virtual-core@npm:3.0.0-beta.23":
+  version: 3.0.0-beta.23
+  resolution: "@tanstack/virtual-core@npm:3.0.0-beta.23"
+  checksum: 94d1bdad239a8bfe7c013df16b97bb6525ec93f8ea5d672142a34e1a88b94d7aacecfe87966106a874a78453a4dbad0f07b9a00af28b3ee800fec5d2eb8b4a27
   languageName: node
   linkType: hard
 
@@ -6612,7 +6612,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@faker-js/faker": ^7.6.0
-    "@tanstack/react-table": ^8.5.28
+    "@tanstack/react-table": ^8.5.30
     "@uidu/badge": ^0.5.20
     "@uidu/docs": ^0.5.22
     "@uidu/shell": ^2.1.39
@@ -6799,7 +6799,7 @@ __metadata:
     "@babel/runtime": ^7.20.1
     "@cubejs-client/core": ^0.31.13
     "@cubejs-client/react": ^0.31.14
-    "@tanstack/react-table": ^8.5.28
+    "@tanstack/react-table": ^8.5.30
     "@types/react-grid-layout": ^1.3.2
     "@uidu/dashboard-controls": ^1.1.11
     "@uidu/dashlets": ^2.1.23
@@ -6866,13 +6866,13 @@ __metadata:
     "@cubejs-client/core": ^0.31.13
     "@cubejs-client/react": ^0.31.14
     "@loadable/component": ^5.15.2
-    "@tanstack/react-table": ^8.5.28
+    "@tanstack/react-table": ^8.5.30
     "@uidu/dashboard-manager": ^2.0.14
     "@uidu/dashlet-controls": ^1.1.11
     "@uidu/data-fields": ^2.1.20
     "@uidu/docs": ^0.5.22
     "@uidu/spinner": ^0.5.21
-    "@uidu/table": 3.3.0
+    "@uidu/table": 3.3.1
     "@uidu/tooltip": ^0.5.27
     d3-array: ^3.2.0
     gql-query-builder: ^3.7.2
@@ -6897,7 +6897,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@heroicons/react": ^2.0.13
-    "@tanstack/react-table": ^8.5.28
+    "@tanstack/react-table": ^8.5.30
     "@uidu/button": 1.3.33
     "@uidu/checkbox": ^2.0.7
     "@uidu/data-fields": ^2.1.20
@@ -6939,7 +6939,7 @@ __metadata:
     "@heroicons/react": ^2.0.13
     "@loadable/component": ^5.15.2
     "@smastrom/react-rating": ^1.2.1
-    "@tanstack/react-table": ^8.5.28
+    "@tanstack/react-table": ^8.5.30
     "@uidu/button": 1.3.33
     "@uidu/docs": ^0.5.22
     "@uidu/field-color-picker": ^3.0.12
@@ -6976,7 +6976,7 @@ __metadata:
     "@cubejs-client/ws-transport": ^0.31.13
     "@loadable/component": ^5.15.2
     "@tanstack/match-sorter-utils": ^8.5.14
-    "@tanstack/react-table": ^8.5.28
+    "@tanstack/react-table": ^8.5.30
     "@uidu/board": ^1.0.10
     "@uidu/button": 1.3.33
     "@uidu/calendar": ^0.4.23
@@ -7016,7 +7016,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@loadable/component": ^5.15.2
-    "@tanstack/react-table": ^8.5.28
+    "@tanstack/react-table": ^8.5.30
     "@uidu/button": 1.3.33
     "@uidu/data-controls": ^4.0.13
     "@uidu/data-manager": 4.3.0
@@ -7568,7 +7568,7 @@ __metadata:
   resolution: "@uidu/field-file-uploader@workspace:packages/forms/field-file-uploader"
   dependencies:
     "@babel/runtime": ^7.20.1
-    "@fluentui/react": 8.101.1
+    "@fluentui/react": 8.101.2
     "@heroicons/react": ^2.0.13
     "@uidu/button": 1.3.33
     "@uidu/docs": ^0.5.22
@@ -7917,8 +7917,8 @@ __metadata:
   resolution: "@uidu/gallery@workspace:packages/data/gallery"
   dependencies:
     "@babel/runtime": ^7.20.1
-    "@tanstack/react-table": ^8.5.28
-    "@tanstack/react-virtual": ^3.0.0-beta.22
+    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-virtual": ^3.0.0-beta.23
     "@uidu/data-controls": ^4.0.12
     "@uidu/data-fields": ^2.1.20
     "@uidu/docs": ^0.5.22
@@ -8135,8 +8135,8 @@ __metadata:
   resolution: "@uidu/list@workspace:packages/data/list"
   dependencies:
     "@babel/runtime": ^7.20.1
-    "@tanstack/react-table": ^8.5.28
-    "@tanstack/react-virtual": ^3.0.0-beta.22
+    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-virtual": ^3.0.0-beta.23
     "@uidu/data-fields": ^2.1.20
     "@uidu/docs": ^0.5.22
     react: ^18.2.0
@@ -8186,7 +8186,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.101.1
+    "@fluentui/react": 8.101.2
     "@uidu/button": ^1.3.33
     "@uidu/docs": ^0.5.22
     "@uidu/dropdown-menu": ^0.6.26
@@ -8387,7 +8387,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.101.1
+    "@fluentui/react": 8.101.2
     "@loadable/component": ^5.15.2
     "@uidu/avatar": ^0.9.18
     "@uidu/button": 1.3.33
@@ -9034,7 +9034,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@3.3.0, @uidu/table@^3.2.10, @uidu/table@^3.3.0, @uidu/table@workspace:packages/data/table":
+"@uidu/table@3.3.1, @uidu/table@^3.2.10, @uidu/table@^3.3.0, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -9045,8 +9045,8 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.2.1
     "@fortawesome/react-fontawesome": ^0.2.0
     "@heroicons/react": ^2.0.13
-    "@tanstack/react-table": ^8.5.28
-    "@tanstack/react-virtual": ^3.0.0-beta.22
+    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-virtual": ^3.0.0-beta.23
     "@uidu/button": 1.3.33
     "@uidu/checkbox": ^2.0.7
     "@uidu/data-controls": ^4.0.13
@@ -17711,7 +17711,7 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.101.1
+    "@fluentui/react": 8.101.2
     "@formatjs/cli": 5.1.3
     "@fortawesome/fontawesome-free": ^6.2.1
     "@fortawesome/fontawesome-svg-core": ^6.2.1
