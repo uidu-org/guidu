@@ -26,7 +26,11 @@ function Row<T extends object>({
   const rowRef = useRef(null);
   const { StyledRow, Td } = components;
 
-  const { contextMenu: ContextMenuComponent } = useDataManagerContext();
+  let ContextMenuComponent = null;
+  const dataManagerContext = useDataManagerContext();
+  if (dataManagerContext) {
+    ContextMenuComponent = dataManagerContext?.contextMenu;
+  }
 
   const renderCell = useCallback(
     (cell: CellContext<T, unknown>) => {
