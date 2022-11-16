@@ -6,7 +6,7 @@ import DropdownMenu, {
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
 import Form, { useForm } from '@uidu/form';
-import { ButtonItem } from '@uidu/menu';
+import { ButtonItem, MenuGroup } from '@uidu/menu';
 import Select from '@uidu/select';
 import {
   ShellBody,
@@ -331,6 +331,16 @@ export default function Basic({}) {
                         isLoadingNext,
                         loadNext,
                       }}
+                      contextMenu={({ row }) => (
+                        <MenuGroup>
+                          <ButtonItem
+                            onClick={() => window.alert('onClick row')}
+                          >
+                            text for {row.original.email}
+                          </ButtonItem>
+                          <ButtonItem>Test</ButtonItem>
+                        </MenuGroup>
+                      )}
                       actions={(row: any) => {
                         return [
                           {

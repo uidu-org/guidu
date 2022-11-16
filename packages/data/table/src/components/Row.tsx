@@ -1,7 +1,9 @@
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import { CellContext, flexRender, Row as RowType } from '@tanstack/react-table';
-import React, { useCallback } from 'react';
+import { useDataManagerContext } from '@uidu/data-manager';
+import React, { useCallback, useRef } from 'react';
 import { StyledComponent } from 'styled-components';
+import ContextMenu from './ContextMenu';
 
 function Row<T extends object>({
   components,
@@ -21,7 +23,10 @@ function Row<T extends object>({
   size: number;
   start: number;
 }) {
+  const rowRef = useRef(null);
   const { StyledRow, Td } = components;
+
+  const { contextMenu: ContextMenuComponent } = useDataManagerContext();
 
   const renderCell = useCallback(
     (cell: CellContext<T, unknown>) => {
@@ -71,6 +76,7 @@ function Row<T extends object>({
 
   return (
     <StyledRow
+      ref={rowRef}
       $size={size}
       $start={start}
       onClick={(e: React.MouseEvent) => {
@@ -78,6 +84,11 @@ function Row<T extends object>({
         onItemClick(row.original);
       }}
     >
+      {rowRef.current && ContextMenuComponent && (
+        <ContextMenu targetRef={rowRef}>
+          <ContextMenuComponent row={row} />
+        </ContextMenu>
+      )}
       {row
         .getVisibleCells()
         .filter((cell) => !cell.column.columnDef.meta?.isPrivate)

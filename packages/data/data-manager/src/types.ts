@@ -8,7 +8,7 @@ import {
 import { FieldKind } from '@uidu/data-fields';
 import { DataView } from '@uidu/data-views';
 import { ButtonItemProps } from '@uidu/menu';
-import React from 'react';
+import React, { FC } from 'react';
 
 declare module '@tanstack/table-core' {
   interface ColumnMeta<TData extends RowData, TValue> {
@@ -74,6 +74,7 @@ export type DataManagerProps<T> = {
   onItemClick: (item: T) => void;
   canSelectRows?: boolean;
   actions?: (row: RowType<T>) => RowActions<T>[];
+  contextMenu?: FC<{ row: RowType<T> }>;
   pagination?: {
     isLoadingNext?: boolean;
     loadNext?: () => void;

@@ -8,7 +8,7 @@ export interface OverrideableTableProps<T> {
   includeFooter?: boolean;
   rowHeight?: number;
   headerHeight?: number;
-  virtualizerOptions?: Partial<VirtualizerOptions>;
+  virtualizerOptions?: Partial<VirtualizerOptions<HTMLDivElement, Element>>;
   // components
   loadingRow?: FC<LoadingRowProps>;
   loadingSkeleton?: FC<LoadingSkeletonProps<T>>;

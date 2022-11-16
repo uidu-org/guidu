@@ -8662,7 +8662,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/portal@^1.0.3, @uidu/portal@workspace:packages/core/portal":
+"@uidu/portal@1.0.3, @uidu/portal@^1.0.3, @uidu/portal@workspace:packages/core/portal":
   version: 0.0.0-use.local
   resolution: "@uidu/portal@workspace:packages/core/portal"
   dependencies:
@@ -9055,8 +9055,10 @@ __metadata:
     "@uidu/docs": ^0.5.22
     "@uidu/menu": ^0.8.7
     "@uidu/popup": ^0.7.8
+    "@uidu/portal": 1.0.3
     numeral: ^2.0.6
     react: ^18.2.0
+    react-cool-onclickoutside: ^1.7.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
     react-intl: ^6.2.1
@@ -26147,6 +26149,15 @@ __metadata:
   peerDependencies:
     react: ">=16.0.0"
   checksum: a6c33ae62c3e2907a4f7f05fb1f14518927eb06608120db32064b9b32993535bb46cee92766fef4dd920658eb27662aa7bd593b1fa5ab4606c2bddd6124bfb58
+  languageName: node
+  linkType: hard
+
+"react-cool-onclickoutside@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "react-cool-onclickoutside@npm:1.7.0"
+  peerDependencies:
+    react: ">= 16.8.0"
+  checksum: 52041d867ff275ee9e925b2fc0616febd17964a372b2319007e4c8ae375a9c583da79ab0f27238a36d7fb7e486ec2293f94b2a2362e9c48db44303884c97b2d4
   languageName: node
   linkType: hard
 

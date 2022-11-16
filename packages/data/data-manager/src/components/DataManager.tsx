@@ -1,7 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { CellContext } from '@tanstack/react-table';
-import { RowActions } from '@uidu/table';
-import React, { useCallback } from 'react';
+import React from 'react';
 import { DataManagerProps } from '../types';
 import { DataManagerProvider } from './DataManagerContext';
 
@@ -14,16 +12,10 @@ export default function DataManager<T>({
   currentView,
   updateView,
   actions = () => [],
+  contextMenu,
   pagination,
   tableInstance,
 }: DataManagerProps<T>) {
-  const RowActionsCell = useCallback(
-    (params: CellContext<T, unknown>) => (
-      <RowActions params={params} actions={actions} />
-    ),
-    [actions],
-  );
-
   // const defaultColumns = useMemo(
   //   () => [
   //     ...columns,
@@ -81,6 +73,7 @@ export default function DataManager<T>({
       onViewUpdate={onViewUpdate}
       updateView={updateView}
       actions={actions}
+      contextMenu={contextMenu}
       pagination={pagination}
     >
       {children}

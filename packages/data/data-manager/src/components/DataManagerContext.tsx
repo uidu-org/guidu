@@ -1,5 +1,11 @@
-import { Column, Table } from '@tanstack/react-table';
-import React, { createContext, useCallback, useContext, useMemo } from 'react';
+import { Column, Row, Table } from '@tanstack/react-table';
+import React, {
+  createContext,
+  FC,
+  useCallback,
+  useContext,
+  useMemo,
+} from 'react';
 
 interface DataManagerPassedDownProps<TTable, TView extends {}> {
   tableInstance: Table<TTable>;
@@ -7,6 +13,7 @@ interface DataManagerPassedDownProps<TTable, TView extends {}> {
   onItemClick: (item: TTable) => void;
   currentView?: TView;
   updateView?: (name: string, value: any) => Promise<any>;
+  contextMenu?: FC<{ row: Row<TTable> }>;
   pagination?: {
     isLoadingNext?: boolean;
     loadNext?: () => void;
@@ -38,6 +45,8 @@ function DataManagerProvider<TTable, TView extends {}>({
   tableInstance,
   onItemClick,
   pagination,
+  actions,
+  contextMenu,
 }: DataManagerProviderProps<TTable, TView>) {
   const setColumnCount = useCallback(
     (columnCount: number) => {
@@ -76,6 +85,7 @@ function DataManagerProvider<TTable, TView extends {}>({
       // setAggregation,
       onItemClick,
       pagination,
+      contextMenu,
     }),
     [
       tableInstance,
@@ -85,6 +95,7 @@ function DataManagerProvider<TTable, TView extends {}>({
       setColumnCount,
       onItemClick,
       pagination,
+      contextMenu,
     ],
   );
 
