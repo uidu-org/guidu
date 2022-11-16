@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 3.3.1
+
+### Patch Changes
+
+- 28def6511: Fix table ContextMenu when outside DataManagerContext
+
 ## 3.3.0
 
 ### Minor Changes
