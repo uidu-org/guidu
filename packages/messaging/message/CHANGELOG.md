@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.60
+
+### Patch Changes
+
+- 23652d36f: Table context menu should perform better
+- Updated dependencies [23652d36f]
+  - @uidu/media-card@0.7.19
+
 ## 0.5.59
 
 ### Patch Changes

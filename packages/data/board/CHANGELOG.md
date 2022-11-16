@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 1.0.11
+
+### Patch Changes
+
+- 23652d36f: Table context menu should perform better
+
 ## 1.0.10
 
 ### Patch Changes

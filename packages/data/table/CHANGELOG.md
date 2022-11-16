@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 3.4.0
+
+### Minor Changes
+
+- 23652d36f: Table context menu should perform better
+
+### Patch Changes
+
+- Updated dependencies [23652d36f]
+  - @uidu/data-fields@2.1.21
+  - @uidu/data-manager@4.3.1
+
 ## 3.3.1
 
 ### Patch Changes

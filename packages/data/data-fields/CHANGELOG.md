@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.1.21
+
+### Patch Changes
+
+- 23652d36f: Table context menu should perform better
+
 ## 2.1.20
 
 ### Patch Changes

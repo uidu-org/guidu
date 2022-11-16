@@ -1,5 +1,14 @@
 # @uidu/data-views
 
+## 3.0.13
+
+### Patch Changes
+
+- 23652d36f: Table context menu should perform better
+- Updated dependencies [23652d36f]
+  - @uidu/data-controls@4.0.14
+  - @uidu/data-manager@4.3.1
+
 ## 3.0.12
 
 ### Patch Changes

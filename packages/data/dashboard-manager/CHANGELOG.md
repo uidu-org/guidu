@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.0.15
+
+### Patch Changes
+
+- 23652d36f: Table context menu should perform better
+- Updated dependencies [23652d36f]
+  - @uidu/dashlets@2.1.26
+
 ## 2.0.14
 
 ### Patch Changes

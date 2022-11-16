@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 2.0.14
+
+### Patch Changes
+
+- 23652d36f: Table context menu should perform better
+- Updated dependencies [23652d36f]
+  - @uidu/data-controls@4.0.14
+  - @uidu/data-fields@2.1.21
+
 ## 2.0.13
 
 ### Patch Changes
