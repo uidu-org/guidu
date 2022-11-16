@@ -1,5 +1,18 @@
 # @uidu/data-manager
 
+## 4.3.0
+
+### Minor Changes
+
+- 0e11a5149: Allow for contextMenu
+
+### Patch Changes
+
+- Updated dependencies [0e11a5149]
+  - @uidu/table@3.3.0
+  - @uidu/data-controls@4.0.13
+  - @uidu/data-views@3.0.12
+
 ## 4.2.4
 
 ### Patch Changes
