@@ -10,7 +10,7 @@
   "types": "dist/uidu-media-card.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.20.1",
-    "@fluentui/react": "8.101.2",
+    "@fluentui/react": "8.102.0",
     "@uidu/button": "^1.3.33",
     "@uidu/dropdown-menu": "^0.6.26",
     "@uidu/media-core": "^1.1.5",
