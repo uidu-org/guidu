@@ -1,5 +1,5 @@
 import { DraggableLocation } from 'react-beautiful-dnd';
-import { ItemMapProps, ItemProps } from '../types';
+import { ItemMapProps } from '../types';
 
 export const grid: number = 8;
 export const borderRadius: number = 2;
@@ -15,33 +15,29 @@ const reorder = (list: any[], startIndex: number, endIndex: number): any[] => {
 
 export default reorder;
 
-type ReorderItemMapArgs = {
-  itemMap: ItemMapProps,
-  source: DraggableLocation,
-  destination: DraggableLocation,
+type ReorderItemMapArgs<T> = {
+  itemMap: ItemMapProps<T>;
+  source: DraggableLocation;
+  destination: DraggableLocation;
 };
 
-export type ReorderItemMapResult = {
-  itemMap: ItemMapProps,
+export type ReorderItemMapResult<T> = {
+  itemMap: ItemMapProps<T>;
 };
 
-export const reorderItemMap = ({
+export function reorderItemMap<T>({
   itemMap,
   source,
   destination,
-}: ReorderItemMapArgs): ReorderItemMapResult => {
-  const current: ItemProps[] = [...itemMap[source.droppableId]];
-  const next: ItemProps[] = [...itemMap[destination.droppableId]];
-  const target: ItemProps = current[source.index];
+}: ReorderItemMapArgs<T>): ReorderItemMapResult<T> {
+  const current: T[] = [...itemMap[source.droppableId]];
+  const next: T[] = [...itemMap[destination.droppableId]];
+  const target: T = current[source.index];
 
   // moving to same list
   if (source.droppableId === destination.droppableId) {
-    const reordered: ItemProps[] = reorder(
-      current,
-      source.index,
-      destination.index,
-    );
-    const result: ItemMapProps = {
+    const reordered: T[] = reorder(current, source.index, destination.index);
+    const result: ItemMapProps<T> = {
       ...itemMap,
       [source.droppableId]: reordered,
     };
@@ -57,7 +53,7 @@ export const reorderItemMap = ({
   // insert into next
   next.splice(destination.index, 0, target);
 
-  const result: ItemMapProps = {
+  const result: ItemMapProps<T> = {
     ...itemMap,
     [source.droppableId]: current,
     [destination.droppableId]: next,
@@ -66,4 +62,4 @@ export const reorderItemMap = ({
   return {
     itemMap: result,
   };
-};
+}

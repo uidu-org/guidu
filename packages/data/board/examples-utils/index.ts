@@ -3,7 +3,7 @@ import { colors } from '@uidu/theme';
 import { Author, ItemMapProps, ItemProps } from '../src/types';
 
 const jake: Author = {
-  id: '1',
+  id: 'Jake',
   name: 'Jake',
   url: 'http://adventuretime.wikia.com/wiki/Jake',
   avatarUrl: `https://api.adorable.io/avatars/80/${faker.internet.email()}.png`,
@@ -14,7 +14,7 @@ const jake: Author = {
 };
 
 const BMO: Author = {
-  id: '2',
+  id: 'BMO',
   name: 'BMO',
   url: 'http://adventuretime.wikia.com/wiki/BMO',
   avatarUrl: `https://api.adorable.io/avatars/80/${faker.internet.email()}.png`,
@@ -25,7 +25,7 @@ const BMO: Author = {
 };
 
 const finn: Author = {
-  id: '3',
+  id: 'Finn',
   name: 'Finn',
   url: 'http://adventuretime.wikia.com/wiki/Finn',
   avatarUrl: `https://api.adorable.io/avatars/80/${faker.internet.email()}.png`,
@@ -36,7 +36,7 @@ const finn: Author = {
 };
 
 const princess: Author = {
-  id: '4',
+  id: 'Princess bubblegum',
   name: 'Princess bubblegum',
   url: 'http://adventuretime.wikia.com/wiki/Princess_Bubblegum',
   avatarUrl: `https://api.adorable.io/avatars/80/${faker.internet.email()}.png`,

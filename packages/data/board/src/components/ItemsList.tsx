@@ -17,7 +17,7 @@ type ItemListProps = {
 };
 
 function InnerItemListComponent(props: ItemListProps) {
-  const { items, components, columnDefs, tableInstance } = props;
+  const { items, components } = props;
   return items.map((item: ItemProps, index: number) => (
     <Draggable key={item.id} draggableId={item.id} index={index}>
       {(
@@ -25,14 +25,12 @@ function InnerItemListComponent(props: ItemListProps) {
         dragSnapshot: DraggableStateSnapshot,
       ) => (
         <Item
-          tableInstance={tableInstance}
           key={item.id}
           item={item}
           components={components}
           isDragging={dragSnapshot.isDragging}
           isGroupedOver={Boolean(dragSnapshot.combineTargetFor)}
           provided={dragProvided}
-          columnDefs={columnDefs}
         />
       )}
     </Draggable>
@@ -49,7 +47,7 @@ type InnerListProps = {
 };
 
 function InnerList(props: InnerListProps) {
-  const { items, dropProvided, components, columnDefs, tableInstance } = props;
+  const { items, dropProvided, components } = props;
 
   const { innerListContainer: Container, innerListDropzone: DropZone } =
     components;
@@ -57,19 +55,14 @@ function InnerList(props: InnerListProps) {
   return (
     <Container>
       <DropZone ref={dropProvided.innerRef}>
-        <InnerItemList
-          items={items}
-          components={components}
-          columnDefs={columnDefs}
-          tableInstance={tableInstance}
-        />
+        <InnerItemList items={items} components={components} />
         {dropProvided.placeholder}
       </DropZone>
     </Container>
   );
 }
 
-export default function ItemList(props: ItemsListProps) {
+export default function ItemList<T>(props: ItemsListProps<T>) {
   const {
     components,
     ignoreContainerClipping,
@@ -83,8 +76,6 @@ export default function ItemList(props: ItemsListProps) {
     items,
     header,
     footer,
-    columnDefs,
-    tableInstance,
   } = props;
 
   const {
@@ -118,8 +109,6 @@ export default function ItemList(props: ItemsListProps) {
                 items={items}
                 components={components}
                 dropProvided={dropProvided}
-                columnDefs={columnDefs}
-                tableInstance={tableInstance}
               />
             </ItemsListScrollContainer>
           ) : (
@@ -127,8 +116,6 @@ export default function ItemList(props: ItemsListProps) {
               items={items}
               components={components}
               dropProvided={dropProvided}
-              columnDefs={columnDefs}
-              tableInstance={tableInstance}
             />
           )}
           {footer}

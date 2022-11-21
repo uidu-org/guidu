@@ -1,15 +1,15 @@
 import Badge from '@uidu/badge';
 import React, { forwardRef, useState } from 'react';
 import { MoreHorizontal, Plus } from 'react-feather';
-import Board, { ColumnProps } from '../../board';
-import { authorItemMap } from '../examples-utils';
+import Board, { ColumnProps } from '..';
+import { authorItemMap, authors } from '../examples-utils';
 import reorder, { ItemMapProps, ItemProps, reorderItemMap } from '../src';
 
 const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => (
   <div ref={ref} tw="mr-3 border rounded h-full" {...props} />
 ));
 
-const ColumnHeader = ({ title, items, ...rest }) => {
+function ColumnHeader({ title, items, ...rest }) {
   return (
     <div tw="p-4 flex justify-between" {...rest}>
       <div>
@@ -21,15 +21,13 @@ const ColumnHeader = ({ title, items, ...rest }) => {
       </div>
     </div>
   );
-};
+}
 
-const Item = forwardRef(({ item, provided, ...rest }, ref) => {
-  return (
-    <div ref={ref} tw="mb-2 bg-white rounded border p-4" {...rest}>
-      {item.content}
-    </div>
-  );
-});
+const Item = forwardRef(({ item, provided, ...rest }, ref) => (
+  <div ref={ref} tw="mb-2 bg-white rounded border p-4" {...rest}>
+    {item.content}
+  </div>
+));
 
 export default function Basic() {
   const [columns, setColumns] = useState<ItemMapProps>(authorItemMap);
@@ -59,8 +57,8 @@ export default function Basic() {
       return;
     }
 
-    const source: DraggableLocation = result.source;
-    const destination: DraggableLocation = result.destination;
+    const { source } = result;
+    const { destination } = result;
 
     // did not move anywhere - can bail early
     if (
@@ -95,7 +93,8 @@ export default function Basic() {
   return (
     <Board
       onDragEnd={onDragEnd}
-      columns={columns}
+      itemsMap={columns}
+      columns={authors}
       withScrollableColumns
       containerHeight="400px"
       components={{

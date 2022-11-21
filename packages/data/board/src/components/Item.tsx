@@ -1,14 +1,13 @@
 import React from 'react';
 import { DraggableProvided } from 'react-beautiful-dnd';
-import { BoardComponents, ItemProps } from '../types';
+import { BoardComponents } from '../types';
 
-type Props = {
-  item: ItemProps;
+type Props<T> = {
+  item: T;
   isDragging: boolean;
   provided: DraggableProvided;
   isGroupedOver?: boolean;
-  components: BoardComponents;
-  columnDefs?: any;
+  components: BoardComponents<T>;
 };
 
 // Previously this extended React.Component
@@ -18,16 +17,8 @@ type Props = {
 // Need to be super sure we are not relying on PureComponent here for
 // things we should be doing in the selector as we do not know if consumers
 // will be using PureComponent
-function ItemItem(props: Props) {
-  const {
-    item,
-    components,
-    isDragging,
-    isGroupedOver,
-    provided,
-    columnDefs,
-    tableInstance,
-  } = props;
+function ItemItem<T>(props: Props<T>) {
+  const { item, components, isDragging, isGroupedOver, provided } = props;
 
   const { item: Item } = components;
 
@@ -38,14 +29,12 @@ function ItemItem(props: Props) {
       isDragging={isDragging}
       isGroupedOver={isGroupedOver}
       ref={provided.innerRef}
-      tableInstance={tableInstance}
       {...provided.draggableProps}
       {...provided.dragHandleProps}
-      columnDefs={columnDefs}
     >
       {item.content}
     </Item>
   );
 }
 
-export default React.memo<Props>(ItemItem);
+export default ItemItem;

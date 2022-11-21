@@ -26,7 +26,7 @@
     "classnames": "^2.3.2",
     "css-color-names": "^1.0.1",
     "date-fns": "^2.29.3",
-    "prosemirror-model": "^1.18.2",
+    "prosemirror-model": "^1.18.3",
     "prosemirror-state": "^1.4.2",
     "prosemirror-transform": "^1.7.0",
     "prosemirror-utils": "^0.9.6",

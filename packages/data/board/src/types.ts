@@ -1,4 +1,4 @@
-import { Table } from '@tanstack/react-table';
+import { FC } from 'react';
 import { DraggableId, DraggableLocation } from 'react-beautiful-dnd';
 
 export type Id = string;
@@ -14,62 +14,53 @@ export type Dragging = {
   location: DraggableLocation;
 };
 
-export type ItemMapProps = {
-  [key: string]: ItemProps[];
+export type ItemMapProps<T> = {
+  [key: string]: T[];
 };
 
-export type Task = {
-  id: Id;
-  content: string | React.ReactNode;
-  data?: any;
-};
-
-export type BoardComponents = {
-  columnHeader?: any;
-  columnContainer?: any;
-  columnFooter?: any;
-  container?: any;
-  parent?: any;
-  itemsListWrapper?: any;
-  itemsListScrollContainer?: any;
-  innerListContainer?: any;
-  innerListDropzone?: any;
-  item?: any;
-  columnDefs?: any;
+export type BoardComponents<T> = {
+  columnHeader?: FC<{ isDragging: boolean; items: T[]; title: string }>;
+  columnContainer?: FC<any>;
+  columnFooter?: FC<{ isDragging: boolean; items: T[]; title: string }>;
+  container?: FC<any>;
+  parent?: FC<any>;
+  itemsListWrapper?: FC<any>;
+  itemsListScrollContainer?: FC<any>;
+  innerListContainer?: FC<any>;
+  innerListDropzone?: FC<any>;
+  item?: FC<any>;
+  columnDefs?: FC<any>;
 };
 
 export type BoardProps<T> = {
-  initial: ItemMapProps;
   withScrollableColumns?: boolean;
   withDraggableColumns?: boolean;
   isCombineEnabled?: boolean;
   containerHeight?: string;
-  components?: BoardComponents;
+  components?: BoardComponents<T>;
   onDragEnd?: (result: any) => void;
-  columns: Record<string, T[]>;
-  tableInstance: Table<T>;
+  columns: Array<{
+    id: string;
+    name: string;
+  }>;
+  itemsMap: Record<string, T[]>;
 };
 
-export type BoardState = {
-  columns: ItemMapProps;
-  ordered: string[];
-};
-
-export type ColumnProps = {
+export type ColumnProps<T> = {
   title: string;
-  items: ItemProps[];
+  items: T[];
   index: number;
   isScrollable?: boolean;
   isDragDisabled?: boolean;
   isCombineEnabled?: boolean;
-  components?: BoardComponents;
+  components?: BoardComponents<T>;
   columnDefs?: any;
 };
 
-export type ItemsListProps = {
+export type ItemsListProps<T> = {
   listId?: string;
   listType?: string;
-  items: ItemProps[];
+  items: T[];
   title?: string;
   internalScroll?: boolean;
   scrollContainerStyle?: Object;
@@ -78,12 +69,8 @@ export type ItemsListProps = {
   style?: Object;
   // may not be provided - and might be null
   ignoreContainerClipping?: boolean;
-  components?: BoardComponents;
+  components?: BoardComponents<T>;
   header?: React.ReactNode;
   footer?: React.ReactNode;
   columnDefs?: any;
-};
-
-type ItemListProps = {
-  items: ItemProps[];
 };

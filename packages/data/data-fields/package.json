@@ -39,7 +39,7 @@
     "react-intl": "^6.2.1",
     "styled-components": "^5.3.6",
     "tslib": "^2.4.1",
-    "twin.macro": "^3.0.0"
+    "twin.macro": "^3.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.22"

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import loadable from '@loadable/component';
 import { Row } from '@tanstack/react-table';
-import { GalleryProps } from '@uidu/gallery/src/types';
+import { GalleryProps } from '@uidu/gallery';
 import { ListProps, OverrideableListProps } from '@uidu/list';
 import { ShellBodyWithSpinner } from '@uidu/shell';
 import { OverrideableTableProps, TableProps } from '@uidu/table';
@@ -209,16 +209,19 @@ function DataManagerView<T>({
             }, {});
             return (
               <Board
-                {...viewProps.board}
-                tableInstance={tableInstance}
-                columns={initial}
+                isPending={isPending}
+                columns={Object.keys(initial).map((key) => ({
+                  id: key,
+                  name: key,
+                }))}
+                itemsMap={initial}
                 onItemClick={onItemClick}
                 components={{
                   columnContainer: Column,
                   columnHeader: ColumnHeader,
                   item: Item,
                 }}
-                isPending={isPending}
+                {...viewProps.board}
               />
             );
           }}

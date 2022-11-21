@@ -1,22 +1,16 @@
 import { colors } from '@uidu/theme';
 import React from 'react';
-import {
-  Draggable,
-  DraggableProvided,
-  DraggableStateSnapshot,
-} from 'react-beautiful-dnd';
+import { Draggable } from 'react-beautiful-dnd';
 import { ColumnProps } from '../types';
 import ItemList from './ItemsList';
 
-export default function Column(props: ColumnProps) {
+export default function Column<T>(props: ColumnProps<T>) {
   const {
     components,
     title,
     items,
     index,
     isDragDisabled,
-    columnDefs,
-    tableInstance,
     isScrollable,
     isCombineEnabled,
   } = props;
@@ -33,10 +27,12 @@ export default function Column(props: ColumnProps) {
       index={index}
       isDragDisabled={isDragDisabled}
     >
-      {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
+      {(provided, snapshot) => (
         <Container
           ref={provided.innerRef}
+          // eslint-disable-next-line react/jsx-props-no-spreading
           {...provided.draggableProps}
+          // eslint-disable-next-line react/jsx-props-no-spreading
           {...provided.dragHandleProps}
         >
           <ItemList
@@ -49,8 +45,6 @@ export default function Column(props: ColumnProps) {
             items={items}
             internalScroll={isScrollable}
             isCombineEnabled={Boolean(isCombineEnabled)}
-            columnDefs={columnDefs}
-            tableInstance={tableInstance}
             header={
               <Header
                 isDragging={snapshot.isDragging}

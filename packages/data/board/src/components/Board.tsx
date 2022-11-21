@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback } from 'react';
 import {
   DragDropContext,
   Droppable,
@@ -16,10 +16,10 @@ import {
   ItemsListWrapper,
   ParentContainer,
 } from '../styled';
-import { BoardProps } from '../types';
+import { BoardComponents, BoardProps } from '../types';
 import Column from './Column';
 
-const defaultComponents = {
+const defaultComponents: BoardComponents<unknown> = {
   container: Container,
   parent: ParentContainer,
   columnHeader: ColumnHeader,
@@ -39,14 +39,11 @@ export default function Board<T>({
   components = defaultComponents,
   containerHeight,
   withScrollableColumns,
-  tableInstance,
   onDragEnd,
   columns,
+  itemsMap,
 }: BoardProps<T>) {
-  const ordered = Object.keys(columns);
-  const boardRef = useRef(null);
-
-  const getComponents = useCallback(
+  const getComponents = useCallback<() => BoardComponents<T>>(
     () => ({
       ...defaultComponents,
       ...components,
@@ -70,18 +67,16 @@ export default function Board<T>({
           ref={provided.innerRef}
           {...provided.droppableProps}
         >
-          {ordered.map((key: string, index: number) => (
+          {columns.map((column, index: number) => (
             <Column
               components={getComponents()}
-              key={key}
+              key={column.id}
               index={index}
-              title={key}
-              items={columns[key]}
+              title={column.name}
+              items={itemsMap[column.id]}
               isScrollable={withScrollableColumns}
               isCombineEnabled={isCombineEnabled}
               isDragDisabled={!withDraggableColumns}
-              columns={columns}
-              tableInstance={tableInstance}
             />
           ))}
           {provided.placeholder}
