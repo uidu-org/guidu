@@ -19,7 +19,10 @@ import {
 import { BoardComponents, BoardProps } from '../types';
 import Column from './Column';
 
-const defaultComponents: BoardComponents<unknown> = {
+const defaultComponents: BoardComponents<
+  unknown,
+  { id: string; name: string }
+> = {
   container: Container,
   parent: ParentContainer,
   columnHeader: ColumnHeader,
@@ -33,7 +36,7 @@ const defaultComponents: BoardComponents<unknown> = {
   item: Item,
 };
 
-export default function Board<T>({
+export default function Board<TItem, TColumn>({
   isCombineEnabled = false,
   withDraggableColumns = false,
   components = defaultComponents,
@@ -42,8 +45,16 @@ export default function Board<T>({
   onDragEnd,
   columns,
   itemsMap,
-}: BoardProps<T>) {
-  const getComponents = useCallback<() => BoardComponents<T>>(
+}: BoardProps<
+  TItem,
+  TColumn extends { id: string; name: string } ? TColumn : never
+>) {
+  const getComponents = useCallback<
+    () => BoardComponents<
+      TItem,
+      TColumn extends { id: string; name: string } ? TColumn : never
+    >
+  >(
     () => ({
       ...defaultComponents,
       ...components,
@@ -69,10 +80,10 @@ export default function Board<T>({
         >
           {columns.map((column, index: number) => (
             <Column
+              column={column}
               components={getComponents()}
               key={column.id}
               index={index}
-              title={column.name}
               items={itemsMap[column.id]}
               isScrollable={withScrollableColumns}
               isCombineEnabled={isCombineEnabled}

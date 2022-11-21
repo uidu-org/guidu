@@ -18,10 +18,19 @@ export type ItemMapProps<T> = {
   [key: string]: T[];
 };
 
-export type BoardComponents<T> = {
-  columnHeader?: FC<{ isDragging: boolean; items: T[]; title: string }>;
+export type ColumnComponentProps<TItem, TColumn> = {
+  isDragging: boolean;
+  items: TItem[];
+  column: TColumn;
+};
+
+export type BoardComponents<
+  TItem,
+  TColumn extends { id: string; name: string },
+> = {
+  columnHeader?: FC<ColumnComponentProps<TItem, TColumn>>;
   columnContainer?: FC<any>;
-  columnFooter?: FC<{ isDragging: boolean; items: T[]; title: string }>;
+  columnFooter?: FC<ColumnComponentProps<TItem, TColumn>>;
   container?: FC<any>;
   parent?: FC<any>;
   itemsListWrapper?: FC<any>;
@@ -29,38 +38,37 @@ export type BoardComponents<T> = {
   innerListContainer?: FC<any>;
   innerListDropzone?: FC<any>;
   item?: FC<any>;
-  columnDefs?: FC<any>;
 };
 
-export type BoardProps<T> = {
+export type BoardProps<TItem, TColumn extends { id: string; name: string }> = {
   withScrollableColumns?: boolean;
   withDraggableColumns?: boolean;
   isCombineEnabled?: boolean;
   containerHeight?: string;
-  components?: BoardComponents<T>;
+  components?: BoardComponents<TItem, TColumn>;
   onDragEnd?: (result: any) => void;
-  columns: Array<{
-    id: string;
-    name: string;
-  }>;
-  itemsMap: Record<string, T[]>;
+  columns: TColumn[];
+  itemsMap: ItemMapProps<TItem>;
 };
 
-export type ColumnProps<T> = {
-  title: string;
-  items: T[];
+export type ColumnProps<TItem, TColumn extends { id: string; name: string }> = {
+  name: TColumn['name'];
+  column: TColumn;
+  items: TItem[];
   index: number;
   isScrollable?: boolean;
   isDragDisabled?: boolean;
   isCombineEnabled?: boolean;
-  components?: BoardComponents<T>;
-  columnDefs?: any;
+  components?: BoardComponents<TItem, TColumn>;
 };
 
-export type ItemsListProps<T> = {
+export type ItemsListProps<
+  TItem,
+  TColumn extends { id: string; name: string },
+> = {
   listId?: string;
   listType?: string;
-  items: T[];
+  items: TItem[];
   title?: string;
   internalScroll?: boolean;
   scrollContainerStyle?: Object;
@@ -69,8 +77,7 @@ export type ItemsListProps<T> = {
   style?: Object;
   // may not be provided - and might be null
   ignoreContainerClipping?: boolean;
-  components?: BoardComponents<T>;
+  components?: BoardComponents<TItem, TColumn>;
   header?: React.ReactNode;
   footer?: React.ReactNode;
-  columnDefs?: any;
 };

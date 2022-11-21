@@ -3,18 +3,27 @@ import React, { forwardRef, useState } from 'react';
 import { MoreHorizontal, Plus } from 'react-feather';
 import Board, { ColumnProps } from '..';
 import { authorItemMap, authors } from '../examples-utils';
-import reorder, { ItemMapProps, ItemProps, reorderItemMap } from '../src';
+import reorder, {
+  ColumnComponentProps,
+  ItemMapProps,
+  ItemProps,
+  reorderItemMap,
+} from '../src';
 
 const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => (
   <div ref={ref} tw="mr-3 border rounded h-full" {...props} />
 ));
 
-function ColumnHeader({ title, items, ...rest }) {
+function ColumnHeader({
+  column,
+  items,
+  ...rest
+}: ColumnComponentProps<{}, { id: string; name: string }>) {
   return (
     <div tw="p-4 flex justify-between" {...rest}>
       <div>
         <Badge>{items.length}</Badge>
-        <span tw="ml-2">{title}</span>
+        <span tw="ml-2">{column.name}</span>
       </div>
       <div>
         <Plus size={16} /> <MoreHorizontal size={16} tw="ml-2" />

@@ -32,7 +32,7 @@ function ItemItem<T>(props: Props<T>) {
       {...provided.draggableProps}
       {...provided.dragHandleProps}
     >
-      {item.content}
+      {/* {item.content} */}
     </Item>
   );
 }

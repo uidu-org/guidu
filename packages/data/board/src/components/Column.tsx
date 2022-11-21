@@ -4,10 +4,15 @@ import { Draggable } from 'react-beautiful-dnd';
 import { ColumnProps } from '../types';
 import ItemList from './ItemsList';
 
-export default function Column<T>(props: ColumnProps<T>) {
+export default function Column<TItem, TColumn>(
+  props: ColumnProps<
+    TItem,
+    TColumn extends { id: string; name: string } ? TColumn : never
+  >,
+) {
   const {
+    column,
     components,
-    title,
     items,
     index,
     isDragDisabled,
@@ -23,7 +28,7 @@ export default function Column<T>(props: ColumnProps<T>) {
 
   return (
     <Draggable
-      draggableId={title}
+      draggableId={column.id}
       index={index}
       isDragDisabled={isDragDisabled}
     >
@@ -37,7 +42,7 @@ export default function Column<T>(props: ColumnProps<T>) {
         >
           <ItemList
             components={components}
-            listId={title}
+            listId={column.id}
             listType="QUOTE"
             style={{
               backgroundColor: snapshot.isDragging ? colors.G50 : null,
@@ -49,7 +54,7 @@ export default function Column<T>(props: ColumnProps<T>) {
               <Header
                 isDragging={snapshot.isDragging}
                 items={items}
-                title={title}
+                column={column}
               />
             }
             footer={
@@ -57,7 +62,7 @@ export default function Column<T>(props: ColumnProps<T>) {
                 <Footer
                   isDragging={snapshot.isDragging}
                   items={items}
-                  title={title}
+                  column={column}
                 />
               )
             }

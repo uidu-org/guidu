@@ -10,13 +10,13 @@ import {
 import { BoardComponents, ItemProps, ItemsListProps } from '../types';
 import Item from './Item';
 
-type ItemListProps = {
-  items: ItemProps[];
-  components: BoardComponents;
+type ItemListProps<TItem, TColumn> = {
+  items: TItem[];
+  components: BoardComponents<TItem, TColumn>;
   columnDefs?: any;
 };
 
-function InnerItemListComponent(props: ItemListProps) {
+function InnerItemList<TItem, TColumn>(props: ItemListProps<TItem, TColumn>) {
   const { items, components } = props;
   return items.map((item: ItemProps, index: number) => (
     <Draggable key={item.id} draggableId={item.id} index={index}>
@@ -37,16 +37,13 @@ function InnerItemListComponent(props: ItemListProps) {
   ));
 }
 
-const InnerItemList = React.memo(InnerItemListComponent);
-
-type InnerListProps = {
+type InnerListProps<TItem, TColumn = unknown> = {
   dropProvided: DroppableProvided;
-  items: ItemProps[];
-  components?: BoardComponents;
-  columnDefs?: any;
+  items: TItem[];
+  components?: BoardComponents<TItem, TColumn>;
 };
 
-function InnerList(props: InnerListProps) {
+function InnerList<TItem, TColumn>(props: InnerListProps<TItem, TColumn>) {
   const { items, dropProvided, components } = props;
 
   const { innerListContainer: Container, innerListDropzone: DropZone } =
@@ -62,7 +59,12 @@ function InnerList(props: InnerListProps) {
   );
 }
 
-export default function ItemList<T>(props: ItemsListProps<T>) {
+export default function ItemList<TItem, TColumn>(
+  props: ItemsListProps<
+    TItem,
+    TColumn extends { id: string; name: string } ? TColumn : never
+  >,
+) {
   const {
     components,
     ignoreContainerClipping,

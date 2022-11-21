@@ -3,7 +3,7 @@ import { ShellBody } from '@uidu/shell';
 import React, { Component } from 'react';
 import { MoreHorizontal, Plus } from 'react-feather';
 import Board, { ColumnProps } from '../../board';
-import { authorItemMap } from '../examples-utils';
+import { authorItemMap, authors } from '../examples-utils';
 
 const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => (
   <div ref={ref} className="mr-3">
@@ -11,7 +11,7 @@ const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => (
   </div>
 ));
 
-const ColumnHeader = ({ title, items, ...rest }) => {
+const ColumnHeader = ({ column, items, ...rest }) => {
   return (
     <div
       className="px-0 bg-transparent border-0 card-header d-flex justify-content-between"
@@ -19,7 +19,7 @@ const ColumnHeader = ({ title, items, ...rest }) => {
     >
       <div>
         <Badge>{items.length}</Badge>
-        <span className="ml-2">{title}</span>
+        <span className="ml-2">{column.name}</span>
       </div>
       <div className="btn-group">
         <button>
@@ -51,7 +51,12 @@ export default class Basic extends Component<any> {
       <ShellBody>
         <div tw="py-4 pl-4 h-full" style={{ overflowX: 'auto' }}>
           <Board
-            initial={authorItemMap}
+            itemsMap={authorItemMap}
+            columns={authors.map((author) => ({
+              id: author.id,
+              title: author.name,
+              name: author.name,
+            }))}
             withScrollableColumns
             withDraggableColumns
             components={{
