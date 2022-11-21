@@ -1,5 +1,21 @@
 # @uidu/editor-core
 
+## 2.0.3
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+- Updated dependencies [0ea42444c]
+  - @uidu/adf-schema@2.0.3
+  - @uidu/editor-common@2.0.2
+  - @uidu/editor-json-transformer@1.0.7
+  - @uidu/editor-markdown-transformer@1.0.6
+  - @uidu/field-date@2.1.5
+  - @uidu/form@2.1.15
+  - @uidu/select@2.1.7
+  - @uidu/media-card@0.7.20
+
 ## 2.0.2
 
 ### Patch Changes

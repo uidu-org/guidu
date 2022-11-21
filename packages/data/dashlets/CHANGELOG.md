@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 2.1.27
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- 0ea42444c: Bump deps
+- Updated dependencies [47b90bf9a]
+- Updated dependencies [0ea42444c]
+  - @uidu/data-fields@2.1.22
+  - @uidu/table@3.4.1
+  - @uidu/dashboard-manager@2.0.16
+
 ## 2.1.26
 
 ### Patch Changes

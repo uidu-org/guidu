@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.1.5
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+  - @uidu/form@2.1.15
+
 ## 4.1.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/field-textarea
 
+## 2.0.7
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+  - @uidu/field-base@4.1.5
+
 ## 2.0.6
 
 ### Patch Changes

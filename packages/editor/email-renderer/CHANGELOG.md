@@ -1,5 +1,13 @@
 # @uidu/email-renderer
 
+## 0.1.5
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+  - @uidu/adf-schema@2.0.3
+
 ## 0.1.4
 
 ### Patch Changes

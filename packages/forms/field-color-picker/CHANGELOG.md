@@ -1,5 +1,13 @@
 # @uidu/field-color-picker
 
+## 3.0.13
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+  - @uidu/field-base@4.1.5
+
 ## 3.0.12
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 2.0.11
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+  - @uidu/field-base@4.1.5
+  - @uidu/field-date@2.1.5
+
 ## 2.0.10
 
 ### Patch Changes

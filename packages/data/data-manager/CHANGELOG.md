@@ -1,5 +1,21 @@
 # @uidu/data-manager
 
+## 4.3.2
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- 0ea42444c: Bump deps
+- Updated dependencies [47b90bf9a]
+- Updated dependencies [0ea42444c]
+  - @uidu/board@2.0.0
+  - @uidu/data-fields@2.1.22
+  - @uidu/gallery@2.0.15
+  - @uidu/table@3.4.1
+  - @uidu/shell@2.1.40
+  - @uidu/data-controls@4.0.15
+  - @uidu/data-views@3.0.14
+
 ## 4.3.1
 
 ### Patch Changes

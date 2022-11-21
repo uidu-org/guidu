@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.0.1
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+
 ## 2.0.0
 
 ### Major Changes

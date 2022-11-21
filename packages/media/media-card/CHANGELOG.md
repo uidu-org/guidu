@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.7.20
+
+### Patch Changes
+
+- 0ea42444c: Bump deps
+
 ## 0.7.19
 
 ### Patch Changes

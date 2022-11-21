@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.15
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+
 ## 2.1.14
 
 ### Patch Changes

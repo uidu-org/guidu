@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.6.27
+
+### Patch Changes
+
+- 0ea42444c: Bump deps
+- Updated dependencies [47b90bf9a]
+- Updated dependencies [0ea42444c]
+  - @uidu/table@3.4.1
+  - @uidu/checkbox@2.0.8
+  - @uidu/form@2.1.15
+  - @uidu/select@2.1.7
+  - @uidu/shell@2.1.40
+
 ## 0.6.26
 
 ### Patch Changes

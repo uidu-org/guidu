@@ -1,5 +1,19 @@
 # @uidu/data-controls
 
+## 4.0.15
+
+### Patch Changes
+
+- Updated dependencies [47b90bf9a]
+- Updated dependencies [0ea42444c]
+  - @uidu/data-fields@2.1.22
+  - @uidu/data-manager@4.3.2
+  - @uidu/checkbox@2.0.8
+  - @uidu/form@2.1.15
+  - @uidu/select@2.1.7
+  - @uidu/shell@2.1.40
+  - @uidu/data-views@3.0.14
+
 ## 4.0.14
 
 ### Patch Changes

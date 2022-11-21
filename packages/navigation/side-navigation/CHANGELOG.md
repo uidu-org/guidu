@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 1.2.5
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [0ea42444c]
+  - @uidu/shell@2.1.40
+
 ## 1.2.4
 
 ### Patch Changes

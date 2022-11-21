@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 1.0.7
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+  - @uidu/adf-schema@2.0.3
+
 ## 1.0.6
 
 ### Patch Changes

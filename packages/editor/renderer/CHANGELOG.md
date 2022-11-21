@@ -1,5 +1,17 @@
 # @uidu/renderer
 
+## 1.2.8
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+- Updated dependencies [0ea42444c]
+  - @uidu/adf-schema@2.0.3
+  - @uidu/editor-common@2.0.2
+  - @uidu/editor-json-transformer@1.0.7
+  - @uidu/media-card@0.7.20
+
 ## 1.2.7
 
 ### Patch Changes

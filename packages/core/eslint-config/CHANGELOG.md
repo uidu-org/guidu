@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.38
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+
 ## 0.1.37
 
 ### Patch Changes
