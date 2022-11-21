@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-range",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Component which renders a slider and is a substitute of the native input[range] element",
   "keywords": [
     "react",
@@ -17,7 +17,7 @@
   "dependencies": {
     "@babel/runtime": "^7.20.1",
     "@radix-ui/react-slider": "^1.1.0",
-    "@uidu/field-base": "^4.1.1",
+    "@uidu/field-base": "^4.1.5",
     "tslib": "^2.4.1"
   },
   "devDependencies": {

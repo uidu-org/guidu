@@ -1,5 +1,20 @@
 # @uidu/data-fields
 
+## 2.1.22
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+  - @uidu/field-color-picker@3.0.13
+  - @uidu/field-date@2.1.5
+  - @uidu/field-downshift@2.1.1
+  - @uidu/field-toggle@2.0.25
+  - @uidu/form@2.1.15
+  - @uidu/select@2.1.7
+  - @uidu/field-number@2.0.25
+  - @uidu/field-time@2.0.28
+
 ## 2.1.21
 
 ### Patch Changes

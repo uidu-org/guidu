@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.0.3
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+
 ## 2.0.2
 
 ### Patch Changes

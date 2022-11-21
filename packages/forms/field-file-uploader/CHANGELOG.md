@@ -1,5 +1,15 @@
 # @uidu/field-file-uploader
 
+## 2.1.7
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- 0ea42444c: Bump deps
+- Updated dependencies [47b90bf9a]
+  - @uidu/field-base@4.1.5
+  - @uidu/form@2.1.15
+
 ## 2.1.6
 
 ### Patch Changes

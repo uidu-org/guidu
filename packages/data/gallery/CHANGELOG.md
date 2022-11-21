@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 2.0.15
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+- Updated dependencies [0ea42444c]
+  - @uidu/data-fields@2.1.22
+  - @uidu/shell@2.1.40
+  - @uidu/data-controls@4.0.15
+
 ## 2.0.14
 
 ### Patch Changes

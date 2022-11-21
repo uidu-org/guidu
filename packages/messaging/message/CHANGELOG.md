@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.61
+
+### Patch Changes
+
+- 0ea42444c: Bump deps
+- Updated dependencies [0ea42444c]
+  - @uidu/media-card@0.7.20
+
 ## 0.5.60
 
 ### Patch Changes

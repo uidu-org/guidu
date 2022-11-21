@@ -1,5 +1,19 @@
 # @uidu/dashlets-form
 
+## 1.0.37
+
+### Patch Changes
+
+- 0ea42444c: Bump deps
+- Updated dependencies [47b90bf9a]
+- Updated dependencies [0ea42444c]
+  - @uidu/dashlets@2.1.27
+  - @uidu/field-downshift@2.1.1
+  - @uidu/field-toggle@2.0.25
+  - @uidu/form@2.1.15
+  - @uidu/select@2.1.7
+  - @uidu/shell@2.1.40
+
 ## 1.0.36
 
 ### Patch Changes

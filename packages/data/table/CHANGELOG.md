@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 3.4.1
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+- Updated dependencies [0ea42444c]
+  - @uidu/data-fields@2.1.22
+  - @uidu/data-manager@4.3.2
+  - @uidu/checkbox@2.0.8
+
 ## 3.4.0
 
 ### Minor Changes

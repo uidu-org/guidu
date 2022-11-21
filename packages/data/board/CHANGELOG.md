@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 2.0.0
+
+### Major Changes
+
+- 47b90bf9a: Board api change for ordering columns
+
 ## 1.0.11
 
 ### Patch Changes

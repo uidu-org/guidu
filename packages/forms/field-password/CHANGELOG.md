@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 2.0.11
+
+### Patch Changes
+
+- 47b90bf9a: Board api change for ordering columns
+- Updated dependencies [47b90bf9a]
+  - @uidu/field-base@4.1.5
+  - @uidu/form@2.1.15
+
 ## 2.0.10
 
 ### Patch Changes
