@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 2.1.0
+
+### Minor Changes
+
+- 419416b5c: Passing proper column to Column and fix types
+
 ## 2.0.0
 
 ### Major Changes
