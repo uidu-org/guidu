@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.0
+
+### Minor Changes
+
+- 71ec423da: Errors should not loose input focus
+
 ## 2.1.15
 
 ### Patch Changes
