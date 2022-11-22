@@ -10,6 +10,8 @@ import RequiredSymbol from '../RequiredSymbol';
 import Row from '../Row';
 import { WrapperProps } from './types';
 
+const emptyArray: any[] = [];
+
 export default function Wrapper<T>({
   addonsAfter,
   addonsBefore,
@@ -31,26 +33,29 @@ export default function Wrapper<T>({
   const { layout: formLayout } = useFormContext();
   const layout = inputLayout || formLayout;
 
-  let input = <>{children}</>;
+  let input = children;
 
   if (type === 'hidden') {
     return input;
   }
 
-  if (addonsBefore || addonsAfter || fieldState?.error) {
-    input = (
-      <InputGroup
-        addonsAfter={[
-          ...(fieldState?.error
-            ? [<ErrorIcon fieldState={fieldState} />].concat(addonsAfter || [])
-            : addonsAfter || []),
-        ]}
-        addonsBefore={addonsBefore}
-      >
-        {input}
-      </InputGroup>
-    );
-  }
+  // if (addonsBefore || addonsAfter || fieldState?.error) {
+  input = (
+    <InputGroup
+      key={id}
+      addonsAfter={[
+        ...(fieldState?.error
+          ? [<ErrorIcon fieldState={fieldState} />].concat(
+              addonsAfter || emptyArray,
+            )
+          : addonsAfter || emptyArray),
+      ]}
+      addonsBefore={addonsBefore}
+    >
+      {input}
+    </InputGroup>
+  );
+  // }
 
   if (floatLabel) {
     return (
@@ -60,6 +65,7 @@ export default function Wrapper<T>({
         htmlFor={id}
         layout={layout}
         overrides={overrides}
+        key={id}
       >
         <FloatLabel htmlFor={id} className="has-float-label">
           {input}
@@ -87,6 +93,7 @@ export default function Wrapper<T>({
       showErrors={showErrors}
       layout={layout}
       overrides={overrides}
+      key={id}
     >
       {input}
       {fieldState?.error && <ErrorMessages messages={[fieldState.error]} />}

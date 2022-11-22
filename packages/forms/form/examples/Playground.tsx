@@ -1,8 +1,10 @@
+import { yupResolver } from '@hookform/resolvers/yup';
 import { StyledAddon, StyledLabel, StyledRow } from '@uidu/field-base';
 import { localUploadOptions } from '@uidu/media-core';
 import * as React from 'react';
 import { Calendar } from 'react-feather';
 import { useForm } from 'react-hook-form';
+import { object, string } from 'yup';
 import Checkbox, { CheckboxGroup } from '../../checkbox/src';
 import FieldColorPicker from '../../field-color-picker/src';
 import FieldCounter from '../../field-counter/src';
@@ -51,6 +53,12 @@ function Playground({
     }
   };
 
+  const schema = object({
+    // fieldableId: string().required(),
+    // fieldableType: string().required(),
+    text1: string().required(),
+  });
+
   const submitForm = async (data) => {
     console.log(data); // eslint-disable-line no-console
   };
@@ -94,7 +102,7 @@ function Playground({
     ...selectOptions,
   ];
 
-  const form = useForm({ mode: 'all' });
+  const form = useForm({ mode: 'all', resolver: yupResolver(schema) });
 
   return (
     <Form
