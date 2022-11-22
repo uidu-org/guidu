@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.2.0
+
+### Minor Changes
+
+- 71ec423da: Errors should not loose input focus
+
+### Patch Changes
+
+- Updated dependencies [71ec423da]
+  - @uidu/form@2.2.0
+
 ## 4.1.5
 
 ### Patch Changes
