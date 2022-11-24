@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.1.10
+
+### Patch Changes
+
+- d7dcedbb2: Board types and comonents
+- Updated dependencies [d7dcedbb2]
+  - @uidu/data-fields@2.1.23
+
 ## 3.1.9
 
 ### Patch Changes

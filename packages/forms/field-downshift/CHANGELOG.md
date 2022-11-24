@@ -1,5 +1,11 @@
 # @uidu/field-downshift
 
+## 2.1.2
+
+### Patch Changes
+
+- d7dcedbb2: Board types and comonents
+
 ## 2.1.1
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.62
+
+### Patch Changes
+
+- d7dcedbb2: Board types and comonents
+- Updated dependencies [d7dcedbb2]
+  - @uidu/media-card@0.7.21
+
 ## 0.5.61
 
 ### Patch Changes

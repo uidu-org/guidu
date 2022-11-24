@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 2.1.28
+
+### Patch Changes
+
+- d7dcedbb2: Board types and comonents
+- Updated dependencies [d7dcedbb2]
+  - @uidu/dashboard-manager@2.0.17
+  - @uidu/data-fields@2.1.23
+  - @uidu/table@3.4.2
+
 ## 2.1.27
 
 ### Patch Changes

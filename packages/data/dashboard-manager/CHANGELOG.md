@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.0.17
+
+### Patch Changes
+
+- d7dcedbb2: Board types and comonents
+- Updated dependencies [d7dcedbb2]
+  - @uidu/dashlets@2.1.28
+
 ## 2.0.16
 
 ### Patch Changes

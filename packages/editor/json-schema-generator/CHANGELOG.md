@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.0.3
+
+### Patch Changes
+
+- d7dcedbb2: Board types and comonents
+
 ## 1.0.2
 
 ### Patch Changes
