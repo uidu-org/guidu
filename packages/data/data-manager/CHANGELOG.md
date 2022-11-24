@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 4.3.3
+
+### Patch Changes
+
+- d7dcedbb2: Board types and comonents
+- Updated dependencies [d7dcedbb2]
+  - @uidu/board@2.1.1
+  - @uidu/data-controls@4.0.16
+  - @uidu/data-fields@2.1.23
+  - @uidu/data-views@3.0.15
+  - @uidu/gallery@2.0.16
+  - @uidu/list@3.1.10
+  - @uidu/table@3.4.2
+
 ## 4.3.2
 
 ### Patch Changes

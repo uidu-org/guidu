@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 2.0.16
+
+### Patch Changes
+
+- d7dcedbb2: Board types and comonents
+- Updated dependencies [d7dcedbb2]
+  - @uidu/data-controls@4.0.16
+  - @uidu/data-fields@2.1.23
+
 ## 2.0.15
 
 ### Patch Changes

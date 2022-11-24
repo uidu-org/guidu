@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.1.9
+
+### Patch Changes
+
+- d7dcedbb2: Board types and comonents
+
 ## 2.1.8
 
 ### Patch Changes

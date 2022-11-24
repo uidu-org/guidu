@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.7.21
+
+### Patch Changes
+
+- d7dcedbb2: Board types and comonents
+
 ## 0.7.20
 
 ### Patch Changes
