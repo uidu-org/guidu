@@ -36,6 +36,8 @@ const defaultComponents: BoardComponents<
   item: Item,
 };
 
+const emptyItems = [];
+
 export default function Board<TItem, TColumn>({
   isCombineEnabled = false,
   withDraggableColumns = false,
@@ -84,7 +86,7 @@ export default function Board<TItem, TColumn>({
               components={getComponents()}
               key={column.id}
               index={index}
-              items={itemsMap[column.id]}
+              items={itemsMap[column.id] || emptyItems}
               isScrollable={withScrollableColumns}
               isCombineEnabled={isCombineEnabled}
               isDragDisabled={!withDraggableColumns}

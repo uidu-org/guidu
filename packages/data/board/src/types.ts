@@ -1,12 +1,16 @@
 import { FC } from 'react';
-import { DraggableId, DraggableLocation } from 'react-beautiful-dnd';
+import {
+  DraggableId,
+  DraggableLocation,
+  DraggableProvided,
+} from 'react-beautiful-dnd';
 
 export type Id = string;
 
-export type ItemProps = {
+export type ItemProps<T> = {
   id: Id;
   content: string | React.ReactNode;
-  data?: any;
+  data?: T;
 };
 
 export type Dragging = {
@@ -24,27 +28,54 @@ export type ColumnComponentProps<TItem, TColumn> = {
   column: TColumn;
 };
 
+export type ColumnContainerProps = {};
+
+export type ContainerProps = {};
+
+export type ParentProps = {
+  height: number;
+};
+
+export type ItemsListWrapperProps = {};
+
+export type ItemsListScrollContainerProps = {};
+
+export type InnerListContainerProps = {
+  children: React.ReactNode;
+};
+
+export type InnerListDropzoneProps = {
+  children: React.ReactNode;
+};
+
+export type ItemComponentProps<TItem> = {
+  item: ItemProps<TItem>;
+  provided: DraggableProvided;
+  isDragging: boolean;
+  isGroupedOver: boolean;
+};
+
 export type BoardComponents<
   TItem,
   TColumn extends { id: string; name: string },
 > = {
   columnHeader?: FC<ColumnComponentProps<TItem, TColumn>>;
-  columnContainer?: FC<any>;
+  columnContainer?: FC<ColumnComponentProps<TItem, TColumn>>;
   columnFooter?: FC<ColumnComponentProps<TItem, TColumn>>;
-  container?: FC<any>;
-  parent?: FC<any>;
-  itemsListWrapper?: FC<any>;
-  itemsListScrollContainer?: FC<any>;
-  innerListContainer?: FC<any>;
-  innerListDropzone?: FC<any>;
-  item?: FC<any>;
+  container?: FC<ContainerProps>;
+  parent?: FC<ParentProps>;
+  itemsListWrapper?: FC<ItemsListWrapperProps<TItem, TColumn>>;
+  itemsListScrollContainer?: FC<ItemsListScrollContainerProps<TItem, TColumn>>;
+  innerListContainer?: FC<InnerListContainerProps>;
+  innerListDropzone?: FC<InnerListDropzoneProps>;
+  item?: FC<ItemComponentProps<TItem>>;
 };
 
 export type BoardProps<TItem, TColumn extends { id: string; name: string }> = {
   withScrollableColumns?: boolean;
   withDraggableColumns?: boolean;
   isCombineEnabled?: boolean;
-  containerHeight?: string;
+  containerHeight?: number;
   components?: BoardComponents<TItem, TColumn>;
   onDragEnd?: (result: any) => void;
   columns: TColumn[];

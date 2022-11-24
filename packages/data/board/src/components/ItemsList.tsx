@@ -10,15 +10,20 @@ import {
 import { BoardComponents, ItemProps, ItemsListProps } from '../types';
 import Item from './Item';
 
-type ItemListProps<TItem, TColumn> = {
+type ItemListProps<TItem, TColumn extends { id: string; name: string }> = {
   items: TItem[];
   components: BoardComponents<TItem, TColumn>;
-  columnDefs?: any;
 };
 
-function InnerItemList<TItem, TColumn>(props: ItemListProps<TItem, TColumn>) {
+function InnerItemList<TItem, TColumn extends { id: string; name: string }>(
+  props: ItemListProps<TItem, TColumn>,
+) {
   const { items, components } = props;
-  return items.map((item: ItemProps, index: number) => (
+  if (items.length === 0) {
+    return null;
+  }
+
+  return (items || []).map((item: ItemProps, index: number) => (
     <Draggable key={item.id} draggableId={item.id} index={index}>
       {(
         dragProvided: DraggableProvided,
@@ -37,13 +42,15 @@ function InnerItemList<TItem, TColumn>(props: ItemListProps<TItem, TColumn>) {
   ));
 }
 
-type InnerListProps<TItem, TColumn = unknown> = {
+type InnerListProps<TItem, TColumn extends { id: string; name: string }> = {
   dropProvided: DroppableProvided;
   items: TItem[];
   components?: BoardComponents<TItem, TColumn>;
 };
 
-function InnerList<TItem, TColumn>(props: InnerListProps<TItem, TColumn>) {
+function InnerList<TItem, TColumn extends { id: string; name: string }>(
+  props: InnerListProps<TItem, TColumn>,
+) {
   const { items, dropProvided, components } = props;
 
   const { innerListContainer: Container, innerListDropzone: DropZone } =

@@ -2776,6 +2776,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fluentui/react-compose@npm:^0.19.24":
+  version: 0.19.24
+  resolution: "@fluentui/react-compose@npm:0.19.24"
+  dependencies:
+    "@types/classnames": ^2.2.9
+    "@uifabric/set-version": ^7.0.24
+    "@uifabric/utilities": ^7.38.2
+    classnames: ^2.2.6
+    tslib: ^1.10.0
+  peerDependencies:
+    "@types/react": ">=16.8.0 <18.0.0"
+    react: ">=16.8.0 <18.0.0"
+  checksum: b76d2cef0eec8862d3d6b0a8c9e0bf05991e53dd975b913e233ba426fe8189715564560d48e649016c6084758387831fd744d39189b4e618fc0bdd9b701c3f97
+  languageName: node
+  linkType: hard
+
 "@fluentui/react-focus@npm:8.8.0":
   version: 8.8.0
   resolution: "@fluentui/react-focus@npm:8.8.0"
@@ -2820,6 +2836,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fluentui/react-stylesheets@npm:^0.2.9":
+  version: 0.2.9
+  resolution: "@fluentui/react-stylesheets@npm:0.2.9"
+  dependencies:
+    "@uifabric/set-version": ^7.0.24
+    tslib: ^1.10.0
+  peerDependencies:
+    "@types/react": ">=16.8.0 <18.0.0"
+    react: ">=16.8.0 <18.0.0"
+  checksum: 18a6acc5881f698c8c97a19a3954eb98d7ae13e0bdb2bae83d83de4da613538e74b5b935877c29d39112a798794e11ae4633bfe1924b740335ddf9412fc8eab4
+  languageName: node
+  linkType: hard
+
+"@fluentui/react-theme-provider@npm:^0.19.16":
+  version: 0.19.16
+  resolution: "@fluentui/react-theme-provider@npm:0.19.16"
+  dependencies:
+    "@fluentui/react-compose": ^0.19.24
+    "@fluentui/react-stylesheets": ^0.2.9
+    "@fluentui/react-window-provider": ^1.0.6
+    "@fluentui/theme": ^1.7.13
+    "@uifabric/merge-styles": ^7.20.2
+    "@uifabric/react-hooks": ^7.16.4
+    "@uifabric/set-version": ^7.0.24
+    "@uifabric/utilities": ^7.38.2
+    classnames: ^2.2.6
+    tslib: ^1.10.0
+  peerDependencies:
+    "@types/react": ">=16.8.0 <18.0.0"
+    react: ">=16.8.0 <18.0.0"
+  checksum: 4a1cf58851abd16259760ce7dae057041bf1faf4e1c83d17cea4aa54bad4fd6020dfdf7698403a270debc431f318331a3998d236a2a2d49e71a5d8e5936e834b
+  languageName: node
+  linkType: hard
+
 "@fluentui/react-window-provider@npm:^1.0.6":
   version: 1.0.6
   resolution: "@fluentui/react-window-provider@npm:1.0.6"
@@ -2848,9 +2898,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:8.102.0":
-  version: 8.102.0
-  resolution: "@fluentui/react@npm:8.102.0"
+"@fluentui/react@npm:8.103.2":
+  version: 8.103.2
+  resolution: "@fluentui/react@npm:8.103.2"
   dependencies:
     "@fluentui/date-time-utilities": ^8.5.3
     "@fluentui/font-icons-mdl2": ^8.5.4
@@ -2871,7 +2921,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <19.0.0"
     react: ">=16.8.0 <19.0.0"
     react-dom: ">=16.8.0 <19.0.0"
-  checksum: 4ef2885563c26f7a516b44d555e9c248acd790a70efb64ba2751ff72078d3bb54641c44f1b544fcec05d452c4f02940462283bc6bc7ccc457d9147ee54e3d499
+  checksum: a86f536cb92bc1e86a7e1dd884f139aae796a8fb3f7391ec46d3764585b9dc71d325ecd4a664cd8fdb9927ce6828d17dd70cb56a2e6ad13f82c0c14f82c687ad
   languageName: node
   linkType: hard
 
@@ -3411,6 +3461,25 @@ __metadata:
     globby: ^11.0.0
     read-yaml-file: ^1.1.0
   checksum: f5a756e5a659e0e1c33f48852d56826d170d5b10a3cdea89ce4fcaa77678d8799aa4004b30e1985c87b73dbc390b95bb6411b78336dd1e0db87c08c74b5c0e74
+  languageName: node
+  linkType: hard
+
+"@mapbox/node-pre-gyp@npm:^1.0.0":
+  version: 1.0.10
+  resolution: "@mapbox/node-pre-gyp@npm:1.0.10"
+  dependencies:
+    detect-libc: ^2.0.0
+    https-proxy-agent: ^5.0.0
+    make-dir: ^3.1.0
+    node-fetch: ^2.6.7
+    nopt: ^5.0.0
+    npmlog: ^5.0.1
+    rimraf: ^3.0.2
+    semver: ^7.3.5
+    tar: ^6.1.11
+  bin:
+    node-pre-gyp: bin/node-pre-gyp
+  checksum: 1a98db05d955b74dad3814679593df293b9194853698f3f5f1ed00ecd93128cdd4b14fb8767fe44ac6981ef05c23effcfdc88710e7c1de99ccb6f647890597c8
   languageName: node
   linkType: hard
 
@@ -5028,24 +5097,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/match-sorter-utils@npm:^8.5.14":
-  version: 8.5.14
-  resolution: "@tanstack/match-sorter-utils@npm:8.5.14"
+"@tanstack/match-sorter-utils@npm:^8.7.0":
+  version: 8.7.0
+  resolution: "@tanstack/match-sorter-utils@npm:8.7.0"
   dependencies:
     remove-accents: 0.4.2
-  checksum: 9db789bc70db6e04c2759c32d497bd3cfdf6fe2ed5afff52046a8c739d00e8df40c74b21ffaeaf70c7e2ede02578ee748c950117190fe4e7a7bd72ce1134d8d9
+  checksum: 7ec97963b44016acb324b1c6009efd87e724aa7d8caac360be7aa75c60cbbd707dffbadcbe4aad565764b591fe8d3ce725ce95f4f90b61c7e5df431e5946b3e5
   languageName: node
   linkType: hard
 
-"@tanstack/react-table@npm:^8.5.30":
-  version: 8.5.30
-  resolution: "@tanstack/react-table@npm:8.5.30"
+"@tanstack/react-table@npm:^8.7.0":
+  version: 8.7.0
+  resolution: "@tanstack/react-table@npm:8.7.0"
   dependencies:
-    "@tanstack/table-core": 8.5.30
+    "@tanstack/table-core": 8.7.0
   peerDependencies:
     react: ">=16"
     react-dom: ">=16"
-  checksum: 0e61cd98bf68a8c5004dc80bf9ff097205ce5e48e48f72600cce0788db6987c4e770e0a97795a884c17f36647f8faf6cea5817399b1e74158c3c4ecf8c80c79a
+  checksum: 5f739f619dacfd134449bc8cff819d7e1b9549b8c8b20c293f2c786098a53d20fe5755727d8abb6fa56a64583792bbc89d8b1c7cd24ac3497495d2c20bac9e77
   languageName: node
   linkType: hard
 
@@ -5060,10 +5129,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/table-core@npm:8.5.30":
-  version: 8.5.30
-  resolution: "@tanstack/table-core@npm:8.5.30"
-  checksum: 05d5612ec417a665cb67c35eb94cada149884fc3377ec6b3850eff3081517a913a57b5725f9c609b9eada6de8b980d63bbb30a8d62111730d62aea80e184b997
+"@tanstack/table-core@npm:8.7.0":
+  version: 8.7.0
+  resolution: "@tanstack/table-core@npm:8.7.0"
+  checksum: 835511727ab5651066a4cbc98916fbc2463ec6d6ddc5c74c1fec5713eeba8e26641653c1a35b69b303f0c58f574416a09e26da44cf7e9a884cb954fc26b12afd
   languageName: node
   linkType: hard
 
@@ -5219,6 +5288,15 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 8d73d22fdd384c290514dad6f9f4a436f5a90bc836bbe9b46fe4f557041a03484f0547291d0347185a806149f465355fc225dc87477b8cf5af5be307bb75e6a4
+  languageName: node
+  linkType: hard
+
+"@types/classnames@npm:^2.2.9":
+  version: 2.3.0
+  resolution: "@types/classnames@npm:2.3.0"
+  dependencies:
+    classnames: "*"
+  checksum: e1bd6de60fc5e4ead601838078b10f378d6a66ad21112922856de59a1f450b1361f597aa3ca34f2cc33bc030f950112872fddfde43c5189bec89737a8b237f24
   languageName: node
   linkType: hard
 
@@ -6630,7 +6708,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@faker-js/faker": ^7.6.0
-    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-table": ^8.7.0
     "@uidu/badge": ^0.5.20
     "@uidu/docs": ^0.5.22
     "@uidu/shell": ^2.1.40
@@ -6817,7 +6895,7 @@ __metadata:
     "@babel/runtime": ^7.20.1
     "@cubejs-client/core": ^0.31.15
     "@cubejs-client/react": ^0.31.15
-    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-table": ^8.7.0
     "@types/react-grid-layout": ^1.3.2
     "@uidu/dashboard-controls": ^1.1.11
     "@uidu/dashlets": ^2.1.27
@@ -6884,7 +6962,7 @@ __metadata:
     "@cubejs-client/core": ^0.31.15
     "@cubejs-client/react": ^0.31.15
     "@loadable/component": ^5.15.2
-    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-table": ^8.7.0
     "@uidu/dashboard-manager": ^2.0.16
     "@uidu/dashlet-controls": ^1.1.11
     "@uidu/data-fields": ^2.1.22
@@ -6915,7 +6993,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@heroicons/react": ^2.0.13
-    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-table": ^8.7.0
     "@uidu/button": 1.3.33
     "@uidu/checkbox": ^2.0.8
     "@uidu/data-fields": ^2.1.22
@@ -6957,7 +7035,7 @@ __metadata:
     "@heroicons/react": ^2.0.13
     "@loadable/component": ^5.15.2
     "@smastrom/react-rating": ^1.2.1
-    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-table": ^8.7.0
     "@uidu/button": 1.3.33
     "@uidu/docs": ^0.5.22
     "@uidu/field-color-picker": ^3.0.13
@@ -6993,8 +7071,8 @@ __metadata:
     "@cubejs-client/react": ^0.31.15
     "@cubejs-client/ws-transport": ^0.31.15
     "@loadable/component": ^5.15.2
-    "@tanstack/match-sorter-utils": ^8.5.14
-    "@tanstack/react-table": ^8.5.30
+    "@tanstack/match-sorter-utils": ^8.7.0
+    "@tanstack/react-table": ^8.7.0
     "@uidu/board": ^2.0.0
     "@uidu/button": 1.3.33
     "@uidu/calendar": ^0.4.23
@@ -7034,7 +7112,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@loadable/component": ^5.15.2
-    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-table": ^8.7.0
     "@uidu/button": 1.3.33
     "@uidu/data-controls": ^4.0.15
     "@uidu/data-manager": 4.3.2
@@ -7569,7 +7647,7 @@ __metadata:
     "@uidu/radio": ^2.1.3
     "@uidu/shell": ^2.1.40
     classnames: ^2.3.2
-    downshift: ^7.0.1
+    downshift: ^7.0.4
     react: ^18.2.0
     react-feather: ^2.0.10
     styled-components: ^5.3.6
@@ -7586,7 +7664,7 @@ __metadata:
   resolution: "@uidu/field-file-uploader@workspace:packages/forms/field-file-uploader"
   dependencies:
     "@babel/runtime": ^7.20.1
-    "@fluentui/react": 8.102.0
+    "@fluentui/react": 8.103.2
     "@heroicons/react": ^2.0.13
     "@uidu/button": 1.3.33
     "@uidu/docs": ^0.5.22
@@ -7937,7 +8015,7 @@ __metadata:
   resolution: "@uidu/gallery@workspace:packages/data/gallery"
   dependencies:
     "@babel/runtime": ^7.20.1
-    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-table": ^8.7.0
     "@tanstack/react-virtual": ^3.0.0-beta.23
     "@uidu/data-controls": ^4.0.15
     "@uidu/data-fields": ^2.1.22
@@ -8104,7 +8182,7 @@ __metadata:
     "@types/prettier": ^2.7.1
     meow: ^9.0.0
     mkdirp: ^1.0.4
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     ts-node: ^10.9.1
     tslib: ^2.4.1
     typescript: ^4.9.3
@@ -8155,7 +8233,7 @@ __metadata:
   resolution: "@uidu/list@workspace:packages/data/list"
   dependencies:
     "@babel/runtime": ^7.20.1
-    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-table": ^8.7.0
     "@tanstack/react-virtual": ^3.0.0-beta.23
     "@uidu/data-fields": ^2.1.21
     "@uidu/docs": ^0.5.22
@@ -8206,7 +8284,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.102.0
+    "@fluentui/react": 8.103.2
     "@uidu/button": ^1.3.33
     "@uidu/docs": ^0.5.22
     "@uidu/dropdown-menu": ^0.6.26
@@ -8407,7 +8485,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.1
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.102.0
+    "@fluentui/react": 8.103.2
     "@loadable/component": ^5.15.2
     "@uidu/avatar": ^0.9.18
     "@uidu/button": 1.3.33
@@ -9065,7 +9143,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.2.1
     "@fortawesome/react-fontawesome": ^0.2.0
     "@heroicons/react": ^2.0.13
-    "@tanstack/react-table": ^8.5.30
+    "@tanstack/react-table": ^8.7.0
     "@tanstack/react-virtual": ^3.0.0-beta.23
     "@uidu/button": 1.3.33
     "@uidu/checkbox": ^2.0.8
@@ -11605,12 +11683,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap@npm:^5.2.2":
-  version: 5.2.2
-  resolution: "bootstrap@npm:5.2.2"
+"bootstrap@npm:^5.2.3":
+  version: 5.2.3
+  resolution: "bootstrap@npm:5.2.3"
   peerDependencies:
     "@popperjs/core": ^2.11.6
-  checksum: 14e6df28feb975dc10702cac0a6c2a21132a6e4e5562e31cdae1db3970e287ed29001020066b61d96b2cea2a45ecf44c08c8c26bc84a31cdeabec0a9be6b9389
+  checksum: 0211805dec6a190c0911d142966df30fdb4b4139a04cc6c23dd83c6045ea3cb0a966b360ab2e701e7b3ad96ff01e05fdc0914be97b41bd876b11e457a8bdc6a3
   languageName: node
   linkType: hard
 
@@ -12192,6 +12270,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"canvas@npm:^2.10.1":
+  version: 2.10.2
+  resolution: "canvas@npm:2.10.2"
+  dependencies:
+    "@mapbox/node-pre-gyp": ^1.0.0
+    nan: ^2.17.0
+    node-gyp: latest
+    simple-get: ^3.0.3
+  checksum: b2e3eb4c3635fa2f67857619621c3d314f935a9e51904536dadf4908ab580dff4f5bcbaafe6eb0255247fa027ca494d5cd97c33376a49a0f994997263fa9944b
+  languageName: node
+  linkType: hard
+
 "ccount@npm:^2.0.0":
   version: 2.0.1
   resolution: "ccount@npm:2.0.1"
@@ -12490,7 +12580,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.2.6, classnames@npm:^2.3.1, classnames@npm:^2.3.2":
+"classnames@npm:*, classnames@npm:^2.2.6, classnames@npm:^2.3.1, classnames@npm:^2.3.2":
   version: 2.3.2
   resolution: "classnames@npm:2.3.2"
   checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
@@ -14699,13 +14789,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dommatrix@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "dommatrix@npm:1.0.3"
-  checksum: 8ac727c1a14cf8de30a5b49a3bd6b2622a661b391fe1ac54e855eaa14a857ed86d63492150b5f70f912acc24fa3acc31d750259c47e9b5801de237624b0a319f
-  languageName: node
-  linkType: hard
-
 "domutils@npm:^2.0.0, domutils@npm:^2.5.2, domutils@npm:^2.8.0":
   version: 2.8.0
   resolution: "domutils@npm:2.8.0"
@@ -14812,9 +14895,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"downshift@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "downshift@npm:7.0.1"
+"downshift@npm:^7.0.4":
+  version: 7.0.4
+  resolution: "downshift@npm:7.0.4"
   dependencies:
     "@babel/runtime": ^7.14.8
     compute-scroll-into-view: ^1.0.17
@@ -14823,7 +14906,7 @@ __metadata:
     tslib: ^2.3.0
   peerDependencies:
     react: ">=16.12.0"
-  checksum: f2dc82171ee64777e82ad86ab8e08f1015bef289ab26799337f43a8465bd55f6b484cad4ab40030b57891e99ed3a7d41b27dd560a0929635133c41cee802bc32
+  checksum: ea59a368427078d199023a299df0fefe2f4463d3207be5a769d9c2703ca61db8e72b5b64e5a12a5152385e6de705ebe3f3e2826c14f65baa69b4f8537657cc1d
   languageName: node
   linkType: hard
 
@@ -17746,7 +17829,7 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.102.0
+    "@fluentui/react": 8.103.2
     "@formatjs/cli": 5.1.3
     "@fortawesome/fontawesome-free": ^6.2.1
     "@fortawesome/fontawesome-svg-core": ^6.2.1
@@ -17851,7 +17934,7 @@ __metadata:
     babel-plugin-twin: ^1.1.0
     body-scroll-lock: ^4.0.0-beta.0
     bolt: ^0.24.10
-    bootstrap: ^5.2.2
+    bootstrap: ^5.2.3
     buffer: ^6.0.3
     bundlesize: ^0.18.1
     bytes: ^3.1.2
@@ -17877,7 +17960,7 @@ __metadata:
     dotenv: ^16.0.3
     dotenv-cli: ^5.1.0
     dotenv-expand: ^8.0.3
-    downshift: ^7.0.1
+    downshift: ^7.0.4
     emoji-mart: ^3.0.1
     emoji-regex: ^10.2.1
     eslint: ^8.28.0
@@ -17929,11 +18012,11 @@ __metadata:
     npm-run: ^5.0.1
     npm-run-all: ^4.1.5
     numeral: ^2.0.6
-    office-ui-fabric-react: ^7.199.6
+    office-ui-fabric-react: ^7.201.0
     overlayscrollbars: ^2.0.1
     overlayscrollbars-react: ^0.5.0
     p-wait-for: ^4.1.0
-    pdfjs-dist: ^2.16.105
+    pdfjs-dist: ^3.0.279
     polished: ^4.2.2
     popper.js: ^1.16.1
     postcss: ^8.4.19
@@ -17942,7 +18025,7 @@ __metadata:
     postcss-loader: ^7.0.1
     postcss-preset-env: ^7.8.3
     postcss-safe-parser: ^6.0.0
-    prettier: ^2.7.1
+    prettier: ^2.8.0
     pretty-proptypes: ^1.7.0
     prismjs: ^1.29.0
     process: ^0.11.10
@@ -22664,6 +22747,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nan@npm:^2.17.0":
+  version: 2.17.0
+  resolution: "nan@npm:2.17.0"
+  dependencies:
+    node-gyp: latest
+  checksum: ec609aeaf7e68b76592a3ba96b372aa7f5df5b056c1e37410b0f1deefbab5a57a922061e2c5b369bae9c7c6b5e6eecf4ad2dac8833a1a7d3a751e0a7c7f849ed
+  languageName: node
+  linkType: hard
+
 "nanoclamp@npm:^1.4.1":
   version: 1.4.1
   resolution: "nanoclamp@npm:1.4.1"
@@ -23575,13 +23667,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"office-ui-fabric-react@npm:^7.199.6":
-  version: 7.199.6
-  resolution: "office-ui-fabric-react@npm:7.199.6"
+"office-ui-fabric-react@npm:^7.201.0":
+  version: 7.201.0
+  resolution: "office-ui-fabric-react@npm:7.201.0"
   dependencies:
     "@fluentui/date-time-utilities": ^7.9.1
     "@fluentui/react-focus": ^7.18.17
+    "@fluentui/react-theme-provider": ^0.19.16
     "@fluentui/react-window-provider": ^1.0.6
+    "@fluentui/theme": ^1.7.13
     "@microsoft/load-themed-styles": ^1.10.26
     "@uifabric/foundation": ^7.10.16
     "@uifabric/icons": ^7.9.5
@@ -23597,7 +23691,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: 7f3a0f68e4bd04cc4a6a88c4fa75cd07900aa9993c80673575dc3a1cc8090b9f68ad834ec68e5e9bb05e358d417f552fcb6eefdf6c4a9918049f5fbe1fa7a17d
+  checksum: 08f4e822d48fa1c2bf0df1fbad8695db1e5aa5af192ccc25645d7071a6c97d22cfa979ec998ba40a15b262543539c59d0043b24e45a50f9e01e0e20aa417b5df
   languageName: node
   linkType: hard
 
@@ -24449,18 +24543,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pdfjs-dist@npm:^2.16.105":
-  version: 2.16.105
-  resolution: "pdfjs-dist@npm:2.16.105"
+"pdfjs-dist@npm:^3.0.279":
+  version: 3.0.279
+  resolution: "pdfjs-dist@npm:3.0.279"
   dependencies:
-    dommatrix: ^1.0.3
+    canvas: ^2.10.1
     web-streams-polyfill: ^3.2.1
-  peerDependencies:
-    worker-loader: ^3.0.8
-  peerDependenciesMeta:
-    worker-loader:
-      optional: true
-  checksum: 16ad2fa0ff8404fefd1a3e83f92ef1a594fcc4d3ff65512f801365c8f06d300d4a38023a867994f0b964a8e146773e6dcc9988c7c1a791917eb6371d5bd72863
+  checksum: 2e59d9bd4a8d7e01c79712435a7ce6a485f63b99620152384e3e110e068a0506dbf70ce39e5e9e61ea7228ad77fffcc716d5fc3a9221634e2e7f24acde267ebf
   languageName: node
   linkType: hard
 
@@ -25306,6 +25395,15 @@ __metadata:
   bin:
     prettier: bin-prettier.js
   checksum: 55a4409182260866ab31284d929b3cb961e5fdb91fe0d2e099dac92eaecec890f36e524b4c19e6ceae839c99c6d7195817579cdffc8e2c80da0cb794463a748b
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "prettier@npm:2.8.0"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 72004ce0cc9bb097daf3e3833f62495768724392c1d5b178dd47372337616e9e50ecbb0804f236596223f7b5eb1bbe69cefc8957dca21112c5777e77ef73a564
   languageName: node
   linkType: hard
 

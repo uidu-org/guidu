@@ -2,8 +2,8 @@ import { colors } from '@uidu/theme';
 import styled from 'styled-components';
 import { borderRadius, grid } from '../utils';
 
-export const ParentContainer = styled.div<{ height: string }>`
-  height: ${({ height }) => height};
+export const ParentContainer = styled.div<{ height: number }>`
+  height: ${({ height }) => `${height}px`};
   overflow-x: auto;
   overflow-y: auto;
 `;
