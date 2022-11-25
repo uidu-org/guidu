@@ -2,7 +2,7 @@
 import { noop, useController, Wrapper } from '@uidu/field-base';
 import { useFormContext } from '@uidu/form';
 import React, { useState } from 'react';
-import { getCountries } from 'react-phone-number-input';
+import { getCountries, parsePhoneNumber } from 'react-phone-number-input';
 import en from 'react-phone-number-input/locale/en.json';
 import tw from 'twin.macro';
 import { FieldPhoneProps } from '../types';
@@ -14,13 +14,13 @@ export default function FieldPhone({
   value: defaultValue,
   onChange = noop,
   rules,
-  country: defaultCountry = 'IT',
+  country: defaultCountry,
   countryLabels = en,
   countries = getCountries(),
   withCountrySelect,
   ...rest
 }: FieldPhoneProps) {
-  const { setFocus } = useFormContext();
+  const { setFocus, setError } = useFormContext();
   const { field, inputProps, wrapperProps } = useController({
     name,
     defaultValue,
@@ -29,9 +29,15 @@ export default function FieldPhone({
     ...rest,
   });
 
+  const [guessedCountry, setGuessedCountry] = useState(
+    field.value ? parsePhoneNumber(field.value)?.country : null,
+  );
+
   const [country, setCountry] = useState(defaultCountry);
 
   const handleChange = (value: string) => {
+    console.log('handleChange', value, rest);
+    setGuessedCountry(value ? parsePhoneNumber(value)?.country : null);
     field.onChange(value);
     onChange(field.name, value);
   };
@@ -45,10 +51,18 @@ export default function FieldPhone({
             <CountrySelect
               countries={countries}
               labels={countryLabels}
-              value={country}
+              value={country || guessedCountry}
               onChange={(value) => {
+                // if (
+                //   field.value &&
+                //   parsePhoneNumber(field.value) &&
+                //   parsePhoneNumber(field.value).country !== value
+                // ) {
+                //   setError(name, { message: 'Attention' });
+                // } else {
                 setCountry(value);
                 setFocus(name);
+                // }
               }}
             />
           </div>,
@@ -59,7 +73,7 @@ export default function FieldPhone({
         {...rest}
         {...inputProps}
         css={[withCountrySelect && tw`pl-32`]}
-        country={country}
+        country={country || guessedCountry}
         onChange={handleChange}
       />
     </Wrapper>

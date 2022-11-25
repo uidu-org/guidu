@@ -118,8 +118,10 @@ export default function CountrySelect({
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
         }),
+        menuPortal: (base) => ({ ...base, zIndex: 9999 }),
         menu: (base) => ({
           ...base,
+
           width: '400px',
         }),
       }}

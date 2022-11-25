@@ -14,7 +14,7 @@ const FieldPhoneStateless = forwardRef<
       value,
       placeholder,
       $hasError,
-      country = 'IT',
+      country,
       onBlur,
       onChange,
       required,
