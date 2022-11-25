@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 2.2.0
+
+### Minor Changes
+
+- 6ce8c98e0: Export some components by default
+
 ## 2.1.7
 
 ### Patch Changes
