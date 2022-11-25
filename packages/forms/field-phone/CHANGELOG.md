@@ -1,5 +1,13 @@
 # @uidu/field-date
 
+## 2.0.28
+
+### Patch Changes
+
+- 3ce726a4b: Field-phone updates
+- Updated dependencies [6ce8c98e0]
+  - @uidu/select@2.2.0
+
 ## 2.0.27
 
 ### Patch Changes
