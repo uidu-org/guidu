@@ -10,7 +10,7 @@
   "module": "dist/uidu-message.esm.js",
   "types": "dist/uidu-message.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.1",
+    "@babel/runtime": "^7.20.6",
     "@fluentui/react": "8.103.2",
     "@loadable/component": "^5.15.2",
     "@uidu/avatar": "^0.9.18",

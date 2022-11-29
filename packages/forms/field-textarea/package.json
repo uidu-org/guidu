@@ -9,7 +9,7 @@
   "module": "dist/uidu-field-textarea.esm.js",
   "types": "dist/uidu-field-textarea.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.1",
+    "@babel/runtime": "^7.20.6",
     "@uidu/field-base": "^4.1.5",
     "autosize": "^5.0.2",
     "react": "^18.2.0",

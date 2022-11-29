@@ -9,7 +9,7 @@
   "module": "dist/uidu-field-file-uploader.esm.js",
   "types": "dist/uidu-field-file-uploader.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.1",
+    "@babel/runtime": "^7.20.6",
     "@fluentui/react": "8.103.2",
     "@heroicons/react": "^2.0.13",
     "@uidu/button": "1.3.33",

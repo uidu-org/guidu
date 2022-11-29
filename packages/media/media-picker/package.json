@@ -9,7 +9,7 @@
   "module": "dist/uidu-media-picker.esm.js",
   "types": "dist/uidu-media-picker.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.1",
+    "@babel/runtime": "^7.20.6",
     "@uidu/media-core": "^1.1.6",
     "@uppy/core": "^3.0.4",
     "@uppy/dashboard": "^3.2.0",

@@ -10,7 +10,7 @@
   "module": "dist/uidu-field-downshift.esm.js",
   "types": "dist/uidu-field-downshift.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.1",
+    "@babel/runtime": "^7.20.6",
     "@heroicons/react": "^2.0.13",
     "@uidu/field-base": "^4.1.5",
     "@uidu/field-text": "^2.0.5",

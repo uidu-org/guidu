@@ -9,7 +9,7 @@
   "module": "dist/uidu-drawer.esm.js",
   "types": "dist/uidu-drawer.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.1",
+    "@babel/runtime": "^7.20.6",
     "@uidu/analytics": "^0.6.9",
     "@uidu/blanket": "^0.6.11",
     "@uidu/docs": "^0.5.22",
