@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 4.0.17
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/button@1.3.34
+  - @uidu/drawer@0.7.29
+  - @uidu/inline-dialog@0.5.26
+  - @uidu/menu@0.8.8
+  - @uidu/popup@0.7.9
+  - @uidu/spinner@0.5.22
+  - @uidu/tooltip@0.5.28
+  - @uidu/data-fields@2.1.24
+  - @uidu/data-manager@4.3.4
+  - @uidu/data-views@3.0.16
+  - @uidu/checkbox@2.0.9
+  - @uidu/field-text@2.0.6
+  - @uidu/form@2.2.1
+  - @uidu/select@2.2.1
+  - @uidu/shell@2.1.41
+
 ## 4.0.16
 
 ### Patch Changes

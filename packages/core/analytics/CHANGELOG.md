@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.6.10
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+
 ## 0.6.9
 
 ### Patch Changes

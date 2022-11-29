@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 1.2.9
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/analytics@0.6.10
+  - @uidu/code@0.5.22
+  - @uidu/theme@0.6.27
+  - @uidu/tooltip@0.5.28
+  - @uidu/adf-schema@2.0.4
+  - @uidu/adf-utils@2.0.1
+  - @uidu/editor-common@2.0.3
+  - @uidu/editor-json-transformer@1.0.8
+  - @uidu/analytics-listeners@0.4.20
+  - @uidu/analytics-namespaced-context@0.4.20
+  - @uidu/mentions@0.5.1
+  - @uidu/status@0.5.25
+  - @uidu/task-decision@0.4.32
+  - @uidu/media-card@0.7.22
+  - @uidu/media-filmstrip@0.5.12
+
 ## 1.2.8
 
 ### Patch Changes

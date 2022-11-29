@@ -1,6 +1,6 @@
 {
   "name": "@uidu/chat-room",
-  "version": "0.4.18",
+  "version": "0.4.19",
   "description": "A video-chat room",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/messaging/chat-room",
   "license": "MIT",
@@ -10,11 +10,11 @@
   "types": "dist/uidu-chat-rooom.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.20.6",
-    "@uidu/shell": "^2.1.38",
+    "@uidu/shell": "^2.1.41",
     "react": "^18.2.0",
     "tslib": "^2.4.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.22"
+    "@uidu/docs": "^0.5.23"
   }
 }

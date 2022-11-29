@@ -1,5 +1,13 @@
 # @uidu/board
 
+## 2.1.2
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/theme@0.6.27
+
 ## 2.1.1
 
 ### Patch Changes

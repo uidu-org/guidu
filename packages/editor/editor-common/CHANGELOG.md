@@ -1,5 +1,22 @@
 # @uidu/editor-common
 
+## 2.0.3
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/analytics@0.6.10
+  - @uidu/theme@0.6.27
+  - @uidu/tooltip@0.5.28
+  - @uidu/adf-schema@2.0.4
+  - @uidu/adf-utils@2.0.1
+  - @uidu/editor-json-transformer@1.0.8
+  - @uidu/analytics-namespaced-context@0.4.20
+  - @uidu/emoji@0.6.28
+  - @uidu/mentions@0.5.1
+  - @uidu/profilecard@0.3.30
+
 ## 2.0.2
 
 ### Patch Changes

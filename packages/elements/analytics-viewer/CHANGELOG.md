@@ -1,5 +1,13 @@
 # @uidu/analytics-viewer
 
+## 0.4.22
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/analytics@0.6.10
+
 ## 0.4.21
 
 ### Patch Changes
