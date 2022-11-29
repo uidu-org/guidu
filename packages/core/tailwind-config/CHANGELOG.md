@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.24
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+
 ## 0.1.23
 
 ### Patch Changes

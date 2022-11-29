@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.4.19
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/shell@2.1.41
+
 ## 0.4.18
 
 ### Patch Changes

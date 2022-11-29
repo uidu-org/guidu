@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.5.25
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/analytics@0.6.10
+  - @uidu/lozenge@0.5.21
+  - @uidu/theme@0.6.27
+  - @uidu/field-text@2.0.6
+
 ## 0.5.24
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.0.32
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/avatar@0.9.19
+  - @uidu/dropdown-menu@0.6.27
+  - @uidu/inline-dialog@0.5.26
+  - @uidu/menu@0.8.8
+  - @uidu/theme@0.6.27
+  - @uidu/tooltip@0.5.28
+  - @uidu/animated-menu@1.0.25
+  - @uidu/shell@2.1.41
+
 ## 1.0.31
 
 ### Patch Changes

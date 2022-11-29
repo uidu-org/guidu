@@ -1,5 +1,17 @@
 # @uidu/field-file-uploader
 
+## 2.1.10
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/button@1.3.34
+  - @uidu/menu@0.8.8
+  - @uidu/field-base@4.2.1
+  - @uidu/form@2.2.1
+  - @uidu/media-core@1.1.7
+
 ## 2.1.9
 
 ### Patch Changes

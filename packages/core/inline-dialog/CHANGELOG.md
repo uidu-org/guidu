@@ -1,5 +1,15 @@
 # @uidu/inline-dialog
 
+## 0.5.26
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/analytics@0.6.10
+  - @uidu/popper@0.5.24
+  - @uidu/theme@0.6.27
+
 ## 0.5.25
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/field-textarea
 
+## 2.0.8
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/field-base@4.2.1
+
 ## 2.0.7
 
 ### Patch Changes

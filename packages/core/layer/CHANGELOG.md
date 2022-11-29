@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.5.21
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+
 ## 0.5.20
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.10.2
+
+### Patch Changes
+
+- 1c3185c3a: Bump dependencies
+- Updated dependencies [1c3185c3a]
+  - @uidu/media-core@1.1.7
+
 ## 0.10.1
 
 ### Patch Changes
