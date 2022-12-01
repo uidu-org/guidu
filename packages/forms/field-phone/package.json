@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-phone",
-  "version": "2.0.29",
+  "version": "2.0.30",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-phone",
   "license": "MIT",
   "sideEffects": false,
@@ -9,7 +9,7 @@
   "types": "dist/uidu-field-phone.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.20.6",
-    "@uidu/field-base": "^4.2.1",
+    "@uidu/field-base": "^4.2.2",
     "@uidu/field-text": "^2.0.6",
     "@uidu/form": "2.2.1",
     "@uidu/select": "2.2.1",
