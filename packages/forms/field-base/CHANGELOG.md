@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.2.2
+
+### Patch Changes
+
+- 7aaffda4d: Fixed border radius
+
 ## 4.2.1
 
 ### Patch Changes
