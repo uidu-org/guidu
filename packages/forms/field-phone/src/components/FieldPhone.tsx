@@ -36,7 +36,6 @@ export default function FieldPhone({
   const [country, setCountry] = useState(defaultCountry);
 
   const handleChange = (value: string) => {
-    console.log('handleChange', value, rest);
     setGuessedCountry(value ? parsePhoneNumber(value)?.country : null);
     field.onChange(value);
     onChange(field.name, value);
