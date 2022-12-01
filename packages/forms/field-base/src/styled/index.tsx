@@ -21,12 +21,12 @@ export const StyledLabel = styled.label<{ layout: string }>`
 `;
 
 export const StyledAddonWrapper = styled.div<{ position: InputGroupPosition }>`
-  ${tw`absolute top-px bottom-px rounded-r flex items-center [background:rgb(var(--body-on-primary-bg))]`}
+  ${tw`absolute top-px bottom-px flex items-center [background:rgb(var(--body-on-primary-bg))]`}
   ${({ position }) => {
     if (position === 'before') {
-      return tw`left-px`;
+      return tw`rounded-l left-px`;
     }
-    return tw`right-px`;
+    return tw`rounded-r right-px`;
   }}
 `;
 
