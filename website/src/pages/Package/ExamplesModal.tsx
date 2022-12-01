@@ -289,7 +289,7 @@ export default class ExamplesModal extends React.Component<Props, State> {
         autoFocus={false}
         width="calc(100vw - 2rem)"
         height="calc(100vh - 2rem)"
-        tw="--modal-dialog-gutter[1rem]"
+        tw="[--modal-dialog-gutter:1rem]"
         // shouldScrollInViewport
         // header={({ showKeyline }) => (
         //   <ModalHeaderComp
