@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.5.64
+
+### Patch Changes
+
+- 2ef68e813: Bump deps
+- Updated dependencies [2ef68e813]
+  - @uidu/popup@0.7.10
+  - @uidu/media-card@0.7.23
+  - @uidu/media-viewer@0.5.11
+
 ## 0.5.63
 
 ### Patch Changes

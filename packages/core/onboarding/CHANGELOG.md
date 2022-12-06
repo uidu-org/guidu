@@ -1,5 +1,11 @@
 # @uidu/onboarding
 
+## 1.3.19
+
+### Patch Changes
+
+- 2ef68e813: Bump deps
+
 ## 1.3.18
 
 ### Patch Changes

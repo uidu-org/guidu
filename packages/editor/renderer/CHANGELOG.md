@@ -1,5 +1,16 @@
 # @uidu/renderer
 
+## 1.2.10
+
+### Patch Changes
+
+- 2ef68e813: Bump deps
+- Updated dependencies [2ef68e813]
+  - @uidu/editor-common@2.0.4
+  - @uidu/mentions@0.5.2
+  - @uidu/status@0.5.26
+  - @uidu/media-card@0.7.23
+
 ## 1.2.9
 
 ### Patch Changes

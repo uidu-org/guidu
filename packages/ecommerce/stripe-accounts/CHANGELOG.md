@@ -1,5 +1,15 @@
 # @uidu/stripe-accounts
 
+## 0.5.16
+
+### Patch Changes
+
+- 2ef68e813: Bump deps
+- Updated dependencies [2ef68e813]
+  - @uidu/payments@1.5.19
+  - @uidu/form@2.2.2
+  - @uidu/stepper@0.4.28
+
 ## 0.5.15
 
 ### Patch Changes

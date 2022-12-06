@@ -1,5 +1,13 @@
 # @uidu/dashboard-controls
 
+## 1.1.13
+
+### Patch Changes
+
+- 2ef68e813: Bump deps
+- Updated dependencies [2ef68e813]
+  - @uidu/form@2.2.2
+
 ## 1.1.12
 
 ### Patch Changes

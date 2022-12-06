@@ -1,5 +1,11 @@
 # @uidu/stepper
 
+## 0.4.28
+
+### Patch Changes
+
+- 2ef68e813: Bump deps
+
 ## 0.4.27
 
 ### Patch Changes
