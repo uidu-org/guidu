@@ -1,5 +1,19 @@
 # @uidu/data-controls
 
+## 4.0.18
+
+### Patch Changes
+
+- 2ef68e813: Bump deps
+- Updated dependencies [2ef68e813]
+  - @uidu/popup@0.7.10
+  - @uidu/data-fields@2.1.25
+  - @uidu/data-manager@4.3.5
+  - @uidu/data-views@3.0.17
+  - @uidu/form@2.2.2
+  - @uidu/select@2.2.2
+  - @uidu/shell@2.1.42
+
 ## 4.0.17
 
 ### Patch Changes

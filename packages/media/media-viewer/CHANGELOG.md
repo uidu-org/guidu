@@ -1,5 +1,13 @@
 # @uidu/media-viewer
 
+## 0.5.11
+
+### Patch Changes
+
+- 2ef68e813: Bump deps
+- Updated dependencies [2ef68e813]
+  - @uidu/shell@2.1.42
+
 ## 0.5.10
 
 ### Patch Changes

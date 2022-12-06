@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.42
+
+### Patch Changes
+
+- 2ef68e813: Bump deps
+
 ## 2.1.41
 
 ### Patch Changes

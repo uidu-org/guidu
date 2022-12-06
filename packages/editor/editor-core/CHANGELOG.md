@@ -1,5 +1,21 @@
 # @uidu/editor-core
 
+## 2.0.5
+
+### Patch Changes
+
+- 2ef68e813: Bump deps
+- Updated dependencies [2ef68e813]
+  - @uidu/editor-common@2.0.4
+  - @uidu/emoji@0.6.29
+  - @uidu/mentions@0.5.2
+  - @uidu/profilecard@0.3.31
+  - @uidu/status@0.5.26
+  - @uidu/form@2.2.2
+  - @uidu/select@2.2.2
+  - @uidu/media-card@0.7.23
+  - @uidu/field-date@2.1.9
+
 ## 2.0.4
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.6.29
+
+### Patch Changes
+
+- 2ef68e813: Bump deps
+- Updated dependencies [2ef68e813]
+  - @uidu/table@3.4.4
+  - @uidu/form@2.2.2
+  - @uidu/select@2.2.2
+  - @uidu/shell@2.1.42
+
 ## 0.6.28
 
 ### Patch Changes
