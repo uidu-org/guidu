@@ -26,7 +26,7 @@
     "react-cool-onclickoutside": "^1.7.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
-    "react-intl": "^6.2.1",
+    "react-intl": "^6.2.5",
     "styled-components": "^5.3.6",
     "tslib": "^2.4.1",
     "twin.macro": "^3.0.1"
