@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.2.0
+
+### Minor Changes
+
+- ef9ed1de2: Try adding more events to media picker to extend editor-core
+
 ## 2.1.12
 
 ### Patch Changes

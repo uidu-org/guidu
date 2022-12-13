@@ -1,5 +1,11 @@
 # @uidu/editor-common
 
+## 2.1.0
+
+### Minor Changes
+
+- ef9ed1de2: Try adding more events to media picker to extend editor-core
+
 ## 2.0.4
 
 ### Patch Changes
