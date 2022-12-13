@@ -127,6 +127,7 @@ function FieldImageUploaderStateless({
       .on('complete', (result) => {
         setIsLoading(false);
         setProgress(null);
+        console.log(result);
         if (result.failed.length > 0) {
           setError(name, { type: 'custom', message: result.failed[0].error });
         } else {

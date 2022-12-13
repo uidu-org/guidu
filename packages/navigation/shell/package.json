@@ -29,6 +29,6 @@
     "@uidu/docs": "^0.5.23",
     "@uidu/navigation": "^1.0.32",
     "react-router-dom": "^5.3.4",
-    "react-scroll": "^1.8.8"
+    "react-scroll": "^1.8.9"
   }
 }

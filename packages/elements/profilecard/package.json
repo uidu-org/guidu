@@ -34,7 +34,7 @@
     "loader-utils": "^2.0.4",
     "lodash": "^4.17.21",
     "sinon": "^14.0.2",
-    "typescript": "^4.9.3",
+    "typescript": "^4.9.4",
     "uid": "^2.0.1"
   },
   "supportedLocales": [

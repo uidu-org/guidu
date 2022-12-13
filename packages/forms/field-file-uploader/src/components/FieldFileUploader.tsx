@@ -69,6 +69,7 @@ function FieldFileUploader({
         clearErrors(name);
       })
       .on('complete', (result) => {
+        console.log(result);
         if (result.failed.length > 0) {
           setError(name, { type: 'custom', message: result.failed[0].error });
         } else if (mergeOptions.restrictions?.maxNumberOfFiles === 1) {

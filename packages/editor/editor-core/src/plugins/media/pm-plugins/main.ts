@@ -411,6 +411,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
         proxyReactContext: reactContext(),
         uploadOptions,
         onComplete: (result) => {
+          console.log(result);
           const files = result.successful.map(uploadOptions.responseHandler);
           this.insertFile(files);
         },

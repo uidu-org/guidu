@@ -19,7 +19,7 @@
     "@uidu/docs": "^0.5.23",
     "@uidu/form": "^2.2.1",
     "styled-components": "^5.3.6",
-    "twin.macro": "^3.0.1"
+    "twin.macro": "^3.1.0"
   },
   "peerDependencies": {
     "styled-components": "*",

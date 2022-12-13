@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.23",
-    "twin.macro": "^3.0.1"
+    "twin.macro": "^3.1.0"
   },
   "peerDependencies": {
     "twin.macro": "*"

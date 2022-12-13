@@ -15,7 +15,7 @@
     "@cubejs-client/core": "^0.31.15",
     "@cubejs-client/react": "^0.31.15",
     "@loadable/component": "^5.15.2",
-    "@tanstack/react-table": "^8.7.0",
+    "@tanstack/react-table": "^8.7.2",
     "@uidu/dashboard-manager": "^2.0.18",
     "@uidu/dashlet-controls": "^1.1.13",
     "@uidu/data-fields": "^2.1.25",
@@ -34,7 +34,7 @@
     "react-intl": "^6.2.5",
     "styled-components": "^5.3.6",
     "tslib": "^2.4.1",
-    "twin.macro": "^3.0.1",
+    "twin.macro": "^3.1.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
