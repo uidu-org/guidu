@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.1.12
+
+### Patch Changes
+
+- 6d5240c15: Added console.log in s3 upload
+
 ## 2.1.11
 
 ### Patch Changes

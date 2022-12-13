@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 2.0.18
+
+### Patch Changes
+
+- 6d5240c15: Added console.log in s3 upload
+- Updated dependencies [6d5240c15]
+  - @uidu/data-controls@4.0.19
+  - @uidu/data-fields@2.1.26
+
 ## 2.0.17
 
 ### Patch Changes

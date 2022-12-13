@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 4.3.6
+
+### Patch Changes
+
+- 6d5240c15: Added console.log in s3 upload
+- Updated dependencies [6d5240c15]
+  - @uidu/board@2.1.3
+  - @uidu/data-controls@4.0.19
+  - @uidu/data-fields@2.1.26
+  - @uidu/data-views@3.0.18
+  - @uidu/gallery@2.0.18
+  - @uidu/list@3.1.12
+  - @uidu/table@3.4.5
+
 ## 4.3.5
 
 ### Patch Changes

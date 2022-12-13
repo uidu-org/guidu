@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 2.1.31
+
+### Patch Changes
+
+- 6d5240c15: Added console.log in s3 upload
+- Updated dependencies [6d5240c15]
+  - @uidu/dashboard-manager@2.0.19
+  - @uidu/data-fields@2.1.26
+  - @uidu/table@3.4.5
+
 ## 2.1.30
 
 ### Patch Changes

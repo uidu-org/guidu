@@ -1,5 +1,11 @@
 # @uidu/email-renderer
 
+## 0.1.7
+
+### Patch Changes
+
+- 6d5240c15: Added console.log in s3 upload
+
 ## 0.1.6
 
 ### Patch Changes

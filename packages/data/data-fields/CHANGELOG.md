@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.1.26
+
+### Patch Changes
+
+- 6d5240c15: Added console.log in s3 upload
+
 ## 2.1.25
 
 ### Patch Changes

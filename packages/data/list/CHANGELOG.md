@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.1.12
+
+### Patch Changes
+
+- 6d5240c15: Added console.log in s3 upload
+- Updated dependencies [6d5240c15]
+  - @uidu/data-fields@2.1.26
+
 ## 3.1.11
 
 ### Patch Changes

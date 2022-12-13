@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-file-uploader",
-  "version": "2.1.11",
+  "version": "2.1.12",
   "description": "A file uploader",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-file-uploader",
   "license": "MIT",
