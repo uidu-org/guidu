@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.0.19
+
+### Patch Changes
+
+- 6d5240c15: Added console.log in s3 upload
+- Updated dependencies [6d5240c15]
+  - @uidu/dashlets@2.1.31
+
 ## 2.0.18
 
 ### Patch Changes

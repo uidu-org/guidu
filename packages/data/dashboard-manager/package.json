@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashboard-manager",
-  "version": "2.0.18",
+  "version": "2.0.19",
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/dashboard-manager",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "@tanstack/react-table": "^8.7.2",
     "@types/react-grid-layout": "^1.3.2",
     "@uidu/dashboard-controls": "^1.1.12",
-    "@uidu/dashlets": "^2.1.29",
+    "@uidu/dashlets": "^2.1.31",
     "d3-collection": "^1.0.7",
     "lodash": "^4.17.21",
     "react": "^18.2.0",

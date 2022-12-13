@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 2.0.6
+
+### Patch Changes
+
+- 6d5240c15: Added console.log in s3 upload
+
 ## 2.0.5
 
 ### Patch Changes

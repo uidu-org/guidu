@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 3.4.5
+
+### Patch Changes
+
+- 6d5240c15: Added console.log in s3 upload
+- Updated dependencies [6d5240c15]
+  - @uidu/data-fields@2.1.26
+  - @uidu/data-manager@4.3.6
+
 ## 3.4.4
 
 ### Patch Changes
