@@ -403,7 +403,16 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     if (!pickers.length) {
       const popupPicker = MediaPickerFactoryClass({
         uploadOptions,
-        ...this.mediaOptions.mediaPickerProps(this),
+        ...(this.mediaOptions.mediaPickerProps
+          ? this.mediaOptions.mediaPickerProps(this)
+          : {
+              onComplete: (result) => {
+                const files = result.successful.map(
+                  uploadOptions.responseHandler,
+                );
+                this.insertFiles(files);
+              },
+            }),
       });
       pickerPromises.push(popupPicker);
       // @ts-ignore
