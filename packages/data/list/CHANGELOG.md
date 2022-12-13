@@ -1,5 +1,11 @@
 # @uidu/list
 
+## 3.1.13
+
+### Patch Changes
+
+- ef9ed1de2: Try adding more events to media picker to extend editor-core
+
 ## 3.1.12
 
 ### Patch Changes

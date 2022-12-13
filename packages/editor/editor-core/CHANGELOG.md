@@ -1,5 +1,19 @@
 # @uidu/editor-core
 
+## 2.1.0
+
+### Minor Changes
+
+- ef9ed1de2: Try adding more events to media picker to extend editor-core
+
+### Patch Changes
+
+- Updated dependencies [ef9ed1de2]
+  - @uidu/editor-common@2.1.0
+  - @uidu/media-card@0.8.0
+  - @uidu/media-picker@0.11.0
+  - @uidu/media-filmstrip@0.5.13
+
 ## 2.0.6
 
 ### Patch Changes

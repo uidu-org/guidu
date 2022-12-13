@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.0
+
+### Minor Changes
+
+- ef9ed1de2: Try adding more events to media picker to extend editor-core
+
 ## 0.7.23
 
 ### Patch Changes

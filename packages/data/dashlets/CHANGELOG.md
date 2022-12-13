@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 2.1.32
+
+### Patch Changes
+
+- ef9ed1de2: Try adding more events to media picker to extend editor-core
+- Updated dependencies [ef9ed1de2]
+  - @uidu/table@3.4.6
+
 ## 2.1.31
 
 ### Patch Changes

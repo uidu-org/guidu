@@ -1,5 +1,14 @@
 # @uidu/renderer
 
+## 1.2.11
+
+### Patch Changes
+
+- Updated dependencies [ef9ed1de2]
+  - @uidu/editor-common@2.1.0
+  - @uidu/media-card@0.8.0
+  - @uidu/media-filmstrip@0.5.13
+
 ## 1.2.10
 
 ### Patch Changes
