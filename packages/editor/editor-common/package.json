@@ -18,6 +18,7 @@
     "@uidu/analytics-namespaced-context": "^0.4.20",
     "@uidu/editor-json-transformer": "1.0.8",
     "@uidu/emoji": "^0.6.29",
+    "@uidu/media-core": "1.1.7",
     "@uidu/mentions": "^0.5.2",
     "@uidu/profilecard": "^0.3.31",
     "@uidu/theme": "^0.6.27",

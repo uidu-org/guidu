@@ -1,5 +1,5 @@
-import { companionUrl, MediaUploadOptions } from '@uidu/media-core';
-import Uppy, { UploadResult } from '@uppy/core';
+import { companionUrl } from '@uidu/media-core';
+import Uppy from '@uppy/core';
 import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
 import '@uppy/drag-drop/dist/style.css';
@@ -11,6 +11,7 @@ import '@uppy/url/dist/style.css';
 import Webcam from '@uppy/webcam';
 import '@uppy/webcam/dist/style.css';
 import React from 'react';
+import { MediaPickerProps } from '../types';
 
 const defaultOnComplete = () => {};
 
@@ -18,11 +19,13 @@ export default function MediaPicker({
   uploadOptions,
   onComplete = defaultOnComplete,
   open = false,
-}: {
-  onComplete: (result: UploadResult) => void;
-  open: boolean;
-  uploadOptions: MediaUploadOptions;
-}) {
+  onFileAdded = defaultOnComplete,
+  onFileRemoved = defaultOnComplete,
+  onUploadError = defaultOnComplete,
+  onUploadProgress = defaultOnComplete,
+  onUploadSuccess = defaultOnComplete,
+  onUploadRetry = defaultOnComplete,
+}: MediaPickerProps) {
   const uppy = useUppy(() =>
     new Uppy({
       debug: false,
@@ -50,10 +53,14 @@ export default function MediaPicker({
         uppy.setFileMeta(file.id, {
           size: file.size,
         });
+        onFileAdded(file);
       })
-      .on('complete', (result) => {
-        onComplete(result);
-      }),
+      .on('file-removed', onFileRemoved)
+      .on('upload-error', onUploadError)
+      .on('upload-progress', onUploadProgress)
+      .on('upload-success', onUploadSuccess)
+      .on('upload-retry', onUploadRetry)
+      .on('complete', onComplete),
   );
 
   return (

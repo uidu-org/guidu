@@ -30,8 +30,8 @@ import { getFeatureFlags } from '../../feature-flags-context';
 import { WidthPluginState } from '../../width';
 import { MediaState } from '../types';
 import { alignmentLayouts } from '../ui/ResizableMediaSingle/utils';
-import { copyOptionalAttrsFromMediaState } from '../utils/media-common';
 import { isImage } from './is-image';
+import { copyOptionalAttrsFromMediaState } from './media-common';
 
 export const wrappedLayouts: MediaSingleLayout[] = [
   'wrap-left',
@@ -273,7 +273,7 @@ export const alignAttributes = (
   oldAttrs: MediaSingleAttributes,
   gridSize: number = 12,
 ): MediaSingleAttributes => {
-  let width = oldAttrs.width;
+  let { width } = oldAttrs;
   const oldLayout: MediaSingleLayout = oldAttrs.layout;
 
   if (
@@ -373,7 +373,8 @@ export const calcMediaPxWidth = (opts: {
 
   if (nestedWidth) {
     return Math.min(calculatedPctWidth || origWidth, nestedWidth);
-  } else if (layout === 'wide') {
+  }
+  if (layout === 'wide') {
     if (lineLength) {
       const wideWidth = Math.ceil(lineLength * breakoutWideScaleRatio);
       return wideWidth > width ? lineLength : wideWidth;
@@ -381,9 +382,9 @@ export const calcMediaPxWidth = (opts: {
   } else if (layout === 'full-width') {
     return width - akEditorBreakoutPadding;
   } else if (calculatedPctWidth) {
-    if (wrappedLayouts.indexOf(layout!) > -1) {
+    if (wrappedLayouts.indexOf(layout) > -1) {
       if (calculatedResizedPctWidth) {
-        if (resizedPctWidth! < 50) {
+        if (resizedPctWidth < 50) {
           return calculatedResizedPctWidth;
         }
         return calculatedPctWidth;

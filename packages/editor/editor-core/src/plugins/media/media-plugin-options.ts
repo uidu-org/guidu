@@ -18,5 +18,6 @@ export type MediaPluginOptions = {
   waitForMediaUpload?: boolean;
   customDropzoneContainer?: HTMLElement;
   customMediaPicker?: CustomMediaPicker;
+  mediaPickerProps?: (mediaState: MediaState) => void;
   allowResizing: boolean;
 };

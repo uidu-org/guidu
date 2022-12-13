@@ -1,16 +1,15 @@
 import { MediaUploadOptions } from '@uidu/media-core';
 import { UploadResult } from '@uppy/core';
+import MediaPicker from './components/MediaPicker';
 
-export { default } from './components/MediaPicker';
 export * from './types';
 
 export async function MediaPickerFactoryClass({
   uploadOptions,
-  proxyReactContext,
   onComplete,
+  ...rest
 }: {
   uploadOptions: MediaUploadOptions;
-  proxyReactContext: any;
   onComplete: (result: UploadResult) => void;
 }): Promise<any> {
   const [{ PopupImpl }] = await Promise.all([
@@ -19,7 +18,7 @@ export async function MediaPickerFactoryClass({
     ),
   ]);
 
-  //  const mediaClient = getMediaClient(mediaClientConfig);
-
-  return PopupImpl({ uploadOptions, proxyReactContext, onComplete });
+  return PopupImpl({ uploadOptions, onComplete, ...rest });
 }
+
+export default MediaPicker;

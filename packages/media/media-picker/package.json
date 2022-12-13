@@ -30,6 +30,12 @@
     "@uidu/docs": "^0.5.23",
     "@uidu/modal-dialog": "^1.1.3"
   },
+  "preconstruct": {
+    "entrypoints": [
+      "./index.ts",
+      "./types.ts"
+    ]
+  },
   "publishConfig": {
     "access": "public"
   }

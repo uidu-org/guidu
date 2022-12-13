@@ -41,7 +41,7 @@ export interface MediaPluginState {
   setMediaProvider: (mediaProvider?: Promise<MediaProvider>) => Promise<void>;
   getMediaOptions: () => MediaPluginOptions;
   // shouldUseMediaPickerPopup: () => boolean;
-  insertFile: (mediaState: MediaState) => void;
+  insertFiles: (mediaState: MediaState[]) => void;
   // addPendingTask: (promise: Promise<any>) => void;
   splitMediaGroup: () => boolean;
   onPopupPickerClose: () => void;

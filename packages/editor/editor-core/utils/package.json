@@ -1,0 +1,4 @@
+{
+  "main": "dist/uidu-editor-core-utils.cjs.js",
+  "module": "dist/uidu-editor-core-utils.esm.js"
+}

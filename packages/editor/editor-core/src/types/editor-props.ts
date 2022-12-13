@@ -17,7 +17,7 @@ import { AnalyticsHandler } from '../analytics/handler';
 import { AnnotationProvider } from '../plugins/annotation/types';
 import { CardOptions } from '../plugins/card/types';
 import { CollabEditOptions } from '../plugins/collab-edit/types';
-import { MediaOptions, MediaState } from '../plugins/media/types';
+import { MediaState } from '../plugins/media/types';
 import { QuickInsertOptions } from '../plugins/quick-insert/types';
 import { TextFormattingOptions } from '../plugins/text-formatting/types';
 import { MenuItem } from '../ui/DropdownMenu/types';
@@ -109,7 +109,7 @@ export interface EditorProps {
 
   // Set to configure media features. Media single refers to the embedded version of media,
   // which is probably what you want. Media group refers to a filmstrip, thumbnail view of media files which was used in Stride.
-  media?: MediaOptions;
+  mediaProvider?: Providers['mediaProvider'];
   collabEdit?: CollabEditOptions;
 
   // Set to disable text formatting styles. If not specified, they will be all enabled by default. Code here refers to inline code.

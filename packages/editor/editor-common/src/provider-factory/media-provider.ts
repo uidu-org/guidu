@@ -1,3 +1,4 @@
+import { MediaState } from '@uidu/editor-core';
 import { MediaClientConfig, MediaUploadOptions } from '@uidu/media-core';
 
 export interface FeatureFlags {}
@@ -13,9 +14,9 @@ export type MediaProvider = {
   uploadMediaClientConfig?: MediaClientConfig;
 
   /**
-   * (optional) For any additional feature to be enabled
+   * (optional) Media picker props to handle media picker in different contexts
    */
-  featureFlags?: FeatureFlags;
+  mediaPickerProps?: (mediaState: MediaState) => void;
 
   /**
    * Used for displaying Media Cards and downloading files.

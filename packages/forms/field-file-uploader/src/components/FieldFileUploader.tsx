@@ -36,6 +36,10 @@ function FieldFileUploader({
   className,
   prompt: Prompt = DefaultPrompt,
   fileList: FileList = DefaultFileList,
+  onFileAdded = noop,
+  onFileRemoved = noop,
+  onUploadError = noop,
+  onUploadComplete = noop,
   ...rest
 }: FieldFileUploaderProps) {
   const { setError, clearErrors } = useFormContext();
@@ -65,11 +69,12 @@ function FieldFileUploader({
   const uppy = useUppy(() =>
     new Uppy(mergeOptions)
       .use(uploadOptions.module, uploadOptions.options)
-      .on('file-added', () => {
+      .on('file-added', (file) => {
+        onFileAdded(file);
         clearErrors(name);
       })
       .on('complete', (result) => {
-        console.log(result);
+        onUploadComplete(result);
         if (result.failed.length > 0) {
           setError(name, { type: 'custom', message: result.failed[0].error });
         } else if (mergeOptions.restrictions?.maxNumberOfFiles === 1) {
@@ -81,10 +86,12 @@ function FieldFileUploader({
       .on('error', (error) => {
         setError(name, { type: 'custom', message: error.message });
       })
-      .on('upload-error', (_file, error) => {
+      .on('upload-error', (file, error) => {
+        onUploadError(file, error);
         setError(name, { type: 'custom', message: error.message });
       })
-      .on('file-removed', () => {
+      .on('file-removed', (file, reason) => {
+        onFileRemoved(file, reason);
         field.onChange(uppy.getFiles().map(uploadOptions.responseHandler));
         onChange(name, uppy.getFiles().map(uploadOptions.responseHandler));
       })

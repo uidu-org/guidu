@@ -87,7 +87,12 @@
   "preconstruct": {
     "entrypoints": [
       "./index.ts",
-      "./plugins/index.ts"
+      "./plugins/index.ts",
+      "./utils/index.ts",
+      "./nodeviews/index.ts",
+      "./commands/index.ts",
+      "./actions/index.ts",
+      "./analytics/index.ts"
     ]
   },
   "supportedLocales": [

@@ -234,10 +234,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     if (this.allowsUploads) {
       this.uploadMediaClientConfig = this.mediaProvider.uploadMediaClientConfig;
       if (this.mediaProvider.uploadOptions) {
-        await this.initPickers(
-          this.mediaProvider.uploadOptions,
-          this.reactContext,
-        );
+        await this.initPickers(this.mediaProvider.uploadOptions);
       } else {
         this.destroyPickers();
       }
@@ -290,7 +287,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
    *
    * called when we insert a new file via the picker (connected via pickerfacade)
    */
-  insertFile = (files) => {
+  insertFiles = (files: MediaState[]) => {
     this.allUploadsFinished = true;
 
     if (files.length === 1) {
@@ -396,10 +393,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     this.customPicker = undefined;
   };
 
-  private async initPickers(
-    uploadOptions: MediaUploadOptions,
-    reactContext: () => {},
-  ) {
+  private async initPickers(uploadOptions: MediaUploadOptions) {
     if (this.destroyed) {
       return undefined;
     }
@@ -408,14 +402,8 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     // create pickers if they don't exist, re-use otherwise
     if (!pickers.length) {
       const popupPicker = MediaPickerFactoryClass({
-        proxyReactContext: reactContext(),
         uploadOptions,
-        onComplete: (result) => {
-          console.log(result);
-          const files = result.successful.map(uploadOptions.responseHandler);
-          this.insertFile(files);
-        },
-        // onClose: () => this.onPopupPickerClose(),
+        ...this.mediaOptions.mediaPickerProps(this),
       });
       pickerPromises.push(popupPicker);
       // @ts-ignore

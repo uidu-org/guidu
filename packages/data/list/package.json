@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.20.6",
     "@tanstack/react-table": "^8.7.2",
-    "@tanstack/react-virtual": "^3.0.0-beta.23",
+    "@tanstack/react-virtual": "^3.0.0-beta.30",
     "@uidu/data-fields": "^2.1.26",
     "react": "^18.2.0",
     "styled-components": "^5.3.6",

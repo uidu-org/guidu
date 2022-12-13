@@ -6,27 +6,26 @@ type Props = {
   mediaState: MediaPluginState;
 };
 
-export default class ClipboardMediaPickerWrapper extends React.Component<Props> {
-  show = () => {};
+const noopNull = () => {};
 
-  setUploadOptions = async () => {
-    const {
-      mediaState: { mediaProvider },
-    } = this.props;
-    return await mediaProvider?.uploadOptions;
-  };
+export default function ClipboardMediaPickerWrapper({
+  mediaState,
+  mediaState: { mediaProvider, mediaOptions },
+}: Props) {
+  if (!mediaProvider) return null;
 
-  render() {
-    const { mediaState } = this.props;
-    if (!mediaState.mediaProvider) return null;
+  const mediaPickerProps = mediaOptions.mediaPickerProps || noopNull;
 
-    return (
-      <MediaPicker
-        uploadOptions={mediaState.mediaProvider.uploadOptions}
-        onComplete={(result) => {
-          mediaState.insertFile(result);
-        }}
-      />
-    );
-  }
+  return (
+    <MediaPicker
+      uploadOptions={mediaState.mediaProvider.uploadOptions}
+      onComplete={(result) => {
+        mediaState.insertFiles(
+          result.successful.map(mediaProvider.uploadOptions.responseHandler),
+        );
+      }}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...mediaPickerProps(mediaState)}
+    />
+  );
 }

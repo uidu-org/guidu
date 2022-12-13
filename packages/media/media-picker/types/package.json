@@ -1,0 +1,4 @@
+{
+  "main": "dist/uidu-media-picker-types.cjs.js",
+  "module": "dist/uidu-media-picker-types.esm.js"
+}

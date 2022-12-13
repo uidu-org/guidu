@@ -17,7 +17,6 @@ export default function MediaCardViewer({
   disableOverlay = true,
   cardDimensions: dimensions = defaultDimensions,
 }) {
-  console.log(dimensions);
   const { downloadUrl, kind, filename, extension, metatada } = file;
 
   return (

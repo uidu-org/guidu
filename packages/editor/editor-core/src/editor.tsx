@@ -182,7 +182,7 @@ export default class Editor extends PureComponent<EditorProps> {
       presenceProvider,
       macroProvider,
       collabEdit,
-      media,
+      mediaProvider,
       quickInsert,
       autoformattingProvider,
       extensionProviders,
@@ -200,7 +200,7 @@ export default class Editor extends PureComponent<EditorProps> {
       contextIdentifierProvider,
     );
 
-    this.providerFactory.setProvider('mediaProvider', media && media.provider);
+    this.providerFactory.setProvider('mediaProvider', mediaProvider);
     this.providerFactory.setProvider(
       'collabEditProvider',
       collabEdit && collabEdit.provider

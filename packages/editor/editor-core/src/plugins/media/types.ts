@@ -5,9 +5,10 @@ import {
   MediaClientConfig,
   MediaUploadOptions,
 } from '@uidu/media-core';
-import { MediaFile } from '@uidu/media-picker/types';
+import { MediaFile, MediaPickerProps } from '@uidu/media-picker';
 import { NodeType } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
+import { MediaPluginState } from './pm-plugins/types';
 
 export interface MediaOptions {
   provider?: Providers['mediaProvider'];
@@ -36,6 +37,10 @@ export interface MediaOptions {
   altTextValidator?: (value: string) => string[];
   useForgePlugins?: boolean;
   useMediaPickerPopup?: boolean;
+
+  mediaPickerProps?: (
+    mediaState: MediaPluginState,
+  ) => Omit<MediaPickerProps, 'uploadOptions'>;
 }
 
 export interface MediaSingleOptions {

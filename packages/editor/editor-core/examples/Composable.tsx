@@ -58,7 +58,7 @@ export default function Composable() {
               <WithEditorActions
                 render={(actions) => (
                   <Editor
-                    tw="bg-red-500 py-5"
+                    tw="py-5 px-5"
                     shouldFocus
                     containerElement={element.current}
                     onChange={handleChange(actions)}
@@ -77,18 +77,23 @@ export default function Composable() {
                       tablesPlugin({ tableOptions: {} }),
                       // datePlugin(),
                       mediaPlugin({
-                        provider: Promise.resolve({
-                          uploadOptions: localUploadOptions({
-                            endpoint: 'https://uidu.local:8443/upload',
-                          }),
-                          viewMediaClientConfig: Promise.resolve('test'),
-                          uploadMediaClientConfig: Promise.resolve('test'),
-                        }),
                         allowMediaGroup: true,
                         allowMediaSingle: true,
                         allowAltTextOnImages: true,
                         allowLinking: true,
                         allowResizing: true,
+                        mediaPickerProps: (mediaState) => ({
+                          onFileAdded: console.log,
+                          onFileRemoved: console.log,
+                          onComplete: (result) => {
+                            const files = result.successful.map(
+                              localUploadOptions({
+                                endpoint: 'https://uidu.local:8443/upload',
+                              }).responseHandler,
+                            );
+                            mediaState.insertFiles(files);
+                          },
+                        }),
                       }),
                     ]}
                     mentionProvider={Promise.resolve(
@@ -99,20 +104,13 @@ export default function Composable() {
                           accountId === mention.id,
                       }),
                     )}
-                    media={{
-                      provider: Promise.resolve({
-                        uploadOptions: localUploadOptions({
-                          endpoint: 'https://uidu.local:8443/upload',
-                        }),
-                        viewMediaClientConfig: Promise.resolve('test'),
-                        uploadMediaClientConfig: Promise.resolve('test'),
+                    mediaProvider={Promise.resolve({
+                      uploadOptions: localUploadOptions({
+                        endpoint: 'https://uidu.local:8443/upload',
                       }),
-                      allowMediaGroup: true,
-                      allowMediaSingle: true,
-                      allowAltTextOnImages: true,
-                      allowLinking: true,
-                      allowResizing: true,
-                    }}
+                      viewMediaClientConfig: Promise.resolve('test'),
+                      uploadMediaClientConfig: Promise.resolve('test'),
+                    })}
                     defaultValue={value}
                     placeholder="Start typing..."
                   >

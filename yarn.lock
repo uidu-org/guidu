@@ -12,9 +12,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@amcharts/amcharts4@npm:^4.10.30":
-  version: 4.10.30
-  resolution: "@amcharts/amcharts4@npm:4.10.30"
+"@amcharts/amcharts4@npm:^4.10.31":
+  version: 4.10.31
+  resolution: "@amcharts/amcharts4@npm:4.10.31"
   dependencies:
     "@babel/runtime": ^7.6.3
     core-js: ^3.0.0
@@ -31,7 +31,7 @@ __metadata:
     stackblur-canvas: ^2.0.0
     tslib: ^2.0.1
     xlsx: ^0.18.5
-  checksum: 18841543ba47ef81bcd08b6f2b59f6c04f70e5da4672c7ea88f1ee3c5ad50c90540c3dcafc5c600e4e196ed1fe71642877c3f720916477e268c397de05941f3a
+  checksum: 8bb5a28d5c62a86d867b297b527988365c6054473635cd4be6d54447e722ddc0a1751e6b332c2295dfdb9c56e4c471fa5581db23d04b88fad0266822e751eb9b
   languageName: node
   linkType: hard
 
@@ -2898,9 +2898,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:8.103.7":
-  version: 8.103.7
-  resolution: "@fluentui/react@npm:8.103.7"
+"@fluentui/react@npm:8.103.8":
+  version: 8.103.8
+  resolution: "@fluentui/react@npm:8.103.8"
   dependencies:
     "@fluentui/date-time-utilities": ^8.5.3
     "@fluentui/font-icons-mdl2": ^8.5.4
@@ -2921,7 +2921,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <19.0.0"
     react: ">=16.8.0 <19.0.0"
     react-dom: ">=16.8.0 <19.0.0"
-  checksum: 69c70e09a83f15333ba5c7915595577733b359a07b43282a05f5c774c140c91bc29517c34bdb9e6ac7711ab2332d8d01ce1d3c5d0ec9bed6ff814feb769808e2
+  checksum: d554fd8d7273e013e8b09e8c43bbca1e590639e7838e5a2fa443a2520d5a89c7b3ea1c7334d087ae370ac1dad8c00f416696fd27d3eb441fb0b3ecbba4e068e5
   languageName: node
   linkType: hard
 
@@ -5134,14 +5134,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-virtual@npm:^3.0.0-beta.23":
-  version: 3.0.0-beta.23
-  resolution: "@tanstack/react-virtual@npm:3.0.0-beta.23"
+"@tanstack/react-virtual@npm:^3.0.0-beta.30":
+  version: 3.0.0-beta.30
+  resolution: "@tanstack/react-virtual@npm:3.0.0-beta.30"
   dependencies:
-    "@tanstack/virtual-core": 3.0.0-beta.23
+    "@tanstack/virtual-core": 3.0.0-beta.30
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 07adb782da90f6bab08326d12cf711cebe7af1a54e675ab803e20826332a7e9da803b0a00a40ac8acf745b3cb6ecb6c4bf49055b98c26e0042b781dbb9b43ac0
+  checksum: f5e558acee618be35790cd217786960d91a465922161fe39b4e994f841b6330910763d2586ebc8ffbdfe38a3833dfc4b5aece446c2d713c3e3c4f51b9b893cab
   languageName: node
   linkType: hard
 
@@ -5152,10 +5152,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/virtual-core@npm:3.0.0-beta.23":
-  version: 3.0.0-beta.23
-  resolution: "@tanstack/virtual-core@npm:3.0.0-beta.23"
-  checksum: 94d1bdad239a8bfe7c013df16b97bb6525ec93f8ea5d672142a34e1a88b94d7aacecfe87966106a874a78453a4dbad0f07b9a00af28b3ee800fec5d2eb8b4a27
+"@tanstack/virtual-core@npm:3.0.0-beta.30":
+  version: 3.0.0-beta.30
+  resolution: "@tanstack/virtual-core@npm:3.0.0-beta.30"
+  checksum: 5d43b2ed529b6f422473905d214680c3fd4c2b19a4f9d22a6fc575f3eadf37d553a307e818e831737846875b6a1f486b3a991e0a127f3ffff2aff040c8a33d11
   languageName: node
   linkType: hard
 
@@ -5514,14 +5514,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/google.maps@npm:*":
-  version: 3.50.5
-  resolution: "@types/google.maps@npm:3.50.5"
-  checksum: 1754518ffc1719c2086834ee1cab45b4a2a0ec007f3d1101d46afda46d7ef96a989ab977333352a1c73c5267ce2e7bec7e5bfeb74146a723be746279c3ad086c
-  languageName: node
-  linkType: hard
-
-"@types/google.maps@npm:^3.51.0":
+"@types/google.maps@npm:*, @types/google.maps@npm:^3.51.0":
   version: 3.51.0
   resolution: "@types/google.maps@npm:3.51.0"
   checksum: fb2dbf823814a6380e6b32abfabc30eed72166f0a08f107a0adbd84ad868ea751f826651af91cf745082cefd59813bac26ab757a1fe938633e7404d4df742ae8
@@ -5813,10 +5806,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 18.11.11
-  resolution: "@types/node@npm:18.11.11"
-  checksum: c4b1176a8f1714a3ee3fc2a5e1d568b0cd50209000282db5c68154b3c975952928dbb834ef3a0ce55bd7b345ae29f2cbf4a34635a070294d135a24254231386a
+"@types/node@npm:*, @types/node@npm:^18.11.14":
+  version: 18.11.14
+  resolution: "@types/node@npm:18.11.14"
+  checksum: 1effaf6d55bbcccde9bca763e6454ebf92047726450256ccc0673bf44e4661fbddcd788b0779bad8a13809b05a7bdcbfba81db0713235478b866d553be864be9
   languageName: node
   linkType: hard
 
@@ -5838,13 +5831,6 @@ __metadata:
   version: 16.18.3
   resolution: "@types/node@npm:16.18.3"
   checksum: 6b8ba2ea5d842f7986e366cb9184c54d273d492784dc62e08fd5afeae938d9b61aec6e4222d2541cd18f9b1412ba361bbcb3f4204fb003608af80a2a6af959f9
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^18.11.13":
-  version: 18.11.13
-  resolution: "@types/node@npm:18.11.13"
-  checksum: b0c1aa3bd2f5df8240e61096a49d6d4be600109b824d23408ec4ba1ec057dc0c60588e09f73b8a60455ad26d367e9c5562fad8403099f885cbc7b4cace83ec4c
   languageName: node
   linkType: hard
 
@@ -6440,13 +6426,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:5.45.1":
-  version: 5.45.1
-  resolution: "@typescript-eslint/types@npm:5.45.1"
-  checksum: 7f809d2951812ae5752c9d1617b7e6dfd662370390b0ddba72005ebc62bd5f04745567bb62cf00a9e43db9dfd222d18ea22945f5457f76ea86386ef7b98c8424
-  languageName: node
-  linkType: hard
-
 "@typescript-eslint/types@npm:5.46.1":
   version: 5.46.1
   resolution: "@typescript-eslint/types@npm:5.46.1"
@@ -6454,7 +6433,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:5.46.1":
+"@typescript-eslint/typescript-estree@npm:5.46.1, @typescript-eslint/typescript-estree@npm:^5.13.0, @typescript-eslint/typescript-estree@npm:^5.9.1":
   version: 5.46.1
   resolution: "@typescript-eslint/typescript-estree@npm:5.46.1"
   dependencies:
@@ -6469,24 +6448,6 @@ __metadata:
     typescript:
       optional: true
   checksum: 21499b927b4118cd51e841b2e1b7e55621135f923f461b75dc8ca8442de38a82da5a0232dce5229e0266b6fc12d70696e0e912fcf1483d4c44f02e4cad39ed98
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/typescript-estree@npm:^5.13.0, @typescript-eslint/typescript-estree@npm:^5.9.1":
-  version: 5.45.1
-  resolution: "@typescript-eslint/typescript-estree@npm:5.45.1"
-  dependencies:
-    "@typescript-eslint/types": 5.45.1
-    "@typescript-eslint/visitor-keys": 5.45.1
-    debug: ^4.3.4
-    globby: ^11.1.0
-    is-glob: ^4.0.3
-    semver: ^7.3.7
-    tsutils: ^3.21.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 867b19ba050af7410c75e4e42b511d4299c8043d238959e9794bb65d7a9db1a875880e5dd50f112896218f3a3d163cd8ce61db94034ca628eca4f7ddccb1d348
   languageName: node
   linkType: hard
 
@@ -6505,16 +6466,6 @@ __metadata:
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
   checksum: db9fd1dfb2390e66041f9529d564f38ccf74042de68e0e1e3d319ba4d02d7cd969d75dc056f938b98acab53ad7c1e36c68eabb15c0b2e2296b081652fa8d3820
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/visitor-keys@npm:5.45.1":
-  version: 5.45.1
-  resolution: "@typescript-eslint/visitor-keys@npm:5.45.1"
-  dependencies:
-    "@typescript-eslint/types": 5.45.1
-    eslint-visitor-keys: ^3.3.0
-  checksum: 725a434fb05010b6ead7e880fa1fcdb4dbc7421b80667e96ad27fcfb3c2b2b0edde64be488740577dd147547fc4a9eac52e2602eb6a8a261ee14a917d4a50c4f
   languageName: node
   linkType: hard
 
@@ -6767,7 +6718,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/board@^2.1.2, @uidu/board@workspace:packages/data/board":
+"@uidu/board@^2.1.3, @uidu/board@workspace:packages/data/board":
   version: 0.0.0-use.local
   resolution: "@uidu/board@workspace:packages/data/board"
   dependencies:
@@ -6953,7 +6904,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/dashboard-manager@^2.0.18, @uidu/dashboard-manager@workspace:packages/data/dashboard-manager":
+"@uidu/dashboard-manager@^2.0.19, @uidu/dashboard-manager@workspace:packages/data/dashboard-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/dashboard-manager@workspace:packages/data/dashboard-manager"
   dependencies:
@@ -6963,7 +6914,7 @@ __metadata:
     "@tanstack/react-table": ^8.7.2
     "@types/react-grid-layout": ^1.3.2
     "@uidu/dashboard-controls": ^1.1.12
-    "@uidu/dashlets": ^2.1.29
+    "@uidu/dashlets": ^2.1.31
     "@uidu/docs": ^0.5.23
     "@uidu/shell": ^2.1.41
     d3-collection: ^1.0.7
@@ -7017,23 +6968,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/dashlets@^2.1.29, @uidu/dashlets@workspace:packages/data/dashlets":
+"@uidu/dashlets@^2.1.29, @uidu/dashlets@^2.1.31, @uidu/dashlets@workspace:packages/data/dashlets":
   version: 0.0.0-use.local
   resolution: "@uidu/dashlets@workspace:packages/data/dashlets"
   dependencies:
-    "@amcharts/amcharts4": ^4.10.30
+    "@amcharts/amcharts4": ^4.10.31
     "@amcharts/amcharts4-geodata": ^4.1.26
     "@babel/runtime": ^7.20.6
     "@cubejs-client/core": ^0.31.15
     "@cubejs-client/react": ^0.31.15
     "@loadable/component": ^5.15.2
     "@tanstack/react-table": ^8.7.2
-    "@uidu/dashboard-manager": ^2.0.18
+    "@uidu/dashboard-manager": ^2.0.19
     "@uidu/dashlet-controls": ^1.1.13
-    "@uidu/data-fields": ^2.1.25
+    "@uidu/data-fields": ^2.1.26
     "@uidu/docs": ^0.5.23
     "@uidu/spinner": ^0.5.22
-    "@uidu/table": 3.4.4
+    "@uidu/table": 3.4.5
     "@uidu/tooltip": ^0.5.28
     d3-array: ^3.2.1
     gql-query-builder: ^3.8.0
@@ -7052,7 +7003,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-controls@^4.0.17, @uidu/data-controls@^4.0.18, @uidu/data-controls@workspace:packages/data/data-controls":
+"@uidu/data-controls@^4.0.19, @uidu/data-controls@workspace:packages/data/data-controls":
   version: 0.0.0-use.local
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
@@ -7061,9 +7012,9 @@ __metadata:
     "@tanstack/react-table": ^8.7.2
     "@uidu/button": 1.3.34
     "@uidu/checkbox": ^2.0.9
-    "@uidu/data-fields": ^2.1.25
-    "@uidu/data-manager": 4.3.5
-    "@uidu/data-views": ^3.0.17
+    "@uidu/data-fields": ^2.1.26
+    "@uidu/data-manager": 4.3.6
+    "@uidu/data-views": ^3.0.18
     "@uidu/docs": ^0.5.23
     "@uidu/drawer": ^0.7.29
     "@uidu/field-text": ^2.0.6
@@ -7088,7 +7039,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-fields@^2.1.24, @uidu/data-fields@^2.1.25, @uidu/data-fields@workspace:packages/data/data-fields":
+"@uidu/data-fields@^2.1.26, @uidu/data-fields@workspace:packages/data/data-fields":
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
@@ -7127,7 +7078,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-manager@4.3.5, @uidu/data-manager@workspace:packages/data/data-manager":
+"@uidu/data-manager@4.3.6, @uidu/data-manager@workspace:packages/data/data-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/data-manager@workspace:packages/data/data-manager"
   dependencies:
@@ -7138,16 +7089,16 @@ __metadata:
     "@loadable/component": ^5.15.2
     "@tanstack/match-sorter-utils": ^8.7.2
     "@tanstack/react-table": ^8.7.2
-    "@uidu/board": ^2.1.2
+    "@uidu/board": ^2.1.3
     "@uidu/button": 1.3.34
     "@uidu/calendar": ^0.4.25
-    "@uidu/data-controls": ^4.0.18
-    "@uidu/data-fields": ^2.1.25
-    "@uidu/data-views": ^3.0.17
+    "@uidu/data-controls": ^4.0.19
+    "@uidu/data-fields": ^2.1.26
+    "@uidu/data-views": ^3.0.18
     "@uidu/docs": ^0.5.23
     "@uidu/dropdown-menu": ^0.6.27
-    "@uidu/gallery": ^2.0.17
-    "@uidu/list": ^3.1.11
+    "@uidu/gallery": ^2.0.18
+    "@uidu/list": ^3.1.12
     "@uidu/menu": 0.8.8
     "@uidu/navigation": ^1.0.32
     "@uidu/page-header": ^1.0.9
@@ -7155,7 +7106,7 @@ __metadata:
     "@uidu/shell": ^2.1.42
     "@uidu/side-navigation": 1.2.7
     "@uidu/spinner": ^0.5.22
-    "@uidu/table": ^3.4.4
+    "@uidu/table": ^3.4.5
     d3-array: ^3.2.1
     dayjs: ^1.11.7
     lodash: ^4.17.21
@@ -7171,7 +7122,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-views@^3.0.17, @uidu/data-views@workspace:packages/data/data-views":
+"@uidu/data-views@^3.0.18, @uidu/data-views@workspace:packages/data/data-views":
   version: 0.0.0-use.local
   resolution: "@uidu/data-views@workspace:packages/data/data-views"
   dependencies:
@@ -7179,8 +7130,8 @@ __metadata:
     "@loadable/component": ^5.15.2
     "@tanstack/react-table": ^8.7.2
     "@uidu/button": 1.3.34
-    "@uidu/data-controls": ^4.0.18
-    "@uidu/data-manager": 4.3.5
+    "@uidu/data-controls": ^4.0.19
+    "@uidu/data-manager": 4.3.6
     "@uidu/docs": ^0.5.23
     "@uidu/field-counter": ^2.0.6
     "@uidu/field-number": ^2.0.29
@@ -7359,6 +7310,7 @@ __metadata:
     "@uidu/analytics-namespaced-context": ^0.4.20
     "@uidu/editor-json-transformer": 1.0.8
     "@uidu/emoji": ^0.6.29
+    "@uidu/media-core": 1.1.7
     "@uidu/mentions": ^0.5.2
     "@uidu/profilecard": ^0.3.31
     "@uidu/theme": ^0.6.27
@@ -7729,7 +7681,7 @@ __metadata:
   resolution: "@uidu/field-file-uploader@workspace:packages/forms/field-file-uploader"
   dependencies:
     "@babel/runtime": ^7.20.6
-    "@fluentui/react": 8.103.7
+    "@fluentui/react": 8.103.8
     "@heroicons/react": ^2.0.13
     "@uidu/button": 1.3.34
     "@uidu/docs": ^0.5.23
@@ -8075,15 +8027,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/gallery@^2.0.17, @uidu/gallery@workspace:packages/data/gallery":
+"@uidu/gallery@^2.0.18, @uidu/gallery@workspace:packages/data/gallery":
   version: 0.0.0-use.local
   resolution: "@uidu/gallery@workspace:packages/data/gallery"
   dependencies:
     "@babel/runtime": ^7.20.6
     "@tanstack/react-table": ^8.7.2
-    "@tanstack/react-virtual": ^3.0.0-beta.23
-    "@uidu/data-controls": ^4.0.17
-    "@uidu/data-fields": ^2.1.24
+    "@tanstack/react-virtual": ^3.0.0-beta.30
+    "@uidu/data-controls": ^4.0.19
+    "@uidu/data-fields": ^2.1.26
     "@uidu/docs": ^0.5.23
     "@uidu/shell": ^2.1.41
     "@uidu/spinner": ^0.5.22
@@ -8293,14 +8245,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/list@^3.1.11, @uidu/list@workspace:packages/data/list":
+"@uidu/list@^3.1.11, @uidu/list@^3.1.12, @uidu/list@workspace:packages/data/list":
   version: 0.0.0-use.local
   resolution: "@uidu/list@workspace:packages/data/list"
   dependencies:
     "@babel/runtime": ^7.20.6
     "@tanstack/react-table": ^8.7.2
-    "@tanstack/react-virtual": ^3.0.0-beta.23
-    "@uidu/data-fields": ^2.1.24
+    "@tanstack/react-virtual": ^3.0.0-beta.30
+    "@uidu/data-fields": ^2.1.26
     "@uidu/docs": ^0.5.23
     react: ^18.2.0
     styled-components: ^5.3.6
@@ -8349,7 +8301,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.6
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.103.7
+    "@fluentui/react": 8.103.8
     "@uidu/button": ^1.3.34
     "@uidu/docs": ^0.5.23
     "@uidu/dropdown-menu": ^0.6.27
@@ -8550,7 +8502,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.6
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.103.7
+    "@fluentui/react": 8.103.8
     "@loadable/component": ^5.15.2
     "@uidu/avatar": ^0.9.19
     "@uidu/button": 1.3.34
@@ -9197,7 +9149,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@3.4.4, @uidu/table@^3.4.4, @uidu/table@workspace:packages/data/table":
+"@uidu/table@3.4.5, @uidu/table@^3.4.4, @uidu/table@^3.4.5, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -9209,12 +9161,12 @@ __metadata:
     "@fortawesome/react-fontawesome": ^0.2.0
     "@heroicons/react": ^2.0.13
     "@tanstack/react-table": ^8.7.2
-    "@tanstack/react-virtual": ^3.0.0-beta.23
+    "@tanstack/react-virtual": ^3.0.0-beta.30
     "@uidu/button": 1.3.34
     "@uidu/checkbox": ^2.0.9
-    "@uidu/data-controls": ^4.0.18
-    "@uidu/data-fields": ^2.1.25
-    "@uidu/data-manager": 4.3.5
+    "@uidu/data-controls": ^4.0.19
+    "@uidu/data-fields": ^2.1.26
+    "@uidu/data-manager": 4.3.6
     "@uidu/docs": ^0.5.23
     "@uidu/menu": ^0.8.8
     "@uidu/popup": ^0.7.10
@@ -17864,7 +17816,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "guidu@workspace:."
   dependencies:
-    "@amcharts/amcharts4": ^4.10.30
+    "@amcharts/amcharts4": ^4.10.31
     "@amcharts/amcharts4-geodata": ^4.1.26
     "@atlaskit/activity": ^1.0.3
     "@atlaskit/icon": ^21.10.7
@@ -17901,7 +17853,7 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.103.7
+    "@fluentui/react": 8.103.8
     "@formatjs/cli": 5.1.7
     "@fortawesome/fontawesome-free": ^6.2.1
     "@fortawesome/fontawesome-svg-core": ^6.2.1
@@ -17933,7 +17885,7 @@ __metadata:
     "@types/markdown-it": ^12.2.3
     "@types/markerclustererplus": ^2.1.33
     "@types/mkdirp": ^1.0.2
-    "@types/node": ^18.11.13
+    "@types/node": ^18.11.14
     "@types/overlayscrollbars": ^1.12.1
     "@types/prettier": ^2.7.1
     "@types/prismjs": ^1.26.0
@@ -18084,7 +18036,7 @@ __metadata:
     npm-run: ^5.0.1
     npm-run-all: ^4.1.5
     numeral: ^2.0.6
-    office-ui-fabric-react: ^7.201.0
+    office-ui-fabric-react: ^7.201.1
     overlayscrollbars: ^2.0.1
     overlayscrollbars-react: ^0.5.0
     p-wait-for: ^4.1.0
@@ -23730,9 +23682,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"office-ui-fabric-react@npm:^7.201.0":
-  version: 7.201.0
-  resolution: "office-ui-fabric-react@npm:7.201.0"
+"office-ui-fabric-react@npm:^7.201.1":
+  version: 7.201.1
+  resolution: "office-ui-fabric-react@npm:7.201.1"
   dependencies:
     "@fluentui/date-time-utilities": ^7.9.1
     "@fluentui/react-focus": ^7.18.17
@@ -23754,7 +23706,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <18.0.0"
     react: ">=16.8.0 <18.0.0"
     react-dom: ">=16.8.0 <18.0.0"
-  checksum: 08f4e822d48fa1c2bf0df1fbad8695db1e5aa5af192ccc25645d7071a6c97d22cfa979ec998ba40a15b262543539c59d0043b24e45a50f9e01e0e20aa417b5df
+  checksum: 291b1c05d5a981f03512c2b450463e7cf9b8e3918adede3dc2cfedbe3f3f70bc20230d8ea6a8785f45d39f655e60082ae8d6ccbdbc2fa25d360e8cde99a1f737
   languageName: node
   linkType: hard
 
@@ -25341,18 +25293,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.12, postcss@npm:^8.4.18":
-  version: 8.4.19
-  resolution: "postcss@npm:8.4.19"
-  dependencies:
-    nanoid: ^3.3.4
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.2
-  checksum: 62782723a385f92b7525f66d29614624de7c5643855423db3a5efd9287e677650300192749adddbbb6734cea9b1d5f5fd4f6ea00ca3f9a95dbbb88f835f5ca64
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.20":
+"postcss@npm:^8.4.12, postcss@npm:^8.4.18, postcss@npm:^8.4.20":
   version: 8.4.20
   resolution: "postcss@npm:8.4.20"
   dependencies:
@@ -25466,16 +25407,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.7.1":
-  version: 2.8.0
-  resolution: "prettier@npm:2.8.0"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 72004ce0cc9bb097daf3e3833f62495768724392c1d5b178dd47372337616e9e50ecbb0804f236596223f7b5eb1bbe69cefc8957dca21112c5777e77ef73a564
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.8.1":
+"prettier@npm:^2.7.1, prettier@npm:^2.8.1":
   version: 2.8.1
   resolution: "prettier@npm:2.8.1"
   bin:
