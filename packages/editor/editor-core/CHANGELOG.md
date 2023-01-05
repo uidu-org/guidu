@@ -1,5 +1,16 @@
 # @uidu/editor-core
 
+## 2.4.0
+
+### Minor Changes
+
+- e3814b621: Picker is now syncronous
+
+### Patch Changes
+
+- Updated dependencies [e3814b621]
+  - @uidu/media-picker@0.12.0
+
 ## 2.3.1
 
 ### Patch Changes
