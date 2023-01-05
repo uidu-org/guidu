@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.25
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+
 ## 0.5.24
 
 ### Patch Changes

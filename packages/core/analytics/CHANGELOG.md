@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.6.11
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+
 ## 0.6.10
 
 ### Patch Changes

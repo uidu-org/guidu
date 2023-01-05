@@ -1,5 +1,13 @@
 # @uidu/field-counter
 
+## 2.0.7
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+- Updated dependencies [533a95f76]
+  - @uidu/field-base@4.2.4
+
 ## 2.0.6
 
 ### Patch Changes

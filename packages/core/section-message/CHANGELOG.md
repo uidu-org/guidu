@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.6.28
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+- Updated dependencies [533a95f76]
+  - @uidu/button@1.3.35
+
 ## 0.6.27
 
 ### Patch Changes

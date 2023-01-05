@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.7.30
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+- Updated dependencies [533a95f76]
+  - @uidu/field-password@2.0.13
+  - @uidu/field-phone@2.0.32
+  - @uidu/field-text@2.0.7
+  - @uidu/shell@2.1.43
+  - @uidu/checkbox@2.0.10
+  - @uidu/spinner@0.5.23
+  - @uidu/avatar@0.9.20
+  - @uidu/slider@2.0.3
+  - @uidu/form@2.2.3
+
 ## 0.7.29
 
 ### Patch Changes

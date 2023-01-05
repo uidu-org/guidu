@@ -1,5 +1,15 @@
 # @uidu/field-mentions
 
+## 2.0.8
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+- Updated dependencies [533a95f76]
+  - @uidu/field-base@4.2.4
+  - @uidu/theme@0.6.28
+  - @uidu/form@2.2.3
+
 ## 2.0.7
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.0.3
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+
 ## 2.0.2
 
 ### Patch Changes

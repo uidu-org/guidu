@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.2.8
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+- Updated dependencies [533a95f76]
+  - @uidu/inline-dialog@0.5.27
+  - @uidu/shell@2.1.43
+  - @uidu/tooltip@0.5.29
+  - @uidu/avatar@0.9.20
+  - @uidu/button@1.3.35
+  - @uidu/popup@0.7.11
+  - @uidu/theme@0.6.28
+  - @uidu/menu@0.8.9
+
 ## 1.2.7
 
 ### Patch Changes
