@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 2.3.1
+
+### Patch Changes
+
+- a1c462e81: Load until file
+
 ## 2.3.0
 
 ### Minor Changes
