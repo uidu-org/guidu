@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 1.3.0
+
+### Minor Changes
+
+- 86b203891: Passing file meta from uploader to FileIdentifier
+
 ## 1.2.0
 
 ### Minor Changes
