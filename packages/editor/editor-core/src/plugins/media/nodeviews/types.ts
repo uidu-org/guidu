@@ -1,8 +1,4 @@
-import {
-  ContextIdentifierProvider,
-  MediaProvider,
-  ProviderFactory,
-} from '@uidu/editor-common';
+import { MediaProvider, ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import { EventDispatcher } from '../../../event-dispatcher';
@@ -21,7 +17,6 @@ export interface MediaSingleNodeProps {
   lineLength: number;
   mediaOptions: MediaOptions;
   mediaProvider?: Promise<MediaProvider>;
-  contextIdentifierProvider?: Promise<ContextIdentifierProvider>;
   fullWidthMode?: boolean;
   mediaPluginState: MediaPluginState;
   dispatchAnalyticsEvent: DispatchAnalyticsEvent;

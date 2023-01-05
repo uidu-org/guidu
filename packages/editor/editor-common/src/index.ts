@@ -32,7 +32,6 @@ export type {
 export { linkMessages } from './messages/link';
 export { ProviderFactory, WithProviders } from './provider-factory';
 export type { MediaProvider, Providers } from './provider-factory';
-export type { ContextIdentifierProvider } from './provider-factory/context-identifier-provider';
 export { combineProviders } from './provider-helpers';
 export {
   akEditorActiveBackground,

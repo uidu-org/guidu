@@ -51,7 +51,7 @@ export class TaskItem extends PureComponent<
       intl: { formatMessage },
       ...otherProps
     } = this.props;
-    const { taskDecisionProvider, contextIdentifierProvider } = providers;
+    const { taskDecisionProvider } = providers;
     const placeholder = formatMessage(messages.placeholder);
 
     return (
@@ -59,7 +59,6 @@ export class TaskItem extends PureComponent<
         {...otherProps}
         placeholder={placeholder}
         taskDecisionProvider={taskDecisionProvider}
-        contextIdentifierProvider={contextIdentifierProvider}
       />
     );
   };
@@ -67,7 +66,7 @@ export class TaskItem extends PureComponent<
   render() {
     return (
       <WithProviders
-        providers={['taskDecisionProvider', 'contextIdentifierProvider']}
+        providers={['taskDecisionProvider']}
         providerFactory={this.providerFactory}
         renderNode={this.renderWithProvider}
       />

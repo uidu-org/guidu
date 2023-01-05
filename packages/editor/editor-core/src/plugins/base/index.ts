@@ -11,7 +11,6 @@ import {
 import { keymap } from '../../utils/keymap';
 import betterTypeHistoryPlugin from './pm-plugins/better-type-history';
 import compositionPlugin from './pm-plugins/composition';
-import contextIdentifierPlugin from './pm-plugins/context-identifier';
 import decorationPlugin from './pm-plugins/decoration';
 import disableSpellcheckingPlugin from './pm-plugins/disable-spell-checking';
 import filterStepsPlugin from './pm-plugins/filter-steps';
@@ -98,11 +97,6 @@ const basePlugin = (options?: BasePluginOptions): EditorPlugin => ({
             'Mod-[': () => true,
             'Mod-]': () => true,
           }),
-      },
-      {
-        name: 'contextIdentifier',
-        plugin: ({ dispatch, providerFactory }) =>
-          contextIdentifierPlugin(dispatch, providerFactory),
       },
       {
         name: 'betterTypeHistory',

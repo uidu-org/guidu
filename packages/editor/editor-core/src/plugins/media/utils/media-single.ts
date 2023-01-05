@@ -51,7 +51,6 @@ export const nonWrappedLayouts: MediaSingleLayout[] = [
 export interface MediaSingleState extends MediaState {
   dimensions: { width: number; height: number };
   scaleFactor?: number;
-  contextId?: string;
 }
 
 const getInsertMediaAnalytics = (

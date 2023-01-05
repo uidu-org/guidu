@@ -1,5 +1,4 @@
 import { uuid } from '@uidu/adf-schema';
-import { ContextIdentifierProvider } from '@uidu/editor-common';
 import { autoJoin } from 'prosemirror-commands';
 import { NodeType, ResolvedPos, Schema } from 'prosemirror-model';
 import {
@@ -29,32 +28,14 @@ import {
 } from '../analytics';
 import { GapCursorSelection } from '../gap-cursor';
 import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock/types';
-import { stateKey as taskDecisionStateKey } from './pm-plugins/main';
 import {
   AddItemTransactionCreator,
-  ContextData,
   TaskDecisionInputMethod,
   TaskDecisionListType,
 } from './types';
 
-const getContextData = (
-  contextProvider: ContextIdentifierProvider = {} as ContextIdentifierProvider,
-): ContextData => {
-  const { objectId, containerId } = contextProvider;
-  const userContext: USER_CONTEXT = objectId
-    ? USER_CONTEXT.EDIT
-    : USER_CONTEXT.NEW;
-
-  return {
-    objectId,
-    containerId,
-    userContext,
-  };
-};
-
 const generateAnalyticsPayload = (
   listType: TaskDecisionListType,
-  contextData: ContextData,
   inputMethod: TaskDecisionInputMethod,
   itemLocalId: string,
   listLocalId: string,
@@ -64,9 +45,6 @@ const generateAnalyticsPayload = (
   let containerId;
   let objectId;
   let userContext: USER_CONTEXT | undefined;
-  if (contextData) {
-    ({ containerId, objectId, userContext } = contextData);
-  }
 
   return {
     action: ACTION.INSERTED,
@@ -194,9 +172,6 @@ export const insertTaskDecisionWithAnalytics = (
   const { tr } = state;
   const { $to } = state.selection;
   const listNode = findParentNodeOfType(list)(state.selection);
-  const contextIdentifierProvider = taskDecisionStateKey.getState(state)
-    .contextIdentifierProvider;
-  const contextData = getContextData(contextIdentifierProvider);
   let insertTrCreator;
   let itemIdx;
   let listSize;
@@ -234,7 +209,6 @@ export const insertTaskDecisionWithAnalytics = (
         insertTr,
         generateAnalyticsPayload(
           listType,
-          contextData,
           inputMethod,
           itemLocalId,
           listLocalId,

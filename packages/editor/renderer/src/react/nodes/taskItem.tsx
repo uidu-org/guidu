@@ -30,7 +30,7 @@ export default class TaskItem extends PureComponent<Props, {}> {
   }
 
   private renderWithProvider = (providers: any) => {
-    const { taskDecisionProvider, contextIdentifierProvider } = providers;
+    const { taskDecisionProvider } = providers;
     const { children, localId, state, rendererContext } = this.props;
     let objectAri = '';
     let containerAri = '';
@@ -51,7 +51,6 @@ export default class TaskItem extends PureComponent<Props, {}> {
           taskId={localId}
           isDone={state === 'DONE'}
           taskDecisionProvider={taskDecisionProvider}
-          contextIdentifierProvider={contextIdentifierProvider}
         >
           {children}
         </TaskItemWithProviders>
@@ -62,7 +61,7 @@ export default class TaskItem extends PureComponent<Props, {}> {
   render() {
     return (
       <WithProviders
-        providers={['taskDecisionProvider', 'contextIdentifierProvider']}
+        providers={['taskDecisionProvider']}
         providerFactory={this.providerFactory}
         renderNode={this.renderWithProvider}
       />

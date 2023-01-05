@@ -1,7 +1,6 @@
 import { MediaADFAttrs, MediaSingleLayout } from '@uidu/adf-schema';
 import {
   browser,
-  ContextIdentifierProvider,
   DEFAULT_IMAGE_HEIGHT,
   DEFAULT_IMAGE_WIDTH,
   MediaSingle,
@@ -40,7 +39,6 @@ export interface MediaSingleNodeState {
   width?: number;
   height?: number;
   viewMediaClientConfig?: MediaClientConfig;
-  contextIdentifierProvider?: ContextIdentifierProvider;
   isCopying: boolean;
 }
 
@@ -71,8 +69,6 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
 
   const [viewMediaClientConfig, setViewMediaClientConfig] =
     useState<MediaClientConfig>(undefined);
-  const [contextIdentifierProvider, setContextIdentifierProvider] =
-    useState<ContextIdentifierProvider>(undefined);
   const [file, setFile] = useState<FileIdentifier>(null);
   const [size, setSize] = useState({ width: undefined, height: undefined });
 
@@ -246,7 +242,6 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
       allowLazyLoading={mediaOptions && mediaOptions.allowLazyLoading}
       uploadComplete={uploadComplete}
       url={childNode.attrs.url}
-      contextIdentifierProvider={contextIdentifierProvider}
       isLoading={isCopying}
     />
   );
@@ -390,9 +385,9 @@ class MediaSingleNodeView extends SelectionBasedNodeView<MediaSingleNodeViewProp
 
     return (
       <WithProviders
-        providers={['mediaProvider', 'contextIdentifierProvider']}
+        providers={['mediaProvider']}
         providerFactory={providerFactory}
-        renderNode={({ mediaProvider, contextIdentifierProvider }) => (
+        renderNode={({ mediaProvider }) => (
           <WithPluginState
             editorView={this.view}
             plugins={{
@@ -413,7 +408,6 @@ class MediaSingleNodeView extends SelectionBasedNodeView<MediaSingleNodeViewProp
                   node={this.node}
                   getPos={getPos}
                   mediaProvider={mediaProvider}
-                  contextIdentifierProvider={contextIdentifierProvider}
                   mediaOptions={mediaOptions || {}}
                   view={this.view}
                   fullWidthMode={fullWidthMode}

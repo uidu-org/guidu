@@ -5,7 +5,6 @@ import { ExtensionProvider } from '../extensions/types';
 import { AutoformattingProvider } from './autoformatting-provider';
 import { CardProvider } from './card-provider';
 import type { CollabEditProvider } from './collab-edit-provider';
-import { ContextIdentifierProvider } from './context-identifier-provider';
 import { ImageUploadProvider } from './image-upload-provider';
 import { MacroProvider } from './macro-provider';
 import { MediaProvider } from './media-provider';
@@ -19,7 +18,6 @@ export interface Providers {
   extensionProvider?: Promise<ExtensionProvider>;
   autoformattingProvider?: Promise<AutoformattingProvider>;
   taskDecisionProvider?: Promise<TaskDecisionProvider>;
-  contextIdentifierProvider?: Promise<ContextIdentifierProvider>;
   imageUploadProvider?: Promise<ImageUploadProvider>;
   collabEditProvider?: Promise<CollabEditProvider>;
   macroProvider?: Promise<MacroProvider>;

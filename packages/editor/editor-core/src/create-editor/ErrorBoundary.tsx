@@ -1,12 +1,10 @@
 import { CreateUIAnalyticsEvent } from '@uidu/analytics';
-import { ContextIdentifierProvider } from '@uidu/editor-common';
 import React from 'react';
 import { ACTION, ACTION_SUBJECT, EVENT_TYPE } from '../plugins/analytics';
 import { editorAnalyticsChannel } from '../plugins/analytics/consts';
 
 export type ErrorBoundaryProps = {
   createAnalyticsEvent?: CreateUIAnalyticsEvent | undefined;
-  contextIdentifierProvider?: Promise<ContextIdentifierProvider>;
   rethrow?: boolean;
   children: React.ReactNode;
 };
@@ -70,19 +68,11 @@ export default class ErrorBoundary extends React.Component<
       })
       .catch((e) => {
         // eslint-disable-next-line no-console
-        console.error(
-          'Failed to resolve product name from contextIdentifierProvider.',
-          e,
-        );
+        console.error('Failed to resolve product name from', e);
       });
   };
 
   private getProductName = async () => {
-    const { contextIdentifierProvider } = this.props;
-    if (contextIdentifierProvider) {
-      const context = await contextIdentifierProvider;
-      if (context.product) return context.product;
-    }
     return 'uidu';
   };
 

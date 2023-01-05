@@ -1,6 +1,5 @@
 import { ActivityProvider } from '@atlaskit/activity';
 import {
-  ContextIdentifierProvider,
   ErrorReportingHandler,
   ExtensionHandlers,
   ExtensionProvider,
@@ -92,7 +91,6 @@ export interface EditorProps {
   emojiProvider?: Providers['emojiProvider'];
   taskDecisionProvider?: Promise<TaskDecisionProvider>;
   allowNestedTasks?: boolean;
-  contextIdentifierProvider?: Promise<ContextIdentifierProvider>;
 
   legacyImageUploadProvider?: Providers['imageUploadProvider'];
   mentionProvider?: Promise<MentionProvider>;

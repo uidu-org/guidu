@@ -1,8 +1,4 @@
-import {
-  ContextIdentifierProvider,
-  ImageLoaderProps,
-  withImageLoader,
-} from '@uidu/editor-common';
+import { ImageLoaderProps, withImageLoader } from '@uidu/editor-common';
 import Card from '@uidu/media-card';
 import { FileIdentifier } from '@uidu/media-core';
 import { Node as PMNode } from 'prosemirror-model';
@@ -24,7 +20,6 @@ export interface MediaNodeProps extends ReactNodeProps, ImageLoaderProps {
   node: PMNode;
   file: FileIdentifier;
   getPos: ProsemirrorGetPosHandler;
-  contextIdentifierProvider?: ContextIdentifierProvider;
   cardDimensions: any;
   originalDimensions?: any;
   onClick?: any;
@@ -56,8 +51,6 @@ class MediaNode extends Component<MediaNodeProps> {
       this.props.node.attrs.collection !== nextProps.node.attrs.collection ||
       this.props.cardDimensions.height !== nextProps.cardDimensions.height ||
       this.props.cardDimensions.width !== nextProps.cardDimensions.width ||
-      this.props.contextIdentifierProvider !==
-        nextProps.contextIdentifierProvider ||
       this.props.isLoading !== nextProps.isLoading ||
       this.props.file !== nextProps.file
     ) {
@@ -92,7 +85,6 @@ class MediaNode extends Component<MediaNodeProps> {
       allowLazyLoading,
       viewMediaClientConfig,
       uploadComplete,
-      contextIdentifierProvider,
       originalDimensions,
       isLoading,
       file,

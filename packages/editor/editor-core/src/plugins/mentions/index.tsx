@@ -1,9 +1,6 @@
 import { mention } from '@uidu/adf-schema';
 import { AnalyticsEventPayload } from '@uidu/analytics';
-import {
-  ContextIdentifierProvider,
-  ProviderFactory,
-} from '@uidu/editor-common';
+import { ProviderFactory } from '@uidu/editor-common';
 import {
   ELEMENTS_CHANNEL,
   isResolvingMentionProvider,
@@ -195,7 +192,6 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
             !prevActive && queryChanged ? [] : pluginState.mentions || [];
 
           const mentionContext = {
-            ...pluginState.contextIdentifierProvider,
             sessionId,
           };
 
@@ -240,7 +236,6 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
           ) as TypeAheadPluginState;
 
           const mentionContext = {
-            ...pluginState.contextIdentifierProvider,
             sessionId,
           };
           if (mentionProvider) {
@@ -263,7 +258,6 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
               mentionee: id,
               duration: pickerElapsedTime,
               queryLength: (typeAheadPluginState.query || '').length,
-              ...(pluginState.contextIdentifierProvider as any),
             },
           );
 
@@ -381,20 +375,6 @@ export const setResults =
     return true;
   };
 
-export const setContext =
-  (context: ContextIdentifierProvider | undefined): Command =>
-  (state, dispatch) => {
-    if (dispatch) {
-      dispatch(
-        state.tr.setMeta(mentionPluginKey, {
-          action: ACTIONS.SET_CONTEXT,
-          params: { context },
-        }),
-      );
-    }
-    return true;
-  };
-
 /**
  *
  * ProseMirror Plugin
@@ -457,14 +437,6 @@ function mentionPluginFactory(
             };
             dispatch(mentionPluginKey, newPluginState);
             return newPluginState;
-
-          case ACTIONS.SET_CONTEXT:
-            newPluginState = {
-              ...pluginState,
-              contextIdentifierProvider: params.context,
-            };
-            dispatch(mentionPluginKey, newPluginState);
-            return newPluginState;
         }
 
         return newPluginState;
@@ -478,7 +450,7 @@ function mentionPluginFactory(
     view(editorView) {
       const providerHandler = (
         name: string,
-        providerPromise?: Promise<MentionProvider | ContextIdentifierProvider>,
+        providerPromise?: Promise<MentionProvider>,
       ) => {
         switch (name) {
           case 'mentionProvider':
@@ -551,35 +523,16 @@ function mentionPluginFactory(
                 setProvider(undefined)(editorView.state, editorView.dispatch),
               );
             break;
-
-          case 'contextIdentifierProvider':
-            if (!providerPromise) {
-              return setContext(undefined)(
-                editorView.state,
-                editorView.dispatch,
-              );
-            }
-            (providerPromise as Promise<ContextIdentifierProvider>).then(
-              (provider) => {
-                setContext(provider)(editorView.state, editorView.dispatch);
-              },
-            );
-            break;
         }
         return undefined;
       };
 
       providerFactory.subscribe('mentionProvider', providerHandler);
-      providerFactory.subscribe('contextIdentifierProvider', providerHandler);
 
       return {
         destroy() {
           if (providerFactory) {
             providerFactory.unsubscribe('mentionProvider', providerHandler);
-            providerFactory.unsubscribe(
-              'contextIdentifierProvider',
-              providerHandler,
-            );
           }
           if (mentionProvider) {
             mentionProvider.unsubscribe('mentionPlugin');

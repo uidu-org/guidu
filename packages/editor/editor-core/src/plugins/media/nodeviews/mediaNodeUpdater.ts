@@ -1,6 +1,5 @@
 import { MediaADFAttrs, MediaAttributes } from '@uidu/adf-schema';
 import {
-  ContextIdentifierProvider,
   DEFAULT_IMAGE_HEIGHT,
   DEFAULT_IMAGE_WIDTH,
   MediaProvider,
@@ -29,7 +28,6 @@ export interface MediaNodeUpdaterProps {
   view: EditorView;
   node: PMNode; // assumed to be media type node (ie. child of MediaSingle, MediaGroup)
   mediaProvider?: Promise<MediaProvider>;
-  contextIdentifierProvider?: Promise<ContextIdentifierProvider>;
   isMediaSingle: boolean;
   mediaOptions?: MediaOptions;
   dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
@@ -55,8 +53,7 @@ export class MediaNodeUpdater {
       attrs.type === 'file' &&
       attrs.__fileName &&
       attrs.__fileMimeType &&
-      attrs.__fileSize &&
-      attrs.__contextId
+      attrs.__fileSize
     );
   };
 
@@ -79,13 +76,11 @@ export class MediaNodeUpdater {
     // if (fileState.status === 'error') {
     //   return;
     // }
-    // const contextId = this.getNodeContextId() || (await this.getObjectId());
     // const { name, mimeType, size } = fileState;
     // const newAttrs = {
     //   __fileName: name,
     //   __fileMimeType: mimeType,
     //   __fileSize: size,
-    //   __contextId: contextId,
     // };
     // const attrsChanged = hasPrivateAttrsChanged(attrs, newAttrs);
     // if (attrsChanged) {
@@ -105,13 +100,6 @@ export class MediaNodeUpdater {
     }
 
     return undefined;
-  };
-
-  getObjectId = async (): Promise<string | undefined> => {
-    const contextIdentifierProvider = await this.props
-      .contextIdentifierProvider;
-
-    return contextIdentifierProvider && contextIdentifierProvider.objectId;
   };
 
   uploadExternalMedia = async (getPos: ProsemirrorGetPosHandler) => {
@@ -146,15 +134,6 @@ export class MediaNodeUpdater {
         }
       }
     }
-  };
-
-  getNodeContextId = (): string | undefined => {
-    const attrs = this.getAttrs();
-    if (!attrs || attrs.type !== 'file') {
-      return undefined;
-    }
-
-    return attrs.__contextId;
   };
 
   updateDimensions = (dimensions: RemoteDimensions) => {
@@ -208,21 +187,6 @@ export class MediaNodeUpdater {
     };
   }
 
-  hasDifferentContextId = async (): Promise<boolean> => {
-    const nodeContextId = this.getNodeContextId();
-    const currentContextId = await this.getObjectId();
-
-    if (
-      nodeContextId &&
-      currentContextId &&
-      nodeContextId !== currentContextId
-    ) {
-      return true;
-    }
-
-    return false;
-  };
-
   isNodeFromDifferentCollection = async (): Promise<boolean> => {
     const mediaProvider = await this.props.mediaProvider;
     if (!mediaProvider || !mediaProvider.uploadOptions) {
@@ -233,9 +197,6 @@ export class MediaNodeUpdater {
     if (!attrs || attrs.type !== 'file') {
       return false;
     }
-
-    const { __contextId } = attrs;
-    const contextId = __contextId || (await this.getObjectId());
 
     return false;
   };
@@ -254,19 +215,11 @@ export class MediaNodeUpdater {
       return;
     }
 
-    const nodeContextId = this.getNodeContextId();
     const uploadMediaClientConfig = mediaProvider.uploadMediaClientConfig;
 
-    if (
-      uploadMediaClientConfig &&
-      uploadMediaClientConfig.getAuthFromContext &&
-      nodeContextId
-    ) {
+    if (uploadMediaClientConfig && uploadMediaClientConfig.getAuthFromContext) {
       const mediaClient = getMediaClient(uploadMediaClientConfig);
-      const auth = await uploadMediaClientConfig.getAuthFromContext(
-        nodeContextId,
-      );
-      const objectId = await this.getObjectId();
+      const auth = await uploadMediaClientConfig.getAuthFromContext();
       const { id } = attrs;
       const source = {
         id,
@@ -282,7 +235,6 @@ export class MediaNodeUpdater {
         source.id,
         {
           id: mediaFile.id,
-          __contextId: objectId,
         },
         isMediaSingle,
       )(view.state, view.dispatch);

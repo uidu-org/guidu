@@ -1,5 +1,4 @@
 import { FabricElementsAnalyticsContext } from '@uidu/analytics-namespaced-context';
-import { ContextIdentifierProvider } from '@uidu/editor-common';
 import {
   ContentRef,
   ResourcedTaskItem,
@@ -16,17 +15,14 @@ export interface Props {
   placeholder?: string;
   children?: ReactElement<any>;
   taskDecisionProvider?: Promise<TaskDecisionProvider>;
-  contextIdentifierProvider?: Promise<ContextIdentifierProvider>;
 }
 
-export interface State {
-  resolvedContextProvider?: ContextIdentifierProvider;
-}
+export interface State {}
 
 export default class TaskItemWithProviders extends Component<Props, State> {
   static displayName = 'TaskItemWithProviders';
 
-  state: State = { resolvedContextProvider: undefined };
+  state: State = {};
 
   // Storing the mounted state is an anti-pattern, however the asynchronous state
   // updates via `updateContextIdentifierProvider` means we may be dismounted before
@@ -37,40 +33,15 @@ export default class TaskItemWithProviders extends Component<Props, State> {
 
   UNSAFE_componentWillMount() {
     this.mounted = true;
-    this.updateContextIdentifierProvider(this.props);
   }
 
   componentWillUnmount() {
     this.mounted = false;
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps: Props) {
-    if (
-      nextProps.contextIdentifierProvider !==
-      this.props.contextIdentifierProvider
-    ) {
-      this.updateContextIdentifierProvider(nextProps);
-    }
-  }
-
-  private async updateContextIdentifierProvider(props: Props) {
-    if (props.contextIdentifierProvider) {
-      try {
-        const resolvedContextProvider = await props.contextIdentifierProvider;
-        if (this.mounted) this.setState({ resolvedContextProvider });
-      } catch (err) {
-        if (this.mounted) this.setState({ resolvedContextProvider: undefined });
-      }
-    } else {
-      this.setState({ resolvedContextProvider: undefined });
-    }
-  }
-
   render() {
-    const { contextIdentifierProvider, ...otherProps } = this.props;
-    const { objectId } =
-      this.state.resolvedContextProvider || ({} as ContextIdentifierProvider);
-    const userContext = objectId ? 'edit' : 'new';
+    const { ...otherProps } = this.props;
+    const userContext = 'new';
 
     return (
       <FabricElementsAnalyticsContext

@@ -1,5 +1,4 @@
 import { CreateUIAnalyticsEvent } from '@uidu/analytics';
-import { ContextIdentifierProvider } from '@uidu/editor-common';
 import {
   MentionDescription,
   MentionProvider,
@@ -22,6 +21,5 @@ export interface MentionPluginOptions {
 
 export type MentionPluginState = {
   mentionProvider?: MentionProvider | TeamMentionProvider;
-  contextIdentifierProvider?: ContextIdentifierProvider;
   mentions?: Array<MentionDescription>;
 };

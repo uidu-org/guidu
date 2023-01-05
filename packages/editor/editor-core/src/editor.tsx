@@ -8,7 +8,7 @@ import {
 } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
-import { IntlShape } from 'react-intl';
+import { IntlContext, IntlShape } from 'react-intl';
 import styled from 'styled-components';
 import EditorActions from './actions';
 import { ReactEditorView } from './create-editor';
@@ -93,7 +93,7 @@ type Context = {
 export default class Editor extends PureComponent<EditorProps> {
   static contextTypes = {
     editorActions: {},
-    // intl: IntlContext,
+    intl: IntlContext,
   };
 
   private editorActions: EditorActions;
@@ -124,7 +124,6 @@ export default class Editor extends PureComponent<EditorProps> {
       emojiProvider,
       mentionProvider,
       taskDecisionProvider,
-      contextIdentifierProvider,
       collabEditProvider,
       activityProvider,
       presenceProvider,
@@ -142,10 +141,6 @@ export default class Editor extends PureComponent<EditorProps> {
     this.providerFactory.setProvider(
       'taskDecisionProvider',
       taskDecisionProvider,
-    );
-    this.providerFactory.setProvider(
-      'contextIdentifierProvider',
-      contextIdentifierProvider,
     );
 
     this.providerFactory.setProvider('mediaProvider', mediaProvider);

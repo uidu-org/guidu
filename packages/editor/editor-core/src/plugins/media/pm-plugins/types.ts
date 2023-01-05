@@ -1,5 +1,5 @@
 import { MediaSingleLayout } from '@uidu/adf-schema';
-import { ContextIdentifierProvider, MediaProvider } from '@uidu/editor-common';
+import { MediaProvider } from '@uidu/editor-common';
 import { MediaClientConfig } from '@uidu/media-core';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
@@ -34,10 +34,6 @@ export interface MediaPluginState {
   showEditingDialog?: boolean;
   mediaOptions?: MediaOptions;
   dispatch?: Dispatch;
-  onContextIdentifierProvider: (
-    _name: string,
-    provider?: Promise<ContextIdentifierProvider>,
-  ) => Promise<void>;
   setMediaProvider: (mediaProvider?: Promise<MediaProvider>) => Promise<void>;
   getMediaOptions: () => MediaPluginOptions;
   // shouldUseMediaPickerPopup: () => boolean;

@@ -1,8 +1,5 @@
 import { MediaSingleLayout } from '@uidu/adf-schema';
-import type {
-  ContextIdentifierProvider,
-  MediaProvider,
-} from '@uidu/editor-common';
+import type { MediaProvider } from '@uidu/editor-common';
 import { ErrorReporter } from '@uidu/editor-common';
 import { MediaClientConfig, MediaUploadOptions } from '@uidu/media-core';
 import { MediaPickerFactoryClass } from '@uidu/media-picker';
@@ -90,8 +87,6 @@ export class MediaPluginStateImplementation implements MediaPluginState {
 
   private destroyed = false;
 
-  private contextIdentifierProvider?: ContextIdentifierProvider;
-
   private errorReporter: ErrorReporter;
 
   private popupPicker?: any;
@@ -145,22 +140,8 @@ export class MediaPluginStateImplementation implements MediaPluginState {
         this.setMediaProvider(provider),
     );
 
-    options.providerFactory.subscribe(
-      'contextIdentifierProvider',
-      this.onContextIdentifierProvider,
-    );
-
     this.errorReporter = options.errorReporter || new ErrorReporter();
   }
-
-  onContextIdentifierProvider = async (
-    _name: string,
-    provider?: Promise<ContextIdentifierProvider>,
-  ) => {
-    if (provider) {
-      this.contextIdentifierProvider = await provider;
-    }
-  };
 
   setMediaProvider = async (mediaProvider?: Promise<MediaProvider>) => {
     if (!mediaProvider) {
