@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.13.0
+
+### Minor Changes
+
+- 30dfb9fb8: Media picker events pass uppy instance
+
 ## 0.12.0
 
 ### Minor Changes

@@ -1,5 +1,13 @@
 # @uidu/renderer
 
+## 1.3.1
+
+### Patch Changes
+
+- 30dfb9fb8: Media picker events pass uppy instance
+- Updated dependencies [30dfb9fb8]
+  - @uidu/media-card@0.8.2
+
 ## 1.3.0
 
 ### Minor Changes
