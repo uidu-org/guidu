@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-common",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "A package that contains common classes and components for editor and renderer",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/editor-common",
   "license": "Apache-2.0",

@@ -1,5 +1,11 @@
 # @uidu/editor-common
 
+## 2.3.0
+
+### Minor Changes
+
+- 46ebd0ef4: Remove contextIdentifierPlugin
+
 ## 2.2.0
 
 ### Minor Changes
