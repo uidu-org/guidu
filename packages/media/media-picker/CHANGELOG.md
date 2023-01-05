@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.12.0
+
+### Minor Changes
+
+- e3814b621: Picker is now syncronous
+
 ## 0.11.1
 
 ### Patch Changes
