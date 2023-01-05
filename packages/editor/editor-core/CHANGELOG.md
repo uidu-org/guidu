@@ -1,5 +1,17 @@
 # @uidu/editor-core
 
+## 2.5.0
+
+### Minor Changes
+
+- 46ebd0ef4: Remove contextIdentifierPlugin
+
+### Patch Changes
+
+- 3387cc245: Fix file reload
+- Updated dependencies [46ebd0ef4]
+  - @uidu/editor-common@2.3.0
+
 ## 2.4.0
 
 ### Minor Changes

@@ -1,5 +1,16 @@
 # @uidu/renderer
 
+## 1.3.0
+
+### Minor Changes
+
+- 46ebd0ef4: Remove contextIdentifierPlugin
+
+### Patch Changes
+
+- Updated dependencies [46ebd0ef4]
+  - @uidu/editor-common@2.3.0
+
 ## 1.2.12
 
 ### Patch Changes
