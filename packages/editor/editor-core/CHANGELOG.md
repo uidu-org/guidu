@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 2.2.0
+
+### Minor Changes
+
+- 8b563daec: Default mediaPickerProps if any
+
 ## 2.1.0
 
 ### Minor Changes
