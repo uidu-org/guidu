@@ -1,5 +1,12 @@
 # @uidu/adf-schema
 
+## 2.0.6
+
+### Patch Changes
+
+- Updated dependencies [220086250]
+  - @uidu/media-core@1.2.0
+
 ## 2.0.5
 
 ### Patch Changes

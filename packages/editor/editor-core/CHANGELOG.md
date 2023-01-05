@@ -1,5 +1,18 @@
 # @uidu/editor-core
 
+## 2.3.0
+
+### Minor Changes
+
+- 220086250: CU-332gd2p add viewMediaClientConfig
+
+### Patch Changes
+
+- Updated dependencies [220086250]
+  - @uidu/editor-common@2.2.0
+  - @uidu/media-core@1.2.0
+  - @uidu/adf-schema@2.0.6
+
 ## 2.2.1
 
 ### Patch Changes
