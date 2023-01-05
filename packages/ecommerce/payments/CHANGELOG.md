@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 1.5.20
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+- Updated dependencies [533a95f76]
+  - @uidu/section-message@0.6.28
+  - @uidu/field-base@4.2.4
+  - @uidu/slider@2.0.3
+  - @uidu/theme@0.6.28
+  - @uidu/form@2.2.3
+
 ## 1.5.19
 
 ### Patch Changes

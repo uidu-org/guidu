@@ -1,6 +1,6 @@
 {
   "name": "@uidu/portal",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Guidu wrapper for rendering components in React portals",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/portal",
   "license": "ISC",
@@ -11,18 +11,18 @@
   "types": "index.td.ts",
   "dependencies": {
     "@babel/runtime": "^7.20.7",
-    "@uidu/theme": "^0.6.27",
+    "@uidu/theme": "^0.6.28",
     "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.10.7",
-    "@uidu/button": "^1.3.34",
-    "@uidu/docs": "^0.5.23",
-    "@uidu/flag": "^0.5.25",
-    "@uidu/inline-dialog": "^0.5.26",
-    "@uidu/modal-dialog": "^1.1.3",
-    "@uidu/onboarding": "^1.3.18",
-    "@uidu/tooltip": "^0.5.28",
+    "@uidu/button": "^1.3.35",
+    "@uidu/docs": "^0.5.24",
+    "@uidu/flag": "^0.5.26",
+    "@uidu/inline-dialog": "^0.5.27",
+    "@uidu/modal-dialog": "^1.1.4",
+    "@uidu/onboarding": "^1.3.20",
+    "@uidu/tooltip": "^0.5.29",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.6"

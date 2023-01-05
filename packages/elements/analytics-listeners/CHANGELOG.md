@@ -1,5 +1,14 @@
 # @uidu/analytics-listeners
 
+## 0.4.21
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+- Updated dependencies [533a95f76]
+  - @uidu/analytics-namespaced-context@0.4.21
+  - @uidu/analytics@0.6.11
+
 ## 0.4.20
 
 ### Patch Changes

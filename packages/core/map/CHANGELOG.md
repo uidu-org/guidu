@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.6.24
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+- Updated dependencies [533a95f76]
+  - @uidu/theme@0.6.28
+
 ## 0.6.23
 
 ### Patch Changes

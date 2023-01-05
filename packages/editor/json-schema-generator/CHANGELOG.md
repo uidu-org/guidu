@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.0.4
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+
 ## 1.0.3
 
 ### Patch Changes

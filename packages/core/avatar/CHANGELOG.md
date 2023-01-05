@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.9.20
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+- Updated dependencies [533a95f76]
+  - @uidu/analytics@0.6.11
+  - @uidu/tooltip@0.5.29
+  - @uidu/theme@0.6.28
+
 ## 0.9.19
 
 ### Patch Changes

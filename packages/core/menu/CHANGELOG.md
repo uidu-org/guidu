@@ -1,5 +1,13 @@
 # @uidu/menu
 
+## 0.8.9
+
+### Patch Changes
+
+- 533a95f76: Bump deps
+- Updated dependencies [533a95f76]
+  - @uidu/theme@0.6.28
+
 ## 0.8.8
 
 ### Patch Changes
