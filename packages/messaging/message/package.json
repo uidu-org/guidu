@@ -10,8 +10,8 @@
   "module": "dist/uidu-message.esm.js",
   "types": "dist/uidu-message.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.6",
-    "@fluentui/react": "8.103.8",
+    "@babel/runtime": "^7.20.7",
+    "@fluentui/react": "8.104.2",
     "@loadable/component": "^5.15.2",
     "@uidu/avatar": "^0.9.19",
     "@uidu/button": "1.3.34",
@@ -32,7 +32,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
-    "react-spring": "^9.6.0",
+    "react-spring": "^9.6.1",
     "react-use-gesture": "^8.0.1",
     "styled-components": "^5.3.6",
     "tslib": "^2.4.1"

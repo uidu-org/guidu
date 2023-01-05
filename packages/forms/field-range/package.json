@@ -15,7 +15,7 @@
   "module": "dist/uidu-field-range.esm.js",
   "types": "dist/uidu-field-range.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.6",
+    "@babel/runtime": "^7.20.7",
     "@radix-ui/react-slider": "^1.1.0",
     "@uidu/field-base": "^4.2.1",
     "tslib": "^2.4.1"

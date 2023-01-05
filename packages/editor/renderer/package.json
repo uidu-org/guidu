@@ -11,7 +11,7 @@
   "types": "dist/uidu-renderer.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.10.7",
-    "@babel/runtime": "^7.20.6",
+    "@babel/runtime": "^7.20.7",
     "@loadable/component": "^5.15.2",
     "@uidu/adf-schema": "^2.0.4",
     "@uidu/adf-utils": "^2.0.1",

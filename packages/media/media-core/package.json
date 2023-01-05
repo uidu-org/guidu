@@ -9,7 +9,7 @@
   "module": "dist/uidu-media-core.esm.js",
   "types": "dist/uidu-media-core.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.6",
+    "@babel/runtime": "^7.20.7",
     "@uidu/docs": "^0.5.23",
     "@uppy/aws-s3": "^3.0.4",
     "@uppy/core": "^3.0.4",
