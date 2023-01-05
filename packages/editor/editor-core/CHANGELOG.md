@@ -1,5 +1,14 @@
 # @uidu/editor-core
 
+## 2.5.1
+
+### Patch Changes
+
+- 30dfb9fb8: Media picker events pass uppy instance
+- Updated dependencies [30dfb9fb8]
+  - @uidu/media-picker@0.13.0
+  - @uidu/media-card@0.8.2
+
 ## 2.5.0
 
 ### Minor Changes

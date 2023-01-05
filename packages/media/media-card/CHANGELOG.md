@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.2
+
+### Patch Changes
+
+- 30dfb9fb8: Media picker events pass uppy instance
+
 ## 0.8.1
 
 ### Patch Changes
