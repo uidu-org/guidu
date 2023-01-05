@@ -50,6 +50,7 @@ export function s3UploadOptions({
       storage: 'cache',
       type,
       metadata: {
+        ...file.meta,
         size: file.size,
         filename: file.name,
         mime_type: file.type,
