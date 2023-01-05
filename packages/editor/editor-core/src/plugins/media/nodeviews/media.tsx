@@ -97,14 +97,13 @@ class MediaNode extends Component<MediaNodeProps> {
       file,
     } = this.props;
 
-    console.log('this.props', this.props);
-
     const { id, type, url } = node.attrs;
 
     if (
-      type !== 'external' &&
-      (!viewMediaClientConfig ||
-        (typeof uploadComplete === 'boolean' && !uploadComplete))
+      (type !== 'external' &&
+        (!viewMediaClientConfig ||
+          (typeof uploadComplete === 'boolean' && !uploadComplete))) ||
+      !file
     ) {
       return <div>Loading...</div>;
       // return <CardLoading dimensions={cardDimensions} />;

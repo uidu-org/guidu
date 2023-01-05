@@ -1,10 +1,11 @@
 import { MediaUploadOptions } from '@uidu/media-core';
 import { UploadResult } from '@uppy/core';
 import MediaPicker from './components/MediaPicker';
+import PopupImpl from './components/popup';
 
 export * from './types';
 
-export async function MediaPickerFactoryClass({
+export function MediaPickerFactoryClass({
   uploadOptions,
   onComplete,
   ...rest
@@ -12,12 +13,6 @@ export async function MediaPickerFactoryClass({
   uploadOptions: MediaUploadOptions;
   onComplete: (result: UploadResult) => void;
 }): Promise<any> {
-  const [{ PopupImpl }] = await Promise.all([
-    import(
-      /* webpackChunkName:"@uidu-internal_media-picker-popup" */ './components/popup'
-    ),
-  ]);
-
   return PopupImpl({ uploadOptions, onComplete, ...rest });
 }
 

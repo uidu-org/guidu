@@ -109,8 +109,6 @@ export class MediaPluginStateImplementation implements MediaPluginState {
 
   pickers: [] = [];
 
-  pickerPromises: Array<Promise<any>> = [];
-
   editingMediaSinglePos?: number;
 
   showEditingDialog?: boolean;
@@ -184,12 +182,8 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     try {
       this.mediaProvider = await mediaProvider;
 
-      console.log('this.mediaProvider', this.mediaProvider);
-
       if (!this.mediaProvider.viewMediaClientConfig) {
         const { viewMediaClientConfig } = this.mediaProvider;
-        console.log('viewMediaClientConfig', viewMediaClientConfig);
-
         if (viewMediaClientConfig) {
           this.mediaProvider.viewMediaClientConfig = viewMediaClientConfig;
         }
@@ -237,7 +231,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     if (this.allowsUploads) {
       this.uploadMediaClientConfig = this.mediaProvider.uploadMediaClientConfig;
       if (this.mediaProvider.uploadOptions) {
-        await this.initPickers(this.mediaProvider.uploadOptions);
+        this.initPickers(this.mediaProvider.uploadOptions);
       } else {
         this.destroyPickers();
       }
@@ -368,6 +362,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
 
     this.removeOnCloseListener();
     this.destroyPickers();
+    return undefined;
   }
 
   findMediaNode = (id: string): MediaNodeWithPosHandler | null =>
@@ -379,28 +374,17 @@ export class MediaPluginStateImplementation implements MediaPluginState {
   };
 
   private destroyPickers = () => {
-    const { pickers, pickerPromises } = this;
-
-    // If pickerPromises and pickers are the same length
-    // All pickers have resolved and we safely destroy them
-    // Otherwise wait for them to resolve then destroy.
-    if (pickerPromises.length === pickers.length) {
-      this.destroyAllPickers(this.pickers);
-    } else {
-      Promise.all(pickerPromises).then((resolvedPickers) =>
-        this.destroyAllPickers(resolvedPickers),
-      );
-    }
+    this.destroyAllPickers(pickers);
 
     this.popupPicker = null;
     this.customPicker = undefined;
   };
 
-  private async initPickers(uploadOptions: MediaUploadOptions) {
+  private initPickers(uploadOptions: MediaUploadOptions) {
     if (this.destroyed) {
       return undefined;
     }
-    const { errorReporter, pickers, pickerPromises } = this;
+    const { errorReporter, pickers } = this;
 
     // create pickers if they don't exist, re-use otherwise
     if (!pickers.length) {
@@ -417,10 +401,10 @@ export class MediaPluginStateImplementation implements MediaPluginState {
               },
             }),
       });
-      pickerPromises.push(popupPicker);
       // @ts-ignore
-      pickers.push((this.popupPicker = await popupPicker));
+      pickers.push((this.popupPicker = popupPicker));
     }
+    return undefined;
   }
 
   public trackNewMediaEvent(mediaState: MediaState) {

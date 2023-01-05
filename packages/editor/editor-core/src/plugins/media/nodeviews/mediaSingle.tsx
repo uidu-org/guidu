@@ -6,7 +6,7 @@ import {
   DEFAULT_IMAGE_WIDTH,
   MediaSingle,
   ProviderFactory,
-  WithProviders,
+  WithProviders
 } from '@uidu/editor-common';
 import { FileIdentifier, MediaClientConfig } from '@uidu/media-core';
 import { Node as PMNode } from 'prosemirror-model';
@@ -19,7 +19,7 @@ import { EventDispatcher } from '../../../event-dispatcher';
 import {
   getPosHandler,
   getPosHandlerNode,
-  SelectionBasedNodeView,
+  SelectionBasedNodeView
 } from '../../../nodeviews/ReactNodeView';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import WithPluginState from '../../../ui/WithPluginState';
@@ -131,7 +131,7 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
       }
     }
     onMount()
-      .then(() => console.log('mounted'))
+      .then(() => {})
       .catch(console.error);
   }, [mediaProvider, node.firstChild.attrs]);
 
@@ -219,8 +219,6 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
     pctWidth: mediaSingleWidth,
     fullWidthMode,
   };
-
-  console.log('file', file);
 
   const isSelected: boolean = selected();
 
