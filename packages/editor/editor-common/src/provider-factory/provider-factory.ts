@@ -10,6 +10,7 @@ function isUndefined(x: any): x is undefined {
 }
 export default class ProviderFactory {
   private providers: Map<string, Promise<any>> = new Map();
+
   private subscribers: Map<string, ProviderHandler[]> = new Map();
 
   static create(
@@ -17,7 +18,7 @@ export default class ProviderFactory {
   ): ProviderFactory {
     const providerFactory = new ProviderFactory();
     const keys = Object.keys(providers) as Array<ProviderName>;
-    keys.forEach(name => {
+    keys.forEach((name) => {
       providerFactory.setProvider(name, providers[name]);
     });
     return providerFactory;
@@ -64,7 +65,7 @@ export default class ProviderFactory {
     const provider = this.providers.get(name);
 
     if (provider) {
-      handler(name as T, provider as ProviderType<T>);
+      handler(name, provider as ProviderType<T>);
     }
   }
 
@@ -112,7 +113,7 @@ export default class ProviderFactory {
       return;
     }
 
-    handlers.forEach(handler => {
+    handlers.forEach((handler) => {
       handler(name, provider);
     });
   }

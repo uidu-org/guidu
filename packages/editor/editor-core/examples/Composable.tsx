@@ -100,15 +100,26 @@ export default function Composable() {
                       new MentionResource({
                         // Required attrib. Requests will happen natively.
                         url: 'https://me.uidu.local:8443/api/mentions',
-                        shouldHighlightMention: (mention) =>
-                          accountId === mention.id,
+                        // shouldHighlightMention: (mention) =>
+                        //   accountId === mention.id,
                       }),
                     )}
                     mediaProvider={Promise.resolve({
                       uploadOptions: localUploadOptions({
                         endpoint: 'https://uidu.local:8443/upload',
                       }),
-                      viewMediaClientConfig: Promise.resolve('test'),
+                      viewMediaClientConfig: async ({ id, ...rest }) => {
+                        console.log(rest);
+                        return {
+                          id,
+                          url: `https://me.uidu.local:8443/uploads/cache/${id}`,
+                          metadata: {
+                            name: 'test',
+                            width: 640,
+                            height: 640,
+                          },
+                        };
+                      },
                       uploadMediaClientConfig: Promise.resolve('test'),
                     })}
                     defaultValue={value}

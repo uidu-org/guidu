@@ -1,5 +1,6 @@
 import AwsS3, { AwsS3Options } from '@uppy/aws-s3';
 import XHRUpload, { XHRUploadOptions } from '@uppy/xhr-upload';
+import { Attrs } from 'prosemirror-model';
 
 export type FileMetadata = {
   extension?: string;
@@ -29,7 +30,7 @@ export type FileIdentifier = {
   url?: string | undefined;
 };
 
-export type MediaClientConfig = any;
+export type MediaClientConfig = (attrs: Attrs) => Promise<FileIdentifier>;
 
 export type MediaUploadOptions = {
   module: typeof AwsS3 | typeof XHRUpload;

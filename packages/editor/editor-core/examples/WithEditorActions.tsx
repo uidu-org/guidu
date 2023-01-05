@@ -56,7 +56,9 @@ export default function Basic({}) {
                         uploadOptions: localUploadOptions({
                           endpoint: 'https://uidu.local:8443/upload',
                         }),
-                        viewMediaClientConfig: Promise.resolve('test'),
+                        viewMediaClientConfig: async (id) => {
+                          return id;
+                        },
                         uploadMediaClientConfig: Promise.resolve('test'),
                       }),
                       allowMediaGroup: true,

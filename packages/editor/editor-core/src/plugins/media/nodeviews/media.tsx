@@ -1,10 +1,10 @@
 import {
   ContextIdentifierProvider,
   ImageLoaderProps,
-  MediaProvider,
   withImageLoader,
 } from '@uidu/editor-common';
 import Card from '@uidu/media-card';
+import { FileIdentifier } from '@uidu/media-core';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
@@ -22,18 +22,17 @@ export type Appearance = 'small' | 'image' | 'horizontal' | 'square';
 export interface MediaNodeProps extends ReactNodeProps, ImageLoaderProps {
   view: EditorView;
   node: PMNode;
+  file: FileIdentifier;
   getPos: ProsemirrorGetPosHandler;
   contextIdentifierProvider?: ContextIdentifierProvider;
   cardDimensions: any;
   originalDimensions?: any;
-  isMediaSingle?: boolean;
   onClick?: any;
   onExternalImageLoaded?: (dimensions: {
     width: number;
     height: number;
   }) => void;
   allowLazyLoading?: boolean;
-  mediaProvider?: Promise<MediaProvider>;
   viewMediaClientConfig?: any;
   uploadComplete?: boolean;
   isLoading?: boolean;
@@ -95,9 +94,12 @@ class MediaNode extends Component<MediaNodeProps> {
       contextIdentifierProvider,
       originalDimensions,
       isLoading,
+      file,
     } = this.props;
 
-    const { id, type, url, file } = node.attrs;
+    console.log('this.props', this.props);
+
+    const { id, type, url } = node.attrs;
 
     if (
       type !== 'external' &&
@@ -126,12 +128,10 @@ class MediaNode extends Component<MediaNodeProps> {
 
   private handleNewNode = (props: MediaNodeProps) => {
     const { node } = props;
+    const { getPos } = this.props;
 
     // +1 indicates the media node inside the mediaSingle nodeview
-    this.mediaPluginState.handleMediaNodeMount(
-      node,
-      () => this.props.getPos() + 1,
-    );
+    this.mediaPluginState.handleMediaNodeMount(node, () => getPos() + 1);
   };
 }
 

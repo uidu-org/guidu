@@ -184,8 +184,11 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     try {
       this.mediaProvider = await mediaProvider;
 
+      console.log('this.mediaProvider', this.mediaProvider);
+
       if (!this.mediaProvider.viewMediaClientConfig) {
         const { viewMediaClientConfig } = this.mediaProvider;
+        console.log('viewMediaClientConfig', viewMediaClientConfig);
 
         if (viewMediaClientConfig) {
           this.mediaProvider.viewMediaClientConfig = viewMediaClientConfig;

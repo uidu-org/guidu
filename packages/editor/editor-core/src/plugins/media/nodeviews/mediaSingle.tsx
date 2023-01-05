@@ -8,23 +8,24 @@ import {
   ProviderFactory,
   WithProviders,
 } from '@uidu/editor-common';
+import { FileIdentifier, MediaClientConfig } from '@uidu/media-core';
 import { Node as PMNode } from 'prosemirror-model';
 import { NodeSelection } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
 import { findParentNodeOfTypeClosestToPos } from 'prosemirror-utils';
 import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { EventDispatcher } from '../../../event-dispatcher';
 import {
   getPosHandler,
   getPosHandlerNode,
   SelectionBasedNodeView,
 } from '../../../nodeviews/ReactNodeView';
-import { createDisplayGrid } from '../../../plugins/grid';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import WithPluginState from '../../../ui/WithPluginState';
 import { setNodeSelection, setTextSelection } from '../../../utils';
 import { DispatchAnalyticsEvent } from '../../analytics';
+import { createDisplayGrid } from '../../grid';
 import { pluginKey as widthPluginKey } from '../../width';
 import { isMobileUploadCompleted } from '../commands/helpers';
 import { stateKey as mediaPluginKey } from '../pm-plugins/main';
@@ -38,12 +39,24 @@ import { MediaSingleNodeProps, MediaSingleNodeViewProps } from './types';
 export interface MediaSingleNodeState {
   width?: number;
   height?: number;
-  viewMediaClientConfig?: any;
+  viewMediaClientConfig?: MediaClientConfig;
   contextIdentifierProvider?: ContextIdentifierProvider;
   isCopying: boolean;
 }
 
 export default function MediaSingleNode(props: MediaSingleNodeProps) {
+  const {
+    selected,
+    getPos,
+    node,
+    mediaOptions,
+    mediaProvider,
+    fullWidthMode,
+    view: { state },
+    view,
+    mediaPluginState,
+    dispatchAnalyticsEvent,
+  } = props;
   // static defaultProps: Partial<MediaSingleNodeProps> = {
   //   mediaOptions: {},
   // };
@@ -56,23 +69,23 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
   //   isCopying: false,
   // };
 
-  const [viewMediaClientConfig, setViewMediaClientConfig] = useState(undefined);
+  const [viewMediaClientConfig, setViewMediaClientConfig] =
+    useState<MediaClientConfig>(undefined);
   const [contextIdentifierProvider, setContextIdentifierProvider] =
-    useState(undefined);
+    useState<ContextIdentifierProvider>(undefined);
+  const [file, setFile] = useState<FileIdentifier>(null);
   const [size, setSize] = useState({ width: undefined, height: undefined });
 
-  const createMediaNodeUpdater = (
-    props: MediaSingleNodeProps,
-  ): MediaNodeUpdater => {
-    const node = props.node.firstChild;
-
-    return new MediaNodeUpdater({
-      ...props,
-      isMediaSingle: true,
-      node: node ? (node as PMNode) : props.node,
-      dispatchAnalyticsEvent: props.dispatchAnalyticsEvent,
-    });
-  };
+  const createMediaNodeUpdater = useCallback<() => MediaNodeUpdater>(
+    () =>
+      new MediaNodeUpdater({
+        ...props,
+        isMediaSingle: true,
+        node: node || node.firstChild,
+        dispatchAnalyticsEvent,
+      }),
+    [node, props, dispatchAnalyticsEvent],
+  );
 
   // const UNSAFE_componentWillReceiveProps(nextProps: MediaSingleNodeProps) {
   //   if (nextProps.mediaProvider !== this.props.mediaProvider) {
@@ -89,36 +102,38 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
   //   this.createMediaNodeUpdater(nextProps).updateFileAttrs();
   // }
 
-  const _setViewMediaClientConfig = async (props: MediaSingleNodeProps) => {
-    const mediaProvider = await props.mediaProvider;
-    if (mediaProvider) {
-      const viewMediaClientConfig = mediaProvider.viewMediaClientConfig;
-      setViewMediaClientConfig(viewMediaClientConfig);
-    }
-  };
-
-  const updateMediaNodeAttributes = async (props: MediaSingleNodeProps) => {
-    const mediaNodeUpdater = createMediaNodeUpdater(props);
-    // const { addPendingTask } = this.props.mediaPluginState;
+  const updateMediaNodeAttributes = useCallback(async () => {
+    const mediaNodeUpdater = createMediaNodeUpdater();
+    // const { addPendingTask } = mediaPluginState;
 
     // we want the first child of MediaSingle (type "media")
-    const node = props.node.firstChild;
-    if (!node) {
+    // const node = node.firstChild;
+    if (!node?.firstChild) {
       return;
     }
-  };
+    const updatedDimensions = await mediaNodeUpdater.getRemoteDimensions();
+    if (updatedDimensions) {
+      mediaNodeUpdater.updateDimensions(updatedDimensions);
+    }
+  }, [createMediaNodeUpdater, node?.firstChild]);
 
   useEffect(() => {
     async function onMount() {
-      await Promise.all([
-        _setViewMediaClientConfig(props),
-        updateMediaNodeAttributes(props),
-      ]);
+      const resolvedMediaProvider = await mediaProvider;
+      if (resolvedMediaProvider) {
+        const { viewMediaClientConfig: viewMediaClientConfigFromProps } =
+          resolvedMediaProvider;
+        setViewMediaClientConfig(() => viewMediaClientConfigFromProps);
 
-      setContextIdentifierProvider(props.contextIdentifierProvider);
+        viewMediaClientConfigFromProps(node.firstChild.attrs)
+          .then(setFile)
+          .catch(console.error);
+      }
     }
-    onMount();
-  }, []);
+    onMount()
+      .then(() => console.log('mounted'))
+      .catch(console.error);
+  }, [mediaProvider, node.firstChild.attrs]);
 
   const onExternalImageLoaded = ({
     width,
@@ -128,15 +143,9 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
     height: number;
   }) => {
     setSize({ width, height });
-    forceUpdate();
   };
 
   const selectMediaSingle = (event: React.MouseEvent) => {
-    const {
-      view,
-      getPos,
-      view: { state },
-    } = props;
     event.persist();
     // We need to call "stopPropagation" here in order to prevent the browser from navigating to
     // another URL if the media node is wrapped in a link mark.
@@ -164,8 +173,7 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
   const updateSize = (width: number | null, layout: MediaSingleLayout) => {
     const {
       node: { attrs },
-      view: { state, dispatch },
-      getPos,
+      view: { dispatch },
     } = props;
     const pos = getPos();
     if (typeof pos === 'undefined') {
@@ -180,20 +188,10 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
     return dispatch(tr);
   };
 
-  const {
-    selected,
-    getPos,
-    node,
-    mediaOptions,
-    fullWidthMode,
-    view: { state },
-    view,
-    mediaPluginState,
-  } = props;
   const isCopying = false;
 
   const { layout, width: mediaSingleWidth } = node.attrs;
-  const childNode = node.firstChild!;
+  const childNode = node.firstChild;
   let {
     file: {
       metadata: { width, height },
@@ -204,7 +202,7 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
     width = DEFAULT_IMAGE_WIDTH;
     height = DEFAULT_IMAGE_HEIGHT;
   }
-  const cardWidth = props.width;
+  const cardWidth = width;
   const cardHeight = (height / width) * cardWidth;
 
   const cardDimensions = {
@@ -216,11 +214,13 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
     layout,
     width,
     height,
-    containerWidth: props.width,
+    containerWidth: width,
     lineLength: props.lineLength,
     pctWidth: mediaSingleWidth,
     fullWidthMode,
   };
+
+  console.log('file', file);
 
   const isSelected: boolean = selected();
 
@@ -236,6 +236,7 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
     <MediaItem
       view={view}
       node={childNode}
+      file={file}
       getPos={getPos}
       cardDimensions={cardDimensions}
       originalDimensions={originalDimensions}
@@ -326,6 +327,7 @@ const getLineLength = (view: EditorView, pos: number): number | null => {
 
 class MediaSingleNodeView extends SelectionBasedNodeView<MediaSingleNodeViewProps> {
   lastOffsetLeft = 0;
+
   forceViewUpdate = false;
 
   createDomRef(): HTMLElement {
@@ -391,42 +393,40 @@ class MediaSingleNodeView extends SelectionBasedNodeView<MediaSingleNodeViewProp
       <WithProviders
         providers={['mediaProvider', 'contextIdentifierProvider']}
         providerFactory={providerFactory}
-        renderNode={({ mediaProvider, contextIdentifierProvider }) => {
-          return (
-            <WithPluginState
-              editorView={this.view}
-              plugins={{
-                width: widthPluginKey,
-                mediaPluginState: mediaPluginKey,
-              }}
-              render={({ width, mediaPluginState }) => {
-                const { selection } = this.view.state;
-                const isSelected = () =>
-                  this.isSelectionInsideNode(selection.from, selection.to) ||
-                  (selection instanceof NodeSelection &&
-                    selection.from === getPos());
+        renderNode={({ mediaProvider, contextIdentifierProvider }) => (
+          <WithPluginState
+            editorView={this.view}
+            plugins={{
+              width: widthPluginKey,
+              mediaPluginState: mediaPluginKey,
+            }}
+            render={({ width, mediaPluginState }) => {
+              const { selection } = this.view.state;
+              const isSelected = () =>
+                this.isSelectionInsideNode(selection.from, selection.to) ||
+                (selection instanceof NodeSelection &&
+                  selection.from === getPos());
 
-                return (
-                  <MediaSingleNode
-                    width={width.width}
-                    lineLength={width.lineLength}
-                    node={this.node}
-                    getPos={getPos}
-                    mediaProvider={mediaProvider}
-                    contextIdentifierProvider={contextIdentifierProvider}
-                    mediaOptions={mediaOptions || {}}
-                    view={this.view}
-                    fullWidthMode={fullWidthMode}
-                    selected={isSelected}
-                    eventDispatcher={eventDispatcher}
-                    mediaPluginState={mediaPluginState}
-                    dispatchAnalyticsEvent={dispatchAnalyticsEvent}
-                  />
-                );
-              }}
-            />
-          );
-        }}
+              return (
+                <MediaSingleNode
+                  width={width.width}
+                  lineLength={width.lineLength}
+                  node={this.node}
+                  getPos={getPos}
+                  mediaProvider={mediaProvider}
+                  contextIdentifierProvider={contextIdentifierProvider}
+                  mediaOptions={mediaOptions || {}}
+                  view={this.view}
+                  fullWidthMode={fullWidthMode}
+                  selected={isSelected}
+                  eventDispatcher={eventDispatcher}
+                  mediaPluginState={mediaPluginState}
+                  dispatchAnalyticsEvent={dispatchAnalyticsEvent}
+                />
+              );
+            }}
+          />
+        )}
       />
     );
   }
@@ -434,7 +434,7 @@ class MediaSingleNodeView extends SelectionBasedNodeView<MediaSingleNodeViewProp
   ignoreMutation() {
     // DOM has changed; recalculate if we need to re-render
     if (this.dom) {
-      const offsetLeft = this.dom.offsetLeft;
+      const { offsetLeft } = this.dom;
 
       if (offsetLeft !== this.lastOffsetLeft) {
         this.lastOffsetLeft = offsetLeft;
@@ -458,8 +458,8 @@ export const ReactMediaSingleNode =
     dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
     isCopyPasteEnabled?: boolean,
   ) =>
-  (node: PMNode, view: EditorView, getPos: getPosHandler) => {
-    return new MediaSingleNodeView(node, view, getPos, portalProviderAPI, {
+  (node: PMNode, view: EditorView, getPos: getPosHandler) =>
+    new MediaSingleNodeView(node, view, getPos, portalProviderAPI, {
       eventDispatcher,
       fullWidthMode,
       providerFactory,
@@ -467,4 +467,3 @@ export const ReactMediaSingleNode =
       dispatchAnalyticsEvent,
       isCopyPasteEnabled,
     }).init();
-  };
