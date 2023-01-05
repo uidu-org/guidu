@@ -76,8 +76,4 @@ export interface MediaPluginState {
   destroy(): void;
 
   trackNewMediaEvent(mediaState: MediaState): void;
-
-  // updateAndDispatch(
-  //   props: Partial<Pick<this, 'allowsUploads' | 'allUploadsFinished'>>,
-  // ): void;
 }
