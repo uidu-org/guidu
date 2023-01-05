@@ -6,7 +6,7 @@ import {
   DEFAULT_IMAGE_WIDTH,
   MediaSingle,
   ProviderFactory,
-  WithProviders
+  WithProviders,
 } from '@uidu/editor-common';
 import { FileIdentifier, MediaClientConfig } from '@uidu/media-core';
 import { Node as PMNode } from 'prosemirror-model';
@@ -19,7 +19,7 @@ import { EventDispatcher } from '../../../event-dispatcher';
 import {
   getPosHandler,
   getPosHandlerNode,
-  SelectionBasedNodeView
+  SelectionBasedNodeView,
 } from '../../../nodeviews/ReactNodeView';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import WithPluginState from '../../../ui/WithPluginState';
@@ -124,16 +124,17 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
         const { viewMediaClientConfig: viewMediaClientConfigFromProps } =
           resolvedMediaProvider;
         setViewMediaClientConfig(() => viewMediaClientConfigFromProps);
-
-        viewMediaClientConfigFromProps(node.firstChild.attrs)
-          .then(setFile)
-          .catch(console.error);
+        if (!file) {
+          viewMediaClientConfigFromProps(node.firstChild.attrs)
+            .then(setFile)
+            .catch(console.error);
+        }
       }
     }
     onMount()
       .then(() => {})
       .catch(console.error);
-  }, [mediaProvider, node.firstChild.attrs]);
+  }, [mediaProvider, node.firstChild.attrs, file]);
 
   const onExternalImageLoaded = ({
     width,

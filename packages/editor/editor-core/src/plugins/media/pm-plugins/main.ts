@@ -374,7 +374,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
   };
 
   private destroyPickers = () => {
-    this.destroyAllPickers(pickers);
+    this.destroyAllPickers(this.pickers);
 
     this.popupPicker = null;
     this.customPicker = undefined;
