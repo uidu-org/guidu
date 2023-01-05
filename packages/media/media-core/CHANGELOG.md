@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 1.2.0
+
+### Minor Changes
+
+- 220086250: CU-332gd2p add viewMediaClientConfig
+
 ## 1.1.8
 
 ### Patch Changes
