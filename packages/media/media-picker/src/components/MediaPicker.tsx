@@ -53,14 +53,20 @@ export default function MediaPicker({
         uppy.setFileMeta(file.id, {
           size: file.size,
         });
-        onFileAdded(file);
+        onFileAdded(file, uppy);
       })
-      .on('file-removed', onFileRemoved)
-      .on('upload-error', onUploadError)
-      .on('upload-progress', onUploadProgress)
-      .on('upload-success', onUploadSuccess)
-      .on('upload-retry', onUploadRetry)
-      .on('complete', onComplete),
+      .on('file-removed', (file, reason) => onFileRemoved(file, reason, uppy))
+      .on('upload-error', (file, error, response) =>
+        onUploadError(file, error, response, uppy),
+      )
+      .on('upload-progress', (file, progress) =>
+        onUploadProgress(file, progress, uppy),
+      )
+      .on('upload-success', (file, response) =>
+        onUploadSuccess(file, response, uppy),
+      )
+      .on('upload-retry', (fileId) => onUploadRetry(fileId, uppy))
+      .on('complete', (result) => onComplete(result, uppy)),
   );
 
   return (

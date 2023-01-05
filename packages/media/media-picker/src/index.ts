@@ -12,7 +12,7 @@ export function MediaPickerFactoryClass({
 }: {
   uploadOptions: MediaUploadOptions;
   onComplete: (result: UploadResult) => void;
-}): Promise<any> {
+}) {
   return PopupImpl({ uploadOptions, onComplete, ...rest });
 }
 

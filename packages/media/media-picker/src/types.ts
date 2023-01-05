@@ -1,17 +1,42 @@
-import { UploadResult, UppyEventMap } from '@uppy/core';
+import type Uppy from '@uppy/core';
+import {
+  ErrorResponse,
+  FileProgress,
+  FileRemoveReason,
+  SuccessResponse,
+  UploadResult,
+  UppyFile,
+} from '@uppy/core';
 
 import { MediaUploadOptions } from '@uidu/media-core';
 
 export type MediaPickerProps = {
-  onComplete: (result: UploadResult) => void;
   open?: boolean;
   uploadOptions: MediaUploadOptions;
-  onFileAdded?: UppyEventMap['file-added'];
-  onFileRemoved?: UppyEventMap['file-removed'];
-  onUploadError?: UppyEventMap['upload-error'];
-  onUploadProgress?: UppyEventMap['upload-progress'];
-  onUploadSuccess?: UppyEventMap['upload-success'];
-  onUploadRetry?: UppyEventMap['upload-retry'];
+  onComplete: (result: UploadResult, uppy: Uppy) => void;
+  onFileAdded?: (file: UppyFile, uppy: Uppy) => void;
+  onFileRemoved?: (
+    file: UppyFile,
+    reason: FileRemoveReason,
+    uppy: Uppy,
+  ) => void;
+  onUploadError?: (
+    file: UppyFile,
+    error: Error,
+    response: ErrorResponse,
+    uppy: Uppy,
+  ) => void;
+  onUploadProgress?: (
+    file: UppyFile,
+    progress: FileProgress,
+    uppy: Uppy,
+  ) => void;
+  onUploadSuccess?: (
+    file: UppyFile,
+    response: SuccessResponse,
+    uppy: Uppy,
+  ) => void;
+  onUploadRetry?: (fileId: string, uppy: Uppy) => void;
 };
 
 export type MediaFile = any;

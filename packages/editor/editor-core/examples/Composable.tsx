@@ -112,6 +112,7 @@ export default function Composable() {
                         console.log(rest);
                         return {
                           id,
+                          type: 'image',
                           url: `https://me.uidu.local:8443/uploads/cache/${id}`,
                           metadata: {
                             name: 'test',
