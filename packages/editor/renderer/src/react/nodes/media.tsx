@@ -6,5 +6,6 @@ export interface MediaProps {
 }
 
 export default function Media(props: MediaProps) {
+  console.log(props);
   return <MediaCard {...props} />;
 }

@@ -50,7 +50,6 @@ export interface Props {
   appearance?: RendererAppearance;
   adfStage?: ADFStage;
   disableHeadingIDs?: boolean;
-  allowDynamicTextSizing?: boolean;
   allowHeadingAnchorLinks?: boolean;
   maxHeight?: number;
   truncated?: boolean;
@@ -142,7 +141,6 @@ export class Renderer extends PureComponent<Props, {}> {
       schema,
       appearance,
       disableHeadingIDs,
-      allowDynamicTextSizing,
       allowHeadingAnchorLinks,
       allowColumnSorting,
     } = props;
@@ -159,7 +157,6 @@ export class Renderer extends PureComponent<Props, {}> {
       } as RendererContext,
       appearance,
       disableHeadingIDs,
-      allowDynamicTextSizing,
       allowHeadingAnchorLinks,
       allowColumnSorting,
       fireAnalyticsEvent: this.fireAnalyticsEvent,
@@ -182,7 +179,6 @@ export class Renderer extends PureComponent<Props, {}> {
       schema,
       appearance,
       adfStage,
-      allowDynamicTextSizing,
       maxHeight,
       truncated,
     } = this.props;
@@ -208,10 +204,7 @@ export class Renderer extends PureComponent<Props, {}> {
               }}
             >
               <SmartCardStorageProvider>
-                <RendererWrapper
-                  appearance={appearance}
-                  dynamicTextSizing={!!allowDynamicTextSizing}
-                >
+                <RendererWrapper appearance={appearance}>
                   {result}
                 </RendererWrapper>
               </SmartCardStorageProvider>
@@ -227,10 +220,7 @@ export class Renderer extends PureComponent<Props, {}> {
       );
     } catch (ex) {
       return (
-        <RendererWrapper
-          appearance={appearance}
-          dynamicTextSizing={!!allowDynamicTextSizing}
-        >
+        <RendererWrapper appearance={appearance}>
           <UnsupportedBlock />
         </RendererWrapper>
       );

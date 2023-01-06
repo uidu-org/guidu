@@ -1,4 +1,8 @@
-import { blockNodesVerticalMargin, calcBreakoutWidth, WidthConsumer } from '@uidu/editor-common';
+import {
+  blockNodesVerticalMargin,
+  calcBreakoutWidth,
+  WidthConsumer,
+} from '@uidu/editor-common';
 import * as React from 'react';
 import styled from 'styled-components';
 
@@ -8,19 +12,22 @@ export const Wrapper = styled.div`
   transform: translateX(-50%);
 `;
 
-export default function Breakout(props: {
-  children: React.ReactChild;
+export default function Breakout({
+  children,
+  mode,
+}: {
+  children: React.ReactNode;
   mode: string;
 }) {
   return (
     <WidthConsumer>
       {({ width }) => (
         <Wrapper
-          data-mode={props.mode}
+          data-mode={mode}
           style={{ width: calcBreakoutWidth(props.mode, width) }}
           className="fabric-editor-breakout-mark"
         >
-          {props.children}
+          {children}
         </Wrapper>
       )}
     </WidthConsumer>

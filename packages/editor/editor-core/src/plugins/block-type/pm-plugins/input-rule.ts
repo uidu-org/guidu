@@ -42,7 +42,7 @@ function getHeadingLevel(match: string[]): {
 
 export function headingRule(nodeType: NodeType, maxLevel: number) {
   return textblockTypeInputRule(
-    new RegExp('^(#{1,' + maxLevel + '})\\s$'),
+    new RegExp(`^(#{1,${maxLevel}})\\s$`),
     nodeType,
     getHeadingLevel,
   ) as InputRuleWithHandler;
@@ -129,20 +129,13 @@ function getBlockQuoteRules(schema: Schema): InputRuleWithHandler[] {
 
   greatherThanRule.handler = trackAndInvoke(
     'uidu.editor-core.format.blockquote.autoformatting',
-    greatherThanRule.handler as any,
+    greatherThanRule.handler,
   );
 
   const leftNodeReplacementGreatherRule = createInputRule(
     new RegExp(`${leafNodeReplacementCharacter}\\s*>\\s$`),
-    (state, _match, start, end) => {
-      return insertBlock(
-        state,
-        schema.nodes.blockquote,
-        'blockquote',
-        start,
-        end,
-      );
-    },
+    (state, _match, start, end) =>
+      insertBlock(state, schema.nodes.blockquote, 'blockquote', start, end),
     true,
   );
 

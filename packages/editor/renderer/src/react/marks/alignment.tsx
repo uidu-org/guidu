@@ -1,12 +1,9 @@
+import { AlignmentAttributes, alignmentPositionMap } from '@uidu/adf-schema';
 import * as React from 'react';
 import styled, { css } from 'styled-components';
-import {
-  alignmentPositionMap,
-  AlignmentAttributes,
-} from '@uidu/adf-schema';
 
 export interface Props extends AlignmentAttributes {
-  children: React.Props<any>;
+  children: React.ReactNode;
 }
 
 const MarkWrapper = styled.div`
@@ -17,10 +14,10 @@ const MarkWrapper = styled.div`
     `};
 `;
 
-export default function Alignment(props: Props) {
+export default function Alignment({ children, align }: Props) {
   return (
-    <MarkWrapper className="fabric-editor-block-mark" data-align={props.align}>
-      {props.children}
+    <MarkWrapper className="fabric-editor-block-mark" data-align={align}>
+      {children}
     </MarkWrapper>
   );
 }

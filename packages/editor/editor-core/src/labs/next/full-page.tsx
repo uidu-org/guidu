@@ -180,7 +180,6 @@ function FullPage(props: FullPageProps) {
   const {
     primaryToolbarComponents,
     contentComponents,
-    allowDynamicTextSizing,
     collabEdit,
     createAnalyticsEvent,
     contextPanel,
@@ -192,7 +191,7 @@ function FullPage(props: FullPageProps) {
   return (
     <ContextPanelWidthProvider>
       <Editor {...props} onAnalyticsEvent={handleAnalyticsEvent}>
-        <BaseTheme dynamicTextSizing={allowDynamicTextSizing}>
+        <BaseTheme>
           <FullPageEditorWrapper className="akEditor">
             <MainToolbar showKeyline={showKeyline}>
               <Toolbar />

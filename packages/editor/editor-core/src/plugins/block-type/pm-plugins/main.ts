@@ -39,7 +39,7 @@ export type BlockTypeState = {
 const blockTypeForNode = (node: Node, schema: Schema): BlockType => {
   if (node.type === schema.nodes.heading) {
     const maybeNode =
-      HEADINGS_BY_LEVEL[node.attrs['level'] as keyof typeof HEADINGS_BY_LEVEL];
+      HEADINGS_BY_LEVEL[node.attrs.level as keyof typeof HEADINGS_BY_LEVEL];
     if (maybeNode) {
       return maybeNode;
     }
@@ -69,6 +69,8 @@ const isBlockTypeSchemaSupported = (
       return !!state.schema.nodes.codeBlock;
     case PANEL:
       return !!state.schema.nodes.panel;
+    default:
+      return undefined;
   }
   return undefined;
 };
@@ -85,7 +87,7 @@ const detectBlockType = (
   const { $from, $to } = state.selection;
   state.doc.nodesBetween($from.pos, $to.pos, (node) => {
     const nodeBlockType = availableBlockTypes.filter(
-      (blockType) => blockType === blockTypeForNode(node, state.schema),
+      (bt) => bt === blockTypeForNode(node, state.schema),
     );
     if (nodeBlockType.length > 0) {
       if (!blockType) {
@@ -108,10 +110,10 @@ const autoformatHeading = (
       view.dispatch,
     );
   } else {
-    setHeadingWithAnalytics(
-      headingLevel as HeadingLevels,
-      INPUT_METHOD.FORMATTING,
-    )(view.state, view.dispatch);
+    setHeadingWithAnalytics(headingLevel, INPUT_METHOD.FORMATTING)(
+      view.state,
+      view.dispatch,
+    );
   }
   return true;
 };
@@ -204,7 +206,8 @@ export const createPlugin = (
         if (headingLevel > -1 && event.altKey) {
           if (browser.mac && event.metaKey) {
             return autoformatHeading(headingLevel, view);
-          } else if (
+          }
+          if (
             !browser.mac &&
             event.ctrlKey &&
             altKeyLocation !== event.DOM_KEY_LOCATION_RIGHT

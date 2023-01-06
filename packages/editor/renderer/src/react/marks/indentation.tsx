@@ -1,17 +1,17 @@
-import * as React from 'react';
 import { IndentationMarkAttributes } from '@uidu/adf-schema';
+import React, { ReactNode } from 'react';
 
 interface Props extends IndentationMarkAttributes {
-  children: React.Props<any>;
+  children: ReactNode;
 }
 
-export default function Indentation(props: Props) {
+export default function Indentation({ children, level }: Props) {
   return (
     <div
       className="fabric-editor-block-mark fabric-editor-indentation-mark"
-      data-level={props.level}
+      data-level={level}
     >
-      {props.children}
+      {children}
     </div>
   );
 }

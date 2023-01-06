@@ -11,7 +11,7 @@ import { INPUT_METHOD } from '../../analytics';
 import {
   cleanUpAtTheStartOfDocument,
   insertBlockTypesWithAnalytics,
-} from '../../block-type/commands';
+} from '../commands';
 import * as blockTypes from '../types';
 
 const analyticsEventName = (blockTypeName: string, eventSource: string) =>
@@ -22,7 +22,7 @@ export default function keymapPlugin(schema: Schema): Plugin {
   const list = {};
 
   keymaps.bindKeymapWithCommand(
-    keymaps.insertNewLine.common!,
+    keymaps.insertNewLine.common,
     trackAndInvoke(
       'uidu.editor-core.newline.keyboard',
       commands.insertNewLineWithAnalytics,
@@ -30,7 +30,7 @@ export default function keymapPlugin(schema: Schema): Plugin {
     list,
   );
   keymaps.bindKeymapWithCommand(
-    keymaps.moveUp.common!,
+    keymaps.moveUp.common,
     trackAndInvoke(
       'uidu.editor-core.moveup.keyboard',
       commands.createNewParagraphAbove,
@@ -38,7 +38,7 @@ export default function keymapPlugin(schema: Schema): Plugin {
     list,
   );
   keymaps.bindKeymapWithCommand(
-    keymaps.moveDown.common!,
+    keymaps.moveDown.common,
     trackAndInvoke(
       'uidu.editor-core.movedown.keyboard',
       commands.createNewParagraphBelow,
@@ -52,7 +52,7 @@ export default function keymapPlugin(schema: Schema): Plugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.undo.common!,
+    keymaps.undo.common,
     trackAndInvoke(
       'uidu.editor-core.undo.keyboard',
       tryUndoInputRuleElseUndoHistory,
@@ -66,7 +66,7 @@ export default function keymapPlugin(schema: Schema): Plugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.backspace.common!,
+    keymaps.backspace.common,
     cleanUpAtTheStartOfDocument,
     list,
   );

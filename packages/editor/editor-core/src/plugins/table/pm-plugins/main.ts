@@ -39,7 +39,6 @@ import { defaultTableSelection } from './default-table-selection';
 import { createPluginState, getPluginState, pluginKey } from './plugin-factory';
 
 let isBreakoutEnabled: boolean | undefined;
-let isDynamicTextSizingEnabled: boolean | undefined;
 let isFullWidthModeEnabled: boolean | undefined;
 let wasFullWidthModeEnabled: boolean | undefined;
 
@@ -53,7 +52,6 @@ export const createPlugin = (
   previousFullWidthModeEnabled?: boolean,
 ) => {
   isBreakoutEnabled = breakoutEnabled;
-  isDynamicTextSizingEnabled = dynamicTextSizing;
   isFullWidthModeEnabled = fullWidthModeEnabled;
   wasFullWidthModeEnabled = previousFullWidthModeEnabled;
 
@@ -162,7 +160,6 @@ export const createPlugin = (
         table: (node, view, getPos) =>
           createTableView(node, view, getPos, portalProviderAPI, {
             isBreakoutEnabled,
-            dynamicTextSizing: isDynamicTextSizingEnabled,
             isFullWidthModeEnabled,
             wasFullWidthModeEnabled,
           }),

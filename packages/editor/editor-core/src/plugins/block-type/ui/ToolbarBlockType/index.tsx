@@ -58,7 +58,7 @@ export default function ToolbarBlockType({
   pluginState: { currentBlockType, blockTypesDisabled, availableBlockTypes },
 }: Props) {
   const [active, setActive] = useState(false);
-  const { formatMessage } = useIntl();
+  const intl = useIntl();
 
   const isHeadingDisabled = !availableBlockTypes.some(
     (blockType) => blockType.nodeName === 'heading',
@@ -74,14 +74,14 @@ export default function ToolbarBlockType({
 
   const longestDropdownMenuItem = [NORMAL_TEXT, ...availableBlockTypes].reduce(
     (longest, item) => {
-      const itemTitle = formatMessage(item.title);
+      const itemTitle = intl.formatMessage(item.title);
       return itemTitle.length >= longest.length ? itemTitle : longest;
     },
     '',
   );
 
   const toolbarButtonFactory = (disabled: boolean) => {
-    const labelTextStyles = formatMessage(messages.textStyles);
+    const labelTextStyles = intl.formatMessage(messages.textStyles);
     return (
       <ToolbarButton
         spacing={isReducedSpacing ? 'none' : 'default'}
@@ -125,7 +125,7 @@ export default function ToolbarBlockType({
       acc.push({
         content: (
           <BlockTypeMenuItem>
-            {createElement(tagName, {}, formatMessage(blockType.title))}
+            {createElement(tagName, {}, intl.formatMessage(blockType.title))}
           </BlockTypeMenuItem>
         ),
         value: blockType,

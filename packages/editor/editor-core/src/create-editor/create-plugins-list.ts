@@ -157,7 +157,6 @@ export default function createPluginsList(
   //       allowContextualMenu: !isMobile,
   //       fullWidthEnabled: props.appearance === 'full-width',
   //       wasFullWidthEnabled: prevProps && prevProps.appearance === 'full-width',
-  //       dynamicSizingEnabled: props.allowDynamicTextSizing,
   //     }),
   //   );
   // }

@@ -34,7 +34,6 @@ export interface Props {
   layout: MediaSingleLayout;
   eventHandlers?: EventHandlers;
   width?: number;
-  allowDynamicTextSizing?: boolean;
   isInsideOfBlockNode?: boolean;
   rendererAppearance: RendererAppearance;
   marks: Mark[];
@@ -189,7 +188,7 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
     return (
       <WidthConsumer>
         {({ width: containerWidth, breakpoint }) => {
-          const { isInsideOfBlockNode, allowDynamicTextSizing } = this.props;
+          const { isInsideOfBlockNode } = this.props;
           const cardWidth = containerWidth;
           const cardHeight = (height / width) * cardWidth;
           const cardDimensions = {
@@ -204,10 +203,7 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
             const isContainerSizeGreaterThanMaxFullPageWidth =
               containerWidth - padding >= akEditorFullPageMaxWidth;
 
-            if (
-              isContainerSizeGreaterThanMaxFullPageWidth &&
-              allowDynamicTextSizing
-            ) {
+            if (isContainerSizeGreaterThanMaxFullPageWidth) {
               nonFullWidthSize = mapBreakpointToLayoutMaxWidth(breakpoint);
             } else if (isContainerSizeGreaterThanMaxFullPageWidth) {
               nonFullWidthSize = akEditorFullPageMaxWidth;

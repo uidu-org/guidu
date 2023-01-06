@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import { Node, ResolvedPos, Slice } from 'prosemirror-model';
 import {
   EditorState,
@@ -11,6 +12,7 @@ import { Decoration, DecorationSet } from 'prosemirror-view';
 
 export class FakeTextCursorBookmark {
   pos: undefined | number = undefined;
+
   visible: boolean = false;
 
   constructor(pos: number) {
@@ -18,11 +20,11 @@ export class FakeTextCursorBookmark {
   }
 
   map(mapping: Mappable): FakeTextCursorBookmark {
-    return new FakeTextCursorBookmark(mapping.map(this.pos!));
+    return new FakeTextCursorBookmark(mapping.map(this.pos));
   }
 
   resolve(doc: Node): Selection {
-    const $pos = doc.resolve(this.pos!);
+    const $pos = doc.resolve(this.pos);
     return Selection.near($pos);
   }
 }

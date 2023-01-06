@@ -74,7 +74,7 @@ const orderChildren = (
     sortedTable.unshift(headerRow);
   }
 
-  return sortedTable.map(elem => elem.rowReact);
+  return sortedTable.map((elem) => elem.rowReact);
 };
 
 const addSortableColumn = (
@@ -102,7 +102,6 @@ export interface TableProps {
   tableNode?: PMNode;
   renderWidth: number;
   rendererAppearance?: RendererAppearance;
-  allowDynamicTextSizing?: boolean;
   allowColumnSorting?: boolean;
 }
 
@@ -144,7 +143,6 @@ const isHeaderRowEnabled = (rows: React.ReactChild[]) => {
 };
 
 interface TableWidthOptions {
-  isDynamicTextSizingEnabled?: boolean;
   containerWidth?: number;
 }
 
@@ -155,7 +153,7 @@ const getTableLayoutWidth = (layout: TableLayout, opts?: TableWidthOptions) => {
     case 'wide':
       return akEditorWideLayoutWidth;
     default:
-      if (opts && opts.isDynamicTextSizingEnabled && opts.containerWidth) {
+      if (opts && opts.containerWidth) {
         return mapBreakpointToLayoutMaxWidth(
           getBreakpoint(opts.containerWidth),
         );
@@ -165,7 +163,7 @@ const getTableLayoutWidth = (layout: TableLayout, opts?: TableWidthOptions) => {
 };
 
 const isTableResized = (columnWidths: Array<number>) => {
-  const filteredWidths = columnWidths.filter(width => width !== 0);
+  const filteredWidths = columnWidths.filter((width) => width !== 0);
   return !!filteredWidths.length;
 };
 
@@ -287,20 +285,14 @@ export class TableContainer extends React.Component<
   };
 
   private renderColgroup = () => {
-    let {
-      columnWidths,
-      layout,
-      isNumberColumnEnabled,
-      renderWidth,
-      allowDynamicTextSizing,
-    } = this.props;
+    let { columnWidths, layout, isNumberColumnEnabled, renderWidth } =
+      this.props;
     if (!columnWidths || !isTableResized(columnWidths)) {
       return null;
     }
 
     // @see ED-6056
     const layoutWidth = getTableLayoutWidth(layout, {
-      isDynamicTextSizingEnabled: allowDynamicTextSizing,
       containerWidth: renderWidth,
     });
     const maxTableWidth = renderWidth < layoutWidth ? renderWidth : layoutWidth;
@@ -316,7 +308,7 @@ export class TableContainer extends React.Component<
     let minTableWidth = tableWidth;
     let zeroWidthColumnsCount = 0;
 
-    columnWidths.forEach(width => {
+    columnWidths.forEach((width) => {
       if (width) {
         tableWidth += Math.ceil(width);
       } else {
@@ -374,9 +366,9 @@ const TableWithShadows = overflowShadow(TableContainer, {
   overflowSelector: `.${TableSharedCssClassName.TABLE_NODE_WRAPPER}`,
 });
 
-const TableWithWidth: React.FunctionComponent<React.ComponentProps<
-  typeof TableWithShadows
->> = props => (
+const TableWithWidth: React.FunctionComponent<
+  React.ComponentProps<typeof TableWithShadows>
+> = (props) => (
   <WidthConsumer>
     {({ width }) => {
       const renderWidth =

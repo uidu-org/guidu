@@ -39,7 +39,6 @@ export interface ConstructorParams {
   objectContext?: RendererContext;
   appearance?: RendererAppearance;
   disableHeadingIDs?: boolean;
-  allowDynamicTextSizing?: boolean;
   allowHeadingAnchorLinks?: boolean;
   allowColumnSorting?: boolean;
   fireAnalyticsEvent?: (event: AnalyticsEventPayload) => void;
@@ -86,8 +85,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
 
   private headingIds: string[] = [];
 
-  private allowDynamicTextSizing?: boolean;
-
   private allowHeadingAnchorLinks?: boolean;
 
   private allowColumnSorting?: boolean;
@@ -102,7 +99,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
     objectContext,
     appearance,
     disableHeadingIDs,
-    allowDynamicTextSizing,
     allowHeadingAnchorLinks,
     allowColumnSorting,
     fireAnalyticsEvent,
@@ -114,7 +110,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
     this.rendererContext = objectContext;
     this.appearance = appearance;
     this.disableHeadingIDs = disableHeadingIDs;
-    this.allowDynamicTextSizing = allowDynamicTextSizing;
     this.allowHeadingAnchorLinks = allowHeadingAnchorLinks;
     this.allowColumnSorting = allowColumnSorting;
     this.fireAnalyticsEvent = fireAnalyticsEvent;
@@ -282,7 +277,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
       rendererContext: this.rendererContext,
       serializer: this,
       content: node.content ? node.content.toJSON() : undefined,
-      allowDynamicTextSizing: this.allowDynamicTextSizing,
       allowHeadingAnchorLinks: this.allowHeadingAnchorLinks,
       rendererAppearance: this.appearance,
       fireAnalyticsEvent: this.fireAnalyticsEvent,
@@ -386,7 +380,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
       extensionHandlers,
       appearance,
       disableHeadingIDs,
-      allowDynamicTextSizing,
       allowHeadingAnchorLinks,
       allowColumnSorting,
     }: ConstructorParams,
@@ -398,7 +391,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
       extensionHandlers,
       appearance,
       disableHeadingIDs,
-      allowDynamicTextSizing,
       allowHeadingAnchorLinks,
       allowColumnSorting,
     });

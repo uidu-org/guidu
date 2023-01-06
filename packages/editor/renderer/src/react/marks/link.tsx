@@ -1,6 +1,6 @@
 import { EventHandlers, mediaSingleClassName } from '@uidu/editor-common';
 import { colors } from '@uidu/theme';
-import * as React from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { getEventHandler } from '../../utils';
 
@@ -24,20 +24,22 @@ const StyledAnchor = styled.a`
   }
 `;
 
-export default function Link(
-  props: {
-    children?: any;
-    href: string;
-    target?: string;
-    eventHandlers?: EventHandlers;
-  } & React.Props<any>,
-) {
-  const { href, target, eventHandlers } = props;
-
-  const anchorProps: any = {
+export default function Link({
+  children,
+  href,
+  target,
+  eventHandlers,
+}: {
+  children?: ReactNode;
+  href: string;
+  target?: string;
+  eventHandlers?: EventHandlers;
+}) {
+  const anchorProps = {
     href,
     target,
     title: href,
+    rel: undefined,
   };
 
   if (target === '_blank') {
@@ -48,14 +50,15 @@ export default function Link(
 
   return (
     <StyledAnchor
-      onClick={e => {
+      onClick={(e) => {
         if (handler) {
           handler(e, href);
         }
       }}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...anchorProps}
     >
-      {props.children}
+      {children}
     </StyledAnchor>
   );
 }
