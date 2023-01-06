@@ -6498,7 +6498,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/adf-schema@^2.0.5, @uidu/adf-schema@^2.0.6, @uidu/adf-schema@workspace:packages/editor/adf-schema":
+"@uidu/adf-schema@^2.0.5, @uidu/adf-schema@^2.0.6, @uidu/adf-schema@^2.0.7, @uidu/adf-schema@workspace:packages/editor/adf-schema":
   version: 0.0.0-use.local
   resolution: "@uidu/adf-schema@workspace:packages/editor/adf-schema"
   dependencies:
@@ -6509,7 +6509,7 @@ __metadata:
     "@types/prosemirror-view": ^1.24.0
     "@uidu/editor-json-transformer": ^1.0.9
     "@uidu/json-schema-generator": ^1.0.4
-    "@uidu/media-core": 1.2.0
+    "@uidu/media-core": 1.3.0
     axios: ^1.2.2
     css-color-names: ^1.0.1
     json-schema-diff-validator: ^0.4.1
@@ -7308,13 +7308,13 @@ __metadata:
   dependencies:
     "@atlaskit/icon": ^21.10.7
     "@babel/runtime": ^7.20.7
-    "@uidu/adf-schema": ^2.0.6
+    "@uidu/adf-schema": ^2.0.7
     "@uidu/adf-utils": ^2.0.2
     "@uidu/analytics": ^0.6.11
     "@uidu/analytics-namespaced-context": ^0.4.21
     "@uidu/editor-json-transformer": 1.0.9
     "@uidu/emoji": ^0.6.30
-    "@uidu/media-core": 1.2.0
+    "@uidu/media-core": 1.3.0
     "@uidu/mentions": ^0.5.3
     "@uidu/profilecard": ^0.3.32
     "@uidu/theme": ^0.6.28
@@ -7691,7 +7691,7 @@ __metadata:
     "@uidu/docs": ^0.5.24
     "@uidu/field-base": ^4.2.4
     "@uidu/form": 2.2.3
-    "@uidu/media-core": 1.2.0
+    "@uidu/media-core": 1.3.0
     "@uidu/menu": 0.8.9
     "@uifabric/file-type-icons": ^7.10.10
     "@uppy/core": ^3.0.4
@@ -8322,7 +8322,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-core@1.2.0, @uidu/media-core@^1.1.8, @uidu/media-core@^1.2.0, @uidu/media-core@workspace:packages/media/media-core":
+"@uidu/media-core@1.3.0, @uidu/media-core@^1.1.8, @uidu/media-core@^1.2.0, @uidu/media-core@workspace:packages/media/media-core":
   version: 0.0.0-use.local
   resolution: "@uidu/media-core@workspace:packages/media/media-core"
   dependencies:
