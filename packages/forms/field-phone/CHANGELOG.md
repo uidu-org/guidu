@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 2.0.33
+
+### Patch Changes
+
+- a57facb44: Added save-on-enter plugin
+
 ## 2.0.32
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 2.6.0
+
+### Minor Changes
+
+- a57facb44: Added save-on-enter plugin
+
 ## 2.5.1
 
 ### Patch Changes
