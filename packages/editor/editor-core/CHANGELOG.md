@@ -1,5 +1,16 @@
 # @uidu/editor-core
 
+## 2.7.0
+
+### Minor Changes
+
+- 6182538fb: Renderer now expect a mediaclientconfig
+
+### Patch Changes
+
+- Updated dependencies [6182538fb]
+  - @uidu/media-card@0.8.3
+
 ## 2.6.1
 
 ### Patch Changes
