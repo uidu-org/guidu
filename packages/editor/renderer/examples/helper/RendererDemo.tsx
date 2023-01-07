@@ -61,6 +61,21 @@ const profilecardProvider = Promise.resolve({
 const providerFactory = ProviderFactory.create({
   // mentionProvider,
   // emojiProvider,
+  mediaProvider: Promise.resolve({
+    viewMediaClientConfig: async ({ id, ...rest }) => {
+      console.log(rest);
+      return {
+        id,
+        type: 'image',
+        url: `https://me.uidu.local:8443/uploads/cache/${id}`,
+        metadata: {
+          name: 'test',
+          width: 640,
+          height: 640,
+        },
+      };
+    },
+  }),
   profilecardProvider,
   // taskDecisionProvider,
 });

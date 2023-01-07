@@ -1,15 +1,19 @@
-import * as React from 'react';
+import React, { ReactNode } from 'react';
 
 export type SubSupType = 'sub' | 'sup';
 
-const isSub = (type: SubSupType): type is 'sub' => {
-  return type === 'sub';
-};
+const isSub = (type: SubSupType): type is 'sub' => type === 'sub';
 
-export default function SubSup(props: { type: SubSupType } & React.Props<any>) {
-  if (isSub(props.type)) {
-    return <sub>{props.children}</sub>;
+export default function SubSup({
+  type,
+  children,
+}: {
+  type: SubSupType;
+  children: ReactNode;
+}) {
+  if (isSub(type)) {
+    return <sub>{children}</sub>;
   }
 
-  return <sup>{props.children}</sup>;
+  return <sup>{children}</sup>;
 }

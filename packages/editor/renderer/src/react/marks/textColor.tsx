@@ -1,4 +1,11 @@
-import * as React from 'react';
-export default function TextColor(props: { color: string } & React.Props<any>) {
-  return <span style={{ color: props.color }}>{props.children}</span>;
+import React, { ReactNode } from 'react';
+
+export default function TextColor({
+  color,
+  children,
+}: {
+  color: string;
+  children: ReactNode;
+}) {
+  return <span style={{ color }}>{children}</span>;
 }

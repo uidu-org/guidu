@@ -1,5 +1,13 @@
 import { defaultSchema } from '@uidu/adf-schema';
-import { ADNode, EventHandlers, Transformer } from '@uidu/editor-common';
+import {
+  ADNode,
+  CardEventClickHandler,
+  EventHandlers,
+  LinkEventClickHandler,
+  MentionEventHandler,
+  SmartCardEventClickHandler,
+  Transformer,
+} from '@uidu/editor-common';
 import { JSONTransformer } from '@uidu/editor-json-transformer';
 import { Node as PMNode, Schema } from 'prosemirror-model';
 
@@ -21,15 +29,21 @@ export const getText = (node: PMNode | ADNode): string =>
   (node.attrs && (node.attrs.text || node.attrs.shortName)) ||
   `[${typeof node.type === 'string' ? node.type : node.type.name}]`;
 
+type GetEventHandlerResponse =
+  | MentionEventHandler
+  | CardEventClickHandler
+  | LinkEventClickHandler
+  | SmartCardEventClickHandler;
+
 export const getEventHandler = (
   eventHandlers?: EventHandlers,
   type?: keyof EventHandlers,
   eventName: string = 'onClick',
-): any =>
+): GetEventHandlerResponse =>
   eventHandlers &&
   type &&
   eventHandlers[type] &&
-  (eventHandlers as any)[type][eventName];
+  eventHandlers[type][eventName];
 
 // The IDs for html must start with a letter (a-z or A-Z),
 // and all subsequent characters can be:

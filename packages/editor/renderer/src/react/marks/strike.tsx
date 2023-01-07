@@ -1,6 +1,5 @@
-import * as React from 'react';
-export default function Strike(props: React.Props<any>) {
-  return (
-    <span style={{ textDecoration: 'line-through' }}>{props.children}</span>
-  );
+import React, { ReactNode } from 'react';
+
+export default function Strike({ children }: { children: ReactNode }) {
+  return <span tw="line-through">{children}</span>;
 }

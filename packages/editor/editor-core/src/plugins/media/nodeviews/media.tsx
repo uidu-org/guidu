@@ -98,7 +98,9 @@ class MediaNode extends Component<MediaNodeProps> {
           (typeof uploadComplete === 'boolean' && !uploadComplete))) ||
       !file
     ) {
-      return <div>Loading...</div>;
+      return (
+        <div tw="h-full w-full bg-gray-100 dark:bg-gray-900 rounded blur-sm" />
+      );
       // return <CardLoading dimensions={cardDimensions} />;
     }
 

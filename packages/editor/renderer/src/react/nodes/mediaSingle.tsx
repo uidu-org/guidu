@@ -1,6 +1,11 @@
 import ShortcutIcon from '@atlaskit/icon/glyph/shortcut';
-import { MediaAttributes, MediaSingleLayout } from '@uidu/adf-schema';
 import {
+  MediaADFAttrs,
+  MediaAttributes,
+  MediaSingleLayout,
+} from '@uidu/adf-schema';
+import {
+  akEditorDefaultLayoutWidth,
   akEditorFullPageMaxWidth,
   akEditorFullWidthLayoutWidth,
   EventHandlers,
@@ -103,6 +108,43 @@ const ExtendedUIMediaSingle = styled(UIMediaSingle)`
       : ``} transition: all 0.1s linear;
 `;
 
+const isMediaElement = (
+  media: React.ReactNode,
+): media is ReactElement<MediaProps & MediaADFAttrs> => {
+  if (!media) {
+    return false;
+  }
+
+  const { nodeType, type } = (media as any).props || {};
+
+  // Use this to perform a rough check
+  // better than assume the first item in children is media
+  return (
+    nodeType === 'media' || ['external', 'file', 'link'].indexOf(type) >= 0
+  );
+};
+
+const checkForMediaElement = (
+  children: React.ReactNode,
+): ReactElement<MediaProps & MediaADFAttrs> => {
+  const [media] = React.Children.toArray(children);
+  if (media && !isMediaElement(media) && (media as any).props.children) {
+    return checkForMediaElement((media as any).props.children);
+  }
+  return media as ReactElement<MediaProps & MediaADFAttrs>;
+};
+
+// returns the existing container width if available (non SSR mode), otherwise
+// we return a default width value
+export const getMediaContainerWidth = (
+  currentContainerWidth: number,
+  layout: MediaSingleLayout,
+): number => {
+  return !currentContainerWidth && layout !== 'full-width' && layout !== 'wide'
+    ? akEditorDefaultLayoutWidth
+    : currentContainerWidth;
+};
+
 class MediaSingle extends Component<Props & WrappedComponentProps, State> {
   constructor(props: Props & WrappedComponentProps) {
     super(props);
@@ -148,10 +190,8 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
 
   render() {
     const { props } = this;
-
-    const child = React.Children.only(
-      React.Children.toArray(props.children)[0],
-    );
+    const [node, caption] = React.Children.toArray(props.children);
+    const media: ReactElement<MediaProps & MediaADFAttrs> = node;
 
     let {
       type,
@@ -159,7 +199,7 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
       file: {
         metadata: { width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT },
       },
-    } = (child as React.ReactElement).props as MediaAttributes;
+    } = media.props as MediaAttributes;
 
     // if (type === 'external') {
     //   const { width: stateWidth, height: stateHeight } = this.state;
@@ -251,7 +291,7 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
                   </Tooltip>
                 ) : null}
                 {React.cloneElement(
-                  child as React.ReactElement,
+                  media as React.ReactElement,
                   {
                     file,
                     resizeMode: 'stretchy-fit',

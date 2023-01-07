@@ -14,8 +14,6 @@ export default function MediaCard(props: MediaCardProps) {
     file: { type, id },
   } = props;
 
-  console.log('file', file);
-
   if (!id) {
     content = NotFound;
   } else {

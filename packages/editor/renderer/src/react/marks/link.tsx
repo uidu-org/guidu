@@ -1,4 +1,8 @@
-import { EventHandlers, mediaSingleClassName } from '@uidu/editor-common';
+import {
+  EventHandlers,
+  LinkEventClickHandler,
+  mediaSingleClassName,
+} from '@uidu/editor-common';
 import { colors } from '@uidu/theme';
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
@@ -46,7 +50,11 @@ export default function Link({
     anchorProps.rel = 'noreferrer noopener';
   }
 
-  const handler = getEventHandler(eventHandlers, 'link');
+  const handler = getEventHandler(
+    eventHandlers,
+    'link',
+    'onClick',
+  ) as LinkEventClickHandler;
 
   return (
     <StyledAnchor
