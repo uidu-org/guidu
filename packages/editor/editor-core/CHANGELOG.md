@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 2.6.1
+
+### Patch Changes
+
+- bd844cfe0: Remove allowDynamicText
+
 ## 2.6.0
 
 ### Minor Changes

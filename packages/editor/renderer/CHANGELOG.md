@@ -1,5 +1,11 @@
 # @uidu/renderer
 
+## 1.3.2
+
+### Patch Changes
+
+- bd844cfe0: Remove allowDynamicText
+
 ## 1.3.1
 
 ### Patch Changes
