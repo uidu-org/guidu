@@ -7487,6 +7487,7 @@ __metadata:
     "@uidu/docs": "*"
     "@uidu/util-data-test": ^0.4.30
     date-fns: ^2.29.3
+    get-video-id: ^3.6.5
     juice: ^7.0.0
     lodash: ^4.17.21
     mkdirp: ^1.0.4

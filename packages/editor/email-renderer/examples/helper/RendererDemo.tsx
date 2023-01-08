@@ -2,7 +2,7 @@
 import { defaultSchema } from '@uidu/adf-schema';
 import React from 'react';
 import EmailSerializer, { MetaDataContext } from '../../src';
-import { document as storyDataDocument } from './story-data';
+import { story2 as storyDataDocument } from './story-data';
 
 export interface DemoRendererProps {
   serializer: 'email';

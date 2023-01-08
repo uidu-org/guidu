@@ -36,6 +36,7 @@ import taskItem from './nodes/task-item';
 import taskList from './nodes/task-list';
 import text from './nodes/text';
 import unknownBlock from './nodes/unknown-block';
+import video from './nodes/video';
 
 const renderNothing = (): string => '';
 
@@ -81,6 +82,7 @@ export const nodeSerializers: { [key: string]: NodeSerializer } = {
   date,
   expand,
   nestedExpand: expand,
+  video,
 };
 
 export default nodeSerializers;

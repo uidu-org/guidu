@@ -1,4 +1,4 @@
-import { code, md } from '@uidu/docs';
+import { code, Example, md } from '@uidu/docs';
 
 export default md`
 # Email renderer
@@ -19,5 +19,15 @@ const serializer = EmailSerializer.fromSchema(defaultSchema);
 const node = defaultSchema.nodeFromJSON(document);
 const result = serializer.serializeFragment(node.content);
 `}
+
+## Example
+
+${(
+  <Example
+    Component={require('../examples/0-adf-to-email').default}
+    title="With Providers"
+    source={require('!!raw-loader!../examples/0-adf-to-email').default}
+  />
+)}
 
 `;

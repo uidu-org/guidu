@@ -1,8 +1,8 @@
 import { applyMarks } from '../apply-marks';
 import { createTag } from '../create-tag';
-import { createClassName } from '../styles/util';
 import { NodeSerializerOpts } from '../interfaces';
-import { lineHeight, fontSize } from '../styles/common';
+import { fontSize, lineHeight } from '../styles/common';
+import { createClassName } from '../styles/util';
 import { className as panelClassName } from './panel';
 
 const className = createClassName('p');
@@ -32,6 +32,6 @@ table th > .${className}:last-child {
 `;
 
 export default function paragraph({ text, marks }: NodeSerializerOpts) {
-  const paragraph = createTag('p', { class: className }, text || '&nbsp;');
-  return applyMarks(marks, paragraph);
+  const p = createTag('p', { class: className }, text || '&nbsp;');
+  return applyMarks(marks, p);
 }

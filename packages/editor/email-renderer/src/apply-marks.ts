@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import { Mark } from 'prosemirror-model';
 import { markSerializers } from './mark-serializers';
 
