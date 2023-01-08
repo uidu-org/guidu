@@ -7370,7 +7370,7 @@ __metadata:
     "@uidu/field-date": ^2.1.10
     "@uidu/field-text": 2.0.7
     "@uidu/form": ^2.2.3
-    "@uidu/media-card": ^0.8.2
+    "@uidu/media-card": ^0.8.3
     "@uidu/media-core": ^1.2.0
     "@uidu/media-filmstrip": ^0.5.14
     "@uidu/media-picker": ^0.13.0
@@ -8300,7 +8300,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-card@^0.8.1, @uidu/media-card@^0.8.2, @uidu/media-card@workspace:packages/media/media-card":
+"@uidu/media-card@^0.8.1, @uidu/media-card@^0.8.3, @uidu/media-card@workspace:packages/media/media-card":
   version: 0.0.0-use.local
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
@@ -8881,7 +8881,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/renderer@^1.2.12, @uidu/renderer@workspace:packages/editor/renderer":
+"@uidu/renderer@^2.0.0, @uidu/renderer@workspace:packages/editor/renderer":
   version: 0.0.0-use.local
   resolution: "@uidu/renderer@workspace:packages/editor/renderer"
   dependencies:
@@ -8901,7 +8901,7 @@ __metadata:
     "@uidu/editor-common": ^2.3.0
     "@uidu/editor-json-transformer": ^1.0.9
     "@uidu/field-range": ^2.0.10
-    "@uidu/media-card": ^0.8.2
+    "@uidu/media-card": ^0.8.3
     "@uidu/media-filmstrip": ^0.5.14
     "@uidu/mentions": ^0.5.3
     "@uidu/navigation": ^1.0.33
@@ -9235,7 +9235,7 @@ __metadata:
     "@uidu/docs": ^0.5.24
     "@uidu/editor-common": ^2.1.1
     "@uidu/elements-test-helpers": ^0.4.35
-    "@uidu/renderer": ^1.2.12
+    "@uidu/renderer": ^2.0.0
     "@uidu/spinner": ^0.5.23
     "@uidu/theme": ^0.6.28
     "@uidu/util-data-test": ^0.4.30
