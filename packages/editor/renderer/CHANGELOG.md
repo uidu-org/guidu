@@ -1,5 +1,11 @@
 # @uidu/renderer
 
+## 2.0.1
+
+### Patch Changes
+
+- cc9d1f2cd: CU-861m3u6bc[review] adding video to email
+
 ## 2.0.0
 
 ### Major Changes
