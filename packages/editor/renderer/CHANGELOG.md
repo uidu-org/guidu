@@ -1,5 +1,16 @@
 # @uidu/renderer
 
+## 2.0.0
+
+### Major Changes
+
+- 6182538fb: Renderer now expect a mediaclientconfig
+
+### Patch Changes
+
+- Updated dependencies [6182538fb]
+  - @uidu/media-card@0.8.3
+
 ## 1.3.2
 
 ### Patch Changes
