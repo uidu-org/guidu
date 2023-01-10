@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.20.7",
     "@heroicons/react": "^2.0.13",
-    "@stripe/react-stripe-js": "^1.16.2",
+    "@stripe/react-stripe-js": "^1.16.3",
     "@stripe/stripe-js": "^1.46.0",
     "@uidu/field-base": "^4.2.4",
     "@uidu/form": "^2.2.3",
