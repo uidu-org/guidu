@@ -7507,7 +7507,7 @@ __metadata:
     "@uidu/adf-schema": 2.0.7
     "@uidu/button": 1.3.35
     "@uidu/editor-core": 2.7.0
-    "@uidu/email-renderer": 0.1.8
+    "@uidu/email-renderer": 1.0.0
     "@uidu/field-number": 2.0.30
     "@uidu/field-text": 2.0.7
     "@uidu/form": 2.2.3
@@ -7524,7 +7524,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/email-renderer@0.1.8, @uidu/email-renderer@workspace:packages/editor/email-renderer":
+"@uidu/email-renderer@1.0.0, @uidu/email-renderer@workspace:packages/editor/email-renderer":
   version: 0.0.0-use.local
   resolution: "@uidu/email-renderer@workspace:packages/editor/email-renderer"
   dependencies:
