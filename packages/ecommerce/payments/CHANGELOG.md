@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.5.21
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+
 ## 1.5.20
 
 ### Patch Changes

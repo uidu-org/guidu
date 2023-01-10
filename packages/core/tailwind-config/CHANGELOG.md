@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.26
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+
 ## 0.1.25
 
 ### Patch Changes

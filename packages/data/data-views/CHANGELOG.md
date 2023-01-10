@@ -1,5 +1,14 @@
 # @uidu/data-views
 
+## 3.0.20
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+- Updated dependencies [5fab730dd]
+  - @uidu/data-controls@4.0.21
+  - @uidu/data-manager@4.3.8
+
 ## 3.0.19
 
 ### Patch Changes

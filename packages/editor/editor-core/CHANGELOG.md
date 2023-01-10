@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 2.7.1
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+- Updated dependencies [5fab730dd]
+  - @uidu/media-card@0.8.4
+
 ## 2.7.0
 
 ### Minor Changes

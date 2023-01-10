@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.0.21
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+- Updated dependencies [5fab730dd]
+  - @uidu/dashlets@2.1.34
+
 ## 2.0.20
 
 ### Patch Changes
