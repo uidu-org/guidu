@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 2.0.34
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+
 ## 2.0.33
 
 ### Patch Changes

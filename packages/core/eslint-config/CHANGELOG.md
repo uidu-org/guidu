@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.42
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+
 ## 0.1.41
 
 ### Patch Changes

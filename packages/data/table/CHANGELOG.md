@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 3.4.8
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+- Updated dependencies [5fab730dd]
+  - @uidu/data-manager@4.3.8
+  - @uidu/data-fields@2.1.28
+
 ## 3.4.7
 
 ### Patch Changes

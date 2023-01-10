@@ -1,5 +1,11 @@
 # @uidu/onboarding
 
+## 1.3.21
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+
 ## 1.3.20
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.2.4
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+
 ## 2.2.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/field-downshift
 
+## 2.1.5
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+
 ## 2.1.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.5.18
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+- Updated dependencies [5fab730dd]
+  - @uidu/payments@1.5.21
+
 ## 0.5.17
 
 ### Patch Changes

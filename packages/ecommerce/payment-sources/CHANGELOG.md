@@ -1,5 +1,13 @@
 # @uidu/payment-sources
 
+## 0.3.39
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+- Updated dependencies [5fab730dd]
+  - @uidu/payments@1.5.21
+
 ## 0.3.38
 
 ### Patch Changes

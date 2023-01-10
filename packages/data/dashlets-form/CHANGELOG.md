@@ -1,5 +1,14 @@
 # @uidu/dashlets-form
 
+## 1.0.40
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+- Updated dependencies [5fab730dd]
+  - @uidu/field-downshift@2.1.5
+  - @uidu/dashlets@2.1.34
+
 ## 1.0.39
 
 ### Patch Changes

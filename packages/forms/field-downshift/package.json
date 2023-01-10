@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-downshift",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-downshift",
   "license": "MIT",

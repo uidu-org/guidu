@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 2.1.34
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+- Updated dependencies [5fab730dd]
+  - @uidu/dashboard-manager@2.0.21
+  - @uidu/data-fields@2.1.28
+  - @uidu/table@3.4.8
+
 ## 2.1.33
 
 ### Patch Changes

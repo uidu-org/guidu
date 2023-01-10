@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.67
+
+### Patch Changes
+
+- 5fab730dd: Bump deps, first version of email builder
+- Updated dependencies [5fab730dd]
+  - @uidu/media-card@0.8.4
+
 ## 0.5.66
 
 ### Patch Changes
