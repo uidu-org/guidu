@@ -1,5 +1,16 @@
 # @uidu/adf-utils
 
+## 2.1.0
+
+### Minor Changes
+
+- a1700e5fd: Add first version of token plugin
+
+### Patch Changes
+
+- Updated dependencies [a1700e5fd]
+  - @uidu/adf-schema@2.1.0
+
 ## 2.0.2
 
 ### Patch Changes
