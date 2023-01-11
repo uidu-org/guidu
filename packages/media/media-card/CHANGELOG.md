@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.5
+
+### Patch Changes
+
+- d7b281200: No more uidu-wrapper class by default
+
 ## 0.8.4
 
 ### Patch Changes

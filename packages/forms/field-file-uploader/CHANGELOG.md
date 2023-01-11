@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.2.5
+
+### Patch Changes
+
+- d7b281200: No more uidu-wrapper class by default
+
 ## 2.2.4
 
 ### Patch Changes
