@@ -1,5 +1,11 @@
 # @uidu/email-renderer
 
+## 1.1.0
+
+### Minor Changes
+
+- d7b281200: No more uidu-wrapper class by default
+
 ## 1.0.0
 
 ### Major Changes

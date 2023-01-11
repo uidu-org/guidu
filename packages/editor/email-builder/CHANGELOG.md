@@ -1,5 +1,14 @@
 # @uidu/email-builder
 
+## 0.2.1
+
+### Patch Changes
+
+- d7b281200: No more uidu-wrapper class by default
+- Updated dependencies [d7b281200]
+  - @uidu/email-renderer@1.1.0
+  - @uidu/editor-core@2.8.1
+
 ## 0.2.0
 
 ### Minor Changes

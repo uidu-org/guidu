@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 2.8.1
+
+### Patch Changes
+
+- d7b281200: No more uidu-wrapper class by default
+- Updated dependencies [d7b281200]
+  - @uidu/media-card@0.8.5
+
 ## 2.8.0
 
 ### Minor Changes
