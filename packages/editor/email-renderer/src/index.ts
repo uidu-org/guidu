@@ -13,7 +13,6 @@ import {
 import { processImages } from './static';
 import styles from './styles';
 import { fontFamily, fontSize } from './styles/common';
-import { createClassName } from './styles/util';
 
 /**
  * Used to pass attributes that affect nested nodes.
@@ -97,10 +96,7 @@ const juicify = (html: string, inlineCSS: boolean): string => {
   if (inlineCSS) {
     opts.extraCss = styles;
   }
-  return juice(
-    `<div class="${createClassName('wrapper')}">${html}</div>`,
-    opts,
-  );
+  return juice(`<div>${html}</div>`, opts);
 };
 
 // replace all CID image references with a fake image

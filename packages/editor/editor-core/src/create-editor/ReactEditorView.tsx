@@ -105,12 +105,19 @@ function handleEditorFocus(view: EditorView): number | undefined {
 
 class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
   view?: EditorView;
+
   eventDispatcher: EventDispatcher;
+
   contentTransformer?: Transformer<string>;
+
   config!: EditorConfig;
+
   editorState: EditorState;
+
   errorReporter: ErrorReporter;
+
   dispatch: Dispatch;
+
   analyticsEventHandler!: (payloadChannel: {
     payload: AnalyticsEventPayload;
     channel?: string;
@@ -503,22 +510,20 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
     stopMeasure(`🦉 ReactEditorView::dispatchTransaction`, () => {});
   };
 
-  getDirectEditorProps = (state?: EditorState): DirectEditorProps => {
-    return {
-      state: state || this.editorState,
-      dispatchTransaction: (tr: Transaction) => {
-        // Block stale transactions:
-        // Prevent runtime exeptions from async transactions that would attempt to
-        // update the DOM after React has unmounted the Editor.
-        if (this.canDispatchTransactions) {
-          this.dispatchTransaction(tr);
-        }
-      },
-      // Disables the contentEditable attribute of the editor if the editor is disabled
-      editable: (_state) => !this.props.editorProps.disabled,
-      attributes: { 'data-gramm': 'false' },
-    };
-  };
+  getDirectEditorProps = (state?: EditorState): DirectEditorProps => ({
+    state: state || this.editorState,
+    dispatchTransaction: (tr: Transaction) => {
+      // Block stale transactions:
+      // Prevent runtime exeptions from async transactions that would attempt to
+      // update the DOM after React has unmounted the Editor.
+      if (this.canDispatchTransactions) {
+        this.dispatchTransaction(tr);
+      }
+    },
+    // Disables the contentEditable attribute of the editor if the editor is disabled
+    editable: (_state) => !this.props.editorProps.disabled,
+    attributes: { 'data-gramm': 'false' },
+  });
 
   createEditorView = (node: HTMLDivElement) => {
     measureRender(measurements.PROSEMIRROR_RENDERED, (duration, startTime) => {
@@ -545,7 +550,7 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
   handleEditorViewRef = (node: HTMLDivElement) => {
     if (!this.view && node) {
       this.createEditorView(node);
-      const view = this.view!;
+      const { view } = this;
       this.props.onEditorCreated({
         view,
         config: this.config,
@@ -614,9 +619,11 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
 function getUAPrefix() {
   if (browser.chrome) {
     return 'ua-chrome';
-  } else if (browser.ie) {
+  }
+  if (browser.ie) {
     return 'ua-ie';
-  } else if (browser.gecko) {
+  }
+  if (browser.gecko) {
     return 'ua-firefox';
   }
 

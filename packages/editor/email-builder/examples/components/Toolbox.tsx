@@ -14,7 +14,7 @@ export default function Toolbox() {
       <div tw="grid grid-cols-1 gap-4 p-4">
         <div>
           <button
-            ref={(ref) => connectors.create(ref, <Text text="Hi world" />)}
+            ref={(ref) => connectors.create(ref, <Text content={[]} />)}
             tw="p-6 border rounded text-center w-full"
             data-cy="toolbox-text"
           >

@@ -121,7 +121,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@faker-js/faker": "^7.6.0",
-    "@fluentui/react": "8.104.4",
+    "@fluentui/react": "8.104.5",
     "@formatjs/cli": "5.1.12",
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",

@@ -76,11 +76,7 @@ function TextSettings() {
 }
 
 export const TextDefaultProps = {
-  content: {
-    version: 1,
-    type: 'doc',
-    content: [],
-  },
+  content: [],
   fontSize: 20,
 };
 
