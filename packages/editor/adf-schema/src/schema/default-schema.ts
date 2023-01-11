@@ -43,6 +43,7 @@ export const defaultSchemaConfig: SchemaConfig = {
     'layoutColumn',
     'inlineCard',
     'blockCard',
+    'token',
     'unsupportedBlock',
     'unsupportedInline',
     'video',

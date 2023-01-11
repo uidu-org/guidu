@@ -50,6 +50,7 @@ export { default as tablesPlugin } from './table';
 // export { default as tasksAndDecisionsPlugin } from './tasks-and-decisions';
 export { default as textColorPlugin } from './text-color';
 export { default as textFormattingPlugin } from './text-formatting';
+export { default as tokenPlugin } from './token';
 export { default as typeAheadPlugin } from './type-ahead';
 export { default as unsupportedContentPlugin } from './unsupported-content';
 export { default as videoPlugin } from './video';

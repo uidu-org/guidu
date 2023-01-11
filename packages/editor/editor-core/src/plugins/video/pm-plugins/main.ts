@@ -28,17 +28,6 @@ const createPlugin: PMPluginFactory = (pmPluginFactoryParams) =>
           VideoNodeView,
           pmPluginFactoryParams.portalProviderAPI,
         ),
-        // video: (node, view, getPos) => {
-        //   console.log('node', node);
-        //   console.log('view', view);
-        //   console.log('getPos', getPos);
-        //   console.log('pmPluginFactoryParams', pmPluginFactoryParams);
-
-        //   return ReactNodeView.fromComponent(
-        //     VideoNodeView,
-        //     pmPluginFactoryParams.portalProviderAPI,
-        //   );
-        // },
       },
     },
   });

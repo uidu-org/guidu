@@ -32,7 +32,11 @@ export default function Basic() {
   const setAndPrintJson = (json) => {
     if (!json) return null;
 
-    const mjml = serializer(json);
+    const mjml = serializer(
+      json,
+      `<mj-head><mj-font name="Inter"
+       href="https://fonts.googleapis.com/css?family=Inter" /><mj-attributes><mj-all font-size="16px" font-family="Inter"></mj-all><mj-text margin="8px"></mj-text></mj-attributes></mj-head>`,
+    );
     console.log(mjml);
     const { html } = mjml2html(mjml, {
       validationLevel: 'skip',

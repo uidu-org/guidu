@@ -223,6 +223,7 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
           const { schema } = state;
 
           const pluginState = getMentionPluginState(state);
+          console.log('pluginState', pluginState);
           const { mentionProvider } = pluginState;
           const { id, name, nickname, accessLevel, userType } = item.mention;
           const trimmedNickname =

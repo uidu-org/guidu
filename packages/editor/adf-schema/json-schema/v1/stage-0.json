@@ -1001,6 +1001,9 @@
                     "size": {
                       "type": "number"
                     },
+                    "mime_type": {
+                      "type": "string"
+                    },
                     "crop": {
                       "type": "object",
                       "properties": {
@@ -1022,6 +1025,12 @@
                   },
                   "additionalProperties": false
                 },
+                "width": {
+                  "type": "number"
+                },
+                "height": {
+                  "type": "number"
+                },
                 "url": {
                   "type": "string"
                 }
@@ -1038,6 +1047,9 @@
             },
             "width": {
               "type": "number"
+            },
+            "url": {
+              "type": "string"
             },
             "occurrenceKey": {
               "type": "string",

@@ -11,7 +11,7 @@ export default function text({ props }) {
   });
   const emailSerializer = new EmailSerializer(defaultSchema, {
     isImageStubEnabled: true,
-    isInlineCSSEnabled: true,
+    isInlineCSSEnabled: false,
   });
   const { result: html } = emailSerializer.serializeFragmentWithImages(
     node.content,

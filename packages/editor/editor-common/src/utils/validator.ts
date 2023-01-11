@@ -283,6 +283,15 @@ export const getValidNode = (
         }
         break;
       }
+      case 'token': {
+        if (attrs && attrs.id && attrs.name) {
+          return {
+            type,
+            attrs,
+          };
+        }
+        break;
+      }
       case 'status': {
         if (attrs && attrs.text && attrs.color) {
           return {

@@ -141,6 +141,8 @@ export { taskList, taskListSelector } from './task-list';
 export type { TaskListContent, TaskListDefinition } from './task-list';
 export { text } from './text';
 export type { TextDefinition } from './text';
+export { token } from './token';
+export type { TokenDefinition } from './token';
 export type { BlockContent } from './types/block-content';
 export type {
   Inline,

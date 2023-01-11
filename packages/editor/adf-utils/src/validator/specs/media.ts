@@ -21,6 +21,7 @@ export default {
                 width: { type: 'number', optional: true },
                 height: { type: 'number', optional: true },
                 size: { type: 'number', optional: true },
+                mime_type: { type: 'string', optional: true },
                 crop: {
                   props: {
                     x: { type: 'number', optional: true },
@@ -32,12 +33,15 @@ export default {
                 },
               },
             },
+            width: { type: 'number', optional: true },
+            height: { type: 'number', optional: true },
             url: { type: 'string', optional: true },
           },
           required: ['id'],
         },
         height: { type: 'number', optional: true },
         width: { type: 'number', optional: true },
+        url: { type: 'string', optional: true },
         occurrenceKey: { type: 'string', minLength: 1, optional: true },
         alt: { type: 'string', optional: true },
       },

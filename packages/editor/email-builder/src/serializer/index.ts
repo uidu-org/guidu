@@ -7,8 +7,9 @@ export function serializeNode(node: SerializedNode) {
   });
 }
 
-export default function serializer(json) {
+export default function serializer(json, head = null) {
   let output = `<mjml>`;
+  output += head;
   output += `<mj-body>`;
   const root = json.ROOT;
   output += serializeNode({ ...root, json });

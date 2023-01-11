@@ -16,6 +16,7 @@ import {
   quickInsertPlugin,
   starterKitPlugin,
   tablesPlugin,
+  tokenPlugin,
   videoPlugin,
 } from '../src/plugins';
 
@@ -65,6 +66,7 @@ export default function Composable() {
       mentionsPlugin(),
       tablesPlugin({ tableOptions: {} }),
       // datePlugin(),
+      tokenPlugin(),
       mediaPlugin({
         allowMediaGroup: true,
         allowMediaSingle: true,

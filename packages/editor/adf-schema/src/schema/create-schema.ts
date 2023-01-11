@@ -58,6 +58,7 @@ import {
   taskItem,
   taskList,
   text,
+  token,
   unknownBlock,
   unsupportedBlock,
   unsupportedInline,
@@ -172,6 +173,7 @@ const nodesInOrder: SchemaBuiltInItem[] = [
   { name: 'unsupportedBlock', spec: unsupportedBlock },
   { name: 'unsupportedInline', spec: unsupportedInline },
   { name: 'video', spec: video },
+  { name: 'token', spec: token },
 ];
 
 const marksInOrder: SchemaBuiltInItem[] = [

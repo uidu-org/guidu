@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import { Node as PMNode } from 'prosemirror-model';
 import { NodeSelection, Selection } from 'prosemirror-state';
 import {
@@ -23,17 +24,25 @@ export default class ReactNodeView<P = ReactComponentProps>
   implements NodeView
 {
   private domRef?: HTMLElement;
+
   private contentDOMWrapper?: Node;
+
   private reactComponent?: React.ComponentType<any>;
+
   private portalProviderAPI: PortalProviderAPI;
+
   private hasContext: boolean;
+
   private _viewShouldUpdate?: shouldUpdate;
 
   reactComponentProps: P;
 
   view: EditorView;
+
   getPos: getPosHandler;
+
   contentDOM: Node | undefined;
+
   node: PMNode;
 
   constructor(
@@ -46,6 +55,8 @@ export default class ReactNodeView<P = ReactComponentProps>
     hasContext: boolean = false,
     viewShouldUpdate?: shouldUpdate,
   ) {
+    console.log('ReactNodeView constructor');
+    console.log('node', node);
     this.node = node;
     this.view = view;
     this.getPos = getPos;
@@ -76,7 +87,7 @@ export default class ReactNodeView<P = ReactComponentProps>
 
     if (this.domRef && contentDOMWrapper) {
       this.domRef.appendChild(contentDOMWrapper);
-      this.contentDOM = contentDOM ? contentDOM : contentDOMWrapper;
+      this.contentDOM = contentDOM || contentDOMWrapper;
       this.contentDOMWrapper = contentDOMWrapper || contentDOM;
     }
 
@@ -100,7 +111,7 @@ export default class ReactNodeView<P = ReactComponentProps>
       return;
     }
 
-    this.portalProviderAPI.render(component, this.domRef!, this.hasContext);
+    this.portalProviderAPI.render(component, this.domRef, this.hasContext);
   }
 
   createDomRef(): HTMLElement {
@@ -250,9 +261,11 @@ export class SelectionBasedNodeView<
   P = ReactComponentProps,
 > extends ReactNodeView<P> {
   private oldSelection: Selection;
+
   private selectionChangeState: ReactNodeViewState;
 
   pos: number | undefined;
+
   posEnd: number | undefined;
 
   constructor(
@@ -348,7 +361,7 @@ export class SelectionBasedNodeView<
     } = this.view;
 
     // update selection
-    const oldSelection = this.oldSelection;
+    const { oldSelection } = this;
     this.oldSelection = selection;
 
     // update cached positions

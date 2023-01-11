@@ -115,6 +115,7 @@ export {
   text,
   toJSONTableCell,
   toJSONTableHeader,
+  token,
   unknownBlock,
   unsupportedBlock,
   unsupportedInline,
@@ -200,6 +201,7 @@ export type {
   TaskListContent,
   TaskListDefinition,
   TextDefinition,
+  TokenDefinition,
   UrlType,
   VideoDefinition,
 } from './nodes';
