@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.1.1
+
+### Patch Changes
+
+- 69174a414: Token provider
+
 ## 2.1.0
 
 ### Minor Changes
