@@ -1,5 +1,14 @@
 # @uidu/editor-core
 
+## 2.8.2
+
+### Patch Changes
+
+- 69174a414: Token provider
+- Updated dependencies [69174a414]
+  - @uidu/editor-common@2.4.1
+  - @uidu/adf-schema@2.1.1
+
 ## 2.8.1
 
 ### Patch Changes
