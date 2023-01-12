@@ -10,6 +10,7 @@ import { MacroProvider } from './macro-provider';
 import { MediaProvider } from './media-provider';
 import { ProfilecardProvider } from './profile-card-provider';
 import { QuickInsertProvider } from './quick-insert-provider';
+import { TokenProvider } from './token-provider';
 
 export interface Providers {
   mediaProvider?: Promise<MediaProvider>;
@@ -24,6 +25,7 @@ export interface Providers {
   cardProvider?: Promise<CardProvider>;
   quickInsertProvider?: Promise<QuickInsertProvider>;
   profilecardProvider?: Promise<ProfilecardProvider>;
+  tokenProvider?: Promise<TokenProvider>;
 
   activityProvider?: Promise<any>; // TODO: Activity AK component looks deprecated any suggestion?
   presenceProvider?: Promise<any>; // TODO: https://product-fabric.atlassian.net/browse/ED-8592

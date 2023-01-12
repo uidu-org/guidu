@@ -29,13 +29,10 @@ export const token: NodeSpec = {
   parseDOM: [
     {
       tag: 'span[data-node-type="token"]',
-      getAttrs: (dom) => {
-        console.log(dom);
-        return {
-          id: (dom as HTMLElement).getAttribute('data-id') || '',
-          name: (dom as HTMLElement).getAttribute('data-name') || '',
-        };
-      },
+      getAttrs: (dom) => ({
+        id: (dom as HTMLElement).getAttribute('data-id') || '',
+        name: (dom as HTMLElement).getAttribute('data-name') || '',
+      }),
     },
   ],
   toDOM(node: Node) {
@@ -45,8 +42,6 @@ export const token: NodeSpec = {
       'data-id': id,
       'data-name': name,
     };
-
-    console.log('node', node);
 
     return ['span', attrs, name];
   },

@@ -6517,7 +6517,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/adf-schema@2.0.7, @uidu/adf-schema@^2.0.5, @uidu/adf-schema@^2.0.6, @uidu/adf-schema@^2.0.7, @uidu/adf-schema@workspace:packages/editor/adf-schema":
+"@uidu/adf-schema@2.1.0, @uidu/adf-schema@^2.0.5, @uidu/adf-schema@^2.1.0, @uidu/adf-schema@workspace:packages/editor/adf-schema":
   version: 0.0.0-use.local
   resolution: "@uidu/adf-schema@workspace:packages/editor/adf-schema"
   dependencies:
@@ -6540,12 +6540,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/adf-utils@^2.0.2, @uidu/adf-utils@workspace:packages/editor/adf-utils":
+"@uidu/adf-utils@^2.0.2, @uidu/adf-utils@^2.1.0, @uidu/adf-utils@workspace:packages/editor/adf-utils":
   version: 0.0.0-use.local
   resolution: "@uidu/adf-utils@workspace:packages/editor/adf-utils"
   dependencies:
     "@babel/runtime": ^7.20.7
-    "@uidu/adf-schema": ^2.0.5
+    "@uidu/adf-schema": ^2.1.0
     "@uidu/docs": ^0.5.24
     "@uidu/json-schema-generator": ^1.0.4
     react: ^18.2.0
@@ -7321,14 +7321,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-common@^2.1.1, @uidu/editor-common@^2.3.0, @uidu/editor-common@workspace:packages/editor/editor-common":
+"@uidu/editor-common@^2.1.1, @uidu/editor-common@^2.3.0, @uidu/editor-common@^2.4.0, @uidu/editor-common@workspace:packages/editor/editor-common":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
     "@atlaskit/icon": ^21.10.7
     "@babel/runtime": ^7.20.7
-    "@uidu/adf-schema": ^2.0.7
-    "@uidu/adf-utils": ^2.0.2
+    "@uidu/adf-schema": ^2.1.0
+    "@uidu/adf-utils": ^2.1.0
     "@uidu/analytics": ^0.6.11
     "@uidu/analytics-namespaced-context": ^0.4.21
     "@uidu/editor-json-transformer": 1.0.9
@@ -7357,7 +7357,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@2.7.1, @uidu/editor-core@^2.2.1, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@2.8.1, @uidu/editor-core@^2.2.1, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -7370,8 +7370,8 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.2.1
     "@fortawesome/react-fontawesome": ^0.2.0
     "@loadable/component": ^5.15.2
-    "@uidu/adf-schema": ^2.0.6
-    "@uidu/adf-utils": ^2.0.2
+    "@uidu/adf-schema": ^2.1.0
+    "@uidu/adf-utils": ^2.1.0
     "@uidu/analytics": ^0.6.11
     "@uidu/analytics-gas-types": ^0.3.5
     "@uidu/analytics-listeners": ^0.4.21
@@ -7382,14 +7382,14 @@ __metadata:
     "@uidu/date": ^0.4.27
     "@uidu/docs": ^0.5.24
     "@uidu/droplist": ^0.5.29
-    "@uidu/editor-common": ^2.3.0
+    "@uidu/editor-common": ^2.4.0
     "@uidu/editor-json-transformer": ^1.0.9
     "@uidu/editor-markdown-transformer": ^1.0.8
     "@uidu/emoji": ^0.6.30
     "@uidu/field-date": ^2.1.10
     "@uidu/field-text": 2.0.7
     "@uidu/form": ^2.2.3
-    "@uidu/media-card": ^0.8.4
+    "@uidu/media-card": ^0.8.5
     "@uidu/media-core": ^1.2.0
     "@uidu/media-filmstrip": ^0.5.14
     "@uidu/media-picker": ^0.13.0
@@ -7505,10 +7505,10 @@ __metadata:
     "@craftjs/core": ^0.2.0-beta.8
     "@craftjs/utils": ^0.2.0-beta.8
     "@heroicons/react": ^2.0.13
-    "@uidu/adf-schema": 2.0.7
+    "@uidu/adf-schema": 2.1.0
     "@uidu/button": 1.3.35
-    "@uidu/editor-core": 2.7.1
-    "@uidu/email-renderer": 1.0.0
+    "@uidu/editor-core": 2.8.1
+    "@uidu/email-renderer": 1.1.0
     "@uidu/field-number": 2.0.30
     "@uidu/field-text": 2.0.7
     "@uidu/form": 2.2.3
@@ -7525,7 +7525,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/email-renderer@1.0.0, @uidu/email-renderer@workspace:packages/editor/email-renderer":
+"@uidu/email-renderer@1.1.0, @uidu/email-renderer@workspace:packages/editor/email-renderer":
   version: 0.0.0-use.local
   resolution: "@uidu/email-renderer@workspace:packages/editor/email-renderer"
   dependencies:
@@ -8347,7 +8347,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-card@^0.8.1, @uidu/media-card@^0.8.3, @uidu/media-card@^0.8.4, @uidu/media-card@workspace:packages/media/media-card":
+"@uidu/media-card@^0.8.1, @uidu/media-card@^0.8.3, @uidu/media-card@^0.8.5, @uidu/media-card@workspace:packages/media/media-card":
   version: 0.0.0-use.local
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
@@ -8561,7 +8561,7 @@ __metadata:
     "@uidu/docs": ^0.5.24
     "@uidu/drawer": ^0.7.30
     "@uidu/dropdown-menu": ^0.6.28
-    "@uidu/media-card": ^0.8.4
+    "@uidu/media-card": ^0.8.5
     "@uidu/media-core": ^1.1.8
     "@uidu/media-viewer": ^0.5.12
     "@uidu/menu": 0.8.9

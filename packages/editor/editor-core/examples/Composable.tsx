@@ -6,6 +6,7 @@ import React, { useMemo, useRef, useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import { localUploadOptions } from '../../../media/media-core/src';
 import { story as document } from '../../renderer/examples/helper/story-data';
+import { getItems } from '../examples-utils/tokens';
 import { Editor, EditorContext, WithEditorActions } from '../src';
 import {
   blockTypePlugin,
@@ -112,6 +113,9 @@ export default function Composable() {
                       //   accountId === mention.id,
                     }),
                   )}
+                  tokenProvider={Promise.resolve({
+                    getItems: (query, selectedItems) => getItems(20),
+                  })}
                   mediaProvider={Promise.resolve({
                     uploadOptions: localUploadOptions({
                       endpoint: 'https://uidu.local:8443/upload',

@@ -123,6 +123,7 @@ export default class Editor extends PureComponent<EditorProps> {
     const {
       emojiProvider,
       mentionProvider,
+      tokenProvider,
       taskDecisionProvider,
       collabEditProvider,
       activityProvider,
@@ -133,11 +134,13 @@ export default class Editor extends PureComponent<EditorProps> {
       quickInsert,
       autoformattingProvider,
       extensionProviders,
-      UNSAFE_cards,
     } = props;
+
+    console.log('tokenProvider', tokenProvider);
 
     this.providerFactory.setProvider('emojiProvider', emojiProvider);
     this.providerFactory.setProvider('mentionProvider', mentionProvider);
+    this.providerFactory.setProvider('tokenProvider', tokenProvider);
     this.providerFactory.setProvider(
       'taskDecisionProvider',
       taskDecisionProvider,
@@ -153,10 +156,6 @@ export default class Editor extends PureComponent<EditorProps> {
     this.providerFactory.setProvider('activityProvider', activityProvider);
     this.providerFactory.setProvider('presenceProvider', presenceProvider);
     this.providerFactory.setProvider('macroProvider', macroProvider);
-
-    if (UNSAFE_cards && UNSAFE_cards.provider) {
-      this.providerFactory.setProvider('cardProvider', UNSAFE_cards.provider);
-    }
 
     this.providerFactory.setProvider(
       'autoformattingProvider',

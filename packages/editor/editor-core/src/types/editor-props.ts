@@ -14,7 +14,6 @@ import { ReactElement } from 'react';
 import EditorActions from '../actions';
 import { AnalyticsHandler } from '../analytics/handler';
 import { AnnotationProvider } from '../plugins/annotation/types';
-import { CardOptions } from '../plugins/card/types';
 import { CollabEditOptions } from '../plugins/collab-edit/types';
 import { MediaState } from '../plugins/media/types';
 import { QuickInsertOptions } from '../plugins/quick-insert/types';
@@ -60,8 +59,6 @@ export interface EditorProps {
   // editor features e.g. Confluence uses this to provide its macros.
   quickInsert?: QuickInsertOptions;
 
-  UNSAFE_cards?: CardOptions;
-
   allowExpand?:
     | boolean
     | { allowInsertion?: boolean; allowInteractiveExpand?: boolean };
@@ -94,6 +91,7 @@ export interface EditorProps {
 
   legacyImageUploadProvider?: Providers['imageUploadProvider'];
   mentionProvider?: Promise<MentionProvider>;
+  tokenProvider?: Providers['tokenProvider'];
 
   // Allows you to define custom autoformatting rules.
   autoformattingProvider?: Providers['autoformattingProvider'];

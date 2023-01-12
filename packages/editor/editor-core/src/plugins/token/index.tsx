@@ -1,4 +1,6 @@
 import { token } from '@uidu/adf-schema';
+import { Token, TypeAheadItem } from '@uidu/editor-common/provider-factory';
+import { ButtonItem } from '@uidu/menu';
 import { EditorState } from 'prosemirror-state';
 import React from 'react';
 import { EditorPlugin } from '../../types';
@@ -58,7 +60,7 @@ const tokenPlugin = (): EditorPlugin => ({
       // customRegex: '\\(?(@)',
       getHighlight: (state: EditorState) => {
         const pluginState = getPluginState(state);
-        console.log(pluginState);
+
         // const provider = pluginState.mentionProvider;
         // if (provider) {
         //   const teamMentionProvider = provider as TeamMentionProvider;
@@ -76,77 +78,36 @@ const tokenPlugin = (): EditorPlugin => ({
         // }
         return null;
       },
-      getItems(
+      getItems: async (
         query,
         state,
         _intl,
         { prevActive, queryChanged },
         tr,
         dispatch,
-      ) {
-        // if (!prevActive && queryChanged) {
-        //   analyticsService.trackEvent(
-        //     'uidu.editor-core.mention.picker.trigger.shortcut',
-        //   );
-        //   if (!tr.getMeta(analyticsPluginKey)) {
-        //     (dispatch as AnalyticsDispatch)(analyticsEventKey, {
-        //       payload: {
-        //         action: ACTION.INVOKED,
-        //         actionSubject: ACTION_SUBJECT.TYPEAHEAD,
-        //         actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_MENTION,
-        //         attributes: { inputMethod: INPUT_METHOD.KEYBOARD },
-        //         eventType: EVENT_TYPE.UI,
-        //       },
-        //     });
-        //   }
-        // }
-
+      ) => {
         const pluginState = getPluginState(state);
+        const { tokenProvider } = pluginState;
 
-        return [
-          {
-            title: 'test',
-            token: { id: 'test', name: 'Test ' },
-            render: ({ onClick, isSelected, onHover }) => (
-              <div
+        const tokens = await tokenProvider.getItems(query, pluginState.tokens);
+
+        return tokens.map(
+          (t: Token): TypeAheadItem => ({
+            title: t.id,
+            render: ({ isSelected, onClick, onHover }) => (
+              <ButtonItem
                 onClick={onClick}
-                selected={isSelected}
+                isSelected={isSelected}
                 onMouseEnter={onHover}
               >
-                Test
-              </div>
+                {t.name}
+              </ButtonItem>
             ),
-          },
-        ];
-        // const mentions =
-        //   !prevActive && queryChanged ? [] : pluginState.mentions || [];
-
-        // const mentionContext = {
-        //   sessionId,
-        // };
-
-        // if (queryChanged && pluginState.mentionProvider) {
-        //   pluginState.mentionProvider.filter(query || '', mentionContext);
-        // }
-
-        // return mentions.map(
-        //   (m: MentionDescription): TypeAheadItem => ({
-        //     title: m.id,
-        //     render: ({ isSelected, onClick, onHover }) => (
-        //       <MentionItem
-        //         mention={m}
-        //         selected={isSelected}
-        //         onMouseEnter={onHover}
-        //         onSelection={onClick}
-        //       />
-        //     ),
-        //     mention: m,
-        //   }),
-        // );
+            token: t,
+          }),
+        );
       },
       selectItem(state, item, insert, { mode }) {
-        console.log('selectItem', item);
-        console.log('selectItem', state);
         const { schema } = state;
         // const sanitizePrivateContent =
         //   options && options.sanitizePrivateContent;
@@ -156,7 +117,6 @@ const tokenPlugin = (): EditorPlugin => ({
         const pluginState = getPluginState(state);
         // const { mentionProvider } = pluginState;
         const { id, name } = item.token;
-        console.log(pluginState);
         // const trimmedNickname =
         //   nickname && nickname.startsWith('@') ? nickname.slice(1) : nickname;
         // const renderName =
@@ -214,8 +174,6 @@ const tokenPlugin = (): EditorPlugin => ({
         //   // Cache (locally) for later rendering
         //   mentionProvider.cacheMentionName(id, renderName);
         // }
-        console.log('insert', insert);
-        console.log('schema.nodes', schema.nodes.token);
         return insert(
           state.schema.nodes.token.createChecked({
             name,

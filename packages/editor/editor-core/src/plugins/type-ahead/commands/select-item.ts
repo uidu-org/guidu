@@ -80,13 +80,13 @@ export const selectItem =
     item: TypeAheadItem,
     mode: SelectItemMode = 'selected',
   ): Command =>
-  (state, dispatch) => {
-    return withTypeAheadQueryMarkPosition(state, (start, end) => {
+  (state, dispatch) =>
+    withTypeAheadQueryMarkPosition(state, (start, end) => {
       const insert = (
         maybeNode?: Node | Object | string | Fragment,
         opts: { selectInlineNode?: boolean } = {},
       ) => {
-        let tr = state.tr;
+        let { tr } = state;
 
         tr = tr
           .setMeta(pluginKey, { action: ACTIONS.SELECT_CURRENT })
@@ -171,7 +171,6 @@ export const selectItem =
       }
       return true;
     });
-  };
 
 export const insertFallbackCommand =
   (start: number, end: number): Command =>

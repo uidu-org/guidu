@@ -2,25 +2,25 @@ export type {
   AutoformatHandler,
   AutoformatReplacement,
   AutoformatRuleset,
-  AutoformattingProvider
+  AutoformattingProvider,
 } from './provider-factory/autoformatting-provider';
 export type {
   CardAppearance,
-  CardProvider
+  CardProvider,
 } from './provider-factory/card-provider';
 export {
   ProviderFactoryProvider,
   useProvider,
-  useProviderFactory
+  useProviderFactory,
 } from './provider-factory/context';
 export type {
   ImageUploadProvider,
-  InsertedImageProperties
+  InsertedImageProperties,
 } from './provider-factory/image-upload-provider';
 export type {
   ExtensionType,
   MacroAttributes,
-  MacroProvider
+  MacroProvider,
 } from './provider-factory/macro-provider';
 export type { MediaProvider } from './provider-factory/media-provider';
 export { default as ProviderFactory } from './provider-factory/provider-factory';
@@ -28,21 +28,21 @@ export type {
   QuickInsertActionInsert,
   QuickInsertItem,
   QuickInsertItemId,
-  QuickInsertProvider
+  QuickInsertProvider,
 } from './provider-factory/quick-insert-provider';
 export type {
   LinkContentType,
   QuickSearchResult,
-  SearchProvider
+  SearchProvider,
 } from './provider-factory/search-provider';
+export type { Token, TokenProvider } from './provider-factory/token-provider';
 export type {
   ProviderHandler,
   ProviderName,
-  Providers
+  Providers,
 } from './provider-factory/types';
 export { WithProviders } from './provider-factory/with-providers';
 export type {
   TypeAheadItem,
-  TypeAheadItemRenderProps
+  TypeAheadItemRenderProps,
 } from './types/type-ahead';
-

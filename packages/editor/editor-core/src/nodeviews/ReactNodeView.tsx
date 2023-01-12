@@ -55,8 +55,6 @@ export default class ReactNodeView<P = ReactComponentProps>
     hasContext: boolean = false,
     viewShouldUpdate?: shouldUpdate,
   ) {
-    console.log('ReactNodeView constructor');
-    console.log('node', node);
     this.node = node;
     this.view = view;
     this.getPos = getPos;
