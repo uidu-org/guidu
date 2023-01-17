@@ -21,6 +21,7 @@ module.exports = {
     'implicit-arrow-linebreak': 'off',
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
+    'react/no-unknown-property': ['error', { ignore: ['css', 'tw'] }],
     'react/jsx-props-no-spreading': 1,
     'react/jsx-wrap-multilines': 'off',
     'react/jsx-filename-extension': [

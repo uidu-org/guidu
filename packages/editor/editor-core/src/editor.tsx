@@ -136,8 +136,6 @@ export default class Editor extends PureComponent<EditorProps> {
       extensionProviders,
     } = props;
 
-    console.log('tokenProvider', tokenProvider);
-
     this.providerFactory.setProvider('emojiProvider', emojiProvider);
     this.providerFactory.setProvider('mentionProvider', mentionProvider);
     this.providerFactory.setProvider('tokenProvider', tokenProvider);

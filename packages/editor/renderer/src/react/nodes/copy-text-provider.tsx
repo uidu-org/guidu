@@ -1,7 +1,13 @@
 import React from 'react';
 
-export const clipboardApiSupported = () =>
-  !!navigator.clipboard && typeof navigator.clipboard.writeText === 'function';
+export const clipboardApiSupported = () => {
+  if (!navigator) {
+    return false;
+  }
+  return (
+    !!navigator.clipboard && typeof navigator.clipboard.writeText === 'function'
+  );
+};
 
 // This function is needed for safari and IE.
 // This function is a synchronous function, but it is wrapped into a promise
@@ -36,9 +42,10 @@ export const copyToClipboard = (textToCopy: string): Promise<void> =>
       navigator.clipboard &&
       typeof navigator.clipboard.writeText === 'function'
     ) {
-      navigator.clipboard
-        .writeText(textToCopy)
-        .then(() => resolve(), e => reject(e));
+      navigator.clipboard.writeText(textToCopy).then(
+        () => resolve(),
+        (e) => reject(e),
+      );
     } else {
       reject('Clipboard api is not supported');
     }
