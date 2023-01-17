@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.0.6
+
+### Patch Changes
+
+- 798907ec8: Slider to ESM, eslint with tw prop rule
+
 ## 1.0.5
 
 ### Patch Changes

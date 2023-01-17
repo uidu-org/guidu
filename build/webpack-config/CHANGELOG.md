@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.47
+
+### Patch Changes
+
+- 798907ec8: Slider to ESM, eslint with tw prop rule
+
 ## 0.3.46
 
 ### Patch Changes

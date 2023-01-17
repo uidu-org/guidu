@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.6.31
+
+### Patch Changes
+
+- 798907ec8: Slider to ESM, eslint with tw prop rule
+- Updated dependencies [798907ec8]
+  - @uidu/select@2.2.4
+  - @uidu/form@2.2.4
+
 ## 0.6.30
 
 ### Patch Changes

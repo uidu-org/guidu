@@ -1,5 +1,15 @@
 # @uidu/editor-core
 
+## 2.8.3
+
+### Patch Changes
+
+- 798907ec8: Slider to ESM, eslint with tw prop rule
+- Updated dependencies [798907ec8]
+  - @uidu/select@2.2.4
+  - @uidu/form@2.2.4
+  - @uidu/field-date@2.1.11
+
 ## 2.8.2
 
 ### Patch Changes
