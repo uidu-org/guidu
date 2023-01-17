@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.44
+
+### Patch Changes
+
+- 798907ec8: Slider to ESM, eslint with tw prop rule
+
 ## 0.1.43
 
 ### Patch Changes

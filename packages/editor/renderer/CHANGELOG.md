@@ -1,5 +1,11 @@
 # @uidu/renderer
 
+## 2.0.2
+
+### Patch Changes
+
+- 798907ec8: Slider to ESM, eslint with tw prop rule
+
 ## 2.0.1
 
 ### Patch Changes

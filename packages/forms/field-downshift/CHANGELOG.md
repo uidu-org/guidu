@@ -1,5 +1,13 @@
 # @uidu/field-downshift
 
+## 2.1.6
+
+### Patch Changes
+
+- 798907ec8: Slider to ESM, eslint with tw prop rule
+- Updated dependencies [798907ec8]
+  - @uidu/field-base@4.2.5
+
 ## 2.1.5
 
 ### Patch Changes
