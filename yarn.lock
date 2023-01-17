@@ -6449,13 +6449,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:5.48.1":
-  version: 5.48.1
-  resolution: "@typescript-eslint/types@npm:5.48.1"
-  checksum: 8437986e9d86d792b23327517ae2f9861ec55992d5a9cd55991e525409b6244169436cd708f3987ab7c579e45e59b6eab5a9d3583f7729219e25691164293094
-  languageName: node
-  linkType: hard
-
 "@typescript-eslint/types@npm:5.48.2":
   version: 5.48.2
   resolution: "@typescript-eslint/types@npm:5.48.2"
@@ -6463,7 +6456,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:5.48.2":
+"@typescript-eslint/typescript-estree@npm:5.48.2, @typescript-eslint/typescript-estree@npm:^5.13.0, @typescript-eslint/typescript-estree@npm:^5.9.1":
   version: 5.48.2
   resolution: "@typescript-eslint/typescript-estree@npm:5.48.2"
   dependencies:
@@ -6478,24 +6471,6 @@ __metadata:
     typescript:
       optional: true
   checksum: 3ae06c597249220bcc138857d37ab2c14204d7db42e943e1a4fe6c56b6912ea271e3ab19f15f458390c54f82ac47785481546b644ff3c111cbb37398cf29949a
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/typescript-estree@npm:^5.13.0, @typescript-eslint/typescript-estree@npm:^5.9.1":
-  version: 5.48.1
-  resolution: "@typescript-eslint/typescript-estree@npm:5.48.1"
-  dependencies:
-    "@typescript-eslint/types": 5.48.1
-    "@typescript-eslint/visitor-keys": 5.48.1
-    debug: ^4.3.4
-    globby: ^11.1.0
-    is-glob: ^4.0.3
-    semver: ^7.3.7
-    tsutils: ^3.21.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 2b26e5848ef131e1bb99ed54d8c0efa8279cf8e8f7d8b72de00c2ca6cf2799d96c20f5bbbcf26e14e81b7b9d1035ba509bff30f2d852c174815879e8f14c27ed
   languageName: node
   linkType: hard
 
@@ -6514,16 +6489,6 @@ __metadata:
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
   checksum: d363dbf577acc5817427ac0e1290df685b027de6b03bbc150fa252e6435a2e88e254ec4c1db03773cbcae14875d1529e447861e015bf19055bd2b02de766f722
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/visitor-keys@npm:5.48.1":
-  version: 5.48.1
-  resolution: "@typescript-eslint/visitor-keys@npm:5.48.1"
-  dependencies:
-    "@typescript-eslint/types": 5.48.1
-    eslint-visitor-keys: ^3.3.0
-  checksum: 2bda10cf4e6bc48b0d463767617e48a832d708b9434665dff6ed101f7d33e0d592f02af17a2259bde1bd17e666246448ae78d0fe006148cb93d897fff9b1d134
   languageName: node
   linkType: hard
 
@@ -7392,7 +7357,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@2.8.2, @uidu/editor-core@^2.2.1, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@2.8.3, @uidu/editor-core@^2.2.1, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -7421,9 +7386,9 @@ __metadata:
     "@uidu/editor-json-transformer": ^1.0.9
     "@uidu/editor-markdown-transformer": ^1.0.8
     "@uidu/emoji": ^0.6.30
-    "@uidu/field-date": ^2.1.10
+    "@uidu/field-date": ^2.1.11
     "@uidu/field-text": 2.0.7
-    "@uidu/form": ^2.2.3
+    "@uidu/form": ^2.2.4
     "@uidu/media-card": ^0.8.5
     "@uidu/media-core": ^1.2.0
     "@uidu/media-filmstrip": ^0.5.14
@@ -7432,7 +7397,7 @@ __metadata:
     "@uidu/menu": ^0.8.9
     "@uidu/modal-dialog": 1.1.4
     "@uidu/profilecard": ^0.3.32
-    "@uidu/select": ^2.2.3
+    "@uidu/select": ^2.2.4
     "@uidu/shell": ^2.1.43
     "@uidu/spinner": ^0.5.23
     "@uidu/status": ^0.5.27
@@ -7542,13 +7507,13 @@ __metadata:
     "@heroicons/react": ^2.0.13
     "@uidu/adf-schema": 2.1.1
     "@uidu/button": 1.3.35
-    "@uidu/editor-core": 2.8.2
+    "@uidu/editor-core": 2.8.3
     "@uidu/email-renderer": 1.1.0
-    "@uidu/field-number": 2.0.30
+    "@uidu/field-number": 2.0.31
     "@uidu/field-text": 2.0.7
-    "@uidu/form": 2.2.3
+    "@uidu/form": 2.2.4
     "@uidu/portal": 1.0.5
-    "@uidu/select": 2.2.3
+    "@uidu/select": 2.2.4
     "@uidu/shell": 2.1.43
     get-video-id: ^3.6.5
     mjml-browser: ^4.13.0
@@ -7636,13 +7601,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-base@4.2.4, @uidu/field-base@^4.2.4, @uidu/field-base@workspace:packages/forms/field-base":
+"@uidu/field-base@4.2.5, @uidu/field-base@^4.2.4, @uidu/field-base@^4.2.5, @uidu/field-base@workspace:packages/forms/field-base":
   version: 0.0.0-use.local
   resolution: "@uidu/field-base@workspace:packages/forms/field-base"
   dependencies:
     "@babel/runtime": ^7.20.7
     "@heroicons/react": ^2.0.13
-    "@uidu/form": 2.2.3
+    "@uidu/form": 2.2.4
     react: ^18.2.0
     react-hook-form: ^7.42.1
     styled-components: ^5.3.6
@@ -7710,7 +7675,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-date@^2.1.10, @uidu/field-date@workspace:packages/forms/field-date":
+"@uidu/field-date@^2.1.10, @uidu/field-date@^2.1.11, @uidu/field-date@workspace:packages/forms/field-date":
   version: 0.0.0-use.local
   resolution: "@uidu/field-date@workspace:packages/forms/field-date"
   dependencies:
@@ -7718,9 +7683,9 @@ __metadata:
     "@heroicons/react": ^2.0.13
     "@uidu/button": 1.3.35
     "@uidu/docs": ^0.5.24
-    "@uidu/field-base": 4.2.4
+    "@uidu/field-base": 4.2.5
     "@uidu/field-text": ^2.0.7
-    "@uidu/form": ^2.2.3
+    "@uidu/form": ^2.2.4
     "@uidu/popup": 0.7.11
     date-fns: ^2.29.3
     react: ^18.2.0
@@ -7740,12 +7705,12 @@ __metadata:
     "@heroicons/react": ^2.0.13
     "@uidu/button": 1.3.35
     "@uidu/docs": ^0.5.24
-    "@uidu/field-base": ^4.2.4
+    "@uidu/field-base": ^4.2.5
     "@uidu/field-counter": ^2.0.7
-    "@uidu/field-date": ^2.1.10
+    "@uidu/field-date": ^2.1.11
     "@uidu/field-text": ^2.0.7
-    "@uidu/field-time": ^2.0.34
-    "@uidu/form": ^2.2.3
+    "@uidu/field-time": ^2.0.35
+    "@uidu/form": ^2.2.4
     "@uidu/menu": 0.8.9
     "@uidu/popup": 0.7.11
     "@uidu/radio": ^2.1.5
@@ -7772,8 +7737,8 @@ __metadata:
     "@heroicons/react": ^2.0.13
     "@uidu/button": 1.3.35
     "@uidu/docs": ^0.5.24
-    "@uidu/field-base": ^4.2.4
-    "@uidu/form": 2.2.3
+    "@uidu/field-base": ^4.2.5
+    "@uidu/form": 2.2.4
     "@uidu/media-core": 1.3.0
     "@uidu/menu": 0.8.9
     "@uifabric/file-type-icons": ^7.10.10
@@ -7817,9 +7782,9 @@ __metadata:
     "@heroicons/react": ^2.0.13
     "@uidu/button": ^1.3.35
     "@uidu/docs": ^0.5.24
-    "@uidu/field-base": ^4.2.4
+    "@uidu/field-base": ^4.2.5
     "@uidu/field-range": 2.0.10
-    "@uidu/form": 2.2.3
+    "@uidu/form": 2.2.4
     "@uidu/media-core": ^1.1.8
     "@uidu/spinner": ^0.5.23
     "@uppy/core": ^3.0.4
@@ -7873,16 +7838,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-number@2.0.30, @uidu/field-number@^2.0.30, @uidu/field-number@workspace:packages/forms/field-number":
+"@uidu/field-number@2.0.31, @uidu/field-number@^2.0.30, @uidu/field-number@workspace:packages/forms/field-number":
   version: 0.0.0-use.local
   resolution: "@uidu/field-number@workspace:packages/forms/field-number"
   dependencies:
     "@babel/runtime": ^7.20.7
     "@uidu/button": ^1.3.35
     "@uidu/docs": ^0.5.24
-    "@uidu/field-base": 4.2.4
+    "@uidu/field-base": 4.2.5
     "@uidu/field-text": ^2.0.7
-    "@uidu/form": ^2.2.3
+    "@uidu/form": ^2.2.4
     react: ^18.2.0
     react-dom: ^18.2.0
     react-number-format: ^4.9.4
@@ -7927,10 +7892,10 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.7
     "@uidu/docs": ^0.5.24
-    "@uidu/field-base": ^4.2.4
+    "@uidu/field-base": ^4.2.5
     "@uidu/field-text": ^2.0.7
-    "@uidu/form": 2.2.3
-    "@uidu/select": 2.2.3
+    "@uidu/form": 2.2.4
+    "@uidu/select": 2.2.4
     react: ^18.2.0
     react-phone-number-input: ^3.2.16
     styled-components: ^5.3.6
@@ -7996,17 +7961,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-time@2.0.34, @uidu/field-time@^2.0.34, @uidu/field-time@workspace:packages/forms/field-time":
+"@uidu/field-time@2.0.35, @uidu/field-time@^2.0.34, @uidu/field-time@^2.0.35, @uidu/field-time@workspace:packages/forms/field-time":
   version: 0.0.0-use.local
   resolution: "@uidu/field-time@workspace:packages/forms/field-time"
   dependencies:
     "@babel/runtime": ^7.20.7
     "@uidu/button": ^1.3.35
     "@uidu/docs": ^0.5.24
-    "@uidu/field-base": 4.2.4
+    "@uidu/field-base": 4.2.5
     "@uidu/field-text": ^2.0.7
-    "@uidu/form": ^2.2.3
-    "@uidu/select": 2.2.3
+    "@uidu/form": ^2.2.4
+    "@uidu/select": 2.2.4
     date-fns: ^2.29.3
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -8026,8 +7991,8 @@ __metadata:
     "@radix-ui/react-switch": ^1.0.1
     "@uidu/button": ^1.3.35
     "@uidu/docs": ^0.5.24
-    "@uidu/field-base": 4.2.4
-    "@uidu/form": ^2.2.3
+    "@uidu/field-base": 4.2.5
+    "@uidu/form": ^2.2.4
     react: ^18.2.0
     react-dom: ^18.2.0
     styled-components: ^5.3.6
@@ -8085,7 +8050,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/form@2.2.3, @uidu/form@^2.2.3, @uidu/form@workspace:packages/forms/form":
+"@uidu/form@2.2.4, @uidu/form@^2.2.3, @uidu/form@^2.2.4, @uidu/form@workspace:packages/forms/form":
   version: 0.0.0-use.local
   resolution: "@uidu/form@workspace:packages/forms/form"
   dependencies:
@@ -8146,7 +8111,7 @@ __metadata:
     "@uidu/docs": ^0.5.24
     "@uidu/drawer": ^0.7.30
     "@uidu/field-text": ^2.0.7
-    "@uidu/form": ^2.2.3
+    "@uidu/form": ^2.2.4
     "@uidu/fs-loader": ^0.1.53
     "@uidu/list": ^3.1.14
     "@uidu/lozenge": ^0.5.22
@@ -8154,14 +8119,14 @@ __metadata:
     "@uidu/nav-info-loader": ^0.2.7
     "@uidu/navigation": ^1.0.33
     "@uidu/page-header": 1.0.9
-    "@uidu/select": ^2.2.3
+    "@uidu/select": ^2.2.4
     "@uidu/shell": ^2.1.43
     "@uidu/spinner": ^0.5.23
     "@uidu/table": ^3.4.7
     "@uidu/theme": ^0.6.28
     "@uidu/themes-uidu": ^0.4.4
     "@uidu/tooltip": ^0.5.29
-    "@uidu/webpack-config": ^0.3.46
+    "@uidu/webpack-config": ^0.3.47
     avataaars: ^2.0.0
     codesandboxer: ^1.0.3
     commonmark: ^0.30.0
@@ -9040,7 +9005,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/select@2.2.3, @uidu/select@^2.2.3, @uidu/select@workspace:packages/forms/select":
+"@uidu/select@2.2.4, @uidu/select@^2.2.3, @uidu/select@^2.2.4, @uidu/select@workspace:packages/forms/select":
   version: 0.0.0-use.local
   resolution: "@uidu/select@workspace:packages/forms/select"
   dependencies:
@@ -9049,7 +9014,7 @@ __metadata:
     "@heroicons/react": ^2.0.13
     "@uidu/button": ^1.3.35
     "@uidu/docs": ^0.5.24
-    "@uidu/field-base": ^4.2.4
+    "@uidu/field-base": ^4.2.5
     "@uidu/menu": 0.8.9
     "@uidu/modal-dialog": ^1.1.4
     "@uidu/spinner": ^0.5.23
@@ -9447,7 +9412,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/webpack-config@^0.3.46, @uidu/webpack-config@workspace:build/webpack-config":
+"@uidu/webpack-config@^0.3.47, @uidu/webpack-config@workspace:build/webpack-config":
   version: 0.0.0-use.local
   resolution: "@uidu/webpack-config@workspace:build/webpack-config"
   dependencies:
@@ -10779,19 +10744,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"array.prototype.flat@npm:^1.2.3":
-  version: 1.3.0
-  resolution: "array.prototype.flat@npm:1.3.0"
-  dependencies:
-    call-bind: ^1.0.2
-    define-properties: ^1.1.3
-    es-abstract: ^1.19.2
-    es-shim-unscopables: ^1.0.0
-  checksum: 2a652b3e8dc0bebb6117e42a5ab5738af0203a14c27341d7bb2431467bdb4b348e2c5dc555dfcda8af0a5e4075c400b85311ded73861c87290a71a17c3e0a257
-  languageName: node
-  linkType: hard
-
-"array.prototype.flat@npm:^1.3.1":
+"array.prototype.flat@npm:^1.2.3, array.prototype.flat@npm:^1.3.1":
   version: 1.3.1
   resolution: "array.prototype.flat@npm:1.3.1"
   dependencies:
@@ -15331,7 +15284,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-abstract@npm:^1.19.0, es-abstract@npm:^1.19.1, es-abstract@npm:^1.19.2, es-abstract@npm:^1.19.5, es-abstract@npm:^1.20.4":
+"es-abstract@npm:^1.19.0, es-abstract@npm:^1.19.1, es-abstract@npm:^1.19.5, es-abstract@npm:^1.20.4":
   version: 1.20.4
   resolution: "es-abstract@npm:1.20.4"
   dependencies:
@@ -18075,9 +18028,9 @@ __metadata:
     "@types/zxcvbn": ^4.4.1
     "@typescript-eslint/eslint-plugin": ^5.48.2
     "@typescript-eslint/parser": ^5.48.2
-    "@uidu/field-base": 4.2.4
-    "@uidu/field-time": 2.0.34
-    "@uidu/form": 2.2.3
+    "@uidu/field-base": 4.2.5
+    "@uidu/field-time": 2.0.35
+    "@uidu/form": 2.2.4
     "@uidu/profilecard": ^0.3.0
     "@uifabric/file-type-icons": ^7.10.10
     "@uppy/aws-s3": ^3.0.4
@@ -19558,21 +19511,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.11.0":
+"is-core-module@npm:^2.11.0, is-core-module@npm:^2.5.0, is-core-module@npm:^2.9.0":
   version: 2.11.0
   resolution: "is-core-module@npm:2.11.0"
   dependencies:
     has: ^1.0.3
   checksum: f96fd490c6b48eb4f6d10ba815c6ef13f410b0ba6f7eb8577af51697de523e5f2cd9de1c441b51d27251bf0e4aebc936545e33a5d26d5d51f28d25698d4a8bab
-  languageName: node
-  linkType: hard
-
-"is-core-module@npm:^2.5.0, is-core-module@npm:^2.9.0":
-  version: 2.10.0
-  resolution: "is-core-module@npm:2.10.0"
-  dependencies:
-    has: ^1.0.3
-  checksum: 0f3f77811f430af3256fa7bbc806f9639534b140f8ee69476f632c3e1eb4e28a38be0b9d1b8ecf596179c841b53576129279df95e7051d694dac4ceb6f967593
   languageName: node
   linkType: hard
 
@@ -22652,16 +22596,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^5.0.0, minimatch@npm:^5.0.1, minimatch@npm:^5.1.0":
-  version: 5.1.2
-  resolution: "minimatch@npm:5.1.2"
-  dependencies:
-    brace-expansion: ^2.0.1
-  checksum: 32ffda25b9fb8270a1c1beafdb7489dc0e411af553495136509a945691f63c9b6b000eeeaaf8bffe3efa609c1d6d3bc0f5a106f6c3443b5c05da649100ded964
-  languageName: node
-  linkType: hard
-
-"minimatch@npm:^5.1.4":
+"minimatch@npm:^5.0.0, minimatch@npm:^5.0.1, minimatch@npm:^5.1.0, minimatch@npm:^5.1.4":
   version: 5.1.4
   resolution: "minimatch@npm:5.1.4"
   dependencies:
@@ -25622,16 +25557,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.7.1":
-  version: 2.8.2
-  resolution: "prettier@npm:2.8.2"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 740c56c2128d587d656ea1dde9bc9c3503dfc94db4f3ac387259215eeb2e216680bdad9d18a0c9feecc6b42cfa188d6fa777df4c36c1d00cedd4199074fbfbd2
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.8.3":
+"prettier@npm:^2.7.1, prettier@npm:^2.8.3":
   version: 2.8.3
   resolution: "prettier@npm:2.8.3"
   bin:
