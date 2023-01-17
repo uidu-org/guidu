@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.2.0
+
+### Minor Changes
+
+- cd8fba974: Add token nodeview and email renderer
+
 ## 2.1.1
 
 ### Patch Changes
