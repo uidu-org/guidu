@@ -408,7 +408,19 @@ export const story = {
   version: 1,
   type: 'doc',
   content: [
-    { type: 'paragraph', content: [{ type: 'text', text: 'a' }] },
+    {
+      type: 'paragraph',
+      content: [
+        { type: 'text', text: 'a' },
+        {
+          type: 'token',
+          attrs: {
+            id: '7c129f60-ffb8-48fb-bb08-67484c883162',
+            name: 'Ronald Von',
+          },
+        },
+      ],
+    },
     {
       type: 'mediaSingle',
       attrs: { layout: 'center' },

@@ -25,5 +25,5 @@ const BlockNode = styled.div`
 `;
 
 export default function UnsupportedBlockNode() {
-  return <BlockNode>Unsupported content</BlockNode>;
+  return <BlockNode>Unsupported block content</BlockNode>;
 }

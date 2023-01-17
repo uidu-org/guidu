@@ -35,6 +35,7 @@ import tableRow from './nodes/table-row';
 import taskItem from './nodes/task-item';
 import taskList from './nodes/task-list';
 import text from './nodes/text';
+import token from './nodes/token';
 import unknownBlock from './nodes/unknown-block';
 import video from './nodes/video';
 
@@ -77,6 +78,7 @@ export const nodeSerializers: { [key: string]: NodeSerializer } = {
   taskItem,
   taskList,
   text,
+  token,
   unknownBlock,
   status,
   date,

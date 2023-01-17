@@ -7,6 +7,7 @@ export default [
   'mention',
   'placeholder',
   'status',
+  'token',
   'formatted_text_inline',
   'code_inline',
 ];

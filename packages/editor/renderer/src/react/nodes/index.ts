@@ -27,6 +27,7 @@ import Table from './table';
 import { TableCell, TableHeader } from './tableCell';
 import TableRow from './tableRow';
 import TaskList from './taskList';
+import Token from './token';
 import UnknownBlock from './unknownBlock';
 import Video from './video';
 
@@ -131,6 +132,7 @@ export const nodeToReact: { [key: string]: React.ComponentType<any> } = {
   tableCell: TableCell,
   tableHeader: TableHeader,
   tableRow: TableRow,
+  token: Token,
   unknownBlock: UnknownBlock,
   video: Video,
 };
@@ -305,5 +307,6 @@ export {
   TableRow,
   UnknownBlock,
   Video,
+  Token,
 };
 export type { BodiedExtensionProps, ExtensionProps, InlineExtensionProps };

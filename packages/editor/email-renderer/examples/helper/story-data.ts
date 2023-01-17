@@ -46,6 +46,14 @@ export const story2 = {
       type: 'paragraph',
       content: [
         { type: 'text', text: 'ITA - ENG', marks: [{ type: 'strong' }] },
+        { type: 'text', text: ' ' },
+        {
+          type: 'token',
+          attrs: {
+            id: '7c129f60-ffb8-48fb-bb08-67484c883162',
+            name: 'Ronald Von',
+          },
+        },
       ],
     },
     {

@@ -23,6 +23,6 @@ export const unsupportedBlock: NodeSpec = {
       'data-node-type': 'unsupportedBlock',
       'data-original-value': JSON.stringify(node.attrs.originalValue),
     };
-    return ['div', attrs, 'Unsupported content'];
+    return ['div', attrs, 'Unsupported block content'];
   },
 };

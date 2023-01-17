@@ -27,7 +27,7 @@ const InlineNode = styled.span`
 export default function UnsupportedInlineNode() {
   return (
     <span>
-      <InlineNode>Unsupported content</InlineNode>
+      <InlineNode>Unsupported inline content</InlineNode>
     </span>
   );
 }

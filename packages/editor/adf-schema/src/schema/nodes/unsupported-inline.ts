@@ -22,6 +22,6 @@ export const unsupportedInline: NodeSpec = {
       'data-node-type': 'unsupportedInline',
       'data-original-value': JSON.stringify(node.attrs.originalValue),
     };
-    return ['span', attrs, 'Unsupported content'];
+    return ['span', attrs, 'Unsupported inline content'];
   },
 };
