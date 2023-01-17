@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 2.2.4
+
+### Patch Changes
+
+- 798907ec8: Slider to ESM, eslint with tw prop rule
+- Updated dependencies [798907ec8]
+  - @uidu/field-base@4.2.5
+
 ## 2.2.3
 
 ### Patch Changes
