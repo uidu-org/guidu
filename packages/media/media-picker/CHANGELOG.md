@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.14.0
+
+### Minor Changes
+
+- 2ac492dc6: CU-8669ar885[review]
+
 ## 0.13.0
 
 ### Minor Changes
