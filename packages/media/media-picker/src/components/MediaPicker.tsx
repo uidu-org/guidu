@@ -5,6 +5,7 @@ import '@uppy/dashboard/dist/style.css';
 import '@uppy/drag-drop/dist/style.css';
 import Dropbox from '@uppy/dropbox';
 import GoogleDrive from '@uppy/google-drive';
+import Instagram from '@uppy/instagram';
 import { DashboardModal, useUppy } from '@uppy/react';
 import Url from '@uppy/url';
 import '@uppy/url/dist/style.css';
@@ -57,6 +58,7 @@ export default function MediaPicker({
       .use(Url, {
         companionUrl,
       })
+      .use(Instagram, { companionUrl })
       .use(GoogleDrive, {
         companionUrl,
       })
@@ -93,6 +95,7 @@ export default function MediaPicker({
         'Url',
         'Dropbox',
         'GoogleDrive',
+        'Instagram',
         // 'ThumbnailGenerator',
       ]}
       proudlyDisplayPoweredByUppy={false}

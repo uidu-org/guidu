@@ -6517,7 +6517,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/adf-schema@2.1.1, @uidu/adf-schema@^2.0.5, @uidu/adf-schema@^2.1.0, @uidu/adf-schema@^2.1.1, @uidu/adf-schema@workspace:packages/editor/adf-schema":
+"@uidu/adf-schema@2.2.0, @uidu/adf-schema@^2.0.5, @uidu/adf-schema@^2.2.0, @uidu/adf-schema@workspace:packages/editor/adf-schema":
   version: 0.0.0-use.local
   resolution: "@uidu/adf-schema@workspace:packages/editor/adf-schema"
   dependencies:
@@ -6540,12 +6540,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/adf-utils@^2.0.2, @uidu/adf-utils@^2.1.0, @uidu/adf-utils@workspace:packages/editor/adf-utils":
+"@uidu/adf-utils@^2.2.0, @uidu/adf-utils@workspace:packages/editor/adf-utils":
   version: 0.0.0-use.local
   resolution: "@uidu/adf-utils@workspace:packages/editor/adf-utils"
   dependencies:
     "@babel/runtime": ^7.20.7
-    "@uidu/adf-schema": ^2.1.0
+    "@uidu/adf-schema": ^2.2.0
     "@uidu/docs": ^0.5.24
     "@uidu/json-schema-generator": ^1.0.4
     react: ^18.2.0
@@ -7321,14 +7321,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-common@^2.1.1, @uidu/editor-common@^2.3.0, @uidu/editor-common@^2.4.1, @uidu/editor-common@workspace:packages/editor/editor-common":
+"@uidu/editor-common@^2.1.1, @uidu/editor-common@^2.5.0, @uidu/editor-common@workspace:packages/editor/editor-common":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
     "@atlaskit/icon": ^21.10.7
     "@babel/runtime": ^7.20.7
-    "@uidu/adf-schema": ^2.1.1
-    "@uidu/adf-utils": ^2.1.0
+    "@uidu/adf-schema": ^2.2.0
+    "@uidu/adf-utils": ^2.2.0
     "@uidu/analytics": ^0.6.11
     "@uidu/analytics-namespaced-context": ^0.4.21
     "@uidu/editor-json-transformer": 1.0.9
@@ -7357,7 +7357,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@2.8.3, @uidu/editor-core@^2.2.1, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@2.9.1, @uidu/editor-core@^2.2.1, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -7370,8 +7370,8 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.2.1
     "@fortawesome/react-fontawesome": ^0.2.0
     "@loadable/component": ^5.15.2
-    "@uidu/adf-schema": ^2.1.1
-    "@uidu/adf-utils": ^2.1.0
+    "@uidu/adf-schema": ^2.2.0
+    "@uidu/adf-utils": ^2.2.0
     "@uidu/analytics": ^0.6.11
     "@uidu/analytics-gas-types": ^0.3.5
     "@uidu/analytics-listeners": ^0.4.21
@@ -7382,7 +7382,7 @@ __metadata:
     "@uidu/date": ^0.4.27
     "@uidu/docs": ^0.5.24
     "@uidu/droplist": ^0.5.29
-    "@uidu/editor-common": ^2.4.1
+    "@uidu/editor-common": ^2.5.0
     "@uidu/editor-json-transformer": ^1.0.9
     "@uidu/editor-markdown-transformer": ^1.0.8
     "@uidu/emoji": ^0.6.30
@@ -7392,7 +7392,7 @@ __metadata:
     "@uidu/media-card": ^0.8.5
     "@uidu/media-core": ^1.2.0
     "@uidu/media-filmstrip": ^0.5.14
-    "@uidu/media-picker": ^0.13.0
+    "@uidu/media-picker": ^0.14.0
     "@uidu/mentions": ^0.5.3
     "@uidu/menu": ^0.8.9
     "@uidu/modal-dialog": 1.1.4
@@ -7505,10 +7505,10 @@ __metadata:
     "@craftjs/core": ^0.2.0-beta.8
     "@craftjs/utils": ^0.2.0-beta.8
     "@heroicons/react": ^2.0.13
-    "@uidu/adf-schema": 2.1.1
+    "@uidu/adf-schema": 2.2.0
     "@uidu/button": 1.3.35
-    "@uidu/editor-core": 2.8.3
-    "@uidu/email-renderer": 1.1.0
+    "@uidu/editor-core": 2.9.1
+    "@uidu/email-renderer": 1.2.0
     "@uidu/field-number": 2.0.31
     "@uidu/field-text": 2.0.7
     "@uidu/form": 2.2.4
@@ -7525,12 +7525,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/email-renderer@1.1.0, @uidu/email-renderer@workspace:packages/editor/email-renderer":
+"@uidu/email-renderer@1.2.0, @uidu/email-renderer@workspace:packages/editor/email-renderer":
   version: 0.0.0-use.local
   resolution: "@uidu/email-renderer@workspace:packages/editor/email-renderer"
   dependencies:
     "@babel/runtime": ^7.20.7
-    "@uidu/adf-schema": ^2.0.5
+    "@uidu/adf-schema": ^2.2.0
     "@uidu/docs": "*"
     "@uidu/util-data-test": ^0.4.30
     date-fns: ^2.29.3
@@ -8406,7 +8406,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-picker@^0.13.0, @uidu/media-picker@workspace:packages/media/media-picker":
+"@uidu/media-picker@^0.14.0, @uidu/media-picker@workspace:packages/media/media-picker":
   version: 0.0.0-use.local
   resolution: "@uidu/media-picker@workspace:packages/media/media-picker"
   dependencies:
@@ -8420,6 +8420,7 @@ __metadata:
     "@uppy/drag-drop": ^3.0.1
     "@uppy/dropbox": ^3.0.1
     "@uppy/google-drive": ^3.0.1
+    "@uppy/instagram": ^3.0.1
     "@uppy/react": ^3.0.2
     "@uppy/url": ^3.1.0
     "@uppy/webcam": ^3.2.1
@@ -8519,7 +8520,7 @@ __metadata:
     "@uidu/field-text": ^2.0.7
     "@uidu/form": ^2.2.3
     "@uidu/media-filmstrip": ^0.5.14
-    "@uidu/media-picker": ^0.13.0
+    "@uidu/media-picker": ^0.14.0
     "@uidu/message": ^0.5.66
     "@uidu/spinner": ^0.5.23
     classnames: ^2.3.2
@@ -8936,8 +8937,8 @@ __metadata:
     "@babel/runtime": ^7.20.7
     "@loadable/component": ^5.15.2
     "@types/prosemirror-model": ^1.17.0
-    "@uidu/adf-schema": ^2.0.5
-    "@uidu/adf-utils": ^2.0.2
+    "@uidu/adf-schema": ^2.2.0
+    "@uidu/adf-utils": ^2.2.0
     "@uidu/analytics": ^0.6.11
     "@uidu/analytics-listeners": ^0.4.21
     "@uidu/analytics-namespaced-context": ^0.4.21
@@ -8945,7 +8946,7 @@ __metadata:
     "@uidu/button": ^1.3.35
     "@uidu/code": ^0.5.23
     "@uidu/docs": ^0.5.24
-    "@uidu/editor-common": ^2.3.0
+    "@uidu/editor-common": ^2.5.0
     "@uidu/editor-json-transformer": ^1.0.9
     "@uidu/field-range": ^2.0.10
     "@uidu/media-card": ^0.8.3
@@ -9691,6 +9692,20 @@ __metadata:
   peerDependencies:
     "@uppy/core": ^3.0.2
   checksum: ebbd0ac82a421898c9287efa070f150f317361f0000bad0d51fafd9f2bc6e07be181800e41cd8474e9ac686bb0f955071104826ad4b54dd2519de93d08bdb3c8
+  languageName: node
+  linkType: hard
+
+"@uppy/instagram@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@uppy/instagram@npm:3.0.1"
+  dependencies:
+    "@uppy/companion-client": ^3.0.2
+    "@uppy/provider-views": ^3.0.1
+    "@uppy/utils": ^5.0.2
+    preact: ^10.5.13
+  peerDependencies:
+    "@uppy/core": ^3.0.2
+  checksum: 0b414aa6c9a00fd6a30abbce81370b0b6849fe6b642d75ddf05d83206071d431e458f6620ef63dc5d92b3f835791c236e82741647e9de32565e13f3da6217143
   languageName: node
   linkType: hard
 
