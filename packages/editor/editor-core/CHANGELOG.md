@@ -1,5 +1,16 @@
 # @uidu/editor-core
 
+## 2.10.0
+
+### Minor Changes
+
+- 62d1ce489: Token with mustache friendlyh output
+
+### Patch Changes
+
+- Updated dependencies [62d1ce489]
+  - @uidu/media-picker@1.0.0
+
 ## 2.9.2
 
 ### Patch Changes

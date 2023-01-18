@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 1.0.0
+
+### Major Changes
+
+- 62d1ce489: Token with mustache friendlyh output
+
 ## 0.15.0
 
 ### Minor Changes

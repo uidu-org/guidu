@@ -1,5 +1,11 @@
 # @uidu/renderer
 
+## 2.2.0
+
+### Minor Changes
+
+- 62d1ce489: Token with mustache friendlyh output
+
 ## 2.1.0
 
 ### Minor Changes

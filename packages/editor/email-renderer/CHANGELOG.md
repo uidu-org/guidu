@@ -1,5 +1,11 @@
 # @uidu/email-renderer
 
+## 1.3.0
+
+### Minor Changes
+
+- 62d1ce489: Token with mustache friendlyh output
+
 ## 1.2.0
 
 ### Minor Changes
