@@ -1,6 +1,6 @@
 {
   "name": "@uidu/email-renderer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Email renderer",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.7",
-    "@uidu/adf-schema": "^2.0.5",
+    "@uidu/adf-schema": "^2.2.0",
     "date-fns": "^2.29.3",
     "get-video-id": "^3.6.5",
     "juice": "^8.1.0",
