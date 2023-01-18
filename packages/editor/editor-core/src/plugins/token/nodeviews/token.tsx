@@ -12,5 +12,7 @@ export default function TokenNodeView(props) {
     getPos,
   } = props;
 
-  return <span tw="bg-gray-100 py-0.5 px-1 rounded mx-0.5">{`{${name}}`}</span>;
+  return (
+    <span tw="bg-gray-100 py-0.5 px-1 rounded mx-0.5">{`{{${name}}}`}</span>
+  );
 }

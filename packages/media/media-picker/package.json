@@ -18,6 +18,7 @@
     "@uppy/google-drive": "^3.0.1",
     "@uppy/instagram": "^3.0.1",
     "@uppy/react": "^3.0.2",
+    "@uppy/unsplash": "^3.0.1",
     "@uppy/url": "^3.1.0",
     "@uppy/webcam": "^3.2.1",
     "@uppy/xhr-upload": "^3.0.4",

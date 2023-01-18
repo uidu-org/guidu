@@ -8,5 +8,7 @@ export interface Props {
 export default function Token(props: Props) {
   const { id, name } = props;
 
-  return <span tw="mx-0.5 rounded p-0.5 py-1 bg-gray-100">{`{${name}}`}</span>;
+  return (
+    <span tw="mx-0.5 rounded p-0.5 py-1 bg-gray-100">{`{{${name}}}`}</span>
+  );
 }

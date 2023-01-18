@@ -12,5 +12,5 @@ export const styles = `
 export default function token({ attrs }: NodeSerializerOpts) {
   const { id, name } = attrs;
 
-  return createTag('span', { class: className }, `{${id}}`);
+  return createTag('span', { class: className }, `{{${id}}}`);
 }
