@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-core",
-  "version": "2.9.2",
+  "version": "2.10.0",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/editor-core",
   "license": "MIT",
   "main": "dist/uidu-editor-core.cjs.js",
@@ -37,7 +37,7 @@
     "@uidu/media-card": "^0.8.5",
     "@uidu/media-core": "^1.4.0",
     "@uidu/media-filmstrip": "^0.5.14",
-    "@uidu/media-picker": "^0.15.0",
+    "@uidu/media-picker": "^1.0.0",
     "@uidu/mentions": "^0.5.3",
     "@uidu/menu": "^0.8.9",
     "@uidu/modal-dialog": "1.1.4",
