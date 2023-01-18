@@ -19,6 +19,7 @@ export default class Example extends Component {
         {isOpen && (
           <MediaPicker
             open={isOpen}
+            onClose={() => this.close()}
             onRequestClose={this.close}
             uploadOptions={localUploadOptions({
               endpoint: 'https://uidu.local:8443/upload',

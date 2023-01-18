@@ -1,5 +1,5 @@
 import { companionUrl } from '@uidu/media-core';
-import Uppy from '@uppy/core';
+import Uppy, { UppyOptions } from '@uppy/core';
 import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
 import '@uppy/drag-drop/dist/style.css';
@@ -10,14 +10,29 @@ import Url from '@uppy/url';
 import '@uppy/url/dist/style.css';
 import Webcam from '@uppy/webcam';
 import '@uppy/webcam/dist/style.css';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { MediaPickerProps } from '../types';
 
+const defaultOptions = {
+  debug: process.env.NODE_ENV === 'development',
+  allowMultipleUploadBatches: true,
+  restrictions: {
+    maxNumberOfFiles: null,
+    minNumberOfFiles: null,
+    maxFileSize: null,
+    allowedFileTypes: null,
+  },
+  autoProceed: true,
+};
+
+const defaultAdditionalOptions = {};
 const defaultOnComplete = () => {};
 
 export default function MediaPicker({
   uploadOptions,
   onComplete = defaultOnComplete,
+  onClose = defaultOnComplete,
+  options = defaultAdditionalOptions,
   open = false,
   onFileAdded = defaultOnComplete,
   onFileRemoved = defaultOnComplete,
@@ -25,19 +40,18 @@ export default function MediaPicker({
   onUploadProgress = defaultOnComplete,
   onUploadSuccess = defaultOnComplete,
   onUploadRetry = defaultOnComplete,
+  ...props
 }: MediaPickerProps) {
+  const mergeOptions: UppyOptions = useMemo(
+    () => ({
+      ...defaultOptions,
+      ...options,
+    }),
+    [options],
+  );
+
   const uppy = useUppy(() =>
-    new Uppy({
-      debug: false,
-      allowMultipleUploadBatches: true,
-      restrictions: {
-        maxNumberOfFiles: null,
-        minNumberOfFiles: null,
-        maxFileSize: null,
-        allowedFileTypes: null,
-      },
-      autoProceed: true,
-    })
+    new Uppy(mergeOptions)
       .use(Webcam)
       .use(uploadOptions.module, uploadOptions.options)
       .use(Url, {
@@ -66,24 +80,28 @@ export default function MediaPicker({
         onUploadSuccess(file, response, uppy),
       )
       .on('upload-retry', (fileId) => onUploadRetry(fileId, uppy))
-      .on('complete', (result) => onComplete(result, uppy)),
+      .on('complete', (result) => onComplete(result, uppy))
+      .on('dashboard:modal-closed', onClose),
   );
 
   return (
     <DashboardModal
       uppy={uppy}
-      // plugins={[
-      //   'XHRUpload',
-      //   'Webcam',
-      //   'Url',
-      //   'Dropbox',
-      //   'GoogleDrive',
-      //   'ThumbnailGenerator',
-      // ]}
+      plugins={
+        [
+          // 'XHRUpload',
+          // 'Webcam',
+          // 'Url',
+          // 'Dropbox',
+          // 'GoogleDrive',
+          // 'ThumbnailGenerator',
+        ]
+      }
       proudlyDisplayPoweredByUppy={false}
       // closeAfterFinish
       closeModalOnClickOutside
       open={open}
+      {...props}
     />
   );
 }

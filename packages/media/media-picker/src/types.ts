@@ -6,13 +6,16 @@ import {
   SuccessResponse,
   UploadResult,
   UppyFile,
+  UppyOptions,
 } from '@uppy/core';
 
 import { MediaUploadOptions } from '@uidu/media-core';
 
 export type MediaPickerProps = {
   open?: boolean;
+  options?: Partial<UppyOptions>;
   uploadOptions: MediaUploadOptions;
+  onClose?: () => void;
   onComplete: (result: UploadResult, uppy: Uppy) => void;
   onFileAdded?: (file: UppyFile, uppy: Uppy) => void;
   onFileRemoved?: (
