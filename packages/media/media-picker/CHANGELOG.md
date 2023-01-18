@@ -1,5 +1,18 @@
 # @uidu/media-picker
 
+## 0.15.0
+
+### Minor Changes
+
+- 7ee9a24af: Changed companion url to heroku
+- cd1aa6929: Now with edits
+
+### Patch Changes
+
+- Updated dependencies [7ee9a24af]
+- Updated dependencies [cd1aa6929]
+  - @uidu/media-core@1.4.0
+
 ## 0.14.0
 
 ### Minor Changes
