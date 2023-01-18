@@ -10,6 +10,7 @@
   "types": "dist/uidu-media-picker.cjs.d.ts",
   "files": [
     "dist",
+    "types",
     "styles.scss"
   ],
   "dependencies": {
