@@ -87,16 +87,14 @@ export default function MediaPicker({
   return (
     <DashboardModal
       uppy={uppy}
-      plugins={
-        [
-          // 'XHRUpload',
-          // 'Webcam',
-          // 'Url',
-          // 'Dropbox',
-          // 'GoogleDrive',
-          // 'ThumbnailGenerator',
-        ]
-      }
+      plugins={[
+        // 'XHRUpload',
+        // 'Webcam',
+        'Url',
+        'Dropbox',
+        'GoogleDrive',
+        // 'ThumbnailGenerator',
+      ]}
       proudlyDisplayPoweredByUppy={false}
       // closeAfterFinish
       closeModalOnClickOutside
