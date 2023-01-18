@@ -1,5 +1,12 @@
 # @uidu/media-core
 
+## 1.4.0
+
+### Minor Changes
+
+- 7ee9a24af: Changed companion url to heroku
+- cd1aa6929: Now with edits
+
 ## 1.3.0
 
 ### Minor Changes

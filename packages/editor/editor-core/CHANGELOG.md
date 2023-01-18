@@ -1,5 +1,16 @@
 # @uidu/editor-core
 
+## 2.9.2
+
+### Patch Changes
+
+- Updated dependencies [7ee9a24af]
+- Updated dependencies [cd1aa6929]
+  - @uidu/media-picker@0.15.0
+  - @uidu/media-core@1.4.0
+  - @uidu/adf-schema@2.2.1
+  - @uidu/editor-common@2.5.1
+
 ## 2.9.1
 
 ### Patch Changes

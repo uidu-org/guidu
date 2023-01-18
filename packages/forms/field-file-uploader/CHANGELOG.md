@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 2.2.7
+
+### Patch Changes
+
+- Updated dependencies [7ee9a24af]
+- Updated dependencies [cd1aa6929]
+  - @uidu/media-core@1.4.0
+
 ## 2.2.6
 
 ### Patch Changes
