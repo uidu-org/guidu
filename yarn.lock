@@ -7357,7 +7357,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@2.9.2, @uidu/editor-core@^2.2.1, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@2.10.0, @uidu/editor-core@^2.2.1, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -7392,7 +7392,7 @@ __metadata:
     "@uidu/media-card": ^0.8.5
     "@uidu/media-core": ^1.4.0
     "@uidu/media-filmstrip": ^0.5.14
-    "@uidu/media-picker": ^0.15.0
+    "@uidu/media-picker": ^1.0.0
     "@uidu/mentions": ^0.5.3
     "@uidu/menu": ^0.8.9
     "@uidu/modal-dialog": 1.1.4
@@ -7507,8 +7507,8 @@ __metadata:
     "@heroicons/react": ^2.0.13
     "@uidu/adf-schema": 2.2.1
     "@uidu/button": 1.3.35
-    "@uidu/editor-core": 2.9.2
-    "@uidu/email-renderer": 1.2.0
+    "@uidu/editor-core": 2.10.0
+    "@uidu/email-renderer": 1.3.0
     "@uidu/field-number": 2.0.31
     "@uidu/field-text": 2.0.7
     "@uidu/form": 2.2.4
@@ -7525,7 +7525,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/email-renderer@1.2.0, @uidu/email-renderer@workspace:packages/editor/email-renderer":
+"@uidu/email-renderer@1.3.0, @uidu/email-renderer@workspace:packages/editor/email-renderer":
   version: 0.0.0-use.local
   resolution: "@uidu/email-renderer@workspace:packages/editor/email-renderer"
   dependencies:
@@ -8406,7 +8406,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-picker@^0.15.0, @uidu/media-picker@workspace:packages/media/media-picker":
+"@uidu/media-picker@^1.0.0, @uidu/media-picker@workspace:packages/media/media-picker":
   version: 0.0.0-use.local
   resolution: "@uidu/media-picker@workspace:packages/media/media-picker"
   dependencies:
@@ -8521,7 +8521,7 @@ __metadata:
     "@uidu/field-text": ^2.0.7
     "@uidu/form": ^2.2.3
     "@uidu/media-filmstrip": ^0.5.14
-    "@uidu/media-picker": ^0.15.0
+    "@uidu/media-picker": ^1.0.0
     "@uidu/message": ^0.5.66
     "@uidu/spinner": ^0.5.23
     classnames: ^2.3.2

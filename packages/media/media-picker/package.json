@@ -8,6 +8,10 @@
   "main": "dist/uidu-media-picker.cjs.js",
   "module": "dist/uidu-media-picker.esm.js",
   "types": "dist/uidu-media-picker.cjs.d.ts",
+  "files": [
+    "dist",
+    "styles.scss"
+  ],
   "dependencies": {
     "@babel/runtime": "^7.20.7",
     "@uidu/media-core": "^1.4.0",

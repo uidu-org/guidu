@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Component } from 'react';
 import { localUploadOptions } from '../../media-core/src';
 import MediaPicker from '../src';
+import '../styles.scss';
 
 export default class Example extends Component {
   state = { isOpen: false };

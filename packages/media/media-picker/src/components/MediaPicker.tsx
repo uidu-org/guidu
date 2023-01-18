@@ -10,8 +10,6 @@ import Webcam from '@uppy/webcam';
 import React, { useMemo } from 'react';
 import { MediaPickerProps } from '../types';
 
-import '../styles.scss';
-
 const defaultOptions = {
   debug: process.env.NODE_ENV === 'development',
   allowMultipleUploadBatches: true,
