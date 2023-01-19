@@ -29,7 +29,7 @@
     "@uidu/theme": "^0.6.28",
     "@uidu/tooltip": "^0.5.29",
     "get-video-id": "^3.6.5",
-    "prosemirror-model": "^1.18.3",
+    "prosemirror-model": "^1.19.0",
     "raf-schd": "^4.0.3",
     "react-intl": "^6.2.5",
     "tslib": "^2.4.1",

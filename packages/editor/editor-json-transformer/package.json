@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.20.7",
     "@uidu/adf-schema": "^2.0.5",
-    "prosemirror-model": "^1.18.3",
+    "prosemirror-model": "^1.19.0",
     "tslib": "^2.4.1"
   },
   "devDependencies": {
@@ -20,7 +20,7 @@
     "@uidu/docs": "^0.5.24",
     "@uidu/editor-common": "^2.1.1",
     "@uidu/editor-core": "^2.2.1",
-    "prosemirror-view": "^1.29.1",
+    "prosemirror-view": "^1.30.0",
     "react": "^18.2.0",
     "styled-components": "^5.3.6"
   },

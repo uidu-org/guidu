@@ -16,7 +16,7 @@
     "markdown-it": "^13.0.1",
     "markdown-it-table": "^2.0.4",
     "prosemirror-markdown": "^1.10.1",
-    "prosemirror-model": "^1.18.3",
+    "prosemirror-model": "^1.19.0",
     "tslib": "^2.4.1"
   },
   "devDependencies": {

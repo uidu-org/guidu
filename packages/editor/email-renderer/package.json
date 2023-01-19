@@ -23,7 +23,7 @@
     "get-video-id": "^3.6.5",
     "juice": "^8.1.0",
     "lodash": "^4.17.21",
-    "prosemirror-model": "^1.18.3"
+    "prosemirror-model": "^1.19.0"
   },
   "devDependencies": {
     "@uidu/docs": "*",

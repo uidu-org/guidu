@@ -25,14 +25,14 @@
     "@uidu/media-core": "1.4.0",
     "css-color-names": "^1.0.1",
     "linkify-it": "^4.0.1",
-    "prosemirror-model": "^1.18.3",
-    "prosemirror-view": "^1.29.1",
+    "prosemirror-model": "^1.19.0",
+    "prosemirror-view": "^1.30.0",
     "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@uidu/editor-json-transformer": "^1.0.9",
     "@uidu/json-schema-generator": "^1.0.4",
-    "axios": "^1.2.2",
+    "axios": "^1.2.3",
     "json-schema-diff-validator": "^0.4.1",
     "prosemirror-state": "^1.4.2"
   }
