@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 4.3.9
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/gallery@2.0.22
+  - @uidu/table@3.4.9
+  - @uidu/list@3.1.16
+  - @uidu/data-controls@4.0.22
+  - @uidu/data-views@3.0.21
+
 ## 4.3.8
 
 ### Patch Changes

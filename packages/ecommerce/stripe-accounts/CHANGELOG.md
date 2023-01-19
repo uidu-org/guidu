@@ -1,5 +1,14 @@
 # @uidu/stripe-accounts
 
+## 0.5.19
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/payments@1.5.22
+  - @uidu/slider@2.1.1
+
 ## 0.5.18
 
 ### Patch Changes

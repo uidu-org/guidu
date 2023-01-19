@@ -1,5 +1,13 @@
 # @uidu/payment-sources
 
+## 0.3.40
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/payments@1.5.22
+
 ## 0.3.39
 
 ### Patch Changes

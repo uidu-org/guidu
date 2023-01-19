@@ -1,5 +1,17 @@
 # @uidu/editor-core
 
+## 2.10.1
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/editor-markdown-transformer@1.0.9
+  - @uidu/editor-json-transformer@1.0.10
+  - @uidu/editor-common@2.5.2
+  - @uidu/adf-schema@2.2.2
+  - @uidu/media-card@0.8.6
+
 ## 2.10.0
 
 ### Minor Changes

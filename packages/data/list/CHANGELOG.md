@@ -1,5 +1,11 @@
 # @uidu/list
 
+## 3.1.16
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+
 ## 3.1.15
 
 ### Patch Changes
