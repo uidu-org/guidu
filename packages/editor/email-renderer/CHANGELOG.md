@@ -1,5 +1,13 @@
 # @uidu/email-renderer
 
+## 1.3.1
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/adf-schema@2.2.2
+
 ## 1.3.0
 
 ### Minor Changes

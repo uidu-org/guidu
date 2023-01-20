@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.2.8
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+
 ## 2.2.7
 
 ### Patch Changes

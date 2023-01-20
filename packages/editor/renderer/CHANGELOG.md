@@ -1,5 +1,16 @@
 # @uidu/renderer
 
+## 2.2.1
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/editor-json-transformer@1.0.10
+  - @uidu/editor-common@2.5.2
+  - @uidu/adf-schema@2.2.2
+  - @uidu/media-card@0.8.6
+
 ## 2.2.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 1.0.9
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/editor-common@2.5.2
+  - @uidu/adf-schema@2.2.2
+
 ## 1.0.8
 
 ### Patch Changes

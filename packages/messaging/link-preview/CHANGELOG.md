@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.27
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+
 ## 0.3.26
 
 ### Patch Changes

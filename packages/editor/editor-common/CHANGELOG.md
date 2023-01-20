@@ -1,5 +1,14 @@
 # @uidu/editor-common
 
+## 2.5.2
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/editor-json-transformer@1.0.10
+  - @uidu/adf-schema@2.2.2
+
 ## 2.5.1
 
 ### Patch Changes

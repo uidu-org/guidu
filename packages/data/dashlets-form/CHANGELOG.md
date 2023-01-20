@@ -1,5 +1,13 @@
 # @uidu/dashlets-form
 
+## 1.0.41
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/dashlets@2.1.35
+
 ## 1.0.40
 
 ### Patch Changes

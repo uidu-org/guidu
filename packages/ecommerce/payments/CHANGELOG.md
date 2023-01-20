@@ -1,5 +1,13 @@
 # @uidu/payments
 
+## 1.5.22
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/slider@2.1.1
+
 ## 1.5.21
 
 ### Patch Changes
