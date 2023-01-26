@@ -1,5 +1,33 @@
 # Change Log
 
+## 0.6.33
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/breadcrumbs@1.0.32
+  - @uidu/page-header@1.0.10
+  - @uidu/navigation@1.0.34
+  - @uidu/modal-dialog@1.1.5
+  - @uidu/field-text@2.0.8
+  - @uidu/shell@2.1.44
+  - @uidu/checkbox@2.0.11
+  - @uidu/lozenge@0.5.23
+  - @uidu/spinner@0.5.24
+  - @uidu/tooltip@0.5.30
+  - @uidu/select@2.2.5
+  - @uidu/button@1.3.36
+  - @uidu/drawer@0.7.31
+  - @uidu/badge@0.5.23
+  - @uidu/theme@0.6.29
+  - @uidu/table@3.4.10
+  - @uidu/form@2.2.5
+  - @uidu/code@0.5.24
+  - @uidu/list@3.1.17
+  - @uidu/themes-uidu@0.4.5
+  - @uidu/docs@0.5.25
+
 ## 0.6.32
 
 ### Patch Changes

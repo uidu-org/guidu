@@ -1,5 +1,16 @@
 # @uidu/field-date
 
+## 2.0.36
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/field-base@4.2.6
+  - @uidu/field-text@2.0.8
+  - @uidu/select@2.2.5
+  - @uidu/form@2.2.5
+
 ## 2.0.35
 
 ### Patch Changes

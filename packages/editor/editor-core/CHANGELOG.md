@@ -1,5 +1,44 @@
 # @uidu/editor-core
 
+## 2.10.2
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/analytics-namespaced-context@0.4.22
+  - @uidu/editor-markdown-transformer@1.0.10
+  - @uidu/editor-json-transformer@1.0.11
+  - @uidu/analytics-gas-types@0.3.6
+  - @uidu/analytics-listeners@0.4.22
+  - @uidu/task-decision@0.4.34
+  - @uidu/media-filmstrip@0.5.15
+  - @uidu/editor-common@2.5.3
+  - @uidu/profilecard@0.3.33
+  - @uidu/media-picker@1.0.1
+  - @uidu/avatar-group@2.6.24
+  - @uidu/modal-dialog@1.1.5
+  - @uidu/adf-schema@2.2.3
+  - @uidu/mentions@0.5.4
+  - @uidu/adf-utils@2.2.1
+  - @uidu/field-date@2.1.12
+  - @uidu/field-text@2.0.8
+  - @uidu/media-card@0.8.7
+  - @uidu/media-core@1.4.1
+  - @uidu/status@0.5.28
+  - @uidu/analytics@0.6.12
+  - @uidu/emoji@0.6.31
+  - @uidu/droplist@0.5.30
+  - @uidu/date@0.4.28
+  - @uidu/spinner@0.5.24
+  - @uidu/tooltip@0.5.30
+  - @uidu/select@2.2.5
+  - @uidu/avatar@0.9.21
+  - @uidu/button@1.3.36
+  - @uidu/theme@0.6.29
+  - @uidu/form@2.2.5
+  - @uidu/menu@0.8.10
+
 ## 2.10.1
 
 ### Patch Changes

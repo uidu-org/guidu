@@ -1,5 +1,13 @@
 # @uidu/menu
 
+## 0.8.10
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/theme@0.6.29
+
 ## 0.8.9
 
 ### Patch Changes

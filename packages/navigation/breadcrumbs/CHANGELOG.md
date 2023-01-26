@@ -1,5 +1,16 @@
 # @uidu/breadcrumbs
 
+## 1.0.32
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/analytics@0.6.12
+  - @uidu/tooltip@0.5.30
+  - @uidu/button@1.3.36
+  - @uidu/theme@0.6.29
+
 ## 1.0.31
 
 ### Patch Changes

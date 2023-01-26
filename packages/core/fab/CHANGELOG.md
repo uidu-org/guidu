@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.5.24
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+
 ## 0.5.23
 
 ### Patch Changes
