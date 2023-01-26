@@ -10,11 +10,11 @@
   "module": "dist/uidu-modal-dialog.esm.js",
   "types": "dist/uidu-modal-dialog.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/ds-lib": "^1.4.2",
+    "@atlaskit/ds-lib": "^2.1.2",
     "@atlaskit/focus-ring": "^1.1.0",
     "@atlaskit/icon": "^21.10.7",
     "@atlaskit/motion": "^1.2.3",
-    "@babel/runtime": "^7.20.7",
+    "@babel/runtime": "^7.20.13",
     "@uidu/analytics": "^0.6.11",
     "@uidu/blanket": "^0.6.13",
     "@uidu/portal": "^1.0.5",
@@ -22,7 +22,7 @@
     "raf-schd": "^4.0.3",
     "react-focus-lock": "^2.9.2",
     "react-scrolllock": "^5.0.1",
-    "tslib": "^2.4.1"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@uidu/avatar": "^0.9.20",

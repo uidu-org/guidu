@@ -25,9 +25,9 @@
     ]
   },
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
+    "@babel/runtime": "^7.20.13",
     "@uidu/adf-schema": "^2.2.0",
-    "tslib": "^2.4.1"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.24",

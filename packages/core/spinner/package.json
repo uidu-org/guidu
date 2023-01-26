@@ -9,11 +9,11 @@
   "main": "dist/uidu-spinner.cjs.js",
   "module": "dist/uidu-spinner.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
+    "@babel/runtime": "^7.20.13",
     "@uidu/theme": "^0.6.28",
     "react-dom": "^18.2.0",
     "react-transition-group": "^4.4.5",
-    "tslib": "^2.4.1"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@uidu/button": "^1.3.35",

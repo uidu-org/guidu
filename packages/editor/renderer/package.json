@@ -11,7 +11,7 @@
   "types": "dist/uidu-renderer.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.10.7",
-    "@babel/runtime": "^7.20.7",
+    "@babel/runtime": "^7.20.13",
     "@loadable/component": "^5.15.2",
     "@uidu/adf-schema": "^2.2.0",
     "@uidu/adf-utils": "^2.2.0",
@@ -32,7 +32,7 @@
     "prosemirror-model": "^1.19.0",
     "raf-schd": "^4.0.3",
     "react-intl": "^6.2.5",
-    "tslib": "^2.4.1",
+    "tslib": "^2.5.0",
     "url-parse": "^1.5.10"
   },
   "devDependencies": {

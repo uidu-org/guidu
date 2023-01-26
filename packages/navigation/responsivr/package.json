@@ -8,10 +8,10 @@
   "main": "dist/uidu-responsivr.cjs.js",
   "module": "dist/uidu-responsivr.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
+    "@babel/runtime": "^7.20.13",
     "react": "^18.2.0",
     "react-media": "^1.10.0",
-    "tslib": "^2.4.1"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.24"

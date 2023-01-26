@@ -10,14 +10,14 @@
   "module": "dist/uidu-popup.esm.js",
   "types": "dist/uidu-popup.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
+    "@babel/runtime": "^7.20.13",
     "@emotion/react": "^11.10.5",
     "@uidu/popper": "^0.5.25",
     "@uidu/portal": "^1.0.5",
     "@uidu/theme": "^0.6.28",
     "focus-trap": "^7.2.0",
     "styled-components": "^5.3.6",
-    "tslib": "^2.4.1"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.10.7",

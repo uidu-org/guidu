@@ -11,7 +11,7 @@
     "index.scss"
   ],
   "dependencies": {
-    "tslib": "^2.4.1"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.22"

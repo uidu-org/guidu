@@ -18,11 +18,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
+    "@babel/runtime": "^7.20.13",
     "@uidu/theme": "^0.6.28",
     "date-fns": "^2.29.3",
     "styled-components": "^5.3.6",
-    "tslib": "^2.4.1"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.24",

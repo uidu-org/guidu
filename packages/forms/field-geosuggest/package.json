@@ -10,13 +10,13 @@
   "module": "dist/uidu-field-geosuggest.esm.js",
   "types": "dist/uidu-field-geosuggest.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
-    "@heroicons/react": "^2.0.13",
+    "@babel/runtime": "^7.20.13",
+    "@heroicons/react": "^2.0.14",
     "@uidu/field-base": "^4.2.4",
     "@uidu/menu": "0.8.9",
     "@uidu/spinner": "^0.5.23",
     "react": "^18.2.0",
-    "tslib": "^2.4.1",
+    "tslib": "^2.5.0",
     "use-places-autocomplete": "^4.0.0"
   },
   "devDependencies": {

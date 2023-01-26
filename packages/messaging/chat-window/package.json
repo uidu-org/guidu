@@ -9,7 +9,7 @@
   "module": "dist/uidu-chat-window.esm.js",
   "types": "dist/uidu-chat-window.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
+    "@babel/runtime": "^7.20.13",
     "@uidu/message": "^0.5.66",
     "@uidu/message-form": "^0.4.31",
     "@uidu/message-renderer": "^0.4.26",
@@ -20,7 +20,7 @@
     "react-chatview": "^0.2.5",
     "react-media": "^1.10.0",
     "styled-components": "^5.3.6",
-    "tslib": "^2.4.1"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",

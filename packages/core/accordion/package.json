@@ -10,13 +10,13 @@
   "module": "dist/uidu-accordion.esm.js",
   "types": "dist/uidu-accordion.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
+    "@babel/runtime": "^7.20.13",
     "@uidu/docs": "^0.5.24",
     "react": "^18.2.0",
     "react-accessible-accordion": "^5.0.0",
     "react-feather": "^2.0.10",
     "styled-components": "^5.3.6",
-    "tslib": "^2.4.1"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@uidu/theme": "^0.6.28"
