@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 1.4.1
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/docs@0.5.25
+
 ## 1.4.0
 
 ### Minor Changes

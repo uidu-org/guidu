@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-image-uploader",
-  "version": "3.0.30",
+  "version": "3.0.31",
   "description": "An image uploader with preview",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-image-uploader",
   "license": "MIT",
@@ -11,12 +11,12 @@
   "dependencies": {
     "@babel/runtime": "^7.20.13",
     "@heroicons/react": "^2.0.14",
-    "@uidu/button": "^1.3.35",
-    "@uidu/field-base": "^4.2.5",
-    "@uidu/field-range": "2.0.10",
-    "@uidu/form": "2.2.4",
-    "@uidu/media-core": "^1.1.8",
-    "@uidu/spinner": "^0.5.23",
+    "@uidu/button": "^1.3.36",
+    "@uidu/field-base": "^4.2.6",
+    "@uidu/field-range": "2.0.11",
+    "@uidu/form": "2.2.5",
+    "@uidu/media-core": "^1.4.1",
+    "@uidu/spinner": "^0.5.24",
     "@uppy/core": "^3.0.5",
     "@uppy/react": "^3.1.0",
     "@uppy/thumbnail-generator": "^3.0.2",
@@ -27,7 +27,7 @@
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.24",
+    "@uidu/docs": "^0.5.25",
     "axios": "^1.2.5"
   }
 }

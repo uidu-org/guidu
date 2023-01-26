@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 2.2.2
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/analytics-namespaced-context@0.4.22
+  - @uidu/editor-json-transformer@1.0.11
+  - @uidu/analytics-listeners@0.4.22
+  - @uidu/task-decision@0.4.34
+  - @uidu/media-filmstrip@0.5.15
+  - @uidu/editor-common@2.5.3
+  - @uidu/adf-schema@2.2.3
+  - @uidu/mentions@0.5.4
+  - @uidu/adf-utils@2.2.1
+  - @uidu/media-card@0.8.7
+  - @uidu/status@0.5.28
+  - @uidu/analytics@0.6.12
+  - @uidu/tooltip@0.5.30
+  - @uidu/theme@0.6.29
+  - @uidu/code@0.5.24
+
 ## 2.2.1
 
 ### Patch Changes

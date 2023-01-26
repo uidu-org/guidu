@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.41
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/payments@1.5.23
+  - @uidu/form@2.2.5
+
 ## 0.3.40
 
 ### Patch Changes

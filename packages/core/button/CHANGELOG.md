@@ -1,5 +1,15 @@
 # @uidu/button
 
+## 1.3.36
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/analytics@0.6.12
+  - @uidu/spinner@0.5.24
+  - @uidu/theme@0.6.29
+
 ## 1.3.35
 
 ### Patch Changes

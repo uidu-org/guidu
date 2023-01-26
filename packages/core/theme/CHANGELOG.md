@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.6.29
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/form@2.2.5
+
 ## 0.6.28
 
 ### Patch Changes

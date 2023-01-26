@@ -1,5 +1,13 @@
 # @uidu/radio
 
+## 2.1.6
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/field-base@4.2.6
+
 ## 2.1.5
 
 ### Patch Changes

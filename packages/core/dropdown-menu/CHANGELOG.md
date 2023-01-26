@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.6.29
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/analytics@0.6.12
+  - @uidu/droplist@0.5.30
+  - @uidu/button@1.3.36
+  - @uidu/theme@0.6.29
+  - @uidu/item@0.5.27
+
 ## 0.6.28
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.5.4
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+- Updated dependencies [fcb7ac71e]
+  - @uidu/analytics-gas-types@0.3.6
+  - @uidu/analytics@0.6.12
+  - @uidu/lozenge@0.5.23
+  - @uidu/tooltip@0.5.30
+  - @uidu/avatar@0.9.21
+  - @uidu/button@1.3.36
+  - @uidu/theme@0.6.29
+
 ## 0.5.3
 
 ### Patch Changes

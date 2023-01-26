@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashlets-form",
-  "version": "1.0.41",
+  "version": "1.0.42",
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/dashlets-form",
   "license": "MIT",
@@ -12,18 +12,18 @@
     "@babel/runtime": "^7.20.13",
     "@cubejs-client/core": "^0.31.46",
     "@cubejs-client/react": "^0.31.46",
-    "@uidu/accordion": "^0.6.22",
-    "@uidu/dashlets": "^2.1.35",
-    "@uidu/dropdown-menu": "^0.6.28",
-    "@uidu/field-downshift": "^2.1.5",
-    "@uidu/field-toggle": "^2.0.30",
-    "@uidu/form": "^2.2.3",
-    "@uidu/select": "^2.2.3",
-    "@uidu/shell": "^2.1.43",
+    "@uidu/accordion": "^0.6.23",
+    "@uidu/dashlets": "^2.1.36",
+    "@uidu/dropdown-menu": "^0.6.29",
+    "@uidu/field-downshift": "^2.1.7",
+    "@uidu/field-toggle": "^2.0.32",
+    "@uidu/form": "^2.2.5",
+    "@uidu/select": "^2.2.5",
+    "@uidu/shell": "^2.1.44",
     "react": "^18.2.0",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.24"
+    "@uidu/docs": "^0.5.25"
   }
 }

@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.0.7
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+
 ## 1.0.6
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.3.7
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+
 ## 0.3.6
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.5
+
+### Patch Changes
+
+- fcb7ac71e: Bump dependencies
+
 ## 0.4.4
 
 ### Patch Changes

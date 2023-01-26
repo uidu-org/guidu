@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-core",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "It holds shared code between MediaComponents like models, providers, interfaces and utilities",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/media/media-core",
   "license": "ISC",
@@ -10,7 +10,7 @@
   "types": "dist/uidu-media-core.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.20.13",
-    "@uidu/docs": "^0.5.24",
+    "@uidu/docs": "^0.5.25",
     "@uppy/aws-s3": "^3.0.5",
     "@uppy/core": "^3.0.5",
     "@uppy/dashboard": "^3.2.1",
@@ -19,7 +19,7 @@
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@uidu/section-message": "^0.6.28",
+    "@uidu/section-message": "^0.6.29",
     "react": "^18.2.0"
   },
   "peerDependencies": {
