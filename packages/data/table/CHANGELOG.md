@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 3.4.9
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/data-manager@4.3.9
+
 ## 3.4.8
 
 ### Patch Changes

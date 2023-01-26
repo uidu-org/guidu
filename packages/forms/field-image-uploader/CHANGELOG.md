@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 3.0.30
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+
 ## 3.0.29
 
 ### Patch Changes

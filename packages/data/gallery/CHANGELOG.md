@@ -1,5 +1,12 @@
 # @uidu/gallery
 
+## 2.0.22
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+  - @uidu/data-controls@4.0.22
+
 ## 2.0.21
 
 ### Patch Changes

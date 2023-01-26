@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.6.32
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/table@3.4.9
+  - @uidu/list@3.1.16
+
 ## 0.6.31
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.2.2
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+
 ## 2.2.1
 
 ### Patch Changes

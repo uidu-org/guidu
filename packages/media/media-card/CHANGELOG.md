@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.6
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+
 ## 0.8.5
 
 ### Patch Changes

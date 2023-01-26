@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 2.1.35
+
+### Patch Changes
+
+- 32c720aea: Bump dependencies
+- Updated dependencies [32c720aea]
+  - @uidu/dashboard-manager@2.0.22
+  - @uidu/table@3.4.9
+
 ## 2.1.34
 
 ### Patch Changes
