@@ -112,7 +112,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/ds-lib@npm:^2.1.0, @atlaskit/ds-lib@npm:^2.1.2":
+"@atlaskit/ds-lib@npm:^1.4.2":
+  version: 1.4.2
+  resolution: "@atlaskit/ds-lib@npm:1.4.2"
+  dependencies:
+    "@babel/runtime": ^7.0.0
+  peerDependencies:
+    react: ^16.8.0
+  checksum: ac6072d552dd3ac795e437157a12057a44f62dbb8659f9ea240dce4de4de184f44651323b5b3101b1ee02d21a882a27545927586beba6e794584282c9515a700
+  languageName: node
+  linkType: hard
+
+"@atlaskit/ds-lib@npm:^2.1.0":
   version: 2.1.2
   resolution: "@atlaskit/ds-lib@npm:2.1.2"
   dependencies:
@@ -8613,7 +8624,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:
-    "@atlaskit/ds-lib": ^2.1.2
+    "@atlaskit/ds-lib": ^1.4.2
     "@atlaskit/focus-ring": ^1.1.0
     "@atlaskit/icon": ^21.10.7
     "@atlaskit/motion": ^1.2.3
