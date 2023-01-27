@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 1.1.6
+
+### Patch Changes
+
+- aee864eef: Revert ds-lib bump
+
 ## 1.1.5
 
 ### Patch Changes

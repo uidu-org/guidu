@@ -1,5 +1,12 @@
 # @uidu/editor-core
 
+## 2.10.3
+
+### Patch Changes
+
+- Updated dependencies [aee864eef]
+  - @uidu/modal-dialog@1.1.6
+
 ## 2.10.2
 
 ### Patch Changes
