@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.0.8
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 1.0.7
 
 ### Patch Changes

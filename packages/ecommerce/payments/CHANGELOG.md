@@ -1,5 +1,15 @@
 # @uidu/payments
 
+## 1.5.24
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/field-base@4.2.7
+  - @uidu/slider@2.1.3
+  - @uidu/form@2.2.6
+
 ## 1.5.23
 
 ### Patch Changes

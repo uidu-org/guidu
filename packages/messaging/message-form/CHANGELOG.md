@@ -1,5 +1,14 @@
 # @uidu/message-form
 
+## 0.4.33
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/message@0.5.71
+  - @uidu/form@2.2.6
+
 ## 0.4.32
 
 ### Patch Changes

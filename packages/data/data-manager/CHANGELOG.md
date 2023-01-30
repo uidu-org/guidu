@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 4.3.11
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/table@3.5.0
+  - @uidu/data-controls@4.0.24
+  - @uidu/data-fields@2.1.30
+  - @uidu/shell@2.1.45
+  - @uidu/data-views@3.0.23
+
 ## 4.3.10
 
 ### Patch Changes

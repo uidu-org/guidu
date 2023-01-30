@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.5.71
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/message-form@0.4.33
+  - @uidu/media-viewer@0.5.14
+  - @uidu/media-card@0.8.8
+
 ## 0.5.70
 
 ### Patch Changes

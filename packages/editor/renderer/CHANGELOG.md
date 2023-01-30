@@ -1,5 +1,20 @@
 # @uidu/renderer
 
+## 2.3.0
+
+### Minor Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
+### Patch Changes
+
+- Updated dependencies [14a465f47]
+  - @uidu/editor-common@2.5.4
+  - @uidu/adf-schema@2.2.4
+  - @uidu/mentions@0.5.5
+  - @uidu/media-card@0.8.8
+  - @uidu/status@0.5.29
+
 ## 2.2.2
 
 ### Patch Changes

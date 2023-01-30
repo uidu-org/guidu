@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.45
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 2.1.44
 
 ### Patch Changes

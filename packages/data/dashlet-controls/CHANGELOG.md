@@ -1,5 +1,14 @@
 # @uidu/dashboard-controls
 
+## 1.1.16
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/field-date-range@2.0.15
+  - @uidu/form@2.2.6
+
 ## 1.1.15
 
 ### Patch Changes

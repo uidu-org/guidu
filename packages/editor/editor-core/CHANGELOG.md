@@ -1,5 +1,23 @@
 # @uidu/editor-core
 
+## 2.10.4
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/editor-common@2.5.4
+  - @uidu/profilecard@0.3.34
+  - @uidu/modal-dialog@1.1.7
+  - @uidu/adf-schema@2.2.4
+  - @uidu/mentions@0.5.5
+  - @uidu/field-date@2.1.13
+  - @uidu/media-card@0.8.8
+  - @uidu/status@0.5.29
+  - @uidu/emoji@0.6.32
+  - @uidu/select@2.2.6
+  - @uidu/form@2.2.6
+
 ## 2.10.3
 
 ### Patch Changes

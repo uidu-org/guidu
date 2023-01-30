@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.3.34
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 0.3.33
 
 ### Patch Changes
