@@ -11,7 +11,7 @@
   "types": "dist/uidu-field.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.20.13",
-    "@loadable/component": "^5.15.2",
+    "@loadable/component": "^5.15.3",
     "@uidu/checkbox": "^2.0.11",
     "@uidu/field-number": "^2.0.32",
     "@uidu/field-text": "^2.0.8",

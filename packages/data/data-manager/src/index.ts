@@ -9,5 +9,6 @@ export { default as DataManagerSidebar } from './components/DataManagerSidebar';
 export { default as DataManagerView } from './components/DataManagerView';
 export { default as useReactTable } from './hooks/useReactTable';
 export * from './types';
+export * from './utils';
 
 export default DataManager;

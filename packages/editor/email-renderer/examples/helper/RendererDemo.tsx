@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { defaultSchema } from '@uidu/adf-schema';
+import { renderDocument, TextSerializer } from '@uidu/renderer';
 import React from 'react';
 import EmailSerializer, { MetaDataContext } from '../../src';
 import { story2 as storyDataDocument } from './story-data';
@@ -68,6 +69,8 @@ export default class RendererDemo extends React.Component<
   inputBox?: HTMLTextAreaElement | null;
   emailTextareaRef?: any;
 
+  textSerializer = new TextSerializer(defaultSchema);
+
   constructor(props: DemoRendererProps) {
     super(props);
 
@@ -133,6 +136,7 @@ export default class RendererDemo extends React.Component<
           </span>
         </fieldset>
         {this.renderEmail()}
+        {this.renderText()}
       </div>
     );
   }
@@ -177,6 +181,25 @@ export default class RendererDemo extends React.Component<
       );
     } catch (ex) {
       console.error(ex instanceof Error ? ex.stack : ex);
+      return null;
+    }
+  }
+
+  private renderText() {
+    if (!this.textSerializer) {
+      return null;
+    }
+
+    try {
+      const doc = JSON.parse(this.state.input);
+
+      return (
+        <div>
+          <h1>Text output</h1>
+          <pre>{renderDocument(doc, this.textSerializer).result}</pre>
+        </div>
+      );
+    } catch (ex) {
       return null;
     }
   }

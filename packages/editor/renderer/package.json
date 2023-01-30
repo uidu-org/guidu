@@ -12,7 +12,7 @@
   "dependencies": {
     "@atlaskit/icon": "^21.10.7",
     "@babel/runtime": "^7.20.13",
-    "@loadable/component": "^5.15.2",
+    "@loadable/component": "^5.15.3",
     "@uidu/adf-schema": "^2.2.3",
     "@uidu/adf-utils": "^2.2.1",
     "@uidu/analytics": "^0.6.12",
@@ -31,7 +31,7 @@
     "get-video-id": "^3.6.5",
     "prosemirror-model": "^1.19.0",
     "raf-schd": "^4.0.3",
-    "react-intl": "^6.2.5",
+    "react-intl": "^6.2.7",
     "tslib": "^2.5.0",
     "url-parse": "^1.5.10"
   },

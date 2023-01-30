@@ -28,6 +28,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.25",
-    "axios": "^1.2.5"
+    "axios": "^1.2.6"
   }
 }

@@ -12,6 +12,7 @@ import paragraph from './paragraph';
 import rule from './rule';
 import table from './table';
 import taskItem from './taskItem';
+import token from './token';
 import unknown from './unknown';
 
 export type NodeReducer = (node: PMNode, schema: Schema) => string;
@@ -37,4 +38,5 @@ export const nodeToReducerMapping: { [key: string]: NodeReducer } = {
   table,
   taskItem,
   unknown,
+  token,
 };

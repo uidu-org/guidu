@@ -1,0 +1,49 @@
+---
+'@uidu/renderer': minor
+'@uidu/table': minor
+'@uidu/elements-test-helpers': patch
+'@uidu/json-schema-generator': patch
+'@uidu/field-image-uploader': patch
+'@uidu/stripe-accounts': patch
+'@uidu/field-file-uploader': patch
+'@uidu/dashboard-controls': patch
+'@uidu/field-date-range': patch
+'@uidu/link-preview': patch
+'@uidu/message-form': patch
+'@uidu/devise': patch
+'@uidu/dashlet-controls': patch
+'@uidu/email-renderer': patch
+'@uidu/editor-common': patch
+'@uidu/email-builder': patch
+'@uidu/profilecard': patch
+'@uidu/field-password': patch
+'eslint-config-uidu': patch
+'@uidu/data-controls': patch
+'@uidu/payments': patch
+'@uidu/editor-core': patch
+'@uidu/media-viewer': patch
+'@uidu/modal-dialog': patch
+'@uidu/data-manager': patch
+'@uidu/adf-schema': patch
+'@uidu/mentions': patch
+'@uidu/message': patch
+'@uidu/inline-edit': patch
+'@uidu/data-fields': patch
+'@uidu/field-base': patch
+'@uidu/field-date': patch
+'@uidu/field-time': patch
+'@uidu/media-card': patch
+'@uidu/shell': patch
+'@uidu/onboarding': patch
+'@uidu/data-views': patch
+'@uidu/status': patch
+'@uidu/emoji': patch
+'@uidu/dashlets': patch
+'@uidu/select': patch
+'@uidu/webpack-config': patch
+'@uidu/slider': patch
+'@uidu/field': patch
+'@uidu/form': patch
+---
+
+Table Header with no opinions on styles

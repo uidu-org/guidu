@@ -40,7 +40,7 @@ export const Td = styled.div.attrs<{
 
   ${({ $pinned, $index }) =>
     $pinned ? getPinnedStyled({ pinned: $pinned, index: $index }) : null};
-  ${tw`flex items-center px-4 border-b border-r border-opacity-50 whitespace-nowrap`}
+  ${tw`flex items-center whitespace-nowrap`}
 `;
 
 type ThProps = {
@@ -67,7 +67,7 @@ export const Th = styled.div.attrs<ThProps>((props: ThProps) => ({
 
   ${({ $pinned, $index }) =>
     $pinned ? getPinnedStyled({ pinned: $pinned, index: $index }) : null};
-  ${tw`relative flex items-center px-4 text-left text-xs font-medium [color:rgb(var(--body-secondary-color))] uppercase tracking-wider border-b border-r border-opacity-50 whitespace-nowrap`}
+  ${tw`relative flex items-center whitespace-nowrap`}
 `;
 
 export const StyledRow = styled.div.attrs<{ $size: number; $start: number }>(
