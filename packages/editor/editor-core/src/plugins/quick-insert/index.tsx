@@ -57,6 +57,7 @@ const quickInsertPlugin = (): EditorPlugin => ({
           });
         }
         const quickInsertState = pluginKey.getState(state);
+
         const defaultItems = processItems(quickInsertState.items, intl);
         const defaultSearch = () => find(query, defaultItems as any);
 

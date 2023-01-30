@@ -34,7 +34,7 @@ const IconWrapper = styled.span`
   padding: 10px;
   color: ${colors.N80};
   padding: 4px 8px;
-  width: 18px;
+  width: 3rem;
 `;
 
 export const messages = defineMessages({
@@ -92,10 +92,15 @@ class LinkAddToolbar extends PureComponent<
   private submitted: boolean = false;
 
   private urlInputContainer: PanelTextInput | null = null;
+
   private displayTextInputContainer: PanelTextInput | null = null;
+
   private urlBlur: () => void;
+
   private textBlur: () => void;
+
   private handleClearText: () => void;
+
   private handleClearDisplayText: () => void;
 
   constructor(props: Props & WrappedComponentProps) {
@@ -182,89 +187,6 @@ class LinkAddToolbar extends PureComponent<
       }
     };
   };
-
-  render() {
-    const { items, isLoading, selectedIndex, text, displayText } = this.state;
-    const {
-      intl: { formatMessage },
-      provider,
-    } = this.props;
-    const placeholder = formatMessage(
-      provider
-        ? linkToolbarCommonMessages.placeholder
-        : linkToolbarCommonMessages.linkPlaceholder,
-    );
-
-    const formatLinkAddressText = formatMessage(
-      linkToolbarCommonMessages.linkAddress,
-    );
-    const formatClearLinkText = formatMessage(messages.clearLink);
-    const formatDisplayText = formatMessage(messages.displayText);
-
-    return (
-      <div className="recent-list">
-        <Container provider={!!provider}>
-          <UrlInputWrapper>
-            <IconWrapper>
-              <Tooltip content={formatLinkAddressText}>
-                <LinkIcon label={formatLinkAddressText} />
-              </Tooltip>
-            </IconWrapper>
-            <PanelTextInput
-              ref={(ele) => (this.urlInputContainer = ele)}
-              placeholder={placeholder}
-              onSubmit={this.handleSubmit}
-              onChange={this.updateInput}
-              autoFocus={{ preventScroll: true }}
-              onCancel={this.urlBlur}
-              onBlur={this.urlBlur}
-              defaultValue={text}
-              onKeyDown={this.handleKeyDown}
-            />
-            {text && (
-              <Tooltip content={formatClearLinkText}>
-                <ClearText onClick={this.handleClearText}>
-                  <CrossCircleIcon label={formatClearLinkText} />
-                </ClearText>
-              </Tooltip>
-            )}
-          </UrlInputWrapper>
-          <RecentList
-            items={items}
-            isLoading={isLoading}
-            selectedIndex={selectedIndex}
-            onSelect={this.handleSelected}
-            onMouseMove={this.handleMouseMove}
-          />
-          <TextInputWrapper>
-            <IconWrapper>
-              <Tooltip content={formatDisplayText}>
-                <EditorAlignLeftIcon label={formatDisplayText} />
-              </Tooltip>
-            </IconWrapper>
-            <PanelTextInput
-              ref={(ele) => (this.displayTextInputContainer = ele)}
-              placeholder={formatDisplayText}
-              ariaLabel={'Link label'}
-              testId={'Link label'}
-              onChange={this.handleTextKeyDown}
-              onCancel={this.textBlur}
-              onBlur={this.textBlur}
-              defaultValue={displayText}
-              onSubmit={this.handleSubmit}
-            />
-            {displayText && (
-              <Tooltip content={formatMessage(messages.clearText)}>
-                <ClearText onClick={this.handleClearDisplayText}>
-                  <CrossCircleIcon label={formatMessage(messages.clearText)} />
-                </ClearText>
-              </Tooltip>
-            )}
-          </TextInputWrapper>
-        </Container>
-      </div>
-    );
-  }
 
   private handleSelected = (href: string, text: string) => {
     this.setState(
@@ -374,6 +296,89 @@ class LinkAddToolbar extends PureComponent<
   private trackAutoCompleteAnalyticsEvent(name: string) {
     const numChars = this.state.text ? this.state.text.length : 0;
     analyticsService.trackEvent(name, { numChars: numChars });
+  }
+
+  render() {
+    const { items, isLoading, selectedIndex, text, displayText } = this.state;
+    const {
+      intl: { formatMessage },
+      provider,
+    } = this.props;
+    const placeholder = formatMessage(
+      provider
+        ? linkToolbarCommonMessages.placeholder
+        : linkToolbarCommonMessages.linkPlaceholder,
+    );
+
+    const formatLinkAddressText = formatMessage(
+      linkToolbarCommonMessages.linkAddress,
+    );
+    const formatClearLinkText = formatMessage(messages.clearLink);
+    const formatDisplayText = formatMessage(messages.displayText);
+
+    return (
+      <div className="recent-list">
+        <Container provider={!!provider}>
+          <UrlInputWrapper>
+            <IconWrapper>
+              <Tooltip content={formatLinkAddressText}>
+                <LinkIcon label={formatLinkAddressText} />
+              </Tooltip>
+            </IconWrapper>
+            <PanelTextInput
+              ref={(ele) => (this.urlInputContainer = ele)}
+              placeholder={placeholder}
+              onSubmit={this.handleSubmit}
+              onChange={this.updateInput}
+              autoFocus={{ preventScroll: true }}
+              onCancel={this.urlBlur}
+              onBlur={this.urlBlur}
+              defaultValue={text}
+              onKeyDown={this.handleKeyDown}
+            />
+            {text && (
+              <Tooltip content={formatClearLinkText}>
+                <ClearText onClick={this.handleClearText}>
+                  <CrossCircleIcon label={formatClearLinkText} />
+                </ClearText>
+              </Tooltip>
+            )}
+          </UrlInputWrapper>
+          <RecentList
+            items={items}
+            isLoading={isLoading}
+            selectedIndex={selectedIndex}
+            onSelect={this.handleSelected}
+            onMouseMove={this.handleMouseMove}
+          />
+          <TextInputWrapper>
+            <IconWrapper>
+              <Tooltip content={formatDisplayText}>
+                <EditorAlignLeftIcon label={formatDisplayText} />
+              </Tooltip>
+            </IconWrapper>
+            <PanelTextInput
+              ref={(ele) => (this.displayTextInputContainer = ele)}
+              placeholder={formatDisplayText}
+              ariaLabel={'Link label'}
+              testId={'Link label'}
+              onChange={this.handleTextKeyDown}
+              onCancel={this.textBlur}
+              onBlur={this.textBlur}
+              defaultValue={displayText}
+              onSubmit={this.handleSubmit}
+            />
+            {displayText && (
+              <Tooltip content={formatMessage(messages.clearText)}>
+                <ClearText onClick={this.handleClearDisplayText}>
+                  <CrossCircleIcon label={formatMessage(messages.clearText)} />
+                </ClearText>
+              </Tooltip>
+            )}
+          </TextInputWrapper>
+        </Container>
+      </div>
+    );
   }
 }
 
