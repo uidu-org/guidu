@@ -1,5 +1,13 @@
 # @uidu/onboarding
 
+## 1.3.23
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/modal-dialog@1.1.7
+
 ## 1.3.22
 
 ### Patch Changes

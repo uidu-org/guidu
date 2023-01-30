@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.2.4
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 2.2.3
 
 ### Patch Changes

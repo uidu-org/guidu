@@ -1,5 +1,14 @@
 # @uidu/inline-edit
 
+## 0.3.35
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/field@1.0.23
+  - @uidu/form@2.2.6
+
 ## 0.3.34
 
 ### Patch Changes

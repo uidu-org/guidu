@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.2.7
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/form@2.2.6
+
 ## 4.2.6
 
 ### Patch Changes

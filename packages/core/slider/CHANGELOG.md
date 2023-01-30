@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.1.3
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 2.1.2
 
 ### Patch Changes

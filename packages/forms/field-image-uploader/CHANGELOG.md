@@ -1,5 +1,14 @@
 # @uidu/field-image-uploader
 
+## 3.0.32
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/field-base@4.2.7
+  - @uidu/form@2.2.6
+
 ## 3.0.31
 
 ### Patch Changes

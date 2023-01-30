@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.29
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 0.3.28
 
 ### Patch Changes

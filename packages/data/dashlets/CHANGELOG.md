@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 2.1.37
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/table@3.5.0
+  - @uidu/dashlet-controls@1.1.16
+  - @uidu/data-fields@2.1.30
+
 ## 2.1.36
 
 ### Patch Changes

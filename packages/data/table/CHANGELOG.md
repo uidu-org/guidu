@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 3.5.0
+
+### Minor Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
+### Patch Changes
+
+- Updated dependencies [14a465f47]
+  - @uidu/data-manager@4.3.11
+  - @uidu/data-fields@2.1.30
+
 ## 3.4.10
 
 ### Patch Changes

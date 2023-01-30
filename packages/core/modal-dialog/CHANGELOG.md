@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 1.1.7
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 1.1.6
 
 ### Patch Changes

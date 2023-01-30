@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.37
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 0.4.36
 
 ### Patch Changes

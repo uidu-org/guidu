@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.49
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 0.3.48
 
 ### Patch Changes

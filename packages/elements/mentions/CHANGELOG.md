@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.5.5
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 0.5.4
 
 ### Patch Changes

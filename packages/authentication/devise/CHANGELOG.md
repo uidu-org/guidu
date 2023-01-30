@@ -1,5 +1,17 @@
 # @uidu/devise
 
+## 0.7.32
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/field-password@2.0.15
+  - @uidu/shell@2.1.45
+  - @uidu/slider@2.1.3
+  - @uidu/form@2.2.6
+  - @uidu/field-phone@2.0.37
+
 ## 0.7.31
 
 ### Patch Changes

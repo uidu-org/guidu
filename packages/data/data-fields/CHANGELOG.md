@@ -1,5 +1,18 @@
 # @uidu/data-fields
 
+## 2.1.30
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/field-date@2.1.13
+  - @uidu/field-time@2.0.37
+  - @uidu/select@2.2.6
+  - @uidu/form@2.2.6
+  - @uidu/field-number@2.0.33
+  - @uidu/field-toggle@2.0.33
+
 ## 2.1.29
 
 ### Patch Changes

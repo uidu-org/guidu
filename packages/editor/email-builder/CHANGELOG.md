@@ -1,5 +1,18 @@
 # @uidu/email-builder
 
+## 0.2.11
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/email-renderer@1.3.3
+  - @uidu/editor-core@2.10.4
+  - @uidu/adf-schema@2.2.4
+  - @uidu/select@2.2.6
+  - @uidu/form@2.2.6
+  - @uidu/field-number@2.0.33
+
 ## 0.2.10
 
 ### Patch Changes

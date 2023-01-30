@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.46
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 0.1.45
 
 ### Patch Changes

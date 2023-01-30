@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.8
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 0.8.7
 
 ### Patch Changes

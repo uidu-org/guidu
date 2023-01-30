@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.6.32
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+
 ## 0.6.31
 
 ### Patch Changes

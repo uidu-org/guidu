@@ -1,5 +1,13 @@
 # @uidu/media-viewer
 
+## 0.5.14
+
+### Patch Changes
+
+- 14a465f47: Table Header with no opinions on styles
+- Updated dependencies [14a465f47]
+  - @uidu/shell@2.1.45
+
 ## 0.5.13
 
 ### Patch Changes
