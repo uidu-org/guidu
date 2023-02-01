@@ -69,7 +69,7 @@ export function RowSelection<T>({ row }: CellContext<T, unknown>) {
               e.stopPropagation();
               toggleSelected(!isSelected);
             }}
-            tw="absolute inset-0 z-20"
+            tw="absolute inset-0 z-20 w-full"
           />
           <CheckboxStateless
             checked={isSelected}
