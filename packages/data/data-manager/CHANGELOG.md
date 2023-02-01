@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 4.3.12
+
+### Patch Changes
+
+- 8b808a41b: Bump dependencies and revert Table Th and Td components
+- Updated dependencies [8b808a41b]
+  - @uidu/data-controls@4.0.25
+  - @uidu/data-fields@2.1.31
+  - @uidu/data-views@3.0.24
+  - @uidu/gallery@2.0.24
+  - @uidu/board@2.1.7
+  - @uidu/table@3.5.1
+  - @uidu/list@3.1.18
+
 ## 4.3.11
 
 ### Patch Changes

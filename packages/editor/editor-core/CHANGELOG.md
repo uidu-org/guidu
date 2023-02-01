@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 2.10.5
+
+### Patch Changes
+
+- 8b808a41b: Bump dependencies and revert Table Th and Td components
+- Updated dependencies [8b808a41b]
+  - @uidu/media-card@0.8.9
+
 ## 2.10.4
 
 ### Patch Changes

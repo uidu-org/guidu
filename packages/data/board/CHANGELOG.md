@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 2.1.7
+
+### Patch Changes
+
+- 8b808a41b: Bump dependencies and revert Table Th and Td components
+
 ## 2.1.6
 
 ### Patch Changes
