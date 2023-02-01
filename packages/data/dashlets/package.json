@@ -15,7 +15,7 @@
     "@cubejs-client/core": "^0.31.46",
     "@cubejs-client/react": "^0.31.46",
     "@loadable/component": "^5.15.3",
-    "@tanstack/react-table": "^8.7.8",
+    "@tanstack/react-table": "^8.7.9",
     "@uidu/dashboard-manager": "^2.0.23",
     "@uidu/dashlet-controls": "^1.1.16",
     "@uidu/data-fields": "^2.1.30",

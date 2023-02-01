@@ -12,7 +12,7 @@ export function keymapPlugin(): Plugin {
   const list = {};
 
   keymaps.bindKeymapWithCommand(
-    keymaps.enter.common!,
+    keymaps.enter.common,
     (state: EditorState, dispatch) => {
       const pluginState = pluginKey.getState(state);
       if (!pluginState || !pluginState.active) {
@@ -24,7 +24,7 @@ export function keymapPlugin(): Plugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.moveUp.common!,
+    keymaps.moveUp.common,
     (state: EditorState, dispatch) => {
       const pluginState = pluginKey.getState(state);
       if (!pluginState || !pluginState.active) {
@@ -39,7 +39,7 @@ export function keymapPlugin(): Plugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.moveDown.common!,
+    keymaps.moveDown.common,
     (state: EditorState, dispatch) => {
       const pluginState = pluginKey.getState(state);
       if (!pluginState || !pluginState.active) {
@@ -54,7 +54,7 @@ export function keymapPlugin(): Plugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.insertNewLine.common!,
+    keymaps.insertNewLine.common,
     (state: EditorState, dispatch) => {
       const pluginState = pluginKey.getState(state);
       if (!pluginState || !pluginState.active) {
@@ -66,7 +66,7 @@ export function keymapPlugin(): Plugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.tab.common!,
+    keymaps.tab.common,
     (state: EditorState, dispatch) => {
       const pluginState = pluginKey.getState(state);
       if (!pluginState || !pluginState.active) {
@@ -78,7 +78,7 @@ export function keymapPlugin(): Plugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.escape.common!,
+    keymaps.escape.common,
     (state: EditorState, dispatch) => {
       const pluginState = pluginKey.getState(state);
       if (!pluginState || !pluginState.active) {
@@ -99,7 +99,7 @@ export function keymapPlugin(): Plugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.space.common!,
+    keymaps.space.common,
     (state: EditorState, dispatch) => {
       const pluginState = pluginKey.getState(state);
       if (pluginState && pluginState.active) {

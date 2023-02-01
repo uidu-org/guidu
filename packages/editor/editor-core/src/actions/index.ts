@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { Transformer } from '@uidu/editor-common';
 import { Node } from 'prosemirror-model';
 import { Selection, TextSelection } from 'prosemirror-state';
