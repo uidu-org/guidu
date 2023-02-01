@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 2.1.38
+
+### Patch Changes
+
+- 8b808a41b: Bump dependencies and revert Table Th and Td components
+- Updated dependencies [8b808a41b]
+  - @uidu/dashboard-manager@2.0.24
+  - @uidu/data-fields@2.1.31
+  - @uidu/table@3.5.1
+
 ## 2.1.37
 
 ### Patch Changes

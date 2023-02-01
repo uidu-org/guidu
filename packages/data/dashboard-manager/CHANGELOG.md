@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.0.24
+
+### Patch Changes
+
+- 8b808a41b: Bump dependencies and revert Table Th and Td components
+- Updated dependencies [8b808a41b]
+  - @uidu/dashlets@2.1.38
+
 ## 2.0.23
 
 ### Patch Changes

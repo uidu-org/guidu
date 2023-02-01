@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.2.11
+
+### Patch Changes
+
+- 8b808a41b: Bump dependencies and revert Table Th and Td components
+
 ## 2.2.10
 
 ### Patch Changes

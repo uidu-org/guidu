@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-phone",
-  "version": "2.0.37",
+  "version": "2.0.38",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-phone",
   "license": "MIT",
   "sideEffects": false,

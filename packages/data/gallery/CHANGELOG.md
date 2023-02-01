@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 2.0.24
+
+### Patch Changes
+
+- 8b808a41b: Bump dependencies and revert Table Th and Td components
+- Updated dependencies [8b808a41b]
+  - @uidu/data-controls@4.0.25
+  - @uidu/data-fields@2.1.31
+
 ## 2.0.23
 
 ### Patch Changes

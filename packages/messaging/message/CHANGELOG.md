@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.72
+
+### Patch Changes
+
+- 8b808a41b: Bump dependencies and revert Table Th and Td components
+- Updated dependencies [8b808a41b]
+  - @uidu/media-card@0.8.9
+
 ## 0.5.71
 
 ### Patch Changes

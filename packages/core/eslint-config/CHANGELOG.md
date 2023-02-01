@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.47
+
+### Patch Changes
+
+- 8b808a41b: Bump dependencies and revert Table Th and Td components
+
 ## 0.1.46
 
 ### Patch Changes
