@@ -2807,13 +2807,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/date-time-utilities@npm:^8.5.4":
-  version: 8.5.4
-  resolution: "@fluentui/date-time-utilities@npm:8.5.4"
+"@fluentui/date-time-utilities@npm:^8.5.5":
+  version: 8.5.5
+  resolution: "@fluentui/date-time-utilities@npm:8.5.5"
   dependencies:
-    "@fluentui/set-version": ^8.2.4
+    "@fluentui/set-version": ^8.2.5
     tslib: ^2.1.0
-  checksum: bb50fd6fe662347a71ae12fa476cce9fe1d2542dd07234d15ace6c00d2e37eccf2785e361600d95f439d5d87afbd078ea1740fded3219a49362ca03fc29c5ed2
+  checksum: 1a3e5376566df038e2a73ba8a5c55f38421aab3244a90a6c8100446758c4945492de3b83ea4f3f1c11b1c01a9974ebe079ffcd406ee02247a6581605658824dd
   languageName: node
   linkType: hard
 
@@ -2834,6 +2834,16 @@ __metadata:
     "@fluentui/set-version": ^8.2.4
     tslib: ^2.1.0
   checksum: 8372dbb2a6449680a981a0cffba97b978a40b189edd2bb497e2388186c3b86b8a69505574bf89d4061e5ecf9a909746bea71db5b77cc32815a11edb67f088b1f
+  languageName: node
+  linkType: hard
+
+"@fluentui/dom-utilities@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "@fluentui/dom-utilities@npm:2.2.5"
+  dependencies:
+    "@fluentui/set-version": ^8.2.5
+    tslib: ^2.1.0
+  checksum: 09277daca0aaa0cecfbac1c652c8c17addf87a63ad348295bc485b1d1705d49b26be7a9184a839a070de4f11a68b2834a7e62126db73f5c3138f9abf663ae1ef
   languageName: node
   linkType: hard
 
@@ -2881,6 +2891,16 @@ __metadata:
     "@fluentui/set-version": ^8.2.4
     tslib: ^2.1.0
   checksum: c46ee038c8aada0516821820b38832baa377615dccc360af3253cf88dad5c0abdcdcba708a95aaca7a46b51018d18be4f91128518ecc9fdf6a185b584a691fef
+  languageName: node
+  linkType: hard
+
+"@fluentui/merge-styles@npm:^8.5.6":
+  version: 8.5.6
+  resolution: "@fluentui/merge-styles@npm:8.5.6"
+  dependencies:
+    "@fluentui/set-version": ^8.2.5
+    tslib: ^2.1.0
+  checksum: 8f472353e430cd64ff4a449d155170bd303fdf0f9dfce021b5c43a7dccb35cd070bbb9e946c18c6e939eb93cfbaf5dab0d5988f9efcde19dc841a8aadb209377
   languageName: node
   linkType: hard
 
@@ -2993,7 +3013,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react-window-provider@npm:^2.2.2, @fluentui/react-window-provider@npm:^2.2.5":
+"@fluentui/react-window-provider@npm:^2.2.2":
   version: 2.2.5
   resolution: "@fluentui/react-window-provider@npm:2.2.5"
   dependencies:
@@ -3006,22 +3026,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:8.105.1":
-  version: 8.105.1
-  resolution: "@fluentui/react@npm:8.105.1"
+"@fluentui/react-window-provider@npm:^2.2.6":
+  version: 2.2.6
+  resolution: "@fluentui/react-window-provider@npm:2.2.6"
   dependencies:
-    "@fluentui/date-time-utilities": ^8.5.4
-    "@fluentui/font-icons-mdl2": ^8.5.7
-    "@fluentui/foundation-legacy": ^8.2.27
-    "@fluentui/merge-styles": ^8.5.5
-    "@fluentui/react-focus": ^8.8.13
-    "@fluentui/react-hooks": ^8.6.15
+    "@fluentui/set-version": ^8.2.5
+    tslib: ^2.1.0
+  peerDependencies:
+    "@types/react": ">=16.8.0 <19.0.0"
+    react: ">=16.8.0 <19.0.0"
+  checksum: 360f51c4feac7856d27149368248b27be50ad36f5bf19894c29d1ca32c3a7a5e0b210204d0460a89fbdadf202ba5928174303068f64b8c5415d9e73a27245430
+  languageName: node
+  linkType: hard
+
+"@fluentui/react@npm:8.105.4":
+  version: 8.105.4
+  resolution: "@fluentui/react@npm:8.105.4"
+  dependencies:
+    "@fluentui/date-time-utilities": ^8.5.5
+    "@fluentui/font-icons-mdl2": ^8.5.8
+    "@fluentui/foundation-legacy": ^8.2.28
+    "@fluentui/merge-styles": ^8.5.6
+    "@fluentui/react-focus": ^8.8.14
+    "@fluentui/react-hooks": ^8.6.16
     "@fluentui/react-portal-compat-context": ^9.0.4
-    "@fluentui/react-window-provider": ^2.2.5
-    "@fluentui/set-version": ^8.2.4
-    "@fluentui/style-utilities": ^8.9.0
-    "@fluentui/theme": ^2.6.21
-    "@fluentui/utilities": ^8.13.5
+    "@fluentui/react-window-provider": ^2.2.6
+    "@fluentui/set-version": ^8.2.5
+    "@fluentui/style-utilities": ^8.9.1
+    "@fluentui/theme": ^2.6.22
+    "@fluentui/utilities": ^8.13.6
     "@microsoft/load-themed-styles": ^1.10.26
     tslib: ^2.1.0
   peerDependencies:
@@ -3029,7 +3062,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <19.0.0"
     react: ">=16.8.0 <19.0.0"
     react-dom: ">=16.8.0 <19.0.0"
-  checksum: 1980dec2fea3364b59ee5cf421fc4723b85b1e7c43becd54ca29700bec03b5cc3c147438c670ab82d1d7f522c13ff760a594ea4ae5741c959310f22efe595eaf
+  checksum: 5dc052143418c739e41618cd69dc3cc62a7cbf5d75c50f23f327ef6331943cd4872236148c322d5c05e89bfb34f26c854a1cb3d83d570e092d01a4ac82deb063
   languageName: node
   linkType: hard
 
@@ -3039,6 +3072,15 @@ __metadata:
   dependencies:
     tslib: ^2.1.0
   checksum: 5e434db1ce25f098e95253d357eb511f3064b5a1104d06cae65cc586520791063c4c60d888a1e59c23880c29480e35e27834b3fbab1f9b17b05024237dcee3d5
+  languageName: node
+  linkType: hard
+
+"@fluentui/set-version@npm:^8.2.5":
+  version: 8.2.5
+  resolution: "@fluentui/set-version@npm:8.2.5"
+  dependencies:
+    tslib: ^2.1.0
+  checksum: be190d34e0bf5b1f7947f9f376483ffb97abc79799ffe8196288abed76c678c31a349d9e7a5ed3eaec892bf80723e76ae309142ee0d7659e66a49048fe2341c7
   languageName: node
   linkType: hard
 
@@ -3071,7 +3113,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/utilities@npm:^8.12.0, @fluentui/utilities@npm:^8.13.5":
+"@fluentui/utilities@npm:^8.12.0":
   version: 8.13.5
   resolution: "@fluentui/utilities@npm:8.13.5"
   dependencies:
@@ -3083,6 +3125,21 @@ __metadata:
     "@types/react": ">=16.8.0 <19.0.0"
     react: ">=16.8.0 <19.0.0"
   checksum: 836ee10d2592b798992f9e2322ad9ad7809df2c4d3783bb4f5313c7a40109e650b59581a5b35d3cd1d9ca1a2a7c09ac93f0cdb4829f8ea702fcb175934ff68c7
+  languageName: node
+  linkType: hard
+
+"@fluentui/utilities@npm:^8.13.6":
+  version: 8.13.6
+  resolution: "@fluentui/utilities@npm:8.13.6"
+  dependencies:
+    "@fluentui/dom-utilities": ^2.2.5
+    "@fluentui/merge-styles": ^8.5.6
+    "@fluentui/set-version": ^8.2.5
+    tslib: ^2.1.0
+  peerDependencies:
+    "@types/react": ">=16.8.0 <19.0.0"
+    react: ">=16.8.0 <19.0.0"
+  checksum: ec7f05070e791554221431a8cfcba58e63225b198968a372a7ff58994ec9b385855cf7a237419527b26657f4d9d800754e6da184d3d6d9aba52be7fd5b274e81
   languageName: node
   linkType: hard
 
@@ -3134,9 +3191,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/cli@npm:5.1.13":
-  version: 5.1.13
-  resolution: "@formatjs/cli@npm:5.1.13"
+"@formatjs/cli@npm:6.0.0":
+  version: 6.0.0
+  resolution: "@formatjs/cli@npm:6.0.0"
   peerDependencies:
     "@vue/compiler-sfc": ^3.2.34
   peerDependenciesMeta:
@@ -3144,7 +3201,7 @@ __metadata:
       optional: true
   bin:
     formatjs: bin/formatjs
-  checksum: 790712c6d6479c7c039beb845ffa0acf402a0550464c5cd8c75bac8335002165d4ae8c4d6630e0fa23215aa29df62689f055d21c420aaf5a320ad1146fd120c7
+  checksum: dbaab1dacbc2f74867f53e26cbfbf47cd3533a761b9caede806c0a01dc202083be2c995ae3651a6dfa1e10cc001a6473fe478f5c70578e805f651da3a344200b
   languageName: node
   linkType: hard
 
@@ -3642,6 +3699,13 @@ __metadata:
   version: 4.2.1
   resolution: "@mdn/browser-compat-data@npm:4.2.1"
   checksum: 76eaa7dafed154040e769ba6d23f2dcb58e805ed3ccb376a5c4b76326c92643753c20194faed363870800dc3c1af26c107b8562710c8bb37aaee8c5ffe2a89cd
+  languageName: node
+  linkType: hard
+
+"@mdn/browser-compat-data@npm:^5.2.34":
+  version: 5.2.34
+  resolution: "@mdn/browser-compat-data@npm:5.2.34"
+  checksum: 9bb69d42750f38bda526931acc6c9b26f8b032be9ff596d671aa8aadcf6be017635bf42418efa45560c07b770ac01c39d43d4974eb58f25dcaf54b220d88b6a2
   languageName: node
   linkType: hard
 
@@ -4519,7 +4583,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.11.6, @popperjs/core@npm:^2.8.6":
+"@popperjs/core@npm:^2.11.6":
   version: 2.11.6
   resolution: "@popperjs/core@npm:2.11.6"
   checksum: 47fb328cec1924559d759b48235c78574f2d71a8a6c4c03edb6de5d7074078371633b91e39bbf3f901b32aa8af9b9d8f82834856d2f5737a23475036b16817f0
@@ -5662,10 +5726,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/google.maps@npm:*, @types/google.maps@npm:^3.51.0":
+"@types/google.maps@npm:*":
   version: 3.51.0
   resolution: "@types/google.maps@npm:3.51.0"
   checksum: fb2dbf823814a6380e6b32abfabc30eed72166f0a08f107a0adbd84ad868ea751f826651af91cf745082cefd59813bac26ab757a1fe938633e7404d4df742ae8
+  languageName: node
+  linkType: hard
+
+"@types/google.maps@npm:^3.51.1":
+  version: 3.51.1
+  resolution: "@types/google.maps@npm:3.51.1"
+  checksum: 63941c714fba03fbecae70d030e8e7c98d934eed5f58ef5582c352a1a0822d8da402e1f88dfa43a0b3c44bac72e76c2a87d2d6b86fc918574eb6ef256efc95e9
   languageName: node
   linkType: hard
 
@@ -5954,7 +6025,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.11.18":
+"@types/node@npm:*":
   version: 18.11.18
   resolution: "@types/node@npm:18.11.18"
   checksum: 03f17f9480f8d775c8a72da5ea7e9383db5f6d85aa5fefde90dd953a1449bd5e4ffde376f139da4f3744b4c83942166d2a7603969a6f8ea826edfb16e6e3b49d
@@ -5979,6 +6050,13 @@ __metadata:
   version: 16.18.3
   resolution: "@types/node@npm:16.18.3"
   checksum: 6b8ba2ea5d842f7986e366cb9184c54d273d492784dc62e08fd5afeae938d9b61aec6e4222d2541cd18f9b1412ba361bbcb3f4204fb003608af80a2a6af959f9
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.11.19":
+  version: 18.11.19
+  resolution: "@types/node@npm:18.11.19"
+  checksum: d7cd19fcfc59cbdd3f9ba0b4072cb7adc21bd575bd8eb7d7e698975e63564aaa83f03434f32b12331f84f73d0b369d9cbe2371e359d9d7f5c3361f4987f4f7da
   languageName: node
   linkType: hard
 
@@ -6397,7 +6475,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/unist@npm:*, @types/unist@npm:^2.0.0":
+"@types/unist@npm:*, @types/unist@npm:^2.0.0, @types/unist@npm:^2.0.2":
   version: 2.0.6
   resolution: "@types/unist@npm:2.0.6"
   checksum: 25cb860ff10dde48b54622d58b23e66214211a61c84c0f15f88d38b61aa1b53d4d46e42b557924a93178c501c166aa37e28d7f6d994aba13d24685326272d5db
@@ -6650,7 +6728,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:5.50.0":
+"@typescript-eslint/utils@npm:5.50.0, @typescript-eslint/utils@npm:^5.10.0":
   version: 5.50.0
   resolution: "@typescript-eslint/utils@npm:5.50.0"
   dependencies:
@@ -6731,7 +6809,7 @@ __metadata:
     linkify-it: ^4.0.1
     prosemirror-model: ^1.19.0
     prosemirror-state: ^1.4.2
-    prosemirror-view: ^1.30.0
+    prosemirror-view: ^1.30.1
     tslib: ^2.5.0
   languageName: unknown
   linkType: soft
@@ -6937,7 +7015,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/board@^2.1.6, @uidu/board@workspace:packages/data/board":
+"@uidu/board@^2.1.7, @uidu/board@workspace:packages/data/board":
   version: 0.0.0-use.local
   resolution: "@uidu/board@workspace:packages/data/board"
   dependencies:
@@ -7018,7 +7096,7 @@ __metadata:
     classnames: ^2.3.2
     moment: ^2.29.4
     react: ^18.2.0
-    react-big-calendar: ^1.5.2
+    react-big-calendar: ^1.6.3
     react-feather: ^2.0.10
     styled-components: ^5.3.6
     tslib: ^2.5.0
@@ -7123,7 +7201,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/dashboard-manager@^2.0.23, @uidu/dashboard-manager@workspace:packages/data/dashboard-manager":
+"@uidu/dashboard-manager@^2.0.24, @uidu/dashboard-manager@workspace:packages/data/dashboard-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/dashboard-manager@workspace:packages/data/dashboard-manager"
   dependencies:
@@ -7133,7 +7211,7 @@ __metadata:
     "@tanstack/react-table": ^8.7.9
     "@types/react-grid-layout": ^1.3.2
     "@uidu/dashboard-controls": ^1.1.15
-    "@uidu/dashlets": ^2.1.36
+    "@uidu/dashlets": ^2.1.38
     "@uidu/docs": ^0.5.25
     "@uidu/shell": ^2.1.44
     d3-collection: ^1.0.7
@@ -7187,7 +7265,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/dashlets@^2.1.36, @uidu/dashlets@workspace:packages/data/dashlets":
+"@uidu/dashlets@^2.1.36, @uidu/dashlets@^2.1.38, @uidu/dashlets@workspace:packages/data/dashlets":
   version: 0.0.0-use.local
   resolution: "@uidu/dashlets@workspace:packages/data/dashlets"
   dependencies:
@@ -7198,12 +7276,12 @@ __metadata:
     "@cubejs-client/react": ^0.31.46
     "@loadable/component": ^5.15.3
     "@tanstack/react-table": ^8.7.9
-    "@uidu/dashboard-manager": ^2.0.23
+    "@uidu/dashboard-manager": ^2.0.24
     "@uidu/dashlet-controls": ^1.1.16
-    "@uidu/data-fields": ^2.1.30
+    "@uidu/data-fields": ^2.1.31
     "@uidu/docs": ^0.5.25
     "@uidu/spinner": ^0.5.24
-    "@uidu/table": 3.5.0
+    "@uidu/table": 3.5.1
     "@uidu/tooltip": ^0.5.30
     d3-array: ^3.2.2
     gql-query-builder: ^3.8.0
@@ -7222,7 +7300,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-controls@^4.0.23, @uidu/data-controls@^4.0.24, @uidu/data-controls@workspace:packages/data/data-controls":
+"@uidu/data-controls@^4.0.25, @uidu/data-controls@workspace:packages/data/data-controls":
   version: 0.0.0-use.local
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
@@ -7231,9 +7309,9 @@ __metadata:
     "@tanstack/react-table": ^8.7.9
     "@uidu/button": 1.3.36
     "@uidu/checkbox": ^2.0.11
-    "@uidu/data-fields": ^2.1.30
-    "@uidu/data-manager": 4.3.11
-    "@uidu/data-views": ^3.0.23
+    "@uidu/data-fields": ^2.1.31
+    "@uidu/data-manager": 4.3.12
+    "@uidu/data-views": ^3.0.24
     "@uidu/docs": ^0.5.25
     "@uidu/drawer": ^0.7.31
     "@uidu/field-text": ^2.0.8
@@ -7258,7 +7336,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-fields@^2.1.29, @uidu/data-fields@^2.1.30, @uidu/data-fields@workspace:packages/data/data-fields":
+"@uidu/data-fields@^2.1.31, @uidu/data-fields@workspace:packages/data/data-fields":
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
@@ -7297,7 +7375,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-manager@4.3.11, @uidu/data-manager@workspace:packages/data/data-manager":
+"@uidu/data-manager@4.3.12, @uidu/data-manager@workspace:packages/data/data-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/data-manager@workspace:packages/data/data-manager"
   dependencies:
@@ -7308,16 +7386,16 @@ __metadata:
     "@loadable/component": ^5.15.3
     "@tanstack/match-sorter-utils": ^8.7.6
     "@tanstack/react-table": ^8.7.9
-    "@uidu/board": ^2.1.6
+    "@uidu/board": ^2.1.7
     "@uidu/button": 1.3.36
     "@uidu/calendar": ^0.4.27
-    "@uidu/data-controls": ^4.0.24
-    "@uidu/data-fields": ^2.1.30
-    "@uidu/data-views": ^3.0.23
+    "@uidu/data-controls": ^4.0.25
+    "@uidu/data-fields": ^2.1.31
+    "@uidu/data-views": ^3.0.24
     "@uidu/docs": ^0.5.25
     "@uidu/dropdown-menu": ^0.6.29
-    "@uidu/gallery": ^2.0.23
-    "@uidu/list": ^3.1.17
+    "@uidu/gallery": ^2.0.24
+    "@uidu/list": ^3.1.18
     "@uidu/menu": 0.8.10
     "@uidu/navigation": ^1.0.34
     "@uidu/page-header": ^1.0.10
@@ -7325,7 +7403,7 @@ __metadata:
     "@uidu/shell": ^2.1.45
     "@uidu/side-navigation": 1.2.9
     "@uidu/spinner": ^0.5.24
-    "@uidu/table": ^3.5.0
+    "@uidu/table": ^3.5.1
     d3-array: ^3.2.2
     dayjs: ^1.11.7
     lodash: ^4.17.21
@@ -7341,7 +7419,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-views@^3.0.23, @uidu/data-views@workspace:packages/data/data-views":
+"@uidu/data-views@^3.0.24, @uidu/data-views@workspace:packages/data/data-views":
   version: 0.0.0-use.local
   resolution: "@uidu/data-views@workspace:packages/data/data-views"
   dependencies:
@@ -7349,8 +7427,8 @@ __metadata:
     "@loadable/component": ^5.15.3
     "@tanstack/react-table": ^8.7.9
     "@uidu/button": 1.3.36
-    "@uidu/data-controls": ^4.0.24
-    "@uidu/data-manager": 4.3.11
+    "@uidu/data-controls": ^4.0.25
+    "@uidu/data-manager": 4.3.12
     "@uidu/docs": ^0.5.25
     "@uidu/field-counter": ^2.0.8
     "@uidu/field-number": ^2.0.33
@@ -7542,7 +7620,7 @@ __metadata:
     prosemirror-state: ^1.4.2
     prosemirror-transform: ^1.7.1
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.30.0
+    prosemirror-view: ^1.30.1
     raf-schd: ^4.0.3
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -7553,7 +7631,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@2.10.4, @uidu/editor-core@^2.10.2, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@2.10.5, @uidu/editor-core@^2.10.2, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -7585,7 +7663,7 @@ __metadata:
     "@uidu/field-date": ^2.1.13
     "@uidu/field-text": 2.0.8
     "@uidu/form": ^2.2.6
-    "@uidu/media-card": ^0.8.8
+    "@uidu/media-card": ^0.8.9
     "@uidu/media-core": ^1.4.1
     "@uidu/media-filmstrip": ^0.5.15
     "@uidu/media-picker": ^1.0.1
@@ -7619,7 +7697,7 @@ __metadata:
     prosemirror-tables: ^1.3.2
     prosemirror-transform: ^1.7.1
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.30.0
+    prosemirror-view: ^1.30.1
     raf-schd: ^4.0.3
     re-resizable: ^6.9.9
     react: ^18.2.0
@@ -7645,7 +7723,7 @@ __metadata:
     "@uidu/editor-common": ^2.5.3
     "@uidu/editor-core": ^2.10.2
     prosemirror-model: ^1.19.0
-    prosemirror-view: ^1.30.0
+    prosemirror-view: ^1.30.1
     react: ^18.2.0
     styled-components: ^5.3.6
     tslib: ^2.5.0
@@ -7703,7 +7781,7 @@ __metadata:
     "@heroicons/react": ^2.0.14
     "@uidu/adf-schema": 2.2.4
     "@uidu/button": 1.3.36
-    "@uidu/editor-core": 2.10.4
+    "@uidu/editor-core": 2.10.5
     "@uidu/email-renderer": 1.3.3
     "@uidu/field-number": 2.0.33
     "@uidu/field-text": 2.0.8
@@ -7929,7 +8007,7 @@ __metadata:
   resolution: "@uidu/field-file-uploader@workspace:packages/forms/field-file-uploader"
   dependencies:
     "@babel/runtime": ^7.20.13
-    "@fluentui/react": 8.105.1
+    "@fluentui/react": 8.105.4
     "@heroicons/react": ^2.0.14
     "@uidu/button": 1.3.36
     "@uidu/docs": ^0.5.25
@@ -8093,7 +8171,7 @@ __metadata:
     "@uidu/form": 2.2.6
     "@uidu/select": 2.2.6
     react: ^18.2.0
-    react-phone-number-input: ^3.2.17
+    react-phone-number-input: ^3.2.18
     styled-components: ^5.3.6
     tslib: ^2.5.0
     twin.macro: ^3.1.0
@@ -8275,15 +8353,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/gallery@^2.0.23, @uidu/gallery@workspace:packages/data/gallery":
+"@uidu/gallery@^2.0.24, @uidu/gallery@workspace:packages/data/gallery":
   version: 0.0.0-use.local
   resolution: "@uidu/gallery@workspace:packages/data/gallery"
   dependencies:
     "@babel/runtime": ^7.20.13
     "@tanstack/react-table": ^8.7.9
     "@tanstack/react-virtual": ^3.0.0-beta.39
-    "@uidu/data-controls": ^4.0.23
-    "@uidu/data-fields": ^2.1.29
+    "@uidu/data-controls": ^4.0.25
+    "@uidu/data-fields": ^2.1.31
     "@uidu/docs": ^0.5.25
     "@uidu/shell": ^2.1.44
     "@uidu/spinner": ^0.5.24
@@ -8493,14 +8571,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/list@^3.1.17, @uidu/list@workspace:packages/data/list":
+"@uidu/list@^3.1.17, @uidu/list@^3.1.18, @uidu/list@workspace:packages/data/list":
   version: 0.0.0-use.local
   resolution: "@uidu/list@workspace:packages/data/list"
   dependencies:
     "@babel/runtime": ^7.20.13
     "@tanstack/react-table": ^8.7.9
     "@tanstack/react-virtual": ^3.0.0-beta.39
-    "@uidu/data-fields": ^2.1.29
+    "@uidu/data-fields": ^2.1.31
     "@uidu/docs": ^0.5.25
     react: ^18.2.0
     styled-components: ^5.3.6
@@ -8543,13 +8621,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-card@^0.8.7, @uidu/media-card@^0.8.8, @uidu/media-card@workspace:packages/media/media-card":
+"@uidu/media-card@^0.8.7, @uidu/media-card@^0.8.8, @uidu/media-card@^0.8.9, @uidu/media-card@workspace:packages/media/media-card":
   version: 0.0.0-use.local
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
     "@babel/runtime": ^7.20.13
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.105.1
+    "@fluentui/react": 8.105.4
     "@uidu/button": ^1.3.36
     "@uidu/docs": ^0.5.25
     "@uidu/dropdown-menu": ^0.6.29
@@ -8752,14 +8830,14 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.13
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.105.1
+    "@fluentui/react": 8.105.4
     "@loadable/component": ^5.15.3
     "@uidu/avatar": ^0.9.21
     "@uidu/button": 1.3.36
     "@uidu/docs": ^0.5.25
     "@uidu/drawer": ^0.7.31
     "@uidu/dropdown-menu": ^0.6.29
-    "@uidu/media-card": ^0.8.8
+    "@uidu/media-card": ^0.8.9
     "@uidu/media-core": ^1.4.1
     "@uidu/media-viewer": ^0.5.14
     "@uidu/menu": 0.8.10
@@ -9243,7 +9321,7 @@ __metadata:
     "@uidu/spinner": ^0.5.24
     body-scroll-lock: ^4.0.0-beta.0
     hoverintent: ^2.2.1
-    overlayscrollbars: ^2.0.3
+    overlayscrollbars: ^2.1.0
     overlayscrollbars-react: ^0.5.0
     react: ^18.2.0
     react-feather: ^2.0.10
@@ -9399,7 +9477,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@3.5.0, @uidu/table@^3.4.10, @uidu/table@^3.5.0, @uidu/table@workspace:packages/data/table":
+"@uidu/table@3.5.1, @uidu/table@^3.4.10, @uidu/table@^3.5.1, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -9414,9 +9492,9 @@ __metadata:
     "@tanstack/react-virtual": ^3.0.0-beta.39
     "@uidu/button": 1.3.36
     "@uidu/checkbox": ^2.0.11
-    "@uidu/data-controls": ^4.0.24
-    "@uidu/data-fields": ^2.1.30
-    "@uidu/data-manager": 4.3.11
+    "@uidu/data-controls": ^4.0.25
+    "@uidu/data-fields": ^2.1.31
+    "@uidu/data-manager": 4.3.12
     "@uidu/docs": ^0.5.25
     "@uidu/menu": ^0.8.10
     "@uidu/popup": ^0.7.12
@@ -12127,6 +12205,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browserslist@npm:^4.21.5":
+  version: 4.21.5
+  resolution: "browserslist@npm:4.21.5"
+  dependencies:
+    caniuse-lite: ^1.0.30001449
+    electron-to-chromium: ^1.4.284
+    node-releases: ^2.0.8
+    update-browserslist-db: ^1.0.10
+  bin:
+    browserslist: cli.js
+  checksum: 9755986b22e73a6a1497fd8797aedd88e04270be33ce66ed5d85a1c8a798292a65e222b0f251bafa1c2522261e237d73b08b58689d4920a607e5a53d56dc4706
+  languageName: node
+  linkType: hard
+
 "buffer-alloc-unsafe@npm:^1.1.0":
   version: 1.1.0
   resolution: "buffer-alloc-unsafe@npm:1.1.0"
@@ -12557,6 +12649,13 @@ __metadata:
   version: 1.0.30001429
   resolution: "caniuse-lite@npm:1.0.30001429"
   checksum: d1658080248ef5ef0f5157423b2766026e6aa45642ce3b2cc74859b6a54e39881dd902397a2368324ed30ed0cd40250f11a4a4f3773453cd57b88db5e5e5c76a
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001449, caniuse-lite@npm:^1.0.30001450":
+  version: 1.0.30001450
+  resolution: "caniuse-lite@npm:1.0.30001450"
+  checksum: 511b360bfc907b2e437699364cf96b83507bc45043926450056642332bcd6f65a1e72540c828534ae15e0ac906e3e9af46cb2bb84458dd580bc31478e9dce282
   languageName: node
   linkType: hard
 
@@ -13709,6 +13808,13 @@ __metadata:
   version: 3.24.1
   resolution: "core-js@npm:3.24.1"
   checksum: 6fb5bf0fd9e9f3e69d95616dd03332fea6758a715d2628c108b5faf17b48b0f580e90c4febb0a523c4665b0991a810de16289f86187fe79d70cc722dbd3edf0e
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^3.27.2":
+  version: 3.27.2
+  resolution: "core-js@npm:3.27.2"
+  checksum: 718debd426f55a6b97cf9b757c936be258afd6d4f7052f89d0f96c982d7013e9000b0b006df42831a0cf32adad298e34d6a19052dce9ae1c7ab87162c0c665e0
   languageName: node
   linkType: hard
 
@@ -15285,6 +15391,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"electron-to-chromium@npm:^1.4.284":
+  version: 1.4.286
+  resolution: "electron-to-chromium@npm:1.4.286"
+  checksum: 6b53e2aea63892cb4af85ea4ee5ed2b6d848713519987efcf4c1177a32e2fe6d04a7f591f5bcd1feab0b3c88890c6eaf65b6feb16c0e0319bf07e31de31930af
+  languageName: node
+  linkType: hard
+
 "elegant-spinner@npm:^1.0.1":
   version: 1.0.1
   resolution: "elegant-spinner@npm:1.0.1"
@@ -15834,6 +15947,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-bliss-typescript@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "eslint-config-bliss-typescript@npm:6.0.2"
+  dependencies:
+    "@typescript-eslint/eslint-plugin": ^5.50.0
+    "@typescript-eslint/parser": ^5.50.0
+    eslint-config-airbnb-typescript: ^17.0.0
+    eslint-config-prettier: ^8.6.0
+    eslint-plugin-compat: ^4.0.2
+    eslint-plugin-import: ^2.27.5
+    eslint-plugin-jest: ^27.2.1
+    eslint-plugin-jsx-a11y: ^6.7.1
+    eslint-plugin-markdown: ^3.0.0
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-promise: ^6.1.1
+    eslint-plugin-react-hooks: ^4.6.0
+    prettier: ^2.8.3
+  peerDependencies:
+    eslint: ">=7.0.0 || >=8.0.0"
+  checksum: ad8f7df295acafe7b1b28af75a3eca18af91cc14b384fe5b8597e1c2a8a9eb69e7f3bb55616d6553c45c79ca4669e60d2bbb9e0b526be0819cd5afcb14ee3173
+  languageName: node
+  linkType: hard
+
 "eslint-config-prettier@npm:^8.6.0":
   version: 8.6.0
   resolution: "eslint-config-prettier@npm:8.6.0"
@@ -15855,7 +15991,7 @@ __metadata:
     eslint-config-airbnb-typescript: ^17.0.0
     eslint-config-prettier: ^8.6.0
     eslint-plugin-babel: ^5.3.1
-    eslint-plugin-compat: ^4.0.2
+    eslint-plugin-compat: ^4.1.0
     eslint-plugin-formatjs: ^4.6.0
     eslint-plugin-import: ^2.27.5
     eslint-plugin-jsx-a11y: ^6.7.1
@@ -15918,6 +16054,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-compat@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "eslint-plugin-compat@npm:4.1.0"
+  dependencies:
+    "@mdn/browser-compat-data": ^5.2.34
+    ast-metadata-inferer: ^0.7.0
+    browserslist: ^4.21.5
+    caniuse-lite: ^1.0.30001450
+    core-js: ^3.27.2
+    eslint-config-bliss-typescript: ^6.0.2
+    find-up: ^5.0.0
+    lodash.memoize: 4.1.2
+    semver: 7.3.8
+  peerDependencies:
+    eslint: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
+  checksum: b75a7181d1a502ba05f6b6f8df46d7bac98c0a73117cb8b1497ba668b890b1537f159adf41d3c662d80a9d7425a2a682253aba7fac5deebf28a08dd6391e211a
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-formatjs@npm:^4.6.0":
   version: 4.6.0
   resolution: "eslint-plugin-formatjs@npm:4.6.0"
@@ -15963,6 +16118,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-jest@npm:^27.2.1":
+  version: 27.2.1
+  resolution: "eslint-plugin-jest@npm:27.2.1"
+  dependencies:
+    "@typescript-eslint/utils": ^5.10.0
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ^5.0.0
+    eslint: ^7.0.0 || ^8.0.0
+  peerDependenciesMeta:
+    "@typescript-eslint/eslint-plugin":
+      optional: true
+    jest:
+      optional: true
+  checksum: 579a4d26304cc6748b2e6dff6c965ea7a21b618d8b051eb02727d25cf5c7767f6db8ef5237531635ff77e242b983b973e7cb8c820a4d20d5bda73358c452a8ab
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-jsx-a11y@npm:^6.7.1":
   version: 6.7.1
   resolution: "eslint-plugin-jsx-a11y@npm:6.7.1"
@@ -15989,6 +16161,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-markdown@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "eslint-plugin-markdown@npm:3.0.0"
+  dependencies:
+    mdast-util-from-markdown: ^0.8.5
+  peerDependencies:
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+  checksum: ea9e8613cffcf7decbc2de0c900a83553ccdccfb6d90187e5d461a457a403d2634585a8c165cc4adf52c86f3b910161f33b1f24a46f296c4a577d2547780c997
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-prettier@npm:^4.2.1":
   version: 4.2.1
   resolution: "eslint-plugin-prettier@npm:4.2.1"
@@ -16001,6 +16184,15 @@ __metadata:
     eslint-config-prettier:
       optional: true
   checksum: b9e839d2334ad8ec7a5589c5cb0f219bded260839a857d7a486997f9870e95106aa59b8756ff3f37202085ebab658de382b0267cae44c3a7f0eb0bcc03a4f6d6
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-promise@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "eslint-plugin-promise@npm:6.1.1"
+  peerDependencies:
+    eslint: ^7.0.0 || ^8.0.0
+  checksum: 46b9a4f79dae5539987922afc27cc17cbccdecf4f0ba19c0ccbf911b0e31853e9f39d9959eefb9637461b52772afa1a482f1f87ff16c1ba38bdb6fcf21897e9a
   languageName: node
   linkType: hard
 
@@ -18183,8 +18375,8 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.105.1
-    "@formatjs/cli": 5.1.13
+    "@fluentui/react": 8.105.4
+    "@formatjs/cli": 6.0.0
     "@fortawesome/fontawesome-free": ^6.2.1
     "@fortawesome/fontawesome-svg-core": ^6.2.1
     "@fortawesome/free-solid-svg-icons": ^6.2.1
@@ -18206,7 +18398,7 @@ __metadata:
     "@types/emoji-mart": ^3.0.9
     "@types/exenv": ^1.2.0
     "@types/google-map-react": ^2.1.7
-    "@types/google.maps": ^3.51.0
+    "@types/google.maps": ^3.51.1
     "@types/js-search": ^1.4.0
     "@types/linkify-it": ^3.0.2
     "@types/lodash.chunk": ^4.2.7
@@ -18215,7 +18407,7 @@ __metadata:
     "@types/markdown-it": ^12.2.3
     "@types/markerclustererplus": ^2.1.33
     "@types/mkdirp": ^1.0.2
-    "@types/node": ^18.11.18
+    "@types/node": ^18.11.19
     "@types/overlayscrollbars": ^1.12.1
     "@types/prettier": ^2.7.2
     "@types/prismjs": ^1.26.0
@@ -18367,7 +18559,7 @@ __metadata:
     npm-run-all: ^4.1.5
     numeral: ^2.0.6
     office-ui-fabric-react: ^7.204.0
-    overlayscrollbars: ^2.0.3
+    overlayscrollbars: ^2.1.0
     overlayscrollbars-react: ^0.5.0
     p-wait-for: ^4.1.0
     pdfjs-dist: ^3.3.122
@@ -18397,7 +18589,7 @@ __metadata:
     prosemirror-tables: ^1.3.2
     prosemirror-transform: ^1.7.1
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.30.0
+    prosemirror-view: ^1.30.1
     query-string: ^7.1.3
     raf-schd: ^4.0.3
     raw-loader: ^4.0.2
@@ -18409,7 +18601,7 @@ __metadata:
     react-animated-number: ^0.4.4
     react-avatar-editor: ^13.0.0
     react-beautiful-dnd: ^13.1.1
-    react-big-calendar: ^1.5.2
+    react-big-calendar: ^1.6.3
     react-chatview: ^0.2.5
     react-codesandboxer: ^3.1.5
     react-color: ^2.19.3
@@ -18442,7 +18634,7 @@ __metadata:
     react-mentions: ^4.4.7
     react-node-resolver: ^2.0.1
     react-number-format: ^4.9.4
-    react-phone-number-input: ^3.2.17
+    react-phone-number-input: ^3.2.18
     react-popper: ^2.3.0
     react-resizable: ^3.0.4
     react-router: ^5.3.4
@@ -21758,17 +21950,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"luxon@npm:^2.4.0":
-  version: 2.5.0
-  resolution: "luxon@npm:2.5.0"
-  checksum: 2fccce6bbdfc8f13c5a8c148ff045ab3b10f4f80cac28dd92575588fffce9b2d7197096d7fedcc61a6245b59f4233507797f530e63f22b9ae4c425dff2909ae3
-  languageName: node
-  linkType: hard
-
 "luxon@npm:^3.0.1":
   version: 3.0.1
   resolution: "luxon@npm:3.0.1"
   checksum: aa966eb919bf95b1bd819cda784d1f6f66e3fb65bd9ec7bf68b6a978eeb4e3e14f7e2275021b473f93b15b6b7ba2e5a30471e53add3929a7e695fcfd6dd40ec8
+  languageName: node
+  linkType: hard
+
+"luxon@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "luxon@npm:3.2.1"
+  checksum: 3fa3def2c5f5d3032b4c46220c4da8aeb467ac979888fc9d2557adcd22195f93516b4ad5909a75862bec8dc6ddc0953b0f38e6d2f4a8ab8450ddc531a83cf20d
   languageName: node
   linkType: hard
 
@@ -21991,6 +22183,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mdast-util-from-markdown@npm:^0.8.5":
+  version: 0.8.5
+  resolution: "mdast-util-from-markdown@npm:0.8.5"
+  dependencies:
+    "@types/mdast": ^3.0.0
+    mdast-util-to-string: ^2.0.0
+    micromark: ~2.11.0
+    parse-entities: ^2.0.0
+    unist-util-stringify-position: ^2.0.0
+  checksum: 5a9d0d753a42db763761e874c22365d0c7c9934a5a18b5ff76a0643610108a208a041ffdb2f3d3dd1863d3d915225a4020a0aade282af0facfd0df110601eee6
+  languageName: node
+  linkType: hard
+
 "mdast-util-from-markdown@npm:^1.0.0":
   version: 1.2.0
   resolution: "mdast-util-from-markdown@npm:1.2.0"
@@ -22097,6 +22302,13 @@ __metadata:
     unist-util-visit: ^4.0.0
     zwitch: ^2.0.0
   checksum: 0ea4fc11b7a49b15d400d50044429c45222cb9bc583553288c7c54704d051f25049233817129ba56a6f581f1e20916e5c540870a80987318747a95b44a36ba3e
+  languageName: node
+  linkType: hard
+
+"mdast-util-to-string@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "mdast-util-to-string@npm:2.0.0"
+  checksum: 0b2113ada10e002fbccb014170506dabe2f2ddacaacbe4bc1045c33f986652c5a162732a2c057c5335cdb58419e2ad23e368e5be226855d4d4e280b81c4e9ec2
   languageName: node
   linkType: hard
 
@@ -22674,6 +22886,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"micromark@npm:~2.11.0":
+  version: 2.11.4
+  resolution: "micromark@npm:2.11.4"
+  dependencies:
+    debug: ^4.0.0
+    parse-entities: ^2.0.0
+  checksum: f8a5477d394908a5d770227aea71657a76423d420227c67ea0699e659a5f62eb39d504c1f7d69ec525a6af5aaeb6a7bffcdba95614968c03d41d3851edecb0d6
+  languageName: node
+  linkType: hard
+
 "micromatch@npm:^3.1.10":
   version: 3.1.10
   resolution: "micromatch@npm:3.1.10"
@@ -23010,12 +23232,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moment-timezone@npm:^0.5.34":
-  version: 0.5.35
-  resolution: "moment-timezone@npm:0.5.35"
+"moment-timezone@npm:^0.5.40":
+  version: 0.5.40
+  resolution: "moment-timezone@npm:0.5.40"
   dependencies:
     moment: ">= 2.9.0"
-  checksum: 0f3907282dc9ae3d405fefaccf486dc4222945ff479127fd269e6c4ddc25e526e7ca9e849d6bf941c871bd17e875b256bdb276137a55db9fce4177c792a003df
+  checksum: 6f6be5412b37fd937bb143efe74bf65b2c3f115fd967a6dc13b717a126ed6dd198bff6db6e179d69a089e20ac03ce7622c6b5598dd585005195554487a91b528
   languageName: node
   linkType: hard
 
@@ -23582,6 +23804,13 @@ __metadata:
   version: 2.0.6
   resolution: "node-releases@npm:2.0.6"
   checksum: e86a926dc9fbb3b41b4c4a89d998afdf140e20a4e8dbe6c0a807f7b2948b42ea97d7fd3ad4868041487b6e9ee98409829c6e4d84a734a4215dff060a7fbeb4bf
+  languageName: node
+  linkType: hard
+
+"node-releases@npm:^2.0.8":
+  version: 2.0.10
+  resolution: "node-releases@npm:2.0.10"
+  checksum: d784ecde25696a15d449c4433077f5cce620ed30a1656c4abf31282bfc691a70d9618bae6868d247a67914d1be5cc4fde22f65a05f4398cdfb92e0fc83cadfbc
   languageName: node
   linkType: hard
 
@@ -24271,10 +24500,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"overlayscrollbars@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "overlayscrollbars@npm:2.0.3"
-  checksum: b2910585cc876dd048ad9eb0bcb69d0e24519c46399c1a141cb0903d2de7150c096b6df52ad6b163f53119654cba99798f0e7c2f8ff930617c3d8d8a0798765d
+"overlayscrollbars@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "overlayscrollbars@npm:2.1.0"
+  checksum: 6a872358db394c403f1ab209fbd0082bc017ccee7290e831538e22408db7b436db8dfaae8ceb404a8870a5d96e7fb153cc405bd957a73a3734a6192c31f60d22
   languageName: node
   linkType: hard
 
@@ -26162,7 +26391,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-view@npm:*, prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.27.0, prosemirror-view@npm:^1.30.0":
+"prosemirror-view@npm:*, prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.27.0":
   version: 1.30.0
   resolution: "prosemirror-view@npm:1.30.0"
   dependencies:
@@ -26170,6 +26399,17 @@ __metadata:
     prosemirror-state: ^1.0.0
     prosemirror-transform: ^1.1.0
   checksum: ffd29ce9a37254337541a06ff961934f457e872374d0aac8b5b1c938c1d6726820f24a75b83b4f55c2f46e3ab5ec907664e72db3863ec17e2c8701c393384fd1
+  languageName: node
+  linkType: hard
+
+"prosemirror-view@npm:^1.30.1":
+  version: 1.30.1
+  resolution: "prosemirror-view@npm:1.30.1"
+  dependencies:
+    prosemirror-model: ^1.16.0
+    prosemirror-state: ^1.0.0
+    prosemirror-transform: ^1.1.0
+  checksum: 6dec0205954ae9ffba7e6864274de6fd2508f8aacec7d54a0bd448257a92bf9c93a147ecc24d4a909bca9b8fddad34627dabfb51c7742653a2b836d962290c9c
   languageName: node
   linkType: hard
 
@@ -26590,29 +26830,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-big-calendar@npm:^1.5.2":
-  version: 1.5.2
-  resolution: "react-big-calendar@npm:1.5.2"
+"react-big-calendar@npm:^1.6.3":
+  version: 1.6.3
+  resolution: "react-big-calendar@npm:1.6.3"
   dependencies:
-    "@babel/runtime": ^7.18.6
+    "@babel/runtime": ^7.20.7
     clsx: ^1.2.1
     date-arithmetic: ^4.1.0
+    dayjs: ^1.11.7
     dom-helpers: ^5.2.1
     globalize: ^0.1.1
     invariant: ^2.2.4
     lodash: ^4.17.21
     lodash-es: ^4.17.21
-    luxon: ^2.4.0
+    luxon: ^3.2.1
     memoize-one: ^6.0.0
     moment: ^2.29.4
-    moment-timezone: ^0.5.34
+    moment-timezone: ^0.5.40
     prop-types: ^15.8.1
-    react-overlays: ^5.2.0
+    react-overlays: ^5.2.1
     uncontrollable: ^7.2.1
   peerDependencies:
     react: ^16.14.0 || ^17 || ^18
     react-dom: ^16.14.0 || ^17 || ^18
-  checksum: c4647cdb2e479278bedba948dbbef5bfd9e9e1492902a96239ea1989f914b038b8d327b4a924148db13a57f10ca8d5fe85878dc50f8e0258806f08fad2b91d1d
+  checksum: 6b8ada8fd9375b449d5e158264e2525637ccb152cdcc9681f2d7819ec603f2fd7bfed34b8a5ef3174cb5a9e6b7ad6776ebfd85eced3a5a7c8350e9cefb03a394
   languageName: node
   linkType: hard
 
@@ -27199,12 +27440,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-overlays@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "react-overlays@npm:5.2.0"
+"react-overlays@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "react-overlays@npm:5.2.1"
   dependencies:
     "@babel/runtime": ^7.13.8
-    "@popperjs/core": ^2.8.6
+    "@popperjs/core": ^2.11.6
     "@restart/hooks": ^0.4.7
     "@types/warning": ^3.0.0
     dom-helpers: ^5.2.0
@@ -27214,13 +27455,13 @@ __metadata:
   peerDependencies:
     react: ">=16.3.0"
     react-dom: ">=16.3.0"
-  checksum: 7bb35cc750453f203700607c87e2e5f0268e10a234ebe7a926162e12cdfb0ee3faa6fb0d37994734b16216bbecd8102e4afec8cb41fc5b7010ca05fee7691749
+  checksum: ac43b3876829081c6912f083b53016384fe1357c2c819cf80ffa961dcc650b0d504da0c87d1e6139775976d514321061f39f6b69ab128d619c6917b70cb179d6
   languageName: node
   linkType: hard
 
-"react-phone-number-input@npm:^3.2.17":
-  version: 3.2.17
-  resolution: "react-phone-number-input@npm:3.2.17"
+"react-phone-number-input@npm:^3.2.18":
+  version: 3.2.18
+  resolution: "react-phone-number-input@npm:3.2.18"
   dependencies:
     classnames: ^2.3.1
     country-flag-icons: ^1.5.4
@@ -27230,7 +27471,7 @@ __metadata:
   peerDependencies:
     react: ">=16.8"
     react-dom: ">=16.8"
-  checksum: abaddef5577f08401118cc36060c7582b4272bc46e08325c7484216e17aaba5d15720f2d9bb03953dcd07ba8621977028d46d8b07dec708984a93f1e1aaadc40
+  checksum: baf12a74e85726754ffbeb55a3e0d9acd8a43f9d6831fa145c9ecdbbcdf788bae23eb66718256837f6e86e109d9822189e9ea81a82361dc9621282392318370c
   languageName: node
   linkType: hard
 
@@ -28752,16 +28993,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^6.0.0, semver@npm:^6.1.1, semver@npm:^6.1.2, semver@npm:^6.2.0, semver@npm:^6.3.0":
-  version: 6.3.0
-  resolution: "semver@npm:6.3.0"
-  bin:
-    semver: ./bin/semver.js
-  checksum: 1b26ecf6db9e8292dd90df4e781d91875c0dcc1b1909e70f5d12959a23c7eebb8f01ea581c00783bbee72ceeaad9505797c381756326073850dc36ed284b21b9
-  languageName: node
-  linkType: hard
-
-"semver@npm:^7.0.0, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8":
+"semver@npm:7.3.8, semver@npm:^7.0.0, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8":
   version: 7.3.8
   resolution: "semver@npm:7.3.8"
   dependencies:
@@ -28769,6 +29001,15 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: ba9c7cbbf2b7884696523450a61fee1a09930d888b7a8d7579025ad93d459b2d1949ee5bbfeb188b2be5f4ac163544c5e98491ad6152df34154feebc2cc337c1
+  languageName: node
+  linkType: hard
+
+"semver@npm:^6.0.0, semver@npm:^6.1.1, semver@npm:^6.1.2, semver@npm:^6.2.0, semver@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "semver@npm:6.3.0"
+  bin:
+    semver: ./bin/semver.js
+  checksum: 1b26ecf6db9e8292dd90df4e781d91875c0dcc1b1909e70f5d12959a23c7eebb8f01ea581c00783bbee72ceeaad9505797c381756326073850dc36ed284b21b9
   languageName: node
   linkType: hard
 
@@ -31383,6 +31624,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"unist-util-stringify-position@npm:^2.0.0":
+  version: 2.0.3
+  resolution: "unist-util-stringify-position@npm:2.0.3"
+  dependencies:
+    "@types/unist": ^2.0.2
+  checksum: f755cadc959f9074fe999578a1a242761296705a7fe87f333a37c00044de74ab4b184b3812989a57d4cd12211f0b14ad397b327c3a594c7af84361b1c25a7f09
+  languageName: node
+  linkType: hard
+
 "unist-util-stringify-position@npm:^3.0.0":
   version: 3.0.2
   resolution: "unist-util-stringify-position@npm:3.0.2"
@@ -31471,6 +31721,20 @@ __metadata:
   version: 3.0.3
   resolution: "untildify@npm:3.0.3"
   checksum: 1c42352a37d9663090f126f343f1ee0a0b90c0a4bd7991229a6f474fa0ab856880f0e8798c15fa12c13e64c5345f63dd428e4b6ac2073d594839548025a4bed9
+  languageName: node
+  linkType: hard
+
+"update-browserslist-db@npm:^1.0.10":
+  version: 1.0.10
+  resolution: "update-browserslist-db@npm:1.0.10"
+  dependencies:
+    escalade: ^3.1.1
+    picocolors: ^1.0.0
+  peerDependencies:
+    browserslist: ">= 4.21.0"
+  bin:
+    browserslist-lint: cli.js
+  checksum: 12db73b4f63029ac407b153732e7cd69a1ea8206c9100b482b7d12859cd3cd0bc59c602d7ae31e652706189f1acb90d42c53ab24a5ba563ed13aebdddc5561a0
   languageName: node
   linkType: hard
 

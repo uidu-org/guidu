@@ -26,7 +26,7 @@
     "css-color-names": "^1.0.1",
     "linkify-it": "^4.0.1",
     "prosemirror-model": "^1.19.0",
-    "prosemirror-view": "^1.30.0",
+    "prosemirror-view": "^1.30.1",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
