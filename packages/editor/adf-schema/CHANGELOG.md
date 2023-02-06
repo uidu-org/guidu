@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.2.5
+
+### Patch Changes
+
+- ce8e51aee: Try with editor re-rendering
+
 ## 2.2.4
 
 ### Patch Changes

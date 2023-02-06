@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 1.0.12
+
+### Patch Changes
+
+- ce8e51aee: Try with editor re-rendering
+- Updated dependencies [ce8e51aee]
+  - @uidu/adf-schema@2.2.5
+
 ## 1.0.11
 
 ### Patch Changes

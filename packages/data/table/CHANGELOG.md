@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 3.5.2
+
+### Patch Changes
+
+- 8bbb9fe7f: Row Selection bug for Firefox onCLick
+
 ## 3.5.1
 
 ### Patch Changes

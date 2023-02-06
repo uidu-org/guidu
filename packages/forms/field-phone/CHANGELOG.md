@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 2.0.39
+
+### Patch Changes
+
+- ce8e51aee: Try with editor re-rendering
+
 ## 2.0.38
 
 ### Patch Changes

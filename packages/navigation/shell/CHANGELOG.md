@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.46
+
+### Patch Changes
+
+- ce8e51aee: Try with editor re-rendering
+
 ## 2.1.45
 
 ### Patch Changes
