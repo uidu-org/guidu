@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.10
+
+### Patch Changes
+
+- ce8e51aee: Try with editor re-rendering
+
 ## 0.8.9
 
 ### Patch Changes

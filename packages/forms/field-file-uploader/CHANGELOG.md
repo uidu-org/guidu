@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.2.12
+
+### Patch Changes
+
+- ce8e51aee: Try with editor re-rendering
+
 ## 2.2.11
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.1.48
+
+### Patch Changes
+
+- ce8e51aee: Try with editor re-rendering
+
 ## 0.1.47
 
 ### Patch Changes

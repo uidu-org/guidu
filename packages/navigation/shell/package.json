@@ -1,6 +1,6 @@
 {
   "name": "@uidu/shell",
-  "version": "2.1.45",
+  "version": "2.1.46",
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/shell",
   "license": "MIT",

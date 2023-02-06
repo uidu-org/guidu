@@ -1,5 +1,13 @@
 # @uidu/calendar
 
+## 0.4.28
+
+### Patch Changes
+
+- ce8e51aee: Try with editor re-rendering
+- Updated dependencies [ce8e51aee]
+  - @uidu/shell@2.1.46
+
 ## 0.4.27
 
 ### Patch Changes

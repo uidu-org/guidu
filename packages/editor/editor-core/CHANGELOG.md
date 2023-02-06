@@ -1,5 +1,16 @@
 # @uidu/editor-core
 
+## 2.10.6
+
+### Patch Changes
+
+- ce8e51aee: Try with editor re-rendering
+- Updated dependencies [ce8e51aee]
+  - @uidu/editor-json-transformer@1.0.12
+  - @uidu/editor-common@2.5.5
+  - @uidu/adf-schema@2.2.5
+  - @uidu/media-card@0.8.10
+
 ## 2.10.5
 
 ### Patch Changes

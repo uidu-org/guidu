@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.73
+
+### Patch Changes
+
+- ce8e51aee: Try with editor re-rendering
+- Updated dependencies [ce8e51aee]
+  - @uidu/media-card@0.8.10
+
 ## 0.5.72
 
 ### Patch Changes
