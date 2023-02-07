@@ -1,5 +1,5 @@
+import Modal, { ModalBody, ModalTransition } from '@uidu/modal-dialog';
 import React from 'react';
-import { Modal, ModalGateway } from 'react-images';
 import { ModalMediaViewerProps } from '../types';
 import MediaViewer from './MediaViewer';
 
@@ -9,12 +9,13 @@ export default function ModalMediaViewer({
   files,
 }: ModalMediaViewerProps) {
   return (
-    <ModalGateway>
+    <ModalTransition>
       {Number.isInteger(currentIndex as any) ? (
         <Modal
-          allowFullscreen
-          closeOnBackdropClick
           onClose={onClose}
+          width="calc(100vw - 1rem)"
+          height="calc(100vh - 1rem)"
+          tw="[--modal-dialog-gutter:1rem] [--modal-dialog-translate-y:0]"
           // styles={{
           //   blanket: (base: any) => ({
           //     ...base,
@@ -28,13 +29,17 @@ export default function ModalMediaViewer({
           //   }),
           // }}
         >
-          <MediaViewer
-            files={files}
-            currentIndex={currentIndex}
-            onClose={onClose}
-          />
+          <ModalBody tw="p-0">
+            <MediaViewer
+              files={files}
+              currentIndex={currentIndex}
+              onClose={onClose}
+              allowFullscreen
+              closeOnBackdropClick
+            />
+          </ModalBody>
         </Modal>
       ) : null}
-    </ModalGateway>
+    </ModalTransition>
   );
 }

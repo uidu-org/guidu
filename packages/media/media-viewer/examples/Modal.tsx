@@ -15,13 +15,15 @@ export default class Basic extends PureComponent {
 
   render() {
     const { files, currentIndex } = this.state;
+    console.log('files', files);
+
     return files.length ? (
       <Fragment>
         <div className="container">
           <div className="card-columns">
             {files.map((card, index) => (
               <MediaCard
-                file={card}
+                file={card.file}
                 onClick={() => {
                   this.setState({ currentIndex: index });
                 }}
@@ -30,7 +32,7 @@ export default class Basic extends PureComponent {
           </div>
         </div>
         <ModalMediaViewer
-          files={files}
+          files={files.map((f) => f.file)}
           currentIndex={currentIndex}
           onClose={() => this.setState({ currentIndex: undefined })}
         />

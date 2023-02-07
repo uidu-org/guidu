@@ -1,6 +1,8 @@
-import { ShellMain } from '@uidu/shell';
 import React, { useState } from 'react';
-import Carousel from 'react-images';
+import { Keyboard } from 'swiper';
+
+import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { MediaViewerProps } from '../types';
 
 export default function MediaViewer({
@@ -11,45 +13,21 @@ export default function MediaViewer({
   const [currentView, setCurrentView] = useState(files[currentIndex]);
   const onViewChange = (index: number) => setCurrentView(files[index]);
 
+  {
+    /* <Header currentView={currentView} onClose={onClose} /> */
+  }
   return (
-    <ShellMain>
-      {/* <Header currentView={currentView} onClose={onClose} /> */}
-      <Carousel
-        trackProps={{
-          onViewChange,
-        }}
-        currentIndex={currentIndex}
-        components={{
-          Footer: null,
-          // NavigationPrev,
-          // NavigationNext,
-          // View,
-        }}
-        // frameProps={{ autoSize: 'height' }}
-        views={files.map(({ url }) => ({
-          source: url,
-        }))}
-        styles={
-          {
-            // container: (base: any) => ({
-            //   ...base,
-            //   height: '100%',
-            //   flex: 1,
-            // }),
-            // view: (base: any) => ({
-            //   ...base,
-            //   backgroundColor: 'black',
-            //   alignItems: 'center',
-            //   display: 'flex',
-            //   height: '100vh',
-            //   justifyContent: 'center',
-            //   '& > img': {
-            //     maxHeight: '100%',
-            //   },
-            // }),
-          }
-        }
-      />
-    </ShellMain>
+    <Swiper
+      onSlideChange={onViewChange}
+      initialSlide={currentIndex}
+      modules={[Keyboard]}
+      keyboard
+    >
+      {files.map(({ url }) => (
+        <SwiperSlide>
+          <img src={url} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }

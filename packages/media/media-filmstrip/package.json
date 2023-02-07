@@ -14,10 +14,11 @@
     "@uidu/media-card": "^0.8.7",
     "@uidu/media-core": "^1.4.1",
     "@uidu/media-viewer": "^0.5.13",
+    "@uidu/modal-dialog": "1.1.7",
     "@uidu/theme": "^0.6.29",
     "react": "^18.2.0",
-    "react-images": "^1.2.0-beta.7",
     "styled-components": "^5.3.6",
+    "swiper": "^9.0.3",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

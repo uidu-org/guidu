@@ -33,9 +33,9 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
-    "@fortawesome/fontawesome-free": "^6.2.1",
-    "@fortawesome/fontawesome-svg-core": "^6.2.1",
-    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/fontawesome-free": "^6.3.0",
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@uidu/data-controls": "^4.0.26",
     "@uidu/docs": "^0.5.25"

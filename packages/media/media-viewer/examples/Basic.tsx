@@ -13,6 +13,11 @@ export default class Basic extends PureComponent {
 
   render() {
     const { files } = this.state;
-    return files.length ? <MediaViewer files={files} /> : <div>Loading...</div>;
+    console.log('files', files);
+    return files.length ? (
+      <MediaViewer files={files.map((f) => f.file)} />
+    ) : (
+      <div>Loading...</div>
+    );
   }
 }
