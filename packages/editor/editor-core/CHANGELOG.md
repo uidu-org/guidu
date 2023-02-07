@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 2.10.8
+
+### Patch Changes
+
+- 5403e88b0: Drop react-images
+- Updated dependencies [5403e88b0]
+  - @uidu/media-filmstrip@0.6.0
+
 ## 2.10.7
 
 ### Patch Changes

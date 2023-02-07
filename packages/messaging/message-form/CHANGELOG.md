@@ -1,5 +1,13 @@
 # @uidu/message-form
 
+## 0.4.34
+
+### Patch Changes
+
+- Updated dependencies [5403e88b0]
+  - @uidu/media-filmstrip@0.6.0
+  - @uidu/message@0.5.75
+
 ## 0.4.33
 
 ### Patch Changes

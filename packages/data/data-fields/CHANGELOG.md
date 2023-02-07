@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.1.33
+
+### Patch Changes
+
+- 5403e88b0: Drop react-images
+
 ## 2.1.32
 
 ### Patch Changes

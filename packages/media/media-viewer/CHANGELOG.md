@@ -1,5 +1,11 @@
 # @uidu/media-viewer
 
+## 0.6.0
+
+### Minor Changes
+
+- 5403e88b0: Drop react-images
+
 ## 0.5.15
 
 ### Patch Changes
