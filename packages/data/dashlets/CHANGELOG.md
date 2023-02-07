@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 2.1.40
+
+### Patch Changes
+
+- a9b9f07a8: Bump deps
+- Updated dependencies [a9b9f07a8]
+  - @uidu/dashlet-controls@1.1.17
+  - @uidu/data-fields@2.1.32
+  - @uidu/table@3.5.3
+
 ## 2.1.39
 
 ### Patch Changes

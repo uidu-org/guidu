@@ -1,5 +1,18 @@
 # @uidu/data-fields
 
+## 2.1.32
+
+### Patch Changes
+
+- a9b9f07a8: Bump deps
+- Updated dependencies [a9b9f07a8]
+  - @uidu/field-time@2.0.38
+  - @uidu/select@2.2.7
+  - @uidu/form@2.2.7
+  - @uidu/field-date@2.1.14
+  - @uidu/field-number@2.0.34
+  - @uidu/field-toggle@2.0.34
+
 ## 2.1.31
 
 ### Patch Changes
