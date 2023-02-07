@@ -1,5 +1,17 @@
 # @uidu/renderer
 
+## 2.3.1
+
+### Patch Changes
+
+- a9b9f07a8: Bump deps
+- Updated dependencies [a9b9f07a8]
+  - @uidu/editor-common@2.5.6
+  - @uidu/adf-schema@2.2.6
+  - @uidu/mentions@0.5.6
+  - @uidu/media-card@0.8.11
+  - @uidu/status@0.5.30
+
 ## 2.3.0
 
 ### Minor Changes

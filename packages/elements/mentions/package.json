@@ -1,6 +1,6 @@
 {
   "name": "@uidu/mentions",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "A React component that renders a message",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/mentions",
   "license": "MIT",

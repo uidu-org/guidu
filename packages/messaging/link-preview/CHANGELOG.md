@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.30
+
+### Patch Changes
+
+- a9b9f07a8: Bump deps
+
 ## 0.3.29
 
 ### Patch Changes

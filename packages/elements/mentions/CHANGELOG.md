@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.5.6
+
+### Patch Changes
+
+- a9b9f07a8: Bump deps
+
 ## 0.5.5
 
 ### Patch Changes

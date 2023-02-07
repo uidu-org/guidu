@@ -1,5 +1,16 @@
 # @uidu/editor-common
 
+## 2.5.6
+
+### Patch Changes
+
+- a9b9f07a8: Bump deps
+- Updated dependencies [a9b9f07a8]
+  - @uidu/profilecard@0.3.35
+  - @uidu/adf-schema@2.2.6
+  - @uidu/mentions@0.5.6
+  - @uidu/emoji@0.6.33
+
 ## 2.5.5
 
 ### Patch Changes

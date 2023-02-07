@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.5.74
+
+### Patch Changes
+
+- a9b9f07a8: Bump deps
+- Updated dependencies [a9b9f07a8]
+  - @uidu/media-viewer@0.5.15
+  - @uidu/media-card@0.8.11
+
 ## 0.5.73
 
 ### Patch Changes
