@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.6.0
+
+### Minor Changes
+
+- 5403e88b0: Drop react-images
+
+### Patch Changes
+
+- Updated dependencies [5403e88b0]
+  - @uidu/media-viewer@0.6.0
+
 ## 0.5.15
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 3.5.4
+
+### Patch Changes
+
+- 5403e88b0: Drop react-images
+- Updated dependencies [5403e88b0]
+  - @uidu/data-fields@2.1.33
+
 ## 3.5.3
 
 ### Patch Changes

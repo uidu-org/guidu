@@ -1,6 +1,6 @@
 {
   "name": "@uidu/renderer",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Renderer component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/renderer",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "@uidu/editor-common": "^2.5.6",
     "@uidu/editor-json-transformer": "^1.0.11",
     "@uidu/media-card": "^0.8.11",
-    "@uidu/media-filmstrip": "^0.5.15",
+    "@uidu/media-filmstrip": "^0.6.0",
     "@uidu/mentions": "^0.5.6",
     "@uidu/status": "^0.5.30",
     "@uidu/task-decision": "^0.4.34",

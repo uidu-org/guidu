@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.1.4
+
+### Patch Changes
+
+- 5403e88b0: Drop react-images
+
 ## 2.1.3
 
 ### Patch Changes
