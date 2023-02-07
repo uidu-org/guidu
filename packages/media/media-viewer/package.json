@@ -27,7 +27,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.5.25",
     "@uidu/media-card": "^0.8.8",
-    "react-intl": "^6.2.7"
+    "react-intl": "^6.2.8"
   },
   "publishConfig": {
     "access": "public"

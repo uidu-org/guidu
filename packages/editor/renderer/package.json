@@ -31,7 +31,7 @@
     "get-video-id": "^3.6.5",
     "prosemirror-model": "^1.19.0",
     "raf-schd": "^4.0.3",
-    "react-intl": "^6.2.7",
+    "react-intl": "^6.2.8",
     "tslib": "^2.5.0",
     "url-parse": "^1.5.10"
   },

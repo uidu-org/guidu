@@ -47,6 +47,6 @@
     "@uidu/navigation": "^1.0.34",
     "@uidu/page-header": "^1.0.10",
     "@uidu/side-navigation": "1.2.9",
-    "react-intl": "^6.2.7"
+    "react-intl": "^6.2.8"
   }
 }
