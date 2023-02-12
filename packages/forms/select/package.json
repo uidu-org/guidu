@@ -11,7 +11,7 @@
   "types": "dist/uidu-select.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.20.13",
-    "@heroicons/react": "^2.0.14",
+    "@heroicons/react": "^2.0.15",
     "@uidu/field-base": "^4.2.8",
     "@uidu/menu": "0.8.10",
     "@uidu/spinner": "^0.5.24",

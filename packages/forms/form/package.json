@@ -20,10 +20,10 @@
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@hookform/resolvers": "^2.9.10",
+    "@hookform/resolvers": "^2.9.11",
     "@uidu/docs": "^0.5.25",
     "react-feather": "^2.0.10",
-    "yup": "1.0.0-beta.8"
+    "yup": "1.0.0"
   },
   "publishConfig": {
     "access": "public"
