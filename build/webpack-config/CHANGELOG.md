@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.50
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+
 ## 0.3.49
 
 ### Patch Changes

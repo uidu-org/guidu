@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.12
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+
 ## 0.8.11
 
 ### Patch Changes

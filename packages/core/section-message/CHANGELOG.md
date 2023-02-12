@@ -1,5 +1,11 @@
 # @uidu/section-message
 
+## 0.6.30
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+
 ## 0.6.29
 
 ### Patch Changes

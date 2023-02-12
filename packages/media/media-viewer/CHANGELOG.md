@@ -1,5 +1,11 @@
 # @uidu/media-viewer
 
+## 0.6.1
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+
 ## 0.6.0
 
 ### Minor Changes

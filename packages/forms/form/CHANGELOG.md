@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.8
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+
 ## 2.2.7
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.2.9
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+- Updated dependencies [fc60b2887]
+  - @uidu/form@2.2.8
+
 ## 4.2.8
 
 ### Patch Changes

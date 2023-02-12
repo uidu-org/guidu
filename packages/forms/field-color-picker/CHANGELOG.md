@@ -1,5 +1,13 @@
 # @uidu/field-color-picker
 
+## 3.0.17
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+- Updated dependencies [fc60b2887]
+  - @uidu/field-base@4.2.9
+
 ## 3.0.16
 
 ### Patch Changes

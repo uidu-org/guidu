@@ -1,5 +1,17 @@
 # @uidu/data-controls
 
+## 4.0.27
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+- Updated dependencies [fc60b2887]
+  - @uidu/data-manager@4.3.14
+  - @uidu/data-fields@2.1.34
+  - @uidu/select@2.2.8
+  - @uidu/form@2.2.8
+  - @uidu/data-views@3.0.26
+
 ## 4.0.26
 
 ### Patch Changes
