@@ -97,19 +97,19 @@ export default function DeviseForm({
 
   return (
     <>
-      <div className="mb-4">
+      <div tw="mb-4">
         <Link to={match.path}>
-          <ArrowLeft className="mr-2" size={18} />
+          <ArrowLeft tw="mr-2" size={18} />
           Indietro
         </Link>
       </div>
-      <div className="mb-4 text-center">
+      <div tw="mb-4 text-center">
         <h3>
           <FormattedMessage
             {...messages[`phone_${scope}_${step || 'phone'}_title`]}
           />
         </h3>
-        <p className="mb-0">
+        <p tw="mb-0">
           <FormattedMessage
             {...messages[`phone_${scope}_${step || 'phone'}_description`]}
           />
@@ -119,17 +119,17 @@ export default function DeviseForm({
         form={form}
         handleSubmit={signUp}
         footerRenderer={({ canSubmit, loading }) => [
-          <div className="d-flex justify-content-between">
+          <div tw="flex justify-between">
             <FormSubmit
-              className="btn-primary btn-block"
+              appearance="primary"
+              shouldFitContainer
               canSubmit={canSubmit}
               loading={loading}
-              label={
-                <FormattedMessage
-                  {...messages[`phone_${scope}_${step || 'phone'}_cta`]}
-                />
-              }
-            />
+            >
+              <FormattedMessage
+                {...messages[`phone_${scope}_${step || 'phone'}_cta`]}
+              />
+            </FormSubmit>
           </div>,
         ]}
       >

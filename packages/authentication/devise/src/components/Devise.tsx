@@ -14,32 +14,18 @@ export default function Devise({
 
   return (
     <Switch>
-      <Route
-        exact
-        path={routes.passwords}
-        render={routeProps => (
-          <PasswordRecovery {...rest} routes={routes} {...routeProps} />
-        )}
-      />
-      <Route
-        exact
-        path={`${routes.passwords}/edit`}
-        render={routeProps => (
-          <PasswordReset {...rest} routes={routes} {...routeProps} />
-        )}
-      />
+      <Route exact path={routes.passwords}>
+        <PasswordRecovery {...rest} routes={routes} />
+      </Route>
+      <Route exact path={`${routes.passwords}/edit`}>
+        <PasswordReset {...rest} routes={routes} />
+      </Route>
       <Route
         // exact
         path={match.path}
-        render={routeProps => (
-          <Providers
-            {...rest}
-            {...routeProps}
-            routes={routes}
-            scope={defaultView}
-          />
-        )}
-      />
+      >
+        <Providers {...rest} routes={routes} scope={defaultView} />
+      </Route>
     </Switch>
   );
 }
