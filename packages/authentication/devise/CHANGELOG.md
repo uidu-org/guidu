@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 1.3.0
+
+### Minor Changes
+
+- c2d079867: Fix existing email behaviour
+
 ## 1.2.0
 
 ### Minor Changes
