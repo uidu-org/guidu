@@ -12,9 +12,9 @@
     "@babel/runtime": "^7.20.13",
     "@uidu/docs": "^0.5.25",
     "@uppy/aws-s3": "^3.0.5",
-    "@uppy/core": "^3.0.5",
-    "@uppy/dashboard": "^3.2.1",
-    "@uppy/xhr-upload": "^3.0.4",
+    "@uppy/core": "^3.0.6",
+    "@uppy/dashboard": "^3.2.2",
+    "@uppy/xhr-upload": "^3.1.0",
     "react-dropzone": "^14.2.3",
     "tslib": "^2.5.0"
   },

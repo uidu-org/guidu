@@ -27,7 +27,7 @@
     "react-intl": "^6.2.8",
     "react-router-dom": "^5.3.4",
     "styled-components": "^5.3.6",
-    "swiper": "^9.0.4"
+    "swiper": "^9.0.5"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.25"
