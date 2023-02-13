@@ -1,5 +1,11 @@
 # @uidu/field-downshift
 
+## 2.2.0
+
+### Minor Changes
+
+- d51090398: Default background for downshift components
+
 ## 2.1.8
 
 ### Patch Changes
