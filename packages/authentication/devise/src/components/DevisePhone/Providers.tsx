@@ -102,6 +102,7 @@ export default function Providers(props: DeviseProps) {
         setCurrentUser(model.user);
         swiper.update();
         swiper.updateAutoHeight(500);
+        return model.user;
       }
       return update(model.user).then(() =>
         history.push(
@@ -162,7 +163,16 @@ export default function Providers(props: DeviseProps) {
                   className="d-flex align-items-center justify-content-between"
                 >
                   <span>Inserisci il tuo numero di cellulare</span>
-                  {exist && <span onClick={() => setExist(false)}>Edit</span>}
+                  {exist && (
+                    <span
+                      onClick={() => {
+                        setExist(false);
+                        setHasSubmitted(false);
+                      }}
+                    >
+                      Edit
+                    </span>
+                  )}
                 </label>
                 <FieldPhone
                   addonsBefore={[

@@ -112,6 +112,7 @@ export default function Providers(props: DeviseProps) {
         setCurrentUser(model.user);
         swiper.update();
         swiper.updateAutoHeight(500);
+        return model.user;
       }
       return update(model.user).then(() =>
         history.push(
@@ -192,7 +193,14 @@ export default function Providers(props: DeviseProps) {
                 >
                   <span>Inserisci la tua email</span>
                   {exist && (
-                    <span onClick={() => setState({ exist: false })}>Edit</span>
+                    <span
+                      onClick={() => {
+                        setExist(false);
+                        setHasSubmitted(false);
+                      }}
+                    >
+                      Edit
+                    </span>
                   )}
                 </label>
                 <FieldText
