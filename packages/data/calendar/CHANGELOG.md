@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.4.29
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+
 ## 0.4.28
 
 ### Patch Changes

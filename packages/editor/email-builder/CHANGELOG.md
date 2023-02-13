@@ -1,5 +1,15 @@
 # @uidu/email-builder
 
+## 0.2.16
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+- Updated dependencies [fc60b2887]
+  - @uidu/select@2.2.8
+  - @uidu/form@2.2.8
+  - @uidu/field-number@2.0.35
+
 ## 0.2.15
 
 ### Patch Changes

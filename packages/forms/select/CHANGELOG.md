@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 2.2.8
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+- Updated dependencies [fc60b2887]
+  - @uidu/field-base@4.2.9
+
 ## 2.2.7
 
 ### Patch Changes

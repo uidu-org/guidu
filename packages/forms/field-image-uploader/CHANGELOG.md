@@ -1,5 +1,14 @@
 # @uidu/field-image-uploader
 
+## 3.0.34
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+- Updated dependencies [fc60b2887]
+  - @uidu/field-base@4.2.9
+  - @uidu/form@2.2.8
+
 ## 3.0.33
 
 ### Patch Changes

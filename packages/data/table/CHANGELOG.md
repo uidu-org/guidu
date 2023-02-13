@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 3.5.5
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+- Updated dependencies [fc60b2887]
+  - @uidu/data-manager@4.3.14
+  - @uidu/data-fields@2.1.34
+
 ## 3.5.4
 
 ### Patch Changes

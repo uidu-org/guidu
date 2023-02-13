@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.1.5
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+
 ## 2.1.4
 
 ### Patch Changes

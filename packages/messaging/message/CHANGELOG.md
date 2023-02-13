@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.5.76
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+- Updated dependencies [fc60b2887]
+  - @uidu/media-viewer@0.6.1
+  - @uidu/media-card@0.8.12
+
 ## 0.5.75
 
 ### Patch Changes

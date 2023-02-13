@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 2.1.42
+
+### Patch Changes
+
+- fc60b2887: Bump dependencies
+- Updated dependencies [fc60b2887]
+  - @uidu/data-fields@2.1.34
+  - @uidu/table@3.5.5
+
 ## 2.1.41
 
 ### Patch Changes
