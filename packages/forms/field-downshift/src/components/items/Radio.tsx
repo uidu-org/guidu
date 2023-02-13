@@ -31,8 +31,8 @@ export default function Checkbox({
       </Circle>
 
       <div>
-        <p>{item.name}</p>
-        {item.description && <p tw="text-gray-500">{item.description}</p>}
+        <p tw="mb-0">{item.name}</p>
+        {item.description && <p tw="text-gray-500 mb-0">{item.description}</p>}
       </div>
     </button>
   );

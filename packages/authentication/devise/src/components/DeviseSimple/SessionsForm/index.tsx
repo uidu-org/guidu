@@ -41,9 +41,7 @@ export default function SessionsForm(props) {
   const { routes, signIn } = props;
   const form = useForm({});
 
-  const handleSubmit = async (model) => {
-    return signIn(model);
-  };
+  const handleSubmit = async (model) => signIn(model);
 
   return (
     <>

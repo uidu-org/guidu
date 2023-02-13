@@ -25,8 +25,8 @@ export default function Checkbox({
         {isSelected && <CheckIcon tw="h-3.5 w-3.5 text-white" />}
       </Square>
       <div>
-        <p>{item.name}</p>
-        {item.description && <p tw="text-gray-500">{item.description}</p>}
+        <p tw="mb-0">{item.name}</p>
+        {item.description && <p tw="text-gray-500 mb-0">{item.description}</p>}
       </div>
     </button>
   );

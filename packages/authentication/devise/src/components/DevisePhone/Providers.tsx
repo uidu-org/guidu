@@ -74,6 +74,7 @@ export default function Providers(props: DeviseProps) {
 
   const [currentUser, setCurrentUser] = useState(props.currentUser);
   const [exist, setExist] = useState(false);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const activeSlideByRoute = useCallback(
     ({ pathname }) => {
@@ -94,6 +95,7 @@ export default function Providers(props: DeviseProps) {
     if (exist) {
       return signIn(model);
     }
+    setHasSubmitted(true);
     return checkExistence(model.user.phone).then((response) => {
       if (response.data.exists) {
         setExist(true);
@@ -232,7 +234,9 @@ export default function Providers(props: DeviseProps) {
         </SwiperSlide>
         <SwiperSlide>
           <div className="p-3">
-            <DeviseForm {...props} scope="registrations" />
+            {hasSubmitted && !exist && (
+              <DeviseForm {...props} scope="registrations" />
+            )}
           </div>
         </SwiperSlide>
       </Swiper>

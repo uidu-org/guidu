@@ -7,6 +7,7 @@ import AnimateHeight from 'react-animate-height';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
+import { DeviseProps } from '../types';
 import DeviseForm from './DeviseForm';
 
 export const messages = defineMessages({
@@ -61,7 +62,7 @@ export const messages = defineMessages({
   },
 });
 
-export default function Providers(props) {
+export default function Providers(props: DeviseProps) {
   const {
     providers = [],
     currentUser: propCurrentUser,
@@ -75,13 +76,15 @@ export default function Providers(props) {
     additionalSignInInfo: AdditionalSignInInfo,
   } = props;
   const [swiper, setSwiper] = useState<SwiperRef['swiper'] | null>(null);
+  const [currentUser, setCurrentUser] = useState(propCurrentUser);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
   const passwordField = useRef();
   const location = useLocation();
   const history = useHistory();
 
   const form = useForm({});
 
-  const [currentUser, setCurrentUser] = useState(propCurrentUser);
   const [exist, setExist] = useState(false);
 
   const activeSlideByRoute = useCallback(
@@ -102,6 +105,7 @@ export default function Providers(props) {
     if (exist) {
       return signIn(model);
     }
+    setHasSubmitted(true);
     return checkExistence(model.user.email).then((response) => {
       if (response.data.exists) {
         setExist(true);
@@ -119,12 +123,11 @@ export default function Providers(props) {
     });
   };
 
-  const update = async (model) => {
+  const update = async (model) =>
     setCurrentUser((prev) => ({
       ...prev,
       ...model,
     }));
-  };
 
   return (
     <div tw="">
@@ -259,7 +262,9 @@ export default function Providers(props) {
         </SwiperSlide>
         <SwiperSlide>
           <div tw="p-3">
-            <DeviseForm {...(props as any)} scope="registrations" />
+            {hasSubmitted && !exist && (
+              <DeviseForm {...props} scope="registrations" />
+            )}
           </div>
         </SwiperSlide>
       </Swiper>

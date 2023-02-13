@@ -7359,7 +7359,6 @@ __metadata:
     "@uidu/field-text": ^2.0.8
     "@uidu/form": ^2.2.7
     "@uidu/shell": ^2.1.47
-    "@uidu/slider": ^2.1.3
     "@uidu/spinner": ^0.5.24
     query-string: ^7.1.3
     react: ^18.2.0
@@ -8937,7 +8936,6 @@ __metadata:
     "@uidu/field-base": ^4.2.9
     "@uidu/form": ^2.2.8
     "@uidu/section-message": 0.6.30
-    "@uidu/slider": ^2.1.5
     "@uidu/theme": ^0.6.29
     axios: ^1.3.2
     react: ^18.2.0
@@ -9256,7 +9254,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/slider@^2.1.3, @uidu/slider@^2.1.5, @uidu/slider@workspace:packages/core/slider":
+"@uidu/slider@workspace:packages/core/slider":
   version: 0.0.0-use.local
   resolution: "@uidu/slider@workspace:packages/core/slider"
   dependencies:
@@ -9344,7 +9342,6 @@ __metadata:
     "@uidu/form": ^2.2.7
     "@uidu/payments": ^1.5.25
     "@uidu/shell": ^2.1.47
-    "@uidu/slider": ^2.1.3
     "@uidu/spinner": ^0.5.24
     "@uidu/stepper": ^0.4.30
     dayjs: ^1.11.7
