@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.5.27
+
+### Patch Changes
+
+- 691713feb: Fix autoslide to second slide
+
 ## 1.5.26
 
 ### Patch Changes
