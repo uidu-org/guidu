@@ -7,6 +7,7 @@ import { FacebookProvider } from 'react-facebook';
 import { Smartphone } from 'react-feather';
 import { IntlProvider } from 'react-intl';
 import { HashRouter as Router, Route } from 'react-router-dom';
+import 'swiper/css';
 import { DevisePhone, DeviseWrapper } from '../src';
 
 function AdditionalSignInInfo({ currentUser }) {
@@ -31,6 +32,7 @@ export default function App() {
             path="/"
             render={(routeProps) => (
               <DeviseWrapper
+                tw="w-full overflow-hidden"
                 header={
                   <div className="mb-4 d-flex justify-content-center w-100">
                     <Avatar

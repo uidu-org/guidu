@@ -1,6 +1,6 @@
 import FieldText from '@uidu/field-text';
-import Form, { FormSubmit } from '@uidu/form';
-import React, { PureComponent } from 'react';
+import Form, { FormSubmit, useForm } from '@uidu/form';
+import React from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
@@ -22,53 +22,51 @@ const messages = defineMessages({
   },
 });
 
-export default class PasswordlessSessionsForm extends PureComponent<any, any> {
-  handleSubmit = async (model) => {
-    const { requestPasswordlessToken } = this.props;
+export default function PasswordlessSessionsForm(props) {
+  const { routes, requestPasswordlessToken } = props;
+  const form = useForm({});
+
+  const handleSubmit = async (model) => {
     return requestPasswordlessToken(model);
   };
 
-  render() {
-    const { routes } = this.props;
-    return (
-      <>
-        <div className="mb-4 text-center">
-          <h3>
-            <FormattedMessage {...messages.passwordless_sessions_title} />
-          </h3>
-          <p className="mb-0">
-            <FormattedMessage {...messages.passwordless_sessions_description} />
-          </p>
-        </div>
-        <Form
-          handleSubmit={this.handleSubmit}
-          footerRenderer={({ canSubmit, loading }) => [
-            <FormSubmit
-              className="btn-primary w-100"
-              canSubmit={canSubmit}
-              loading={loading}
-              label={
-                <FormattedMessage
-                  {...messages.passwordless_sessions_primary_cta}
-                />
-              }
-            />,
-          ]}
-        >
-          <FieldText
-            type="email"
+  return (
+    <>
+      <div className="mb-4 text-center">
+        <h3>
+          <FormattedMessage {...messages.passwordless_sessions_title} />
+        </h3>
+        <p className="mb-0">
+          <FormattedMessage {...messages.passwordless_sessions_description} />
+        </p>
+      </div>
+      <Form
+        form={form}
+        handleSubmit={handleSubmit}
+        footerRenderer={({ canSubmit, loading }) => [
+          <FormSubmit
+            className="btn-primary w-100"
+            canSubmit={canSubmit}
+            loading={loading}
             label={
               <FormattedMessage
-                {...messages.passwordless_sessions_email_label}
+                {...messages.passwordless_sessions_primary_cta}
               />
             }
-            name="user[email]"
-            autoComplete="email"
-            autoCorrect="off"
-            required
-          />
-        </Form>
-      </>
-    );
-  }
+          />,
+        ]}
+      >
+        <FieldText
+          type="email"
+          label={
+            <FormattedMessage {...messages.passwordless_sessions_email_label} />
+          }
+          name="user[email]"
+          autoComplete="email"
+          autoCorrect="off"
+          required
+        />
+      </Form>
+    </>
+  );
 }

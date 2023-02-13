@@ -1,13 +1,12 @@
 import Checkbox from '@uidu/checkbox';
 import FieldPassword from '@uidu/field-password';
 import FieldText from '@uidu/field-text';
-import Form, { FormSubmit } from '@uidu/form';
-import Slider, { Slide } from '@uidu/slider';
-import React, { PureComponent } from 'react';
+import Form, { FormSubmit, useForm } from '@uidu/form';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { defineMessages, FormattedMessage } from 'react-intl';
-import { Link } from 'react-router-dom';
-import Swiper from 'swiper';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import DeviseForm from './DeviseForm';
 
 export const messages = defineMessages({
@@ -62,52 +61,55 @@ export const messages = defineMessages({
   },
 });
 
-export default class Providers extends PureComponent<any, any> {
-  private slider: React.RefObject<Swiper> = React.createRef();
-  private passwordField = React.createRef();
+export default function Providers(props) {
+  const {
+    providers = [],
+    currentUser: propCurrentUser,
+    routes,
+    checkExistence,
+    signIn,
+    scope,
+    authSignIn,
+    onAuthSignIn,
+    onAuthSignInError,
+    additionalSignInInfo: AdditionalSignInInfo,
+  } = props;
+  const [swiper, setSwiper] = useState<SwiperRef['swiper'] | null>(null);
+  const passwordField = useRef();
+  const location = useLocation();
+  const history = useHistory();
 
-  static defaultProps = {
-    providers: [],
-  };
+  const form = useForm({});
 
-  constructor(props) {
-    super(props);
-    const { currentUser } = props;
-    this.state = {
-      currentUser,
-      exist: false,
-    };
-  }
+  const [currentUser, setCurrentUser] = useState(propCurrentUser);
+  const [exist, setExist] = useState(false);
 
-  componentDidMount() {
-    const { location } = this.props;
-    this.slider.current.slideTo(this.activeSlideByRoute(location));
-  }
+  const activeSlideByRoute = useCallback(
+    ({ pathname }) => {
+      if (pathname === routes.registrations) {
+        return 1;
+      }
+      return 0;
+    },
+    [routes],
+  );
 
-  UNSAFE_componentWillReceiveProps({ location }) {
-    this.slider.current.slideTo(this.activeSlideByRoute(location));
-  }
+  useEffect(() => {
+    swiper?.slideTo(activeSlideByRoute(location), 300);
+  }, [location, swiper, activeSlideByRoute]);
 
-  handleSubmit = (model) => {
-    const { routes, checkExistence, history, signIn } = this.props;
-    const { exist } = this.state;
+  const handleSubmit = (model) => {
     if (exist) {
       return signIn(model);
     }
     return checkExistence(model.user.email).then((response) => {
       if (response.data.exists) {
-        return this.setState(
-          {
-            exist: true,
-            currentUser: model.user,
-          },
-          () => {
-            this.slider.current.update();
-            this.slider.current.updateAutoHeight(500);
-          },
-        );
+        setExist(true);
+        setCurrentUser(model.user);
+        swiper.update();
+        swiper.updateAutoHeight(500);
       }
-      return this.update(model.user).then(() =>
+      return update(model.user).then(() =>
         history.push(
           `${routes.registrations}?email=${encodeURIComponent(
             model.user.email,
@@ -117,181 +119,150 @@ export default class Providers extends PureComponent<any, any> {
     });
   };
 
-  update = async (model) => {
-    const { currentUser } = this.state;
-    await this.setState({
-      currentUser: {
-        ...currentUser,
-        ...model,
-      },
-    });
-    return this.state.currentUser;
+  const update = async (model) => {
+    setCurrentUser((prev) => ({
+      ...prev,
+      ...model,
+    }));
   };
 
-  activeSlideByRoute = ({ pathname }) => {
-    const { routes } = this.props;
-    if (pathname === routes.registrations) {
-      return 1;
-    }
-    return 0;
-  };
-
-  render() {
-    const {
-      routes,
-      scope,
-      authSignIn,
-      onAuthSignIn,
-      onAuthSignInError,
-      history,
-      location,
-      providers,
-      additionalSignInInfo: AdditionalSignInInfo,
-    } = this.props;
-
-    const { currentUser, exist } = this.state;
-
-    return (
-      <div>
-        <Slider
-          options={{
-            autoHeight: true,
-            slidesPerView: 1,
-            allowTouchMove: false,
-            simulateTouch: false,
-            initialSlide: this.activeSlideByRoute(location), // step ? this.slideNames().indexOf(step) : 0,
-          }}
-          ref={this.slider}
-        >
-          <Slide>
-            <div className="p-3">
-              <div className="text-center">
-                <h3>
-                  <FormattedMessage {...messages[`${scope}_title`]} />
-                </h3>
-                <p>
-                  <FormattedMessage {...messages[`${scope}_description`]} />
-                </p>
-              </div>
-              {providers.map(
-                ({ name, label, component: Component, ...rest }) => (
-                  <Component
-                    onCompleted={(auth) =>
-                      authSignIn(auth, name).then((response) => {
-                        if (response.currentUser) {
-                          return null;
-                        }
-                        return history.push(`${routes.registrations}/email`);
-                      })
+  return (
+    <div tw="">
+      <Swiper
+        autoHeight
+        slidesPerView={1}
+        allowTouchMove={false}
+        simulateTouch={false}
+        initialSlide={activeSlideByRoute(location)}
+        onInit={setSwiper}
+      >
+        <SwiperSlide>
+          <div tw="p-3">
+            <div tw="text-center">
+              <h3>
+                <FormattedMessage {...messages[`${scope}_title`]} />
+              </h3>
+              <p>
+                <FormattedMessage {...messages[`${scope}_description`]} />
+              </p>
+            </div>
+            {providers.map(({ name, label, component: Component, ...rest }) => (
+              <Component
+                onCompleted={(auth) =>
+                  authSignIn(auth, name).then((response) => {
+                    if (response.currentUser) {
+                      return null;
                     }
-                    onError={onAuthSignInError}
-                    label={label}
-                    {...rest}
-                  />
-                ),
-              )}
-              {providers.length > 0 && (
-                <h6 className="my-4 text-center small text-muted text-uppercase">
-                  Oppure
-                </h6>
-              )}
-              <Form
-                handleSubmit={this.handleSubmit}
-                footerRenderer={({ canSubmit, loading }) => (
-                  <div className="d-flex align-items-center justify-content-between">
-                    <FormSubmit
-                      className="btn-primary w-100"
-                      canSubmit={canSubmit}
-                      loading={loading}
-                      label="Avanti"
-                    />
-                  </div>
-                )}
-              >
-                <div className="form-group">
-                  <label
-                    htmlFor="user_email"
-                    className="d-flex align-items-center justify-content-between"
+                    return history.push(`${routes.registrations}/email`);
+                  })
+                }
+                onError={onAuthSignInError}
+                label={label}
+                {...rest}
+              />
+            ))}
+            {providers.length > 0 && (
+              <h6 tw="my-4 text-center text-sm text-gray-500 uppercase">
+                Oppure
+              </h6>
+            )}
+            <Form
+              form={form}
+              handleSubmit={handleSubmit}
+              footerRenderer={({ canSubmit, loading }) => (
+                <div tw="flex items-center justify-between">
+                  <FormSubmit
+                    shouldFitContainer
+                    appearance="primary"
+                    canSubmit={canSubmit}
+                    loading={loading}
                   >
-                    <span>Inserisci la tua email</span>
-                    {exist && (
-                      <span onClick={() => this.setState({ exist: false })}>
-                        Edit
-                      </span>
-                    )}
-                  </label>
-                  <FieldText
-                    type="email"
-                    layout="elementOnly"
-                    name="user[email]"
-                    autoComplete="email"
-                    autoCorrect="off"
-                    required
-                    disabled={exist}
-                  />
+                    Avanti
+                  </FormSubmit>
                 </div>
-                <AnimateHeight
-                  height={exist ? 'auto' : 0}
-                  onHeightAnimationEnd={() => {
-                    this.slider.current.updateAutoHeight(300);
-                  }}
+              )}
+            >
+              <div tw="mb-4">
+                <label
+                  htmlFor="user_email"
+                  tw="flex items-center justify-between"
                 >
+                  <span>Inserisci la tua email</span>
                   {exist && (
-                    <>
-                      <div className="form-group">
-                        <label
-                          htmlFor="new-password"
-                          className="d-flex align-items-center justify-content-between"
-                        >
-                          Inserisci la tua password
-                          <Link
-                            to={`${routes.passwords}?email=${encodeURIComponent(
-                              currentUser.email,
-                            )}`}
-                          >
-                            <FormattedMessage
-                              {...messages.sessions_forgot_password}
-                            />
-                          </Link>
-                        </label>
-                        <FieldPassword
-                          layout="elementOnly"
-                          measurePasswordStrength={false}
-                          autoComplete="current-password"
-                          name="user[password]"
-                          type="password"
-                          id="new-password"
-                          validations="minLength:8"
-                          required
-                        />
-                      </div>
-                      <div className="form-group">
-                        <Checkbox
-                          layout="elementOnly"
-                          name="user[remember_me]"
-                          label={
-                            <FormattedMessage
-                              {...messages.simple_sessions_remember_me_label}
-                            />
-                          }
-                        />
-                      </div>
-                      {AdditionalSignInInfo && (
-                        <AdditionalSignInInfo currentUser={currentUser} />
-                      )}
-                    </>
+                    <span onClick={() => setState({ exist: false })}>Edit</span>
                   )}
-                </AnimateHeight>
-              </Form>
-            </div>
-          </Slide>
-          <Slide>
-            <div className="p-3">
-              <DeviseForm {...(this.props as any)} scope="registrations" />
-            </div>
-          </Slide>
-        </Slider>
-      </div>
-    );
-  }
+                </label>
+                <FieldText
+                  type="email"
+                  layout="elementOnly"
+                  name="user[email]"
+                  autoComplete="email"
+                  autoCorrect="off"
+                  required
+                  disabled={exist}
+                />
+              </div>
+              <AnimateHeight
+                height={exist ? 'auto' : 0}
+                onHeightAnimationEnd={() => {
+                  swiper.updateAutoHeight(300);
+                }}
+              >
+                {exist && (
+                  <>
+                    <div tw="mb-4">
+                      <label
+                        htmlFor="new-password"
+                        tw="flex items-center justify-between"
+                      >
+                        Inserisci la tua password
+                        <Link
+                          to={`${routes.passwords}?email=${encodeURIComponent(
+                            currentUser.email,
+                          )}`}
+                        >
+                          <FormattedMessage
+                            {...messages.sessions_forgot_password}
+                          />
+                        </Link>
+                      </label>
+                      <FieldPassword
+                        layout="elementOnly"
+                        measurePasswordStrength={false}
+                        autoComplete="current-password"
+                        name="user[password]"
+                        type="password"
+                        id="new-password"
+                        validations="minLength:8"
+                        required
+                      />
+                    </div>
+                    <div tw="mb-4">
+                      <Checkbox
+                        layout="elementOnly"
+                        name="user[remember_me]"
+                        label={
+                          <FormattedMessage
+                            {...messages.simple_sessions_remember_me_label}
+                          />
+                        }
+                      />
+                    </div>
+                    {AdditionalSignInInfo && (
+                      <AdditionalSignInInfo currentUser={currentUser} />
+                    )}
+                  </>
+                )}
+              </AnimateHeight>
+            </Form>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div tw="p-3">
+            <DeviseForm {...(props as any)} scope="registrations" />
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  );
 }

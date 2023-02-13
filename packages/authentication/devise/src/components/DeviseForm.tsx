@@ -1,9 +1,9 @@
-import Form, { FormSubmit } from '@uidu/form';
+import Form, { FormSubmit, useForm } from '@uidu/form';
 import queryString from 'query-string';
 import React from 'react';
 import { ArrowLeft } from 'react-feather';
 import { defineMessages, FormattedMessage } from 'react-intl';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useRouteMatch } from 'react-router-dom';
 
 export const messages = defineMessages({
   email_sessions_email_title: {
@@ -61,17 +61,20 @@ export const messages = defineMessages({
 });
 
 export default function DeviseForm({
-  match: {
-    params: { step },
-  },
   scope,
-  match,
   children,
   signUp,
-  location,
+}: {
+  scope: 'sessions' | 'registrations';
+  children: (props: { email: string }) => React.ReactNode;
+  signUp: (data: any) => void;
 }) {
   // private recaptchaInstance = React.createRef();
-  const form = React.createRef();
+  const form = useForm();
+  const location = useLocation();
+  const match = useRouteMatch();
+
+  const step = match?.params?.step;
 
   // handleSubmit = async () => {
   //   (this.recaptchaInstance.current as any).execute();
@@ -94,31 +97,32 @@ export default function DeviseForm({
 
   return (
     <>
-      <div className="mb-4">
+      <div tw="mb-4">
         <Link to={match.path}>
-          <ArrowLeft className="mr-2" size={18} />
+          <ArrowLeft tw="mr-2" size={18} />
           Indietro
         </Link>
       </div>
-      <div className="mb-4 text-center">
+      <div tw="mb-4 text-center">
         <h3>
           <FormattedMessage
             {...messages[`email_${scope}_${step || 'email'}_title`]}
           />
         </h3>
-        <p className="mb-0">
+        <p tw="mb-0">
           <FormattedMessage
             {...messages[`email_${scope}_${step || 'email'}_description`]}
           />
         </p>
       </div>
       <Form
-        ref={form}
+        form={form}
         handleSubmit={signUp}
         footerRenderer={({ canSubmit, loading }) => [
-          <div className="d-flex justify-content-between">
+          <div tw="flex justify-between">
             <FormSubmit
-              className="btn-primary btn-block"
+              appearance="primary"
+              shouldFitContainer
               canSubmit={canSubmit}
               loading={loading}
               label={
