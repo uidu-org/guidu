@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 2.2.7
+
+### Patch Changes
+
+- 8bab3d27b: Bump deps
+- Updated dependencies [8bab3d27b]
+  - @uidu/media-core@1.4.2
+
 ## 2.2.6
 
 ### Patch Changes
