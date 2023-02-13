@@ -16,7 +16,7 @@ export default function Checkbox({
       type="button"
       key={item.id}
       css={[
-        tw`flex flex-row items-center justify-start w-full px-4 py-3 mb-2 space-x-3 text-left border rounded`,
+        tw`flex flex-row items-center justify-start w-full px-4 py-3 mb-2 space-x-3 text-left border rounded [background:rgb(var(--body-on-primary-bg))]`,
         !!isSelected && tw`text-white [background:rgb(var(--brand-primary))]`,
       ]}
       onClick={(e) => {
