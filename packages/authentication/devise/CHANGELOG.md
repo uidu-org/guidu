@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 1.1.0
+
+### Minor Changes
+
+- 691713feb: Fix autoslide to second slide
+
 ## 1.0.0
 
 ### Major Changes

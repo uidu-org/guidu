@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.5.23
+
+### Patch Changes
+
+- 691713feb: Fix autoslide to second slide
+- Updated dependencies [691713feb]
+  - @uidu/payments@1.5.27
+
 ## 0.5.22
 
 ### Patch Changes
