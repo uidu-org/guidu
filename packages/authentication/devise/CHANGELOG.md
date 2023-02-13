@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 1.2.0
+
+### Minor Changes
+
+- 2a3659a40: Better slides handling
+
 ## 1.1.0
 
 ### Minor Changes
