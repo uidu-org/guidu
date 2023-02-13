@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 1.0.0
+
+### Major Changes
+
+- 9d0481171: Migrate to functional components, drop @uidu/slider
+
 ## 0.7.33
 
 ### Patch Changes
