@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.2.0
+
+### Minor Changes
+
+- 08c34597e: Add Activity provider and link picker
+
 ## 0.1.51
 
 ### Patch Changes

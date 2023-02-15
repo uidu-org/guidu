@@ -1,5 +1,16 @@
 # @uidu/editor-common
 
+## 2.6.0
+
+### Minor Changes
+
+- 08c34597e: Add Activity provider and link picker
+
+### Patch Changes
+
+- Updated dependencies [08c34597e]
+  - @uidu/adf-utils@2.2.2
+
 ## 2.5.7
 
 ### Patch Changes

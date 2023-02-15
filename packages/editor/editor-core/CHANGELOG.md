@@ -1,5 +1,23 @@
 # @uidu/editor-core
 
+## 2.11.0
+
+### Minor Changes
+
+- 08c34597e: Add Activity provider and link picker
+
+### Patch Changes
+
+- Updated dependencies [08c34597e]
+  - @uidu/editor-common@2.6.0
+  - @uidu/activity-provider@0.1.1
+  - @uidu/adf-utils@2.2.2
+  - @uidu/field-base@4.2.10
+  - @uidu/media-card@0.8.14
+  - @uidu/menu@0.8.11
+  - @uidu/field-date@2.1.16
+  - @uidu/select@2.2.9
+
 ## 2.10.8
 
 ### Patch Changes

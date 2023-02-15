@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 3.5.6
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+- Updated dependencies [08c34597e]
+  - @uidu/menu@0.8.11
+  - @uidu/data-manager@4.3.15
+
 ## 3.5.5
 
 ### Patch Changes

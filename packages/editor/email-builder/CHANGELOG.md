@@ -1,5 +1,15 @@
 # @uidu/email-builder
 
+## 0.2.18
+
+### Patch Changes
+
+- Updated dependencies [08c34597e]
+  - @uidu/editor-core@2.11.0
+  - @uidu/email-renderer@1.3.4
+  - @uidu/field-number@2.0.36
+  - @uidu/select@2.2.9
+
 ## 0.2.17
 
 ### Patch Changes

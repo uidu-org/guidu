@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.2.10
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+
 ## 4.2.9
 
 ### Patch Changes

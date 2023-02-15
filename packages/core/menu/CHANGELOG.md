@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.8.11
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+
 ## 0.8.10
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/field-date
 
+## 2.0.42
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+- Updated dependencies [08c34597e]
+  - @uidu/field-base@4.2.10
+  - @uidu/select@2.2.9
+
 ## 2.0.41
 
 ### Patch Changes

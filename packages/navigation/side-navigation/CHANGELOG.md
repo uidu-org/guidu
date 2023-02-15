@@ -1,5 +1,12 @@
 # @uidu/navigation
 
+## 1.2.10
+
+### Patch Changes
+
+- Updated dependencies [08c34597e]
+  - @uidu/menu@0.8.11
+
 ## 1.2.9
 
 ### Patch Changes

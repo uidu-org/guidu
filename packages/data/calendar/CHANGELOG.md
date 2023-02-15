@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.4.30
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+
 ## 0.4.29
 
 ### Patch Changes

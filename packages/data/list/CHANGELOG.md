@@ -1,5 +1,11 @@
 # @uidu/list
 
+## 3.1.19
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+
 ## 3.1.18
 
 ### Patch Changes

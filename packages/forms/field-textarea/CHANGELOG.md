@@ -1,5 +1,13 @@
 # @uidu/field-textarea
 
+## 2.0.12
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+- Updated dependencies [08c34597e]
+  - @uidu/field-base@4.2.10
+
 ## 2.0.11
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/email-renderer
 
+## 1.3.4
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+
 ## 1.3.3
 
 ### Patch Changes

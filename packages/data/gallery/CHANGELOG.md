@@ -1,5 +1,12 @@
 # @uidu/gallery
 
+## 2.0.25
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+  - @uidu/data-controls@4.0.28
+
 ## 2.0.24
 
 ### Patch Changes

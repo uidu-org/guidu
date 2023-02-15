@@ -1,5 +1,18 @@
 # @uidu/renderer
 
+## 2.4.0
+
+### Minor Changes
+
+- 08c34597e: Add Activity provider and link picker
+
+### Patch Changes
+
+- Updated dependencies [08c34597e]
+  - @uidu/editor-common@2.6.0
+  - @uidu/adf-utils@2.2.2
+  - @uidu/media-card@0.8.14
+
 ## 2.3.2
 
 ### Patch Changes

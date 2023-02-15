@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.14
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+
 ## 0.8.13
 
 ### Patch Changes
