@@ -1,5 +1,11 @@
 # @uidu/adf-utils
 
+## 2.2.2
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+
 ## 2.2.1
 
 ### Patch Changes

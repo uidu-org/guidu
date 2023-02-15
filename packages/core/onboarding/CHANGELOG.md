@@ -1,5 +1,11 @@
 # @uidu/onboarding
 
+## 1.3.24
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+
 ## 1.3.23
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @uidu/toggle
 
+## 2.0.36
+
+### Patch Changes
+
+- Updated dependencies [08c34597e]
+  - @uidu/field-base@4.2.10
+
 ## 2.0.35
 
 ### Patch Changes

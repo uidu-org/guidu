@@ -1,5 +1,14 @@
 # @uidu/field-file-uploader
 
+## 2.2.16
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+- Updated dependencies [08c34597e]
+  - @uidu/field-base@4.2.10
+  - @uidu/menu@0.8.11
+
 ## 2.2.15
 
 ### Patch Changes

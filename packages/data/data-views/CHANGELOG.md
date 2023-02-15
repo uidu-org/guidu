@@ -1,5 +1,14 @@
 # @uidu/data-views
 
+## 3.0.27
+
+### Patch Changes
+
+- @uidu/field-number@2.0.36
+- @uidu/data-manager@4.3.15
+- @uidu/select@2.2.9
+- @uidu/data-controls@4.0.28
+
 ## 3.0.26
 
 ### Patch Changes

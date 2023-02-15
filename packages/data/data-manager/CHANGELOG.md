@@ -1,5 +1,18 @@
 # @uidu/data-manager
 
+## 4.3.15
+
+### Patch Changes
+
+- Updated dependencies [08c34597e]
+  - @uidu/calendar@0.4.30
+  - @uidu/gallery@2.0.25
+  - @uidu/table@3.5.6
+  - @uidu/menu@0.8.11
+  - @uidu/list@3.1.19
+  - @uidu/data-controls@4.0.28
+  - @uidu/data-views@3.0.27
+
 ## 4.3.14
 
 ### Patch Changes

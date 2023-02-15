@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.5.78
+
+### Patch Changes
+
+- 08c34597e: Add Activity provider and link picker
+- Updated dependencies [08c34597e]
+  - @uidu/media-card@0.8.14
+  - @uidu/menu@0.8.11
+
 ## 0.5.77
 
 ### Patch Changes
