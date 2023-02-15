@@ -1,10 +1,10 @@
-import { ActivityProvider } from '@atlaskit/activity';
+import { ActivityProvider } from '@uidu/activity-provider';
 import {
   ErrorReportingHandler,
   ExtensionHandlers,
   ExtensionProvider,
   Providers,
-  Transformer,
+  Transformer
 } from '@uidu/editor-common';
 import { MentionProvider } from '@uidu/mentions';
 import { TaskDecisionProvider } from '@uidu/task-decision';

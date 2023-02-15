@@ -1,4 +1,4 @@
-import { ActivityItem, ActivityProvider } from '@atlaskit/activity';
+import { ActivityItem, ActivityProvider } from '@uidu/activity-provider';
 import * as React from 'react';
 import { KeyboardEvent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
@@ -187,7 +187,7 @@ class RecentLink extends React.Component<
     const { items } = this.state;
 
     if (items) {
-      const index = items.findIndex(item => item.objectId === objectId);
+      const index = items.findIndex((item) => item.objectId === objectId);
       this.setState({
         selectedIndex: index,
       });

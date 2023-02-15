@@ -1,6 +1,6 @@
 import UnlinkIcon from '@atlaskit/icon/glyph/editor/unlink';
 import OpenIcon from '@atlaskit/icon/glyph/shortcut';
-import { isSafeUrl } from '@uidu/adf-schema';
+import { isSafeUrl, LinkAttributes } from '@uidu/adf-schema';
 import { Mark } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
@@ -102,6 +102,7 @@ const handleBlur =
     }
   };
 
+// eslint-disable-next-line import/prefer-default-export
 export const getToolbarConfig: FloatingToolbarHandler = (
   state,
   { formatMessage },
@@ -133,7 +134,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
         const linkMark = node.marks.filter(
           (mark) => mark.type === state.schema.marks.link,
         );
-        const link = linkMark[0] && linkMark[0].attrs.href;
+        const link = linkMark[0] && (linkMark[0].attrs as LinkAttributes).href;
         const isValidUrl = isSafeUrl(link);
 
         const labelOpenLink = formatMessage(
@@ -211,7 +212,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
                 idx?: number,
               ):
                 | React.ComponentClass
-                | React.SFC
+                | React.FC
                 | React.ReactElement<any>
                 | null => {
                 if (!view) {
@@ -247,6 +248,8 @@ export const getToolbarConfig: FloatingToolbarHandler = (
           ],
         };
       }
+      default:
+        return undefined;
     }
   }
   return undefined;

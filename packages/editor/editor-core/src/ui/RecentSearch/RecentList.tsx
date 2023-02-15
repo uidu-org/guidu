@@ -1,27 +1,15 @@
-import { ActivityItem } from '@atlaskit/activity';
+import { ActivityItem } from '@uidu/activity-provider';
+import { MenuGroup, Section } from '@uidu/menu';
 import Spinner from '@uidu/spinner';
 import * as React from 'react';
 import { PureComponent } from 'react';
 import styled from 'styled-components';
 import RecentItem from './RecentItem';
 
-const Container = styled.div`
-  padding-top: 10px;
-`;
-
-const ListContainer = styled.div`
-  padding-top: 0;
-`;
-
 const SpinnerContainer = styled.div`
   text-align: center;
   min-height: 80px;
   margin-top: 30px;
-`;
-
-const List = styled.ul`
-  padding: 0;
-  list-style: none;
 `;
 
 export interface Props {
@@ -34,21 +22,16 @@ export interface Props {
 
 export default class RecentList extends PureComponent<Props, {}> {
   render() {
-    const {
-      onSelect,
-      onMouseMove,
-      items,
-      selectedIndex,
-      isLoading,
-    } = this.props;
+    const { onSelect, onMouseMove, items, selectedIndex, isLoading } =
+      this.props;
 
     if (isLoading) {
       return (
-        <Container>
+        <div>
           <SpinnerContainer>
-            <Spinner invertColor={true} size="medium" />
+            <Spinner invertColor size="medium" />
           </SpinnerContainer>
-        </Container>
+        </div>
       );
     }
 
@@ -57,8 +40,8 @@ export default class RecentList extends PureComponent<Props, {}> {
     }
 
     return (
-      <ListContainer>
-        <List>
+      <MenuGroup>
+        <Section isScrollable>
           {items.map((item, index) => (
             <RecentItem
               item={item}
@@ -68,8 +51,8 @@ export default class RecentList extends PureComponent<Props, {}> {
               key={item.objectId}
             />
           ))}
-        </List>
-      </ListContainer>
+        </Section>
+      </MenuGroup>
     );
   }
 }

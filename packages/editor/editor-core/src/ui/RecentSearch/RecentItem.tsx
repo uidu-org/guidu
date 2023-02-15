@@ -1,4 +1,5 @@
-import { ActivityItem } from '@atlaskit/activity';
+import { ActivityItem } from '@uidu/activity-provider';
+import { ButtonItem } from '@uidu/menu';
 import { colors } from '@uidu/theme';
 import * as React from 'react';
 import styled from 'styled-components';
@@ -15,24 +16,8 @@ const Container = styled.li`
   display: flex;
 `;
 
-const NameWrapper = styled.span`
-  overflow: hidden;
-`;
-
-export const Name = styled.div`
-  color: ${colors.N800};
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
-export const ContainerName = styled.div`
-  color: ${colors.N100};
-  font-size: 12px;
-`;
-
 const Icon = styled.span`
-  min-width: 16px;
+  width: 16px;
   margin-top: 3px;
   margin-right: 8px;
 `;
@@ -60,19 +45,19 @@ export default class RecentItem extends React.PureComponent<Props, {}> {
     const { item, selected } = this.props;
 
     return (
-      <Container
-        selected={selected}
-        onMouseMove={this.handleMouseMove}
+      <ButtonItem
+        isSelected={selected}
         onMouseDown={this.handleSelect}
+        onMouseMove={this.handleMouseMove}
+        iconBefore={
+          <Icon>
+            <img src={item.iconUrl} tw="h-4 w-4 m-0!" />
+          </Icon>
+        }
+        description={item.container}
       >
-        <Icon>
-          <img src={item.iconUrl} />
-        </Icon>
-        <NameWrapper>
-          <Name>{item.name}</Name>
-          <ContainerName>{item.container}</ContainerName>
-        </NameWrapper>
-      </Container>
+        {item.name}
+      </ButtonItem>
     );
   }
 }

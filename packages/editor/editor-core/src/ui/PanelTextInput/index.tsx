@@ -1,6 +1,6 @@
 import { browser } from '@uidu/editor-common';
+import { InputGroup, StyledInput } from '@uidu/field-base';
 import React, { FocusEvent, KeyboardEvent, PureComponent } from 'react';
-import { Input } from './styles';
 
 export interface Props {
   autoFocus?: boolean | FocusOptions;
@@ -71,20 +71,26 @@ export default class PanelTextInput extends PureComponent<Props, State> {
     const { placeholder, width, maxLength, testId, ariaLabel } = this.props;
     const { value } = this.state;
     return (
-      <Input
-        data-testid={testId || ''}
-        type="text"
-        placeholder={placeholder}
-        value={value}
-        onChange={this.handleChange}
-        onKeyDown={this.handleKeydown}
-        onMouseDown={this.onMouseDown}
-        onBlur={this.onBlur}
-        ref={this.handleRef}
-        width={width}
-        maxLength={maxLength}
-        aria-label={ariaLabel}
-      />
+      <InputGroup
+        addonsAfter={this.props.addonsAfter}
+        addonsBefore={this.props.addonsBefore}
+      >
+        <StyledInput
+          className={this.props.className}
+          data-testid={testId || ''}
+          type="text"
+          placeholder={placeholder}
+          value={value}
+          onChange={this.handleChange}
+          onKeyDown={this.handleKeydown}
+          onMouseDown={this.onMouseDown}
+          onBlur={this.onBlur}
+          ref={this.handleRef}
+          width={width}
+          maxLength={maxLength}
+          aria-label={ariaLabel}
+        />
+      </InputGroup>
     );
   }
 

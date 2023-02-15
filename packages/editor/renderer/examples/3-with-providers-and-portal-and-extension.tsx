@@ -3,11 +3,6 @@ import RendererDemo from './helper/RendererDemo';
 
 export default function Example() {
   return (
-    <RendererDemo
-      withProviders={true}
-      withPortal={true}
-      withExtension={true}
-      serializer="react"
-    />
+    <RendererDemo withProviders withPortal withExtension serializer="react" />
   );
 }

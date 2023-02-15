@@ -19,7 +19,7 @@ import {
   pluginKey as editorDisabledPluginKey,
 } from '../editor-disabled';
 import { FloatingToolbarConfig, FloatingToolbarHandler } from './types';
-import { ToolbarLoader } from './ui/ToolbarLoader';
+import Toolbar from './ui/Toolbar';
 
 type ConfigWithNodeInfo = {
   config: FloatingToolbarConfig | undefined;
@@ -172,7 +172,7 @@ const floatingToolbarPlugin = (): EditorPlugin => ({
               boundariesElement={popupsBoundariesElement}
               scrollableElement={popupsScrollableElement}
             >
-              <ToolbarLoader
+              <Toolbar
                 target={targetRef}
                 items={toolbarItems}
                 node={floatingToolbarState.node}
@@ -232,12 +232,8 @@ function floatingToolbarPluginFactory(options: {
   reactContext: () => { [key: string]: any };
   providerFactory: ProviderFactory;
 }) {
-  const {
-    floatingToolbarHandlers,
-    dispatch,
-    reactContext,
-    providerFactory,
-  } = options;
+  const { floatingToolbarHandlers, dispatch, reactContext, providerFactory } =
+    options;
 
   const apply = (
     _tr: Transaction,
@@ -264,7 +260,7 @@ function floatingToolbarPluginFactory(options: {
     key: pluginKey,
     state: {
       init: () => {
-        ToolbarLoader.preload();
+        // ToolbarLoader.preload();
       },
       apply: rafApply,
     },

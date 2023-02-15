@@ -17,6 +17,7 @@ const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
       testId,
       overrides,
       onMouseDown,
+      onMouseMove,
       ...others
     } = props;
     const onMouseDownHandler = onMouseDown;
@@ -35,6 +36,7 @@ const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
         data-testid={testId}
         onClick={isDisabled ? undefined : onClick}
         onMouseDown={onMouseDownHandler}
+        onMouseMove={onMouseMove}
         ref={ref}
         {...others}
       >

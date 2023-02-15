@@ -1,5 +1,5 @@
-import type { RichMediaLayout } from '@atlaskit/adf-schema';
-import type { ADFEntityMark } from '@atlaskit/adf-utils/types';
+import type { RichMediaLayout } from '@uidu/adf-schema';
+import type { ADFEntityMark } from '@uidu/adf-utils/types';
 
 import type { FeatureFlagKey } from '../../types/feature-flags';
 import { PropsDifference, ShallowPropsDifference } from '../../utils';

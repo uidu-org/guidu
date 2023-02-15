@@ -146,6 +146,13 @@ export const areSameItems = (
 };
 
 export default class Toolbar extends Component<Props> {
+  shouldComponentUpdate(nextProps: Props) {
+    return (
+      this.props.node.type !== nextProps.node.type ||
+      !areSameItems(this.props.items, nextProps.items)
+    );
+  }
+
   render() {
     const {
       items,
@@ -261,13 +268,6 @@ export default class Toolbar extends Component<Props> {
             })}
         </ButtonGroup>
       </ToolbarContainer>
-    );
-  }
-
-  shouldComponentUpdate(nextProps: Props) {
-    return (
-      this.props.node.type !== nextProps.node.type ||
-      !areSameItems(this.props.items, nextProps.items)
     );
   }
 }

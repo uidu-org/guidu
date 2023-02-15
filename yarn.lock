@@ -3013,9 +3013,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:8.105.7":
-  version: 8.105.7
-  resolution: "@fluentui/react@npm:8.105.7"
+"@fluentui/react@npm:8.105.8":
+  version: 8.105.8
+  resolution: "@fluentui/react@npm:8.105.8"
   dependencies:
     "@fluentui/date-time-utilities": ^8.5.5
     "@fluentui/font-icons-mdl2": ^8.5.8
@@ -3036,7 +3036,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <19.0.0"
     react: ">=16.8.0 <19.0.0"
     react-dom: ">=16.8.0 <19.0.0"
-  checksum: 09e08a31f2df2e7ee946b5f50c5427249a57272754a701de6dba6c4d327c6accb7a23c7cf8a5c828a2479609b3a2d2b2729c208266dfe2e2b29884da44ab6086
+  checksum: df97d4c6e3d27a8e99137568318603546fbc6a9ac85c83af298063ef34e6f04164d3c26ea2b29b0164bdb666289d27f322783d1a22005fba0ec9fa8f181ff5f8
   languageName: node
   linkType: hard
 
@@ -5282,14 +5282,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-virtual@npm:^3.0.0-beta.39":
-  version: 3.0.0-beta.39
-  resolution: "@tanstack/react-virtual@npm:3.0.0-beta.39"
+"@tanstack/react-virtual@npm:^3.0.0-beta.48":
+  version: 3.0.0-beta.48
+  resolution: "@tanstack/react-virtual@npm:3.0.0-beta.48"
   dependencies:
-    "@tanstack/virtual-core": 3.0.0-beta.39
+    "@tanstack/virtual-core": 3.0.0-beta.48
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 33b9ee61904bb2b4326c2f1db4f2380aff2281d6eb17a721288cc302744aed644bc81ef9b9909961e1cb9730eade035488a77619267d7ca084cc3968b6e3d3b4
+  checksum: 3c0d75570b2b316edbf4f658f7fc398a63467d305cd3b69450febd9ab470b65f00948561c9e8f315a6756564c5164e51ff276f1d2e76c196c7a6110ef115afea
   languageName: node
   linkType: hard
 
@@ -5300,10 +5300,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/virtual-core@npm:3.0.0-beta.39":
-  version: 3.0.0-beta.39
-  resolution: "@tanstack/virtual-core@npm:3.0.0-beta.39"
-  checksum: 617e04cb6a4de54f543e9c991c1242d1b3dc233082bcd5dbb252144eb8a5a7a888fa2c5034863067629ec89ebb9e38df15cfd05bdcd40a363ed4fc426239221a
+"@tanstack/virtual-core@npm:3.0.0-beta.48":
+  version: 3.0.0-beta.48
+  resolution: "@tanstack/virtual-core@npm:3.0.0-beta.48"
+  checksum: 2bc41ad00aaeb7c07ec1ba5987e795aacef01e1bc32ca75c65f3357aa2b202bfd0aece73b4eb79241d0166ee19956e99e3789ee0edbb55cafb2714adde9b07c2
   languageName: node
   linkType: hard
 
@@ -5935,15 +5935,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mkdirp@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@types/mkdirp@npm:1.0.2"
-  dependencies:
-    "@types/node": "*"
-  checksum: 72dedfb2d250f0e44ec964ac68ff6a4a03d7d9d6e83ae1d5ba6d212791af69cf051a5fac59846826242d099de56a18c8e0581861792fae8b845b3c9ad67ecdeb
-  languageName: node
-  linkType: hard
-
 "@types/ms@npm:*":
   version: 0.7.31
   resolution: "@types/ms@npm:0.7.31"
@@ -6142,12 +6133,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.0.10":
-  version: 18.0.10
-  resolution: "@types/react-dom@npm:18.0.10"
+"@types/react-dom@npm:^18.0.11":
+  version: 18.0.11
+  resolution: "@types/react-dom@npm:18.0.11"
   dependencies:
     "@types/react": "*"
-  checksum: ff8282d5005a0b1cd95fb65bf79d3d8485e4cfe2aaf052129033a178684b940014a3f4536bc20d573f8a01cf4c6f4770c74988cef7c2b5cac3041d9f172647e3
+  checksum: 579691e4d5ec09688087568037c35edf8cfb1ab3e07f6c60029280733ee7b5c06d66df6fcc90786702c93ac8cb13bc7ff16c79ddfc75d082938fbaa36e1cdbf4
   languageName: node
   linkType: hard
 
@@ -6720,6 +6711,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@uidu/activity-provider@workspace:^, @uidu/activity-provider@workspace:packages/editor/activity-provider":
+  version: 0.0.0-use.local
+  resolution: "@uidu/activity-provider@workspace:packages/editor/activity-provider"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    typescript: ^4.9.5
+  languageName: unknown
+  linkType: soft
+
 "@uidu/adf-schema@2.2.6, @uidu/adf-schema@^2.2.3, @uidu/adf-schema@^2.2.4, @uidu/adf-schema@^2.2.5, @uidu/adf-schema@^2.2.6, @uidu/adf-schema@workspace:packages/editor/adf-schema":
   version: 0.0.0-use.local
   resolution: "@uidu/adf-schema@workspace:packages/editor/adf-schema"
@@ -7025,7 +7025,7 @@ __metadata:
     classnames: ^2.3.2
     moment: ^2.29.4
     react: ^18.2.0
-    react-big-calendar: ^1.6.4
+    react-big-calendar: ^1.6.7
     react-feather: ^2.0.10
     styled-components: ^5.3.6
     tslib: ^2.5.0
@@ -7573,6 +7573,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^6.3.0
     "@fortawesome/react-fontawesome": ^0.2.0
     "@loadable/component": ^5.15.3
+    "@uidu/activity-provider": "workspace:^"
     "@uidu/adf-schema": ^2.2.6
     "@uidu/adf-utils": ^2.2.1
     "@uidu/analytics": ^0.6.12
@@ -7589,6 +7590,7 @@ __metadata:
     "@uidu/editor-json-transformer": ^1.0.12
     "@uidu/editor-markdown-transformer": ^1.0.10
     "@uidu/emoji": ^0.6.33
+    "@uidu/field-base": "workspace:^"
     "@uidu/field-date": ^2.1.14
     "@uidu/field-text": 2.0.8
     "@uidu/form": ^2.2.7
@@ -7619,7 +7621,7 @@ __metadata:
     prosemirror-commands: ^1.5.0
     prosemirror-history: ^1.3.0
     prosemirror-inputrules: ^1.2.0
-    prosemirror-keymap: ^1.2.0
+    prosemirror-keymap: ^1.2.1
     prosemirror-model: ^1.19.0
     prosemirror-schema-list: ^1.2.2
     prosemirror-state: ^1.4.2
@@ -7804,7 +7806,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-base@4.2.9, @uidu/field-base@^4.2.6, @uidu/field-base@^4.2.7, @uidu/field-base@^4.2.9, @uidu/field-base@workspace:packages/forms/field-base":
+"@uidu/field-base@4.2.9, @uidu/field-base@^4.2.6, @uidu/field-base@^4.2.7, @uidu/field-base@^4.2.9, @uidu/field-base@workspace:^, @uidu/field-base@workspace:packages/forms/field-base":
   version: 0.0.0-use.local
   resolution: "@uidu/field-base@workspace:packages/forms/field-base"
   dependencies:
@@ -7936,7 +7938,7 @@ __metadata:
   resolution: "@uidu/field-file-uploader@workspace:packages/forms/field-file-uploader"
   dependencies:
     "@babel/runtime": ^7.20.13
-    "@fluentui/react": 8.105.7
+    "@fluentui/react": 8.105.8
     "@heroicons/react": ^2.0.15
     "@uidu/button": 1.3.36
     "@uidu/docs": ^0.5.25
@@ -8100,7 +8102,7 @@ __metadata:
     "@uidu/form": 2.2.8
     "@uidu/select": 2.2.8
     react: ^18.2.0
-    react-phone-number-input: ^3.2.18
+    react-phone-number-input: ^3.2.19
     styled-components: ^5.3.6
     tslib: ^2.5.0
     twin.macro: ^3.1.0
@@ -8155,7 +8157,7 @@ __metadata:
     "@uidu/docs": ^0.5.25
     "@uidu/field-base": ^4.2.6
     "@uidu/form": ^2.2.5
-    autosize: ^6.0.0
+    autosize: ^6.0.1
     react: ^18.2.0
     styled-components: ^5.3.6
     tslib: ^2.5.0
@@ -8288,7 +8290,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.13
     "@tanstack/react-table": ^8.7.9
-    "@tanstack/react-virtual": ^3.0.0-beta.39
+    "@tanstack/react-virtual": ^3.0.0-beta.48
     "@uidu/data-controls": ^4.0.25
     "@uidu/data-fields": ^2.1.31
     "@uidu/docs": ^0.5.25
@@ -8450,7 +8452,6 @@ __metadata:
   resolution: "@uidu/json-schema-generator@workspace:packages/editor/json-schema-generator"
   dependencies:
     "@types/meow": ^6.0.0
-    "@types/mkdirp": ^1.0.2
     "@types/prettier": ^2.7.2
     meow: ^9.0.0
     mkdirp: ^1.0.4
@@ -8506,7 +8507,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.13
     "@tanstack/react-table": ^8.7.9
-    "@tanstack/react-virtual": ^3.0.0-beta.39
+    "@tanstack/react-virtual": ^3.0.0-beta.48
     "@uidu/data-fields": ^2.1.31
     "@uidu/docs": ^0.5.25
     react: ^18.2.0
@@ -8556,7 +8557,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.13
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.105.7
+    "@fluentui/react": 8.105.8
     "@uidu/button": ^1.3.36
     "@uidu/docs": ^0.5.25
     "@uidu/dropdown-menu": ^0.6.29
@@ -8762,7 +8763,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.20.13
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.105.7
+    "@fluentui/react": 8.105.8
     "@loadable/component": ^5.15.3
     "@uidu/avatar": ^0.9.21
     "@uidu/button": 1.3.36
@@ -8893,7 +8894,7 @@ __metadata:
     react-node-resolver: ^2.0.1
     react-scrolllock: ^5.0.1
     react-transition-group: ^4.4.5
-    scroll-into-view-if-needed: ^3.0.4
+    scroll-into-view-if-needed: ^3.0.6
     styled-components: ^5.3.6
     tslib: ^2.5.0
   peerDependencies:
@@ -9419,7 +9420,7 @@ __metadata:
     "@fortawesome/react-fontawesome": ^0.2.0
     "@heroicons/react": ^2.0.15
     "@tanstack/react-table": ^8.7.9
-    "@tanstack/react-virtual": ^3.0.0-beta.39
+    "@tanstack/react-virtual": ^3.0.0-beta.48
     "@uidu/button": 1.3.36
     "@uidu/checkbox": ^2.0.11
     "@uidu/data-controls": ^4.0.27
@@ -11175,10 +11176,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autosize@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "autosize@npm:6.0.0"
-  checksum: ff4cff7df51000c397309d60dafc93edf47b2a6c5cd1d587ad1cfcaf2d6b01bb273bef76608fb73f40610326afedc049c6109b6432a540c1175b8ccadbe84abe
+"autosize@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "autosize@npm:6.0.1"
+  checksum: 116635be9479baee6dd9c4f0545fbd07318e83bcdb198f9c41c0594af82ca52a1e0cce38797dcbda9d321467805293e66a3b2f3e01a82952ff879c50e2c813e8
   languageName: node
   linkType: hard
 
@@ -13441,6 +13442,13 @@ __metadata:
   version: 2.0.4
   resolution: "compute-scroll-into-view@npm:2.0.4"
   checksum: f3d1db9276c16af42155b572750514939cd0ab0a0f46498906f6811c5b654c5ff2b3f9bfd65958e57439e000a5e1ae092eb96b9e153d194a73e52ffd2380550c
+  languageName: node
+  linkType: hard
+
+"compute-scroll-into-view@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "compute-scroll-into-view@npm:3.0.0"
+  checksum: 06965595510d3190bfb58705cf74bacc0b6fea8021f56a6477ad134fadcd1971d2083a714c6e3c99f545cc72614d60a9a97d774ea81a37ad302efddc849d372c
   languageName: node
   linkType: hard
 
@@ -18106,7 +18114,7 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.105.7
+    "@fluentui/react": 8.105.8
     "@formatjs/cli": 6.0.1
     "@fortawesome/fontawesome-free": ^6.3.0
     "@fortawesome/fontawesome-svg-core": ^6.3.0
@@ -18137,7 +18145,6 @@ __metadata:
     "@types/lodash.sample": ^4.2.7
     "@types/markdown-it": ^12.2.3
     "@types/markerclustererplus": ^2.1.33
-    "@types/mkdirp": ^1.0.2
     "@types/node": ^18.13.0
     "@types/overlayscrollbars": ^1.12.1
     "@types/prettier": ^2.7.2
@@ -18154,7 +18161,7 @@ __metadata:
     "@types/prosemirror-view": ^1.24.0
     "@types/react": ^18.0.28
     "@types/react-beautiful-dnd": ^13.1.3
-    "@types/react-dom": ^18.0.10
+    "@types/react-dom": ^18.0.11
     "@types/react-grid-layout": ^1.3.2
     "@types/react-helmet": ^6.1.6
     "@types/react-loadable": ^5.5.6
@@ -18196,7 +18203,7 @@ __metadata:
     add: ^2.0.6
     array-find: ^1.0.0
     autoprefixer: ^10.4.13
-    autosize: ^6.0.0
+    autosize: ^6.0.1
     avataaars: ^2.0.0
     axios: ^1.3.3
     babel-loader: ^9.1.2
@@ -18312,7 +18319,7 @@ __metadata:
     prosemirror-dev-tools: ^4.0.0
     prosemirror-history: ^1.3.0
     prosemirror-inputrules: ^1.2.0
-    prosemirror-keymap: ^1.2.0
+    prosemirror-keymap: ^1.2.1
     prosemirror-markdown: ^1.10.1
     prosemirror-model: ^1.19.0
     prosemirror-schema-list: ^1.2.2
@@ -18332,7 +18339,7 @@ __metadata:
     react-animated-number: ^0.4.4
     react-avatar-editor: ^13.0.0
     react-beautiful-dnd: ^13.1.1
-    react-big-calendar: ^1.6.4
+    react-big-calendar: ^1.6.7
     react-chatview: ^0.2.5
     react-codesandboxer: ^3.1.5
     react-color: ^2.19.3
@@ -18364,7 +18371,7 @@ __metadata:
     react-mentions: ^4.4.7
     react-node-resolver: ^2.0.1
     react-number-format: ^4.9.4
-    react-phone-number-input: ^3.2.18
+    react-phone-number-input: ^3.2.19
     react-popper: ^2.3.0
     react-resizable: ^3.0.4
     react-router: ^5.3.4
@@ -18380,9 +18387,9 @@ __metadata:
     react-use-gesture: ^8.0.1
     react-virtualized: ^9.22.3
     resolve: ^1.22.1
-    sass: ^1.58.0
+    sass: ^1.58.1
     sass-loader: ^13.2.0
-    scroll-into-view-if-needed: ^3.0.4
+    scroll-into-view-if-needed: ^3.0.6
     scrollparent: ^2.0.1
     semver: ^7.3.8
     sentence-case: ^3.0.4
@@ -20970,10 +20977,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libphonenumber-js@npm:^1.10.19":
-  version: 1.10.19
-  resolution: "libphonenumber-js@npm:1.10.19"
-  checksum: 8408056a375b36728b83daa2048a9157abe21596b042307487c64a648aa31319ace77f04c59331710b30d7fc79466fc5ad978fddb74b6e4a0a21463b7e6bd535
+"libphonenumber-js@npm:^1.10.20":
+  version: 1.10.20
+  resolution: "libphonenumber-js@npm:1.10.20"
+  checksum: 9a5a544ad982351ee77579e4f3d6d72039bbd3de930f5f94af3dcb2ae089e77555e197e8db8314f796bdb6fc2d23fa30b187280e559f673134e61f06abdbe166
   languageName: node
   linkType: hard
 
@@ -25936,13 +25943,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-keymap@npm:*, prosemirror-keymap@npm:^1.1.2, prosemirror-keymap@npm:^1.2.0":
+"prosemirror-keymap@npm:*, prosemirror-keymap@npm:^1.1.2":
   version: 1.2.0
   resolution: "prosemirror-keymap@npm:1.2.0"
   dependencies:
     prosemirror-state: ^1.0.0
     w3c-keyname: ^2.2.0
   checksum: 35ce499a7281078e2c6a92c52325243433ddce9536b377b615b945a418267a5e0b839ff8dbd3f276539668de7524916e3dfb4879eec4a53b6cc07dc26ac13aab
+  languageName: node
+  linkType: hard
+
+"prosemirror-keymap@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "prosemirror-keymap@npm:1.2.1"
+  dependencies:
+    prosemirror-state: ^1.0.0
+    w3c-keyname: ^2.2.0
+  checksum: 3339421f34d4d83a145e143fda6428d851685e7c2475fb9703df44f461e972b50b26298a127883682b296a80828548e0627332b8a0a502bd4e1ac851a5753b61
   languageName: node
   linkType: hard
 
@@ -26448,9 +26465,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-big-calendar@npm:^1.6.4":
-  version: 1.6.4
-  resolution: "react-big-calendar@npm:1.6.4"
+"react-big-calendar@npm:^1.6.7":
+  version: 1.6.7
+  resolution: "react-big-calendar@npm:1.6.7"
   dependencies:
     "@babel/runtime": ^7.20.7
     clsx: ^1.2.1
@@ -26471,7 +26488,7 @@ __metadata:
   peerDependencies:
     react: ^16.14.0 || ^17 || ^18
     react-dom: ^16.14.0 || ^17 || ^18
-  checksum: 7ac7e69ba33d71ee5f196fd933c0da9325ee3d290cd7fd0a1a200c87861ef45fd3bbe2245d24e573f93c732f091995858f537a665c4d3795008d3530eef1849a
+  checksum: 113d3daedca66055169b70d9d7ec37adbc7657d5cb0953cd193b0431c22271196c17000bf8b9cb446993552a6ced34ff78f20cac8835625ccb44ce5b31cbd50d
   languageName: node
   linkType: hard
 
@@ -27011,19 +27028,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-phone-number-input@npm:^3.2.18":
-  version: 3.2.18
-  resolution: "react-phone-number-input@npm:3.2.18"
+"react-phone-number-input@npm:^3.2.19":
+  version: 3.2.19
+  resolution: "react-phone-number-input@npm:3.2.19"
   dependencies:
     classnames: ^2.3.1
     country-flag-icons: ^1.5.4
     input-format: ^0.3.8
-    libphonenumber-js: ^1.10.19
+    libphonenumber-js: ^1.10.20
     prop-types: ^15.8.1
   peerDependencies:
     react: ">=16.8"
     react-dom: ">=16.8"
-  checksum: baf12a74e85726754ffbeb55a3e0d9acd8a43f9d6831fa145c9ecdbbcdf788bae23eb66718256837f6e86e109d9822189e9ea81a82361dc9621282392318370c
+  checksum: 4d75dea76dbaa8fb4c61066f620495ba5fb952057151cb7e9edac9fb143a2e9420021970eb82bc9beb663828726feadce4d30cde6941312f09c9a9983f33b15e
   languageName: node
   linkType: hard
 
@@ -28265,16 +28282,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.58.0":
-  version: 1.58.0
-  resolution: "sass@npm:1.58.0"
+"sass@npm:^1.58.1":
+  version: 1.58.1
+  resolution: "sass@npm:1.58.1"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: a7219634881d2de6441fb619787fb1a02e3fa0333fb715be26aa335ba49d6bdb4f1105d9df70a80a67200893022b08346745783dc49046095d94fc6e044492d6
+  checksum: ff079887d906b5c0dde99084d14ac36336d238c0c07935ff6381bad68f05de212c1ff12657ac1e8a0533523cd7a393126facdc2508d758e7d5700344a0e6ea51
   languageName: node
   linkType: hard
 
@@ -28361,12 +28378,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scroll-into-view-if-needed@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "scroll-into-view-if-needed@npm:3.0.4"
+"scroll-into-view-if-needed@npm:^3.0.6":
+  version: 3.0.6
+  resolution: "scroll-into-view-if-needed@npm:3.0.6"
   dependencies:
-    compute-scroll-into-view: ^2.0.4
-  checksum: 613fef3d404c1122f5505f3d2d4198ace569fa37a6e1a19d4a17a9baad09a541bb4753c479a2d205f91921a29e8c0fe27f2e8b217e318f28d018cd61aa8b5dfb
+    compute-scroll-into-view: ^3.0.0
+  checksum: fb3a62748f44bc14ee5f6986e6c3fd1a571811ff14e894f5ff1045247cfd9bf94ebd2038319971a8657bdd4c70a165e523ec1a0b90f74ded175a77035ff2d109
   languageName: node
   linkType: hard
 

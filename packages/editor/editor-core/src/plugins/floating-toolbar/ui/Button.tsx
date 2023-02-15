@@ -1,7 +1,6 @@
 import Button from '@uidu/button';
 import Tooltip from '@uidu/tooltip';
 import React from 'react';
-import { baseStyles, getButtonStyles } from './styles';
 
 export type ButtonAppearance = 'subtle' | 'danger';
 export interface Props {
@@ -22,7 +21,7 @@ export interface Props {
   testId?: string;
 }
 
-export default ({
+export default function FloatingToolbarButton({
   title,
   icon,
   iconAfter,
@@ -38,38 +37,22 @@ export default ({
   className,
   tooltipContent,
   testId,
-}: Props) => {
+}: Props) {
   return (
     <Tooltip
       content={tooltipContent || title}
-      hideTooltipOnClick={true}
+      hideTooltipOnClick
       position="top"
     >
       <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <Button
           className={className}
-          theme={(adgTheme, themeProps) => {
-            const { buttonStyles, ...rest } = adgTheme(themeProps);
-            return {
-              buttonStyles: {
-                ...buttonStyles,
-                ...baseStyles,
-                ...(appearance === 'danger' &&
-                  getButtonStyles({
-                    appearance,
-                    state: themeProps.state,
-                    mode: themeProps.mode,
-                  })),
-              },
-              ...rest,
-            };
-          }}
           aria-label={title}
           spacing="compact"
           href={href}
           target={target}
           appearance={appearance}
-          aria-haspopup={true}
+          aria-haspopup
           iconBefore={icon || undefined}
           iconAfter={iconAfter}
           onClick={onClick}
@@ -82,4 +65,4 @@ export default ({
       </div>
     </Tooltip>
   );
-};
+}

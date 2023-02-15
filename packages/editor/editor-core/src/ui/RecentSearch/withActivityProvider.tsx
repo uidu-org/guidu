@@ -1,4 +1,4 @@
-import { ActivityProvider } from '@atlaskit/activity';
+import { ActivityProvider } from '@uidu/activity-provider';
 import {
   Diff,
   ProviderFactory,

@@ -7,7 +7,7 @@ export const RECENT_SEARCH_HEIGHT_IN_PX = 360;
 export const InputWrapper = `
   display: flex;
   line-height: 0;
-  padding: 5px 0;
+  padding: 5px;
   align-items: center;
 `;
 

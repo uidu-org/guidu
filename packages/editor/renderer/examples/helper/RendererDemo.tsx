@@ -87,7 +87,7 @@ const extensionHandlers: ExtensionHandlers = {
     switch (extensionKey) {
       case 'clock':
         return (
-          <p format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'}>
+          <p format="HH:mm:ss" ticking timezone="US/Pacific">
             Test
           </p>
         );
@@ -141,16 +141,15 @@ const eventHandlers: EventHandlers = {
       result: CardEvent,
       surroundings?: CardSurroundings,
       analyticsEvent?: any,
-    ) => {
+    ) =>
       // json-safe-stringify does not handle cyclic references in the react mouse click event
-      return console.log(
+      console.log(
         'onMediaClick',
         '[react.MouseEvent]',
         result.mediaItemDetails,
         surroundings,
         analyticsEvent,
-      );
-    },
+      ),
   },
 };
 
@@ -180,14 +179,17 @@ export default class RendererDemo extends React.Component<
   DemoRendererState
 > {
   textSerializer = new TextSerializer(defaultSchema);
+
   emailRef?: HTMLIFrameElement;
+
   inputBox?: HTMLTextAreaElement | null;
+
   emailTextareaRef?: any;
 
   constructor(props: DemoRendererProps) {
     super(props);
 
-    const doc = !!this.props.document ? this.props.document : storyDataDocument;
+    const doc = this.props.document ? this.props.document : storyDataDocument;
 
     // Prevent browser retain the previous scroll position when refresh,
     // This code is necessary for pages with scrollable body to avoid two scroll actions.
@@ -210,35 +212,33 @@ export default class RendererDemo extends React.Component<
 
   render() {
     return (
-      <>
-        <div ref="root" style={{ padding: 20 }}>
-          <fieldset style={{ marginBottom: 20 }}>
-            <legend>Input</legend>
-            <textarea
-              id="renderer-value-input"
-              style={{
-                boxSizing: 'border-box',
-                border: '1px solid lightgray',
-                fontFamily: 'monospace',
-                fontSize: 14,
-                padding: 10,
-                width: '100%',
-                height: 220,
-              }}
-              ref={(ref) => {
-                this.inputBox = ref;
-              }}
-              onChange={this.onDocumentChange}
-              value={this.state.input}
-            />
-            <button onClick={this.toggleEventHandlers}>
-              Toggle Event handlers
-            </button>
-          </fieldset>
-          <div tw="prose prose-primary">{this.renderRenderer()}</div>
-          {this.renderText()}
-        </div>
-      </>
+      <div ref="root" style={{ padding: 20 }}>
+        <fieldset style={{ marginBottom: 20 }}>
+          <legend>Input</legend>
+          <textarea
+            id="renderer-value-input"
+            style={{
+              boxSizing: 'border-box',
+              border: '1px solid lightgray',
+              fontFamily: 'monospace',
+              fontSize: 14,
+              padding: 10,
+              width: '100%',
+              height: 220,
+            }}
+            ref={(ref) => {
+              this.inputBox = ref;
+            }}
+            onChange={this.onDocumentChange}
+            value={this.state.input}
+          />
+          <button onClick={this.toggleEventHandlers}>
+            Toggle Event handlers
+          </button>
+        </fieldset>
+        <div tw="prose prose-primary">{this.renderRenderer()}</div>
+        {this.renderText()}
+      </div>
     );
   }
 
@@ -294,14 +294,14 @@ export default class RendererDemo extends React.Component<
       const expandButton = (
         <div>
           <Button
-            appearance={'link'}
-            spacing={'none'}
+            appearance="link"
+            spacing="none"
             onClick={this.toggleTruncated}
           >
             {this.state.truncated ? 'Expand text' : 'Collapse text'}
           </Button>
           &nbsp;&middot;&nbsp;
-          <Button appearance={'link'} spacing={'none'}>
+          <Button appearance="link" spacing="none">
             Do something else
           </Button>
         </div>

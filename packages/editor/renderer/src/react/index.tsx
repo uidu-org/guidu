@@ -44,8 +44,8 @@ export interface ConstructorParams {
   fireAnalyticsEvent?: (event: AnalyticsEventPayload) => void;
 }
 
-type MarkWithContent = Partial<Mark<any>> & {
-  content: Array<MarkWithContent | Node<any>>;
+type MarkWithContent = Partial<Mark> & {
+  content: Array<MarkWithContent | Node>;
 };
 
 function mergeMarks(marksAndNodes: Array<MarkWithContent | Node>) {

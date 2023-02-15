@@ -19,6 +19,7 @@ module.exports = {
     'function-paren-newline': 'off',
     'arrow-parens': 'off',
     'implicit-arrow-linebreak': 'off',
+    'import/prefer-default-export': 'off',
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
     'react/no-unknown-property': ['error', { ignore: ['css', 'tw'] }],

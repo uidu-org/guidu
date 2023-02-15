@@ -52,15 +52,12 @@ const hyperlinkPlugin = (): EditorPlugin => ({
         priority: 1200,
         keyshortcut: tooltip(addLink),
         icon: () => <IconLink label={formatMessage(messages.link)} />,
-        action(_insert, state) {
-          const pos = state.selection.from;
-          const { nodeBefore } = state.selection.$from;
-          if (!nodeBefore) {
-            return false;
-          }
-          const tr = state.tr
-            .setMeta(stateKey, { type: LinkAction.SHOW_INSERT_TOOLBAR })
-            .delete(pos - nodeBefore.nodeSize, pos);
+        action(insert, state) {
+          const tr = insert(undefined);
+          tr.setMeta(stateKey, {
+            type: LinkAction.SHOW_INSERT_TOOLBAR,
+            inputMethod: INPUT_METHOD.QUICK_INSERT,
+          });
 
           return addAnalytics(state, tr, {
             action: ACTION.INVOKED,

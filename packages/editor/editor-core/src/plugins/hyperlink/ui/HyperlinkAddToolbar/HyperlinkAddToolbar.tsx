@@ -1,7 +1,6 @@
-import { ActivityItem, ActivityProvider } from '@atlaskit/activity';
-import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
-import EditorAlignLeftIcon from '@atlaskit/icon/glyph/editor/align-left';
-import LinkIcon from '@atlaskit/icon/glyph/link';
+import { faFont, faLink, faX } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ActivityItem, ActivityProvider } from '@uidu/activity-provider';
 import { colors } from '@uidu/theme';
 import Tooltip from '@uidu/tooltip';
 import React, { KeyboardEvent, PureComponent } from 'react';
@@ -33,8 +32,6 @@ const TextInputWrapper = styled.div`
 const IconWrapper = styled.span`
   padding: 10px;
   color: ${colors.N80};
-  padding: 4px 8px;
-  width: 3rem;
 `;
 
 export const messages = defineMessages({
@@ -320,12 +317,18 @@ class LinkAddToolbar extends PureComponent<
       <div className="recent-list">
         <Container provider={!!provider}>
           <UrlInputWrapper>
-            <IconWrapper>
-              <Tooltip content={formatLinkAddressText}>
-                <LinkIcon label={formatLinkAddressText} />
-              </Tooltip>
-            </IconWrapper>
             <PanelTextInput
+              tw="pl-14"
+              addonsBefore={[
+                <IconWrapper tw="px-4">
+                  <Tooltip content={formatLinkAddressText}>
+                    <FontAwesomeIcon
+                      icon={faLink}
+                      title={formatLinkAddressText}
+                    />
+                  </Tooltip>
+                </IconWrapper>,
+              ]}
               ref={(ele) => (this.urlInputContainer = ele)}
               placeholder={placeholder}
               onSubmit={this.handleSubmit}
@@ -335,14 +338,23 @@ class LinkAddToolbar extends PureComponent<
               onBlur={this.urlBlur}
               defaultValue={text}
               onKeyDown={this.handleKeyDown}
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...(text && {
+                addonsAfter: [
+                  <IconWrapper tw="px-4">
+                    <Tooltip content={formatClearLinkText}>
+                      <ClearText onClick={this.handleClearText}>
+                        <FontAwesomeIcon
+                          icon={faX}
+                          title={formatClearLinkText}
+                        />
+                      </ClearText>
+                    </Tooltip>
+                    ,
+                  </IconWrapper>,
+                ],
+              })}
             />
-            {text && (
-              <Tooltip content={formatClearLinkText}>
-                <ClearText onClick={this.handleClearText}>
-                  <CrossCircleIcon label={formatClearLinkText} />
-                </ClearText>
-              </Tooltip>
-            )}
           </UrlInputWrapper>
           <RecentList
             items={items}
@@ -352,12 +364,15 @@ class LinkAddToolbar extends PureComponent<
             onMouseMove={this.handleMouseMove}
           />
           <TextInputWrapper>
-            <IconWrapper>
-              <Tooltip content={formatDisplayText}>
-                <EditorAlignLeftIcon label={formatDisplayText} />
-              </Tooltip>
-            </IconWrapper>
             <PanelTextInput
+              tw="pl-14"
+              addonsBefore={[
+                <IconWrapper tw="px-4">
+                  <Tooltip content={formatDisplayText}>
+                    <FontAwesomeIcon icon={faFont} title={formatDisplayText} />
+                  </Tooltip>
+                </IconWrapper>,
+              ]}
               ref={(ele) => (this.displayTextInputContainer = ele)}
               placeholder={formatDisplayText}
               ariaLabel={'Link label'}
@@ -367,14 +382,22 @@ class LinkAddToolbar extends PureComponent<
               onBlur={this.textBlur}
               defaultValue={displayText}
               onSubmit={this.handleSubmit}
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...(displayText && {
+                addonsAfter: [
+                  <IconWrapper tw="px-4">
+                    <Tooltip content={formatClearLinkText}>
+                      <ClearText onClick={this.handleClearDisplayText}>
+                        <FontAwesomeIcon
+                          icon={faX}
+                          title={formatClearLinkText}
+                        />
+                      </ClearText>
+                    </Tooltip>
+                  </IconWrapper>,
+                ],
+              })}
             />
-            {displayText && (
-              <Tooltip content={formatMessage(messages.clearText)}>
-                <ClearText onClick={this.handleClearDisplayText}>
-                  <CrossCircleIcon label={formatMessage(messages.clearText)} />
-                </ClearText>
-              </Tooltip>
-            )}
           </TextInputWrapper>
         </Container>
       </div>

@@ -1,6 +1,7 @@
 export { default as ErrorIcon } from './components/ErrorIcon';
 export { default as ErrorMessages } from './components/ErrorMessages';
 export { default as Help } from './components/Help';
+export { default as InputGroup } from './components/InputGroup';
 export { default as Label } from './components/Label';
 export { default as RequiredSymbol } from './components/RequiredSymbol';
 export { default as Row } from './components/Row';

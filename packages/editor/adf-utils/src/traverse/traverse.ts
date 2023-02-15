@@ -27,6 +27,9 @@ function traverseNode(
   if (newNode.content) {
     newNode.content = newNode.content.reduce<Array<ADFEntity>>(
       (acc, node, idx) => {
+        if (!node) {
+          return acc;
+        }
         const processedNode = traverseNode(
           node,
           { node: newNode, parent },
@@ -46,6 +49,15 @@ function traverseNode(
   return newNode;
 }
 
+/**
+ * Provides recursive, depth-first search document traversal. Use visitors collection to define nodes of interest.
+ * If no visitor for given node is defined, no-op happens.
+ * If visitor returns new node, the old node is replaced.
+ * If visitor returns false, node is dropped from the document.
+ * If visitor returns null/undefined/void, original node is used.
+ * @param adf Document to traverse.
+ * @param visitors Collection of visitors.
+ */
 export function traverse(adf: ADFEntity, visitors: VisitorCollection) {
   if (!validateVisitors(visitors)) {
     throw new Error(
