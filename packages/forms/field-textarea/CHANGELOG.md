@@ -1,5 +1,11 @@
 # @uidu/field-textarea
 
+## 2.0.11
+
+### Patch Changes
+
+- 8bab3d27b: Bump deps
+
 ## 2.0.10
 
 ### Patch Changes

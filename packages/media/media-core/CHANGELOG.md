@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 1.4.2
+
+### Patch Changes
+
+- 8bab3d27b: Bump deps
+
 ## 1.4.1
 
 ### Patch Changes

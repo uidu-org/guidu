@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 1.3.1
+
+### Patch Changes
+
+- 8bab3d27b: Bump deps
+
 ## 1.3.0
 
 ### Minor Changes

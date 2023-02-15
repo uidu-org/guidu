@@ -1,5 +1,13 @@
 # @uidu/field-image-uploader
 
+## 3.0.35
+
+### Patch Changes
+
+- 8bab3d27b: Bump deps
+- Updated dependencies [8bab3d27b]
+  - @uidu/media-core@1.4.2
+
 ## 3.0.34
 
 ### Patch Changes
