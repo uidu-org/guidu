@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 1.0.3
+
+### Patch Changes
+
+- 7f9f9bbdc: Bump companion url and useUppy
+- Updated dependencies [7f9f9bbdc]
+  - @uidu/media-core@1.5.0
+
 ## 1.0.2
 
 ### Patch Changes

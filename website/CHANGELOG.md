@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.34
+
+### Patch Changes
+
+- 7f9f9bbdc: Bump companion url and useUppy
+
 ## 0.6.33
 
 ### Patch Changes

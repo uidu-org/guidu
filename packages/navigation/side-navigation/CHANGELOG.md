@@ -1,5 +1,12 @@
 # @uidu/navigation
 
+## 1.2.11
+
+### Patch Changes
+
+- Updated dependencies [7f9f9bbdc]
+  - @uidu/popup@0.7.13
+
 ## 1.2.10
 
 ### Patch Changes

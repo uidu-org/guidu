@@ -1,5 +1,14 @@
 # @uidu/editor-common
 
+## 2.6.1
+
+### Patch Changes
+
+- Updated dependencies [7f9f9bbdc]
+  - @uidu/media-core@1.5.0
+  - @uidu/emoji@0.6.34
+  - @uidu/adf-schema@2.2.8
+
 ## 2.6.0
 
 ### Minor Changes
