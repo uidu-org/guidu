@@ -1,5 +1,12 @@
 # @uidu/email-renderer
 
+## 1.3.5
+
+### Patch Changes
+
+- 7f9f9bbdc: Bump companion url and useUppy
+  - @uidu/adf-schema@2.2.8
+
 ## 1.3.4
 
 ### Patch Changes

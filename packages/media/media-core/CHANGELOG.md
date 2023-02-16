@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 1.5.0
+
+### Minor Changes
+
+- 7f9f9bbdc: Bump companion url and useUppy
+
 ## 1.4.2
 
 ### Patch Changes

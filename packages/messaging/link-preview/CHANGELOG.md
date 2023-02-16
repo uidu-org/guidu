@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.32
+
+### Patch Changes
+
+- 7f9f9bbdc: Bump companion url and useUppy
+
 ## 0.3.31
 
 ### Patch Changes

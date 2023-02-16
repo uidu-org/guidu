@@ -1,5 +1,13 @@
 # @uidu/renderer
 
+## 2.4.1
+
+### Patch Changes
+
+- 7f9f9bbdc: Bump companion url and useUppy
+  - @uidu/adf-schema@2.2.8
+  - @uidu/editor-common@2.6.1
+
 ## 2.4.0
 
 ### Minor Changes

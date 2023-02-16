@@ -1,5 +1,11 @@
 # @uidu/popup
 
+## 0.7.13
+
+### Patch Changes
+
+- 7f9f9bbdc: Bump companion url and useUppy
+
 ## 0.7.12
 
 ### Patch Changes
