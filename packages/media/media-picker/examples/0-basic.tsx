@@ -21,6 +21,7 @@ export default class Example extends Component {
           <MediaPicker
             open={isOpen}
             onClose={() => this.close()}
+            onFileAdded={console.log}
             onRequestClose={this.close}
             uploadOptions={localUploadOptions({
               endpoint: 'https://uidu.local:8443/upload',

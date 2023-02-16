@@ -1,7 +1,6 @@
-import { Fragment, Schema } from 'prosemirror-model';
-
-import { Serializer } from '../serializer';
 import { defaultSchema } from '@uidu/adf-schema';
+import { Fragment, Schema } from 'prosemirror-model';
+import { Serializer } from '../serializer';
 import { reduce } from './nodes';
 
 export default class TextSerializer implements Serializer<string> {
@@ -12,7 +11,7 @@ export default class TextSerializer implements Serializer<string> {
   serializeFragment(fragment: Fragment): string {
     const result: string[] = [];
 
-    fragment.forEach(n => {
+    fragment.forEach((n) => {
       result.push(reduce(n, this.schema));
     });
 

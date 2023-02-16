@@ -1,1 +1,1 @@
-export const companionUrl = 'https://uidu-uppy-companion.herokuapp.com';
+export const companionUrl = 'https://companion.uidu.dev';

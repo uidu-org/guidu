@@ -3,7 +3,7 @@ import Uppy, { UppyOptions } from '@uppy/core';
 import Dropbox from '@uppy/dropbox';
 import GoogleDrive from '@uppy/google-drive';
 import Instagram from '@uppy/instagram';
-import { DashboardModal, useUppy } from '@uppy/react';
+import { DashboardModal } from '@uppy/react';
 import Unsplash from '@uppy/unsplash';
 import Url from '@uppy/url';
 import Webcam from '@uppy/webcam';
@@ -47,41 +47,45 @@ export default function MediaPicker({
     [options],
   );
 
-  const uppy = useUppy(() =>
-    new Uppy(mergeOptions)
-      .use(Webcam)
-      .use(uploadOptions.module, uploadOptions.options)
-      .use(Url, {
-        companionUrl,
-      })
-      .use(Instagram, { companionUrl })
-      .use(Unsplash, { companionUrl })
-      .use(GoogleDrive, {
-        companionUrl,
-      })
-      .use(Dropbox, {
-        companionUrl,
-      })
-      .on('file-added', (file) => {
-        uppy.setFileMeta(file.id, {
-          size: file.size,
-        });
-        onFileAdded(file, uppy);
-      })
-      .on('file-removed', (file, reason) => onFileRemoved(file, reason, uppy))
-      .on('upload-error', (file, error, response) =>
-        onUploadError(file, error, response, uppy),
-      )
-      .on('upload-progress', (file, progress) =>
-        onUploadProgress(file, progress, uppy),
-      )
-      .on('upload-success', (file, response) =>
-        onUploadSuccess(file, response, uppy),
-      )
-      .on('upload-retry', (fileId) => onUploadRetry(fileId, uppy))
-      .on('complete', (result) => onComplete(result, uppy))
-      .on('dashboard:modal-closed', onClose),
+  const uppy = useMemo(
+    () =>
+      new Uppy(mergeOptions)
+        .use(Webcam)
+        .use(uploadOptions.module, uploadOptions.options)
+        .use(Url, {
+          companionUrl,
+        })
+        .use(Instagram, { companionUrl })
+        .use(Unsplash, { companionUrl })
+        .use(GoogleDrive, {
+          companionUrl,
+        })
+        .use(Dropbox, {
+          companionUrl,
+        }),
+    [uploadOptions.module, uploadOptions.options, mergeOptions],
   );
+
+  uppy
+    .on('file-added', (file) => {
+      uppy.setFileMeta(file.id, {
+        size: file.size,
+      });
+      onFileAdded(file, uppy);
+    })
+    .on('file-removed', (file, reason) => onFileRemoved(file, reason, uppy))
+    .on('upload-error', (file, error, response) =>
+      onUploadError(file, error, response, uppy),
+    )
+    .on('upload-progress', (file, progress) =>
+      onUploadProgress(file, progress, uppy),
+    )
+    .on('upload-success', (file, response) =>
+      onUploadSuccess(file, response, uppy),
+    )
+    .on('upload-retry', (fileId) => onUploadRetry(fileId, uppy))
+    .on('complete', (result) => onComplete(result, uppy))
+    .on('dashboard:modal-closed', onClose);
 
   return (
     <DashboardModal

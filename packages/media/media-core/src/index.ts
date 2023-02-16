@@ -32,10 +32,11 @@ export function localUploadOptions(options: XHRUploadOptions): {
 export function s3UploadOptions({
   url: companionUrl,
   type = 'file',
+  ...rest
 }: {
   url: string;
   type: FileType;
-}): {
+} & AwsS3Options): {
   module: typeof AwsS3;
   options: AwsS3Options;
   responseHandler: (response: UploadedUppyFile<any, any>) => FileIdentifier;
@@ -44,6 +45,7 @@ export function s3UploadOptions({
     module: AwsS3,
     options: {
       companionUrl,
+      ...rest,
     },
     responseHandler: (file) => ({
       id: file.meta?.key.match(/^cache\/(.+)/)[1], // object key without prefix
