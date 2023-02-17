@@ -49,13 +49,6 @@ function FieldFileUploader({
     rules,
     ...rest,
   });
-  const handleChange = useCallback(
-    (results: FileIdentifier | FileIdentifier[]) => {
-      field.onChange(results);
-      onChange(name, results);
-    },
-    [onChange, name, field],
-  );
 
   const mergeOptions: UppyOptions = useMemo(
     () => ({
@@ -65,42 +58,68 @@ function FieldFileUploader({
     [options],
   );
 
-  const uppy = useMemo(
-    () =>
-      new Uppy(mergeOptions).use(uploadOptions.module, uploadOptions.options),
-    [uploadOptions, mergeOptions],
+  const { onChange: onFieldChange } = field;
+
+  const handleChange = useCallback(
+    (results: FileIdentifier | FileIdentifier[]) => {
+      onFieldChange(results);
+      onChange(name, results);
+    },
+    [onChange, name, onFieldChange],
   );
 
-  uppy
-    .on('file-added', (file) => {
-      onFileAdded(file);
-      clearErrors(name);
-    })
-    .on('complete', (result) => {
-      onUploadComplete(result);
-      if (result.failed.length > 0) {
-        setError(name, { type: 'custom', message: result.failed[0].error });
-      } else if (mergeOptions.restrictions?.maxNumberOfFiles === 1) {
-        handleChange(result.successful.map(uploadOptions.responseHandler)[0]);
-      } else {
-        handleChange(result.successful.map(uploadOptions.responseHandler));
-      }
-    })
-    .on('error', (error) => {
-      setError(name, { type: 'custom', message: error.message });
-    })
-    .on('upload-error', (file, error) => {
-      onUploadError(file, error);
-      setError(name, { type: 'custom', message: error.message });
-    })
-    .on('file-removed', (file, reason) => {
-      onFileRemoved(file, reason);
-      field.onChange(uppy.getFiles().map(uploadOptions.responseHandler));
-      onChange(name, uppy.getFiles().map(uploadOptions.responseHandler));
-    })
-    .on('restriction-failed', (_file, error) => {
-      setError(name, { type: 'custom', message: error.message });
-    });
+  const uppy = useMemo(() => {
+    const uppyInstance = new Uppy(mergeOptions)
+      .use(uploadOptions.module, uploadOptions.options)
+      .on('file-added', (file) => {
+        onFileAdded(file);
+        clearErrors(name);
+      })
+      .on('complete', (result) => {
+        onUploadComplete(result);
+        if (result.failed.length > 0) {
+          setError(name, { type: 'custom', message: result.failed[0].error });
+        } else if (mergeOptions.restrictions?.maxNumberOfFiles === 1) {
+          handleChange(result.successful.map(uploadOptions.responseHandler)[0]);
+        } else {
+          handleChange(result.successful.map(uploadOptions.responseHandler));
+        }
+      })
+      .on('error', (error) => {
+        setError(name, { type: 'custom', message: error.message });
+      })
+      .on('upload-error', (file, error) => {
+        onUploadError(file, error);
+        setError(name, { type: 'custom', message: error.message });
+      })
+      .on('file-removed', (file, reason) => {
+        onFileRemoved(file, reason);
+        onFieldChange(
+          uppyInstance.getFiles().map(uploadOptions.responseHandler),
+        );
+        onChange(
+          name,
+          uppyInstance.getFiles().map(uploadOptions.responseHandler),
+        );
+      })
+      .on('restriction-failed', (_file, error) => {
+        setError(name, { type: 'custom', message: error.message });
+      });
+    return uppyInstance;
+  }, [
+    uploadOptions,
+    mergeOptions,
+    name,
+    onFileAdded,
+    onFileRemoved,
+    onUploadError,
+    onUploadComplete,
+    setError,
+    clearErrors,
+    handleChange,
+    onFieldChange,
+    onChange,
+  ]);
 
   const evaluate = (file: File) => {
     uppy.addFile({

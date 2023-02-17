@@ -93,6 +93,8 @@ function FieldImageUploaderStateless({
 
   const [value, setValue] = useState<FileIdentifier>(field.value);
 
+  const { onChange: onFieldChange } = field;
+
   const mergeOptions: UppyOptions = useMemo(
     () => ({
       ...defaultOptions,
@@ -103,61 +105,69 @@ function FieldImageUploaderStateless({
 
   const uppy = useMemo(
     () =>
-      new Uppy(mergeOptions).use(uploadOptions.module, uploadOptions.options),
-    [uploadOptions, mergeOptions],
+      new Uppy(mergeOptions)
+        .use(uploadOptions.module, uploadOptions.options)
+        .use(ThumbnailGenerator, {
+          thumbnailWidth: calculateWidth(),
+          thumbnailType: 'image/png',
+        })
+        .on('file-added', () => {
+          clearErrors(name);
+        })
+        .on('thumbnail:generated', (file, preview) => {
+          setIsLoading(false);
+          setScale(1);
+          setImageUrl(preview);
+          setData([file]);
+          setErrors([]);
+        })
+        .on('upload', () => setProgress(0))
+        .on('upload-progress', (_file, prgrss) => {
+          setProgress(prgrss.bytesUploaded / prgrss.bytesTotal);
+        })
+
+        .on('complete', (result) => {
+          setIsLoading(false);
+          setProgress(null);
+          console.log(result);
+          if (result.failed.length > 0) {
+            setError(name, { type: 'custom', message: result.failed[0].error });
+          } else {
+            const response = result.successful.map(
+              uploadOptions.responseHandler,
+            )[0];
+            setValue(response);
+            onFieldChange(response);
+            onChange(name, response);
+          }
+        })
+        .on('error', (error) => {
+          setIsLoading(false);
+          setError(name, { type: 'custom', message: error.message });
+        })
+        .on('upload-error', (_file, error) => {
+          setIsLoading(false);
+          setError(name, { type: 'custom', message: error.message });
+        })
+        .on('file-removed', () => {
+          onFieldChange('');
+          onChange(name, '');
+        })
+        .on('restriction-failed', (_file, error) => {
+          setIsLoading(false);
+          setError(name, { type: 'custom', message: error.message });
+        }),
+    [
+      uploadOptions,
+      mergeOptions,
+      calculateWidth,
+      name,
+      clearErrors,
+      setError,
+      onChange,
+      onFieldChange,
+    ],
   );
-
-  uppy
-    .on('file-added', () => {
-      clearErrors(name);
-    })
-    .use(ThumbnailGenerator, {
-      thumbnailWidth: calculateWidth(),
-      thumbnailType: 'image/png',
-    })
-    .on('thumbnail:generated', (file, preview) => {
-      setIsLoading(false);
-      setScale(1);
-      setImageUrl(preview);
-      setData([file]);
-      setErrors([]);
-    })
-    .on('upload', () => setProgress(0))
-    .on('upload-progress', (_file, prgrss) => {
-      setProgress(prgrss.bytesUploaded / prgrss.bytesTotal);
-    })
-
-    .on('complete', (result) => {
-      setIsLoading(false);
-      setProgress(null);
-      console.log(result);
-      if (result.failed.length > 0) {
-        setError(name, { type: 'custom', message: result.failed[0].error });
-      } else {
-        const response = result.successful.map(
-          uploadOptions.responseHandler,
-        )[0];
-        setValue(response);
-        field.onChange(response);
-        onChange(name, response);
-      }
-    })
-    .on('error', (error) => {
-      setIsLoading(false);
-      setError(name, { type: 'custom', message: error.message });
-    })
-    .on('upload-error', (_file, error) => {
-      setIsLoading(false);
-      setError(name, { type: 'custom', message: error.message });
-    })
-    .on('file-removed', () => {
-      field.onChange('');
-      onChange(name, '');
-    })
-    .on('restriction-failed', (_file, error) => {
-      setIsLoading(false);
-      setError(name, { type: 'custom', message: error.message });
-    });
 
   const thumbnailPlugin = useMemo(
     () => uppy.getPlugin('ThumbnailGenerator'),
@@ -218,9 +228,9 @@ function FieldImageUploaderStateless({
   const debouncedChange = useCallback(
     debounce((v) => {
       onChange(name, v);
-      field.onChange(v);
+      onFieldChange(v);
     }, 300),
-    [name, field.onChange, onChange],
+    [name, onFieldChange, onChange],
   );
 
   useEffect(() => {
@@ -245,7 +255,7 @@ function FieldImageUploaderStateless({
     setIsLoading(false);
     setData([]);
     setScale(1);
-    field.onChange(defaultValue || null);
+    onFieldChange(defaultValue || null);
     onChange(name, defaultValue || null);
     setImageUrl(defaultImageUrl);
   };
@@ -253,7 +263,7 @@ function FieldImageUploaderStateless({
   const destroy = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    field.onChange(null);
+    onFieldChange(null);
     onChange(name, null);
     setImageUrl(null);
   };
