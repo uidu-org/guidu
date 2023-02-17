@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 3.1.0
+
+### Minor Changes
+
+- 2191ab69c: Fix re-rendering media-picker
+
 ## 3.0.36
 
 ### Patch Changes
