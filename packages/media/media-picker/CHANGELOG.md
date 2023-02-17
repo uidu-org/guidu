@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 1.1.0
+
+### Minor Changes
+
+- 2191ab69c: Fix re-rendering media-picker
+
 ## 1.0.3
 
 ### Patch Changes
