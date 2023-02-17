@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.79
+
+### Patch Changes
+
+- Updated dependencies [7f9f9bbdc]
+  - @uidu/media-core@1.5.0
+  - @uidu/popup@0.7.13
+
 ## 0.5.78
 
 ### Patch Changes

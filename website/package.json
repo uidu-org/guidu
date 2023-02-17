@@ -1,6 +1,6 @@
 {
   "name": "@uidu/guidu-website",
-  "version": "0.6.33",
+  "version": "0.6.34",
   "repository": "https://github.com/uidu-org/guidu/tree/main/website",
   "license": "MIT",
   "scripts": {
@@ -76,7 +76,7 @@
   "devDependencies": {
     "@uidu/fs-loader": "^0.1.53",
     "@uidu/nav-info-loader": "^0.2.7",
-    "@uidu/webpack-config": "^0.3.48"
+    "@uidu/webpack-config": "^0.3.52"
   },
   "publishConfig": {
     "access": "public"

@@ -1,5 +1,13 @@
 # @uidu/field-image-uploader
 
+## 3.0.36
+
+### Patch Changes
+
+- 7f9f9bbdc: Bump companion url and useUppy
+- Updated dependencies [7f9f9bbdc]
+  - @uidu/media-core@1.5.0
+
 ## 3.0.35
 
 ### Patch Changes
