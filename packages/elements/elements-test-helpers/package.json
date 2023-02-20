@@ -11,7 +11,7 @@
   "module": "dist/uidu-elements-test-helpers.esm.js",
   "types": "dist/uidu-elements-test-helpers.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.13",
+    "@babel/runtime": "^7.21.0",
     "exenv": "^1.2.2",
     "tslib": "^2.5.0"
   },
@@ -19,7 +19,7 @@
     "@uidu/docs": "^0.5.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.2.8"
+    "react-intl": "^6.2.10"
   },
   "peerDependencies": {
     "react": "^18.0.0",

@@ -10,8 +10,8 @@
   "module": "dist/uidu-field-geosuggest.esm.js",
   "types": "dist/uidu-field-geosuggest.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.13",
-    "@heroicons/react": "^2.0.15",
+    "@babel/runtime": "^7.21.0",
+    "@heroicons/react": "^2.0.16",
     "@uidu/field-base": "^4.2.10",
     "@uidu/menu": "0.8.11",
     "@uidu/spinner": "^0.5.24",

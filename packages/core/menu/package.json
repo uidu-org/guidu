@@ -10,8 +10,8 @@
   "module": "dist/uidu-menu.esm.js",
   "types": "dist/uidu-menu.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.13",
-    "@emotion/react": "^11.10.5",
+    "@babel/runtime": "^7.21.0",
+    "@emotion/react": "^11.10.6",
     "@uidu/theme": "^0.6.29",
     "react-router-dom": "^5.3.4",
     "styled-components": "^5.3.6",

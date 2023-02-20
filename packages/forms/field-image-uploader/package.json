@@ -9,8 +9,8 @@
   "module": "dist/uidu-field-image-uploader.esm.js",
   "types": "dist/uidu-field-image-uploader.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.13",
-    "@heroicons/react": "^2.0.15",
+    "@babel/runtime": "^7.21.0",
+    "@heroicons/react": "^2.0.16",
     "@uidu/button": "^1.3.36",
     "@uidu/field-base": "^4.2.9",
     "@uidu/field-range": "2.0.11",

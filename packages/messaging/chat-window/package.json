@@ -9,7 +9,7 @@
   "module": "dist/uidu-chat-window.esm.js",
   "types": "dist/uidu-chat-window.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.13",
+    "@babel/runtime": "^7.21.0",
     "@uidu/message": "^0.5.70",
     "@uidu/message-form": "^0.4.32",
     "@uidu/message-renderer": "^0.4.27",

@@ -10,7 +10,7 @@
   "module": "dist/uidu-portal.esm.js",
   "types": "index.td.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.13",
+    "@babel/runtime": "^7.21.0",
     "@uidu/theme": "^0.6.29",
     "tslib": "^2.5.0"
   },

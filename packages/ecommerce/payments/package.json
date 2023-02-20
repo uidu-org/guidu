@@ -9,8 +9,8 @@
   "module": "dist/uidu-payments.esm.js",
   "types": "dist/uidu-payments.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.20.13",
-    "@heroicons/react": "^2.0.15",
+    "@babel/runtime": "^7.21.0",
+    "@heroicons/react": "^2.0.16",
     "@stripe/react-stripe-js": "^1.16.4",
     "@stripe/stripe-js": "^1.46.0",
     "@uidu/field-base": "^4.2.9",
@@ -20,7 +20,7 @@
     "axios": "^1.3.3",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
-    "react-intl": "^6.2.8",
+    "react-intl": "^6.2.10",
     "styled-components": "^5.3.6",
     "tslib": "^2.5.0",
     "uuid": "^8.3.2"
