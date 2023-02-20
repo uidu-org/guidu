@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.2.1
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+
 ## 0.2.0
 
 ### Minor Changes

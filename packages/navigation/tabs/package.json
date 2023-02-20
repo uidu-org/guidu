@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tabs",
-  "version": "0.3.25",
+  "version": "0.3.26",
   "description": "A tabs component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/tabs",
   "license": "MIT",
@@ -8,9 +8,9 @@
   "main": "dist/uidu-tabs.cjs.js",
   "dependencies": {
     "@babel/runtime": "^7.21.0",
-    "@uidu/analytics": "^0.6.12",
-    "@uidu/docs": "^0.5.25",
-    "@uidu/theme": "^0.6.29",
+    "@uidu/analytics": "^0.6.13",
+    "@uidu/docs": "^0.5.26",
+    "@uidu/theme": "^0.6.30",
     "react": "^18.2.0",
     "styled-components": "^5.3.6",
     "tslib": "^2.5.0"

@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.6.35
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+- Updated dependencies [9885c54c9]
+  - @uidu/field-text@2.0.9
+  - @uidu/analytics@0.6.13
+  - @uidu/spinner@0.5.25
+  - @uidu/tooltip@0.5.31
+  - @uidu/button@1.3.37
+  - @uidu/theme@0.6.30
+  - @uidu/code@0.5.25
+
 ## 0.6.34
 
 ### Patch Changes

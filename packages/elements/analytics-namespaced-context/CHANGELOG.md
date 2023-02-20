@@ -1,5 +1,13 @@
 # @uidu/analytics-namespaced-context
 
+## 0.4.23
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+- Updated dependencies [9885c54c9]
+  - @uidu/analytics@0.6.13
+
 ## 0.4.22
 
 ### Patch Changes

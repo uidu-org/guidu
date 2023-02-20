@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.0.12
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+- Updated dependencies [9885c54c9]
+  - @uidu/field-base@4.2.11
+
 ## 2.0.11
 
 ### Patch Changes

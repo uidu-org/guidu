@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 1.5.1
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+- Updated dependencies [9885c54c9]
+  - @uidu/docs@0.5.26
+
 ## 1.5.0
 
 ### Minor Changes

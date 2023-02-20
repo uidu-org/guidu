@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.3.27
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+
 ## 0.3.26
 
 ### Patch Changes
