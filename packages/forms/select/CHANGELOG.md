@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.2.10
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+- Updated dependencies [9885c54c9]
+  - @uidu/field-base@4.2.11
+  - @uidu/spinner@0.5.25
+  - @uidu/menu@0.8.12
+
 ## 2.2.9
 
 ### Patch Changes

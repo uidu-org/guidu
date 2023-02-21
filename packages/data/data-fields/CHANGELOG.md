@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 2.1.36
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+- Updated dependencies [9885c54c9]
+  - @uidu/field-color-picker@3.0.18
+  - @uidu/field-downshift@2.2.1
+  - @uidu/field-number@2.0.37
+  - @uidu/field-toggle@2.0.37
+  - @uidu/field-date@2.1.18
+  - @uidu/field-text@2.0.9
+  - @uidu/field-time@2.0.41
+  - @uidu/select@2.2.10
+  - @uidu/button@1.3.37
+  - @uidu/popup@0.7.14
+  - @uidu/form@2.2.9
+  - @uidu/menu@0.8.12
+  - @uidu/map@0.6.26
+
 ## 2.1.35
 
 ### Patch Changes

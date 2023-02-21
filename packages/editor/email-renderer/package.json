@@ -1,6 +1,6 @@
 {
   "name": "@uidu/email-renderer",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "description": "Email renderer",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.21.0",
-    "@uidu/adf-schema": "^2.2.8",
+    "@uidu/adf-schema": "^2.2.9",
     "date-fns": "^2.29.3",
     "get-video-id": "^3.6.5",
     "juice": "^8.1.0",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "*",
-    "@uidu/util-data-test": "^0.4.31",
+    "@uidu/util-data-test": "^0.4.32",
     "mkdirp": "^1.0.4",
     "react": "^18.2.0",
     "rimraf": "^4.1.2",

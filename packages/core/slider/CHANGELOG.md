@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.1.7
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+
 ## 2.1.6
 
 ### Patch Changes

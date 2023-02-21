@@ -1,5 +1,13 @@
 # @uidu/stepper
 
+## 0.4.31
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+- Updated dependencies [9885c54c9]
+  - @uidu/theme@0.6.30
+
 ## 0.4.30
 
 ### Patch Changes

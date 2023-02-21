@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.0.24
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+- Updated dependencies [9885c54c9]
+  - @uidu/field-textarea@2.0.13
+  - @uidu/field-number@2.0.37
+  - @uidu/field-text@2.0.9
+  - @uidu/checkbox@2.0.12
+  - @uidu/select@2.2.10
+
 ## 1.0.23
 
 ### Patch Changes

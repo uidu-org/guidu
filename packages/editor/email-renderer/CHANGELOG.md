@@ -1,5 +1,13 @@
 # @uidu/email-renderer
 
+## 1.3.6
+
+### Patch Changes
+
+- 9885c54c9: Bump dependencies
+- Updated dependencies [9885c54c9]
+  - @uidu/adf-schema@2.2.9
+
 ## 1.3.5
 
 ### Patch Changes
