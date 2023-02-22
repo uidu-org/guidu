@@ -20,6 +20,7 @@ import {
   mediaPlugin,
   mentionsPlugin,
   quickInsertPlugin,
+  saveOnEnterPlugin,
   starterKitPlugin,
   tablesPlugin,
   tokenPlugin,
@@ -67,7 +68,7 @@ export default function Composable() {
     () => [
       blockTypePlugin(),
       layoutPlugin(),
-      // saveOnEnterPlugin(console.log),
+      saveOnEnterPlugin(console.log),
       starterKitPlugin({
         placeholder: 'Insert something...',
       }),

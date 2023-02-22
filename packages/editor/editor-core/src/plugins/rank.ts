@@ -6,6 +6,7 @@ export default {
     'focusHandlerPlugin',
     'frozenEditor',
     'submitEditor',
+    'typeAheadKeymap',
     'saveOnEnter',
     'customAutoformatting',
     'newlinePreserveMarksPlugin',
@@ -28,7 +29,6 @@ export default {
     'blockTypeInputRule',
     'tasksAndDecisionsInputRule',
     'typeAhead',
-    'typeAheadKeymap',
     'typeAheadInputRule',
     // This should be always after `typeAheadKeymap` & `emojiKeymap`
     'indentationKeymap',

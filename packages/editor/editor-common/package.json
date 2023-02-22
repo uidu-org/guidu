@@ -44,12 +44,14 @@
     "entrypoints": [
       "index.ts",
       "provider-factory.ts",
+      "analytics/index.ts",
       "safe-plugin/index.ts",
       "selection/index.ts",
       "type-ahead/index.ts",
       "ui-color/index.ts",
       "utils/index.ts",
-      "types/index.ts"
+      "types/index.ts",
+      "ui/index.tsx"
     ]
   }
 }

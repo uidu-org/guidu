@@ -38,10 +38,8 @@ export type TypeAheadItemsListProps = {
 export function scrollIntoViewIfNeeded(element: HTMLElement) {
   const { offsetTop, offsetHeight, offsetParent } = element;
 
-  const {
-    offsetHeight: offsetParentHeight,
-    scrollTop,
-  } = offsetParent as HTMLElement;
+  const { offsetHeight: offsetParentHeight, scrollTop } =
+    offsetParent as HTMLElement;
 
   const direction =
     offsetTop + offsetHeight > offsetParentHeight + scrollTop
@@ -105,7 +103,9 @@ export function TypeAheadItemComponent({
     return index === currentIndex;
   }, [index, currentIndex]);
 
-  const insertByIndex = () => {
+  const insertByIndex = (e) => {
+    console.log(e);
+    e.stopPropagation();
     inserByIndexProp(index);
   };
 
