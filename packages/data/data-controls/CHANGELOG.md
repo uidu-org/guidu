@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 4.0.30
+
+### Patch Changes
+
+- 5185cbf5c: Fix typeahead plugin conflicts
+- Updated dependencies [5185cbf5c]
+  - @uidu/select@2.2.11
+  - @uidu/form@2.2.10
+
 ## 4.0.29
 
 ### Patch Changes

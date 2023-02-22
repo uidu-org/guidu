@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.81
+
+### Patch Changes
+
+- 5185cbf5c: Fix typeahead plugin conflicts
+- Updated dependencies [5185cbf5c]
+  - @uidu/media-card@0.8.16
+
 ## 0.5.80
 
 ### Patch Changes

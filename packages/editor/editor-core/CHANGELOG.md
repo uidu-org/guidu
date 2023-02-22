@@ -1,5 +1,21 @@
 # @uidu/editor-core
 
+## 2.12.0
+
+### Minor Changes
+
+- 5185cbf5c: Fix typeahead plugin conflicts
+
+### Patch Changes
+
+- Updated dependencies [5185cbf5c]
+  - @uidu/editor-common@2.7.0
+  - @uidu/field-base@4.2.12
+  - @uidu/media-card@0.8.16
+  - @uidu/select@2.2.11
+  - @uidu/form@2.2.10
+  - @uidu/field-date@2.1.19
+
 ## 2.11.1
 
 ### Patch Changes

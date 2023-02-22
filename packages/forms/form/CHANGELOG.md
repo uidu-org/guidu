@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.10
+
+### Patch Changes
+
+- 5185cbf5c: Fix typeahead plugin conflicts
+
 ## 2.2.9
 
 ### Patch Changes

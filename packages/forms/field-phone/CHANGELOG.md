@@ -1,5 +1,14 @@
 # @uidu/field-date
 
+## 2.0.44
+
+### Patch Changes
+
+- Updated dependencies [5185cbf5c]
+  - @uidu/field-base@4.2.12
+  - @uidu/select@2.2.11
+  - @uidu/form@2.2.10
+
 ## 2.0.43
 
 ### Patch Changes

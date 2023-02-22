@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 1.2.13
+
+### Patch Changes
+
+- 5185cbf5c: Fix typeahead plugin conflicts
+
 ## 1.2.12
 
 ### Patch Changes

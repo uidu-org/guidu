@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 1.5.30
+
+### Patch Changes
+
+- 5185cbf5c: Fix typeahead plugin conflicts
+- Updated dependencies [5185cbf5c]
+  - @uidu/field-base@4.2.12
+  - @uidu/form@2.2.10
+
 ## 1.5.29
 
 ### Patch Changes
