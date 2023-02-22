@@ -1,5 +1,13 @@
 # @uidu/field-downshift
 
+## 2.2.2
+
+### Patch Changes
+
+- 5185cbf5c: Fix typeahead plugin conflicts
+- Updated dependencies [5185cbf5c]
+  - @uidu/field-base@4.2.12
+
 ## 2.2.1
 
 ### Patch Changes

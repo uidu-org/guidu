@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.2.12
+
+### Patch Changes
+
+- 5185cbf5c: Fix typeahead plugin conflicts
+- Updated dependencies [5185cbf5c]
+  - @uidu/form@2.2.10
+
 ## 4.2.11
 
 ### Patch Changes

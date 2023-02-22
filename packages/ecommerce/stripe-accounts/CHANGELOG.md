@@ -1,5 +1,14 @@
 # @uidu/stripe-accounts
 
+## 0.5.25
+
+### Patch Changes
+
+- 5185cbf5c: Fix typeahead plugin conflicts
+- Updated dependencies [5185cbf5c]
+  - @uidu/payments@1.5.30
+  - @uidu/form@2.2.10
+
 ## 0.5.24
 
 ### Patch Changes

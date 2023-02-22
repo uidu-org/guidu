@@ -1,5 +1,11 @@
 # @uidu/editor-common
 
+## 2.7.0
+
+### Minor Changes
+
+- 5185cbf5c: Fix typeahead plugin conflicts
+
 ## 2.6.2
 
 ### Patch Changes

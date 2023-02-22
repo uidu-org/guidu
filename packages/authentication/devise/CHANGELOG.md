@@ -1,5 +1,14 @@
 # @uidu/devise
 
+## 1.3.3
+
+### Patch Changes
+
+- 5185cbf5c: Fix typeahead plugin conflicts
+- Updated dependencies [5185cbf5c]
+  - @uidu/form@2.2.10
+  - @uidu/field-phone@2.0.44
+
 ## 1.3.2
 
 ### Patch Changes
