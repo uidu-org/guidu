@@ -20,7 +20,20 @@ export default class Example extends Component {
         {isOpen && (
           <MediaPicker
             open={isOpen}
+            options={{
+              onBeforeUpload: (files) => {
+                const updatedFiles = {};
+                Object.keys(files).forEach((fileID) => {
+                  updatedFiles[fileID] = {
+                    ...files[fileID],
+                    meta: { ...files[fileID].meta, storage: 'public_store' },
+                  };
+                });
+                return updatedFiles;
+              },
+            }}
             onClose={() => this.close()}
+            onComplete={console.log}
             onFileAdded={console.log}
             onRequestClose={this.close}
             uploadOptions={localUploadOptions({
