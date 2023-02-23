@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 1.0.14
+
+### Patch Changes
+
+- 3bfc21bd6: Remove old @types
+- Updated dependencies [3bfc21bd6]
+  - @uidu/adf-schema@2.2.10
+
 ## 1.0.13
 
 ### Patch Changes

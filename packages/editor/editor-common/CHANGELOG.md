@@ -1,5 +1,13 @@
 # @uidu/editor-common
 
+## 2.7.1
+
+### Patch Changes
+
+- Updated dependencies [3bfc21bd6]
+  - @uidu/editor-json-transformer@1.0.14
+  - @uidu/adf-schema@2.2.10
+
 ## 2.7.0
 
 ### Minor Changes

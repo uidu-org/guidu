@@ -1,5 +1,15 @@
 # @uidu/renderer
 
+## 2.4.3
+
+### Patch Changes
+
+- 3bfc21bd6: Remove old @types
+- Updated dependencies [3bfc21bd6]
+  - @uidu/editor-json-transformer@1.0.14
+  - @uidu/adf-schema@2.2.10
+  - @uidu/editor-common@2.7.1
+
 ## 2.4.2
 
 ### Patch Changes
