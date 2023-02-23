@@ -1,5 +1,11 @@
 # @uidu/field-geosuggest
 
+## 2.2.0
+
+### Minor Changes
+
+- bf63f6e39: callback in camelCase
+
 ## 2.1.0
 
 ### Minor Changes
