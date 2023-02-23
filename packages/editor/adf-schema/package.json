@@ -19,9 +19,6 @@
   "dependencies": {
     "@babel/runtime": "^7.21.0",
     "@types/linkify-it": "^3.0.2",
-    "@types/prosemirror-model": "^1.17.0",
-    "@types/prosemirror-state": "^1.4.0",
-    "@types/prosemirror-view": "^1.24.0",
     "@uidu/media-core": "1.5.1",
     "css-color-names": "^1.0.1",
     "linkify-it": "^4.0.1",

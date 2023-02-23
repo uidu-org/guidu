@@ -16,7 +16,6 @@
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@types/prosemirror-model": "^1.17.0",
     "@uidu/docs": "^0.5.26",
     "@uidu/editor-common": "^2.6.2",
     "@uidu/editor-core": "^2.11.1",

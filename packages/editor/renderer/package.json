@@ -36,7 +36,6 @@
     "url-parse": "^1.5.10"
   },
   "devDependencies": {
-    "@types/prosemirror-model": "^1.17.0",
     "@uidu/avatar": "^0.9.22",
     "@uidu/button": "^1.3.37",
     "@uidu/docs": "^0.5.26",
