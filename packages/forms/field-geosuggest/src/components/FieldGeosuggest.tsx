@@ -74,7 +74,7 @@ export default function FieldGeosuggest({
     setValue,
     clearSuggestions,
   } = usePlacesAutocomplete({
-    callbackName: 'google-maps-callback',
+    callbackName: 'googleMapsCallback',
     requestOptions,
     debounce: 300,
     defaultValue,
