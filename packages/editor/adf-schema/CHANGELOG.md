@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.2.10
+
+### Patch Changes
+
+- 3bfc21bd6: Remove old @types
+
 ## 2.2.9
 
 ### Patch Changes

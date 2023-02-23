@@ -1,5 +1,12 @@
 # @uidu/email-builder
 
+## 0.2.22
+
+### Patch Changes
+
+- Updated dependencies [3bfc21bd6]
+  - @uidu/adf-schema@2.2.10
+
 ## 0.2.21
 
 ### Patch Changes
