@@ -1,5 +1,11 @@
 # @uidu/field-geosuggest
 
+## 2.1.0
+
+### Minor Changes
+
+- ec1f25084: Use callbackName for google maps api
+
 ## 2.0.19
 
 ### Patch Changes
