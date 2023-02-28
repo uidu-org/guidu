@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.2.2
+
+### Patch Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+
 ## 0.2.1
 
 ### Patch Changes

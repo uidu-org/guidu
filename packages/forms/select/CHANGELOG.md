@@ -1,5 +1,12 @@
 # @uidu/field-text
 
+## 2.2.12
+
+### Patch Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+  - @uidu/field-base@4.2.13
+
 ## 2.2.11
 
 ### Patch Changes

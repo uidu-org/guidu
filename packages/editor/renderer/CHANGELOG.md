@@ -1,5 +1,14 @@
 # @uidu/renderer
 
+## 2.4.4
+
+### Patch Changes
+
+- Updated dependencies [fc86c70c7]
+  - @uidu/media-filmstrip@0.7.0
+  - @uidu/adf-schema@2.2.11
+  - @uidu/media-card@0.8.17
+
 ## 2.4.3
 
 ### Patch Changes

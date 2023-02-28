@@ -1,5 +1,19 @@
 # @uidu/editor-core
 
+## 2.12.1
+
+### Patch Changes
+
+- Updated dependencies [fc86c70c7]
+  - @uidu/media-filmstrip@0.7.0
+  - @uidu/modal-dialog@1.1.9
+  - @uidu/adf-schema@2.2.11
+  - @uidu/media-card@0.8.17
+  - @uidu/select@2.2.12
+  - @uidu/form@2.2.11
+  - @uidu/field-base@4.2.13
+  - @uidu/field-date@2.1.20
+
 ## 2.12.0
 
 ### Minor Changes

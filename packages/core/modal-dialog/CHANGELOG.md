@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 1.1.9
+
+### Patch Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+
 ## 1.1.8
 
 ### Patch Changes

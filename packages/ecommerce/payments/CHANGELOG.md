@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 1.5.31
+
+### Patch Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+- Updated dependencies [fc86c70c7]
+  - @uidu/form@2.2.11
+  - @uidu/field-base@4.2.13
+
 ## 1.5.30
 
 ### Patch Changes

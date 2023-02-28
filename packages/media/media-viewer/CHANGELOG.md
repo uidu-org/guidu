@@ -1,5 +1,16 @@
 # @uidu/media-viewer
 
+## 1.0.0
+
+### Major Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+
+### Patch Changes
+
+- Updated dependencies [fc86c70c7]
+  - @uidu/modal-dialog@1.1.9
+
 ## 0.6.3
 
 ### Patch Changes
