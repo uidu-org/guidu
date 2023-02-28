@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.2.11
+
+### Patch Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+
 ## 2.2.10
 
 ### Patch Changes

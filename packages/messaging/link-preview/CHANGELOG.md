@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.3.34
+
+### Patch Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+
 ## 0.3.33
 
 ### Patch Changes

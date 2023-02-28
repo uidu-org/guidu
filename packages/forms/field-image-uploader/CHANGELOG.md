@@ -1,5 +1,14 @@
 # @uidu/field-image-uploader
 
+## 3.1.3
+
+### Patch Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+- Updated dependencies [fc86c70c7]
+  - @uidu/form@2.2.11
+  - @uidu/field-base@4.2.13
+
 ## 3.1.2
 
 ### Patch Changes

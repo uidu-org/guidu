@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.5.82
+
+### Patch Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+- Updated dependencies [fc86c70c7]
+  - @uidu/media-viewer@1.0.0
+  - @uidu/media-card@0.8.17
+  - @uidu/message-form@0.4.36
+
 ## 0.5.81
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.17
+
+### Patch Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+
 ## 0.8.16
 
 ### Patch Changes

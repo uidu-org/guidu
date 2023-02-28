@@ -1,5 +1,18 @@
 # @uidu/media-filmstrip
 
+## 0.7.0
+
+### Minor Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+
+### Patch Changes
+
+- Updated dependencies [fc86c70c7]
+  - @uidu/media-viewer@1.0.0
+  - @uidu/modal-dialog@1.1.9
+  - @uidu/media-card@0.8.17
+
 ## 0.6.3
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/data-fields
 
+## 2.1.37
+
+### Patch Changes
+
+- fc86c70c7: Media viewer usin different strategies for different mime types
+- Updated dependencies [fc86c70c7]
+  - @uidu/select@2.2.12
+  - @uidu/form@2.2.11
+  - @uidu/field-time@2.0.43
+  - @uidu/field-date@2.1.20
+  - @uidu/field-number@2.0.39
+  - @uidu/field-toggle@2.0.39
+
 ## 2.1.36
 
 ### Patch Changes
