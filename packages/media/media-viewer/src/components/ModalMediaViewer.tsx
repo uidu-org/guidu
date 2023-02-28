@@ -1,4 +1,4 @@
-import Modal, { ModalBody, ModalTransition } from '@uidu/modal-dialog';
+import Modal, { ModalTransition } from '@uidu/modal-dialog';
 import React from 'react';
 import { ModalMediaViewerProps } from '../types';
 import MediaViewer from './MediaViewer';
@@ -10,7 +10,7 @@ export default function ModalMediaViewer({
 }: ModalMediaViewerProps) {
   return (
     <ModalTransition>
-      {Number.isInteger(currentIndex as any) ? (
+      {Number.isInteger(currentIndex) ? (
         <Modal
           onClose={onClose}
           width="calc(100vw - 1rem)"
@@ -29,15 +29,11 @@ export default function ModalMediaViewer({
           //   }),
           // }}
         >
-          <ModalBody tw="p-0">
-            <MediaViewer
-              files={files}
-              currentIndex={currentIndex}
-              onClose={onClose}
-              allowFullscreen
-              closeOnBackdropClick
-            />
-          </ModalBody>
+          <MediaViewer
+            files={files}
+            currentIndex={currentIndex}
+            onClose={onClose}
+          />
         </Modal>
       ) : null}
     </ModalTransition>

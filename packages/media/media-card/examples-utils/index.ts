@@ -16,6 +16,7 @@ export const fakeImage = () => ({
     metadata: {
       filename: faker.finance.accountName(),
       extension: 'jpg',
+      mime_type: 'image/jpeg',
     },
   },
 });
@@ -35,6 +36,7 @@ export const fakeVideo = () => ({
     metadata: {
       filename: faker.finance.accountName(),
       extension: 'mkv',
+      // mime_type: 'image/jpeg',
       sources: [
         {
           type: 'video/mp4',
@@ -49,7 +51,7 @@ export const fakeVideo = () => ({
   },
 });
 
-export const fakeFile = () => ({
+export const fakePdf = () => ({
   id: faker.datatype.uuid(),
   description: faker.lorem.sentence(),
   author: {
@@ -60,10 +62,50 @@ export const fakeFile = () => ({
   file: {
     id: faker.datatype.uuid(),
     type: 'file' as FileType,
-    url: faker.image.business(),
+    url: 'https://arxiv.org/pdf/quant-ph/0410100.pdf',
     metadata: {
       filename: faker.finance.accountName(),
       extension: 'pdf',
+      mime_type: 'application/pdf',
+    },
+  },
+});
+
+export const fakeXls = () => ({
+  id: faker.datatype.uuid(),
+  description: faker.lorem.sentence(),
+  author: {
+    avatar: faker.image.avatar(),
+    name: faker.name.fullName(),
+  },
+  createdAt: faker.date.recent(),
+  file: {
+    id: faker.datatype.uuid(),
+    type: 'file' as FileType,
+    url: 'https://file-examples.com/wp-content/uploads/2017/02/file_example_XLS_100.xls',
+    metadata: {
+      filename: faker.finance.accountName(),
+      extension: 'pdf',
+      mime_type: 'xls',
+    },
+  },
+});
+export const fakeCsv = () => ({
+  id: faker.datatype.uuid(),
+  description: faker.lorem.sentence(),
+  author: {
+    avatar: faker.image.avatar(),
+    name: faker.name.fullName(),
+  },
+  createdAt: faker.date.recent(),
+  file: {
+    id: faker.datatype.uuid(),
+    type: 'file' as FileType,
+    url: 'https://arxiv.org/pdf/quant-ph/0410100.pdf',
+    metadata: {
+      filename: faker.finance.accountName(),
+      extension: 'pdf',
+      mime_type: 'application/pdf',
     },
   },
 });
@@ -94,8 +136,9 @@ export const fetchAttachments = () => {
       resolve([
         ...Array.from(Array(1).keys()).map((i) => fakeImage()),
         ...Array.from(Array(1).keys()).map((i) => fakeVideo()),
-        ...Array.from(Array(1).keys()).map((i) => fakeFile()),
+        ...Array.from(Array(1).keys()).map((i) => fakePdf()),
         ...Array.from(Array(1).keys()).map((i) => fakeLink()),
+        ...Array.from(Array(1).keys()).map((i) => fakeXls()),
       ]);
     }, 3000);
   });

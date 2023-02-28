@@ -135,17 +135,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/focus-ring@npm:^1.0.0, @atlaskit/focus-ring@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@atlaskit/focus-ring@npm:1.1.0"
+"@atlaskit/focus-ring@npm:^1.0.0, @atlaskit/focus-ring@npm:^1.2.5":
+  version: 1.2.5
+  resolution: "@atlaskit/focus-ring@npm:1.2.5"
   dependencies:
-    "@atlaskit/theme": ^12.2.0
-    "@atlaskit/tokens": ^0.10.0
+    "@atlaskit/tokens": ^1.2.0
     "@babel/runtime": ^7.0.0
     "@emotion/react": ^11.7.1
   peerDependencies:
     react: ^16.8.0
-  checksum: aa2055e4bf0c3c329e38d2846ca83a85adc9c00f120573f6f0d8a9624b8b2b9808d31a5a8f23eac3bb596cd89299c5d14b35970556f39ce48eb6de8789232fd6
+  checksum: 78c33b7e4c68d2f9dbf6e2390dbadf38dd17ff1385118a94209f8c854d23852e339fd28394cb8beaf3376223e9c614fabcef2de0a34ba61c0632b2efa9e52d22
   languageName: node
   linkType: hard
 
@@ -203,17 +202,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/motion@npm:^1.2.0, @atlaskit/motion@npm:^1.2.3":
-  version: 1.2.3
-  resolution: "@atlaskit/motion@npm:1.2.3"
+"@atlaskit/motion@npm:^1.2.0, @atlaskit/motion@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "@atlaskit/motion@npm:1.3.1"
   dependencies:
     "@atlaskit/ds-lib": ^2.1.0
     "@babel/runtime": ^7.0.0
-    "@emotion/core": ^10.0.9
+    "@emotion/react": ^11.7.1
     bind-event-listener: ^2.1.1
   peerDependencies:
     react: ^16.8.0
-  checksum: 2027b919242de3b7370da03de7d3836f248c17c25bd2ba6ce43c6b500aa0ea16c74a4d43c4dbd4c5833e9a1f77490b51a2730b0beba4e73e6e2253813bf54dfa
+  checksum: e33735b0720b1de5195213de4d398dfffcb60a23c9de43b70ffb86cc35bc96b8c279e511cd53fe44a62ccabdb36a7f43b83253c898f56fd3d8065007ba13cf67
   languageName: node
   linkType: hard
 
@@ -312,6 +311,21 @@ __metadata:
   peerDependencies:
     react: ^16.8.0
   checksum: ac363332228c2373bba1e359233d4879b04568fec5379dbdeba90747922d33d9d86cffbfb67b2d9d95ed5f55f6849825ce381d5f221e35b9bce05f1dad834825
+  languageName: node
+  linkType: hard
+
+"@atlaskit/tokens@npm:^1.2.0":
+  version: 1.2.1
+  resolution: "@atlaskit/tokens@npm:1.2.1"
+  dependencies:
+    "@atlaskit/ds-lib": ^2.1.0
+    "@babel/runtime": ^7.0.0
+    "@babel/traverse": ^7.15.0
+    "@babel/types": ^7.15.0
+    bind-event-listener: ^2.1.1
+  peerDependencies:
+    react: ^16.8.0
+  checksum: 76317ec8068bb129318284269b7b3e2ff56be8d12dffe89118a49bb0b7793bae85584e065679cc3fdc2014683a2cdd8556dc192b6cf81ccfbd1fd2e49315ee60
   languageName: node
   linkType: hard
 
@@ -2553,7 +2567,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/core@npm:^10.0.14, @emotion/core@npm:^10.0.9":
+"@emotion/core@npm:^10.0.14":
   version: 10.3.1
   resolution: "@emotion/core@npm:10.3.1"
   dependencies:
@@ -2756,9 +2770,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/eslintrc@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "@eslint/eslintrc@npm:1.4.1"
+"@eslint/eslintrc@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@eslint/eslintrc@npm:2.0.0"
   dependencies:
     ajv: ^6.12.4
     debug: ^4.3.2
@@ -2769,7 +2783,14 @@ __metadata:
     js-yaml: ^4.1.0
     minimatch: ^3.1.2
     strip-json-comments: ^3.1.1
-  checksum: cd3e5a8683db604739938b1c1c8b77927dc04fce3e28e0c88e7f2cd4900b89466baf83dfbad76b2b9e4d2746abdd00dd3f9da544d3e311633d8693f327d04cd7
+  checksum: 31119c8ca06723d80384f18f5c78e0530d8e6306ad36379868650131a8b10dd7cffd7aff79a5deb3a2e9933660823052623d268532bae9538ded53d5b19a69a6
+  languageName: node
+  linkType: hard
+
+"@eslint/js@npm:8.35.0":
+  version: 8.35.0
+  resolution: "@eslint/js@npm:8.35.0"
+  checksum: 6687ceff659a6d617e37823f809dc9c4b096535961a81acead27d26b1a51a4cf608a5e59d831ddd57f24f6f8bb99340a4a0e19f9c99b390fbb4b275f51ed5f5e
   languageName: node
   linkType: hard
 
@@ -3133,9 +3154,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/cli@npm:6.0.3":
-  version: 6.0.3
-  resolution: "@formatjs/cli@npm:6.0.3"
+"@formatjs/cli@npm:6.0.4":
+  version: 6.0.4
+  resolution: "@formatjs/cli@npm:6.0.4"
   peerDependencies:
     "@vue/compiler-sfc": ^3.2.34
   peerDependenciesMeta:
@@ -3143,7 +3164,7 @@ __metadata:
       optional: true
   bin:
     formatjs: bin/formatjs
-  checksum: 2d9682d2cf50b2136483de4413594c838e71dea941477e3724fe39d1b113cf3610e60b591b9adc7b3a28ea1804ddf2af770fa22442c1707e2e7324a06100fc18
+  checksum: 2a13d9fe5a6fc70ddd7e667e64f727eeebf554ec20b25cdfc3354c7f02cc938410ebfaf59fd492e5c2af7acc3542d8861c0095e96a0a920d6b5608162876ceeb
   languageName: node
   linkType: hard
 
@@ -5062,134 +5083,313 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-spring/animated@npm:~9.6.1":
-  version: 9.6.1
-  resolution: "@react-spring/animated@npm:9.6.1"
-  dependencies:
-    "@react-spring/shared": ~9.6.1
-    "@react-spring/types": ~9.6.1
+"@react-pdf-viewer/core@npm:3.11.0, @react-pdf-viewer/core@npm:^3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/core@npm:3.11.0"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: fd8b3dbb1ad3195d510888bd7ea2e2790ea4505442b70b19b30c462c2b68f56c9d66febbb7e4fa32a21e31b03c423176f6257879be80b22c0286e56789547ee3
+    pdfjs-dist: ^2.16.105 || ^3.0.279
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 7083e31302a00f4f6d767d94799ccd0176a400691159a753252f8dae2966bd484cff0456db33a498e0103a5e0007a098e503373a3cb5dfe30f3dafe75954ae99
   languageName: node
   linkType: hard
 
-"@react-spring/core@npm:~9.6.1":
-  version: 9.6.1
-  resolution: "@react-spring/core@npm:9.6.1"
+"@react-pdf-viewer/full-screen@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/full-screen@npm:3.11.0"
   dependencies:
-    "@react-spring/animated": ~9.6.1
-    "@react-spring/rafz": ~9.6.1
-    "@react-spring/shared": ~9.6.1
-    "@react-spring/types": ~9.6.1
+    "@react-pdf-viewer/core": 3.11.0
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 7e0aaec8a6f68b3f2399533947cdbf1b2c4f94a6b01eb1d577516af7385cd302d775f1f3f10b838581edd70773d314ba066dbce0b63169b4cf2fd7791acc3d13
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: ebdcb6db6c46b78d63ce0a636a95be8e6cc4184e36c3e54de1dc7166548c35cc2508402aeb6b1567be62224da8204871e5d90b2112d0b5d628ab7ba1dbcfbcf4
   languageName: node
   linkType: hard
 
-"@react-spring/konva@npm:~9.6.1":
-  version: 9.6.1
-  resolution: "@react-spring/konva@npm:9.6.1"
+"@react-pdf-viewer/get-file@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/get-file@npm:3.11.0"
   dependencies:
-    "@react-spring/animated": ~9.6.1
-    "@react-spring/core": ~9.6.1
-    "@react-spring/shared": ~9.6.1
-    "@react-spring/types": ~9.6.1
+    "@react-pdf-viewer/core": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: c9737023acdf36973f040ea38c61c08d1d1ca09ec120d4f13b52b65f60c5efb3f0f2d0f0322c47bedcb844ac84de807bac745d953ac9dddf3d670f3226325f2e
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/open@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/open@npm:3.11.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 2b5335c16670c819c032219c77e6e21f2f06001dea9d755e9a25ea7bf192a02a39261777afc984dc18c4adac21ef336ed0367078b59f2b3dfc8a8bd2d23e6f08
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/page-navigation@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/page-navigation@npm:3.11.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 748a7abf9913cb96e775c8eb37f60d5493fce0c9cbe6692f12437657ade22a4fd7522cb6a9e0ce4e27b644cb9ab05c8d45ea14b00bdccdb7e003ded8bb235e2d
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/print@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/print@npm:3.11.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 1867a4e1f8334337fd17e08a404f804755acd83dad8f0d8e0c77c4301212346ca3eed4a3df99d78847bc5d2f1eb2df1f658d45c2a257519be71fb9586f2b3407
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/properties@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/properties@npm:3.11.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: db4a65ac46019d94bae06fb804b33f35c9daa0529fe4d8efead21d8f6a02a4d60502d9770872f630f6eb8a4c5847ae5cceb9bb1f8af733c93c3da414c44b167c
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/rotate@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/rotate@npm:3.11.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: acd7a7236324530668f28d8c8ab341b2819f79398f15c51ac43f008c469c133e565dc145db1979452b7e6d9844ed6fb003c8de9836ecc01057feaf38fbd3382d
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/scroll-mode@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/scroll-mode@npm:3.11.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 9caab258928352fdffb122e54fc7bdc06639aea9552c3aeca6300926998435b27f5517761713722430d0daab78a90f901715bcfa24602c871aaa3c7c810e64bb
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/search@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/search@npm:3.11.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 180302f9419774b4bd5d177d887915bcf0e76ba3e2ef672dfd64a55794acc8eacbbeb3a29444e2910ac8bbee18c13c9302ebdb3d4ee5648c1947ffe93ee5453e
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/selection-mode@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/selection-mode@npm:3.11.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: c62bcc20701513ae04a4ca0bd5f8fd476dab604fb95d988abef26376abc4beffa7f699ad4e27b57e662f1aa70c0802f15d24f3b294b07e49c5f61aa9754e2923
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/theme@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/theme@npm:3.11.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: fbdc825bdeff6cb52a751d16ba7e5217f12b1040759af9e2ad08e51cee77baaa2d56efd29317d44a4480178bffd5bd597c931e88faa563a4699448f9e82b1f4b
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/toolbar@npm:^3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/toolbar@npm:3.11.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.11.0
+    "@react-pdf-viewer/full-screen": 3.11.0
+    "@react-pdf-viewer/get-file": 3.11.0
+    "@react-pdf-viewer/open": 3.11.0
+    "@react-pdf-viewer/page-navigation": 3.11.0
+    "@react-pdf-viewer/print": 3.11.0
+    "@react-pdf-viewer/properties": 3.11.0
+    "@react-pdf-viewer/rotate": 3.11.0
+    "@react-pdf-viewer/scroll-mode": 3.11.0
+    "@react-pdf-viewer/search": 3.11.0
+    "@react-pdf-viewer/selection-mode": 3.11.0
+    "@react-pdf-viewer/theme": 3.11.0
+    "@react-pdf-viewer/zoom": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 73fbf65f032badf3bca88043e2410d9335e0dac9f5e06f90e58d26d771233004b5fae4c14d0e6928470ac6bc2a42e0db94a3d1585bfc09fa9ffdb766b8cd121f
+  languageName: node
+  linkType: hard
+
+"@react-pdf-viewer/zoom@npm:3.11.0":
+  version: 3.11.0
+  resolution: "@react-pdf-viewer/zoom@npm:3.11.0"
+  dependencies:
+    "@react-pdf-viewer/core": 3.11.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 5c2f8737ba294250f62cc744d343175c86bfe81f5ebac4695e658682e62fc08c5fe15b53606e4a47b7aaaf952f943782b92004fc6b41199b41726f095ca3c9ee
+  languageName: node
+  linkType: hard
+
+"@react-spring/animated@npm:~9.7.0":
+  version: 9.7.0
+  resolution: "@react-spring/animated@npm:9.7.0"
+  dependencies:
+    "@react-spring/shared": ~9.7.0
+    "@react-spring/types": ~9.7.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 54e78da697568029cd4fd2ca2f71fb5ed5b1ee0cc61702b2aa0e805e55ac5e43bfbda896776353ba2c23ccaba5cd6c2caf69e3fa985c0d423b823673dd983ffe
+  languageName: node
+  linkType: hard
+
+"@react-spring/core@npm:~9.7.0":
+  version: 9.7.0
+  resolution: "@react-spring/core@npm:9.7.0"
+  dependencies:
+    "@react-spring/animated": ~9.7.0
+    "@react-spring/rafz": ~9.7.0
+    "@react-spring/shared": ~9.7.0
+    "@react-spring/types": ~9.7.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 8a87856898d796355a2f45abb893128e1c2f3b5034e377e1890b7ee99f50374d06a73a27ce8edab819aaf5a1749401d997bf4716aa129a3b474aca527c85374f
+  languageName: node
+  linkType: hard
+
+"@react-spring/konva@npm:~9.7.0":
+  version: 9.7.0
+  resolution: "@react-spring/konva@npm:9.7.0"
+  dependencies:
+    "@react-spring/animated": ~9.7.0
+    "@react-spring/core": ~9.7.0
+    "@react-spring/shared": ~9.7.0
+    "@react-spring/types": ~9.7.0
   peerDependencies:
     konva: ">=2.6"
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-konva: ^16.8.0 || ^17.0.0
-  checksum: 6dce3db0183514495dd30825c0605f1eecb3fa4184a45d214cc81ccd48ec7eec6e54913fba54401cc7997d47da36b6bca9d49fc5bfc507159be6ea515144f883
+    react-konva: ^16.8.0 || ^16.8.7-0 || ^16.9.0-0 || ^16.10.1-0 || ^16.12.0-0 || ^16.13.0-0 || ^17.0.0-0 || ^17.0.1-0 || ^17.0.2-0 || ^18.0.0-0
+  checksum: bf503d1580d8083bd1b3b95a719df16ce867d692d7b8ae05f746b50026414ba821328e3c1bda8965008fe83ccc40dabd1febbba5bc5e4450e0f77738a604791b
   languageName: node
   linkType: hard
 
-"@react-spring/native@npm:~9.6.1":
-  version: 9.6.1
-  resolution: "@react-spring/native@npm:9.6.1"
+"@react-spring/native@npm:~9.7.0":
+  version: 9.7.0
+  resolution: "@react-spring/native@npm:9.7.0"
   dependencies:
-    "@react-spring/animated": ~9.6.1
-    "@react-spring/core": ~9.6.1
-    "@react-spring/shared": ~9.6.1
-    "@react-spring/types": ~9.6.1
+    "@react-spring/animated": ~9.7.0
+    "@react-spring/core": ~9.7.0
+    "@react-spring/shared": ~9.7.0
+    "@react-spring/types": ~9.7.0
   peerDependencies:
     react: ^16.8.0  || >=17.0.0 || >=18.0.0
     react-native: ">=0.58"
-  checksum: 11489382636b00d3c9f14e2c4c74da30d72129ed8accd4c21fce57fd813ffd13f088793f9d227c657ad04588f8c4cbefa800955c62e745cf59696d5539acc07a
+  checksum: a2b676da7827253575b5edaae90e7f1bfe7ec8a75c0d04d52d8457f9ac2f01f7bffa88bd690a694429a9a8654fd38fa37718b5be9211a0c28df547f594f9d8f9
   languageName: node
   linkType: hard
 
-"@react-spring/rafz@npm:~9.6.1":
-  version: 9.6.1
-  resolution: "@react-spring/rafz@npm:9.6.1"
-  checksum: 3c8967b01ad29d212244a572193b465087104064b043e6bb303e4498e165f73bb8ef20d46af7bcdd351dc3370fb190fcee76a31d80a8b2c09cf04ef976e34556
+"@react-spring/rafz@npm:~9.7.0":
+  version: 9.7.0
+  resolution: "@react-spring/rafz@npm:9.7.0"
+  checksum: bb6c7f6ddbbb78ff04a4765920b6b4a9e22ce6ffe465cda8cb52edb2f15b1de7b363b9f9019ef0f3df3da82401e6e3ac0a049abc7b0b510fb6ea1ac558fe2a13
   languageName: node
   linkType: hard
 
-"@react-spring/shared@npm:~9.6.1":
-  version: 9.6.1
-  resolution: "@react-spring/shared@npm:9.6.1"
+"@react-spring/shared@npm:~9.7.0":
+  version: 9.7.0
+  resolution: "@react-spring/shared@npm:9.7.0"
   dependencies:
-    "@react-spring/rafz": ~9.6.1
-    "@react-spring/types": ~9.6.1
+    "@react-spring/rafz": ~9.7.0
+    "@react-spring/types": ~9.7.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 4e2c905a1804fe0402753ce50fc563faa87dec7b6dd348cc21800c213ce71d77db4e299cf1b9c47a8ee557220b62ee64ac934867c11881b1124b63f59eb4c9f3
+  checksum: 730fc47531b73e0cfd65975155f2fa6699bd480a36be9203a422a4e65dad719aaf6d16f8d0a970ab2f297fa6aec3969f4c6e8eb5e870661426014a229ff291d6
   languageName: node
   linkType: hard
 
-"@react-spring/three@npm:~9.6.1":
-  version: 9.6.1
-  resolution: "@react-spring/three@npm:9.6.1"
+"@react-spring/three@npm:~9.7.0":
+  version: 9.7.0
+  resolution: "@react-spring/three@npm:9.7.0"
   dependencies:
-    "@react-spring/animated": ~9.6.1
-    "@react-spring/core": ~9.6.1
-    "@react-spring/shared": ~9.6.1
-    "@react-spring/types": ~9.6.1
+    "@react-spring/animated": ~9.7.0
+    "@react-spring/core": ~9.7.0
+    "@react-spring/shared": ~9.7.0
+    "@react-spring/types": ~9.7.0
   peerDependencies:
     "@react-three/fiber": ">=6.0"
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     three: ">=0.126"
-  checksum: 7d53e6673efd4dc063a475bbbfbac687c717695ffff0d03d3f7e4d8adaa39ebe0455d099337871f281ab5f2bab872886f782cf269722deb907b0446388a818b4
+  checksum: 0fe4ec4d638c12472fee4f67b8d513b813d6cc8267192cd32d39f7445704f2d813625f1e83e12722c13f731adf96292d6ec4d97c178067512e44620243a96e65
   languageName: node
   linkType: hard
 
-"@react-spring/types@npm:~9.6.1":
-  version: 9.6.1
-  resolution: "@react-spring/types@npm:9.6.1"
-  checksum: 803dc6c2d67773ee1e5d00d2feac291dad32cf4ca6a790554d6133dd4cd39aeb89b3beea4cc67f91c2d2e4bdbd1a995540dc7fee117138e207a105d255d39c1c
+"@react-spring/types@npm:~9.7.0":
+  version: 9.7.0
+  resolution: "@react-spring/types@npm:9.7.0"
+  checksum: 0137cf6066d9e3be2a0499eee3dbb5e979b1b392e74f38eec10933702800d5f401c84c23cb13d4575453d1b8b4ad9c849090ee3d959fe0a0a5108f423bfc0fc3
   languageName: node
   linkType: hard
 
-"@react-spring/web@npm:~9.6.1":
-  version: 9.6.1
-  resolution: "@react-spring/web@npm:9.6.1"
+"@react-spring/web@npm:~9.7.0":
+  version: 9.7.0
+  resolution: "@react-spring/web@npm:9.7.0"
   dependencies:
-    "@react-spring/animated": ~9.6.1
-    "@react-spring/core": ~9.6.1
-    "@react-spring/shared": ~9.6.1
-    "@react-spring/types": ~9.6.1
+    "@react-spring/animated": ~9.7.0
+    "@react-spring/core": ~9.7.0
+    "@react-spring/shared": ~9.7.0
+    "@react-spring/types": ~9.7.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 3c336a9d162136c0d1ec8adad31d8534d4309de46eea9fa50f735aa9ea0cd3350320654160ea1fc731ba06a3b4342c508d7b5b9035b7816ab0285f5e952dd118
+  checksum: d52c0d93e39c9d5d6fd683f9ab5f847354b89f3874b9ff1074414e871b80b6924aac2298d51386556b3cb6fe47836dffcc5a7250ebbc8a3387627e6f374b1819
   languageName: node
   linkType: hard
 
-"@react-spring/zdog@npm:~9.6.1":
-  version: 9.6.1
-  resolution: "@react-spring/zdog@npm:9.6.1"
+"@react-spring/zdog@npm:~9.7.0":
+  version: 9.7.0
+  resolution: "@react-spring/zdog@npm:9.7.0"
   dependencies:
-    "@react-spring/animated": ~9.6.1
-    "@react-spring/core": ~9.6.1
-    "@react-spring/shared": ~9.6.1
-    "@react-spring/types": ~9.6.1
+    "@react-spring/animated": ~9.7.0
+    "@react-spring/core": ~9.7.0
+    "@react-spring/shared": ~9.7.0
+    "@react-spring/types": ~9.7.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-zdog: ">=1.0"
     zdog: ">=1.0"
-  checksum: 269bd52bbc5dc5fa0cf1aa20c28d96668f2231aacc781ff762328185f70877bc4a867d9ad8f4a873c507df94832be25dc0047352621b1de1f85b345981bdf050
+  checksum: b8a6e9cfa1192c585469b98e985f892b4d0bfa885e744b649834e7bc9101bf9a4f6ad7c40cec89a4f9db8e463ff43a58de581ca63681b572c722e35bc0210bb1
   languageName: node
   linkType: hard
 
@@ -6241,10 +6441,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.14.0":
-  version: 18.14.0
-  resolution: "@types/node@npm:18.14.0"
-  checksum: d83fcf5e4ed544755dd9028f5cbb6b9d46235043159111bb2ad62223729aee581c0144a9f6df8ba73d74011db9ed4ebd7af2fd5e0996714e3beb508a5da8ac5c
+"@types/node@npm:*, @types/node@npm:^18.14.2":
+  version: 18.14.2
+  resolution: "@types/node@npm:18.14.2"
+  checksum: 53c07e721f6ae33de71306f6a0b75dae6066a4f55bd5484c93bd59ff25f0c5f004ceafeef509a4d0cb9e24a247efc34d50489bcc1b05a53ecc68e2fc088e65cb
   languageName: node
   linkType: hard
 
@@ -6956,16 +7156,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/adf-schema@2.2.9, @uidu/adf-schema@^2.2.9, @uidu/adf-schema@workspace:packages/editor/adf-schema":
+"@uidu/adf-schema@2.2.10, @uidu/adf-schema@^2.2.10, @uidu/adf-schema@^2.2.9, @uidu/adf-schema@workspace:packages/editor/adf-schema":
   version: 0.0.0-use.local
   resolution: "@uidu/adf-schema@workspace:packages/editor/adf-schema"
   dependencies:
     "@babel/runtime": ^7.21.0
     "@types/linkify-it": ^3.0.2
-    "@uidu/editor-json-transformer": ^1.0.13
+    "@uidu/editor-json-transformer": ^1.0.14
     "@uidu/json-schema-generator": ^1.0.8
     "@uidu/media-core": 1.5.1
-    axios: ^1.3.3
+    axios: ^1.3.4
     css-color-names: ^1.0.1
     json-schema-diff-validator: ^0.4.1
     linkify-it: ^4.0.1
@@ -7757,17 +7957,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-common@^2.6.2, @uidu/editor-common@^2.7.0, @uidu/editor-common@workspace:packages/editor/editor-common":
+"@uidu/editor-common@^2.6.2, @uidu/editor-common@^2.7.0, @uidu/editor-common@^2.7.1, @uidu/editor-common@workspace:packages/editor/editor-common":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
     "@atlaskit/icon": ^21.10.7
     "@babel/runtime": ^7.21.0
-    "@uidu/adf-schema": ^2.2.9
+    "@uidu/adf-schema": ^2.2.10
     "@uidu/adf-utils": ^2.2.3
     "@uidu/analytics": ^0.6.13
     "@uidu/analytics-namespaced-context": ^0.4.23
-    "@uidu/editor-json-transformer": 1.0.13
+    "@uidu/editor-json-transformer": 1.0.14
     "@uidu/emoji": ^0.6.35
     "@uidu/media-core": 1.5.1
     "@uidu/mentions": ^0.5.7
@@ -7876,14 +8076,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-json-transformer@1.0.13, @uidu/editor-json-transformer@^1.0.13, @uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer":
+"@uidu/editor-json-transformer@1.0.14, @uidu/editor-json-transformer@^1.0.13, @uidu/editor-json-transformer@^1.0.14, @uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer"
   dependencies:
     "@babel/runtime": ^7.21.0
-    "@uidu/adf-schema": ^2.2.9
+    "@uidu/adf-schema": ^2.2.10
     "@uidu/docs": ^0.5.26
-    "@uidu/editor-common": ^2.6.2
+    "@uidu/editor-common": ^2.7.1
     "@uidu/editor-core": ^2.11.1
     prosemirror-model: ^1.19.0
     prosemirror-view: ^1.30.1
@@ -7942,7 +8142,7 @@ __metadata:
     "@craftjs/core": ^0.2.0-beta.8
     "@craftjs/utils": ^0.2.0-beta.8
     "@heroicons/react": ^2.0.16
-    "@uidu/adf-schema": 2.2.9
+    "@uidu/adf-schema": 2.2.10
     "@uidu/button": 1.3.37
     "@uidu/editor-core": 2.12.0
     "@uidu/email-renderer": 1.3.6
@@ -8226,7 +8426,7 @@ __metadata:
     "@uppy/core": ^3.0.6
     "@uppy/react": ^3.1.0
     "@uppy/thumbnail-generator": ^3.0.2
-    axios: ^1.3.3
+    axios: ^1.3.4
     react: ^18.2.0
     react-avatar-editor: ^13.0.0
     react-dropzone: ^14.2.3
@@ -8501,7 +8701,7 @@ __metadata:
     react-media: ^1.10.0
     styled-components: ^5.3.6
     tslib: ^2.5.0
-    yup: 1.0.0
+    yup: 1.0.1
   languageName: unknown
   linkType: soft
 
@@ -8722,7 +8922,7 @@ __metadata:
     "@uidu/docs": ^0.5.26
     "@uidu/field-text": ^2.0.9
     "@uidu/form": ^2.2.9
-    axios: ^1.3.3
+    axios: ^1.3.4
     get-urls: ^10.0.1
     lodash: ^4.17.21
     nanoclamp: ^2.0.4
@@ -8875,6 +9075,8 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.21.0
     "@heroicons/react": ^2.0.16
+    "@react-pdf-viewer/core": ^3.11.0
+    "@react-pdf-viewer/toolbar": ^3.11.0
     "@uidu/avatar": ^0.9.22
     "@uidu/button": ^1.3.37
     "@uidu/docs": ^0.5.26
@@ -9017,7 +9219,7 @@ __metadata:
     prop-types: ^15.8.1
     react: ^18.2.0
     react-feather: ^2.0.10
-    react-spring: ^9.6.1
+    react-spring: ^9.7.0
     react-use-gesture: ^8.0.1
     styled-components: ^5.3.6
     tslib: ^2.5.0
@@ -9029,9 +9231,9 @@ __metadata:
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:
     "@atlaskit/ds-lib": ^1.4.2
-    "@atlaskit/focus-ring": ^1.1.0
+    "@atlaskit/focus-ring": ^1.2.5
     "@atlaskit/icon": ^21.10.7
-    "@atlaskit/motion": ^1.2.3
+    "@atlaskit/motion": ^1.3.1
     "@babel/runtime": ^7.21.0
     "@uidu/analytics": ^0.6.13
     "@uidu/avatar": ^0.9.22
@@ -9211,7 +9413,7 @@ __metadata:
     "@uidu/form": ^2.2.10
     "@uidu/section-message": 0.6.31
     "@uidu/theme": ^0.6.30
-    axios: ^1.3.3
+    axios: ^1.3.4
     react: ^18.2.0
     react-feather: ^2.0.10
     react-intl: ^6.2.10
@@ -9374,7 +9576,7 @@ __metadata:
     "@atlaskit/icon": ^21.10.7
     "@babel/runtime": ^7.21.0
     "@loadable/component": ^5.15.3
-    "@uidu/adf-schema": ^2.2.9
+    "@uidu/adf-schema": ^2.2.10
     "@uidu/adf-utils": ^2.2.3
     "@uidu/analytics": ^0.6.13
     "@uidu/analytics-listeners": ^0.4.23
@@ -9383,8 +9585,8 @@ __metadata:
     "@uidu/button": ^1.3.37
     "@uidu/code": ^0.5.25
     "@uidu/docs": ^0.5.26
-    "@uidu/editor-common": ^2.6.2
-    "@uidu/editor-json-transformer": ^1.0.13
+    "@uidu/editor-common": ^2.7.1
+    "@uidu/editor-json-transformer": ^1.0.14
     "@uidu/field-range": ^2.0.12
     "@uidu/media-card": ^0.8.15
     "@uidu/media-filmstrip": ^0.6.3
@@ -9460,7 +9662,7 @@ __metadata:
     react-hook-form: ^7.43.2
     react-select: ^5.7.0
     styled-components: ^5.3.6
-    timezones-list: ^3.0.1
+    timezones-list: ^3.0.2
     tslib: ^2.5.0
     twin.macro: ^3.1.0
   peerDependencies:
@@ -11465,14 +11667,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.3.3":
-  version: 1.3.3
-  resolution: "axios@npm:1.3.3"
+"axios@npm:^1.3.4":
+  version: 1.3.4
+  resolution: "axios@npm:1.3.4"
   dependencies:
     follow-redirects: ^1.15.0
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
-  checksum: b734a4bc348e2fa27150a7d4289d783fa405feb3f79f8daf28fd05813a12c8525ae9d3854aafe7ba041b005a4a751a0ba3b923331ceed41296ae14c7e54e2f26
+  checksum: 7440edefcf8498bc3cdf39de00443e8101f249972c83b739c6e880d9d669fea9486372dbe8739e88b3bf8bb1ad15f6106693f206f078f4516fe8fd47b1c3093c
   languageName: node
   linkType: hard
 
@@ -16067,7 +16269,7 @@ __metadata:
     eslint-config-prettier: ^8.6.0
     eslint-plugin-babel: ^5.3.1
     eslint-plugin-compat: ^4.1.2
-    eslint-plugin-formatjs: ^4.7.2
+    eslint-plugin-formatjs: ^4.8.0
     eslint-plugin-import: ^2.27.5
     eslint-plugin-jsx-a11y: ^6.7.1
     eslint-plugin-prettier: ^4.2.1
@@ -16128,9 +16330,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-formatjs@npm:^4.7.2":
-  version: 4.7.2
-  resolution: "eslint-plugin-formatjs@npm:4.7.2"
+"eslint-plugin-formatjs@npm:^4.8.0":
+  version: 4.8.0
+  resolution: "eslint-plugin-formatjs@npm:4.8.0"
   dependencies:
     "@formatjs/icu-messageformat-parser": 2.3.0
     "@formatjs/ts-transformer": 3.12.0
@@ -16145,7 +16347,7 @@ __metadata:
     unicode-emoji-utils: ^1.1.1
   peerDependencies:
     eslint: 7 || 8
-  checksum: 540484f892ee0d47420a24467b67cc0173b057a19534f325c7565fcee53dac300a94bb08249a4d6652bebe78f94c753ffee21c68ea07bf9e69fc0442339cf566
+  checksum: bf110bb7567912acd5a09c14fc5d76566048b642f112a633b67d16d6888fb8a4917aa818b589ae2cbb0b05c3492f2574d88587b039423d85a1bcd471341d3049
   languageName: node
   linkType: hard
 
@@ -16310,11 +16512,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.34.0":
-  version: 8.34.0
-  resolution: "eslint@npm:8.34.0"
+"eslint@npm:^8.35.0":
+  version: 8.35.0
+  resolution: "eslint@npm:8.35.0"
   dependencies:
-    "@eslint/eslintrc": ^1.4.1
+    "@eslint/eslintrc": ^2.0.0
+    "@eslint/js": 8.35.0
     "@humanwhocodes/config-array": ^0.11.8
     "@humanwhocodes/module-importer": ^1.0.1
     "@nodelib/fs.walk": ^1.2.8
@@ -16328,7 +16531,7 @@ __metadata:
     eslint-utils: ^3.0.0
     eslint-visitor-keys: ^3.3.0
     espree: ^9.4.0
-    esquery: ^1.4.0
+    esquery: ^1.4.2
     esutils: ^2.0.2
     fast-deep-equal: ^3.1.3
     file-entry-cache: ^6.0.1
@@ -16355,7 +16558,7 @@ __metadata:
     text-table: ^0.2.0
   bin:
     eslint: bin/eslint.js
-  checksum: 4e13e9eb05ac2248efbb6acae0b2325091235d5c47ba91a4775c7d6760778cbcd358a773ebd42f4629d2ad89e27c02f5d66eb1f737d75d9f5fc411454f83b2e5
+  checksum: 6212173691d90b1bc94dd3d640e1f210374b30c3905fc0a15e501cf71c6ca52aa3d80ea7a9a245adaaed26d6019169e01fb6881b3f2885b188d37069c749308c
   languageName: node
   linkType: hard
 
@@ -16390,12 +16593,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esquery@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "esquery@npm:1.4.0"
+"esquery@npm:^1.4.2":
+  version: 1.4.2
+  resolution: "esquery@npm:1.4.2"
   dependencies:
     estraverse: ^5.1.0
-  checksum: a0807e17abd7fbe5fbd4fab673038d6d8a50675cdae6b04fbaa520c34581be0c5fa24582990e8acd8854f671dd291c78bb2efb9e0ed5b62f33bac4f9cf820210
+  checksum: 2f4ad89c5aafaca61cc2c15e256190f0d6deb4791cae6552d3cb4b1eb8867958cdf27a56aaa3272ff17435e3eaa19ee0d4129fac336ca6373d7354d7b5da7966
   languageName: node
   linkType: hard
 
@@ -18371,7 +18574,7 @@ __metadata:
     "@emotion/styled": ^11.10.6
     "@faker-js/faker": ^7.6.0
     "@fluentui/react": 8.106.1
-    "@formatjs/cli": 6.0.3
+    "@formatjs/cli": 6.0.4
     "@fortawesome/fontawesome-free": ^6.3.0
     "@fortawesome/fontawesome-svg-core": ^6.3.0
     "@fortawesome/free-solid-svg-icons": ^6.3.0
@@ -18401,7 +18604,7 @@ __metadata:
     "@types/lodash.sample": ^4.2.7
     "@types/markdown-it": ^12.2.3
     "@types/markerclustererplus": ^2.1.33
-    "@types/node": ^18.14.0
+    "@types/node": ^18.14.2
     "@types/overlayscrollbars": ^1.12.1
     "@types/prettier": ^2.7.2
     "@types/prismjs": ^1.26.0
@@ -18459,7 +18662,7 @@ __metadata:
     autoprefixer: ^10.4.13
     autosize: ^6.0.1
     avataaars: ^2.0.0
-    axios: ^1.3.3
+    axios: ^1.3.4
     babel-loader: ^9.1.2
     babel-plugin-add-module-exports: ^1.0.4
     babel-plugin-formatjs: ^10.4.0
@@ -18501,7 +18704,7 @@ __metadata:
     downshift: ^7.2.1
     emoji-mart: ^3.0.1
     emoji-regex: ^10.2.1
-    eslint: ^8.34.0
+    eslint: ^8.35.0
     eslint-config-uidu: ^0.2.0
     eventemitter2: ^6.4.9
     exenv: ^1.2.2
@@ -18614,7 +18817,7 @@ __metadata:
     react-grid-layout: ^1.3.4
     react-helmet: ^6.1.0
     react-hook-form: ^7.43.2
-    react-intersection-observer: ^9.4.2
+    react-intersection-observer: ^9.4.3
     react-intl: ^6.2.10
     react-loadable: ^5.5.0
     react-lorem-component: ^0.13.0
@@ -18633,7 +18836,7 @@ __metadata:
     react-scrolllock: ^5.0.1
     react-select: ^5.7.0
     react-simple-timefield: ^3.3.1
-    react-spring: ^9.6.1
+    react-spring: ^9.7.0
     react-switch: ^7.0.0
     react-syntax-highlighter: ^15.5.0
     react-transition-group: ^4.4.5
@@ -27056,12 +27259,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-intersection-observer@npm:^9.4.2":
-  version: 9.4.2
-  resolution: "react-intersection-observer@npm:9.4.2"
+"react-intersection-observer@npm:^9.4.3":
+  version: 9.4.3
+  resolution: "react-intersection-observer@npm:9.4.3"
   peerDependencies:
     react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 038786fe4678d76b71bb1f1b1e46153521cb4e91e1a4a8732b4a00aa0a818171c312b8ae04907a340d1c8cbb390d4a548a4b05fe99cab9e413d172024a5e42e8
+  checksum: ac31c6c76ce72019a1fb50fe6b53ef6429d98b9e9b937f92d16635ef8586392c7058bb61526a8fe6bea6ce36c006015fe2d8893bac43eda6157b9e6b17ad9b68
   languageName: node
   linkType: hard
 
@@ -27450,20 +27653,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-spring@npm:^9.6.1":
-  version: 9.6.1
-  resolution: "react-spring@npm:9.6.1"
+"react-spring@npm:^9.7.0":
+  version: 9.7.0
+  resolution: "react-spring@npm:9.7.0"
   dependencies:
-    "@react-spring/core": ~9.6.1
-    "@react-spring/konva": ~9.6.1
-    "@react-spring/native": ~9.6.1
-    "@react-spring/three": ~9.6.1
-    "@react-spring/web": ~9.6.1
-    "@react-spring/zdog": ~9.6.1
+    "@react-spring/core": ~9.7.0
+    "@react-spring/konva": ~9.7.0
+    "@react-spring/native": ~9.7.0
+    "@react-spring/three": ~9.7.0
+    "@react-spring/web": ~9.7.0
+    "@react-spring/zdog": ~9.7.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: ee18d0fc4aa98b952c2d8c2a939c5fb05f160ca30d92b5b4a7d932910c1146120118f0506deb73fd671e147f891391a3556de512fb2cdf88b795a3c6f3b53219
+  checksum: 57d04edf7aac0c9ab20dc64c60ecc45ef336bdffd5db8af069d305dda40e90184ac13295bcdbb9808ba5f1ac190ebcf182b7094fe9ebc1a9a62dfaefc50c5434
   languageName: node
   linkType: hard
 
@@ -30486,10 +30689,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"timezones-list@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "timezones-list@npm:3.0.1"
-  checksum: 2c23ce42793c3acb9fd774a497112a6b942fe68b3064423dad4947cbd637d10855b8cf9ea4b3c78263957625ff662310b939bd1e38fce4da44c58352d2181f68
+"timezones-list@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "timezones-list@npm:3.0.2"
+  checksum: 962038425e6a794cf6361f2383cc007a46845b4341f4bf85efaab8f47988fe894e397ca6496792e33a6960d9f018b2f7e005410458061cbad95944a517c37f2d
   languageName: node
   linkType: hard
 
@@ -32643,15 +32846,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yup@npm:1.0.0":
-  version: 1.0.0
-  resolution: "yup@npm:1.0.0"
+"yup@npm:1.0.1":
+  version: 1.0.1
+  resolution: "yup@npm:1.0.1"
   dependencies:
     property-expr: ^2.0.5
     tiny-case: ^1.0.3
     toposort: ^2.0.2
     type-fest: ^2.19.0
-  checksum: 5944fd677c70e0d6b5ea82bd11e992d91339c8f33efddafd52dc812514309bd17ad61b7604cfac39fed52a5f23ca65b97a0b8cb1bd7186da5ad6e731ebdce7c7
+  checksum: 0c9075cdb8b7f33de37e4e65912b10231141deef6a99d512446941b3ce544d82c646dd1a1ca14cb166f280d1a91cb3c5d964363e94ef36a7f56e7de66f8d4d52
   languageName: node
   linkType: hard
 

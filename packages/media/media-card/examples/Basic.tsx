@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { fakeFile, fakeImage, fakeLink, fakeVideo } from '../examples-utils';
+import { fakeImage, fakeLink, fakePdf, fakeVideo } from '../examples-utils';
 import MediaCard from '../src';
 
 export default class Basic extends PureComponent {
@@ -8,7 +8,7 @@ export default class Basic extends PureComponent {
       <div className="card-columns">
         <MediaCard file={fakeImage().file} />
         <MediaCard file={fakeVideo().file} />
-        <MediaCard file={fakeFile().file} />
+        <MediaCard file={fakePdf().file} />
         <MediaCard file={fakeLink().file} />
       </div>
     );

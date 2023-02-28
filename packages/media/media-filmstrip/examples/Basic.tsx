@@ -13,6 +13,6 @@ export default class ViewStory extends PureComponent<any, any> {
 
   render() {
     const { files } = this.state;
-    return <MediaFilmstrip files={files} />;
+    return <MediaFilmstrip files={files.map((f) => f.file)} />;
   }
 }

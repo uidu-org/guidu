@@ -12,12 +12,13 @@ export default function useOnMotionFinish({
   const motionRef = useRef<HTMLElement>(null);
   const onMotionFinish = useCallback(
     (state: Transition) => {
+      console.log('state', state);
       if (state === 'entering' && onOpenComplete) {
-        onOpenComplete(motionRef.current!, true);
+        onOpenComplete(motionRef.current, true);
       }
 
       if (state === 'exiting' && onCloseComplete) {
-        onCloseComplete(motionRef.current!);
+        onCloseComplete(motionRef.current);
       }
     },
     [onOpenComplete, onCloseComplete],

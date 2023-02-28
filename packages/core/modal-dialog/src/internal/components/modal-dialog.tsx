@@ -76,14 +76,14 @@ function ModalDialog(props: ModalDialogProps) {
 
   return (
     <Positioner
-      stackIndex={stackIndex!}
+      stackIndex={stackIndex}
       shouldScrollInViewport={shouldScrollInViewport}
       testId={testId}
       className={className}
     >
       <ModalContext.Provider value={modalDialogContext}>
         <ScrollContext.Provider value={shouldScrollInViewport}>
-          <FadeIn entranceDirection="bottom" onFinish={onMotionFinish}>
+          <FadeIn entranceDirection="top" onFinish={onMotionFinish}>
             {(bottomFadeInProps) => (
               <FocusRing>
                 <StyledDialog
@@ -99,7 +99,7 @@ function ModalDialog(props: ModalDialogProps) {
                   data-testid={testId}
                   data-modal-stack={stackIndex}
                   tabIndex={-1}
-                  aria-modal={true}
+                  aria-modal
                 >
                   {children}
                 </StyledDialog>

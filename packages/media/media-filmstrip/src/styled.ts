@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const FilmStrip = styled.div`
+  display: flex;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   white-space: nowrap;

@@ -23,7 +23,7 @@
     "@hookform/resolvers": "^2.9.11",
     "@uidu/docs": "^0.5.26",
     "react-feather": "^2.0.10",
-    "yup": "1.0.0"
+    "yup": "1.0.1"
   },
   "publishConfig": {
     "access": "public"
