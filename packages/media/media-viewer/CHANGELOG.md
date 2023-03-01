@@ -1,5 +1,11 @@
 # @uidu/media-viewer
 
+## 1.2.0
+
+### Minor Changes
+
+- 6b326a839: Add png renderer
+
 ## 1.1.0
 
 ### Minor Changes
