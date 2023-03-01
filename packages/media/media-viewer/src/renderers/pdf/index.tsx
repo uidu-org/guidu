@@ -16,6 +16,7 @@ import { FileIdentifier } from '@uidu/media-core';
 import React from 'react';
 import styled from 'styled-components';
 import tw, { theme } from 'twin.macro';
+import { DocRendererProps } from '../types';
 
 // pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
@@ -27,7 +28,7 @@ const PdfViewerWrapper = styled.div`
   }
 `;
 
-function PDFRendererStateless({ file }: { file: FileIdentifier }) {
+function PDFRendererStateless({ file }: DocRendererProps) {
   const toolbarPluginInstance = toolbarPlugin();
   const { Toolbar } = toolbarPluginInstance;
 

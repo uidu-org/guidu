@@ -50,8 +50,9 @@ export default function MediaViewer({
         slidesPerView={1}
         loop
         onSwiper={(swiper) => {
-          onSwiper && onSwiper(swiper);
+          if (onSwiper) onSwiper(swiper);
         }}
+        // eslint-disable-next-line react/jsx-props-no-spreading
         {...rest}
       >
         {files.map((file) => (

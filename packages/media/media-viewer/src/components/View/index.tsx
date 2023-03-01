@@ -1,11 +1,11 @@
-import loadable from '@loadable/component';
 import { FileIdentifier } from '@uidu/media-core';
 import React from 'react';
 import { DocViewerRenderers } from '../../renderers';
+import { DocRenderer } from '../../renderers/types';
 import { MediaViewerProps } from '../../types';
 
-const LoadableImage = loadable(() => import('./Image'));
-const LoadableVideo = loadable(() => import('./Video'));
+// const LoadableImage = loadable(() => import('./Image'));
+// const LoadableVideo = loadable(() => import('./Video'));
 // const LoadableFile = loadable(() => import('./File'));
 
 export default function View({

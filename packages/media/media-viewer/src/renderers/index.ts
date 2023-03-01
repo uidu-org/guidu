@@ -3,7 +3,7 @@
 import JPGRenderer from './jpg';
 import MSDocRenderer from './msdoc';
 import PDFRenderer from './pdf';
-// import PNGRenderer from "./png";
+import PNGRenderer from './png';
 // import TIFFRenderer from "./tiff";
 // import TXTRenderer from "./txt";
 // import CSVRenderer from "./csv";
@@ -15,7 +15,7 @@ export const DocViewerRenderers = [
   JPGRenderer,
   MSDocRenderer,
   PDFRenderer,
-  // PNGRenderer,
+  PNGRenderer,
   // TIFFRenderer,
   // TXTRenderer,
   // CSVRenderer,
