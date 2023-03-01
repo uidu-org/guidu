@@ -1,5 +1,11 @@
 # @uidu/media-viewer
 
+## 1.1.0
+
+### Minor Changes
+
+- 248900a71: Add worker pdfjs config
+
 ## 1.0.0
 
 ### Major Changes
