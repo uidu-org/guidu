@@ -15,7 +15,12 @@ export default class Basic extends PureComponent {
     const { files } = this.state;
     console.log('files', files);
     return files.length ? (
-      <MediaViewer files={files.map((f) => f.file)} />
+      <MediaViewer
+        files={files.map((f) => f.file)}
+        config={{
+          pdfJsVersion: '3.3.122',
+        }}
+      />
     ) : (
       <div>Loading...</div>
     );

@@ -33,17 +33,16 @@ const SwiperWrapper = styled.div`
 `;
 
 export default function MediaViewer({
-  currentIndex = 0,
   files,
   onSwiper,
   onSlideChange,
+  config,
   ...rest
 }: MediaViewerProps) {
   return (
     <SwiperWrapper tw="h-full w-full overflow-hidden">
       <Swiper
         onSlideChange={onSlideChange}
-        initialSlide={currentIndex}
         modules={[Keyboard, Navigation]}
         keyboard
         navigation
@@ -57,7 +56,7 @@ export default function MediaViewer({
       >
         {files.map((file) => (
           <SwiperSlide key={file.id}>
-            <View file={file} />
+            <View file={file} config={config} />
           </SwiperSlide>
         ))}
       </Swiper>

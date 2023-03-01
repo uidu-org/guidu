@@ -138,9 +138,17 @@ function PDFRendererStateless({ file }: { file: FileIdentifier }) {
   );
 }
 
-function PDFRenderer({ file }: { file: FileIdentifier }) {
+function PDFRenderer({
+  file,
+  pdfJsVersion,
+}: {
+  file: FileIdentifier;
+  pdfJsVersion: string;
+}) {
   return (
-    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
+    <Worker
+      workerUrl={`https://unpkg.com/pdfjs-dist@${pdfJsVersion}/build/pdf.worker.min.js`}
+    >
       <PDFRendererStateless file={file} />
     </Worker>
   );

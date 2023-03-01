@@ -2,15 +2,20 @@ import loadable from '@loadable/component';
 import { FileIdentifier } from '@uidu/media-core';
 import React from 'react';
 import { DocViewerRenderers } from '../../renderers';
+import { MediaViewerProps } from '../../types';
 
 const LoadableImage = loadable(() => import('./Image'));
 const LoadableVideo = loadable(() => import('./Video'));
 // const LoadableFile = loadable(() => import('./File'));
 
-export default function View({ file }: { file: FileIdentifier }) {
+export default function View({
+  file,
+  config,
+}: {
+  file: FileIdentifier;
+  config: MediaViewerProps['config'];
+}) {
   const pluginRenderers = DocViewerRenderers;
-
-  console.log('pluginRenderers', pluginRenderers);
 
   const matchingRenderers: DocRenderer[] = [];
 
@@ -25,21 +30,9 @@ export default function View({ file }: { file: FileIdentifier }) {
     (a, b) => b.weight - a.weight,
   );
 
-  console.log('SelectedRenderer', SelectedRenderer);
-
   if (SelectedRenderer) {
-    return <SelectedRenderer file={file} />;
+    return <SelectedRenderer file={file} {...config} />;
   }
 
-  switch (file.type) {
-    case 'image':
-      return <LoadableImage file={file} />;
-    case 'video':
-      return null;
-      return <LoadableVideo file={file} />;
-    // case 'file':
-    //   return <LoadableFile {...this.props} />;
-    default:
-      return null;
-  }
+  return null;
 }

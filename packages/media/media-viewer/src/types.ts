@@ -5,6 +5,9 @@ export type MediaViewerProps = SwiperProps & {
   files: Array<FileIdentifier>;
   currentIndex?: number | null;
   onClose?: () => void;
+  config: {
+    pdfJsVersion?: string;
+  };
   onSwiper: SwiperProps['onSwiper'];
   onSlideChange: SwiperProps['onSlideChange'];
 };
