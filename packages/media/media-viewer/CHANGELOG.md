@@ -1,5 +1,12 @@
 # @uidu/media-viewer
 
+## 1.2.2
+
+### Patch Changes
+
+- Updated dependencies [cfad4a0d1]
+  - @uidu/modal-dialog@1.2.0
+
 ## 1.2.1
 
 ### Patch Changes
