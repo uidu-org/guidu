@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 3.0.0
+
+### Major Changes
+
+- ae093ddc8: Dashlet refactoring
+
+### Patch Changes
+
+- Updated dependencies [ae093ddc8]
+  - @uidu/dashboard-manager@2.1.0
+  - @uidu/data-fields@2.1.39
+
 ## 2.1.45
 
 ### Patch Changes

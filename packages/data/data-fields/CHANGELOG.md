@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.1.39
+
+### Patch Changes
+
+- ae093ddc8: Dashlet refactoring
+
 ## 2.1.38
 
 ### Patch Changes

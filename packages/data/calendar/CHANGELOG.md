@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.4.33
+
+### Patch Changes
+
+- ae093ddc8: Dashlet refactoring
+
 ## 0.4.32
 
 ### Patch Changes

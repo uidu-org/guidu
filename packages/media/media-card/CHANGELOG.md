@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.19
+
+### Patch Changes
+
+- ae093ddc8: Dashlet refactoring
+
 ## 0.8.18
 
 ### Patch Changes
