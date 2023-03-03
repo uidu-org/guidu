@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 1.2.0
+
+### Minor Changes
+
+- cfad4a0d1: Bump ds-lib, add bind-event-listener
+
 ## 1.1.10
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 2.12.3
+
+### Patch Changes
+
+- Updated dependencies [cfad4a0d1]
+  - @uidu/modal-dialog@1.2.0
+  - @uidu/media-filmstrip@0.7.2
+
 ## 2.12.2
 
 ### Patch Changes
