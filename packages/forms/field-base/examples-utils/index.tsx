@@ -1,7 +1,80 @@
-import Form from '@uidu/form';
+import Form, { useWatch } from '@uidu/form';
 import { ScrollableContainer, ShellBody, ShellMain } from '@uidu/shell';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDebouncedCallback } from 'use-debounce';
 import { useDefaultForm } from '../../form/examples-utils';
+// import Button, { ButtonGroup } from '@uidu/button';
+import {
+  DeepPartialSkipArrayKey,
+  FieldValues,
+  UseFormReturn,
+} from 'react-hook-form';
+
+export default function useAutoSave<T extends FieldValues, M>({
+  form,
+  handleSubmit,
+  defaultValue,
+  debounce = 600,
+}: {
+  form: UseFormReturn<T>;
+  handleSubmit: (data: T) => Promise<M>;
+  defaultValue: DeepPartialSkipArrayKey<T>;
+  debounce?: number;
+}) {
+  const {
+    formState: { isDirty, isValid },
+    formState,
+    control,
+  } = form;
+
+  const autoSaveTimeout: number | null = null;
+
+  const [isAutoSaving, setAutoSaving] = useState<'in-progress' | 'done' | null>(
+    null,
+  );
+
+  const handleAutoSave = async (currentValues: T, isChanged: boolean) => {
+    if (isChanged) {
+      window.clearTimeout(autoSaveTimeout!);
+      setAutoSaving('in-progress');
+
+      return handleSubmit(currentValues).then(() => {
+        setAutoSaving('done');
+        // autoSaveTimeout = window.setTimeout(() => {
+        //   startTransition(() => {
+        //     setAutoSaving(null);
+        //   });
+        // }, 4000);
+      });
+    }
+    // eslint-disable-next-line compat/compat
+    return Promise.resolve();
+  };
+
+  const debouncedUpdate = useDebouncedCallback(handleAutoSave, debounce);
+
+  const quickUpdate = useDebouncedCallback(handleAutoSave, 0);
+
+  const watchedData = useWatch<T>({
+    control,
+    defaultValue,
+  });
+
+  useEffect(() => {
+    // https://github.com/react-hook-form/react-hook-form/discussions/3715
+    const temp = JSON.stringify(watchedData);
+    const copiedValues = JSON.parse(temp) as T;
+
+    async function update() {
+      await debouncedUpdate(copiedValues, isDirty);
+    }
+    update()
+      .then(() => {})
+      .catch(() => {});
+  }, [watchedData, isDirty, isValid, debouncedUpdate]);
+
+  return { handleAutoSave, debouncedUpdate, quickUpdate, isAutoSaving };
+}
 
 export const inputDefaultProps = {
   label: 'This is a form label',
@@ -153,6 +226,28 @@ export function FieldExampleWithSubmit({ component: Component, ...rest }) {
   );
 }
 
+export function FieldExampleWithAutosave({ component: Component, ...rest }) {
+  const defaultForm = useDefaultForm();
+
+  const handleSubmit = async (data) => {
+    console.log('handleSubmit', data);
+  };
+
+  const { isAutoSaving } = useAutoSave({
+    handleSubmit,
+    form: defaultForm.form,
+    defaultValue: {},
+  });
+
+  console.log('isAutoSaving', isAutoSaving);
+
+  return (
+    <Form {...defaultForm} handleSubmit={handleSubmit}>
+      <Component {...inputDefaultProps} required {...rest} />
+    </Form>
+  );
+}
+
 export function FieldExampleScaffold<TProps>({
   component,
   defaultValue,
@@ -185,6 +280,9 @@ export function FieldExampleScaffold<TProps>({
             </FieldExampleBlock>
             <FieldExampleBlock name="With Submit">
               <FieldExampleWithSubmit component={component} {...rest} />
+            </FieldExampleBlock>
+            <FieldExampleBlock name="With autosave">
+              <FieldExampleWithAutosave component={component} {...rest} />
             </FieldExampleBlock>
           </div>
         </ScrollableContainer>

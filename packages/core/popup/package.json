@@ -16,7 +16,7 @@
     "@uidu/portal": "^1.0.7",
     "@uidu/theme": "^0.6.30",
     "focus-trap": "^7.3.1",
-    "styled-components": "^5.3.6",
+    "styled-components": "^5.3.8",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

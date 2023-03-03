@@ -13,8 +13,8 @@
     "@babel/runtime": "^7.21.0",
     "@heroicons/react": "^2.0.16",
     "@uidu/form": "2.2.11",
-    "react-hook-form": "^7.43.2",
-    "styled-components": "^5.3.6",
+    "react-hook-form": "^7.43.3",
+    "styled-components": "^5.3.8",
     "tslib": "^2.5.0",
     "twin.macro": "^3.1.0"
   },

@@ -25,7 +25,7 @@
     "react-dom": "^18.2.0",
     "react-intl": "^6.2.10",
     "react-node-resolver": "^2.0.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.8"
   },
   "devDependencies": {
     "@uidu/docs": "*",

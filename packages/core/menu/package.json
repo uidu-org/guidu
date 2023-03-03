@@ -14,7 +14,7 @@
     "@emotion/react": "^11.10.6",
     "@uidu/theme": "^0.6.30",
     "react-router-dom": "^5.3.4",
-    "styled-components": "^5.3.6",
+    "styled-components": "^5.3.8",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

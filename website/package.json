@@ -68,7 +68,7 @@
     "semver": "^7.3.8",
     "sentence-case": "^3.0.4",
     "snake-case": "^3.0.4",
-    "styled-components": "^5.3.6",
+    "styled-components": "^5.3.8",
     "tslib": "^2.5.0",
     "tti-polyfill": "^0.2.2",
     "uuid": "^8.3.2"

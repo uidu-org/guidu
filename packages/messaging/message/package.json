@@ -11,7 +11,7 @@
   "types": "dist/uidu-message.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.21.0",
-    "@fluentui/react": "8.106.1",
+    "@fluentui/react": "8.106.2",
     "@loadable/component": "^5.15.3",
     "@uidu/avatar": "^0.9.22",
     "@uidu/button": "1.3.37",
@@ -32,9 +32,9 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
-    "react-spring": "^9.7.0",
+    "react-spring": "^9.7.1",
     "react-use-gesture": "^8.0.1",
-    "styled-components": "^5.3.6",
+    "styled-components": "^5.3.8",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

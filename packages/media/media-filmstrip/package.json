@@ -17,8 +17,8 @@
     "@uidu/modal-dialog": "1.1.9",
     "@uidu/theme": "^0.6.30",
     "react": "^18.2.0",
-    "styled-components": "^5.3.6",
-    "swiper": "^9.0.5",
+    "styled-components": "^5.3.8",
+    "swiper": "^9.1.0",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

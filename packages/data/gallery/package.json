@@ -18,7 +18,7 @@
     "@uidu/spinner": "^0.5.25",
     "memoize-one": "^6.0.0",
     "react": "^18.2.0",
-    "styled-components": "^5.3.6",
+    "styled-components": "^5.3.8",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
