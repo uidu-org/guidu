@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 2.2.3
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/field-base@4.2.14
+  - @uidu/field-text@2.0.10
+
 ## 2.2.2
 
 ### Patch Changes

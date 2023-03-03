@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.1.21
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/data-fields@2.1.38
+
 ## 3.1.20
 
 ### Patch Changes

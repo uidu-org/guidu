@@ -1,5 +1,16 @@
 # @uidu/field-text
 
+## 2.0.44
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/field-base@4.2.14
+  - @uidu/field-text@2.0.10
+  - @uidu/select@2.2.13
+  - @uidu/form@2.2.12
+
 ## 2.0.43
 
 ### Patch Changes

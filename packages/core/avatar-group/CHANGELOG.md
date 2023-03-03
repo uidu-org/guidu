@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.6.26
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/dropdown-menu@0.6.31
+  - @uidu/tooltip@0.5.32
+  - @uidu/avatar@0.9.23
+  - @uidu/theme@0.6.31
+
 ## 2.6.25
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/media-viewer
 
+## 1.2.1
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/modal-dialog@1.1.10
+  - @uidu/shell@2.1.49
+  - @uidu/spinner@0.5.26
+  - @uidu/avatar@0.9.23
+  - @uidu/button@1.3.38
+  - @uidu/theme@0.6.31
+
 ## 1.2.0
 
 ### Minor Changes

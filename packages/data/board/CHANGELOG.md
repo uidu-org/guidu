@@ -1,5 +1,13 @@
 # @uidu/board
 
+## 2.1.9
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/theme@0.6.31
+
 ## 2.1.8
 
 ### Patch Changes

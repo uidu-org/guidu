@@ -1,5 +1,11 @@
 # @uidu/editor-json-transformer
 
+## 1.0.15
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+
 ## 1.0.14
 
 ### Patch Changes

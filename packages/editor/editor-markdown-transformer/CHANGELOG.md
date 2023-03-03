@@ -1,5 +1,13 @@
 # @uidu/editor-markdown-transformer
 
+## 1.0.12
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/editor-common@2.7.2
+
 ## 1.0.11
 
 ### Patch Changes

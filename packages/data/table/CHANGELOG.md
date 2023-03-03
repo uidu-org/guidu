@@ -1,5 +1,19 @@
 # @uidu/table
 
+## 3.5.8
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/data-manager@4.3.17
+  - @uidu/data-fields@2.1.38
+  - @uidu/checkbox@2.0.13
+  - @uidu/button@1.3.38
+  - @uidu/portal@1.0.8
+  - @uidu/popup@0.7.15
+  - @uidu/menu@0.8.13
+
 ## 3.5.7
 
 ### Patch Changes

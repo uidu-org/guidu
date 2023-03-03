@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.0.11
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/shell@2.1.49
+  - @uidu/theme@0.6.31
+
 ## 1.0.10
 
 ### Patch Changes

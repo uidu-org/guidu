@@ -1,5 +1,22 @@
 # @uidu/renderer
 
+## 2.4.5
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/editor-json-transformer@1.0.15
+  - @uidu/task-decision@0.4.36
+  - @uidu/media-filmstrip@0.7.1
+  - @uidu/editor-common@2.7.2
+  - @uidu/mentions@0.5.8
+  - @uidu/media-card@0.8.18
+  - @uidu/status@0.5.32
+  - @uidu/tooltip@0.5.32
+  - @uidu/theme@0.6.31
+  - @uidu/code@0.5.26
+
 ## 2.4.4
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/button
 
+## 1.3.38
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/spinner@0.5.26
+  - @uidu/theme@0.6.31
+
 ## 1.3.37
 
 ### Patch Changes

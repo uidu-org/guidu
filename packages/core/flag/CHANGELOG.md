@@ -1,5 +1,15 @@
 # @uidu/flag
 
+## 0.5.29
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/button@1.3.38
+  - @uidu/portal@1.0.8
+  - @uidu/theme@0.6.31
+
 ## 0.5.28
 
 ### Patch Changes

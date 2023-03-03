@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.2.13
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/field-base@4.2.14
+  - @uidu/spinner@0.5.26
+  - @uidu/menu@0.8.13
+
 ## 2.2.12
 
 ### Patch Changes

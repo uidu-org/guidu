@@ -1,5 +1,17 @@
 # @uidu/onboarding
 
+## 1.3.26
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/modal-dialog@1.1.10
+  - @uidu/button@1.3.38
+  - @uidu/popper@0.5.28
+  - @uidu/portal@1.0.8
+  - @uidu/theme@0.6.31
+
 ## 1.3.25
 
 ### Patch Changes

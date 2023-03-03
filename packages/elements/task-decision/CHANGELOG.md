@@ -1,5 +1,16 @@
 # @uidu/task-decision
 
+## 0.4.36
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/avatar-group@2.6.26
+  - @uidu/spinner@0.5.26
+  - @uidu/button@1.3.38
+  - @uidu/theme@0.6.31
+
 ## 0.4.35
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/email-renderer
 
+## 1.3.7
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+
 ## 1.3.6
 
 ### Patch Changes

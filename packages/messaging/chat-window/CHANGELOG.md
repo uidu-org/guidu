@@ -1,5 +1,14 @@
 # @uidu/chat-window
 
+## 0.4.33
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/message-renderer@0.4.29
+  - @uidu/message@0.5.83
+
 ## 0.4.32
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.6.16
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+
 ## 0.6.15
 
 ### Patch Changes
