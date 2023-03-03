@@ -1,5 +1,17 @@
 # @uidu/droplist
 
+## 0.5.32
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/spinner@0.5.26
+  - @uidu/tooltip@0.5.32
+  - @uidu/layer@0.5.25
+  - @uidu/theme@0.6.31
+  - @uidu/item@0.5.29
+
 ## 0.5.31
 
 ### Patch Changes

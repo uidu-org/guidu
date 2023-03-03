@@ -1,5 +1,17 @@
 # @uidu/mentions
 
+## 0.5.8
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/lozenge@0.5.25
+  - @uidu/tooltip@0.5.32
+  - @uidu/avatar@0.9.23
+  - @uidu/button@1.3.38
+  - @uidu/theme@0.6.31
+
 ## 0.5.7
 
 ### Patch Changes

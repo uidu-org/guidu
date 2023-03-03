@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.2.14
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/form@2.2.12
+
 ## 4.2.13
 
 ### Patch Changes

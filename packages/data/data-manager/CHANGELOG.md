@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 4.3.17
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/data-controls@4.0.31
+  - @uidu/data-fields@2.1.38
+  - @uidu/shell@2.1.49
+  - @uidu/pagination@0.5.30
+  - @uidu/data-views@3.0.29
+  - @uidu/calendar@0.4.32
+  - @uidu/spinner@0.5.26
+  - @uidu/gallery@2.0.27
+  - @uidu/button@1.3.38
+  - @uidu/board@2.1.9
+  - @uidu/table@3.5.8
+  - @uidu/menu@0.8.13
+  - @uidu/list@3.1.21
+
 ## 4.3.16
 
 ### Patch Changes

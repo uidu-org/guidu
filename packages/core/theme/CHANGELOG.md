@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.6.31
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/form@2.2.12
+
 ## 0.6.30
 
 ### Patch Changes

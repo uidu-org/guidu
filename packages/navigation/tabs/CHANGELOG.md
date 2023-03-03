@@ -1,5 +1,14 @@
 # @uidu/tabs
 
+## 0.3.27
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/theme@0.6.31
+  - @uidu/docs@0.5.27
+
 ## 0.3.26
 
 ### Patch Changes

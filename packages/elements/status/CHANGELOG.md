@@ -1,5 +1,15 @@
 # @uidu/status
 
+## 0.5.32
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/field-text@2.0.10
+  - @uidu/lozenge@0.5.25
+  - @uidu/theme@0.6.31
+
 ## 0.5.31
 
 ### Patch Changes

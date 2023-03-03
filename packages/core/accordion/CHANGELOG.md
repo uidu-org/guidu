@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.25
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/docs@0.5.27
+
 ## 0.6.24
 
 ### Patch Changes

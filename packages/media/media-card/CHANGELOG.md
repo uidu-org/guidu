@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.8.18
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/dropdown-menu@0.6.31
+  - @uidu/spinner@0.5.26
+  - @uidu/tooltip@0.5.32
+  - @uidu/button@1.3.38
+  - @uidu/theme@0.6.31
+
 ## 0.8.17
 
 ### Patch Changes

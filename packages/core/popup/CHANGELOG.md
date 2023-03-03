@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.7.15
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/popper@0.5.28
+  - @uidu/portal@1.0.8
+  - @uidu/theme@0.6.31
+
 ## 0.7.14
 
 ### Patch Changes

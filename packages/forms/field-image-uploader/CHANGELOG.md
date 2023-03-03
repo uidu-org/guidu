@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 3.1.4
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/field-range@2.0.13
+  - @uidu/field-base@4.2.14
+  - @uidu/spinner@0.5.26
+  - @uidu/button@1.3.38
+  - @uidu/form@2.2.12
+
 ## 3.1.3
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-json-transformer",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "JSON transformer",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/editor-json-transformer",
   "license": "Apache-2.0",
@@ -16,9 +16,9 @@
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.26",
-    "@uidu/editor-common": "^2.7.1",
-    "@uidu/editor-core": "^2.11.1",
+    "@uidu/docs": "^0.5.27",
+    "@uidu/editor-common": "^2.7.2",
+    "@uidu/editor-core": "^2.12.2",
     "prosemirror-view": "^1.30.1",
     "react": "^18.2.0",
     "styled-components": "^5.3.8"

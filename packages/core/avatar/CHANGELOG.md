@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.9.23
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/tooltip@0.5.32
+  - @uidu/theme@0.6.31
+
 ## 0.9.22
 
 ### Patch Changes

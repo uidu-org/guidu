@@ -1,5 +1,16 @@
 # @uidu/payments
 
+## 1.5.32
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/section-message@0.6.32
+  - @uidu/field-base@4.2.14
+  - @uidu/theme@0.6.31
+  - @uidu/form@2.2.12
+
 ## 1.5.31
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 4.0.31
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/inline-dialog@0.5.30
+  - @uidu/data-manager@4.3.17
+  - @uidu/data-fields@2.1.38
+  - @uidu/field-text@2.0.10
+  - @uidu/shell@2.1.49
+  - @uidu/data-views@3.0.29
+  - @uidu/checkbox@2.0.13
+  - @uidu/spinner@0.5.26
+  - @uidu/tooltip@0.5.32
+  - @uidu/select@2.2.13
+  - @uidu/button@1.3.38
+  - @uidu/drawer@0.7.33
+  - @uidu/popup@0.7.15
+  - @uidu/form@2.2.12
+  - @uidu/menu@0.8.13
+
 ## 4.0.30
 
 ### Patch Changes

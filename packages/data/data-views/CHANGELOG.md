@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 3.0.29
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/field-counter@2.0.10
+  - @uidu/data-controls@4.0.31
+  - @uidu/field-number@2.0.40
+  - @uidu/data-manager@4.3.17
+  - @uidu/select@2.2.13
+  - @uidu/button@1.3.38
+  - @uidu/form@2.2.12
+
 ## 3.0.28
 
 ### Patch Changes

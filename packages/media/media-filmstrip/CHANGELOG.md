@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.7.1
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/media-viewer@1.2.1
+  - @uidu/modal-dialog@1.1.10
+  - @uidu/media-card@0.8.18
+  - @uidu/theme@0.6.31
+
 ## 0.7.0
 
 ### Minor Changes

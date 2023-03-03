@@ -1,5 +1,16 @@
 # @uidu/field-date
 
+## 2.1.21
+
+### Patch Changes
+
+- 7dc81108a: Bump deps
+- Updated dependencies [7dc81108a]
+  - @uidu/field-base@4.2.14
+  - @uidu/field-text@2.0.10
+  - @uidu/button@1.3.38
+  - @uidu/popup@0.7.15
+
 ## 2.1.20
 
 ### Patch Changes
