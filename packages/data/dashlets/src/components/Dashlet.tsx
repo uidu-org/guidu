@@ -1,8 +1,8 @@
 import React from 'react';
+import CubeDashlet from '../adapters/CubeDashlet';
+import DataDashlet from '../adapters/DataDashlet';
+import GQLDashlet from '../adapters/GQLDashlet';
 import { DashletProps } from '../types';
-import CubeDashlet from './Adapters/CubeDashlet';
-import DataDashlet from './Adapters/DataDashlet';
-import GQLDashlet from './Adapters/GQLDashlet';
 
 export default function Dashlet({
   dashlet,

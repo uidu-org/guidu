@@ -1,0 +1,149 @@
+import * as am4charts from '@amcharts/amcharts4/charts';
+import * as am4core from '@amcharts/amcharts4/core';
+import am4themes_animated from '@amcharts/amcharts4/themes/animated';
+import { Series } from '@cubejs-client/core';
+import React, { useCallback, useLayoutEffect, useRef } from 'react';
+import { v1 as uuid } from 'uuid';
+
+function am4themes_myTheme(target) {
+  if (target instanceof am4core.ColorSet) {
+    target.list = [
+      am4core.color('#6366F1'),
+      // am4core.color('#3B82F6'),
+      am4core.color('#10B981'),
+      am4core.color('#F59E0B'),
+      // am4core.color('#EF4444'),
+      am4core.color('#6B7280'),
+    ];
+  }
+}
+
+am4core.useTheme(am4themes_animated);
+am4core.useTheme(am4themes_myTheme);
+// am4core.options.queue = true;
+am4core.options.commercialLicense = true;
+
+export type XYStatelessProps<T> = {
+  data: T[];
+  series?: Series<T>[];
+  config?: am4charts.XYChart;
+  dataFormatter: (data: T[]) => T[];
+};
+
+export default function XYStateless<T>({
+  data,
+  series = [],
+  config,
+  dataFormatter = (d) => d,
+}: XYStatelessProps<T>) {
+  const chart = useRef<am4core.Sprite>(null);
+  const id = useRef(uuid());
+
+  const mergeConfig = useCallback(
+    () => ({
+      paddingBottom: 15,
+      paddingLeft: 0,
+      paddingRight: 0,
+      paddingTop: 0,
+      cursor: {
+        lineY: {
+          disabled: true,
+        },
+        lineX: {
+          disabled: true,
+        },
+      },
+      xAxes: [
+        {
+          type: 'DateAxis',
+          dataFields: [
+            {
+              date: 'x',
+            },
+          ],
+          renderer: {
+            baseGrid: {
+              disabled: true,
+            },
+            line: {
+              disabled: true,
+            },
+            grid: {
+              strokeOpacity: 0.04,
+            },
+          },
+          fontSize: 12,
+          fillOpacity: 0.3,
+          cursorTooltipEnabled: false,
+        },
+      ],
+      yAxes: [
+        {
+          type: 'ValueAxis',
+          fontSize: 12,
+          fillOpacity: 0.3,
+          cursorTooltipEnabled: false,
+          min: 0,
+          renderer: {
+            baseGrid: {
+              disabled: true,
+            },
+            // inside: true,
+            maxLabelPosition: 0.99,
+            labels: {
+              // template: {
+              //   dy: -20,
+              //   dx: 15,
+              // },
+            },
+            grid: {
+              strokeOpacity: 0.04,
+            },
+          },
+        },
+      ],
+      numberFormat: '#a',
+      data: dataFormatter(data),
+      ...config,
+      series:
+        config?.series ||
+        series.map((line) => ({
+          type: 'StepLineSeries',
+          dataFields: {
+            valueY: line.key,
+            dateX: 'x',
+          },
+          strokeWidth: 1,
+          fillOpacity: 1,
+          tensionX: 0.6,
+          name: line.title,
+          tooltipText: `{dateX}\n[bold]{valueY}[/]`,
+        })),
+    }),
+    [config, data, dataFormatter, series],
+  );
+
+  useLayoutEffect(() => {
+    if (data) {
+      const x = am4core.createFromConfig(
+        mergeConfig(),
+        id.current,
+        am4charts.XYChart,
+      );
+
+      chart.current = x;
+    }
+
+    return () => {
+      chart.current?.dispose();
+    };
+  }, [data, config, mergeConfig]);
+
+  useLayoutEffect(() => {
+    if (chart.current) {
+      chart.current.config = mergeConfig();
+    }
+  }, [config, mergeConfig]);
+
+  return <div tw="h-full w-full" id={id.current} />;
+}

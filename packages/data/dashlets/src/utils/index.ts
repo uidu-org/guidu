@@ -19,7 +19,13 @@ export const colors = [
   '#433339',
 ];
 
-export const manipulator = (record, [operation, key]) => {
+export function resolve(path: string, obj = {}) {
+  return path
+    .split('.')
+    .reduce((prev, curr) => (prev ? prev[curr] : null), obj);
+}
+
+export function manipulator<T>(record: T[], [operation, key]: string[]) {
   switch (operation) {
     case 'sum':
       return sum(record, (c) => resolve(key, c));
@@ -35,14 +41,9 @@ export const manipulator = (record, [operation, key]) => {
     default:
       return record.length;
   }
-};
+}
 
-export const resolve = (path, obj) =>
-  path
-    .split('.')
-    .reduce((prev, curr) => (prev ? prev[curr] : null), obj || self);
-
-export const format = (value, formatter) => {
+export function format(value: number, formatter: string) {
   switch (formatter) {
     case 'currency':
       return numeral(value).format('$ 0,0.00');
@@ -55,4 +56,4 @@ export const format = (value, formatter) => {
     default:
       return value;
   }
-};
+}

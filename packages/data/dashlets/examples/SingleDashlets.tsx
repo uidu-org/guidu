@@ -12,7 +12,7 @@ function Basic({}) {
       </div>
       <div tw="p-3 bg-gray-50">
         <h6>Pie</h6>
-        <Pie.chart
+        <Pie.Chart
           data={{
             values: [
               { name: 'foo', value: 123 },

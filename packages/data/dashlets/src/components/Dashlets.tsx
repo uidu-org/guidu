@@ -2,20 +2,20 @@ import loadable from '@loadable/component';
 import React from 'react';
 import { DashletProps, DashletsProps } from '../types';
 import Dashlet from './Dashlet';
-import DashletGroup from './Dashlets/DashletGroup';
+import DashletGroup from './DashletGroup';
 
-const LoadableCounter = loadable(() => import(`./Dashlets/Counter/Counter`));
-const LoadableFunnel = loadable(() => import(`./Dashlets/Funnel/Funnel`));
-const LoadableGeo = loadable(() => import(`./Dashlets/Geo/Geo`));
-const LoadableTable = loadable(() => import(`./Dashlets/Table/Table`));
-const LoadablePie = loadable(() => import(`./Dashlets/Pie/Pie`));
-const LoadableRadar = loadable(() => import(`./Dashlets/Radar/Radar`));
-const LoadableTreemap = loadable(() => import(`./Dashlets/Treemap/Treemap`));
-const LoadableXY = loadable(() => import(`./Dashlets/XY/XY`));
+const LoadableCounter = loadable(() => import(`../dashlets/Counter/Counter`));
+const LoadableFunnel = loadable(() => import(`../dashlets/Funnel/Funnel`));
+const LoadableGeo = loadable(() => import(`../dashlets/Geo/Geo`));
+const LoadableTable = loadable(() => import(`../dashlets/Table/Table`));
+const LoadablePie = loadable(() => import(`../dashlets/Pie/Pie`));
+const LoadableRadar = loadable(() => import(`../dashlets/Radar/Radar`));
+const LoadableTreemap = loadable(() => import(`../dashlets/Treemap/Treemap`));
+const LoadableXY = loadable(() => import(`../dashlets/XY/XY`));
 const LoadableHorizontalRule = loadable(
-  () => import(`./Dashlets/HorizontalRule`),
+  () => import(`../dashlets/HorizontalRule`),
 );
-const LoadableVerticalRule = loadable(() => import(`./Dashlets/VerticalRule`));
+const LoadableVerticalRule = loadable(() => import(`../dashlets/VerticalRule`));
 
 export function renderDashlet(
   {

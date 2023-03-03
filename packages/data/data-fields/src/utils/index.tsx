@@ -98,11 +98,13 @@ export const numericComparator = (number1, number2) => {
   return numericNumber1 - numericNumber2;
 };
 
-export const getColumnDef = (columnDefs, filterOrGrouperOrSorter) =>
-  columnDefs.filter((c) => c.id === filterOrGrouperOrSorter.id)[0];
+export function getColumnDef(columnDefs, filterOrGrouperOrSorter) {
+  return columnDefs.filter((c) => c.id === filterOrGrouperOrSorter.id)[0];
+}
 
-export const getFieldFromColumnDef = (columnDef) =>
-  byName[columnDef.meta?.kind];
+export function getFieldFromColumnDef<T>(columnDef: ColumnDef<T>) {
+  return byName[columnDef.meta?.kind];
+}
 
 export function mergeByKind<T>(passedMeta: ColumnMeta<T, unknown>) {
   const { meta, ...rest } = byName[passedMeta.kind || 'string'];

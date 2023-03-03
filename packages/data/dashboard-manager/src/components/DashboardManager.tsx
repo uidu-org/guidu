@@ -82,15 +82,13 @@ export default function DashboardManager({
               xs: 480,
               xxs: 0,
             }}
-            cols={
-              {
-                lg: 12,
-                md: 12,
-                sm: 12,
-                xs: 1,
-                xxs: 1,
-              } as any
-            }
+            cols={{
+              lg: 12,
+              md: 12,
+              sm: 12,
+              xs: 1,
+              xxs: 1,
+            }}
             margin={[24, 24]}
             {...gridProps}
           >
@@ -99,14 +97,12 @@ export default function DashboardManager({
         </DashboardManagerProvider>
       );
     },
-    [columnDefs, gridProps],
+    [columnDefs, gridProps, apiUrl],
   );
 
-  const renderControls = ({}) => {
-    return <></>;
-  };
+  const renderControls = ({}) => <></>;
 
-  return (children as any)({
+  return children({
     renderControls,
     renderBlocks: renderDashlets,
     renderDashlets,
