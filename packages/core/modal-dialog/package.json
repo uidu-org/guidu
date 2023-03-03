@@ -19,6 +19,7 @@
     "@uidu/blanket": "^0.6.16",
     "@uidu/portal": "^1.0.8",
     "@uidu/theme": "^0.6.31",
+    "bind-event-listener": "^2.1.1",
     "raf-schd": "^4.0.3",
     "react-focus-lock": "^2.9.4",
     "react-scrolllock": "^5.0.1",
