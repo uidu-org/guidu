@@ -27,7 +27,7 @@ export type XYStatelessProps<T> = {
   data: T[];
   series?: Series<T>[];
   config?: am4charts.XYChart;
-  dataFormatter: (data: T[]) => T[];
+  dataFormatter?: (data: T[]) => T[];
 };
 
 export default function XYStateless<T>({

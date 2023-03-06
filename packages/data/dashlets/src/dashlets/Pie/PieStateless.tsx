@@ -13,7 +13,7 @@ export type PieStatelessProps<T> = {
   data: T[];
   series?: Series<T>[];
   config?: am4charts.PieChart;
-  dataFormatter: (data: T[]) => T[];
+  dataFormatter?: (data: T[]) => T[];
 };
 
 export default function PieStateless<T>({

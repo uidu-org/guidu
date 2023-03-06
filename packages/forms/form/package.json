@@ -14,7 +14,7 @@
     "@uidu/button": "1.3.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.43.3",
+    "react-hook-form": "^7.43.4",
     "react-media": "^1.10.0",
     "styled-components": "^5.3.8",
     "tslib": "^2.5.0"

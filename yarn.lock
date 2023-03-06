@@ -3015,20 +3015,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react@npm:8.106.2":
-  version: 8.106.2
-  resolution: "@fluentui/react@npm:8.106.2"
+"@fluentui/react@npm:8.106.3":
+  version: 8.106.3
+  resolution: "@fluentui/react@npm:8.106.3"
   dependencies:
     "@fluentui/date-time-utilities": ^8.5.5
-    "@fluentui/font-icons-mdl2": ^8.5.10
-    "@fluentui/foundation-legacy": ^8.2.30
+    "@fluentui/font-icons-mdl2": ^8.5.11
+    "@fluentui/foundation-legacy": ^8.2.31
     "@fluentui/merge-styles": ^8.5.6
-    "@fluentui/react-focus": ^8.8.16
+    "@fluentui/react-focus": ^8.8.17
     "@fluentui/react-hooks": ^8.6.18
     "@fluentui/react-portal-compat-context": ^9.0.4
     "@fluentui/react-window-provider": ^2.2.7
     "@fluentui/set-version": ^8.2.5
-    "@fluentui/style-utilities": ^8.9.3
+    "@fluentui/style-utilities": ^8.9.4
     "@fluentui/theme": ^2.6.24
     "@fluentui/utilities": ^8.13.8
     "@microsoft/load-themed-styles": ^1.10.26
@@ -3038,7 +3038,7 @@ __metadata:
     "@types/react-dom": ">=16.8.0 <19.0.0"
     react: ">=16.8.0 <19.0.0"
     react-dom: ">=16.8.0 <19.0.0"
-  checksum: c939914cad21d43308e95d9b57416cf034ab008bd5d1a1ddcdb3e8e0142e8ca4b4f90dd927e70ef6658e64825de5af47e8076db4d92cd59ed2ee81cf2c949fa0
+  checksum: 654bc4e6597f49cdd1810d034eb9b9e30b417d78f2b80aec37c8da5e00a0fb118dc909232671b51ea393faf1bb939aa261850aef59da2302bde5ec8aa12ed419
   languageName: node
   linkType: hard
 
@@ -6499,7 +6499,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.14.5":
+"@types/node@npm:*":
   version: 18.14.5
   resolution: "@types/node@npm:18.14.5"
   checksum: 415fb0edc132baa9580f1b7a381a3f10b662f5d7a7d11641917fa0961788ccede3272badc414aadc47306e9fc35c5f6c59159ac470b46d3f3a15fb0446224c8c
@@ -6524,6 +6524,13 @@ __metadata:
   version: 16.18.12
   resolution: "@types/node@npm:16.18.12"
   checksum: fc3271182414f8593018ef8f00b4718116a92f463f619081bd399d9460e7861e1dd7eebc7cf94c23567e418ff397babed077011711aae8d47171b5a81c5bd71d
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.14.6":
+  version: 18.14.6
+  resolution: "@types/node@npm:18.14.6"
+  checksum: 2f88f482cabadc6dbddd627a1674239e68c3c9beab56eb4ae2309fb96fd17fc3a509d99b0309bafe13b58529574f49ecf3a583f2ebe2896dd32fe4be436dc96e
   languageName: node
   linkType: hard
 
@@ -8050,7 +8057,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@2.12.2, @uidu/editor-core@^2.12.2, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@2.12.3, @uidu/editor-core@^2.12.2, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -8086,11 +8093,11 @@ __metadata:
     "@uidu/form": ^2.2.12
     "@uidu/media-card": ^0.8.18
     "@uidu/media-core": ^1.5.1
-    "@uidu/media-filmstrip": ^0.7.1
+    "@uidu/media-filmstrip": ^0.7.2
     "@uidu/media-picker": ^1.1.1
     "@uidu/mentions": ^0.5.8
     "@uidu/menu": ^0.8.13
-    "@uidu/modal-dialog": 1.1.10
+    "@uidu/modal-dialog": 1.2.0
     "@uidu/profilecard": ^0.3.37
     "@uidu/select": ^2.2.13
     "@uidu/shell": ^2.1.49
@@ -8201,7 +8208,7 @@ __metadata:
     "@heroicons/react": ^2.0.16
     "@uidu/adf-schema": 2.2.11
     "@uidu/button": 1.3.38
-    "@uidu/editor-core": 2.12.2
+    "@uidu/editor-core": 2.12.3
     "@uidu/email-renderer": 1.3.7
     "@uidu/field-number": 2.0.40
     "@uidu/field-text": 2.0.10
@@ -8234,7 +8241,7 @@ __metadata:
     mkdirp: ^1.0.4
     prosemirror-model: ^1.19.0
     react: ^18.2.0
-    rimraf: ^4.2.0
+    rimraf: ^4.3.0
     svgexport: ^0.4.2
     ts-node: ^10.9.1
     typescript: ^4.9.5
@@ -8302,7 +8309,7 @@ __metadata:
     "@heroicons/react": ^2.0.16
     "@uidu/form": 2.2.12
     react: ^18.2.0
-    react-hook-form: ^7.43.3
+    react-hook-form: ^7.43.4
     styled-components: ^5.3.8
     tslib: ^2.5.0
     twin.macro: ^3.1.0
@@ -8409,7 +8416,7 @@ __metadata:
     "@uidu/radio": ^2.1.8
     "@uidu/shell": ^2.1.49
     classnames: ^2.3.2
-    downshift: ^7.2.2
+    downshift: ^7.3.0
     react: ^18.2.0
     react-feather: ^2.0.10
     styled-components: ^5.3.8
@@ -8426,7 +8433,7 @@ __metadata:
   resolution: "@uidu/field-file-uploader@workspace:packages/forms/field-file-uploader"
   dependencies:
     "@babel/runtime": ^7.21.0
-    "@fluentui/react": 8.106.2
+    "@fluentui/react": 8.106.3
     "@heroicons/react": ^2.0.16
     "@uidu/button": 1.3.38
     "@uidu/docs": ^0.5.27
@@ -8754,7 +8761,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-feather: ^2.0.10
-    react-hook-form: ^7.43.3
+    react-hook-form: ^7.43.4
     react-media: ^1.10.0
     styled-components: ^5.3.8
     tslib: ^2.5.0
@@ -9045,7 +9052,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.21.0
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.106.2
+    "@fluentui/react": 8.106.3
     "@uidu/button": ^1.3.38
     "@uidu/docs": ^0.5.27
     "@uidu/media-core": ^1.5.1
@@ -9080,7 +9087,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-filmstrip@^0.7.0, @uidu/media-filmstrip@^0.7.1, @uidu/media-filmstrip@workspace:packages/media/media-filmstrip":
+"@uidu/media-filmstrip@^0.7.0, @uidu/media-filmstrip@^0.7.1, @uidu/media-filmstrip@^0.7.2, @uidu/media-filmstrip@workspace:packages/media/media-filmstrip":
   version: 0.0.0-use.local
   resolution: "@uidu/media-filmstrip@workspace:packages/media/media-filmstrip"
   dependencies:
@@ -9088,8 +9095,8 @@ __metadata:
     "@uidu/docs": ^0.5.27
     "@uidu/media-card": ^0.8.18
     "@uidu/media-core": ^1.5.1
-    "@uidu/media-viewer": ^1.2.1
-    "@uidu/modal-dialog": 1.1.10
+    "@uidu/media-viewer": ^1.2.2
+    "@uidu/modal-dialog": 1.2.0
     "@uidu/theme": ^0.6.31
     react: ^18.2.0
     styled-components: ^5.3.8
@@ -9125,7 +9132,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-viewer@^1.2.1, @uidu/media-viewer@workspace:packages/media/media-viewer":
+"@uidu/media-viewer@^1.2.1, @uidu/media-viewer@^1.2.2, @uidu/media-viewer@workspace:packages/media/media-viewer":
   version: 0.0.0-use.local
   resolution: "@uidu/media-viewer@workspace:packages/media/media-viewer"
   dependencies:
@@ -9139,7 +9146,7 @@ __metadata:
     "@uidu/docs": ^0.5.27
     "@uidu/media-card": ^0.8.18
     "@uidu/media-core": ^1.5.1
-    "@uidu/modal-dialog": 1.1.10
+    "@uidu/modal-dialog": 1.2.0
     "@uidu/shell": ^2.1.49
     "@uidu/spinner": ^0.5.26
     "@uidu/theme": ^0.6.31
@@ -9254,7 +9261,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.21.0
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.106.2
+    "@fluentui/react": 8.106.3
     "@loadable/component": ^5.15.3
     "@uidu/avatar": ^0.9.23
     "@uidu/button": 1.3.38
@@ -9283,7 +9290,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/modal-dialog@1.1.10, @uidu/modal-dialog@^1.1.10, @uidu/modal-dialog@^1.1.8, @uidu/modal-dialog@workspace:packages/core/modal-dialog":
+"@uidu/modal-dialog@1.2.0, @uidu/modal-dialog@^1.1.10, @uidu/modal-dialog@^1.1.8, @uidu/modal-dialog@workspace:packages/core/modal-dialog":
   version: 0.0.0-use.local
   resolution: "@uidu/modal-dialog@workspace:packages/core/modal-dialog"
   dependencies:
@@ -9717,7 +9724,7 @@ __metadata:
     "@uidu/modal-dialog": ^1.1.10
     "@uidu/spinner": ^0.5.26
     react: ^18.2.0
-    react-hook-form: ^7.43.3
+    react-hook-form: ^7.43.4
     react-select: ^5.7.0
     styled-components: ^5.3.8
     timezones-list: ^3.0.2
@@ -15765,9 +15772,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"downshift@npm:^7.2.2":
-  version: 7.2.2
-  resolution: "downshift@npm:7.2.2"
+"downshift@npm:^7.3.0":
+  version: 7.3.0
+  resolution: "downshift@npm:7.3.0"
   dependencies:
     "@babel/runtime": ^7.14.8
     compute-scroll-into-view: ^2.0.4
@@ -15776,7 +15783,7 @@ __metadata:
     tslib: ^2.3.0
   peerDependencies:
     react: ">=16.12.0"
-  checksum: dee08eaa9c86c1c40dd903a09e7ef6aadf6c71db26a3fd1e0aa062b3d8456e401aeb8829d0a8ad0f48dc9d32457e66630fbcfd895eec2f562729276cf79c5f68
+  checksum: f9d168538ad1a99491868242609e38969e7f8a8949f5b8535b99fb102099cd3563f56e580a1b1eaf58a5c6b18184e6191bfada3bcaf44db2cd8dc9ac19e90770
   languageName: node
   linkType: hard
 
@@ -18727,7 +18734,7 @@ __metadata:
     "@emotion/react": ^11.10.6
     "@emotion/styled": ^11.10.6
     "@faker-js/faker": ^7.6.0
-    "@fluentui/react": 8.106.2
+    "@fluentui/react": 8.106.3
     "@formatjs/cli": 6.0.4
     "@fortawesome/fontawesome-free": ^6.3.0
     "@fortawesome/fontawesome-svg-core": ^6.3.0
@@ -18758,7 +18765,7 @@ __metadata:
     "@types/lodash.sample": ^4.2.7
     "@types/markdown-it": ^12.2.3
     "@types/markerclustererplus": ^2.1.33
-    "@types/node": ^18.14.5
+    "@types/node": ^18.14.6
     "@types/overlayscrollbars": ^1.12.1
     "@types/prettier": ^2.7.2
     "@types/prismjs": ^1.26.0
@@ -18855,7 +18862,7 @@ __metadata:
     dotenv: ^16.0.3
     dotenv-cli: ^7.0.0
     dotenv-expand: ^10.0.0
-    downshift: ^7.2.2
+    downshift: ^7.3.0
     emoji-mart: ^3.0.1
     emoji-regex: ^10.2.1
     eslint: ^8.35.0
@@ -18970,7 +18977,7 @@ __metadata:
     react-google-maps: ^9.4.5
     react-grid-layout: ^1.3.4
     react-helmet: ^6.1.0
-    react-hook-form: ^7.43.3
+    react-hook-form: ^7.43.4
     react-intersection-observer: ^9.4.3
     react-intl: ^6.2.10
     react-loadable: ^5.5.0
@@ -27438,12 +27445,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.43.3":
-  version: 7.43.3
-  resolution: "react-hook-form@npm:7.43.3"
+"react-hook-form@npm:^7.43.4":
+  version: 7.43.4
+  resolution: "react-hook-form@npm:7.43.4"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
-  checksum: 16e03e42d07f696e36d67c0d60671df6d0bc73b9e48876ea99b85cf3aaa4cf40acb0c0e2870169d4a22504c7111c0f658b0b17a4f3fd191ef69c7eea70785a9d
+  checksum: 5ae2672951a0f22420413aa7dcbe185831be5b506d464e2b60d22ba969fe04e5a176dc0c42788098f72a2a7bfac5c7b3ddcdf453eb1fac6f72fd88e84243652f
   languageName: node
   linkType: hard
 
@@ -28820,14 +28827,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "rimraf@npm:4.2.0"
+"rimraf@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "rimraf@npm:4.3.0"
   dependencies:
     glob: ^9.2.0
   bin:
     rimraf: dist/cjs/src/bin.js
-  checksum: 885baaec6d8e3a771bb3060f110c29070073a47fdcb26775ae165703173e79e845974dc8ed07e8eb4c3c85f126777968febdb385d0c274ad3b167db326e7f82e
+  checksum: 48498f1eeb9b6b848605d93fa79e7bf3c57bb47807500ee636848dc0fd3b69b6b532f1ce9d4e46c4feeb4c3ff0e8ab85cd177cbbbd65f635f8bc8cb88aee151c
   languageName: node
   linkType: hard
 

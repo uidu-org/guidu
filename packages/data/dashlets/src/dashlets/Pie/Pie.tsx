@@ -14,7 +14,7 @@ export default function Pie<T>({
   };
   resultSet?: ResultSet;
   config?: any;
-  dataFormatter: (data: T[]) => T[];
+  dataFormatter?: (data: T[]) => T[];
 }) {
   if (data) {
     return (

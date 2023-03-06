@@ -14,7 +14,7 @@ export default function XY<T>({
   data?: {
     values: T[];
   };
-  dataFormatter: (data: T[]) => T[];
+  dataFormatter?: (data: T[]) => T[];
 }) {
   if (data) {
     return (
