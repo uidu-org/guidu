@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 1.1.20
+
+### Patch Changes
+
+- ae093ddc8: Dashlet refactoring
+
 ## 1.1.19
 
 ### Patch Changes

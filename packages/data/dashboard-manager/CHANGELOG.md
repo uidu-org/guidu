@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 2.1.0
+
+### Minor Changes
+
+- ae093ddc8: Dashlet refactoring
+
+### Patch Changes
+
+- Updated dependencies [ae093ddc8]
+  - @uidu/dashlets@3.0.0
+
 ## 2.0.26
 
 ### Patch Changes

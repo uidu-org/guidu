@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.84
+
+### Patch Changes
+
+- ae093ddc8: Dashlet refactoring
+- Updated dependencies [ae093ddc8]
+  - @uidu/media-card@0.8.19
+
 ## 0.5.83
 
 ### Patch Changes
