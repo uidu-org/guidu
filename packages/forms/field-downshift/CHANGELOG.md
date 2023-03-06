@@ -1,5 +1,13 @@
 # @uidu/field-downshift
 
+## 2.2.4
+
+### Patch Changes
+
+- 86fe49008: Add missing DashletLoader export
+- Updated dependencies [86fe49008]
+  - @uidu/field-base@4.2.15
+
 ## 2.2.3
 
 ### Patch Changes

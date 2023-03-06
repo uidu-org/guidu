@@ -1,5 +1,14 @@
 # @uidu/field-file-uploader
 
+## 2.3.5
+
+### Patch Changes
+
+- 86fe49008: Add missing DashletLoader export
+- Updated dependencies [86fe49008]
+  - @uidu/field-base@4.2.15
+  - @uidu/form@2.2.13
+
 ## 2.3.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.13
+
+### Patch Changes
+
+- 86fe49008: Add missing DashletLoader export
+
 ## 2.2.12
 
 ### Patch Changes

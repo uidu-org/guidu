@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 3.0.1
+
+### Patch Changes
+
+- 86fe49008: Add missing DashletLoader export
+
 ## 3.0.0
 
 ### Major Changes

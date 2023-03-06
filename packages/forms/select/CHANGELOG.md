@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 2.2.14
+
+### Patch Changes
+
+- 86fe49008: Add missing DashletLoader export
+- Updated dependencies [86fe49008]
+  - @uidu/field-base@4.2.15
+
 ## 2.2.13
 
 ### Patch Changes
