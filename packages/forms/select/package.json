@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "2.2.13",
+  "version": "2.2.14",
   "description": "Select Component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/select",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.21.0",
     "@heroicons/react": "^2.0.16",
-    "@uidu/field-base": "^4.2.14",
+    "@uidu/field-base": "^4.2.15",
     "@uidu/menu": "0.8.13",
     "@uidu/spinner": "^0.5.26",
     "react-hook-form": "^7.43.4",

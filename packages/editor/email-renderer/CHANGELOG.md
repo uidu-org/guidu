@@ -1,5 +1,11 @@
 # @uidu/email-renderer
 
+## 1.3.8
+
+### Patch Changes
+
+- 86fe49008: Add missing DashletLoader export
+
 ## 1.3.7
 
 ### Patch Changes

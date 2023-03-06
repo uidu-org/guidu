@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.85
+
+### Patch Changes
+
+- 86fe49008: Add missing DashletLoader export
+- Updated dependencies [86fe49008]
+  - @uidu/media-card@0.8.20
+
 ## 0.5.84
 
 ### Patch Changes

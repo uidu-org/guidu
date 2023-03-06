@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.20
+
+### Patch Changes
+
+- 86fe49008: Add missing DashletLoader export
+
 ## 0.8.19
 
 ### Patch Changes

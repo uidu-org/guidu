@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.2.15
+
+### Patch Changes
+
+- 86fe49008: Add missing DashletLoader export
+- Updated dependencies [86fe49008]
+  - @uidu/form@2.2.13
+
 ## 4.2.14
 
 ### Patch Changes
