@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 3.1.0
+
+### Minor Changes
+
+- 8420b42ec: Pass columnDef to dahslet Table
+
 ## 3.0.1
 
 ### Patch Changes
