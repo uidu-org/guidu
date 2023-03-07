@@ -1,19 +1,17 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import axios, { CancelTokenSource } from 'axios';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { CardContent, CardMedia } from './components/Card';
 import LinkCard from './components/LinkCard';
-import { LinkCardProps, LinkPayloadProps, LinkPreviewProps } from './types';
+import { LinkCardState, LinkPayloadProps, LinkPreviewProps } from './types';
 import {
   createApiUrl,
   defaultApiParameters,
   extractFirstUrl,
   fetchFromApi,
   fetchFromApiUrl,
-  getUrlPath,
   imageProxy,
-  isFunction,
   isNil,
-  someProp,
+  payloadToCardProps,
 } from './utils';
 
 function Card({ url, size, title, description, logo, ...props }) {
@@ -37,79 +35,81 @@ function LinkPreview(props: LinkPreviewProps) {
     autoPlay,
     controls,
     loop,
-    setData,
     muted,
-    loading: loadingProp,
     playsInline,
     className,
     size,
     onScraped,
-    ...restProps
+    data: initialData,
+    url,
   } = props;
 
-  const [loading, setLoading] = useState(loadingProp);
-  const [state, setState] = useState<Partial<LinkCardProps>>({});
+  const source = useRef<CancelTokenSource>(null);
 
-  const mergeData = (data) => {
-    const payload = isFunction(setData)
-      ? setData(data)
-      : { ...data, ...setData };
+  const [isLoading, setIsLoading] = useState<boolean>(!initialData);
 
-    const { title, description, url, video, image, logo } =
-      payload as LinkPayloadProps;
+  const [state, setState] = useState<LinkCardState>(
+    initialData ? payloadToCardProps(initialData) : ({} as LinkCardState),
+  );
 
-    let imageUrl;
-    let videoUrl;
-    let media: any = {};
-    let isVideo = false;
+  const mergeData = useCallback(
+    (payload: LinkPayloadProps) => {
+      const { title, description, video, image, logo } = payload;
 
-    if (isNil(video)) {
-      media = someProp(payload, [].concat(props.media)) || image || logo;
-      imageUrl = getUrlPath(media);
-    } else {
-      media = image || logo;
-      videoUrl = getUrlPath(video);
-      imageUrl = getUrlPath(media);
-      isVideo = true;
-    }
+      let imageUrl: string;
+      let videoUrl: string;
+      let media: string;
+      let isVideo = false;
 
-    const { color, background_color: backgroundColor } = media || {};
+      if (isNil(video)) {
+        media = image || logo;
+        imageUrl = media;
+      } else {
+        media = image || logo;
+        videoUrl = video;
+        imageUrl = media;
+        isVideo = true;
+      }
 
-    setLoading(false);
-    onScraped(payload as LinkPayloadProps);
-    setState({
-      url,
-      color,
-      title,
-      description,
-      imageUrl,
-      videoUrl,
-      isVideo,
-      backgroundColor,
-      logo,
-    });
-  };
+      // const { color, background_color: backgroundColor } = media || {};
 
-  const fetchData = () => {
-    setLoading(true);
-    const { source: oldSource } = state;
-    oldSource && oldSource.cancel('Operation canceled by the user.');
-    const newSource = axios.CancelToken.source();
-    setState({ source: newSource });
-    const fetch = isFunction(setData)
-      ? Promise.resolve({})
-      : fetchFromApi(props, newSource);
+      setIsLoading(false);
+      onScraped(payload);
+      setState({
+        url,
+        title,
+        description,
+        imageUrl,
+        videoUrl,
+        isVideo,
+        logo,
+        // color,
+        // backgroundColor,
+      });
+    },
+    [onScraped, url],
+  );
 
-    fetch.then(mergeData).catch(console.error);
-  };
+  useEffect(() => {
+    const fetchData = () => {
+      if (initialData) return;
 
-  useEffect(fetchData, [props.url, setData]);
+      setIsLoading(true);
+      if (source.current)
+        source.current.cancel('Operation canceled by the user.');
+      source.current = axios.CancelToken.source();
+
+      fetchFromApi({ url }, source.current.token)
+        .then(mergeData)
+        .catch(console.error);
+    };
+    fetchData();
+  }, [url, initialData, mergeData]);
 
   const {
     title,
-    color,
-    backgroundColor,
-    url,
+    // color,
+    // backgroundColor,
     description,
     logo,
     imageUrl,
@@ -117,20 +117,18 @@ function LinkPreview(props: LinkPreviewProps) {
     isVideo,
   } = state;
 
-  const isLoading = isNil(loadingProp) ? loading : loadingProp;
-
   return (
     <LinkCard
-      className={className ? `microlink_card ${className}` : 'microlink_card'}
+      className={className}
       url={url}
-      color={color}
+      // color={color}
       title={title}
       description={description}
       logo={logo}
       imageUrl={imageUrl}
       videoUrl={videoUrl}
       isVideo={isVideo}
-      backgroundColor={backgroundColor}
+      // backgroundColor={backgroundColor}
       isLoading={isLoading}
       size={size}
       autoPlay={autoPlay}
@@ -138,7 +136,6 @@ function LinkPreview(props: LinkPreviewProps) {
       loop={loop}
       muted={muted}
       playsInline={playsInline}
-      {...restProps}
     />
   );
 }

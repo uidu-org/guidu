@@ -1,5 +1,6 @@
 export type LinkPreviewProps = {
   apiKey: string;
+  className?: string;
   autoPlay: boolean;
   contrast: string | boolean;
   controls: boolean;
@@ -12,6 +13,19 @@ export type LinkPreviewProps = {
   size: 'normal' | 'large';
   url: string;
   onScraped: (data: LinkPayloadProps) => void;
+  data?: LinkPayloadProps;
+};
+
+export type LinkCardState = {
+  url: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  videoUrl: string;
+  isVideo: boolean;
+  logo: string;
+  // color: string;
+  // backgroundColor: string;
 };
 
 export type LinkPayloadProps = {
@@ -32,14 +46,12 @@ export type LinkPayloadProps = {
 export type LinkCardProps = {
   className?: string;
   url: string;
-  color?: string;
   title: string;
   description: string;
   logo: string;
   imageUrl: string;
   videoUrl: string;
   isVideo: boolean;
-  backgroundColor: string;
   isLoading: boolean;
   size: string;
   autoPlay: boolean;

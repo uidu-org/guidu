@@ -7,7 +7,6 @@ function Card({ url, size, title, description, logo, ...props }) {
     <>
       <CardMedia url={url} cardSize={size} {...props} />
       <CardContent
-        className="microlink_card__content"
         title={title}
         description={description}
         url={url}
@@ -21,14 +20,12 @@ function Card({ url, size, title, description, logo, ...props }) {
 export default function LinkCard({
   className,
   url,
-  color,
   title,
   description,
   logo,
   imageUrl,
   videoUrl,
   isVideo,
-  backgroundColor,
   isLoading,
   size,
   autoPlay,
@@ -40,12 +37,10 @@ export default function LinkCard({
 }: LinkCardProps) {
   return (
     <CardWrap
-      className={className ? `microlink_card ${className}` : 'microlink_card'}
+      className={className}
       href={url}
       title={title}
       cardSize={size}
-      color={color}
-      backgroundColor={backgroundColor}
       loading={isLoading}
       {...restProps}
     >

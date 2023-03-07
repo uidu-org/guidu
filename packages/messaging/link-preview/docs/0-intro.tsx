@@ -25,6 +25,15 @@ export default md`
   ${(
     <Example
       packageName="@uidu/link-preview"
+      Component={require('../examples/Existing').default}
+      title="Existing"
+      source={require('!!raw-loader!../examples/Existing').default}
+    />
+  )}
+
+  ${(
+    <Example
+      packageName="@uidu/link-preview"
       Component={require('../examples/OnKeyDown').default}
       title="OnKeyDown"
       source={require('!!raw-loader!../examples/OnKeyDown').default}

@@ -5,20 +5,6 @@ import { isLarge, media } from '../../utils';
 
 const HEIGHT = '382px';
 
-const contrastStyle = ({ backgroundColor, color }) => css`
-  background-color: ${backgroundColor};
-  border-color: ${color};
-  transition-property: filter;
-
-  &&& {
-    color: ${color};
-  }
-
-  &:hover {
-    filter: brightness(90%);
-  }
-`;
-
 const largeStyle = css`
   flex-direction: column;
   height: ${HEIGHT};
@@ -67,21 +53,21 @@ const createEl = ({ as }) =>
     ({ loading, contrast }) => !loading && !contrast && hoverStyle,
     ({ cardSize }) => isLarge(cardSize) && largeStyle,
     ({ direction }) => direction === 'rtl' && rtlStyle,
-    ({ backgroundColor, color, contrast }) =>
-      contrast && color && backgroundColor && contrastStyle,
-    ({ backgroundColor, color, contrast }) =>
-      contrast && (!color || !backgroundColor) && hoverStyle,
+    // ({ backgroundColor, color, contrast }) =>
+    //   contrast && color && backgroundColor && contrastStyle,
+    // ({ backgroundColor, color, contrast }) =>
+    //   contrast && (!color || !backgroundColor) && hoverStyle,
   );
 
 const CACHE = {};
 
-const CardWrap = ({ rel, href, target, ...props }) => {
+function CardWrap({ rel, href, target, ...props }) {
   const key = JSON.stringify({ ...props, children: undefined });
   return createElement(
     CACHE[key] || (CACHE[key] = createEl({ as: props.as })),
     props.as === 'a' ? { href, rel, target, ...props } : props,
   );
-};
+}
 
 CardWrap.defaultProps = {
   as: 'a',
