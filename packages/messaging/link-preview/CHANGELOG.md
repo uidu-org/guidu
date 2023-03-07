@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.2.0
+
+### Minor Changes
+
+- 87febc7df: Link preview handles existing preview as well
+
 ## 1.1.0
 
 ### Minor Changes
