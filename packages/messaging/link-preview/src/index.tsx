@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { CardContent, CardEmpty, CardMedia, CardWrap } from './components/Card';
+import { CardContent, CardMedia } from './components/Card';
+import LinkCard from './components/LinkCard';
+import { LinkCardProps, LinkPayloadProps, LinkPreviewProps } from './types';
 import {
   createApiUrl,
   defaultApiParameters,
@@ -30,7 +32,7 @@ function Card({ url, size, title, description, logo, ...props }) {
   );
 }
 
-function LinkPreview<LinkPreviewProps>(props) {
+function LinkPreview(props: LinkPreviewProps) {
   const {
     autoPlay,
     controls,
@@ -46,30 +48,15 @@ function LinkPreview<LinkPreviewProps>(props) {
   } = props;
 
   const [loading, setLoading] = useState(loadingProp);
-  const [state, setState] = useState<any>({});
+  const [state, setState] = useState<Partial<LinkCardProps>>({});
 
-  const fetchData = () => {
-    setLoading(true);
-    const { source: oldSource } = state;
-    oldSource && oldSource.cancel('Operation canceled by the user.');
-    const newSource = axios.CancelToken.source();
-    setState({ source: newSource });
-    const fetch = isFunction(setData)
-      ? Promise.resolve({})
-      : fetchFromApi(props, newSource);
-
-    fetch.then((data) => {
-      console.log(data);
-      mergeData(data);
-    });
-  };
-
-  const mergeData = (fetchData) => {
+  const mergeData = (data) => {
     const payload = isFunction(setData)
-      ? setData(fetchData)
-      : { ...fetchData, ...setData };
+      ? setData(data)
+      : { ...data, ...setData };
 
-    const { title, description, url, video, image, logo } = payload;
+    const { title, description, url, video, image, logo } =
+      payload as LinkPayloadProps;
 
     let imageUrl;
     let videoUrl;
@@ -89,7 +76,7 @@ function LinkPreview<LinkPreviewProps>(props) {
     const { color, background_color: backgroundColor } = media || {};
 
     setLoading(false);
-    onScraped(payload);
+    onScraped(payload as LinkPayloadProps);
     setState({
       url,
       color,
@@ -101,6 +88,19 @@ function LinkPreview<LinkPreviewProps>(props) {
       backgroundColor,
       logo,
     });
+  };
+
+  const fetchData = () => {
+    setLoading(true);
+    const { source: oldSource } = state;
+    oldSource && oldSource.cancel('Operation canceled by the user.');
+    const newSource = axios.CancelToken.source();
+    setState({ source: newSource });
+    const fetch = isFunction(setData)
+      ? Promise.resolve({})
+      : fetchFromApi(props, newSource);
+
+    fetch.then(mergeData).catch(console.error);
   };
 
   useEffect(fetchData, [props.url, setData]);
@@ -120,36 +120,26 @@ function LinkPreview<LinkPreviewProps>(props) {
   const isLoading = isNil(loadingProp) ? loading : loadingProp;
 
   return (
-    <CardWrap
+    <LinkCard
       className={className ? `microlink_card ${className}` : 'microlink_card'}
-      href={url}
-      title={title}
-      cardSize={size}
+      url={url}
       color={color}
+      title={title}
+      description={description}
+      logo={logo}
+      imageUrl={imageUrl}
+      videoUrl={videoUrl}
+      isVideo={isVideo}
       backgroundColor={backgroundColor}
-      loading={isLoading}
+      isLoading={isLoading}
+      size={size}
+      autoPlay={autoPlay}
+      controls={controls}
+      loop={loop}
+      muted={muted}
+      playsInline={playsInline}
       {...restProps}
-    >
-      {isLoading ? (
-        <CardEmpty cardSize={size} />
-      ) : (
-        <Card
-          title={title}
-          description={description}
-          url={url}
-          isVideo={isVideo}
-          imageUrl={imageUrl}
-          videoUrl={videoUrl}
-          autoPlay={autoPlay}
-          controls={controls}
-          loop={loop}
-          muted={muted}
-          playsInline={playsInline}
-          size={size}
-          logo={logo}
-        />
-      )}
-    </CardWrap>
+    />
   );
 }
 

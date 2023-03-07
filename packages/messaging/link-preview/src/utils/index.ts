@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { css } from 'styled-components';
+import { LinkPayloadProps } from '../types';
 
 const REGEX_HTTPS = /^https/;
 const REGEX_LOCALHOST = /http:\/\/localhost/;
@@ -16,11 +17,11 @@ export function isNil(value) {
   return value == null;
 }
 
-export function getUrlPath(data) {
+export function getUrlPath(data: LinkPayloadProps | string) {
   return data && isObject(data) ? data.url : data;
 }
 
-export function someProp(data, props) {
+export function someProp(data: LinkPayloadProps, props) {
   return data[
     props.find((prop) => data[prop] !== null && data[prop] !== undefined)
   ];
@@ -93,10 +94,16 @@ export function fetchFromApiUrl(
     apiUrl: string;
   },
   source: any,
-) {
+): Promise<LinkPayloadProps> {
   const headers = apiKey ? { 'x-api-key': apiKey } : {};
   return axios
-    .get(apiUrl, { headers, cancelToken: source.token })
+    .get<{
+      title: string;
+      description: string;
+      image: string;
+      url: string;
+      video: string;
+    }>(apiUrl, { headers, cancelToken: source.token })
     .then((res) => res.data)
     .catch((err) => {
       throw err;
