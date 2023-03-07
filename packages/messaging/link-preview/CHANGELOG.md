@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.1.0
+
+### Minor Changes
+
+- 5dc7d5d34: Export LinkCard
+
 ## 1.0.0
 
 ### Major Changes
