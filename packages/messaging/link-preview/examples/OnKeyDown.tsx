@@ -1,47 +1,42 @@
 import { FieldTextStateless } from '@uidu/field-text';
-import Form from '@uidu/form';
+import Form, { useForm } from '@uidu/form';
 import debounce from 'lodash/debounce';
-import React, { Component } from 'react';
-
+import React, { useState } from 'react';
 import LinkPreview, { extractFirstUrl } from '../src';
 
-export default class Basic extends Component<any> {
-  state = {
-    url: null,
+export default function Basic() {
+  const [url, setUrl] = useState(null);
+
+  const handleSubmit = async (model) => {
+    setUrl(model.url);
   };
 
-  handleSubmit = async (model) => {
-    await this.setState({ url: model.url });
-  };
-
-  debounceExtractUrl = debounce((e) => {
-    const { url } = this.state;
+  const debounceExtractUrl = debounce((e) => {
     const nextUrl = extractFirstUrl(e.target.value);
     if (url !== nextUrl) {
-      this.setState({
-        url: nextUrl,
-      });
+      setUrl(nextUrl);
     }
   }, 500);
 
-  onKeyUp = (event) => {
+  const onKeyUp = (event) => {
     event.persist();
-    this.debounceExtractUrl(event);
+    debounceExtractUrl(event);
   };
 
-  render() {
-    const { url } = this.state;
-    return [
-      <Form handleSubmit={this.handleSubmit} footerRenderer={() => {}}>
-        <FieldTextStateless type="url" name="url" onKeyUp={this.onKeyUp} />
-      </Form>,
-      url && [
+  const form = useForm({});
+
+  return (
+    <>
+      <Form form={form} handleSubmit={handleSubmit} footerRenderer={() => {}}>
+        <FieldTextStateless type="url" name="url" onKeyUp={onKeyUp} />
+      </Form>
+      {url && (
         <LinkPreview
           url={url}
-          className="mt-4 card flex-row"
+          className="flex-row mt-4 card"
           onScraped={console.log}
-        />,
-      ],
-    ];
-  }
+        />
+      )}
+    </>
+  );
 }

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CardContent, CardEmpty, CardMedia, CardWrap } from './components/Card';
 import {
   createApiUrl,
@@ -14,19 +14,21 @@ import {
   someProp,
 } from './utils';
 
-const Card = ({ url, size, title, description, logo, ...props }) => (
-  <Fragment>
-    <CardMedia url={url} cardSize={size} {...props} />
-    <CardContent
-      className="microlink_card__content"
-      title={title}
-      description={description}
-      url={url}
-      cardSize={size}
-      logo={logo}
-    />
-  </Fragment>
-);
+function Card({ url, size, title, description, logo, ...props }) {
+  return (
+    <>
+      <CardMedia url={url} cardSize={size} {...props} />
+      <CardContent
+        className="microlink_card__content"
+        title={title}
+        description={description}
+        url={url}
+        cardSize={size}
+        logo={logo}
+      />
+    </>
+  );
+}
 
 function LinkPreview<LinkPreviewProps>(props) {
   const {
@@ -55,10 +57,14 @@ function LinkPreview<LinkPreviewProps>(props) {
     const fetch = isFunction(setData)
       ? Promise.resolve({})
       : fetchFromApi(props, newSource);
-    fetch.then(({ data }) => mergeData(data));
+
+    fetch.then((data) => {
+      console.log(data);
+      mergeData(data);
+    });
   };
 
-  const mergeData = fetchData => {
+  const mergeData = (fetchData) => {
     const payload = isFunction(setData)
       ? setData(fetchData)
       : { ...fetchData, ...setData };
@@ -80,7 +86,7 @@ function LinkPreview<LinkPreviewProps>(props) {
       isVideo = true;
     }
 
-    const { color, background_color: backgroundColor } = media;
+    const { color, background_color: backgroundColor } = media || {};
 
     setLoading(false);
     onScraped(payload);

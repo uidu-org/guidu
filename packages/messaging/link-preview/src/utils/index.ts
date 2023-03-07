@@ -1,20 +1,30 @@
 import axios from 'axios';
-import getUrls from 'get-urls';
 import { css } from 'styled-components';
 
 const REGEX_HTTPS = /^https/;
 const REGEX_LOCALHOST = /http:\/\/localhost/;
 
-export const isFunction = (fn) => typeof fn === 'function';
+export function isFunction(fn) {
+  return typeof fn === 'function';
+}
 
-export const isObject = (obj) => typeof obj === 'object';
+export function isObject(obj) {
+  return typeof obj === 'object';
+}
 
-export const isNil = (value) => value == null;
+export function isNil(value) {
+  return value == null;
+}
 
-export const getUrlPath = (data) => (data && isObject(data) ? data.url : data);
+export function getUrlPath(data) {
+  return data && isObject(data) ? data.url : data;
+}
 
-export const someProp = (data, props) =>
-  data[props.find((prop) => data[prop] !== null && data[prop] !== undefined)];
+export function someProp(data, props) {
+  return data[
+    props.find((prop) => data[prop] !== null && data[prop] !== undefined)
+  ];
+}
 
 export const media = {
   mobile: (...args) => css`
@@ -29,8 +39,9 @@ export const media = {
   `,
 };
 
-const apiValue = (key, value) =>
-  value === true ? `${key}` : `${key}=${value}`;
+function apiValue(key: string, value: string) {
+  return value === true ? `${key}` : `${key}=${value}`;
+}
 
 export const defaultApiParameters = {
   video: false,
@@ -39,12 +50,18 @@ export const defaultApiParameters = {
   prerender: 'auto',
 };
 
-export const createApiUrl = (props) => {
+export function createApiUrl(props: {
+  apiKey: string;
+  url: string;
+  prerender: string;
+  contrast: string;
+  media: string[];
+}) {
   const { apiKey, url: targetUrl, prerender, contrast, media } = props;
   const takeScreenshot = media.includes('screenshot');
   const hasVideo = media.includes('video');
 
-  let url = `https://p2jxzlrab4.execute-api.eu-west-1.amazonaws.com/dev?url=${encodeURIComponent(
+  let url = `https://metascraper-lime.vercel.app/api/scrape?url=${encodeURIComponent(
     targetUrl,
   )}`;
 
@@ -65,36 +82,50 @@ export const createApiUrl = (props) => {
   }
 
   return url;
-};
+}
 
-export const fetchFromApiUrl = ({ apiKey, apiUrl }, source) => {
+export function fetchFromApiUrl(
+  {
+    apiKey,
+    apiUrl,
+  }: {
+    apiKey: string;
+    apiUrl: string;
+  },
+  source: any,
+) {
   const headers = apiKey ? { 'x-api-key': apiKey } : {};
   return axios
     .get(apiUrl, { headers, cancelToken: source.token })
-    .then((res) => {
-      return res.data;
+    .then((res) => res.data)
+    .catch((err) => {
+      throw err;
     });
-};
+}
 
-export const fetchFromApi = (props, source) => {
+export function fetchFromApi(props, source) {
   const apiUrl = createApiUrl(props);
   return fetchFromApiUrl({ apiUrl, ...props }, source);
-};
+}
 
-export const isLarge = (cardSize) => cardSize === 'large';
+export function isLarge(cardSize: string) {
+  return cardSize === 'large';
+}
 
-export const imageProxy = (url) => {
+export function imageProxy(url: string) {
   if (!url || REGEX_LOCALHOST.test(url) || REGEX_HTTPS.test(url)) return url;
   return `https://images.weserv.nl/?url=${encodeURIComponent(url).replace(
     'http://',
     '',
   )}`;
-};
+}
 
-export const extractFirstUrl = (text) => {
-  const urlsSet = getUrls(text);
-  if (urlsSet.size == 0) {
+export function extractFirstUrl(text: string) {
+  const urlsSet = text.match(
+    /\b((https?|ftp|file):\/\/|(www|ftp)\.)[-A-Z0-9+&@#/%?=~_|$!:,.;]*[A-Z0-9+&@#/%=~_|$]/gi,
+  );
+  if (urlsSet && urlsSet.length === 0) {
     return null;
   }
-  return Array.from(urlsSet)[0];
-};
+  return urlsSet[0];
+}

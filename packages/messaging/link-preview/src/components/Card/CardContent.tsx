@@ -4,11 +4,12 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import CardText from './CardText';
 
-import { media, imageProxy } from '../../utils';
+import { imageProxy, media } from '../../utils';
 
 const REGEX_STRIP_WWW = /^www\./;
 
 const getHostname = (href: string) => {
+  // eslint-disable-next-line compat/compat
   const { hostname } = new URL(href);
   return hostname.replace(REGEX_STRIP_WWW, '');
 };
@@ -29,7 +30,7 @@ const mobileDescriptionStyle = css`
   `};
 `;
 
-export const Content = styled.div<any>`
+export const Content = styled.div<{ cardSize: string }>`
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -48,7 +49,7 @@ const Header = styled.header`
   flex-grow: 1.2;
 `;
 
-const Description = styled.div<any>`
+const Description = styled.div<{ cardSize: string }>`
   text-align: left;
   font-size: 14px;
   flex-grow: 2;
@@ -66,7 +67,7 @@ const Footer = styled.footer`
   flex-grow: 0;
 `;
 
-const Logo = styled.div<any>`
+const Logo = styled.div<{ logo: string }>`
   background-image: ${({ logo }) => `url('${imageProxy(logo)}')`};
   background-size: cover;
   background-position: center center;
@@ -76,17 +77,33 @@ const Logo = styled.div<any>`
   margin-right: 0.25rem;
 `;
 
-export default ({ title, description, url, cardSize, className, logo }) => (
-  <Content className={className} cardSize={cardSize}>
-    <Header>
-      <CardText lines={1}>{title}</CardText>
-    </Header>
-    <Description cardSize={cardSize}>
-      <CardText lines={2}>{description}</CardText>
-    </Description>
-    <Footer>
-      {logo && <Logo className="rounded" logo={logo} />}
-      <CardText lines={1}>{url && getHostname(url)}</CardText>
-    </Footer>
-  </Content>
-);
+export default function CardContent({
+  title,
+  description,
+  url,
+  cardSize,
+  className,
+  logo,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  cardSize: string;
+  className?: string;
+  logo?: string;
+}) {
+  return (
+    <Content className={className} cardSize={cardSize}>
+      <Header>
+        <CardText lines={1}>{title}</CardText>
+      </Header>
+      <Description cardSize={cardSize}>
+        <CardText lines={2}>{description}</CardText>
+      </Description>
+      <Footer>
+        {logo && <Logo className="rounded" logo={logo} />}
+        <CardText lines={1}>{url && getHostname(url)}</CardText>
+      </Footer>
+    </Content>
+  );
+}

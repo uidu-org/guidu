@@ -1,10 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-
-import { emptyStateAnimation, emptyStateImageAnimation } from './CardAnimation';
-import CardImage from './CardMedia/Image';
-import { Content } from './CardContent';
 import { media } from '../../utils';
+import { emptyStateAnimation, emptyStateImageAnimation } from './CardAnimation';
+import { Content } from './CardContent';
+import CardImage from './CardMedia/Image';
 
 const MediaEmpty = styled(CardImage)<any>`
   ${emptyStateImageAnimation};
@@ -64,15 +63,17 @@ const FooterEmpty = styled.footer<any>`
   ${emptyStateAnimation} animation-delay: .25s;
 `;
 
-const CardEmptyState = ({ cardSize }) => (
-  <Fragment>
-    <MediaEmpty cardSize={cardSize} />
-    <Content cardSize={cardSize}>
-      <HeaderEmpty />
-      <DescriptionEmpty cardSize={cardSize} />
-      <FooterEmpty />
-    </Content>
-  </Fragment>
-);
+function CardEmptyState({ cardSize }: { cardSize: string }) {
+  return (
+    <>
+      <MediaEmpty cardSize={cardSize} />
+      <Content cardSize={cardSize}>
+        <HeaderEmpty />
+        <DescriptionEmpty cardSize={cardSize} />
+        <FooterEmpty />
+      </Content>
+    </>
+  );
+}
 
 export default CardEmptyState;

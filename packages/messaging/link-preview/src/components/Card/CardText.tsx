@@ -1,10 +1,20 @@
+import NanoClamp from 'nanoclamp';
 import React from 'react';
 import styled from 'styled-components';
-import NanoClamp from 'nanoclamp';
 
-const Clamp = ({ children, className, lines }) => (
-  <NanoClamp className={className} lines={lines} text={children} is="p" />
-);
+function Clamp({
+  children,
+  className,
+  lines,
+}: {
+  children: string;
+  className?: string;
+  lines: number;
+}) {
+  return (
+    <NanoClamp className={className} lines={lines} text={children} is="p" />
+  );
+}
 
 const CardText = styled(Clamp)<any>`
   &&& {

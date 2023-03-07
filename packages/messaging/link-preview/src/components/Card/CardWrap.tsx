@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import styled, { css } from 'styled-components';
 
-import { media, isLarge } from '../../utils';
+import { isLarge, media } from '../../utils';
 
 const HEIGHT = '382px';
 

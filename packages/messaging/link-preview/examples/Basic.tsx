@@ -1,35 +1,35 @@
 import FieldText from '@uidu/field-text';
-import Form, { FormSubmit } from '@uidu/form';
-import React, { Component } from 'react';
+import Form, { FormSubmit, useForm } from '@uidu/form';
+import React, { useState } from 'react';
 import LinkPreview from '../src';
 
-export default class Basic extends Component<any> {
-  state = {
-    url: null,
+export default function Basic() {
+  const [url, setUrl] = useState(null);
+
+  const handleSubmit = async (model) => {
+    setUrl(model.url);
   };
 
-  handleSubmit = async (model) => {
-    await this.setState({ url: model.url });
-  };
+  const form = useForm({});
 
-  render() {
-    const { url } = this.state;
-    return [
+  return (
+    <>
       <Form
-        handleSubmit={this.handleSubmit}
+        form={form}
+        handleSubmit={handleSubmit}
         footerRenderer={({ loading, canSubmit }) => (
           <FormSubmit canSubmit={canSubmit} loading={loading} />
         )}
       >
         <FieldText type="url" name="url" />
-      </Form>,
-      url && [
+      </Form>
+      {url && (
         <LinkPreview
           url={url}
-          className="mt-4 card flex-row"
+          className="flex-row mt-4 card"
           onScraped={console.log}
-        />,
-      ],
-    ];
-  }
+        />
+      )}
+    </>
+  );
 }
