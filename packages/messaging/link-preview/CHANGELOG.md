@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.0.0
+
+### Major Changes
+
+- 78fce1c9c: Migrate to vercel functions
+
 ## 0.3.35
 
 ### Patch Changes
