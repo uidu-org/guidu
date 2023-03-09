@@ -1,11 +1,15 @@
 import { FieldBaseProps } from '@uidu/field-base';
-import { DayPickerInputProps } from 'react-day-picker';
+import { DateRange, DayPickerInputProps } from 'react-day-picker';
 
-export type FieldDateRangeProps = FieldBaseProps & FieldDateRangeStatelessProps;
+export type FieldDateRangeProps = FieldBaseProps<{
+  from: string;
+  to: string;
+}> &
+  FieldDateRangeStatelessProps;
 
 export type FieldDateRangeStatelessProps = DayPickerInputProps & {
   formatSubmit?: string;
-  onChange: (value: any) => void;
+  onChange: (value: DateRange) => void;
   locale?: string;
   displayFormat?: string;
   placeholders?: {

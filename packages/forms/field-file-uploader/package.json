@@ -18,7 +18,7 @@
     "@uidu/media-core": "1.5.1",
     "@uidu/menu": "0.8.13",
     "@uifabric/file-type-icons": "^7.10.11",
-    "@uppy/core": "^3.0.6",
+    "@uppy/core": "^3.1.1",
     "@uppy/react": "^3.1.0",
     "react": "^18.2.0",
     "react-dropzone": "^14.2.3",

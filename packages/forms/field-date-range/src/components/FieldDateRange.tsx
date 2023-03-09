@@ -4,10 +4,9 @@ import { FieldDateRangeProps } from '../types';
 import InputControl from './FieldDateRangeStateless';
 
 export default function FieldDateRange({
-  formatSubmit = 'YYYY-MM-DD',
   onChange = noop,
   name,
-  value: defaultValue,
+  value: defaultValue = { from: '', to: '' },
   ...rest
 }: FieldDateRangeProps) {
   const { field, wrapperProps, inputProps } = useController({
@@ -17,7 +16,10 @@ export default function FieldDateRange({
     ...rest,
   });
 
+  console.log('field', field);
+
   const handleChange = (value: any) => {
+    console.log(value);
     field.onChange(value);
     onChange(name, value);
   };
