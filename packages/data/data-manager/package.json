@@ -38,7 +38,7 @@
     "react-media": "^1.10.0",
     "react-table-plugins": "^1.3.2",
     "react-transition-group": "^4.4.5",
-    "styled-components": "^5.3.8",
+    "styled-components": "^5.3.9",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
@@ -47,6 +47,6 @@
     "@uidu/navigation": "^1.0.37",
     "@uidu/page-header": "^1.0.11",
     "@uidu/side-navigation": "1.2.14",
-    "react-intl": "^6.2.10"
+    "react-intl": "^6.3.1"
   }
 }

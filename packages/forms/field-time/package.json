@@ -17,14 +17,14 @@
     "@uidu/select": "2.2.14",
     "date-fns": "^2.29.3",
     "react": "^18.2.0",
-    "react-intl": "^6.2.10",
+    "react-intl": "^6.3.1",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
     "@uidu/button": "^1.3.38",
     "@uidu/docs": "^0.5.27",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.8"
+    "styled-components": "^5.3.9"
   },
   "peerDependencies": {
     "styled-components": "*"

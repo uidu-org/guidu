@@ -1,25 +1,34 @@
-import { CardElement } from '@stripe/react-stripe-js';
-import { Wrapper } from '@uidu/field-base';
+import { CardElement, CardElementProps } from '@stripe/react-stripe-js';
+import { StripeCardElementChangeEvent } from '@stripe/stripe-js';
+import { FieldBaseProps, noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { FieldBase } from '../../styled';
 import { createCardElementOptions } from '../../utils';
 
 function FieldCard({
-  onChange,
+  onChange = noop,
   providerProps,
-  onReady,
-  onSetValue,
+  onReady = noop,
   name,
   ...rest
+}: FieldBaseProps<StripeCardElementChangeEvent['value']> & {
+  onReady?: CardElementProps['onReady'];
+  providerProps: CardElementProps;
 }) {
-  const handleChange = (value) => {
-    onSetValue(value);
+  const { field, inputProps, wrapperProps } = useController({
+    name,
+    onChange,
+    ...rest,
+  });
+
+  const handleChange = (value: StripeCardElementChangeEvent['value']) => {
+    field.onChange(value);
     onChange(name, value);
   };
 
   return (
-    <Wrapper {...rest}>
-      <FieldBase>
+    <Wrapper {...wrapperProps}>
+      <FieldBase ref={field.ref} {...inputProps}>
         <CardElement
           id="credit-card"
           onChange={handleChange}

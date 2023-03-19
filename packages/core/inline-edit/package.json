@@ -29,7 +29,7 @@
     "@uidu/field-textarea": "^2.0.14",
     "@uidu/select": "^2.2.13",
     "react": "^18.2.0",
-    "styled-components": "^5.3.8"
+    "styled-components": "^5.3.9"
   },
   "peerDependencies": {
     "react": "^18.0.0",

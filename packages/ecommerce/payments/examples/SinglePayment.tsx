@@ -8,20 +8,18 @@ import {
 } from '@uidu/shell';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
 import { IntlProvider } from 'react-intl';
 import { PaymentMethods, SinglePayment } from '../src';
 
 const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
 
-const createPaymentIntent = (amount: number) => {
-  return axios
+const createPaymentIntent = (amount: number) =>
+  axios
     .post('https://uidu.local:8443/payment-intents', {
       amount,
       description: 'Donation to Organization',
     })
     .then((res) => res.data);
-};
 
 export default function Basic() {
   const [paymentIntent, setPaymentIntent] = useState(null);
@@ -66,26 +64,15 @@ export default function Basic() {
                       'credit_card_split',
                       'bank_account',
                     ]}
-                    footerRenderer={(props) => {
-                      return createPortal(
-                        <div tw="fixed left-0 top-0">
-                          <FormSubmit
-                            {...props}
-                            form="test-1"
-                            label="Donate 30"
-                          />
-                        </div>,
-                        document.body,
-                      );
-                    }}
+                    footerRenderer={(props) => (
+                      <FormSubmit {...props} form="test-1" label="Donate 30" />
+                    )}
                   >
-                    {(paymentProps) => {
-                      return (
-                        <PaymentMethods {...paymentProps}>
-                          <FieldText name="otherField" label="other field" />
-                        </PaymentMethods>
-                      );
-                    }}
+                    {(paymentProps) => (
+                      <PaymentMethods {...paymentProps}>
+                        <FieldText name="otherField" label="other field" />
+                      </PaymentMethods>
+                    )}
                   </SinglePayment>
                 </div>
               </div>

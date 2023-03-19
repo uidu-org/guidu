@@ -24,10 +24,10 @@
     "react-facebook": "^8.1.4",
     "react-feather": "^2.0.10",
     "react-google-login": "^5.2.2",
-    "react-intl": "^6.2.10",
+    "react-intl": "^6.3.1",
     "react-router-dom": "^5.3.4",
-    "styled-components": "^5.3.8",
-    "swiper": "^9.1.0"
+    "styled-components": "^5.3.9",
+    "swiper": "^9.1.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.27"

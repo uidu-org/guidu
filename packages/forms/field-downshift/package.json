@@ -15,7 +15,7 @@
     "@uidu/field-base": "^4.2.15",
     "@uidu/field-text": "^2.0.10",
     "classnames": "^2.3.2",
-    "downshift": "^7.3.0",
+    "downshift": "^7.4.1",
     "react": "^18.2.0",
     "tslib": "^2.5.0"
   },
@@ -31,7 +31,7 @@
     "@uidu/radio": "^2.1.8",
     "@uidu/shell": "^2.1.49",
     "react-feather": "^2.0.10",
-    "styled-components": "^5.3.8",
+    "styled-components": "^5.3.9",
     "twin.macro": "^3.1.0"
   },
   "peerDependencies": {

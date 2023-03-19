@@ -4,14 +4,7 @@ import React from 'react';
 import { FieldBase } from '../../styled';
 import { createIbanElementOptions } from '../../utils';
 
-function FieldBank({
-  onChange = noop,
-  providerProps,
-  onReady,
-  onSetValue,
-  name,
-  ...rest
-}) {
+function FieldBank({ onChange = noop, providerProps, onReady, name, ...rest }) {
   const { field, wrapperProps, inputProps } = useController({
     name,
     defaultValue: '',

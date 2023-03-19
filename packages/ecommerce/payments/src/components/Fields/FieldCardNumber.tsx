@@ -1,25 +1,24 @@
 import { CardNumberElement } from '@stripe/react-stripe-js';
-import { Wrapper } from '@uidu/field-base';
+import { useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { FieldBase } from '../../styled';
 import { createCardElementOptions } from '../../utils';
 
-function FieldCardNumber({
-  onChange,
-  providerProps,
-  onReady,
-  onSetValue,
-  name,
-  ...rest
-}) {
+function FieldCardNumber({ onChange, providerProps, onReady, name, ...rest }) {
+  const { field, inputProps, wrapperProps } = useController({
+    name,
+    onChange,
+    ...rest,
+  });
+
   const handleChange = (value) => {
-    onSetValue(value);
+    field.onChange(value);
     onChange(name, value);
   };
 
   return (
-    <Wrapper {...rest}>
-      <FieldBase>
+    <Wrapper {...wrapperProps}>
+      <FieldBase {...inputProps} ref={field.ref}>
         <CardNumberElement
           id="credit-card-number"
           onChange={handleChange}

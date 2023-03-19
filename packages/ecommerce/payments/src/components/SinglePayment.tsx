@@ -182,7 +182,10 @@ export default function SinglePayment({
         ...stripeOptions,
       }}
     >
-      <StatelessSinglePayment {...(rest as SinglePaymentProps)} />
+      <StatelessSinglePayment
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...(rest as SinglePaymentProps)}
+      />
     </Elements>
   );
 }

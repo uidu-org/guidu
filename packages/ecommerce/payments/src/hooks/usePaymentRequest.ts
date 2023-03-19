@@ -1,4 +1,5 @@
 import { useStripe } from '@stripe/react-stripe-js';
+import { PaymentRequest } from '@stripe/stripe-js';
 import { useEffect, useState } from 'react';
 
 export default function usePaymentRequest({
@@ -11,7 +12,7 @@ export default function usePaymentRequest({
   requestPayerPhone = true,
 }) {
   const stripe = useStripe();
-  const [paymentRequest, setPaymentRequest] = useState(null);
+  const [paymentRequest, setPaymentRequest] = useState<PaymentRequest>(null);
 
   useEffect(() => {
     if (stripe) {
@@ -27,11 +28,13 @@ export default function usePaymentRequest({
         requestPayerPhone,
       });
 
-      pr.canMakePayment().then((result) => {
-        if (result) {
-          setPaymentRequest(pr);
-        }
-      });
+      pr.canMakePayment()
+        .then((result) => {
+          if (result) {
+            setPaymentRequest(pr);
+          }
+        })
+        .finally(() => {});
     }
   }, [
     stripe,

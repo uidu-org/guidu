@@ -25,15 +25,15 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
-    "styled-components": "^5.3.8",
-    "swiper": "^9.1.0",
+    "styled-components": "^5.3.9",
+    "swiper": "^9.1.1",
     "tslib": "^2.5.0",
     "twin.macro": "^3.1.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.27",
     "@uidu/media-card": "^0.8.18",
-    "react-intl": "^6.2.10"
+    "react-intl": "^6.3.1"
   },
   "publishConfig": {
     "access": "public"
