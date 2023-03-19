@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.5.28
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/section-message@0.6.33
+  - @uidu/tooltip@0.5.33
+  - @uidu/button@1.3.39
+  - @uidu/theme@0.6.32
+  - @uidu/code@0.5.27
+
 ## 0.5.27
 
 ### Patch Changes

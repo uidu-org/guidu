@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 4.3.18
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/data-controls@4.0.32
+  - @uidu/data-fields@2.1.40
+  - @uidu/shell@2.1.50
+  - @uidu/pagination@0.5.31
+  - @uidu/data-views@3.0.30
+  - @uidu/calendar@0.4.34
+  - @uidu/spinner@0.5.27
+  - @uidu/gallery@2.0.28
+  - @uidu/button@1.3.39
+  - @uidu/board@2.1.10
+  - @uidu/table@3.5.9
+  - @uidu/menu@0.8.14
+  - @uidu/list@3.1.22
+
 ## 4.3.17
 
 ### Patch Changes

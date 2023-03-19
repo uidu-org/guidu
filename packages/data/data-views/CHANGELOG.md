@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 3.0.30
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-counter@2.0.11
+  - @uidu/data-controls@4.0.32
+  - @uidu/field-number@2.0.42
+  - @uidu/data-manager@4.3.18
+  - @uidu/select@2.2.15
+  - @uidu/button@1.3.39
+  - @uidu/form@2.2.14
+
 ## 3.0.29
 
 ### Patch Changes

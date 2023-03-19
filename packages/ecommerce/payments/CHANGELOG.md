@@ -1,5 +1,19 @@
 # @uidu/payments
 
+## 1.6.0
+
+### Minor Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
+### Patch Changes
+
+- Updated dependencies [da4516e96]
+  - @uidu/section-message@0.6.33
+  - @uidu/field-base@4.2.16
+  - @uidu/theme@0.6.32
+  - @uidu/form@2.2.14
+
 ## 1.5.32
 
 ### Patch Changes

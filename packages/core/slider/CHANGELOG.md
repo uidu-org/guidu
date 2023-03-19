@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.1.9
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
 ## 2.1.8
 
 ### Patch Changes

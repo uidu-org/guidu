@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.1.20
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-date-range@2.0.18
+  - @uidu/dropdown-menu@0.6.32
+  - @uidu/avatar-group@2.6.27
+  - @uidu/avatar@0.9.24
+  - @uidu/button@1.3.39
+  - @uidu/form@2.2.14
+
 ## 1.1.19
 
 ### Patch Changes

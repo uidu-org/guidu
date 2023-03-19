@@ -1,5 +1,17 @@
 # @uidu/onboarding
 
+## 1.3.27
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/modal-dialog@1.2.1
+  - @uidu/button@1.3.39
+  - @uidu/popper@0.5.29
+  - @uidu/portal@1.0.9
+  - @uidu/theme@0.6.32
+
 ## 1.3.26
 
 ### Patch Changes

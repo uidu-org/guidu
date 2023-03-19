@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 2.1.40
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-color-picker@3.0.20
+  - @uidu/field-downshift@2.2.5
+  - @uidu/field-number@2.0.42
+  - @uidu/field-toggle@2.0.42
+  - @uidu/field-date@2.1.23
+  - @uidu/field-text@2.0.11
+  - @uidu/field-time@2.0.46
+  - @uidu/select@2.2.15
+  - @uidu/button@1.3.39
+  - @uidu/popup@0.7.16
+  - @uidu/form@2.2.14
+  - @uidu/menu@0.8.14
+  - @uidu/map@0.6.28
+
 ## 2.1.39
 
 ### Patch Changes

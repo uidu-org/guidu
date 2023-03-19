@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.2.1
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
 ## 1.2.0
 
 ### Minor Changes

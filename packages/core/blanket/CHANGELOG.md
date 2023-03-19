@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.6.17
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
 ## 0.6.16
 
 ### Patch Changes

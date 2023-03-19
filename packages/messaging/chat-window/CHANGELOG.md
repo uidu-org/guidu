@@ -1,5 +1,14 @@
 # @uidu/chat-window
 
+## 0.4.34
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/message-renderer@0.4.30
+  - @uidu/message@0.5.86
+
 ## 0.4.33
 
 ### Patch Changes

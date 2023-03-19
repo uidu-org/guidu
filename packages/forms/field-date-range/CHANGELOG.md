@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 2.0.18
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-base@4.2.16
+  - @uidu/field-date@2.1.23
+
 ## 2.0.17
 
 ### Patch Changes

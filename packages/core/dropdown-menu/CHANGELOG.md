@@ -1,5 +1,16 @@
 # @uidu/dropdown-menu
 
+## 0.6.32
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/droplist@0.5.33
+  - @uidu/button@1.3.39
+  - @uidu/theme@0.6.32
+  - @uidu/item@0.5.30
+
 ## 0.6.31
 
 ### Patch Changes

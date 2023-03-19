@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 2.0.28
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/data-controls@4.0.32
+  - @uidu/data-fields@2.1.40
+  - @uidu/shell@2.1.50
+  - @uidu/spinner@0.5.27
+
 ## 2.0.27
 
 ### Patch Changes

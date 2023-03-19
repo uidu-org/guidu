@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.6.27
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/dropdown-menu@0.6.32
+  - @uidu/tooltip@0.5.33
+  - @uidu/avatar@0.9.24
+  - @uidu/theme@0.6.32
+
 ## 2.6.26
 
 ### Patch Changes

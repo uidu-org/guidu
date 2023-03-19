@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.8.21
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/media-core@1.5.2
+  - @uidu/spinner@0.5.27
+  - @uidu/tooltip@0.5.33
+  - @uidu/button@1.3.39
+  - @uidu/theme@0.6.32
+
 ## 0.8.20
 
 ### Patch Changes

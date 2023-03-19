@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.2.4
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
 ## 0.2.3
 
 ### Patch Changes

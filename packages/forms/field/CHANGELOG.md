@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.0.25
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-textarea@2.0.15
+  - @uidu/field-number@2.0.42
+  - @uidu/field-text@2.0.11
+  - @uidu/checkbox@2.0.14
+  - @uidu/select@2.2.15
+
 ## 1.0.24
 
 ### Patch Changes

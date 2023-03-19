@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.2.15
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/inline-dialog@0.5.31
+  - @uidu/shell@2.1.50
+  - @uidu/tooltip@0.5.33
+  - @uidu/avatar@0.9.24
+  - @uidu/button@1.3.39
+  - @uidu/popup@0.7.16
+  - @uidu/theme@0.6.32
+  - @uidu/menu@0.8.14
+
 ## 1.2.14
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.2.16
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/form@2.2.14
+
 ## 4.2.15
 
 ### Patch Changes

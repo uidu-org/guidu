@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.40
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
 ## 0.4.39
 
 ### Patch Changes

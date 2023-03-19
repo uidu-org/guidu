@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.0.42
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-base@4.2.16
+  - @uidu/field-text@2.0.11
+  - @uidu/form@2.2.14
+
 ## 2.0.41
 
 ### Patch Changes

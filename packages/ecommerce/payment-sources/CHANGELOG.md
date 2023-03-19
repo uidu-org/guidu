@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.45
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/payments@1.6.0
+  - @uidu/form@2.2.14
+
 ## 0.3.44
 
 ### Patch Changes

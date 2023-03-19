@@ -1,5 +1,18 @@
 # @uidu/emoji
 
+## 0.6.36
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-text@2.0.11
+  - @uidu/spinner@0.5.27
+  - @uidu/tooltip@0.5.33
+  - @uidu/button@1.3.39
+  - @uidu/theme@0.6.32
+  - @uidu/code@0.5.27
+
 ## 0.6.35
 
 ### Patch Changes

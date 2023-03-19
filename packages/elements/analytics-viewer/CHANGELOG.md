@@ -1,5 +1,11 @@
 # @uidu/analytics-viewer
 
+## 0.4.27
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
 ## 0.4.26
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/list",
-  "version": "3.1.21",
+  "version": "3.1.22",
   "description": "React component to show data items as calendar",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/list",
   "license": "MIT",
@@ -12,12 +12,12 @@
     "@babel/runtime": "^7.21.0",
     "@tanstack/react-table": "^8.7.9",
     "@tanstack/react-virtual": "^3.0.0-beta.48",
-    "@uidu/data-fields": "^2.1.38",
+    "@uidu/data-fields": "^2.1.40",
     "react": "^18.2.0",
     "styled-components": "^5.3.9",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.27"
+    "@uidu/docs": "^0.5.28"
   }
 }

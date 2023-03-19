@@ -1,5 +1,17 @@
 # @uidu/media-filmstrip
 
+## 0.7.3
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/media-viewer@1.2.3
+  - @uidu/modal-dialog@1.2.1
+  - @uidu/media-card@0.8.21
+  - @uidu/media-core@1.5.2
+  - @uidu/theme@0.6.32
+
 ## 0.7.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/activity-provider
 
+## 0.1.3
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
 ## 0.1.2
 
 ### Patch Changes

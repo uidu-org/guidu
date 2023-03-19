@@ -1,5 +1,17 @@
 # @uidu/stripe-accounts
 
+## 0.5.27
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/payments@1.6.0
+  - @uidu/stepper@0.4.33
+  - @uidu/field-text@2.0.11
+  - @uidu/spinner@0.5.27
+  - @uidu/form@2.2.14
+
 ## 0.5.26
 
 ### Patch Changes

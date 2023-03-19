@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.53
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
 ## 0.3.52
 
 ### Patch Changes

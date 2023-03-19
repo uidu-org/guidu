@@ -1,5 +1,41 @@
 # @uidu/editor-core
 
+## 2.12.5
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/editor-markdown-transformer@1.0.13
+  - @uidu/editor-json-transformer@1.0.16
+  - @uidu/activity-provider@0.1.3
+  - @uidu/task-decision@0.4.37
+  - @uidu/media-filmstrip@0.7.3
+  - @uidu/editor-common@2.7.3
+  - @uidu/profilecard@0.3.38
+  - @uidu/media-picker@1.1.2
+  - @uidu/avatar-group@2.6.27
+  - @uidu/modal-dialog@1.2.1
+  - @uidu/adf-schema@2.2.12
+  - @uidu/mentions@0.5.9
+  - @uidu/field-base@4.2.16
+  - @uidu/field-date@2.1.23
+  - @uidu/field-text@2.0.11
+  - @uidu/media-card@0.8.21
+  - @uidu/media-core@1.5.2
+  - @uidu/status@0.5.33
+  - @uidu/emoji@0.6.36
+  - @uidu/droplist@0.5.33
+  - @uidu/date@0.4.31
+  - @uidu/spinner@0.5.27
+  - @uidu/tooltip@0.5.33
+  - @uidu/select@2.2.15
+  - @uidu/avatar@0.9.24
+  - @uidu/button@1.3.39
+  - @uidu/theme@0.6.32
+  - @uidu/form@2.2.14
+  - @uidu/menu@0.8.14
+
 ## 2.12.4
 
 ### Patch Changes

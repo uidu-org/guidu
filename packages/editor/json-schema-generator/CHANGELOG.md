@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.0.11
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
 ## 1.0.10
 
 ### Patch Changes

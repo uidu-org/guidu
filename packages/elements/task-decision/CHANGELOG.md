@@ -1,5 +1,16 @@
 # @uidu/task-decision
 
+## 0.4.37
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/avatar-group@2.6.27
+  - @uidu/spinner@0.5.27
+  - @uidu/button@1.3.39
+  - @uidu/theme@0.6.32
+
 ## 0.4.36
 
 ### Patch Changes
