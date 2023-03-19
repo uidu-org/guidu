@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.0.30
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
 ## 1.0.29
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.30
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/dropdown-menu@0.6.32
+  - @uidu/theme@0.6.32
+
 ## 0.4.29
 
 ### Patch Changes

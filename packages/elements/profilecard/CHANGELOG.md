@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.3.38
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/lozenge@0.5.26
+  - @uidu/spinner@0.5.27
+  - @uidu/avatar@0.9.24
+  - @uidu/button@1.3.39
+  - @uidu/popup@0.7.16
+  - @uidu/theme@0.6.32
+
 ## 0.3.37
 
 ### Patch Changes

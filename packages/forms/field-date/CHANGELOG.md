@@ -1,5 +1,16 @@
 # @uidu/field-date
 
+## 2.1.23
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-base@4.2.16
+  - @uidu/field-text@2.0.11
+  - @uidu/button@1.3.39
+  - @uidu/popup@0.7.16
+
 ## 2.1.22
 
 ### Patch Changes

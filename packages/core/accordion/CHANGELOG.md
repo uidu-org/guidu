@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.26
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/docs@0.5.28
+
 ## 0.6.25
 
 ### Patch Changes

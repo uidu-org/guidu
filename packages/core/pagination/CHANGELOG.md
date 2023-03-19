@@ -1,5 +1,14 @@
 # @uidu/pagination
 
+## 0.5.31
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/button@1.3.39
+  - @uidu/theme@0.6.32
+
 ## 0.5.30
 
 ### Patch Changes

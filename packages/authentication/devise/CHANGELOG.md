@@ -1,5 +1,20 @@
 # @uidu/devise
 
+## 1.3.5
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-password@2.0.19
+  - @uidu/field-phone@2.0.48
+  - @uidu/field-text@2.0.11
+  - @uidu/shell@2.1.50
+  - @uidu/checkbox@2.0.14
+  - @uidu/spinner@0.5.27
+  - @uidu/avatar@0.9.24
+  - @uidu/form@2.2.14
+
 ## 1.3.4
 
 ### Patch Changes

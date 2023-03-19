@@ -1,5 +1,21 @@
 # @uidu/email-builder
 
+## 0.2.27
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/email-renderer@1.3.9
+  - @uidu/editor-core@2.12.5
+  - @uidu/field-number@2.0.42
+  - @uidu/adf-schema@2.2.12
+  - @uidu/field-text@2.0.11
+  - @uidu/select@2.2.15
+  - @uidu/button@1.3.39
+  - @uidu/portal@1.0.9
+  - @uidu/form@2.2.14
+
 ## 0.2.26
 
 ### Patch Changes

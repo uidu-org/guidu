@@ -1,5 +1,15 @@
 # @uidu/breadcrumbs
 
+## 1.0.35
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/tooltip@0.5.33
+  - @uidu/button@1.3.39
+  - @uidu/theme@0.6.32
+
 ## 1.0.34
 
 ### Patch Changes

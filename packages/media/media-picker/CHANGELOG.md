@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 1.1.2
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/media-core@1.5.2
+
 ## 1.1.1
 
 ### Patch Changes

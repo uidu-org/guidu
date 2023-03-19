@@ -1,5 +1,13 @@
 # @uidu/email-renderer
 
+## 1.3.9
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/adf-schema@2.2.12
+
 ## 1.3.8
 
 ### Patch Changes

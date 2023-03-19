@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 3.1.1
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/dashboard-manager@2.1.1
+  - @uidu/data-fields@2.1.40
+  - @uidu/spinner@0.5.27
+  - @uidu/tooltip@0.5.33
+  - @uidu/table@3.5.9
+
 ## 3.1.0
 
 ### Minor Changes

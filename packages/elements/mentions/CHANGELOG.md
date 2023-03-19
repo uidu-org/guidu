@@ -1,5 +1,17 @@
 # @uidu/mentions
 
+## 0.5.9
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/lozenge@0.5.26
+  - @uidu/tooltip@0.5.33
+  - @uidu/avatar@0.9.24
+  - @uidu/button@1.3.39
+  - @uidu/theme@0.6.32
+
 ## 0.5.8
 
 ### Patch Changes

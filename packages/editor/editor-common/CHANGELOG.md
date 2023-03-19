@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 2.7.3
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/editor-json-transformer@1.0.16
+  - @uidu/profilecard@0.3.38
+  - @uidu/adf-schema@2.2.12
+  - @uidu/mentions@0.5.9
+  - @uidu/media-core@1.5.2
+  - @uidu/emoji@0.6.36
+  - @uidu/tooltip@0.5.33
+  - @uidu/theme@0.6.32
+
 ## 2.7.2
 
 ### Patch Changes

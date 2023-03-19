@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 1.0.16
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/adf-schema@2.2.12
+
 ## 1.0.15
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # @uidu/renderer
 
+## 2.4.6
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/editor-json-transformer@1.0.16
+  - @uidu/task-decision@0.4.37
+  - @uidu/media-filmstrip@0.7.3
+  - @uidu/editor-common@2.7.3
+  - @uidu/adf-schema@2.2.12
+  - @uidu/mentions@0.5.9
+  - @uidu/media-card@0.8.21
+  - @uidu/status@0.5.33
+  - @uidu/tooltip@0.5.33
+  - @uidu/theme@0.6.32
+  - @uidu/code@0.5.27
+
 ## 2.4.5
 
 ### Patch Changes

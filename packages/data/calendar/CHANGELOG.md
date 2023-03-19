@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.4.34
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/shell@2.1.50
+  - @uidu/button@1.3.39
+
 ## 0.4.33
 
 ### Patch Changes

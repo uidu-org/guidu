@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.1.22
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/data-fields@2.1.40
+
 ## 3.1.21
 
 ### Patch Changes

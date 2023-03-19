@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 1.0.13
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/editor-common@2.7.3
+  - @uidu/adf-schema@2.2.12
+
 ## 1.0.12
 
 ### Patch Changes

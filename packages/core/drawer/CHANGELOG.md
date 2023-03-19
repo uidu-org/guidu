@@ -1,5 +1,16 @@
 # @uidu/drawer
 
+## 0.7.34
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/blanket@0.6.17
+  - @uidu/theme@0.6.32
+  - @uidu/item@0.5.30
+  - @uidu/docs@0.5.28
+
 ## 0.7.33
 
 ### Patch Changes

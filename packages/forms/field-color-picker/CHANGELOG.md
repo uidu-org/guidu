@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 3.0.20
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-base@4.2.16
+  - @uidu/button@1.3.39
+  - @uidu/popup@0.7.16
+
 ## 3.0.19
 
 ### Patch Changes

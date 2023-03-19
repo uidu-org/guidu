@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 2.2.12
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/media-core@1.5.2
+
 ## 2.2.11
 
 ### Patch Changes

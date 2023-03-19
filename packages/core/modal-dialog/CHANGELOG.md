@@ -1,5 +1,15 @@
 # @uidu/modal-dialog
 
+## 1.2.1
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/blanket@0.6.17
+  - @uidu/portal@1.0.9
+  - @uidu/theme@0.6.32
+
 ## 1.2.0
 
 ### Minor Changes

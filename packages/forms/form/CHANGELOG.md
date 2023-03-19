@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.2.14
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/button@1.3.39
+
 ## 2.2.13
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.1.1
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/dashlets@3.1.1
+
 ## 2.1.0
 
 ### Minor Changes

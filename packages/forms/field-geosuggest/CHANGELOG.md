@@ -1,5 +1,15 @@
 # @uidu/field-geosuggest
 
+## 2.2.2
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-base@4.2.16
+  - @uidu/spinner@0.5.27
+  - @uidu/menu@0.8.14
+
 ## 2.2.1
 
 ### Patch Changes

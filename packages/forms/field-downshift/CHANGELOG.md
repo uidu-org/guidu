@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 2.2.5
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-base@4.2.16
+  - @uidu/field-text@2.0.11
+
 ## 2.2.4
 
 ### Patch Changes

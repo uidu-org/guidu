@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.1.50
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/spinner@0.5.27
+
 ## 2.1.49
 
 ### Patch Changes

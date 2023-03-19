@@ -1,5 +1,32 @@
 # Change Log
 
+## 0.6.37
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/breadcrumbs@1.0.35
+  - @uidu/page-header@1.0.12
+  - @uidu/navigation@1.0.38
+  - @uidu/modal-dialog@1.2.1
+  - @uidu/field-text@2.0.11
+  - @uidu/shell@2.1.50
+  - @uidu/checkbox@2.0.14
+  - @uidu/lozenge@0.5.26
+  - @uidu/spinner@0.5.27
+  - @uidu/tooltip@0.5.33
+  - @uidu/select@2.2.15
+  - @uidu/button@1.3.39
+  - @uidu/drawer@0.7.34
+  - @uidu/badge@0.5.26
+  - @uidu/theme@0.6.32
+  - @uidu/table@3.5.9
+  - @uidu/form@2.2.14
+  - @uidu/code@0.5.27
+  - @uidu/list@3.1.22
+  - @uidu/docs@0.5.28
+
 ## 0.6.36
 
 ### Patch Changes

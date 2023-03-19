@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.0.12
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/shell@2.1.50
+  - @uidu/theme@0.6.32
+
 ## 1.0.11
 
 ### Patch Changes

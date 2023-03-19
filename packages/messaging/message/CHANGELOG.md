@@ -1,5 +1,22 @@
 # @uidu/message
 
+## 0.5.86
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/message-renderer@0.4.30
+  - @uidu/media-viewer@1.2.3
+  - @uidu/media-card@0.8.21
+  - @uidu/media-core@1.5.2
+  - @uidu/tooltip@0.5.33
+  - @uidu/avatar@0.9.24
+  - @uidu/button@1.3.39
+  - @uidu/drawer@0.7.34
+  - @uidu/popup@0.7.16
+  - @uidu/menu@0.8.14
+
 ## 0.5.85
 
 ### Patch Changes

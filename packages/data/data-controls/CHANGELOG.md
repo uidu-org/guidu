@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 4.0.32
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/inline-dialog@0.5.31
+  - @uidu/data-manager@4.3.18
+  - @uidu/data-fields@2.1.40
+  - @uidu/field-text@2.0.11
+  - @uidu/shell@2.1.50
+  - @uidu/data-views@3.0.30
+  - @uidu/checkbox@2.0.14
+  - @uidu/spinner@0.5.27
+  - @uidu/tooltip@0.5.33
+  - @uidu/select@2.2.15
+  - @uidu/button@1.3.39
+  - @uidu/drawer@0.7.34
+  - @uidu/popup@0.7.16
+  - @uidu/form@2.2.14
+  - @uidu/menu@0.8.14
+
 ## 4.0.31
 
 ### Patch Changes

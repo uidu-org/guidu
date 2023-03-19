@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.5.26
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+
 ## 0.5.25
 
 ### Patch Changes

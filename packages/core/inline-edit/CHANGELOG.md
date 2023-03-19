@@ -1,5 +1,18 @@
 # @uidu/inline-edit
 
+## 0.3.38
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/inline-dialog@0.5.31
+  - @uidu/field-text@2.0.11
+  - @uidu/button@1.3.39
+  - @uidu/field@1.0.25
+  - @uidu/theme@0.6.32
+  - @uidu/form@2.2.14
+
 ## 0.3.37
 
 ### Patch Changes

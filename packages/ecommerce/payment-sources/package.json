@@ -1,6 +1,6 @@
 {
   "name": "@uidu/payment-sources",
-  "version": "0.3.44",
+  "version": "0.3.45",
   "description": "Payment form using Stripe",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/ecommerce/payment-sources",
   "license": "MIT",
@@ -12,14 +12,14 @@
     "@babel/runtime": "^7.21.0",
     "@stripe/react-stripe-js": "^2.0.0",
     "@stripe/stripe-js": "^1.49.0",
-    "@uidu/form": "^2.2.12",
-    "@uidu/payments": "^1.5.32",
+    "@uidu/form": "^2.2.14",
+    "@uidu/payments": "^1.6.0",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
     "react-scroll": "^1.8.9",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.27"
+    "@uidu/docs": "^0.5.28"
   }
 }

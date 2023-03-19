@@ -1,5 +1,17 @@
 # @uidu/field-file-uploader
 
+## 2.3.6
+
+### Patch Changes
+
+- da4516e96: Bump deps, drop onSetValue on payments
+- Updated dependencies [da4516e96]
+  - @uidu/field-base@4.2.16
+  - @uidu/media-core@1.5.2
+  - @uidu/button@1.3.39
+  - @uidu/form@2.2.14
+  - @uidu/menu@0.8.14
+
 ## 2.3.5
 
 ### Patch Changes
