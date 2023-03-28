@@ -1,5 +1,14 @@
 # @uidu/stripe-accounts
 
+## 0.5.28
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/payments@1.6.1
+  - @uidu/form@2.2.15
+
 ## 0.5.27
 
 ### Patch Changes

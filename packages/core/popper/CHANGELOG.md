@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.5.30
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+
 ## 0.5.29
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.5.10
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+
 ## 0.5.9
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.6.38
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/modal-dialog@1.2.2
+  - @uidu/shell@2.1.51
+  - @uidu/select@2.2.16
+  - @uidu/table@3.5.10
+  - @uidu/form@2.2.15
+  - @uidu/list@3.1.23
+
 ## 0.6.37
 
 ### Patch Changes

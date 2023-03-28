@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 2.1.11
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+
 ## 2.1.10
 
 ### Patch Changes

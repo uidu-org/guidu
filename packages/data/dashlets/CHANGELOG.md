@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 3.1.2
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/dashboard-manager@2.1.2
+  - @uidu/data-fields@2.1.41
+  - @uidu/table@3.5.10
+
 ## 3.1.1
 
 ### Patch Changes

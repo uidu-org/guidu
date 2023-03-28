@@ -1,5 +1,14 @@
 # @uidu/media-filmstrip
 
+## 0.7.4
+
+### Patch Changes
+
+- Updated dependencies [d5a1bbafb]
+  - @uidu/media-viewer@1.2.4
+  - @uidu/modal-dialog@1.2.2
+  - @uidu/media-card@0.8.22
+
 ## 0.7.3
 
 ### Patch Changes

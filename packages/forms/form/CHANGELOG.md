@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.15
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+
 ## 2.2.14
 
 ### Patch Changes

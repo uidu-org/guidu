@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.22
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+
 ## 0.8.21
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/gallery
 
+## 2.0.29
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/data-controls@4.0.33
+  - @uidu/data-fields@2.1.41
+  - @uidu/shell@2.1.51
+
 ## 2.0.28
 
 ### Patch Changes

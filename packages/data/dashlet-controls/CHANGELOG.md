@@ -1,5 +1,13 @@
 # @uidu/dashboard-controls
 
+## 1.1.22
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/form@2.2.15
+
 ## 1.1.21
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/email-renderer
 
+## 1.3.10
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+
 ## 1.3.9
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/data-fields
 
+## 2.1.41
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/field-downshift@2.2.6
+  - @uidu/field-time@2.0.47
+  - @uidu/select@2.2.16
+  - @uidu/form@2.2.15
+  - @uidu/field-date@2.1.24
+  - @uidu/field-number@2.0.43
+  - @uidu/field-toggle@2.0.43
+
 ## 2.1.40
 
 ### Patch Changes

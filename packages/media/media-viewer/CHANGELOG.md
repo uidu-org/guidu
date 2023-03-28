@@ -1,5 +1,14 @@
 # @uidu/media-viewer
 
+## 1.2.4
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/modal-dialog@1.2.2
+  - @uidu/shell@2.1.51
+
 ## 1.2.3
 
 ### Patch Changes

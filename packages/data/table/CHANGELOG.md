@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 3.5.10
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/data-manager@4.3.19
+  - @uidu/data-fields@2.1.41
+
 ## 3.5.9
 
 ### Patch Changes

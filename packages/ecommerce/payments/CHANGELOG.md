@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 1.6.1
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/field-base@4.2.17
+  - @uidu/form@2.2.15
+
 ## 1.6.0
 
 ### Minor Changes

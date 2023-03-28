@@ -1,5 +1,24 @@
 # @uidu/editor-core
 
+## 2.12.6
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/editor-common@2.7.4
+  - @uidu/profilecard@0.3.39
+  - @uidu/modal-dialog@1.2.2
+  - @uidu/mentions@0.5.10
+  - @uidu/field-base@4.2.17
+  - @uidu/media-card@0.8.22
+  - @uidu/status@0.5.34
+  - @uidu/emoji@0.6.37
+  - @uidu/select@2.2.16
+  - @uidu/form@2.2.15
+  - @uidu/media-filmstrip@0.7.4
+  - @uidu/field-date@2.1.24
+
 ## 2.12.5
 
 ### Patch Changes

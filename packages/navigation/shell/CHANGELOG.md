@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.51
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+
 ## 2.1.50
 
 ### Patch Changes

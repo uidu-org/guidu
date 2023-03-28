@@ -1,5 +1,15 @@
 # @uidu/editor-common
 
+## 2.7.4
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/profilecard@0.3.39
+  - @uidu/mentions@0.5.10
+  - @uidu/emoji@0.6.37
+
 ## 2.7.3
 
 ### Patch Changes
