@@ -15,8 +15,8 @@
     "@uidu/field-base": "^4.2.16",
     "@uidu/menu": "0.8.14",
     "@uidu/spinner": "^0.5.27",
-    "react-hook-form": "^7.43.7",
-    "react-select": "^5.7.0",
+    "react-hook-form": "^7.43.8",
+    "react-select": "^5.7.2",
     "styled-components": "^5.3.9",
     "timezones-list": "^3.0.2",
     "tslib": "^2.5.0"

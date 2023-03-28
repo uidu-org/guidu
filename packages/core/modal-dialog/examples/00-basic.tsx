@@ -37,6 +37,7 @@ export default class ExampleBasic extends React.PureComponent<{}, State> {
             <Modal
               actions={actions}
               onClose={this.close}
+              onCloseComplete={() => console.log('onCloseComplete')}
               tw="[--modal-dialog-gutter:1rem]"
               width="calc(100vw - 2rem)"
             >
