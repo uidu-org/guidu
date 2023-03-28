@@ -8748,6 +8748,7 @@ __metadata:
     "@uidu/docs": ^0.5.28
     "@uidu/field-base": ^4.2.16
     "@uidu/form": ^2.2.14
+    "@uidu/spinner": 0.5.27
     autosize: ^6.0.1
     react: ^18.2.0
     styled-components: ^5.3.9
@@ -9904,7 +9905,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/spinner@^0.5.25, @uidu/spinner@^0.5.27, @uidu/spinner@workspace:packages/core/spinner":
+"@uidu/spinner@0.5.27, @uidu/spinner@^0.5.25, @uidu/spinner@^0.5.27, @uidu/spinner@workspace:packages/core/spinner":
   version: 0.0.0-use.local
   resolution: "@uidu/spinner@workspace:packages/core/spinner"
   dependencies:

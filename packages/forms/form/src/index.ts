@@ -1,5 +1,6 @@
 import Form from './components/Form';
 
+export { default as CompatForm } from './components/CompatForm';
 export { default as FormActions } from './components/FormActions';
 export * from './components/FormContext';
 export { default as FormFooter } from './components/FormFooter';

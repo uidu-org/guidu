@@ -11,6 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.21.0",
     "@uidu/field-base": "^4.2.16",
+    "@uidu/spinner": "0.5.27",
     "autosize": "^6.0.1",
     "react": "^18.2.0",
     "tslib": "^2.5.0"

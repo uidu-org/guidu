@@ -1,7 +1,8 @@
 import Button from '@uidu/button';
 import Checkbox from '@uidu/checkbox';
 import FieldText from '@uidu/field-text';
-import Form, { FormSubmit } from '@uidu/form';
+import FieldTextarea from '@uidu/field-textarea';
+import { CompatForm, FormSubmit } from '@uidu/form';
 import { RadioGroup } from '@uidu/radio';
 import React from 'react';
 import ModalDialog, {
@@ -79,7 +80,7 @@ export default class GuiduFormDemo extends React.Component<{}, State> {
                 </ModalTitle>
               </ModalHeader>
               <ModalBody>
-                <Form
+                <CompatForm
                   handleSubmit={this.onFormSubmit}
                   footerRenderer={(props) => (
                     <ModalFooter>
@@ -87,9 +88,13 @@ export default class GuiduFormDemo extends React.Component<{}, State> {
                     </ModalFooter>
                   )}
                 >
-                  <p>
-                    Enter some text then submit the form to see the response.
-                  </p>
+                  <FieldTextarea
+                    label="Enter some text then submit the form to see the response."
+                    name="textarea"
+                    value="Enter some text then submit the form to see the response., Enter some text then submit the form to see the response., Enter some text then submit the form to see the response."
+                    autoSize
+                    rows={1}
+                  />
                   <FieldText label="Name" name="my-name" defaultValue="" />
                   <FieldText
                     autoComplete="off"
@@ -109,7 +114,7 @@ export default class GuiduFormDemo extends React.Component<{}, State> {
                     name="radio"
                     label="Basic Radio Group Example"
                   ></RadioGroup>
-                </Form>
+                </CompatForm>
               </ModalBody>
             </ModalDialog>
           )}
