@@ -1,5 +1,15 @@
 # @uidu/field-textarea
 
+## 2.1.0
+
+### Minor Changes
+
+- e48d09e71: Autosize with loader
+
+### Patch Changes
+
+- @uidu/field-base@4.2.18
+
 ## 2.0.15
 
 ### Patch Changes
