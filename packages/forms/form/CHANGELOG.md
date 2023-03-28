@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.16
+
+### Patch Changes
+
+- e48d09e71: Autosize with loader
+
 ## 2.2.15
 
 ### Patch Changes
