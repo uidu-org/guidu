@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.1.23
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/data-fields@2.1.41
+
 ## 3.1.22
 
 ### Patch Changes

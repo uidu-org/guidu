@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.3.39
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+
 ## 0.3.38
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.5.87
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/media-viewer@1.2.4
+  - @uidu/media-card@0.8.22
+
 ## 0.5.86
 
 ### Patch Changes

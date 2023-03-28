@@ -1,5 +1,18 @@
 # @uidu/data-controls
 
+## 4.0.33
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/data-manager@4.3.19
+  - @uidu/data-fields@2.1.41
+  - @uidu/shell@2.1.51
+  - @uidu/data-views@3.0.31
+  - @uidu/select@2.2.16
+  - @uidu/form@2.2.15
+
 ## 4.0.32
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/devise
 
+## 1.3.6
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/shell@2.1.51
+  - @uidu/form@2.2.15
+  - @uidu/field-phone@2.0.49
+
 ## 1.3.5
 
 ### Patch Changes

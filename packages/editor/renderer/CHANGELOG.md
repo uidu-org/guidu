@@ -1,5 +1,17 @@
 # @uidu/renderer
 
+## 2.4.7
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/editor-common@2.7.4
+  - @uidu/mentions@0.5.10
+  - @uidu/media-card@0.8.22
+  - @uidu/status@0.5.34
+  - @uidu/media-filmstrip@0.7.4
+
 ## 2.4.6
 
 ### Patch Changes

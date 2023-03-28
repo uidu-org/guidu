@@ -1,5 +1,13 @@
 # @uidu/calendar
 
+## 0.4.35
+
+### Patch Changes
+
+- d5a1bbafb: Bump dependencies
+- Updated dependencies [d5a1bbafb]
+  - @uidu/shell@2.1.51
+
 ## 0.4.34
 
 ### Patch Changes
