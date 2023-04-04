@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 3.1.3
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/table@4.0.0
+  - @uidu/dashboard-manager@2.1.3
+  - @uidu/data-fields@2.1.42
+
 ## 3.1.2
 
 ### Patch Changes

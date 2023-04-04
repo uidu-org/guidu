@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.0.13
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
 ## 1.0.12
 
 ### Patch Changes

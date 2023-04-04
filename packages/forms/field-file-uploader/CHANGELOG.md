@@ -1,5 +1,14 @@
 # @uidu/field-file-uploader
 
+## 2.3.9
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/field-base@4.2.19
+  - @uidu/form@2.2.17
+
 ## 2.3.8
 
 ### Patch Changes

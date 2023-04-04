@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.1.3
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/dashlets@3.1.3
+
 ## 2.1.2
 
 ### Patch Changes

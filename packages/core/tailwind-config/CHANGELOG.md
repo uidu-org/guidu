@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.31
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
 ## 0.1.30
 
 ### Patch Changes

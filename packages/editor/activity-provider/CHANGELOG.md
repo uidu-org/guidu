@@ -1,5 +1,11 @@
 # @uidu/activity-provider
 
+## 0.1.4
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
 ## 0.1.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/media-viewer
 
+## 1.2.5
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
 ## 1.2.4
 
 ### Patch Changes

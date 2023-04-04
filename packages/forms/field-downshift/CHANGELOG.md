@@ -1,5 +1,13 @@
 # @uidu/field-downshift
 
+## 2.2.7
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/field-base@4.2.19
+
 ## 2.2.6
 
 ### Patch Changes

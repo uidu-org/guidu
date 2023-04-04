@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 2.1.12
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
 ## 2.1.11
 
 ### Patch Changes

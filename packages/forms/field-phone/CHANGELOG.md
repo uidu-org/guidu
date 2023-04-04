@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 2.0.51
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/field-base@4.2.19
+  - @uidu/select@2.2.17
+  - @uidu/form@2.2.17
+
 ## 2.0.50
 
 ### Patch Changes

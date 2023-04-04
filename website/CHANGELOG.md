@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.6.39
+
+### Patch Changes
+
+- Updated dependencies [b2715b30c]
+  - @uidu/table@4.0.0
+  - @uidu/checkbox@2.0.15
+  - @uidu/select@2.2.17
+  - @uidu/form@2.2.17
+  - @uidu/list@3.1.24
+
 ## 0.6.38
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/dashlets-form
 
+## 1.0.47
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/field-downshift@2.2.7
+  - @uidu/field-toggle@2.0.45
+  - @uidu/dashlets@3.1.3
+  - @uidu/select@2.2.17
+  - @uidu/form@2.2.17
+
 ## 1.0.46
 
 ### Patch Changes

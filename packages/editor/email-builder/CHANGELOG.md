@@ -1,5 +1,17 @@
 # @uidu/email-builder
 
+## 0.2.30
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/email-renderer@1.3.11
+  - @uidu/editor-core@2.12.8
+  - @uidu/select@2.2.17
+  - @uidu/form@2.2.17
+  - @uidu/field-number@2.0.45
+
 ## 0.2.29
 
 ### Patch Changes
