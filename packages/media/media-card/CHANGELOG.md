@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.8.23
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
 ## 0.8.22
 
 ### Patch Changes

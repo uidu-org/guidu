@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.3.40
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
 ## 0.3.39
 
 ### Patch Changes

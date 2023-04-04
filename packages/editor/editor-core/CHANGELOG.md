@@ -1,5 +1,19 @@
 # @uidu/editor-core
 
+## 2.12.8
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/activity-provider@0.1.4
+  - @uidu/profilecard@0.3.40
+  - @uidu/field-base@4.2.19
+  - @uidu/field-date@2.1.26
+  - @uidu/media-card@0.8.23
+  - @uidu/select@2.2.17
+  - @uidu/form@2.2.17
+
 ## 2.12.7
 
 ### Patch Changes

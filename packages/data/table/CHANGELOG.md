@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 4.0.0
+
+### Major Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
+### Patch Changes
+
+- Updated dependencies [b2715b30c]
+  - @uidu/data-manager@4.3.20
+  - @uidu/data-fields@2.1.42
+  - @uidu/checkbox@2.0.15
+
 ## 3.5.10
 
 ### Patch Changes

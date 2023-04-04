@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.2.6
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
 ## 0.2.5
 
 ### Patch Changes

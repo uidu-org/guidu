@@ -1,5 +1,13 @@
 # @uidu/field-color-picker
 
+## 3.0.21
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/field-base@4.2.19
+
 ## 3.0.20
 
 ### Patch Changes

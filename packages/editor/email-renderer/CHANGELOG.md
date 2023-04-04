@@ -1,5 +1,11 @@
 # @uidu/email-renderer
 
+## 1.3.11
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
 ## 1.3.10
 
 ### Patch Changes

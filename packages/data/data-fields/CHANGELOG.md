@@ -1,5 +1,20 @@
 # @uidu/data-fields
 
+## 2.1.42
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/field-color-picker@3.0.21
+  - @uidu/field-downshift@2.2.7
+  - @uidu/field-toggle@2.0.45
+  - @uidu/field-date@2.1.26
+  - @uidu/select@2.2.17
+  - @uidu/form@2.2.17
+  - @uidu/field-number@2.0.45
+  - @uidu/field-time@2.0.49
+
 ## 2.1.41
 
 ### Patch Changes

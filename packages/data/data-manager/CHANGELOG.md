@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 4.3.20
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/table@4.0.0
+  - @uidu/data-controls@4.0.34
+  - @uidu/data-fields@2.1.42
+  - @uidu/data-views@3.0.32
+  - @uidu/gallery@2.0.30
+  - @uidu/board@2.1.12
+  - @uidu/list@3.1.24
+
 ## 4.3.19
 
 ### Patch Changes

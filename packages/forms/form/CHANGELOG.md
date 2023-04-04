@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.17
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
 ## 2.2.16
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 2.0.30
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+- Updated dependencies [b2715b30c]
+  - @uidu/data-controls@4.0.34
+  - @uidu/data-fields@2.1.42
+
 ## 2.0.29
 
 ### Patch Changes

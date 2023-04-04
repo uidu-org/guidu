@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 1.2.16
+
+### Patch Changes
+
+- b2715b30c: No more RowIndex and hover on select row
+
 ## 1.2.15
 
 ### Patch Changes
