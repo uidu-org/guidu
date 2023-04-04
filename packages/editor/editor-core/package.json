@@ -84,7 +84,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.5.28",
     "@uidu/shell": "^2.1.51",
-    "twin.macro": "^3.1.0"
+    "twin.macro": "^3.3.0"
   },
   "preconstruct": {
     "entrypoints": [

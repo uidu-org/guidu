@@ -12,10 +12,10 @@
     "@amcharts/amcharts4": "^4.10.35",
     "@amcharts/amcharts4-geodata": "^4.1.26",
     "@babel/runtime": "^7.21.0",
-    "@cubejs-client/core": "^0.32.12",
-    "@cubejs-client/react": "^0.32.12",
+    "@cubejs-client/core": "^0.32.17",
+    "@cubejs-client/react": "^0.32.17",
     "@loadable/component": "^5.15.3",
-    "@tanstack/react-table": "^8.8.4",
+    "@tanstack/react-table": "^8.8.5",
     "@uidu/dashboard-manager": "^2.1.2",
     "@uidu/data-fields": "^2.1.41",
     "@uidu/spinner": "^0.5.27",
@@ -34,7 +34,7 @@
     "recharts": "^2.5.0",
     "styled-components": "^5.3.9",
     "tslib": "^2.5.0",
-    "twin.macro": "^3.1.0",
+    "twin.macro": "^3.3.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

@@ -18,7 +18,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.5.28",
     "@uidu/form": "^2.2.14",
-    "twin.macro": "^3.1.0"
+    "twin.macro": "^3.3.0"
   },
   "peerDependencies": {
     "twin.macro": "*"

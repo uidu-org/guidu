@@ -11,7 +11,7 @@
   "types": "dist/uidu-section-message.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.21.0",
-    "@heroicons/react": "^2.0.16",
+    "@heroicons/react": "^2.0.17",
     "@uidu/button": "^1.3.39",
     "tslib": "^2.5.0"
   },

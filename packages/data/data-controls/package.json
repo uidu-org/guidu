@@ -11,8 +11,8 @@
   "types": "dist/uidu-data-controls.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.21.0",
-    "@heroicons/react": "^2.0.16",
-    "@tanstack/react-table": "^8.8.4",
+    "@heroicons/react": "^2.0.17",
+    "@tanstack/react-table": "^8.8.5",
     "@uidu/button": "1.3.39",
     "@uidu/checkbox": "^2.0.14",
     "@uidu/data-fields": "^2.1.41",
