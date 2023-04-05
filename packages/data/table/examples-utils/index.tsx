@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { ColumnDef, Row } from '@tanstack/react-table';
 import numeral from 'numeral';
+import { HeaderSelection, RowSelection } from '../src';
 
 export const withGroupColumns = [
   {
@@ -111,12 +112,22 @@ export const columnDefsNext: Record<string, ColumnDef<unknown>> = {
 };
 
 export const availableColumns: ColumnDef<unknown>[] = [
-  // {
-  //   kind: 'uid',
-  //   id: 'id',
-  //   field: 'id',
-  //   cellProps: { onItemClick: (params) => console.log(params) },
-  // },
+  {
+    accessorKey: 'id',
+    id: 'id',
+    meta: {
+      pinned: 'left',
+      cellProps: {
+        style: {
+          padding: 0,
+        },
+      },
+    },
+    cell: RowSelection,
+    header: HeaderSelection,
+    maxSize: 56,
+    size: 56,
+  },
   {
     accessorKey: 'cover',
     meta: {

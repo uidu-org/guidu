@@ -50,7 +50,7 @@ const useHover = <T extends HTMLElement>(): [
 };
 
 export function RowSelection<T>({ row }: CellContext<T, unknown>) {
-  // const [hoverRef, isHovered] = useHover<HTMLDivElement>();
+  const [hoverRef, isHovered] = useHover<HTMLDivElement>();
 
   const { getIsSelected, toggleSelected } = row;
   const isSelected = getIsSelected();
@@ -58,32 +58,34 @@ export function RowSelection<T>({ row }: CellContext<T, unknown>) {
   return (
     <div
       tw="flex justify-center items-center h-full w-full relative"
-      // ref={hoverRef}
+      ref={hoverRef}
     >
-      {/* {isHovered || isSelected ? ( */}
-      <button
-        type="button"
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          toggleSelected(!isSelected);
-        }}
-        tw="absolute inset-0 z-20 w-full"
-      />
-      <CheckboxStateless
-        checked={isSelected}
-        onChange={() => toggleSelected(!isSelected)}
-        id={row.id}
-      />
-      {/* ) : (
+      {isHovered || isSelected ? (
+        <>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleSelected(!isSelected);
+            }}
+            tw="absolute inset-0 z-20 w-full"
+          />
+          <CheckboxStateless
+            checked={isSelected}
+            onChange={() => toggleSelected(!isSelected)}
+            id={row.id}
+          />
+        </>
+      ) : (
         <RowIndex>
           <span tw="flex flex-col justify-center min-w-0 [line-height:initial]">
-            <span tw="[color:rgb(var(--body-secondary-color))]">
+            <span tw="[color:rgb(var(--body-secondary-color))] text-sm">
               {row.index + 1}
             </span>
           </span>
         </RowIndex>
-      )} */}
+      )}
     </div>
   );
 }
