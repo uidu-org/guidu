@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 4.1.0
+
+### Minor Changes
+
+- 7c810ff95: Restore hover on RowSelection
+
 ## 4.0.1
 
 ### Patch Changes
