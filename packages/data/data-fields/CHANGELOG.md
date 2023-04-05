@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.2.0
+
+### Minor Changes
+
+- 478dacac5: Date withouth appending Z at the end of the date
+
 ## 2.1.42
 
 ### Patch Changes
