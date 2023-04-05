@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 4.0.1
+
+### Patch Changes
+
+- 478dacac5: Date withouth appending Z at the end of the date
+- Updated dependencies [478dacac5]
+  - @uidu/data-fields@2.2.0
+
 ## 4.0.0
 
 ### Major Changes
