@@ -50,7 +50,7 @@ const useHover = <T extends HTMLElement>(): [
 };
 
 export function RowSelection<T>({ row }: CellContext<T, unknown>) {
-  const [hoverRef, isHovered] = useHover<HTMLDivElement>();
+  // const [hoverRef, isHovered] = useHover<HTMLDivElement>();
 
   const { getIsSelected, toggleSelected } = row;
   const isSelected = getIsSelected();

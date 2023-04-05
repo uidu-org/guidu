@@ -12,7 +12,7 @@ export default function Cell<T>(props: CellContext<T, string>) {
   }
 
   // we should ensure value is an utc date, if not force it
-  const cleaned = getValue().endsWith('Z') ? getValue() : `${getValue()}Z`;
+  const cleaned = getValue(); // .endsWith('Z') ? getValue() : `${getValue()}Z`;
   const convertedIntoUTC = dayjs(cleaned).utc().format();
 
   return (
