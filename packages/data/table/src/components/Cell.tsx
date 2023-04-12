@@ -8,6 +8,7 @@ import {
 import { useDataManagerContext } from '@uidu/data-manager';
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { StyledComponent } from 'styled-components';
+import { StyledTdProps } from '../styled';
 
 export default function Cell<T, V>({
   row,
@@ -18,7 +19,7 @@ export default function Cell<T, V>({
 }: {
   row: Row<T>;
   components: {
-    Td: StyledComponent<'div', {}>;
+    Td: StyledComponent<'div', StyledTdProps, {}>;
   };
   cell: CellType<T, V>;
   index: number;
