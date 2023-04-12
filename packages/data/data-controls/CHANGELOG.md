@@ -1,5 +1,17 @@
 # @uidu/data-controls
 
+## 4.0.35
+
+### Patch Changes
+
+- Updated dependencies [322825253]
+  - @uidu/data-manager@4.3.21
+  - @uidu/data-fields@2.2.1
+  - @uidu/form@2.2.18
+  - @uidu/menu@0.8.15
+  - @uidu/data-views@3.0.33
+  - @uidu/select@2.2.18
+
 ## 4.0.34
 
 ### Patch Changes

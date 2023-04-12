@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 2.2.13
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/media-core@1.5.3
+
 ## 2.2.12
 
 ### Patch Changes

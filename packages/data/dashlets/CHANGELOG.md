@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 3.1.6
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/table@5.0.0
+  - @uidu/dashboard-manager@2.1.4
+  - @uidu/data-fields@2.2.1
+
 ## 3.1.5
 
 ### Patch Changes

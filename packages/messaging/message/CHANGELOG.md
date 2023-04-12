@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.5.89
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/media-card@0.8.24
+  - @uidu/media-core@1.5.3
+  - @uidu/menu@0.8.15
+
 ## 0.5.88
 
 ### Patch Changes

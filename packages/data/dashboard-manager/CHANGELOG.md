@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.1.4
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/dashlets@3.1.6
+
 ## 2.1.3
 
 ### Patch Changes

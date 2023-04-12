@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.6.38
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+
 ## 0.6.37
 
 ### Patch Changes

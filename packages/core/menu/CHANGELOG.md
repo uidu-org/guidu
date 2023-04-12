@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.8.15
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+
 ## 0.8.14
 
 ### Patch Changes

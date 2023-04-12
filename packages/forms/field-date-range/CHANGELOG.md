@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 2.0.19
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/field-date@2.1.27
+  - @uidu/field-base@4.2.20
+
 ## 2.0.18
 
 ### Patch Changes

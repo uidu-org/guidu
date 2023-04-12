@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.3.41
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+
 ## 0.3.40
 
 ### Patch Changes

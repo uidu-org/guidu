@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.6.40
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/table@5.0.0
+  - @uidu/form@2.2.18
+  - @uidu/select@2.2.18
+
 ## 0.6.39
 
 ### Patch Changes

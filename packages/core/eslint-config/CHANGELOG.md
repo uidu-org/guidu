@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.2.7
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+
 ## 0.2.6
 
 ### Patch Changes

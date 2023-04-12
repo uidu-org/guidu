@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.0.14
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+
 ## 1.0.13
 
 ### Patch Changes

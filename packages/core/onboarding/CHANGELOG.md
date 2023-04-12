@@ -1,5 +1,11 @@
 # @uidu/onboarding
 
+## 1.3.28
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+
 ## 1.3.27
 
 ### Patch Changes

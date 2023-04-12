@@ -1,5 +1,13 @@
 # @uidu/email-renderer
 
+## 1.3.12
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/adf-schema@2.2.13
+
 ## 1.3.11
 
 ### Patch Changes

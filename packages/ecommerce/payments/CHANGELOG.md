@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 1.6.3
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/form@2.2.18
+  - @uidu/field-base@4.2.20
+
 ## 1.6.2
 
 ### Patch Changes

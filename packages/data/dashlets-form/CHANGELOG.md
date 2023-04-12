@@ -1,5 +1,16 @@
 # @uidu/dashlets-form
 
+## 1.0.48
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/dashlets@3.1.6
+  - @uidu/form@2.2.18
+  - @uidu/select@2.2.18
+  - @uidu/field-toggle@2.0.46
+
 ## 1.0.47
 
 ### Patch Changes

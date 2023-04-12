@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-time",
-  "version": "2.0.49",
+  "version": "2.0.50",
   "description": "Field Time Component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-time",
   "license": "MIT",
@@ -11,10 +11,10 @@
   "types": "dist/uidu-field-time.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.21.0",
-    "@uidu/field-base": "4.2.19",
+    "@uidu/field-base": "4.2.20",
     "@uidu/field-text": "^2.0.11",
-    "@uidu/form": "^2.2.17",
-    "@uidu/select": "2.2.17",
+    "@uidu/form": "^2.2.18",
+    "@uidu/select": "2.2.18",
     "date-fns": "^2.29.3",
     "react": "^18.2.0",
     "react-intl": "^6.3.2",

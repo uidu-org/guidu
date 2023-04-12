@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 1.1.3
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/media-core@1.5.3
+
 ## 1.1.2
 
 ### Patch Changes
