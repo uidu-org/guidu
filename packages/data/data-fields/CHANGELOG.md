@@ -1,5 +1,19 @@
 # @uidu/data-fields
 
+## 2.2.1
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/field-date@2.1.27
+  - @uidu/form@2.2.18
+  - @uidu/menu@0.8.15
+  - @uidu/select@2.2.18
+  - @uidu/field-number@2.0.46
+  - @uidu/field-time@2.0.50
+  - @uidu/field-toggle@2.0.46
+
 ## 2.2.0
 
 ### Minor Changes

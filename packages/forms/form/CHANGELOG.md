@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.18
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+
 ## 2.2.17
 
 ### Patch Changes

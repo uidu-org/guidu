@@ -1,5 +1,15 @@
 # @uidu/field-image-uploader
 
+## 3.1.10
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/media-core@1.5.3
+  - @uidu/form@2.2.18
+  - @uidu/field-base@4.2.20
+
 ## 3.1.9
 
 ### Patch Changes

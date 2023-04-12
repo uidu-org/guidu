@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 5.0.0
+
+### Major Changes
+
+- 322825253: Table now allow for cell selection and editing
+
+### Patch Changes
+
+- Updated dependencies [322825253]
+  - @uidu/data-manager@4.3.21
+  - @uidu/data-fields@2.2.1
+  - @uidu/menu@0.8.15
+
 ## 4.1.0
 
 ### Minor Changes

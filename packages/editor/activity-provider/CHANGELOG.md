@@ -1,5 +1,11 @@
 # @uidu/activity-provider
 
+## 0.1.5
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+
 ## 0.1.4
 
 ### Patch Changes

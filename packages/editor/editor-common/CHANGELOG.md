@@ -1,5 +1,15 @@
 # @uidu/editor-common
 
+## 2.7.5
+
+### Patch Changes
+
+- Updated dependencies [322825253]
+  - @uidu/profilecard@0.3.41
+  - @uidu/adf-schema@2.2.13
+  - @uidu/media-core@1.5.3
+  - @uidu/emoji@0.6.38
+
 ## 2.7.4
 
 ### Patch Changes

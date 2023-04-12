@@ -1,5 +1,24 @@
 # @uidu/editor-core
 
+## 2.12.9
+
+### Patch Changes
+
+- Updated dependencies [322825253]
+  - @uidu/activity-provider@0.1.5
+  - @uidu/profilecard@0.3.41
+  - @uidu/media-picker@1.1.3
+  - @uidu/adf-schema@2.2.13
+  - @uidu/field-date@2.1.27
+  - @uidu/media-card@0.8.24
+  - @uidu/media-core@1.5.3
+  - @uidu/emoji@0.6.38
+  - @uidu/form@2.2.18
+  - @uidu/menu@0.8.15
+  - @uidu/editor-common@2.7.5
+  - @uidu/field-base@4.2.20
+  - @uidu/select@2.2.18
+
 ## 2.12.8
 
 ### Patch Changes

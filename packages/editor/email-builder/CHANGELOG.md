@@ -1,5 +1,18 @@
 # @uidu/email-builder
 
+## 0.2.31
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+- Updated dependencies [322825253]
+  - @uidu/email-renderer@1.3.12
+  - @uidu/adf-schema@2.2.13
+  - @uidu/form@2.2.18
+  - @uidu/editor-core@2.12.9
+  - @uidu/select@2.2.18
+  - @uidu/field-number@2.0.46
+
 ## 0.2.30
 
 ### Patch Changes

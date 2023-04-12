@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.2.2
+
+### Patch Changes
+
+- 322825253: Table now allow for cell selection and editing
+
 ## 1.2.1
 
 ### Patch Changes
