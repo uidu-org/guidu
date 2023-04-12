@@ -1,16 +1,58 @@
-import { CellContext } from '@tanstack/react-table';
-import { CustomItem, MenuGroup, Section } from '@uidu/menu';
-import React, { useRef } from 'react';
+import { CellContext, ColumnMeta } from '@tanstack/react-table';
+import {
+  CustomItem,
+  CustomItemComponentProps,
+  MenuGroup,
+  Section,
+} from '@uidu/menu';
+import React, { FC, useCallback, useRef } from 'react';
 
-export default function SelectEditor(
-  props: CellContext<unknown, string> & {
-    option;
-    multiple?: boolean;
-    onChange;
-  },
+type SelectEditorProps<T> = CellContext<T, string> & {
+  option: FC<ColumnMeta<T, string>['options'][number]>;
+  multiple?: boolean;
+  onChange: (value: string | number) => void;
+};
+
+function OptionItem<T>({
+  option,
+  optionRenderer: Option,
+  onChange,
+}: {
+  option: ColumnMeta<T, string>['options'][number];
+  optionRenderer: SelectEditorProps<T>['option'];
+  onChange: SelectEditorProps<T>['onChange'];
+}) {
+  const OptionComponent = useCallback(
+    ({
+      isSelected,
+      isDisabled,
+      ...componentProps
+    }: CustomItemComponentProps) => (
+      <button
+        type="button"
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...componentProps}
+        tabIndex={-1}
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          onChange(option.id);
+        }}
+      >
+        <Option value={option} />
+      </button>
+    ),
+    [Option, option, onChange],
+  );
+
+  return <CustomItem key={option.id} component={OptionComponent} />;
+}
+
+export default function SelectEditor<T>(
+  props: CellContext<T, string> & SelectEditorProps<T>,
 ) {
   const select = useRef(null);
-  const { getValue, option: Option, onChange } = props;
+  const { getValue, option: OptionRenderer, onChange } = props;
   const value = getValue();
 
   const { column, multiple } = props;
@@ -20,21 +62,11 @@ export default function SelectEditor(
     <MenuGroup>
       <Section>
         {options.map((option) => (
-          <CustomItem
-            component={(componentProps) => (
-              <button
-                type="button"
-                // eslint-disable-next-line react/jsx-props-no-spreading
-                {...componentProps}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  onChange(option.id);
-                }}
-              >
-                <Option value={option} />
-              </button>
-            )}
+          <OptionItem
+            key={option.id}
+            option={option}
+            optionRenderer={OptionRenderer}
+            onChange={onChange}
           />
         ))}
       </Section>

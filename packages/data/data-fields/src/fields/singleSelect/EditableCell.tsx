@@ -5,7 +5,7 @@ import SelectEditor from '../../components/editors/SelectEditor';
 import { Option, ValueRenderer } from './utils';
 
 export default function EditableCell(props: CellContext<unknown, string>) {
-  const { getValue, column } = props;
+  const { getValue, column, isEditing, closeEditing } = props;
   const [value, setValue] = useState(getValue());
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,7 +15,8 @@ export default function EditableCell(props: CellContext<unknown, string>) {
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...triggerProps}
         type="button"
-        onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
+        tw="w-full h-full flex items-center"
+        onDoubleClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
       >
         <ValueRenderer {...props} value={value} />
       </button>
@@ -30,19 +31,19 @@ export default function EditableCell(props: CellContext<unknown, string>) {
           {...props}
           onChange={(newValue) => {
             setValue(newValue);
-            setIsOpen(false);
+            closeEditing();
           }}
           option={Option}
         />
       </div>
     ),
-    [column, props],
+    [column, props, closeEditing],
   );
 
   return (
     <Popup
-      isOpen={isOpen}
-      onClose={() => setIsOpen(false)}
+      isOpen={isEditing}
+      onClose={closeEditing}
       content={Content}
       placement="bottom-start"
       offset={[-16, 16]}

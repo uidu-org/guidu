@@ -1,17 +1,18 @@
 import { CellContext } from '@tanstack/react-table';
-import React from 'react';
+import React, { memo } from 'react';
+import EditableCell from './EditableCell';
 import { StyledRating } from './utils';
 
-export default function Cell(props: CellContext<any, number>) {
-  const { getValue, column } = props;
+function Cell(props: CellContext<any, number>) {
+  const { getValue, column, cell } = props;
   const value = getValue() || 0;
 
   const max = column.columnDef?.meta?.max || 5;
 
-  // if (column?.columnDef.meta.enableEditing) {
-  //   // eslint-disable-next-line react/jsx-props-no-spreading
-  //   return <EditableCell {...props} />;
-  // }
+  if (column?.columnDef.meta.enableEditing) {
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    return <EditableCell key={cell.id} {...props} />;
+  }
 
   return (
     <div tw="flex items-center">
@@ -23,3 +24,5 @@ export default function Cell(props: CellContext<any, number>) {
     </div>
   );
 }
+
+export default memo(Cell);

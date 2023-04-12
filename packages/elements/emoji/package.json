@@ -27,7 +27,7 @@
     "js-search": "^2.0.0",
     "lru-fast": "^0.2.2",
     "prop-types": "^15.8.1",
-    "react-virtualized": "^9.22.3",
+    "react-virtualized": "^9.22.4",
     "tslib": "^2.5.0",
     "typestyle": "^2.4.0",
     "url": "^0.11.0",

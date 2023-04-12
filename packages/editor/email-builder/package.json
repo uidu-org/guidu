@@ -31,6 +31,6 @@
   },
   "devDependencies": {
     "@uidu/shell": "2.1.51",
-    "mjml-browser": "^4.13.0"
+    "mjml-browser": "^4.14.1"
   }
 }

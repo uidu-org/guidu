@@ -1,4 +1,4 @@
-import { faIdBadge } from '@fortawesome/free-solid-svg-icons';
+import { faIdBadge } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';

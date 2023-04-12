@@ -10,8 +10,8 @@
   "types": "dist/uidu-stripe-accounts.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.21.0",
-    "@stripe/react-stripe-js": "^2.0.0",
-    "@stripe/stripe-js": "^1.49.0",
+    "@stripe/react-stripe-js": "^2.1.0",
+    "@stripe/stripe-js": "^1.52.1",
     "@uidu/field-text": "^2.0.11",
     "@uidu/form": "^2.2.15",
     "@uidu/payments": "^1.6.1",

@@ -244,6 +244,16 @@ export interface CustomItemComponentProps {
    * Disabled attribute.
    */
   disabled?: boolean;
+
+  /**
+   * Selected attribute.
+   * This is used to make the element appear selected.
+   */
+  isSelected?: boolean;
+  /**
+   * Disabled attribute.
+   */
+  isDisabled?: boolean;
 }
 
 export interface CustomItemProps<

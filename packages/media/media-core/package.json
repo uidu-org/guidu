@@ -11,10 +11,10 @@
   "dependencies": {
     "@babel/runtime": "^7.21.0",
     "@uidu/docs": "^0.5.28",
-    "@uppy/aws-s3": "^3.0.5",
-    "@uppy/core": "^3.1.1",
-    "@uppy/dashboard": "^3.3.1",
-    "@uppy/xhr-upload": "^3.1.0",
+    "@uppy/aws-s3": "^3.0.6",
+    "@uppy/core": "^3.1.2",
+    "@uppy/dashboard": "^3.3.2",
+    "@uppy/xhr-upload": "^3.1.1",
     "react-dropzone": "^14.2.3",
     "tslib": "^2.5.0"
   },

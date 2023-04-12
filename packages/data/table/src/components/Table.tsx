@@ -130,7 +130,7 @@ function Table<T extends { id: string }>({
 
   return (
     <div tw="h-full" role="table">
-      <div ref={parentRef} tw="h-full w-full overflow-auto">
+      <div ref={parentRef} tw="h-full w-full overflow-scroll">
         {/* <div
           style={{
             // width: tableInstance.getTotalSize(),
@@ -143,9 +143,18 @@ function Table<T extends { id: string }>({
           components={headerComponents}
           headerHeight={headerHeight}
           columnSizingInfo={columnSizingInfo}
+          style={{
+            width: tableInstance.getTotalSize(),
+          }}
         />
         {/* Here we should insert the pagination fragment, and manage data  */}
-        <Body $height={totalSize} $verticalPadding={headerHeight}>
+        <Body
+          $height={totalSize}
+          $verticalPadding={headerHeight}
+          style={{
+            width: tableInstance.getTotalSize(),
+          }}
+        >
           {/* {paddingTop > 0 && <div style={{ height: `${paddingTop}px` }} />} */}
           {isPending ? (
             <LoadingSkeleton

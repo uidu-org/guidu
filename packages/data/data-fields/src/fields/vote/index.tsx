@@ -1,4 +1,4 @@
-import { faPoll } from '@fortawesome/free-solid-svg-icons';
+import { faPoll } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';

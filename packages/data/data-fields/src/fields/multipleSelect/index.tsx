@@ -1,4 +1,4 @@
-import { faListUl } from '@fortawesome/free-solid-svg-icons';
+import { faListUl } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';

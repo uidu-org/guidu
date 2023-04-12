@@ -1,4 +1,4 @@
-import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import loadable from '@loadable/component';
 import { ColumnDef } from '@tanstack/react-table';

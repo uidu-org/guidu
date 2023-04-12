@@ -1,7 +1,7 @@
 import { CellContext } from '@tanstack/react-table';
-import React from 'react';
+import React, { memo } from 'react';
 
-export default function Cell<T>({ getValue, column }: CellContext<T, unknown>) {
+function Cell<T>({ getValue, column }: CellContext<T, unknown>) {
   // if (props.node && props.node.group) {
   //   return null;
   // }
@@ -27,3 +27,5 @@ export default function Cell<T>({ getValue, column }: CellContext<T, unknown>) {
     </>
   );
 }
+
+export default memo(Cell);

@@ -20,7 +20,7 @@
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@hookform/resolvers": "^3.0.0",
+    "@hookform/resolvers": "^3.0.1",
     "@uidu/docs": "^0.5.28",
     "react-feather": "^2.0.10",
     "yup": "1.0.2"

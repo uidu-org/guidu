@@ -24,7 +24,7 @@
     "react-node-resolver": "^2.0.1",
     "react-scrolllock": "^5.0.1",
     "react-transition-group": "^4.4.5",
-    "scroll-into-view-if-needed": "^3.0.6",
+    "scroll-into-view-if-needed": "^3.0.10",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

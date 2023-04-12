@@ -11,15 +11,20 @@ export default function Headers<T>({
   components,
   headerHeight,
   columnSizingInfo,
+  style,
 }: {
   headerGroups: HeaderGroup<T>[];
   components: any;
   headerHeight: number;
   columnSizingInfo: ColumnSizingInfoState;
+  style?: React.CSSProperties;
 }) {
   const { Th } = components;
   return (
-    <div tw="[background:rgb(var(--body-on-primary-bg))] flex flex-col min-w-full top-0 sticky z-50 w-max">
+    <div
+      tw="[background:rgb(var(--body-on-primary-bg))] flex flex-col min-w-full top-0 sticky z-50 w-max"
+      style={style}
+    >
       {headerGroups.map((headerGroup) => (
         <div tw="flex min-w-full" key={headerGroup.id}>
           {headerGroup.headers

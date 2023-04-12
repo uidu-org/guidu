@@ -1,8 +1,8 @@
 import { CellContext } from '@tanstack/react-table';
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { StyledRating } from './utils';
 
-export default function EditableCell(props: CellContext<any, number>) {
+function EditableCell(props: CellContext<any, number>) {
   const { getValue, column } = props;
   const max = column.columnDef?.meta?.max || 5;
 
@@ -18,7 +18,7 @@ export default function EditableCell(props: CellContext<any, number>) {
 
   return (
     <div tw="flex items-center">
-      <StyledRating value={value} onChange={setValue} items={max} />
+      <StyledRating value={defaultValue} onChange={setValue} items={max} />
       {/* {Array.from(Array(max).keys()).map((i) => (
         <button
           key={i}
@@ -36,3 +36,5 @@ export default function EditableCell(props: CellContext<any, number>) {
     </div>
   );
 }
+
+export default memo(EditableCell);

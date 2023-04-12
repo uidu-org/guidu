@@ -152,7 +152,7 @@ export default function Basic({}) {
     console.log(row);
   }, []);
 
-  const tableInstance = useReactTable<typeof data[0]>({
+  const tableInstance = useReactTable<(typeof data)[0]>({
     data,
     columns,
   });
@@ -362,7 +362,7 @@ export default function Basic({}) {
                       }}
                       isAutoSaving={isAutoSaving}
                       key={`table-for-${currentView.id}`}
-                      onItemClick={onItemClick}
+                      // onItemClick={onItemClick}
                       tableInstance={tableInstance}
                       currentView={currentView}
                       updateView={onViewUpdate}

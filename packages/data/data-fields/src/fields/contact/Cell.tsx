@@ -1,7 +1,7 @@
 import { CellContext } from '@tanstack/react-table';
-import React from 'react';
+import React, { memo } from 'react';
 
-export default function Cell<T>(props: CellContext<T, string>) {
+function Cell<T>(props: CellContext<T, string>) {
   // if (props.row.isGrouped) {
   //   return groupRenderer(props);
   // }
@@ -23,3 +23,5 @@ export default function Cell<T>(props: CellContext<T, string>) {
     </div>
   );
 }
+
+export default memo(Cell);

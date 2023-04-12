@@ -10,9 +10,9 @@
   "types": "dist/uidu-data-manager.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.21.0",
-    "@cubejs-client/core": "^0.32.17",
-    "@cubejs-client/react": "^0.32.17",
-    "@cubejs-client/ws-transport": "^0.32.17",
+    "@cubejs-client/core": "^0.32.22",
+    "@cubejs-client/react": "^0.32.22",
+    "@cubejs-client/ws-transport": "^0.32.22",
     "@loadable/component": "^5.15.3",
     "@tanstack/match-sorter-utils": "^8.8.4",
     "@tanstack/react-table": "^8.8.5",

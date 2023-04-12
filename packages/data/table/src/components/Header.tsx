@@ -230,7 +230,7 @@ export default function Header({
     >
       <div tw="flex-grow truncate">
         {headerIcons && column?.columnDef.meta?.icon && (
-          <span tw="mr-3 [color:rgb(var(--body-secondary-color))] opacity-40">
+          <span tw="mr-2 [color:rgb(var(--body-secondary-color))] opacity-40 text-sm">
             {column.columnDef.meta?.icon}
           </span>
         )}
