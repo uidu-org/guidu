@@ -22,6 +22,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --no-immutable
+        env:
+          FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
 
       - name: Create Release Pull Request
         uses: changesets/action@v1
