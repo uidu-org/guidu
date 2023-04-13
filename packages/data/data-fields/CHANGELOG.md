@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.3.0
+
+### Minor Changes
+
+- 28796e38f: Fix missing cell.id
+
 ## 2.2.1
 
 ### Patch Changes
