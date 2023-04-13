@@ -4,14 +4,14 @@ import EditableCell from './EditableCell';
 import { StyledRating } from './utils';
 
 function Cell(props: CellContext<any, number>) {
-  const { getValue, column, cell } = props;
+  const { getValue, column } = props;
   const value = getValue() || 0;
 
   const max = column.columnDef?.meta?.max || 5;
 
   if (column?.columnDef.meta.enableEditing) {
     // eslint-disable-next-line react/jsx-props-no-spreading
-    return <EditableCell key={cell.id} {...props} />;
+    return <EditableCell {...props} />;
   }
 
   return (
