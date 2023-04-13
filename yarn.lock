@@ -9123,6 +9123,7 @@ __metadata:
     "@tanstack/react-virtual": ^3.0.0-beta.48
     "@uidu/data-fields": ^2.1.42
     "@uidu/docs": ^0.5.28
+    "@uidu/shell": 2.1.51
     react: ^18.2.0
     styled-components: ^5.3.9
     tslib: ^2.5.0
@@ -10045,6 +10046,7 @@ __metadata:
     "@uidu/menu": ^0.8.15
     "@uidu/popup": ^0.7.16
     "@uidu/portal": 1.0.9
+    "@uidu/shell": 2.1.51
     numeral: ^2.0.6
     react: ^18.2.0
     react-cool-onclickoutside: ^1.7.0

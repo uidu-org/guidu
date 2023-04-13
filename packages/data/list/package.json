@@ -13,6 +13,7 @@
     "@tanstack/react-table": "^8.8.5",
     "@tanstack/react-virtual": "^3.0.0-beta.48",
     "@uidu/data-fields": "^2.1.42",
+    "@uidu/shell": "2.1.51",
     "react": "^18.2.0",
     "styled-components": "^5.3.9",
     "tslib": "^2.5.0"

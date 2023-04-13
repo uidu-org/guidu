@@ -252,7 +252,7 @@ export default function Basic({}) {
     <IntlProvider locale="en">
       <Router>
         <>
-          <ShellSidebar tw="w-80 border-r">
+          <ShellSidebar tw="w-80 border-r hidden md:flex">
             <Navigation tw="bg-white border-b" schema={schema} />
           </ShellSidebar>
           <ShellMain>
@@ -368,40 +368,38 @@ export default function Basic({}) {
                       updateView={onViewUpdate}
                     >
                       <ShellBody>
-                        <ShellMain>
-                          <Suspense fallback={<ShellBodyWithSpinner />}>
-                            <DataManagerView
-                              viewProps={{
-                                gallery: {
-                                  gutterSize: 24,
-                                },
-                                list: {
-                                  rowHeight: 104,
-                                },
-                                calendar: {
-                                  components: {
+                        <Suspense fallback={<ShellBodyWithSpinner />}>
+                          <DataManagerView
+                            viewProps={{
+                              gallery: {
+                                gutterSize: 24,
+                              },
+                              list: {
+                                rowHeight: 104,
+                              },
+                              calendar: {
+                                components: {
+                                  event: (props) => (
+                                    <div tw="bg-red-500 my-0.5">Ciao</div>
+                                  ),
+                                  month: {
                                     event: (props) => (
-                                      <div tw="bg-red-500 my-0.5">Ciao</div>
+                                      <div tw="bg-red-500 my-0.5">
+                                        {props.title}
+                                      </div>
                                     ),
-                                    month: {
-                                      event: (props) => (
-                                        <div tw="bg-red-500 my-0.5">
-                                          {props.title}
-                                        </div>
-                                      ),
-                                    },
                                   },
                                 },
-                                board: {},
-                                table: {
-                                  includeFooter: false,
-                                  headerHeight: 48,
-                                  rowHeight: 48,
-                                },
-                              }}
-                            />
-                          </Suspense>
-                        </ShellMain>
+                              },
+                              board: {},
+                              table: {
+                                includeFooter: false,
+                                headerHeight: 48,
+                                rowHeight: 48,
+                              },
+                            }}
+                          />
+                        </Suspense>
                       </ShellBody>
                       <DataManagerFooter />
                     </DataManager>

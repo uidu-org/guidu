@@ -24,6 +24,8 @@ runDevServer({
           // and bind address to 0.0.0.0 using ifconfig 192.168.xxx.xxx:9000
           // https: false,
           https,
+          // host: 'local-ip',
+          // disableHostCheck: true,
         },
       }
     : {}),

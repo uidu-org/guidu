@@ -1,5 +1,6 @@
 import { Row } from '@tanstack/react-table';
 import { useVirtualizer } from '@tanstack/react-virtual';
+import { ScrollableContainer } from '@uidu/shell';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { StyledRow } from '../styled';
 import { ListProps } from '../types';
@@ -29,7 +30,7 @@ export default function List<T>({
   const headerGroups = getHeaderGroups();
   const { rows } = getRowModel();
 
-  const rowVirtualizer = useVirtualizer({
+  const rowVirtualizer = useVirtualizer<HTMLDivElement>({
     count: hasNext ? rows.length + 1 : rows.length,
     getScrollElement: () => parentRef.current,
     getItemKey: (index) => rows[index]?.original?.id,
@@ -95,29 +96,39 @@ export default function List<T>({
   }, [loadNext, hasNext, rows.length, virtualRows, isLoadingNext, isPending]);
 
   return (
-    <div tw="h-full">
-      <div ref={parentRef} tw="h-full w-full overflow-auto xl:px-4 px-3">
-        <Header headerGroups={headerGroups} />
-        <div
-          tw="relative"
-          style={{
-            height: `${totalSize}px`,
-            minHeight: `calc(100% - ${rowHeight * 2 - 8 - 16}px)`,
-          }}
-        >
-          {isPending ? (
-            <LoadingSkeleton
-              count={50}
-              rowHeight={rowHeight}
-              gutterSize={gutterSize}
-            />
-          ) : (
-            virtualRows.map(({ index, key, start, size }) => (
-              <Item index={index} key={key} start={start} size={size} />
-            ))
-          )}
-        </div>
+    <ScrollableContainer
+      ref={parentRef}
+      tw="h-full w-full overflow-auto xl:px-4 px-3 z-20 min-w-0 min-h-0"
+      // style={{
+      //   WebkitOverflowScrolling: 'auto',
+      //   WebkitBackfaceVisibility: 'hidden',
+      //   overscrollBehavior: 'contain contain',
+      //   flex: '0 1 auto',
+      //   overflowY: 'auto',
+      //   height: 300,
+      // }}
+    >
+      <Header headerGroups={headerGroups} />
+      <div
+        tw="relative flex flex-col"
+        style={{
+          height: `${totalSize}px`,
+          minHeight: `calc(100% - ${rowHeight * 2 - 8 - 16}px)`,
+          flex: '0 1 auto',
+        }}
+      >
+        {isPending ? (
+          <LoadingSkeleton
+            count={50}
+            rowHeight={rowHeight}
+            gutterSize={gutterSize}
+          />
+        ) : (
+          virtualRows.map(({ index, key, start, size }) => (
+            <Item index={index} key={key} start={start} size={size} />
+          ))
+        )}
       </div>
-    </div>
+    </ScrollableContainer>
   );
 }

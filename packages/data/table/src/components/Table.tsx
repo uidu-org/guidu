@@ -3,6 +3,7 @@
 
 import { Row as RowType } from '@tanstack/react-table';
 import { useVirtualizer } from '@tanstack/react-virtual';
+import { ScrollableContainer } from '@uidu/shell';
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import * as defaultComponents from '../styled';
 import { TableProps } from '../types';
@@ -129,55 +130,43 @@ function Table<T extends { id: string }>({
       : 0;
 
   return (
-    <div tw="h-full" role="table">
-      <div ref={parentRef} tw="h-full w-full overflow-scroll">
-        {/* <div
+    <ScrollableContainer ref={parentRef} tw="h-full w-full overflow-scroll">
+      {/* <div
           style={{
             // width: tableInstance.getTotalSize(),
             minWidth: '100%',
           }}
           tw="h-full overflow-auto"
         > */}
-        <Headers
-          headerGroups={headerGroups}
-          components={headerComponents}
-          headerHeight={headerHeight}
-          columnSizingInfo={columnSizingInfo}
-          style={{
-            width: tableInstance.getTotalSize(),
-          }}
-        />
-        {/* Here we should insert the pagination fragment, and manage data  */}
-        <Body
-          $height={totalSize}
-          $verticalPadding={headerHeight}
-          style={{
-            width: tableInstance.getTotalSize(),
-          }}
-        >
-          {/* {paddingTop > 0 && <div style={{ height: `${paddingTop}px` }} />} */}
-          {isPending ? (
-            <LoadingSkeleton
-              components={rowComponents}
-              columns={tableInstance.getAllColumns()}
-              count={50}
-              rowHeight={rowHeight}
-            />
-          ) : (
-            virtualRows.map(({ size, start, index, key }) => (
-              <Row key={key} size={size} start={start} index={index} />
-            ))
-          )}
-          {/* {paddingBottom > 0 && (
+      <Headers
+        headerGroups={headerGroups}
+        components={headerComponents}
+        headerHeight={headerHeight}
+        columnSizingInfo={columnSizingInfo}
+      />
+      {/* Here we should insert the pagination fragment, and manage data  */}
+      <Body $height={totalSize} $verticalPadding={headerHeight}>
+        {/* {paddingTop > 0 && <div style={{ height: `${paddingTop}px` }} />} */}
+        {isPending ? (
+          <LoadingSkeleton
+            components={rowComponents}
+            columns={tableInstance.getAllColumns()}
+            count={50}
+            rowHeight={rowHeight}
+          />
+        ) : (
+          virtualRows.map(({ size, start, index, key }) => (
+            <Row key={key} size={size} start={start} index={index} />
+          ))
+        )}
+        {/* {paddingBottom > 0 && (
             <div style={{ height: `${paddingBottom}px` }} />
           )} */}
-        </Body>
-        {includeFooter ? (
-          <Footer footerGroups={footerGroups} rowHeight={rowHeight} />
-        ) : null}
-      </div>
-      {/* </div> */}
-    </div>
+      </Body>
+      {includeFooter ? (
+        <Footer footerGroups={footerGroups} rowHeight={rowHeight} />
+      ) : null}
+    </ScrollableContainer>
   );
 }
 

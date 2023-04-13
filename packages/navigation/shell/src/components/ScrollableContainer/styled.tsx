@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledScrollableContainer = styled.div`
   flex: 1 1 auto;
   scroll-behavior: smooth;
+  overscroll-behavior: contain contain;
   overflow-x: hidden;
   overflow-y: auto;
   // to fix chrome flex

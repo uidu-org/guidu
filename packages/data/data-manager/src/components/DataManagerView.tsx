@@ -278,18 +278,16 @@ function DataManagerView<T>({
         <Suspense fallback={<ShellBodyWithSpinner />}>
           <LoadableTable fallback={<ShellBodyWithSpinner />}>
             {({ default: Table }: { default: FC<TableProps<T>> }) => (
-              <div tw="h-full">
-                <Table
-                  // setAggregation={setAggregation}
-                  // setColumnWidth={setColumnWidth}
-                  rowHeight={(viewProps.table || {}).rowHeight || 56}
-                  onItemClick={onItemClick}
-                  pagination={pagination}
-                  tableInstance={tableInstance}
-                  isPending={isPending}
-                  {...viewProps.table}
-                />
-              </div>
+              <Table
+                // setAggregation={setAggregation}
+                // setColumnWidth={setColumnWidth}
+                rowHeight={(viewProps.table || {}).rowHeight || 56}
+                onItemClick={onItemClick}
+                pagination={pagination}
+                tableInstance={tableInstance}
+                isPending={isPending}
+                {...viewProps.table}
+              />
             )}
           </LoadableTable>
         </Suspense>
