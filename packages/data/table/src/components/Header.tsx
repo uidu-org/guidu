@@ -228,7 +228,7 @@ export default function Header({
       tw="flex items-center justify-center flex-grow min-w-0 cursor-default"
       onDoubleClick={() => setIsOpen(true)}
     >
-      <div tw="flex items-center flex-grow">
+      <div tw="flex items-center flex-grow min-w-0 min-h-0">
         {headerIcons && column?.columnDef.meta?.icon && (
           <span tw="mr-2 [color:rgb(var(--body-secondary-color))] opacity-40 text-sm">
             {column.columnDef.meta?.icon}
