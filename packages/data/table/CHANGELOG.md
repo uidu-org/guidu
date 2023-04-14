@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 5.1.1
+
+### Patch Changes
+
+- 9a9a8b2fb: Column headers flex improvements
+
 ## 5.1.0
 
 ### Minor Changes

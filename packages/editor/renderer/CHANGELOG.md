@@ -1,5 +1,11 @@
 # @uidu/renderer
 
+## 2.4.8
+
+### Patch Changes
+
+- 9a9a8b2fb: Column headers flex improvements
+
 ## 2.4.7
 
 ### Patch Changes
