@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 5.1.2
+
+### Patch Changes
+
+- 82d3dcebc: Fix flex Header
+
 ## 5.1.1
 
 ### Patch Changes
