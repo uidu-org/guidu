@@ -34,7 +34,13 @@ export default function Cell<T, V>({
     onItemClick,
     editingCell,
     setEditingCell,
-  } = useDataManagerContext();
+  } = useDataManagerContext() || {
+    selectedCell: null,
+    setSelectedCell: () => {},
+    onItemClick: () => {},
+    editingCell: null,
+    setEditingCell: () => {},
+  };
 
   const isEditing = useMemo(
     () => editingCell?.id === cell.id,
