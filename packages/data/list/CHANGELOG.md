@@ -1,5 +1,16 @@
 # @uidu/list
 
+## 3.2.0
+
+### Minor Changes
+
+- 00b2a3165: List is now mobile friendly
+
+### Patch Changes
+
+- Updated dependencies [00b2a3165]
+  - @uidu/shell@2.1.52
+
 ## 3.1.24
 
 ### Patch Changes

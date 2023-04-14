@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.52
+
+### Patch Changes
+
+- 00b2a3165: List is now mobile friendly
+
 ## 2.1.51
 
 ### Patch Changes

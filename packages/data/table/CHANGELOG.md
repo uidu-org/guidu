@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 5.1.0
+
+### Minor Changes
+
+- 00b2a3165: List is now mobile friendly
+
+### Patch Changes
+
+- Updated dependencies [00b2a3165]
+  - @uidu/data-manager@4.3.22
+  - @uidu/shell@2.1.52
+
 ## 5.0.0
 
 ### Major Changes
