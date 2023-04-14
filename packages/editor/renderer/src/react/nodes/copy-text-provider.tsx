@@ -1,12 +1,16 @@
 import React from 'react';
 
 export const clipboardApiSupported = () => {
-  if (!navigator) {
-    return false;
+  if (window) {
+    if (!navigator) {
+      return false;
+    }
+    return (
+      !!navigator.clipboard &&
+      typeof navigator.clipboard.writeText === 'function'
+    );
   }
-  return (
-    !!navigator.clipboard && typeof navigator.clipboard.writeText === 'function'
-  );
+  return false;
 };
 
 // This function is needed for safari and IE.
