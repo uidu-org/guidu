@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 4.3.22
+
+### Patch Changes
+
+- 00b2a3165: List is now mobile friendly
+- Updated dependencies [00b2a3165]
+  - @uidu/table@5.1.0
+  - @uidu/list@3.2.0
+  - @uidu/shell@2.1.52
+  - @uidu/data-controls@4.0.36
+  - @uidu/data-views@3.0.34
+
 ## 4.3.21
 
 ### Patch Changes

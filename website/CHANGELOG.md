@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.6.41
+
+### Patch Changes
+
+- 00b2a3165: List is now mobile friendly
+- Updated dependencies [00b2a3165]
+  - @uidu/table@5.1.0
+  - @uidu/list@3.2.0
+  - @uidu/shell@2.1.52
+
 ## 0.6.40
 
 ### Patch Changes
