@@ -1,5 +1,17 @@
 # @uidu/devise
 
+## 1.3.7
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/field-password@2.0.21
+  - @uidu/field-phone@2.0.53
+  - @uidu/shell@2.1.53
+  - @uidu/checkbox@2.0.16
+  - @uidu/form@2.2.19
+
 ## 1.3.6
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.2.21
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/form@2.2.19
+
 ## 4.2.20
 
 ### Patch Changes

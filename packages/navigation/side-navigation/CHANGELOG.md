@@ -1,5 +1,14 @@
 # @uidu/navigation
 
+## 1.2.18
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/shell@2.1.53
+  - @uidu/button@1.3.40
+
 ## 1.2.17
 
 ### Patch Changes

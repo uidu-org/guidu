@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.32
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+
 ## 0.1.31
 
 ### Patch Changes

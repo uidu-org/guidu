@@ -1,5 +1,12 @@
 # @uidu/link-preview
 
+## 1.2.3
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- 3b9c9cfe2: Do not show block if image is not present - link-preview
+
 ## 1.2.2
 
 ### Patch Changes

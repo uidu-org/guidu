@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 1.5.4
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+
 ## 1.5.3
 
 ### Patch Changes

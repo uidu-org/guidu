@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.53
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+
 ## 2.1.52
 
 ### Patch Changes

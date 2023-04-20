@@ -1,5 +1,17 @@
 # @uidu/renderer
 
+## 2.4.9
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/editor-common@2.7.6
+  - @uidu/adf-schema@2.2.14
+  - @uidu/mentions@0.5.11
+  - @uidu/media-card@0.8.25
+  - @uidu/status@0.5.35
+
 ## 2.4.8
 
 ### Patch Changes

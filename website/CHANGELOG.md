@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.6.42
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/table@5.2.0
+  - @uidu/shell@2.1.53
+  - @uidu/checkbox@2.0.16
+  - @uidu/select@2.2.19
+  - @uidu/button@1.3.40
+  - @uidu/form@2.2.19
+  - @uidu/list@3.2.1
+
 ## 0.6.41
 
 ### Patch Changes

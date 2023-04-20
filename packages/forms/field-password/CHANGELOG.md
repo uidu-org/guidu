@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 2.0.21
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/field-base@4.2.21
+  - @uidu/form@2.2.19
+
 ## 2.0.20
 
 ### Patch Changes

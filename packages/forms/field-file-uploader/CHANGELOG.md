@@ -1,5 +1,16 @@
 # @uidu/field-file-uploader
 
+## 2.3.11
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/field-base@4.2.21
+  - @uidu/media-core@1.5.4
+  - @uidu/button@1.3.40
+  - @uidu/form@2.2.19
+
 ## 2.3.10
 
 ### Patch Changes

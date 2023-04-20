@@ -1,5 +1,18 @@
 # @uidu/data-views
 
+## 3.0.35
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/data-controls@4.0.37
+  - @uidu/data-manager@4.3.23
+  - @uidu/select@2.2.19
+  - @uidu/button@1.3.40
+  - @uidu/form@2.2.19
+  - @uidu/field-number@2.0.47
+
 ## 3.0.34
 
 ### Patch Changes

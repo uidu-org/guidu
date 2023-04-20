@@ -1,5 +1,17 @@
 # @uidu/editor-common
 
+## 2.7.6
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/profilecard@0.3.42
+  - @uidu/adf-schema@2.2.14
+  - @uidu/mentions@0.5.11
+  - @uidu/media-core@1.5.4
+  - @uidu/emoji@0.6.39
+
 ## 2.7.5
 
 ### Patch Changes

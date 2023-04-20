@@ -1,5 +1,26 @@
 # @uidu/editor-core
 
+## 2.12.10
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/editor-common@2.7.6
+  - @uidu/profilecard@0.3.42
+  - @uidu/media-picker@1.1.4
+  - @uidu/adf-schema@2.2.14
+  - @uidu/mentions@0.5.11
+  - @uidu/field-base@4.2.21
+  - @uidu/media-card@0.8.25
+  - @uidu/media-core@1.5.4
+  - @uidu/status@0.5.35
+  - @uidu/emoji@0.6.39
+  - @uidu/select@2.2.19
+  - @uidu/button@1.3.40
+  - @uidu/form@2.2.19
+  - @uidu/field-date@2.1.28
+
 ## 2.12.9
 
 ### Patch Changes

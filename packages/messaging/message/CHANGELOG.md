@@ -1,5 +1,16 @@
 # @uidu/message
 
+## 0.5.90
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/media-viewer@1.2.6
+  - @uidu/media-card@0.8.25
+  - @uidu/media-core@1.5.4
+  - @uidu/button@1.3.40
+
 ## 0.5.89
 
 ### Patch Changes
