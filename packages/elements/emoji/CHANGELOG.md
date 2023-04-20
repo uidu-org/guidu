@@ -1,5 +1,13 @@
 # @uidu/emoji
 
+## 0.6.39
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/button@1.3.40
+
 ## 0.6.38
 
 ### Patch Changes

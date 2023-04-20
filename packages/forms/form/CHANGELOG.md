@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.2.19
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/button@1.3.40
+
 ## 2.2.18
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 3.1.10
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/table@5.2.0
+  - @uidu/data-fields@2.3.1
+
 ## 3.1.9
 
 ### Patch Changes

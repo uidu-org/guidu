@@ -1,5 +1,13 @@
 # @uidu/mentions
 
+## 0.5.11
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/button@1.3.40
+
 ## 0.5.10
 
 ### Patch Changes

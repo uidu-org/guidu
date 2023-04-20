@@ -1,5 +1,20 @@
 # @uidu/table
 
+## 5.2.0
+
+### Minor Changes
+
+- c8c60fd81: Enable better Table footer customizations
+
+### Patch Changes
+
+- Updated dependencies [c8c60fd81]
+  - @uidu/data-manager@4.3.23
+  - @uidu/data-fields@2.3.1
+  - @uidu/shell@2.1.53
+  - @uidu/checkbox@2.0.16
+  - @uidu/button@1.3.40
+
 ## 5.1.2
 
 ### Patch Changes

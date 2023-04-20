@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 1.6.4
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/field-base@4.2.21
+  - @uidu/form@2.2.19
+
 ## 1.6.3
 
 ### Patch Changes

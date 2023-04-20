@@ -1,5 +1,21 @@
 # @uidu/data-fields
 
+## 2.3.1
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/field-color-picker@3.0.22
+  - @uidu/field-downshift@2.2.8
+  - @uidu/field-toggle@2.0.47
+  - @uidu/field-time@2.0.51
+  - @uidu/select@2.2.19
+  - @uidu/button@1.3.40
+  - @uidu/form@2.2.19
+  - @uidu/field-date@2.1.28
+  - @uidu/field-number@2.0.47
+
 ## 2.3.0
 
 ### Minor Changes

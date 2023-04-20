@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 2.2.14
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/media-core@1.5.4
+
 ## 2.2.13
 
 ### Patch Changes

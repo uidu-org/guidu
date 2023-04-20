@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.2.8
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+
 ## 0.2.7
 
 ### Patch Changes

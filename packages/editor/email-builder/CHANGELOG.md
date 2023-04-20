@@ -1,5 +1,18 @@
 # @uidu/email-builder
 
+## 0.2.32
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/editor-core@2.12.10
+  - @uidu/adf-schema@2.2.14
+  - @uidu/select@2.2.19
+  - @uidu/button@1.3.40
+  - @uidu/form@2.2.19
+  - @uidu/field-number@2.0.47
+
 ## 0.2.31
 
 ### Patch Changes

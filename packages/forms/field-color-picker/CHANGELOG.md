@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 3.0.22
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/field-base@4.2.21
+  - @uidu/button@1.3.40
+
 ## 3.0.21
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message",
-  "version": "0.5.89",
+  "version": "0.5.90",
   "description": "A React component that renders a message",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/messaging/message",
   "license": "ISC",
@@ -14,11 +14,11 @@
     "@fluentui/react": "8.108.0",
     "@loadable/component": "^5.15.3",
     "@uidu/avatar": "^0.9.24",
-    "@uidu/button": "1.3.39",
+    "@uidu/button": "1.3.40",
     "@uidu/drawer": "^0.7.34",
-    "@uidu/media-card": "^0.8.24",
-    "@uidu/media-core": "^1.5.3",
-    "@uidu/media-viewer": "^1.2.5",
+    "@uidu/media-card": "^0.8.25",
+    "@uidu/media-core": "^1.5.4",
+    "@uidu/media-viewer": "^1.2.6",
     "@uidu/menu": "0.8.15",
     "@uidu/message-form": "^0.4.36",
     "@uidu/message-renderer": "^0.4.30",
@@ -39,7 +39,7 @@
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
     "@uidu/docs": "^0.5.28",
-    "@uidu/shell": "^2.1.51"
+    "@uidu/shell": "^2.1.53"
   },
   "publishConfig": {
     "access": "public"

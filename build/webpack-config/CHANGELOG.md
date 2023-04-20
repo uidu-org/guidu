@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.57
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+
 ## 0.3.56
 
 ### Patch Changes

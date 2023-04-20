@@ -1,5 +1,13 @@
 # @uidu/field-date
 
+## 2.1.28
+
+### Patch Changes
+
+- Updated dependencies [c8c60fd81]
+  - @uidu/field-base@4.2.21
+  - @uidu/button@1.3.40
+
 ## 2.1.27
 
 ### Patch Changes

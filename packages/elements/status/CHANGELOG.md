@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.5.35
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+
 ## 0.5.34
 
 ### Patch Changes

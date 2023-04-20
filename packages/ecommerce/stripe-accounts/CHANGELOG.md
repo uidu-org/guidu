@@ -1,5 +1,14 @@
 # @uidu/stripe-accounts
 
+## 0.5.30
+
+### Patch Changes
+
+- c8c60fd81: Enable better Table footer customizations
+- Updated dependencies [c8c60fd81]
+  - @uidu/payments@1.6.4
+  - @uidu/form@2.2.19
+
 ## 0.5.29
 
 ### Patch Changes
