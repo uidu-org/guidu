@@ -28,12 +28,12 @@
     "styled-components": "^5.3.9",
     "swiper": "^9.1.1",
     "tslib": "^2.5.0",
-    "twin.macro": "^3.3.0"
+    "twin.macro": "^3.3.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.28",
     "@uidu/media-card": "^0.8.23",
-    "react-intl": "^6.3.2"
+    "react-intl": "^6.4.1"
   },
   "publishConfig": {
     "access": "public"

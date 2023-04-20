@@ -393,7 +393,7 @@ export default function Basic({}) {
                               },
                               board: {},
                               table: {
-                                includeFooter: false,
+                                includeFooter: true,
                                 headerHeight: 48,
                                 rowHeight: 48,
                               },

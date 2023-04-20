@@ -29,7 +29,7 @@
   "devDependencies": {
     "@uidu/editor-json-transformer": "^1.0.16",
     "@uidu/json-schema-generator": "^1.0.14",
-    "axios": "^1.3.5",
+    "axios": "^1.3.6",
     "json-schema-diff-validator": "^0.4.1",
     "prosemirror-state": "^1.4.2"
   }

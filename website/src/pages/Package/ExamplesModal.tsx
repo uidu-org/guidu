@@ -337,7 +337,7 @@ export default class ExamplesModal extends React.Component<Props, State> {
             onExampleSelected={this.onExampleSelected}
             loadingSandbox={this.state.loadingSandbox}
           />
-          <ModalContent>
+          <ModalContent tw="p-0">
             {examples && exampleId && loaderUrl ? (
               <ExampleDisplay
                 displayCode={displayCode}

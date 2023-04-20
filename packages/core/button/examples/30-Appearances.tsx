@@ -1,5 +1,5 @@
 import Checkbox from '@uidu/checkbox';
-import Form from '@uidu/form';
+import Form, { useForm } from '@uidu/form';
 import * as React from 'react';
 import Button, { ButtonAppearances } from '../src';
 
@@ -31,57 +31,50 @@ export type State = {
   showLoadingState: boolean;
 };
 
-export default class ButtonAppearance extends React.Component<{}, State> {
-  state = { showLoadingState: false };
+export default function ButtonAppearance() {
+  const [showLoadingState, setShowLoadingState] = React.useState(null);
+  const form = useForm({});
 
-  render() {
-    const { showLoadingState } = this.state;
-
-    return (
-      <Form handleSubmit={console.log}>
-        <div className="form-group">
-          <Checkbox
-            value="showLoading"
-            label="Show Loading State"
-            onChange={(name, value) =>
-              this.setState({
-                showLoadingState: value,
-              })
-            }
-            value={showLoadingState}
-            name="show-loading"
-          />
-        </div>
-        <Table>
-          {appearances.map((a) => (
-            <Row key={a}>
-              <Cell>
-                <Button isLoading={showLoadingState} appearance={a}>
-                  {capitalize(a)}
-                </Button>
-              </Cell>
-              <Cell>
-                <Button
-                  isLoading={showLoadingState}
-                  appearance={a}
-                  isDisabled={true}
-                >
-                  Disabled
-                </Button>
-              </Cell>
-              <Cell>
-                <Button
-                  isLoading={showLoadingState}
-                  appearance={a}
-                  isSelected={true}
-                >
-                  Selected
-                </Button>
-              </Cell>
-            </Row>
-          ))}
-        </Table>
-      </Form>
-    );
-  }
+  return (
+    <Form form={form} handleSubmit={console.log}>
+      <div className="form-group">
+        <Checkbox
+          value="showLoading"
+          label="Show Loading State"
+          onChange={(name, value) => setShowLoadingState(value)}
+          value={showLoadingState}
+          name="show-loading"
+        />
+      </div>
+      <Table>
+        {appearances.map((a) => (
+          <Row key={a}>
+            <Cell>
+              <Button isLoading={showLoadingState} appearance={a}>
+                {capitalize(a)}
+              </Button>
+            </Cell>
+            <Cell>
+              <Button
+                isLoading={showLoadingState}
+                appearance={a}
+                isDisabled={true}
+              >
+                Disabled
+              </Button>
+            </Cell>
+            <Cell>
+              <Button
+                isLoading={showLoadingState}
+                appearance={a}
+                isSelected={true}
+              >
+                Selected
+              </Button>
+            </Cell>
+          </Row>
+        ))}
+      </Table>
+    </Form>
+  );
 }

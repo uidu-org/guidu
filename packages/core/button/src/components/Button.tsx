@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable no-underscore-dangle */
 import memoize from 'memoize-one';
 import React, {
   FocusEventHandler,
@@ -93,7 +95,7 @@ function Button(props: ButtonProps) {
     if (autoFocus && button instanceof HTMLButtonElement) {
       button.current.focus();
     }
-  }, []);
+  }, [autoFocus]);
 
   const isInteractive = () => !isDisabled && !isLoading;
 

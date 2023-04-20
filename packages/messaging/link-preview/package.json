@@ -10,7 +10,7 @@
   "types": "dist/uidu-link-preview.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.21.0",
-    "axios": "^1.3.5",
+    "axios": "^1.3.6",
     "nanoclamp": "^2.0.4",
     "react": "^18.2.0",
     "styled-components": "^5.3.9",

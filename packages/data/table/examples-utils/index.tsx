@@ -158,6 +158,10 @@ export const availableColumns: ColumnDef<unknown>[] = [
     },
     id: 'member',
     accessorFn: (data) => data.member.email,
+    footer: (params) => {
+      console.log(params);
+      return <div>Footer</div>;
+    },
     size: 340,
   },
   {
@@ -167,6 +171,10 @@ export const availableColumns: ColumnDef<unknown>[] = [
       name: 'FullName',
     },
     accessorKey: 'displayName',
+    footer: (params) => {
+      console.log(params);
+      return <div>Footer</div>;
+    },
   },
   {
     id: 'amount',
@@ -177,6 +185,10 @@ export const availableColumns: ColumnDef<unknown>[] = [
       valueFormatter: (value) => {
         return numeral(value).format('$ 0,0.00');
       },
+    },
+    footer: (params) => {
+      console.log(params);
+      return <div>Footer</div>;
     },
     accessorKey: 'amount',
   },

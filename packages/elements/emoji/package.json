@@ -27,7 +27,7 @@
     "js-search": "^2.0.0",
     "lru-fast": "^0.2.2",
     "prop-types": "^15.8.1",
-    "react-virtualized": "^9.22.4",
+    "react-virtualized": "^9.22.5",
     "tslib": "^2.5.0",
     "typestyle": "^2.4.0",
     "url": "^0.11.0",
@@ -43,7 +43,7 @@
     "@uidu/util-data-test": "^0.4.32",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.3.2"
+    "react-intl": "^6.4.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",

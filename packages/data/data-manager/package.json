@@ -12,7 +12,7 @@
     "@babel/runtime": "^7.21.0",
     "@cubejs-client/core": "^0.32.22",
     "@cubejs-client/react": "^0.32.22",
-    "@cubejs-client/ws-transport": "^0.32.22",
+    "@cubejs-client/ws-transport": "^0.32.28",
     "@loadable/component": "^5.15.3",
     "@tanstack/match-sorter-utils": "^8.8.4",
     "@tanstack/react-table": "^8.8.5",
@@ -47,6 +47,6 @@
     "@uidu/navigation": "^1.0.38",
     "@uidu/page-header": "^1.0.12",
     "@uidu/side-navigation": "1.2.17",
-    "react-intl": "^6.3.2"
+    "react-intl": "^6.4.1"
   }
 }
