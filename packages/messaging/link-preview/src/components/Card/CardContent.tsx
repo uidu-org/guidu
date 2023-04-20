@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styled, { css } from 'styled-components';
-import CardText from './CardText';
 
 import { imageProxy, media } from '../../utils';
 
@@ -93,16 +92,16 @@ export default function CardContent({
   logo?: string;
 }) {
   return (
-    <Content className={className} cardSize={cardSize}>
+    <Content tw="space-y-1.5" className={className} cardSize={cardSize}>
       <Header>
-        <CardText lines={1}>{title}</CardText>
+        <p tw="line-clamp-1">{title}</p>
       </Header>
       <Description cardSize={cardSize}>
-        <CardText lines={2}>{description}</CardText>
+        <p tw="line-clamp-2">{description}</p>
       </Description>
       <Footer>
         {logo && <Logo className="rounded" logo={logo} />}
-        <CardText lines={1}>{url && getHostname(url)}</CardText>
+        <p tw="line-clamp-1">{url && getHostname(url)}</p>
       </Footer>
     </Content>
   );

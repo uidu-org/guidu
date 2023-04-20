@@ -9107,7 +9107,6 @@ __metadata:
     "@uidu/form": ^2.2.18
     axios: ^1.3.6
     lodash: ^4.17.21
-    nanoclamp: ^2.0.4
     react: ^18.2.0
     styled-components: ^5.3.9
     tslib: ^2.5.0
@@ -19027,7 +19026,6 @@ __metadata:
     minimatch: ^5.1.6
     mkdirp: ^1.0.4
     moment: ^2.29.4
-    nanoclamp: ^2.0.4
     netlify-cli: ^10.18.0
     node-fetch: ^3.3.1
     node-gyp: ^9.3.1
@@ -23779,15 +23777,6 @@ __metadata:
   dependencies:
     node-gyp: latest
   checksum: ec609aeaf7e68b76592a3ba96b372aa7f5df5b056c1e37410b0f1deefbab5a57a922061e2c5b369bae9c7c6b5e6eecf4ad2dac8833a1a7d3a751e0a7c7f849ed
-  languageName: node
-  linkType: hard
-
-"nanoclamp@npm:^2.0.4":
-  version: 2.0.4
-  resolution: "nanoclamp@npm:2.0.4"
-  peerDependencies:
-    react: ^18
-  checksum: bbc1b0ff2659c14b22a3d331bc6edf19cd15cf55f80c9ba553ae091f815ed35a17202f7ccc2b1472b89b80cfb8344163aaf25a387e94ce26aa93378117e4f379
   languageName: node
   linkType: hard
 
