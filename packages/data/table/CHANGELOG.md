@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 5.2.1
+
+### Patch Changes
+
+- afc062663: Sticky pinned footer
+
 ## 5.2.0
 
 ### Minor Changes
