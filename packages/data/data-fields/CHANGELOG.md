@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 2.3.2
+
+### Patch Changes
+
+- 9b413c3d6: Small fixes and debug
+
 ## 2.3.1
 
 ### Patch Changes

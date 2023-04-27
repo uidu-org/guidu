@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.1.54
+
+### Patch Changes
+
+- 9b413c3d6: Small fixes and debug
+
 ## 2.1.53
 
 ### Patch Changes
