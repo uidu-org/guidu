@@ -11,6 +11,11 @@ export default function Cell(
     return null;
   }
 
+  if (!Array.isArray(value)) {
+    console.log('offending value', value);
+    return null;
+  }
+
   return (
     <div>
       {(value || []).map((attachment) => (

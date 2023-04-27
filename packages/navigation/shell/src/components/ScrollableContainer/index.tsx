@@ -25,12 +25,12 @@ function ScrollableContainer({
   customScrollbarProps = {},
 }: ShellBodyProps) {
   const [shadowedHeader, setShadowedHeader] = useState(false);
-  const element: React.RefObject<any> = useRef();
+  const element: React.RefObject<HTMLDivElement> = useRef();
   const overlayScrollbar = useRef(null);
 
-  useImperativeHandle(forwardedRef, () => element.current);
+  useImperativeHandle(forwardedRef, () => element.current, []);
 
-  const getScrollable = useCallback(
+  const getScrollable = useCallback<() => HTMLDivElement>(
     () =>
       enableCustomScrollbars && overlayScrollbar.current
         ? element.current?.getElement()
@@ -107,13 +107,14 @@ export default React.forwardRef(
   ) => (
     <ScrollableContainer
       id={id}
-      children={children}
       shadowOnScroll={shadowOnScroll}
       className={className}
       innerClassName={innerClassName}
       enableCustomScrollbars={enableCustomScrollbars}
       customScrollbarProps={customScrollbarProps}
       forwardedRef={ref}
-    />
+    >
+      {children}
+    </ScrollableContainer>
   ),
 );
