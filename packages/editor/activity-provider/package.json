@@ -1,6 +1,6 @@
 {
   "name": "@uidu/activity-provider",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Activity provider types",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

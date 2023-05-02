@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.5.29
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/section-message@0.6.35
+  - @uidu/tooltip@0.5.34
+  - @uidu/button@1.3.41
+  - @uidu/theme@0.6.33
+  - @uidu/code@0.5.28
+
 ## 0.5.28
 
 ### Patch Changes

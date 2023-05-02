@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 2.2.4
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/adf-schema@2.2.15
+
 ## 2.2.3
 
 ### Patch Changes

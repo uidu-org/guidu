@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.2.4
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+
 ## 1.2.3
 
 ### Patch Changes

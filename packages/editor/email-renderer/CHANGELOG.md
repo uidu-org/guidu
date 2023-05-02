@@ -1,5 +1,13 @@
 # @uidu/email-renderer
 
+## 1.3.13
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/adf-schema@2.2.15
+
 ## 1.3.12
 
 ### Patch Changes

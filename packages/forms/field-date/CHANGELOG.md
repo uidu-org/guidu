@@ -1,5 +1,16 @@
 # @uidu/field-date
 
+## 2.1.29
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/field-base@4.2.22
+  - @uidu/field-text@2.0.12
+  - @uidu/button@1.3.41
+  - @uidu/popup@0.7.17
+
 ## 2.1.28
 
 ### Patch Changes

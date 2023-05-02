@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.2.20
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/button@1.3.41
+
 ## 2.2.19
 
 ### Patch Changes

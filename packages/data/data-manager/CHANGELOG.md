@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 4.3.24
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/data-controls@4.0.38
+  - @uidu/data-fields@2.3.3
+  - @uidu/shell@2.1.55
+  - @uidu/pagination@0.5.32
+  - @uidu/data-views@3.0.36
+  - @uidu/calendar@0.4.37
+  - @uidu/spinner@0.5.28
+  - @uidu/gallery@2.0.31
+  - @uidu/button@1.3.41
+  - @uidu/board@2.1.13
+  - @uidu/table@5.2.3
+  - @uidu/menu@0.8.16
+  - @uidu/list@3.2.3
+
 ## 4.3.23
 
 ### Patch Changes

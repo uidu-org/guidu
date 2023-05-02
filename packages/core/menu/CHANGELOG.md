@@ -1,5 +1,13 @@
 # @uidu/menu
 
+## 0.8.16
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/theme@0.6.33
+
 ## 0.8.15
 
 ### Patch Changes

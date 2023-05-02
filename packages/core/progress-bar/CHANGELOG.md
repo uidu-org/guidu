@@ -1,5 +1,13 @@
 # @uidu/progress-bar
 
+## 0.5.30
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/theme@0.6.33
+
 ## 0.5.29
 
 ### Patch Changes

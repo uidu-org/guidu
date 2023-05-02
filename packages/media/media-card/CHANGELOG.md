@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.8.26
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/media-core@1.5.5
+  - @uidu/spinner@0.5.28
+  - @uidu/tooltip@0.5.34
+  - @uidu/button@1.3.41
+  - @uidu/theme@0.6.33
+
 ## 0.8.25
 
 ### Patch Changes

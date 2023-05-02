@@ -1,5 +1,19 @@
 # @uidu/media-viewer
 
+## 1.2.7
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/modal-dialog@1.2.3
+  - @uidu/media-core@1.5.5
+  - @uidu/shell@2.1.55
+  - @uidu/spinner@0.5.28
+  - @uidu/avatar@0.9.25
+  - @uidu/button@1.3.41
+  - @uidu/theme@0.6.33
+
 ## 1.2.6
 
 ### Patch Changes

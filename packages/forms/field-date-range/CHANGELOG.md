@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 2.0.20
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/field-base@4.2.22
+  - @uidu/field-date@2.1.29
+
 ## 2.0.19
 
 ### Patch Changes
