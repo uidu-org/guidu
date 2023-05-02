@@ -1,5 +1,32 @@
 # Change Log
 
+## 0.6.43
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/breadcrumbs@1.0.36
+  - @uidu/page-header@1.0.13
+  - @uidu/navigation@1.0.39
+  - @uidu/modal-dialog@1.2.3
+  - @uidu/field-text@2.0.12
+  - @uidu/shell@2.1.55
+  - @uidu/checkbox@2.0.17
+  - @uidu/lozenge@0.5.27
+  - @uidu/spinner@0.5.28
+  - @uidu/tooltip@0.5.34
+  - @uidu/select@2.2.20
+  - @uidu/button@1.3.41
+  - @uidu/drawer@0.7.35
+  - @uidu/badge@0.5.27
+  - @uidu/theme@0.6.33
+  - @uidu/table@5.2.3
+  - @uidu/form@2.2.20
+  - @uidu/code@0.5.28
+  - @uidu/list@3.2.3
+  - @uidu/docs@0.5.29
+
 ## 0.6.42
 
 ### Patch Changes

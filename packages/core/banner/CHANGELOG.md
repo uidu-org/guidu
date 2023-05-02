@@ -1,5 +1,13 @@
 # @uidu/banner
 
+## 0.5.27
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/theme@0.6.33
+
 ## 0.5.26
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.1.55
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/spinner@0.5.28
+
 ## 2.1.54
 
 ### Patch Changes

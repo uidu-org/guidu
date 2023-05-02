@@ -1,5 +1,13 @@
 # @uidu/field-counter
 
+## 2.0.12
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/field-base@4.2.22
+
 ## 2.0.11
 
 ### Patch Changes

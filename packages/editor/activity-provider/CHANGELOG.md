@@ -1,5 +1,11 @@
 # @uidu/activity-provider
 
+## 0.1.6
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+
 ## 0.1.5
 
 ### Patch Changes

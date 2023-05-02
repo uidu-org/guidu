@@ -1,5 +1,20 @@
 # @uidu/table
 
+## 5.2.3
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/data-manager@4.3.24
+  - @uidu/data-fields@2.3.3
+  - @uidu/shell@2.1.55
+  - @uidu/checkbox@2.0.17
+  - @uidu/button@1.3.41
+  - @uidu/portal@1.0.10
+  - @uidu/popup@0.7.17
+  - @uidu/menu@0.8.16
+
 ## 5.2.2
 
 ### Patch Changes

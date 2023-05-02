@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.6.29
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/theme@0.6.33
+
 ## 0.6.28
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 2.2.15
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/media-core@1.5.5
+
 ## 2.2.14
 
 ### Patch Changes

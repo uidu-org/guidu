@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.2.22
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/form@2.2.20
+
 ## 4.2.21
 
 ### Patch Changes

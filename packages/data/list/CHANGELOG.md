@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 3.2.3
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/data-fields@2.3.3
+  - @uidu/shell@2.1.55
+
 ## 3.2.2
 
 ### Patch Changes

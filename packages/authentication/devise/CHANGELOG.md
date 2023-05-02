@@ -1,5 +1,20 @@
 # @uidu/devise
 
+## 1.3.8
+
+### Patch Changes
+
+- ed78abbdd: Bump dependencies
+- Updated dependencies [ed78abbdd]
+  - @uidu/field-password@2.0.22
+  - @uidu/field-phone@2.0.54
+  - @uidu/field-text@2.0.12
+  - @uidu/shell@2.1.55
+  - @uidu/checkbox@2.0.17
+  - @uidu/spinner@0.5.28
+  - @uidu/avatar@0.9.25
+  - @uidu/form@2.2.20
+
 ## 1.3.7
 
 ### Patch Changes
