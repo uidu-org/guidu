@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.6.18
+
+### Patch Changes
+
+- 9b413c3d6: Small fixes and debug
+
 ## 0.6.17
 
 ### Patch Changes

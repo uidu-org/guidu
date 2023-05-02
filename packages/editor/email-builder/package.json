@@ -30,7 +30,7 @@
     "twin.macro": "^3.3.1"
   },
   "devDependencies": {
-    "@uidu/shell": "2.1.53",
+    "@uidu/shell": "2.1.54",
     "mjml-browser": "^4.14.1"
   }
 }
