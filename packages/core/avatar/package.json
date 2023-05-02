@@ -10,11 +10,11 @@
   "module": "dist/uidu-avatar.esm.js",
   "types": "dist/uidu-avatar.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.21.0",
+    "@babel/runtime": "^7.21.5",
     "@uidu/analytics": "^0.6.13",
     "@uidu/theme": "^0.6.32",
     "@uidu/tooltip": "^0.5.33",
-    "styled-components": "^5.3.9",
+    "styled-components": "^5.3.10",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

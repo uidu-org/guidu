@@ -7,12 +7,12 @@
   "author": "uidu",
   "main": "dist/uidu-tabs.cjs.js",
   "dependencies": {
-    "@babel/runtime": "^7.21.0",
+    "@babel/runtime": "^7.21.5",
     "@uidu/analytics": "^0.6.13",
     "@uidu/docs": "^0.5.28",
     "@uidu/theme": "^0.6.32",
     "react": "^18.2.0",
-    "styled-components": "^5.3.9",
+    "styled-components": "^5.3.10",
     "tslib": "^2.5.0"
   }
 }

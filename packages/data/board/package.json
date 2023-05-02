@@ -9,13 +9,13 @@
   "module": "dist/uidu-board.esm.js",
   "types": "dist/uidu-board.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.21.0",
-    "@tanstack/react-table": "^8.8.5",
+    "@babel/runtime": "^7.21.5",
+    "@tanstack/react-table": "^8.9.0",
     "@uidu/theme": "^0.6.32",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
     "react-feather": "^2.0.10",
-    "styled-components": "^5.3.9",
+    "styled-components": "^5.3.10",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

@@ -13,7 +13,7 @@
   "module": "dist/uidu-activity-provider.esm.js",
   "types": "dist/uidu-activity-provider.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.21.0"
+    "@babel/runtime": "^7.21.5"
   },
   "devDependencies": {
     "typescript": "^5.0.4"

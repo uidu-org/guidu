@@ -10,7 +10,7 @@
   "module": "dist/uidu-checkbox.esm.js",
   "types": "dist/uidu-checkbox.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.21.0",
+    "@babel/runtime": "^7.21.5",
     "@uidu/field-base": "^4.2.21",
     "react": "^18.2.0",
     "tslib": "^2.5.0"
@@ -18,7 +18,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.5.28",
     "@uidu/form": "^2.2.19",
-    "styled-components": "^5.3.9",
+    "styled-components": "^5.3.10",
     "twin.macro": "^3.3.1"
   },
   "peerDependencies": {

@@ -17,9 +17,9 @@
     "build:images": "ts-node --files --project ./tsconfig.ts-node.json ./src/static/generator/generate.ts"
   },
   "dependencies": {
-    "@babel/runtime": "^7.21.0",
+    "@babel/runtime": "^7.21.5",
     "@uidu/adf-schema": "^2.2.13",
-    "date-fns": "^2.29.3",
+    "date-fns": "^2.30.0",
     "get-video-id": "^3.6.5",
     "juice": "^8.1.0",
     "lodash": "^4.17.21",
