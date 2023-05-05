@@ -1,5 +1,13 @@
 # @uidu/field-date
 
+## 2.0.55
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+- Updated dependencies [ceb5ddb72]
+  - @uidu/select@2.2.21
+
 ## 2.0.54
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 4.3.25
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+- Updated dependencies [ceb5ddb72]
+  - @uidu/data-controls@4.0.39
+  - @uidu/data-fields@2.3.4
+  - @uidu/data-views@3.0.37
+  - @uidu/gallery@2.0.32
+  - @uidu/board@2.1.14
+  - @uidu/table@5.2.4
+  - @uidu/list@3.2.4
+
 ## 4.3.24
 
 ### Patch Changes

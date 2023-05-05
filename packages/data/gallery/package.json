@@ -1,6 +1,6 @@
 {
   "name": "@uidu/gallery",
-  "version": "2.0.31",
+  "version": "2.0.32",
   "description": "React component to show data items as gallery card",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/gallery",
   "license": "MIT",
@@ -12,8 +12,8 @@
     "@babel/runtime": "^7.21.5",
     "@tanstack/react-table": "^8.9.1",
     "@tanstack/react-virtual": "^3.0.0-beta.48",
-    "@uidu/data-controls": "^4.0.38",
-    "@uidu/data-fields": "^2.3.3",
+    "@uidu/data-controls": "^4.0.39",
+    "@uidu/data-fields": "^2.3.4",
     "@uidu/shell": "^2.1.55",
     "@uidu/spinner": "^0.5.28",
     "memoize-one": "^6.0.0",

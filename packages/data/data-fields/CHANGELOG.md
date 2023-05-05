@@ -1,5 +1,14 @@
 # @uidu/data-fields
 
+## 2.3.4
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+- Updated dependencies [ceb5ddb72]
+  - @uidu/select@2.2.21
+  - @uidu/field-time@2.0.53
+
 ## 2.3.3
 
 ### Patch Changes

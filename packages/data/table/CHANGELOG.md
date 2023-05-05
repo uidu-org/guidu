@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 5.2.4
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+- Updated dependencies [ceb5ddb72]
+  - @uidu/data-manager@4.3.25
+  - @uidu/data-fields@2.3.4
+
 ## 5.2.3
 
 ### Patch Changes

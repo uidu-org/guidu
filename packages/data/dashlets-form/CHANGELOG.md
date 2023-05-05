@@ -1,5 +1,14 @@
 # @uidu/dashlets-form
 
+## 1.0.50
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+- Updated dependencies [ceb5ddb72]
+  - @uidu/dashlets@3.1.14
+  - @uidu/select@2.2.21
+
 ## 1.0.49
 
 ### Patch Changes

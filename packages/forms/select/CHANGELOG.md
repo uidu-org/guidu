@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 2.2.21
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+
 ## 2.2.20
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/editor-common
 
+## 2.7.8
+
+### Patch Changes
+
+- Updated dependencies [ceb5ddb72]
+  - @uidu/media-core@1.5.6
+  - @uidu/adf-schema@2.2.16
+
 ## 2.7.7
 
 ### Patch Changes

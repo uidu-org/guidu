@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 2.3.13
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+- Updated dependencies [ceb5ddb72]
+  - @uidu/media-core@1.5.6
+
 ## 2.3.12
 
 ### Patch Changes

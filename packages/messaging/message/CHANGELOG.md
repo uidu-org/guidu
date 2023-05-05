@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.5.92
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+- Updated dependencies [ceb5ddb72]
+  - @uidu/media-card@0.8.27
+  - @uidu/media-core@1.5.6
+
 ## 0.5.91
 
 ### Patch Changes
