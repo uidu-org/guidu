@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.2.4
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+- Updated dependencies [ceb5ddb72]
+  - @uidu/data-fields@2.3.4
+
 ## 3.2.3
 
 ### Patch Changes

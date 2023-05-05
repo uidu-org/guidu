@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.6.44
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+- Updated dependencies [ceb5ddb72]
+  - @uidu/select@2.2.21
+  - @uidu/table@5.2.4
+  - @uidu/list@3.2.4
+
 ## 0.6.43
 
 ### Patch Changes

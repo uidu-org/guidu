@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 2.1.14
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+
 ## 2.1.13
 
 ### Patch Changes

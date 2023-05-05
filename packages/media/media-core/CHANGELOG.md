@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 1.5.6
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+
 ## 1.5.5
 
 ### Patch Changes

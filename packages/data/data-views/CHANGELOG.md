@@ -1,5 +1,15 @@
 # @uidu/data-views
 
+## 3.0.37
+
+### Patch Changes
+
+- ceb5ddb72: Bump dependencies
+- Updated dependencies [ceb5ddb72]
+  - @uidu/data-controls@4.0.39
+  - @uidu/data-manager@4.3.25
+  - @uidu/select@2.2.21
+
 ## 3.0.36
 
 ### Patch Changes
