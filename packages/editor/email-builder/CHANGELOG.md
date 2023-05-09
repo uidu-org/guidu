@@ -1,5 +1,19 @@
 # @uidu/email-builder
 
+## 0.2.35
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/editor-core@2.12.12
+  - @uidu/field-number@2.0.49
+  - @uidu/field-text@2.0.13
+  - @uidu/select@2.2.22
+  - @uidu/button@1.3.42
+  - @uidu/portal@1.0.11
+  - @uidu/form@2.2.21
+
 ## 0.2.34
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.1.11
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+
 ## 2.1.10
 
 ### Patch Changes

@@ -1,5 +1,36 @@
 # @uidu/editor-core
 
+## 2.12.12
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/editor-markdown-transformer@1.0.15
+  - @uidu/editor-json-transformer@1.0.18
+  - @uidu/task-decision@0.4.39
+  - @uidu/media-filmstrip@0.7.6
+  - @uidu/editor-common@2.7.9
+  - @uidu/profilecard@0.3.44
+  - @uidu/avatar-group@2.6.29
+  - @uidu/modal-dialog@1.2.4
+  - @uidu/mentions@0.5.13
+  - @uidu/field-base@4.2.23
+  - @uidu/field-date@2.1.30
+  - @uidu/field-text@2.0.13
+  - @uidu/media-card@0.8.28
+  - @uidu/status@0.5.37
+  - @uidu/droplist@0.5.35
+  - @uidu/date@0.4.33
+  - @uidu/spinner@0.5.29
+  - @uidu/tooltip@0.5.35
+  - @uidu/select@2.2.22
+  - @uidu/avatar@0.9.26
+  - @uidu/button@1.3.42
+  - @uidu/theme@0.6.34
+  - @uidu/form@2.2.21
+  - @uidu/menu@0.8.17
+
 ## 2.12.11
 
 ### Patch Changes

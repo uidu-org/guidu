@@ -1,5 +1,13 @@
 # @uidu/portal
 
+## 1.0.11
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/theme@0.6.34
+
 ## 1.0.10
 
 ### Patch Changes

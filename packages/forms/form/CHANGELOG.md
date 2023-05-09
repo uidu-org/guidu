@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.2.21
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/button@1.3.42
+
 ## 2.2.20
 
 ### Patch Changes

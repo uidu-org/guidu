@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.1.56
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/spinner@0.5.29
+
 ## 2.1.55
 
 ### Patch Changes

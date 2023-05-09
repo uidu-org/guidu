@@ -1,5 +1,13 @@
 # @uidu/menu
 
+## 0.8.17
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/theme@0.6.34
+
 ## 0.8.16
 
 ### Patch Changes

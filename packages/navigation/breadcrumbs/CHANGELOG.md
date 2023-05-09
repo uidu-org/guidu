@@ -1,5 +1,15 @@
 # @uidu/breadcrumbs
 
+## 1.0.37
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/tooltip@0.5.35
+  - @uidu/button@1.3.42
+  - @uidu/theme@0.6.34
+
 ## 1.0.36
 
 ### Patch Changes

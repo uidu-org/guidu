@@ -1,5 +1,15 @@
 # @uidu/modal-dialog
 
+## 1.2.4
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/blanket@0.6.20
+  - @uidu/portal@1.0.11
+  - @uidu/theme@0.6.34
+
 ## 1.2.3
 
 ### Patch Changes

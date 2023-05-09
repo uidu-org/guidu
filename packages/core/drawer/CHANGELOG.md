@@ -1,5 +1,16 @@
 # @uidu/drawer
 
+## 0.7.36
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/blanket@0.6.20
+  - @uidu/theme@0.6.34
+  - @uidu/item@0.5.32
+  - @uidu/docs@0.5.30
+
 ## 0.7.35
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.3.44
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/lozenge@0.5.28
+  - @uidu/spinner@0.5.29
+  - @uidu/avatar@0.9.26
+  - @uidu/button@1.3.42
+  - @uidu/popup@0.7.18
+  - @uidu/theme@0.6.34
+
 ## 0.3.43
 
 ### Patch Changes
