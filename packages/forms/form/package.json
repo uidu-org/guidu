@@ -16,7 +16,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
     "react-media": "^1.10.0",
-    "styled-components": "^5.3.10",
+    "styled-components": "^6.0.0-rc.1",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

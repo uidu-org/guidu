@@ -26,7 +26,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-lorem-component": "^0.13.0",
-    "styled-components": "^5.3.10"
+    "styled-components": "^6.0.0-rc.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",

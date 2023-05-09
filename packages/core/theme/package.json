@@ -11,7 +11,7 @@
   "types": "dist/uidu-theme.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.21.5",
-    "@emotion/react": "^11.10.8",
+    "@emotion/react": "^11.11.0",
     "@uidu/form": "^2.2.20",
     "exenv": "^1.2.2",
     "prop-types": "^15.8.1",
@@ -26,7 +26,7 @@
     "color": "^4.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.10"
+    "styled-components": "^6.0.0-rc.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",

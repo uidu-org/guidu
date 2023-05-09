@@ -11,10 +11,10 @@
   "types": "dist/uidu-field-base.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.21.5",
-    "@heroicons/react": "^2.0.17",
+    "@heroicons/react": "^2.0.18",
     "@uidu/form": "2.2.20",
     "react-hook-form": "^7.43.9",
-    "styled-components": "^5.3.10",
+    "styled-components": "^6.0.0-rc.1",
     "tslib": "^2.5.0",
     "twin.macro": "^3.3.1"
   },

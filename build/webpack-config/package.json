@@ -40,11 +40,11 @@
     "sass-loader": "^13.2.2",
     "style-loader": "^3.3.2",
     "svg-url-loader": "^8.0.0",
-    "terser-webpack-plugin": "^5.3.7",
+    "terser-webpack-plugin": "^5.3.8",
     "url-loader": "^4.1.1",
     "webpack": "^5.82.0",
     "webpack-bundle-analyzer": "^4.8.0",
-    "webpack-dev-server": "^4.13.3",
+    "webpack-dev-server": "^4.15.0",
     "webpack-manifest-plugin": "^5.0.0"
   },
   "publishConfig": {

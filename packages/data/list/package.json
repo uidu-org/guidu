@@ -15,7 +15,7 @@
     "@uidu/data-fields": "^2.3.4",
     "@uidu/shell": "2.1.55",
     "react": "^18.2.0",
-    "styled-components": "^5.3.10",
+    "styled-components": "^6.0.0-rc.1",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

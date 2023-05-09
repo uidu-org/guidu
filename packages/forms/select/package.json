@@ -11,13 +11,13 @@
   "types": "dist/uidu-select.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.21.5",
-    "@heroicons/react": "^2.0.17",
+    "@heroicons/react": "^2.0.18",
     "@uidu/field-base": "^4.2.22",
     "@uidu/menu": "0.8.16",
     "@uidu/spinner": "^0.5.28",
     "react-hook-form": "^7.43.9",
     "react-select": "^5.7.3",
-    "styled-components": "^5.3.10",
+    "styled-components": "^6.0.0-rc.1",
     "timezones-list": "^3.0.2",
     "tslib": "^2.5.0"
   },

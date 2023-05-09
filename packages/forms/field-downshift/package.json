@@ -11,7 +11,7 @@
   "types": "dist/uidu-field-downshift.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.21.5",
-    "@heroicons/react": "^2.0.17",
+    "@heroicons/react": "^2.0.18",
     "@uidu/field-base": "^4.2.22",
     "@uidu/field-text": "^2.0.12",
     "classnames": "^2.3.2",
@@ -31,7 +31,7 @@
     "@uidu/radio": "^2.1.12",
     "@uidu/shell": "^2.1.55",
     "react-feather": "^2.0.10",
-    "styled-components": "^5.3.10",
+    "styled-components": "^6.0.0-rc.1",
     "twin.macro": "^3.3.1"
   },
   "peerDependencies": {

@@ -19,7 +19,7 @@
     "@uidu/blanket": "^0.6.19",
     "@uidu/portal": "^1.0.10",
     "@uidu/theme": "^0.6.33",
-    "bind-event-listener": "^2.1.1",
+    "bind-event-listener": "^3.0.0",
     "raf-schd": "^4.0.3",
     "react-focus-lock": "^2.9.4",
     "react-scrolllock": "^5.0.1",
@@ -39,7 +39,7 @@
     "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
     "react-lorem-component": "^0.13.0",
-    "styled-components": "^5.3.10"
+    "styled-components": "^6.0.0-rc.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",
