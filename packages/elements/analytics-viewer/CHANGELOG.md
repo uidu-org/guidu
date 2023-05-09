@@ -1,5 +1,11 @@
 # @uidu/analytics-viewer
 
+## 0.4.29
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+
 ## 0.4.28
 
 ### Patch Changes

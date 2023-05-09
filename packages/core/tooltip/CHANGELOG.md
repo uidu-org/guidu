@@ -1,5 +1,15 @@
 # @uidu/tooltip
 
+## 0.5.35
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/popper@0.5.32
+  - @uidu/portal@1.0.11
+  - @uidu/theme@0.6.34
+
 ## 0.5.34
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/editor-common
 
+## 2.7.9
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/editor-json-transformer@1.0.18
+  - @uidu/profilecard@0.3.44
+  - @uidu/mentions@0.5.13
+  - @uidu/tooltip@0.5.35
+  - @uidu/theme@0.6.34
+
 ## 2.7.8
 
 ### Patch Changes

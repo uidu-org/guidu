@@ -1,5 +1,16 @@
 # @uidu/media-card
 
+## 0.8.28
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/spinner@0.5.29
+  - @uidu/tooltip@0.5.35
+  - @uidu/button@1.3.42
+  - @uidu/theme@0.6.34
+
 ## 0.8.27
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/pagination
 
+## 0.5.33
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/button@1.3.42
+  - @uidu/theme@0.6.34
+
 ## 0.5.32
 
 ### Patch Changes

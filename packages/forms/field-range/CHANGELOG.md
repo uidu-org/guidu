@@ -1,5 +1,13 @@
 # @uidu/field-range
 
+## 2.0.18
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/field-base@4.2.23
+
 ## 2.0.17
 
 ### Patch Changes

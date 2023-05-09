@@ -1,5 +1,15 @@
 # @uidu/status
 
+## 0.5.37
+
+### Patch Changes
+
+- 7be8489b4: Bump deps
+- Updated dependencies [7be8489b4]
+  - @uidu/field-text@2.0.13
+  - @uidu/lozenge@0.5.28
+  - @uidu/theme@0.6.34
+
 ## 0.5.36
 
 ### Patch Changes
