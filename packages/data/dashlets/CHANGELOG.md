@@ -1,5 +1,12 @@
 # @uidu/blocks
 
+## 3.1.16
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+  - @uidu/data-fields@2.3.6
+
 ## 3.1.15
 
 ### Patch Changes

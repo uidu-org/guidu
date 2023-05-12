@@ -1,5 +1,15 @@
 # @uidu/editor-common
 
+## 2.7.10
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+- Updated dependencies [a84d1d8fa]
+  - @uidu/editor-json-transformer@1.0.19
+  - @uidu/adf-schema@2.2.17
+  - @uidu/emoji@0.6.41
+
 ## 2.7.9
 
 ### Patch Changes

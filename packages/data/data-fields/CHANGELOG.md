@@ -1,5 +1,14 @@
 # @uidu/data-fields
 
+## 2.3.6
+
+### Patch Changes
+
+- Updated dependencies [a84d1d8fa]
+  - @uidu/field-toggle@2.0.50
+  - @uidu/popup@0.7.19
+  - @uidu/field-date@2.1.31
+
 ## 2.3.5
 
 ### Patch Changes

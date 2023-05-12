@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.61
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+
 ## 0.3.60
 
 ### Patch Changes

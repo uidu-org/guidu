@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashlets",
-  "version": "3.1.15",
+  "version": "3.1.16",
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/dashlets",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "@loadable/component": "^5.15.3",
     "@tanstack/react-table": "^8.9.1",
     "@uidu/dashboard-manager": "^2.1.7",
-    "@uidu/data-fields": "^2.3.5",
+    "@uidu/data-fields": "^2.3.6",
     "@uidu/spinner": "^0.5.29",
     "@uidu/table": "5.2.5",
     "@uidu/tooltip": "^0.5.35",

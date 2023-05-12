@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.6.41
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+
 ## 0.6.40
 
 ### Patch Changes

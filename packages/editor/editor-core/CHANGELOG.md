@@ -1,5 +1,18 @@
 # @uidu/editor-core
 
+## 2.12.13
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+- Updated dependencies [a84d1d8fa]
+  - @uidu/editor-json-transformer@1.0.19
+  - @uidu/media-filmstrip@0.7.7
+  - @uidu/editor-common@2.7.10
+  - @uidu/adf-schema@2.2.17
+  - @uidu/emoji@0.6.41
+  - @uidu/field-date@2.1.31
+
 ## 2.12.12
 
 ### Patch Changes

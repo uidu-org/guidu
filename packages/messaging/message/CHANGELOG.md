@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.5.94
+
+### Patch Changes
+
+- Updated dependencies [a84d1d8fa]
+  - @uidu/media-viewer@1.2.9
+  - @uidu/popup@0.7.19
+
 ## 0.5.93
 
 ### Patch Changes
