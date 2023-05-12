@@ -6,7 +6,7 @@ import tw from 'twin.macro';
 import { FieldToggleStatelessProps } from '../types';
 
 const StyledSwitchRoot = styled(Root)<{ $hasError: boolean }>`
-  ${tw`bg-gray-200 flex items-center flex items-center transition-all duration-200 rounded-3xl focus:[--tw-ring-color:rgba(var(--brand-primary), .1)] focus:ring-2 focus:[border-color:rgb(var(--brand-primary))]`}
+  ${tw`bg-gray-200 flex items-center flex-shrink-0 flex items-center transition-all duration-200 rounded-3xl focus:[--tw-ring-color:rgba(var(--brand-primary), .1)] focus:ring-2 focus:[border-color:rgb(var(--brand-primary))]`}
   ${({ $hasError }) =>
     $hasError &&
     tw`bg-red-400 border-red-500 focus:outline-none focus:ring-red-50 focus:border-red-400`}

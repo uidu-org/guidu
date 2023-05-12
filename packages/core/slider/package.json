@@ -15,7 +15,7 @@
     "classnames": "^2.3.2",
     "react": "^18.2.0",
     "styled-components": "^6.0.0-rc.1",
-    "swiper": "^9.3.0",
+    "swiper": "^9.3.1",
     "tslib": "^2.5.0",
     "uuid": "^8.3.2"
   },

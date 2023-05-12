@@ -24,7 +24,7 @@
     "@uidu/theme": "^0.6.33",
     "@uidu/tooltip": "^0.5.34",
     "classnames": "^2.3.2",
-    "js-search": "^2.0.0",
+    "js-search": "^2.0.1",
     "lru-fast": "^0.2.2",
     "prop-types": "^15.8.1",
     "react-virtualized": "^9.22.5",

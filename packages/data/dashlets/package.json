@@ -31,7 +31,7 @@
     "react-countup": "^6.4.2",
     "react-feather": "^2.0.10",
     "react-intl": "^6.4.2",
-    "recharts": "^2.6.0",
+    "recharts": "^2.6.2",
     "styled-components": "^6.0.0-rc.1",
     "tslib": "^2.5.0",
     "twin.macro": "^3.3.1",

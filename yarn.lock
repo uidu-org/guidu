@@ -7371,7 +7371,7 @@ __metadata:
     linkify-it: ^4.0.1
     prosemirror-model: ^1.19.0
     prosemirror-state: ^1.4.2
-    prosemirror-view: ^1.31.1
+    prosemirror-view: ^1.31.2
     tslib: ^2.5.0
   languageName: unknown
   linkType: soft
@@ -7853,7 +7853,7 @@ __metadata:
     react-countup: ^6.4.2
     react-feather: ^2.0.10
     react-intl: ^6.4.2
-    recharts: ^2.6.0
+    recharts: ^2.6.2
     styled-components: ^6.0.0-rc.1
     tslib: ^2.5.0
     twin.macro: ^3.3.1
@@ -8045,7 +8045,7 @@ __metadata:
     react-intl: ^6.4.2
     react-router-dom: ^5.3.4
     styled-components: ^6.0.0-rc.1
-    swiper: ^9.3.0
+    swiper: ^9.3.1
   languageName: unknown
   linkType: soft
 
@@ -8183,7 +8183,7 @@ __metadata:
     prosemirror-state: ^1.4.2
     prosemirror-transform: ^1.7.1
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.31.1
+    prosemirror-view: ^1.31.2
     raf-schd: ^4.0.3
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -8262,7 +8262,7 @@ __metadata:
     prosemirror-tables: ^1.3.2
     prosemirror-transform: ^1.7.1
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.31.1
+    prosemirror-view: ^1.31.2
     raf-schd: ^4.0.3
     re-resizable: ^6.9.9
     react: ^18.2.0
@@ -8287,7 +8287,7 @@ __metadata:
     "@uidu/editor-common": ^2.7.9
     "@uidu/editor-core": ^2.12.12
     prosemirror-model: ^1.19.0
-    prosemirror-view: ^1.31.1
+    prosemirror-view: ^1.31.2
     react: ^18.2.0
     styled-components: ^6.0.0-rc.1
     tslib: ^2.5.0
@@ -8407,7 +8407,7 @@ __metadata:
     "@uidu/tooltip": ^0.5.34
     "@uidu/util-data-test": ^0.4.33
     classnames: ^2.3.2
-    js-search: ^2.0.0
+    js-search: ^2.0.1
     lru-fast: ^0.2.2
     prop-types: ^15.8.1
     react: ^18.2.0
@@ -8734,7 +8734,7 @@ __metadata:
     "@uidu/form": 2.2.21
     "@uidu/select": 2.2.22
     react: ^18.2.0
-    react-phone-number-input: ^3.2.22
+    react-phone-number-input: ^3.2.23
     styled-components: ^6.0.0-rc.1
     tslib: ^2.5.0
     twin.macro: ^3.3.1
@@ -9237,7 +9237,7 @@ __metadata:
     "@uidu/theme": ^0.6.34
     react: ^18.2.0
     styled-components: ^6.0.0-rc.1
-    swiper: ^9.3.0
+    swiper: ^9.3.1
     tslib: ^2.5.0
   languageName: unknown
   linkType: soft
@@ -9293,7 +9293,7 @@ __metadata:
     react-feather: ^2.0.10
     react-intl: ^6.4.2
     styled-components: ^6.0.0-rc.1
-    swiper: ^9.3.0
+    swiper: ^9.3.1
     tslib: ^2.5.0
     twin.macro: ^3.3.1
   languageName: unknown
@@ -9661,7 +9661,7 @@ __metadata:
     "@uidu/select": ^2.2.22
     "@uidu/spinner": ^0.5.29
     "@uidu/theme": ^0.6.34
-    focus-trap: ^7.4.0
+    focus-trap: ^7.4.1
     react: ^18.2.0
     react-dom: ^18.2.0
     styled-components: ^6.0.0-rc.1
@@ -9940,7 +9940,7 @@ __metadata:
     classnames: ^2.3.2
     react: ^18.2.0
     styled-components: ^6.0.0-rc.1
-    swiper: ^9.3.0
+    swiper: ^9.3.1
     tslib: ^2.5.0
     uuid: ^8.3.2
   languageName: unknown
@@ -10241,7 +10241,7 @@ __metadata:
     "@uidu/mentions": ^0.5.12
     "@uidu/task-decision": ^0.4.38
     date-fns: ^2.30.0
-    js-search: ^2.0.0
+    js-search: ^2.0.1
     lodash.sample: ^4.2.1
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -10286,7 +10286,7 @@ __metadata:
     svg-url-loader: ^8.0.0
     terser-webpack-plugin: ^5.3.8
     url-loader: ^4.1.1
-    webpack: ^5.82.0
+    webpack: ^5.82.1
     webpack-bundle-analyzer: ^4.8.0
     webpack-dev-server: ^4.15.0
     webpack-manifest-plugin: ^5.0.0
@@ -17844,12 +17844,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"focus-trap@npm:^7.4.0":
-  version: 7.4.0
-  resolution: "focus-trap@npm:7.4.0"
+"focus-trap@npm:^7.4.1":
+  version: 7.4.1
+  resolution: "focus-trap@npm:7.4.1"
   dependencies:
-    tabbable: ^6.1.1
-  checksum: e55d07295f1facf3a82fb7b78713c196f893a82a04ec9a8ab95306a3099ac8fc30dba982651e4fa8a0f3fba623e3120baf419a1c31da3c25223c0bfbece340aa
+    tabbable: ^6.1.2
+  checksum: 33d0f219f2b5d318205c589d20c485db0dafcea0b82cc756e714920bf18d769b488bab7e13041e85a90788e46dff7f513998849c3b392f99691b7dd205f82e6a
   languageName: node
   linkType: hard
 
@@ -19009,7 +19009,7 @@ __metadata:
     fetch-mock: ^9.11.0
     file-loader: ^6.2.0
     flushable: ^1.0.0
-    focus-trap: ^7.4.0
+    focus-trap: ^7.4.1
     formsy-react: ^2.3.0
     fs-extra: ^10.1.0
     fuzzy: ^0.1.3
@@ -19021,7 +19021,7 @@ __metadata:
     html-webpack-plugin: ^5.5.1
     interweave: ^13.1.0
     interweave-autolink: ^5.1.0
-    js-search: ^2.0.0
+    js-search: ^2.0.1
     json-schema-diff-validator: ^0.4.1
     linkify-it: ^4.0.1
     loader-utils: ^2.0.4
@@ -19078,7 +19078,7 @@ __metadata:
     prosemirror-tables: ^1.3.2
     prosemirror-transform: ^1.7.1
     prosemirror-utils: ^0.9.6
-    prosemirror-view: ^1.31.1
+    prosemirror-view: ^1.31.2
     query-string: ^7.1.3
     raf-schd: ^4.0.3
     raw-loader: ^4.0.2
@@ -19122,7 +19122,7 @@ __metadata:
     react-mentions: ^4.4.7
     react-node-resolver: ^2.0.1
     react-number-format: ^4.9.4
-    react-phone-number-input: ^3.2.22
+    react-phone-number-input: ^3.2.23
     react-popper: ^2.3.0
     react-resizable: ^3.0.5
     react-router: ^5.3.4
@@ -19155,7 +19155,7 @@ __metadata:
     stylis-plugin-rtl: ^2.1.1
     svg-inline-react: ^3.2.1
     svg-url-loader: ^8.0.0
-    swiper: ^9.3.0
+    swiper: ^9.3.1
     tailwindcss: 3.3.2
     terser-webpack-plugin: ^5.3.8
     thread-loader: ^4.0.1
@@ -19175,7 +19175,7 @@ __metadata:
     use-places-autocomplete: ^4.0.0
     uuid: ^8.3.2
     w3c-keyname: ^2.2.6
-    webpack: ^5.82.0
+    webpack: ^5.82.1
     webpack-bundle-analyzer: ^4.8.0
     webpack-dev-server: ^4.15.0
     webpack-manifest-plugin: ^5.0.0
@@ -21196,10 +21196,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-search@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "js-search@npm:2.0.0"
-  checksum: 2dc0ff4c63843fdeef76f8642d98f0be20231e78e75c5e106410836c26ca35860ea56e257804ecabd7026c096fd6abf1f3a78931f875afc4f81ab164c32738b0
+"js-search@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "js-search@npm:2.0.1"
+  checksum: 09bd837b83adaa5d29a1fd80d2324b1af4117b4d4d97013e6be6f043ea636b2c5e6f271e634ec68e7d9411b8b76f625b55c4b41ae66fb19d7164a43c47899ca3
   languageName: node
   linkType: hard
 
@@ -26805,7 +26805,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.27.0, prosemirror-view@npm:^1.31.0, prosemirror-view@npm:^1.31.1":
+"prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.27.0, prosemirror-view@npm:^1.31.0":
   version: 1.31.1
   resolution: "prosemirror-view@npm:1.31.1"
   dependencies:
@@ -26813,6 +26813,17 @@ __metadata:
     prosemirror-state: ^1.0.0
     prosemirror-transform: ^1.1.0
   checksum: 0896ba2c59967ab973a3c846d121d5620c25cf692bae2d87179ee5fa94cf8d764fb3ce095e2bc8c55c3eea0120667643e19339598c57c15783946f62e17a3412
+  languageName: node
+  linkType: hard
+
+"prosemirror-view@npm:^1.31.2":
+  version: 1.31.2
+  resolution: "prosemirror-view@npm:1.31.2"
+  dependencies:
+    prosemirror-model: ^1.16.0
+    prosemirror-state: ^1.0.0
+    prosemirror-transform: ^1.1.0
+  checksum: 22942a8552a4667831a1350ec8b0ba6f8bc4a9dca85f478b63eb933134f4721e7355b43b260063c371e35ccc95bb6a40c695c3eba1c0f00297af17304fb685a6
   languageName: node
   linkType: hard
 
@@ -27785,9 +27796,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-phone-number-input@npm:^3.2.22":
-  version: 3.2.22
-  resolution: "react-phone-number-input@npm:3.2.22"
+"react-phone-number-input@npm:^3.2.23":
+  version: 3.2.23
+  resolution: "react-phone-number-input@npm:3.2.23"
   dependencies:
     classnames: ^2.3.1
     country-flag-icons: ^1.5.4
@@ -27797,7 +27808,7 @@ __metadata:
   peerDependencies:
     react: ">=16.8"
     react-dom: ">=16.8"
-  checksum: cfa1cd48ee761ca54a72dfaf15879698fdeb6fa2c322e5431db8bce3a599787384064669bcc55813e4419d8b4fcb79bbd7eb71a74be8592d8089adc2b23761ce
+  checksum: 2e5096821dc2c91ab2b34d948d7aa8dc508c4aba8de067d3d20623dd6bfc8c8f18153a74669cf7f11985ed06e89e4b064c23c251df3d383d4b24cefb8e5bec4d
   languageName: node
   linkType: hard
 
@@ -28367,9 +28378,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"recharts@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "recharts@npm:2.6.0"
+"recharts@npm:^2.6.2":
+  version: 2.6.2
+  resolution: "recharts@npm:2.6.2"
   dependencies:
     classnames: ^2.2.5
     eventemitter3: ^4.0.1
@@ -28384,7 +28395,7 @@ __metadata:
     prop-types: ^15.6.0
     react: ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: dc7db8360cab8a6fd25d17c6fdb93c04dd7ad04446e59f8ae965fd00b4c724e77c0294f0d5859e109438d800faa1e1d58fa8e48889d6f747cc7cf62d82aaf8dd
+  checksum: 4d63232317bbb39e457d13575a8410b353f8b45bb62aaf515d9f5a33bb7a04202908aa760b87a7e243503a5a033a176922ae4aef51238aab8511a5554cf7746e
   languageName: node
   linkType: hard
 
@@ -30739,12 +30750,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swiper@npm:*, swiper@npm:^9.3.0":
+"swiper@npm:*":
   version: 9.3.0
   resolution: "swiper@npm:9.3.0"
   dependencies:
     ssr-window: ^4.0.2
   checksum: 5dd7f2ed5bb403eaabd9ee4edca41b65a01981f5d5501bdfa73bc69578aa76fed6fb9c82e37ad1562c9e05d87680a001b878570c07d39685db2bb6b77edfe687
+  languageName: node
+  linkType: hard
+
+"swiper@npm:^9.3.1":
+  version: 9.3.1
+  resolution: "swiper@npm:9.3.1"
+  dependencies:
+    ssr-window: ^4.0.2
+  checksum: e418d5462fc11f7f26624897203decef131a1c7f2a46bc197b2813857631674c0b44a6943f5b784644a7051fa56f807cca4803813b7456ee2d2d6dbfb8708f16
   languageName: node
   linkType: hard
 
@@ -30762,10 +30782,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tabbable@npm:^6.1.1":
-  version: 6.1.1
-  resolution: "tabbable@npm:6.1.1"
-  checksum: 348639497262241ce8e0ccb0664ea582a386183107299ee8f27cf7b56bc84f36e09eaf667d3cb4201e789634012a91f7129bcbd49760abe874fbace35b4cf429
+"tabbable@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "tabbable@npm:6.1.2"
+  checksum: 1e2d9af4f172a3793f491bab10263c26903c2be6a5c4ab723d69d1ba2054828d22a50add9ba7fc42735468871d40054d906fa4f0a9dc2fbd4feff875e84c1a89
   languageName: node
   linkType: hard
 
