@@ -1,5 +1,11 @@
 # @uidu/popup
 
+## 0.7.19
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+
 ## 0.7.18
 
 ### Patch Changes

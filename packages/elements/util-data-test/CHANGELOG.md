@@ -1,5 +1,13 @@
 # @uidu/util-data-test
 
+## 0.4.34
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+- Updated dependencies [a84d1d8fa]
+  - @uidu/emoji@0.6.41
+
 ## 0.4.33
 
 ### Patch Changes

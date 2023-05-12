@@ -1,5 +1,13 @@
 # @uidu/devise
 
+## 1.3.10
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+- Updated dependencies [a84d1d8fa]
+  - @uidu/field-phone@2.0.57
+
 ## 1.3.9
 
 ### Patch Changes

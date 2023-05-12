@@ -1,5 +1,11 @@
 # @uidu/media-viewer
 
+## 1.2.9
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+
 ## 1.2.8
 
 ### Patch Changes

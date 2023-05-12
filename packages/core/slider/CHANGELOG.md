@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.1.12
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+
 ## 2.1.11
 
 ### Patch Changes

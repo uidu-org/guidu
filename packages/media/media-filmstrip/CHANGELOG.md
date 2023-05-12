@@ -1,5 +1,13 @@
 # @uidu/media-filmstrip
 
+## 0.7.7
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+- Updated dependencies [a84d1d8fa]
+  - @uidu/media-viewer@1.2.9
+
 ## 0.7.6
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 2.0.57
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+
 ## 2.0.56
 
 ### Patch Changes

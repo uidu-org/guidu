@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.2.17
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+
 ## 2.2.16
 
 ### Patch Changes

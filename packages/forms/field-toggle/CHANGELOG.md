@@ -1,5 +1,11 @@
 # @uidu/toggle
 
+## 2.0.50
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+
 ## 2.0.49
 
 ### Patch Changes

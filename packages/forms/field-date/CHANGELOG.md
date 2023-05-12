@@ -1,5 +1,12 @@
 # @uidu/field-date
 
+## 2.1.31
+
+### Patch Changes
+
+- Updated dependencies [a84d1d8fa]
+  - @uidu/popup@0.7.19
+
 ## 2.1.30
 
 ### Patch Changes

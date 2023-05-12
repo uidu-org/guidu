@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 1.0.19
+
+### Patch Changes
+
+- a84d1d8fa: FieldToggle flex-shrink
+- Updated dependencies [a84d1d8fa]
+  - @uidu/adf-schema@2.2.17
+
 ## 1.0.18
 
 ### Patch Changes
