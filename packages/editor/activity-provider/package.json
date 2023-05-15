@@ -2,12 +2,9 @@
   "name": "@uidu/activity-provider",
   "version": "0.1.6",
   "description": "Activity provider types",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/activity-provider",
-  "author": "uidu",
   "license": "Apache-2.0",
+  "author": "uidu",
   "sideEffects": false,
   "main": "dist/uidu-activity-provider.cjs.js",
   "module": "dist/uidu-activity-provider.esm.js",
@@ -17,5 +14,8 @@
   },
   "devDependencies": {
     "typescript": "^5.0.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

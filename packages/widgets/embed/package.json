@@ -1,0 +1,16 @@
+{
+  "name": "@uidu/embed",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/widgets/embed",
+  "license": "MIT",
+  "author": "uidu",
+  "main": "dist/uidu-embed.cjs.js",
+  "module": "dist/uidu-embed.esm.js",
+  "types": "dist/uidu-embed.cjs.d.ts",
+  "dependencies": {
+    "jsx-pragmatic": "^2.0.22",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "zoid": "^9.0.86"
+  },
+  "packageManager": "yarn@3.2.3"
+}

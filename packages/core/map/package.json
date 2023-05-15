@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.21.5",
     "@uidu/theme": "^0.6.34",
-    "google-map-react": "^2.2.0",
+    "google-map-react": "^2.2.1",
     "tslib": "^2.5.0"
   },
   "devDependencies": {

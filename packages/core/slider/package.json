@@ -6,16 +6,16 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "type": "module",
   "main": "dist/uidu-slider.cjs.js",
   "module": "dist/uidu-slider.esm.js",
   "types": "dist/uidu-slider.cjs.d.ts",
-  "type": "module",
   "dependencies": {
     "@babel/runtime": "^7.21.5",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
     "styled-components": "^6.0.0-rc.1",
-    "swiper": "^9.3.1",
+    "swiper": "^9.3.2",
     "tslib": "^2.5.0",
     "uuid": "^8.3.2"
   },

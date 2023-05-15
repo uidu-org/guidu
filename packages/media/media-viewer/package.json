@@ -26,7 +26,7 @@
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
     "styled-components": "^6.0.0-rc.1",
-    "swiper": "^9.3.1",
+    "swiper": "^9.3.2",
     "tslib": "^2.5.0",
     "twin.macro": "^3.3.1"
   },
