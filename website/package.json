@@ -1,6 +1,6 @@
 {
   "name": "@uidu/guidu-website",
-  "version": "0.6.45",
+  "version": "0.6.46",
   "repository": "https://github.com/uidu-org/guidu/tree/main/website",
   "license": "MIT",
   "scripts": {

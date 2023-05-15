@@ -1,5 +1,11 @@
 # @uidu/adf-utils
 
+## 2.2.5
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+
 ## 2.2.4
 
 ### Patch Changes

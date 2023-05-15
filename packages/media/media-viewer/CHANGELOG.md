@@ -1,5 +1,11 @@
 # @uidu/media-viewer
 
+## 1.2.10
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+
 ## 1.2.9
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 1.1.6
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+
 ## 1.1.5
 
 ### Patch Changes

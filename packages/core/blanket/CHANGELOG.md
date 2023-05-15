@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.6.21
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+
 ## 0.6.20
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/email-builder
 
+## 0.2.37
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+- Updated dependencies [05ccca3fd]
+  - @uidu/email-renderer@1.3.14
+  - @uidu/editor-core@2.12.14
+
 ## 0.2.36
 
 ### Patch Changes

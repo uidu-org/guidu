@@ -1,5 +1,11 @@
 # @uidu/activity-provider
 
+## 0.1.7
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+
 ## 0.1.6
 
 ### Patch Changes

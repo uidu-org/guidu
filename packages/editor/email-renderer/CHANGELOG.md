@@ -1,5 +1,11 @@
 # @uidu/email-renderer
 
+## 1.3.14
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+
 ## 1.3.13
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/map
 
+## 0.6.31
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+
 ## 0.6.30
 
 ### Patch Changes
