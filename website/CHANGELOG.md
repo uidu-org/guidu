@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.46
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+
 ## 0.6.45
 
 ### Patch Changes

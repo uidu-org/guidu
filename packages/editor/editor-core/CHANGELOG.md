@@ -1,5 +1,15 @@
 # @uidu/editor-core
 
+## 2.12.14
+
+### Patch Changes
+
+- Updated dependencies [05ccca3fd]
+  - @uidu/activity-provider@0.1.7
+  - @uidu/media-filmstrip@0.7.8
+  - @uidu/media-picker@1.1.6
+  - @uidu/adf-utils@2.2.5
+
 ## 2.12.13
 
 ### Patch Changes

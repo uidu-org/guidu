@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.34
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+
 ## 0.1.33
 
 ### Patch Changes

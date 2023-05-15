@@ -1,5 +1,13 @@
 # @uidu/media-filmstrip
 
+## 0.7.8
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+- Updated dependencies [05ccca3fd]
+  - @uidu/media-viewer@1.2.10
+
 ## 0.7.7
 
 ### Patch Changes

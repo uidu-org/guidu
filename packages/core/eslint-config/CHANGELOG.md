@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.2.11
+
+### Patch Changes
+
+- 05ccca3fd: Bump deps, first embed
+
 ## 0.2.10
 
 ### Patch Changes
