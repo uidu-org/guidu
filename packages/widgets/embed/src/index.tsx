@@ -17,7 +17,7 @@ export const Button = zoid.create({
   tag: 'my-button',
   url: ({ props }) => {
     console.log(props);
-    return `https://widgets.uidu.local:8443/show?code=${props.code}`;
+    return `https://widgets.uidu.local:8443/button?code=${props.code}`;
     // local: 'https://widgets.uidu.local:8443/show',
     // dev: 'http://widgets.uidu.it.org/show',
     // live: 'https://widgets.uidu.org/show',
@@ -41,7 +41,7 @@ export const Modal = zoid.create({
   tag: 'my-modal',
   url: ({ props }) => {
     console.log(props);
-    return 'https://widgets.uidu.local:8443/renderer';
+    return `https://widgets.uidu.local:8443/modal?code=${props.code}`;
     // local: 'https://widgets.uidu.local:8443/renderer',
     // dev: 'http://widgets.uidu.it.org/renderer',
     // live: 'https://widgets.uidu.org/renderer',
