@@ -1,5 +1,5 @@
-import { Wrapper } from '@uidu/field-base';
-import React from 'react';
+import { noop, useController, Wrapper } from '@uidu/field-base';
+import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
 const RadioGridWrapper = styled.div`
@@ -28,24 +28,30 @@ export default function RadioGrid({
   questions,
   name,
   onSetValue,
-  onChange,
+  onChange = noop,
   value: propValue,
   ...rest
 }) {
-  const handleChange = (e, question) => {
+  const { field, wrapperProps, inputProps } = useController({
+    name,
+    defaultValue: propValue,
+    onChange,
+    ...rest,
+  });
+  const handleChange = (e: ChangeEvent<HTMLInputElement>, question) => {
     const { value } = e.currentTarget;
     const newValue = {
-      ...propValue,
+      ...field.value,
       [question.id]: value,
     };
-    onSetValue(newValue);
+    field.onChange(newValue);
     onChange(name, newValue);
   };
 
-  const renderQuestion = question => (
+  const renderQuestion = (question) => (
     <tr key={question.id}>
       <th scope="row">{question.name}</th>
-      {options.map(radio => {
+      {options.map((radio) => {
         const checked =
           propValue && propValue[question.id] === radio.id.toString();
         const id = [question.id, radio.id].join('-');
@@ -58,7 +64,7 @@ export default function RadioGrid({
                 defaultChecked={checked}
                 type="radio"
                 value={radio.id}
-                onChange={e => handleChange(e, question)}
+                onChange={(e) => handleChange(e, question)}
                 // disabled={disabled}
               />
             </div>
@@ -73,7 +79,7 @@ export default function RadioGrid({
       <thead>
         <tr>
           <th className="border-top-0" />
-          {options.map(o => (
+          {options.map((o) => (
             <th key={o.id} scope="col" className="text-center border-top-0">
               {o.name}
             </th>
@@ -85,13 +91,13 @@ export default function RadioGrid({
   );
 
   return (
-    <Wrapper {...rest}>
+    <Wrapper {...wrapperProps}>
       <RadioGridWrapper>
         <table className="table table-hover">
           <thead>
             <tr>
               <th className="border-top-0" />
-              {options.map(o => (
+              {options.map((o) => (
                 <th key={o.id} scope="col" className="text-center border-top-0">
                   {o.name}
                 </th>
