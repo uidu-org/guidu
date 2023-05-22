@@ -1,6 +1,6 @@
 {
   "name": "@uidu/radio",
-  "version": "2.1.13",
+  "version": "2.2.0",
   "description": "Radio component for forms",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/radio",
   "license": "MIT",

@@ -1,5 +1,11 @@
 # @uidu/radio
 
+## 2.2.0
+
+### Minor Changes
+
+- 1a0419aeb: RadioGrid fix useController
+
 ## 2.1.13
 
 ### Patch Changes
