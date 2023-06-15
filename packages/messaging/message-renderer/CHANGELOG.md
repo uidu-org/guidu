@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.4.33
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/dropdown-menu@0.6.35
+  - @uidu/theme@0.6.35
+
 ## 0.4.32
 
 ### Patch Changes

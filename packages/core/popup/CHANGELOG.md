@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.7.20
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/popper@0.5.33
+  - @uidu/portal@1.0.12
+  - @uidu/theme@0.6.35
+
 ## 0.7.19
 
 ### Patch Changes

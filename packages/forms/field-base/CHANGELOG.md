@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.2.24
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/form@2.2.22
+
 ## 4.2.23
 
 ### Patch Changes

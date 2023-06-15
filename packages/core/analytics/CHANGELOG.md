@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.6.15
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+
 ## 0.6.14
 
 ### Patch Changes

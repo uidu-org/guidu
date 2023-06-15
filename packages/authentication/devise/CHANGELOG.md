@@ -1,5 +1,20 @@
 # @uidu/devise
 
+## 1.3.12
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-password@2.0.24
+  - @uidu/field-phone@2.0.58
+  - @uidu/field-text@2.0.14
+  - @uidu/shell@2.1.57
+  - @uidu/checkbox@2.0.19
+  - @uidu/spinner@0.5.30
+  - @uidu/avatar@0.9.27
+  - @uidu/form@2.2.22
+
 ## 1.3.11
 
 ### Patch Changes

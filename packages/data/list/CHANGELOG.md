@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 3.2.6
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/data-fields@2.3.8
+  - @uidu/shell@2.1.57
+
 ## 3.2.5
 
 ### Patch Changes

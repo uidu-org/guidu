@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.5.31
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/section-message@0.6.37
+  - @uidu/tooltip@0.5.36
+  - @uidu/button@1.3.43
+  - @uidu/theme@0.6.35
+  - @uidu/code@0.5.30
+
 ## 0.5.30
 
 ### Patch Changes

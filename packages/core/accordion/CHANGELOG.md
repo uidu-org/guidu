@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.6.29
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/docs@0.5.31
+
 ## 0.6.28
 
 ### Patch Changes

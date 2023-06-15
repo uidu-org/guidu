@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.4.40
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics-namespaced-context@0.4.25
+  - @uidu/avatar-group@2.6.30
+  - @uidu/analytics@0.6.15
+  - @uidu/spinner@0.5.30
+  - @uidu/button@1.3.43
+  - @uidu/theme@0.6.35
+
 ## 0.4.39
 
 ### Patch Changes

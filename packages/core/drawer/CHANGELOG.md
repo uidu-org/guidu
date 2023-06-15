@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.7.37
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics@0.6.15
+  - @uidu/blanket@0.6.22
+  - @uidu/theme@0.6.35
+  - @uidu/item@0.5.33
+  - @uidu/docs@0.5.31
+
 ## 0.7.36
 
 ### Patch Changes

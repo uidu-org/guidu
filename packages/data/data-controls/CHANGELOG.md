@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 4.0.41
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/inline-dialog@0.5.34
+  - @uidu/data-manager@4.3.27
+  - @uidu/data-fields@2.3.8
+  - @uidu/field-text@2.0.14
+  - @uidu/shell@2.1.57
+  - @uidu/data-views@3.0.39
+  - @uidu/checkbox@2.0.19
+  - @uidu/spinner@0.5.30
+  - @uidu/tooltip@0.5.36
+  - @uidu/select@2.2.23
+  - @uidu/button@1.3.43
+  - @uidu/drawer@0.7.37
+  - @uidu/popup@0.7.20
+  - @uidu/form@2.2.22
+  - @uidu/menu@0.8.18
+
 ## 4.0.40
 
 ### Patch Changes

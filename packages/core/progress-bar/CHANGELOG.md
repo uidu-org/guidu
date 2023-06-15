@@ -1,5 +1,13 @@
 # @uidu/progress-bar
 
+## 0.5.32
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/theme@0.6.35
+
 ## 0.5.31
 
 ### Patch Changes

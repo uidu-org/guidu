@@ -1,5 +1,13 @@
 # @uidu/email-renderer
 
+## 1.3.15
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/adf-schema@2.2.18
+
 ## 1.3.14
 
 ### Patch Changes

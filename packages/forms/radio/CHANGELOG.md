@@ -1,5 +1,13 @@
 # @uidu/radio
 
+## 2.2.1
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-base@4.2.24
+
 ## 2.2.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.6.35
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics@0.6.15
+  - @uidu/droplist@0.5.36
+  - @uidu/button@1.3.43
+  - @uidu/theme@0.6.35
+  - @uidu/item@0.5.33
+
 ## 0.6.34
 
 ### Patch Changes

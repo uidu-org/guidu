@@ -1,5 +1,13 @@
 # @uidu/analytics-namespaced-context
 
+## 0.4.25
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics@0.6.15
+
 ## 0.4.24
 
 ### Patch Changes

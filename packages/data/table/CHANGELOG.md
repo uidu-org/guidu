@@ -1,5 +1,20 @@
 # @uidu/table
 
+## 5.2.6
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/data-manager@4.3.27
+  - @uidu/data-fields@2.3.8
+  - @uidu/shell@2.1.57
+  - @uidu/checkbox@2.0.19
+  - @uidu/button@1.3.43
+  - @uidu/portal@1.0.12
+  - @uidu/popup@0.7.20
+  - @uidu/menu@0.8.18
+
 ## 5.2.5
 
 ### Patch Changes

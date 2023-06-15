@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 3.0.39
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-counter@2.0.14
+  - @uidu/data-controls@4.0.41
+  - @uidu/field-number@2.0.50
+  - @uidu/data-manager@4.3.27
+  - @uidu/select@2.2.23
+  - @uidu/button@1.3.43
+  - @uidu/form@2.2.22
+
 ## 3.0.38
 
 ### Patch Changes

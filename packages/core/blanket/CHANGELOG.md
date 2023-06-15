@@ -1,5 +1,13 @@
 # @uidu/blanket
 
+## 0.6.22
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics@0.6.15
+
 ## 0.6.21
 
 ### Patch Changes

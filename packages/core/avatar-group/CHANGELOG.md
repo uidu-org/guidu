@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.6.30
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/dropdown-menu@0.6.35
+  - @uidu/tooltip@0.5.36
+  - @uidu/avatar@0.9.27
+  - @uidu/theme@0.6.35
+
 ## 2.6.29
 
 ### Patch Changes

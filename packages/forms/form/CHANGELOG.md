@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.2.22
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/button@1.3.43
+
 ## 2.2.21
 
 ### Patch Changes

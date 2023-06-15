@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 2.0.22
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-base@4.2.24
+  - @uidu/field-date@2.1.32
+
 ## 2.0.21
 
 ### Patch Changes

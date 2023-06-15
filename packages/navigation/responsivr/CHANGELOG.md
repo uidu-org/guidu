@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.4.24
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+
 ## 0.4.23
 
 ### Patch Changes

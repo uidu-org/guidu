@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.4.27
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/shell@2.1.57
+
 ## 0.4.26
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.3.8
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+
 ## 0.3.7
 
 ### Patch Changes

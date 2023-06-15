@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 1.1.7
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/media-core@1.5.7
+
 ## 1.1.6
 
 ### Patch Changes

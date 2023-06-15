@@ -1,6 +1,6 @@
 {
   "name": "@uidu/json-schema-generator",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "private": true,
   "description": "A CLI tool for generating JSON Schema from typescript",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/json-schema-generator",

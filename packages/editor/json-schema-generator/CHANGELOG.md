@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.0.16
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+
 ## 1.0.15
 
 ### Patch Changes

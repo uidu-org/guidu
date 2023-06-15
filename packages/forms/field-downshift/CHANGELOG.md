@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 2.2.11
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-base@4.2.24
+  - @uidu/field-text@2.0.14
+
 ## 2.2.10
 
 ### Patch Changes

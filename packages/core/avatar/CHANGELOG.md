@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.9.27
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics@0.6.15
+  - @uidu/tooltip@0.5.36
+  - @uidu/theme@0.6.35
+
 ## 0.9.26
 
 ### Patch Changes

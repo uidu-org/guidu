@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.5.14
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics-gas-types@0.3.7
+  - @uidu/analytics@0.6.15
+  - @uidu/lozenge@0.5.29
+  - @uidu/tooltip@0.5.36
+  - @uidu/avatar@0.9.27
+  - @uidu/button@1.3.43
+  - @uidu/theme@0.6.35
+
 ## 0.5.13
 
 ### Patch Changes

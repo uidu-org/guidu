@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 2.2.18
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/media-core@1.5.7
+
 ## 2.2.17
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.2.6
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+
 ## 1.2.5
 
 ### Patch Changes

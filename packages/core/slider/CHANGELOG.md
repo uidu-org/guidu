@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.1.14
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+
 ## 2.1.13
 
 ### Patch Changes

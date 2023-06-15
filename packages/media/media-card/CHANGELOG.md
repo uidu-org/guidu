@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.8.29
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/media-core@1.5.7
+  - @uidu/spinner@0.5.30
+  - @uidu/tooltip@0.5.36
+  - @uidu/button@1.3.43
+  - @uidu/theme@0.6.35
+
 ## 0.8.28
 
 ### Patch Changes

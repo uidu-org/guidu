@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 2.0.34
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/data-controls@4.0.41
+  - @uidu/data-fields@2.3.8
+  - @uidu/shell@2.1.57
+  - @uidu/spinner@0.5.30
+
 ## 2.0.33
 
 ### Patch Changes

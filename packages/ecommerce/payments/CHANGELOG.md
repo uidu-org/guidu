@@ -1,5 +1,16 @@
 # @uidu/payments
 
+## 1.6.7
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/section-message@0.6.37
+  - @uidu/field-base@4.2.24
+  - @uidu/theme@0.6.35
+  - @uidu/form@2.2.22
+
 ## 1.6.6
 
 ### Patch Changes

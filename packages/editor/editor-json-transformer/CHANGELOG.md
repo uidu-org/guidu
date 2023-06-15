@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 1.0.20
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/adf-schema@2.2.18
+
 ## 1.0.19
 
 ### Patch Changes

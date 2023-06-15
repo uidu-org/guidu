@@ -1,5 +1,23 @@
 # @uidu/editor-common
 
+## 2.7.11
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics-namespaced-context@0.4.25
+  - @uidu/editor-json-transformer@1.0.20
+  - @uidu/profilecard@0.3.45
+  - @uidu/adf-schema@2.2.18
+  - @uidu/mentions@0.5.14
+  - @uidu/adf-utils@2.2.6
+  - @uidu/media-core@1.5.7
+  - @uidu/analytics@0.6.15
+  - @uidu/emoji@0.6.42
+  - @uidu/tooltip@0.5.36
+  - @uidu/theme@0.6.35
+
 ## 2.7.10
 
 ### Patch Changes

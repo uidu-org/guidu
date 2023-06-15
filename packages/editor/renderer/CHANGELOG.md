@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 2.4.12
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics-namespaced-context@0.4.25
+  - @uidu/editor-json-transformer@1.0.20
+  - @uidu/analytics-listeners@0.4.25
+  - @uidu/task-decision@0.4.40
+  - @uidu/media-filmstrip@0.7.9
+  - @uidu/editor-common@2.7.11
+  - @uidu/adf-schema@2.2.18
+  - @uidu/mentions@0.5.14
+  - @uidu/adf-utils@2.2.6
+  - @uidu/media-card@0.8.29
+  - @uidu/status@0.5.38
+  - @uidu/analytics@0.6.15
+  - @uidu/tooltip@0.5.36
+  - @uidu/theme@0.6.35
+  - @uidu/code@0.5.30
+
 ## 2.4.11
 
 ### Patch Changes

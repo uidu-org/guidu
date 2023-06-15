@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.5.33
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/avatar@0.9.27
+  - @uidu/theme@0.6.35
+
 ## 0.5.32
 
 ### Patch Changes

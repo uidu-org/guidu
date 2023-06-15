@@ -1,5 +1,15 @@
 # @uidu/inline-dialog
 
+## 0.5.34
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics@0.6.15
+  - @uidu/popper@0.5.33
+  - @uidu/theme@0.6.35
+
 ## 0.5.33
 
 ### Patch Changes

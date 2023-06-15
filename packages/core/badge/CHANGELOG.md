@@ -1,5 +1,13 @@
 # @uidu/badge
 
+## 0.5.29
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/theme@0.6.35
+
 ## 0.5.28
 
 ### Patch Changes

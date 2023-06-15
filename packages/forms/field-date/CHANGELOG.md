@@ -1,5 +1,16 @@
 # @uidu/field-date
 
+## 2.1.32
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-base@4.2.24
+  - @uidu/field-text@2.0.14
+  - @uidu/button@1.3.43
+  - @uidu/popup@0.7.20
+
 ## 2.1.31
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.62
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+
 ## 0.3.61
 
 ### Patch Changes

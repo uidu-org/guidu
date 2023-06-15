@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.6.42
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-text@2.0.14
+  - @uidu/analytics@0.6.15
+  - @uidu/spinner@0.5.30
+  - @uidu/tooltip@0.5.36
+  - @uidu/button@1.3.43
+  - @uidu/theme@0.6.35
+  - @uidu/code@0.5.30
+
 ## 0.6.41
 
 ### Patch Changes

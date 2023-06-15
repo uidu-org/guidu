@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 4.3.27
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/data-controls@4.0.41
+  - @uidu/data-fields@2.3.8
+  - @uidu/shell@2.1.57
+  - @uidu/pagination@0.5.34
+  - @uidu/data-views@3.0.39
+  - @uidu/calendar@0.4.39
+  - @uidu/spinner@0.5.30
+  - @uidu/gallery@2.0.34
+  - @uidu/button@1.3.43
+  - @uidu/board@2.1.16
+  - @uidu/table@5.2.6
+  - @uidu/menu@0.8.18
+  - @uidu/list@3.2.6
+
 ## 4.3.26
 
 ### Patch Changes
