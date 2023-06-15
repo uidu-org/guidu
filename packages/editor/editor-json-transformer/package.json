@@ -10,16 +10,16 @@
   "module": "dist/uidu-editor-json-transformer.esm.js",
   "types": "dist/uidu-editor-json-transformer.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.21.5",
+    "@babel/runtime": "^7.22.5",
     "@uidu/adf-schema": "^2.2.17",
-    "prosemirror-model": "^1.19.0",
-    "tslib": "^2.5.0"
+    "prosemirror-model": "^1.19.2",
+    "tslib": "^2.5.3"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.30",
     "@uidu/editor-common": "^2.7.10",
     "@uidu/editor-core": "^2.12.13",
-    "prosemirror-view": "^1.31.2",
+    "prosemirror-view": "^1.31.4",
     "react": "^18.2.0",
     "styled-components": "^6.0.0-rc.1"
   },

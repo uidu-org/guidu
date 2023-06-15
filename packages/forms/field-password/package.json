@@ -15,7 +15,7 @@
   "module": "dist/uidu-field-password.esm.js",
   "types": "dist/uidu-field-password.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.21.5",
+    "@babel/runtime": "^7.22.5",
     "@heroicons/react": "^2.0.18",
     "@loadable/component": "^5.15.3",
     "@types/zxcvbn": "^4.4.1",
@@ -24,7 +24,7 @@
     "@uidu/form": "^2.2.21",
     "@uidu/theme": "^0.6.34",
     "@uidu/tooltip": "^0.5.35",
-    "tslib": "^2.5.0",
+    "tslib": "^2.5.3",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {

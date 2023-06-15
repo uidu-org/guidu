@@ -11,7 +11,7 @@
   "types": "dist/uidu-editor-common.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.10.7",
-    "@babel/runtime": "^7.21.5",
+    "@babel/runtime": "^7.22.5",
     "@uidu/adf-schema": "^2.2.17",
     "@uidu/adf-utils": "^2.2.4",
     "@uidu/analytics": "^0.6.14",
@@ -27,18 +27,18 @@
     "classnames": "^2.3.2",
     "css-color-names": "^1.0.1",
     "date-fns": "^2.30.0",
-    "prosemirror-model": "^1.19.0",
-    "prosemirror-state": "^1.4.2",
-    "prosemirror-transform": "^1.7.1",
+    "prosemirror-model": "^1.19.2",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-transform": "^1.7.3",
     "prosemirror-utils": "^0.9.6",
-    "prosemirror-view": "^1.31.2",
+    "prosemirror-view": "^1.31.4",
     "raf-schd": "^4.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.4.2",
+    "react-intl": "^6.4.4",
     "react-loadable": "^5.5.0",
     "styled-components": "^6.0.0-rc.1",
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.3"
   },
   "preconstruct": {
     "entrypoints": [

@@ -10,16 +10,16 @@
   "module": "dist/uidu-select.esm.js",
   "types": "dist/uidu-select.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.21.5",
+    "@babel/runtime": "^7.22.5",
     "@heroicons/react": "^2.0.18",
     "@uidu/field-base": "^4.2.23",
     "@uidu/menu": "0.8.17",
     "@uidu/spinner": "^0.5.29",
-    "react-hook-form": "^7.43.9",
+    "react-hook-form": "^7.44.3",
     "react-select": "^5.7.3",
     "styled-components": "^6.0.0-rc.1",
     "timezones-list": "^3.0.2",
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.3"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",

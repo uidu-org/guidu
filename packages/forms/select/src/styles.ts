@@ -12,7 +12,7 @@ function getBoxShadow(
   if (isFocused) {
     return '0 0 0 1px rgba(var(--brand-primary), 0.1)';
   }
-  return 'none';
+  return theme`boxShadow.sm`;
 }
 
 function getBorderColor(

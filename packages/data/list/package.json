@@ -9,14 +9,14 @@
   "module": "dist/uidu-list.esm.js",
   "types": "dist/uidu-list.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.21.5",
-    "@tanstack/react-table": "^8.9.1",
+    "@babel/runtime": "^7.22.5",
+    "@tanstack/react-table": "^8.9.2",
     "@tanstack/react-virtual": "^3.0.0-beta.48",
     "@uidu/data-fields": "^2.3.5",
     "@uidu/shell": "2.1.56",
     "react": "^18.2.0",
     "styled-components": "^6.0.0-rc.1",
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.3"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.30"

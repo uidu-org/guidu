@@ -17,20 +17,20 @@
     "postbuild": "yarn build:json-schema"
   },
   "dependencies": {
-    "@babel/runtime": "^7.21.5",
+    "@babel/runtime": "^7.22.5",
     "@types/linkify-it": "^3.0.2",
     "@uidu/media-core": "1.5.6",
     "css-color-names": "^1.0.1",
     "linkify-it": "^4.0.1",
-    "prosemirror-model": "^1.19.0",
-    "prosemirror-view": "^1.31.2",
-    "tslib": "^2.5.0"
+    "prosemirror-model": "^1.19.2",
+    "prosemirror-view": "^1.31.4",
+    "tslib": "^2.5.3"
   },
   "devDependencies": {
     "@uidu/editor-json-transformer": "^1.0.19",
     "@uidu/json-schema-generator": "^1.0.15",
     "axios": "^1.4.0",
     "json-schema-diff-validator": "^0.4.1",
-    "prosemirror-state": "^1.4.2"
+    "prosemirror-state": "^1.4.3"
   }
 }

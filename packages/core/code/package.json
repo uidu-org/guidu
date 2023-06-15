@@ -13,11 +13,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/runtime": "^7.21.5",
+    "@babel/runtime": "^7.22.5",
     "@uidu/theme": "^0.6.34",
     "memoize-one": "^6.0.0",
     "react-syntax-highlighter": "^15.5.0",
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.3"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.30",

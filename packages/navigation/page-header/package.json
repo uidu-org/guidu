@@ -11,7 +11,7 @@
   "dependencies": {
     "@uidu/shell": "^2.1.56",
     "@uidu/theme": "^0.6.34",
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.3"
   },
   "devDependencies": {
     "@uidu/breadcrumbs": "^1.0.37",

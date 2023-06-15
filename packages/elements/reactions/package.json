@@ -9,7 +9,7 @@
   "main": "dist/uidu-reactions.cjs.js",
   "module": "dist/uidu-reactions.esm.js",
   "dependencies": {
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.3"
   },
   "publishConfig": {
     "access": "public"

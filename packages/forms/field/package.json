@@ -10,7 +10,7 @@
   "module": "dist/uidu-field.esm.js",
   "types": "dist/uidu-field.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.21.5",
+    "@babel/runtime": "^7.22.5",
     "@loadable/component": "^5.15.3",
     "@uidu/checkbox": "^2.0.17",
     "@uidu/field-number": "^2.0.48",
@@ -19,7 +19,7 @@
     "@uidu/select": "^2.2.20",
     "react": "^18.2.0",
     "react-content-loader": "^6.2.1",
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.3"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.29",
