@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 2.3.8
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-color-picker@3.0.25
+  - @uidu/field-downshift@2.2.11
+  - @uidu/field-number@2.0.50
+  - @uidu/field-toggle@2.0.51
+  - @uidu/field-date@2.1.32
+  - @uidu/field-text@2.0.14
+  - @uidu/field-time@2.0.55
+  - @uidu/select@2.2.23
+  - @uidu/button@1.3.43
+  - @uidu/popup@0.7.20
+  - @uidu/form@2.2.22
+  - @uidu/menu@0.8.18
+  - @uidu/map@0.6.32
+
 ## 2.3.7
 
 ### Patch Changes

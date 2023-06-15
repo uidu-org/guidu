@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.3.45
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/lozenge@0.5.29
+  - @uidu/spinner@0.5.30
+  - @uidu/avatar@0.9.27
+  - @uidu/button@1.3.43
+  - @uidu/popup@0.7.20
+  - @uidu/theme@0.6.35
+
 ## 0.3.44
 
 ### Patch Changes

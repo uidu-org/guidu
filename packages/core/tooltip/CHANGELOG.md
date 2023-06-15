@@ -1,5 +1,16 @@
 # @uidu/tooltip
 
+## 0.5.36
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics@0.6.15
+  - @uidu/popper@0.5.33
+  - @uidu/portal@1.0.12
+  - @uidu/theme@0.6.35
+
 ## 0.5.35
 
 ### Patch Changes

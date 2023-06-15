@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.3.31
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics@0.6.15
+  - @uidu/theme@0.6.35
+  - @uidu/docs@0.5.31
+
 ## 0.3.30
 
 ### Patch Changes

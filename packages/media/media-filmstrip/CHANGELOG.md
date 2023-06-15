@@ -1,5 +1,17 @@
 # @uidu/media-filmstrip
 
+## 0.7.9
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/media-viewer@1.2.11
+  - @uidu/modal-dialog@1.2.5
+  - @uidu/media-card@0.8.29
+  - @uidu/media-core@1.5.7
+  - @uidu/theme@0.6.35
+
 ## 0.7.8
 
 ### Patch Changes

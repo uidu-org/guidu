@@ -1,5 +1,17 @@
 # @uidu/field-file-uploader
 
+## 2.3.15
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-base@4.2.24
+  - @uidu/media-core@1.5.7
+  - @uidu/button@1.3.43
+  - @uidu/form@2.2.22
+  - @uidu/menu@0.8.18
+
 ## 2.3.14
 
 ### Patch Changes

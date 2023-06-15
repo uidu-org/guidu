@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.2.12
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+
 ## 0.2.11
 
 ### Patch Changes

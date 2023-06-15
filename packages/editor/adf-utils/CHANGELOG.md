@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 2.2.6
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/adf-schema@2.2.18
+
 ## 2.2.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.1.35
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+
 ## 0.1.34
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/onboarding
 
+## 1.3.31
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/modal-dialog@1.2.5
+  - @uidu/analytics@0.6.15
+  - @uidu/button@1.3.43
+  - @uidu/popper@0.5.33
+  - @uidu/portal@1.0.12
+  - @uidu/theme@0.6.35
+
 ## 1.3.30
 
 ### Patch Changes

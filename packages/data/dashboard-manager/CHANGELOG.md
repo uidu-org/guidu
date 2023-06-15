@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.1.8
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/dashlets@3.1.17
+
 ## 2.1.7
 
 ### Patch Changes

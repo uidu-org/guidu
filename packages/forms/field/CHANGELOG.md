@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.0.27
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-textarea@2.1.3
+  - @uidu/field-number@2.0.50
+  - @uidu/field-text@2.0.14
+  - @uidu/checkbox@2.0.19
+  - @uidu/select@2.2.23
+
 ## 1.0.26
 
 ### Patch Changes

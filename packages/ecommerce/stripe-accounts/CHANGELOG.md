@@ -1,5 +1,17 @@
 # @uidu/stripe-accounts
 
+## 0.5.32
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/payments@1.6.7
+  - @uidu/stepper@0.4.36
+  - @uidu/field-text@2.0.14
+  - @uidu/spinner@0.5.30
+  - @uidu/form@2.2.22
+
 ## 0.5.31
 
 ### Patch Changes

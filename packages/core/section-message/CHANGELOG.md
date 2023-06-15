@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.6.37
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/button@1.3.43
+
 ## 0.6.36
 
 ### Patch Changes

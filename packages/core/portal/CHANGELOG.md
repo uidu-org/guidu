@@ -1,5 +1,13 @@
 # @uidu/portal
 
+## 1.0.12
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/theme@0.6.35
+
 ## 1.0.11
 
 ### Patch Changes

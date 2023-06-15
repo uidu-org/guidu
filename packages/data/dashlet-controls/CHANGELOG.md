@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.1.26
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-date-range@2.0.22
+  - @uidu/dropdown-menu@0.6.35
+  - @uidu/avatar-group@2.6.30
+  - @uidu/avatar@0.9.27
+  - @uidu/button@1.3.43
+  - @uidu/form@2.2.22
+
 ## 1.1.25
 
 ### Patch Changes

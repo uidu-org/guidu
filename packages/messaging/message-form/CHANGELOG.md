@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.4.38
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/media-filmstrip@0.7.9
+  - @uidu/field-mentions@2.0.15
+  - @uidu/dropdown-menu@0.6.35
+  - @uidu/message@0.5.95
+  - @uidu/field-text@2.0.14
+  - @uidu/spinner@0.5.30
+  - @uidu/form@2.2.22
+
 ## 0.4.37
 
 ### Patch Changes

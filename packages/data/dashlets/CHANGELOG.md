@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 3.1.17
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/dashboard-manager@2.1.8
+  - @uidu/data-fields@2.3.8
+  - @uidu/spinner@0.5.30
+  - @uidu/tooltip@0.5.36
+  - @uidu/table@5.2.6
+
 ## 3.1.16
 
 ### Patch Changes

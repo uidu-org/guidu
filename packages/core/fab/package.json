@@ -1,6 +1,6 @@
 {
   "name": "@uidu/fab",
-  "version": "0.5.29",
+  "version": "0.5.30",
   "description": "Floating action buttons",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/fab",
   "license": "MIT",
@@ -16,6 +16,6 @@
     "tslib": "^2.5.3"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.5.30"
+    "@uidu/docs": "^0.5.31"
   }
 }

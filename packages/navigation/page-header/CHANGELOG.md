@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.0.15
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/shell@2.1.57
+  - @uidu/theme@0.6.35
+
 ## 1.0.14
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.4.24
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/shell@2.1.57
+
 ## 0.4.23
 
 ### Patch Changes

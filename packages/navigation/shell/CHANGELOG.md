@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.1.57
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/spinner@0.5.30
+
 ## 2.1.56
 
 ### Patch Changes

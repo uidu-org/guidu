@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.5.30
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+
 ## 0.5.29
 
 ### Patch Changes

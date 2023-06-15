@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.6.35
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/form@2.2.22
+
 ## 0.6.34
 
 ### Patch Changes

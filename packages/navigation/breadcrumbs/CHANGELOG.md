@@ -1,5 +1,16 @@
 # @uidu/breadcrumbs
 
+## 1.0.38
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/analytics@0.6.15
+  - @uidu/tooltip@0.5.36
+  - @uidu/button@1.3.43
+  - @uidu/theme@0.6.35
+
 ## 1.0.37
 
 ### Patch Changes

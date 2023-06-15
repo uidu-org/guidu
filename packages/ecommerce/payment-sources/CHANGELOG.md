@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.3.48
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/payments@1.6.7
+  - @uidu/form@2.2.22
+
 ## 0.3.47
 
 ### Patch Changes

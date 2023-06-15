@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 1.0.16
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/editor-common@2.7.11
+  - @uidu/adf-schema@2.2.18
+
 ## 1.0.15
 
 ### Patch Changes

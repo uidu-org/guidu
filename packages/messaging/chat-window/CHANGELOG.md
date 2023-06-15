@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.4.37
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/message-renderer@0.4.33
+  - @uidu/message-form@0.4.38
+  - @uidu/message@0.5.95
+
 ## 0.4.36
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.4.39
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/shell@2.1.57
+  - @uidu/button@1.3.43
+
 ## 0.4.38
 
 ### Patch Changes

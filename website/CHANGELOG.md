@@ -1,5 +1,33 @@
 # Change Log
 
+## 0.6.47
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/breadcrumbs@1.0.38
+  - @uidu/page-header@1.0.15
+  - @uidu/navigation@1.0.41
+  - @uidu/modal-dialog@1.2.5
+  - @uidu/field-text@2.0.14
+  - @uidu/shell@2.1.57
+  - @uidu/checkbox@2.0.19
+  - @uidu/lozenge@0.5.29
+  - @uidu/spinner@0.5.30
+  - @uidu/tooltip@0.5.36
+  - @uidu/select@2.2.23
+  - @uidu/button@1.3.43
+  - @uidu/drawer@0.7.37
+  - @uidu/badge@0.5.29
+  - @uidu/theme@0.6.35
+  - @uidu/table@5.2.6
+  - @uidu/form@2.2.22
+  - @uidu/code@0.5.30
+  - @uidu/list@3.2.6
+  - @uidu/themes-uidu@0.4.6
+  - @uidu/docs@0.5.31
+
 ## 0.6.46
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/field-range
 
+## 2.0.19
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-base@4.2.24
+
 ## 2.0.18
 
 ### Patch Changes

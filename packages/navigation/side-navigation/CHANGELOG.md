@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.2.22
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/inline-dialog@0.5.34
+  - @uidu/shell@2.1.57
+  - @uidu/tooltip@0.5.36
+  - @uidu/avatar@0.9.27
+  - @uidu/button@1.3.43
+  - @uidu/popup@0.7.20
+  - @uidu/theme@0.6.35
+  - @uidu/menu@0.8.18
+
 ## 1.2.21
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.4.44
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+
 ## 0.4.43
 
 ### Patch Changes

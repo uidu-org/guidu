@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.4.35
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/task-decision@0.4.40
+  - @uidu/mentions@0.5.14
+  - @uidu/analytics@0.6.15
+  - @uidu/emoji@0.6.42
+
 ## 0.4.34
 
 ### Patch Changes

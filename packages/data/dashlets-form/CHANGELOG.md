@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 1.0.51
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/field-downshift@2.2.11
+  - @uidu/dropdown-menu@0.6.35
+  - @uidu/field-toggle@2.0.51
+  - @uidu/shell@2.1.57
+  - @uidu/accordion@0.6.29
+  - @uidu/dashlets@3.1.17
+  - @uidu/select@2.2.23
+  - @uidu/form@2.2.22
+
 ## 1.0.50
 
 ### Patch Changes

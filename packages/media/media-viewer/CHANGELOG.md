@@ -1,5 +1,19 @@
 # @uidu/media-viewer
 
+## 1.2.11
+
+### Patch Changes
+
+- f6c900591: Add shadow to select
+- Updated dependencies [f6c900591]
+  - @uidu/modal-dialog@1.2.5
+  - @uidu/media-core@1.5.7
+  - @uidu/shell@2.1.57
+  - @uidu/spinner@0.5.30
+  - @uidu/avatar@0.9.27
+  - @uidu/button@1.3.43
+  - @uidu/theme@0.6.35
+
 ## 1.2.10
 
 ### Patch Changes
