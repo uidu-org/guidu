@@ -9,6 +9,15 @@ import { ProgressProps } from './components/Progress';
 import { PromptProps } from './components/Prompt';
 import { ToolbarProps } from './components/Toolbar';
 
+export type {
+  ContainerProps,
+  EmptyProps,
+  ExistingProps,
+  ProgressProps,
+  PromptProps,
+  ToolbarProps,
+};
+
 export type FieldImageUploaderProps = FieldBaseProps<
   FileIdentifier | string
 > & {
