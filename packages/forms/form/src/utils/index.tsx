@@ -54,7 +54,7 @@ export function transformObj<T extends FieldValues>(
 export function stripEmpty<T extends FieldValues>(model: T) {
   return transformObj<T>(model, {
     values: (value) => {
-      if (!value || value === '') {
+      if ((!value && value !== 0) || value === '') {
         return null;
       }
       return value;
