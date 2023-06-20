@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 2.3.16
+
+### Patch Changes
+
+- Updated dependencies [88e101be2]
+  - @uidu/form@2.3.0
+  - @uidu/field-base@4.2.25
+
 ## 2.3.15
 
 ### Patch Changes

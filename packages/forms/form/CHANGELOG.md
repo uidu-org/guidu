@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.3.0
+
+### Minor Changes
+
+- 88e101be2: stripEmpty update, should not have breaking changes
+
 ## 2.2.22
 
 ### Patch Changes
