@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 3.1.15
+
+### Patch Changes
+
+- 456eaa312: Export types
+
 ## 3.1.14
 
 ### Patch Changes
