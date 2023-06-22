@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 2.3.18
+
+### Patch Changes
+
+- b59bf0fc4: Try compat with newer react-hook-form version
+
 ## 2.3.17
 
 ### Patch Changes

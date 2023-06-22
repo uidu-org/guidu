@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 2.0.53
+
+### Patch Changes
+
+- b59bf0fc4: Try compat with newer react-hook-form version
+- Updated dependencies [b59bf0fc4]
+  - @uidu/field-text@2.0.15
+
 ## 2.0.52
 
 ### Patch Changes

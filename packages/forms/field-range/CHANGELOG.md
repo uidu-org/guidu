@@ -1,5 +1,11 @@
 # @uidu/field-range
 
+## 2.0.20
+
+### Patch Changes
+
+- b59bf0fc4: Try compat with newer react-hook-form version
+
 ## 2.0.19
 
 ### Patch Changes

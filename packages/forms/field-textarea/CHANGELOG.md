@@ -1,5 +1,11 @@
 # @uidu/field-textarea
 
+## 2.1.4
+
+### Patch Changes
+
+- b59bf0fc4: Try compat with newer react-hook-form version
+
 ## 2.1.3
 
 ### Patch Changes

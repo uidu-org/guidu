@@ -1,5 +1,11 @@
 # @uidu/field-counter
 
+## 2.0.15
+
+### Patch Changes
+
+- b59bf0fc4: Try compat with newer react-hook-form version
+
 ## 2.0.14
 
 ### Patch Changes
