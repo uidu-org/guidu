@@ -1,0 +1,39 @@
+---
+'@uidu/editor-json-transformer': patch
+'@uidu/field-image-uploader': patch
+'@uidu/field-file-uploader': patch
+'@uidu/task-decision': patch
+'@uidu/field-date-range': patch
+'@uidu/breadcrumbs': patch
+'@uidu/editor-common': patch
+'@uidu/email-builder': patch
+'@uidu/profilecard': patch
+'@uidu/dropdown-menu': patch
+'eslint-config-uidu': patch
+'@uidu/inline-dialog': patch
+'@uidu/editor-core': patch
+'@uidu/media-picker': patch
+'@uidu/modal-dialog': patch
+'@uidu/adf-schema': patch
+'@uidu/mentions': patch
+'@uidu/message': patch
+'@uidu/inline-edit': patch
+'@uidu/field-base': patch
+'@uidu/field-date': patch
+'@uidu/media-card': patch
+'@uidu/media-core': patch
+'@uidu/renderer': patch
+'@uidu/status': patch
+'@uidu/emoji': patch
+'@uidu/droplist': patch
+'@uidu/dashlets': patch
+'@uidu/tooltip': patch
+'@uidu/select': patch
+'@uidu/button': patch
+'@uidu/portal': patch
+'@uidu/popup': patch
+'@uidu/form': patch
+'@uidu/menu': patch
+---
+
+Bump rect-hook-form

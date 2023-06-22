@@ -10,8 +10,8 @@
   "types": "dist/uidu-email-builder.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.22.5",
-    "@craftjs/core": "^0.2.0-beta.10",
-    "@craftjs/utils": "^0.2.0-beta.10",
+    "@craftjs/core": "^0.2.0-beta.11",
+    "@craftjs/utils": "^0.2.0-beta.11",
     "@heroicons/react": "^2.0.18",
     "@uidu/adf-schema": "2.2.18",
     "@uidu/button": "1.3.43",

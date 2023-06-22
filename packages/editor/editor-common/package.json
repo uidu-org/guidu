@@ -10,7 +10,7 @@
   "module": "dist/uidu-editor-common.esm.js",
   "types": "dist/uidu-editor-common.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.10.7",
+    "@atlaskit/icon": "^21.12.4",
     "@babel/runtime": "^7.22.5",
     "@uidu/adf-schema": "^2.2.18",
     "@uidu/adf-utils": "^2.2.6",
@@ -31,7 +31,7 @@
     "prosemirror-state": "^1.4.3",
     "prosemirror-transform": "^1.7.3",
     "prosemirror-utils": "^0.9.6",
-    "prosemirror-view": "^1.31.4",
+    "prosemirror-view": "^1.31.5",
     "raf-schd": "^4.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
