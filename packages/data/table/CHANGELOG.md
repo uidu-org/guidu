@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 5.2.7
+
+### Patch Changes
+
+- Updated dependencies [06f66be4e]
+  - @uidu/button@1.3.44
+  - @uidu/portal@1.0.13
+  - @uidu/popup@0.7.21
+  - @uidu/menu@0.8.19
+  - @uidu/data-fields@2.3.9
+  - @uidu/data-manager@4.3.28
+
 ## 5.2.6
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/editor-common
 
+## 2.7.12
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/editor-json-transformer@1.0.21
+  - @uidu/profilecard@0.3.46
+  - @uidu/adf-schema@2.2.19
+  - @uidu/mentions@0.5.15
+  - @uidu/media-core@1.5.8
+  - @uidu/emoji@0.6.43
+  - @uidu/tooltip@0.5.37
+
 ## 2.7.11
 
 ### Patch Changes

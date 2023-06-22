@@ -1,5 +1,13 @@
 # @uidu/modal-dialog
 
+## 1.2.6
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/portal@1.0.13
+
 ## 1.2.5
 
 ### Patch Changes

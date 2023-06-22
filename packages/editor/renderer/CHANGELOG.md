@@ -1,5 +1,21 @@
 # @uidu/renderer
 
+## 2.4.13
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/editor-json-transformer@1.0.21
+  - @uidu/task-decision@0.4.41
+  - @uidu/editor-common@2.7.12
+  - @uidu/adf-schema@2.2.19
+  - @uidu/mentions@0.5.15
+  - @uidu/media-card@0.8.30
+  - @uidu/status@0.5.39
+  - @uidu/tooltip@0.5.37
+  - @uidu/media-filmstrip@0.7.10
+
 ## 2.4.12
 
 ### Patch Changes

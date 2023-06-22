@@ -1,5 +1,33 @@
 # @uidu/editor-core
 
+## 2.12.17
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/editor-json-transformer@1.0.21
+  - @uidu/task-decision@0.4.41
+  - @uidu/editor-common@2.7.12
+  - @uidu/profilecard@0.3.46
+  - @uidu/media-picker@1.1.8
+  - @uidu/modal-dialog@1.2.6
+  - @uidu/adf-schema@2.2.19
+  - @uidu/mentions@0.5.15
+  - @uidu/field-base@4.2.26
+  - @uidu/field-date@2.1.34
+  - @uidu/media-card@0.8.30
+  - @uidu/media-core@1.5.8
+  - @uidu/status@0.5.39
+  - @uidu/emoji@0.6.43
+  - @uidu/droplist@0.5.37
+  - @uidu/tooltip@0.5.37
+  - @uidu/select@2.2.24
+  - @uidu/button@1.3.44
+  - @uidu/form@2.3.1
+  - @uidu/menu@0.8.19
+  - @uidu/media-filmstrip@0.7.10
+
 ## 2.12.16
 
 ### Patch Changes

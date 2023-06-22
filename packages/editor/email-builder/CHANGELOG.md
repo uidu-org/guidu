@@ -1,5 +1,19 @@
 # @uidu/email-builder
 
+## 0.2.40
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/editor-core@2.12.17
+  - @uidu/adf-schema@2.2.19
+  - @uidu/select@2.2.24
+  - @uidu/button@1.3.44
+  - @uidu/portal@1.0.13
+  - @uidu/form@2.3.1
+  - @uidu/field-number@2.0.52
+
 ## 0.2.39
 
 ### Patch Changes

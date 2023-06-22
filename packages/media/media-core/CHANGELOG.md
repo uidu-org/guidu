@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 1.5.8
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+
 ## 1.5.7
 
 ### Patch Changes

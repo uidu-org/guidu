@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 2.2.19
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/media-core@1.5.8
+
 ## 2.2.18
 
 ### Patch Changes

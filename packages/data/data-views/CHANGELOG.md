@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 3.0.40
+
+### Patch Changes
+
+- Updated dependencies [06f66be4e]
+  - @uidu/select@2.2.24
+  - @uidu/button@1.3.44
+  - @uidu/form@2.3.1
+  - @uidu/field-number@2.0.52
+  - @uidu/data-controls@4.0.42
+  - @uidu/data-manager@4.3.28
+
 ## 3.0.39
 
 ### Patch Changes

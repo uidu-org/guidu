@@ -1,5 +1,11 @@
 # @uidu/portal
 
+## 1.0.13
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+
 ## 1.0.12
 
 ### Patch Changes

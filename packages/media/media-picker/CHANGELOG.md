@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 1.1.8
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/media-core@1.5.8
+
 ## 1.1.7
 
 ### Patch Changes

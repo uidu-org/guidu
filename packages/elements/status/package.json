@@ -1,6 +1,6 @@
 {
   "name": "@uidu/status",
-  "version": "0.5.38",
+  "version": "0.5.39",
   "description": "Fabric Status React Components",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/status",
   "license": "Apache-2.0",
