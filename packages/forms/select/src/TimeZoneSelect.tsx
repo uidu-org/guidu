@@ -8,10 +8,10 @@ import { useSelect } from './hooks/useSelect';
 import { CreateSelectProps } from './types';
 
 // return the country name; used for searching
-const getOptionLabel = (opt: typeof TimeZone[number]) => opt.label;
+const getOptionLabel = (opt: (typeof TimeZone)[number]) => opt.label;
 
 // set the country's abbreviation for the option value, (also searchable)
-const getOptionValue = (opt: typeof TimeZone[number]) => opt.tzCode;
+const getOptionValue = (opt: (typeof TimeZone)[number]) => opt.tzCode;
 
 function SingleValue({ innerProps, data, getStyles, ...otherProps }) {
   return (
@@ -40,10 +40,10 @@ function TimeZoneSelect({
   name,
   onChange = noop,
   value: defaultValue = '',
-  rules,
+  rules = {},
   components: propComponents = {},
   ...rest
-}: CreateSelectProps<typeof TimeZone[number]>) {
+}: CreateSelectProps<(typeof TimeZone)[number]>) {
   const { field, fieldState, inputProps, wrapperProps } = useController({
     name,
     defaultValue,
@@ -57,7 +57,7 @@ function TimeZoneSelect({
     onChange(name, value, { option, actionMeta });
   };
 
-  const selectProps = useSelect<typeof TimeZone[number], false>({
+  const selectProps = useSelect<(typeof TimeZone)[number], false>({
     value: field.value,
     handleChange,
     fieldState,

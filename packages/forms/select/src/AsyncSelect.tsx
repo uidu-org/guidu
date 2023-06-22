@@ -9,7 +9,7 @@ function AsyncSelect({
   name,
   onChange = noop,
   value: defaultValue = '',
-  rules,
+  rules = {},
   ...rest
 }: CreateSelectProps<unknown>) {
   const { field, fieldState, inputProps, wrapperProps } = useController({

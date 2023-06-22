@@ -9,7 +9,7 @@ export default function FieldRange({
   name,
   value: defaultValue = '',
   onChange = noop,
-  rules,
+  rules = {},
   ...rest
 }: FieldRangeProps) {
   const { field, wrapperProps, inputProps } = useController({

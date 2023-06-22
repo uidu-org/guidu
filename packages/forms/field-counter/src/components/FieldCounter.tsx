@@ -8,7 +8,7 @@ export default function FieldCounter({
   name,
   value: defaultValue = '',
   onChange = noop,
-  rules,
+  rules = {},
   ...rest
 }: FieldCounterProps) {
   const { field, inputProps, wrapperProps } = useController({

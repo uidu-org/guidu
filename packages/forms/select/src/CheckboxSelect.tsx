@@ -10,7 +10,7 @@ function CheckboxSelect({
   name,
   onChange = noop,
   value: defaultValue = '',
-  rules,
+  rules = {},
   ...rest
 }: CreateSelectProps<unknown, true>) {
   const { field, fieldState, inputProps, wrapperProps } = useController({

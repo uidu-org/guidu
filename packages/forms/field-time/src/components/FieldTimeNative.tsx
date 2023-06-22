@@ -8,7 +8,7 @@ export default function FieldTimeNative({
   onChange = noop,
   name,
   value: defaultValue,
-  rules,
+  rules = {},
   ...rest
 }: FieldTimeProps) {
   const { field, wrapperProps, inputProps } = useController({

@@ -9,7 +9,7 @@ export default function FieldNumber({
   name,
   value: defaultValue = '',
   onChange = noop,
-  rules,
+  rules = {},
   ...rest
 }: FieldNumberProps) {
   const { field, wrapperProps, inputProps } = useController({

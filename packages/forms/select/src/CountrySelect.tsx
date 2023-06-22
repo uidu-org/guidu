@@ -71,7 +71,7 @@ function CountrySelect({
   name,
   onChange = noop,
   value: defaultValue = '',
-  rules,
+  rules = {},
   ...rest
 }: CreateSelectProps<Country>) {
   const { field, fieldState, inputProps, wrapperProps } = useController({

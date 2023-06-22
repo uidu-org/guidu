@@ -8,7 +8,7 @@ export default function Radio({
   onChange = noop,
   value: defaultValue,
   name,
-  rules,
+  rules = {},
   ...rest
 }: RadioProps) {
   const { field, wrapperProps, inputProps } = useController({

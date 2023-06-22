@@ -10,7 +10,7 @@ function RadioSelect({
   name,
   onChange = noop,
   value: defaultValue = '',
-  rules,
+  rules = {},
   ...rest
 }: CreateSelectProps<unknown, false>) {
   const { field, fieldState, inputProps, wrapperProps } = useController({

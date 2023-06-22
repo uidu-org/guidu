@@ -29,7 +29,7 @@ function FieldFileUploader({
   onChange = noop,
   name,
   value: defaultValue = '',
-  rules,
+  rules = {},
   options = {},
   uploadOptions,
   className,

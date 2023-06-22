@@ -8,7 +8,7 @@ export default function FieldTextarea({
   onChange = noop,
   name,
   value: defaultValue = '',
-  rules,
+  rules = {},
   ...rest
 }: FieldTextareaProps) {
   const { field, wrapperProps, inputProps } = useController({

@@ -17,7 +17,7 @@ function FieldTimeSelect({
   interval = 15,
   start = 0,
   end = 24,
-  rules,
+  rules = {},
   options,
   ...rest
 }: FieldTimeProps) {

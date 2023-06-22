@@ -9,7 +9,7 @@ function AsyncCreatableSelect<TOption, TIsMulti extends boolean = false>({
   name,
   onChange = noop,
   value: defaultValue = '',
-  rules,
+  rules = {},
   ...rest
 }: CreateSelectProps<TOption, TIsMulti>) {
   const { field, fieldState, inputProps, wrapperProps } = useController({

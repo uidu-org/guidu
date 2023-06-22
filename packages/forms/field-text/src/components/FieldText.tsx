@@ -8,7 +8,7 @@ export default function FieldText({
   name,
   onChange = noop,
   value: defaultValue = '',
-  rules,
+  rules = {},
   ...rest
 }: FieldTextProps) {
   const { field, inputProps, wrapperProps } = useController({

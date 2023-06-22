@@ -13,7 +13,7 @@ export default function FieldPhone({
   name,
   value: defaultValue,
   onChange = noop,
-  rules,
+  rules = {},
   country: defaultCountry,
   countryLabels = en,
   countries = getCountries(),
