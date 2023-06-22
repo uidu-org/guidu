@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 2.0.23
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/field-base@4.2.26
+  - @uidu/field-date@2.1.34
+
 ## 2.0.22
 
 ### Patch Changes

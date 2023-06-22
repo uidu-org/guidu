@@ -1,5 +1,14 @@
 # @uidu/media-viewer
 
+## 1.2.12
+
+### Patch Changes
+
+- Updated dependencies [06f66be4e]
+  - @uidu/modal-dialog@1.2.6
+  - @uidu/media-core@1.5.8
+  - @uidu/button@1.3.44
+
 ## 1.2.11
 
 ### Patch Changes

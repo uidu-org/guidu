@@ -1,5 +1,14 @@
 # @uidu/breadcrumbs
 
+## 1.0.39
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/tooltip@0.5.37
+  - @uidu/button@1.3.44
+
 ## 1.0.38
 
 ### Patch Changes

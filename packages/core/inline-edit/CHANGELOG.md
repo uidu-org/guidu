@@ -1,5 +1,15 @@
 # @uidu/inline-edit
 
+## 0.3.42
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/inline-dialog@0.5.35
+  - @uidu/button@1.3.44
+  - @uidu/form@2.3.1
+
 ## 0.3.41
 
 ### Patch Changes

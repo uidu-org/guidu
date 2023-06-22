@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.3.1
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/button@1.3.44
+
 ## 2.3.0
 
 ### Minor Changes

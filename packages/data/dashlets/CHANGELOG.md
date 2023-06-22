@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 3.1.18
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/tooltip@0.5.37
+  - @uidu/data-fields@2.3.9
+  - @uidu/table@5.2.7
+
 ## 3.1.17
 
 ### Patch Changes

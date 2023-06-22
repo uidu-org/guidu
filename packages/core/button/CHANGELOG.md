@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.3.44
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+
 ## 1.3.43
 
 ### Patch Changes

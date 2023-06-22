@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 2.2.24
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/field-base@4.2.26
+  - @uidu/menu@0.8.19
+
 ## 2.2.23
 
 ### Patch Changes

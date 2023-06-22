@@ -1,5 +1,21 @@
 # @uidu/data-controls
 
+## 4.0.42
+
+### Patch Changes
+
+- Updated dependencies [06f66be4e]
+  - @uidu/inline-dialog@0.5.35
+  - @uidu/tooltip@0.5.37
+  - @uidu/select@2.2.24
+  - @uidu/button@1.3.44
+  - @uidu/popup@0.7.21
+  - @uidu/form@2.3.1
+  - @uidu/menu@0.8.19
+  - @uidu/data-fields@2.3.9
+  - @uidu/data-manager@4.3.28
+  - @uidu/data-views@3.0.40
+
 ## 4.0.41
 
 ### Patch Changes

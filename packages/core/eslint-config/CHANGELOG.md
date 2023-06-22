@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.2.13
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+
 ## 0.2.12
 
 ### Patch Changes

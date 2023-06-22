@@ -1,5 +1,13 @@
 # @uidu/popup
 
+## 0.7.21
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/portal@1.0.13
+
 ## 0.7.20
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @uidu/data-fields
 
+## 2.3.9
+
+### Patch Changes
+
+- Updated dependencies [06f66be4e]
+  - @uidu/field-date@2.1.34
+  - @uidu/select@2.2.24
+  - @uidu/button@1.3.44
+  - @uidu/popup@0.7.21
+  - @uidu/form@2.3.1
+  - @uidu/menu@0.8.19
+  - @uidu/field-number@2.0.52
+  - @uidu/field-time@2.0.57
+  - @uidu/field-toggle@2.0.53
+  - @uidu/field-color-picker@3.0.26
+
 ## 2.3.8
 
 ### Patch Changes

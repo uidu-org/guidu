@@ -1,5 +1,15 @@
 # @uidu/media-card
 
+## 0.8.30
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/media-core@1.5.8
+  - @uidu/tooltip@0.5.37
+  - @uidu/button@1.3.44
+
 ## 0.8.29
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/dashboard-controls
 
+## 1.1.27
+
+### Patch Changes
+
+- Updated dependencies [06f66be4e]
+  - @uidu/field-date-range@2.0.23
+  - @uidu/dropdown-menu@0.6.36
+  - @uidu/button@1.3.44
+  - @uidu/form@2.3.1
+
 ## 1.1.26
 
 ### Patch Changes

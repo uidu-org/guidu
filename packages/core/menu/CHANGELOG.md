@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.8.19
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+
 ## 0.8.18
 
 ### Patch Changes

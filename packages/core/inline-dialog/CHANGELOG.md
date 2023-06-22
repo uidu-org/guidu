@@ -1,5 +1,11 @@
 # @uidu/inline-dialog
 
+## 0.5.35
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+
 ## 0.5.34
 
 ### Patch Changes

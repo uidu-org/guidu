@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 1.0.21
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+- Updated dependencies [06f66be4e]
+  - @uidu/adf-schema@2.2.19
+
 ## 1.0.20
 
 ### Patch Changes

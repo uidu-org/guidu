@@ -1,5 +1,16 @@
 # @uidu/navigation
 
+## 1.2.23
+
+### Patch Changes
+
+- Updated dependencies [06f66be4e]
+  - @uidu/inline-dialog@0.5.35
+  - @uidu/tooltip@0.5.37
+  - @uidu/button@1.3.44
+  - @uidu/popup@0.7.21
+  - @uidu/menu@0.8.19
+
 ## 1.2.22
 
 ### Patch Changes

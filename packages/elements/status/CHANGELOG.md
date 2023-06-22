@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.5.39
+
+### Patch Changes
+
+- 06f66be4e: Bump rect-hook-form
+
 ## 0.5.38
 
 ### Patch Changes
