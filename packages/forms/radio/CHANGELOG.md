@@ -1,5 +1,11 @@
 # @uidu/radio
 
+## 2.2.2
+
+### Patch Changes
+
+- b59bf0fc4: Try compat with newer react-hook-form version
+
 ## 2.2.1
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/field-image-uploader
 
+## 3.1.18
+
+### Patch Changes
+
+- b59bf0fc4: Try compat with newer react-hook-form version
+- Updated dependencies [b59bf0fc4]
+  - @uidu/field-range@2.0.20
+
 ## 3.1.17
 
 ### Patch Changes

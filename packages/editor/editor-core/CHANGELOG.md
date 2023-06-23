@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 2.12.18
+
+### Patch Changes
+
+- Updated dependencies [b59bf0fc4]
+  - @uidu/field-text@2.0.15
+  - @uidu/select@2.2.25
+
 ## 2.12.17
 
 ### Patch Changes
