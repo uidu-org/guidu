@@ -16,6 +16,7 @@ export default function useController<
   ...props
 }: UseControllerProps<TFieldValues>): UseControllerReturn<TFieldValues> {
   const { control } = useFormContext<TFieldValues>();
+
   const { field, fieldState, formState } =
     useReactHookFormController<TFieldValues>({
       control,
