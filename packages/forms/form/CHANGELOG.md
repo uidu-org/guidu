@@ -1,5 +1,15 @@
 # Change Log
 
+## 2.4.0
+
+### Minor Changes
+
+- 9348e9385: React-hook-form revert
+
+### Patch Changes
+
+- e4fb73af1: Revert react-hook-form to 7.36.0
+
 ## 2.3.1
 
 ### Patch Changes
