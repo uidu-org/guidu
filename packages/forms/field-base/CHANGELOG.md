@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.3.0
+
+### Minor Changes
+
+- 9348e9385: React-hook-form revert
+
+### Patch Changes
+
+- e4fb73af1: Revert react-hook-form to 7.36.0
+- Updated dependencies [9348e9385]
+- Updated dependencies [e4fb73af1]
+  - @uidu/form@2.4.0
+
 ## 4.2.26
 
 ### Patch Changes
