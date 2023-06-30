@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 5.2.8
+
+### Patch Changes
+
+- 54d2d47c5: Add item to StyledRow
+
 ## 5.2.7
 
 ### Patch Changes
