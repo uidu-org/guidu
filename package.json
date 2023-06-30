@@ -189,7 +189,7 @@
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
     "@uidu/field-base": "4.3.0",
-    "@uidu/field-time": "2.0.59",
+    "@uidu/field-time": "2.0.60",
     "@uidu/form": "2.4.0",
     "@uidu/profilecard": "^0.3.0",
     "@uifabric/file-type-icons": "^7.10.11",

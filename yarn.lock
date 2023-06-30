@@ -8058,7 +8058,7 @@ __metadata:
     "@uidu/data-fields": ^2.3.9
     "@uidu/docs": ^0.5.31
     "@uidu/spinner": ^0.5.30
-    "@uidu/table": 5.2.7
+    "@uidu/table": 5.2.8
     "@uidu/tooltip": ^0.5.37
     d3-array: ^3.2.4
     gql-query-builder: ^3.8.0
@@ -8568,7 +8568,7 @@ __metadata:
     "@uidu/field-text": 2.0.15
     "@uidu/form": 2.4.0
     "@uidu/portal": 1.0.13
-    "@uidu/select": 2.3.0
+    "@uidu/select": 2.3.1
     "@uidu/shell": 2.1.57
     get-video-id: ^3.6.5
     mjml-browser: ^4.14.1
@@ -8960,7 +8960,7 @@ __metadata:
     "@uidu/field-base": ^4.3.0
     "@uidu/field-text": ^2.0.15
     "@uidu/form": 2.4.0
-    "@uidu/select": 2.3.0
+    "@uidu/select": 2.3.1
     react: ^18.2.0
     react-phone-number-input: ^3.2.23
     styled-components: ^6.0.0-rc.1
@@ -9027,7 +9027,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-time@2.0.59, @uidu/field-time@^2.0.57, @uidu/field-time@workspace:packages/forms/field-time":
+"@uidu/field-time@2.0.60, @uidu/field-time@^2.0.57, @uidu/field-time@workspace:packages/forms/field-time":
   version: 0.0.0-use.local
   resolution: "@uidu/field-time@workspace:packages/forms/field-time"
   dependencies:
@@ -9037,7 +9037,7 @@ __metadata:
     "@uidu/field-base": 4.3.0
     "@uidu/field-text": ^2.0.15
     "@uidu/form": ^2.4.0
-    "@uidu/select": 2.3.0
+    "@uidu/select": 2.3.1
     date-fns: ^2.30.0
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -10075,7 +10075,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/select@2.3.0, @uidu/select@^2.2.23, @uidu/select@^2.2.24, @uidu/select@^2.3.0, @uidu/select@workspace:packages/forms/select":
+"@uidu/select@2.3.1, @uidu/select@^2.2.23, @uidu/select@^2.2.24, @uidu/select@^2.3.0, @uidu/select@workspace:packages/forms/select":
   version: 0.0.0-use.local
   resolution: "@uidu/select@workspace:packages/forms/select"
   dependencies:
@@ -10270,7 +10270,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@5.2.7, @uidu/table@^5.2.7, @uidu/table@workspace:packages/data/table":
+"@uidu/table@5.2.8, @uidu/table@^5.2.7, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -19213,7 +19213,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.60.0
     "@typescript-eslint/parser": ^5.60.0
     "@uidu/field-base": 4.3.0
-    "@uidu/field-time": 2.0.59
+    "@uidu/field-time": 2.0.60
     "@uidu/form": 2.4.0
     "@uidu/profilecard": ^0.3.0
     "@uifabric/file-type-icons": ^7.10.11
