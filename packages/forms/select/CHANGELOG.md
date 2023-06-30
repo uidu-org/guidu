@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 2.3.1
+
+### Patch Changes
+
+- 54d2d47c5: Add item to StyledRow
+
 ## 2.3.0
 
 ### Minor Changes

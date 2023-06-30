@@ -1,6 +1,6 @@
 {
   "name": "@uidu/email-builder",
-  "version": "0.2.42",
+  "version": "0.2.43",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/email-builder",
   "license": "MIT",
   "author": "uidu",
@@ -21,7 +21,7 @@
     "@uidu/field-text": "2.0.15",
     "@uidu/form": "2.4.0",
     "@uidu/portal": "1.0.13",
-    "@uidu/select": "2.3.0",
+    "@uidu/select": "2.3.1",
     "get-video-id": "^3.6.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
