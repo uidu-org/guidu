@@ -46,6 +46,7 @@ function Row<T extends object>({
       $size={size}
       $start={start}
       $onItemClick={!!onItemClick}
+      item={row.original}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...(onItemClick
         ? {
