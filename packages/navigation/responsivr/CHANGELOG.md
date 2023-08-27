@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.5.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
 ## 0.4.24
 
 ### Patch Changes

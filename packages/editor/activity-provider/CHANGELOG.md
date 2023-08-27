@@ -1,5 +1,11 @@
 # @uidu/activity-provider
 
+## 0.2.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
 ## 0.1.8
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/stepper
 
+## 0.5.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/theme@0.7.0
+
 ## 0.4.36
 
 ### Patch Changes

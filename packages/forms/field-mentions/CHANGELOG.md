@@ -1,5 +1,18 @@
 # @uidu/field-mentions
 
+## 2.1.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/field-base@4.4.0
+  - @uidu/theme@0.7.0
+  - @uidu/form@2.5.0
+
 ## 2.0.15
 
 ### Patch Changes

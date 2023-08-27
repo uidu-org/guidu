@@ -1,5 +1,22 @@
 # @uidu/media-viewer
 
+## 1.3.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/modal-dialog@1.3.0
+  - @uidu/media-core@1.6.0
+  - @uidu/shell@2.2.0
+  - @uidu/spinner@0.6.0
+  - @uidu/avatar@0.10.0
+  - @uidu/button@1.4.0
+  - @uidu/theme@0.7.0
+
 ## 1.2.12
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/stripe-accounts
 
+## 0.6.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/payments@1.7.0
+  - @uidu/stepper@0.5.0
+  - @uidu/field-text@2.1.0
+  - @uidu/spinner@0.6.0
+  - @uidu/form@2.5.0
+
 ## 0.5.32
 
 ### Patch Changes

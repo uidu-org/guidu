@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.6.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
 ## 0.5.33
 
 ### Patch Changes

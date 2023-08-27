@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.2.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
 ## 2.1.14
 
 ### Patch Changes

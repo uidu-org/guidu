@@ -1,5 +1,26 @@
 # @uidu/editor-common
 
+## 2.8.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/analytics-namespaced-context@0.5.0
+  - @uidu/editor-json-transformer@1.1.0
+  - @uidu/profilecard@0.4.0
+  - @uidu/adf-schema@2.3.0
+  - @uidu/mentions@0.6.0
+  - @uidu/adf-utils@2.3.0
+  - @uidu/media-core@1.6.0
+  - @uidu/analytics@0.7.0
+  - @uidu/emoji@0.7.0
+  - @uidu/tooltip@0.6.0
+  - @uidu/theme@0.7.0
+
 ## 2.7.12
 
 ### Patch Changes

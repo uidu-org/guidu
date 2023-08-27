@@ -1,5 +1,20 @@
 # @uidu/blocks
 
+## 3.2.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/dashboard-manager@2.2.0
+  - @uidu/data-fields@2.4.0
+  - @uidu/spinner@0.6.0
+  - @uidu/tooltip@0.6.0
+  - @uidu/table@5.3.0
+
 ## 3.1.19
 
 ### Patch Changes
