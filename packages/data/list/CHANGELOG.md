@@ -1,5 +1,17 @@
 # @uidu/list
 
+## 3.3.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/data-fields@2.4.0
+  - @uidu/shell@2.2.0
+
 ## 3.2.6
 
 ### Patch Changes

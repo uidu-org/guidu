@@ -1,5 +1,18 @@
 # @uidu/popup
 
+## 0.8.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/popper@0.6.0
+  - @uidu/portal@1.1.0
+  - @uidu/theme@0.7.0
+
 ## 0.7.21
 
 ### Patch Changes

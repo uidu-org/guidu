@@ -1,5 +1,23 @@
 # @uidu/table
 
+## 5.3.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/data-manager@4.4.0
+  - @uidu/data-fields@2.4.0
+  - @uidu/shell@2.2.0
+  - @uidu/checkbox@2.1.0
+  - @uidu/button@1.4.0
+  - @uidu/portal@1.1.0
+  - @uidu/popup@0.8.0
+  - @uidu/menu@0.9.0
+
 ## 5.2.8
 
 ### Patch Changes

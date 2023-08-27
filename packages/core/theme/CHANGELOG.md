@@ -1,5 +1,16 @@
 # @uidu/theme
 
+## 0.7.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/form@2.5.0
+
 ## 0.6.35
 
 ### Patch Changes

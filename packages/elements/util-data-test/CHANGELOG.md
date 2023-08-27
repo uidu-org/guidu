@@ -1,5 +1,19 @@
 # @uidu/util-data-test
 
+## 0.5.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/task-decision@0.5.0
+  - @uidu/mentions@0.6.0
+  - @uidu/analytics@0.7.0
+  - @uidu/emoji@0.7.0
+
 ## 0.4.35
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/status
 
+## 0.6.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/analytics-gas-types@0.4.0
+  - @uidu/field-text@2.1.0
+  - @uidu/analytics@0.7.0
+  - @uidu/lozenge@0.6.0
+  - @uidu/theme@0.7.0
+
 ## 0.5.39
 
 ### Patch Changes

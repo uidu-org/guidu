@@ -1,5 +1,20 @@
 # @uidu/media-card
 
+## 0.9.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
+### Patch Changes
+
+- Updated dependencies [535c8b5ec]
+  - @uidu/media-core@1.6.0
+  - @uidu/spinner@0.6.0
+  - @uidu/tooltip@0.6.0
+  - @uidu/button@1.4.0
+  - @uidu/theme@0.7.0
+
 ## 0.8.30
 
 ### Patch Changes

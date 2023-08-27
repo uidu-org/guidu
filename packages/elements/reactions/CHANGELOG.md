@@ -1,5 +1,11 @@
 # @uidu/reactions
 
+## 0.4.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
 ## 0.3.6
 
 ### Patch Changes

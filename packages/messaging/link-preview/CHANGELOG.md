@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.3.0
+
+### Minor Changes
+
+- 535c8b5ec: Bump dependencies, should not contain breaking changes
+
 ## 1.2.6
 
 ### Patch Changes
