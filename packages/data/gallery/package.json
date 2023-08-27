@@ -9,8 +9,8 @@
   "module": "dist/uidu-gallery.esm.js",
   "types": "dist/uidu-gallery.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
-    "@tanstack/react-table": "^8.9.2",
+    "@babel/runtime": "^7.22.11",
+    "@tanstack/react-table": "^8.9.3",
     "@tanstack/react-virtual": "^3.0.0-beta.48",
     "@uidu/data-controls": "^4.0.41",
     "@uidu/data-fields": "^2.3.8",
@@ -18,8 +18,8 @@
     "@uidu/spinner": "^0.5.30",
     "memoize-one": "^6.0.0",
     "react": "^18.2.0",
-    "styled-components": "^6.0.0-rc.1",
-    "tslib": "^2.5.3"
+    "styled-components": "^5.3.11",
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31",

@@ -16,9 +16,9 @@
     "generate:spec": "rm -rf ./src/validator/specs/ && ../json-schema-generator/bin.js --outDir=./src/validator/specs/ --mode=Spec --stage=0 ./src/validator/entry.ts"
   },
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@uidu/adf-schema": "^2.2.18",
-    "tslib": "^2.5.3"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31",

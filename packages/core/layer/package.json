@@ -9,20 +9,20 @@
   "main": "dist/uidu-layer.cjs.js",
   "module": "dist/uidu-layer.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "popper.js": "^1.16.1",
     "raf-schd": "^4.0.3",
     "react-scrolllock": "^5.0.1",
-    "tslib": "^2.5.3"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.0-rc.1"
+    "styled-components": "^5.3.11"
   },
   "peerDependencies": {
     "react": "^18.0.0",
-    "styled-components": "^5.0.0"
+    "styled-components": "<6"
   }
 }

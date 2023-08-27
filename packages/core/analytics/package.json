@@ -9,9 +9,9 @@
   "module": "dist/uidu-analytics.esm.js",
   "types": "dist/uidu-analytics.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "prop-types": "^15.8.1",
-    "tslib": "^2.5.3"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@uidu/button": "^1.3.43",

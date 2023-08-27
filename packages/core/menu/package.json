@@ -10,12 +10,12 @@
   "module": "dist/uidu-menu.esm.js",
   "types": "dist/uidu-menu.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@emotion/react": "^11.11.1",
     "@uidu/theme": "^0.6.35",
     "react-router-dom": "^5.3.4",
-    "styled-components": "^6.0.0-rc.1",
-    "tslib": "^2.5.3"
+    "styled-components": "^5.3.11",
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.12.4",

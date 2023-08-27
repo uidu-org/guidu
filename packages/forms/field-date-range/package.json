@@ -8,20 +8,20 @@
   "module": "dist/uidu-field-date-range.esm.js",
   "types": "dist/uidu-field-date-range.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@uidu/field-base": "^4.2.26",
     "@uidu/field-date": "^2.1.34",
     "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-day-picker": "^8.8.0",
+    "react-day-picker": "^8.8.1",
     "react-feather": "^2.0.10",
     "react-helmet": "^6.1.0",
-    "tslib": "^2.5.3"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31",
     "@uidu/form": "^2.3.1",
-    "styled-components": "^6.0.0-rc.1"
+    "styled-components": "^5.3.11"
   },
   "peerDependencies": {
     "styled-components": "*"

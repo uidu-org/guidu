@@ -10,20 +10,20 @@
   "module": "dist/uidu-field-geosuggest.esm.js",
   "types": "dist/uidu-field-geosuggest.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@heroicons/react": "^2.0.18",
     "@uidu/field-base": "^4.2.26",
     "@uidu/menu": "0.8.19",
     "@uidu/spinner": "^0.5.30",
     "react": "^18.2.0",
-    "tslib": "^2.5.3",
-    "use-places-autocomplete": "^4.0.0"
+    "tslib": "^2.6.2",
+    "use-places-autocomplete": "^4.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31",
     "@uidu/form": "^2.3.1",
-    "styled-components": "^6.0.0-rc.1",
-    "twin.macro": "^3.3.1"
+    "styled-components": "^5.3.11",
+    "twin.macro": "^3.4.0"
   },
   "peerDependencies": {
     "styled-components": "*"

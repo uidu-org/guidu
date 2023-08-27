@@ -52,10 +52,10 @@ function FieldMentionsStateless({
     >
       {items.map((item, index) => (
         <Mention
-          {...item}
           key={`mention-${index}`}
           style={defaultMentionStyle}
           appendSpaceOnAdd
+          {...item}
         />
       ))}
     </MentionsInput>

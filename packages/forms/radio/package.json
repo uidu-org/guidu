@@ -9,16 +9,16 @@
   "module": "dist/uidu-radio.esm.js",
   "types": "dist/uidu-radio.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@uidu/field-base": "^4.2.24",
     "react": "^18.2.0",
-    "styled-components": "^6.0.0-rc.1",
-    "tslib": "^2.5.3"
+    "styled-components": "^5.3.11",
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31",
     "@uidu/form": "^2.2.22",
-    "twin.macro": "^3.3.1"
+    "twin.macro": "^3.4.0"
   },
   "peerDependencies": {
     "twin.macro": "*"

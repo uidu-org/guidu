@@ -9,11 +9,11 @@
   "module": "dist/uidu-link-preview.esm.js",
   "types": "dist/uidu-link-preview.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
-    "axios": "^1.4.0",
+    "@babel/runtime": "^7.22.11",
+    "axios": "^1.5.0",
     "react": "^18.2.0",
-    "styled-components": "^6.0.0-rc.1",
-    "tslib": "^2.5.3"
+    "styled-components": "^5.3.11",
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31",

@@ -9,6 +9,7 @@ export default function Basic() {
       component={FieldPhone}
       defaultValue="+393803306560"
       withCountrySelect
+      country="IT"
     />
   );
 }

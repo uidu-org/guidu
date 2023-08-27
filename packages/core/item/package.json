@@ -9,13 +9,13 @@
   "main": "dist/uidu-item.cjs.js",
   "module": "dist/uidu-item.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@uidu/avatar": "^0.9.27",
     "@uidu/theme": "^0.6.35",
     "polished": "^4.2.2",
     "prop-types": "^15.8.1",
     "react-addons-text-content": "^0.0.4",
-    "tslib": "^2.5.3",
+    "tslib": "^2.6.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
@@ -26,12 +26,12 @@
     "react-dom": "^18.2.0",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
-    "styled-components": "^6.0.0-rc.1"
+    "styled-components": "^5.3.11"
   },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "styled-components": "^5.0.0"
+    "styled-components": "<6"
   },
   "publishConfig": {
     "access": "public"

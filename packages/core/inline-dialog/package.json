@@ -10,12 +10,12 @@
   "module": "dist/uidu-inline-dialog.esm.js",
   "types": "dist/uidu-inline-dialog.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@uidu/analytics": "^0.6.15",
     "@uidu/popper": "^0.5.33",
     "@uidu/theme": "^0.6.35",
     "react-node-resolver": "^2.0.1",
-    "tslib": "^2.5.3"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.12.4",
@@ -26,10 +26,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-lorem-component": "^0.13.0",
-    "styled-components": "^6.0.0-rc.1"
+    "styled-components": "^5.3.11"
   },
   "peerDependencies": {
     "react": "^18.0.0",
-    "styled-components": "^5.0.0"
+    "styled-components": "<6"
   }
 }

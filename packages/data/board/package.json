@@ -9,14 +9,14 @@
   "module": "dist/uidu-board.esm.js",
   "types": "dist/uidu-board.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
-    "@tanstack/react-table": "^8.9.2",
+    "@babel/runtime": "^7.22.11",
+    "@tanstack/react-table": "^8.9.3",
     "@uidu/theme": "^0.6.35",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
     "react-feather": "^2.0.10",
-    "styled-components": "^6.0.0-rc.1",
-    "tslib": "^2.5.3"
+    "styled-components": "^5.3.11",
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",

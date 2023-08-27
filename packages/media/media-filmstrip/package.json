@@ -10,16 +10,16 @@
   "module": "dist/uidu-media-filmstrip.esm.js",
   "types": "dist/uidu-media-filmstrip.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@uidu/media-card": "^0.8.30",
     "@uidu/media-core": "^1.5.8",
     "@uidu/media-viewer": "^1.2.12",
     "@uidu/modal-dialog": "1.2.6",
     "@uidu/theme": "^0.6.35",
     "react": "^18.2.0",
-    "styled-components": "^6.0.0-rc.1",
+    "styled-components": "^5.3.11",
     "swiper": "^9.4.1",
-    "tslib": "^2.5.3"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31"

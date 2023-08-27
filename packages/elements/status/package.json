@@ -17,14 +17,14 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^21.12.4",
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@uidu/analytics": "^0.6.15",
     "@uidu/analytics-gas-types": "^0.3.7",
     "@uidu/field-text": "^2.0.14",
     "@uidu/lozenge": "^0.5.29",
     "@uidu/theme": "^0.6.35",
-    "styled-components": "^6.0.0-rc.1",
-    "tslib": "^2.5.3"
+    "styled-components": "^5.3.11",
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31",

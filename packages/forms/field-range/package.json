@@ -15,17 +15,17 @@
   "module": "dist/uidu-field-range.esm.js",
   "types": "dist/uidu-field-range.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@radix-ui/react-slider": "^1.1.2",
     "@uidu/field-base": "^4.2.24",
-    "tslib": "^2.5.3"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.0-rc.1",
-    "twin.macro": "^3.3.1"
+    "styled-components": "^5.3.11",
+    "twin.macro": "^3.4.0"
   },
   "peerDependencies": {
     "react": "^18.0.0",

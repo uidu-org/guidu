@@ -8,7 +8,7 @@
   "main": "dist/uidu-timeline.cjs.js",
   "dependencies": {
     "react": "^18.2.0",
-    "tslib": "^2.5.3"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31"

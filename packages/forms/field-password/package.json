@@ -15,7 +15,7 @@
   "module": "dist/uidu-field-password.esm.js",
   "types": "dist/uidu-field-password.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@heroicons/react": "^2.0.18",
     "@loadable/component": "^5.15.3",
     "@types/zxcvbn": "^4.4.1",
@@ -24,7 +24,7 @@
     "@uidu/form": "^2.2.22",
     "@uidu/theme": "^0.6.35",
     "@uidu/tooltip": "^0.5.36",
-    "tslib": "^2.5.3",
+    "tslib": "^2.6.2",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
@@ -32,8 +32,8 @@
     "@uidu/docs": "^0.5.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.0-rc.1",
-    "twin.macro": "^3.3.1"
+    "styled-components": "^5.3.11",
+    "twin.macro": "^3.4.0"
   },
   "peerDependencies": {
     "react": "^18.0.0",

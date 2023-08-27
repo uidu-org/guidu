@@ -9,7 +9,7 @@
   "module": "dist/uidu-media-viewer.esm.js",
   "types": "dist/uidu-media-viewer.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
+    "@babel/runtime": "^7.22.11",
     "@heroicons/react": "^2.0.18",
     "@loadable/component": "^5.15.3",
     "@react-pdf-viewer/core": "^3.12.0",
@@ -25,10 +25,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
-    "styled-components": "^6.0.0-rc.1",
+    "styled-components": "^5.3.11",
     "swiper": "^9.4.1",
-    "tslib": "^2.5.3",
-    "twin.macro": "^3.3.1"
+    "tslib": "^2.6.2",
+    "twin.macro": "^3.4.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.5.31",
