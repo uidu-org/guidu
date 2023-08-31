@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 
 const whitespaceSharedStyles = css`
-  word-wrap: break-word;
+  word-break: break-word;
   white-space: pre-wrap;
 `;
 
