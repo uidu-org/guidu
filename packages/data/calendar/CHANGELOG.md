@@ -1,5 +1,17 @@
 # @uidu/calendar
 
+## 0.6.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/shell@2.3.0
+  - @uidu/button@1.5.0
+
 ## 0.5.0
 
 ### Minor Changes

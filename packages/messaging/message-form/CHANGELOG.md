@@ -1,5 +1,22 @@
 # @uidu/message-form
 
+## 0.6.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/media-filmstrip@0.9.0
+  - @uidu/field-mentions@2.2.0
+  - @uidu/dropdown-menu@0.8.0
+  - @uidu/message@0.7.0
+  - @uidu/field-text@2.2.0
+  - @uidu/spinner@0.7.0
+  - @uidu/form@2.6.0
+
 ## 0.5.0
 
 ### Minor Changes

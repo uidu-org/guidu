@@ -1,5 +1,16 @@
 # @uidu/section-message
 
+## 0.8.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/button@1.5.0
+
 ## 0.7.0
 
 ### Minor Changes

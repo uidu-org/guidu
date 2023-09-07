@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.5.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
 ## 0.4.0
 
 ### Minor Changes

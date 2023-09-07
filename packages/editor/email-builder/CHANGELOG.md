@@ -1,5 +1,24 @@
 # @uidu/email-builder
 
+## 0.4.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/email-renderer@1.5.0
+  - @uidu/editor-core@2.14.0
+  - @uidu/field-number@2.2.0
+  - @uidu/adf-schema@2.4.0
+  - @uidu/field-text@2.2.0
+  - @uidu/select@2.5.0
+  - @uidu/button@1.5.0
+  - @uidu/portal@1.2.0
+  - @uidu/form@2.6.0
+
 ## 0.3.0
 
 ### Minor Changes

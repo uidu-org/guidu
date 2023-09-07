@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.4.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
 ## 1.3.0
 
 ### Minor Changes

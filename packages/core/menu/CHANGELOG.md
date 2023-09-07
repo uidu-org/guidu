@@ -1,5 +1,16 @@
 # @uidu/menu
 
+## 0.10.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/theme@0.8.0
+
 ## 0.9.0
 
 ### Minor Changes
