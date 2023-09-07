@@ -10,8 +10,8 @@
   "module": "dist/uidu-renderer.esm.js",
   "types": "dist/uidu-renderer.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.12.4",
-    "@babel/runtime": "^7.22.11",
+    "@atlaskit/icon": "^21.12.7",
+    "@babel/runtime": "^7.22.15",
     "@loadable/component": "^5.15.3",
     "@uidu/adf-schema": "^2.3.0",
     "@uidu/adf-utils": "^2.3.0",

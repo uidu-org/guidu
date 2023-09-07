@@ -10,12 +10,12 @@
   "module": "dist/uidu-portal.esm.js",
   "types": "index.td.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@uidu/theme": "^0.7.0",
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^21.12.4",
+    "@atlaskit/icon": "^21.12.7",
     "@uidu/button": "^1.4.0",
     "@uidu/docs": "^0.6.0",
     "@uidu/flag": "^0.6.0",

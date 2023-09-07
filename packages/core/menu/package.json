@@ -10,7 +10,7 @@
   "module": "dist/uidu-menu.esm.js",
   "types": "dist/uidu-menu.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@emotion/react": "^11.11.1",
     "@uidu/theme": "^0.7.0",
     "react-router-dom": "^5.3.4",
@@ -18,9 +18,9 @@
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^21.12.4",
-    "@atlaskit/icon-file-type": "^6.4.3",
-    "@atlaskit/icon-object": "^6.3.3",
+    "@atlaskit/icon": "^21.12.7",
+    "@atlaskit/icon-file-type": "^6.4.4",
+    "@atlaskit/icon-object": "^6.3.5",
     "@uidu/avatar": "^0.10.0",
     "@uidu/button": "^1.4.0",
     "@uidu/docs": "^0.6.0",

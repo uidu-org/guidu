@@ -11,11 +11,11 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.38",
     "@amcharts/amcharts4-geodata": "^4.1.27",
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@cubejs-client/core": "^0.33.47",
     "@cubejs-client/react": "^0.33.47",
     "@loadable/component": "^5.15.3",
-    "@tanstack/react-table": "^8.9.3",
+    "@tanstack/react-table": "^8.9.7",
     "@uidu/dashboard-manager": "^2.2.0",
     "@uidu/data-fields": "^2.4.0",
     "@uidu/spinner": "^0.6.0",

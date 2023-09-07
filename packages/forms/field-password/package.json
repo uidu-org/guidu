@@ -15,10 +15,10 @@
   "module": "dist/uidu-field-password.esm.js",
   "types": "dist/uidu-field-password.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@heroicons/react": "^2.0.18",
     "@loadable/component": "^5.15.3",
-    "@types/zxcvbn": "^4.4.1",
+    "@types/zxcvbn": "^4.4.2",
     "@uidu/field-base": "^4.4.0",
     "@uidu/field-text": "^2.1.0",
     "@uidu/form": "^2.5.0",

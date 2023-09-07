@@ -9,7 +9,7 @@
   "module": "dist/uidu-media-viewer.esm.js",
   "types": "dist/uidu-media-viewer.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@heroicons/react": "^2.0.18",
     "@loadable/component": "^5.15.3",
     "@react-pdf-viewer/core": "^3.12.0",

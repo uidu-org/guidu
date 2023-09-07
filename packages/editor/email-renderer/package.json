@@ -14,7 +14,7 @@
     "build:styles": "ts-node --project ./tsconfig.ts-node.json ./build/ts-to-css.ts"
   },
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@uidu/adf-schema": "^2.3.0",
     "date-fns": "^2.30.0",
     "get-video-id": "^3.6.5",

@@ -10,7 +10,7 @@
   "module": "dist/uidu-field-toggle.esm.js",
   "types": "dist/uidu-field-toggle.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@radix-ui/react-switch": "^1.0.3",
     "@uidu/field-base": "4.4.0",
     "tslib": "^2.6.2"

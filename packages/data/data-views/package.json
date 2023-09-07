@@ -8,9 +8,9 @@
   "module": "dist/uidu-data-views.esm.js",
   "types": "dist/uidu-data-views.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@loadable/component": "^5.15.3",
-    "@tanstack/react-table": "^8.9.3",
+    "@tanstack/react-table": "^8.9.7",
     "@uidu/button": "1.4.0",
     "@uidu/data-controls": "^4.1.0",
     "@uidu/data-manager": "4.4.0",

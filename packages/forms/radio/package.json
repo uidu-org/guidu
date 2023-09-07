@@ -9,7 +9,7 @@
   "module": "dist/uidu-radio.esm.js",
   "types": "dist/uidu-radio.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@uidu/field-base": "^4.4.0",
     "react": "^18.2.0",
     "styled-components": "^5.3.11",

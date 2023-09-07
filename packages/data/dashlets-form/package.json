@@ -9,7 +9,7 @@
   "module": "dist/uidu-dashlets-form.esm.js",
   "types": "dist/uidu-dashlets-form.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@cubejs-client/core": "^0.33.47",
     "@cubejs-client/react": "^0.33.47",
     "@uidu/accordion": "^0.7.0",

@@ -9,7 +9,7 @@
   "module": "dist/uidu-devise.esm.js",
   "types": "dist/uidu-devise.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@uidu/avatar": "^0.10.0",
     "@uidu/checkbox": "^2.1.0",
     "@uidu/field-password": "^2.1.0",

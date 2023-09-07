@@ -14,10 +14,10 @@
     "styles.scss"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@uidu/media-core": "^1.6.0",
-    "@uppy/core": "^3.4.0",
-    "@uppy/dashboard": "^3.5.1",
+    "@uppy/core": "^3.5.0",
+    "@uppy/dashboard": "^3.5.2",
     "@uppy/drag-drop": "^3.0.3",
     "@uppy/dropbox": "^3.1.3",
     "@uppy/google-drive": "^3.2.1",
@@ -26,7 +26,7 @@
     "@uppy/unsplash": "^3.2.2",
     "@uppy/url": "^3.3.3",
     "@uppy/webcam": "^3.3.2",
-    "@uppy/xhr-upload": "^3.3.2",
+    "@uppy/xhr-upload": "^3.4.0",
     "exenv": "^1.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

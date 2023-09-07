@@ -9,7 +9,7 @@
   "module": "dist/uidu-link-preview.esm.js",
   "types": "dist/uidu-link-preview.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "axios": "^1.5.0",
     "react": "^18.2.0",
     "styled-components": "^5.3.11",

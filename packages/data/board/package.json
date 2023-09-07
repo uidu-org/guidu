@@ -9,8 +9,8 @@
   "module": "dist/uidu-board.esm.js",
   "types": "dist/uidu-board.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
-    "@tanstack/react-table": "^8.9.3",
+    "@babel/runtime": "^7.22.15",
+    "@tanstack/react-table": "^8.9.7",
     "@uidu/theme": "^0.7.0",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",

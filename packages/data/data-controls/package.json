@@ -10,9 +10,9 @@
   "module": "dist/uidu-data-controls.esm.js",
   "types": "dist/uidu-data-controls.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.11",
+    "@babel/runtime": "^7.22.15",
     "@heroicons/react": "^2.0.18",
-    "@tanstack/react-table": "^8.9.3",
+    "@tanstack/react-table": "^8.9.7",
     "@uidu/button": "1.4.0",
     "@uidu/checkbox": "^2.1.0",
     "@uidu/data-fields": "^2.4.0",
