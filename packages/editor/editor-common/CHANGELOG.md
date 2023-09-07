@@ -1,5 +1,28 @@
 # @uidu/editor-common
 
+## 2.9.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- 4c626c2a7: Add word-break to Renderer
+- d5f6d7b56: Word-break instead of word-wrap
+- Updated dependencies [e615acbf4]
+  - @uidu/analytics-namespaced-context@0.6.0
+  - @uidu/editor-json-transformer@1.2.0
+  - @uidu/profilecard@0.5.0
+  - @uidu/adf-schema@2.4.0
+  - @uidu/mentions@0.7.0
+  - @uidu/adf-utils@2.4.0
+  - @uidu/media-core@1.7.0
+  - @uidu/analytics@0.8.0
+  - @uidu/emoji@0.8.0
+  - @uidu/tooltip@0.7.0
+  - @uidu/theme@0.8.0
+
 ## 2.8.0
 
 ### Minor Changes

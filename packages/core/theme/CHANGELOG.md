@@ -1,5 +1,16 @@
 # @uidu/theme
 
+## 0.8.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/form@2.6.0
+
 ## 0.7.0
 
 ### Minor Changes

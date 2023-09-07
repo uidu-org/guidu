@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.3.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
 ## 0.2.0
 
 ### Minor Changes

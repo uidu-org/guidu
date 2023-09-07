@@ -1,5 +1,16 @@
 # @uidu/portal
 
+## 1.2.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/theme@0.8.0
+
 ## 1.1.0
 
 ### Minor Changes

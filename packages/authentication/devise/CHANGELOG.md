@@ -1,5 +1,23 @@
 # @uidu/devise
 
+## 1.5.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/field-password@2.2.0
+  - @uidu/field-phone@2.2.0
+  - @uidu/field-text@2.2.0
+  - @uidu/shell@2.3.0
+  - @uidu/checkbox@2.2.0
+  - @uidu/spinner@0.7.0
+  - @uidu/avatar@0.11.0
+  - @uidu/form@2.6.0
+
 ## 1.4.0
 
 ### Minor Changes

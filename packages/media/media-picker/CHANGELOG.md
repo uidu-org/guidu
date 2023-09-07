@@ -1,5 +1,16 @@
 # @uidu/media-picker
 
+## 1.3.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/media-core@1.7.0
+
 ## 1.2.0
 
 ### Minor Changes

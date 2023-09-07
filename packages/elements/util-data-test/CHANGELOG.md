@@ -1,5 +1,19 @@
 # @uidu/util-data-test
 
+## 0.6.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/task-decision@0.6.0
+  - @uidu/mentions@0.7.0
+  - @uidu/analytics@0.8.0
+  - @uidu/emoji@0.8.0
+
 ## 0.5.0
 
 ### Minor Changes

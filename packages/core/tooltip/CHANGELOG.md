@@ -1,5 +1,19 @@
 # @uidu/tooltip
 
+## 0.7.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/analytics@0.8.0
+  - @uidu/popper@0.7.0
+  - @uidu/portal@1.2.0
+  - @uidu/theme@0.8.0
+
 ## 0.6.0
 
 ### Minor Changes

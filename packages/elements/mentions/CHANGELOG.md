@@ -1,5 +1,22 @@
 # @uidu/mentions
 
+## 0.7.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/analytics@0.8.0
+  - @uidu/lozenge@0.7.0
+  - @uidu/tooltip@0.7.0
+  - @uidu/avatar@0.11.0
+  - @uidu/button@1.5.0
+  - @uidu/theme@0.8.0
+  - @uidu/analytics-gas-types@0.4.1
+
 ## 0.6.0
 
 ### Minor Changes

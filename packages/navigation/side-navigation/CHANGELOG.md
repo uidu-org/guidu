@@ -1,5 +1,23 @@
 # @uidu/navigation
 
+## 1.4.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/inline-dialog@0.7.0
+  - @uidu/shell@2.3.0
+  - @uidu/tooltip@0.7.0
+  - @uidu/avatar@0.11.0
+  - @uidu/button@1.5.0
+  - @uidu/popup@0.9.0
+  - @uidu/theme@0.8.0
+  - @uidu/menu@0.10.0
+
 ## 1.3.0
 
 ### Minor Changes

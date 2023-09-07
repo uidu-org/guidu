@@ -1,5 +1,26 @@
 # @uidu/message
 
+## 0.7.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/message-renderer@0.6.0
+  - @uidu/message-form@0.6.0
+  - @uidu/media-viewer@1.4.0
+  - @uidu/media-card@0.10.0
+  - @uidu/media-core@1.7.0
+  - @uidu/tooltip@0.7.0
+  - @uidu/avatar@0.11.0
+  - @uidu/button@1.5.0
+  - @uidu/drawer@0.9.0
+  - @uidu/popup@0.9.0
+  - @uidu/menu@0.10.0
+
 ## 0.6.0
 
 ### Minor Changes

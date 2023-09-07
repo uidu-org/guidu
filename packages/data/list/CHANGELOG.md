@@ -1,5 +1,17 @@
 # @uidu/list
 
+## 3.4.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/data-fields@2.5.0
+  - @uidu/shell@2.3.0
+
 ## 3.3.0
 
 ### Minor Changes

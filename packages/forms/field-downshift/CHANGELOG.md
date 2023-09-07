@@ -1,5 +1,17 @@
 # @uidu/field-downshift
 
+## 2.4.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [e615acbf4]
+  - @uidu/field-base@4.5.0
+  - @uidu/field-text@2.2.0
+
 ## 2.3.0
 
 ### Minor Changes

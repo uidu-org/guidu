@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.2.0
+
+### Minor Changes
+
+- e615acbf4: Bump dependencies
+
 ## 1.1.0
 
 ### Minor Changes
