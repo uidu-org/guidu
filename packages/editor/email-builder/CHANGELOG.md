@@ -1,5 +1,14 @@
 # @uidu/email-builder
 
+## 0.5.1
+
+### Patch Changes
+
+- Updated dependencies [c269ff76c]
+  - @uidu/email-renderer@1.6.0
+  - @uidu/editor-core@2.16.0
+  - @uidu/adf-schema@2.5.0
+
 ## 0.5.0
 
 ### Minor Changes

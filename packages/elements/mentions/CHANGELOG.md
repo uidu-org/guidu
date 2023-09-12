@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.9.0
+
+### Minor Changes
+
+- c269ff76c: Fix mentions picker
+
 ## 0.8.0
 
 ### Minor Changes
