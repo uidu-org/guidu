@@ -1,5 +1,20 @@
 # @uidu/editor-core
 
+## 2.16.0
+
+### Minor Changes
+
+- c269ff76c: Fix mentions picker
+
+### Patch Changes
+
+- Updated dependencies [c269ff76c]
+  - @uidu/editor-markdown-transformer@1.3.0
+  - @uidu/editor-json-transformer@1.3.0
+  - @uidu/editor-common@2.11.0
+  - @uidu/adf-schema@2.5.0
+  - @uidu/mentions@0.9.0
+
 ## 2.15.0
 
 ### Minor Changes

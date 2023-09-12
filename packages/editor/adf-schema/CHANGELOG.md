@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.5.0
+
+### Minor Changes
+
+- c269ff76c: Fix mentions picker
+
 ## 2.4.0
 
 ### Minor Changes
