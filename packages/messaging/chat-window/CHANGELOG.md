@@ -1,5 +1,17 @@
 # @uidu/chat-window
 
+## 0.7.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
+### Patch Changes
+
+- Updated dependencies [a807fef99]
+  - @uidu/message@0.8.0
+  - @uidu/message-form@0.6.1
+
 ## 0.6.0
 
 ### Minor Changes

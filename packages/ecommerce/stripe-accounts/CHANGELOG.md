@@ -1,5 +1,16 @@
 # @uidu/stripe-accounts
 
+## 0.8.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
+### Patch Changes
+
+- Updated dependencies [a807fef99]
+  - @uidu/payments@1.9.0
+
 ## 0.7.0
 
 ### Minor Changes

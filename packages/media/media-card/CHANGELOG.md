@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.11.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
 ## 0.10.0
 
 ### Minor Changes

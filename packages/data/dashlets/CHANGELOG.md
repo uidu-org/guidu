@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 3.4.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
+### Patch Changes
+
+- Updated dependencies [a807fef99]
+  - @uidu/dashboard-manager@2.4.0
+  - @uidu/data-fields@2.6.0
+  - @uidu/table@5.5.0
+
 ## 3.3.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.6.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
 ## 0.5.0
 
 ### Minor Changes

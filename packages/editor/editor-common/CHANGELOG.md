@@ -1,5 +1,18 @@
 # @uidu/editor-common
 
+## 2.10.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
+### Patch Changes
+
+- Updated dependencies [a807fef99]
+  - @uidu/profilecard@0.6.0
+  - @uidu/mentions@0.8.0
+  - @uidu/emoji@0.9.0
+
 ## 2.9.0
 
 ### Minor Changes

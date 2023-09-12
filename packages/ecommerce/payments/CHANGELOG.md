@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.9.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
 ## 1.8.0
 
 ### Minor Changes

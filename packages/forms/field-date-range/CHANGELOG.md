@@ -1,5 +1,16 @@
 # @uidu/field-date-range
 
+## 2.3.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
+### Patch Changes
+
+- Updated dependencies [a807fef99]
+  - @uidu/field-date@2.4.0
+
 ## 2.2.0
 
 ### Minor Changes

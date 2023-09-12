@@ -1,5 +1,20 @@
 # @uidu/renderer
 
+## 2.7.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
+### Patch Changes
+
+- Updated dependencies [a807fef99]
+  - @uidu/editor-common@2.10.0
+  - @uidu/mentions@0.8.0
+  - @uidu/media-card@0.11.0
+  - @uidu/status@0.8.0
+  - @uidu/media-filmstrip@0.9.1
+
 ## 2.6.0
 
 ### Minor Changes

@@ -1,5 +1,18 @@
 # @uidu/message
 
+## 0.8.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
+### Patch Changes
+
+- Updated dependencies [a807fef99]
+  - @uidu/media-viewer@1.5.0
+  - @uidu/media-card@0.11.0
+  - @uidu/message-form@0.6.1
+
 ## 0.7.0
 
 ### Minor Changes
