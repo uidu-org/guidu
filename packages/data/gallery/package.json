@@ -10,7 +10,7 @@
   "types": "dist/uidu-gallery.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.22.15",
-    "@tanstack/react-table": "^8.9.7",
+    "@tanstack/react-table": "^8.9.8",
     "@tanstack/react-virtual": "^3.0.0-beta.59",
     "@uidu/data-controls": "^4.2.0",
     "@uidu/data-fields": "^2.5.0",
