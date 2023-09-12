@@ -24,9 +24,7 @@ export const ItemIcon = styled.div`
   }
 `;
 
-const fallbackIcon = (label: string) => {
-  return <IconFallback label={label} />;
-};
+const fallbackIcon = (label: string) => <IconFallback label={label} />;
 
 export type TypeAheadItemsListProps = {
   items?: Array<TypeAheadItem>;
@@ -99,13 +97,12 @@ export function TypeAheadItemComponent({
 }: TypeAheadItemComponentProps) {
   const ref = useRef(null);
 
-  const isSelected = useCallback(() => {
-    return index === currentIndex;
-  }, [index, currentIndex]);
+  const isSelected = useCallback(
+    () => index === currentIndex,
+    [index, currentIndex],
+  );
 
-  const insertByIndex = (e) => {
-    console.log(e);
-    e.stopPropagation();
+  const insertByIndex = (item) => {
     inserByIndexProp(index);
   };
 

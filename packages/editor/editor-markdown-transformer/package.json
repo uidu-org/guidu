@@ -15,8 +15,8 @@
     "@uidu/editor-common": "^2.9.0",
     "markdown-it": "^13.0.1",
     "markdown-it-table": "^2.0.6",
-    "prosemirror-markdown": "^1.11.0",
-    "prosemirror-model": "^1.19.2",
+    "prosemirror-markdown": "^1.11.2",
+    "prosemirror-model": "^1.19.3",
     "tslib": "^2.6.2"
   },
   "devDependencies": {

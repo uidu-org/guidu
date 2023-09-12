@@ -79,8 +79,8 @@ export const MentionItemStyle = styled.div`
   display: block;
   overflow: hidden;
   list-style-type: none;
-  height: 48px;
-  line-height: 1.2;
+  /* height: 48px; */
+  /* line-height: 1.2; */
   cursor: pointer;
 `;
 
