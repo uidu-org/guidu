@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 2.6.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
 ## 2.5.0
 
 ### Minor Changes

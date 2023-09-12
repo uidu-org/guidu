@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 2.4.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
 ## 2.3.0
 
 ### Minor Changes

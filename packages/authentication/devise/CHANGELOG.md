@@ -1,5 +1,17 @@
 # @uidu/devise
 
+## 1.6.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
+### Patch Changes
+
+- Updated dependencies [a807fef99]
+  - @uidu/shell@2.4.0
+  - @uidu/field-phone@2.2.1
+
 ## 1.5.0
 
 ### Minor Changes

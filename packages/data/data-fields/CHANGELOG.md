@@ -1,5 +1,18 @@
 # @uidu/data-fields
 
+## 2.6.0
+
+### Minor Changes
+
+- a807fef99: Bump deps
+
+### Patch Changes
+
+- Updated dependencies [a807fef99]
+  - @uidu/field-date@2.4.0
+  - @uidu/field-time@2.3.0
+  - @uidu/select@2.6.0
+
 ## 2.5.0
 
 ### Minor Changes
