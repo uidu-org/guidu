@@ -42,6 +42,7 @@ export default function Footer<T>({
             .filter((header) => !header.column.columnDef.meta?.isPrivate)
             .map((header, index) => (
               <Tf
+                key={`${header.id}-footer`}
                 $height={rowHeight}
                 $width={header.column.getSize()}
                 $minWidth={header.column.columnDef.minSize}
