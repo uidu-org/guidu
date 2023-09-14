@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 4.8.0
+
+### Minor Changes
+
+- e4bfe1e9d: Table scrollable headers
+
+### Patch Changes
+
+- Updated dependencies [d52d281ed]
+- Updated dependencies [e4bfe1e9d]
+  - @uidu/table@5.7.0
+  - @uidu/data-controls@4.4.1
+  - @uidu/data-views@3.4.1
+
 ## 4.7.0
 
 ### Minor Changes
