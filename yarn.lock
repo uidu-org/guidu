@@ -7803,7 +7803,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/board@^2.4.0, @uidu/board@workspace:packages/data/board":
+"@uidu/board@^2.5.0, @uidu/board@workspace:packages/data/board":
   version: 0.0.0-use.local
   resolution: "@uidu/board@workspace:packages/data/board"
   dependencies:
@@ -7915,7 +7915,7 @@ __metadata:
     "@babel/runtime": ^7.22.15
     "@faker-js/faker": ^8.0.2
     "@uidu/docs": ^0.7.0
-    "@uidu/message": ^0.8.0
+    "@uidu/message": ^0.8.1
     "@uidu/message-form": ^0.6.1
     "@uidu/message-renderer": ^0.6.0
     "@uidu/shell": ^2.4.0
@@ -7988,7 +7988,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/dashboard-manager@^2.4.0, @uidu/dashboard-manager@workspace:packages/data/dashboard-manager":
+"@uidu/dashboard-manager@^2.5.0, @uidu/dashboard-manager@workspace:packages/data/dashboard-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/dashboard-manager@workspace:packages/data/dashboard-manager"
   dependencies:
@@ -7998,7 +7998,7 @@ __metadata:
     "@tanstack/react-table": ^8.9.9
     "@types/react-grid-layout": ^1.3.2
     "@uidu/dashboard-controls": ^1.4.0
-    "@uidu/dashlets": ^3.4.0
+    "@uidu/dashlets": ^3.5.0
     "@uidu/docs": ^0.7.0
     "@uidu/shell": ^2.4.0
     d3-collection: ^1.0.7
@@ -8039,20 +8039,20 @@ __metadata:
     "@cubejs-client/core": ^0.33.55
     "@cubejs-client/react": ^0.33.55
     "@uidu/accordion": ^0.8.0
-    "@uidu/dashlets": ^3.3.0
+    "@uidu/dashlets": ^3.5.0
     "@uidu/docs": ^0.7.0
     "@uidu/dropdown-menu": ^0.8.0
     "@uidu/field-downshift": ^2.4.0
     "@uidu/field-toggle": ^2.2.0
     "@uidu/form": ^2.6.0
-    "@uidu/select": ^2.5.0
+    "@uidu/select": ^2.7.0
     "@uidu/shell": ^2.3.0
     react: ^18.2.0
     tslib: ^2.6.2
   languageName: unknown
   linkType: soft
 
-"@uidu/dashlets@^3.3.0, @uidu/dashlets@^3.4.0, @uidu/dashlets@workspace:packages/data/dashlets":
+"@uidu/dashlets@^3.5.0, @uidu/dashlets@workspace:packages/data/dashlets":
   version: 0.0.0-use.local
   resolution: "@uidu/dashlets@workspace:packages/data/dashlets"
   dependencies:
@@ -8063,11 +8063,11 @@ __metadata:
     "@cubejs-client/react": ^0.33.55
     "@loadable/component": ^5.15.3
     "@tanstack/react-table": ^8.9.9
-    "@uidu/dashboard-manager": ^2.4.0
-    "@uidu/data-fields": ^2.6.0
+    "@uidu/dashboard-manager": ^2.5.0
+    "@uidu/data-fields": ^2.7.0
     "@uidu/docs": ^0.7.0
     "@uidu/spinner": ^0.7.0
-    "@uidu/table": 5.5.0
+    "@uidu/table": 5.6.0
     "@uidu/tooltip": ^0.7.0
     d3-array: ^3.2.4
     gql-query-builder: ^3.8.0
@@ -8087,7 +8087,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-controls@^4.3.0, @uidu/data-controls@workspace:packages/data/data-controls":
+"@uidu/data-controls@^4.4.0, @uidu/data-controls@workspace:packages/data/data-controls":
   version: 0.0.0-use.local
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
@@ -8096,17 +8096,17 @@ __metadata:
     "@tanstack/react-table": ^8.9.9
     "@uidu/button": 1.5.0
     "@uidu/checkbox": ^2.2.0
-    "@uidu/data-fields": ^2.6.0
-    "@uidu/data-manager": 4.6.0
-    "@uidu/data-views": ^3.3.0
+    "@uidu/data-fields": ^2.7.0
+    "@uidu/data-manager": 4.7.0
+    "@uidu/data-views": ^3.4.0
     "@uidu/docs": ^0.7.0
     "@uidu/drawer": ^0.9.0
     "@uidu/field-text": ^2.2.0
     "@uidu/form": ^2.6.0
     "@uidu/inline-dialog": ^0.7.0
     "@uidu/menu": ^0.10.0
-    "@uidu/popup": ^0.9.0
-    "@uidu/select": ^2.6.0
+    "@uidu/popup": ^0.10.0
+    "@uidu/select": ^2.7.0
     "@uidu/shell": ^2.4.0
     "@uidu/spinner": ^0.7.0
     "@uidu/tooltip": ^0.7.0
@@ -8123,7 +8123,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-fields@^2.6.0, @uidu/data-fields@workspace:packages/data/data-fields":
+"@uidu/data-fields@^2.7.0, @uidu/data-fields@workspace:packages/data/data-fields":
   version: 0.0.0-use.local
   resolution: "@uidu/data-fields@workspace:packages/data/data-fields"
   dependencies:
@@ -8140,18 +8140,18 @@ __metadata:
     "@tanstack/react-table": ^8.9.9
     "@uidu/button": 1.5.0
     "@uidu/docs": ^0.7.0
-    "@uidu/field-color-picker": ^3.2.0
-    "@uidu/field-date": ^2.4.0
+    "@uidu/field-color-picker": ^3.2.1
+    "@uidu/field-date": ^2.4.1
     "@uidu/field-downshift": ^2.4.0
     "@uidu/field-number": ^2.2.0
     "@uidu/field-text": ^2.2.0
-    "@uidu/field-time": ^2.3.0
+    "@uidu/field-time": ^2.3.1
     "@uidu/field-toggle": ^2.2.0
     "@uidu/form": ^2.6.0
     "@uidu/map": 0.8.0
     "@uidu/menu": ^0.10.0
-    "@uidu/popup": 0.9.0
-    "@uidu/select": ^2.6.0
+    "@uidu/popup": 0.10.0
+    "@uidu/select": ^2.7.0
     dayjs: ^1.11.9
     numeral: ^2.0.6
     react: ^18.2.0
@@ -8164,7 +8164,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-manager@4.6.0, @uidu/data-manager@workspace:packages/data/data-manager":
+"@uidu/data-manager@4.7.0, @uidu/data-manager@workspace:packages/data/data-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/data-manager@workspace:packages/data/data-manager"
   dependencies:
@@ -8175,24 +8175,24 @@ __metadata:
     "@loadable/component": ^5.15.3
     "@tanstack/match-sorter-utils": ^8.8.4
     "@tanstack/react-table": ^8.9.9
-    "@uidu/board": ^2.4.0
+    "@uidu/board": ^2.5.0
     "@uidu/button": 1.5.0
     "@uidu/calendar": ^0.6.0
-    "@uidu/data-controls": ^4.3.0
-    "@uidu/data-fields": ^2.6.0
-    "@uidu/data-views": ^3.3.0
+    "@uidu/data-controls": ^4.4.0
+    "@uidu/data-fields": ^2.7.0
+    "@uidu/data-views": ^3.4.0
     "@uidu/docs": ^0.7.0
     "@uidu/dropdown-menu": ^0.8.0
-    "@uidu/gallery": ^2.3.0
-    "@uidu/list": ^3.5.0
+    "@uidu/gallery": ^2.4.0
+    "@uidu/list": ^3.6.0
     "@uidu/menu": 0.10.0
     "@uidu/navigation": ^1.2.0
     "@uidu/page-header": ^1.1.1
     "@uidu/pagination": 0.7.0
     "@uidu/shell": ^2.4.0
-    "@uidu/side-navigation": 1.4.0
+    "@uidu/side-navigation": 1.4.1
     "@uidu/spinner": ^0.7.0
-    "@uidu/table": ^5.5.0
+    "@uidu/table": ^5.6.0
     d3-array: ^3.2.4
     dayjs: ^1.11.9
     lodash: ^4.17.21
@@ -8208,7 +8208,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-views@^3.3.0, @uidu/data-views@workspace:packages/data/data-views":
+"@uidu/data-views@^3.4.0, @uidu/data-views@workspace:packages/data/data-views":
   version: 0.0.0-use.local
   resolution: "@uidu/data-views@workspace:packages/data/data-views"
   dependencies:
@@ -8216,13 +8216,13 @@ __metadata:
     "@loadable/component": ^5.15.3
     "@tanstack/react-table": ^8.9.9
     "@uidu/button": 1.5.0
-    "@uidu/data-controls": ^4.3.0
-    "@uidu/data-manager": 4.6.0
+    "@uidu/data-controls": ^4.4.0
+    "@uidu/data-manager": 4.7.0
     "@uidu/docs": ^0.7.0
     "@uidu/field-counter": ^2.2.0
     "@uidu/field-number": ^2.2.0
     "@uidu/form": ^2.6.0
-    "@uidu/select": ^2.6.0
+    "@uidu/select": ^2.7.0
     react: ^18.2.0
     react-feather: ^2.0.10
     react-intl: ^6.4.6
@@ -8420,7 +8420,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@2.16.0, @uidu/editor-core@^2.16.0, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@2.17.0, @uidu/editor-core@^2.16.0, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -8451,18 +8451,18 @@ __metadata:
     "@uidu/editor-markdown-transformer": ^1.3.0
     "@uidu/emoji": ^0.9.0
     "@uidu/field-base": 4.5.0
-    "@uidu/field-date": ^2.4.0
+    "@uidu/field-date": ^2.4.1
     "@uidu/field-text": 2.2.0
     "@uidu/form": ^2.6.0
-    "@uidu/media-card": ^0.11.0
+    "@uidu/media-card": ^0.12.0
     "@uidu/media-core": ^1.7.0
-    "@uidu/media-filmstrip": ^0.9.1
+    "@uidu/media-filmstrip": ^0.9.2
     "@uidu/media-picker": ^1.3.0
     "@uidu/mentions": ^0.9.0
     "@uidu/menu": ^0.10.0
     "@uidu/modal-dialog": 1.4.0
-    "@uidu/profilecard": ^0.6.0
-    "@uidu/select": ^2.6.0
+    "@uidu/profilecard": ^0.6.1
+    "@uidu/select": ^2.7.0
     "@uidu/shell": ^2.4.0
     "@uidu/spinner": ^0.7.0
     "@uidu/status": ^0.8.0
@@ -8571,13 +8571,13 @@ __metadata:
     "@heroicons/react": ^2.0.18
     "@uidu/adf-schema": 2.5.0
     "@uidu/button": 1.5.0
-    "@uidu/editor-core": 2.16.0
+    "@uidu/editor-core": 2.17.0
     "@uidu/email-renderer": 1.6.0
     "@uidu/field-number": 2.2.0
     "@uidu/field-text": 2.2.0
     "@uidu/form": 2.6.0
     "@uidu/portal": 1.2.0
-    "@uidu/select": 2.6.0
+    "@uidu/select": 2.7.0
     "@uidu/shell": 2.4.0
     get-video-id: ^3.6.5
     mjml-browser: ^4.14.1
@@ -8692,7 +8692,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-color-picker@^3.2.0, @uidu/field-color-picker@workspace:packages/forms/field-color-picker":
+"@uidu/field-color-picker@^3.2.1, @uidu/field-color-picker@workspace:packages/forms/field-color-picker":
   version: 0.0.0-use.local
   resolution: "@uidu/field-color-picker@workspace:packages/forms/field-color-picker"
   dependencies:
@@ -8702,7 +8702,7 @@ __metadata:
     "@uidu/docs": ^0.7.0
     "@uidu/field-base": ^4.5.0
     "@uidu/form": ^2.6.0
-    "@uidu/popup": ^0.9.0
+    "@uidu/popup": ^0.10.0
     react: ^18.2.0
     react-colorful: ^5.6.1
     styled-components: ^5.3.11
@@ -8749,7 +8749,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-date@^2.3.0, @uidu/field-date@^2.4.0, @uidu/field-date@workspace:packages/forms/field-date":
+"@uidu/field-date@^2.3.0, @uidu/field-date@^2.4.0, @uidu/field-date@^2.4.1, @uidu/field-date@workspace:packages/forms/field-date":
   version: 0.0.0-use.local
   resolution: "@uidu/field-date@workspace:packages/forms/field-date"
   dependencies:
@@ -8760,7 +8760,7 @@ __metadata:
     "@uidu/field-base": 4.5.0
     "@uidu/field-text": ^2.2.0
     "@uidu/form": ^2.6.0
-    "@uidu/popup": 0.9.0
+    "@uidu/popup": 0.10.0
     date-fns: ^2.30.0
     react: ^18.2.0
     react-day-picker: ^8.8.2
@@ -8781,12 +8781,12 @@ __metadata:
     "@uidu/docs": ^0.7.0
     "@uidu/field-base": ^4.5.0
     "@uidu/field-counter": ^2.2.0
-    "@uidu/field-date": ^2.3.0
+    "@uidu/field-date": ^2.4.1
     "@uidu/field-text": ^2.2.0
-    "@uidu/field-time": ^2.2.0
+    "@uidu/field-time": ^2.3.1
     "@uidu/form": ^2.6.0
     "@uidu/menu": 0.10.0
-    "@uidu/popup": 0.9.0
+    "@uidu/popup": 0.10.0
     "@uidu/radio": ^2.4.0
     "@uidu/shell": ^2.3.0
     classnames: ^2.3.2
@@ -8969,7 +8969,7 @@ __metadata:
     "@uidu/field-base": ^4.5.0
     "@uidu/field-text": ^2.2.0
     "@uidu/form": 2.6.0
-    "@uidu/select": 2.6.0
+    "@uidu/select": 2.7.0
     react: ^18.2.0
     react-phone-number-input: ^3.3.6
     styled-components: ^5.3.11
@@ -9036,7 +9036,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-time@2.3.0, @uidu/field-time@^2.2.0, @uidu/field-time@^2.3.0, @uidu/field-time@workspace:packages/forms/field-time":
+"@uidu/field-time@2.3.1, @uidu/field-time@^2.3.1, @uidu/field-time@workspace:packages/forms/field-time":
   version: 0.0.0-use.local
   resolution: "@uidu/field-time@workspace:packages/forms/field-time"
   dependencies:
@@ -9046,7 +9046,7 @@ __metadata:
     "@uidu/field-base": 4.5.0
     "@uidu/field-text": ^2.2.0
     "@uidu/form": ^2.6.0
-    "@uidu/select": 2.6.0
+    "@uidu/select": 2.7.0
     date-fns: ^2.30.0
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -9154,15 +9154,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/gallery@^2.3.0, @uidu/gallery@workspace:packages/data/gallery":
+"@uidu/gallery@^2.4.0, @uidu/gallery@workspace:packages/data/gallery":
   version: 0.0.0-use.local
   resolution: "@uidu/gallery@workspace:packages/data/gallery"
   dependencies:
     "@babel/runtime": ^7.22.15
     "@tanstack/react-table": ^8.9.9
     "@tanstack/react-virtual": ^3.0.0-beta.59
-    "@uidu/data-controls": ^4.3.0
-    "@uidu/data-fields": ^2.6.0
+    "@uidu/data-controls": ^4.4.0
+    "@uidu/data-fields": ^2.7.0
     "@uidu/docs": ^0.7.0
     "@uidu/shell": ^2.4.0
     "@uidu/spinner": ^0.7.0
@@ -9369,14 +9369,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/list@^3.4.0, @uidu/list@^3.5.0, @uidu/list@workspace:packages/data/list":
+"@uidu/list@^3.4.0, @uidu/list@^3.6.0, @uidu/list@workspace:packages/data/list":
   version: 0.0.0-use.local
   resolution: "@uidu/list@workspace:packages/data/list"
   dependencies:
     "@babel/runtime": ^7.22.15
     "@tanstack/react-table": ^8.9.9
     "@tanstack/react-virtual": ^3.0.0-beta.59
-    "@uidu/data-fields": ^2.6.0
+    "@uidu/data-fields": ^2.7.0
     "@uidu/docs": ^0.7.0
     "@uidu/shell": 2.4.0
     react: ^18.2.0
@@ -9420,7 +9420,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-card@^0.11.0, @uidu/media-card@workspace:packages/media/media-card":
+"@uidu/media-card@^0.12.0, @uidu/media-card@workspace:packages/media/media-card":
   version: 0.0.0-use.local
   resolution: "@uidu/media-card@workspace:packages/media/media-card"
   dependencies:
@@ -9461,13 +9461,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/media-filmstrip@^0.9.1, @uidu/media-filmstrip@workspace:packages/media/media-filmstrip":
+"@uidu/media-filmstrip@^0.9.1, @uidu/media-filmstrip@^0.9.2, @uidu/media-filmstrip@workspace:packages/media/media-filmstrip":
   version: 0.0.0-use.local
   resolution: "@uidu/media-filmstrip@workspace:packages/media/media-filmstrip"
   dependencies:
     "@babel/runtime": ^7.22.15
     "@uidu/docs": ^0.7.0
-    "@uidu/media-card": ^0.11.0
+    "@uidu/media-card": ^0.12.0
     "@uidu/media-core": ^1.7.0
     "@uidu/media-viewer": ^1.5.0
     "@uidu/modal-dialog": 1.4.0
@@ -9518,7 +9518,7 @@ __metadata:
     "@uidu/avatar": ^0.11.0
     "@uidu/button": ^1.5.0
     "@uidu/docs": ^0.7.0
-    "@uidu/media-card": ^0.11.0
+    "@uidu/media-card": ^0.12.0
     "@uidu/media-core": ^1.7.0
     "@uidu/modal-dialog": 1.4.0
     "@uidu/shell": ^2.4.0
@@ -9629,7 +9629,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/message@^0.8.0, @uidu/message@workspace:packages/messaging/message":
+"@uidu/message@^0.8.0, @uidu/message@^0.8.1, @uidu/message@workspace:packages/messaging/message":
   version: 0.0.0-use.local
   resolution: "@uidu/message@workspace:packages/messaging/message"
   dependencies:
@@ -9641,13 +9641,13 @@ __metadata:
     "@uidu/button": 1.5.0
     "@uidu/docs": ^0.7.0
     "@uidu/drawer": ^0.9.0
-    "@uidu/media-card": ^0.11.0
+    "@uidu/media-card": ^0.12.0
     "@uidu/media-core": ^1.7.0
     "@uidu/media-viewer": ^1.5.0
     "@uidu/menu": 0.10.0
     "@uidu/message-form": ^0.6.1
     "@uidu/message-renderer": ^0.6.0
-    "@uidu/popup": 0.9.0
+    "@uidu/popup": 0.10.0
     "@uidu/shell": ^2.4.0
     "@uidu/tooltip": ^0.7.0
     "@uifabric/file-type-icons": ^7.10.11
@@ -9882,7 +9882,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/popup@0.9.0, @uidu/popup@^0.9.0, @uidu/popup@workspace:packages/core/popup":
+"@uidu/popup@0.10.0, @uidu/popup@^0.10.0, @uidu/popup@workspace:packages/core/popup":
   version: 0.0.0-use.local
   resolution: "@uidu/popup@workspace:packages/core/popup"
   dependencies:
@@ -9895,7 +9895,7 @@ __metadata:
     "@uidu/popper": ^0.7.0
     "@uidu/portal": ^1.2.0
     "@uidu/radio": ^2.4.0
-    "@uidu/select": ^2.5.0
+    "@uidu/select": ^2.7.0
     "@uidu/spinner": ^0.7.0
     "@uidu/theme": ^0.8.0
     focus-trap: ^7.5.2
@@ -9933,7 +9933,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/profilecard@^0.6.0, @uidu/profilecard@workspace:packages/elements/profilecard":
+"@uidu/profilecard@^0.6.0, @uidu/profilecard@^0.6.1, @uidu/profilecard@workspace:packages/elements/profilecard":
   version: 0.0.0-use.local
   resolution: "@uidu/profilecard@workspace:packages/elements/profilecard"
   dependencies:
@@ -9943,7 +9943,7 @@ __metadata:
     "@uidu/button": ^1.5.0
     "@uidu/docs": "*"
     "@uidu/lozenge": ^0.7.0
-    "@uidu/popup": ^0.9.0
+    "@uidu/popup": ^0.10.0
     "@uidu/spinner": ^0.7.0
     "@uidu/theme": ^0.8.0
     date-fns: ^2.30.0
@@ -10027,8 +10027,8 @@ __metadata:
     "@uidu/editor-common": ^2.11.0
     "@uidu/editor-json-transformer": ^1.3.0
     "@uidu/field-range": ^2.2.0
-    "@uidu/media-card": ^0.11.0
-    "@uidu/media-filmstrip": ^0.9.1
+    "@uidu/media-card": ^0.12.0
+    "@uidu/media-filmstrip": ^0.9.2
     "@uidu/mentions": ^0.9.0
     "@uidu/navigation": ^1.2.0
     "@uidu/status": ^0.8.0
@@ -10084,7 +10084,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/select@2.6.0, @uidu/select@^2.5.0, @uidu/select@^2.6.0, @uidu/select@workspace:packages/forms/select":
+"@uidu/select@2.7.0, @uidu/select@^2.5.0, @uidu/select@^2.7.0, @uidu/select@workspace:packages/forms/select":
   version: 0.0.0-use.local
   resolution: "@uidu/select@workspace:packages/forms/select"
   dependencies:
@@ -10136,7 +10136,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/side-navigation@1.4.0, @uidu/side-navigation@workspace:packages/navigation/side-navigation":
+"@uidu/side-navigation@1.4.1, @uidu/side-navigation@workspace:packages/navigation/side-navigation":
   version: 0.0.0-use.local
   resolution: "@uidu/side-navigation@workspace:packages/navigation/side-navigation"
   dependencies:
@@ -10148,7 +10148,7 @@ __metadata:
     "@uidu/inline-dialog": ^0.7.0
     "@uidu/lozenge": ^0.7.0
     "@uidu/menu": 0.10.0
-    "@uidu/popup": 0.9.0
+    "@uidu/popup": 0.10.0
     "@uidu/shell": ^2.3.0
     "@uidu/theme": ^0.8.0
     "@uidu/tooltip": ^0.7.0
@@ -10279,7 +10279,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@5.5.0, @uidu/table@^5.4.0, @uidu/table@^5.5.0, @uidu/table@workspace:packages/data/table":
+"@uidu/table@5.6.0, @uidu/table@^5.4.0, @uidu/table@^5.6.0, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -10294,12 +10294,12 @@ __metadata:
     "@tanstack/react-virtual": ^3.0.0-beta.59
     "@uidu/button": 1.5.0
     "@uidu/checkbox": ^2.2.0
-    "@uidu/data-controls": ^4.3.0
-    "@uidu/data-fields": ^2.6.0
-    "@uidu/data-manager": 4.6.0
+    "@uidu/data-controls": ^4.4.0
+    "@uidu/data-fields": ^2.7.0
+    "@uidu/data-manager": 4.7.0
     "@uidu/docs": ^0.7.0
     "@uidu/menu": ^0.10.0
-    "@uidu/popup": ^0.9.0
+    "@uidu/popup": ^0.10.0
     "@uidu/portal": 1.2.0
     "@uidu/shell": 2.4.0
     numeral: ^2.0.6
@@ -19412,7 +19412,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.7.0
     "@typescript-eslint/parser": ^6.7.0
     "@uidu/field-base": 4.5.0
-    "@uidu/field-time": 2.3.0
+    "@uidu/field-time": 2.3.1
     "@uidu/form": 2.6.0
     "@uidu/profilecard": ^0.6.0
     "@uifabric/file-type-icons": ^7.10.11
