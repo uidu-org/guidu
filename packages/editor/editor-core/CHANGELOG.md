@@ -1,5 +1,20 @@
 # @uidu/editor-core
 
+## 2.17.0
+
+### Minor Changes
+
+- 43361b7d4: Bump deps and DataManager scrollable container
+
+### Patch Changes
+
+- Updated dependencies [43361b7d4]
+  - @uidu/media-card@0.12.0
+  - @uidu/select@2.7.0
+  - @uidu/media-filmstrip@0.9.2
+  - @uidu/profilecard@0.6.1
+  - @uidu/field-date@2.4.1
+
 ## 2.16.0
 
 ### Minor Changes

@@ -1,5 +1,18 @@
 # @uidu/data-views
 
+## 3.4.0
+
+### Minor Changes
+
+- 43361b7d4: Bump deps and DataManager scrollable container
+
+### Patch Changes
+
+- Updated dependencies [43361b7d4]
+  - @uidu/data-controls@4.4.0
+  - @uidu/data-manager@4.7.0
+  - @uidu/select@2.7.0
+
 ## 3.3.0
 
 ### Minor Changes

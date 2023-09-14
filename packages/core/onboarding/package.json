@@ -1,6 +1,6 @@
 {
   "name": "@uidu/onboarding",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Highlight elements of the UI to the user and display a complementary dialog.",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/onboarding",
   "license": "MIT",

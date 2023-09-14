@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 2.5.0
+
+### Minor Changes
+
+- 43361b7d4: Bump deps and DataManager scrollable container
+
+### Patch Changes
+
+- Updated dependencies [43361b7d4]
+  - @uidu/dashlets@3.5.0
+
 ## 2.4.0
 
 ### Minor Changes
