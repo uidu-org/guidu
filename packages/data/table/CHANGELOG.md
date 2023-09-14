@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 5.7.0
+
+### Minor Changes
+
+- d52d281ed: Add keys to footer cells
+- e4bfe1e9d: Table scrollable headers
+
+### Patch Changes
+
+- Updated dependencies [e4bfe1e9d]
+  - @uidu/data-manager@4.8.0
+
 ## 5.6.0
 
 ### Minor Changes

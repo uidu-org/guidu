@@ -1,5 +1,11 @@
 # @uidu/field-downshift
 
+## 2.5.0
+
+### Minor Changes
+
+- e4bfe1e9d: Table scrollable headers
+
 ## 2.4.0
 
 ### Minor Changes
