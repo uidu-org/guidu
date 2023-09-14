@@ -8067,7 +8067,7 @@ __metadata:
     "@uidu/data-fields": ^2.7.0
     "@uidu/docs": ^0.7.0
     "@uidu/spinner": ^0.7.0
-    "@uidu/table": 5.6.0
+    "@uidu/table": 5.7.0
     "@uidu/tooltip": ^0.7.0
     d3-array: ^3.2.4
     gql-query-builder: ^3.8.0
@@ -8087,7 +8087,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-controls@^4.4.0, @uidu/data-controls@workspace:packages/data/data-controls":
+"@uidu/data-controls@^4.4.0, @uidu/data-controls@^4.4.1, @uidu/data-controls@workspace:packages/data/data-controls":
   version: 0.0.0-use.local
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
@@ -8097,8 +8097,8 @@ __metadata:
     "@uidu/button": 1.5.0
     "@uidu/checkbox": ^2.2.0
     "@uidu/data-fields": ^2.7.0
-    "@uidu/data-manager": 4.7.0
-    "@uidu/data-views": ^3.4.0
+    "@uidu/data-manager": 4.8.0
+    "@uidu/data-views": ^3.4.1
     "@uidu/docs": ^0.7.0
     "@uidu/drawer": ^0.9.0
     "@uidu/field-text": ^2.2.0
@@ -8164,7 +8164,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-manager@4.7.0, @uidu/data-manager@workspace:packages/data/data-manager":
+"@uidu/data-manager@4.8.0, @uidu/data-manager@workspace:packages/data/data-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/data-manager@workspace:packages/data/data-manager"
   dependencies:
@@ -8178,9 +8178,9 @@ __metadata:
     "@uidu/board": ^2.5.0
     "@uidu/button": 1.5.0
     "@uidu/calendar": ^0.6.0
-    "@uidu/data-controls": ^4.4.0
+    "@uidu/data-controls": ^4.4.1
     "@uidu/data-fields": ^2.7.0
-    "@uidu/data-views": ^3.4.0
+    "@uidu/data-views": ^3.4.1
     "@uidu/docs": ^0.7.0
     "@uidu/dropdown-menu": ^0.8.0
     "@uidu/gallery": ^2.4.0
@@ -8192,7 +8192,7 @@ __metadata:
     "@uidu/shell": ^2.4.0
     "@uidu/side-navigation": 1.4.1
     "@uidu/spinner": ^0.7.0
-    "@uidu/table": ^5.6.0
+    "@uidu/table": ^5.7.0
     d3-array: ^3.2.4
     dayjs: ^1.11.9
     lodash: ^4.17.21
@@ -8208,7 +8208,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-views@^3.4.0, @uidu/data-views@workspace:packages/data/data-views":
+"@uidu/data-views@^3.4.1, @uidu/data-views@workspace:packages/data/data-views":
   version: 0.0.0-use.local
   resolution: "@uidu/data-views@workspace:packages/data/data-views"
   dependencies:
@@ -8216,8 +8216,8 @@ __metadata:
     "@loadable/component": ^5.15.3
     "@tanstack/react-table": ^8.9.9
     "@uidu/button": 1.5.0
-    "@uidu/data-controls": ^4.4.0
-    "@uidu/data-manager": 4.7.0
+    "@uidu/data-controls": ^4.4.1
+    "@uidu/data-manager": 4.8.0
     "@uidu/docs": ^0.7.0
     "@uidu/field-counter": ^2.2.0
     "@uidu/field-number": ^2.2.0
@@ -10279,7 +10279,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@5.6.0, @uidu/table@^5.4.0, @uidu/table@^5.6.0, @uidu/table@workspace:packages/data/table":
+"@uidu/table@5.7.0, @uidu/table@^5.4.0, @uidu/table@^5.7.0, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -10294,9 +10294,9 @@ __metadata:
     "@tanstack/react-virtual": ^3.0.0-beta.59
     "@uidu/button": 1.5.0
     "@uidu/checkbox": ^2.2.0
-    "@uidu/data-controls": ^4.4.0
+    "@uidu/data-controls": ^4.4.1
     "@uidu/data-fields": ^2.7.0
-    "@uidu/data-manager": 4.7.0
+    "@uidu/data-manager": 4.8.0
     "@uidu/docs": ^0.7.0
     "@uidu/menu": ^0.10.0
     "@uidu/popup": ^0.10.0

@@ -1,6 +1,6 @@
 import { Row as RowType } from '@tanstack/react-table';
 import { useDataManagerContext } from '@uidu/data-manager';
-import React, { useMemo, useRef } from 'react';
+import React, { useRef } from 'react';
 import { StyledComponent } from 'styled-components';
 import Cell from './Cell';
 import ContextMenu from './ContextMenu';
@@ -32,13 +32,9 @@ function Row<T extends object>({
     ContextMenuComponent = dataManagerContext?.contextMenu;
   }
 
-  const visibleCells = useMemo(
-    () =>
-      row
-        .getVisibleCells()
-        .filter((cell) => !cell.column.columnDef.meta?.isPrivate),
-    [row],
-  );
+  const visibleCells = row
+    .getVisibleCells()
+    .filter((cell) => !cell.column.columnDef.meta?.isPrivate);
 
   return (
     <StyledRow
