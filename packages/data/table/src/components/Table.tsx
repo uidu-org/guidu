@@ -131,13 +131,13 @@ function Table<T extends { id: string }>({
 
   return (
     <ShellBody tw="flex-col">
-      <Headers
-        headerGroups={headerGroups}
-        components={headerComponents}
-        headerHeight={headerHeight}
-        columnSizingInfo={columnSizingInfo}
-      />
       <ScrollableContainer ref={parentRef} tw="h-full w-full overflow-scroll">
+        <Headers
+          headerGroups={headerGroups}
+          components={headerComponents}
+          headerHeight={headerHeight}
+          columnSizingInfo={columnSizingInfo}
+        />
         {/* <div
           style={{
             // width: tableInstance.getTotalSize(),

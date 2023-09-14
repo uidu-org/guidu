@@ -50,23 +50,29 @@ export default function Basic({}) {
 
   const form = useForm({});
 
-  const toggleView = useCallback((view) => {
-    if (view.id !== currentView.id) {
-      setRendered(false);
-      setCurrentView(view);
-    }
-  }, []);
+  const toggleView = useCallback(
+    (view) => {
+      if (view.id !== currentView.id) {
+        setRendered(false);
+        setCurrentView(view);
+      }
+    },
+    [currentView.id],
+  );
 
-  const addView = useCallback((dataview) => {
-    const newView = {
-      id: dataViews.length + 1,
-      kind: dataview.kind,
-      name: `New ${dataview.name}`,
-      fields: [],
-    };
-    setDataViews((prevDataViews) => [...prevDataViews, newView]);
-    setCurrentView(newView);
-  }, []);
+  const addView = useCallback(
+    (dataview) => {
+      const newView = {
+        id: dataViews.length + 1,
+        kind: dataview.kind,
+        name: `New ${dataview.name}`,
+        fields: [],
+      };
+      setDataViews((prevDataViews) => [...prevDataViews, newView]);
+      setCurrentView(newView);
+    },
+    [dataViews.length],
+  );
 
   useEffect(() => {
     fetchContacts().then((response) => {
