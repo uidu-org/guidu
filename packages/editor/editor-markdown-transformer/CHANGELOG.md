@@ -1,5 +1,17 @@
 # @uidu/editor-markdown-transformer
 
+## 1.3.0
+
+### Minor Changes
+
+- c269ff76c: Fix mentions picker
+
+### Patch Changes
+
+- Updated dependencies [c269ff76c]
+  - @uidu/editor-common@2.11.0
+  - @uidu/adf-schema@2.5.0
+
 ## 1.2.0
 
 ### Minor Changes

@@ -1,5 +1,16 @@
 # @uidu/email-renderer
 
+## 1.6.0
+
+### Minor Changes
+
+- c269ff76c: Fix mentions picker
+
+### Patch Changes
+
+- Updated dependencies [c269ff76c]
+  - @uidu/adf-schema@2.5.0
+
 ## 1.5.0
 
 ### Minor Changes
