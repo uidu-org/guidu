@@ -1,5 +1,11 @@
 # @uidu/popup
 
+## 0.10.0
+
+### Minor Changes
+
+- 43361b7d4: Bump deps and DataManager scrollable container
+
 ## 0.9.0
 
 ### Minor Changes

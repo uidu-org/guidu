@@ -1,5 +1,20 @@
 # @uidu/data-fields
 
+## 2.7.0
+
+### Minor Changes
+
+- 43361b7d4: Bump deps and DataManager scrollable container
+
+### Patch Changes
+
+- Updated dependencies [43361b7d4]
+  - @uidu/select@2.7.0
+  - @uidu/popup@0.10.0
+  - @uidu/field-time@2.3.1
+  - @uidu/field-color-picker@3.2.1
+  - @uidu/field-date@2.4.1
+
 ## 2.6.0
 
 ### Minor Changes

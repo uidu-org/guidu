@@ -1,5 +1,12 @@
 # @uidu/navigation
 
+## 1.4.1
+
+### Patch Changes
+
+- Updated dependencies [43361b7d4]
+  - @uidu/popup@0.10.0
+
 ## 1.4.0
 
 ### Minor Changes

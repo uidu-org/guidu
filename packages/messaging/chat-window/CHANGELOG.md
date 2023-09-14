@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.8.0
+
+### Minor Changes
+
+- 43361b7d4: Bump deps and DataManager scrollable container
+
+### Patch Changes
+
+- @uidu/message@0.8.1
+
 ## 0.7.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 2.7.0
+
+### Minor Changes
+
+- 43361b7d4: Bump deps and DataManager scrollable container
+
 ## 2.6.0
 
 ### Minor Changes

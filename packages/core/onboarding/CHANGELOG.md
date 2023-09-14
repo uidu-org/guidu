@@ -1,5 +1,11 @@
 # @uidu/onboarding
 
+## 1.6.0
+
+### Minor Changes
+
+- 43361b7d4: Bump deps and DataManager scrollable container
+
 ## 1.5.0
 
 ### Minor Changes

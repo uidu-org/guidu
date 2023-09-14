@@ -1,5 +1,12 @@
 # @uidu/media-filmstrip
 
+## 0.9.2
+
+### Patch Changes
+
+- Updated dependencies [43361b7d4]
+  - @uidu/media-card@0.12.0
+
 ## 0.9.1
 
 ### Patch Changes

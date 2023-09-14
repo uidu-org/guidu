@@ -1,5 +1,13 @@
 # @uidu/renderer
 
+## 2.8.1
+
+### Patch Changes
+
+- Updated dependencies [43361b7d4]
+  - @uidu/media-card@0.12.0
+  - @uidu/media-filmstrip@0.9.2
+
 ## 2.8.0
 
 ### Minor Changes
