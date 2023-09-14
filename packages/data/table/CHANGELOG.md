@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 5.8.0
+
+### Minor Changes
+
+- 0d924d29e: Fix row.getVisibleCells
+
 ## 5.7.0
 
 ### Minor Changes
