@@ -44,7 +44,7 @@ const containerCSS = {
 };
 
 export default () => (
-  <div css={containerCSS}>
+  <div>
     <PopupExample name="foo" />
     <PopupExample name="bar" />
     <PopupExample name="baz" />

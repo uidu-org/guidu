@@ -164,10 +164,10 @@ export default function Cell<T, V>({
     >
       {renderCell(cell.getContext())}
       {selectedCell === cell.id && (
-        <div tw="absolute inset-0 bg-primary bg-opacity-5 rounded pointer-events-none" />
+        <div tw="absolute inset-0 bg-primary pointer-events-none [--tw-bg-opacity:0.05]" />
       )}
       {selectedCell === cell.id && (
-        <div tw="absolute inset-0 border border-primary rounded -z-0 pointer-events-none" />
+        <div tw="absolute inset-0 border border-primary -z-0 pointer-events-none  [--tw-border-opacity:0.1]" />
       )}
     </Td>
   );

@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { FileType } from '../../media-core/dist/uidu-media-core.cjs';
 
 export const fakeImage = () => ({
-  id: faker.datatype.uuid(),
+  id: faker.string.uuid(),
   description: faker.lorem.sentence(),
   author: {
     avatar: faker.image.avatar(),
@@ -10,7 +10,7 @@ export const fakeImage = () => ({
     email: faker.internet.email(),
   },
   file: {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     type: 'image' as FileType,
     url: faker.image.business(),
     metadata: {
@@ -22,7 +22,7 @@ export const fakeImage = () => ({
 });
 
 export const fakeVideo = () => ({
-  id: faker.datatype.uuid(),
+  id: faker.string.uuid(),
   description: faker.lorem.sentence(),
   author: {
     avatar: faker.image.avatar(),
@@ -30,7 +30,7 @@ export const fakeVideo = () => ({
   },
   createdAt: faker.date.recent(),
   file: {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     type: 'video' as FileType,
     url: 'https://peach.blender.org/wp-content/uploads/bbb-splash.png',
     metadata: {
@@ -52,7 +52,7 @@ export const fakeVideo = () => ({
 });
 
 export const fakePdf = () => ({
-  id: faker.datatype.uuid(),
+  id: faker.string.uuid(),
   description: faker.lorem.sentence(),
   author: {
     avatar: faker.image.avatar(),
@@ -60,7 +60,7 @@ export const fakePdf = () => ({
   },
   createdAt: faker.date.recent(),
   file: {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     type: 'file' as FileType,
     url: 'https://arxiv.org/pdf/quant-ph/0410100.pdf',
     metadata: {
@@ -72,7 +72,7 @@ export const fakePdf = () => ({
 });
 
 export const fakeXls = () => ({
-  id: faker.datatype.uuid(),
+  id: faker.string.uuid(),
   description: faker.lorem.sentence(),
   author: {
     avatar: faker.image.avatar(),
@@ -80,7 +80,7 @@ export const fakeXls = () => ({
   },
   createdAt: faker.date.recent(),
   file: {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     type: 'file' as FileType,
     url: 'https://file-examples.com/wp-content/uploads/2017/02/file_example_XLS_100.xls',
     metadata: {
@@ -91,7 +91,7 @@ export const fakeXls = () => ({
   },
 });
 export const fakeCsv = () => ({
-  id: faker.datatype.uuid(),
+  id: faker.string.uuid(),
   description: faker.lorem.sentence(),
   author: {
     avatar: faker.image.avatar(),
@@ -99,7 +99,7 @@ export const fakeCsv = () => ({
   },
   createdAt: faker.date.recent(),
   file: {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     type: 'file' as FileType,
     url: 'https://arxiv.org/pdf/quant-ph/0410100.pdf',
     metadata: {
@@ -111,7 +111,7 @@ export const fakeCsv = () => ({
 });
 
 export const fakeLink = () => ({
-  id: faker.datatype.uuid(),
+  id: faker.string.uuid(),
   description: faker.lorem.sentence(),
   author: {
     avatar: faker.image.avatar(),
@@ -119,7 +119,7 @@ export const fakeLink = () => ({
   },
   createdAt: faker.date.recent(),
   file: {
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     type: 'link' as FileType,
     metadata: {
       url: faker.image.dataUri(),

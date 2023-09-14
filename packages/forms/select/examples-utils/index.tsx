@@ -9,7 +9,7 @@ export const defaultUsers = Array.from(Array(10)).map((x) => ({
 }));
 
 export const defaultOptions = Array.from(Array(10)).map((x) => {
-  const id = faker.datatype.uuid();
+  const id = faker.string.uuid();
   return {
     id,
     name: faker.lorem.word(),

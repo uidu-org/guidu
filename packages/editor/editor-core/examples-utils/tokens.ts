@@ -3,7 +3,7 @@ import { Token } from '@uidu/editor-common/provider-factory';
 
 export const getItems = (count: number = 20): Token[] =>
   Array.from(Array(count)).map((x) => ({
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     name: faker.name.fullName(),
   }));
 

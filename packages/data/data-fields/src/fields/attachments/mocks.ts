@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 
 const value = () => ({
-  id: faker.datatype.uuid(),
+  id: faker.string.uuid(),
   url: faker.image.image(),
 });
 

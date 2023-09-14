@@ -77,7 +77,7 @@ export default function Basic({}) {
 
   const loadNext = () => {
     setIsLoadingNext(true);
-    fetchContacts(3000).then((response) => {
+    fetchContacts(100).then((response) => {
       setIsLoadingNext(false);
       setRowData((prev) => [...prev, ...response]);
     });

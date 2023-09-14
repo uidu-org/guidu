@@ -6,9 +6,9 @@ const fakeAttachments = () => {
   return Array.from(
     Array(faker.datatype.number({ min: 1, max: 4 })).keys(),
   ).map((i) => ({
-    id: faker.datatype.uuid(),
+    id: faker.string.uuid(),
     file: {
-      id: faker.datatype.uuid(),
+      id: faker.string.uuid(),
       url: faker.random.image(),
       type: faker.random.arrayElement(['file', 'image']),
       metadata: {
@@ -29,8 +29,8 @@ export const message: () => MessageProps = () => ({
   klass: 'Message',
   scope: 'messages',
   kind: 'message.create',
-  id: faker.datatype.uuid(),
-  uid: faker.datatype.uuid(),
+  id: faker.string.uuid(),
+  uid: faker.string.uuid(),
   body: faker.random.boolean() ? faker.lorem.paragraph() : faker.lorem.words(),
   createdAt: moment().toDate(),
   updatedAt: faker.date.recent(),
