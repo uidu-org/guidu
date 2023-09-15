@@ -8067,7 +8067,7 @@ __metadata:
     "@uidu/data-fields": ^2.7.0
     "@uidu/docs": ^0.7.0
     "@uidu/spinner": ^0.7.0
-    "@uidu/table": 5.7.0
+    "@uidu/table": 5.8.0
     "@uidu/tooltip": ^0.7.0
     d3-array: ^3.2.4
     gql-query-builder: ^3.8.0
@@ -10279,7 +10279,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@5.7.0, @uidu/table@^5.4.0, @uidu/table@^5.7.0, @uidu/table@workspace:packages/data/table":
+"@uidu/table@5.8.0, @uidu/table@^5.4.0, @uidu/table@^5.7.0, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:

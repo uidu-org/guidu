@@ -8,10 +8,10 @@ export const StyledMenuGroup = styled.div<{
   minHeight: number | string;
 }>`
   ${tw`flex flex-col overflow-auto`}
-  ${({ maxWidth }) => `max-width: ${maxWidth}`}
-  ${({ minWidth }) => `min-width: ${minWidth}`}
-  ${({ maxHeight }) => `max-height: ${maxHeight}`}
-  ${({ minHeight }) => `min-height: ${minHeight}`}
+  ${({ maxWidth }) => maxWidth && { maxWidth }}
+  ${({ minWidth }) => minWidth && { minWidth }}
+  ${({ maxHeight }) => maxHeight && { maxHeight }}
+  ${({ minHeight }) => minHeight && { minHeight }}
 `;
 
 export const StyledSection = styled.div<{
