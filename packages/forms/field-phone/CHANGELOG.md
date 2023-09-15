@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 2.2.3
+
+### Patch Changes
+
+- @uidu/select@2.7.1
+
 ## 2.2.2
 
 ### Patch Changes

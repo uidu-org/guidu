@@ -1,5 +1,13 @@
 # @uidu/data-views
 
+## 3.4.2
+
+### Patch Changes
+
+- @uidu/data-controls@4.4.2
+- @uidu/data-manager@4.8.1
+- @uidu/select@2.7.1
+
 ## 3.4.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.11.0
+
+### Minor Changes
+
+- f8efbfe66: Fix scrollable menu group
+
 ## 0.10.0
 
 ### Minor Changes

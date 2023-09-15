@@ -1,5 +1,12 @@
 # @uidu/navigation
 
+## 1.2.1
+
+### Patch Changes
+
+- Updated dependencies [f8efbfe66]
+  - @uidu/menu@0.11.0
+
 ## 1.2.0
 
 ### Minor Changes
