@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 5.8.1
+
+### Patch Changes
+
+- Updated dependencies [f8efbfe66]
+  - @uidu/menu@0.11.0
+  - @uidu/data-fields@2.7.1
+  - @uidu/data-manager@4.8.1
+
 ## 5.8.0
 
 ### Minor Changes

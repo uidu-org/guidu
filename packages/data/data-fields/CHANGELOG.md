@@ -1,5 +1,14 @@
 # @uidu/data-fields
 
+## 2.7.1
+
+### Patch Changes
+
+- Updated dependencies [f8efbfe66]
+  - @uidu/menu@0.11.0
+  - @uidu/select@2.7.1
+  - @uidu/field-time@2.3.2
+
 ## 2.7.0
 
 ### Minor Changes

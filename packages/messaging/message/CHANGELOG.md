@@ -1,5 +1,12 @@
 # @uidu/message
 
+## 0.8.2
+
+### Patch Changes
+
+- Updated dependencies [f8efbfe66]
+  - @uidu/menu@0.11.0
+
 ## 0.8.1
 
 ### Patch Changes

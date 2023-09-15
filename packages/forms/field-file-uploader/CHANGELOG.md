@@ -1,5 +1,12 @@
 # @uidu/field-file-uploader
 
+## 2.5.1
+
+### Patch Changes
+
+- Updated dependencies [f8efbfe66]
+  - @uidu/menu@0.11.0
+
 ## 2.5.0
 
 ### Minor Changes

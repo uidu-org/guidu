@@ -1,5 +1,12 @@
 # @uidu/email-builder
 
+## 0.5.3
+
+### Patch Changes
+
+- @uidu/editor-core@2.17.1
+- @uidu/select@2.7.1
+
 ## 0.5.2
 
 ### Patch Changes
