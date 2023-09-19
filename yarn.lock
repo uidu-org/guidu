@@ -6016,23 +6016,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stripe/react-stripe-js@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@stripe/react-stripe-js@npm:2.1.0"
+"@stripe/react-stripe-js@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@stripe/react-stripe-js@npm:2.3.0"
   dependencies:
     prop-types: ^15.7.2
   peerDependencies:
-    "@stripe/stripe-js": ^1.44.1
+    "@stripe/stripe-js": ^1.44.1 || ^2.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: ae5a26e44bd43bcb36ea7d578a2fe0920e75eb46f6f942eae88c3758cb8328a70f891d3a492760d3e6021e7dd93b0d4e4e279ffe169cfa671049c690c210fba0
+  checksum: 6deaeb4e7fd6162d3a5d1061706a75b213e238fc59a29e013d1b9f51277f538766ab86123198888cb37866c8c87b45f57463ad2361d4e6dd5774df2d100f1bdf
   languageName: node
   linkType: hard
 
-"@stripe/stripe-js@npm:^1.52.1":
-  version: 1.52.1
-  resolution: "@stripe/stripe-js@npm:1.52.1"
-  checksum: db1971b064d3c8c6f79da01e9f49d6bb8084bfa5282efc46570508059423ed148bfa71aa1f21d17a259fad2597a832840fdf59a64311b0703f045599cd6bb0f0
+"@stripe/stripe-js@npm:^2.1.6":
+  version: 2.1.6
+  resolution: "@stripe/stripe-js@npm:2.1.6"
+  checksum: fc521467a68f7ae37ddad9e3f27f8d0520a2acca227f2cfb225a145b0b7dc3ebaba6d510179d0ef0cef3ed7320a8db40ba73253f759949d50136a12311e7b924
   languageName: node
   linkType: hard
 
@@ -9827,8 +9827,8 @@ __metadata:
   resolution: "@uidu/payment-sources@workspace:packages/ecommerce/payment-sources"
   dependencies:
     "@babel/runtime": ^7.22.15
-    "@stripe/react-stripe-js": ^2.1.0
-    "@stripe/stripe-js": ^1.52.1
+    "@stripe/react-stripe-js": ^2.3.0
+    "@stripe/stripe-js": ^2.1.6
     "@uidu/docs": ^0.7.0
     "@uidu/form": ^2.6.0
     "@uidu/payments": ^1.8.0
@@ -9845,8 +9845,8 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.22.15
     "@heroicons/react": ^2.0.18
-    "@stripe/react-stripe-js": ^2.1.0
-    "@stripe/stripe-js": ^1.52.1
+    "@stripe/react-stripe-js": ^2.3.0
+    "@stripe/stripe-js": ^2.1.6
     "@uidu/docs": ^0.7.0
     "@uidu/field-base": ^4.5.0
     "@uidu/form": ^2.6.0
@@ -10249,8 +10249,8 @@ __metadata:
   resolution: "@uidu/stripe-accounts@workspace:packages/ecommerce/stripe-accounts"
   dependencies:
     "@babel/runtime": ^7.22.15
-    "@stripe/react-stripe-js": ^2.1.0
-    "@stripe/stripe-js": ^1.52.1
+    "@stripe/react-stripe-js": ^2.3.0
+    "@stripe/stripe-js": ^2.1.6
     "@uidu/docs": ^0.7.0
     "@uidu/field-text": ^2.2.0
     "@uidu/form": ^2.6.0
@@ -19359,8 +19359,8 @@ __metadata:
     "@popperjs/core": ^2.11.8
     "@preconstruct/cli": ^2.8.1
     "@researchgate/react-intersection-observer": ^1.3.5
-    "@stripe/react-stripe-js": ^2.1.0
-    "@stripe/stripe-js": ^1.52.1
+    "@stripe/react-stripe-js": ^2.3.0
+    "@stripe/stripe-js": ^2.1.6
     "@tailwindcss/aspect-ratio": ^0.4.2
     "@tailwindcss/forms": ^0.5.6
     "@tailwindcss/typography": ^0.5.10

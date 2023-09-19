@@ -4,6 +4,7 @@ import {
 } from '@stripe/stripe-js';
 
 const defaultOptions = {
+  disableLink: true,
   classes: {},
   style: {
     // base: {
