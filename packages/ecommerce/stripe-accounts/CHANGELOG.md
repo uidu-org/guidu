@@ -1,5 +1,16 @@
 # @uidu/stripe-accounts
 
+## 0.9.0
+
+### Minor Changes
+
+- beda2101d: Bump stripe and disableLink by default
+
+### Patch Changes
+
+- Updated dependencies [beda2101d]
+  - @uidu/payments@1.10.0
+
 ## 0.8.0
 
 ### Minor Changes
