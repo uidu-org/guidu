@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.10.0
+
+### Minor Changes
+
+- beda2101d: Bump stripe and disableLink by default
+
 ## 1.9.0
 
 ### Minor Changes

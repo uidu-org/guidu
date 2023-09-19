@@ -1,5 +1,16 @@
 # @uidu/payment-sources
 
+## 0.6.0
+
+### Minor Changes
+
+- beda2101d: Bump stripe and disableLink by default
+
+### Patch Changes
+
+- Updated dependencies [beda2101d]
+  - @uidu/payments@1.10.0
+
 ## 0.5.0
 
 ### Minor Changes
