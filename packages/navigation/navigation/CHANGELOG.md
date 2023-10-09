@@ -1,5 +1,23 @@
 # @uidu/navigation
 
+## 1.3.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/animated-menu@1.3.0
+  - @uidu/dropdown-menu@0.9.0
+  - @uidu/inline-dialog@0.8.0
+  - @uidu/shell@2.5.0
+  - @uidu/tooltip@0.8.0
+  - @uidu/avatar@0.12.0
+  - @uidu/theme@0.9.0
+  - @uidu/menu@0.12.0
+
 ## 1.2.1
 
 ### Patch Changes

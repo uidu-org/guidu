@@ -1,5 +1,18 @@
 # @uidu/field-geosuggest
 
+## 2.5.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/field-base@4.6.0
+  - @uidu/spinner@0.8.0
+  - @uidu/menu@0.12.0
+
 ## 2.4.1
 
 ### Patch Changes

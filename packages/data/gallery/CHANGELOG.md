@@ -1,5 +1,19 @@
 # @uidu/gallery
 
+## 2.5.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/data-fields@3.0.0
+  - @uidu/data-controls@4.5.0
+  - @uidu/shell@2.5.0
+  - @uidu/spinner@0.8.0
+
 ## 2.4.0
 
 ### Minor Changes

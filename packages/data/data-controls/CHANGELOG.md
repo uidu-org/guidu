@@ -1,5 +1,30 @@
 # @uidu/data-controls
 
+## 4.5.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/data-fields@3.0.0
+  - @uidu/inline-dialog@0.8.0
+  - @uidu/data-manager@4.9.0
+  - @uidu/field-text@2.3.0
+  - @uidu/shell@2.5.0
+  - @uidu/data-views@3.5.0
+  - @uidu/checkbox@2.3.0
+  - @uidu/spinner@0.8.0
+  - @uidu/tooltip@0.8.0
+  - @uidu/select@2.8.0
+  - @uidu/button@1.6.0
+  - @uidu/drawer@0.10.0
+  - @uidu/popup@0.11.0
+  - @uidu/form@2.7.0
+  - @uidu/menu@0.12.0
+
 ## 4.4.2
 
 ### Patch Changes

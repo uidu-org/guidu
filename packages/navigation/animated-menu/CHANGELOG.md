@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.3.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
 ## 1.2.0
 
 ### Minor Changes

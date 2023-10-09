@@ -1,5 +1,18 @@
 # @uidu/pagination
 
+## 0.8.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/analytics@0.9.0
+  - @uidu/button@1.6.0
+  - @uidu/theme@0.9.0
+
 ## 0.7.0
 
 ### Minor Changes

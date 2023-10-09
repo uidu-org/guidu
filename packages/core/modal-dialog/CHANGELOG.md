@@ -1,5 +1,19 @@
 # @uidu/modal-dialog
 
+## 1.5.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/analytics@0.9.0
+  - @uidu/portal@1.3.0
+  - @uidu/theme@0.9.0
+  - @uidu/blanket@0.7.2
+
 ## 1.4.0
 
 ### Minor Changes

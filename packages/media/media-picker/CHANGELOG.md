@@ -1,5 +1,16 @@
 # @uidu/media-picker
 
+## 1.4.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/media-core@1.8.0
+
 ## 1.3.0
 
 ### Minor Changes

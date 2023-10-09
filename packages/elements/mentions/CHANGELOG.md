@@ -1,5 +1,22 @@
 # @uidu/mentions
 
+## 0.10.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/analytics@0.9.0
+  - @uidu/lozenge@0.8.0
+  - @uidu/tooltip@0.8.0
+  - @uidu/avatar@0.12.0
+  - @uidu/button@1.6.0
+  - @uidu/theme@0.9.0
+  - @uidu/analytics-gas-types@0.4.2
+
 ## 0.9.0
 
 ### Minor Changes

@@ -1,5 +1,49 @@
 # @uidu/editor-core
 
+## 2.18.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/analytics-namespaced-context@0.7.0
+  - @uidu/editor-markdown-transformer@1.4.0
+  - @uidu/editor-json-transformer@1.4.0
+  - @uidu/analytics-listeners@0.7.0
+  - @uidu/activity-provider@0.4.0
+  - @uidu/task-decision@0.7.0
+  - @uidu/media-filmstrip@0.10.0
+  - @uidu/editor-common@2.12.0
+  - @uidu/profilecard@0.7.0
+  - @uidu/media-picker@1.4.0
+  - @uidu/avatar-group@2.9.0
+  - @uidu/modal-dialog@1.5.0
+  - @uidu/adf-schema@2.6.0
+  - @uidu/mentions@0.10.0
+  - @uidu/adf-utils@2.5.0
+  - @uidu/field-base@4.6.0
+  - @uidu/field-date@2.5.0
+  - @uidu/field-text@2.3.0
+  - @uidu/media-card@0.13.0
+  - @uidu/media-core@1.8.0
+  - @uidu/status@0.9.0
+  - @uidu/analytics@0.9.0
+  - @uidu/emoji@0.10.0
+  - @uidu/droplist@0.8.0
+  - @uidu/date@0.7.0
+  - @uidu/spinner@0.8.0
+  - @uidu/tooltip@0.8.0
+  - @uidu/select@2.8.0
+  - @uidu/avatar@0.12.0
+  - @uidu/button@1.6.0
+  - @uidu/theme@0.9.0
+  - @uidu/form@2.7.0
+  - @uidu/menu@0.12.0
+  - @uidu/analytics-gas-types@0.4.2
+
 ## 2.17.1
 
 ### Patch Changes

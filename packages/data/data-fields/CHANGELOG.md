@@ -1,5 +1,28 @@
 # @uidu/data-fields
 
+## 3.0.0
+
+### Major Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/field-color-picker@3.3.0
+  - @uidu/field-downshift@2.6.0
+  - @uidu/field-number@2.3.0
+  - @uidu/field-toggle@2.3.0
+  - @uidu/field-date@2.5.0
+  - @uidu/field-text@2.3.0
+  - @uidu/field-time@2.4.0
+  - @uidu/select@2.8.0
+  - @uidu/button@1.6.0
+  - @uidu/popup@0.11.0
+  - @uidu/form@2.7.0
+  - @uidu/menu@0.12.0
+  - @uidu/map@0.9.0
+
 ## 2.7.1
 
 ### Patch Changes

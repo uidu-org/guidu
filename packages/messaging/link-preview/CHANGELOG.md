@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.5.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
 ## 1.4.0
 
 ### Minor Changes

@@ -1,5 +1,21 @@
 # @uidu/dashboard-controls
 
+## 1.5.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/field-date-range@2.4.0
+  - @uidu/dropdown-menu@0.9.0
+  - @uidu/avatar-group@2.9.0
+  - @uidu/avatar@0.12.0
+  - @uidu/button@1.6.0
+  - @uidu/form@2.7.0
+
 ## 1.4.0
 
 ### Minor Changes

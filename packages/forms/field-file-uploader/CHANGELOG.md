@@ -1,5 +1,20 @@
 # @uidu/field-file-uploader
 
+## 2.6.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/field-base@4.6.0
+  - @uidu/media-core@1.8.0
+  - @uidu/button@1.6.0
+  - @uidu/form@2.7.0
+  - @uidu/menu@0.12.0
+
 ## 2.5.1
 
 ### Patch Changes
