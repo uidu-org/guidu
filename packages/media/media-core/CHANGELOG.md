@@ -1,5 +1,16 @@
 # @uidu/media-core
 
+## 1.8.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/docs@0.8.0
+
 ## 1.7.0
 
 ### Minor Changes

@@ -1,5 +1,28 @@
 # @uidu/data-manager
 
+## 4.9.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/data-fields@3.0.0
+  - @uidu/data-controls@4.5.0
+  - @uidu/shell@2.5.0
+  - @uidu/pagination@0.8.0
+  - @uidu/data-views@3.5.0
+  - @uidu/calendar@0.7.0
+  - @uidu/spinner@0.8.0
+  - @uidu/gallery@2.5.0
+  - @uidu/button@1.6.0
+  - @uidu/board@2.6.0
+  - @uidu/table@5.9.0
+  - @uidu/menu@0.12.0
+  - @uidu/list@3.7.0
+
 ## 4.8.1
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @uidu/blanket
 
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/analytics@0.9.0
+
 ## 0.7.1
 
 ### Patch Changes

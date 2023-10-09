@@ -1,5 +1,30 @@
 # @uidu/renderer
 
+## 2.9.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/analytics-namespaced-context@0.7.0
+  - @uidu/editor-json-transformer@1.4.0
+  - @uidu/analytics-listeners@0.7.0
+  - @uidu/task-decision@0.7.0
+  - @uidu/media-filmstrip@0.10.0
+  - @uidu/editor-common@2.12.0
+  - @uidu/adf-schema@2.6.0
+  - @uidu/mentions@0.10.0
+  - @uidu/adf-utils@2.5.0
+  - @uidu/media-card@0.13.0
+  - @uidu/status@0.9.0
+  - @uidu/analytics@0.9.0
+  - @uidu/tooltip@0.8.0
+  - @uidu/theme@0.9.0
+  - @uidu/code@0.8.0
+
 ## 2.8.1
 
 ### Patch Changes

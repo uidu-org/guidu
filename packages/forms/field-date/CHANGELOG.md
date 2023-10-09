@@ -1,5 +1,19 @@
 # @uidu/field-date
 
+## 2.5.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/field-base@4.6.0
+  - @uidu/field-text@2.3.0
+  - @uidu/button@1.6.0
+  - @uidu/popup@0.11.0
+
 ## 2.4.1
 
 ### Patch Changes

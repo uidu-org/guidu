@@ -1,5 +1,16 @@
 # @uidu/adf-utils
 
+## 2.5.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/adf-schema@2.6.0
+
 ## 2.4.0
 
 ### Minor Changes

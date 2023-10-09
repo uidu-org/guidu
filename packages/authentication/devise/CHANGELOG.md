@@ -1,5 +1,23 @@
 # @uidu/devise
 
+## 1.7.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/field-password@2.3.0
+  - @uidu/field-phone@2.3.0
+  - @uidu/field-text@2.3.0
+  - @uidu/shell@2.5.0
+  - @uidu/checkbox@2.3.0
+  - @uidu/spinner@0.8.0
+  - @uidu/avatar@0.12.0
+  - @uidu/form@2.7.0
+
 ## 1.6.0
 
 ### Minor Changes

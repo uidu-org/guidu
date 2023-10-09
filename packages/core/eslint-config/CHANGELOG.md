@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.6.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
 ## 0.5.0
 
 ### Minor Changes

@@ -1,5 +1,23 @@
 # @uidu/dashlets-form
 
+## 1.4.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/field-downshift@2.6.0
+  - @uidu/dropdown-menu@0.9.0
+  - @uidu/field-toggle@2.3.0
+  - @uidu/shell@2.5.0
+  - @uidu/accordion@0.9.0
+  - @uidu/dashlets@3.6.0
+  - @uidu/select@2.8.0
+  - @uidu/form@2.7.0
+
 ## 1.3.0
 
 ### Minor Changes

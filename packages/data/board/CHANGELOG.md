@@ -1,5 +1,16 @@
 # @uidu/board
 
+## 2.6.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/theme@0.9.0
+
 ## 2.5.0
 
 ### Minor Changes

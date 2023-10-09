@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.9.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
 ## 0.8.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # @uidu/editor-markdown-transformer
 
+## 1.4.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/editor-common@2.12.0
+  - @uidu/adf-schema@2.6.0
+
 ## 1.3.0
 
 ### Minor Changes

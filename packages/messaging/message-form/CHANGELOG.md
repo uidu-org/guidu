@@ -1,5 +1,22 @@
 # @uidu/message-form
 
+## 0.7.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/media-filmstrip@0.10.0
+  - @uidu/field-mentions@2.3.0
+  - @uidu/dropdown-menu@0.9.0
+  - @uidu/message@0.9.0
+  - @uidu/field-text@2.3.0
+  - @uidu/spinner@0.8.0
+  - @uidu/form@2.7.0
+
 ## 0.6.1
 
 ### Patch Changes

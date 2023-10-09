@@ -1,5 +1,19 @@
 # @uidu/tooltip
 
+## 0.8.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/analytics@0.9.0
+  - @uidu/popper@0.8.0
+  - @uidu/portal@1.3.0
+  - @uidu/theme@0.9.0
+
 ## 0.7.0
 
 ### Minor Changes

@@ -1,5 +1,20 @@
 # @uidu/blocks
 
+## 3.6.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/data-fields@3.0.0
+  - @uidu/dashboard-manager@2.6.0
+  - @uidu/spinner@0.8.0
+  - @uidu/tooltip@0.8.0
+  - @uidu/table@5.9.0
+
 ## 3.5.3
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.7.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/button@1.6.0
+
 ## 2.6.0
 
 ### Minor Changes

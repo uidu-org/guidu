@@ -1,5 +1,26 @@
 # @uidu/editor-common
 
+## 2.12.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/analytics-namespaced-context@0.7.0
+  - @uidu/editor-json-transformer@1.4.0
+  - @uidu/profilecard@0.7.0
+  - @uidu/adf-schema@2.6.0
+  - @uidu/mentions@0.10.0
+  - @uidu/adf-utils@2.5.0
+  - @uidu/media-core@1.8.0
+  - @uidu/analytics@0.9.0
+  - @uidu/emoji@0.10.0
+  - @uidu/tooltip@0.8.0
+  - @uidu/theme@0.9.0
+
 ## 2.11.0
 
 ### Minor Changes

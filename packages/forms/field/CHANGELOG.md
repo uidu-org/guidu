@@ -1,5 +1,20 @@
 # @uidu/field
 
+## 1.3.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/field-textarea@2.4.0
+  - @uidu/field-number@2.3.0
+  - @uidu/field-text@2.3.0
+  - @uidu/checkbox@2.3.0
+  - @uidu/select@2.8.0
+
 ## 1.2.0
 
 ### Minor Changes

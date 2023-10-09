@@ -1,5 +1,21 @@
 # @uidu/profilecard
 
+## 0.7.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/lozenge@0.8.0
+  - @uidu/spinner@0.8.0
+  - @uidu/avatar@0.12.0
+  - @uidu/button@1.6.0
+  - @uidu/popup@0.11.0
+  - @uidu/theme@0.9.0
+
 ## 0.6.1
 
 ### Patch Changes

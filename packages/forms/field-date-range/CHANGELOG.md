@@ -1,5 +1,17 @@
 # @uidu/field-date-range
 
+## 2.4.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/field-base@4.6.0
+  - @uidu/field-date@2.5.0
+
 ## 2.3.0
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @uidu/util-data-test
 
+## 0.7.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/task-decision@0.7.0
+  - @uidu/mentions@0.10.0
+  - @uidu/analytics@0.9.0
+  - @uidu/emoji@0.10.0
+
 ## 0.6.2
 
 ### Patch Changes

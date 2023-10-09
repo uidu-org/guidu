@@ -1,5 +1,22 @@
 # @uidu/data-views
 
+## 3.5.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/field-counter@2.3.0
+  - @uidu/data-controls@4.5.0
+  - @uidu/field-number@2.3.0
+  - @uidu/data-manager@4.9.0
+  - @uidu/select@2.8.0
+  - @uidu/button@1.6.0
+  - @uidu/form@2.7.0
+
 ## 3.4.2
 
 ### Patch Changes

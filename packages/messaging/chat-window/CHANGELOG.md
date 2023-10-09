@@ -1,5 +1,18 @@
 # @uidu/chat-window
 
+## 0.9.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
+### Patch Changes
+
+- Updated dependencies [ca13e0108]
+  - @uidu/message-renderer@0.7.0
+  - @uidu/message-form@0.7.0
+  - @uidu/message@0.9.0
+
 ## 0.8.0
 
 ### Minor Changes

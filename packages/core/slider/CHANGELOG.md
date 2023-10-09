@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.4.0
+
+### Minor Changes
+
+- ca13e0108: Bump deps, changed data-fields color references
+
 ## 2.3.0
 
 ### Minor Changes
