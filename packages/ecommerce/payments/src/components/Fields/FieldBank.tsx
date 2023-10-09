@@ -1,10 +1,24 @@
 import { IbanElement } from '@stripe/react-stripe-js';
-import { noop, useController, Wrapper } from '@uidu/field-base';
+import {
+  StripeIbanElement,
+  StripeIbanElementChangeEvent,
+  StripeIbanElementOptions,
+} from '@stripe/stripe-js';
+import { FieldBaseProps, noop, useController, Wrapper } from '@uidu/field-base';
 import React from 'react';
 import { FieldBase } from '../../styled';
 import { createIbanElementOptions } from '../../utils';
 
-function FieldBank({ onChange = noop, providerProps, onReady, name, ...rest }) {
+function FieldBank({
+  onChange = noop,
+  providerProps,
+  onReady,
+  name,
+  ...rest
+}: {
+  providerProps: StripeIbanElementOptions;
+  onReady?: (element: StripeIbanElement) => void;
+} & FieldBaseProps<string>) {
   const { field, wrapperProps, inputProps } = useController({
     name,
     defaultValue: '',
@@ -12,9 +26,9 @@ function FieldBank({ onChange = noop, providerProps, onReady, name, ...rest }) {
     ...rest,
   });
 
-  const handleChange = (value) => {
-    field.onChange(value);
-    onChange(name, value);
+  const handleChange = (event: StripeIbanElementChangeEvent) => {
+    field.onChange(event.bankName);
+    onChange(name, event.bankName);
   };
 
   return (

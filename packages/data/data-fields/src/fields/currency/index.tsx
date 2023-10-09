@@ -26,7 +26,7 @@ const Currency: ColumnDef<unknown, number> = {
       />
     ),
     icon: <FontAwesomeIcon icon={faEuroSign} />,
-    color: 'sandybrown',
+    color: '#f4a460',
   },
   cell: Cell,
   aggregate: 'sum',

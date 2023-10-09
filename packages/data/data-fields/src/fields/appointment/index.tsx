@@ -20,7 +20,7 @@ const Appointment: ColumnDef<unknown> = {
         id="uidu.data-fields.appointment.description"
       />
     ),
-    color: 'cornflowerblue',
+    color: '#6495ed',
   },
 };
 

@@ -10,12 +10,12 @@
   "module": "dist/uidu-popup.esm.js",
   "types": "dist/uidu-popup.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.15",
+    "@babel/runtime": "^7.23.1",
     "@emotion/react": "^11.11.1",
     "@uidu/popper": "^0.7.0",
     "@uidu/portal": "^1.2.0",
     "@uidu/theme": "^0.8.0",
-    "focus-trap": "^7.5.2",
+    "focus-trap": "^7.5.3",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2"
   },

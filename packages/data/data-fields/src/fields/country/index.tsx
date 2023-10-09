@@ -29,7 +29,7 @@ const Country: ColumnDef<unknown> = {
         id="uidu.data-fields.country.description"
       />
     ),
-    color: 'tan',
+    color: '#d2b48c',
     options: allCountries,
   },
   Filter,

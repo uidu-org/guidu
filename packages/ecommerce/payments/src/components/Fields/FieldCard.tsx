@@ -21,9 +21,9 @@ function FieldCard({
     ...rest,
   });
 
-  const handleChange = (value: StripeCardElementChangeEvent['value']) => {
-    field.onChange(value);
-    onChange(name, value);
+  const handleChange = (event: StripeCardElementChangeEvent) => {
+    field.onChange(event.value);
+    onChange(name, event.value);
   };
 
   return (

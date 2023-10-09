@@ -10,6 +10,14 @@ export default function usePaymentRequest({
   requestPayerName = true,
   requestPayerEmail = true,
   requestPayerPhone = true,
+}: {
+  country?: string;
+  currency?: string;
+  label: string;
+  amount: number;
+  requestPayerName?: boolean;
+  requestPayerEmail?: boolean;
+  requestPayerPhone?: boolean;
 }) {
   const stripe = useStripe();
   const [paymentRequest, setPaymentRequest] = useState<PaymentRequest>(null);

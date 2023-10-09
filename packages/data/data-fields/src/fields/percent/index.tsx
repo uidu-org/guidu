@@ -21,7 +21,7 @@ const Percent: ColumnDef<unknown, number> = {
       />
     ),
     icon: <FontAwesomeIcon icon={faPercent} />,
-    color: 'darkkhaki',
+    color: '#bdb76b',
     valueFormatter: (value) => `${value}%`,
   },
   cell: Cell,

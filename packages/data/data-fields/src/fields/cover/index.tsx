@@ -21,7 +21,7 @@ const Cover: ColumnDef<unknown> = {
       />
     ),
     isPrivate: true,
-    color: 'skyblue',
+    color: '#87ceeb',
   },
   enableSorting: false,
 };

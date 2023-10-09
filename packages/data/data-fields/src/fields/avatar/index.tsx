@@ -23,7 +23,7 @@ const Avatar: ColumnDef<unknown> = {
         id="uidu.data-fields.avatar.description"
       />
     ),
-    color: 'teal',
+    color: '#008080',
     isPrivate: true,
   },
   enableSorting: false,

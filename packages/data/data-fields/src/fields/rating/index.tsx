@@ -24,7 +24,7 @@ const Rating: ColumnDef<unknown, number> = {
       />
     ),
     icon: <FontAwesomeIcon icon={faStar} />,
-    color: 'burlywood',
+    color: '#deb887',
   },
   cell: Cell,
   mocks,

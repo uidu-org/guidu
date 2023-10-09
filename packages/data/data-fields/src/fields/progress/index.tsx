@@ -24,7 +24,7 @@ const Progress: ColumnDef<unknown, number> = {
       />
     ),
     icon: <FontAwesomeIcon icon={faTasks} />,
-    color: 'darkseagreen',
+    color: '#8fbc8f',
   },
   cell: Cell,
   mocks,

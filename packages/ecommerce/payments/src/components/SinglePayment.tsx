@@ -17,7 +17,8 @@ function StatelessSinglePayment({
   children,
   amount,
   clientSecret,
-  onSave = (paymentIntent: PaymentIntent, model: any) => Promise.resolve(),
+  onSave = (paymentIntent: PaymentIntent, model: any) =>
+    Promise.resolve({ paymentIntent, model }),
   stripeBillingDetails,
   label,
   ...rest

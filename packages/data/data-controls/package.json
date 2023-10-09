@@ -10,9 +10,9 @@
   "module": "dist/uidu-data-controls.esm.js",
   "types": "dist/uidu-data-controls.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.22.15",
+    "@babel/runtime": "^7.23.1",
     "@heroicons/react": "^2.0.18",
-    "@tanstack/react-table": "^8.9.9",
+    "@tanstack/react-table": "^8.10.6",
     "@uidu/button": "1.5.0",
     "@uidu/checkbox": "^2.2.0",
     "@uidu/data-fields": "^2.7.1",
@@ -35,7 +35,7 @@
     "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
-    "react-intl": "^6.4.6",
+    "react-intl": "^6.4.7",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2"
   },
