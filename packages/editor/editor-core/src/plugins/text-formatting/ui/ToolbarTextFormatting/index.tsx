@@ -57,7 +57,7 @@ class ToolbarTextFormatting extends PureComponent<
       emHidden,
       emActive,
       emDisabled,
-    } = textFormattingState;
+    } = textFormattingState || {};
 
     const labelBold = formatMessage(messages.bold);
     const labelItalic = formatMessage(messages.italic);

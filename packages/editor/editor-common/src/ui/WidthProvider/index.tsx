@@ -1,6 +1,5 @@
 import rafSchedule from 'raf-schd';
 import React from 'react';
-import styled from 'styled-components';
 import { WidthObserver } from '../WidthObserver';
 
 export enum Breakpoints {
@@ -21,7 +20,9 @@ const SCROLLBAR_WIDTH = 30;
 export function getBreakpoint(width: number = 0): Breakpoints {
   if (width >= MAX_S && width < MAX_M) {
     return Breakpoints.M;
-  } else if (width >= MAX_M) {
+  }
+
+  if (width >= MAX_M) {
     return Breakpoints.L;
   }
   return Breakpoints.S;
@@ -33,10 +34,10 @@ export function createWidthContext(width: number = 0): WidthConsumerContext {
 
 const { Provider, Consumer } = React.createContext(createWidthContext());
 
-const RelativeContainer = React.memo(styled.div`
-  position: relative;
-  width: 100%;
-`);
+// const RelativeContainer = React.memo(styled.div`
+//   position: relative;
+//   width: 100%;
+// `);
 
 export type WidthProviderState = {
   width?: number;
@@ -59,12 +60,12 @@ export class WidthProvider extends React.Component<
 
   render() {
     return (
-      <RelativeContainer className={this.props.className}>
-        <WidthObserver setWidth={this.setWidth} />
+      <div tw="relative w-full" className={this.props.className}>
+        <WidthObserver setWidth={this.setWidth} offscreen />
         <Provider value={createWidthContext(this.state.width)}>
           {this.props.children}
         </Provider>
-      </RelativeContainer>
+      </div>
     );
   }
 

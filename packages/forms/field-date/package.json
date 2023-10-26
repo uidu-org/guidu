@@ -13,7 +13,7 @@
     "index.module.scss"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.23.1",
+    "@babel/runtime": "^7.23.2",
     "@heroicons/react": "^2.0.18",
     "@uidu/button": "1.6.0",
     "@uidu/field-base": "4.6.0",
@@ -21,7 +21,7 @@
     "@uidu/popup": "0.11.0",
     "date-fns": "^2.30.0",
     "react": "^18.2.0",
-    "react-day-picker": "^8.8.2",
+    "react-day-picker": "^8.9.1",
     "tslib": "^2.6.2"
   },
   "devDependencies": {

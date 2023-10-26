@@ -10,14 +10,14 @@
   "module": "dist/uidu-field-time.esm.js",
   "types": "dist/uidu-field-time.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.1",
+    "@babel/runtime": "^7.23.2",
     "@uidu/field-base": "4.6.0",
     "@uidu/field-text": "^2.3.0",
     "@uidu/form": "^2.7.0",
     "@uidu/select": "2.8.0",
     "date-fns": "^2.30.0",
     "react": "^18.2.0",
-    "react-intl": "^6.4.7",
+    "react-intl": "^6.5.1",
     "tslib": "^2.6.2"
   },
   "devDependencies": {

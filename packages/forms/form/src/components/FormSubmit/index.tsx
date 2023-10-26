@@ -11,8 +11,8 @@ export default function FormSubmit({
   ...rest
 }: {
   className?: string;
-  label?: any;
-  children?: React.ReactChild;
+  label?: string | null | React.ReactNode;
+  children?: React.ReactNode;
   canSubmit?: boolean;
   loading?: boolean;
   appearance?: ButtonAppearances;
@@ -24,6 +24,7 @@ export default function FormSubmit({
       isDisabled={!canSubmit || loading}
       type="submit"
       appearance={appearance}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
       {children || label}

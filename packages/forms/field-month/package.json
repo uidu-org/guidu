@@ -15,7 +15,7 @@
   "module": "dist/uidu-field-month.esm.js",
   "types": "dist/uidu-field-month.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.1",
+    "@babel/runtime": "^7.23.2",
     "@uidu/field-base": "^4.6.0",
     "@uidu/form": "^2.7.0",
     "@uidu/theme": "^0.9.0",

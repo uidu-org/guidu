@@ -9,7 +9,7 @@
   "module": "dist/uidu-list.esm.js",
   "types": "dist/uidu-list.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.1",
+    "@babel/runtime": "^7.23.2",
     "@tanstack/react-table": "^8.10.6",
     "@tanstack/react-virtual": "^3.0.0-beta.59",
     "@uidu/data-fields": "^3.0.0",

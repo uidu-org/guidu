@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import EditorActions from '../../actions';
 import { ToolbarInnerProps } from './toolbar-types';
 
 const ToolbarComponentsWrapper = styled.div`
@@ -38,6 +37,8 @@ export class ToolbarInner extends React.Component<ToolbarInnerProps> {
       dispatchAnalyticsEvent,
     } = this.props;
 
+    console.log('items', items);
+
     if (!items || !items.length) {
       return null;
     }
@@ -48,10 +49,10 @@ export class ToolbarInner extends React.Component<ToolbarInnerProps> {
           const props: any = { key };
           const element = component({
             editorView,
-            editorActions: editorActions as EditorActions,
+            editorActions,
             eventDispatcher,
             providerFactory,
-            appearance: appearance!,
+            appearance: appearance || 'full-page',
             popupsMountPoint,
             popupsBoundariesElement,
             popupsScrollableElement,
@@ -61,6 +62,7 @@ export class ToolbarInner extends React.Component<ToolbarInnerProps> {
             containerElement: null,
             dispatchAnalyticsEvent,
           });
+          console.log('element', element);
           return element && React.cloneElement(element, props);
         })}
       </ToolbarComponentsWrapper>

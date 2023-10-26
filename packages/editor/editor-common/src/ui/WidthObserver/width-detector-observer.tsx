@@ -1,18 +1,16 @@
 import React from 'react';
 import { useInView } from './hooks';
 import { WidthObserverProps } from './types';
-import { browser } from './utils';
 
 export const WidthDetectorObserver = React.memo(
-  ({ setWidth }: WidthObserverProps) => {
-    const { supportsResizeObserver } = browser;
+  ({ setWidth, offscreen }: WidthObserverProps) => {
     const [inViewRef, inView, target] = useInView({
       /* Optional options */
       threshold: 0,
     });
 
     const observer = React.useRef(() => {
-      if (typeof window === 'undefined' || !supportsResizeObserver) {
+      if (typeof window === 'undefined') {
         return null;
       }
 
@@ -34,11 +32,11 @@ export const WidthDetectorObserver = React.memo(
       const resizeObserver = currentObserver();
 
       if (resizeObserver === null) {
-        return null;
+        return;
       }
 
       if (target) {
-        if (inView) {
+        if (inView || offscreen) {
           resizeObserver.observe(target);
         } else {
           resizeObserver.unobserve(target);
@@ -48,7 +46,7 @@ export const WidthDetectorObserver = React.memo(
       return () => {
         resizeObserver.disconnect();
       };
-    }, [target, inView]);
+    }, [target, inView, offscreen]);
 
     return (
       <div

@@ -1,5 +1,4 @@
 import React from 'react';
-import { browser } from './utils';
 
 type Response = [
   (node?: Element | null) => void,
@@ -25,17 +24,7 @@ export function useInView(options: IntersectionObserverInit = {}): Response {
   const { threshold, root, rootMargin } = options;
 
   const setRef = React.useCallback(
-    node => {
-      const { supportsIntersectionObserver } = browser;
-      if (!supportsIntersectionObserver) {
-        setState({
-          inView: true,
-          entry: undefined,
-          target: node,
-        });
-        return null;
-      }
-
+    (node) => {
       observerInstance.current = new IntersectionObserver(
         (entries: IntersectionObserverEntry[]) => {
           if (entries && entries.length) {

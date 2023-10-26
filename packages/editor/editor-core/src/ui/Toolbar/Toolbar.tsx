@@ -17,6 +17,7 @@ export function Toolbar({
   dispatchAnalyticsEvent,
   toolbarSize,
 }: ToolbarProps) {
+  console.log('should render toolbar inner');
   return (
     <ToolbarInner
       items={items}

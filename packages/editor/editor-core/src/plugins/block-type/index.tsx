@@ -133,9 +133,9 @@ const blockTypePlugin = (options?: BlockTypePluginOptions): EditorPlugin => ({
         }}
         render={({ pluginState }) => (
           <ToolbarBlockType
-            isSmall={isSmall}
-            isDisabled={disabled}
-            isReducedSpacing={isToolbarReducedSpacing}
+            isSmall={false}
+            isDisabled={false}
+            isReducedSpacing={false}
             setBlockType={boundSetBlockType}
             pluginState={pluginState}
             popupsMountPoint={popupsMountPoint}

@@ -1,6 +1,6 @@
-import { ToolbarBreakPoint } from './toolbar-types';
 import { EditorAppearance } from '../../types';
 import { isFullPage } from '../../utils/is-full-page';
+import { ToolbarBreakPoint } from './toolbar-types';
 import { ToolbarSize } from './types';
 
 // Toolbar sizes for full page editor a little bit different, because it has more buttons e.g. actions button...
@@ -22,6 +22,19 @@ const toolbarSizes: ToolbarBreakPoint[] = [
 
 const toolbarSizesForAppearance = (appearance?: EditorAppearance) =>
   isFullPage(appearance) ? toolbarSizesFullPage : toolbarSizes;
+
+export const toolbarSizeToWidth = (
+  toolbarSize: ToolbarSize,
+  appearance?: EditorAppearance,
+) => {
+  return (
+    toolbarSizesForAppearance(appearance).find(
+      ({ size }) => toolbarSize === size,
+    ) || {
+      width: ToolbarWidths.S,
+    }
+  ).width;
+};
 
 export const widthToToolbarSize = (
   toolbarWidth: number,
