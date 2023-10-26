@@ -1,5 +1,21 @@
 # @uidu/profilecard
 
+## 0.8.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/lozenge@0.9.0
+  - @uidu/spinner@0.9.0
+  - @uidu/avatar@0.13.0
+  - @uidu/button@1.7.0
+  - @uidu/popup@0.12.0
+  - @uidu/theme@0.10.0
+
 ## 0.7.0
 
 ### Minor Changes

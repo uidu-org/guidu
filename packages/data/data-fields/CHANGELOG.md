@@ -1,5 +1,28 @@
 # @uidu/data-fields
 
+## 3.1.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/field-color-picker@3.4.0
+  - @uidu/field-downshift@2.7.0
+  - @uidu/field-number@2.4.0
+  - @uidu/field-toggle@2.4.0
+  - @uidu/field-date@2.6.0
+  - @uidu/field-text@2.4.0
+  - @uidu/field-time@2.5.0
+  - @uidu/select@2.9.0
+  - @uidu/button@1.7.0
+  - @uidu/popup@0.12.0
+  - @uidu/form@2.8.0
+  - @uidu/menu@0.13.0
+  - @uidu/map@0.10.0
+
 ## 3.0.0
 
 ### Major Changes

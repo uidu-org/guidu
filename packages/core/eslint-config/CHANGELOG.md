@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.7.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
 ## 0.6.0
 
 ### Minor Changes

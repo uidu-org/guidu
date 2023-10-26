@@ -1,5 +1,21 @@
 # @uidu/dashboard-controls
 
+## 1.6.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/field-date-range@2.5.0
+  - @uidu/dropdown-menu@0.10.0
+  - @uidu/avatar-group@2.10.0
+  - @uidu/avatar@0.13.0
+  - @uidu/button@1.7.0
+  - @uidu/form@2.8.0
+
 ## 1.5.0
 
 ### Minor Changes

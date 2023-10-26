@@ -1,5 +1,20 @@
 # @uidu/field
 
+## 1.4.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/field-textarea@2.5.0
+  - @uidu/field-number@2.4.0
+  - @uidu/field-text@2.4.0
+  - @uidu/checkbox@2.4.0
+  - @uidu/select@2.9.0
+
 ## 1.3.0
 
 ### Minor Changes

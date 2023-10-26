@@ -1,5 +1,23 @@
 # @uidu/devise
 
+## 1.8.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/field-password@2.4.0
+  - @uidu/field-phone@2.4.0
+  - @uidu/field-text@2.4.0
+  - @uidu/shell@2.6.0
+  - @uidu/checkbox@2.4.0
+  - @uidu/spinner@0.9.0
+  - @uidu/avatar@0.13.0
+  - @uidu/form@2.8.0
+
 ## 1.7.0
 
 ### Minor Changes

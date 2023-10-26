@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.5.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
 ## 2.4.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # @uidu/calendar
 
+## 0.8.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/shell@2.6.0
+  - @uidu/button@1.7.0
+
 ## 0.7.0
 
 ### Minor Changes

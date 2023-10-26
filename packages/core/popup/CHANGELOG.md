@@ -1,5 +1,18 @@
 # @uidu/popup
 
+## 0.12.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/popper@0.9.0
+  - @uidu/portal@1.4.0
+  - @uidu/theme@0.10.0
+
 ## 0.11.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.10.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
 ## 0.9.0
 
 ### Minor Changes

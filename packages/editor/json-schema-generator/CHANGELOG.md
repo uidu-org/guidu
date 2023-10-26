@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.2.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
 ## 1.1.0
 
 ### Minor Changes

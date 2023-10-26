@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.4.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
 ## 1.3.0
 
 ### Minor Changes

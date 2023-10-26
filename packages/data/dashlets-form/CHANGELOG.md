@@ -1,5 +1,23 @@
 # @uidu/dashlets-form
 
+## 1.5.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/field-downshift@2.7.0
+  - @uidu/dropdown-menu@0.10.0
+  - @uidu/field-toggle@2.4.0
+  - @uidu/shell@2.6.0
+  - @uidu/accordion@0.10.0
+  - @uidu/dashlets@3.7.0
+  - @uidu/select@2.9.0
+  - @uidu/form@2.8.0
+
 ## 1.4.0
 
 ### Minor Changes

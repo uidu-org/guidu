@@ -1,5 +1,20 @@
 # @uidu/status
 
+## 0.10.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/field-text@2.4.0
+  - @uidu/analytics@0.10.0
+  - @uidu/lozenge@0.9.0
+  - @uidu/theme@0.10.0
+  - @uidu/analytics-gas-types@0.4.3
+
 ## 0.9.0
 
 ### Minor Changes

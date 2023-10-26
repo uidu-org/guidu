@@ -1,5 +1,16 @@
 # @uidu/media-picker
 
+## 1.5.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/media-core@1.9.0
+
 ## 1.4.0
 
 ### Minor Changes

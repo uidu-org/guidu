@@ -1,5 +1,26 @@
 # @uidu/editor-common
 
+## 2.13.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/analytics-namespaced-context@0.8.0
+  - @uidu/editor-json-transformer@1.5.0
+  - @uidu/profilecard@0.8.0
+  - @uidu/adf-schema@2.7.0
+  - @uidu/mentions@0.11.0
+  - @uidu/adf-utils@2.6.0
+  - @uidu/media-core@1.9.0
+  - @uidu/analytics@0.10.0
+  - @uidu/emoji@0.11.0
+  - @uidu/tooltip@0.9.0
+  - @uidu/theme@0.10.0
+
 ## 2.12.0
 
 ### Minor Changes

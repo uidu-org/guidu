@@ -1,5 +1,28 @@
 # @uidu/data-manager
 
+## 4.10.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/data-controls@4.6.0
+  - @uidu/data-fields@3.1.0
+  - @uidu/shell@2.6.0
+  - @uidu/pagination@0.9.0
+  - @uidu/data-views@3.6.0
+  - @uidu/calendar@0.8.0
+  - @uidu/spinner@0.9.0
+  - @uidu/gallery@2.6.0
+  - @uidu/button@1.7.0
+  - @uidu/board@2.7.0
+  - @uidu/table@5.10.0
+  - @uidu/menu@0.13.0
+  - @uidu/list@3.8.0
+
 ## 4.9.0
 
 ### Minor Changes

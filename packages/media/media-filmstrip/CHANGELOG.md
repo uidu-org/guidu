@@ -1,5 +1,20 @@
 # @uidu/media-filmstrip
 
+## 0.11.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/media-viewer@1.7.0
+  - @uidu/modal-dialog@1.6.0
+  - @uidu/media-card@0.14.0
+  - @uidu/media-core@1.9.0
+  - @uidu/theme@0.10.0
+
 ## 0.10.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @uidu/activity-provider
 
+## 0.5.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
 ## 0.4.0
 
 ### Minor Changes

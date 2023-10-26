@@ -1,5 +1,22 @@
 # @uidu/inline-edit
 
+## 0.7.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/inline-dialog@0.9.0
+  - @uidu/field-text@2.4.0
+  - @uidu/analytics@0.10.0
+  - @uidu/button@1.7.0
+  - @uidu/field@1.4.0
+  - @uidu/theme@0.10.0
+  - @uidu/form@2.8.0
+
 ## 0.6.0
 
 ### Minor Changes
