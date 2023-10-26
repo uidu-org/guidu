@@ -1,5 +1,18 @@
 # @uidu/analytics-listeners
 
+## 0.8.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/analytics-namespaced-context@0.8.0
+  - @uidu/analytics@0.10.0
+  - @uidu/analytics-gas-types@0.4.3
+
 ## 0.7.0
 
 ### Minor Changes

@@ -1,5 +1,24 @@
 # @uidu/email-builder
 
+## 0.7.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/email-renderer@1.8.0
+  - @uidu/editor-core@2.19.0
+  - @uidu/field-number@2.4.0
+  - @uidu/adf-schema@2.7.0
+  - @uidu/field-text@2.4.0
+  - @uidu/select@2.9.0
+  - @uidu/button@1.7.0
+  - @uidu/portal@1.4.0
+  - @uidu/form@2.8.0
+
 ## 0.6.0
 
 ### Minor Changes

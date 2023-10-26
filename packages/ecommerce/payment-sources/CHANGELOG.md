@@ -1,5 +1,17 @@
 # @uidu/payment-sources
 
+## 0.8.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/payments@1.12.0
+  - @uidu/form@2.8.0
+
 ## 0.7.0
 
 ### Minor Changes

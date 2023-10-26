@@ -1,5 +1,18 @@
 # @uidu/field-color-picker
 
+## 3.4.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/field-base@4.7.0
+  - @uidu/button@1.7.0
+  - @uidu/popup@0.12.0
+
 ## 3.3.0
 
 ### Minor Changes

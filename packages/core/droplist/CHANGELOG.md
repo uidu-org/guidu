@@ -1,5 +1,21 @@
 # @uidu/droplist
 
+## 0.9.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/analytics@0.10.0
+  - @uidu/spinner@0.9.0
+  - @uidu/tooltip@0.9.0
+  - @uidu/layer@0.9.0
+  - @uidu/theme@0.10.0
+  - @uidu/item@0.9.0
+
 ## 0.8.0
 
 ### Minor Changes

@@ -1,5 +1,16 @@
 # @uidu/section-message
 
+## 0.10.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/button@1.7.0
+
 ## 0.9.0
 
 ### Minor Changes

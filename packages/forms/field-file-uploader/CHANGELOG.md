@@ -1,5 +1,20 @@
 # @uidu/field-file-uploader
 
+## 2.7.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/field-base@4.7.0
+  - @uidu/media-core@1.9.0
+  - @uidu/button@1.7.0
+  - @uidu/form@2.8.0
+  - @uidu/menu@0.13.0
+
 ## 2.6.0
 
 ### Minor Changes

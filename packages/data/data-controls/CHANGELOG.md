@@ -1,5 +1,30 @@
 # @uidu/data-controls
 
+## 4.6.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/inline-dialog@0.9.0
+  - @uidu/data-manager@4.10.0
+  - @uidu/data-fields@3.1.0
+  - @uidu/field-text@2.4.0
+  - @uidu/shell@2.6.0
+  - @uidu/data-views@3.6.0
+  - @uidu/checkbox@2.4.0
+  - @uidu/spinner@0.9.0
+  - @uidu/tooltip@0.9.0
+  - @uidu/select@2.9.0
+  - @uidu/button@1.7.0
+  - @uidu/drawer@0.11.0
+  - @uidu/popup@0.12.0
+  - @uidu/form@2.8.0
+  - @uidu/menu@0.13.0
+
 ## 4.5.0
 
 ### Minor Changes

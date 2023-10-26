@@ -1,5 +1,35 @@
 # Change Log
 
+## 0.10.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/breadcrumbs@1.4.0
+  - @uidu/navigation@1.4.0
+  - @uidu/modal-dialog@1.6.0
+  - @uidu/field-text@2.4.0
+  - @uidu/shell@2.6.0
+  - @uidu/checkbox@2.4.0
+  - @uidu/lozenge@0.9.0
+  - @uidu/spinner@0.9.0
+  - @uidu/tooltip@0.9.0
+  - @uidu/select@2.9.0
+  - @uidu/button@1.7.0
+  - @uidu/drawer@0.11.0
+  - @uidu/badge@0.9.0
+  - @uidu/theme@0.10.0
+  - @uidu/table@5.10.0
+  - @uidu/form@2.8.0
+  - @uidu/code@0.9.0
+  - @uidu/list@3.8.0
+  - @uidu/docs@0.9.0
+  - @uidu/page-header@1.1.3
+
 ## 0.9.0
 
 ### Minor Changes

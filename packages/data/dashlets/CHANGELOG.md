@@ -1,5 +1,20 @@
 # @uidu/blocks
 
+## 3.7.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/dashboard-manager@2.7.0
+  - @uidu/data-fields@3.1.0
+  - @uidu/spinner@0.9.0
+  - @uidu/tooltip@0.9.0
+  - @uidu/table@5.10.0
+
 ## 3.6.0
 
 ### Minor Changes

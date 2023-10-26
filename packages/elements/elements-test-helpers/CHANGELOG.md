@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.9.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
 ## 0.8.0
 
 ### Minor Changes

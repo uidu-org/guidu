@@ -1,5 +1,20 @@
 # @uidu/media-card
 
+## 0.14.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/media-core@1.9.0
+  - @uidu/spinner@0.9.0
+  - @uidu/tooltip@0.9.0
+  - @uidu/button@1.7.0
+  - @uidu/theme@0.10.0
+
 ## 0.13.0
 
 ### Minor Changes

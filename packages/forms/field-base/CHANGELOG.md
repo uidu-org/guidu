@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.7.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/form@2.8.0
+
 ## 4.6.0
 
 ### Minor Changes

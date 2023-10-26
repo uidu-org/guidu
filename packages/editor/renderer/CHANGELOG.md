@@ -1,5 +1,30 @@
 # @uidu/renderer
 
+## 2.10.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/analytics-namespaced-context@0.8.0
+  - @uidu/editor-json-transformer@1.5.0
+  - @uidu/analytics-listeners@0.8.0
+  - @uidu/task-decision@0.8.0
+  - @uidu/media-filmstrip@0.11.0
+  - @uidu/editor-common@2.13.0
+  - @uidu/adf-schema@2.7.0
+  - @uidu/mentions@0.11.0
+  - @uidu/adf-utils@2.6.0
+  - @uidu/media-card@0.14.0
+  - @uidu/status@0.10.0
+  - @uidu/analytics@0.10.0
+  - @uidu/tooltip@0.9.0
+  - @uidu/theme@0.10.0
+  - @uidu/code@0.9.0
+
 ## 2.9.0
 
 ### Minor Changes

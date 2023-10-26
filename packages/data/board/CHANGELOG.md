@@ -1,5 +1,16 @@
 # @uidu/board
 
+## 2.7.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/theme@0.10.0
+
 ## 2.6.0
 
 ### Minor Changes

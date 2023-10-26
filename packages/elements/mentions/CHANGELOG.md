@@ -1,5 +1,22 @@
 # @uidu/mentions
 
+## 0.11.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/analytics@0.10.0
+  - @uidu/lozenge@0.9.0
+  - @uidu/tooltip@0.9.0
+  - @uidu/avatar@0.13.0
+  - @uidu/button@1.7.0
+  - @uidu/theme@0.10.0
+  - @uidu/analytics-gas-types@0.4.3
+
 ## 0.10.0
 
 ### Minor Changes

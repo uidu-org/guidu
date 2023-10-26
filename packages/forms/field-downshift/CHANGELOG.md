@@ -1,5 +1,17 @@
 # @uidu/field-downshift
 
+## 2.7.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/field-base@4.7.0
+  - @uidu/field-text@2.4.0
+
 ## 2.6.0
 
 ### Minor Changes

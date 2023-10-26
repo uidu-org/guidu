@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.13.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/analytics@0.10.0
+  - @uidu/tooltip@0.9.0
+  - @uidu/theme@0.10.0
+
 ## 0.12.0
 
 ### Minor Changes

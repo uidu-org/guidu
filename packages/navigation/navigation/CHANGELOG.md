@@ -1,5 +1,23 @@
 # @uidu/navigation
 
+## 1.4.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/animated-menu@1.4.0
+  - @uidu/dropdown-menu@0.10.0
+  - @uidu/inline-dialog@0.9.0
+  - @uidu/shell@2.6.0
+  - @uidu/tooltip@0.9.0
+  - @uidu/avatar@0.13.0
+  - @uidu/theme@0.10.0
+  - @uidu/menu@0.13.0
+
 ## 1.3.0
 
 ### Minor Changes

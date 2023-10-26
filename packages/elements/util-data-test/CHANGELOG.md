@@ -1,5 +1,19 @@
 # @uidu/util-data-test
 
+## 0.8.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/task-decision@0.8.0
+  - @uidu/mentions@0.11.0
+  - @uidu/analytics@0.10.0
+  - @uidu/emoji@0.11.0
+
 ## 0.7.0
 
 ### Minor Changes

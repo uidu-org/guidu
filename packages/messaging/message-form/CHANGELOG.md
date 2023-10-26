@@ -1,5 +1,22 @@
 # @uidu/message-form
 
+## 0.8.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/media-filmstrip@0.11.0
+  - @uidu/field-mentions@2.4.0
+  - @uidu/dropdown-menu@0.10.0
+  - @uidu/message@0.10.0
+  - @uidu/field-text@2.4.0
+  - @uidu/spinner@0.9.0
+  - @uidu/form@2.8.0
+
 ## 0.7.0
 
 ### Minor Changes

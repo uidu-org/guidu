@@ -1,5 +1,18 @@
 # @uidu/chat-window
 
+## 0.10.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/message-renderer@0.8.0
+  - @uidu/message-form@0.8.0
+  - @uidu/message@0.10.0
+
 ## 0.9.0
 
 ### Minor Changes

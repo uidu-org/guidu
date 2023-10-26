@@ -1,5 +1,19 @@
 # Change Log
 
+## 2.10.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/dropdown-menu@0.10.0
+  - @uidu/tooltip@0.9.0
+  - @uidu/avatar@0.13.0
+  - @uidu/theme@0.10.0
+
 ## 2.9.0
 
 ### Minor Changes

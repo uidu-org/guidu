@@ -1,5 +1,19 @@
 # @uidu/modal-dialog
 
+## 1.6.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/analytics@0.10.0
+  - @uidu/portal@1.4.0
+  - @uidu/theme@0.10.0
+  - @uidu/blanket@0.7.3
+
 ## 1.5.0
 
 ### Minor Changes

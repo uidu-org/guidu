@@ -1,5 +1,22 @@
 # @uidu/data-views
 
+## 3.6.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/field-counter@2.4.0
+  - @uidu/data-controls@4.6.0
+  - @uidu/field-number@2.4.0
+  - @uidu/data-manager@4.10.0
+  - @uidu/select@2.9.0
+  - @uidu/button@1.7.0
+  - @uidu/form@2.8.0
+
 ## 3.5.0
 
 ### Minor Changes

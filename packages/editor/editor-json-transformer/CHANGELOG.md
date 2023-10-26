@@ -1,5 +1,16 @@
 # @uidu/editor-json-transformer
 
+## 1.5.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/adf-schema@2.7.0
+
 ## 1.4.0
 
 ### Minor Changes

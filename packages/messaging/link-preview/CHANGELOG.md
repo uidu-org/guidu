@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.6.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
 ## 1.5.0
 
 ### Minor Changes

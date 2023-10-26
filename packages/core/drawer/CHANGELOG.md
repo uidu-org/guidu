@@ -1,5 +1,20 @@
 # @uidu/drawer
 
+## 0.11.0
+
+### Minor Changes
+
+- 1a479dd1c: Bump deps, fix editor toolbar resizing
+
+### Patch Changes
+
+- Updated dependencies [1a479dd1c]
+  - @uidu/analytics@0.10.0
+  - @uidu/theme@0.10.0
+  - @uidu/item@0.9.0
+  - @uidu/docs@0.9.0
+  - @uidu/blanket@0.7.3
+
 ## 0.10.0
 
 ### Minor Changes
