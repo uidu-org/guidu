@@ -44,11 +44,7 @@ export { default as Popup, findOverflowScrollParent } from './Popup';
 export type { Position as PopupPosition, Props as PopupProps } from './Popup';
 export { default as UnsupportedBlock } from './UnsupportedBlock';
 export { default as UnsupportedInline } from './UnsupportedInline';
-export {
-  IframeWidthObserverFallbackWrapper,
-  IframeWrapperConsumer,
-  WidthObserver,
-} from './WidthObserver';
+export { WidthObserver } from './WidthObserver';
 export { getBreakpoint, WidthConsumer, WidthProvider } from './WidthProvider';
 export type { WidthConsumerContext } from './WidthProvider';
 export { default as withOuterListeners } from './with-outer-listeners';

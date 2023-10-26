@@ -160,8 +160,6 @@ export {
   findOverflowScrollParent,
   getBreakpoint,
   HelperMessage,
-  IframeWidthObserverFallbackWrapper,
-  IframeWrapperConsumer,
   layoutSupportsWidth,
   mapBreakpointToLayoutMaxWidth,
   MediaLink,
