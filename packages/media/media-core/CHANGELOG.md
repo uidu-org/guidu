@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 2.0.0
+
+### Major Changes
+
+- 9e58cab91: File uploader now uses mime-standard to convert file extensions. One should pass mime-types as allowedFileTypes to uppy
+
 ## 1.9.0
 
 ### Minor Changes

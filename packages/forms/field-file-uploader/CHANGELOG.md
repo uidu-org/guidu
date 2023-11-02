@@ -1,5 +1,16 @@
 # @uidu/field-file-uploader
 
+## 3.0.0
+
+### Major Changes
+
+- 9e58cab91: File uploader now uses mime-standard to convert file extensions. One should pass mime-types as allowedFileTypes to uppy
+
+### Patch Changes
+
+- Updated dependencies [9e58cab91]
+  - @uidu/media-core@2.0.0
+
 ## 2.7.0
 
 ### Minor Changes

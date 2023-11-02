@@ -1,5 +1,12 @@
 # @uidu/media-viewer
 
+## 1.7.1
+
+### Patch Changes
+
+- Updated dependencies [9e58cab91]
+  - @uidu/media-core@2.0.0
+
 ## 1.7.0
 
 ### Minor Changes
