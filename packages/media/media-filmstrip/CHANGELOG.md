@@ -1,5 +1,14 @@
 # @uidu/media-filmstrip
 
+## 0.11.1
+
+### Patch Changes
+
+- Updated dependencies [9e58cab91]
+  - @uidu/media-core@2.0.0
+  - @uidu/media-card@0.14.1
+  - @uidu/media-viewer@1.7.1
+
 ## 0.11.0
 
 ### Minor Changes

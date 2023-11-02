@@ -1,5 +1,17 @@
 # @uidu/editor-core
 
+## 2.19.1
+
+### Patch Changes
+
+- Updated dependencies [9e58cab91]
+  - @uidu/media-core@2.0.0
+  - @uidu/adf-schema@2.7.1
+  - @uidu/editor-common@2.13.1
+  - @uidu/media-card@0.14.1
+  - @uidu/media-filmstrip@0.11.1
+  - @uidu/media-picker@1.5.1
+
 ## 2.19.0
 
 ### Minor Changes
