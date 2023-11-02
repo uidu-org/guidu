@@ -6,7 +6,13 @@ import {
   uppyRestrictionsToDropzoneProps,
 } from '@uidu/media-core';
 import Uppy, { UppyOptions } from '@uppy/core';
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+} from 'react';
 import { useDropzone } from 'react-dropzone';
 import { StyledRoot } from '../styled';
 import { FieldFileUploaderProps } from '../types';
@@ -39,6 +45,7 @@ function FieldFileUploader({
   onFileRemoved = noop,
   onUploadError = noop,
   onUploadComplete = noop,
+  forwardedRef,
   ...rest
 }: FieldFileUploaderProps) {
   const { setError, clearErrors } = useFormContext();
@@ -121,6 +128,8 @@ function FieldFileUploader({
     onChange,
   ]);
 
+  useImperativeHandle(forwardedRef, () => uppy, [uppy]);
+
   const evaluate = (file: File) => {
     uppy.addFile({
       name: file.name,
@@ -148,6 +157,14 @@ function FieldFileUploader({
     // }
   };
 
+  const uppyRestrictionsToDropZone = useMemo(
+    () =>
+      uppyRestrictionsToDropzoneProps({
+        restrictions: mergeOptions.restrictions,
+      }),
+    [mergeOptions.restrictions],
+  );
+
   const {
     getRootProps,
     getInputProps,
@@ -160,12 +177,7 @@ function FieldFileUploader({
     isDragReject,
   } = useDropzone({
     onDrop,
-    ...uppyRestrictionsToDropzoneProps({
-      restrictions: mergeOptions.restrictions,
-      // ...(mergeOptions.restrictions.allowedFileTypes
-      //   ? { accept: { 'image/*': mergeOptions.restrictions.allowedFileTypes } }
-      //   : {}),
-    }),
+    ...uppyRestrictionsToDropZone,
   });
 
   useEffect(() => {
@@ -196,4 +208,6 @@ function FieldFileUploader({
   );
 }
 
-export default FieldFileUploader;
+export default forwardRef((props, ref) => (
+  <FieldFileUploader forwardedRef={ref} {...props} />
+));

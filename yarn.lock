@@ -9478,6 +9478,7 @@ __metadata:
     "@uppy/core": "npm:^3.6.1"
     "@uppy/dashboard": "npm:^3.6.0"
     "@uppy/xhr-upload": "npm:^3.4.2"
+    mime-standard: "npm:^1.0.2"
     react: "npm:^18.2.0"
     react-dropzone: "npm:^14.2.3"
     tslib: "npm:^2.6.2"
@@ -23986,6 +23987,13 @@ __metadata:
   dependencies:
     wildcard: "npm:^1.1.0"
   checksum: 3e4afd6be98e20bfb421146a14147560941f471886e6d3534372b37d29bb7e35a7462e1f9cee98312f92e44969ae9deca2da7ad91ab5a738af55a7d5f03a6814
+  languageName: node
+  linkType: hard
+
+"mime-standard@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "mime-standard@npm:1.0.2"
+  checksum: d158375113d3d2da0c4b6b133f428f793e602f0b1de19fa629a62f3e6efa710e85d9918319161eed2225ca674830b137020678b0b18f0e74cd159c72c3c1de4e
   languageName: node
   linkType: hard
 
