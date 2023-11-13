@@ -1,5 +1,19 @@
 # @uidu/data-fields
 
+## 4.0.0
+
+### Major Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/field-downshift@2.8.0
+  - @uidu/field-time@2.6.0
+  - @uidu/select@2.10.0
+  - @uidu/menu@0.14.0
+
 ## 3.1.0
 
 ### Minor Changes

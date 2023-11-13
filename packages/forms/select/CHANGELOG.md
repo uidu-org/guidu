@@ -1,5 +1,16 @@
 # @uidu/field-text
 
+## 2.10.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/menu@0.14.0
+
 ## 2.9.0
 
 ### Minor Changes

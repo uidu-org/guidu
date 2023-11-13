@@ -1,5 +1,11 @@
 # @uidu/onboarding
 
+## 1.9.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
 ## 1.8.0
 
 ### Minor Changes

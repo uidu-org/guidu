@@ -1,5 +1,17 @@
 # @uidu/message-form
 
+## 0.9.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/message@0.11.0
+  - @uidu/media-filmstrip@0.11.2
+
 ## 0.8.0
 
 ### Minor Changes

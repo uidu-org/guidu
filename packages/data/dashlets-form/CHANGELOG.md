@@ -1,5 +1,19 @@
 # @uidu/dashlets-form
 
+## 1.6.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/field-downshift@2.8.0
+  - @uidu/shell@2.7.0
+  - @uidu/dashlets@3.8.0
+  - @uidu/select@2.10.0
+
 ## 1.5.0
 
 ### Minor Changes

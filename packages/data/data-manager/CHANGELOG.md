@@ -1,5 +1,24 @@
 # @uidu/data-manager
 
+## 4.11.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/data-fields@4.0.0
+  - @uidu/data-controls@4.7.0
+  - @uidu/shell@2.7.0
+  - @uidu/data-views@3.7.0
+  - @uidu/calendar@0.9.0
+  - @uidu/table@5.11.0
+  - @uidu/menu@0.14.0
+  - @uidu/gallery@2.6.1
+  - @uidu/list@3.8.1
+
 ## 4.10.0
 
 ### Minor Changes

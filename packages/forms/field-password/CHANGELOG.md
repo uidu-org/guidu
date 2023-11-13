@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 2.5.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
 ## 2.4.0
 
 ### Minor Changes

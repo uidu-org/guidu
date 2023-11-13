@@ -1,5 +1,14 @@
 # @uidu/util-data-test
 
+## 0.8.1
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/task-decision@0.9.0
+  - @uidu/mentions@0.12.0
+  - @uidu/emoji@0.12.0
+
 ## 0.8.0
 
 ### Minor Changes
