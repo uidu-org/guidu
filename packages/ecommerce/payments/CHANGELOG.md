@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 1.13.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
 ## 1.12.0
 
 ### Minor Changes

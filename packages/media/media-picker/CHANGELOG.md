@@ -1,5 +1,16 @@
 # @uidu/media-picker
 
+## 1.6.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/media-core@2.1.0
+
 ## 1.5.1
 
 ### Patch Changes

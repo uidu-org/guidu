@@ -1,5 +1,18 @@
 # @uidu/devise
 
+## 1.9.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/field-password@2.5.0
+  - @uidu/shell@2.7.0
+  - @uidu/field-phone@2.4.1
+
 ## 1.8.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @uidu/chat-window
 
+## 0.10.1
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/message-renderer@0.9.0
+  - @uidu/message-form@0.9.0
+  - @uidu/message@0.11.0
+
 ## 0.10.0
 
 ### Minor Changes

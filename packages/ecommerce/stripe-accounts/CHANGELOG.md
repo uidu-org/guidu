@@ -1,5 +1,16 @@
 # @uidu/stripe-accounts
 
+## 0.12.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/payments@1.13.0
+
 ## 0.11.0
 
 ### Minor Changes

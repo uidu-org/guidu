@@ -9,7 +9,7 @@
   "main": "dist/uidu-page-header.cjs.js",
   "types": "dist/uidu-page-header.cjs.d.ts",
   "dependencies": {
-    "@uidu/shell": "^2.6.0",
+    "@uidu/shell": "^2.7.0",
     "@uidu/theme": "^0.10.0",
     "tslib": "^2.6.2"
   },
@@ -19,8 +19,8 @@
     "@uidu/docs": "^0.9.0",
     "@uidu/field-text": "^2.4.0",
     "@uidu/form": "^2.8.0",
-    "@uidu/inline-edit": "0.7.0",
-    "@uidu/select": "^2.9.0",
+    "@uidu/inline-edit": "0.8.0",
+    "@uidu/select": "^2.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.11"

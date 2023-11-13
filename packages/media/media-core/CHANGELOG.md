@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 2.1.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
 ## 2.0.0
 
 ### Major Changes

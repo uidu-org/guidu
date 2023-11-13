@@ -1,5 +1,21 @@
 # @uidu/editor-common
 
+## 2.14.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/editor-json-transformer@1.6.0
+  - @uidu/profilecard@0.9.0
+  - @uidu/adf-schema@2.8.0
+  - @uidu/mentions@0.12.0
+  - @uidu/media-core@2.1.0
+  - @uidu/emoji@0.12.0
+
 ## 2.13.1
 
 ### Patch Changes

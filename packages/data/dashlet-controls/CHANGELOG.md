@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 1.7.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
 ## 1.6.0
 
 ### Minor Changes

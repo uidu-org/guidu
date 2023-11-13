@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.11.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/message-renderer@0.9.0
+  - @uidu/message-form@0.9.0
+  - @uidu/media-viewer@1.8.0
+  - @uidu/media-card@0.15.0
+  - @uidu/media-core@2.1.0
+  - @uidu/menu@0.14.0
+
 ## 0.10.1
 
 ### Patch Changes

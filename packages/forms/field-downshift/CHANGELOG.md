@@ -1,5 +1,11 @@
 # @uidu/field-downshift
 
+## 2.8.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
 ## 2.7.0
 
 ### Minor Changes

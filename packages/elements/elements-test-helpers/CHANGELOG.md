@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.10.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
 ## 0.9.0
 
 ### Minor Changes

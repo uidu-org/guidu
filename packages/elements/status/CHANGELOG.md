@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.11.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
 ## 0.10.0
 
 ### Minor Changes

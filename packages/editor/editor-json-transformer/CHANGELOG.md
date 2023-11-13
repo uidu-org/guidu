@@ -1,5 +1,16 @@
 # @uidu/editor-json-transformer
 
+## 1.6.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/adf-schema@2.8.0
+
 ## 1.5.0
 
 ### Minor Changes

@@ -1,5 +1,16 @@
 # @uidu/adf-schema
 
+## 2.8.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/media-core@2.1.0
+
 ## 2.7.1
 
 ### Patch Changes

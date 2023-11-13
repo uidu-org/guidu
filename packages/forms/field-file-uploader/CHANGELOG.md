@@ -1,5 +1,17 @@
 # @uidu/field-file-uploader
 
+## 3.1.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/media-core@2.1.0
+  - @uidu/menu@0.14.0
+
 ## 3.0.0
 
 ### Major Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-picker",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "uidu media picker, using Uppy",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/media/media-picker",
   "license": "ISC",
@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.23.2",
-    "@uidu/media-core": "^2.0.0",
+    "@uidu/media-core": "^2.1.0",
     "@uppy/core": "^3.7.1",
     "@uppy/dashboard": "^3.7.1",
     "@uppy/drag-drop": "^3.0.3",

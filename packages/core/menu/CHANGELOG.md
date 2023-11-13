@@ -1,5 +1,11 @@
 # @uidu/menu
 
+## 0.14.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
 ## 0.13.0
 
 ### Minor Changes

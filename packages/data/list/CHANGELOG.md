@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.8.1
+
+### Patch Changes
+
+- Updated dependencies [3cb8eebbf]
+  - @uidu/data-fields@4.0.0
+  - @uidu/shell@2.7.0
+
 ## 3.8.0
 
 ### Minor Changes

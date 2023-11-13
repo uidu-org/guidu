@@ -1,5 +1,11 @@
 # @uidu/inline-edit
 
+## 0.8.0
+
+### Minor Changes
+
+- 3cb8eebbf: Added datetime field
+
 ## 0.7.0
 
 ### Minor Changes
