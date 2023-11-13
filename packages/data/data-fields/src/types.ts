@@ -13,6 +13,7 @@ export type FieldKind =
   | 'country'
   | 'cover'
   | 'currency'
+  | 'datetime'
   | 'date'
   | 'email'
   | 'member'

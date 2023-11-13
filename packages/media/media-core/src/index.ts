@@ -40,7 +40,9 @@ export function s3UploadOptions({
 } & AwsS3Options): {
   module: typeof AwsS3;
   options: AwsS3Options;
-  responseHandler: (response: UploadedUppyFile<any, any>) => FileIdentifier;
+  responseHandler: (
+    response: UploadedUppyFile<unknown, unknown>,
+  ) => FileIdentifier;
 } {
   return {
     module: AwsS3,

@@ -18,6 +18,7 @@ export default function Cell<T>(props: CellContext<T, string>) {
   return (
     <div tw="flex w-full justify-between">
       {dayjs(convertedIntoUTC).format('L')}
+      <span>{dayjs(convertedIntoUTC).format('LT')}</span>
     </div>
   );
 }

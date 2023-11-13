@@ -214,7 +214,7 @@ export const availableColumns: ColumnDef<unknown>[] = [
   {
     id: 'createdAt',
     meta: {
-      kind: 'date',
+      kind: 'datetime',
       name: 'Data creazione',
       enableEditing: true,
     },

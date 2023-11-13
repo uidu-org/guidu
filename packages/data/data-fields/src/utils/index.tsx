@@ -23,27 +23,24 @@ export function buildNextColumn<T>({
   });
 }
 
-export const buildColumn = ({ columns, ...fieldGroup }: FieldGroup) => {
-  return columns.map(({ primary, kind, ...column }) => {
-    return {
-      fieldGroup,
-      id: column.id,
-      accessor: column.id,
-      ...(kind ? { ...byName[kind] } : {}),
-      ...(primary
-        ? {
-            canMove: false,
-            canHide: false,
-            lockPinned: true,
-            isPrimary: true,
-            showRowGroup: true,
-            pinned: 'left',
-          }
-        : {}),
-      ...column,
-    };
-  });
-};
+export const buildColumn = ({ columns, ...fieldGroup }: FieldGroup) =>
+  columns.map(({ primary, kind, ...column }) => ({
+    fieldGroup,
+    id: column.id,
+    accessor: column.id,
+    ...(kind ? { ...byName[kind] } : {}),
+    ...(primary
+      ? {
+          canMove: false,
+          canHide: false,
+          lockPinned: true,
+          isPrimary: true,
+          showRowGroup: true,
+          pinned: 'left',
+        }
+      : {}),
+    ...column,
+  }));
 
 export function buildNextColumns<T>(
   columns: ColumnDef<T>[],
@@ -54,11 +51,8 @@ export function buildNextColumns<T>(
   );
 }
 
-export const buildColumns = (columns): Array<FieldGroup> => {
-  return columns.reduce((arr, item) => {
-    return [...arr, ...buildColumn(item)];
-  }, []);
-};
+export const buildColumns = (columns): Array<FieldGroup> =>
+  columns.reduce((arr, item) => [...arr, ...buildColumn(item)], []);
 
 export function getPrimary<T>(columns: Column<T>[]) {
   return columns.find((column) => column.columnDef.meta?.isPrimary);

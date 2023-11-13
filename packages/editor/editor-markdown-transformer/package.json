@@ -13,7 +13,7 @@
     "@babel/runtime": "^7.23.2",
     "@uidu/adf-schema": "^2.7.0",
     "@uidu/editor-common": "^2.13.0",
-    "markdown-it": "^13.0.1",
+    "markdown-it": "^13.0.2",
     "markdown-it-table": "^2.0.6",
     "prosemirror-markdown": "^1.11.2",
     "prosemirror-model": "^1.19.3",

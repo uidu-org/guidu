@@ -12,6 +12,7 @@ import countryField from './country';
 import coverField from './cover';
 import currencyField from './currency';
 import dateField from './date';
+import datetimeField from './datetime';
 import emailField from './email';
 import memberField from './member';
 import multipleSelectField from './multipleSelect';
@@ -41,6 +42,7 @@ export { default as countryField } from './country';
 export { default as coverField } from './cover';
 export { default as currencyField } from './currency';
 export { default as dateField } from './date';
+export { default as datetimeField } from './datetime';
 export { default as emailField } from './email';
 export { default as memberField } from './member';
 export { default as multipleSelectField } from './multipleSelect';
@@ -71,6 +73,7 @@ export const byName: Record<FieldKind, Partial<ColumnDef<unknown>>> = {
   cover: coverField,
   currency: currencyField,
   date: dateField,
+  datetime: datetimeField,
   email: emailField,
   member: memberField,
   multipleSelect: multipleSelectField,
@@ -102,6 +105,7 @@ const allFields: ColumnDef<unknown>[] = [
   coverField,
   currencyField,
   dateField,
+  datetimeField,
   emailField,
   memberField,
   multipleSelectField,
