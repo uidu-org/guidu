@@ -31,8 +31,6 @@ function FieldDownshift<
     ...otherProps,
   });
 
-  console.log('field', field);
-
   const getValue = useCallback(() => {
     if (field.value === undefined) return undefined;
 
@@ -55,7 +53,6 @@ function FieldDownshift<
         const newValue = ((field.value as string[]) || []).filter(
           (v) => v !== getOptionValue(selectedItem),
         );
-        console.log('newValue', newValue);
         field.onChange(newValue);
         onChange(name, newValue, { option: selectedItem });
         return undefined;

@@ -10,7 +10,7 @@
   "module": "dist/uidu-progress-bar.esm.js",
   "types": "dist/uidu-progress-bar.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.2",
+    "@babel/runtime": "^7.23.6",
     "@emotion/react": "^11.11.1",
     "@uidu/theme": "^0.10.0",
     "styled-components": "^5.3.11",

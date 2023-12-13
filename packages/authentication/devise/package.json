@@ -9,7 +9,7 @@
   "module": "dist/uidu-devise.esm.js",
   "types": "dist/uidu-devise.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.2",
+    "@babel/runtime": "^7.23.6",
     "@uidu/avatar": "^0.13.0",
     "@uidu/checkbox": "^2.4.0",
     "@uidu/field-password": "^2.5.0",
@@ -24,7 +24,7 @@
     "react-facebook": "^8.1.4",
     "react-feather": "^2.0.10",
     "react-google-login": "^5.2.2",
-    "react-intl": "^6.5.4",
+    "react-intl": "^6.5.5",
     "react-router-dom": "^5.3.4",
     "styled-components": "^5.3.11",
     "swiper": "^9.4.1"

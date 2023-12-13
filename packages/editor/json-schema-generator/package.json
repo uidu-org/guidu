@@ -21,8 +21,8 @@
     "meow": "^9.0.0",
     "mkdirp": "^1.0.4",
     "prettier": "^3.0.3",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   }
 }

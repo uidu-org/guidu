@@ -8,7 +8,7 @@
   "module": "dist/uidu-data-views.esm.js",
   "types": "dist/uidu-data-views.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.2",
+    "@babel/runtime": "^7.23.6",
     "@loadable/component": "^5.15.3",
     "@tanstack/react-table": "^8.10.6",
     "@uidu/button": "1.7.0",
@@ -20,7 +20,7 @@
     "@uidu/select": "^2.10.0",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
-    "react-intl": "^6.5.4",
+    "react-intl": "^6.5.5",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2"
   },

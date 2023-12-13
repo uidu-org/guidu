@@ -9,8 +9,8 @@
   "module": "dist/uidu-link-preview.esm.js",
   "types": "dist/uidu-link-preview.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.2",
-    "axios": "^1.6.1",
+    "@babel/runtime": "^7.23.6",
+    "axios": "^1.6.2",
     "react": "^18.2.0",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2"

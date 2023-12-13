@@ -10,7 +10,7 @@
   "module": "dist/uidu-select.esm.js",
   "types": "dist/uidu-select.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.2",
+    "@babel/runtime": "^7.23.6",
     "@heroicons/react": "^2.0.18",
     "@uidu/field-base": "^4.7.0",
     "@uidu/menu": "0.14.0",
@@ -22,7 +22,7 @@
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.2.0",
+    "@faker-js/faker": "^8.3.1",
     "@uidu/button": "^1.7.0",
     "@uidu/docs": "^0.9.0",
     "@uidu/modal-dialog": "^1.6.0",

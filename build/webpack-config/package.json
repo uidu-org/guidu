@@ -28,7 +28,7 @@
     "file-loader": "^6.2.0",
     "gray-matter-loader": "^0.0.10",
     "html-loader": "^3.1.2",
-    "html-webpack-plugin": "^5.5.3",
+    "html-webpack-plugin": "^5.5.4",
     "lodash-webpack-plugin": "^0.11.6",
     "mini-css-extract-plugin": "^2.7.6",
     "minimatch": "^5.1.6",
@@ -43,7 +43,7 @@
     "terser-webpack-plugin": "^5.3.9",
     "url-loader": "^4.1.1",
     "webpack": "^5.89.0",
-    "webpack-bundle-analyzer": "^4.9.1",
+    "webpack-bundle-analyzer": "^4.10.1",
     "webpack-dev-server": "^4.15.1",
     "webpack-manifest-plugin": "^5.0.0"
   },
