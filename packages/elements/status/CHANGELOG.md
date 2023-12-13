@@ -1,5 +1,20 @@
 # @uidu/status
 
+## 0.12.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/field-text@2.5.0
+  - @uidu/analytics@0.11.0
+  - @uidu/lozenge@0.10.0
+  - @uidu/theme@0.11.0
+  - @uidu/analytics-gas-types@0.4.4
+
 ## 0.11.0
 
 ### Minor Changes

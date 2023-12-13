@@ -1,5 +1,13 @@
 # @uidu/page-header
 
+## 1.1.4
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/shell@2.8.0
+  - @uidu/theme@0.11.0
+
 ## 1.1.3
 
 ### Patch Changes

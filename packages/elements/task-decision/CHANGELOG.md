@@ -1,5 +1,21 @@
 # @uidu/task-decision
 
+## 0.10.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/analytics-namespaced-context@0.9.0
+  - @uidu/avatar-group@2.11.0
+  - @uidu/analytics@0.11.0
+  - @uidu/spinner@0.10.0
+  - @uidu/button@1.8.0
+  - @uidu/theme@0.11.0
+
 ## 0.9.0
 
 ### Minor Changes

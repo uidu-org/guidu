@@ -1,5 +1,21 @@
 # @uidu/field-image-uploader
 
+## 3.7.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/field-range@2.5.0
+  - @uidu/field-base@4.8.0
+  - @uidu/media-core@2.2.0
+  - @uidu/spinner@0.10.0
+  - @uidu/button@1.8.0
+  - @uidu/form@2.9.0
+
 ## 3.6.0
 
 ### Minor Changes

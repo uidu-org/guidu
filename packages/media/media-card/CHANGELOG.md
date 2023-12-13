@@ -1,5 +1,20 @@
 # @uidu/media-card
 
+## 0.16.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/media-core@2.2.0
+  - @uidu/spinner@0.10.0
+  - @uidu/tooltip@0.10.0
+  - @uidu/button@1.8.0
+  - @uidu/theme@0.11.0
+
 ## 0.15.0
 
 ### Minor Changes

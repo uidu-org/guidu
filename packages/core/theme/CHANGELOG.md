@@ -1,5 +1,16 @@
 # @uidu/theme
 
+## 0.11.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/form@2.9.0
+
 ## 0.10.0
 
 ### Minor Changes

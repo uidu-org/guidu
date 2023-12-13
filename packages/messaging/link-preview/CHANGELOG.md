@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.8.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
 ## 1.7.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.11.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
 ## 0.10.0
 
 ### Minor Changes

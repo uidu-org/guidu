@@ -1,5 +1,23 @@
 # @uidu/table
 
+## 5.12.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/data-manager@4.12.0
+  - @uidu/data-fields@4.1.0
+  - @uidu/shell@2.8.0
+  - @uidu/checkbox@2.5.0
+  - @uidu/button@1.8.0
+  - @uidu/portal@1.5.0
+  - @uidu/popup@0.13.0
+  - @uidu/menu@0.15.0
+
 ## 5.11.0
 
 ### Minor Changes

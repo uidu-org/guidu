@@ -1,5 +1,17 @@
 # @uidu/payment-sources
 
+## 0.9.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/payments@1.14.0
+  - @uidu/form@2.9.0
+
 ## 0.8.0
 
 ### Minor Changes

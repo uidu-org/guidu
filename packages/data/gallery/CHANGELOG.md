@@ -1,5 +1,19 @@
 # @uidu/gallery
 
+## 2.7.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/data-controls@4.8.0
+  - @uidu/data-fields@4.1.0
+  - @uidu/shell@2.8.0
+  - @uidu/spinner@0.10.0
+
 ## 2.6.1
 
 ### Patch Changes

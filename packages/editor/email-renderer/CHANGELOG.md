@@ -1,5 +1,16 @@
 # @uidu/email-renderer
 
+## 1.9.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/adf-schema@2.9.0
+
 ## 1.8.0
 
 ### Minor Changes

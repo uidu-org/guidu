@@ -1,5 +1,19 @@
 # @uidu/util-data-test
 
+## 0.9.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/task-decision@0.10.0
+  - @uidu/mentions@0.13.0
+  - @uidu/analytics@0.11.0
+  - @uidu/emoji@0.13.0
+
 ## 0.8.1
 
 ### Patch Changes

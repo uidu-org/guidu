@@ -1,5 +1,30 @@
 # @uidu/data-controls
 
+## 4.8.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/inline-dialog@0.10.0
+  - @uidu/data-manager@4.12.0
+  - @uidu/data-fields@4.1.0
+  - @uidu/field-text@2.5.0
+  - @uidu/shell@2.8.0
+  - @uidu/data-views@3.8.0
+  - @uidu/checkbox@2.5.0
+  - @uidu/spinner@0.10.0
+  - @uidu/tooltip@0.10.0
+  - @uidu/select@2.11.0
+  - @uidu/button@1.8.0
+  - @uidu/drawer@0.12.0
+  - @uidu/popup@0.13.0
+  - @uidu/form@2.9.0
+  - @uidu/menu@0.15.0
+
 ## 4.7.0
 
 ### Minor Changes

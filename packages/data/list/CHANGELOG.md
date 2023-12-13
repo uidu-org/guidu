@@ -1,5 +1,17 @@
 # @uidu/list
 
+## 3.9.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/data-fields@4.1.0
+  - @uidu/shell@2.8.0
+
 ## 3.8.1
 
 ### Patch Changes

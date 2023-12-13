@@ -1,5 +1,20 @@
 # @uidu/dropdown-menu
 
+## 0.11.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/analytics@0.11.0
+  - @uidu/droplist@0.10.0
+  - @uidu/button@1.8.0
+  - @uidu/theme@0.11.0
+  - @uidu/item@0.10.0
+
 ## 0.10.0
 
 ### Minor Changes

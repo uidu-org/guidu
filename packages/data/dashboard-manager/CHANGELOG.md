@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 2.9.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/dashlets@3.9.0
+
 ## 2.8.0
 
 ### Minor Changes
