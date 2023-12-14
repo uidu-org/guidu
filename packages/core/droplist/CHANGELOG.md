@@ -1,5 +1,21 @@
 # @uidu/droplist
 
+## 0.10.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/analytics@0.11.0
+  - @uidu/spinner@0.10.0
+  - @uidu/tooltip@0.10.0
+  - @uidu/layer@0.10.0
+  - @uidu/theme@0.11.0
+  - @uidu/item@0.10.0
+
 ## 0.9.0
 
 ### Minor Changes

@@ -1,5 +1,22 @@
 # @uidu/inline-edit
 
+## 0.9.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/inline-dialog@0.10.0
+  - @uidu/field-text@2.5.0
+  - @uidu/analytics@0.11.0
+  - @uidu/button@1.8.0
+  - @uidu/field@1.5.0
+  - @uidu/theme@0.11.0
+  - @uidu/form@2.9.0
+
 ## 0.8.0
 
 ### Minor Changes

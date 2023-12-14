@@ -1,5 +1,16 @@
 # @uidu/menu
 
+## 0.15.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/theme@0.11.0
+
 ## 0.14.0
 
 ### Minor Changes

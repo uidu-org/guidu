@@ -1,5 +1,16 @@
 # @uidu/radio
 
+## 2.7.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/field-base@4.8.0
+
 ## 2.6.0
 
 ### Minor Changes

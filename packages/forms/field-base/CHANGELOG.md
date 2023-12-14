@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.8.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/form@2.9.0
+
 ## 4.7.0
 
 ### Minor Changes

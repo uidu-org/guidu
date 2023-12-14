@@ -1,5 +1,16 @@
 # @uidu/media-core
 
+## 2.2.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/docs@0.10.0
+
 ## 2.1.0
 
 ### Minor Changes

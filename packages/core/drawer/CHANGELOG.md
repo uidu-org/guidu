@@ -1,5 +1,20 @@
 # @uidu/drawer
 
+## 0.12.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/analytics@0.11.0
+  - @uidu/theme@0.11.0
+  - @uidu/item@0.10.0
+  - @uidu/docs@0.10.0
+  - @uidu/blanket@0.7.4
+
 ## 0.11.0
 
 ### Minor Changes

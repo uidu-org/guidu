@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.6.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
 ## 2.5.0
 
 ### Minor Changes

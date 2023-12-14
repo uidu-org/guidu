@@ -1,5 +1,16 @@
 # @uidu/shell
 
+## 2.8.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/spinner@0.10.0
+
 ## 2.7.0
 
 ### Minor Changes

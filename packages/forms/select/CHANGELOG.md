@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 2.11.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/field-base@4.8.0
+  - @uidu/spinner@0.10.0
+  - @uidu/menu@0.15.0
+
 ## 2.10.0
 
 ### Minor Changes

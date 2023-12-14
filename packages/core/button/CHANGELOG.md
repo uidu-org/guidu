@@ -1,5 +1,18 @@
 # @uidu/button
 
+## 1.8.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/analytics@0.11.0
+  - @uidu/spinner@0.10.0
+  - @uidu/theme@0.11.0
+
 ## 1.7.0
 
 ### Minor Changes

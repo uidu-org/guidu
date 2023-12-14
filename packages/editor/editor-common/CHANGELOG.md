@@ -1,5 +1,26 @@
 # @uidu/editor-common
 
+## 2.15.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/analytics-namespaced-context@0.9.0
+  - @uidu/editor-json-transformer@1.7.0
+  - @uidu/profilecard@0.10.0
+  - @uidu/adf-schema@2.9.0
+  - @uidu/mentions@0.13.0
+  - @uidu/adf-utils@2.7.0
+  - @uidu/media-core@2.2.0
+  - @uidu/analytics@0.11.0
+  - @uidu/emoji@0.13.0
+  - @uidu/tooltip@0.10.0
+  - @uidu/theme@0.11.0
+
 ## 2.14.0
 
 ### Minor Changes

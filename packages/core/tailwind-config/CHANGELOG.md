@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.6.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
 ## 0.5.0
 
 ### Minor Changes

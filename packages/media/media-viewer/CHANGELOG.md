@@ -1,5 +1,22 @@
 # @uidu/media-viewer
 
+## 1.9.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/modal-dialog@1.7.0
+  - @uidu/media-core@2.2.0
+  - @uidu/shell@2.8.0
+  - @uidu/spinner@0.10.0
+  - @uidu/avatar@0.14.0
+  - @uidu/button@1.8.0
+  - @uidu/theme@0.11.0
+
 ## 1.8.0
 
 ### Minor Changes

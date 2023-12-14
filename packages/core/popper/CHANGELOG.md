@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.10.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
 ## 0.9.0
 
 ### Minor Changes

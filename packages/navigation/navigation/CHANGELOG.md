@@ -1,5 +1,23 @@
 # @uidu/navigation
 
+## 1.6.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/animated-menu@1.5.0
+  - @uidu/dropdown-menu@0.11.0
+  - @uidu/inline-dialog@0.10.0
+  - @uidu/shell@2.8.0
+  - @uidu/tooltip@0.10.0
+  - @uidu/avatar@0.14.0
+  - @uidu/theme@0.11.0
+  - @uidu/menu@0.15.0
+
 ## 1.5.0
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @uidu/field-date
 
+## 2.5.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/field-base@4.8.0
+  - @uidu/field-text@2.5.0
+  - @uidu/select@2.11.0
+  - @uidu/form@2.9.0
+
 ## 2.4.1
 
 ### Patch Changes

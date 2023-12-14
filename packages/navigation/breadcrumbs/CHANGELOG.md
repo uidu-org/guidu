@@ -1,5 +1,19 @@
 # @uidu/breadcrumbs
 
+## 1.5.0
+
+### Minor Changes
+
+- ccec7a7: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [ccec7a7]
+  - @uidu/analytics@0.11.0
+  - @uidu/tooltip@0.10.0
+  - @uidu/button@1.8.0
+  - @uidu/theme@0.11.0
+
 ## 1.4.0
 
 ### Minor Changes
