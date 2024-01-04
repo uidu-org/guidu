@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 2.10.0
+
+### Minor Changes
+
+- dc9ad21: Fix emoji implementation, bump dependencies
+
 ## 2.9.0
 
 ### Minor Changes

@@ -1,5 +1,15 @@
 # @uidu/message-form
 
+## 0.11.0
+
+### Minor Changes
+
+- dc9ad21: Fix emoji implementation, bump dependencies
+
+### Patch Changes
+
+- @uidu/message@0.12.1
+
 ## 0.10.0
 
 ### Minor Changes
