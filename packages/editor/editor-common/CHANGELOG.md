@@ -1,5 +1,11 @@
 # @uidu/editor-common
 
+## 2.17.0
+
+### Minor Changes
+
+- 1e6851f: Allow emoji in renderer as well
+
 ## 2.16.0
 
 ### Minor Changes
