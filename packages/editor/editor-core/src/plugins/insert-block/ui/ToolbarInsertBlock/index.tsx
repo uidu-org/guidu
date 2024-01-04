@@ -13,6 +13,8 @@ import TaskIcon from '@atlaskit/icon/glyph/editor/task';
 import PlaceholderTextIcon from '@atlaskit/icon/glyph/media-services/text';
 import QuoteIcon from '@atlaskit/icon/glyph/quote';
 import StatusIcon from '@atlaskit/icon/glyph/status';
+import data from '@emoji-mart/data';
+import Picker from '@emoji-mart/react';
 import {
   faImages,
   faLink,
@@ -21,7 +23,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { akEditorMenuZIndex, Popup } from '@uidu/editor-common';
-import { EmojiPicker as AkEmojiPicker } from '@uidu/emoji/picker';
 import { EmojiId } from '@uidu/emoji/types';
 import React, { ReactInstance } from 'react';
 import ReactDOM from 'react-dom';
@@ -163,11 +164,14 @@ class ToolbarInsertBlock extends React.PureComponent<
         boundariesElement={popupsBoundariesElement}
         scrollableElement={popupsScrollableElement}
       >
-        <AkEmojiPicker
-          emojiProvider={emojiProvider}
-          onSelection={this.handleSelectedEmoji}
-          onPickerRef={this.onPickerRef}
-        />
+        {emojiPickerOpen && (
+          <Picker
+            data={data}
+            onEmojiSelect={this.handleSelectedEmoji}
+            theme="light"
+            previewPosition="none"
+          />
+        )}
       </Popup>
     );
   }
@@ -434,7 +438,7 @@ class ToolbarInsertBlock extends React.PureComponent<
     //     shortcut: '@',
     //   });
     // }
-    if (emojiProvider) {
+    if (!emojiDisabled) {
       const labelEmoji = formatMessage(messages.emoji);
       items.push({
         content: labelEmoji,
@@ -739,10 +743,14 @@ class ToolbarInsertBlock extends React.PureComponent<
     'uidu.editor-core.emoji.button',
     (emojiId: EmojiId): boolean => {
       this.props.editorView.focus();
-      insertEmoji(emojiId, INPUT_METHOD.PICKER)(
-        this.props.editorView.state,
-        this.props.editorView.dispatch,
-      );
+      insertEmoji(
+        {
+          id: emojiId.unified,
+          fallback: emojiId.shortcodes,
+          shortName: emojiId.shortcodes,
+        },
+        INPUT_METHOD.PICKER,
+      )(this.props.editorView.state, this.props.editorView.dispatch);
       this.toggleEmojiPicker();
       return true;
     },

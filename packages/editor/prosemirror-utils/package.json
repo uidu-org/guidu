@@ -1,0 +1,26 @@
+{
+  "name": "@uidu/prosemirror-utils",
+  "version": "0.1.0",
+  "description": "Utils library for ProseMirror",
+  "main": "dist/uidu-prosemirror-utils.cjs.js",
+  "module": "dist/uidu-prosemirror-utils.esm.js",
+  "types": "dist/uidu-prosemirror-utils.cjs.d.ts",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "prosemirror-model": "^1.19.2",
+    "prosemirror-state": "^1.4.3"
+  },
+  "devDependencies": {
+    "prosemirror-model": "^1.19.4",
+    "prosemirror-schema-basic": "^1.2.2",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-test-builder": "^1.1.1",
+    "prosemirror-transform": "^1.8.0",
+    "prosemirror-view": "^1.32.7",
+    "typescript": "^5.3.3"
+  },
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/prosemirror-utils"
+}

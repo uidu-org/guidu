@@ -1,10 +1,10 @@
+import { safeInsert } from '@uidu/prosemirror-utils';
 import {
   textblockTypeInputRule,
   wrappingInputRule,
 } from 'prosemirror-inputrules';
 import { NodeType, Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
-import { safeInsert } from 'prosemirror-utils';
 import { analyticsService, trackAndInvoke } from '../../../analytics';
 import {
   createInputRule,

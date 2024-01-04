@@ -29,17 +29,12 @@ export class EmojiNodeView extends ReactNodeView<Props> {
   }
 
   render(props: Props) {
-    const { providerFactory, options } = props;
+    const { options } = props;
     const { shortName, id, text } = this.node.attrs;
 
     return (
       <InlineNodeWrapper useInlineWrapper={options && options.useInlineWrapper}>
-        <Emoji
-          providers={providerFactory}
-          id={id}
-          shortName={shortName}
-          fallback={text}
-        />
+        <Emoji id={id} shortName={shortName} />
         {options && options.allowZeroWidthSpaceAfter && ZeroWidthSpace}
       </InlineNodeWrapper>
     );

@@ -1,11 +1,7 @@
 import { emoji } from '@uidu/adf-schema';
 import { ProviderFactory } from '@uidu/editor-common/provider-factory';
-import {
-  EmojiDescription,
-  EmojiProvider,
-  EmojiTypeAheadItem,
-  SearchSort,
-} from '@uidu/emoji';
+import { EmojiDescription, EmojiProvider } from '@uidu/emoji';
+import { ButtonItem } from '@uidu/menu';
 import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
 import React from 'react';
 import { analyticsService } from '../../analytics';
@@ -25,9 +21,7 @@ import { IconEmoji } from '../quick-insert/assets';
 import { typeAheadPluginKey, TypeAheadPluginState } from '../type-ahead';
 import { TypeAheadItem } from '../type-ahead/types';
 import emojiNodeView from './nodeviews/emoji';
-import { inputRulePlugin as asciiInputRulePlugin } from './pm-plugins/ascii-input-rules';
 import { EmojiPluginOptions, EmojiPluginState } from './types';
-import { EmojiContextProvider } from './ui/EmojiContextProvider';
 
 export const defaultListLimit = 50;
 const isFullShortName = (query?: string) =>
@@ -55,11 +49,11 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
             options,
           ),
       },
-      {
-        name: 'emojiAsciiInputRule',
-        plugin: ({ schema, providerFactory }) =>
-          asciiInputRulePlugin(schema, providerFactory),
-      },
+      // {
+      //   name: 'emojiAsciiInputRule',
+      //   plugin: ({ schema, providerFactory }) =>
+      //     asciiInputRulePlugin(schema, providerFactory),
+      // },
     ];
   },
 
@@ -108,47 +102,79 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
         }
 
         const pluginState = getEmojiPluginState(state);
-        const emojis =
-          !prevActive && queryChanged ? [] : pluginState.emojis || [];
 
-        if (queryChanged && pluginState.emojiProvider) {
-          pluginState.emojiProvider.filter(query ? `:${query}` : '', {
-            limit: defaultListLimit,
-            skinTone: pluginState.emojiProvider.getSelectedTone(),
-            sort: !query.length
-              ? SearchSort.UsageFrequency
-              : SearchSort.Default,
-          });
+        if (!query) {
+          return [];
         }
 
-        return emojis.map<TypeAheadItem>((emoji) => ({
-          title: emoji.shortName || '',
-          key: emoji.id || emoji.shortName,
-          render({ isSelected, onClick, onHover }) {
-            return (
-              // It's required to pass emojiProvider through the context for custom emojis to work
-              <EmojiContextProvider emojiProvider={pluginState.emojiProvider}>
-                <EmojiTypeAheadItem
-                  emoji={emoji}
-                  selected={isSelected}
-                  onMouseMove={onHover}
-                  onSelection={onClick}
-                />
-              </EmojiContextProvider>
-            );
-          },
-          emoji,
-        }));
+        return pluginState.emojiProvider.search(query).then((results) => {
+          return (results || []).map<TypeAheadItem>((e) => ({
+            title: e.title || '',
+            key: e.unified || e.shortcodes,
+            render({ isSelected, onClick, onHover }) {
+              return (
+                <ButtonItem
+                  onClick={onClick}
+                  isSelected={isSelected}
+                  onMouseEnter={onHover}
+                  iconBefore={
+                    <div tw="flex items-center justify-center leading-none">
+                      <em-emoji size="2em" shortcodes={e.shortcodes}></em-emoji>
+                    </div>
+                  }
+                  description={e.shortcodes}
+                >
+                  {e.title}
+                </ButtonItem>
+              );
+            },
+            emoji: e,
+          }));
+        });
+
+        // if (queryChanged && pluginState.emojiProvider) {
+        //   pluginState.emojiProvider.filter(query ? `:${query}` : '', {
+        //     limit: defaultListLimit,
+        //     skinTone: pluginState.emojiProvider.getSelectedTone(),
+        //     sort: !query.length
+        //       ? SearchSort.UsageFrequency
+        //       : SearchSort.Default,
+        //   });
+        // }
+
+        // return emojis.map<TypeAheadItem>((emoji) => ({
+        //   title: emoji.shortName || '',
+        //   key: emoji.id || emoji.shortName,
+        //   render({ isSelected, onClick, onHover }) {
+        //     return (
+        //       // It's required to pass emojiProvider through the context for custom emojis to work
+        //       <EmojiContextProvider emojiProvider={pluginState.emojiProvider}>
+        //         <EmojiTypeAheadItem
+        //           emoji={emoji}
+        //           selected={isSelected}
+        //           onMouseMove={onHover}
+        //           onSelection={onClick}
+        //         />
+        //       </EmojiContextProvider>
+        //     );
+        //   },
+        //   emoji,
+        // }));
       },
       forceSelect(query: string, items: Array<TypeAheadItem>) {
-        const normalizedQuery = ':' + query;
+        const normalizedQuery = `:${query}`;
         return (
           !!isFullShortName(normalizedQuery) &&
           !!items.find((item) => item.title.toLowerCase() === normalizedQuery)
         );
       },
       selectItem(state, item, insert, { mode }) {
-        const { id = '', type = '', fallback, shortName } = item.emoji;
+        const {
+          unified: id = '',
+          type = '',
+          fallback,
+          shortcodes: shortName,
+        } = item.emoji;
         const text = fallback || shortName;
         const emojiPluginState = emojiPluginKey.getState(
           state,
@@ -160,21 +186,11 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
           ? Date.now() - typeAheadPluginState.queryStarted
           : 0;
 
-        if (
-          emojiPluginState.emojiProvider &&
-          emojiPluginState.emojiProvider.recordSelection &&
-          item.emoji
-        ) {
-          emojiPluginState.emojiProvider.recordSelection(item.emoji);
-          // .then(recordSelectionSucceededSli(options))
-          // .catch(recordSelectionFailedSli(options));
-        }
-
         analyticsService.trackEvent('uidu.editor-core.emoji.typeahead.select', {
           mode,
           duration: pickerElapsedTime,
           emojiId: id,
-          type: type,
+          type,
           queryLength: (typeAheadPluginState.query || '').length,
         });
 
@@ -220,6 +236,7 @@ export const ACTIONS = {
 export const setProvider =
   (provider?: EmojiProvider): Command =>
   (state, dispatch) => {
+    console.log('setProvider', provider);
     if (dispatch) {
       dispatch(
         state.tr.setMeta(emojiPluginKey, {
@@ -318,23 +335,8 @@ export function emojiPluginFactory(
 
             providerPromise
               .then((provider) => {
-                if (emojiProvider && emojiProviderChangeHandler) {
-                  emojiProvider.unsubscribe(emojiProviderChangeHandler);
-                }
-
                 emojiProvider = provider;
                 setProvider(provider)(editorView.state, editorView.dispatch);
-
-                emojiProviderChangeHandler = {
-                  result(emojis) {
-                    // Emoji provider is synchronous and
-                    // we need to make it async here to make PM happy
-                    Promise.resolve().then(() => {
-                      setResults(emojis)(editorView.state, editorView.dispatch);
-                    });
-                  },
-                };
-                provider.subscribe(emojiProviderChangeHandler);
               })
               .catch(() =>
                 setProvider(undefined)(editorView.state, editorView.dispatch),

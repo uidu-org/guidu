@@ -45,9 +45,10 @@ function initMatcher(providerFactory: ProviderFactory) {
     }
 
     provider.then((emojiProvider) => {
-      emojiProvider.getAsciiMap().then((map) => {
-        matcher = new RecordingAsciiEmojiMatcher(emojiProvider, map);
-      });
+      emojiProvider.getAsciiMap &&
+        emojiProvider.getAsciiMap().then((map) => {
+          matcher = new RecordingAsciiEmojiMatcher(emojiProvider, map);
+        });
     });
   };
 

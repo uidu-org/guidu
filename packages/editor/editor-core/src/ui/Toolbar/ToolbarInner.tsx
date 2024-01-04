@@ -37,8 +37,6 @@ export class ToolbarInner extends React.Component<ToolbarInnerProps> {
       dispatchAnalyticsEvent,
     } = this.props;
 
-    console.log('items', items);
-
     if (!items || !items.length) {
       return null;
     }
@@ -62,7 +60,6 @@ export class ToolbarInner extends React.Component<ToolbarInnerProps> {
             containerElement: null,
             dispatchAnalyticsEvent,
           });
-          console.log('element', element);
           return element && React.cloneElement(element, props);
         })}
       </ToolbarComponentsWrapper>

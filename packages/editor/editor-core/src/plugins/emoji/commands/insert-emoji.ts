@@ -1,7 +1,7 @@
 import { EmojiId } from '@uidu/emoji';
+import { safeInsert } from '@uidu/prosemirror-utils';
 import { Fragment } from 'prosemirror-model';
 import { Selection } from 'prosemirror-state';
-import { safeInsert } from 'prosemirror-utils';
 import { Command } from '../../../types';
 import {
   ACTION,
@@ -27,6 +27,7 @@ export function insertEmoji(
         ...emojiId,
         text: emojiId.fallback || emojiId.shortName,
       });
+
       const textNode = state.schema.text(' ');
 
       if (dispatch) {

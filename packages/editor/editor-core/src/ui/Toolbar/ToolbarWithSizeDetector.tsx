@@ -45,11 +45,6 @@ export default function ToolbarWithSizeDetector(
     return [toolbar, minWidth];
   }, [props.appearance, props.hasMinWidth, props.twoLineEditorToolbar]);
 
-  console.log('toolbarSize', toolbarSize);
-  console.log('width', width);
-  console.log('width === undefined', width === undefined);
-  console.log('toolbarStyle', toolbarStyle);
-
   return (
     <div css={toolbarStyle}>
       <WidthObserver setWidth={setWidth} />

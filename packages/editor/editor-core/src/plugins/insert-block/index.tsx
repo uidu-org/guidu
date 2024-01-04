@@ -156,7 +156,7 @@ const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
               !hyperlinkState.canInsertLink ||
               !!hyperlinkState.activeLinkMark
             }
-            emojiDisabled={!emojiState || !emojiState.emojiProvider}
+            emojiDisabled={!emojiState}
             emojiProvider={providers.emojiProvider}
             nativeStatusSupported={options.nativeStatusSupported}
             horizontalRuleEnabled={options.horizontalRuleEnabled}

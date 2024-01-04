@@ -1,10 +1,7 @@
+import { safeInsert } from '@uidu/prosemirror-utils';
 import { Fragment, Node as PMNode, NodeType } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
-import {
-  ContentNodeWithPos,
-  hasParentNode,
-  safeInsert,
-} from 'prosemirror-utils';
+import { ContentNodeWithPos, hasParentNode } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import {
   findFarthestParentNode,

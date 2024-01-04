@@ -1,6 +1,6 @@
+import { safeInsert } from '@uidu/prosemirror-utils';
 import { Fragment, Node } from 'prosemirror-model';
 import { EditorState, NodeSelection, Selection } from 'prosemirror-state';
-import { safeInsert } from 'prosemirror-utils';
 import { analyticsService } from '../../../analytics';
 import { Command } from '../../../types';
 import {

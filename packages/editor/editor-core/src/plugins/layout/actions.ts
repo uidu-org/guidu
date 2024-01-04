@@ -1,6 +1,6 @@
+import { safeInsert } from '@uidu/prosemirror-utils';
 import { Fragment, Node, Schema, Slice } from 'prosemirror-model';
 import { EditorState, TextSelection, Transaction } from 'prosemirror-state';
-import { safeInsert } from 'prosemirror-utils';
 import { Command } from '../../types/command';
 import { getStepRange, isEmptyDocument } from '../../utils';
 import { flatmap, mapChildren } from '../../utils/slice';

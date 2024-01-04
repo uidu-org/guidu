@@ -1,8 +1,8 @@
+import { safeInsert } from '@uidu/prosemirror-utils';
 import { selectNodeBackward } from 'prosemirror-commands';
 import { keymap } from 'prosemirror-keymap';
 import { Node, NodeType, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, Selection } from 'prosemirror-state';
-import { safeInsert } from 'prosemirror-utils';
 import * as keymaps from '../../../keymaps';
 import { Command, CommandDispatch } from '../../../types';
 import {

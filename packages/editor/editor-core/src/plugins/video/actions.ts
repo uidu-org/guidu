@@ -1,10 +1,10 @@
+import { safeInsert } from '@uidu/prosemirror-utils';
 import {
   EditorState,
   NodeSelection,
   Selection,
   Transaction,
 } from 'prosemirror-state';
-import { safeInsert } from 'prosemirror-utils';
 import { Command } from '../../types';
 import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock/types';
 import { pluginKey } from './pm-plugins/plugin-key';

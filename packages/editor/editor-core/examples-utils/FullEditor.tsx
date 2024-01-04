@@ -1,4 +1,6 @@
+import data from '@emoji-mart/data';
 import { filter, traverse } from '@uidu/adf-utils';
+import Button from '@uidu/button';
 import { MentionResource } from '@uidu/mentions/src';
 import { ShellBody, ShellHeader, ShellMain, ShellSidebar } from '@uidu/shell';
 import '@uppy/core/dist/style.css';
@@ -6,6 +8,7 @@ import '@uppy/dashboard/dist/style.css';
 import '@uppy/drag-drop/dist/style.css';
 import '@uppy/url/dist/style.css';
 import '@uppy/webcam/dist/style.css';
+import { init, SearchIndex } from 'emoji-mart';
 import React, { useMemo, useRef, useState } from 'react';
 import { localUploadOptions } from '../../../media/media-core/src';
 import { story as document } from '../../renderer/examples/helper/story-data';
@@ -13,6 +16,7 @@ import { getItems } from '../examples-utils/tokens';
 import { Editor, EditorContext, WithEditorActions } from '../src';
 import {
   blockTypePlugin,
+  emojiPlugin,
   insertBlockPlugin,
   layoutPlugin,
   mediaPlugin,
@@ -24,6 +28,20 @@ import {
   tokenPlugin,
   videoPlugin,
 } from '../src/plugins';
+
+console.log(init);
+init({ data });
+
+async function search(value: string) {
+  const emojis: Emoji[] = await SearchIndex.search(value);
+  const results = (emojis || []).map((e) => ({
+    title: e.name,
+    ...e.skins[0],
+  }));
+
+  console.log(results);
+  return results;
+}
 
 export default function FullEditor() {
   const element = useRef(null);
@@ -73,6 +91,7 @@ export default function FullEditor() {
       insertBlockPlugin({
         insertMenuItems: [],
       }),
+      emojiPlugin(),
       quickInsertPlugin(),
       videoPlugin(),
       mentionsPlugin(),
@@ -124,6 +143,9 @@ export default function FullEditor() {
             tokenProvider={Promise.resolve({
               getItems: (query, selectedItems) => getItems(20),
             })}
+            emojiProvider={Promise.resolve({
+              search,
+            })}
             activityProvider={Promise.resolve({
               getRecentItems: () => [
                 {
@@ -172,6 +194,31 @@ export default function FullEditor() {
                     </ShellBody>
                   </ShellMain>
                   <ShellSidebar tw="w-80 border-l bg-gray-50">
+                    <Button
+                      onClick={async () => {
+                        const emojis = await SearchIndex.search('☠');
+                        const emoji = emojis[0].skins[0];
+                        console.log('emoji', emoji);
+
+                        const state = actions.editorView.state;
+                        const dispatch = actions.editorView.dispatch;
+                        const node = state.schema.nodes.emoji.createChecked({
+                          id: emoji.native,
+                          text: emoji.native,
+                          shortName: emoji.shortcodes,
+                        });
+                        const textNode = state.schema.text(' ');
+                        console.log(node, textNode);
+                        console.log(state);
+                        const tr = state.tr.insert(
+                          state.selection.$from.pos,
+                          node,
+                        );
+                        dispatch(tr);
+                      }}
+                    >
+                      Add emoji
+                    </Button>
                     <textarea
                       style={{ resize: 'none' }}
                       tw="w-full h-full"

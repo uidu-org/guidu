@@ -29,13 +29,8 @@ export default class EmojiNode extends PureComponent<EmojiProps, {}> {
   }
 
   private renderWithProvider = (providers: Providers) => {
-    const {
-      allowTextFallback,
-      shortName,
-      id,
-      fallback,
-      fitToHeight,
-    } = this.props;
+    const { allowTextFallback, shortName, id, fallback, fitToHeight } =
+      this.props;
 
     if (allowTextFallback && !providers.emojiProvider) {
       return <span>{fallback || shortName}</span>;
