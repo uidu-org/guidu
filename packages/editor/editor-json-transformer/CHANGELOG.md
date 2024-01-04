@@ -1,5 +1,16 @@
 # @uidu/editor-json-transformer
 
+## 1.8.0
+
+### Minor Changes
+
+- dc9ad21: Fix emoji implementation, bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [dc9ad21]
+  - @uidu/adf-schema@2.10.0
+
 ## 1.7.0
 
 ### Minor Changes

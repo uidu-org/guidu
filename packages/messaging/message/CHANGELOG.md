@@ -1,5 +1,12 @@
 # @uidu/message
 
+## 0.12.1
+
+### Patch Changes
+
+- Updated dependencies [dc9ad21]
+  - @uidu/message-form@0.11.0
+
 ## 0.12.0
 
 ### Minor Changes
