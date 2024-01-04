@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import data from '@emoji-mart/data';
 import { defaultSchema } from '@uidu/adf-schema';
 import Button from '@uidu/button';
 import {
@@ -9,6 +10,7 @@ import {
 } from '@uidu/editor-common';
 import { modifyResponse, ProfileClient } from '@uidu/profilecard';
 import { profilecard as profilecardUtils } from '@uidu/util-data-test';
+import { init } from 'emoji-mart';
 import * as React from 'react';
 import { renderDocument, TextSerializer } from '../../src';
 import {
@@ -17,6 +19,9 @@ import {
 } from '../../src/ui/Renderer';
 import { RendererAppearance } from '../../src/ui/Renderer/types';
 import { story as storyDataDocument } from './story-data';
+
+console.log('init', init);
+init({ data }).then(() => console.log('init done'));
 
 const { getMockProfileClient: getMockProfileClientUtil } = profilecardUtils;
 const MockProfileClient = getMockProfileClientUtil(

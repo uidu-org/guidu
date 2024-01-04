@@ -27,6 +27,7 @@
     "classnames": "^2.3.2",
     "css-color-names": "^1.0.1",
     "date-fns": "^2.30.0",
+    "emoji-mart": "^5.5.2",
     "prosemirror-model": "^1.19.4",
     "prosemirror-state": "^1.4.3",
     "prosemirror-transform": "^1.8.0",

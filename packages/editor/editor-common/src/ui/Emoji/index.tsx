@@ -1,62 +1,20 @@
-import { EmojiId, ResourcedEmoji } from '@uidu/emoji';
+import { EmojiSkin } from 'emoji-mart';
 import React, { PureComponent } from 'react';
-import {
-  ProviderFactory,
-  Providers,
-  WithProviders,
-} from '../../provider-factory';
 
-export interface EmojiProps extends EmojiId {
+export interface EmojiProps extends EmojiSkin {
   allowTextFallback?: boolean;
-  providers?: ProviderFactory;
   fitToHeight?: number;
 }
 
 export default class EmojiNode extends PureComponent<EmojiProps, {}> {
-  private providerFactory: ProviderFactory;
-
-  constructor(props: EmojiProps) {
-    super(props);
-    this.providerFactory = props.providers || new ProviderFactory();
-  }
-
-  componentWillUnmount() {
-    if (!this.props.providers) {
-      // new ProviderFactory is created if no `providers` has been set
-      // in this case when component is unmounted it's safe to destroy this providerFactory
-      this.providerFactory.destroy();
-    }
-  }
-
-  private renderWithProvider = (providers: Providers) => {
+  render() {
     const { allowTextFallback, shortName, id, fallback, fitToHeight } =
       this.props;
 
-    if (allowTextFallback && !providers.emojiProvider) {
+    return <em-emoji shortcodes={shortName} size="1rem"></em-emoji>;
+
+    if (allowTextFallback) {
       return <span>{fallback || shortName}</span>;
     }
-
-    if (!providers.emojiProvider) {
-      return null;
-    }
-
-    return (
-      <ResourcedEmoji
-        emojiId={{ id, fallback, shortName }}
-        emojiProvider={providers.emojiProvider}
-        showTooltip={true}
-        fitToHeight={fitToHeight}
-      />
-    );
-  };
-
-  render() {
-    return (
-      <WithProviders
-        providers={['emojiProvider']}
-        providerFactory={this.providerFactory}
-        renderNode={this.renderWithProvider}
-      />
-    );
   }
 }

@@ -419,6 +419,14 @@ export const story = {
             name: 'Ronald Von',
           },
         },
+        {
+          type: 'emoji',
+          attrs: {
+            shortName: ':smile:',
+            id: '1f604',
+            text: ':smile:',
+          },
+        },
       ],
     },
     {

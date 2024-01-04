@@ -29,7 +29,6 @@ import {
   videoPlugin,
 } from '../src/plugins';
 
-console.log(init);
 init({ data });
 
 async function search(value: string) {
