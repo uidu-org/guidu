@@ -1,6 +1,6 @@
 {
   "name": "@uidu/table",
-  "version": "5.12.0",
+  "version": "6.0.0",
   "description": "React ag-datagrid wrapper with default configurations",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/table",
   "license": "MIT",
@@ -15,8 +15,8 @@
     "@tanstack/react-table": "^8.11.3",
     "@uidu/button": "1.8.0",
     "@uidu/checkbox": "^2.5.0",
-    "@uidu/data-fields": "^4.1.0",
-    "@uidu/data-manager": "4.12.0",
+    "@uidu/data-fields": "^4.2.0",
+    "@uidu/data-manager": "4.13.0",
     "@uidu/menu": "^0.15.0",
     "@uidu/popup": "^0.13.0",
     "@uidu/portal": "1.5.0",
@@ -38,7 +38,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@uidu/data-controls": "^4.8.0",
+    "@uidu/data-controls": "^4.8.1",
     "@uidu/docs": "^0.10.0"
   },
   "supportedLocales": [

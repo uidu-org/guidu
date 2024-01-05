@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 3.9.0
+
+### Minor Changes
+
+- 23f61e3: Migrate to virtuoso
+
+### Patch Changes
+
+- Updated dependencies [23f61e3]
+  - @uidu/data-manager@4.13.0
+  - @uidu/data-controls@4.8.1
+
 ## 3.8.0
 
 ### Minor Changes

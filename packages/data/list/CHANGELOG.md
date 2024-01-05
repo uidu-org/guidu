@@ -1,5 +1,16 @@
 # @uidu/list
 
+## 3.10.0
+
+### Minor Changes
+
+- 23f61e3: Migrate to virtuoso
+
+### Patch Changes
+
+- Updated dependencies [23f61e3]
+  - @uidu/data-fields@4.2.0
+
 ## 3.9.0
 
 ### Minor Changes
