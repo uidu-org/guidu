@@ -1,7 +1,7 @@
 import { FieldBaseStatelessProps } from '@uidu/field-base';
 import { FieldTextStateless } from '@uidu/field-text';
 import React, { forwardRef } from 'react';
-import NumberFormat from 'react-number-format';
+import { NumericFormat } from 'react-number-format';
 import { FieldNumberStatelessProps } from '../types';
 
 const FieldNumberStateless = forwardRef<
@@ -27,7 +27,7 @@ const FieldNumberStateless = forwardRef<
     <FieldTextStateless
       inputMode="numeric"
       fieldState={fieldState}
-      as={NumberFormat}
+      as={NumericFormat}
       placeholder={placeholder}
       required={required}
       disabled={disabled}
@@ -37,7 +37,7 @@ const FieldNumberStateless = forwardRef<
       options={{
         thousandSeparator: '.',
         decimalSeparator: ',',
-        // isNumericString: true,
+        // valueIsNumericString: true,
         decimalScale: 2,
         onValueChange,
         getInputRef: ref,

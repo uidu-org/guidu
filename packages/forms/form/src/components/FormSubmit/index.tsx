@@ -8,6 +8,7 @@ export default function FormSubmit({
   children,
   loading = false,
   appearance = 'primary',
+  disabledWhenInvalid = false,
   ...rest
 }: {
   className?: string;
@@ -16,12 +17,13 @@ export default function FormSubmit({
   canSubmit?: boolean;
   loading?: boolean;
   appearance?: ButtonAppearances;
+  disabledWhenInvalid?: boolean;
 } & ButtonProps) {
   return (
     <Button
       className={className}
       isLoading={loading}
-      isDisabled={!canSubmit || loading}
+      isDisabled={disabledWhenInvalid ? !canSubmit || loading : loading}
       type="submit"
       appearance={appearance}
       // eslint-disable-next-line react/jsx-props-no-spreading
