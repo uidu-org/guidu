@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.0.0
+
+### Major Changes
+
+- 9118af2: Bump hook-form
+
 ## 2.9.0
 
 ### Minor Changes

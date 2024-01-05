@@ -1,5 +1,13 @@
 # @uidu/dashboard-controls
 
+## 1.8.1
+
+### Patch Changes
+
+- Updated dependencies [9118af2]
+  - @uidu/form@3.0.0
+  - @uidu/field-date-range@2.7.0
+
 ## 1.8.0
 
 ### Minor Changes

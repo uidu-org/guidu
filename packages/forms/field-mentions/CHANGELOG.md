@@ -1,5 +1,14 @@
 # @uidu/field-mentions
 
+## 2.5.1
+
+### Patch Changes
+
+- Updated dependencies [9118af2]
+  - @uidu/form@3.0.0
+  - @uidu/field-base@4.9.0
+  - @uidu/theme@0.11.1
+
 ## 2.5.0
 
 ### Minor Changes

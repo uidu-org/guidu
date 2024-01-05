@@ -1,5 +1,15 @@
 # @uidu/dashlets-form
 
+## 1.7.1
+
+### Patch Changes
+
+- Updated dependencies [9118af2]
+  - @uidu/form@3.0.0
+  - @uidu/field-downshift@2.10.0
+  - @uidu/select@2.12.0
+  - @uidu/field-toggle@2.5.1
+
 ## 1.7.0
 
 ### Minor Changes

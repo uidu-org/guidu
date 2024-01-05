@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.13.1
+
+### Patch Changes
+
+- Updated dependencies [9118af2]
+  - @uidu/form@3.0.0
+  - @uidu/payments@1.14.1
+
 ## 0.13.0
 
 ### Minor Changes

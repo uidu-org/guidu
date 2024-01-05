@@ -18,7 +18,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.10.0",
     "@uidu/field-text": "^2.5.0",
-    "@uidu/form": "^2.9.0",
+    "@uidu/form": "^3.0.0",
     "lodash": "^4.17.21"
   },
   "publishConfig": {

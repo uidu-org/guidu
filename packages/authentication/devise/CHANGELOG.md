@@ -1,5 +1,14 @@
 # @uidu/devise
 
+## 1.10.1
+
+### Patch Changes
+
+- Updated dependencies [9118af2]
+  - @uidu/form@3.0.0
+  - @uidu/field-phone@2.6.0
+  - @uidu/field-password@2.6.1
+
 ## 1.10.0
 
 ### Minor Changes

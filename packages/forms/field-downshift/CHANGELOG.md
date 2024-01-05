@@ -1,5 +1,16 @@
 # @uidu/field-downshift
 
+## 2.10.0
+
+### Minor Changes
+
+- 9118af2: Bump hook-form
+
+### Patch Changes
+
+- Updated dependencies [9118af2]
+  - @uidu/field-base@4.9.0
+
 ## 2.9.0
 
 ### Minor Changes
