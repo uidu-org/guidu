@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 2.22.1
+
+### Patch Changes
+
+- 1e6851f: Allow emoji in renderer as well
+- Updated dependencies [1e6851f]
+  - @uidu/editor-common@2.17.0
+
 ## 2.22.0
 
 ### Minor Changes

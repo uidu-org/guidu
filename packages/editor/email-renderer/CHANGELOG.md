@@ -1,5 +1,11 @@
 # @uidu/email-renderer
 
+## 1.11.0
+
+### Minor Changes
+
+- 1e6851f: Allow emoji in renderer as well
+
 ## 1.10.0
 
 ### Minor Changes
