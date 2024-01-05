@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useDataManagerContext } from '@uidu/data-manager';
 import { ShellBody } from '@uidu/shell';
-import React, { useCallback, useMemo } from 'react';
+import React, { forwardRef, useCallback, useMemo } from 'react';
 import { TableVirtuoso } from 'react-virtuoso';
 import * as defaultComponents from '../styled';
 import { TableProps } from '../types';
@@ -20,13 +20,25 @@ function TableWrapper(props) {
 }
 const MemoizedTableWrapper = React.memo(TableWrapper);
 
-function TableRow(props) {
-  return <div {...props} />;
+const TableHead = forwardRef(({ children }, ref) => (
+  <div tw="z-50 sticky top-0" ref={ref}>
+    {children}
+  </div>
+));
+
+function TableRow({ item, ...props }) {
+  return <div key={item.id} {...props} />;
 }
 
 const MemoizedTableRow = React.memo(TableRow, (prev, next) => {
-  return prev.item.id === next.item.id;
+  return prev.item === next.item;
 });
+
+const TableFoot = forwardRef(({ children }, ref) => (
+  <div ref={ref} tw="z-50 sticky bottom-0">
+    {children}
+  </div>
+));
 
 function Table<T extends { id: string }>({
   // overrideable props
@@ -146,11 +158,6 @@ function Table<T extends { id: string }>({
     [footerGroups, rowHeight],
   );
 
-  const TableHead = useCallback(
-    ({ children }) => <div tw="z-50 sticky top-0">{children}</div>,
-    [],
-  );
-
   const TableBody = useCallback(
     (props) =>
       isPending ? (
@@ -172,11 +179,6 @@ function Table<T extends { id: string }>({
       LoadingSkeleton,
       Body,
     ],
-  );
-
-  const TableFoot = useCallback(
-    ({ children }) => <div tw="z-50 sticky bottom-0">{children}</div>,
-    [],
   );
 
   const SuspendedScrollSeek = useCallback(({ height, index, context }) => {
@@ -234,7 +236,7 @@ function Table<T extends { id: string }>({
           : {})}
         components={{
           Table: columnSizingInfo.isResizingColumn
-            ? MemoizedTableWrapper
+            ? TableWrapper
             : MemoizedTableWrapper,
           TableHead,
           TableBody,

@@ -37,7 +37,7 @@ export default function Footer<T>({
   return (
     <div tw="sticky bottom-0 -mt-px [background:rgb(var(--body-on-primary-bg))] [width:max-content] z-10 min-w-full border-t">
       {footerGroups.map((group) => (
-        <div tw="flex">
+        <div tw="flex" key={group.id}>
           {group.headers
             .filter((header) => !header.column.columnDef.meta?.isPrivate)
             .map((header, index) => (

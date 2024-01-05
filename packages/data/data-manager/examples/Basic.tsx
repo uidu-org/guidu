@@ -89,6 +89,15 @@ export default function Basic({}) {
     });
   };
 
+  const updateFirstContact = () => {
+    const firstContact = rowData[0];
+    const updatedContact = {
+      ...firstContact,
+      displayName: 'updated@uidu.org',
+    };
+    setRowData((prev) => [updatedContact, ...prev.slice(1)]);
+  };
+
   const onViewUpdate = async (name, value) => {
     console.log(name, value);
     if (!isEqual(currentView[name], value)) {
@@ -329,6 +338,7 @@ export default function Basic({}) {
                         tableInstance={tableInstance}
                         currentView={currentView}
                       />
+                      <Button onClick={updateFirstContact}>Test update</Button>
                     </ShellHeader>
                     <DataManager
                       // query={query}
@@ -368,7 +378,7 @@ export default function Basic({}) {
                       }}
                       isAutoSaving={isAutoSaving}
                       key={`table-for-${currentView.id}`}
-                      // onItemClick={onItemClick}
+                      onItemClick={onItemClick}
                       tableInstance={tableInstance}
                       currentView={currentView}
                       updateView={onViewUpdate}

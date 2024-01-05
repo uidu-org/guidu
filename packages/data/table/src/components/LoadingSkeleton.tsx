@@ -21,8 +21,6 @@ export function ScrollSeekPlaceholder({
 }) {
   const { StyledRow, Td } = components;
 
-  console.log(rest);
-
   return (
     <div
       key={`fake-${i}`}
@@ -33,6 +31,7 @@ export function ScrollSeekPlaceholder({
         .filter((column) => !column.columnDef.meta?.isPrivate)
         .map((column, index) => (
           <Td
+            key={`${column.id}-fake-${i}`}
             // tw="border-b border-r border-opacity-50 p-4 flex[1 0 auto]"
             $width={column.getSize()}
             $minWidth={column.columnDef.minSize}
