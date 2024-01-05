@@ -1,5 +1,21 @@
 # @uidu/data-manager
 
+## 4.13.0
+
+### Minor Changes
+
+- 23f61e3: Migrate to virtuoso
+
+### Patch Changes
+
+- Updated dependencies [23f61e3]
+  - @uidu/table@6.0.0
+  - @uidu/board@2.9.0
+  - @uidu/data-fields@4.2.0
+  - @uidu/data-views@3.9.0
+  - @uidu/list@3.10.0
+  - @uidu/data-controls@4.8.1
+
 ## 4.12.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 2.9.0
+
+### Minor Changes
+
+- 23f61e3: Migrate to virtuoso
+
 ## 2.8.0
 
 ### Minor Changes

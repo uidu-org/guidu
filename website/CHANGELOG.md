@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.10.2
+
+### Patch Changes
+
+- Updated dependencies [23f61e3]
+  - @uidu/table@6.0.0
+  - @uidu/list@3.10.0
+
 ## 0.10.1
 
 ### Patch Changes

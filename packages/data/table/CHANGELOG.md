@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 6.0.0
+
+### Major Changes
+
+- 23f61e3: Migrate to virtuoso
+
+### Patch Changes
+
+- Updated dependencies [23f61e3]
+  - @uidu/data-fields@4.2.0
+  - @uidu/data-manager@4.13.0
+
 ## 5.12.0
 
 ### Minor Changes

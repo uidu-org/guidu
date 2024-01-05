@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 2.10.0
+
+### Minor Changes
+
+- 23f61e3: Migrate to virtuoso
+
+### Patch Changes
+
+- Updated dependencies [23f61e3]
+  - @uidu/dashlets@3.10.0
+
 ## 2.9.0
 
 ### Minor Changes

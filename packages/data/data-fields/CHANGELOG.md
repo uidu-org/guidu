@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 4.2.0
+
+### Minor Changes
+
+- 23f61e3: Migrate to virtuoso
+
 ## 4.1.0
 
 ### Minor Changes

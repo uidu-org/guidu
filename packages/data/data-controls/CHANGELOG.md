@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 4.8.1
+
+### Patch Changes
+
+- Updated dependencies [23f61e3]
+  - @uidu/data-fields@4.2.0
+  - @uidu/data-manager@4.13.0
+  - @uidu/data-views@3.9.0
+
 ## 4.8.0
 
 ### Minor Changes
