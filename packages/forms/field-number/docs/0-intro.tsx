@@ -14,15 +14,6 @@ export default md`
   ${(
     <Example
       packageName="@uidu/field-number"
-      Component={require('../examples/Basic').default}
-      title="Basic"
-      source={require('!!raw-loader!../examples/Basic').default}
-    />
-  )}
-
-  ${(
-    <Example
-      packageName="@uidu/field-number"
       Component={require('../examples/Scaffold').default}
       title="Scaffold"
       source={require('!!raw-loader!../examples/Scaffold').default}

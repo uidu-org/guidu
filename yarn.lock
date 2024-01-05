@@ -3700,12 +3700,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hookform/resolvers@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@hookform/resolvers@npm:3.1.1"
+"@hookform/resolvers@npm:^3.3.4":
+  version: 3.3.4
+  resolution: "@hookform/resolvers@npm:3.3.4"
   peerDependencies:
     react-hook-form: ^7.0.0
-  checksum: 4f76dc32cb2a295cc95e9f015d95c7318ffeb998577ec25d1f54ac4f52b3440911fd7cf8f75ba1bcd683c30da55fb081d4747308fe0116f7650690132f878c96
+  checksum: 0845e15f53b515ab5dc8d970d4ee7f47bbdfc4f4391bc166361535482d96b6ae3d1812669107fca05bf8687fa5447e3ed65f2eee3e349759b23b229ca978f917
   languageName: node
   linkType: hard
 
@@ -8454,7 +8454,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-common@npm:^2.15.0, @uidu/editor-common@npm:^2.16.0, @uidu/editor-common@workspace:packages/editor/editor-common":
+"@uidu/editor-common@npm:^2.15.0, @uidu/editor-common@npm:^2.16.0, @uidu/editor-common@npm:^2.17.0, @uidu/editor-common@workspace:packages/editor/editor-common":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
@@ -8491,7 +8491,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@npm:2.22.0, @uidu/editor-core@npm:^2.22.0, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@npm:2.22.1, @uidu/editor-core@npm:^2.22.0, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -8519,7 +8519,7 @@ __metadata:
     "@uidu/date": "npm:^0.9.0"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/droplist": "npm:^0.10.0"
-    "@uidu/editor-common": "npm:^2.16.0"
+    "@uidu/editor-common": "npm:^2.17.0"
     "@uidu/editor-json-transformer": "npm:^1.8.0"
     "@uidu/editor-markdown-transformer": "npm:^1.8.0"
     "@uidu/emoji": "npm:^0.13.0"
@@ -8646,8 +8646,8 @@ __metadata:
     "@heroicons/react": "npm:^2.0.18"
     "@uidu/adf-schema": "npm:2.10.0"
     "@uidu/button": "npm:1.8.0"
-    "@uidu/editor-core": "npm:2.22.0"
-    "@uidu/email-renderer": "npm:1.10.0"
+    "@uidu/editor-core": "npm:2.22.1"
+    "@uidu/email-renderer": "npm:1.11.0"
     "@uidu/field-number": "npm:2.5.0"
     "@uidu/field-text": "npm:2.5.0"
     "@uidu/form": "npm:2.9.0"
@@ -8664,7 +8664,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/email-renderer@npm:1.10.0, @uidu/email-renderer@workspace:packages/editor/email-renderer":
+"@uidu/email-renderer@npm:1.11.0, @uidu/email-renderer@workspace:packages/editor/email-renderer":
   version: 0.0.0-use.local
   resolution: "@uidu/email-renderer@workspace:packages/editor/email-renderer"
   dependencies:
@@ -8758,7 +8758,7 @@ __metadata:
     "@heroicons/react": "npm:^2.0.18"
     "@uidu/form": "npm:2.9.0"
     react: "npm:^18.2.0"
-    react-hook-form: "npm:7.36.0"
+    react-hook-form: "npm:7.49.2"
     styled-components: "npm:^5.3.11"
     tslib: "npm:^2.6.2"
     twin.macro: "npm:^3.4.0"
@@ -8814,7 +8814,7 @@ __metadata:
     "@uidu/form": "npm:^2.9.0"
     moment: "npm:^2.29.4"
     react: "npm:^18.2.0"
-    react-day-picker: "npm:^8.9.1"
+    react-day-picker: "npm:^8.10.0"
     react-feather: "npm:^2.0.10"
     react-helmet: "npm:^6.1.0"
     styled-components: "npm:^5.3.11"
@@ -8838,7 +8838,7 @@ __metadata:
     "@uidu/popup": "npm:0.13.0"
     date-fns: "npm:^2.30.0"
     react: "npm:^18.2.0"
-    react-day-picker: "npm:^8.9.1"
+    react-day-picker: "npm:^8.10.0"
     styled-components: "npm:^5.3.11"
     tslib: "npm:^2.6.2"
   peerDependencies:
@@ -8865,7 +8865,7 @@ __metadata:
     "@uidu/radio": "npm:^2.7.0"
     "@uidu/shell": "npm:^2.8.0"
     classnames: "npm:^2.3.2"
-    downshift: "npm:^8.2.3"
+    downshift: "npm:^8.3.1"
     react: "npm:^18.2.0"
     react-feather: "npm:^2.0.10"
     styled-components: "npm:^5.3.11"
@@ -8999,7 +8999,7 @@ __metadata:
     "@uidu/form": "npm:^2.9.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    react-number-format: "npm:^4.9.4"
+    react-number-format: "npm:^5.3.1"
     styled-components: "npm:^5.3.11"
     tslib: "npm:^2.6.2"
   peerDependencies:
@@ -9046,7 +9046,7 @@ __metadata:
     "@uidu/form": "npm:2.9.0"
     "@uidu/select": "npm:2.11.0"
     react: "npm:^18.2.0"
-    react-phone-number-input: "npm:^3.3.7"
+    react-phone-number-input: "npm:^3.3.8"
     styled-components: "npm:^5.3.11"
     tslib: "npm:^2.6.2"
     twin.macro: "npm:^3.4.0"
@@ -9205,13 +9205,13 @@ __metadata:
   resolution: "@uidu/form@workspace:packages/forms/form"
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
-    "@hookform/resolvers": "npm:^3.1.1"
+    "@hookform/resolvers": "npm:^3.3.4"
     "@uidu/button": "npm:1.8.0"
     "@uidu/docs": "npm:^0.10.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-feather: "npm:^2.0.10"
-    react-hook-form: "npm:7.36.0"
+    react-hook-form: "npm:7.49.2"
     react-media: "npm:^1.10.0"
     styled-components: "npm:^5.3.11"
     tslib: "npm:^2.6.2"
@@ -10117,7 +10117,7 @@ __metadata:
     "@uidu/button": "npm:^1.8.0"
     "@uidu/code": "npm:^0.10.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/editor-common": "npm:^2.16.0"
+    "@uidu/editor-common": "npm:^2.17.0"
     "@uidu/editor-json-transformer": "npm:^1.8.0"
     "@uidu/field-range": "npm:^2.5.0"
     "@uidu/media-card": "npm:^0.16.0"
@@ -10191,7 +10191,7 @@ __metadata:
     "@uidu/modal-dialog": "npm:^1.7.0"
     "@uidu/spinner": "npm:^0.10.0"
     react: "npm:^18.2.0"
-    react-hook-form: "npm:7.36.0"
+    react-hook-form: "npm:7.49.2"
     react-select: "npm:^5.8.0"
     styled-components: "npm:^5.3.11"
     timezones-list: "npm:^3.0.2"
@@ -16360,9 +16360,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"downshift@npm:^8.2.3":
-  version: 8.2.3
-  resolution: "downshift@npm:8.2.3"
+"downshift@npm:^8.3.1":
+  version: 8.3.1
+  resolution: "downshift@npm:8.3.1"
   dependencies:
     "@babel/runtime": "npm:^7.22.15"
     compute-scroll-into-view: "npm:^3.0.3"
@@ -16371,7 +16371,7 @@ __metadata:
     tslib: "npm:^2.6.2"
   peerDependencies:
     react: ">=16.12.0"
-  checksum: 08c15b9e880088062993f5f76c6c20f77890e62213dd6d4d3486def28ac7f0129d225c37fa9986745700a9d9a0f745c377eeab2789e1b89e61e9a985bc356bc0
+  checksum: b616da957802bd80bc8d909d36bff851d9701e743d800be6443514f24deeaf0ce22ae56e6802c386c769328d8442969c6629c6f94d99ff12bea8d07e11c86cee
   languageName: node
   linkType: hard
 
@@ -19552,7 +19552,7 @@ __metadata:
     dotenv: "npm:^16.3.1"
     dotenv-cli: "npm:^7.3.0"
     dotenv-expand: "npm:^10.0.0"
-    downshift: "npm:^8.2.3"
+    downshift: "npm:^8.3.1"
     emoji-mart: "npm:^5.5.2"
     emoji-regex: "npm:^10.3.0"
     eslint: "npm:^8.55.0"
@@ -19653,7 +19653,7 @@ __metadata:
     react-content-loader: "npm:^6.2.1"
     react-countdown: "npm:^2.3.5"
     react-countup: "npm:^6.5.0"
-    react-day-picker: "npm:^8.9.1"
+    react-day-picker: "npm:^8.10.0"
     react-dom: "npm:^18.2.0"
     react-dropzone: "npm:^14.2.3"
     react-facebook: "npm:^8.1.4"
@@ -19666,7 +19666,7 @@ __metadata:
     react-google-maps: "npm:^9.4.5"
     react-grid-layout: "npm:^1.4.4"
     react-helmet: "npm:^6.1.0"
-    react-hook-form: "npm:7.36.0"
+    react-hook-form: "npm:7.49.2"
     react-intersection-observer: "npm:^9.5.3"
     react-intl: "npm:^6.5.5"
     react-loadable: "npm:^5.5.0"
@@ -19676,8 +19676,8 @@ __metadata:
     react-media: "npm:^1.10.0"
     react-mentions: "npm:^4.4.10"
     react-node-resolver: "npm:^2.0.1"
-    react-number-format: "npm:^4.9.4"
-    react-phone-number-input: "npm:^3.3.7"
+    react-number-format: "npm:^5.3.1"
+    react-phone-number-input: "npm:^3.3.8"
     react-popper: "npm:^2.3.0"
     react-resizable: "npm:^3.0.5"
     react-router: "npm:^5.3.4"
@@ -20625,12 +20625,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"input-format@npm:^0.3.8":
-  version: 0.3.8
-  resolution: "input-format@npm:0.3.8"
+"input-format@npm:^0.3.9":
+  version: 0.3.9
+  resolution: "input-format@npm:0.3.9"
   dependencies:
     prop-types: "npm:^15.8.1"
-  checksum: 5c41f6ca5ee1f83367f1ba387a059bae8ed3962fd232f13b12217b55a7f2dada083189e2ef892efc94259aff79603c4fd72977d54441bd3cb3c18ae25309baff
+  checksum: 1256a4a5e15313512601f265f8bc8f74a0472bb1335df579aa2177615eeb2b19b6c06ae879e85794b8962699aa310ef8c14a83fe508baa8737714c374f2be6ee
   languageName: node
   linkType: hard
 
@@ -22372,10 +22372,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libphonenumber-js@npm:^1.10.48":
-  version: 1.10.48
-  resolution: "libphonenumber-js@npm:1.10.48"
-  checksum: 135b6cbaf7993ca9f48591a098741f2ef6f00e9ce748d9514f4dd5433d2fc41f05ca22af52f53a088f53968f65ff9a0f17756804eb391ad40785ece21d813791
+"libphonenumber-js@npm:^1.10.53":
+  version: 1.10.53
+  resolution: "libphonenumber-js@npm:1.10.53"
+  checksum: 206a324c064572741ec2a949cddd2d36ada2da0e54889dbf67fe525e17a66cdfffd6deaaff773133bfae9aed4359bb7dd41bfee77cb620abe5c788ff2726db47
   languageName: node
   linkType: hard
 
@@ -28164,13 +28164,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-day-picker@npm:^8.9.1":
-  version: 8.9.1
-  resolution: "react-day-picker@npm:8.9.1"
+"react-day-picker@npm:^8.10.0":
+  version: 8.10.0
+  resolution: "react-day-picker@npm:8.10.0"
   peerDependencies:
-    date-fns: ^2.28.0
+    date-fns: ^2.28.0 || ^3.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: b7f7165b64359509d99953016d883b4cde4fda8f71accec7f78635859716f21a85878c2cabe10adbd2f90af1d782ba5af8255d22c3395a5422704e3bc4e07ab6
+  checksum: 974496ce004762d521923fc533f6ad6ff8d1f24368220753106617eb199aeb9658b4b7734e12a3fe8a5057840464a3d2d08b4b7f9a84ec77a59c50cc647f6dbc
   languageName: node
   linkType: hard
 
@@ -28371,12 +28371,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:7.36.0":
-  version: 7.36.0
-  resolution: "react-hook-form@npm:7.36.0"
+"react-hook-form@npm:7.49.2":
+  version: 7.49.2
+  resolution: "react-hook-form@npm:7.49.2"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
-  checksum: b3236cdfdea27a57756bb74f5809ee7264019241061caaee8af21aec7a89ad41df9445c744930e063c06c80e540d73da2e20bf41221d1cc2b304b1afe8848ed3
+  checksum: 7895d65b8458c42d46eb338803bb0fd1aab42fc69ecf80b47846eace9493a10cac5b05c9b744a5f9f1f7969a3e2703fc2118cdab97e49a7798a72d09f106383f
   languageName: node
   linkType: hard
 
@@ -28566,15 +28566,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-number-format@npm:^4.9.4":
-  version: 4.9.4
-  resolution: "react-number-format@npm:4.9.4"
+"react-number-format@npm:^5.3.1":
+  version: 5.3.1
+  resolution: "react-number-format@npm:5.3.1"
   dependencies:
     prop-types: "npm:^15.7.2"
   peerDependencies:
     react: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: 184c078eadaf71bfeb8896a4ed40ce75325f044f03f6e2340a12b1d5f58ff11954cb6eadc02e6abecdd601b44da93059c715cc54a5baceba25b50d4148f95be9
+  checksum: 117c068ed656fd8542ce89f0e0e4a01c835d00122a2c7bd556bf43f541d55c7d9925b08903e02f04b04197def10e94f1a009cf6ebe360a0db144f9b40aad590c
   languageName: node
   linkType: hard
 
@@ -28597,19 +28597,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-phone-number-input@npm:^3.3.7":
-  version: 3.3.7
-  resolution: "react-phone-number-input@npm:3.3.7"
+"react-phone-number-input@npm:^3.3.8":
+  version: 3.3.8
+  resolution: "react-phone-number-input@npm:3.3.8"
   dependencies:
     classnames: "npm:^2.3.1"
     country-flag-icons: "npm:^1.5.4"
-    input-format: "npm:^0.3.8"
-    libphonenumber-js: "npm:^1.10.48"
+    input-format: "npm:^0.3.9"
+    libphonenumber-js: "npm:^1.10.53"
     prop-types: "npm:^15.8.1"
   peerDependencies:
     react: ">=16.8"
     react-dom: ">=16.8"
-  checksum: 4bca9ce7d6eea382ce6fecaa783291587d7dfd0e3d8895a1e71b584fb85f9f0caf202ba57fb9e3595bec1804f205a88215aad253db0c2949dad8336337b09a58
+  checksum: 97d4ae4ca14747bda45ae0d37ecb5e16632f5e9ab547aa7369abcfd1dffd37c7d721f9b741c24e771ed313dbd570a609b59e71a80bb1609e9427fa2de17a8339
   languageName: node
   linkType: hard
 

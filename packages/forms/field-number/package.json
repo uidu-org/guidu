@@ -19,7 +19,7 @@
     "@uidu/field-base": "4.8.0",
     "@uidu/field-text": "^2.5.0",
     "@uidu/form": "^2.9.0",
-    "react-number-format": "^4.9.4",
+    "react-number-format": "^5.3.1",
     "tslib": "^2.6.2"
   },
   "devDependencies": {
