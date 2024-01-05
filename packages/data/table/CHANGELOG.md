@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 6.0.1
+
+### Patch Changes
+
+- 37d009e: Less aggressive memoization of table rows"
+- Updated dependencies [37d009e]
+  - @uidu/data-manager@4.13.1
+
 ## 6.0.0
 
 ### Major Changes

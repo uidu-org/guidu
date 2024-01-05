@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 4.13.1
+
+### Patch Changes
+
+- 37d009e: Less aggressive memoization of table rows"
+- Updated dependencies [37d009e]
+  - @uidu/table@6.0.1
+  - @uidu/data-controls@4.8.3
+  - @uidu/data-views@3.9.2
+
 ## 4.13.0
 
 ### Minor Changes
