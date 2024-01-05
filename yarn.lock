@@ -6173,24 +6173,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/match-sorter-utils@npm:^8.8.4":
-  version: 8.8.4
-  resolution: "@tanstack/match-sorter-utils@npm:8.8.4"
+"@tanstack/match-sorter-utils@npm:^8.11.3":
+  version: 8.11.3
+  resolution: "@tanstack/match-sorter-utils@npm:8.11.3"
   dependencies:
     remove-accents: "npm:0.4.2"
-  checksum: 25a109c72414ce439dba914f0756b52ef29e1d0a008f9c0f3f79af24cdf8a129500c9304a9877f5c9cd2713e394915297cfc07c249b8e1f78bd2f026643de0b8
+  checksum: 9bd1b5ee09a0a4993ce6194702d7a15177774a1ae6d9dc9486c6ffbcdcbbf75431126568b305c497f257709c0d2f924ee8d5b75c5de029f98a2aac59794a5c9b
   languageName: node
   linkType: hard
 
-"@tanstack/react-table@npm:^8.10.6":
-  version: 8.10.6
-  resolution: "@tanstack/react-table@npm:8.10.6"
+"@tanstack/react-table@npm:^8.11.3":
+  version: 8.11.3
+  resolution: "@tanstack/react-table@npm:8.11.3"
   dependencies:
-    "@tanstack/table-core": "npm:8.10.6"
+    "@tanstack/table-core": "npm:8.11.3"
   peerDependencies:
     react: ">=16"
     react-dom: ">=16"
-  checksum: b7a75aba47c1a75f3c5ada3f88cc815099dfc927cbaa7e12cb80963b90cc2f67670c05792dd471e595c08053075f1b999a33369a0c736c3e704b41dfea4df6b1
+  checksum: 0b6377fb5d8c519542990c300d9ceca4c3c2260e71ee18d118d36c25e641576ec3d6126cbd8e67213758cfe2c652fae49ff6f9d097ddbab49d65434ad1933c0f
   languageName: node
   linkType: hard
 
@@ -6206,10 +6206,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/table-core@npm:8.10.6":
-  version: 8.10.6
-  resolution: "@tanstack/table-core@npm:8.10.6"
-  checksum: fa26ecc7f620c7a45bb5dd9687a294f5167a9ce60261c052283f6948a75ad5ec296392e85f4bc59a3e9344232429c359128b113fdf5cf484adf0f948d5ea27c9
+"@tanstack/table-core@npm:8.11.3":
+  version: 8.11.3
+  resolution: "@tanstack/table-core@npm:8.11.3"
+  checksum: a7d9721b380a2388698326b9870f4322058054f7ab4fa404323c18afc55374bc2403339a03df44eeaad4b2d82e7d8e72a46cd2c5c18a02c7ca495a55b87da7bd
   languageName: node
   linkType: hard
 
@@ -7652,13 +7652,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/adf-schema@npm:2.9.0, @uidu/adf-schema@npm:^2.9.0, @uidu/adf-schema@workspace:packages/editor/adf-schema":
+"@uidu/adf-schema@npm:2.10.0, @uidu/adf-schema@npm:^2.10.0, @uidu/adf-schema@npm:^2.9.0, @uidu/adf-schema@workspace:packages/editor/adf-schema":
   version: 0.0.0-use.local
   resolution: "@uidu/adf-schema@workspace:packages/editor/adf-schema"
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
     "@types/linkify-it": "npm:^3.0.5"
-    "@uidu/editor-json-transformer": "npm:^1.7.0"
+    "@uidu/editor-json-transformer": "npm:^1.8.0"
     "@uidu/json-schema-generator": "npm:^1.3.0"
     "@uidu/media-core": "npm:2.2.0"
     axios: "npm:^1.6.2"
@@ -7879,7 +7879,7 @@ __metadata:
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
     "@faker-js/faker": "npm:^8.3.1"
-    "@tanstack/react-table": "npm:^8.10.6"
+    "@tanstack/react-table": "npm:^8.11.3"
     "@uidu/badge": "npm:^0.10.0"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/shell": "npm:^2.8.0"
@@ -7985,8 +7985,8 @@ __metadata:
     "@babel/runtime": "npm:^7.23.6"
     "@faker-js/faker": "npm:^8.3.1"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/message": "npm:^0.12.0"
-    "@uidu/message-form": "npm:^0.10.0"
+    "@uidu/message": "npm:^0.12.1"
+    "@uidu/message-form": "npm:^0.11.0"
     "@uidu/message-renderer": "npm:^0.10.0"
     "@uidu/shell": "npm:^2.8.0"
     body-scroll-lock: "npm:^4.0.0-beta.0"
@@ -8065,7 +8065,7 @@ __metadata:
     "@babel/runtime": "npm:^7.23.6"
     "@cubejs-client/core": "npm:^0.34.32"
     "@cubejs-client/react": "npm:^0.34.32"
-    "@tanstack/react-table": "npm:^8.10.6"
+    "@tanstack/react-table": "npm:^8.11.3"
     "@types/react-grid-layout": "npm:^1.3.5"
     "@uidu/dashboard-controls": "npm:^1.8.0"
     "@uidu/dashlets": "npm:^3.9.0"
@@ -8132,7 +8132,7 @@ __metadata:
     "@cubejs-client/core": "npm:^0.34.32"
     "@cubejs-client/react": "npm:^0.34.32"
     "@loadable/component": "npm:^5.15.3"
-    "@tanstack/react-table": "npm:^8.10.6"
+    "@tanstack/react-table": "npm:^8.11.3"
     "@uidu/dashboard-manager": "npm:^2.9.0"
     "@uidu/data-fields": "npm:^4.1.0"
     "@uidu/docs": "npm:^0.10.0"
@@ -8163,7 +8163,7 @@ __metadata:
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
     "@heroicons/react": "npm:^2.0.18"
-    "@tanstack/react-table": "npm:^8.10.6"
+    "@tanstack/react-table": "npm:^8.11.3"
     "@uidu/button": "npm:1.8.0"
     "@uidu/checkbox": "npm:^2.5.0"
     "@uidu/data-fields": "npm:^4.1.0"
@@ -8207,7 +8207,7 @@ __metadata:
     "@heroicons/react": "npm:^2.0.18"
     "@loadable/component": "npm:^5.15.3"
     "@smastrom/react-rating": "npm:^1.4.0"
-    "@tanstack/react-table": "npm:^8.10.6"
+    "@tanstack/react-table": "npm:^8.11.3"
     "@uidu/button": "npm:1.8.0"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/field-color-picker": "npm:^3.5.0"
@@ -8243,8 +8243,8 @@ __metadata:
     "@cubejs-client/react": "npm:^0.34.32"
     "@cubejs-client/ws-transport": "npm:^0.34.32"
     "@loadable/component": "npm:^5.15.3"
-    "@tanstack/match-sorter-utils": "npm:^8.8.4"
-    "@tanstack/react-table": "npm:^8.10.6"
+    "@tanstack/match-sorter-utils": "npm:^8.11.3"
+    "@tanstack/react-table": "npm:^8.11.3"
     "@uidu/board": "npm:^2.8.0"
     "@uidu/button": "npm:1.8.0"
     "@uidu/calendar": "npm:^0.10.0"
@@ -8284,7 +8284,7 @@ __metadata:
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
     "@loadable/component": "npm:^5.15.3"
-    "@tanstack/react-table": "npm:^8.10.6"
+    "@tanstack/react-table": "npm:^8.11.3"
     "@uidu/button": "npm:1.8.0"
     "@uidu/data-controls": "npm:^4.8.0"
     "@uidu/data-manager": "npm:4.12.0"
@@ -8454,17 +8454,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-common@npm:^2.15.0, @uidu/editor-common@workspace:packages/editor/editor-common":
+"@uidu/editor-common@npm:^2.15.0, @uidu/editor-common@npm:^2.16.0, @uidu/editor-common@workspace:packages/editor/editor-common":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
     "@atlaskit/icon": "npm:^21.12.8"
     "@babel/runtime": "npm:^7.23.6"
-    "@uidu/adf-schema": "npm:^2.9.0"
+    "@uidu/adf-schema": "npm:^2.10.0"
     "@uidu/adf-utils": "npm:^2.7.0"
     "@uidu/analytics": "npm:^0.11.0"
     "@uidu/analytics-namespaced-context": "npm:^0.9.0"
-    "@uidu/editor-json-transformer": "npm:1.7.0"
+    "@uidu/editor-json-transformer": "npm:1.8.0"
     "@uidu/emoji": "npm:^0.13.0"
     "@uidu/media-core": "npm:2.2.0"
     "@uidu/mentions": "npm:^0.13.0"
@@ -8475,6 +8475,7 @@ __metadata:
     classnames: "npm:^2.3.2"
     css-color-names: "npm:^1.0.1"
     date-fns: "npm:^2.30.0"
+    emoji-mart: "npm:^5.5.2"
     prosemirror-model: "npm:^1.19.4"
     prosemirror-state: "npm:^1.4.3"
     prosemirror-transform: "npm:^1.8.0"
@@ -8490,7 +8491,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@npm:2.21.0, @uidu/editor-core@npm:^2.21.0, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@npm:2.22.0, @uidu/editor-core@npm:^2.22.0, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -8506,7 +8507,7 @@ __metadata:
     "@fortawesome/react-fontawesome": "npm:^0.2.0"
     "@loadable/component": "npm:^5.15.3"
     "@uidu/activity-provider": "npm:0.6.0"
-    "@uidu/adf-schema": "npm:^2.9.0"
+    "@uidu/adf-schema": "npm:^2.10.0"
     "@uidu/adf-utils": "npm:^2.7.0"
     "@uidu/analytics": "npm:^0.11.0"
     "@uidu/analytics-gas-types": "npm:^0.4.4"
@@ -8518,9 +8519,9 @@ __metadata:
     "@uidu/date": "npm:^0.9.0"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/droplist": "npm:^0.10.0"
-    "@uidu/editor-common": "npm:^2.15.0"
-    "@uidu/editor-json-transformer": "npm:^1.7.0"
-    "@uidu/editor-markdown-transformer": "npm:^1.7.0"
+    "@uidu/editor-common": "npm:^2.16.0"
+    "@uidu/editor-json-transformer": "npm:^1.8.0"
+    "@uidu/editor-markdown-transformer": "npm:^1.8.0"
     "@uidu/emoji": "npm:^0.13.0"
     "@uidu/field-base": "npm:4.8.0"
     "@uidu/field-date": "npm:^2.7.0"
@@ -8534,7 +8535,7 @@ __metadata:
     "@uidu/menu": "npm:^0.15.0"
     "@uidu/modal-dialog": "npm:1.7.0"
     "@uidu/profilecard": "npm:^0.10.0"
-    "@uidu/prosemirror-utils": "npm:0.1.0"
+    "@uidu/prosemirror-utils": "npm:0.2.0"
     "@uidu/select": "npm:^2.11.0"
     "@uidu/shell": "npm:^2.8.0"
     "@uidu/spinner": "npm:^0.10.0"
@@ -8577,15 +8578,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-json-transformer@npm:1.7.0, @uidu/editor-json-transformer@npm:^1.7.0, @uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer":
+"@uidu/editor-json-transformer@npm:1.8.0, @uidu/editor-json-transformer@npm:^1.8.0, @uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-json-transformer@workspace:packages/editor/editor-json-transformer"
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
-    "@uidu/adf-schema": "npm:^2.9.0"
+    "@uidu/adf-schema": "npm:^2.10.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/editor-common": "npm:^2.15.0"
-    "@uidu/editor-core": "npm:^2.21.0"
+    "@uidu/editor-common": "npm:^2.16.0"
+    "@uidu/editor-core": "npm:^2.22.0"
     prosemirror-model: "npm:^1.19.4"
     prosemirror-view: "npm:^1.32.7"
     react: "npm:^18.2.0"
@@ -8596,15 +8597,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-markdown-transformer@npm:^1.7.0, @uidu/editor-markdown-transformer@workspace:packages/editor/editor-markdown-transformer":
+"@uidu/editor-markdown-transformer@npm:^1.8.0, @uidu/editor-markdown-transformer@workspace:packages/editor/editor-markdown-transformer":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-markdown-transformer@workspace:packages/editor/editor-markdown-transformer"
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
-    "@uidu/adf-schema": "npm:^2.9.0"
+    "@uidu/adf-schema": "npm:^2.10.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/editor-common": "npm:^2.15.0"
-    "@uidu/editor-core": "npm:^2.21.0"
+    "@uidu/editor-common": "npm:^2.16.0"
+    "@uidu/editor-core": "npm:^2.22.0"
     markdown-it: "npm:^13.0.2"
     markdown-it-table: "npm:^2.0.6"
     prosemirror-markdown: "npm:^1.12.0"
@@ -8643,10 +8644,10 @@ __metadata:
     "@craftjs/core": "npm:^0.2.3"
     "@craftjs/utils": "npm:^0.2.1"
     "@heroicons/react": "npm:^2.0.18"
-    "@uidu/adf-schema": "npm:2.9.0"
+    "@uidu/adf-schema": "npm:2.10.0"
     "@uidu/button": "npm:1.8.0"
-    "@uidu/editor-core": "npm:2.21.0"
-    "@uidu/email-renderer": "npm:1.9.0"
+    "@uidu/editor-core": "npm:2.22.0"
+    "@uidu/email-renderer": "npm:1.10.0"
     "@uidu/field-number": "npm:2.5.0"
     "@uidu/field-text": "npm:2.5.0"
     "@uidu/form": "npm:2.9.0"
@@ -8663,12 +8664,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/email-renderer@npm:1.9.0, @uidu/email-renderer@workspace:packages/editor/email-renderer":
+"@uidu/email-renderer@npm:1.10.0, @uidu/email-renderer@workspace:packages/editor/email-renderer":
   version: 0.0.0-use.local
   resolution: "@uidu/email-renderer@workspace:packages/editor/email-renderer"
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
-    "@uidu/adf-schema": "npm:^2.9.0"
+    "@uidu/adf-schema": "npm:^2.10.0"
     "@uidu/docs": "npm:*"
     "@uidu/util-data-test": "npm:^0.9.0"
     date-fns: "npm:^2.30.0"
@@ -9233,7 +9234,7 @@ __metadata:
   resolution: "@uidu/gallery@workspace:packages/data/gallery"
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
-    "@tanstack/react-table": "npm:^8.10.6"
+    "@tanstack/react-table": "npm:^8.11.3"
     "@tanstack/react-virtual": "npm:^3.0.1"
     "@uidu/data-controls": "npm:^4.8.0"
     "@uidu/data-fields": "npm:^4.1.0"
@@ -9448,7 +9449,7 @@ __metadata:
   resolution: "@uidu/list@workspace:packages/data/list"
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
-    "@tanstack/react-table": "npm:^8.10.6"
+    "@tanstack/react-table": "npm:^8.11.3"
     "@tanstack/react-virtual": "npm:^3.0.1"
     "@uidu/data-fields": "npm:^4.1.0"
     "@uidu/docs": "npm:^0.10.0"
@@ -9661,7 +9662,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/message-form@npm:^0.10.0, @uidu/message-form@workspace:packages/messaging/message-form":
+"@uidu/message-form@npm:^0.11.0, @uidu/message-form@workspace:packages/messaging/message-form":
   version: 0.0.0-use.local
   resolution: "@uidu/message-form@workspace:packages/messaging/message-form"
   dependencies:
@@ -9676,7 +9677,7 @@ __metadata:
     "@uidu/form": "npm:^2.9.0"
     "@uidu/media-filmstrip": "npm:^0.12.0"
     "@uidu/media-picker": "npm:^1.7.0"
-    "@uidu/message": "npm:^0.12.0"
+    "@uidu/message": "npm:^0.12.1"
     "@uidu/spinner": "npm:^0.10.0"
     classnames: "npm:^2.3.2"
     emoji-mart: "npm:^5.5.2"
@@ -9704,7 +9705,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/message@npm:^0.12.0, @uidu/message@workspace:packages/messaging/message":
+"@uidu/message@npm:^0.12.1, @uidu/message@workspace:packages/messaging/message":
   version: 0.0.0-use.local
   resolution: "@uidu/message@workspace:packages/messaging/message"
   dependencies:
@@ -9720,7 +9721,7 @@ __metadata:
     "@uidu/media-core": "npm:^2.2.0"
     "@uidu/media-viewer": "npm:^1.9.0"
     "@uidu/menu": "npm:0.15.0"
-    "@uidu/message-form": "npm:^0.10.0"
+    "@uidu/message-form": "npm:^0.11.0"
     "@uidu/message-renderer": "npm:^0.10.0"
     "@uidu/popup": "npm:0.13.0"
     "@uidu/shell": "npm:^2.8.0"
@@ -10058,7 +10059,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/prosemirror-utils@npm:0.1.0, @uidu/prosemirror-utils@workspace:packages/editor/prosemirror-utils":
+"@uidu/prosemirror-utils@npm:0.2.0, @uidu/prosemirror-utils@workspace:packages/editor/prosemirror-utils":
   version: 0.0.0-use.local
   resolution: "@uidu/prosemirror-utils@workspace:packages/editor/prosemirror-utils"
   dependencies:
@@ -10107,7 +10108,7 @@ __metadata:
     "@atlaskit/icon": "npm:^21.12.8"
     "@babel/runtime": "npm:^7.23.6"
     "@loadable/component": "npm:^5.15.3"
-    "@uidu/adf-schema": "npm:^2.9.0"
+    "@uidu/adf-schema": "npm:^2.10.0"
     "@uidu/adf-utils": "npm:^2.7.0"
     "@uidu/analytics": "npm:^0.11.0"
     "@uidu/analytics-listeners": "npm:^0.9.0"
@@ -10116,8 +10117,8 @@ __metadata:
     "@uidu/button": "npm:^1.8.0"
     "@uidu/code": "npm:^0.10.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/editor-common": "npm:^2.15.0"
-    "@uidu/editor-json-transformer": "npm:^1.7.0"
+    "@uidu/editor-common": "npm:^2.16.0"
+    "@uidu/editor-json-transformer": "npm:^1.8.0"
     "@uidu/field-range": "npm:^2.5.0"
     "@uidu/media-card": "npm:^0.16.0"
     "@uidu/media-filmstrip": "npm:^0.12.0"
@@ -10382,8 +10383,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": "npm:^6.5.1"
     "@fortawesome/react-fontawesome": "npm:^0.2.0"
     "@heroicons/react": "npm:^2.0.18"
-    "@tanstack/react-table": "npm:^8.10.6"
-    "@tanstack/react-virtual": "npm:^3.0.1"
+    "@tanstack/react-table": "npm:^8.11.3"
     "@uidu/button": "npm:1.8.0"
     "@uidu/checkbox": "npm:^2.5.0"
     "@uidu/data-controls": "npm:^4.8.0"
@@ -16535,14 +16535,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^4.2.0, entities@npm:^4.3.0":
-  version: 4.3.1
-  resolution: "entities@npm:4.3.1"
-  checksum: 762a83d3d994a40cb2bc12aafe0d250956883c7a5f76889dd05e25b714850accfb86383dd6d78ac531bb6abaef07d64b362726292789afc4bd0924b2056f2ea2
-  languageName: node
-  linkType: hard
-
-"entities@npm:^4.4.0":
+"entities@npm:^4.2.0, entities@npm:^4.3.0, entities@npm:^4.4.0":
   version: 4.5.0
   resolution: "entities@npm:4.5.0"
   checksum: ede2a35c9bce1aeccd055a1b445d41c75a14a2bb1cd22e242f20cf04d236cdcd7f9c859eb83f76885327bfae0c25bf03303665ee1ce3d47c5927b98b0e3e3d48
@@ -27493,17 +27486,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-inputrules@npm:*":
-  version: 1.2.1
-  resolution: "prosemirror-inputrules@npm:1.2.1"
-  dependencies:
-    prosemirror-state: "npm:^1.0.0"
-    prosemirror-transform: "npm:^1.0.0"
-  checksum: 37bd7b731f5e77ad44ad45ad7901c3ccdb1f06f68b4da29825c4e1c39a8472c3335e728511408e3d1c8bec341d847db5034bbadfa70f98db89fd45ac76c9b943
-  languageName: node
-  linkType: hard
-
-"prosemirror-inputrules@npm:^1.3.0":
+"prosemirror-inputrules@npm:*, prosemirror-inputrules@npm:^1.3.0":
   version: 1.3.0
   resolution: "prosemirror-inputrules@npm:1.3.0"
   dependencies:
@@ -27617,18 +27600,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.27.0, prosemirror-view@npm:^1.31.0":
-  version: 1.32.4
-  resolution: "prosemirror-view@npm:1.32.4"
-  dependencies:
-    prosemirror-model: "npm:^1.16.0"
-    prosemirror-state: "npm:^1.0.0"
-    prosemirror-transform: "npm:^1.1.0"
-  checksum: 30d54eeb38b0e07db9cd05c54359003f3602eecfa183e10c7c0afcfcd48a72ef3394359e5676a16da7853feab801796517307ef445af6ff3f1aac64a6992cc4d
-  languageName: node
-  linkType: hard
-
-"prosemirror-view@npm:^1.32.7":
+"prosemirror-view@npm:^1.13.3, prosemirror-view@npm:^1.27.0, prosemirror-view@npm:^1.31.0, prosemirror-view@npm:^1.32.7":
   version: 1.32.7
   resolution: "prosemirror-view@npm:1.32.7"
   dependencies:

@@ -10,7 +10,7 @@
   "types": "dist/uidu-board.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.23.6",
-    "@tanstack/react-table": "^8.10.6",
+    "@tanstack/react-table": "^8.11.3",
     "@uidu/theme": "^0.11.0",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",

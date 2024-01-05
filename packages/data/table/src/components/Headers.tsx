@@ -6,7 +6,7 @@ import {
 import React from 'react';
 import Resizer from './Resizer';
 
-export default function Headers<T>({
+function Headers<T>({
   headerGroups,
   components,
   headerHeight,
@@ -35,13 +35,16 @@ export default function Headers<T>({
                 <Th
                   key={header.id}
                   $height={headerHeight}
-                  $width={header.getSize()}
+                  $width={`calc(var(--header-${header?.id}-size) * 1px)`}
                   $minWidth={header.column.columnDef.minSize}
                   $maxWidth={header.column.columnDef.maxSize}
                   $isSorted={header.column.getIsSorted()}
                   $pinned={header?.column.columnDef.meta?.pinned}
                   $index={index}
                   {...(header.column.columnDef.meta?.headerProps || {})}
+                  // style={{
+                  //   width: `calc(var(--header-${header?.id}-size) * 1px)`,
+                  // }}
                 >
                   {header.isPlaceholder
                     ? null
@@ -63,3 +66,5 @@ export default function Headers<T>({
     </div>
   );
 }
+
+export default React.memo(Headers);

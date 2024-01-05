@@ -14,7 +14,7 @@ const Tf = styled.div.attrs<{
 }>((props) => ({
   style: {
     height: `${props.$height}px`,
-    width: `${props.$width}px`,
+    width: props.$width,
     ...(props.$minWidth && { minWidth: `${props.$minWidth}px` }),
     ...(props.$maxWidth && { maxWidth: `${props.$maxWidth}px` }),
   },
@@ -44,7 +44,7 @@ export default function Footer<T>({
               <Tf
                 key={`${header.id}-footer`}
                 $height={rowHeight}
-                $width={header.column.getSize()}
+                $width={`calc(var(--col-${header?.id}-size) * 1px)`}
                 $minWidth={header.column.columnDef.minSize}
                 $maxWidth={header.column.columnDef.maxSize}
                 $pinned={header.column.columnDef.meta?.pinned}

@@ -2,8 +2,8 @@ import React from 'react';
 
 export type LoadingRowProps = {
   components: Record<string, any>;
-  start: number;
-  size: number;
+  start?: number;
+  size?: number;
 };
 
 export default function LoadingRow({

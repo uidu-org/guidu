@@ -7,15 +7,23 @@ export type LoadingSkeletonProps<T> = {
   rowHeight: number;
 };
 
-export default function LoadingSkeleton<T extends { id: string }>({
+export function ScrollSeekPlaceholder({
   columns,
-  count = 10,
+  i,
   rowHeight,
   components,
-}: LoadingSkeletonProps<T>) {
+  ...rest
+}: {
+  columns: Column<any>[];
+  i: number;
+  rowHeight: number;
+  components: any;
+}) {
   const { StyledRow, Td } = components;
 
-  return Array.from(Array(count).keys()).map((i) => (
+  console.log(rest);
+
+  return (
     <div
       key={`fake-${i}`}
       style={{ height: rowHeight }}
@@ -39,5 +47,23 @@ export default function LoadingSkeleton<T extends { id: string }>({
           </Td>
         ))}
     </div>
+  );
+}
+
+export default function LoadingSkeleton<T extends { id: string }>({
+  columns,
+  count = 10,
+  rowHeight,
+  components,
+}: LoadingSkeletonProps<T>) {
+  const { StyledRow, Td } = components;
+
+  return Array.from(Array(count).keys()).map((i) => (
+    <ScrollSeekPlaceholder
+      columns={columns}
+      i={i}
+      rowHeight={rowHeight}
+      components={components}
+    />
   ));
 }

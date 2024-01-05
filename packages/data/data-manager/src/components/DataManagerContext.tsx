@@ -41,6 +41,8 @@ interface DataManagerContextProps<TTable, TView extends {}>
   >;
   editingCell?: Cell<TTable, unknown>;
   setEditingCell?: Dispatch<SetStateAction<Cell<TTable, unknown> | null>>;
+  isScrolling?: boolean;
+  setIsScrolling?: Dispatch<SetStateAction<boolean>>;
 }
 
 interface DataManagerProviderProps<TTable, TView extends {}>
@@ -64,6 +66,7 @@ function DataManagerProvider<TTable, TView extends {}>({
   const [selectedCell, setSelectedCell] =
     useState<Cell<TTable, unknown>['id']>(null);
   const [editingCell, setEditingCell] = useState<Cell<TTable, unknown>>(null);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const setColumnCount = useCallback(
     (columnCount: number) => {
@@ -154,6 +157,9 @@ function DataManagerProvider<TTable, TView extends {}>({
       // cell editing
       editingCell,
       setEditingCell,
+      // scrolling
+      isScrolling,
+      setIsScrolling,
     }),
     [
       tableInstance,
@@ -168,6 +174,8 @@ function DataManagerProvider<TTable, TView extends {}>({
       setSelectedCell,
       editingCell,
       setEditingCell,
+      isScrolling,
+      setIsScrolling,
     ],
   );
 

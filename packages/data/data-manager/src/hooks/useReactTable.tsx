@@ -55,7 +55,7 @@ export default function useReactTable<T>(props: TableOptions<T>): Table<T> {
 
   return useReactTableOriginal<T>({
     defaultColumn,
-    columnResizeMode: 'onEnd',
+    columnResizeMode: 'onChange',
     globalFilterFn: fuzzyFilter,
     filterFns: {
       fuzzy: fuzzyFilter,

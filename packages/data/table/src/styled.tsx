@@ -32,7 +32,7 @@ export type StyledTdProps = {
 export const Td = styled.div.attrs<StyledTdProps>((props) => ({
   style: {
     height: `${props.$height}px`,
-    width: `${props.$width}px`,
+    width: props.$width,
     ...(props.$minWidth && { minWidth: `${props.$minWidth}px` }),
     ...(props.$maxWidth && { maxWidth: `${props.$maxWidth}px` }),
     ...(props.$isSorted ? { backgroundColor: theme`colors.yellow.50` } : {}),
@@ -70,7 +70,7 @@ export type ThProps = {
 export const Th = styled.div.attrs<ThProps>((props: ThProps) => ({
   style: {
     height: `${props.$height}px`,
-    width: `${props.$width}px`,
+    width: props.$width,
     ...(props.$minWidth && { minWidth: `${props.$minWidth}px` }),
     ...(props.$maxWidth && { maxWidth: `${props.$maxWidth}px` }),
     flex: '1 0 auto',
@@ -87,15 +87,13 @@ export const Th = styled.div.attrs<ThProps>((props: ThProps) => ({
 
 export const StyledRow = styled.div.attrs<{
   $size: number;
-  $start: number;
   $onItemClick?: boolean;
 }>((props) => ({
   style: {
     height: `${props.$size}px`,
-    transform: `translateY(${props.$start}px)`,
   },
 }))`
-  ${tw`absolute top-0 left-0 cursor-pointer`}
+  ${tw`cursor-pointer [width:fit-content]`}
 
   ${tw`flex flex-row items-center min-w-full`}
   ${({ $onItemClick }) => {

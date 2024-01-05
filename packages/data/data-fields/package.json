@@ -19,7 +19,7 @@
     "@heroicons/react": "^2.0.18",
     "@loadable/component": "^5.15.3",
     "@smastrom/react-rating": "^1.4.0",
-    "@tanstack/react-table": "^8.10.6",
+    "@tanstack/react-table": "^8.11.3",
     "@uidu/button": "1.8.0",
     "@uidu/field-color-picker": "^3.5.0",
     "@uidu/field-date": "^2.7.0",

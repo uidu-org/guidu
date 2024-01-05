@@ -1,6 +1,7 @@
 import { Table } from '@tanstack/react-table';
-import { VirtualizerOptions } from '@tanstack/react-virtual';
+
 import { FC } from 'react';
+import { TableVirtuosoProps } from 'react-virtuoso';
 import { LoadingRowProps } from './components/LoadingRow';
 import { LoadingSkeletonProps } from './components/LoadingSkeleton';
 
@@ -8,7 +9,7 @@ export interface OverrideableTableProps<T> {
   includeFooter?: boolean;
   rowHeight?: number;
   headerHeight?: number;
-  virtualizerOptions?: Partial<VirtualizerOptions<HTMLDivElement, Element>>;
+  virtuosoOptions?: TableVirtuosoProps<T, unknown>;
   // components
   loadingRow?: FC<LoadingRowProps>;
   loadingSkeleton?: FC<LoadingSkeletonProps<T>>;

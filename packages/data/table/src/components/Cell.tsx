@@ -9,8 +9,9 @@ import { useDataManagerContext } from '@uidu/data-manager';
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { StyledComponent } from 'styled-components';
 import { StyledTdProps } from '../styled';
+import { StyledResizer } from './Resizer';
 
-export default function Cell<T, V>({
+function Cell<T, V>({
   row,
   components,
   cell,
@@ -34,6 +35,7 @@ export default function Cell<T, V>({
     onItemClick,
     editingCell,
     setEditingCell,
+    isScrolling,
   } = useDataManagerContext() || {
     selectedCell: null,
     setSelectedCell: () => {},
@@ -86,6 +88,7 @@ export default function Cell<T, V>({
                 ...cellContext,
                 isEditing,
                 closeEditing,
+                isScrolling,
               })}
             </div>
             <div tw="ml-2">({row.subRows.length})</div>
@@ -101,6 +104,7 @@ export default function Cell<T, V>({
             ...cellContext,
             isEditing,
             closeEditing,
+            isScrolling,
           },
         );
       }
@@ -113,9 +117,10 @@ export default function Cell<T, V>({
         ...cellContext,
         isEditing,
         closeEditing,
+        isScrolling,
       });
     },
-    [row, isEditing, closeEditing],
+    [row, isEditing, closeEditing, isScrolling],
   );
 
   useEffect(() => {
@@ -128,7 +133,7 @@ export default function Cell<T, V>({
     <Td
       ref={ref}
       key={cell.id}
-      $width={cell.column.getSize()}
+      $width={`calc(var(--col-${cell.column.id}-size) * 1px)`}
       $minWidth={cell.column.columnDef.minSize}
       $maxWidth={cell.column.columnDef.maxSize}
       $isSorted={cell.column.getIsSorted()}
@@ -169,6 +174,11 @@ export default function Cell<T, V>({
       {selectedCell === cell.id && (
         <div tw="absolute inset-0 border border-primary -z-0 pointer-events-none  [--tw-border-opacity:0.1]" />
       )}
+      {cell.column.getIsResizing() && (
+        <StyledResizer isResizing={cell.column.getIsResizing()} />
+      )}
     </Td>
   );
 }
+
+export default React.memo(Cell);

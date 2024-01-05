@@ -10,8 +10,6 @@ function Row<T extends object>({
   rowHeight,
   row,
   onItemClick,
-  size,
-  start,
 }: {
   components: {
     StyledRow: StyledComponent<any, {}>;
@@ -20,8 +18,6 @@ function Row<T extends object>({
   rowHeight: number;
   onItemClick: (row: T) => void;
   row: RowType<T>;
-  size: number;
-  start: number;
 }) {
   const rowRef = useRef(null);
   const { StyledRow, Td } = components;
@@ -39,8 +35,7 @@ function Row<T extends object>({
   return (
     <StyledRow
       ref={rowRef}
-      $size={size}
-      $start={start}
+      $size={rowHeight}
       $onItemClick={!!onItemClick}
       item={row.original}
       // eslint-disable-next-line react/jsx-props-no-spreading
@@ -74,4 +69,4 @@ function Row<T extends object>({
   );
 }
 
-export default Row;
+export default React.memo(Row);
