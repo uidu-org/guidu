@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 6.1.0
+
+### Minor Changes
+
+- aaafc79: Changed flex container
+
 ## 6.0.1
 
 ### Patch Changes
