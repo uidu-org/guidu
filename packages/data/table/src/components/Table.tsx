@@ -16,7 +16,7 @@ import RowSingle from './Row';
 const defaultOverrides = {};
 
 function TableWrapper(props) {
-  return <div {...props} />;
+  return <div tw="flex flex-col min-h-full" {...props} />;
 }
 const MemoizedTableWrapper = React.memo(TableWrapper);
 

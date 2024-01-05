@@ -8,13 +8,11 @@ export const Body = styled.div.attrs<{
   $verticalPadding: number;
 }>((props) => ({
   style: {
-    height: `${props.$height}px`,
-    minHeight: `calc(100% - ${props.$verticalPadding}px)`,
     minWidth: 'fit-content',
   },
 }))`
   background: rgb(var(--body-on-primary-bg));
-  ${tw`relative w-full`}
+  ${tw`relative w-full flex-grow`}
 `;
 
 export type StyledTdProps = {
