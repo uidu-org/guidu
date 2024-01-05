@@ -1,5 +1,17 @@
 # @uidu/field-text
 
+## 2.6.0
+
+### Minor Changes
+
+- 9118af2: Bump hook-form
+
+### Patch Changes
+
+- Updated dependencies [9118af2]
+  - @uidu/form@3.0.0
+  - @uidu/field-base@4.9.0
+
 ## 2.5.0
 
 ### Minor Changes

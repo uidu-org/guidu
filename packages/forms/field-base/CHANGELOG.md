@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.9.0
+
+### Minor Changes
+
+- 9118af2: Bump hook-form
+
+### Patch Changes
+
+- Updated dependencies [9118af2]
+  - @uidu/form@3.0.0
+
 ## 4.8.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.10.3
+
+### Patch Changes
+
+- Updated dependencies [9118af2]
+  - @uidu/form@3.0.0
+  - @uidu/select@2.12.0
+  - @uidu/theme@0.11.1
+
 ## 0.10.2
 
 ### Patch Changes

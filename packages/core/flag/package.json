@@ -14,7 +14,7 @@
     "@uidu/analytics": "^0.11.0",
     "@uidu/button": "^1.8.0",
     "@uidu/portal": "^1.5.0",
-    "@uidu/theme": "^0.11.0",
+    "@uidu/theme": "^0.11.1",
     "react-feather": "^2.0.10",
     "react-transition-group": "^4.4.5",
     "tslib": "^2.6.2",
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.10.0",
-    "@uidu/form": "^2.9.0",
+    "@uidu/form": "^3.0.0",
     "@uidu/radio": "^2.7.0",
     "@uidu/spinner": "^0.10.0",
     "react": "^18.2.0",

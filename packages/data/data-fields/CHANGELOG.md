@@ -1,5 +1,18 @@
 # @uidu/data-fields
 
+## 4.2.1
+
+### Patch Changes
+
+- Updated dependencies [9118af2]
+  - @uidu/form@3.0.0
+  - @uidu/field-downshift@2.10.0
+  - @uidu/field-number@2.6.0
+  - @uidu/field-date@2.8.0
+  - @uidu/select@2.12.0
+  - @uidu/field-time@2.7.1
+  - @uidu/field-toggle@2.5.1
+
 ## 4.2.0
 
 ### Minor Changes

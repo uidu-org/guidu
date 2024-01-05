@@ -12,7 +12,7 @@
     "@babel/runtime": "^7.23.6",
     "@heroicons/react": "^2.0.18",
     "@uidu/button": "1.8.0",
-    "@uidu/field-base": "^4.8.0",
+    "@uidu/field-base": "^4.9.0",
     "@uidu/popup": "^0.13.0",
     "react": "^18.2.0",
     "react-colorful": "^5.6.1",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.10.0",
-    "@uidu/form": "^2.9.0",
+    "@uidu/form": "^3.0.0",
     "twin.macro": "^3.4.0"
   },
   "peerDependencies": {

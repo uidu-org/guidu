@@ -10,7 +10,7 @@
   "types": "dist/uidu-field-textarea.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.23.6",
-    "@uidu/field-base": "^4.8.0",
+    "@uidu/field-base": "^4.9.0",
     "@uidu/spinner": "0.10.0",
     "autosize": "^6.0.1",
     "react": "^18.2.0",
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.10.0",
-    "@uidu/form": "^2.9.0",
+    "@uidu/form": "^3.0.0",
     "styled-components": "^5.3.11"
   },
   "peerDependencies": {
