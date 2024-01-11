@@ -50,6 +50,7 @@ export default function FloatingToolbarButton({
           aria-label={title}
           spacing="compact"
           href={href}
+          as={href ? 'a' : 'button'}
           target={target}
           appearance={appearance}
           aria-haspopup

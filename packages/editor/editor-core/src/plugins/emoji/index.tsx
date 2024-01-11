@@ -236,7 +236,6 @@ export const ACTIONS = {
 export const setProvider =
   (provider?: EmojiProvider): Command =>
   (state, dispatch) => {
-    console.log('setProvider', provider);
     if (dispatch) {
       dispatch(
         state.tr.setMeta(emojiPluginKey, {
