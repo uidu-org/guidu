@@ -4,23 +4,23 @@ import AddIcon from '@atlaskit/icon/glyph/editor/add';
 import CodeIcon from '@atlaskit/icon/glyph/editor/code';
 import DateIcon from '@atlaskit/icon/glyph/editor/date';
 import DecisionIcon from '@atlaskit/icon/glyph/editor/decision';
-import EmojiIcon from '@atlaskit/icon/glyph/editor/emoji';
 import HorizontalRuleIcon from '@atlaskit/icon/glyph/editor/horizontal-rule';
 import InfoIcon from '@atlaskit/icon/glyph/editor/info';
-import LayoutTwoEqualIcon from '@atlaskit/icon/glyph/editor/layout-two-equal';
 import EditorMoreIcon from '@atlaskit/icon/glyph/editor/more';
 import TaskIcon from '@atlaskit/icon/glyph/editor/task';
 import PlaceholderTextIcon from '@atlaskit/icon/glyph/media-services/text';
-import QuoteIcon from '@atlaskit/icon/glyph/quote';
 import StatusIcon from '@atlaskit/icon/glyph/status';
 import data from '@emoji-mart/data';
 import Picker from '@emoji-mart/react';
 import {
+  faColumns3,
+  faFaceSmile,
   faImages,
   faLink,
+  faQuoteLeft,
   faTable,
   faVideo,
-} from '@fortawesome/free-solid-svg-icons';
+} from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { akEditorMenuZIndex, Popup } from '@uidu/editor-common';
 import { EmojiId } from '@uidu/emoji/types';
@@ -76,7 +76,7 @@ import { Props, State, TOOLBAR_MENU_TYPE } from './types';
 const blockTypeIcons = {
   codeblock: CodeIcon,
   panel: InfoIcon,
-  blockquote: QuoteIcon,
+  blockquote: () => <FontAwesomeIcon tw="h-4 w-4" icon={faQuoteLeft} />,
 };
 
 /**
@@ -444,7 +444,9 @@ class ToolbarInsertBlock extends React.PureComponent<
         content: labelEmoji,
         value: { name: 'emoji' },
         isDisabled: emojiDisabled || !isTypeAheadAllowed,
-        elemBefore: <EmojiIcon label={labelEmoji} />,
+        elemBefore: (
+          <FontAwesomeIcon tw="h-4 w-4" icon={faFaceSmile} label={labelEmoji} />
+        ),
         handleRef: this.handleButtonRef,
         elemAfter: <Shortcut>:</Shortcut>,
         shortcut: ':',
@@ -470,7 +472,7 @@ class ToolbarInsertBlock extends React.PureComponent<
       items.push({
         content: labelColumns,
         value: { name: 'layout' },
-        elemBefore: <LayoutTwoEqualIcon label={labelColumns} />,
+        elemBefore: <FontAwesomeIcon tw="h-4 w-4" icon={faColumns3} />,
       });
     }
     if (availableWrapperBlockTypes) {

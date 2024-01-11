@@ -3636,15 +3636,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fortawesome/free-regular-svg-icons@npm:^6.5.1":
-  version: 6.5.1
-  resolution: "@fortawesome/free-regular-svg-icons@npm:6.5.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Ffree-regular-svg-icons%2F-%2F6.5.1%2Ffree-regular-svg-icons-6.5.1.tgz"
-  dependencies:
-    "@fortawesome/fontawesome-common-types": "npm:6.5.1"
-  checksum: 58a9f4dcf5b08c1fad4f4353cb4c280f3a1919f3c7fe3b9b411d24f82b1e75a1edc12f5521721f8b01c3d080e6f12953353ceb3876d045f214f3a1ff1357a29d
-  languageName: node
-  linkType: hard
-
 "@fortawesome/free-solid-svg-icons@npm:^6.5.1":
   version: 6.5.1
   resolution: "@fortawesome/free-solid-svg-icons@npm:6.5.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Ffree-solid-svg-icons%2F-%2F6.5.1%2Ffree-solid-svg-icons-6.5.1.tgz"
@@ -8137,7 +8128,7 @@ __metadata:
     "@uidu/data-fields": "npm:^4.2.0"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/spinner": "npm:^0.10.0"
-    "@uidu/table": "npm:6.0.1"
+    "@uidu/table": "npm:6.1.0"
     "@uidu/tooltip": "npm:^0.10.0"
     d3-array: "npm:^3.2.4"
     gql-query-builder: "npm:^3.8.0"
@@ -8200,8 +8191,6 @@ __metadata:
     "@babel/runtime": "npm:^7.23.6"
     "@faker-js/faker": "npm:^8.3.1"
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.1"
-    "@fortawesome/free-regular-svg-icons": "npm:^6.5.1"
-    "@fortawesome/free-solid-svg-icons": "npm:^6.5.1"
     "@fortawesome/pro-regular-svg-icons": "npm:^6.5.1"
     "@fortawesome/react-fontawesome": "npm:^0.2.0"
     "@heroicons/react": "npm:^2.0.18"
@@ -8502,8 +8491,7 @@ __metadata:
     "@emoji-mart/data": "npm:^1.1.2"
     "@emoji-mart/react": "npm:^1.1.1"
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.1"
-    "@fortawesome/free-regular-svg-icons": "npm:^6.5.1"
-    "@fortawesome/free-solid-svg-icons": "npm:^6.5.1"
+    "@fortawesome/pro-regular-svg-icons": "npm:^6.5.1"
     "@fortawesome/react-fontawesome": "npm:^0.2.0"
     "@loadable/component": "npm:^5.15.3"
     "@uidu/activity-provider": "npm:0.6.0"
@@ -10372,7 +10360,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@npm:6.0.1, @uidu/table@npm:^6.0.0, @uidu/table@npm:^6.0.1, @uidu/table@workspace:packages/data/table":
+"@uidu/table@npm:6.1.0, @uidu/table@npm:^6.0.0, @uidu/table@npm:^6.0.1, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -19428,7 +19416,6 @@ __metadata:
     "@formatjs/cli": "npm:6.2.4"
     "@fortawesome/fontawesome-free": "npm:^6.5.1"
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.1"
-    "@fortawesome/free-solid-svg-icons": "npm:^6.5.1"
     "@fortawesome/react-fontawesome": "npm:^0.2.0"
     "@loadable/babel-plugin": "npm:^5.16.1"
     "@loadable/component": "npm:^5.15.3"

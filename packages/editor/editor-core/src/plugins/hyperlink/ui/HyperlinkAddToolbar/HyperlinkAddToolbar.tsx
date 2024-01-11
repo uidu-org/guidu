@@ -1,4 +1,4 @@
-import { faFont, faLink, faX } from '@fortawesome/free-solid-svg-icons';
+import { faFont, faLink, faX } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ActivityItem, ActivityProvider } from '@uidu/activity-provider';
 import { colors } from '@uidu/theme';

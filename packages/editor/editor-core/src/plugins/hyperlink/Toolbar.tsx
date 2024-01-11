@@ -1,5 +1,9 @@
-import UnlinkIcon from '@atlaskit/icon/glyph/editor/unlink';
-import OpenIcon from '@atlaskit/icon/glyph/shortcut';
+import {
+  faExternalLink,
+  faPenAlt,
+  faUnlink,
+} from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { isSafeUrl, LinkAttributes } from '@uidu/adf-schema';
 import { Mark } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
@@ -153,24 +157,29 @@ export const getToolbarConfig: FloatingToolbarHandler = (
           items: [
             {
               type: 'button',
-              onClick: editInsertedLink(),
-              selected: false,
-              title: editLink,
-              showTitle: true,
-            },
-            {
-              type: 'separator',
-            },
-            {
-              type: 'button',
               disabled: !isValidUrl,
               target: '_blank',
               href: isValidUrl ? link : null,
               onClick: () => true,
               selected: false,
               title: labelOpenLink,
-              icon: OpenIcon,
-              className: 'hyperlink-open-link',
+              showTitle: true,
+              appearance: 'link',
+              icon: () => (
+                <FontAwesomeIcon tw="h-4 w-4" icon={faExternalLink} />
+              ),
+              // className: 'hyperlink-open-link',
+            },
+            {
+              type: 'separator',
+            },
+            {
+              type: 'button',
+              onClick: editInsertedLink(),
+              selected: false,
+              title: editLink,
+              showTitle: true,
+              icon: () => <FontAwesomeIcon tw="h-4 w-4" icon={faPenAlt} />,
             },
             {
               type: 'separator',
@@ -180,7 +189,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
               onClick: removeLink(pos),
               selected: false,
               title: labelUnlink,
-              icon: UnlinkIcon,
+              icon: () => <FontAwesomeIcon tw="h-4 w-4" icon={faUnlink} />,
             },
           ],
         };

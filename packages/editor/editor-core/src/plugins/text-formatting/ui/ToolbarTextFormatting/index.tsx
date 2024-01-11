@@ -1,6 +1,5 @@
-import { faBold, faItalic } from '@fortawesome/free-solid-svg-icons';
+import { faBold, faItalic } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
