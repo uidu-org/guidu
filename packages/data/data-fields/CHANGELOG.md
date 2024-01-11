@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 4.3.0
+
+### Minor Changes
+
+- ecb49eb: Bump deps
+
 ## 4.2.1
 
 ### Patch Changes

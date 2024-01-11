@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 2.23.0
+
+### Minor Changes
+
+- 51b940d: Fix hyperlink click to visit link
+
 ## 2.22.2
 
 ### Patch Changes

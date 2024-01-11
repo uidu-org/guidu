@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-core",
-  "version": "2.22.2",
+  "version": "2.23.0",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/editor-core",
   "license": "MIT",
   "main": "dist/uidu-editor-core.cjs.js",
