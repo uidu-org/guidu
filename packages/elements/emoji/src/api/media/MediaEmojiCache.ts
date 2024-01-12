@@ -1,18 +1,16 @@
 import {
   EmojiDescription,
-  OptionalEmojiDescription,
   EmojiRepresentation,
+  OptionalEmojiDescription,
 } from '../../types';
+import debug from '../../util/logger';
 import {
   convertMediaToImageEmoji,
   isMediaRepresentation,
   isPromise,
 } from '../../util/type-helpers';
 import MediaImageLoader from './MediaImageLoader';
-import debug from '../../util/logger';
 import TokenManager from './TokenManager';
-
-import { LRUCache } from 'lru-fast';
 
 const getRequiredRepresentation = (
   emoji: EmojiDescription,
@@ -98,7 +96,7 @@ export class BrowserCacheStrategy implements EmojiCacheStrategy {
         () =>
           // Image should be cached in browser, if supported it should be accessible from the cache by an <img/>
           // Try to load without via image to confirm this support (this fails in Firefox)
-          new Promise<boolean>(resolve => {
+          new Promise<boolean>((resolve) => {
             const img = new Image();
 
             img.addEventListener('load', () => {
@@ -129,13 +127,11 @@ const maxImageSize = 10000;
  * small delay noticable to the end user.
  */
 export class MemoryCacheStrategy implements EmojiCacheStrategy {
-  private dataURLCache: LRUCache<string, string>;
   private mediaImageLoader: MediaImageLoader;
 
   constructor(mediaImageLoader: MediaImageLoader) {
     debug('MemoryCacheStrategy');
     this.mediaImageLoader = mediaImageLoader;
-    this.dataURLCache = new LRUCache<string, string>(maxImageCached);
   }
 
   loadEmoji(
@@ -149,7 +145,6 @@ export class MemoryCacheStrategy implements EmojiCacheStrategy {
     }
 
     const { mediaPath } = representation;
-    const dataURL = this.dataURLCache.get(mediaPath);
     if (dataURL) {
       // Already cached
       return convertMediaToImageEmoji(emoji, dataURL, useAlt);
@@ -158,11 +153,10 @@ export class MemoryCacheStrategy implements EmojiCacheStrategy {
     // Not cached, load
     return this.mediaImageLoader
       .loadMediaImage(mediaPath)
-      .then(dataURL => {
+      .then((dataURL) => {
         const loadedEmoji = convertMediaToImageEmoji(emoji, dataURL, useAlt);
         if (dataURL.length <= maxImageSize) {
           // Only cache if not large than max size
-          this.dataURLCache.put(mediaPath, dataURL);
         } else {
           debug(
             'No caching as image is too large',
@@ -216,7 +210,7 @@ export default class MediaEmojiCache {
     if (isPromise(emojiCache)) {
       // Promise based
       return emojiCache
-        .then(cache => cache.loadEmoji(emoji, useAlt))
+        .then((cache) => cache.loadEmoji(emoji, useAlt))
         .catch(() => undefined);
     }
 
@@ -229,7 +223,7 @@ export default class MediaEmojiCache {
     if (isPromise(emojiCache)) {
       // Promise based
       return emojiCache
-        .then(cache => cache.optimisticRendering())
+        .then((cache) => cache.optimisticRendering())
         .catch(() => false);
     }
 
@@ -245,12 +239,12 @@ export default class MediaEmojiCache {
     this.waitingInitUrls.push(url);
     if (!this.cacheLoading) {
       this.cacheLoading = this.initCache()
-        .then(cache => {
+        .then((cache) => {
           this.cache = cache;
           this.cacheLoading = undefined;
           return cache;
         })
-        .catch(err => {
+        .catch((err) => {
           this.cacheLoading = undefined;
           throw err;
         });
@@ -266,7 +260,7 @@ export default class MediaEmojiCache {
       );
     }
     return BrowserCacheStrategy.supported(url, this.mediaImageLoader)
-      .then(supported => {
+      .then((supported) => {
         this.waitingInitUrls = []; // clear
         this.cacheLoading = undefined;
         if (supported) {

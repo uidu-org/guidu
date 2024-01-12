@@ -1,4 +1,3 @@
-import { LRUCache } from 'lru-fast';
 /**
  * Transform response from GraphQL
  * - Prefix `timestring` with `remoteWeekdayString` depending on `remoteWeekdayIndex`
@@ -121,10 +120,7 @@ class ProfileCardClient {
       );
     }
     // Only set cache if maxCacheAge and cacheSize are set
-    this.cache =
-      !this.config.cacheMaxAge || !this.config.cacheSize
-        ? null
-        : new LRUCache(this.config.cacheSize);
+    this.cache = null;
   }
   makeRequest(cloudId, userId) {
     if (!this.config.url) {

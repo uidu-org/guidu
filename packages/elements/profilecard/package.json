@@ -20,7 +20,6 @@
     "@uidu/theme": "^0.11.0",
     "date-fns": "^2.30.0",
     "es6-promise": "^4.2.8",
-    "lru-fast": "^0.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.5.5",
