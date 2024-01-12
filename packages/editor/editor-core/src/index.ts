@@ -5,7 +5,6 @@ export type {
   MacroAttributes,
   MacroProvider,
 } from '@uidu/editor-common/provider-factory';
-export { EmojiResource } from '@uidu/emoji';
 export {
   AbstractMentionResource,
   MentionResource,

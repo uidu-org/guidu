@@ -8708,7 +8708,6 @@ __metadata:
     "@uidu/util-data-test": "npm:^0.9.0"
     classnames: "npm:^2.3.2"
     js-search: "npm:^2.0.1"
-    lru-fast: "npm:^0.2.2"
     prop-types: "npm:^15.8.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -10016,7 +10015,6 @@ __metadata:
     fetch-mock: "npm:^9.11.0"
     loader-utils: "npm:^2.0.4"
     lodash: "npm:^4.17.21"
-    lru-fast: "npm:^0.2.2"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-intl: "npm:^6.5.5"
@@ -19575,7 +19573,6 @@ __metadata:
     lodash.last: "npm:^3.0.0"
     lodash.merge: "npm:^4.6.2"
     lodash.sample: "npm:^4.2.1"
-    lru-fast: "npm:^0.2.2"
     markdown-it: "npm:^13.0.2"
     markdown-it-table: "npm:^2.0.6"
     memoize-one: "npm:^6.0.0"
@@ -23022,13 +23019,6 @@ __metadata:
   version: 9.1.2
   resolution: "lru-cache@npm:9.1.2"
   checksum: 8830ad333f5202656e712d40df16a4dbd373a489821c1f22d5dc2b3cf49820734cf814e7fd89bbda80ecb32e1bfd716e2dc2d78fae0dd7b55fe65ffd0158edd7
-  languageName: node
-  linkType: hard
-
-"lru-fast@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "lru-fast@npm:0.2.2"
-  checksum: 5402196c2b469e1af7464039d696c9355dfe9ed775c9e3ceba40001f58b59eb04bc69271b2d052588773aac5bf7b4cd3ec0555259531a326e2ab44cb5749133a
   languageName: node
   linkType: hard
 
