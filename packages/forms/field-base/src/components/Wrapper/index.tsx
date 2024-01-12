@@ -41,19 +41,22 @@ export default function Wrapper<T>({
 
   // if (addonsBefore || addonsAfter || fieldState?.error) {
   input = (
-    <InputGroup
-      key={id}
-      addonsAfter={[
-        ...(fieldState?.error
-          ? [<ErrorIcon fieldState={fieldState} />].concat(
-              addonsAfter || emptyArray,
-            )
-          : addonsAfter || emptyArray),
-      ]}
-      addonsBefore={addonsBefore}
-    >
-      {input}
-    </InputGroup>
+    <>
+      <InputGroup
+        layout={layout}
+        key={id}
+        addonsAfter={addonsAfter}
+        addonsBefore={addonsBefore}
+      >
+        {input}
+      </InputGroup>
+      {fieldState?.error && (
+        <div tw="flex space-x-2 mt-3">
+          <ErrorIcon fieldState={fieldState} />
+          <ErrorMessages messages={[fieldState.error]} />
+        </div>
+      )}
+    </>
   );
   // }
 
@@ -82,7 +85,7 @@ export default function Wrapper<T>({
   }
 
   if (layout === 'elementOnly') {
-    return input;
+    return <div>{input}</div>;
   }
 
   return (
@@ -96,7 +99,6 @@ export default function Wrapper<T>({
       key={id}
     >
       {input}
-      {fieldState?.error && <ErrorMessages messages={[fieldState.error]} />}
       {help ? <Help id={id} help={help} /> : null}
     </Row>
   );

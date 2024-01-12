@@ -1,5 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { noop, useController, Wrapper as FieldWrapper } from '@uidu/field-base';
+import {
+  noop,
+  useController,
+  useFormContext,
+  Wrapper as FieldWrapper,
+} from '@uidu/field-base';
 import Downshift from 'downshift';
 import React, { useCallback } from 'react';
 import { FieldDownshiftProps } from '../types';
@@ -18,7 +23,11 @@ function FieldDownshift<
   filterOptions = (props) => props.options,
   option: Option = ({ item, ...rest }) => <div {...rest}>{item.name}</div>,
   input: Input = null,
-  menu: Menu = ({ children, ...rest }) => <div {...rest}>{children}</div>,
+  menu: Menu = ({ children, ...rest }) => (
+    <div style={rest.isInvalid ? { border: '1px solid red' } : {}} {...rest}>
+      {children}
+    </div>
+  ),
   options,
   value: defaultValue = '',
   name,
@@ -91,6 +100,7 @@ function FieldDownshift<
   };
 
   const selectedItem = getValue();
+  const { getFieldState } = useFormContext();
 
   return (
     <Downshift<TOption | TOption[]>
@@ -123,6 +133,7 @@ function FieldDownshift<
           <Menu
             getMenuProps={getMenuProps}
             isOpen={isOpen}
+            isInvalid={getFieldState(name).invalid}
             selectedItem={selectedItem}
             field={field}
             {...rest}

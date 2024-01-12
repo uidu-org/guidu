@@ -1,4 +1,5 @@
 import React, { Children, Fragment, ReactElement, ReactNode } from 'react';
+import tw from 'twin.macro';
 import { StyledAddonWrapper } from '../../styled';
 import { InputGroupPosition, InputGroupPropsWithChildren } from './types';
 
@@ -6,6 +7,7 @@ import { InputGroupPosition, InputGroupPropsWithChildren } from './types';
  * Wraps an input to implement a Bootstrap [Input Group](http://getbootstrap.com/components/#input-groups)
  */
 function InputGroup({
+  layout,
   children,
   addonsBefore,
   addonsAfter,
@@ -32,7 +34,7 @@ function InputGroup({
   };
 
   return (
-    <div tw="relative w-full h-full">
+    <div css={[tw`relative w-full`, layout === 'vertical' ? tw`h-full` : tw``]}>
       {renderAddons(addonsBefore, 'before')}
       {children}
       {renderAddons(addonsAfter, 'after')}

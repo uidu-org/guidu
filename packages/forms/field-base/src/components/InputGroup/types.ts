@@ -1,3 +1,4 @@
+import { LayoutType } from '@uidu/form';
 import { ReactElement, ReactNode } from 'react';
 
 export interface InputGroupProps {
@@ -9,4 +10,5 @@ export type InputGroupPosition = 'before' | 'after';
 
 export type InputGroupPropsWithChildren = InputGroupProps & {
   children: ReactNode;
+  layout: LayoutType;
 };

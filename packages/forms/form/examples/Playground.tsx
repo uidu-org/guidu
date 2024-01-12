@@ -103,6 +103,18 @@ function Playground({
   ];
 
   const form = useForm({ mode: 'all', resolver: yupResolver(schema) });
+  // trigger errors for all fields for testing
+  const triggerErrors = (e) => {
+    console.log(e);
+    const keys = Object.keys(form.getValues());
+    console.log(keys);
+    keys.forEach((key) => {
+      console.log(key);
+      form.setError(key, { type: 'required', message: 'This is required' });
+    });
+  };
+
+  // form.setError('text1', { type: 'required', message: 'This is required' });
 
   return (
     <Form
@@ -115,6 +127,9 @@ function Playground({
         <FormSubmit {...props} canSubmit label="Submit" />
       )}
     >
+      <button type="button" onClick={triggerErrors}>
+        TriggerErrors
+      </button>
       <FieldText name="secret" value="I'm hidden!" type="hidden" />
       <FormSection
         name="FieldText types"

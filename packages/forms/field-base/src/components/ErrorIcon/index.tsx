@@ -6,7 +6,7 @@ import { ErrorIconProps } from './types';
 export default function ErrorIcon({ fieldState }: ErrorIconProps) {
   return (
     <StyledAddon key={fieldState.error.type}>
-      <ExclamationCircleIcon tw="h-5 text-red-500 px-4" />
+      <ExclamationCircleIcon tw="h-5 text-red-500" />
     </StyledAddon>
   );
 }
