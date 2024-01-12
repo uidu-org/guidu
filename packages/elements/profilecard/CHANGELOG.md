@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.11.0
+
+### Minor Changes
+
+- 0195e20: Removed lru-fast dependency
+
 ## 0.10.0
 
 ### Minor Changes

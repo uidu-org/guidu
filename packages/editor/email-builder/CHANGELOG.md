@@ -1,5 +1,12 @@
 # @uidu/email-builder
 
+## 0.9.6
+
+### Patch Changes
+
+- Updated dependencies [0195e20]
+  - @uidu/editor-core@2.23.2
+
 ## 0.9.5
 
 ### Patch Changes

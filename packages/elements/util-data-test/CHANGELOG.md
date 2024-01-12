@@ -1,5 +1,12 @@
 # @uidu/util-data-test
 
+## 0.9.1
+
+### Patch Changes
+
+- Updated dependencies [0195e20]
+  - @uidu/emoji@0.14.0
+
 ## 0.9.0
 
 ### Minor Changes

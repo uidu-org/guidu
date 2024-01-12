@@ -1,5 +1,15 @@
 # @uidu/editor-core
 
+## 2.23.2
+
+### Patch Changes
+
+- 0195e20: Removed lru-fast dependency
+- Updated dependencies [0195e20]
+  - @uidu/profilecard@0.11.0
+  - @uidu/emoji@0.14.0
+  - @uidu/editor-common@2.17.1
+
 ## 2.23.1
 
 ### Patch Changes
