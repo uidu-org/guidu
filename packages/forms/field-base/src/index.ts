@@ -1,3 +1,5 @@
+import { useFormContext } from '@uidu/form';
+
 export { default as ErrorIcon } from './components/ErrorIcon';
 export { default as ErrorMessages } from './components/ErrorMessages';
 export { default as Help } from './components/Help';
@@ -11,3 +13,4 @@ export * from './styled';
 export { default as FloatLabel } from './styled/FloatLabel';
 export * from './types';
 export * from './utils';
+export { useFormContext };

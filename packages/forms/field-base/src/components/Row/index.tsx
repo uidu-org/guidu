@@ -25,6 +25,8 @@ export default function Row<T>({
 
   let element = children;
 
+  console.log(label);
+
   if (layout === 'elementOnly') {
     return element;
   }
