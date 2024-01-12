@@ -1,5 +1,13 @@
 # @uidu/editor-common
 
+## 2.17.1
+
+### Patch Changes
+
+- Updated dependencies [0195e20]
+  - @uidu/profilecard@0.11.0
+  - @uidu/emoji@0.14.0
+
 ## 2.17.0
 
 ### Minor Changes

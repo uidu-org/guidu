@@ -1,6 +1,6 @@
 {
   "name": "@uidu/profilecard",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "A React component to display a card with user information.",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/profilecard",
   "license": "MIT",

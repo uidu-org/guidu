@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.14.0
+
+### Minor Changes
+
+- 0195e20: Removed lru-fast dependency
+
 ## 0.13.0
 
 ### Minor Changes
