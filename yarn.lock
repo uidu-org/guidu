@@ -8128,7 +8128,7 @@ __metadata:
     "@uidu/data-fields": "npm:^4.2.0"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/spinner": "npm:^0.10.0"
-    "@uidu/table": "npm:6.1.0"
+    "@uidu/table": "npm:6.2.0"
     "@uidu/tooltip": "npm:^0.10.0"
     d3-array: "npm:^3.2.4"
     gql-query-builder: "npm:^3.8.0"
@@ -8480,7 +8480,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@npm:2.22.2, @uidu/editor-core@npm:^2.22.0, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@npm:2.23.1, @uidu/editor-core@npm:^2.22.0, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -8511,10 +8511,10 @@ __metadata:
     "@uidu/editor-json-transformer": "npm:^1.8.0"
     "@uidu/editor-markdown-transformer": "npm:^1.8.0"
     "@uidu/emoji": "npm:^0.13.0"
-    "@uidu/field-base": "npm:4.9.0"
-    "@uidu/field-date": "npm:^2.8.0"
+    "@uidu/field-base": "npm:4.10.0"
+    "@uidu/field-date": "npm:^2.8.1"
     "@uidu/field-text": "npm:2.5.0"
-    "@uidu/form": "npm:^3.0.0"
+    "@uidu/form": "npm:^3.1.0"
     "@uidu/media-card": "npm:^0.16.0"
     "@uidu/media-core": "npm:^2.2.0"
     "@uidu/media-filmstrip": "npm:^0.12.0"
@@ -8634,11 +8634,11 @@ __metadata:
     "@heroicons/react": "npm:^2.0.18"
     "@uidu/adf-schema": "npm:2.10.0"
     "@uidu/button": "npm:1.8.0"
-    "@uidu/editor-core": "npm:2.22.2"
+    "@uidu/editor-core": "npm:2.23.1"
     "@uidu/email-renderer": "npm:1.11.0"
-    "@uidu/field-number": "npm:2.6.0"
+    "@uidu/field-number": "npm:2.6.1"
     "@uidu/field-text": "npm:2.5.0"
-    "@uidu/form": "npm:3.0.0"
+    "@uidu/form": "npm:3.1.0"
     "@uidu/portal": "npm:1.5.0"
     "@uidu/select": "npm:2.12.0"
     "@uidu/shell": "npm:2.8.0"
@@ -8737,13 +8737,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-base@npm:4.9.0, @uidu/field-base@npm:^4.8.0, @uidu/field-base@npm:^4.9.0, @uidu/field-base@workspace:packages/forms/field-base":
+"@uidu/field-base@npm:4.10.0, @uidu/field-base@npm:^4.10.0, @uidu/field-base@npm:^4.8.0, @uidu/field-base@npm:^4.9.0, @uidu/field-base@workspace:packages/forms/field-base":
   version: 0.0.0-use.local
   resolution: "@uidu/field-base@workspace:packages/forms/field-base"
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
     "@heroicons/react": "npm:^2.0.18"
-    "@uidu/form": "npm:3.0.0"
+    "@uidu/form": "npm:3.1.0"
     react: "npm:^18.2.0"
     react-hook-form: "npm:7.49.2"
     styled-components: "npm:^5.3.11"
@@ -8811,7 +8811,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-date@npm:^2.8.0, @uidu/field-date@workspace:packages/forms/field-date":
+"@uidu/field-date@npm:^2.8.0, @uidu/field-date@npm:^2.8.1, @uidu/field-date@workspace:packages/forms/field-date":
   version: 0.0.0-use.local
   resolution: "@uidu/field-date@workspace:packages/forms/field-date"
   dependencies:
@@ -8819,9 +8819,9 @@ __metadata:
     "@heroicons/react": "npm:^2.0.18"
     "@uidu/button": "npm:1.8.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/field-base": "npm:4.9.0"
+    "@uidu/field-base": "npm:4.10.0"
     "@uidu/field-text": "npm:^2.5.0"
-    "@uidu/form": "npm:^3.0.0"
+    "@uidu/form": "npm:^3.1.0"
     "@uidu/popup": "npm:0.13.0"
     date-fns: "npm:^2.30.0"
     react: "npm:^18.2.0"
@@ -8841,12 +8841,12 @@ __metadata:
     "@heroicons/react": "npm:^2.0.18"
     "@uidu/button": "npm:1.8.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/field-base": "npm:^4.9.0"
+    "@uidu/field-base": "npm:^4.10.0"
     "@uidu/field-counter": "npm:^2.5.0"
-    "@uidu/field-date": "npm:^2.8.0"
+    "@uidu/field-date": "npm:^2.8.1"
     "@uidu/field-text": "npm:^2.5.0"
-    "@uidu/field-time": "npm:^2.7.1"
-    "@uidu/form": "npm:^3.0.0"
+    "@uidu/field-time": "npm:^2.7.2"
+    "@uidu/form": "npm:^3.1.0"
     "@uidu/menu": "npm:0.15.0"
     "@uidu/popup": "npm:0.13.0"
     "@uidu/radio": "npm:^2.7.0"
@@ -8873,8 +8873,8 @@ __metadata:
     "@heroicons/react": "npm:^2.0.18"
     "@uidu/button": "npm:1.8.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/field-base": "npm:^4.9.0"
-    "@uidu/form": "npm:3.0.0"
+    "@uidu/field-base": "npm:^4.10.0"
+    "@uidu/form": "npm:3.1.0"
     "@uidu/media-core": "npm:2.2.0"
     "@uidu/menu": "npm:0.15.0"
     "@uifabric/file-type-icons": "npm:^7.10.11"
@@ -8918,9 +8918,9 @@ __metadata:
     "@heroicons/react": "npm:^2.0.18"
     "@uidu/button": "npm:^1.8.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/field-base": "npm:^4.9.0"
+    "@uidu/field-base": "npm:^4.10.0"
     "@uidu/field-range": "npm:2.5.0"
-    "@uidu/form": "npm:3.0.0"
+    "@uidu/form": "npm:3.1.0"
     "@uidu/media-core": "npm:^2.2.0"
     "@uidu/spinner": "npm:^0.10.0"
     "@uppy/core": "npm:^3.8.0"
@@ -8974,16 +8974,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-number@npm:2.6.0, @uidu/field-number@npm:^2.6.0, @uidu/field-number@workspace:packages/forms/field-number":
+"@uidu/field-number@npm:2.6.1, @uidu/field-number@npm:^2.6.0, @uidu/field-number@workspace:packages/forms/field-number":
   version: 0.0.0-use.local
   resolution: "@uidu/field-number@workspace:packages/forms/field-number"
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
     "@uidu/button": "npm:^1.8.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/field-base": "npm:4.9.0"
+    "@uidu/field-base": "npm:4.10.0"
     "@uidu/field-text": "npm:^2.5.0"
-    "@uidu/form": "npm:^3.0.0"
+    "@uidu/form": "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-number-format: "npm:^5.3.1"
@@ -9028,9 +9028,9 @@ __metadata:
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/field-base": "npm:^4.9.0"
+    "@uidu/field-base": "npm:^4.10.0"
     "@uidu/field-text": "npm:^2.5.0"
-    "@uidu/form": "npm:3.0.0"
+    "@uidu/form": "npm:3.1.0"
     "@uidu/select": "npm:2.12.0"
     react: "npm:^18.2.0"
     react-phone-number-input: "npm:^3.3.8"
@@ -9098,16 +9098,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/field-time@npm:2.7.1, @uidu/field-time@npm:^2.7.1, @uidu/field-time@workspace:packages/forms/field-time":
+"@uidu/field-time@npm:2.7.2, @uidu/field-time@npm:^2.7.1, @uidu/field-time@npm:^2.7.2, @uidu/field-time@workspace:packages/forms/field-time":
   version: 0.0.0-use.local
   resolution: "@uidu/field-time@workspace:packages/forms/field-time"
   dependencies:
     "@babel/runtime": "npm:^7.23.6"
     "@uidu/button": "npm:^1.8.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/field-base": "npm:4.9.0"
+    "@uidu/field-base": "npm:4.10.0"
     "@uidu/field-text": "npm:^2.5.0"
-    "@uidu/form": "npm:^3.0.0"
+    "@uidu/form": "npm:^3.1.0"
     "@uidu/select": "npm:2.12.0"
     date-fns: "npm:^2.30.0"
     react: "npm:^18.2.0"
@@ -9128,8 +9128,8 @@ __metadata:
     "@radix-ui/react-switch": "npm:^1.0.3"
     "@uidu/button": "npm:^1.8.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/field-base": "npm:4.9.0"
-    "@uidu/form": "npm:^3.0.0"
+    "@uidu/field-base": "npm:4.10.0"
+    "@uidu/form": "npm:^3.1.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     styled-components: "npm:^5.3.11"
@@ -9187,7 +9187,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/form@npm:3.0.0, @uidu/form@npm:^3.0.0, @uidu/form@workspace:packages/forms/form":
+"@uidu/form@npm:3.1.0, @uidu/form@npm:^3.0.0, @uidu/form@npm:^3.1.0, @uidu/form@workspace:packages/forms/form":
   version: 0.0.0-use.local
   resolution: "@uidu/form@workspace:packages/forms/form"
   dependencies:
@@ -10358,7 +10358,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@npm:6.1.0, @uidu/table@npm:^6.0.0, @uidu/table@npm:^6.0.1, @uidu/table@workspace:packages/data/table":
+"@uidu/table@npm:6.2.0, @uidu/table@npm:^6.0.0, @uidu/table@npm:^6.0.1, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -19474,9 +19474,9 @@ __metadata:
     "@types/zxcvbn": "npm:^4.4.4"
     "@typescript-eslint/eslint-plugin": "npm:^6.14.0"
     "@typescript-eslint/parser": "npm:^6.14.0"
-    "@uidu/field-base": "npm:4.9.0"
-    "@uidu/field-time": "npm:2.7.1"
-    "@uidu/form": "npm:3.0.0"
+    "@uidu/field-base": "npm:4.10.0"
+    "@uidu/field-time": "npm:2.7.2"
+    "@uidu/form": "npm:3.1.0"
     "@uidu/profilecard": "npm:^0.10.0"
     "@uifabric/file-type-icons": "npm:^7.10.11"
     "@uppy/aws-s3": "npm:^3.6.0"
