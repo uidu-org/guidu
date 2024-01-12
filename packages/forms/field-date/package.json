@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-date",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-date",
   "license": "MIT",
   "sideEffects": false,
@@ -16,7 +16,7 @@
     "@babel/runtime": "^7.23.6",
     "@heroicons/react": "^2.0.18",
     "@uidu/button": "1.8.0",
-    "@uidu/field-base": "4.9.0",
+    "@uidu/field-base": "4.10.0",
     "@uidu/field-text": "^2.5.0",
     "@uidu/popup": "0.13.0",
     "date-fns": "^2.30.0",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.10.0",
-    "@uidu/form": "^3.0.0",
+    "@uidu/form": "^3.1.0",
     "styled-components": "^5.3.11"
   },
   "peerDependencies": {
