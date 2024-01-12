@@ -8443,7 +8443,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-common@npm:^2.15.0, @uidu/editor-common@npm:^2.16.0, @uidu/editor-common@npm:^2.17.0, @uidu/editor-common@workspace:packages/editor/editor-common":
+"@uidu/editor-common@npm:^2.15.0, @uidu/editor-common@npm:^2.16.0, @uidu/editor-common@npm:^2.17.0, @uidu/editor-common@npm:^2.17.1, @uidu/editor-common@workspace:packages/editor/editor-common":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
@@ -8454,10 +8454,10 @@ __metadata:
     "@uidu/analytics": "npm:^0.11.0"
     "@uidu/analytics-namespaced-context": "npm:^0.9.0"
     "@uidu/editor-json-transformer": "npm:1.8.0"
-    "@uidu/emoji": "npm:^0.13.0"
+    "@uidu/emoji": "npm:^0.14.0"
     "@uidu/media-core": "npm:2.2.0"
     "@uidu/mentions": "npm:^0.13.0"
-    "@uidu/profilecard": "npm:^0.10.0"
+    "@uidu/profilecard": "npm:^0.11.0"
     "@uidu/theme": "npm:^0.11.0"
     "@uidu/tooltip": "npm:0.10.0"
     chromatism: "npm:^3.0.0"
@@ -8480,7 +8480,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@npm:2.23.1, @uidu/editor-core@npm:^2.22.0, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@npm:2.23.2, @uidu/editor-core@npm:^2.22.0, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -8507,10 +8507,10 @@ __metadata:
     "@uidu/date": "npm:^0.9.0"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/droplist": "npm:^0.10.0"
-    "@uidu/editor-common": "npm:^2.17.0"
+    "@uidu/editor-common": "npm:^2.17.1"
     "@uidu/editor-json-transformer": "npm:^1.8.0"
     "@uidu/editor-markdown-transformer": "npm:^1.8.0"
-    "@uidu/emoji": "npm:^0.13.0"
+    "@uidu/emoji": "npm:^0.14.0"
     "@uidu/field-base": "npm:4.10.0"
     "@uidu/field-date": "npm:^2.8.1"
     "@uidu/field-text": "npm:2.5.0"
@@ -8522,7 +8522,7 @@ __metadata:
     "@uidu/mentions": "npm:^0.13.0"
     "@uidu/menu": "npm:^0.15.0"
     "@uidu/modal-dialog": "npm:1.7.0"
-    "@uidu/profilecard": "npm:^0.10.0"
+    "@uidu/profilecard": "npm:^0.11.0"
     "@uidu/prosemirror-utils": "npm:0.2.0"
     "@uidu/select": "npm:^2.12.0"
     "@uidu/shell": "npm:^2.8.0"
@@ -8634,7 +8634,7 @@ __metadata:
     "@heroicons/react": "npm:^2.0.18"
     "@uidu/adf-schema": "npm:2.10.0"
     "@uidu/button": "npm:1.8.0"
-    "@uidu/editor-core": "npm:2.23.1"
+    "@uidu/editor-core": "npm:2.23.2"
     "@uidu/email-renderer": "npm:1.11.0"
     "@uidu/field-number": "npm:2.6.1"
     "@uidu/field-text": "npm:2.5.0"
@@ -8685,7 +8685,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/emoji@npm:^0.13.0, @uidu/emoji@workspace:packages/elements/emoji":
+"@uidu/emoji@npm:^0.14.0, @uidu/emoji@workspace:packages/elements/emoji":
   version: 0.0.0-use.local
   resolution: "@uidu/emoji@workspace:packages/elements/emoji"
   dependencies:
@@ -8705,7 +8705,7 @@ __metadata:
     "@uidu/spinner": "npm:^0.10.0"
     "@uidu/theme": "npm:^0.11.0"
     "@uidu/tooltip": "npm:^0.10.0"
-    "@uidu/util-data-test": "npm:^0.9.0"
+    "@uidu/util-data-test": "npm:^0.9.1"
     classnames: "npm:^2.3.2"
     js-search: "npm:^2.0.1"
     prop-types: "npm:^15.8.1"
@@ -9996,7 +9996,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/profilecard@npm:^0.10.0, @uidu/profilecard@workspace:packages/elements/profilecard":
+"@uidu/profilecard@npm:^0.11.0, @uidu/profilecard@workspace:packages/elements/profilecard":
   version: 0.0.0-use.local
   resolution: "@uidu/profilecard@workspace:packages/elements/profilecard"
   dependencies:
@@ -10545,7 +10545,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/util-data-test@npm:^0.9.0, @uidu/util-data-test@workspace:packages/elements/util-data-test":
+"@uidu/util-data-test@npm:^0.9.0, @uidu/util-data-test@npm:^0.9.1, @uidu/util-data-test@workspace:packages/elements/util-data-test":
   version: 0.0.0-use.local
   resolution: "@uidu/util-data-test@workspace:packages/elements/util-data-test"
   dependencies:
@@ -10553,7 +10553,7 @@ __metadata:
     "@babel/runtime": "npm:^7.23.6"
     "@uidu/analytics": "npm:^0.11.0"
     "@uidu/docs": "npm:^0.10.0"
-    "@uidu/emoji": "npm:^0.13.0"
+    "@uidu/emoji": "npm:^0.14.0"
     "@uidu/mentions": "npm:^0.13.0"
     "@uidu/task-decision": "npm:^0.10.0"
     date-fns: "npm:^2.30.0"
@@ -19477,7 +19477,7 @@ __metadata:
     "@uidu/field-base": "npm:4.10.0"
     "@uidu/field-time": "npm:2.7.2"
     "@uidu/form": "npm:3.1.0"
-    "@uidu/profilecard": "npm:^0.10.0"
+    "@uidu/profilecard": "npm:^0.11.0"
     "@uifabric/file-type-icons": "npm:^7.10.11"
     "@uppy/aws-s3": "npm:^3.6.0"
     "@uppy/core": "npm:^3.8.0"
