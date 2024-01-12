@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 6.2.0
+
+### Minor Changes
+
+- 166607d: Fix how errors are shown
+
 ## 6.1.0
 
 ### Minor Changes

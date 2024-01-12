@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.10.0
+
+### Minor Changes
+
+- 166607d: Fix how errors are shown
+
+### Patch Changes
+
+- Updated dependencies [166607d]
+  - @uidu/form@3.1.0
+
 ## 4.9.0
 
 ### Minor Changes

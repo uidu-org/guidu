@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.0
+
+### Minor Changes
+
+- 166607d: Fix how errors are shown
+
 ## 3.0.0
 
 ### Major Changes
