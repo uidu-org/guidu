@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 6.3.0
+
+### Minor Changes
+
+- f6661e2: Fix css variables for dot-notation columns
+
+### Patch Changes
+
+- Updated dependencies [f6661e2]
+  - @uidu/data-manager@4.13.2
+
 ## 6.2.0
 
 ### Minor Changes
