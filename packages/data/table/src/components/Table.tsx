@@ -130,16 +130,19 @@ function Table<T extends { id: string }>({
    * we will calculate all column sizes at once at the root table level in a useMemo
    * and pass the column sizes down as CSS variables to the <table> element.
    */
+  const headers = tableInstance.getFlatHeaders();
+
   const columnSizeVars = useMemo(() => {
-    const headers = tableInstance.getFlatHeaders();
     const colSizes: { [key: string]: number } = {};
     for (let i = 0; i < headers.length; i++) {
       const header = headers[i]!;
-      colSizes[`--header-${header.id}-size`] = header.getSize();
-      colSizes[`--col-${header.column.id}-size`] = header.column.getSize();
+      colSizes[`--header-${header.id.replace('.', '_')}-size`] =
+        header.getSize();
+      colSizes[`--col-${header.column.id.replace('.', '_')}-size`] =
+        header.column.getSize();
     }
     return colSizes;
-  }, [columnSizingInfo]);
+  }, [columnSizingInfo, headers]);
 
   const FixedHeader = useCallback(
     () => (

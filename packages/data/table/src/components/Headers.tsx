@@ -35,7 +35,10 @@ function Headers<T>({
                 <Th
                   key={header.id}
                   $height={headerHeight}
-                  $width={`calc(var(--header-${header?.id}-size) * 1px)`}
+                  $width={`calc(var(--header-${header?.id.replace(
+                    '.',
+                    '_',
+                  )}-size) * 1px)`}
                   $minWidth={header.column.columnDef.minSize}
                   $maxWidth={header.column.columnDef.maxSize}
                   $isSorted={header.column.getIsSorted()}
@@ -67,4 +70,4 @@ function Headers<T>({
   );
 }
 
-export default React.memo(Headers);
+export default Headers;

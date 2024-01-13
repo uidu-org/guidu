@@ -133,7 +133,7 @@ function Cell<T, V>({
     <Td
       ref={ref}
       key={cell.id}
-      $width={`calc(var(--col-${cell.column.id}-size) * 1px)`}
+      $width={`calc(var(--col-${cell.column.id.replace('.', '_')}-size) * 1px)`}
       $minWidth={cell.column.columnDef.minSize}
       $maxWidth={cell.column.columnDef.maxSize}
       $isSorted={cell.column.getIsSorted()}

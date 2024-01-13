@@ -170,6 +170,9 @@ export default function Basic({}) {
   const tableInstance = useReactTable<(typeof data)[0]>({
     data,
     columns,
+    meta: {
+      allSelected: true,
+    },
   });
 
   const schema = useMemo(

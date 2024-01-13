@@ -38,7 +38,7 @@ export const Td = styled.div.attrs<StyledTdProps>((props) => ({
 }))`
   font-size: 0.95rem;
   background: rgb(var(--body-on-primary-bg));
-  flex: 1 0 auto;
+  /* flex: 1 0 auto; */
   position: relative;
 
   ${({ $isSelected }) => {
@@ -71,7 +71,7 @@ export const Th = styled.div.attrs<ThProps>((props: ThProps) => ({
     width: props.$width,
     ...(props.$minWidth && { minWidth: `${props.$minWidth}px` }),
     ...(props.$maxWidth && { maxWidth: `${props.$maxWidth}px` }),
-    flex: '1 0 auto',
+    // flex: '1 0 auto',
     // ...(props.$isSorted ? { backgroundColor: theme`colors.yellow.50` } : {}),
   },
 }))`

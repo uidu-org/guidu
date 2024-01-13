@@ -177,7 +177,7 @@ export const availableColumns: ColumnDef<unknown>[] = [
     },
   },
   {
-    id: 'amount',
+    id: 'amount.cu',
     meta: {
       name: 'Donation amount',
       kind: 'currency',

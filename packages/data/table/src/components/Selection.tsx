@@ -96,6 +96,7 @@ export function HeaderSelection<T>({
     toggleAllRowsSelected,
     getIsAllRowsSelected,
     getIsSomeRowsSelected,
+    options,
   },
 }: HeaderContext<T, unknown>) {
   return (
@@ -111,7 +112,7 @@ export function HeaderSelection<T>({
       />
       <CheckboxStateless
         onChange={getToggleAllRowsSelectedHandler()}
-        checked={getIsAllRowsSelected()}
+        checked={getIsAllRowsSelected() || options.meta?.allSelected}
         isIndeterminate={getIsSomeRowsSelected()}
       />
     </div>
