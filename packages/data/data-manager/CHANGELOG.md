@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 4.13.2
+
+### Patch Changes
+
+- f6661e2: Fix css variables for dot-notation columns
+- Updated dependencies [f6661e2]
+  - @uidu/table@6.3.0
+  - @uidu/data-controls@4.8.4
+  - @uidu/data-views@3.9.3
+
 ## 4.13.1
 
 ### Patch Changes
