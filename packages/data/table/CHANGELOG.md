@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 6.3.1
+
+### Patch Changes
+
+- 6bb9239: Fix flex td and th
+
 ## 6.3.0
 
 ### Minor Changes
