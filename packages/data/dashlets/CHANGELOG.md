@@ -1,5 +1,12 @@
 # @uidu/blocks
 
+## 3.10.5
+
+### Patch Changes
+
+- Updated dependencies [6bb9239]
+  - @uidu/table@6.3.1
+
 ## 3.10.4
 
 ### Patch Changes
