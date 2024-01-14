@@ -6,13 +6,9 @@ import { getPinnedStyled } from './utils';
 export const Body = styled.div.attrs<{
   $height: number;
   $verticalPadding: number;
-}>((props) => ({
-  style: {
-    minWidth: 'fit-content',
-  },
-}))`
+}>((props) => ({}))`
   background: rgb(var(--body-on-primary-bg));
-  ${tw`relative w-full flex-grow`}
+  ${tw`relative w-full flex-grow min-w-fit`}
 `;
 
 export type StyledTdProps = {
@@ -52,7 +48,7 @@ export const Td = styled.div.attrs<StyledTdProps>((props) => ({
 
   ${({ $pinned, $index }) =>
     $pinned ? getPinnedStyled({ pinned: $pinned, index: $index }) : null};
-  ${tw`flex items-center px-4 border-b border-r border-opacity-50 whitespace-nowrap`}
+  ${tw`flex flex-auto items-center px-4 border-b border-r border-opacity-50 whitespace-nowrap`}
 `;
 
 export type ThProps = {
@@ -71,7 +67,6 @@ export const Th = styled.div.attrs<ThProps>((props: ThProps) => ({
     width: props.$width,
     ...(props.$minWidth && { minWidth: `${props.$minWidth}px` }),
     ...(props.$maxWidth && { maxWidth: `${props.$maxWidth}px` }),
-    // flex: '1 0 auto',
     // ...(props.$isSorted ? { backgroundColor: theme`colors.yellow.50` } : {}),
   },
 }))`
@@ -80,7 +75,8 @@ export const Th = styled.div.attrs<ThProps>((props: ThProps) => ({
 
   ${({ $pinned, $index }) =>
     $pinned ? getPinnedStyled({ pinned: $pinned, index: $index }) : null};
-  ${tw`relative flex items-center px-4 text-left [color:rgb(var(--body-secondary-color))] border-b border-r border-opacity-50 whitespace-nowrap`}
+
+  ${tw`relative flex-auto flex items-center px-4 text-left [color:rgb(var(--body-secondary-color))] border-b border-r border-opacity-50 whitespace-nowrap`}
 `;
 
 export const StyledRow = styled.div.attrs<{
