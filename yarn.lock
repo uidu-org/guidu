@@ -8128,7 +8128,7 @@ __metadata:
     "@uidu/data-fields": "npm:^4.2.0"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/spinner": "npm:^0.10.0"
-    "@uidu/table": "npm:6.2.0"
+    "@uidu/table": "npm:6.3.0"
     "@uidu/tooltip": "npm:^0.10.0"
     d3-array: "npm:^3.2.4"
     gql-query-builder: "npm:^3.8.0"
@@ -8148,7 +8148,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-controls@npm:^4.8.0, @uidu/data-controls@npm:^4.8.3, @uidu/data-controls@workspace:packages/data/data-controls":
+"@uidu/data-controls@npm:^4.8.0, @uidu/data-controls@npm:^4.8.4, @uidu/data-controls@workspace:packages/data/data-controls":
   version: 0.0.0-use.local
   resolution: "@uidu/data-controls@workspace:packages/data/data-controls"
   dependencies:
@@ -8158,8 +8158,8 @@ __metadata:
     "@uidu/button": "npm:1.8.0"
     "@uidu/checkbox": "npm:^2.5.0"
     "@uidu/data-fields": "npm:^4.2.1"
-    "@uidu/data-manager": "npm:4.13.1"
-    "@uidu/data-views": "npm:^3.9.2"
+    "@uidu/data-manager": "npm:4.13.2"
+    "@uidu/data-views": "npm:^3.9.3"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/drawer": "npm:^0.12.0"
     "@uidu/field-text": "npm:^2.5.0"
@@ -8223,7 +8223,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-manager@npm:4.13.1, @uidu/data-manager@workspace:packages/data/data-manager":
+"@uidu/data-manager@npm:4.13.2, @uidu/data-manager@workspace:packages/data/data-manager":
   version: 0.0.0-use.local
   resolution: "@uidu/data-manager@workspace:packages/data/data-manager"
   dependencies:
@@ -8237,9 +8237,9 @@ __metadata:
     "@uidu/board": "npm:^2.9.0"
     "@uidu/button": "npm:1.8.0"
     "@uidu/calendar": "npm:^0.10.0"
-    "@uidu/data-controls": "npm:^4.8.3"
+    "@uidu/data-controls": "npm:^4.8.4"
     "@uidu/data-fields": "npm:^4.2.0"
-    "@uidu/data-views": "npm:^3.9.2"
+    "@uidu/data-views": "npm:^3.9.3"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/dropdown-menu": "npm:^0.11.0"
     "@uidu/gallery": "npm:^2.7.0"
@@ -8251,7 +8251,7 @@ __metadata:
     "@uidu/shell": "npm:^2.8.0"
     "@uidu/side-navigation": "npm:1.8.0"
     "@uidu/spinner": "npm:^0.10.0"
-    "@uidu/table": "npm:^6.0.1"
+    "@uidu/table": "npm:^6.3.0"
     d3-array: "npm:^3.2.4"
     dayjs: "npm:^1.11.10"
     lodash: "npm:^4.17.21"
@@ -8267,7 +8267,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/data-views@npm:^3.9.2, @uidu/data-views@workspace:packages/data/data-views":
+"@uidu/data-views@npm:^3.9.3, @uidu/data-views@workspace:packages/data/data-views":
   version: 0.0.0-use.local
   resolution: "@uidu/data-views@workspace:packages/data/data-views"
   dependencies:
@@ -8275,8 +8275,8 @@ __metadata:
     "@loadable/component": "npm:^5.15.3"
     "@tanstack/react-table": "npm:^8.11.3"
     "@uidu/button": "npm:1.8.0"
-    "@uidu/data-controls": "npm:^4.8.3"
-    "@uidu/data-manager": "npm:4.13.1"
+    "@uidu/data-controls": "npm:^4.8.4"
+    "@uidu/data-manager": "npm:4.13.2"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/field-counter": "npm:^2.5.0"
     "@uidu/field-number": "npm:^2.6.0"
@@ -10358,7 +10358,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/table@npm:6.2.0, @uidu/table@npm:^6.0.0, @uidu/table@npm:^6.0.1, @uidu/table@workspace:packages/data/table":
+"@uidu/table@npm:6.3.0, @uidu/table@npm:^6.0.0, @uidu/table@npm:^6.3.0, @uidu/table@workspace:packages/data/table":
   version: 0.0.0-use.local
   resolution: "@uidu/table@workspace:packages/data/table"
   dependencies:
@@ -10372,9 +10372,9 @@ __metadata:
     "@tanstack/react-table": "npm:^8.11.3"
     "@uidu/button": "npm:1.8.0"
     "@uidu/checkbox": "npm:^2.5.0"
-    "@uidu/data-controls": "npm:^4.8.3"
+    "@uidu/data-controls": "npm:^4.8.4"
     "@uidu/data-fields": "npm:^4.2.0"
-    "@uidu/data-manager": "npm:4.13.1"
+    "@uidu/data-manager": "npm:4.13.2"
     "@uidu/docs": "npm:^0.10.0"
     "@uidu/menu": "npm:^0.15.0"
     "@uidu/popup": "npm:^0.13.0"
