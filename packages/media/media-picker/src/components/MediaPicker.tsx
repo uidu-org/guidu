@@ -7,7 +7,7 @@ import { DashboardModal } from '@uppy/react';
 import Unsplash from '@uppy/unsplash';
 import Url from '@uppy/url';
 import Webcam from '@uppy/webcam';
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { MediaPickerProps } from '../types';
 
 const defaultOptions = {
@@ -47,8 +47,8 @@ export default function MediaPicker({
     [options],
   );
 
-  const uppy = useMemo(() => {
-    const uppyInstance = new Uppy(mergeOptions)
+  const [uppy] = useState(() =>
+    new Uppy(mergeOptions)
       .use(Webcam)
       .use(uploadOptions.module, uploadOptions.options)
       .use(Url, {
@@ -61,44 +61,29 @@ export default function MediaPicker({
       })
       .use(Dropbox, {
         companionUrl,
-      });
+      }),
+  );
 
-    uppyInstance
-      .on('file-added', (file) => {
-        uppyInstance.setFileMeta(file.id, {
-          size: file.size,
-        });
-        onFileAdded(file, uppyInstance);
-      })
-      .on('file-removed', (file, reason) =>
-        onFileRemoved(file, reason, uppyInstance),
-      )
-      .on('upload-error', (file, error, response) =>
-        onUploadError(file, error, response, uppyInstance),
-      )
-      .on('upload-progress', (file, progress) =>
-        onUploadProgress(file, progress, uppyInstance),
-      )
-      .on('upload-success', (file, response) =>
-        onUploadSuccess(file, response, uppyInstance),
-      )
-      .on('upload-retry', (fileId) => onUploadRetry(fileId, uppyInstance))
-      .on('complete', (result) => onComplete(result, uppyInstance))
-      .on('dashboard:modal-closed', onClose);
-    return uppyInstance;
-  }, [
-    uploadOptions.module,
-    uploadOptions.options,
-    mergeOptions,
-    onClose,
-    onComplete,
-    onFileAdded,
-    onFileRemoved,
-    onUploadError,
-    onUploadProgress,
-    onUploadRetry,
-    onUploadSuccess,
-  ]);
+  uppy
+    .on('file-added', (file) => {
+      uppy.setFileMeta(file.id, {
+        size: file.size,
+      });
+      onFileAdded(file, uppy);
+    })
+    .on('file-removed', (file, reason) => onFileRemoved(file, reason, uppy))
+    .on('upload-error', (file, error, response) =>
+      onUploadError(file, error, response, uppy),
+    )
+    .on('upload-progress', (file, progress) =>
+      onUploadProgress(file, progress, uppy),
+    )
+    .on('upload-success', (file, response) =>
+      onUploadSuccess(file, response, uppy),
+    )
+    .on('upload-retry', (fileId) => onUploadRetry(fileId, uppy))
+    .on('complete', (result) => onComplete(result, uppy))
+    .on('dashboard:modal-closed', onClose);
 
   return (
     <DashboardModal

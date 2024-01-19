@@ -103,71 +103,60 @@ function FieldImageUploaderStateless({
     [options],
   );
 
-  const uppy = useMemo(
-    () =>
-      new Uppy(mergeOptions)
-        .use(uploadOptions.module, uploadOptions.options)
-        .use(ThumbnailGenerator, {
-          thumbnailWidth: calculateWidth(),
-          thumbnailType: 'image/png',
-        })
-        .on('file-added', () => {
-          clearErrors(name);
-        })
-        .on('thumbnail:generated', (file, preview) => {
-          setIsLoading(false);
-          setScale(1);
-          setImageUrl(preview);
-          setData([file]);
-          setErrors([]);
-        })
-        .on('upload', () => setProgress(0))
-        .on('upload-progress', (_file, prgrss) => {
-          setProgress(prgrss.bytesUploaded / prgrss.bytesTotal);
-        })
-
-        .on('complete', (result) => {
-          setIsLoading(false);
-          setProgress(null);
-          console.log(result);
-          if (result.failed.length > 0) {
-            setError(name, { type: 'custom', message: result.failed[0].error });
-          } else {
-            const response = result.successful.map(
-              uploadOptions.responseHandler,
-            )[0];
-            setValue(response);
-            onFieldChange(response);
-            onChange(name, response);
-          }
-        })
-        .on('error', (error) => {
-          setIsLoading(false);
-          setError(name, { type: 'custom', message: error.message });
-        })
-        .on('upload-error', (_file, error) => {
-          setIsLoading(false);
-          setError(name, { type: 'custom', message: error.message });
-        })
-        .on('file-removed', () => {
-          onFieldChange('');
-          onChange(name, '');
-        })
-        .on('restriction-failed', (_file, error) => {
-          setIsLoading(false);
-          setError(name, { type: 'custom', message: error.message });
-        }),
-    [
-      uploadOptions,
-      mergeOptions,
-      calculateWidth,
-      name,
-      clearErrors,
-      setError,
-      onChange,
-      onFieldChange,
-    ],
+  const [uppy] = useState(() =>
+    new Uppy(mergeOptions)
+      .use(uploadOptions.module, uploadOptions.options)
+      .use(ThumbnailGenerator, {
+        thumbnailWidth: calculateWidth(),
+        thumbnailType: 'image/png',
+      }),
   );
+
+  uppy
+    .on('file-added', () => {
+      clearErrors(name);
+    })
+    .on('thumbnail:generated', (file, preview) => {
+      setIsLoading(false);
+      setScale(1);
+      setImageUrl(preview);
+      setData([file]);
+      setErrors([]);
+    })
+    .on('upload', () => setProgress(0))
+    .on('upload-progress', (_file, prgrss) => {
+      setProgress(prgrss.bytesUploaded / prgrss.bytesTotal);
+    })
+    .on('complete', (result) => {
+      setIsLoading(false);
+      setProgress(null);
+      if (result.failed.length > 0) {
+        setError(name, { type: 'custom', message: result.failed[0].error });
+      } else {
+        const response = result.successful.map(
+          uploadOptions.responseHandler,
+        )[0];
+        setValue(response);
+        onFieldChange(response);
+        onChange(name, response);
+      }
+    })
+    .on('error', (error) => {
+      setIsLoading(false);
+      setError(name, { type: 'custom', message: error.message });
+    })
+    .on('upload-error', (_file, error) => {
+      setIsLoading(false);
+      setError(name, { type: 'custom', message: error.message });
+    })
+    .on('file-removed', () => {
+      onFieldChange('');
+      onChange(name, '');
+    })
+    .on('restriction-failed', (_file, error) => {
+      setIsLoading(false);
+      setError(name, { type: 'custom', message: error.message });
+    });
 
   const thumbnailPlugin = useMemo(
     () => uppy.getPlugin('ThumbnailGenerator'),
