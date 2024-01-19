@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 3.0.0
+
+### Major Changes
+
+- 5d81cbd: Changed companion url
+
 ## 2.2.0
 
 ### Minor Changes
