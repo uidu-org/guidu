@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 1.8.0
+
+### Minor Changes
+
+- 39e03a7: Initialize uppy with useState as suggested in uppy docs
+
 ## 1.7.1
 
 ### Patch Changes
