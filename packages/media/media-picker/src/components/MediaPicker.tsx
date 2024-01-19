@@ -8,6 +8,7 @@ import Unsplash from '@uppy/unsplash';
 import Url from '@uppy/url';
 import Webcam from '@uppy/webcam';
 import React, { useMemo, useState } from 'react';
+import ReactFocusLock from 'react-focus-lock';
 import { MediaPickerProps } from '../types';
 
 const defaultOptions = {
@@ -86,23 +87,27 @@ export default function MediaPicker({
     .on('dashboard:modal-closed', onClose);
 
   return (
-    <DashboardModal
-      uppy={uppy}
-      plugins={[
-        // 'XHRUpload',
-        // 'Webcam',
-        'Unsplash',
-        'Url',
-        'Dropbox',
-        'GoogleDrive',
-        // 'Instagram',
-        // 'ThumbnailGenerator',
-      ]}
-      proudlyDisplayPoweredByUppy={false}
-      // closeAfterFinish
-      closeModalOnClickOutside
-      open={open}
-      {...props}
-    />
+    <ReactFocusLock>
+      <DashboardModal
+        uppy={uppy}
+        plugins={[
+          // 'XHRUpload',
+          // 'Webcam',
+          'Unsplash',
+          'Url',
+          'Dropbox',
+          'GoogleDrive',
+          // 'Instagram',
+          // 'ThumbnailGenerator',
+        ]}
+        target={document.body}
+        proudlyDisplayPoweredByUppy={false}
+        // closeAfterFinish
+        closeModalOnClickOutside
+        disablePageScrollWhenModalOpen={false}
+        open={open}
+        {...props}
+      />
+    </ReactFocusLock>
   );
 }
