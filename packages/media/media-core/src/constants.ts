@@ -1,1 +1,1 @@
-export const companionUrl = 'https://companion.uidu.dev';
+export const companionUrl = 'https://companion.uidu.org';
