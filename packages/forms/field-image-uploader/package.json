@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-image-uploader",
-  "version": "3.7.2",
+  "version": "3.7.3",
   "description": "An image uploader with preview",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-image-uploader",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "@uidu/field-base": "^4.10.0",
     "@uidu/field-range": "2.5.0",
     "@uidu/form": "3.1.0",
-    "@uidu/media-core": "^2.2.0",
+    "@uidu/media-core": "^3.0.0",
     "@uidu/spinner": "^0.10.0",
     "@uppy/core": "^3.8.0",
     "@uppy/react": "^3.2.1",
