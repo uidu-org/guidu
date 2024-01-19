@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 1.10.0
+
+### Minor Changes
+
+- 541a160: Fix uppy events recreated every render
+
 ## 1.9.0
 
 ### Minor Changes

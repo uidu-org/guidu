@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 3.9.0
+
+### Minor Changes
+
+- 541a160: Fix uppy events recreated every render
+
 ## 3.8.0
 
 ### Minor Changes
