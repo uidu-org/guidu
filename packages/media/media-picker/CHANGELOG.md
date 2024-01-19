@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 1.9.0
+
+### Minor Changes
+
+- 0cb2061: Addef focus-lock
+
 ## 1.8.0
 
 ### Minor Changes
