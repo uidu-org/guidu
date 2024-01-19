@@ -112,51 +112,64 @@ function FieldImageUploaderStateless({
       }),
   );
 
-  uppy
-    .on('file-added', () => {
-      clearErrors(name);
-    })
-    .on('thumbnail:generated', (file, preview) => {
-      setIsLoading(false);
-      setScale(1);
-      setImageUrl(preview);
-      setData([file]);
-      setErrors([]);
-    })
-    .on('upload', () => setProgress(0))
-    .on('upload-progress', (_file, prgrss) => {
-      setProgress(prgrss.bytesUploaded / prgrss.bytesTotal);
-    })
-    .on('complete', (result) => {
-      setIsLoading(false);
-      setProgress(null);
-      if (result.failed.length > 0) {
-        setError(name, { type: 'custom', message: result.failed[0].error });
-      } else {
-        const response = result.successful.map(
-          uploadOptions.responseHandler,
-        )[0];
-        setValue(response);
-        onFieldChange(response);
-        onChange(name, response);
-      }
-    })
-    .on('error', (error) => {
-      setIsLoading(false);
-      setError(name, { type: 'custom', message: error.message });
-    })
-    .on('upload-error', (_file, error) => {
-      setIsLoading(false);
-      setError(name, { type: 'custom', message: error.message });
-    })
-    .on('file-removed', () => {
-      onFieldChange('');
-      onChange(name, '');
-    })
-    .on('restriction-failed', (_file, error) => {
-      setIsLoading(false);
-      setError(name, { type: 'custom', message: error.message });
-    });
+  useEffect(() => {
+    uppy
+      .on('file-added', () => {
+        clearErrors(name);
+      })
+      .on('thumbnail:generated', (file, preview) => {
+        setIsLoading(false);
+        setScale(1);
+        setImageUrl(preview);
+        setData([file]);
+        setErrors([]);
+      })
+      .on('upload', () => setProgress(0))
+      .on('upload-progress', (_file, prgrss) => {
+        setProgress(prgrss.bytesUploaded / prgrss.bytesTotal);
+      })
+      .on('complete', (result) => {
+        setIsLoading(false);
+        setProgress(null);
+        if (result.failed.length > 0) {
+          setError(name, { type: 'custom', message: result.failed[0].error });
+        } else {
+          const response = result.successful.map(
+            uploadOptions.responseHandler,
+          )[0];
+          setValue(response);
+          onFieldChange(response);
+          onChange(name, response);
+        }
+      })
+      .on('error', (error) => {
+        setIsLoading(false);
+        setError(name, { type: 'custom', message: error.message });
+      })
+      .on('upload-error', (_file, error) => {
+        setIsLoading(false);
+        setError(name, { type: 'custom', message: error.message });
+      })
+      .on('file-removed', () => {
+        onFieldChange('');
+        onChange(name, '');
+      })
+      .on('restriction-failed', (_file, error) => {
+        setIsLoading(false);
+        setError(name, { type: 'custom', message: error.message });
+      });
+  }, [
+    clearErrors,
+    name,
+    onFieldChange,
+    setError,
+    uploadOptions.module,
+    uploadOptions.responseHandler,
+    uploadOptions.options,
+    mergeOptions.restrictions,
+    onChange,
+    uppy,
+  ]);
 
   const thumbnailPlugin = useMemo(
     () => uppy.getPlugin('ThumbnailGenerator'),
