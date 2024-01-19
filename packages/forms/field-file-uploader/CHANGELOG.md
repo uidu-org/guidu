@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 3.3.0
+
+### Minor Changes
+
+- 39e03a7: Initialize uppy with useState as suggested in uppy docs
+
 ## 3.2.3
 
 ### Patch Changes
