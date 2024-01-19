@@ -1,5 +1,17 @@
 # @uidu/editor-core
 
+## 2.23.3
+
+### Patch Changes
+
+- Updated dependencies [5d81cbd]
+  - @uidu/media-core@3.0.0
+  - @uidu/adf-schema@2.10.1
+  - @uidu/editor-common@2.17.2
+  - @uidu/media-card@0.16.1
+  - @uidu/media-filmstrip@0.12.1
+  - @uidu/media-picker@1.7.1
+
 ## 2.23.2
 
 ### Patch Changes
