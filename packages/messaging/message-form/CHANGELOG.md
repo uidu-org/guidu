@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.11.2
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/media-filmstrip@0.12.2
+  - @uidu/field-mentions@2.5.2
+  - @uidu/dropdown-menu@0.11.1
+  - @uidu/message@0.12.3
+  - @uidu/field-text@2.5.1
+  - @uidu/spinner@0.10.1
+  - @uidu/form@3.1.1
+
 ## 0.11.1
 
 ### Patch Changes

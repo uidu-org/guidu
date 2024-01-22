@@ -1,5 +1,13 @@
 # @uidu/email-renderer
 
+## 1.11.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/adf-schema@2.10.2
+
 ## 1.11.0
 
 ### Minor Changes

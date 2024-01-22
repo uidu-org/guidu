@@ -1,5 +1,23 @@
 # @uidu/editor-common
 
+## 2.17.3
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/analytics-namespaced-context@0.9.1
+  - @uidu/editor-json-transformer@1.8.1
+  - @uidu/profilecard@0.11.1
+  - @uidu/adf-schema@2.10.2
+  - @uidu/mentions@0.13.1
+  - @uidu/adf-utils@2.7.1
+  - @uidu/media-core@3.0.1
+  - @uidu/analytics@0.11.1
+  - @uidu/emoji@0.14.1
+  - @uidu/tooltip@0.10.1
+  - @uidu/theme@0.11.2
+
 ## 2.17.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.8.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+
 ## 1.8.0
 
 ### Minor Changes

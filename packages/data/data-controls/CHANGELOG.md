@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 4.8.5
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/inline-dialog@0.10.1
+  - @uidu/data-manager@4.13.3
+  - @uidu/data-fields@4.3.1
+  - @uidu/field-text@2.5.1
+  - @uidu/shell@2.8.1
+  - @uidu/data-views@3.9.4
+  - @uidu/checkbox@2.5.1
+  - @uidu/spinner@0.10.1
+  - @uidu/tooltip@0.10.1
+  - @uidu/select@2.12.1
+  - @uidu/button@1.8.1
+  - @uidu/drawer@0.12.1
+  - @uidu/popup@0.13.1
+  - @uidu/form@3.1.1
+  - @uidu/menu@0.15.1
+
 ## 4.8.4
 
 ### Patch Changes

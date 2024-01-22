@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.5.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/field-textarea@2.6.1
+  - @uidu/field-number@2.6.2
+  - @uidu/field-text@2.5.1
+  - @uidu/checkbox@2.5.1
+  - @uidu/select@2.12.1
+
 ## 1.5.0
 
 ### Minor Changes

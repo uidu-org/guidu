@@ -1,5 +1,19 @@
 # @uidu/media-viewer
 
+## 1.9.2
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/modal-dialog@1.7.1
+  - @uidu/media-core@3.0.1
+  - @uidu/shell@2.8.1
+  - @uidu/spinner@0.10.1
+  - @uidu/avatar@0.14.1
+  - @uidu/button@1.8.1
+  - @uidu/theme@0.11.2
+
 ## 1.9.1
 
 ### Patch Changes

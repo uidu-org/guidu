@@ -1,5 +1,18 @@
 # @uidu/onboarding
 
+## 1.10.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/modal-dialog@1.7.1
+  - @uidu/analytics@0.11.1
+  - @uidu/button@1.8.1
+  - @uidu/popper@0.10.1
+  - @uidu/portal@1.5.1
+  - @uidu/theme@0.11.2
+
 ## 1.10.0
 
 ### Minor Changes

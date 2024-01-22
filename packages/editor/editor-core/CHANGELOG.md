@@ -1,5 +1,45 @@
 # @uidu/editor-core
 
+## 2.23.4
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/analytics-namespaced-context@0.9.1
+  - @uidu/editor-markdown-transformer@1.8.1
+  - @uidu/editor-json-transformer@1.8.1
+  - @uidu/analytics-listeners@0.9.1
+  - @uidu/activity-provider@0.6.1
+  - @uidu/task-decision@0.10.1
+  - @uidu/media-filmstrip@0.12.2
+  - @uidu/editor-common@2.17.3
+  - @uidu/profilecard@0.11.1
+  - @uidu/media-picker@1.10.1
+  - @uidu/avatar-group@2.11.1
+  - @uidu/modal-dialog@1.7.1
+  - @uidu/adf-schema@2.10.2
+  - @uidu/mentions@0.13.1
+  - @uidu/adf-utils@2.7.1
+  - @uidu/field-base@4.10.1
+  - @uidu/field-date@2.8.2
+  - @uidu/field-text@2.5.1
+  - @uidu/media-card@0.16.2
+  - @uidu/media-core@3.0.1
+  - @uidu/status@0.12.1
+  - @uidu/analytics@0.11.1
+  - @uidu/emoji@0.14.1
+  - @uidu/droplist@0.10.1
+  - @uidu/date@0.9.1
+  - @uidu/spinner@0.10.1
+  - @uidu/tooltip@0.10.1
+  - @uidu/select@2.12.1
+  - @uidu/avatar@0.14.1
+  - @uidu/button@1.8.1
+  - @uidu/theme@0.11.2
+  - @uidu/form@3.1.1
+  - @uidu/menu@0.15.1
+
 ## 2.23.3
 
 ### Patch Changes

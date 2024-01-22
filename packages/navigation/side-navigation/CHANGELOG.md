@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.8.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/inline-dialog@0.10.1
+  - @uidu/shell@2.8.1
+  - @uidu/tooltip@0.10.1
+  - @uidu/avatar@0.14.1
+  - @uidu/button@1.8.1
+  - @uidu/popup@0.13.1
+  - @uidu/theme@0.11.2
+  - @uidu/menu@0.15.1
+
 ## 1.8.0
 
 ### Minor Changes

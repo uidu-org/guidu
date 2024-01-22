@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.11.2
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/message-renderer@0.10.1
+  - @uidu/message-form@0.11.2
+  - @uidu/message@0.12.3
+
 ## 0.11.1
 
 ### Patch Changes

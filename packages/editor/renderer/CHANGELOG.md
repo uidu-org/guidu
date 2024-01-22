@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 2.14.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/analytics-namespaced-context@0.9.1
+  - @uidu/editor-json-transformer@1.8.1
+  - @uidu/analytics-listeners@0.9.1
+  - @uidu/task-decision@0.10.1
+  - @uidu/media-filmstrip@0.12.2
+  - @uidu/editor-common@2.17.3
+  - @uidu/adf-schema@2.10.2
+  - @uidu/mentions@0.13.1
+  - @uidu/adf-utils@2.7.1
+  - @uidu/media-card@0.16.2
+  - @uidu/status@0.12.1
+  - @uidu/analytics@0.11.1
+  - @uidu/tooltip@0.10.1
+  - @uidu/theme@0.11.2
+  - @uidu/code@0.10.1
+
 ## 2.14.0
 
 ### Minor Changes

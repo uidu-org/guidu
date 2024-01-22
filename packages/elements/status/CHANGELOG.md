@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.12.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/field-text@2.5.1
+  - @uidu/analytics@0.11.1
+  - @uidu/lozenge@0.10.1
+  - @uidu/theme@0.11.2
+
 ## 0.12.0
 
 ### Minor Changes

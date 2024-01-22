@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.10.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+
 ## 0.10.0
 
 ### Minor Changes

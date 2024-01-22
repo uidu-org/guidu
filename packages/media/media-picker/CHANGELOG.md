@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 1.10.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/media-core@3.0.1
+
 ## 1.10.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.10.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/section-message@0.11.1
+  - @uidu/tooltip@0.10.1
+  - @uidu/button@1.8.1
+  - @uidu/theme@0.11.2
+  - @uidu/code@0.10.1
+
 ## 0.10.0
 
 ### Minor Changes

@@ -1,5 +1,15 @@
 # @uidu/inline-dialog
 
+## 0.10.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/analytics@0.11.1
+  - @uidu/popper@0.10.1
+  - @uidu/theme@0.11.2
+
 ## 0.10.0
 
 ### Minor Changes

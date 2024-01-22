@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.11.2
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/form@3.1.1
+
 ## 0.11.1
 
 ### Patch Changes
