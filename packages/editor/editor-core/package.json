@@ -10,13 +10,13 @@
     "@atlaskit/icon": "^21.12.8",
     "@atlaskit/util-service-support": "^6.2.3",
     "@atlaskit/width-detector": "^4.1.5",
-    "@babel/runtime": "^7.23.6",
+    "@babel/runtime": "^7.23.8",
     "@emoji-mart/data": "^1.1.2",
     "@emoji-mart/react": "^1.1.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/pro-regular-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@loadable/component": "^5.15.3",
+    "@loadable/component": "^5.16.3",
     "@uidu/activity-provider": "0.6.0",
     "@uidu/adf-schema": "^2.10.1",
     "@uidu/adf-utils": "^2.7.0",
@@ -53,7 +53,7 @@
     "@uidu/theme": "^0.11.1",
     "@uidu/tooltip": "^0.10.0",
     "assert": "^2.1.0",
-    "classnames": "^2.3.2",
+    "classnames": "^2.5.1",
     "emoji-mart": "^5.5.2",
     "eventemitter2": "^6.4.9",
     "get-video-id": "^3.6.5",
@@ -77,7 +77,7 @@
     "re-resizable": "^6.9.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.5.5",
+    "react-intl": "^6.6.1",
     "react-loadable": "^5.5.0",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2",
@@ -87,7 +87,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.10.0",
     "@uidu/shell": "^2.8.0",
-    "twin.macro": "^3.4.0"
+    "twin.macro": "^3.4.1"
   },
   "preconstruct": {
     "entrypoints": [

@@ -9,13 +9,13 @@
   "module": "dist/uidu-data-manager.esm.js",
   "types": "dist/uidu-data-manager.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.6",
-    "@cubejs-client/core": "^0.34.32",
-    "@cubejs-client/react": "^0.34.32",
-    "@cubejs-client/ws-transport": "^0.34.32",
-    "@loadable/component": "^5.15.3",
-    "@tanstack/match-sorter-utils": "^8.11.3",
-    "@tanstack/react-table": "^8.11.3",
+    "@babel/runtime": "^7.23.8",
+    "@cubejs-client/core": "^0.34.37",
+    "@cubejs-client/react": "^0.34.46",
+    "@cubejs-client/ws-transport": "^0.34.37",
+    "@loadable/component": "^5.16.3",
+    "@tanstack/match-sorter-utils": "^8.11.7",
+    "@tanstack/react-table": "^8.11.7",
     "@uidu/board": "^2.9.0",
     "@uidu/button": "1.8.0",
     "@uidu/calendar": "^0.10.0",
@@ -47,6 +47,6 @@
     "@uidu/navigation": "^1.6.0",
     "@uidu/page-header": "^1.1.4",
     "@uidu/side-navigation": "1.8.0",
-    "react-intl": "^6.5.5"
+    "react-intl": "^6.6.1"
   }
 }

@@ -10,8 +10,8 @@
   "module": "dist/uidu-field-geosuggest.esm.js",
   "types": "dist/uidu-field-geosuggest.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.6",
-    "@heroicons/react": "^2.0.18",
+    "@babel/runtime": "^7.23.8",
+    "@heroicons/react": "^2.1.1",
     "@uidu/field-base": "^4.9.0",
     "@uidu/menu": "0.15.0",
     "@uidu/spinner": "^0.10.0",
@@ -23,7 +23,7 @@
     "@uidu/docs": "^0.10.0",
     "@uidu/form": "^3.0.0",
     "styled-components": "^5.3.11",
-    "twin.macro": "^3.4.0"
+    "twin.macro": "^3.4.1"
   },
   "peerDependencies": {
     "styled-components": "*"

@@ -13,8 +13,8 @@
     "index.module.scss"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.23.6",
-    "@heroicons/react": "^2.0.18",
+    "@babel/runtime": "^7.23.8",
+    "@heroicons/react": "^2.1.1",
     "@uidu/button": "1.8.0",
     "@uidu/field-base": "4.10.0",
     "@uidu/field-text": "^2.5.0",

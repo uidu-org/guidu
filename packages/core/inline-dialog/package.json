@@ -10,7 +10,7 @@
   "module": "dist/uidu-inline-dialog.esm.js",
   "types": "dist/uidu-inline-dialog.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.6",
+    "@babel/runtime": "^7.23.8",
     "@uidu/analytics": "^0.11.0",
     "@uidu/popper": "^0.10.0",
     "@uidu/theme": "^0.11.1",

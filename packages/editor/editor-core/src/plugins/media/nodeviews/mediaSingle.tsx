@@ -70,6 +70,7 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
   const [viewMediaClientConfig, setViewMediaClientConfig] =
     useState<MediaClientConfig>(undefined);
   const [file, setFile] = useState<FileIdentifier>(null);
+
   const [size, setSize] = useState({ width: undefined, height: undefined });
 
   const createMediaNodeUpdater = useCallback<() => MediaNodeUpdater>(
@@ -113,24 +114,31 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
     }
   }, [createMediaNodeUpdater, node?.firstChild]);
 
-  useEffect(() => {
-    async function onMount() {
-      const resolvedMediaProvider = await mediaProvider;
-      if (resolvedMediaProvider) {
-        const { viewMediaClientConfig: viewMediaClientConfigFromProps } =
-          resolvedMediaProvider;
-        setViewMediaClientConfig(() => viewMediaClientConfigFromProps);
-        if (!file) {
-          viewMediaClientConfigFromProps(node.firstChild.attrs)
-            .then(setFile)
-            .catch(console.error);
-        }
+  const onMount = useCallback(async () => {
+    console.log('mounted');
+    const resolvedMediaProvider = await mediaProvider;
+    if (resolvedMediaProvider) {
+      const { viewMediaClientConfig: viewMediaClientConfigFromProps } =
+        resolvedMediaProvider;
+      console.log(
+        'viewMediaClientConfigFromProps',
+        viewMediaClientConfigFromProps,
+      );
+      console.log('file', file);
+      setViewMediaClientConfig(() => viewMediaClientConfigFromProps);
+      if (!file) {
+        viewMediaClientConfigFromProps(node.firstChild.attrs)
+          .then(setFile)
+          .catch(console.error);
       }
     }
+  }, [mediaProvider, node?.firstChild, file]);
+
+  useEffect(() => {
     onMount()
       .then(() => {})
       .catch(console.error);
-  }, [mediaProvider, node.firstChild.attrs, file]);
+  }, [onMount]);
 
   const onExternalImageLoaded = ({
     width,

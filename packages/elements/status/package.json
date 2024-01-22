@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^21.12.8",
-    "@babel/runtime": "^7.23.6",
+    "@babel/runtime": "^7.23.8",
     "@uidu/analytics": "^0.11.0",
     "@uidu/analytics-gas-types": "^0.4.4",
     "@uidu/field-text": "^2.5.0",
@@ -30,7 +30,7 @@
     "@uidu/docs": "^0.10.0",
     "@uidu/elements-test-helpers": "^0.11.0",
     "react": "^18.2.0",
-    "react-intl": "^6.5.5"
+    "react-intl": "^6.6.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",

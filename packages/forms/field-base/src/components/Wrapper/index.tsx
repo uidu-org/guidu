@@ -85,7 +85,7 @@ export default function Wrapper<T>({
   }
 
   if (layout === 'elementOnly') {
-    return <div>{input}</div>;
+    return <div tw="w-full">{input}</div>;
   }
 
   return (

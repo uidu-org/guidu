@@ -8,7 +8,7 @@
   "module": "dist/uidu-analytics-namespaced-context.esm.js",
   "types": "dist/uidu-analytics-namespaced-context.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.6",
+    "@babel/runtime": "^7.23.8",
     "@uidu/analytics": "^0.11.0",
     "tslib": "^2.6.2"
   },

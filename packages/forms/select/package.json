@@ -10,15 +10,15 @@
   "module": "dist/uidu-select.esm.js",
   "types": "dist/uidu-select.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.6",
-    "@heroicons/react": "^2.0.18",
+    "@babel/runtime": "^7.23.8",
+    "@heroicons/react": "^2.1.1",
     "@uidu/field-base": "^4.9.0",
     "@uidu/menu": "0.15.0",
     "@uidu/spinner": "^0.10.0",
-    "react-hook-form": "7.49.2",
+    "react-hook-form": "7.49.3",
     "react-select": "^5.8.0",
     "styled-components": "^5.3.11",
-    "timezones-list": "^3.0.2",
+    "timezones-list": "^3.0.3",
     "tslib": "^2.6.2"
   },
   "devDependencies": {
@@ -27,7 +27,7 @@
     "@uidu/docs": "^0.10.0",
     "@uidu/modal-dialog": "^1.7.0",
     "react": "^18.2.0",
-    "twin.macro": "^3.4.0"
+    "twin.macro": "^3.4.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",

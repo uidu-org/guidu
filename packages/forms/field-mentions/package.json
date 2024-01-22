@@ -10,11 +10,11 @@
   "module": "dist/uidu-field-mentions.esm.js",
   "types": "dist/uidu-field-mentions.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.6",
+    "@babel/runtime": "^7.23.8",
     "@uidu/field-base": "^4.9.0",
     "@uidu/form": "^3.0.0",
     "@uidu/theme": "^0.11.1",
-    "classnames": "^2.3.2",
+    "classnames": "^2.5.1",
     "react": "^18.2.0",
     "react-mentions": "^4.4.10",
     "tslib": "^2.6.2"

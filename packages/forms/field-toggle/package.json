@@ -10,7 +10,7 @@
   "module": "dist/uidu-field-toggle.esm.js",
   "types": "dist/uidu-field-toggle.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.6",
+    "@babel/runtime": "^7.23.8",
     "@radix-ui/react-switch": "^1.0.3",
     "@uidu/field-base": "4.10.0",
     "tslib": "^2.6.2"
@@ -22,7 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.11",
-    "twin.macro": "^3.4.0"
+    "twin.macro": "^3.4.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",

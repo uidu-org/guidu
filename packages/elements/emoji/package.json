@@ -15,7 +15,7 @@
   "dependencies": {
     "@atlaskit/icon": "^21.12.8",
     "@atlaskit/util-service-support": "^6.2.3",
-    "@babel/runtime": "^7.23.6",
+    "@babel/runtime": "^7.23.8",
     "@uidu/analytics": "^0.11.0",
     "@uidu/button": "^1.8.0",
     "@uidu/code": "^0.10.0",
@@ -23,7 +23,7 @@
     "@uidu/spinner": "^0.10.0",
     "@uidu/theme": "^0.11.0",
     "@uidu/tooltip": "^0.10.0",
-    "classnames": "^2.3.2",
+    "classnames": "^2.5.1",
     "js-search": "^2.0.1",
     "prop-types": "^15.8.1",
     "react-virtualized": "^9.22.5",
@@ -42,7 +42,7 @@
     "@uidu/util-data-test": "^0.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.5.5"
+    "react-intl": "^6.6.1"
   },
   "peerDependencies": {
     "react": "^18.0.0",

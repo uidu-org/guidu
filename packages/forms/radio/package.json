@@ -9,7 +9,7 @@
   "module": "dist/uidu-radio.esm.js",
   "types": "dist/uidu-radio.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.6",
+    "@babel/runtime": "^7.23.8",
     "@uidu/field-base": "^4.9.0",
     "react": "^18.2.0",
     "styled-components": "^5.3.11",
@@ -18,7 +18,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.10.0",
     "@uidu/form": "^3.0.0",
-    "twin.macro": "^3.4.0"
+    "twin.macro": "^3.4.1"
   },
   "peerDependencies": {
     "twin.macro": "*"
