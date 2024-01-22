@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.16.2
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/media-core@3.0.1
+  - @uidu/spinner@0.10.1
+  - @uidu/tooltip@0.10.1
+  - @uidu/button@1.8.1
+  - @uidu/theme@0.11.2
+
 ## 0.16.1
 
 ### Patch Changes

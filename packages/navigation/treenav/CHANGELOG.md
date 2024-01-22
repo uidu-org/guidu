@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.8.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+
 ## 0.8.0
 
 ### Minor Changes

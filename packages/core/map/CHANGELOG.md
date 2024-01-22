@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.11.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/theme@0.11.2
+
 ## 0.11.0
 
 ### Minor Changes

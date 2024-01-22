@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.11.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/button@1.8.1
+
 ## 0.11.0
 
 ### Minor Changes

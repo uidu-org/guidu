@@ -1,5 +1,17 @@
 # @uidu/field-file-uploader
 
+## 3.4.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/field-base@4.10.1
+  - @uidu/media-core@3.0.1
+  - @uidu/button@1.8.1
+  - @uidu/form@3.1.1
+  - @uidu/menu@0.15.1
+
 ## 3.4.0
 
 ### Minor Changes

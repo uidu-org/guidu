@@ -1,5 +1,23 @@
 # @uidu/message
 
+## 0.12.3
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/message-renderer@0.10.1
+  - @uidu/message-form@0.11.2
+  - @uidu/media-viewer@1.9.2
+  - @uidu/media-card@0.16.2
+  - @uidu/media-core@3.0.1
+  - @uidu/tooltip@0.10.1
+  - @uidu/avatar@0.14.1
+  - @uidu/button@1.8.1
+  - @uidu/drawer@0.12.1
+  - @uidu/popup@0.13.1
+  - @uidu/menu@0.15.1
+
 ## 0.12.2
 
 ### Patch Changes

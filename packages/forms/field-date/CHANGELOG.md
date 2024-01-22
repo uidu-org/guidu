@@ -1,5 +1,16 @@
 # @uidu/field-date
 
+## 2.8.2
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/field-base@4.10.1
+  - @uidu/field-text@2.5.1
+  - @uidu/button@1.8.1
+  - @uidu/popup@0.13.1
+
 ## 2.8.1
 
 ### Patch Changes

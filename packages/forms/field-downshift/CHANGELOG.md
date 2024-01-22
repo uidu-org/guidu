@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 2.11.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/field-base@4.10.1
+  - @uidu/field-text@2.5.1
+
 ## 2.11.0
 
 ### Minor Changes

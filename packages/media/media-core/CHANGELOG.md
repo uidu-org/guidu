@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 3.0.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/docs@0.10.1
+
 ## 3.0.0
 
 ### Major Changes

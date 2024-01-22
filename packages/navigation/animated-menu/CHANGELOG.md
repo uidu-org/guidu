@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.5.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+
 ## 1.5.0
 
 ### Minor Changes

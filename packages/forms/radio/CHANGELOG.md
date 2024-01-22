@@ -1,5 +1,13 @@
 # @uidu/radio
 
+## 2.7.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/field-base@4.10.1
+
 ## 2.7.0
 
 ### Minor Changes

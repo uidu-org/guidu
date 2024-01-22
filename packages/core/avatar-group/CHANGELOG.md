@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.11.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/dropdown-menu@0.11.1
+  - @uidu/tooltip@0.10.1
+  - @uidu/avatar@0.14.1
+  - @uidu/theme@0.11.2
+
 ## 2.11.0
 
 ### Minor Changes

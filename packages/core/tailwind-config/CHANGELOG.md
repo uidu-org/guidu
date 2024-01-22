@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.6.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+
 ## 0.6.0
 
 ### Minor Changes

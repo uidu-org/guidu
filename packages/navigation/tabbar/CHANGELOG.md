@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.9.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/shell@2.8.1
+
 ## 0.9.0
 
 ### Minor Changes

@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.6.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/animated-menu@1.5.1
+  - @uidu/dropdown-menu@0.11.1
+  - @uidu/inline-dialog@0.10.1
+  - @uidu/shell@2.8.1
+  - @uidu/tooltip@0.10.1
+  - @uidu/avatar@0.14.1
+  - @uidu/theme@0.11.2
+  - @uidu/menu@0.15.1
+
 ## 1.6.0
 
 ### Minor Changes

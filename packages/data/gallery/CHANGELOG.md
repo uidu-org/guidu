@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 2.7.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/data-controls@4.8.5
+  - @uidu/data-fields@4.3.1
+  - @uidu/shell@2.8.1
+  - @uidu/spinner@0.10.1
+
 ## 2.7.0
 
 ### Minor Changes

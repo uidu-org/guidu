@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.10.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/form@3.1.1
+
 ## 4.10.0
 
 ### Minor Changes

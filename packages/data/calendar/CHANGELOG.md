@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.10.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/shell@2.8.1
+  - @uidu/button@1.8.1
+
 ## 0.10.0
 
 ### Minor Changes

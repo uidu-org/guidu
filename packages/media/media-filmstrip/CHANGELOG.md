@@ -1,5 +1,17 @@
 # @uidu/media-filmstrip
 
+## 0.12.2
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/media-viewer@1.9.2
+  - @uidu/modal-dialog@1.7.1
+  - @uidu/media-card@0.16.2
+  - @uidu/media-core@3.0.1
+  - @uidu/theme@0.11.2
+
 ## 0.12.1
 
 ### Patch Changes

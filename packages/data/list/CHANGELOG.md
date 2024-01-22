@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 3.10.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+- Updated dependencies [c330f22]
+  - @uidu/data-fields@4.3.1
+  - @uidu/shell@2.8.1
+
 ## 3.10.0
 
 ### Minor Changes

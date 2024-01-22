@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.9.1
+
+### Patch Changes
+
+- c330f22: Bump deps
+
 ## 0.9.0
 
 ### Minor Changes
