@@ -10470,6 +10470,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/text-serializer@workspace:packages/editor/text-serializer"
   dependencies:
+    "@babel/runtime": "npm:^7.23.8"
     "@uidu/adf-schema": "npm:2.10.2"
     "@uidu/editor-common": "npm:2.17.3"
     prosemirror-model: "npm:^1.19.4"
