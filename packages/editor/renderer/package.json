@@ -1,6 +1,6 @@
 {
   "name": "@uidu/renderer",
-  "version": "2.14.1",
+  "version": "2.15.0",
   "description": "Renderer component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/renderer",
   "license": "MIT",
