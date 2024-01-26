@@ -1,0 +1,16 @@
+{
+  "name": "@uidu/text-serializer",
+  "version": "0.1.0",
+  "description": "Renderer schema as full text",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/text-serializer",
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "dist/uidu-text-serializer.cjs.js",
+  "module": "dist/uidu-text-serializer.esm.js",
+  "types": "dist/uidu-text-serializer.cjs.d.ts",
+  "dependencies": {
+    "@uidu/adf-schema": "2.10.2",
+    "@uidu/editor-common": "2.17.3",
+    "prosemirror-model": "^1.19.4"
+  }
+}

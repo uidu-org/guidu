@@ -24,13 +24,10 @@ export interface ResultWithTime<T> {
   time: number;
 }
 
-const SUPPORTS_HIRES_TIMER_API =
-  window && window.performance && performance.now;
-
 const withStopwatch = <T>(cb: () => T): ResultWithTime<T> => {
-  const startTime = SUPPORTS_HIRES_TIMER_API ? performance.now() : Date.now();
+  const startTime = Date.now();
   const output = cb();
-  const endTime = SUPPORTS_HIRES_TIMER_API ? performance.now() : Date.now();
+  const endTime = Date.now();
   const time = endTime - startTime;
 
   return { output, time };
