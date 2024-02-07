@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 6.4.0
+
+### Minor Changes
+
+- 26786b5: Re-render headers when table state changes (rowSelection)
+
 ## 6.3.3
 
 ### Patch Changes
