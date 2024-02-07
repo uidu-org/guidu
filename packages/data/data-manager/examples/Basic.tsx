@@ -171,7 +171,7 @@ export default function Basic({}) {
     data,
     columns,
     meta: {
-      allSelected: true,
+      // allSelected: true,
     },
   });
 

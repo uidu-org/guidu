@@ -99,6 +99,22 @@ export function HeaderSelection<T>({
     options,
   },
 }: HeaderContext<T, unknown>) {
+  console.log(
+    'getToggleAllRowsSelectedHandler',
+    getToggleAllRowsSelectedHandler,
+  );
+  const [isChecked, setIsChecked] = useState<boolean>(
+    getIsAllRowsSelected() || options.meta?.allSelected,
+  );
+
+  const handleChange = useCallback(
+    (e) => {
+      setIsChecked((prev) => !prev);
+      getToggleAllRowsSelectedHandler()(e);
+    },
+    [setIsChecked, getToggleAllRowsSelectedHandler],
+  );
+
   return (
     <div tw="flex justify-center items-center h-full w-full relative">
       <button
@@ -106,13 +122,13 @@ export function HeaderSelection<T>({
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
-          toggleAllRowsSelected(!getIsAllRowsSelected());
+          handleChange(e);
         }}
         tw="absolute inset-0"
       />
       <CheckboxStateless
-        onChange={getToggleAllRowsSelectedHandler()}
-        checked={getIsAllRowsSelected() || options.meta?.allSelected}
+        onChange={handleChange}
+        checked={isChecked}
         isIndeterminate={getIsSomeRowsSelected()}
       />
     </div>

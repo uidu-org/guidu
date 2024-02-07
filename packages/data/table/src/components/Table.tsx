@@ -135,25 +135,25 @@ function Table<T extends { id: string }>({
   const columnSizeVars = useMemo(() => {
     const colSizes: { [key: string]: number } = {};
     for (let i = 0; i < headers.length; i++) {
-      const header = headers[i]!;
+      const header = headers[i];
       colSizes[`--header-${header.id.replace('.', '_')}-size`] =
         header.getSize();
       colSizes[`--col-${header.column.id.replace('.', '_')}-size`] =
         header.column.getSize();
     }
     return colSizes;
-  }, [columnSizingInfo, headers]);
+  }, [headers]);
 
   const FixedHeader = useCallback(
     () => (
       <Headers
-        headerGroups={headerGroups}
+        headerGroups={tableInstance.getHeaderGroups()}
         components={headerComponents}
         headerHeight={headerHeight}
         columnSizingInfo={columnSizingInfo}
       />
     ),
-    [columnSizingInfo, headerGroups, headerComponents, headerHeight],
+    [columnSizingInfo, headerComponents, headerHeight, tableInstance],
   );
 
   const FixedFooter = useCallback(
