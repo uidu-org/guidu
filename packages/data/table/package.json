@@ -1,6 +1,6 @@
 {
   "name": "@uidu/table",
-  "version": "6.3.3",
+  "version": "6.4.0",
   "description": "React ag-datagrid wrapper with default configurations",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/table",
   "license": "MIT",
