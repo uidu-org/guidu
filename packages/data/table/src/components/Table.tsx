@@ -70,7 +70,7 @@ function Table<T extends { id: string }>({
   const footerGroups = getFooterGroups();
   const { rows } = getRowModel();
 
-  const { columnSizingInfo } = getState();
+  const { columnSizingInfo, rowSelection } = getState();
 
   const {
     Th: { component: Th, props: trProps },
@@ -147,13 +147,19 @@ function Table<T extends { id: string }>({
   const FixedHeader = useCallback(
     () => (
       <Headers
-        headerGroups={tableInstance.getHeaderGroups()}
+        headerGroups={headerGroups}
         components={headerComponents}
         headerHeight={headerHeight}
         columnSizingInfo={columnSizingInfo}
       />
     ),
-    [columnSizingInfo, headerComponents, headerHeight, tableInstance],
+    [
+      columnSizingInfo,
+      headerGroups,
+      headerComponents,
+      headerHeight,
+      rowSelection,
+    ],
   );
 
   const FixedFooter = useCallback(
