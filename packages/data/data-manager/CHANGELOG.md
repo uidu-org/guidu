@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 4.13.4
+
+### Patch Changes
+
+- 3339836: Fix SelectionHeader
+- Updated dependencies [3339836]
+  - @uidu/table@6.3.3
+  - @uidu/data-controls@4.8.6
+  - @uidu/data-views@3.9.5
+
 ## 4.13.3
 
 ### Patch Changes

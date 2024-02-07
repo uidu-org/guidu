@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 6.3.3
+
+### Patch Changes
+
+- 3339836: Fix SelectionHeader
+- Updated dependencies [3339836]
+  - @uidu/data-manager@4.13.4
+
 ## 6.3.2
 
 ### Patch Changes
