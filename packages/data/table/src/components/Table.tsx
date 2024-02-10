@@ -142,7 +142,7 @@ function Table<T extends { id: string }>({
         header.column.getSize();
     }
     return colSizes;
-  }, [headers]);
+  }, [headers, columnSizingInfo]);
 
   const FixedHeader = useCallback(
     () => (

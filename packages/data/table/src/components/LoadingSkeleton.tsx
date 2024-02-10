@@ -25,15 +25,19 @@ export function ScrollSeekPlaceholder({
     <div
       key={`fake-${i}`}
       style={{ height: rowHeight }}
-      tw="flex flex-row items-center min-w-full"
+      tw="flex flex-row items-center min-w-full w-fit"
     >
       {columns
         .filter((column) => !column.columnDef.meta?.isPrivate)
         .map((column, index) => (
           <Td
             key={`${column.id}-fake-${i}`}
+            $width={`calc(var(--col-${column.id.replace(
+              '.',
+              '_',
+            )}-size) * 1px)`}
             // tw="border-b border-r border-opacity-50 p-4 flex[1 0 auto]"
-            $width={column.getSize()}
+            // $width={column.getSize()}
             $minWidth={column.columnDef.minSize}
             $maxWidth={column.columnDef.maxSize}
             $isSorted={column.getIsSorted()}
@@ -55,8 +59,6 @@ export default function LoadingSkeleton<T extends { id: string }>({
   rowHeight,
   components,
 }: LoadingSkeletonProps<T>) {
-  const { StyledRow, Td } = components;
-
   return Array.from(Array(count).keys()).map((i) => (
     <ScrollSeekPlaceholder
       columns={columns}

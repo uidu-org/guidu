@@ -4,6 +4,7 @@ export { default as RowActions } from './components/Actions';
 export { default as Aggregated } from './components/Aggregated';
 export * from './components/groups';
 export { default as Header } from './components/Header';
+export { default as LoadingSkeleton } from './components/LoadingSkeleton';
 export * from './components/menu';
 export * from './components/Selection';
 export * from './styled';
