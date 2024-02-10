@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 6.5.0
+
+### Minor Changes
+
+- 900c425: Restore column resizing and skeleton
+
 ## 6.4.0
 
 ### Minor Changes
