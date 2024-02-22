@@ -10,7 +10,7 @@
   "module": "dist/uidu-section-message.esm.js",
   "types": "dist/uidu-section-message.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.8",
+    "@babel/runtime": "^7.23.9",
     "@heroicons/react": "^2.1.1",
     "@uidu/button": "^1.8.1",
     "tslib": "^2.6.2"

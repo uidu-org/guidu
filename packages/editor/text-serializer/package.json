@@ -9,7 +9,7 @@
   "module": "dist/uidu-text-serializer.esm.js",
   "types": "dist/uidu-text-serializer.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.8",
+    "@babel/runtime": "^7.23.9",
     "@uidu/adf-schema": "2.10.2",
     "@uidu/editor-common": "2.17.3",
     "prosemirror-model": "^1.19.4"

@@ -10,7 +10,7 @@
   "module": "dist/uidu-popup.esm.js",
   "types": "dist/uidu-popup.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.8",
+    "@babel/runtime": "^7.23.9",
     "@emotion/react": "^11.11.3",
     "@uidu/popper": "^0.10.1",
     "@uidu/portal": "^1.5.1",

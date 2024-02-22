@@ -66,7 +66,7 @@ const presets = {
 
 export default function Basic() {
   const defaultForm = useDefaultForm();
-  const [preset, setPreset] = useState('HorizontalCard');
+  const [preset, setPreset] = useState('Radio');
 
   const currentPreset = presets[preset];
 

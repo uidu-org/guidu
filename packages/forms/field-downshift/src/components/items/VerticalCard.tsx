@@ -17,6 +17,7 @@ export default function HorizontalCard({
       css={[
         isSelected && tw`border-primary`,
         tw`relative p-4 text-left border rounded [background:rgb(var(--body-on-primary-bg))]`,
+        tw`hover:[background:rgba(var(--brand-primary), .05)]`,
       ]}
       onClick={(e) => {
         e.preventDefault();

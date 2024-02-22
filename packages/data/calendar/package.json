@@ -9,7 +9,7 @@
   "module": "dist/uidu-calendar.esm.js",
   "types": "dist/uidu-calendar.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.8",
+    "@babel/runtime": "^7.23.9",
     "@uidu/button": "1.8.1",
     "@uidu/shell": "^2.8.1",
     "classnames": "^2.5.1",

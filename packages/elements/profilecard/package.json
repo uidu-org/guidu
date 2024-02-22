@@ -11,7 +11,7 @@
   "types": "dist/uidu-profilecard.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.12.8",
-    "@babel/runtime": "^7.23.8",
+    "@babel/runtime": "^7.23.9",
     "@uidu/avatar": "^0.14.1",
     "@uidu/button": "^1.8.1",
     "@uidu/lozenge": "^0.10.1",
@@ -22,7 +22,7 @@
     "es6-promise": "^4.2.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.6.1",
+    "react-intl": "^6.6.2",
     "react-node-resolver": "^2.0.1",
     "styled-components": "^5.3.11"
   },

@@ -12,7 +12,7 @@
   "dependencies": {
     "@atlaskit/icon": "^21.12.8",
     "@atlaskit/util-service-support": "^6.2.3",
-    "@babel/runtime": "^7.23.8",
+    "@babel/runtime": "^7.23.9",
     "@uidu/analytics": "^0.11.1",
     "@uidu/analytics-gas-types": "^0.4.4",
     "@uidu/avatar": "^0.14.1",
@@ -22,13 +22,13 @@
     "@uidu/tooltip": "^0.10.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.6.1",
+    "react-intl": "^6.6.2",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@faker-js/faker": "^8.3.1",
+    "@faker-js/faker": "^8.4.1",
     "@uidu/docs": "^0.10.1"
   },
   "publishConfig": {

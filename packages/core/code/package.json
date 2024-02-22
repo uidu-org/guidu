@@ -13,7 +13,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/runtime": "^7.23.8",
+    "@babel/runtime": "^7.23.9",
     "@uidu/theme": "^0.11.2",
     "memoize-one": "^6.0.0",
     "react-syntax-highlighter": "^15.5.0",
