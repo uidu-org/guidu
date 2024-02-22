@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.11.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/button@1.8.2
+
 ## 0.11.1
 
 ### Patch Changes

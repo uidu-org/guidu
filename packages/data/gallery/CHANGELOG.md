@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 2.7.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/data-controls@4.8.7
+  - @uidu/data-fields@4.3.2
+  - @uidu/shell@2.8.2
+  - @uidu/spinner@0.10.2
+
 ## 2.7.1
 
 ### Patch Changes

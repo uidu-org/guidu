@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.9.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/payments@1.14.3
+  - @uidu/form@3.1.2
+
 ## 0.9.2
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # @uidu/editor-common
 
+## 2.17.4
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/analytics-namespaced-context@0.9.2
+  - @uidu/editor-json-transformer@1.8.2
+  - @uidu/profilecard@0.11.2
+  - @uidu/adf-schema@2.10.3
+  - @uidu/mentions@0.13.2
+  - @uidu/adf-utils@2.7.2
+  - @uidu/media-core@3.0.2
+  - @uidu/analytics@0.11.2
+  - @uidu/emoji@0.14.2
+  - @uidu/tooltip@0.10.2
+  - @uidu/theme@0.11.3
+
 ## 2.17.3
 
 ### Patch Changes

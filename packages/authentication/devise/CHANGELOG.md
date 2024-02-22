@@ -1,5 +1,20 @@
 # @uidu/devise
 
+## 1.10.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/field-password@2.6.3
+  - @uidu/field-phone@2.6.3
+  - @uidu/field-text@2.5.2
+  - @uidu/shell@2.8.2
+  - @uidu/checkbox@2.5.2
+  - @uidu/spinner@0.10.2
+  - @uidu/avatar@0.14.2
+  - @uidu/form@3.1.2
+
 ## 1.10.2
 
 ### Patch Changes

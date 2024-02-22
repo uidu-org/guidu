@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "description": "The uidu component analytics framework",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/analytics",
   "license": "ISC",
@@ -14,10 +14,10 @@
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@uidu/button": "^1.8.1",
-    "@uidu/docs": "^0.10.1",
-    "@uidu/field-text": "^2.5.1",
-    "@uidu/form": "^3.1.1",
+    "@uidu/button": "^1.8.2",
+    "@uidu/docs": "^0.10.2",
+    "@uidu/field-text": "^2.5.2",
+    "@uidu/form": "^3.1.2",
     "lodash.isequal": "^4.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

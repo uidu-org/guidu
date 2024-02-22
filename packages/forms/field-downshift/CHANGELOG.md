@@ -1,5 +1,17 @@
 # @uidu/field-downshift
 
+## 2.12.0
+
+### Minor Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+
+### Patch Changes
+
+- Updated dependencies [b6f1beb]
+  - @uidu/field-base@4.10.2
+  - @uidu/field-text@2.5.2
+
 ## 2.11.1
 
 ### Patch Changes

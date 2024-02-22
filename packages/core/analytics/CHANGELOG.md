@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.11.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+
 ## 0.11.1
 
 ### Patch Changes

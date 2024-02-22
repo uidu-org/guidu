@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.1.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/button@1.8.2
+
 ## 3.1.1
 
 ### Patch Changes

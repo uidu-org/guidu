@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.6.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+
 ## 0.6.1
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 1.7.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/field-downshift@2.12.0
+  - @uidu/dropdown-menu@0.11.2
+  - @uidu/field-toggle@2.5.4
+  - @uidu/shell@2.8.2
+  - @uidu/accordion@0.11.2
+  - @uidu/dashlets@3.10.10
+  - @uidu/select@2.12.2
+  - @uidu/form@3.1.2
+
 ## 1.7.2
 
 ### Patch Changes

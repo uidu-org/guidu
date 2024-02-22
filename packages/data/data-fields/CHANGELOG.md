@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 4.3.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/field-downshift@2.12.0
+  - @uidu/field-color-picker@3.5.2
+  - @uidu/field-number@2.6.3
+  - @uidu/field-toggle@2.5.4
+  - @uidu/field-date@2.8.3
+  - @uidu/field-text@2.5.2
+  - @uidu/field-time@2.7.4
+  - @uidu/select@2.12.2
+  - @uidu/button@1.8.2
+  - @uidu/popup@0.13.2
+  - @uidu/form@3.1.2
+  - @uidu/menu@0.15.2
+  - @uidu/map@0.11.2
+
 ## 4.3.1
 
 ### Patch Changes

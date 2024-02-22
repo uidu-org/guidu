@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 3.10.10
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/dashboard-manager@2.10.2
+  - @uidu/data-fields@4.3.2
+  - @uidu/spinner@0.10.2
+  - @uidu/tooltip@0.10.2
+  - @uidu/table@6.5.1
+
 ## 3.10.9
 
 ### Patch Changes

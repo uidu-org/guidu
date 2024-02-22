@@ -1,5 +1,16 @@
 # @uidu/payments
 
+## 1.14.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/section-message@0.11.2
+  - @uidu/field-base@4.10.2
+  - @uidu/theme@0.11.3
+  - @uidu/form@3.1.2
+
 ## 1.14.2
 
 ### Patch Changes

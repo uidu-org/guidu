@@ -1,6 +1,6 @@
 {
   "name": "@uidu/util-data-test",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Shared test and story data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/util-data-test",
   "license": "MIT",
@@ -14,17 +14,17 @@
   "dependencies": {
     "@atlaskit/util-service-support": "^6.2.3",
     "@babel/runtime": "^7.23.9",
-    "@uidu/analytics": "^0.11.1",
-    "@uidu/emoji": "^0.14.1",
-    "@uidu/mentions": "^0.13.1",
-    "@uidu/task-decision": "^0.10.1",
+    "@uidu/analytics": "^0.11.2",
+    "@uidu/emoji": "^0.14.2",
+    "@uidu/mentions": "^0.13.2",
+    "@uidu/task-decision": "^0.10.2",
     "date-fns": "^2.30.0",
     "lodash.sample": "^4.2.1",
     "tslib": "^2.6.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.10.1",
+    "@uidu/docs": "^0.10.2",
     "js-search": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

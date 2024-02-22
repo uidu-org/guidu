@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.11.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/message-renderer@0.10.2
+  - @uidu/message-form@0.11.3
+  - @uidu/message@0.12.4
+
 ## 0.11.2
 
 ### Patch Changes

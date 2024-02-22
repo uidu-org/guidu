@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 3.5.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/field-base@4.10.2
+  - @uidu/button@1.8.2
+  - @uidu/popup@0.13.2
+
 ## 3.5.1
 
 ### Patch Changes

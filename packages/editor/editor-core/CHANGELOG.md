@@ -1,5 +1,45 @@
 # @uidu/editor-core
 
+## 2.23.5
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/analytics-namespaced-context@0.9.2
+  - @uidu/editor-markdown-transformer@1.8.2
+  - @uidu/editor-json-transformer@1.8.2
+  - @uidu/analytics-listeners@0.9.2
+  - @uidu/activity-provider@0.6.2
+  - @uidu/task-decision@0.10.2
+  - @uidu/media-filmstrip@0.12.3
+  - @uidu/editor-common@2.17.4
+  - @uidu/profilecard@0.11.2
+  - @uidu/media-picker@1.10.2
+  - @uidu/avatar-group@2.11.2
+  - @uidu/modal-dialog@1.7.2
+  - @uidu/adf-schema@2.10.3
+  - @uidu/mentions@0.13.2
+  - @uidu/adf-utils@2.7.2
+  - @uidu/field-base@4.10.2
+  - @uidu/field-date@2.8.3
+  - @uidu/field-text@2.5.2
+  - @uidu/media-card@0.16.3
+  - @uidu/media-core@3.0.2
+  - @uidu/status@0.12.2
+  - @uidu/analytics@0.11.2
+  - @uidu/emoji@0.14.2
+  - @uidu/droplist@0.10.2
+  - @uidu/date@0.9.2
+  - @uidu/spinner@0.10.2
+  - @uidu/tooltip@0.10.2
+  - @uidu/select@2.12.2
+  - @uidu/avatar@0.14.2
+  - @uidu/button@1.8.2
+  - @uidu/theme@0.11.3
+  - @uidu/form@3.1.2
+  - @uidu/menu@0.15.2
+
 ## 2.23.4
 
 ### Patch Changes

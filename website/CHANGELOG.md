@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.10.5
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/breadcrumbs@1.5.2
+  - @uidu/navigation@1.6.2
+  - @uidu/modal-dialog@1.7.2
+  - @uidu/field-text@2.5.2
+  - @uidu/shell@2.8.2
+  - @uidu/checkbox@2.5.2
+  - @uidu/lozenge@0.10.2
+  - @uidu/spinner@0.10.2
+  - @uidu/tooltip@0.10.2
+  - @uidu/select@2.12.2
+  - @uidu/button@1.8.2
+  - @uidu/drawer@0.12.2
+  - @uidu/badge@0.10.2
+  - @uidu/theme@0.11.3
+  - @uidu/table@6.5.1
+  - @uidu/form@3.1.2
+  - @uidu/code@0.10.2
+  - @uidu/list@3.10.2
+  - @uidu/docs@0.10.2
+
 ## 0.10.4
 
 ### Patch Changes

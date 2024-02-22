@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 2.15.1
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/analytics-namespaced-context@0.9.2
+  - @uidu/editor-json-transformer@1.8.2
+  - @uidu/analytics-listeners@0.9.2
+  - @uidu/task-decision@0.10.2
+  - @uidu/media-filmstrip@0.12.3
+  - @uidu/editor-common@2.17.4
+  - @uidu/adf-schema@2.10.3
+  - @uidu/mentions@0.13.2
+  - @uidu/adf-utils@2.7.2
+  - @uidu/media-card@0.16.3
+  - @uidu/status@0.12.2
+  - @uidu/analytics@0.11.2
+  - @uidu/tooltip@0.10.2
+  - @uidu/theme@0.11.3
+  - @uidu/code@0.10.2
+
 ## 2.15.0
 
 ### Minor Changes

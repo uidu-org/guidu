@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.5.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+
 ## 1.5.1
 
 ### Patch Changes

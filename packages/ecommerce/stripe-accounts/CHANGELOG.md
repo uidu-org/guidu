@@ -1,5 +1,17 @@
 # @uidu/stripe-accounts
 
+## 0.13.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/payments@1.14.3
+  - @uidu/stepper@0.9.2
+  - @uidu/field-text@2.5.2
+  - @uidu/spinner@0.10.2
+  - @uidu/form@3.1.2
+
 ## 0.13.2
 
 ### Patch Changes

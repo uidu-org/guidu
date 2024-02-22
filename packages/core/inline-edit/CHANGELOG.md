@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.9.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/inline-dialog@0.10.2
+  - @uidu/field-text@2.5.2
+  - @uidu/analytics@0.11.2
+  - @uidu/button@1.8.2
+  - @uidu/field@1.5.2
+  - @uidu/theme@0.11.3
+  - @uidu/form@3.1.2
+
 ## 0.9.2
 
 ### Patch Changes

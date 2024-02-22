@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.10.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/shell@2.8.2
+  - @uidu/button@1.8.2
+
 ## 0.10.1
 
 ### Patch Changes

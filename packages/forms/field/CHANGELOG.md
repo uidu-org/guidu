@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.5.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/field-textarea@2.6.2
+  - @uidu/field-number@2.6.3
+  - @uidu/field-text@2.5.2
+  - @uidu/checkbox@2.5.2
+  - @uidu/select@2.12.2
+
 ## 1.5.1
 
 ### Patch Changes

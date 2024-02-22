@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.11.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/docs@0.10.2
+
 ## 0.11.1
 
 ### Patch Changes

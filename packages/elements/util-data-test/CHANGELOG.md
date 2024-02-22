@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.9.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/task-decision@0.10.2
+  - @uidu/mentions@0.13.2
+  - @uidu/analytics@0.11.2
+  - @uidu/emoji@0.14.2
+
 ## 0.9.2
 
 ### Patch Changes

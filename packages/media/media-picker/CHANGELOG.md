@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 1.10.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/media-core@3.0.2
+
 ## 1.10.1
 
 ### Patch Changes

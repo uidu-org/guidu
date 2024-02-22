@@ -1,5 +1,20 @@
 # @uidu/table
 
+## 6.5.1
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/data-manager@4.13.5
+  - @uidu/data-fields@4.3.2
+  - @uidu/shell@2.8.2
+  - @uidu/checkbox@2.5.2
+  - @uidu/button@1.8.2
+  - @uidu/portal@1.5.2
+  - @uidu/popup@0.13.2
+  - @uidu/menu@0.15.2
+
 ## 6.5.0
 
 ### Minor Changes

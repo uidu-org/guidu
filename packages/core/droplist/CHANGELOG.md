@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.10.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/analytics@0.11.2
+  - @uidu/spinner@0.10.2
+  - @uidu/tooltip@0.10.2
+  - @uidu/layer@0.10.2
+  - @uidu/theme@0.11.3
+  - @uidu/item@0.10.2
+
 ## 0.10.1
 
 ### Patch Changes

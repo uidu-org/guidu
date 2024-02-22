@@ -1,5 +1,17 @@
 # @uidu/media-filmstrip
 
+## 0.12.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/media-viewer@1.9.3
+  - @uidu/modal-dialog@1.7.2
+  - @uidu/media-card@0.16.3
+  - @uidu/media-core@3.0.2
+  - @uidu/theme@0.11.3
+
 ## 0.12.2
 
 ### Patch Changes
