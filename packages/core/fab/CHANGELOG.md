@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.10.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+
 ## 0.10.1
 
 ### Patch Changes

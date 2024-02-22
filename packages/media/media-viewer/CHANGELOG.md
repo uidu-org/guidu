@@ -1,5 +1,19 @@
 # @uidu/media-viewer
 
+## 1.9.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/modal-dialog@1.7.2
+  - @uidu/media-core@3.0.2
+  - @uidu/shell@2.8.2
+  - @uidu/spinner@0.10.2
+  - @uidu/avatar@0.14.2
+  - @uidu/button@1.8.2
+  - @uidu/theme@0.11.3
+
 ## 1.9.2
 
 ### Patch Changes

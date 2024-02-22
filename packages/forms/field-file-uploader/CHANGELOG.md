@@ -1,5 +1,17 @@
 # @uidu/field-file-uploader
 
+## 3.4.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/field-base@4.10.2
+  - @uidu/media-core@3.0.2
+  - @uidu/button@1.8.2
+  - @uidu/form@3.1.2
+  - @uidu/menu@0.15.2
+
 ## 3.4.1
 
 ### Patch Changes

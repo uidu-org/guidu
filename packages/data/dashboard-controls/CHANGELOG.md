@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.8.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/field-date-range@2.7.2
+  - @uidu/dropdown-menu@0.11.2
+  - @uidu/avatar-group@2.11.2
+  - @uidu/avatar@0.14.2
+  - @uidu/button@1.8.2
+  - @uidu/form@3.1.2
+
 ## 1.8.2
 
 ### Patch Changes

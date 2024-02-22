@@ -1,5 +1,14 @@
 # @uidu/analytics-listeners
 
+## 0.9.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/analytics-namespaced-context@0.9.2
+  - @uidu/analytics@0.11.2
+
 ## 0.9.1
 
 ### Patch Changes

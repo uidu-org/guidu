@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 1.8.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/adf-schema@2.10.3
+
 ## 1.8.1
 
 ### Patch Changes

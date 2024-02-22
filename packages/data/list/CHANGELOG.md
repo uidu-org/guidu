@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 3.10.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/data-fields@4.3.2
+  - @uidu/shell@2.8.2
+
 ## 3.10.1
 
 ### Patch Changes

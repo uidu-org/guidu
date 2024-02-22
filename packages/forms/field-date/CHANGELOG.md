@@ -1,5 +1,16 @@
 # @uidu/field-date
 
+## 2.8.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/field-base@4.10.2
+  - @uidu/field-text@2.5.2
+  - @uidu/button@1.8.2
+  - @uidu/popup@0.13.2
+
 ## 2.8.2
 
 ### Patch Changes

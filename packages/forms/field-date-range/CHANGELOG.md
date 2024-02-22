@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 2.7.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/field-base@4.10.2
+  - @uidu/field-date@2.8.3
+
 ## 2.7.1
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/portal
 
+## 1.5.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/theme@0.11.3
+
 ## 1.5.1
 
 ### Patch Changes

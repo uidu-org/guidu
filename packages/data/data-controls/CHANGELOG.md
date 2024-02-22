@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 4.8.7
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/inline-dialog@0.10.2
+  - @uidu/data-manager@4.13.5
+  - @uidu/data-fields@4.3.2
+  - @uidu/field-text@2.5.2
+  - @uidu/shell@2.8.2
+  - @uidu/data-views@3.9.6
+  - @uidu/checkbox@2.5.2
+  - @uidu/spinner@0.10.2
+  - @uidu/tooltip@0.10.2
+  - @uidu/select@2.12.2
+  - @uidu/button@1.8.2
+  - @uidu/drawer@0.12.2
+  - @uidu/popup@0.13.2
+  - @uidu/form@3.1.2
+  - @uidu/menu@0.15.2
+
 ## 4.8.6
 
 ### Patch Changes

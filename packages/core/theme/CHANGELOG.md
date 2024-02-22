@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.11.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/form@3.1.2
+
 ## 0.11.2
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @uidu/email-builder
 
+## 0.9.9
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/email-renderer@1.11.2
+  - @uidu/editor-core@2.23.5
+  - @uidu/field-number@2.6.3
+  - @uidu/adf-schema@2.10.3
+  - @uidu/field-text@2.5.2
+  - @uidu/select@2.12.2
+  - @uidu/button@1.8.2
+  - @uidu/portal@1.5.2
+  - @uidu/form@3.1.2
+
 ## 0.9.8
 
 ### Patch Changes

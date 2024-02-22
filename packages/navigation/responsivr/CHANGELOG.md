@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.9.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+
 ## 0.9.1
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.12.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/field-base@4.10.2
+  - @uidu/spinner@0.10.2
+  - @uidu/menu@0.15.2
+
 ## 2.12.1
 
 ### Patch Changes

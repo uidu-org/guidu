@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.8.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+
 ## 0.8.1
 
 ### Patch Changes

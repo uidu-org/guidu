@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 3.9.6
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/field-counter@2.5.2
+  - @uidu/data-controls@4.8.7
+  - @uidu/field-number@2.6.3
+  - @uidu/data-manager@4.13.5
+  - @uidu/select@2.12.2
+  - @uidu/button@1.8.2
+  - @uidu/form@3.1.2
+
 ## 3.9.5
 
 ### Patch Changes

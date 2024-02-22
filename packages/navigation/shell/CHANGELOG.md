@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.8.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/spinner@0.10.2
+
 ## 2.8.1
 
 ### Patch Changes

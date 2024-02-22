@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.9.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/shell@2.8.2
+
 ## 0.9.1
 
 ### Patch Changes

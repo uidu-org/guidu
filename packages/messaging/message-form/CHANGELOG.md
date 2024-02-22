@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.11.3
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/media-filmstrip@0.12.3
+  - @uidu/field-mentions@2.5.3
+  - @uidu/dropdown-menu@0.11.2
+  - @uidu/message@0.12.4
+  - @uidu/field-text@2.5.2
+  - @uidu/spinner@0.10.2
+  - @uidu/form@3.1.2
+
 ## 0.11.2
 
 ### Patch Changes

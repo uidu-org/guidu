@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.10.2
+
+### Patch Changes
+
+- b6f1beb: Changed styles of Downshift presets, bumped dependencies
+- Updated dependencies [b6f1beb]
+  - @uidu/dashlets@3.10.10
+
 ## 2.10.1
 
 ### Patch Changes
