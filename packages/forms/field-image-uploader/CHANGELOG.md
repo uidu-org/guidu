@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 3.9.3
+
+### Patch Changes
+
+- efe060b: use StyledInput in downshift and uploaders
+
 ## 3.9.2
 
 ### Patch Changes
