@@ -1,5 +1,11 @@
 # @uidu/field-downshift
 
+## 2.12.1
+
+### Patch Changes
+
+- efe060b: use StyledInput in downshift and uploaders
+
 ## 2.12.0
 
 ### Minor Changes

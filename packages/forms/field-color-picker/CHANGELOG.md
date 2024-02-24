@@ -1,5 +1,11 @@
 # @uidu/field-color-picker
 
+## 3.5.3
+
+### Patch Changes
+
+- efe060b: use StyledInput in downshift and uploaders
+
 ## 3.5.2
 
 ### Patch Changes
