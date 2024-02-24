@@ -17,7 +17,7 @@ export default function Prompt({
       <div>
         <CloudArrowUpIcon tw="h-8 w-8" />
       </div>
-      {label && <p tw="font-medium mb-0 mt-2">{label}</p>}
+      {label && <p tw="font-medium mb-0 mt-1">{label}</p>}
       {help && <p tw="text-sm text-muted mt-2">{help}</p>}
     </div>
   );

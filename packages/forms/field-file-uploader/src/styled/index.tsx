@@ -9,7 +9,7 @@ export const StyledRoot = styled.div<{
   $isDragReject: boolean;
   $hasError: boolean;
 }>`
-  ${tw`flex items-center justify-center h-40 text-gray-600 border rounded shadow-sm bg-gray-50`}
+  ${tw`flex items-center justify-center h-40 text-gray-600 border [border-color:rgb(var(--field-border, var(--border)))] rounded shadow-sm [background:rgb(var(--body-on-primary-bg))]`}
   ${({ $isDragActive }) => $isDragActive && tw`border-green-500`}
   ${({ $isDragAccept }) => $isDragAccept && tw`border-green-500`}
   ${({ $isDragReject }) => $isDragReject && tw`border-red-500`}

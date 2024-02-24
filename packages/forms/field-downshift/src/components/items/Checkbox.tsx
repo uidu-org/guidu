@@ -1,4 +1,5 @@
 import { CheckIcon } from '@heroicons/react/24/outline';
+import { StyledInput } from '@uidu/field-base';
 import React from 'react';
 import tw from 'twin.macro';
 import { FieldDownshiftOptionProps } from '../../types';
@@ -11,7 +12,8 @@ export default function Checkbox({
   getItemProps,
 }: FieldDownshiftOptionProps<unknown>) {
   return (
-    <button
+    <StyledInput
+      as="button"
       type="button"
       key={item.id}
       css={[
@@ -32,6 +34,6 @@ export default function Checkbox({
         <p tw="mb-0">{item.name}</p>
         {item.description && <p tw="text-gray-500 mb-0">{item.description}</p>}
       </div>
-    </button>
+    </StyledInput>
   );
 }

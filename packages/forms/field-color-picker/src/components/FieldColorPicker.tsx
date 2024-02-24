@@ -42,7 +42,7 @@ const DefaulTrigger = forwardRef<
     tabIndex={-1}
     type="button"
     onClick={toggleDialog}
-    tw="absolute [left:2px] [top:2px] [bottom:2px] flex items-center w-12 z-50 focus:(outline-none ring-0)"
+    tw="absolute [left:2px] [top:2px] [bottom:2px] flex items-center w-12 z-50 [border-color:rgb(var(--border))] focus:(outline-none ring-0) rounded cursor-pointer"
     style={{
       backgroundColor: value,
     }}
@@ -143,7 +143,7 @@ export default function FieldColorPicker({
 
   return (
     <Wrapper {...wrapperProps} label={label}>
-      <div tw="relative flex">
+      <div tw="relative">
         <Popup
           isOpen={dialogOpen}
           onClose={() => setDialogOpen(false)}

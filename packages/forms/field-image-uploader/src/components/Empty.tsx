@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
+import { StyledInput } from '@uidu/field-base';
 import { uppyRestrictionsToDropzoneProps } from '@uidu/media-core';
 import { Restrictions } from '@uppy/core';
 import React, { FC } from 'react';
@@ -34,7 +35,7 @@ export default function Empty({
     }),
   });
   return (
-    <div {...getRootProps()} tw="h-full">
+    <StyledInput as="div" {...getRootProps()} tw="h-full">
       <input {...getInputProps()} />
       <div
         tw="flex items-center justify-center h-full flex-col"
@@ -44,6 +45,6 @@ export default function Empty({
       >
         <Prompt label={label} help={help} errors={errors} />
       </div>
-    </div>
+    </StyledInput>
   );
 }

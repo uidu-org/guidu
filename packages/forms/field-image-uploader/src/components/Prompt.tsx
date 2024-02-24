@@ -12,9 +12,9 @@ export default function Prompt({ label, help, errors }: PromptProps) {
     <>
       <div tw="flex flex-col items-center">
         <div>
-          <CloudArrowUpIcon tw="h-12 w-12" />
+          <CloudArrowUpIcon tw="h-8 w-8" />
         </div>
-        {label && <p tw="font-bold mb-0 mt-2">{label}</p>}
+        {label && <p tw="font-medium mb-0 mt-1">{label}</p>}
         {help && <p tw="text-sm text-muted mt-2">{help}</p>}
       </div>
       {errors.length ? <p tw="text-red-500">{errors.join(', ')}</p> : null}

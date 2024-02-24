@@ -1,4 +1,5 @@
 import { CheckIcon } from '@heroicons/react/24/outline';
+import { StyledInput } from '@uidu/field-base';
 import React from 'react';
 import tw from 'twin.macro';
 import { FieldDownshiftOptionProps } from '../../types';
@@ -11,7 +12,8 @@ export default function HorizontalCard({
 }: FieldDownshiftOptionProps<unknown>) {
   const { onClick, ...rest } = getItemProps({ item, index });
   return (
-    <button
+    <StyledInput
+      as="button"
       type="button"
       key={index}
       css={[
@@ -49,6 +51,6 @@ export default function HorizontalCard({
           </div>
         </div>
       </div>
-    </button>
+    </StyledInput>
   );
 }
