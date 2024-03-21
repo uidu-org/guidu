@@ -7,6 +7,9 @@
     "description": "Please enter a valid link.",
     "message": "Inserisci un link valido."
   },
+  "uidu.edito-core.video.picker.button": {
+    "message": "Add video"
+  },
   "uidu.editor-core.action": {
     "description": "Also known as a “task”, “to do item”, or a checklist",
     "message": "Azione"
@@ -491,10 +494,6 @@
     "description": "Code blocks display software code. A prompt to select the software language the code is written in.",
     "message": "Seleziona la lingua"
   },
-  "uidu.editor-core.selected": {
-    "description": "If the item is selected or not.",
-    "message": "Selezionato"
-  },
   "uidu.editor-core.sortColumnASC": {
     "description": "Sort column in ascending order",
     "message": "Ordina colonna A → Z"
@@ -579,94 +578,6 @@
     "description": "Menu provides access to various heading styles or normal text",
     "message": "Stili di testo"
   },
-  "uidu.editor-core.theme.blue": {
-    "description": "Name of a color",
-    "message": "Blu"
-  },
-  "uidu.editor-core.theme.dark-blue": {
-    "description": "Name of a color",
-    "message": "Blu scuro"
-  },
-  "uidu.editor-core.theme.dark-green": {
-    "description": "Name of a color",
-    "message": "Verde scuro"
-  },
-  "uidu.editor-core.theme.dark-purple": {
-    "description": "Name of a color",
-    "message": "Viola scuro"
-  },
-  "uidu.editor-core.theme.dark-red": {
-    "description": "Name of a color",
-    "message": "Rosso scuro"
-  },
-  "uidu.editor-core.theme.dark-teal": {
-    "description": "Name of a color",
-    "message": "Verde acqua scuro"
-  },
-  "uidu.editor-core.theme.dark-yellow": {
-    "description": "Name of a color",
-    "message": "Giallo scuro"
-  },
-  "uidu.editor-core.theme.gray": {
-    "description": "Name of a color",
-    "message": "Grigio"
-  },
-  "uidu.editor-core.theme.green": {
-    "description": "Name of a color",
-    "message": "Verde"
-  },
-  "uidu.editor-core.theme.light-blue": {
-    "description": "Name of a color",
-    "message": "Azzurro"
-  },
-  "uidu.editor-core.theme.light-gray": {
-    "description": "Name of a color",
-    "message": "Grigio chiaro"
-  },
-  "uidu.editor-core.theme.light-green": {
-    "description": "Name of a color",
-    "message": "Verde chiaro"
-  },
-  "uidu.editor-core.theme.light-purple": {
-    "description": "Name of a color",
-    "message": "Viola chiaro"
-  },
-  "uidu.editor-core.theme.light-red": {
-    "description": "Name of a color",
-    "message": "Rosso chiaro"
-  },
-  "uidu.editor-core.theme.light-teal": {
-    "description": "Name of a color",
-    "message": "Verde acqua"
-  },
-  "uidu.editor-core.theme.light-yellow": {
-    "description": "Name of a color",
-    "message": "Giallo chiaro"
-  },
-  "uidu.editor-core.theme.orange": {
-    "description": "Name of a color.",
-    "message": "arancia"
-  },
-  "uidu.editor-core.theme.purple": {
-    "description": "Name of a color",
-    "message": "Viola"
-  },
-  "uidu.editor-core.theme.red": {
-    "description": "Name of a color",
-    "message": "rosso"
-  },
-  "uidu.editor-core.theme.teal": {
-    "description": "Name of a color",
-    "message": "Alzavola"
-  },
-  "uidu.editor-core.theme.white": {
-    "description": "Name of a color",
-    "message": "bianco"
-  },
-  "uidu.editor-core.theme.yellow": {
-    "description": "Name of a color",
-    "message": "Giallo"
-  },
   "uidu.editor-core.threeColumns": {
     "description": "Layout with three columns of equal width",
     "message": "Tre colonne"
@@ -702,6 +613,20 @@
   "uidu.editor-core.unorderedList.description": {
     "description": "",
     "message": "Crea un elenco non ordinato"
+  },
+  "uidu.editor-core.video": {
+    "description": "Insert a video",
+    "message": "Video"
+  },
+  "uidu.editor-core.video.description": {
+    "description": "Insert a video",
+    "message": "Insert a video from youtube embed"
+  },
+  "uidu.editor-core.video.picker.cancel": {
+    "message": "Cancel"
+  },
+  "uidu.editor-core.video.picker.title": {
+    "message": "Choose video"
   },
   "uidu.editor-core.viewMore": {
     "description": "",

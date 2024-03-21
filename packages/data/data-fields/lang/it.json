@@ -68,6 +68,12 @@
   "uidu.data-fields.date.name": {
     "message": "Data"
   },
+  "uidu.data-fields.datetime.description": {
+    "message": "Enter a date (e.g. 11/12/2013) or pick one from a calendar."
+  },
+  "uidu.data-fields.datetime.name": {
+    "message": "Datetime"
+  },
   "uidu.data-fields.email.description": {
     "message": "Un indirizzo email valido (ad es. andrew@example.com)."
   },
