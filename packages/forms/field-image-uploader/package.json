@@ -9,7 +9,7 @@
   "module": "dist/uidu-field-image-uploader.esm.js",
   "types": "dist/uidu-field-image-uploader.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.9",
+    "@babel/runtime": "^7.24.1",
     "@heroicons/react": "^2.1.1",
     "@uidu/button": "^1.8.2",
     "@uidu/field-base": "^4.10.2",
@@ -17,9 +17,9 @@
     "@uidu/form": "3.1.2",
     "@uidu/media-core": "^3.0.2",
     "@uidu/spinner": "^0.10.2",
-    "@uppy/core": "^3.8.0",
-    "@uppy/react": "^3.2.1",
-    "@uppy/thumbnail-generator": "^3.0.6",
+    "@uppy/core": "^3.9.3",
+    "@uppy/react": "^3.2.2",
+    "@uppy/thumbnail-generator": "^3.0.8",
     "react": "^18.2.0",
     "react-avatar-editor": "^13.0.2",
     "react-dropzone": "^14.2.3",
@@ -28,6 +28,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.10.2",
-    "axios": "^1.6.5"
+    "axios": "^1.6.8"
   }
 }

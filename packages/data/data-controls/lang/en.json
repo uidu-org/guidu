@@ -8,6 +8,9 @@
   "ZLFzi4": {
     "message": "{index, plural, =0 {Sort by} other {Then by} }"
   },
+  "ubNZSC": {
+    "message": "Toggle group"
+  },
   "uidu.data-controls.calendar.choose_view": {
     "message": "Choose calendar view"
   },
@@ -30,7 +33,7 @@
     "message": "{filtersCount, plural, =0 {Filter} one {Filtered by 1 field} other {Filtered by {filtersCount, number} fields} }"
   },
   "uidu.data-controls.filterer.no_filters": {
-    "message": "No filters applied. Pick a field"
+    "message": "Pick a field to filter by"
   },
   "uidu.data-controls.grouper.add_another": {
     "message": "Pick a field to group by"
@@ -59,6 +62,12 @@
   "uidu.data-controls.sorter.no_sorters": {
     "message": "No selected fields to sort by. Pick one"
   },
+  "uidu.data-controls.sorter.sort_a_z": {
+    "message": "A {icon} Z"
+  },
+  "uidu.data-controls.sorter.sort_z_a": {
+    "message": "Z {icon} A"
+  },
   "uidu.data-controls.sorter.sorters_count": {
     "message": "{sortersCount, plural, =0 {Sort} one {Sorted by 1 field} other {Sorted by {sortersCount, number} fields} }"
   },
@@ -67,5 +76,8 @@
   },
   "uidu.data-controls.toggler.select_all": {
     "message": "Select all"
+  },
+  "xYIsCK": {
+    "message": "Pick a field to group by"
   }
 }

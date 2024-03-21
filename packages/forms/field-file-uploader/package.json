@@ -9,8 +9,8 @@
   "module": "dist/uidu-field-file-uploader.esm.js",
   "types": "dist/uidu-field-file-uploader.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.9",
-    "@fluentui/react": "8.115.6",
+    "@babel/runtime": "^7.24.1",
+    "@fluentui/react": "8.116.0",
     "@heroicons/react": "^2.1.1",
     "@uidu/button": "1.8.2",
     "@uidu/field-base": "^4.10.2",
@@ -18,8 +18,8 @@
     "@uidu/media-core": "3.0.2",
     "@uidu/menu": "0.15.2",
     "@uifabric/file-type-icons": "^7.10.11",
-    "@uppy/core": "^3.8.0",
-    "@uppy/react": "^3.2.1",
+    "@uppy/core": "^3.9.3",
+    "@uppy/react": "^3.2.2",
     "react": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "styled-components": "^5.3.11"

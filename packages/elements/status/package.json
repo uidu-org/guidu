@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^21.12.8",
-    "@babel/runtime": "^7.23.9",
+    "@babel/runtime": "^7.24.1",
     "@uidu/analytics": "^0.11.2",
     "@uidu/analytics-gas-types": "^0.4.4",
     "@uidu/field-text": "^2.5.2",

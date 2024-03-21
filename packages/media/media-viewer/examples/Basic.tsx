@@ -18,7 +18,7 @@ export default class Basic extends PureComponent {
       <MediaViewer
         files={files.map((f) => f.file)}
         config={{
-          pdfJsVersion: '3.3.122',
+          pdfJsVersion: '3.11.174',
         }}
       />
     ) : (

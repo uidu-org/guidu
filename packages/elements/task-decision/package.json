@@ -16,7 +16,7 @@
   "dependencies": {
     "@atlaskit/icon": "^21.12.8",
     "@atlaskit/util-service-support": "^6.2.3",
-    "@babel/runtime": "^7.23.9",
+    "@babel/runtime": "^7.24.1",
     "@uidu/analytics": "^0.11.2",
     "@uidu/analytics-namespaced-context": "^0.9.2",
     "@uidu/avatar-group": "^2.11.2",

@@ -9,7 +9,7 @@
   "module": "dist/uidu-banner.esm.js",
   "types": "dist/uidu-banner.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.9",
+    "@babel/runtime": "^7.24.1",
     "@uidu/theme": "^0.11.3",
     "tslib": "^2.6.2"
   },

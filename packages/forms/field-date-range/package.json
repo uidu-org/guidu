@@ -8,7 +8,7 @@
   "module": "dist/uidu-field-date-range.esm.js",
   "types": "dist/uidu-field-date-range.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.9",
+    "@babel/runtime": "^7.24.1",
     "@uidu/field-base": "^4.10.2",
     "@uidu/field-date": "^2.8.3",
     "moment": "^2.30.1",

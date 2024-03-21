@@ -9,7 +9,7 @@
   "module": "dist/uidu-payments.esm.js",
   "types": "dist/uidu-payments.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.23.9",
+    "@babel/runtime": "^7.24.1",
     "@heroicons/react": "^2.1.1",
     "@stripe/react-stripe-js": "^2.4.0",
     "@stripe/stripe-js": "^2.4.0",
@@ -17,7 +17,7 @@
     "@uidu/form": "^3.1.2",
     "@uidu/section-message": "0.11.2",
     "@uidu/theme": "^0.11.3",
-    "axios": "^1.6.5",
+    "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
     "react-intl": "^6.6.2",

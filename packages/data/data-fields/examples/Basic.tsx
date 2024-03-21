@@ -13,16 +13,26 @@ import { HashRouter, Route, Switch, useParams } from 'react-router-dom';
 import useDefaultForm, {
   formDefaultProps,
 } from '../../../forms/form/examples-utils';
-import fields, { Field } from '../src';
+import fields, { Field, FieldKind } from '../src';
+
+const ExtendedFieldKind = {
+  ...FieldKind,
+  color: 'color',
+} as const;
+
+type AllFieldKinds = (typeof ExtendedFieldKind)[keyof typeof ExtendedFieldKind];
 
 function CurrentField({ fields }) {
   const { kind }: { kind: string } = useParams();
   const [mocks, setMocks] = useState(null);
   const [isLoadingMocks, setIsLoadingMocks] = useState(true);
-  const currentField: Field = fields.find(
+
+  const currentField: Field<unknown, AllFieldKinds> = fields.find(
     ({ kind: fieldKind }) => fieldKind === kind,
   );
   const { Cell, Filter, Grouper, mocks: mocksPromise } = currentField;
+
+  console.log(currentField.kind === 'color');
 
   const fetchMocks = useCallback(async () => {
     if (mocksPromise && mocksPromise.load) {

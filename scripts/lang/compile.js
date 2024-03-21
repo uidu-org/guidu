@@ -1,4 +1,4 @@
-const formatjs = require('@formatjs/cli');
+const formatjs = require('@formatjs/cli-lib');
 const globby = require('globby');
 
 const getPackages = require('@manypkg/get-packages');

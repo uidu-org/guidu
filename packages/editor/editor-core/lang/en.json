@@ -7,6 +7,9 @@
     "description": "Please enter a valid link.",
     "message": "Please enter a valid link."
   },
+  "uidu.edito-core.video.picker.button": {
+    "message": "Add video"
+  },
   "uidu.editor-core.action": {
     "description": "Also known as a “task”, “to do item”, or a checklist",
     "message": "Action item"
@@ -491,10 +494,6 @@
     "description": "Code blocks display software code. A prompt to select the software language the code is written in.",
     "message": "Select language"
   },
-  "uidu.editor-core.selected": {
-    "description": "If the item is selected or not.",
-    "message": "Selected"
-  },
   "uidu.editor-core.sortColumnASC": {
     "description": "Sort column in ascending order",
     "message": "Sort column A → Z"
@@ -579,94 +578,6 @@
     "description": "Menu provides access to various heading styles or normal text",
     "message": "Text styles"
   },
-  "uidu.editor-core.theme.blue": {
-    "description": "Name of a color",
-    "message": "Blue"
-  },
-  "uidu.editor-core.theme.dark-blue": {
-    "description": "Name of a color",
-    "message": "Dark blue"
-  },
-  "uidu.editor-core.theme.dark-green": {
-    "description": "Name of a color",
-    "message": "Dark green"
-  },
-  "uidu.editor-core.theme.dark-purple": {
-    "description": "Name of a color",
-    "message": "Dark purple"
-  },
-  "uidu.editor-core.theme.dark-red": {
-    "description": "Name of a color",
-    "message": "Dark red"
-  },
-  "uidu.editor-core.theme.dark-teal": {
-    "description": "Name of a color",
-    "message": "Dark teal"
-  },
-  "uidu.editor-core.theme.dark-yellow": {
-    "description": "Name of a color",
-    "message": "Dark yellow"
-  },
-  "uidu.editor-core.theme.gray": {
-    "description": "Name of a color",
-    "message": "Gray"
-  },
-  "uidu.editor-core.theme.green": {
-    "description": "Name of a color",
-    "message": "Green"
-  },
-  "uidu.editor-core.theme.light-blue": {
-    "description": "Name of a color",
-    "message": "Light blue"
-  },
-  "uidu.editor-core.theme.light-gray": {
-    "description": "Name of a color",
-    "message": "Light gray"
-  },
-  "uidu.editor-core.theme.light-green": {
-    "description": "Name of a color",
-    "message": "Light green"
-  },
-  "uidu.editor-core.theme.light-purple": {
-    "description": "Name of a color",
-    "message": "Light purple"
-  },
-  "uidu.editor-core.theme.light-red": {
-    "description": "Name of a color",
-    "message": "Light red"
-  },
-  "uidu.editor-core.theme.light-teal": {
-    "description": "Name of a color",
-    "message": "Light teal"
-  },
-  "uidu.editor-core.theme.light-yellow": {
-    "description": "Name of a color",
-    "message": "Light yellow"
-  },
-  "uidu.editor-core.theme.orange": {
-    "description": "Name of a color.",
-    "message": "Orange"
-  },
-  "uidu.editor-core.theme.purple": {
-    "description": "Name of a color",
-    "message": "Purple"
-  },
-  "uidu.editor-core.theme.red": {
-    "description": "Name of a color",
-    "message": "Red"
-  },
-  "uidu.editor-core.theme.teal": {
-    "description": "Name of a color",
-    "message": "Teal"
-  },
-  "uidu.editor-core.theme.white": {
-    "description": "Name of a color",
-    "message": "White"
-  },
-  "uidu.editor-core.theme.yellow": {
-    "description": "Name of a color",
-    "message": "Yellow"
-  },
   "uidu.editor-core.threeColumns": {
     "description": "Layout with three columns of equal width",
     "message": "Three columns"
@@ -702,6 +613,20 @@
   "uidu.editor-core.unorderedList.description": {
     "description": "",
     "message": "Create an unordered list"
+  },
+  "uidu.editor-core.video": {
+    "description": "Insert a video",
+    "message": "Video"
+  },
+  "uidu.editor-core.video.description": {
+    "description": "Insert a video",
+    "message": "Insert a video from youtube embed"
+  },
+  "uidu.editor-core.video.picker.cancel": {
+    "message": "Cancel"
+  },
+  "uidu.editor-core.video.picker.title": {
+    "message": "Choose video"
   },
   "uidu.editor-core.viewMore": {
     "description": "",

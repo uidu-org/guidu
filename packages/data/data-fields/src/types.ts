@@ -1,42 +1,46 @@
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
 
-export type FieldKind =
-  | 'addField'
-  | 'address'
-  | 'appointment'
-  | 'attachments'
-  | 'avatar'
-  | 'checkbox'
-  | 'collection'
-  | 'contact'
-  | 'country'
-  | 'cover'
-  | 'currency'
-  | 'datetime'
-  | 'date'
-  | 'email'
-  | 'member'
-  | 'multipleSelect'
-  | 'number'
-  | 'paymentMethod'
-  | 'percent'
-  | 'phone'
-  | 'progress'
-  | 'rating'
-  | 'richText'
-  | 'singleSelect'
-  | 'string'
-  | 'text'
-  | 'uid'
-  | 'url'
-  | 'vote';
+export const FieldKind = {
+  addField: 'addField',
+  address: 'address',
+  appointment: 'appointment',
+  attachments: 'attachments',
+  avatar: 'avatar',
+  checkbox: 'checkbox',
+  collection: 'collection',
+  contact: 'contact',
+  country: 'country',
+  cover: 'cover',
+  currency: 'currency',
+  datetime: 'datetime',
+  date: 'date',
+  email: 'email',
+  member: 'member',
+  multipleSelect: 'multipleSelect',
+  number: 'number',
+  paymentMethod: 'paymentMethod',
+  percent: 'percent',
+  phone: 'phone',
+  progress: 'progress',
+  rating: 'rating',
+  richText: 'richText',
+  singleSelect: 'singleSelect',
+  string: 'string',
+  text: 'text',
+  uid: 'uid',
+  url: 'url',
+  vote: 'vote',
+} as const;
+
+// eslint-disable-next-line @typescript-eslint/no-redeclare
+export type FieldKind = (typeof FieldKind)[keyof typeof FieldKind];
 
 export type FieldDefinition = {};
 
-export type Field<T> = Partial<ColumnDef<T>> & {
+export type Field<T, K = FieldKind> = Partial<ColumnDef<T>> & {
   accessor: String | ((originalRow: any, rowIndex: number) => any);
-  kind: FieldKind;
+  kind: K;
   name: string | React.ReactNode;
   icon: React.ReactNode;
   color?: string;
