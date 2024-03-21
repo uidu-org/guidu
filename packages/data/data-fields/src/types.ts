@@ -1,7 +1,7 @@
 import { ColumnDef } from '@tanstack/react-table';
 import React from 'react';
 
-export const FieldKind = {
+export const FieldKindEnum = {
   addField: 'addField',
   address: 'address',
   appointment: 'appointment',
@@ -34,7 +34,7 @@ export const FieldKind = {
 } as const;
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
-export type FieldKind = (typeof FieldKind)[keyof typeof FieldKind];
+export type FieldKind = (typeof FieldKindEnum)[keyof typeof FieldKindEnum];
 
 export type FieldDefinition = {};
 
