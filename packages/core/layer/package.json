@@ -1,6 +1,6 @@
 {
   "name": "@uidu/layer",
-  "version": "0.10.2",
+  "version": "0.11.0",
   "description": "A React layer component responsible for the position of an element on a page",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/layer",
   "license": "ISC",
@@ -16,7 +16,7 @@
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.10.2",
+    "@uidu/docs": "^0.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.11"

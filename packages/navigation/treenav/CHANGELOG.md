@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.9.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
 ## 0.8.2
 
 ### Patch Changes

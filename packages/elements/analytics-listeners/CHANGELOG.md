@@ -1,5 +1,18 @@
 # @uidu/analytics-listeners
 
+## 0.10.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [6569f35]
+  - @uidu/analytics-namespaced-context@0.10.0
+  - @uidu/analytics@0.12.0
+  - @uidu/analytics-gas-types@0.4.5
+
 ## 0.9.2
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/button
 
+## 1.9.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [6569f35]
+  - @uidu/analytics@0.12.0
+  - @uidu/spinner@0.11.0
+  - @uidu/theme@0.12.0
+
 ## 1.8.2
 
 ### Patch Changes

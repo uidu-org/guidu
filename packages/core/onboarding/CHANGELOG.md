@@ -1,5 +1,21 @@
 # @uidu/onboarding
 
+## 1.11.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [6569f35]
+  - @uidu/modal-dialog@1.8.0
+  - @uidu/analytics@0.12.0
+  - @uidu/button@1.9.0
+  - @uidu/popper@0.11.0
+  - @uidu/portal@1.6.0
+  - @uidu/theme@0.12.0
+
 ## 1.10.2
 
 ### Patch Changes

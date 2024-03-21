@@ -1,5 +1,20 @@
 # @uidu/media-filmstrip
 
+## 0.13.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [6569f35]
+  - @uidu/media-viewer@1.10.0
+  - @uidu/modal-dialog@1.8.0
+  - @uidu/media-card@0.17.0
+  - @uidu/media-core@3.1.0
+  - @uidu/theme@0.12.0
+
 ## 0.12.3
 
 ### Patch Changes

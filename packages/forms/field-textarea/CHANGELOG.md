@@ -1,5 +1,17 @@
 # @uidu/field-textarea
 
+## 2.7.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [6569f35]
+  - @uidu/field-base@4.11.0
+  - @uidu/spinner@0.11.0
+
 ## 2.6.2
 
 ### Patch Changes

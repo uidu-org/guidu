@@ -1,6 +1,6 @@
 {
   "name": "@uidu/blanket",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "A React component that covers the underlying UI for a layered component.",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/blanket",
   "license": "ISC",
@@ -9,11 +9,11 @@
   "main": "dist/uidu-blanket.cjs.js",
   "module": "dist/uidu-blanket.esm.js",
   "dependencies": {
-    "@uidu/analytics": "0.11.2"
+    "@uidu/analytics": "0.12.0"
   },
   "devDependencies": {
-    "@uidu/button": "^1.8.2",
-    "@uidu/docs": "^0.10.2",
+    "@uidu/button": "^1.9.0",
+    "@uidu/docs": "^0.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.11",

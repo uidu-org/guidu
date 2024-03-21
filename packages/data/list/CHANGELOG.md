@@ -1,5 +1,17 @@
 # @uidu/list
 
+## 3.11.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [6569f35]
+  - @uidu/data-fields@4.4.0
+  - @uidu/shell@2.9.0
+
 ## 3.10.2
 
 ### Patch Changes
