@@ -1,5 +1,17 @@
 # @uidu/payment-sources
 
+## 0.10.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [6569f35]
+  - @uidu/payments@1.15.0
+  - @uidu/form@3.2.0
+
 ## 0.9.3
 
 ### Patch Changes

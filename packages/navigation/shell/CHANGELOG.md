@@ -1,5 +1,16 @@
 # @uidu/shell
 
+## 2.9.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [6569f35]
+  - @uidu/spinner@0.11.0
+
 ## 2.8.2
 
 ### Patch Changes

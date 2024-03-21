@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.10.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
 ## 0.9.2
 
 ### Patch Changes

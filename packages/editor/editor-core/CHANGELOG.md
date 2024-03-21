@@ -1,5 +1,50 @@
 # @uidu/editor-core
 
+## 2.24.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [6569f35]
+  - @uidu/analytics-namespaced-context@0.10.0
+  - @uidu/editor-markdown-transformer@1.9.0
+  - @uidu/editor-json-transformer@1.9.0
+  - @uidu/analytics-listeners@0.10.0
+  - @uidu/activity-provider@0.7.0
+  - @uidu/prosemirror-utils@0.3.0
+  - @uidu/task-decision@0.11.0
+  - @uidu/media-filmstrip@0.13.0
+  - @uidu/editor-common@2.18.0
+  - @uidu/profilecard@0.12.0
+  - @uidu/media-picker@1.11.0
+  - @uidu/avatar-group@2.12.0
+  - @uidu/modal-dialog@1.8.0
+  - @uidu/adf-schema@2.11.0
+  - @uidu/mentions@0.14.0
+  - @uidu/adf-utils@2.8.0
+  - @uidu/field-base@4.11.0
+  - @uidu/field-date@2.9.0
+  - @uidu/field-text@2.6.0
+  - @uidu/media-card@0.17.0
+  - @uidu/media-core@3.1.0
+  - @uidu/status@0.13.0
+  - @uidu/analytics@0.12.0
+  - @uidu/emoji@0.15.0
+  - @uidu/droplist@0.11.0
+  - @uidu/date@0.10.0
+  - @uidu/spinner@0.11.0
+  - @uidu/tooltip@0.11.0
+  - @uidu/select@2.13.0
+  - @uidu/avatar@0.15.0
+  - @uidu/button@1.9.0
+  - @uidu/theme@0.12.0
+  - @uidu/form@3.2.0
+  - @uidu/menu@0.16.0
+  - @uidu/analytics-gas-types@0.4.5
+
 ## 2.23.5
 
 ### Patch Changes

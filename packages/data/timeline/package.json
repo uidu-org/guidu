@@ -11,6 +11,6 @@
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.10.0"
+    "@uidu/docs": "^0.11.0"
   }
 }

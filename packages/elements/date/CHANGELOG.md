@@ -1,5 +1,16 @@
 # @uidu/date
 
+## 0.10.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [6569f35]
+  - @uidu/theme@0.12.0
+
 ## 0.9.2
 
 ### Patch Changes

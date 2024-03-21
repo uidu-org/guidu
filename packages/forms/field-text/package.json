@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-text",
-  "version": "2.5.2",
+  "version": "2.6.0",
   "description": "Field Text Component",
   "keywords": [
     "react",
@@ -16,12 +16,12 @@
   "types": "dist/uidu-field-text.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.24.1",
-    "@uidu/field-base": "^4.10.2",
+    "@uidu/field-base": "^4.11.0",
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@uidu/button": "^1.8.2",
-    "@uidu/docs": "^0.10.2",
+    "@uidu/button": "^1.9.0",
+    "@uidu/docs": "^0.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.11"

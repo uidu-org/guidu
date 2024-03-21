@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.9.0
+
+### Minor Changes
+
+- 6569f35: Bump dependencies
+
 ## 1.8.2
 
 ### Patch Changes
