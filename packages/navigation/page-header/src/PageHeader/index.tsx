@@ -2,7 +2,7 @@ import React from 'react';
 import tw from 'twin.macro';
 import { PageHeaderProps } from '../types';
 
-const PageHeader = ({
+function PageHeader({
   innerRef,
   breadcrumbs,
   actions,
@@ -10,7 +10,7 @@ const PageHeader = ({
   disableTitleStyles = false,
   truncateTitle = false,
   className,
-}: PageHeaderProps) => {
+}: PageHeaderProps) {
   return (
     <div className={className} tw="flex flex-grow flex-col py-6 min-w-0">
       {breadcrumbs}
@@ -35,6 +35,6 @@ const PageHeader = ({
       </div>
     </div>
   );
-};
+}
 
 export default PageHeader;
