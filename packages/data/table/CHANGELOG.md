@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 6.7.0
+
+### Minor Changes
+
+- a713bca: Increased border-opacity on tables
+
+### Patch Changes
+
+- Updated dependencies [a713bca]
+  - @uidu/data-fields@4.5.0
+
 ## 6.6.0
 
 ### Minor Changes
