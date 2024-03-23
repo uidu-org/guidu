@@ -1,5 +1,12 @@
 # @uidu/blocks
 
+## 3.11.2
+
+### Patch Changes
+
+- Updated dependencies [db1ef37]
+  - @uidu/table@6.7.1
+
 ## 3.11.1
 
 ### Patch Changes
