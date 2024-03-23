@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 4.5.0
+
+### Minor Changes
+
+- a713bca: Increased border-opacity on tables
+
 ## 4.4.1
 
 ### Patch Changes
