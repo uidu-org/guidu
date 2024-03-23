@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 3.11.3
+
+### Patch Changes
+
+- e3c4b9d: Border opacity
+
 ## 3.11.2
 
 ### Patch Changes
