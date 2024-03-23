@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 4.4.1
+
+### Patch Changes
+
+- f62d96d: Fix types"
+
 ## 4.4.0
 
 ### Minor Changes
