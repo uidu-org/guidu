@@ -13,10 +13,10 @@ import { HashRouter, Route, Switch, useParams } from 'react-router-dom';
 import useDefaultForm, {
   formDefaultProps,
 } from '../../../forms/form/examples-utils';
-import fields, { Field, FieldKind } from '../src';
+import fields, { Field, FieldKindEnum } from '../src';
 
 const ExtendedFieldKind = {
-  ...FieldKind,
+  ...FieldKindEnum,
   color: 'color',
 } as const;
 

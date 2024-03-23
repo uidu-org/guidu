@@ -19,7 +19,7 @@ const Tf = styled.div.attrs<{
     ...(props.$maxWidth && { maxWidth: `${props.$maxWidth}px` }),
   },
 }))`
-  ${tw`flex items-center relative px-4 whitespace-nowrap [background:rgb(var(--body-on-primary-bg))] border-r border-opacity-50`}
+  ${tw`flex items-center relative px-4 whitespace-nowrap [background:rgb(var(--body-on-primary-bg))] border-r border-opacity-80`}
   /* height: ${({ height }) => `${height}px`}; */
   font-size: 0.9375rem;
   flex: 1 0 auto;
