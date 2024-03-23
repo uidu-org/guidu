@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 6.7.1
+
+### Patch Changes
+
+- db1ef37: Opacity 1
+
 ## 6.7.0
 
 ### Minor Changes
