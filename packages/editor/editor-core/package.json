@@ -56,7 +56,7 @@
     "classnames": "^2.5.1",
     "emoji-mart": "^5.5.2",
     "eventemitter2": "^6.4.9",
-    "get-video-id": "^4.1.5",
+    "get-video-id": "<4",
     "linkify-it": "^4.0.1",
     "markdown-it": "^13.0.2",
     "memoize-one": "^6.0.0",
