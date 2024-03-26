@@ -1,5 +1,13 @@
 # @uidu/field-image-uploader
 
+## 3.10.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+- Updated dependencies [0807f4c]
+  - @uidu/field-base@4.11.1
+
 ## 3.10.0
 
 ### Minor Changes

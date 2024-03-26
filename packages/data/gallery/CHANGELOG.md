@@ -1,5 +1,15 @@
 # @uidu/gallery
 
+## 2.8.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+- Updated dependencies [0807f4c]
+  - @uidu/data-controls@4.9.1
+  - @uidu/data-fields@4.5.1
+  - @uidu/shell@2.9.1
+
 ## 2.8.0
 
 ### Minor Changes

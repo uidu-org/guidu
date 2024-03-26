@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.9.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+
 ## 2.9.0
 
 ### Minor Changes

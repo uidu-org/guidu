@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 2.10.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+
 ## 2.10.0
 
 ### Minor Changes

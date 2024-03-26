@@ -1,5 +1,16 @@
 # @uidu/renderer
 
+## 2.16.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+- Updated dependencies [0807f4c]
+  - @uidu/editor-common@2.18.1
+  - @uidu/mentions@0.14.1
+  - @uidu/media-card@0.17.1
+  - @uidu/status@0.13.1
+
 ## 2.16.0
 
 ### Minor Changes

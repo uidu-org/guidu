@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.14.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+
 ## 0.14.0
 
 ### Minor Changes

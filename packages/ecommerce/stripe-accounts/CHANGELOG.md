@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.14.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+- Updated dependencies [0807f4c]
+  - @uidu/payments@1.15.1
+
 ## 0.14.0
 
 ### Minor Changes

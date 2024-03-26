@@ -1,5 +1,16 @@
 # @uidu/data-views
 
+## 3.10.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+- Updated dependencies [0807f4c]
+  - @uidu/data-controls@4.9.1
+  - @uidu/data-manager@4.14.1
+  - @uidu/select@2.13.1
+  - @uidu/field-number@2.7.1
+
 ## 3.10.0
 
 ### Minor Changes

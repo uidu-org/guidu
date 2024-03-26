@@ -1,5 +1,21 @@
 # @uidu/editor-core
 
+## 2.24.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+- Updated dependencies [0807f4c]
+  - @uidu/editor-common@2.18.1
+  - @uidu/profilecard@0.12.1
+  - @uidu/mentions@0.14.1
+  - @uidu/field-base@4.11.1
+  - @uidu/field-date@2.9.1
+  - @uidu/media-card@0.17.1
+  - @uidu/status@0.13.1
+  - @uidu/emoji@0.15.1
+  - @uidu/select@2.13.1
+
 ## 2.24.0
 
 ### Minor Changes

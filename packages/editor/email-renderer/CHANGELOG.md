@@ -1,5 +1,11 @@
 # @uidu/email-renderer
 
+## 1.12.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+
 ## 1.12.0
 
 ### Minor Changes
