@@ -15,7 +15,7 @@
     "@cubejs-client/ws-transport": "^0.34.37",
     "@loadable/component": "^5.16.3",
     "@tanstack/match-sorter-utils": "^8.11.8",
-    "@tanstack/react-table": "^8.14.0",
+    "@tanstack/react-table": "^8.15.0",
     "@uidu/board": "^2.10.0",
     "@uidu/button": "1.9.0",
     "@uidu/calendar": "^0.11.0",
@@ -47,6 +47,6 @@
     "@uidu/navigation": "^1.7.0",
     "@uidu/page-header": "^1.1.5",
     "@uidu/side-navigation": "1.9.0",
-    "react-intl": "^6.6.2"
+    "react-intl": "^6.6.3"
   }
 }

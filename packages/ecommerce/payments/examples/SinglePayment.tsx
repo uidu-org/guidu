@@ -15,7 +15,7 @@ const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
 
 const createPaymentIntent = (amount: number) =>
   axios
-    .post('https://uidu.local:8443/payment-intents', {
+    .post('https://me.uidu.local:8443/payment-intents', {
       amount,
       description: 'Donation to Organization',
     })

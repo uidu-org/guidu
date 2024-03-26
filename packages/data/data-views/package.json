@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/runtime": "^7.24.1",
     "@loadable/component": "^5.16.3",
-    "@tanstack/react-table": "^8.14.0",
+    "@tanstack/react-table": "^8.15.0",
     "@uidu/button": "1.9.0",
     "@uidu/data-controls": "^4.9.0",
     "@uidu/data-manager": "4.14.0",
@@ -20,7 +20,7 @@
     "@uidu/select": "^2.13.0",
     "react": "^18.2.0",
     "react-feather": "^2.0.10",
-    "react-intl": "^6.6.2",
+    "react-intl": "^6.6.3",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2"
   },

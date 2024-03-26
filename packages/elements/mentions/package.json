@@ -22,7 +22,7 @@
     "@uidu/tooltip": "^0.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intl": "^6.6.2",
+    "react-intl": "^6.6.3",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2",
     "uuid": "^8.3.2"

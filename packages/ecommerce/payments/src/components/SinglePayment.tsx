@@ -98,17 +98,15 @@ function StatelessSinglePayment({
       // Show error to your customer
       setLoading(false);
       setError(stripeError);
-    } else {
-      if (paymentIntent.status === 'succeeded') {
-        // Show a success message to your customer
-        // There's a risk of the customer closing the window before callback execution
-        // Set up a webhook or plugin to listen for the payment_intent.succeeded event
-        // to save the card to a Customer
-        // The PaymentMethod ID can be found on result.paymentIntent.payment_method
-        onSave(paymentIntent, model).then(() => {
-          setLoading(false);
-        });
-      }
+    } else if (paymentIntent.status === 'succeeded') {
+      // Show a success message to your customer
+      // There's a risk of the customer closing the window before callback execution
+      // Set up a webhook or plugin to listen for the payment_intent.succeeded event
+      // to save the card to a Customer
+      // The PaymentMethod ID can be found on result.paymentIntent.payment_method
+      onSave(paymentIntent, model).then(() => {
+        setLoading(false);
+      });
     }
   };
 
