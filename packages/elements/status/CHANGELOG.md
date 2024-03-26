@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.13.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+
 ## 0.13.0
 
 ### Minor Changes

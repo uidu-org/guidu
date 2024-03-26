@@ -1,5 +1,13 @@
 # @uidu/media-viewer
 
+## 1.10.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+- Updated dependencies [0807f4c]
+  - @uidu/shell@2.9.1
+
 ## 1.10.0
 
 ### Minor Changes

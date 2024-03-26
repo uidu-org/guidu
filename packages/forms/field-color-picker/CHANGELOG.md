@@ -1,5 +1,13 @@
 # @uidu/field-color-picker
 
+## 3.6.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+- Updated dependencies [0807f4c]
+  - @uidu/field-base@4.11.1
+
 ## 3.6.0
 
 ### Minor Changes

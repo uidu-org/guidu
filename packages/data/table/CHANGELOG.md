@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 6.7.2
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+- Updated dependencies [0807f4c]
+  - @uidu/data-manager@4.14.1
+  - @uidu/data-fields@4.5.1
+  - @uidu/shell@2.9.1
+
 ## 6.7.1
 
 ### Patch Changes

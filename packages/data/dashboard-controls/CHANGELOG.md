@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 1.9.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+
 ## 1.9.0
 
 ### Minor Changes

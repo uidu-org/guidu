@@ -1,5 +1,15 @@
 # @uidu/devise
 
+## 1.11.1
+
+### Patch Changes
+
+- 0807f4c: Bump dependencies
+- Updated dependencies [0807f4c]
+  - @uidu/field-password@2.7.1
+  - @uidu/shell@2.9.1
+  - @uidu/field-phone@2.7.1
+
 ## 1.11.0
 
 ### Minor Changes
