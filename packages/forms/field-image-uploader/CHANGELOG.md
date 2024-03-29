@@ -1,5 +1,13 @@
 # @uidu/field-image-uploader
 
+## 3.10.2
+
+### Patch Changes
+
+- 2d594c5: Bump deps and loading skeleton animation
+- Updated dependencies [2d594c5]
+  - @uidu/media-core@3.1.1
+
 ## 3.10.1
 
 ### Patch Changes
