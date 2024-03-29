@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-core",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "It holds shared code between MediaComponents like models, providers, interfaces and utilities",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/media/media-core",
   "license": "ISC",

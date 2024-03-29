@@ -1,5 +1,11 @@
 # @uidu/email-builder
 
+## 0.10.2
+
+### Patch Changes
+
+- @uidu/adf-schema@2.11.1
+
 ## 0.10.1
 
 ### Patch Changes
