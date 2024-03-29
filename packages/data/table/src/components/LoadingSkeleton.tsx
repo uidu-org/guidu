@@ -46,7 +46,7 @@ export function ScrollSeekPlaceholder({
             $height={rowHeight}
             // style={{ width: column.getSize() }}
           >
-            <div tw="bg-gray-100 w-full [height:30%] rounded" />
+            <div tw="bg-gray-200 w-full [height:30%] rounded animate-pulse" />
           </Td>
         ))}
     </div>
