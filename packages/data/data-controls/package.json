@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "4.9.1",
+  "version": "4.9.2",
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/data-controls",
   "license": "MIT",
