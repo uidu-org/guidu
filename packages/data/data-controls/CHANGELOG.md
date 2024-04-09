@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 4.9.2
+
+### Patch Changes
+
+- 479e4e4: Fix localization
+
 ## 4.9.1
 
 ### Patch Changes
