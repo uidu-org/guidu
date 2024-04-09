@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 1.11.1
+
+### Patch Changes
+
+- 2d594c5: Bump deps and loading skeleton animation
+- Updated dependencies [2d594c5]
+  - @uidu/media-core@3.1.1
+
 ## 1.11.0
 
 ### Minor Changes

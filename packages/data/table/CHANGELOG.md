@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 6.8.0
+
+### Minor Changes
+
+- 2d594c5: Bump deps and loading skeleton animation
+
 ## 6.7.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 3.1.1
+
+### Patch Changes
+
+- 2d594c5: Bump deps and loading skeleton animation
+
 ## 3.1.0
 
 ### Minor Changes
