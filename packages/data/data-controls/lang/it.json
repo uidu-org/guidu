@@ -8,9 +8,6 @@
   "ZLFzi4": {
     "message": "{index, plural, =0 {Ordinato per} other {E per} }"
   },
-  "ubNZSC": {
-    "message": "Toggle group"
-  },
   "uidu.data-controls.calendar.choose_view": {
     "message": "Scegli una vista"
   },
@@ -76,6 +73,9 @@
   },
   "uidu.data-controls.toggler.select_all": {
     "message": "Seleziona tutti"
+  },
+  "uidu.data-controls.toggler.toggle_group": {
+    "message": "Toggle group"
   },
   "xYIsCK": {
     "message": "Pick a field to group by"
