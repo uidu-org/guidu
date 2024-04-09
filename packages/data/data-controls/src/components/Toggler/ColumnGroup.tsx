@@ -79,7 +79,10 @@ export default function ColumnGroup<T>({
                   setIsOpen(!isOpen);
                 }}
               >
-                {intl.formatMessage({ defaultMessage: 'Toggle group' })}
+                {intl.formatMessage({
+                  defaultMessage: 'Toggle group',
+                  id: 'uidu.data-controls.toggler.toggle_group',
+                })}
               </Button>
             </ButtonGroup>
           </div>
