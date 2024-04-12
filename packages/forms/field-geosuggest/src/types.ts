@@ -1,4 +1,5 @@
 import { FieldBaseProps } from '@uidu/field-base/src';
+import { PopupProps } from '@uidu/popup';
 import { LatLng, RequestOptions, Suggestion } from 'use-places-autocomplete';
 
 export type FieldGeosuggestProps = {
@@ -14,7 +15,9 @@ export type FieldGeosuggestProps = {
   valueGetter?: (suggestion: Suggestion) => string;
   /** Filter options to further customize google places autocomplete results */
   filterOption?: (suggestion: Suggestion) => boolean;
-} & FieldBaseProps;
+  /** Custom popup component */
+  popupComponent?: React.FC<PopupProps>;
+} & FieldBaseProps<string>;
 
 export type FieldGeosuggestItemProps = {
   suggestion: Suggestion;

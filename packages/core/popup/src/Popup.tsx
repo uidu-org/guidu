@@ -49,8 +49,8 @@ export const Popup: FC<PopupProps> = memo(
     return (
       <Manager>
         <Reference>
-          {({ ref }) => {
-            return trigger({
+          {({ ref }) =>
+            trigger({
               ref: (node: HTMLElement | null) => {
                 if (node) {
                   if (typeof ref === 'function') {
@@ -65,8 +65,8 @@ export const Popup: FC<PopupProps> = memo(
               'aria-controls': id,
               'aria-expanded': isOpen,
               'aria-haspopup': true,
-            });
-          }}
+            })
+          }
         </Reference>
         {isOpen && (
           <Portal zIndex={zIndex}>
@@ -78,44 +78,42 @@ export const Popup: FC<PopupProps> = memo(
                   name: 'flip',
                   enabled: shouldFlip,
                   options: {
-                    rootBoundary: rootBoundary,
-                    boundary: boundary,
+                    rootBoundary,
+                    boundary,
                   },
                 },
               ]}
             >
-              {({ ref, style, placement, update }) => {
-                return (
-                  <PopupContainer
-                    id={id}
-                    data-placement={placement}
-                    data-testid={testId}
-                    ref={(node: HTMLDivElement) => {
-                      if (typeof ref === 'function') {
-                        ref(node);
-                      } else {
-                        (ref as React.MutableRefObject<HTMLElement>).current =
-                          node;
-                      }
+              {({ ref, style, placement, update }) => (
+                <PopupContainer
+                  id={id}
+                  data-placement={placement}
+                  data-testid={testId}
+                  ref={(node: HTMLDivElement) => {
+                    if (typeof ref === 'function') {
+                      ref(node);
+                    } else {
+                      (ref as React.MutableRefObject<HTMLElement>).current =
+                        node;
+                    }
 
-                      setPopupRef(node);
-                    }}
-                    style={style}
-                    // using tabIndex={-1} would cause a bug where Safari focuses
-                    // first on the browser address bar when using keyboard
-                    tabIndex={autoFocus ? 0 : undefined}
-                  >
-                    <RepositionOnUpdate content={content} update={update}>
-                      {content({
-                        update,
-                        isOpen,
-                        onClose,
-                        setInitialFocusRef,
-                      })}
-                    </RepositionOnUpdate>
-                  </PopupContainer>
-                );
-              }}
+                    setPopupRef(node);
+                  }}
+                  style={style}
+                  // using tabIndex={-1} would cause a bug where Safari focuses
+                  // first on the browser address bar when using keyboard
+                  tabIndex={autoFocus ? 0 : undefined}
+                >
+                  <RepositionOnUpdate content={content} update={update}>
+                    {content({
+                      update,
+                      isOpen,
+                      onClose,
+                      setInitialFocusRef,
+                    })}
+                  </RepositionOnUpdate>
+                </PopupContainer>
+              )}
             </Popper>
           </Portal>
         )}

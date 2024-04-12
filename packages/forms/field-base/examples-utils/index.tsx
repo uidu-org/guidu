@@ -1,12 +1,15 @@
+import Button from '@uidu/button';
 import Form, { useWatch } from '@uidu/form';
 import { ScrollableContainer, ShellBody, ShellMain } from '@uidu/shell';
 import React, { useEffect, useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { useDefaultForm } from '../../form/examples-utils';
 // import Button, { ButtonGroup } from '@uidu/button';
+import Modal, { ModalBody, ModalTransition } from '@uidu/modal-dialog';
 import {
   DeepPartialSkipArrayKey,
   FieldValues,
+  useFieldArray,
   UseFormReturn,
 } from 'react-hook-form';
 
@@ -248,6 +251,86 @@ export function FieldExampleWithAutosave({ component: Component, ...rest }) {
   );
 }
 
+export function FieldExampleWithFieldArray({ component: Component, ...rest }) {
+  const defaultForm = useDefaultForm({
+    values: {
+      fieldArray: [{ foo: 'bar' }],
+    },
+  });
+
+  const { fields, append } = useFieldArray({
+    control: defaultForm.form.control,
+    name: 'fieldArray',
+  });
+
+  const handleSubmit = async (data) => {
+    console.log('handleSubmit', data);
+  };
+
+  const { isAutoSaving } = useAutoSave({
+    handleSubmit,
+    form: defaultForm.form,
+    defaultValue: {},
+  });
+
+  return (
+    <Form {...defaultForm} handleSubmit={handleSubmit}>
+      {fields.map((field, index) => (
+        <Component
+          key={field.id}
+          {...inputDefaultProps}
+          name={`fieldArray.${index}.foo`}
+          required
+          {...rest}
+        />
+      ))}
+      <button
+        type="button"
+        onClick={() =>
+          append(
+            {},
+            {
+              focusName: `fieldArray.${fields.length}.foo`,
+            },
+          )
+        }
+      >
+        Append
+      </button>
+    </Form>
+  );
+}
+
+export function FieldExampleWithModal({ component: Component, ...rest }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const defaultForm = useDefaultForm({
+    values: {},
+  });
+
+  const handleSubmit = async (data) => {
+    console.log('handleSubmit', data);
+    setIsOpen(false);
+  };
+
+  return (
+    <>
+      <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
+      <ModalTransition>
+        {isOpen && (
+          <Modal onClose={() => setIsOpen(false)}>
+            <ModalBody>
+              <Form {...defaultForm} handleSubmit={handleSubmit}>
+                <Component {...inputDefaultProps} required {...rest} />
+              </Form>
+            </ModalBody>
+          </Modal>
+        )}
+      </ModalTransition>
+    </>
+  );
+}
+
 export function FieldExampleScaffold<TProps>({
   component,
   defaultValue,
@@ -283,6 +366,12 @@ export function FieldExampleScaffold<TProps>({
             </FieldExampleBlock>
             <FieldExampleBlock name="With autosave">
               <FieldExampleWithAutosave component={component} {...rest} />
+            </FieldExampleBlock>
+            <FieldExampleBlock name="With useFieldArray">
+              <FieldExampleWithFieldArray component={component} {...rest} />
+            </FieldExampleBlock>
+            <FieldExampleBlock name="With modal">
+              <FieldExampleWithModal component={component} {...rest} />
             </FieldExampleBlock>
           </div>
         </ScrollableContainer>

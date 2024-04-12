@@ -19,7 +19,10 @@ export default function FieldGeosuggestCurrentPosition({
           onGeocode(position.coords);
         }
       },
-      (error) => console.log(error.message),
+      (error) => {
+        setIsLoading(false);
+        console.log(error);
+      },
       {
         enableHighAccuracy: true,
         timeout: 5000,

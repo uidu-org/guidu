@@ -14,6 +14,16 @@ import { ShellBodyProps } from './types';
 
 const OverlayScrollbars = loadable.lib(() => import('overlayscrollbars-react'));
 
+function DefaultInnerComponent({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className: string;
+}) {
+  return <div className={className}>{children}</div>;
+}
+
 function ScrollableContainer({
   id = null,
   forwardedRef,
@@ -21,6 +31,7 @@ function ScrollableContainer({
   shadowOnScroll = true,
   className = null,
   innerClassName = null,
+  innerComponent: InnerComponent = DefaultInnerComponent,
   enableCustomScrollbars = false,
   customScrollbarProps = {},
 }: ShellBodyProps) {
@@ -66,7 +77,7 @@ function ScrollableContainer({
           />
         </>
       )}
-      <div className={innerClassName}>{children}</div>
+      <InnerComponent className={innerClassName}>{children}</InnerComponent>
     </StyledScrollableContainer>
   );
 

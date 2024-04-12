@@ -5,7 +5,7 @@ import { RowProps } from '../Row/types';
 
 export type WrapperProps = RowProps &
   InputGroupProps & {
-    floatLabel?: boolean | string | ReactNode;
+    floatLabel?: string | ReactNode;
     help?: string | ReactNode;
     id?: string;
     type?: string;

@@ -7,11 +7,14 @@ import {
   Wrapper,
 } from '@uidu/field-base';
 import { ButtonItem, MenuGroup } from '@uidu/menu';
+import DefaultPopup, { TriggerProps } from '@uidu/popup';
 import React, {
   ChangeEvent,
+  forwardRef,
   KeyboardEvent,
   useCallback,
   useEffect,
+  useImperativeHandle,
   useRef,
   useState,
 } from 'react';
@@ -27,8 +30,7 @@ import { FieldGeosuggestProps } from '../types';
 import FieldGeosuggestCurrentPosition from './FieldGeosuggestCurrentPosition';
 import FieldGeosuggestItem from './FieldGeosuggestItem';
 
-export default function FieldGeosuggest({
-  onSuggestSelect = () => {},
+function FieldGeosuggest({
   onGeocode,
   name,
   autoFocus,
@@ -45,8 +47,9 @@ export default function FieldGeosuggest({
   geolocationEnabled = true,
   option: OptionRenderer = FieldGeosuggestItem,
   valueGetter,
-  filterOption = (option: Suggestion) => true,
+  filterOption = () => true,
   value: defaultValue = '',
+  popupComponent: Popup = DefaultPopup,
   ...rest
 }: FieldGeosuggestProps) {
   const { field, wrapperProps, inputProps, fieldState } = useController({
@@ -57,6 +60,9 @@ export default function FieldGeosuggest({
   });
 
   const element = useRef<HTMLInputElement>(null);
+
+  useImperativeHandle(forwardedRef, () => element.current, [element]);
+
   const [activeSuggestion, setActiveSuggestion] = useState<Suggestion | null>(
     null,
   );
@@ -80,6 +86,8 @@ export default function FieldGeosuggest({
     defaultValue,
   });
 
+  const { onChange: onFieldChange, ref: fieldRef } = field;
+
   const [isGeolocationAvailable, setIsGeolocationAvailable] = useState(false);
 
   useEffect(() => {
@@ -96,99 +104,119 @@ export default function FieldGeosuggest({
     }
   }, [geolocationEnabled]);
 
-  const activateSuggestion = (direction: string): void => {
-    const suggestsCount = data.length - 1;
-    const next = direction === 'next';
+  const activateSuggestion = useCallback(
+    (direction: string): void => {
+      const suggestsCount = data.length - 1;
+      const next = direction === 'next';
 
-    let newActiveSuggest: Suggestion = null;
-    let newIndex = 0;
-    let i = 0;
+      let newActiveSuggest: Suggestion = null;
+      let newIndex = 0;
+      let i = 0;
 
-    for (i; i <= suggestsCount; i += 1) {
-      if (data[i] === activeSuggestion) {
-        newIndex = next ? i + 1 : i - 1;
+      for (i; i <= suggestsCount; i += 1) {
+        if (data[i] === activeSuggestion) {
+          newIndex = next ? i + 1 : i - 1;
+        }
       }
-    }
 
-    if (!activeSuggestion) {
-      newIndex = next ? 0 : suggestsCount;
-    }
+      if (!activeSuggestion) {
+        newIndex = next ? 0 : suggestsCount;
+      }
 
-    if (newIndex >= 0 && newIndex <= suggestsCount) {
-      newActiveSuggest = data[newIndex];
-    }
+      if (newIndex >= 0 && newIndex <= suggestsCount) {
+        newActiveSuggest = data[newIndex];
+      }
 
-    setActiveSuggestion(newActiveSuggest);
-  };
+      setActiveSuggestion(newActiveSuggest);
+    },
+    [activeSuggestion, data],
+  );
 
-  const geocodeSuggestion = ({
-    description,
-  }: {
-    description: GeoArgs['address'];
-  }) => {
-    getGeocode({ address: description })
-      .then((results) => getLatLng(results[0]))
-      .then(onGeocode)
-      .catch((error) => {
-        console.log('😱 Error: ', error);
-      });
-  };
+  const geocodeSuggestion = useCallback(
+    ({ description }: { description: GeoArgs['address'] }) => {
+      getGeocode({ address: description })
+        .then((results) => getLatLng(results[0]))
+        .then(onGeocode)
+        .catch((error) => {
+          console.log('😱 Error: ', error);
+        });
+    },
+    [onGeocode],
+  );
 
-  const selectSuggestion = (suggestion: Suggestion): undefined => {
-    if (!suggestion) return null;
+  const selectSuggestion = useCallback(
+    (suggestion: Suggestion): undefined => {
+      if (!suggestion) return null;
 
-    const { description } = suggestion;
-    let v = description;
-    if (valueGetter) {
-      v = valueGetter(suggestion);
-    }
-    setValue(v, false);
-    field.onChange(v);
-    onChange(name, v, suggestion);
-    // callbacks
-    if (onGeocode) {
-      geocodeSuggestion(suggestion);
-    }
-    clearSuggestions();
-    return undefined;
-  };
+      const { description } = suggestion;
+      let v = description;
+      if (valueGetter) {
+        v = valueGetter(suggestion);
+      }
+      setValue(v, false);
+      onFieldChange(v);
+      onChange(name, v, suggestion);
+      // callbacks
+      if (onGeocode) {
+        geocodeSuggestion(suggestion);
+      }
+      clearSuggestions();
+      return undefined;
+    },
+    [
+      clearSuggestions,
+      valueGetter,
+      setValue,
+      onFieldChange,
+      geocodeSuggestion,
+      onChange,
+      name,
+      onGeocode,
+    ],
+  );
 
-  const onInputKeyDown = (event: KeyboardEvent) => {
-    switch (event.which) {
-      case 40: // DOWN
-        event.preventDefault();
-        activateSuggestion('next');
-        break;
-      case 38: // UP
-        event.preventDefault();
-        activateSuggestion('prev');
-        break;
-      case 13: // ENTER
-        event.preventDefault();
-        selectSuggestion(activeSuggestion);
-        break;
-      case 9: // TAB
-        selectSuggestion(activeSuggestion);
-        break;
-      case 27: // ESC
-        clearSuggestions();
-        break;
-      default:
-        break;
-    }
-  };
+  const onInputKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      switch (event.key) {
+        case 'ArrowDown': // DOWN
+          event.preventDefault();
+          activateSuggestion('next');
+          break;
+        case 'ArrowUp': // UP
+          event.preventDefault();
+          activateSuggestion('prev');
+          break;
+        case 'Enter': // ENTER
+          event.preventDefault();
+          selectSuggestion(activeSuggestion);
+          break;
+        case 'Tab': // TAB
+          selectSuggestion(activeSuggestion);
+          break;
+        case 'Escape': // ESC
+          clearSuggestions();
+          break;
+        default:
+          break;
+      }
+    },
+    [selectSuggestion, activeSuggestion, clearSuggestions, activateSuggestion],
+  );
 
-  const onInputFocus = () => {
+  const onInputFocus = useCallback(() => {
     element.current?.setSelectionRange(0, 9999);
-  };
+  }, []);
 
-  const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value === '') {
-      field.onChange(e.target.value);
-    }
+  const onInputChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      if (e.target.value === '') {
+        onFieldChange(e.target.value);
+      }
 
-    setValue(e.target.value);
-  };
+      setValue(e.target.value);
+    },
+    [setValue, onFieldChange],
+  );
 
   const CachedStyledRow = useCallback(
     (props) => (
@@ -199,6 +227,75 @@ export default function FieldGeosuggest({
       />
     ),
     [],
+  );
+
+  const Trigger = useCallback(
+    (triggerProps: TriggerProps) => (
+      <StyledInput
+        {...inputProps}
+        {...triggerProps}
+        ref={(e) => {
+          if (e) {
+            triggerProps.ref(e);
+            element.current = e;
+            fieldRef(e);
+          }
+        }}
+        $hasError={!!fieldState?.error}
+        value={value}
+        className={className}
+        css={[isGeolocationAvailable && tw`pr-14`]}
+        disabled={!ready || disabled}
+        type="search"
+        autoComplete="off"
+        // autoFocus={autoFocus}
+        placeholder={placeholder as string}
+        onFocus={onInputFocus}
+        onKeyDown={onInputKeyDown}
+        onChange={onInputChange}
+        required={required}
+      />
+    ),
+    [
+      ready,
+      value,
+      fieldRef,
+      fieldState?.error,
+      className,
+      disabled,
+      placeholder,
+      required,
+      onInputFocus,
+      onInputKeyDown,
+      onInputChange,
+      isGeolocationAvailable,
+      inputProps,
+    ],
+  );
+
+  const Content = useCallback(
+    () => (
+      <div tw="" style={{ minWidth: element.current.offsetWidth }}>
+        <MenuGroup>
+          {data.filter(filterOption).map((suggestion) => {
+            const isActive =
+              activeSuggestion &&
+              suggestion.place_id === activeSuggestion.place_id;
+
+            return (
+              <ButtonItem
+                key={suggestion.place_id}
+                onClick={() => selectSuggestion(suggestion)}
+                isSelected={isActive}
+              >
+                <OptionRenderer suggestion={suggestion} />
+              </ButtonItem>
+            );
+          })}
+        </MenuGroup>
+      </div>
+    ),
+    [data, activeSuggestion, selectSuggestion, filterOption, OptionRenderer],
   );
 
   return (
@@ -225,44 +322,18 @@ export default function FieldGeosuggest({
       required={required}
     >
       <div tw="relative w-full">
-        <StyledInput
-          {...inputProps}
-          $hasError={!!fieldState?.error}
-          value={value}
-          className={className}
-          css={[isGeolocationAvailable && tw`pr-14`]}
-          disabled={!ready || disabled}
-          type="search"
-          autoComplete="off"
-          autoFocus={autoFocus}
-          placeholder={placeholder as string}
-          onFocus={onInputFocus}
-          onKeyDown={onInputKeyDown}
-          onChange={onInputChange}
-          required={required}
+        <Popup
+          autoFocus={false}
+          isOpen={status === 'OK'}
+          placement="bottom-start"
+          trigger={Trigger}
+          content={Content}
         />
-        <div tw="absolute overflow-y-scroll p-0 z-30 w-full rounded-b bg-white shadow max-h-72 divide-y top-full">
-          {status === 'OK' && (
-            <MenuGroup>
-              {data.filter(filterOption).map((suggestion) => {
-                const isActive =
-                  activeSuggestion &&
-                  suggestion.place_id === activeSuggestion.place_id;
-
-                return (
-                  <ButtonItem
-                    key={suggestion.place_id}
-                    onClick={() => selectSuggestion(suggestion)}
-                    isSelected={isActive}
-                  >
-                    <OptionRenderer suggestion={suggestion} />
-                  </ButtonItem>
-                );
-              })}
-            </MenuGroup>
-          )}
-        </div>
       </div>
     </Wrapper>
   );
 }
+
+export default forwardRef((props, ref) => (
+  <FieldGeosuggest forwardedRef={ref} {...props} />
+));
