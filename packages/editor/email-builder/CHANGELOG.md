@@ -1,5 +1,12 @@
 # @uidu/email-builder
 
+## 0.10.3
+
+### Patch Changes
+
+- @uidu/editor-core@2.24.2
+- @uidu/field-number@2.7.2
+
 ## 0.10.2
 
 ### Patch Changes

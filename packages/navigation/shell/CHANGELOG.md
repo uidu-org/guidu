@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 2.10.0
+
+### Minor Changes
+
+- 50de926: Use popup for FieldGeosuggest
+
 ## 2.9.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.11.2
+
+### Patch Changes
+
+- 50de926: Use popup for FieldGeosuggest
+
 ## 4.11.1
 
 ### Patch Changes
