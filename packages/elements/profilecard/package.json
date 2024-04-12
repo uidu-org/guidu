@@ -15,7 +15,7 @@
     "@uidu/avatar": "^0.15.0",
     "@uidu/button": "^1.9.0",
     "@uidu/lozenge": "^0.11.0",
-    "@uidu/popup": "^0.14.0",
+    "@uidu/popup": "^0.14.1",
     "@uidu/spinner": "^0.11.0",
     "@uidu/theme": "^0.12.0",
     "date-fns": "^2.30.0",
