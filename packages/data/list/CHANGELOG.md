@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 3.11.2
+
+### Patch Changes
+
+- Updated dependencies [50de926]
+  - @uidu/shell@2.10.0
+  - @uidu/data-fields@4.5.2
+
 ## 3.11.1
 
 ### Patch Changes

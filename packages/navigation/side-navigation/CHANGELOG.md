@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 1.9.1
+
+### Patch Changes
+
+- Updated dependencies [50de926]
+  - @uidu/shell@2.10.0
+  - @uidu/popup@0.14.1
+
 ## 1.9.0
 
 ### Minor Changes

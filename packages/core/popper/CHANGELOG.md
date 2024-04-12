@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.11.1
+
+### Patch Changes
+
+- 50de926: Use popup for FieldGeosuggest
+
 ## 0.11.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 6.8.1
+
+### Patch Changes
+
+- Updated dependencies [50de926]
+  - @uidu/shell@2.10.0
+  - @uidu/popup@0.14.1
+  - @uidu/data-fields@4.5.2
+
 ## 6.8.0
 
 ### Minor Changes

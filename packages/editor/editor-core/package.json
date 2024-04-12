@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-core",
-  "version": "2.24.1",
+  "version": "2.24.2",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/editor-core",
   "license": "MIT",
   "main": "dist/uidu-editor-core.cjs.js",
@@ -33,8 +33,8 @@
     "@uidu/editor-json-transformer": "^1.9.0",
     "@uidu/editor-markdown-transformer": "^1.9.0",
     "@uidu/emoji": "^0.15.1",
-    "@uidu/field-base": "4.11.1",
-    "@uidu/field-date": "^2.9.1",
+    "@uidu/field-base": "4.11.2",
+    "@uidu/field-date": "^2.9.2",
     "@uidu/field-text": "2.6.0",
     "@uidu/form": "^3.2.0",
     "@uidu/media-card": "^0.17.1",
@@ -86,7 +86,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.11.0",
-    "@uidu/shell": "^2.9.1",
+    "@uidu/shell": "^2.10.0",
     "twin.macro": "^3.4.1"
   },
   "preconstruct": {

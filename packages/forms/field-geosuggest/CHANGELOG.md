@@ -1,5 +1,17 @@
 # @uidu/field-geosuggest
 
+## 3.0.0
+
+### Major Changes
+
+- 50de926: Use popup for FieldGeosuggest
+
+### Patch Changes
+
+- Updated dependencies [50de926]
+  - @uidu/field-base@4.11.2
+  - @uidu/popup@0.14.1
+
 ## 2.8.1
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @uidu/message
 
+## 0.13.2
+
+### Patch Changes
+
+- Updated dependencies [50de926]
+  - @uidu/popup@0.14.1
+
 ## 0.13.1
 
 ### Patch Changes

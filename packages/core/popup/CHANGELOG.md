@@ -1,5 +1,13 @@
 # @uidu/popup
 
+## 0.14.1
+
+### Patch Changes
+
+- 50de926: Use popup for FieldGeosuggest
+- Updated dependencies [50de926]
+  - @uidu/popper@0.11.1
+
 ## 0.14.0
 
 ### Minor Changes
