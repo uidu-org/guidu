@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.12.1
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/form@3.2.1
+
 ## 0.12.0
 
 ### Minor Changes

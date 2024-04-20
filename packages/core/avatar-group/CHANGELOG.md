@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.12.1
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/dropdown-menu@0.12.1
+  - @uidu/tooltip@0.11.1
+  - @uidu/avatar@0.15.1
+  - @uidu/theme@0.12.1
+
 ## 2.12.0
 
 ### Minor Changes

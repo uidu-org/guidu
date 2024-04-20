@@ -1,5 +1,11 @@
 # @uidu/prosemirror-utils
 
+## 0.3.1
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+
 ## 0.3.0
 
 ### Minor Changes

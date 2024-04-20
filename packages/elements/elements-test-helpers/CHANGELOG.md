@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.12.2
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+
 ## 0.12.1
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/field-geosuggest
 
+## 3.0.1
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/field-base@4.11.3
+  - @uidu/spinner@0.11.1
+  - @uidu/popup@0.14.2
+  - @uidu/menu@0.16.1
+
 ## 3.0.0
 
 ### Major Changes

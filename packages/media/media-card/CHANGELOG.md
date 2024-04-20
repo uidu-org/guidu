@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.17.2
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/media-core@3.1.2
+  - @uidu/spinner@0.11.1
+  - @uidu/tooltip@0.11.1
+  - @uidu/button@1.9.1
+  - @uidu/theme@0.12.1
+
 ## 0.17.1
 
 ### Patch Changes

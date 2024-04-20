@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.12.1
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+
 ## 0.12.0
 
 ### Minor Changes

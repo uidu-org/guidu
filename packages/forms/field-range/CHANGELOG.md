@@ -1,5 +1,13 @@
 # @uidu/field-range
 
+## 2.6.1
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/field-base@4.11.3
+
 ## 2.6.0
 
 ### Minor Changes

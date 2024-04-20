@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.11.1
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/avatar@0.15.1
+  - @uidu/theme@0.12.1
+
 ## 0.11.0
 
 ### Minor Changes

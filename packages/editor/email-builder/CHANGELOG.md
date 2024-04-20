@@ -1,5 +1,21 @@
 # @uidu/email-builder
 
+## 0.10.4
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/email-renderer@1.12.2
+  - @uidu/editor-core@2.24.3
+  - @uidu/field-number@2.7.3
+  - @uidu/adf-schema@2.11.2
+  - @uidu/field-text@2.6.1
+  - @uidu/select@2.13.2
+  - @uidu/button@1.9.1
+  - @uidu/portal@1.6.1
+  - @uidu/form@3.2.1
+
 ## 0.10.3
 
 ### Patch Changes

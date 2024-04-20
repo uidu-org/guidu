@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-textarea",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "description": "Simple Textarea component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-textarea",
   "license": "MIT",
@@ -10,15 +10,15 @@
   "types": "dist/uidu-field-textarea.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.24.4",
-    "@uidu/field-base": "^4.11.0",
-    "@uidu/spinner": "0.11.0",
+    "@uidu/field-base": "^4.11.3",
+    "@uidu/spinner": "0.11.1",
     "autosize": "^6.0.1",
     "react": "^18.2.0",
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.11.0",
-    "@uidu/form": "^3.2.0",
+    "@uidu/docs": "^0.11.1",
+    "@uidu/form": "^3.2.1",
     "styled-components": "^5.3.11"
   },
   "peerDependencies": {

@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 2.11.2
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/media-core@3.1.2
+
 ## 2.11.1
 
 ### Patch Changes

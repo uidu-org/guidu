@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.1.6
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/shell@2.10.1
+  - @uidu/theme@0.12.1
+
 ## 1.1.5
 
 ### Patch Changes

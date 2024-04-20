@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 2.8.1
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/adf-schema@2.11.2
+
 ## 2.8.0
 
 ### Minor Changes

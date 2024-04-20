@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.10.2
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+
 ## 0.10.1
 
 ### Patch Changes
