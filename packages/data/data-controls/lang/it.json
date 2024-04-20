@@ -30,7 +30,7 @@
     "message": "{filtersCount, plural, =0 {Filtra} one {1 Filtro applicato} other {Filtrato per {filtersCount, number} campi} }"
   },
   "uidu.data-controls.filterer.no_filters": {
-    "message": "Pick a field to filter by"
+    "message": "Nessun filtro applicato. Scegli una colonna"
   },
   "uidu.data-controls.grouper.add_another": {
     "message": "Scegli un campo per raggruppare i tuoi dati"
@@ -75,9 +75,9 @@
     "message": "Seleziona tutti"
   },
   "uidu.data-controls.toggler.toggle_group": {
-    "message": "Toggle group"
+    "message": "Attiva/disattiva raggruppamento"
   },
   "xYIsCK": {
-    "message": "Pick a field to group by"
+    "message": "Scegli un campo per raggruppare i tuoi dati"
   }
 }
