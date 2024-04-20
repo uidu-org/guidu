@@ -1,6 +1,6 @@
 {
   "name": "@uidu/calendar",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "React component to show data items as calendar",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/calendar",
   "license": "MIT",
@@ -10,8 +10,8 @@
   "types": "dist/uidu-calendar.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.24.4",
-    "@uidu/button": "1.9.0",
-    "@uidu/shell": "^2.9.0",
+    "@uidu/button": "1.9.1",
+    "@uidu/shell": "^2.10.1",
     "classnames": "^2.5.1",
     "moment": "^2.30.1",
     "react": "^18.2.0",
@@ -21,6 +21,6 @@
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.11.0"
+    "@uidu/docs": "^0.11.1"
   }
 }

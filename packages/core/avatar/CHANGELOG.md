@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.15.1
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/analytics@0.12.1
+  - @uidu/tooltip@0.11.1
+  - @uidu/theme@0.12.1
+
 ## 0.15.0
 
 ### Minor Changes

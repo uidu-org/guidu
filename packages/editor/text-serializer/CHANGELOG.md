@@ -1,5 +1,14 @@
 # @uidu/text-serializer
 
+## 0.3.3
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/editor-common@2.18.3
+  - @uidu/adf-schema@2.11.2
+
 ## 0.3.2
 
 ### Patch Changes

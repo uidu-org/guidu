@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.10.7
+
+### Patch Changes
+
+- Updated dependencies [0524a19]
+  - @uidu/breadcrumbs@1.6.1
+  - @uidu/page-header@1.1.6
+  - @uidu/navigation@1.7.1
+  - @uidu/modal-dialog@1.8.1
+  - @uidu/field-text@2.6.1
+  - @uidu/shell@2.10.1
+  - @uidu/checkbox@2.6.1
+  - @uidu/lozenge@0.11.1
+  - @uidu/spinner@0.11.1
+  - @uidu/tooltip@0.11.1
+  - @uidu/select@2.13.2
+  - @uidu/button@1.9.1
+  - @uidu/drawer@0.13.1
+  - @uidu/badge@0.11.1
+  - @uidu/theme@0.12.1
+  - @uidu/table@6.8.2
+  - @uidu/form@3.2.1
+  - @uidu/code@0.11.1
+  - @uidu/list@3.11.3
+  - @uidu/docs@0.11.1
+
 ## 0.10.6
 
 ### Patch Changes

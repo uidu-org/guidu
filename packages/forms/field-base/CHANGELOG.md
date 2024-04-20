@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.11.3
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/form@3.2.1
+
 ## 4.11.2
 
 ### Patch Changes

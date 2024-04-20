@@ -1,5 +1,23 @@
 # @uidu/editor-common
 
+## 2.18.3
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/analytics-namespaced-context@0.10.1
+  - @uidu/editor-json-transformer@1.9.1
+  - @uidu/profilecard@0.12.2
+  - @uidu/adf-schema@2.11.2
+  - @uidu/mentions@0.14.2
+  - @uidu/adf-utils@2.8.1
+  - @uidu/media-core@3.1.2
+  - @uidu/analytics@0.12.1
+  - @uidu/emoji@0.15.2
+  - @uidu/tooltip@0.11.1
+  - @uidu/theme@0.12.1
+
 ## 2.18.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.10.1
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+
 ## 0.10.0
 
 ### Minor Changes

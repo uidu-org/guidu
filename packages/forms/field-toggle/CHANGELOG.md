@@ -1,5 +1,13 @@
 # @uidu/toggle
 
+## 2.6.3
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+- Updated dependencies [0524a19]
+  - @uidu/field-base@4.11.3
+
 ## 2.6.2
 
 ### Patch Changes

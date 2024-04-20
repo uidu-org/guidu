@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.9.1
+
+### Patch Changes
+
+- 0524a19: Bump dependencies
+
 ## 1.9.0
 
 ### Minor Changes
