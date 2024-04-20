@@ -9,7 +9,7 @@
   "main": "dist/uidu-page-header.cjs.js",
   "types": "dist/uidu-page-header.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.1",
+    "@babel/runtime": "^7.24.4",
     "@uidu/shell": "^2.9.0",
     "@uidu/theme": "^0.12.0",
     "tslib": "^2.6.2"

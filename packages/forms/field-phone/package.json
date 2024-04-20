@@ -8,13 +8,13 @@
   "module": "dist/uidu-field-phone.esm.js",
   "types": "dist/uidu-field-phone.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.1",
+    "@babel/runtime": "^7.24.4",
     "@uidu/field-base": "^4.11.1",
     "@uidu/field-text": "^2.6.0",
     "@uidu/form": "3.2.0",
     "@uidu/select": "2.13.1",
     "react": "^18.2.0",
-    "react-phone-number-input": "^3.3.9",
+    "react-phone-number-input": "^3.3.12",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2"
   },

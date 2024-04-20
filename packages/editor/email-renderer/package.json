@@ -14,7 +14,7 @@
     "build:styles": "ts-node --project ./tsconfig.ts-node.json ./build/ts-to-css.ts"
   },
   "dependencies": {
-    "@babel/runtime": "^7.24.1",
+    "@babel/runtime": "^7.24.4",
     "@uidu/adf-schema": "^2.11.0",
     "date-fns": "^2.30.0",
     "get-video-id": "<4",
@@ -30,7 +30,7 @@
     "rimraf": "^4.4.1",
     "svgexport": "^0.4.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.5"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

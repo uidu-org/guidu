@@ -10,7 +10,7 @@
   "module": "dist/uidu-field-mentions.esm.js",
   "types": "dist/uidu-field-mentions.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.1",
+    "@babel/runtime": "^7.24.4",
     "@uidu/field-base": "^4.11.0",
     "@uidu/form": "^3.2.0",
     "@uidu/theme": "^0.12.0",

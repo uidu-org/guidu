@@ -10,7 +10,7 @@
   "module": "dist/uidu-media-filmstrip.esm.js",
   "types": "dist/uidu-media-filmstrip.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.1",
+    "@babel/runtime": "^7.24.4",
     "@uidu/media-card": "^0.17.0",
     "@uidu/media-core": "^3.1.0",
     "@uidu/media-viewer": "^1.10.0",

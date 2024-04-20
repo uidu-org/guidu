@@ -10,7 +10,7 @@
   "module": "dist/uidu-lozenge.esm.js",
   "types": "dist/uidu-lozenge.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.1",
+    "@babel/runtime": "^7.24.4",
     "@uidu/theme": "^0.12.0",
     "tslib": "^2.6.2"
   },

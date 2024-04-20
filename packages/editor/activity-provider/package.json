@@ -10,10 +10,10 @@
   "module": "dist/uidu-activity-provider.esm.js",
   "types": "dist/uidu-activity-provider.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.1"
+    "@babel/runtime": "^7.24.4"
   },
   "devDependencies": {
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.5"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

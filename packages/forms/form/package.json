@@ -10,11 +10,11 @@
   "module": "dist/uidu-form.esm.js",
   "types": "dist/uidu-form.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.1",
+    "@babel/runtime": "^7.24.4",
     "@uidu/button": "1.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "7.51.1",
+    "react-hook-form": "7.51.3",
     "react-media": "^1.10.0",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2"
