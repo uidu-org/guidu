@@ -1,5 +1,11 @@
 # @uidu/embed
 
+## 0.3.1
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+
 ## 0.3.0
 
 ### Minor Changes

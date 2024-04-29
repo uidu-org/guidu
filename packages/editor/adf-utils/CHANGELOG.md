@@ -1,5 +1,12 @@
 # @uidu/adf-utils
 
+## 2.8.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+  - @uidu/adf-schema@2.11.3
+
 ## 2.8.1
 
 ### Patch Changes

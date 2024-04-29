@@ -1,5 +1,23 @@
 # @uidu/message
 
+## 0.13.4
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/message-renderer@0.11.2
+  - @uidu/message-form@0.12.2
+  - @uidu/media-viewer@1.10.3
+  - @uidu/media-card@0.17.3
+  - @uidu/media-core@3.1.3
+  - @uidu/tooltip@0.11.2
+  - @uidu/avatar@0.15.2
+  - @uidu/button@1.9.2
+  - @uidu/drawer@0.13.2
+  - @uidu/popup@0.14.3
+  - @uidu/menu@0.16.2
+
 ## 0.13.3
 
 ### Patch Changes

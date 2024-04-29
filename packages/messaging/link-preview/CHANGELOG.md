@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.9.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+
 ## 1.9.1
 
 ### Patch Changes

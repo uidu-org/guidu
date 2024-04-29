@@ -1,5 +1,16 @@
 # @uidu/field-geosuggest
 
+## 3.0.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/field-base@4.11.4
+  - @uidu/spinner@0.11.2
+  - @uidu/popup@0.14.3
+  - @uidu/menu@0.16.2
+
 ## 3.0.1
 
 ### Patch Changes

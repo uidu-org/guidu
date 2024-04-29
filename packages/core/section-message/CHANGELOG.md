@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.12.3
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/button@1.9.2
+
 ## 0.12.2
 
 ### Patch Changes

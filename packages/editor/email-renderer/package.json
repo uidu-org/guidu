@@ -1,6 +1,6 @@
 {
   "name": "@uidu/email-renderer",
-  "version": "1.12.2",
+  "version": "1.12.3",
   "description": "Email renderer",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/email-renderer",
   "license": "Apache-2.0",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.24.4",
-    "@uidu/adf-schema": "^2.11.2",
+    "@uidu/adf-schema": "^2.11.3",
     "date-fns": "^2.30.0",
     "get-video-id": "^3.7.0",
     "juice": "^8.1.0",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "*",
-    "@uidu/util-data-test": "^0.10.1",
+    "@uidu/util-data-test": "^0.10.2",
     "mkdirp": "^1.0.4",
     "react": "^18.3.1",
     "rimraf": "^4.4.1",

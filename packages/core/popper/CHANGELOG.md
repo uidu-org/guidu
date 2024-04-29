@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.11.3
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+
 ## 0.11.2
 
 ### Patch Changes

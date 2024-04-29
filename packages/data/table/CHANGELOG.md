@@ -1,5 +1,20 @@
 # @uidu/table
 
+## 6.8.3
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/data-manager@4.14.3
+  - @uidu/data-fields@4.5.4
+  - @uidu/shell@2.10.2
+  - @uidu/checkbox@2.6.2
+  - @uidu/button@1.9.2
+  - @uidu/portal@1.6.2
+  - @uidu/popup@0.14.3
+  - @uidu/menu@0.16.2
+
 ## 6.8.2
 
 ### Patch Changes

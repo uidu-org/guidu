@@ -1,5 +1,13 @@
 # @uidu/board
 
+## 2.10.3
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/theme@0.12.2
+
 ## 2.10.2
 
 ### Patch Changes

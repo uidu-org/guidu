@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.13.3
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/field-text@2.6.2
+  - @uidu/analytics@0.12.2
+  - @uidu/lozenge@0.11.2
+  - @uidu/theme@0.12.2
+
 ## 0.13.2
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 3.11.4
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/data-fields@4.5.4
+  - @uidu/shell@2.10.2
+
 ## 3.11.3
 
 ### Patch Changes

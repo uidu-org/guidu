@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 2.16.3
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/analytics-namespaced-context@0.10.2
+  - @uidu/editor-json-transformer@1.9.2
+  - @uidu/analytics-listeners@0.10.2
+  - @uidu/task-decision@0.11.2
+  - @uidu/media-filmstrip@0.13.2
+  - @uidu/editor-common@2.18.4
+  - @uidu/mentions@0.14.3
+  - @uidu/adf-utils@2.8.2
+  - @uidu/media-card@0.17.3
+  - @uidu/status@0.13.3
+  - @uidu/analytics@0.12.2
+  - @uidu/tooltip@0.11.2
+  - @uidu/theme@0.12.2
+  - @uidu/code@0.11.2
+  - @uidu/adf-schema@2.11.3
+
 ## 2.16.2
 
 ### Patch Changes

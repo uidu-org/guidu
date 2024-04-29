@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.15.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/analytics@0.12.2
+  - @uidu/tooltip@0.11.2
+  - @uidu/theme@0.12.2
+
 ## 0.15.1
 
 ### Patch Changes

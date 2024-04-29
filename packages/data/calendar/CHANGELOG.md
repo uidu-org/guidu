@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.11.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/shell@2.10.2
+  - @uidu/button@1.9.2
+
 ## 0.11.1
 
 ### Patch Changes
