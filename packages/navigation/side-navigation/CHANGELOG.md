@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.9.3
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/inline-dialog@0.11.2
+  - @uidu/shell@2.10.2
+  - @uidu/tooltip@0.11.2
+  - @uidu/avatar@0.15.2
+  - @uidu/button@1.9.2
+  - @uidu/popup@0.14.3
+  - @uidu/theme@0.12.2
+  - @uidu/menu@0.16.2
+
 ## 1.9.2
 
 ### Patch Changes

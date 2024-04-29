@@ -1,5 +1,16 @@
 # @uidu/payments
 
+## 1.15.3
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/section-message@0.12.3
+  - @uidu/field-base@4.11.4
+  - @uidu/theme@0.12.2
+  - @uidu/form@3.2.2
+
 ## 1.15.2
 
 ### Patch Changes

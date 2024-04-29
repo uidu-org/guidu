@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.12.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+
 ## 0.12.1
 
 ### Patch Changes

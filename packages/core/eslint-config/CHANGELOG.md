@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.9.5
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+
 ## 0.9.4
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # @uidu/editor-common
 
+## 2.18.4
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/analytics-namespaced-context@0.10.2
+  - @uidu/editor-json-transformer@1.9.2
+  - @uidu/profilecard@0.12.3
+  - @uidu/mentions@0.14.3
+  - @uidu/adf-utils@2.8.2
+  - @uidu/media-core@3.1.3
+  - @uidu/analytics@0.12.2
+  - @uidu/emoji@0.15.3
+  - @uidu/tooltip@0.11.2
+  - @uidu/theme@0.12.2
+  - @uidu/adf-schema@2.11.3
+
 ## 2.18.3
 
 ### Patch Changes

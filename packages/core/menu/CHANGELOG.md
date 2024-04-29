@@ -1,5 +1,13 @@
 # @uidu/menu
 
+## 0.16.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/theme@0.12.2
+
 ## 0.16.1
 
 ### Patch Changes

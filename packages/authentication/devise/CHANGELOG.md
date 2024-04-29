@@ -1,5 +1,20 @@
 # @uidu/devise
 
+## 1.11.3
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/field-password@2.7.3
+  - @uidu/field-phone@2.7.3
+  - @uidu/field-text@2.6.2
+  - @uidu/shell@2.10.2
+  - @uidu/checkbox@2.6.2
+  - @uidu/spinner@0.11.2
+  - @uidu/avatar@0.15.2
+  - @uidu/form@3.2.2
+
 ## 1.11.2
 
 ### Patch Changes

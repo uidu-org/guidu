@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.12.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/form@3.2.2
+
 ## 0.12.1
 
 ### Patch Changes

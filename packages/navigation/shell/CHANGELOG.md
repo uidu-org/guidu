@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.10.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/spinner@0.11.2
+
 ## 2.10.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.7.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+
 ## 0.7.1
 
 ### Patch Changes

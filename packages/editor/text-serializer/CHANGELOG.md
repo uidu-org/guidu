@@ -1,5 +1,13 @@
 # @uidu/text-serializer
 
+## 0.3.4
+
+### Patch Changes
+
+- Updated dependencies [7b5a4ad]
+  - @uidu/editor-common@2.18.4
+  - @uidu/adf-schema@2.11.3
+
 ## 0.3.3
 
 ### Patch Changes

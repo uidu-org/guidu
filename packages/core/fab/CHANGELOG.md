@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.11.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+
 ## 0.11.1
 
 ### Patch Changes

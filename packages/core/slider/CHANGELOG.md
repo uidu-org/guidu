@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.7.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+
 ## 2.7.1
 
 ### Patch Changes

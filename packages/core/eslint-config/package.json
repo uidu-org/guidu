@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-uidu",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/eslint-config",
   "main": "index.js",
   "files": [

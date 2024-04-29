@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 3.11.8
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/dashboard-manager@2.11.3
+  - @uidu/data-fields@4.5.4
+  - @uidu/spinner@0.11.2
+  - @uidu/tooltip@0.11.2
+  - @uidu/table@6.8.3
+
 ## 3.11.7
 
 ### Patch Changes

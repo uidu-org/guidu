@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.4.1
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+
 ## 0.4.0
 
 ### Minor Changes

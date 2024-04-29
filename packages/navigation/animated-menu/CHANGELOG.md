@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.6.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+
 ## 1.6.1
 
 ### Patch Changes

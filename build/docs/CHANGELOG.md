@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.11.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/section-message@0.12.3
+  - @uidu/tooltip@0.11.2
+  - @uidu/button@1.9.2
+  - @uidu/theme@0.12.2
+  - @uidu/code@0.11.2
+
 ## 0.11.1
 
 ### Patch Changes

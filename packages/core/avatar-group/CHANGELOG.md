@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.12.2
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/dropdown-menu@0.12.2
+  - @uidu/tooltip@0.11.2
+  - @uidu/avatar@0.15.2
+  - @uidu/theme@0.12.2
+
 ## 2.12.1
 
 ### Patch Changes

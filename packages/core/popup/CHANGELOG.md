@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.14.3
+
+### Patch Changes
+
+- 7b5a4ad: Bump versions
+- Updated dependencies [7b5a4ad]
+  - @uidu/popper@0.11.3
+  - @uidu/portal@1.6.2
+  - @uidu/theme@0.12.2
+
 ## 0.14.2
 
 ### Patch Changes
