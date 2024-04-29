@@ -6,7 +6,7 @@ const path = require('path');
 //   idInterpolationPattern: '[sha512:contenthash:base64:6]',
 // });
 
-async function compileTranslation() {
+async function addLine() {
   const { packages, root } = await getPackages.getPackages();
   console.log(packages);
   packages.map(async (pkg) => {
@@ -20,4 +20,4 @@ async function compileTranslation() {
   });
 }
 
-compileTranslation();
+addLine();
