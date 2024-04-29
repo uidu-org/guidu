@@ -10,15 +10,15 @@
   "types": "dist/uidu-media-card.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.24.4",
-    "@fluentui/react": "8.117.5",
+    "@fluentui/react": "8.117.7",
     "@uidu/button": "^1.9.1",
     "@uidu/media-core": "^3.1.2",
     "@uidu/spinner": "^0.11.1",
     "@uidu/theme": "^0.12.1",
     "@uidu/tooltip": "^0.11.1",
     "@uifabric/file-type-icons": "^7.10.11",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-feather": "^2.0.10",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2"

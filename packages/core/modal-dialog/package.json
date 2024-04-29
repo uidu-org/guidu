@@ -21,7 +21,7 @@
     "@uidu/theme": "^0.12.1",
     "bind-event-listener": "^3.0.0",
     "raf-schd": "^4.0.3",
-    "react-focus-lock": "^2.12.0",
+    "react-focus-lock": "^2.12.1",
     "react-scrolllock": "^5.0.1",
     "tslib": "^2.6.2"
   },
@@ -35,9 +35,9 @@
     "@uidu/inline-dialog": "^0.11.1",
     "@uidu/radio": "^2.8.1",
     "@uidu/select": "^2.13.2",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-beautiful-dnd": "^13.1.1",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.1",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^5.3.11"
   },

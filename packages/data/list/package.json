@@ -11,10 +11,10 @@
   "dependencies": {
     "@babel/runtime": "^7.24.4",
     "@tanstack/react-table": "^8.16.0",
-    "@tanstack/react-virtual": "^3.4.0",
+    "@tanstack/react-virtual": "^3.5.0",
     "@uidu/data-fields": "^4.5.3",
     "@uidu/shell": "2.10.1",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2"
   },

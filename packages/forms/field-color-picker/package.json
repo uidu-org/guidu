@@ -14,7 +14,7 @@
     "@uidu/button": "1.9.1",
     "@uidu/field-base": "^4.11.3",
     "@uidu/popup": "^0.14.2",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-colorful": "^5.6.1",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2"

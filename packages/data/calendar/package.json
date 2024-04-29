@@ -14,8 +14,8 @@
     "@uidu/shell": "^2.10.1",
     "classnames": "^2.5.1",
     "moment": "^2.30.1",
-    "react": "^18.2.0",
-    "react-big-calendar": "^1.11.6",
+    "react": "^18.3.1",
+    "react-big-calendar": "^1.12.0",
     "react-feather": "^2.0.10",
     "styled-components": "^5.3.11",
     "tslib": "^2.6.2"

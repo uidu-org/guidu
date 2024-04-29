@@ -16,7 +16,7 @@
     "@uidu/media-viewer": "^1.10.2",
     "@uidu/modal-dialog": "1.8.1",
     "@uidu/theme": "^0.12.1",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "styled-components": "^5.3.11",
     "swiper": "^9.4.1",
     "tslib": "^2.6.2"

@@ -18,7 +18,7 @@
     "@uidu/section-message": "0.12.2",
     "@uidu/theme": "^0.12.1",
     "axios": "^1.6.8",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-feather": "^2.0.10",
     "react-intl": "^6.6.5",
     "styled-components": "^5.3.11",
