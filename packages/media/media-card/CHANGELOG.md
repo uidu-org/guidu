@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.17.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+  - @uidu/spinner@0.11.3
+  - @uidu/theme@0.12.3
+  - @uidu/tooltip@0.11.3
+  - @uidu/media-core@3.1.4
+
 ## 0.17.3
 
 ### Patch Changes

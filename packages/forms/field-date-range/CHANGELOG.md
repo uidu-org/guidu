@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 2.8.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/field-base@4.11.5
+  - @uidu/field-date@2.9.5
+
 ## 2.8.2
 
 ### Patch Changes

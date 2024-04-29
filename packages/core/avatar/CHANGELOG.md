@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.15.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+  - @uidu/theme@0.12.3
+  - @uidu/tooltip@0.11.3
+
 ## 0.15.2
 
 ### Patch Changes

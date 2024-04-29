@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 4.14.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+  - @uidu/menu@0.16.3
+  - @uidu/pagination@0.11.3
+  - @uidu/spinner@0.11.3
+  - @uidu/board@2.10.4
+  - @uidu/calendar@0.11.3
+  - @uidu/data-controls@4.9.5
+  - @uidu/data-fields@4.5.5
+  - @uidu/data-views@3.10.4
+  - @uidu/gallery@2.8.4
+  - @uidu/list@3.11.5
+  - @uidu/table@6.8.4
+  - @uidu/shell@2.10.3
+
 ## 4.14.3
 
 ### Patch Changes

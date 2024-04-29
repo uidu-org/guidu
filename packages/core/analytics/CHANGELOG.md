@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.12.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 0.12.2
 
 ### Patch Changes

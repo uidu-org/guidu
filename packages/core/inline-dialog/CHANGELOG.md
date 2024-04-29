@@ -1,5 +1,15 @@
 # @uidu/inline-dialog
 
+## 0.11.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+  - @uidu/popper@0.11.4
+  - @uidu/theme@0.12.3
+
 ## 0.11.2
 
 ### Patch Changes

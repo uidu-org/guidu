@@ -1,5 +1,23 @@
 # @uidu/message
 
+## 0.13.5
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/avatar@0.15.3
+  - @uidu/button@1.9.3
+  - @uidu/drawer@0.13.3
+  - @uidu/menu@0.16.3
+  - @uidu/popup@0.14.4
+  - @uidu/tooltip@0.11.3
+  - @uidu/media-card@0.17.4
+  - @uidu/media-core@3.1.4
+  - @uidu/media-viewer@1.10.4
+  - @uidu/message-form@0.12.3
+  - @uidu/message-renderer@0.11.3
+
 ## 0.13.4
 
 ### Patch Changes

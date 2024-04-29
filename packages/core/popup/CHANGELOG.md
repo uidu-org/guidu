@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.14.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/popper@0.11.4
+  - @uidu/portal@1.6.3
+  - @uidu/theme@0.12.3
+
 ## 0.14.3
 
 ### Patch Changes

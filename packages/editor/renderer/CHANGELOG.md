@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 2.16.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+  - @uidu/code@0.11.3
+  - @uidu/theme@0.12.3
+  - @uidu/tooltip@0.11.3
+  - @uidu/adf-schema@2.11.4
+  - @uidu/adf-utils@2.8.3
+  - @uidu/editor-common@2.18.5
+  - @uidu/editor-json-transformer@1.9.3
+  - @uidu/analytics-listeners@0.10.3
+  - @uidu/analytics-namespaced-context@0.10.3
+  - @uidu/mentions@0.14.4
+  - @uidu/status@0.13.4
+  - @uidu/task-decision@0.11.3
+  - @uidu/media-card@0.17.4
+  - @uidu/media-filmstrip@0.13.3
+
 ## 2.16.3
 
 ### Patch Changes

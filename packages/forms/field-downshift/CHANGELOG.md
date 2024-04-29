@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 2.13.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/field-base@4.11.5
+  - @uidu/field-text@2.6.3
+
 ## 2.13.3
 
 ### Patch Changes

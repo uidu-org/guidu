@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.12.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+  - @uidu/button@1.9.3
+  - @uidu/droplist@0.11.3
+  - @uidu/item@0.11.3
+  - @uidu/theme@0.12.3
+
 ## 0.12.2
 
 ### Patch Changes

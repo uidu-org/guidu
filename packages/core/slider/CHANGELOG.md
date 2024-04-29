@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.7.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 2.7.2
 
 ### Patch Changes

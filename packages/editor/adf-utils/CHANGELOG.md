@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 2.8.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/adf-schema@2.11.4
+
 ## 2.8.2
 
 ### Patch Changes

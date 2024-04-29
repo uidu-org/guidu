@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.14.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+  - @uidu/avatar@0.15.3
+  - @uidu/button@1.9.3
+  - @uidu/lozenge@0.11.3
+  - @uidu/theme@0.12.3
+  - @uidu/tooltip@0.11.3
+  - @uidu/analytics-gas-types@0.4.6
+
 ## 0.14.3
 
 ### Patch Changes

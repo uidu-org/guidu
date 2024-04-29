@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.10.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+  - @uidu/emoji@0.15.4
+  - @uidu/mentions@0.14.4
+  - @uidu/task-decision@0.11.3
+
 ## 0.10.2
 
 ### Patch Changes

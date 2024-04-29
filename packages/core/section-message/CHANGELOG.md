@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.12.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+
 ## 0.12.3
 
 ### Patch Changes

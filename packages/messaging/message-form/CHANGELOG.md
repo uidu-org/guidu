@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.12.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/dropdown-menu@0.12.3
+  - @uidu/spinner@0.11.3
+  - @uidu/field-mentions@2.6.3
+  - @uidu/field-text@2.6.3
+  - @uidu/form@3.2.3
+  - @uidu/media-filmstrip@0.13.3
+  - @uidu/message@0.13.5
+
 ## 0.12.2
 
 ### Patch Changes

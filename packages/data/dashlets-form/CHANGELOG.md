@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 1.8.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/accordion@0.12.3
+  - @uidu/dropdown-menu@0.12.3
+  - @uidu/dashlets@3.11.9
+  - @uidu/field-downshift@2.13.4
+  - @uidu/field-toggle@2.6.5
+  - @uidu/form@3.2.3
+  - @uidu/select@2.13.4
+  - @uidu/shell@2.10.3
+
 ## 1.8.2
 
 ### Patch Changes

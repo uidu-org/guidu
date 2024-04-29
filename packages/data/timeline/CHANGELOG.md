@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.4.2
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 0.4.1
 
 ### Patch Changes

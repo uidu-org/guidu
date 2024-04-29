@@ -1,5 +1,14 @@
 # @uidu/text-serializer
 
+## 0.3.5
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/adf-schema@2.11.4
+  - @uidu/editor-common@2.18.5
+
 ## 0.3.4
 
 ### Patch Changes

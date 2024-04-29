@@ -1,5 +1,21 @@
 # @uidu/email-builder
 
+## 0.10.6
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+  - @uidu/portal@1.6.3
+  - @uidu/adf-schema@2.11.4
+  - @uidu/editor-core@2.24.5
+  - @uidu/email-renderer@1.12.4
+  - @uidu/field-number@2.7.5
+  - @uidu/field-text@2.6.3
+  - @uidu/form@3.2.3
+  - @uidu/select@2.13.4
+
 ## 0.10.5
 
 ### Patch Changes

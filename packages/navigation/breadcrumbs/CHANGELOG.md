@@ -1,5 +1,16 @@
 # @uidu/breadcrumbs
 
+## 1.6.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+  - @uidu/button@1.9.3
+  - @uidu/theme@0.12.3
+  - @uidu/tooltip@0.11.3
+
 ## 1.6.2
 
 ### Patch Changes

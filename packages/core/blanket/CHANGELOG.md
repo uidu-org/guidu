@@ -1,5 +1,13 @@
 # @uidu/blanket
 
+## 0.7.10
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+
 ## 0.7.9
 
 ### Patch Changes

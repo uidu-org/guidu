@@ -1,5 +1,15 @@
 # @uidu/analytics-listeners
 
+## 0.10.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+  - @uidu/analytics-gas-types@0.4.6
+  - @uidu/analytics-namespaced-context@0.10.3
+
 ## 0.10.2
 
 ### Patch Changes

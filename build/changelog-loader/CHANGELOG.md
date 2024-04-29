@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.34
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 0.1.33
 
 ### Patch Changes

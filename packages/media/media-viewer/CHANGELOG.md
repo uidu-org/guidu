@@ -1,5 +1,19 @@
 # @uidu/media-viewer
 
+## 1.10.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/avatar@0.15.3
+  - @uidu/button@1.9.3
+  - @uidu/modal-dialog@1.8.3
+  - @uidu/spinner@0.11.3
+  - @uidu/theme@0.12.3
+  - @uidu/media-core@3.1.4
+  - @uidu/shell@2.10.3
+
 ## 1.10.3
 
 ### Patch Changes

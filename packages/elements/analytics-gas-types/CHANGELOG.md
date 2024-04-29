@@ -1,5 +1,13 @@
 # @uidu/analytics-gas-types
 
+## 0.4.6
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+
 ## 0.4.5
 
 ### Patch Changes

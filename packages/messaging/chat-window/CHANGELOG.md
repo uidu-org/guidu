@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.12.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/message@0.13.5
+  - @uidu/message-form@0.12.3
+  - @uidu/message-renderer@0.11.3
+
 ## 0.12.2
 
 ### Patch Changes

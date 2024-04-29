@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.12.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/docs@0.11.3
+
 ## 0.12.2
 
 ### Patch Changes

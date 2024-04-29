@@ -1,5 +1,23 @@
 # @uidu/editor-common
 
+## 2.18.5
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+  - @uidu/theme@0.12.3
+  - @uidu/tooltip@0.11.3
+  - @uidu/adf-schema@2.11.4
+  - @uidu/adf-utils@2.8.3
+  - @uidu/editor-json-transformer@1.9.3
+  - @uidu/analytics-namespaced-context@0.10.3
+  - @uidu/emoji@0.15.4
+  - @uidu/mentions@0.14.4
+  - @uidu/profilecard@0.12.4
+  - @uidu/media-core@3.1.4
+
 ## 2.18.4
 
 ### Patch Changes

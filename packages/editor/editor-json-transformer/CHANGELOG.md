@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 1.9.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/adf-schema@2.11.4
+
 ## 1.9.2
 
 ### Patch Changes

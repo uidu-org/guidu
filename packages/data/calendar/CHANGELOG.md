@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.11.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+  - @uidu/shell@2.10.3
+
 ## 0.11.2
 
 ### Patch Changes

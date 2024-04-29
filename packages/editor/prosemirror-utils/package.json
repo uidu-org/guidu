@@ -1,6 +1,6 @@
 {
   "name": "@uidu/prosemirror-utils",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Utils library for ProseMirror",
   "main": "dist/uidu-prosemirror-utils.cjs.js",
   "module": "dist/uidu-prosemirror-utils.esm.js",

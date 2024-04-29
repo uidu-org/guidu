@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.11.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/avatar@0.15.3
+  - @uidu/theme@0.12.3
+
 ## 0.11.2
 
 ### Patch Changes

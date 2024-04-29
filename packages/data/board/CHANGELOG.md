@@ -1,5 +1,13 @@
 # @uidu/board
 
+## 2.10.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/theme@0.12.3
+
 ## 2.10.3
 
 ### Patch Changes

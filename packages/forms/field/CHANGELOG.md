@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.6.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/checkbox@2.6.3
+  - @uidu/field-number@2.7.5
+  - @uidu/field-text@2.6.3
+  - @uidu/field-textarea@2.7.3
+  - @uidu/select@2.13.4
+
 ## 1.6.2
 
 ### Patch Changes

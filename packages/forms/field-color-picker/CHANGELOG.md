@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 3.6.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+  - @uidu/popup@0.14.4
+  - @uidu/field-base@4.11.5
+
 ## 3.6.3
 
 ### Patch Changes

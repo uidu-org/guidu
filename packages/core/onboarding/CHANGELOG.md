@@ -1,5 +1,18 @@
 # @uidu/onboarding
 
+## 1.11.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+  - @uidu/button@1.9.3
+  - @uidu/modal-dialog@1.8.3
+  - @uidu/popper@0.11.4
+  - @uidu/portal@1.6.3
+  - @uidu/theme@0.12.3
+
 ## 1.11.2
 
 ### Patch Changes

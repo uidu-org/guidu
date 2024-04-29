@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 1.9.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/adf-schema@2.11.4
+  - @uidu/editor-common@2.18.5
+
 ## 1.9.2
 
 ### Patch Changes

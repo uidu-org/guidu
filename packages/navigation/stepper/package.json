@@ -1,6 +1,6 @@
 {
   "name": "@uidu/stepper",
-  "version": "0.10.2",
+  "version": "0.10.3",
   "description": "Animated menu like Stripe",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/stepper",
   "license": "MIT",
@@ -10,7 +10,7 @@
   "types": "dist/uidu-stepper.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.24.4",
-    "@uidu/theme": "^0.12.2",
+    "@uidu/theme": "^0.12.3",
     "classnames": "^2.5.1",
     "query-string": "^7.1.3",
     "react": "^18.3.1",
@@ -21,7 +21,7 @@
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.11.2",
-    "@uidu/shell": "^2.10.2"
+    "@uidu/docs": "^0.11.3",
+    "@uidu/shell": "^2.10.3"
   }
 }

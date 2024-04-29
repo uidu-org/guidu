@@ -1,5 +1,16 @@
 # @uidu/payments
 
+## 1.15.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/section-message@0.12.4
+  - @uidu/theme@0.12.3
+  - @uidu/field-base@4.11.5
+  - @uidu/form@3.2.3
+
 ## 1.15.3
 
 ### Patch Changes

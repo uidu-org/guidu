@@ -1,5 +1,17 @@
 # @uidu/stripe-accounts
 
+## 0.14.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/spinner@0.11.3
+  - @uidu/payments@1.15.4
+  - @uidu/field-text@2.6.3
+  - @uidu/form@3.2.3
+  - @uidu/stepper@0.10.3
+
 ## 0.14.3
 
 ### Patch Changes
