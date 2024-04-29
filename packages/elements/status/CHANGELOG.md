@@ -1,5 +1,17 @@
 # @uidu/status
 
+## 0.13.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/analytics@0.12.3
+  - @uidu/lozenge@0.11.3
+  - @uidu/theme@0.12.3
+  - @uidu/analytics-gas-types@0.4.6
+  - @uidu/field-text@2.6.3
+
 ## 0.13.3
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/field-file-uploader
 
+## 3.5.5
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+  - @uidu/menu@0.16.3
+  - @uidu/field-base@4.11.5
+  - @uidu/form@3.2.3
+  - @uidu/media-core@3.1.4
+
 ## 3.5.4
 
 ### Patch Changes

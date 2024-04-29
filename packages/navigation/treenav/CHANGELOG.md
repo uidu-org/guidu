@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.9.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 0.9.2
 
 ### Patch Changes

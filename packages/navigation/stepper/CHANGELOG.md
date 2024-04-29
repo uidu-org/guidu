@@ -1,5 +1,13 @@
 # @uidu/stepper
 
+## 0.10.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/theme@0.12.3
+
 ## 0.10.2
 
 ### Patch Changes

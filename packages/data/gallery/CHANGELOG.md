@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 2.8.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/spinner@0.11.3
+  - @uidu/data-controls@4.9.5
+  - @uidu/data-fields@4.5.5
+  - @uidu/shell@2.10.3
+
 ## 2.8.3
 
 ### Patch Changes

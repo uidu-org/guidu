@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.9.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/avatar@0.15.3
+  - @uidu/avatar-group@2.12.3
+  - @uidu/button@1.9.3
+  - @uidu/dropdown-menu@0.12.3
+  - @uidu/field-date-range@2.8.3
+  - @uidu/form@3.2.3
+
 ## 1.9.3
 
 ### Patch Changes

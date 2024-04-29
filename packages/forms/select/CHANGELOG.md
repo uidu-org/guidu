@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.13.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/menu@0.16.3
+  - @uidu/spinner@0.11.3
+  - @uidu/field-base@4.11.5
+
 ## 2.13.3
 
 ### Patch Changes

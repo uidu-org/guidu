@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 3.10.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+  - @uidu/data-controls@4.9.5
+  - @uidu/data-manager@4.14.4
+  - @uidu/field-counter@2.6.3
+  - @uidu/field-number@2.7.5
+  - @uidu/form@3.2.3
+  - @uidu/select@2.13.4
+
 ## 3.10.3
 
 ### Patch Changes

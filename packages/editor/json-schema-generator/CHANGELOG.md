@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.4.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 1.4.2
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 4.9.5
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+  - @uidu/drawer@0.13.3
+  - @uidu/inline-dialog@0.11.3
+  - @uidu/menu@0.16.3
+  - @uidu/popup@0.14.4
+  - @uidu/spinner@0.11.3
+  - @uidu/tooltip@0.11.3
+  - @uidu/data-fields@4.5.5
+  - @uidu/data-manager@4.14.4
+  - @uidu/data-views@3.10.4
+  - @uidu/checkbox@2.6.3
+  - @uidu/field-text@2.6.3
+  - @uidu/form@3.2.3
+  - @uidu/select@2.13.4
+  - @uidu/shell@2.10.3
+
 ## 4.9.4
 
 ### Patch Changes

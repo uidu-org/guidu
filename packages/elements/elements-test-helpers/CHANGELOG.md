@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.12.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 0.12.3
 
 ### Patch Changes

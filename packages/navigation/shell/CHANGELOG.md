@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 2.10.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/spinner@0.11.3
+
 ## 2.10.2
 
 ### Patch Changes

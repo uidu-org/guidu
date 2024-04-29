@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 3.1.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/docs@0.11.3
+
 ## 3.1.3
 
 ### Patch Changes

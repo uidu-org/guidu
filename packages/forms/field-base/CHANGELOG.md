@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.11.5
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/form@3.2.3
+
 ## 4.11.4
 
 ### Patch Changes

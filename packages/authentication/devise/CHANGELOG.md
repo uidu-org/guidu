@@ -1,5 +1,20 @@
 # @uidu/devise
 
+## 1.11.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/avatar@0.15.3
+  - @uidu/spinner@0.11.3
+  - @uidu/checkbox@2.6.3
+  - @uidu/field-password@2.7.4
+  - @uidu/field-phone@2.7.4
+  - @uidu/field-text@2.6.3
+  - @uidu/form@3.2.3
+  - @uidu/shell@2.10.3
+
 ## 1.11.3
 
 ### Patch Changes

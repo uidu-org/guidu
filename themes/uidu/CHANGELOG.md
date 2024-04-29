@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.1
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 0.5.0
 
 ### Minor Changes

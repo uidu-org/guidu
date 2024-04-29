@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 4.5.5
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+  - @uidu/map@0.12.3
+  - @uidu/menu@0.16.3
+  - @uidu/popup@0.14.4
+  - @uidu/field-color-picker@3.6.4
+  - @uidu/field-date@2.9.5
+  - @uidu/field-downshift@2.13.4
+  - @uidu/field-number@2.7.5
+  - @uidu/field-text@2.6.3
+  - @uidu/field-time@2.8.5
+  - @uidu/field-toggle@2.6.5
+  - @uidu/form@3.2.3
+  - @uidu/select@2.13.4
+
 ## 4.5.4
 
 ### Patch Changes

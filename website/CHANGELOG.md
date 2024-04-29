@@ -1,5 +1,33 @@
 # Change Log
 
+## 0.10.9
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/docs@0.11.3
+  - @uidu/badge@0.11.3
+  - @uidu/button@1.9.3
+  - @uidu/code@0.11.3
+  - @uidu/drawer@0.13.3
+  - @uidu/lozenge@0.11.3
+  - @uidu/modal-dialog@1.8.3
+  - @uidu/spinner@0.11.3
+  - @uidu/theme@0.12.3
+  - @uidu/tooltip@0.11.3
+  - @uidu/list@3.11.5
+  - @uidu/table@6.8.4
+  - @uidu/checkbox@2.6.3
+  - @uidu/field-text@2.6.3
+  - @uidu/form@3.2.3
+  - @uidu/select@2.13.4
+  - @uidu/breadcrumbs@1.6.3
+  - @uidu/navigation@1.7.3
+  - @uidu/page-header@1.1.8
+  - @uidu/shell@2.10.3
+  - @uidu/themes-uidu@0.5.1
+
 ## 0.10.8
 
 ### Patch Changes

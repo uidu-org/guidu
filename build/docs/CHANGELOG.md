@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.11.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+  - @uidu/code@0.11.3
+  - @uidu/section-message@0.12.4
+  - @uidu/theme@0.12.3
+  - @uidu/tooltip@0.11.3
+
 ## 0.11.2
 
 ### Patch Changes

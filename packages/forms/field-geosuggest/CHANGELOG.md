@@ -1,5 +1,16 @@
 # @uidu/field-geosuggest
 
+## 3.0.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/menu@0.16.3
+  - @uidu/popup@0.14.4
+  - @uidu/spinner@0.11.3
+  - @uidu/field-base@4.11.5
+
 ## 3.0.2
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/email-renderer
 
+## 1.12.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/adf-schema@2.11.4
+
 ## 1.12.3
 
 ### Patch Changes

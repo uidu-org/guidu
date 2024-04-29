@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.12.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/avatar@0.15.3
+  - @uidu/button@1.9.3
+  - @uidu/lozenge@0.11.3
+  - @uidu/popup@0.14.4
+  - @uidu/spinner@0.11.3
+  - @uidu/theme@0.12.3
+
 ## 0.12.3
 
 ### Patch Changes

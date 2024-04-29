@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.9.6
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 0.9.5
 
 ### Patch Changes

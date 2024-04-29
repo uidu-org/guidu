@@ -1,5 +1,14 @@
 # @uidu/field-textarea
 
+## 2.7.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/spinner@0.11.3
+  - @uidu/field-base@4.11.5
+
 ## 2.7.2
 
 ### Patch Changes

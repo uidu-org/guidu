@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.6.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 1.6.2
 
 ### Patch Changes

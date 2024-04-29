@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 3.11.5
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/data-fields@4.5.5
+  - @uidu/shell@2.10.3
+
 ## 3.11.4
 
 ### Patch Changes

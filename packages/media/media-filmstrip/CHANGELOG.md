@@ -1,5 +1,17 @@
 # @uidu/media-filmstrip
 
+## 0.13.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/modal-dialog@1.8.3
+  - @uidu/theme@0.12.3
+  - @uidu/media-card@0.17.4
+  - @uidu/media-core@3.1.4
+  - @uidu/media-viewer@1.10.4
+
 ## 0.13.2
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.9.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/docs@0.11.3
+  - @uidu/analytics@0.12.3
+  - @uidu/theme@0.12.3
+
 ## 0.9.2
 
 ### Patch Changes

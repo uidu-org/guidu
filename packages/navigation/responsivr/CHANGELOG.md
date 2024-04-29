@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.10.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 0.10.2
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.6.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/theme@0.12.3
+  - @uidu/field-base@4.11.5
+  - @uidu/form@3.2.3
+
 ## 2.6.2
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 3.11.9
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/spinner@0.11.3
+  - @uidu/tooltip@0.11.3
+  - @uidu/dashboard-manager@2.11.4
+  - @uidu/data-fields@4.5.5
+  - @uidu/table@6.8.4
+
 ## 3.11.8
 
 ### Patch Changes

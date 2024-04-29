@@ -1,5 +1,11 @@
 # @uidu/embed
 
+## 0.3.2
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 0.3.1
 
 ### Patch Changes

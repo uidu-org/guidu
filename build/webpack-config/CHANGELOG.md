@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.10.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/changelog-loader@0.1.34
+  - @uidu/fs-loader@0.1.54
+  - @uidu/nav-info-loader@0.2.8
+
 ## 0.10.3
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/table
 
+## 6.8.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/button@1.9.3
+  - @uidu/menu@0.16.3
+  - @uidu/popup@0.14.4
+  - @uidu/portal@1.6.3
+  - @uidu/data-fields@4.5.5
+  - @uidu/data-manager@4.14.4
+  - @uidu/checkbox@2.6.3
+  - @uidu/shell@2.10.3
+
 ## 6.8.3
 
 ### Patch Changes

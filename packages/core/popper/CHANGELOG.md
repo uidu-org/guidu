@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.11.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 0.11.3
 
 ### Patch Changes

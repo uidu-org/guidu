@@ -1,5 +1,13 @@
 # @uidu/toggle
 
+## 2.6.5
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/field-base@4.11.5
+
 ## 2.6.4
 
 ### Patch Changes

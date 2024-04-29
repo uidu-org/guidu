@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.9.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/avatar@0.15.3
+  - @uidu/button@1.9.3
+  - @uidu/inline-dialog@0.11.3
+  - @uidu/menu@0.16.3
+  - @uidu/popup@0.14.4
+  - @uidu/theme@0.12.3
+  - @uidu/tooltip@0.11.3
+  - @uidu/shell@2.10.3
+
 ## 1.9.3
 
 ### Patch Changes

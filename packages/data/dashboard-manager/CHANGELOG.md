@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 2.11.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/dashlets@3.11.9
+
 ## 2.11.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/tailwind-config
 
+## 0.7.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+
 ## 0.7.2
 
 ### Patch Changes

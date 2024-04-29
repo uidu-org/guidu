@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.10.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/payments@1.15.4
+  - @uidu/form@3.2.3
+
 ## 0.10.3
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.1.8
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/theme@0.12.3
+  - @uidu/shell@2.10.3
+
 ## 1.1.7
 
 ### Patch Changes

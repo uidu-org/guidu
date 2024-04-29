@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 2.11.4
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/media-core@3.1.4
+
 ## 2.11.3
 
 ### Patch Changes

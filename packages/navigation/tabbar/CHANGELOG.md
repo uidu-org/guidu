@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.10.3
+
+### Patch Changes
+
+- 14523bd: Added declarations back"
+- Updated dependencies [14523bd]
+  - @uidu/shell@2.10.3
+
 ## 0.10.2
 
 ### Patch Changes
