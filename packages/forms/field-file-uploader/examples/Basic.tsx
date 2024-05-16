@@ -13,7 +13,12 @@ export default function Basic() {
         allowMultipleUploadBatches: false,
         restrictions: {
           maxNumberOfFiles: 1,
-          allowedFileTypes: ['.csv', '.txt'],
+          allowedFileTypes: [
+            'application/vnd.ms-excel',
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'text/csv',
+            'text/plain',
+          ],
         },
       }}
       moduleOptions={{

@@ -1,7 +1,7 @@
 import AwsS3, { AwsS3Options } from '@uppy/aws-s3';
 import { Restrictions, UploadedUppyFile } from '@uppy/core';
 import XHRUpload, { XHRUploadOptions } from '@uppy/xhr-upload';
-import mime from 'mime-standard';
+import mime from 'mime';
 import { DropzoneProps } from 'react-dropzone';
 import { FileIdentifier, FileType } from './types';
 
@@ -69,10 +69,10 @@ export function convertUppyAllowedFileTypesToMediaTypes(
 ) {
   const result = {} as { [key: string]: string[] };
   allowedFileTypes.forEach((allowedFileType) => {
-    if (mime[allowedFileType]) {
-      result[allowedFileType] = mime[allowedFileType].map(
-        (extension: string) => `.${extension}`,
-      );
+    if (mime.getAllExtensions(allowedFileType)) {
+      result[allowedFileType] = Array.from(
+        mime.getAllExtensions(allowedFileType),
+      ).map((extension) => `.${extension}`);
     }
   });
   return result;

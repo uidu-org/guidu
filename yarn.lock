@@ -9637,7 +9637,7 @@ __metadata:
     "@uppy/core": "npm:^3.10.1"
     "@uppy/dashboard": "npm:^3.8.1"
     "@uppy/xhr-upload": "npm:^3.6.4"
-    mime-standard: "npm:^1.0.2"
+    mime: "npm:^4.0.3"
     react: "npm:^18.3.1"
     react-dropzone: "npm:^14.2.3"
     tslib: "npm:^2.6.2"
@@ -24155,13 +24155,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime-standard@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "mime-standard@npm:1.0.2"
-  checksum: 10/d158375113d3d2da0c4b6b133f428f793e602f0b1de19fa629a62f3e6efa710e85d9918319161eed2225ca674830b137020678b0b18f0e74cd159c72c3c1de4e
-  languageName: node
-  linkType: hard
-
 "mime-types@npm:^2.1.12, mime-types@npm:^2.1.27, mime-types@npm:^2.1.31, mime-types@npm:~2.1.17, mime-types@npm:~2.1.24, mime-types@npm:~2.1.34":
   version: 2.1.35
   resolution: "mime-types@npm:2.1.35"
@@ -24186,6 +24179,15 @@ __metadata:
   bin:
     mime: cli.js
   checksum: 10/7da117808b5cd0203bb1b5e33445c330fe213f4d8ee2402a84d62adbde9716ca4fb90dd6d9ab4e77a4128c6c5c24a9c4c9f6a4d720b095b1b342132d02dba58d
+  languageName: node
+  linkType: hard
+
+"mime@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "mime@npm:4.0.3"
+  bin:
+    mime: bin/cli.js
+  checksum: 10/fdabb0f0aecd34c11be108e7a73d74a9f672bee8586d3353834ebebedfb8420bdf932efad11a343de994978504024dab5b7846fc4cae4b1855b571a01d27ee6e
   languageName: node
   linkType: hard
 
