@@ -1,5 +1,12 @@
 # @uidu/media-picker
 
+## 1.11.5
+
+### Patch Changes
+
+- Updated dependencies [1edaea9]
+  - @uidu/media-core@4.0.0
+
 ## 1.11.4
 
 ### Patch Changes
