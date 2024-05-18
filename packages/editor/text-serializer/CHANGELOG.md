@@ -1,5 +1,12 @@
 # @uidu/text-serializer
 
+## 0.3.6
+
+### Patch Changes
+
+- @uidu/adf-schema@2.11.5
+- @uidu/editor-common@2.18.6
+
 ## 0.3.5
 
 ### Patch Changes

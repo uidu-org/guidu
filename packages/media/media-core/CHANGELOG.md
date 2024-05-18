@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 4.0.0
+
+### Major Changes
+
+- 1edaea9: Bump mime-standard to mime for more extensions
+
 ## 3.1.4
 
 ### Patch Changes
