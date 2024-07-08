@@ -20,6 +20,7 @@ const CheckboxStateless = forwardRef<
       fieldState,
       disabled,
       checked,
+      required,
     },
     ref,
   ) => {
@@ -62,6 +63,7 @@ const CheckboxStateless = forwardRef<
               if (ref && typeof ref === 'function') ref(e);
               element.current = e;
             }}
+            required={required}
           />
         </div>
         {label && (
