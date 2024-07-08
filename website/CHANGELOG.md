@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.10.10
+
+### Patch Changes
+
+- 3f8d975: Checkbox add required html5 attribute
+- Updated dependencies [3f8d975]
+  - @uidu/checkbox@2.7.0
+
 ## 0.10.9
 
 ### Patch Changes
