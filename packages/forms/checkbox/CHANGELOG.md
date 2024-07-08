@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.7.0
+
+### Minor Changes
+
+- 3f8d975: Checkbox add required html5 attribute
+
 ## 2.6.3
 
 ### Patch Changes
