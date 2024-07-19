@@ -1,5 +1,14 @@
 # @uidu/editor-core
 
+## 2.24.7
+
+### Patch Changes
+
+- Updated dependencies [b25d4d9]
+  - @uidu/form@3.3.0
+  - @uidu/field-base@4.11.6
+  - @uidu/field-date@2.9.6
+
 ## 2.24.6
 
 ### Patch Changes

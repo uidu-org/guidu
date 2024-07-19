@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.3.0
+
+### Minor Changes
+
+- b25d4d9: FormSection smaller titles
+
 ## 3.2.3
 
 ### Patch Changes
