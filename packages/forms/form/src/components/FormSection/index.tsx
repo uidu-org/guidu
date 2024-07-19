@@ -35,7 +35,7 @@ export default function FormSection({
                   layout === 'horizontal' ? tw`lg:w-3/12` : tw`w-10/12`,
                 ]}
               >
-                <legend css={[tw`text-xl font-bold flex items-center`]}>
+                <legend css={[tw`text-lg font-semibold flex items-center`]}>
                   {/* {Icon && (
                     <div tw="-ml-5 mr-3 opacity-20">
                       <Icon size={30} strokeWidth={1} />
