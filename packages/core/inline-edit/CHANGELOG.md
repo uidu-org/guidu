@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.10.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/inline-dialog@0.11.4
+  - @uidu/field-text@2.6.4
+  - @uidu/analytics@0.12.4
+  - @uidu/button@1.9.4
+  - @uidu/field@1.6.4
+  - @uidu/theme@0.12.4
+  - @uidu/form@3.3.1
+
 ## 0.10.3
 
 ### Patch Changes

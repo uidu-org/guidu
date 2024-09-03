@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.10.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/task-decision@0.11.4
+  - @uidu/mentions@0.14.5
+  - @uidu/analytics@0.12.4
+  - @uidu/emoji@0.15.5
+
 ## 0.10.3
 
 ### Patch Changes

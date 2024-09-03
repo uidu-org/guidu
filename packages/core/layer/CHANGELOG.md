@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.11.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+
 ## 0.11.3
 
 ### Patch Changes

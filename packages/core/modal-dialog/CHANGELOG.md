@@ -1,5 +1,16 @@
 # @uidu/modal-dialog
 
+## 1.8.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/analytics@0.12.4
+  - @uidu/blanket@0.7.11
+  - @uidu/portal@1.6.4
+  - @uidu/theme@0.12.4
+
 ## 1.8.3
 
 ### Patch Changes

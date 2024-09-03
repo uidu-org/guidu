@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 2.8.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/data-controls@4.9.6
+  - @uidu/data-fields@4.5.6
+  - @uidu/shell@2.10.4
+  - @uidu/spinner@0.11.4
+
 ## 2.8.4
 
 ### Patch Changes

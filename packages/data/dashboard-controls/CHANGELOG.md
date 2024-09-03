@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 1.9.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/field-date-range@2.8.4
+  - @uidu/dropdown-menu@0.12.4
+  - @uidu/avatar-group@2.12.4
+  - @uidu/avatar@0.15.4
+  - @uidu/button@1.9.4
+  - @uidu/form@3.3.1
+
 ## 1.9.4
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/media-viewer
 
+## 1.10.6
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/modal-dialog@1.8.4
+  - @uidu/media-core@4.0.1
+  - @uidu/shell@2.10.4
+  - @uidu/spinner@0.11.4
+  - @uidu/avatar@0.15.4
+  - @uidu/button@1.9.4
+  - @uidu/theme@0.12.4
+
 ## 1.10.5
 
 ### Patch Changes

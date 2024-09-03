@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 1.1.9
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/shell@2.10.4
+  - @uidu/theme@0.12.4
+
 ## 1.1.8
 
 ### Patch Changes

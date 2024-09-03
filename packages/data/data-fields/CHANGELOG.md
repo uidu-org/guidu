@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 4.5.6
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/select@2.14.0
+  - @uidu/field-color-picker@3.6.5
+  - @uidu/field-downshift@2.13.5
+  - @uidu/field-number@2.7.7
+  - @uidu/field-toggle@2.6.7
+  - @uidu/field-date@2.9.7
+  - @uidu/field-text@2.6.4
+  - @uidu/field-time@2.8.7
+  - @uidu/button@1.9.4
+  - @uidu/popup@0.14.5
+  - @uidu/form@3.3.1
+  - @uidu/menu@0.16.4
+  - @uidu/map@0.12.4
+
 ## 4.5.5
 
 ### Patch Changes

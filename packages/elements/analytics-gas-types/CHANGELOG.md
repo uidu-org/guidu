@@ -1,5 +1,13 @@
 # @uidu/analytics-gas-types
 
+## 0.4.7
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/analytics@0.12.4
+
 ## 0.4.6
 
 ### Patch Changes

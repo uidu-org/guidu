@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 2.7.7
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/field-base@4.11.7
+  - @uidu/field-text@2.6.4
+  - @uidu/form@3.3.1
+
 ## 2.7.6
 
 ### Patch Changes

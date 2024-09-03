@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.12.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+
 ## 0.12.4
 
 ### Patch Changes

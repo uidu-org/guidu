@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 2.16.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/analytics-namespaced-context@0.10.4
+  - @uidu/editor-json-transformer@1.9.4
+  - @uidu/analytics-listeners@0.10.4
+  - @uidu/task-decision@0.11.4
+  - @uidu/media-filmstrip@0.13.5
+  - @uidu/editor-common@2.18.7
+  - @uidu/adf-schema@2.11.6
+  - @uidu/mentions@0.14.5
+  - @uidu/adf-utils@2.8.4
+  - @uidu/media-card@0.17.6
+  - @uidu/status@0.13.5
+  - @uidu/analytics@0.12.4
+  - @uidu/tooltip@0.11.4
+  - @uidu/theme@0.12.4
+  - @uidu/code@0.11.4
+
 ## 2.16.4
 
 ### Patch Changes

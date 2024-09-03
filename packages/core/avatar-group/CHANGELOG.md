@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.12.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/dropdown-menu@0.12.4
+  - @uidu/tooltip@0.11.4
+  - @uidu/avatar@0.15.4
+  - @uidu/theme@0.12.4
+
 ## 2.12.3
 
 ### Patch Changes

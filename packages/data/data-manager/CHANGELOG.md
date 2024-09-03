@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 4.14.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/data-controls@4.9.6
+  - @uidu/data-fields@4.5.6
+  - @uidu/shell@2.10.4
+  - @uidu/pagination@0.11.4
+  - @uidu/data-views@3.10.5
+  - @uidu/calendar@0.11.4
+  - @uidu/spinner@0.11.4
+  - @uidu/gallery@2.8.5
+  - @uidu/button@1.9.4
+  - @uidu/board@2.10.5
+  - @uidu/table@6.8.5
+  - @uidu/menu@0.16.4
+  - @uidu/list@3.11.6
+
 ## 4.14.4
 
 ### Patch Changes

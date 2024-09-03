@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.9.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/inline-dialog@0.11.4
+  - @uidu/shell@2.10.4
+  - @uidu/tooltip@0.11.4
+  - @uidu/avatar@0.15.4
+  - @uidu/button@1.9.4
+  - @uidu/popup@0.14.5
+  - @uidu/theme@0.12.4
+  - @uidu/menu@0.16.4
+
 ## 1.9.4
 
 ### Patch Changes

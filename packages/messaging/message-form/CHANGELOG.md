@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.12.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/media-filmstrip@0.13.5
+  - @uidu/field-mentions@2.6.4
+  - @uidu/dropdown-menu@0.12.4
+  - @uidu/message@0.13.7
+  - @uidu/field-text@2.6.4
+  - @uidu/spinner@0.11.4
+  - @uidu/form@3.3.1
+
 ## 0.12.3
 
 ### Patch Changes

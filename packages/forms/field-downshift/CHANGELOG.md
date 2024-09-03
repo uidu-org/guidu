@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 2.13.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/field-base@4.11.7
+  - @uidu/field-text@2.6.4
+
 ## 2.13.4
 
 ### Patch Changes

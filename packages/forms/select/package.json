@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "2.13.4",
+  "version": "2.14.0",
   "description": "Select Component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/select",
   "license": "MIT",
@@ -12,9 +12,9 @@
   "dependencies": {
     "@babel/runtime": "^7.25.6",
     "@heroicons/react": "^2.1.5",
-    "@uidu/field-base": "^4.11.5",
-    "@uidu/menu": "0.16.3",
-    "@uidu/spinner": "^0.11.3",
+    "@uidu/field-base": "^4.11.7",
+    "@uidu/menu": "0.16.4",
+    "@uidu/spinner": "^0.11.4",
     "react-hook-form": "7.53.0",
     "react-select": "^5.8.0",
     "styled-components": "^5.3.11",
@@ -23,9 +23,9 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
-    "@uidu/button": "^1.9.3",
-    "@uidu/docs": "^0.11.3",
-    "@uidu/modal-dialog": "^1.8.3",
+    "@uidu/button": "^1.9.4",
+    "@uidu/docs": "^0.11.4",
+    "@uidu/modal-dialog": "^1.8.4",
     "react": "^18.3.1",
     "twin.macro": "^3.4.1"
   },

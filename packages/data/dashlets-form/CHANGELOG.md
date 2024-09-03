@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 1.8.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/select@2.14.0
+  - @uidu/field-downshift@2.13.5
+  - @uidu/dropdown-menu@0.12.4
+  - @uidu/field-toggle@2.6.7
+  - @uidu/shell@2.10.4
+  - @uidu/accordion@0.12.4
+  - @uidu/dashlets@3.11.10
+  - @uidu/form@3.3.1
+
 ## 1.8.3
 
 ### Patch Changes

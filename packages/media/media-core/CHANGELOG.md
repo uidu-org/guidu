@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 4.0.1
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/docs@0.11.4
+
 ## 4.0.0
 
 ### Major Changes

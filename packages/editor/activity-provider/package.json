@@ -1,6 +1,6 @@
 {
   "name": "@uidu/activity-provider",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "Activity provider types",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/activity-provider",
   "license": "Apache-2.0",

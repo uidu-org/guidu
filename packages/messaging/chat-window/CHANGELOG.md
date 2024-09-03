@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.12.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/message-renderer@0.11.4
+  - @uidu/message-form@0.12.4
+  - @uidu/message@0.13.7
+
 ## 0.12.3
 
 ### Patch Changes

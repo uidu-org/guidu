@@ -1,5 +1,19 @@
 # @uidu/data-views
 
+## 3.10.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/select@2.14.0
+  - @uidu/field-counter@2.6.4
+  - @uidu/data-controls@4.9.6
+  - @uidu/field-number@2.7.7
+  - @uidu/data-manager@4.14.5
+  - @uidu/button@1.9.4
+  - @uidu/form@3.3.1
+
 ## 3.10.4
 
 ### Patch Changes

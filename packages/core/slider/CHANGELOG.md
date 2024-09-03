@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.7.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+
 ## 2.7.3
 
 ### Patch Changes

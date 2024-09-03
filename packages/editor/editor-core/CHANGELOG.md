@@ -1,5 +1,47 @@
 # @uidu/editor-core
 
+## 2.24.8
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/select@2.14.0
+  - @uidu/analytics-namespaced-context@0.10.4
+  - @uidu/editor-markdown-transformer@1.9.4
+  - @uidu/editor-json-transformer@1.9.4
+  - @uidu/analytics-gas-types@0.4.7
+  - @uidu/analytics-listeners@0.10.4
+  - @uidu/activity-provider@0.7.3
+  - @uidu/prosemirror-utils@0.3.3
+  - @uidu/task-decision@0.11.4
+  - @uidu/media-filmstrip@0.13.5
+  - @uidu/editor-common@2.18.7
+  - @uidu/profilecard@0.12.5
+  - @uidu/media-picker@1.11.6
+  - @uidu/avatar-group@2.12.4
+  - @uidu/modal-dialog@1.8.4
+  - @uidu/adf-schema@2.11.6
+  - @uidu/mentions@0.14.5
+  - @uidu/adf-utils@2.8.4
+  - @uidu/field-base@4.11.7
+  - @uidu/field-date@2.9.7
+  - @uidu/field-text@2.6.4
+  - @uidu/media-card@0.17.6
+  - @uidu/media-core@4.0.1
+  - @uidu/status@0.13.5
+  - @uidu/analytics@0.12.4
+  - @uidu/emoji@0.15.5
+  - @uidu/droplist@0.11.4
+  - @uidu/date@0.10.4
+  - @uidu/spinner@0.11.4
+  - @uidu/tooltip@0.11.4
+  - @uidu/avatar@0.15.4
+  - @uidu/button@1.9.4
+  - @uidu/theme@0.12.4
+  - @uidu/form@3.3.1
+  - @uidu/menu@0.16.4
+
 ## 2.24.7
 
 ### Patch Changes

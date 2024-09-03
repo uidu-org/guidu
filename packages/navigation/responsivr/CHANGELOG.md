@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.10.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+
 ## 0.10.3
 
 ### Patch Changes

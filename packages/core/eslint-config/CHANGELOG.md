@@ -1,5 +1,11 @@
 # eslint-config-uidu
 
+## 0.9.7
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+
 ## 0.9.6
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 4.9.6
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/select@2.14.0
+  - @uidu/inline-dialog@0.11.4
+  - @uidu/data-manager@4.14.5
+  - @uidu/data-fields@4.5.6
+  - @uidu/field-text@2.6.4
+  - @uidu/shell@2.10.4
+  - @uidu/data-views@3.10.5
+  - @uidu/checkbox@2.7.1
+  - @uidu/spinner@0.11.4
+  - @uidu/tooltip@0.11.4
+  - @uidu/button@1.9.4
+  - @uidu/drawer@0.13.4
+  - @uidu/popup@0.14.5
+  - @uidu/form@3.3.1
+  - @uidu/menu@0.16.4
+
 ## 4.9.5
 
 ### Patch Changes
