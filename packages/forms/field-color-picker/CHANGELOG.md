@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 3.6.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/field-base@4.11.7
+  - @uidu/button@1.9.4
+  - @uidu/popup@0.14.5
+
 ## 3.6.4
 
 ### Patch Changes

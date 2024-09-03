@@ -1,6 +1,6 @@
 {
   "name": "@uidu/breadcrumbs",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "Breadcrumbs are a navigation system used to show a user's location in a site or app.",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/breadcrumbs",
   "license": "MIT",
@@ -10,16 +10,16 @@
   "types": "dist/uidu-breadcrumbs.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.25.6",
-    "@uidu/analytics": "^0.12.3",
-    "@uidu/button": "^1.9.3",
-    "@uidu/theme": "^0.12.3",
-    "@uidu/tooltip": "^0.11.3",
+    "@uidu/analytics": "^0.12.4",
+    "@uidu/button": "^1.9.4",
+    "@uidu/theme": "^0.12.4",
+    "@uidu/tooltip": "^0.11.4",
     "tslib": "^2.7.0"
   },
   "devDependencies": {
     "@atlaskit/logo": "^13.14.9",
-    "@uidu/docs": "^0.11.3",
-    "@uidu/select": "^2.13.4",
+    "@uidu/docs": "^0.11.4",
+    "@uidu/select": "^2.14.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^5.3.4",

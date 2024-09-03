@@ -1,5 +1,18 @@
 # @uidu/field-image-uploader
 
+## 3.10.8
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/field-range@2.6.4
+  - @uidu/field-base@4.11.7
+  - @uidu/media-core@4.0.1
+  - @uidu/spinner@0.11.4
+  - @uidu/button@1.9.4
+  - @uidu/form@3.3.1
+
 ## 3.10.7
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # @uidu/editor-common
 
+## 2.18.7
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/analytics-namespaced-context@0.10.4
+  - @uidu/editor-json-transformer@1.9.4
+  - @uidu/profilecard@0.12.5
+  - @uidu/adf-schema@2.11.6
+  - @uidu/mentions@0.14.5
+  - @uidu/adf-utils@2.8.4
+  - @uidu/media-core@4.0.1
+  - @uidu/analytics@0.12.4
+  - @uidu/emoji@0.15.5
+  - @uidu/tooltip@0.11.4
+  - @uidu/theme@0.12.4
+
 ## 2.18.6
 
 ### Patch Changes

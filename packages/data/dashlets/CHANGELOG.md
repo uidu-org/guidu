@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 3.11.10
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/dashboard-manager@2.11.5
+  - @uidu/data-fields@4.5.6
+  - @uidu/spinner@0.11.4
+  - @uidu/tooltip@0.11.4
+  - @uidu/table@6.8.5
+
 ## 3.11.9
 
 ### Patch Changes

@@ -1,5 +1,33 @@
 # Change Log
 
+## 0.10.11
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/select@2.14.0
+  - @uidu/breadcrumbs@1.6.4
+  - @uidu/page-header@1.1.9
+  - @uidu/navigation@1.7.4
+  - @uidu/modal-dialog@1.8.4
+  - @uidu/field-text@2.6.4
+  - @uidu/shell@2.10.4
+  - @uidu/checkbox@2.7.1
+  - @uidu/lozenge@0.11.4
+  - @uidu/spinner@0.11.4
+  - @uidu/tooltip@0.11.4
+  - @uidu/button@1.9.4
+  - @uidu/drawer@0.13.4
+  - @uidu/badge@0.11.4
+  - @uidu/theme@0.12.4
+  - @uidu/table@6.8.5
+  - @uidu/form@3.3.1
+  - @uidu/code@0.11.4
+  - @uidu/list@3.11.6
+  - @uidu/themes-uidu@0.5.2
+  - @uidu/docs@0.11.4
+
 ## 0.10.10
 
 ### Patch Changes

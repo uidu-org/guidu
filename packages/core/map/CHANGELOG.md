@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.12.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/theme@0.12.4
+
 ## 0.12.3
 
 ### Patch Changes

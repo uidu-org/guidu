@@ -1,5 +1,17 @@
 # @uidu/media-filmstrip
 
+## 0.13.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/media-viewer@1.10.6
+  - @uidu/modal-dialog@1.8.4
+  - @uidu/media-card@0.17.6
+  - @uidu/media-core@4.0.1
+  - @uidu/theme@0.12.4
+
 ## 0.13.4
 
 ### Patch Changes

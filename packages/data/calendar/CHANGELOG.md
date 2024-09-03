@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.11.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/shell@2.10.4
+  - @uidu/button@1.9.4
+
 ## 0.11.3
 
 ### Patch Changes

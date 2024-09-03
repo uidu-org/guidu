@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 1.9.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/editor-common@2.18.7
+  - @uidu/adf-schema@2.11.6
+
 ## 1.9.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.7.1
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/field-base@4.11.7
+
 ## 2.7.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.11.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/section-message@0.12.5
+  - @uidu/tooltip@0.11.4
+  - @uidu/button@1.9.4
+  - @uidu/theme@0.12.4
+  - @uidu/code@0.11.4
+
 ## 0.11.3
 
 ### Patch Changes

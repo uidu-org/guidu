@@ -1,5 +1,16 @@
 # @uidu/field-geosuggest
 
+## 3.0.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/field-base@4.11.7
+  - @uidu/spinner@0.11.4
+  - @uidu/popup@0.14.5
+  - @uidu/menu@0.16.4
+
 ## 3.0.3
 
 ### Patch Changes

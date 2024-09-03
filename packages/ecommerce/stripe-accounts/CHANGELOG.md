@@ -1,5 +1,17 @@
 # @uidu/stripe-accounts
 
+## 0.14.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/payments@1.15.5
+  - @uidu/stepper@0.10.4
+  - @uidu/field-text@2.6.4
+  - @uidu/spinner@0.11.4
+  - @uidu/form@3.3.1
+
 ## 0.14.4
 
 ### Patch Changes

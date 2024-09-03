@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 3.11.6
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/data-fields@4.5.6
+  - @uidu/shell@2.10.4
+
 ## 3.11.5
 
 ### Patch Changes

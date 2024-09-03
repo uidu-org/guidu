@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.15.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/field-text@2.6.4
+  - @uidu/analytics@0.12.4
+  - @uidu/spinner@0.11.4
+  - @uidu/tooltip@0.11.4
+  - @uidu/button@1.9.4
+  - @uidu/theme@0.12.4
+  - @uidu/code@0.11.4
+
 ## 0.15.4
 
 ### Patch Changes

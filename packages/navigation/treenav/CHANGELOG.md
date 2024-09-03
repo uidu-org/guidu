@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.9.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+
 ## 0.9.3
 
 ### Patch Changes

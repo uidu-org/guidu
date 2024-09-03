@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 2.14.0
+
+### Minor Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+
+### Patch Changes
+
+- Updated dependencies [a2f3a99]
+  - @uidu/field-base@4.11.7
+  - @uidu/spinner@0.11.4
+  - @uidu/menu@0.16.4
+
 ## 2.13.4
 
 ### Patch Changes

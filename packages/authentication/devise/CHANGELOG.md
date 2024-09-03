@@ -1,5 +1,20 @@
 # @uidu/devise
 
+## 1.11.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/field-password@2.7.5
+  - @uidu/field-phone@2.7.6
+  - @uidu/field-text@2.6.4
+  - @uidu/shell@2.10.4
+  - @uidu/checkbox@2.7.1
+  - @uidu/spinner@0.11.4
+  - @uidu/avatar@0.15.4
+  - @uidu/form@3.3.1
+
 ## 1.11.4
 
 ### Patch Changes

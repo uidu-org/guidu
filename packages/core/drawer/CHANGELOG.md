@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.13.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/analytics@0.12.4
+  - @uidu/blanket@0.7.11
+  - @uidu/theme@0.12.4
+  - @uidu/item@0.11.4
+  - @uidu/docs@0.11.4
+
 ## 0.13.3
 
 ### Patch Changes

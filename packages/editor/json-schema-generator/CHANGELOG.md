@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.4.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+
 ## 1.4.3
 
 ### Patch Changes

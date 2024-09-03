@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-renderer",
-  "version": "0.11.3",
+  "version": "0.11.4",
   "description": "Message renderer",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/messaging/message-renderer",
   "license": "MIT",
@@ -10,8 +10,8 @@
   "types": "dist/uidu-message-renderer.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.25.6",
-    "@uidu/dropdown-menu": "^0.12.3",
-    "@uidu/theme": "^0.12.3",
+    "@uidu/dropdown-menu": "^0.12.4",
+    "@uidu/theme": "^0.12.4",
     "interweave": "^13.1.0",
     "interweave-autolink": "^5.1.1",
     "react": "^18.3.1",
@@ -20,6 +20,6 @@
     "tslib": "^2.7.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.11.3"
+    "@uidu/docs": "^0.11.4"
   }
 }

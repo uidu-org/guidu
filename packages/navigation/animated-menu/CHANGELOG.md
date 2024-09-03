@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.6.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+
 ## 1.6.3
 
 ### Patch Changes

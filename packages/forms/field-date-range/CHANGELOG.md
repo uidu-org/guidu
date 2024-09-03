@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 2.8.4
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/field-base@4.11.7
+  - @uidu/field-date@2.9.7
+
 ## 2.8.3
 
 ### Patch Changes

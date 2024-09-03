@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.14.5
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/analytics-gas-types@0.4.7
+  - @uidu/analytics@0.12.4
+  - @uidu/lozenge@0.11.4
+  - @uidu/tooltip@0.11.4
+  - @uidu/avatar@0.15.4
+  - @uidu/button@1.9.4
+  - @uidu/theme@0.12.4
+
 ## 0.14.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.3.1
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/button@1.9.4
+
 ## 3.3.0
 
 ### Minor Changes

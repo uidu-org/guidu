@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 1.11.6
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/media-core@4.0.1
+
 ## 1.11.5
 
 ### Patch Changes

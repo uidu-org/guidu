@@ -1,5 +1,21 @@
 # @uidu/email-builder
 
+## 0.10.9
+
+### Patch Changes
+
+- a2f3a99: Add controls on select value, bump lots of dependencies
+- Updated dependencies [a2f3a99]
+  - @uidu/select@2.14.0
+  - @uidu/email-renderer@1.12.5
+  - @uidu/editor-core@2.24.8
+  - @uidu/field-number@2.7.7
+  - @uidu/adf-schema@2.11.6
+  - @uidu/field-text@2.6.4
+  - @uidu/button@1.9.4
+  - @uidu/portal@1.6.4
+  - @uidu/form@3.3.1
+
 ## 0.10.8
 
 ### Patch Changes
