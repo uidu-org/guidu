@@ -11,7 +11,7 @@
   "types": "dist/uidu-onboarding.cjs.d.ts",
   "dependencies": {
     "@atlaskit/progress-indicator": "^9.5.18",
-    "@babel/runtime": "^7.24.4",
+    "@babel/runtime": "^7.25.6",
     "@uidu/analytics": "^0.12.3",
     "@uidu/button": "^1.9.3",
     "@uidu/modal-dialog": "^1.8.3",
@@ -20,12 +20,12 @@
     "@uidu/theme": "^0.12.3",
     "exenv": "^1.2.2",
     "memoize-one": "^6.0.0",
-    "react-focus-lock": "^2.12.1",
+    "react-focus-lock": "^2.13.2",
     "react-node-resolver": "^2.0.1",
     "react-scrolllock": "^5.0.1",
     "react-transition-group": "^4.4.5",
     "scroll-into-view-if-needed": "^3.1.0",
-    "tslib": "^2.6.2"
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.11.3",

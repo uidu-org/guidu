@@ -9,9 +9,9 @@
   "module": "dist/uidu-gallery.esm.js",
   "types": "dist/uidu-gallery.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.4",
-    "@tanstack/react-table": "^8.16.0",
-    "@tanstack/react-virtual": "^3.5.0",
+    "@babel/runtime": "^7.25.6",
+    "@tanstack/react-table": "^8.20.5",
+    "@tanstack/react-virtual": "^3.10.6",
     "@uidu/data-controls": "^4.9.5",
     "@uidu/data-fields": "^4.5.5",
     "@uidu/shell": "^2.10.3",
@@ -19,7 +19,7 @@
     "memoize-one": "^6.0.0",
     "react": "^18.3.1",
     "styled-components": "^5.3.11",
-    "tslib": "^2.6.2"
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.11.3",

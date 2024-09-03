@@ -15,9 +15,9 @@
   "module": "dist/uidu-field-text.esm.js",
   "types": "dist/uidu-field-text.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.4",
+    "@babel/runtime": "^7.25.6",
     "@uidu/field-base": "^4.11.5",
-    "tslib": "^2.6.2"
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
     "@uidu/button": "^1.9.3",

@@ -65,11 +65,11 @@
     "react-router-dom": "^5.3.4",
     "react-transition-group": "^4.4.5",
     "resolve": "^1.22.8",
-    "semver": "^7.6.0",
+    "semver": "^7.6.3",
     "sentence-case": "^4.0.0",
     "snake-case": "^4.0.0",
     "styled-components": "^5.3.11",
-    "tslib": "^2.6.2",
+    "tslib": "^2.7.0",
     "tti-polyfill": "^0.2.2",
     "uuid": "^8.3.2"
   },

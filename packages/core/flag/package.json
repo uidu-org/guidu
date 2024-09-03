@@ -10,14 +10,14 @@
   "module": "dist/uidu-flag.esm.js",
   "types": "dist/uidu-flag.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.4",
+    "@babel/runtime": "^7.25.6",
     "@uidu/analytics": "^0.12.3",
     "@uidu/button": "^1.9.3",
     "@uidu/portal": "^1.6.3",
     "@uidu/theme": "^0.12.3",
     "react-feather": "^2.0.10",
     "react-transition-group": "^4.4.5",
-    "tslib": "^2.6.2",
+    "tslib": "^2.7.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

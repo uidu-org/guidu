@@ -9,13 +9,13 @@
   "main": "dist/uidu-item.cjs.js",
   "module": "dist/uidu-item.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.24.4",
+    "@babel/runtime": "^7.25.6",
     "@uidu/avatar": "^0.15.3",
     "@uidu/theme": "^0.12.3",
     "polished": "^4.3.1",
     "prop-types": "^15.8.1",
     "react-addons-text-content": "^0.0.4",
-    "tslib": "^2.6.2",
+    "tslib": "^2.7.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
