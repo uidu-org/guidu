@@ -10,12 +10,12 @@
   "module": "dist/uidu-theme.esm.js",
   "types": "dist/uidu-theme.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.4",
-    "@emotion/react": "^11.11.4",
+    "@babel/runtime": "^7.25.6",
+    "@emotion/react": "^11.13.3",
     "@uidu/form": "^3.2.3",
     "exenv": "^1.2.2",
     "prop-types": "^15.8.1",
-    "tslib": "^2.6.2"
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
     "@uidu/button": "^1.9.3",

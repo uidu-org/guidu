@@ -9,8 +9,8 @@
   "module": "dist/uidu-media-card.esm.js",
   "types": "dist/uidu-media-card.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.4",
-    "@fluentui/react": "8.117.7",
+    "@babel/runtime": "^7.25.6",
+    "@fluentui/react": "8.120.7",
     "@uidu/button": "^1.9.3",
     "@uidu/media-core": "^4.0.0",
     "@uidu/spinner": "^0.11.3",
@@ -21,7 +21,7 @@
     "react-dom": "^18.3.1",
     "react-feather": "^2.0.10",
     "styled-components": "^5.3.11",
-    "tslib": "^2.6.2"
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",

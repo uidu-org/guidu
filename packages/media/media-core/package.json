@@ -9,15 +9,15 @@
   "module": "dist/uidu-media-core.esm.js",
   "types": "dist/uidu-media-core.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.4",
+    "@babel/runtime": "^7.25.6",
     "@uidu/docs": "^0.11.3",
     "@uppy/aws-s3": "^3.6.2",
-    "@uppy/core": "^3.10.1",
-    "@uppy/dashboard": "^3.8.1",
-    "@uppy/xhr-upload": "^3.6.4",
-    "mime": "^4.0.3",
+    "@uppy/core": "^3.13.1",
+    "@uppy/dashboard": "^3.9.1",
+    "@uppy/xhr-upload": "^3.6.8",
+    "mime": "^4.0.4",
     "react-dropzone": "^14.2.3",
-    "tslib": "^2.6.2"
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
     "@uidu/section-message": "^0.12.4",

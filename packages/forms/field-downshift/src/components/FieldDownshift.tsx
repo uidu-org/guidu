@@ -44,10 +44,10 @@ function FieldDownshift<
     if (field.value === undefined) return undefined;
 
     const cleanedValue = multiple
-      ? options.filter((o) =>
+      ? (options || []).filter((o) =>
           (field.value as string[]).includes(getOptionValue(o)),
         )
-      : options.find((o) => getOptionValue(o) === field.value);
+      : (options || []).find((o) => getOptionValue(o) === field.value);
 
     return cleanedValue;
   }, [field.value, multiple, options, getOptionValue]);

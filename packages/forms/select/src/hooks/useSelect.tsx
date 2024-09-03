@@ -99,7 +99,9 @@ export function useSelect<
 
     const opts = flatten(options);
     const cleanedValue = multiple
-      ? opts.filter((o) => value.includes(selectProps.getOptionValue(o)))
+      ? opts.filter((o) =>
+          (value || []).includes(selectProps.getOptionValue(o)),
+        )
       : opts.find((o) => selectProps.getOptionValue(o) === value);
 
     return cleanedValue || '';

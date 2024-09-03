@@ -9,7 +9,7 @@
   "module": "dist/uidu-dashlet-controls.esm.js",
   "types": "dist/uidu-dashlet-controls.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.4",
+    "@babel/runtime": "^7.25.6",
     "@uidu/avatar": "^0.15.3",
     "@uidu/avatar-group": "^2.12.3",
     "@uidu/button": "1.9.3",
@@ -18,9 +18,9 @@
     "@uidu/form": "^3.2.3",
     "react": "^18.3.1",
     "react-feather": "^2.0.10",
-    "react-intl": "^6.6.5",
+    "react-intl": "^6.6.8",
     "styled-components": "^5.3.11",
-    "tslib": "^2.6.2"
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.11.3"

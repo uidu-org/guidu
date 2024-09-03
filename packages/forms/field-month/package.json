@@ -15,14 +15,14 @@
   "module": "dist/uidu-field-month.esm.js",
   "types": "dist/uidu-field-month.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.4",
+    "@babel/runtime": "^7.25.6",
     "@uidu/field-base": "^4.11.5",
     "@uidu/form": "^3.2.3",
     "@uidu/theme": "^0.12.3",
     "classnames": "^2.5.1",
     "react": "^18.3.1",
     "styled-components": "^5.3.11",
-    "tslib": "^2.6.2"
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
     "@uidu/button": "^1.9.3",

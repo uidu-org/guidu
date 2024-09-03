@@ -15,10 +15,10 @@
   "module": "dist/uidu-field-range.esm.js",
   "types": "dist/uidu-field-range.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.4",
-    "@radix-ui/react-slider": "^1.1.2",
+    "@babel/runtime": "^7.25.6",
+    "@radix-ui/react-slider": "^1.2.0",
     "@uidu/field-base": "^4.11.5",
-    "tslib": "^2.6.2"
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.11.3",

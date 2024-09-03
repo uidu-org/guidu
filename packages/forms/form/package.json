@@ -10,17 +10,17 @@
   "module": "dist/uidu-form.esm.js",
   "types": "dist/uidu-form.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.24.4",
+    "@babel/runtime": "^7.25.6",
     "@uidu/button": "1.9.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hook-form": "7.51.3",
+    "react-hook-form": "7.53.0",
     "react-media": "^1.10.0",
     "styled-components": "^5.3.11",
-    "tslib": "^2.6.2"
+    "tslib": "^2.7.0"
   },
   "devDependencies": {
-    "@hookform/resolvers": "^3.3.4",
+    "@hookform/resolvers": "^3.9.0",
     "@uidu/docs": "^0.11.3",
     "react-feather": "^2.0.10",
     "yup": "1.4.0"
