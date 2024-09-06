@@ -1,4 +1,3 @@
-import MediaFilmstrip from '@uidu/media-filmstrip';
 import * as React from 'react';
 import { PureComponent } from 'react';
 
@@ -9,6 +8,6 @@ export default class MediaGroup extends PureComponent<any> {
   }
 
   renderStrip() {
-    return <MediaFilmstrip files={[]}></MediaFilmstrip>;
+    return null;
   }
 }
