@@ -27,8 +27,7 @@
     "react-router-dom": "^5.3.4"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-router-dom": "*"
+    "react": "^18.0.0"
   },
   "publishConfig": {
     "access": "public"

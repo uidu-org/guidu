@@ -8068,7 +8068,6 @@ __metadata:
     tslib: "npm:^2.7.0"
   peerDependencies:
     react: ^18.0.0
-    react-router-dom: "*"
   languageName: unknown
   linkType: soft
 
