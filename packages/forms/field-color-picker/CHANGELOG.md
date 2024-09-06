@@ -1,5 +1,11 @@
 # @uidu/field-color-picker
 
+## 3.7.0
+
+### Minor Changes
+
+- 97e1877: Allow className to field-color-picker
+
 ## 3.6.6
 
 ### Patch Changes
