@@ -54,6 +54,7 @@ export default function FieldColorPicker({
   value: defaultValue,
   onChange = noop,
   trigger: Trigger = DefaulTrigger,
+  className,
   colors = [
     '#FF6900',
     '#FCB900',
@@ -160,6 +161,7 @@ export default function FieldColorPicker({
             </span>
             <StyledInput
               {...field}
+              className={className}
               type="text"
               $hasError={!!fieldState?.error}
               as={HexColorInput}
