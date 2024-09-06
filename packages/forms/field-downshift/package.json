@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.25.6",
     "@heroicons/react": "^2.1.5",
-    "@uidu/field-base": "^4.11.7",
+    "@uidu/field-base": "^4.11.8",
     "@uidu/field-text": "^2.6.4",
     "classnames": "^2.5.1",
     "downshift": "^8.5.0",
@@ -20,12 +20,12 @@
     "tslib": "^2.7.0"
   },
   "devDependencies": {
-    "@uidu/button": "1.9.4",
+    "@uidu/button": "1.10.0",
     "@uidu/docs": "^0.11.4",
     "@uidu/field-counter": "^2.6.4",
-    "@uidu/field-date": "^2.9.7",
-    "@uidu/field-time": "^2.8.7",
-    "@uidu/form": "^3.3.1",
+    "@uidu/field-date": "^2.9.8",
+    "@uidu/field-time": "^2.8.8",
+    "@uidu/form": "^3.3.2",
     "@uidu/menu": "0.16.4",
     "@uidu/popup": "0.14.5",
     "@uidu/radio": "^2.8.4",

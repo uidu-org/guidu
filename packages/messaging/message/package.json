@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message",
-  "version": "0.13.7",
+  "version": "0.13.8",
   "description": "A React component that renders a message",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/messaging/message",
   "license": "ISC",
@@ -14,7 +14,7 @@
     "@fluentui/react": "8.120.7",
     "@loadable/component": "^5.16.4",
     "@uidu/avatar": "^0.15.4",
-    "@uidu/button": "1.9.4",
+    "@uidu/button": "1.10.0",
     "@uidu/drawer": "^0.13.4",
     "@uidu/media-card": "^0.17.6",
     "@uidu/media-core": "^4.0.1",

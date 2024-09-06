@@ -1,5 +1,12 @@
 # @uidu/field-text
 
+## 2.7.8
+
+### Patch Changes
+
+- @uidu/form@3.3.2
+- @uidu/field-base@4.11.8
+
 ## 2.7.7
 
 ### Patch Changes

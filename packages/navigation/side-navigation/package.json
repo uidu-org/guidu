@@ -1,6 +1,6 @@
 {
   "name": "@uidu/side-navigation",
-  "version": "1.9.5",
+  "version": "1.9.6",
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/side-navigation",
   "license": "MIT",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.25.6",
     "@uidu/avatar": "^0.15.4",
-    "@uidu/button": "1.9.4",
+    "@uidu/button": "1.10.0",
     "@uidu/inline-dialog": "^0.11.4",
     "@uidu/menu": "0.16.4",
     "@uidu/popup": "0.14.5",

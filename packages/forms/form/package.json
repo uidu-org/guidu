@@ -1,6 +1,6 @@
 {
   "name": "@uidu/form",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "description": "Forms using Formsy",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/form",
   "license": "MIT",
@@ -11,7 +11,7 @@
   "types": "dist/uidu-form.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.25.6",
-    "@uidu/button": "1.9.4",
+    "@uidu/button": "1.10.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "7.53.0",

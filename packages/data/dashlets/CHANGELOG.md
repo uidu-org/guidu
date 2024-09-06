@@ -1,5 +1,12 @@
 # @uidu/blocks
 
+## 3.11.11
+
+### Patch Changes
+
+- @uidu/data-fields@4.5.7
+- @uidu/table@6.8.6
+
 ## 3.11.10
 
 ### Patch Changes

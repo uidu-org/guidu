@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 1.10.0
+
+### Minor Changes
+
+- 76e0b06: Removed react-router-dom from button
+
 ## 1.9.4
 
 ### Patch Changes
