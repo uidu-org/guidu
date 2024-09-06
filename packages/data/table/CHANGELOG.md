@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 6.8.6
+
+### Patch Changes
+
+- Updated dependencies [76e0b06]
+  - @uidu/button@1.10.0
+  - @uidu/data-fields@4.5.7
+  - @uidu/data-manager@4.14.6
+
 ## 6.8.5
 
 ### Patch Changes

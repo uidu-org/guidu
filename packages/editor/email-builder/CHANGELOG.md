@@ -1,5 +1,15 @@
 # @uidu/email-builder
 
+## 0.10.10
+
+### Patch Changes
+
+- Updated dependencies [76e0b06]
+  - @uidu/button@1.10.0
+  - @uidu/form@3.3.2
+  - @uidu/editor-core@2.24.9
+  - @uidu/field-number@2.7.8
+
 ## 0.10.9
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/dashboard-controls
 
+## 1.9.6
+
+### Patch Changes
+
+- Updated dependencies [76e0b06]
+  - @uidu/button@1.10.0
+  - @uidu/form@3.3.2
+
 ## 1.9.5
 
 ### Patch Changes
