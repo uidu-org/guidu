@@ -22,7 +22,6 @@
     "@uidu/editor-common": "^2.18.7",
     "@uidu/editor-json-transformer": "^1.9.4",
     "@uidu/media-card": "^0.17.6",
-    "@uidu/media-filmstrip": "^0.13.5",
     "@uidu/mentions": "^0.14.5",
     "@uidu/status": "^0.13.5",
     "@uidu/task-decision": "^0.11.4",
