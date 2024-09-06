@@ -1,5 +1,11 @@
 # @uidu/renderer
 
+## 2.17.0
+
+### Minor Changes
+
+- b3b91e5: Removed filmstrip
+
 ## 2.16.5
 
 ### Patch Changes
