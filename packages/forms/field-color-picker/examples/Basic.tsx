@@ -53,6 +53,12 @@ export default function Basic() {
           showInput={false}
         />
       </div>
+      <FieldColorPicker
+        {...inputDefaultProps}
+        name="foo3"
+        layout="elementOnly"
+        tw="py-2"
+      />
     </Form>
   );
 }
