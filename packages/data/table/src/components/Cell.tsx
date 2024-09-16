@@ -140,6 +140,7 @@ function Cell<T, V>({
       $pinned={cell.column.columnDef.meta?.pinned}
       $index={index}
       $height={rowHeight}
+      role="gridcell"
       tabIndex={-1}
       onDoubleClick={(e) => {
         e.preventDefault();
