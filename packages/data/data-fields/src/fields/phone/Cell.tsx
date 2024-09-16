@@ -19,6 +19,7 @@ export default function Cell<T>({ getValue }: CellContext<T, string>) {
           target="_blank"
           tw="p-1 ml-auto flex"
           rel="noopener noreferrer"
+          tabIndex={-1}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
