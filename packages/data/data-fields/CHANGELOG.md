@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 4.6.0
+
+### Minor Changes
+
+- e324ab5: Better tabIndex managment for phone fields
+
 ## 4.5.7
 
 ### Patch Changes
