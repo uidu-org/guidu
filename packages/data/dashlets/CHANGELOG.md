@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 3.11.12
+
+### Patch Changes
+
+- Updated dependencies [e324ab5]
+  - @uidu/data-fields@4.6.0
+  - @uidu/table@6.9.0
+
 ## 3.11.11
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 6.9.0
+
+### Minor Changes
+
+- e324ab5: Better tabIndex managment for phone fields
+
+### Patch Changes
+
+- Updated dependencies [e324ab5]
+  - @uidu/data-fields@4.6.0
+
 ## 6.8.6
 
 ### Patch Changes
