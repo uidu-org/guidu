@@ -2,7 +2,6 @@ import { ErrorReporter, ProviderFactory } from '@uidu/editor-common';
 import { Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
 import { Dispatch, EventDispatcher } from '../event-dispatcher';
-import { DispatchAnalyticsEvent } from '../plugins/analytics/types/dispatch-analytics-event';
 import { PortalProviderAPI } from '../ui/PortalProvider';
 // TODO: Check if this circular dependency is still needed or is just legacy
 // eslint-disable-next-line import/no-cycle
@@ -16,7 +15,6 @@ export type PMPluginFactoryParams = {
   errorReporter?: ErrorReporter;
   portalProviderAPI: PortalProviderAPI;
   reactContext: () => { [key: string]: any };
-  dispatchAnalyticsEvent: DispatchAnalyticsEvent;
 };
 export type PMPluginCreateConfig = PMPluginFactoryParams & {
   editorConfig: EditorConfig;

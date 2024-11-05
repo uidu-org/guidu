@@ -4,7 +4,6 @@ import { EditorView } from 'prosemirror-view';
 import React from 'react';
 import EditorActions from '../../../../actions';
 import { Dispatch, EventDispatcher } from '../../../../event-dispatcher';
-import { FireAnalyticsCallback } from '../../../../plugins/analytics';
 import { EditorAppearanceComponentProps } from '../../../../types';
 import { EditorProps } from '../editor-props-type';
 
@@ -17,7 +16,6 @@ export type EditorSharedConfig = {
   eventDispatcher: EventDispatcher;
   dispatch: Dispatch;
   transformer?: Transformer<any>;
-  dispatchAnalyticsEvent?: FireAnalyticsCallback;
 
   primaryToolbarComponents: EditorAppearanceComponentProps['primaryToolbarComponents'];
   contentComponents: EditorAppearanceComponentProps['contentComponents'];
@@ -34,9 +32,8 @@ export type EditorSharedConfig = {
   onMount?: EditorProps['onMount'];
 };
 
-const EditorSharedConfigContext = React.createContext<EditorSharedConfig | null>(
-  null,
-);
+const EditorSharedConfigContext =
+  React.createContext<EditorSharedConfig | null>(null);
 
 export class EditorSharedConfigProvider extends React.Component<
   { value: EditorSharedConfig | null },

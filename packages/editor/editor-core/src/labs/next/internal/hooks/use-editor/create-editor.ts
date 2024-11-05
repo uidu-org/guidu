@@ -63,9 +63,6 @@ export function createEditor({
     // Required to workaround issues with multiple react trees.
     // Though it's kinda leaking react to outside world.
     reactContext: () => context,
-
-    // TODO: ED-8133 Need to make types more generic otherwise it's not extensible.
-    dispatchAnalyticsEvent: onAnalyticsEvent as any,
   });
   const state = EditorState.create({
     schema,
@@ -92,7 +89,6 @@ export function createEditor({
     editorView,
 
     transformer: transformerInstance,
-    dispatchAnalyticsEvent: onAnalyticsEvent,
 
     eventDispatcher,
     dispatch,

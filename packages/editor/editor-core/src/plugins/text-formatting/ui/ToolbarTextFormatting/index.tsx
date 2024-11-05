@@ -1,5 +1,6 @@
 import { faBold, faItalic } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ButtonGroup } from '@uidu/button';
 import { EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
@@ -9,7 +10,6 @@ import {
   toggleBold,
   toggleItalic,
 } from '../../../../keymaps';
-import { ButtonGroup } from '../../../../ui/styles';
 import ToolbarButton from '../../../../ui/ToolbarButton';
 import { INPUT_METHOD } from '../../../analytics';
 import {
@@ -61,7 +61,7 @@ class ToolbarTextFormatting extends PureComponent<
     const labelBold = formatMessage(messages.bold);
     const labelItalic = formatMessage(messages.italic);
     return (
-      <ButtonGroup width={isReducedSpacing ? 'small' : 'large'}>
+      <ButtonGroup tw="space-x-0">
         {strongHidden ? null : (
           <ToolbarButton
             spacing={isReducedSpacing ? 'none' : 'default'}

@@ -43,8 +43,11 @@ export default class WithPluginState extends React.Component<Props, State> {
   static displayName = 'WithPluginState';
 
   private listeners = {};
+
   private debounce: number | null = null;
+
   private notAppliedState = {};
+
   private isSubscribed = false;
 
   static contextTypes = {
@@ -53,6 +56,7 @@ export default class WithPluginState extends React.Component<Props, State> {
   };
 
   state = {};
+
   context!: Context;
 
   constructor(props: Props, context: Context) {
@@ -93,15 +97,13 @@ export default class WithPluginState extends React.Component<Props, State> {
     );
   }
 
-  private handlePluginStateChange = (
-    propName: string,
-    skipEqualityCheck?: boolean,
-  ) => (pluginState: any) => {
-    // skipEqualityCheck is being used for old plugins since they are mutating plugin state instead of creating a new one
-    if ((this.state as any)[propName] !== pluginState || skipEqualityCheck) {
-      this.updateState({ [propName]: pluginState });
-    }
-  };
+  private handlePluginStateChange =
+    (propName: string, skipEqualityCheck?: boolean) => (pluginState: any) => {
+      // skipEqualityCheck is being used for old plugins since they are mutating plugin state instead of creating a new one
+      if ((this.state as any)[propName] !== pluginState || skipEqualityCheck) {
+        this.updateState({ [propName]: pluginState });
+      }
+    };
 
   /**
    * Debounces setState calls in order to reduce number of re-renders caused by several plugin state changes.
@@ -139,7 +141,7 @@ export default class WithPluginState extends React.Component<Props, State> {
   }
 
   private subscribe(props: Props): void {
-    const plugins = props.plugins;
+    const { plugins } = props;
     const eventDispatcher = this.getEventDispatcher(props);
     const editorView = this.getEditorView(props);
 

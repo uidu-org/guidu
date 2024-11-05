@@ -1,10 +1,9 @@
+import { faAt } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { mention } from '@uidu/adf-schema';
-import { AnalyticsEventPayload } from '@uidu/analytics';
 import { ProviderFactory } from '@uidu/editor-common';
 import {
-  ELEMENTS_CHANNEL,
   isResolvingMentionProvider,
-  isSpecialMention,
   MentionDescription,
   MentionItem,
   MentionProvider,
@@ -17,32 +16,17 @@ import { Fragment, Node, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
 import React from 'react';
 import { v1 as uuid } from 'uuid';
-import { analyticsService } from '../../analytics';
 import { Dispatch } from '../../event-dispatcher';
 import { Command, EditorPlugin } from '../../types';
 import { PortalProviderAPI } from '../../ui/PortalProvider';
 import WithPluginState from '../../ui/WithPluginState';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
-import { IconMention } from '../quick-insert/assets';
 import {
   createInitialPluginState,
   pluginKey as typeAheadPluginKey,
   PluginState as TypeAheadPluginState,
 } from '../type-ahead/pm-plugins/main';
 import { TypeAheadItem } from '../type-ahead/types';
-import {
-  buildTypeAheadCancelPayload,
-  buildTypeAheadInsertedPayload,
-  buildTypeAheadRenderedPayload,
-} from './analytics';
 import mentionNodeView from './nodeviews/mention';
 import {
   MentionPluginOptions,
@@ -54,14 +38,6 @@ import { isTeamStats, isTeamType } from './utils';
 
 const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
   let sessionId = uuid();
-  const fireEvent = <T extends AnalyticsEventPayload>(payload: T): void => {
-    if (options && options.createAnalyticsEvent) {
-      if (payload.attributes && !payload.attributes.sessionId) {
-        payload.attributes.sessionId = sessionId;
-      }
-      options.createAnalyticsEvent(payload).fire(ELEMENTS_CHANNEL);
-    }
-  };
 
   return {
     name: 'mention',
@@ -79,7 +55,6 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
               dispatch,
               providerFactory,
               portalProviderAPI,
-              fireEvent,
               options,
             ),
         },
@@ -119,20 +94,14 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
           description: formatMessage(messages.mentionDescription),
           priority: 400,
           keyshortcut: '@',
-          icon: () => <IconMention label={formatMessage(messages.mention)} />,
+          icon: () => <FontAwesomeIcon icon={faAt} />,
           action(insert, state) {
             const mark = state.schema.mark('typeAheadQuery', {
               trigger: '@',
             });
             const mentionText = state.schema.text('@', [mark]);
             const tr = insert(mentionText);
-            return addAnalytics(state, tr, {
-              action: ACTION.INVOKED,
-              actionSubject: ACTION_SUBJECT.TYPEAHEAD,
-              actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_MENTION,
-              attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-              eventType: EVENT_TYPE.UI,
-            });
+            return tr;
           },
         },
       ],
@@ -246,35 +215,6 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
             );
           }
 
-          const pickerElapsedTime = typeAheadPluginState.queryStarted
-            ? Date.now() - typeAheadPluginState.queryStarted
-            : 0;
-
-          analyticsService.trackEvent(
-            'uidu.editor-core.mention.picker.insert',
-            {
-              mode,
-              isSpecial: isSpecialMention(item.mention) || false,
-              accessLevel: accessLevel || '',
-              mentionee: id,
-              duration: pickerElapsedTime,
-              queryLength: (typeAheadPluginState.query || '').length,
-            },
-          );
-
-          fireEvent(
-            buildTypeAheadInsertedPayload(
-              pickerElapsedTime,
-              typeAheadPluginState.upKeyCount,
-              typeAheadPluginState.downKeyCount,
-              sessionId,
-              mode,
-              item.mention,
-              pluginState.mentions,
-              typeAheadPluginState.query || '',
-            ),
-          );
-
           sessionId = uuid();
 
           if (mentionProvider && isTeamType(userType)) {
@@ -310,27 +250,7 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
             }),
           );
         },
-        dismiss(state) {
-          const typeAheadPluginState = typeAheadPluginKey.getState(
-            state,
-          ) as TypeAheadPluginState;
-
-          const pickerElapsedTime = typeAheadPluginState.queryStarted
-            ? Date.now() - typeAheadPluginState.queryStarted
-            : 0;
-
-          fireEvent(
-            buildTypeAheadCancelPayload(
-              pickerElapsedTime,
-              typeAheadPluginState.upKeyCount,
-              typeAheadPluginState.downKeyCount,
-              sessionId,
-              typeAheadPluginState.query || '',
-            ),
-          );
-
-          sessionId = uuid();
-        },
+        dismiss(state) {},
       },
     },
   };
@@ -392,20 +312,9 @@ function mentionPluginFactory(
   dispatch: Dispatch,
   providerFactory: ProviderFactory,
   portalProviderAPI: PortalProviderAPI,
-  fireEvent: (payload: any) => void,
   options?: MentionPluginOptions,
 ) {
   let mentionProvider: MentionProvider;
-
-  // const sendAnalytics = (
-  //   event: string,
-  //   actionSubject: string,
-  //   action: string,
-  // ): void => {
-  //   if (event === SLI_EVENT_TYPE) {
-  //     fireEvent(buildSliPayload(actionSubject, action));
-  //   }
-  // };
 
   return new Plugin({
     key: mentionPluginKey,
@@ -505,14 +414,6 @@ function mentionPluginFactory(
                         )
                         .filter((m) => !!m) as TeamInfoAttrAnalytics[];
                     }
-
-                    const payload = buildTypeAheadRenderedPayload(
-                      duration,
-                      userIds,
-                      query || '',
-                      teams,
-                    );
-                    fireEvent(payload);
                   },
                   // undefined,
                   // undefined,

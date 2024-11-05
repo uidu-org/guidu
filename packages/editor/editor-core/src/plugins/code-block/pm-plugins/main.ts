@@ -12,26 +12,25 @@ export type CodeBlockState = {
   toolbarVisible?: boolean | undefined;
 };
 
+export const pluginKey = new PluginKey<CodeBlockState>('codeBlockPlugin');
+
 export const getPluginState = (state: EditorState): CodeBlockState =>
   pluginKey.getState(state);
 
-export const setPluginState = (stateProps: Object) => (
-  state: EditorState,
-  dispatch: CommandDispatch,
-): boolean => {
-  const pluginState = getPluginState(state);
-  dispatch(
-    state.tr.setMeta(pluginKey, {
-      ...pluginState,
-      ...stateProps,
-    }),
-  );
-  return true;
-};
+export const setPluginState =
+  (stateProps: Object) =>
+  (state: EditorState, dispatch: CommandDispatch): boolean => {
+    const pluginState = getPluginState(state);
+    dispatch(
+      state.tr.setMeta(pluginKey, {
+        ...pluginState,
+        ...stateProps,
+      }),
+    );
+    return true;
+  };
 
 export type CodeBlockStateSubscriber = (state: CodeBlockState) => any;
-
-export const pluginKey = new PluginKey('codeBlockPlugin');
 
 export const createPlugin = ({ dispatch }: PMPluginFactoryParams) =>
   new Plugin({
@@ -51,40 +50,38 @@ export const createPlugin = ({ dispatch }: PMPluginFactoryParams) =>
       },
     },
     key: pluginKey,
-    view: () => {
-      return {
-        update: (view: EditorView) => {
-          const {
-            state: {
-              selection,
-              schema: {
-                nodes: { codeBlock },
-              },
+    view: () => ({
+      update: (view: EditorView) => {
+        const {
+          state: {
+            selection,
+            schema: {
+              nodes: { codeBlock },
             },
-          } = view;
-          const pluginState = getPluginState(view.state);
-          const parentDOM = findParentDomRefOfType(
-            codeBlock,
-            view.domAtPos.bind(view),
-          )(selection);
-          if (parentDOM !== pluginState.element) {
-            const parent = findParentNodeOfType(codeBlock)(selection);
-            const newState: CodeBlockState = {
-              element: parentDOM as HTMLElement,
-              toolbarVisible: !!parent,
-            };
-            setPluginState(newState)(view.state, view.dispatch);
-            return true;
-          }
+          },
+        } = view;
+        const pluginState = getPluginState(view.state);
+        const parentDOM = findParentDomRefOfType(
+          codeBlock,
+          view.domAtPos.bind(view),
+        )(selection);
+        if (parentDOM !== pluginState.element) {
+          const parent = findParentNodeOfType(codeBlock)(selection);
+          const newState: CodeBlockState = {
+            element: parentDOM as HTMLElement,
+            toolbarVisible: !!parent,
+          };
+          setPluginState(newState)(view.state, view.dispatch);
+          return true;
+        }
 
-          /** Plugin dispatch needed to reposition the toolbar */
-          dispatch(pluginKey, {
-            ...pluginState,
-          });
-          return undefined;
-        },
-      };
-    },
+        /** Plugin dispatch needed to reposition the toolbar */
+        dispatch(pluginKey, {
+          ...pluginState,
+        });
+        return undefined;
+      },
+    }),
     props: {
       nodeViews: {
         codeBlock: codeBlockNodeView,

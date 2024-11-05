@@ -37,14 +37,8 @@ export interface TextFormattingState {
 const getTextFormattingState = (
   editorState: EditorState,
 ): TextFormattingState => {
-  const {
-    em,
-    code,
-    strike,
-    strong,
-    subsup,
-    underline,
-  } = editorState.schema.marks;
+  const { em, code, strike, strong, subsup, underline } =
+    editorState.schema.marks;
   const state: TextFormattingState = {};
 
   if (code) {
@@ -114,7 +108,8 @@ export const plugin = (dispatch: Dispatch) =>
         const { state, dispatch } = view;
         if (event.key === keymaps.moveRight.common) {
           return commands.moveRight()(state, dispatch);
-        } else if (event.key === keymaps.moveLeft.common) {
+        }
+        if (event.key === keymaps.moveLeft.common) {
           return commands.moveLeft()(state, dispatch);
         }
         return false;

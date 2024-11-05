@@ -1,11 +1,11 @@
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
-import BulletListIcon from '@atlaskit/icon/glyph/editor/bullet-list';
-import NumberListIcon from '@atlaskit/icon/glyph/editor/number-list';
+import { faListOl, faListUl } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ButtonGroup } from '@uidu/button';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
-import { withAnalytics } from '../../../../analytics';
 import {
   renderTooltipContent,
   toggleBulletList as toggleBulletListKeymap,
@@ -14,7 +14,6 @@ import {
 } from '../../../../keymaps';
 import DropdownMenu from '../../../../ui/DropdownMenu';
 import {
-  ButtonGroup,
   ExpandIconWrapper,
   Separator,
   Shortcut,
@@ -110,31 +109,45 @@ class ToolbarLists extends PureComponent<Props & WrappedComponentProps, State> {
       const labelUnorderedList = formatMessage(messages.unorderedList);
       const labelOrderedList = formatMessage(messages.orderedList);
       return (
-        <ButtonGroup width={isReducedSpacing ? 'small' : 'large'}>
-          <ToolbarButton
-            spacing={isReducedSpacing ? 'none' : 'default'}
-            onClick={this.handleBulletListClick}
-            selected={bulletListActive}
-            disabled={bulletListDisabled || disabled}
-            title={renderTooltipContent(
-              labelUnorderedList,
-              toggleBulletListKeymap,
-            )}
-            iconBefore={<BulletListIcon label={labelUnorderedList} />}
-          />
-          <ToolbarButton
-            spacing={isReducedSpacing ? 'none' : 'default'}
-            onClick={this.handleOrderedListClick}
-            selected={orderedListActive}
-            disabled={orderedListDisabled || disabled}
-            title={renderTooltipContent(
-              labelOrderedList,
-              toggleOrderedListKeymap,
-            )}
-            iconBefore={<NumberListIcon label={labelOrderedList} />}
-          />
+        <>
+          <ButtonGroup tw="space-x-0">
+            <ToolbarButton
+              spacing={isReducedSpacing ? 'none' : 'default'}
+              onClick={this.handleBulletListClick}
+              selected={bulletListActive}
+              disabled={bulletListDisabled || disabled}
+              title={renderTooltipContent(
+                labelUnorderedList,
+                toggleBulletListKeymap,
+              )}
+              iconBefore={
+                <FontAwesomeIcon
+                  icon={faListUl}
+                  label={labelUnorderedList}
+                  tw="h-4 w-4"
+                />
+              }
+            />
+            <ToolbarButton
+              spacing={isReducedSpacing ? 'none' : 'default'}
+              onClick={this.handleOrderedListClick}
+              selected={orderedListActive}
+              disabled={orderedListDisabled || disabled}
+              title={renderTooltipContent(
+                labelOrderedList,
+                toggleOrderedListKeymap,
+              )}
+              iconBefore={
+                <FontAwesomeIcon
+                  icon={faListOl}
+                  label={labelOrderedList}
+                  tw="h-4 w-4"
+                />
+              }
+            />
+          </ButtonGroup>
           {isSeparator && <Separator />}
-        </ButtonGroup>
+        </>
       );
     } else {
       const items = this.createItems();
@@ -146,63 +159,59 @@ class ToolbarLists extends PureComponent<Props & WrappedComponentProps, State> {
 
       const labelLists = formatMessage(messages.lists);
       return (
-        <Wrapper>
-          <DropdownMenu
-            items={items}
-            onItemActivated={this.onItemActivated}
-            mountTo={popupsMountPoint}
-            boundariesElement={popupsBoundariesElement}
-            scrollableElement={popupsScrollableElement}
-            isOpen={isDropdownOpen}
-            onOpenChange={this.onOpenChange}
-            fitHeight={188}
-            fitWidth={175}
-          >
-            <ToolbarButton
-              spacing={isReducedSpacing ? 'none' : 'default'}
-              selected={bulletListActive || orderedListActive}
-              disabled={disabled}
-              onClick={this.handleTriggerClick}
-              title={labelLists}
-              iconBefore={
-                <Wrapper>
-                  <BulletListIcon label={labelLists} />
-                  <ExpandIconWrapper>
-                    <ExpandIcon label={labelLists} />
-                  </ExpandIconWrapper>
-                </Wrapper>
-              }
-            />
-          </DropdownMenu>
+        <>
+          <Wrapper>
+            <DropdownMenu
+              items={items}
+              onItemActivated={this.onItemActivated}
+              mountTo={popupsMountPoint}
+              boundariesElement={popupsBoundariesElement}
+              scrollableElement={popupsScrollableElement}
+              isOpen={isDropdownOpen}
+              onOpenChange={this.onOpenChange}
+              fitHeight={188}
+              fitWidth={175}
+            >
+              <ToolbarButton
+                spacing={isReducedSpacing ? 'none' : 'default'}
+                selected={bulletListActive || orderedListActive}
+                disabled={disabled}
+                onClick={this.handleTriggerClick}
+                title={labelLists}
+                iconBefore={
+                  <Wrapper>
+                    <FontAwesomeIcon icon={faListUl} label={labelLists} />
+                    <ExpandIconWrapper>
+                      <ExpandIcon label={labelLists} />
+                    </ExpandIconWrapper>
+                  </Wrapper>
+                }
+              />
+            </DropdownMenu>
+          </Wrapper>
           {isSeparator && <Separator />}
-        </Wrapper>
+        </>
       );
     }
   }
 
-  private handleBulletListClick = withAnalytics(
-    'uidu.editor-core.format.list.bullet.button',
-    () => {
-      if (!this.props.bulletListDisabled) {
-        if (toggleBulletList(this.props.editorView, INPUT_METHOD.TOOLBAR)) {
-          return true;
-        }
+  private handleBulletListClick = () => {
+    if (!this.props.bulletListDisabled) {
+      if (toggleBulletList(this.props.editorView, INPUT_METHOD.TOOLBAR)) {
+        return true;
       }
-      return false;
-    },
-  );
+    }
+    return false;
+  };
 
-  private handleOrderedListClick = withAnalytics(
-    'uidu.editor-core.format.list.numbered.button',
-    () => {
-      if (!this.props.orderedListDisabled) {
-        if (toggleOrderedList(this.props.editorView, INPUT_METHOD.TOOLBAR)) {
-          return true;
-        }
+  private handleOrderedListClick = () => {
+    if (!this.props.orderedListDisabled) {
+      if (toggleOrderedList(this.props.editorView, INPUT_METHOD.TOOLBAR)) {
+        return true;
       }
-      return false;
-    },
-  );
+    }
+    return false;
+  };
 
   private onItemActivated = ({
     item,

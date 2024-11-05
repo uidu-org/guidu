@@ -14,7 +14,6 @@ import {
   whitespaceSharedStyles,
 } from '@uidu/editor-common';
 import styled from 'styled-components';
-import { blocktypeStyles } from '../../plugins/block-type/styles';
 import { breakoutStyles } from '../../plugins/breakout/';
 import { codeBlockStyles } from '../../plugins/code-block/styles';
 import { telepointerStyle } from '../../plugins/collab-edit/styles';
@@ -104,7 +103,6 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
     }
   }
 
-  /* ${blocktypeStyles} */
   /* ${textFormattingStyles} */
   ${placeholderTextStyles}
   ${placeholderStyles}
@@ -122,7 +120,7 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
   ${tasksAndDecisionsStyles}
   ${gridStyles}
   ${linkStyles}
-  ${blockMarksSharedStyles}
+  /* ${blockMarksSharedStyles} */
   ${dateSharedStyle}
   ${extensionStyles}
   ${expandStyles}

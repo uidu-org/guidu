@@ -26,7 +26,6 @@ import {
   InputMethodInsertMedia,
   InsertEventPayload,
 } from '../../analytics';
-import { getFeatureFlags } from '../../feature-flags-context';
 import { WidthPluginState } from '../../width';
 import { MediaState } from '../types';
 import { alignmentLayouts } from '../ui/ResizableMediaSingle/utils';
@@ -198,11 +197,8 @@ export const insertMediaSingleNode = (
       dispatch,
     );
   } else {
-    const { newInsertionBehaviour } = getFeatureFlags(view.state);
     let tr: Transaction<any> | null = null;
-    if (newInsertionBehaviour) {
-      tr = safeInsert(node, state.selection.from)(state.tr);
-    }
+    tr = safeInsert(node, state.selection.from)(state.tr);
 
     if (!tr) {
       const content = shouldAddParagraph(view.state)

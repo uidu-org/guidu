@@ -1,3 +1,5 @@
+import { faTable } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { table, tableCell, tableHeader, tableRow } from '@uidu/adf-schema';
 import { tableEditing } from 'prosemirror-tables';
 import { createTable } from 'prosemirror-utils';
@@ -14,7 +16,6 @@ import {
   INPUT_METHOD,
 } from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
-import { IconTable } from '../quick-insert/assets';
 import { pluginConfig } from './create-plugin-config';
 import { keymapPlugin } from './pm-plugins/keymap';
 import { createPlugin } from './pm-plugins/main';
@@ -211,7 +212,12 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
         description: formatMessage(messages.tableDescription),
         priority: 600,
         keyshortcut: tooltip(toggleTable),
-        icon: () => <IconTable label={formatMessage(messages.table)} />,
+        icon: () => (
+          <FontAwesomeIcon
+            icon={faTable}
+            label={formatMessage(messages.table)}
+          />
+        ),
         action(insert, state) {
           const tr = insert(createTable(state.schema));
           return addAnalytics(state, tr, {

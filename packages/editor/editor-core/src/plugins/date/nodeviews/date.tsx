@@ -9,7 +9,6 @@ import { borderRadius, colors } from '@uidu/theme';
 import React from 'react';
 import { useIntl } from 'react-intl';
 import styled from 'styled-components';
-import { InlineNodeViewComponentProps } from '../../../nodeviews/getInlineNodeViewProducer';
 import { setDatePickerAt } from '../actions';
 
 const SelectableDate = styled(Date)`
@@ -35,14 +34,15 @@ const Span = styled.span`
   line-height: initial;
 `;
 
-export default function DateNodeView(props: InlineNodeViewComponentProps) {
+export default function DateNodeView(props) {
+  console.log('DateNodeView', props);
   const {
     node: {
       attrs: { timestamp },
     },
     view,
     view: {
-      state: { schema, selection },
+      state: { schema, selection, doc },
     },
     getPos,
   } = props;

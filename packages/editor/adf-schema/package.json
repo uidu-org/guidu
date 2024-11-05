@@ -22,8 +22,8 @@
     "@uidu/media-core": "4.0.1",
     "css-color-names": "^1.0.1",
     "linkify-it": "^4.0.1",
-    "prosemirror-model": "^1.19.4",
-    "prosemirror-view": "^1.32.7",
+    "prosemirror-model": "^1.23.0",
+    "prosemirror-view": "^1.35.0",
     "tslib": "^2.7.0"
   },
   "devDependencies": {

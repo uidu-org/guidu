@@ -21,7 +21,6 @@ import {
   EditorSharedConfig,
   useEditorSharedConfig,
 } from './Editor';
-import { useCreateAnalyticsHandler } from './internal/hooks/use-analytics';
 import { Toolbar } from './Toolbar';
 
 const FullPageEditorWrapper = styled.div`
@@ -184,13 +183,12 @@ function FullPage(props: FullPageProps) {
     createAnalyticsEvent,
     contextPanel,
   } = props;
-  const handleAnalyticsEvent = useCreateAnalyticsHandler(createAnalyticsEvent);
   const [showKeyline, scrollContainerRef] = useKeyline();
   const config = useEditorSharedConfig();
 
   return (
     <ContextPanelWidthProvider>
-      <Editor {...props} onAnalyticsEvent={handleAnalyticsEvent}>
+      <Editor {...props}>
         <BaseTheme>
           <FullPageEditorWrapper className="akEditor">
             <MainToolbar showKeyline={showKeyline}>

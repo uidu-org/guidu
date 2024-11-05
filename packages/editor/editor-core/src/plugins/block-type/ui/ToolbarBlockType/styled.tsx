@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Shortcut } from '../../../../ui/styles';
 
 export const BlockTypeMenuItem = styled.div`
-  ${headingsSharedStyles};
+  /* ${headingsSharedStyles}; */
   > {
     p,
     h1,

@@ -43,8 +43,7 @@ const basePlugin = (options?: BasePluginOptions): EditorPlugin => ({
     const plugins: { name: string; plugin: PMPluginFactory }[] = [
       {
         name: 'filterStepsPlugin',
-        plugin: ({ dispatchAnalyticsEvent }) =>
-          filterStepsPlugin(dispatchAnalyticsEvent),
+        plugin: () => filterStepsPlugin(),
       },
     ];
 
@@ -76,10 +75,9 @@ const basePlugin = (options?: BasePluginOptions): EditorPlugin => ({
       { name: 'reactNodeView', plugin: () => reactNodeView },
       {
         name: 'frozenEditor',
-        plugin: ({ dispatchAnalyticsEvent }) =>
+        plugin: () =>
           options?.inputTracking?.enabled || options?.ufo
             ? frozenEditor(
-                dispatchAnalyticsEvent,
                 options.inputTracking,
                 options.browserFreezeTracking,
                 options.ufo,

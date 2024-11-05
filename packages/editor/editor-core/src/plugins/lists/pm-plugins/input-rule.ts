@@ -1,7 +1,6 @@
 import { InputRule, wrappingInputRule } from 'prosemirror-inputrules';
-import { Node as PMNode, NodeRange, NodeType, Schema } from 'prosemirror-model';
+import { NodeType, Schema } from 'prosemirror-model';
 import { EditorState, Plugin } from 'prosemirror-state';
-import { analyticsService, trackAndInvoke } from '../../../analytics';
 import {
   createInputRule as defaultCreateInputRule,
   defaultInputRuleHandler,
@@ -36,7 +35,7 @@ export const insertList = (
 ) => {
   // To ensure that match is done after HardBreak.
   const { hardBreak } = state.schema.nodes;
-  if (state.doc.resolve(start).nodeAfter!.type !== hardBreak) {
+  if (state.doc.resolve(start).nodeAfter.type !== hardBreak) {
     return null;
   }
 
@@ -45,17 +44,12 @@ export const insertList = (
     return null;
   }
 
-  // Track event
-  analyticsService.trackEvent(
-    `uidu.editor-core.format.list.${listTypeName}.autoformatting`,
-  );
-
   // Split at the start of autoformatting and delete formatting characters.
   let tr = state.tr.delete(start, end).split(start);
 
   // If node has more content split at the end of autoformatting.
-  let currentNode = tr.doc.nodeAt(start + 1) as PMNode;
-  tr.doc.nodesBetween(start, start + currentNode!.nodeSize, (node, pos) => {
+  const currentNode = tr.doc.nodeAt(start + 1);
+  tr.doc.nodesBetween(start, start + currentNode.nodeSize, (node, pos) => {
     if (node.type === hardBreak) {
       tr = tr.split(pos + 1).delete(pos, pos + 1);
     }
@@ -64,8 +58,8 @@ export const insertList = (
   // Wrap content in list node
   const { listItem } = state.schema.nodes;
   const position = tr.doc.resolve(start + 2);
-  let range = position.blockRange(position)!;
-  tr = tr.wrap(range as NodeRange, [{ type: listType }, { type: listItem }]);
+  const range = position.blockRange(position);
+  tr = tr.wrap(range, [{ type: listType }, { type: listItem }]);
   return tr;
 };
 
@@ -92,16 +86,15 @@ function getBulletListInputRules(schema: Schema): InputRule[] {
     true,
   );
 
-  asteriskRule.handler = trackAndInvoke(
-    'uidu.editor-core.format.list.bullet.autoformatting',
-    asteriskRule.handler as any,
-  );
+  // asteriskRule.handler = trackAndInvoke(
+  //   'uidu.editor-core.format.list.bullet.autoformatting',
+  //   asteriskRule.handler as any,
+  // );
 
   const leafNodeAsteriskRule = defaultCreateInputRule(
     new RegExp(`${leafNodeReplacementCharacter}\\s*([\\*\\-]) $`),
-    (state, _match, start, end) => {
-      return insertList(state, schema.nodes.bulletList, 'bullet', start, end);
-    },
+    (state, _match, start, end) =>
+      insertList(state, schema.nodes.bulletList, 'bullet', start, end),
     true,
   );
 
@@ -136,22 +129,11 @@ function getOrderedListInputRules(schema: Schema): InputRule[] {
     createInputRule(/^(1)[\.\)] $/, schema.nodes.orderedList),
     true,
   );
-  numberOneRule.handler = trackAndInvoke(
-    'uidu.editor-core.format.list.numbered.autoformatting',
-    numberOneRule.handler as any,
-  );
 
   const leafNodeNumberOneRule = defaultCreateInputRule(
     new RegExp(`${leafNodeReplacementCharacter}(1)[\\.\\)] $`),
-    (state, _match, start, end) => {
-      return insertList(
-        state,
-        schema.nodes.orderedList,
-        'numbered',
-        start,
-        end,
-      );
-    },
+    (state, _match, start, end) =>
+      insertList(state, schema.nodes.orderedList, 'numbered', start, end),
     true,
   );
 

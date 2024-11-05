@@ -8,7 +8,6 @@ import {
   PluginsOptions,
   PMPluginCreateConfig,
 } from '../types';
-import { InstrumentedPlugin } from '../utils/performance/instrumented-plugin';
 import { name, version } from '../version-wrapper';
 import { sortByOrder } from './sort-by-order';
 
@@ -44,7 +43,7 @@ export function processPluginsList(plugins: EditorPlugin[]): EditorConfig {
         if (!acc[pluginName]) {
           acc[pluginName] = [];
         }
-        acc[pluginName].push(plugin.pluginsOptions![pluginName]);
+        acc[pluginName].push(plugin.pluginsOptions[pluginName]);
       });
     }
 
@@ -110,8 +109,7 @@ export function createPMPlugins(config: PMPluginCreateConfig): Plugin[] {
   return editorConfig.pmPlugins
     .sort(sortByOrder('plugins'))
     .map(({ plugin }) => plugin(rest))
-    .filter((plugin): plugin is Plugin => typeof plugin !== 'undefined')
-    .map((plugin) => InstrumentedPlugin.fromPlugin(plugin));
+    .filter((plugin): plugin is Plugin => typeof plugin !== 'undefined');
 }
 
 export function createErrorReporter(

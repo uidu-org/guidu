@@ -9,8 +9,7 @@ import { JSONDocNode } from '@uidu/editor-json-transformer';
 import { Node, ResolvedPos, Schema } from 'prosemirror-model';
 import { EditorState, TextSelection, Transaction } from 'prosemirror-state';
 import { ContentNodeWithPos } from 'prosemirror-utils';
-import { DispatchAnalyticsEvent } from '../plugins/analytics/types/dispatch-analytics-event';
-import { sanitizeNodeForPrivacy } from '../utils/filter/privacy-filter';
+import { sanitizeNodeForPrivacy } from './filter/privacy-filter';
 
 /**
  * Checks if node is an empty paragraph.
@@ -23,17 +22,18 @@ export function isEmptyParagraph(node?: Node | null): boolean {
  * Returns false if node contains only empty inline nodes and hardBreaks.
  */
 export function hasVisibleContent(node: Node): boolean {
-  const isInlineNodeHasVisibleContent = (inlineNode: Node) => {
-    return inlineNode.isText
+  const isInlineNodeHasVisibleContent = (inlineNode: Node) =>
+    inlineNode.isText
       ? !!inlineNode.textContent.trim()
       : inlineNode.type.name !== 'hardBreak';
-  };
 
   if (node.isInline) {
     return isInlineNodeHasVisibleContent(node);
-  } else if (node.isBlock && (node.isLeaf || node.isAtom)) {
+  }
+  if (node.isBlock && (node.isLeaf || node.isAtom)) {
     return true;
-  } else if (!node.childCount) {
+  }
+  if (!node.childCount) {
     return false;
   }
 
@@ -154,7 +154,6 @@ export function processRawValue(
   providerFactory?: ProviderFactory,
   sanitizePrivateContent?: boolean,
   contentTransformer?: Transformer<string>,
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
 ): Node | undefined {
   if (!value) {
     return;
@@ -209,11 +208,7 @@ export function processRawValue(
       return Node.fromJSON(schema, node);
     }
 
-    const entity: ADFEntity = validateADFEntity(
-      schema,
-      node as ADFEntity,
-      dispatchAnalyticsEvent,
-    );
+    const entity: ADFEntity = validateADFEntity(schema, node as ADFEntity);
 
     const newEntity = maySanitizePrivateContent(
       entity as JSONDocNode,
@@ -226,13 +221,7 @@ export function processRawValue(
     // throws an error if the document is invalid
     parsedDoc.check();
 
-    if (dispatchAnalyticsEvent) {
-      findAndTrackUnsupportedContentNodes(
-        parsedDoc,
-        schema,
-        dispatchAnalyticsEvent,
-      );
-    }
+    findAndTrackUnsupportedContentNodes(parsedDoc, schema);
 
     return parsedDoc;
   } catch (e) {
@@ -241,7 +230,6 @@ export function processRawValue(
       `Error processing document:\n${e.message}\n\n`,
       JSON.stringify(node),
     );
-    return;
   }
 }
 
@@ -295,9 +283,9 @@ export const isSelectionEndOfParagraph = (state: EditorState): boolean =>
 export function nodesBetweenChanged(
   tr: Transaction,
   f: (
-    node: Node<any>,
+    node: Node,
     pos: number,
-    parent: Node<any>,
+    parent: Node,
     index: number,
   ) => boolean | null | undefined | void,
   startPos?: number,
@@ -311,7 +299,7 @@ export function nodesBetweenChanged(
 }
 
 export function getNodesCount(node: Node): Record<string, number> {
-  let count: Record<string, number> = {};
+  const count: Record<string, number> = {};
 
   node.nodesBetween(0, node.nodeSize - 2, (node) => {
     count[node.type.name] = (count[node.type.name] || 0) + 1;

@@ -1,3 +1,5 @@
+import { faSmile } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { emoji } from '@uidu/adf-schema';
 import { ProviderFactory } from '@uidu/editor-common/provider-factory';
 import { EmojiDescription, EmojiProvider } from '@uidu/emoji';
@@ -8,16 +10,7 @@ import { analyticsService } from '../../analytics';
 import { Dispatch } from '../../event-dispatcher';
 import { Command, EditorPlugin } from '../../types';
 import { PortalProviderAPI } from '../../ui/PortalProvider';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
-import { IconEmoji } from '../quick-insert/assets';
 import { typeAheadPluginKey, TypeAheadPluginState } from '../type-ahead';
 import { TypeAheadItem } from '../type-ahead/types';
 import emojiNodeView from './nodeviews/emoji';
@@ -64,20 +57,19 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
         description: formatMessage(messages.emojiDescription),
         priority: 500,
         keyshortcut: ':',
-        icon: () => <IconEmoji label={formatMessage(messages.emoji)} />,
+        icon: () => (
+          <FontAwesomeIcon
+            icon={faSmile}
+            label={formatMessage(messages.emoji)}
+          />
+        ),
         action(insert, state) {
           const mark = state.schema.mark('typeAheadQuery', {
             trigger: ':',
           });
           const emojiText = state.schema.text(':', [mark]);
           const tr = insert(emojiText);
-          return addAnalytics(state, tr, {
-            action: ACTION.INVOKED,
-            actionSubject: ACTION_SUBJECT.TYPEAHEAD,
-            actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_EMOJI,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-            eventType: EVENT_TYPE.UI,
-          });
+          return tr;
         },
       },
     ],
@@ -90,13 +82,6 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
         if (!prevActive && queryChanged) {
           analyticsService.trackEvent(
             'uidu.editor-core.emoji.typeahead.open',
-            {},
-          );
-        }
-
-        if (query.charAt(query.length - 1) === ' ') {
-          analyticsService.trackEvent(
-            'uidu.editor-core.emoji.typeahead.space',
             {},
           );
         }
@@ -186,38 +171,15 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
           ? Date.now() - typeAheadPluginState.queryStarted
           : 0;
 
-        analyticsService.trackEvent('uidu.editor-core.emoji.typeahead.select', {
-          mode,
-          duration: pickerElapsedTime,
-          emojiId: id,
-          type,
-          queryLength: (typeAheadPluginState.query || '').length,
-        });
-
-        return addAnalytics(
-          state,
-          insert(
-            state.schema.nodes.emoji.createChecked({
-              shortName,
-              id,
-              text,
-            }),
-          ),
-          {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.EMOJI,
-            attributes: { inputMethod: INPUT_METHOD.TYPEAHEAD },
-            eventType: EVENT_TYPE.TRACK,
-          },
+        return insert(
+          state.schema.nodes.emoji.createChecked({
+            shortName,
+            id,
+            text,
+          }),
         );
       },
-      dismiss() {
-        analyticsService.trackEvent(
-          'uidu.editor-core.emoji.typeahead.close',
-          {},
-        );
-      },
+      dismiss() {},
     },
   },
 });

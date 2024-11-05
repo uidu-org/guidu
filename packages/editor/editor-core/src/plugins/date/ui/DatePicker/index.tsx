@@ -41,7 +41,7 @@ type CalendarOnChange = {
 
 export default function DatePicker(props: Props) {
   const { element, closeDatePicker, onSelect } = props;
-  const timestamp = element!.getAttribute('timestamp');
+  const timestamp = element.getAttribute('timestamp');
   const { day, month, year } = timestampToUTCDate(timestamp);
   const [state, setState] = useState({});
 

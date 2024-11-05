@@ -1,3 +1,5 @@
+import { faQuotes } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { blockquote, hardBreak, heading } from '@uidu/adf-schema';
 import {
   QuickInsertActionInsert,
@@ -10,16 +12,8 @@ import * as keymaps from '../../keymaps';
 import { EditorPlugin } from '../../types';
 import { ToolbarSize } from '../../ui/Toolbar/types';
 import WithPluginState from '../../ui/WithPluginState';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
-import { IconHeading, IconQuote } from '../quick-insert/assets';
-import { setBlockTypeWithAnalytics } from './commands';
+import { IconHeading } from '../quick-insert/assets';
+import { setBlockType } from './commands';
 import { messages } from './messages';
 import inputRulePlugin from './pm-plugins/input-rule';
 import keymapPlugin from './pm-plugins/keymap';
@@ -53,16 +47,7 @@ const headingPluginOptions = ({
       ),
       action(insert: QuickInsertActionInsert, state: EditorState) {
         const tr = insert(state.schema.nodes.heading.createChecked({ level }));
-        return addAnalytics(state, tr, {
-          action: ACTION.FORMATTED,
-          actionSubject: ACTION_SUBJECT.TEXT,
-          eventType: EVENT_TYPE.TRACK,
-          actionSubjectId: ACTION_SUBJECT_ID.FORMAT_HEADING,
-          attributes: {
-            inputMethod: INPUT_METHOD.QUICK_INSERT,
-            newHeadingLevel: level,
-          },
-        });
+        return tr;
       },
     };
   });
@@ -119,10 +104,7 @@ const blockTypePlugin = (options?: BlockTypePluginOptions): EditorPlugin => ({
   }) {
     const isSmall = toolbarSize < ToolbarSize.XL;
     const boundSetBlockType = (name: string) =>
-      setBlockTypeWithAnalytics(name, INPUT_METHOD.TOOLBAR)(
-        editorView.state,
-        editorView.dispatch,
-      );
+      setBlockType(name)(editorView.state, editorView.dispatch);
 
     return (
       <WithPluginState
@@ -133,9 +115,9 @@ const blockTypePlugin = (options?: BlockTypePluginOptions): EditorPlugin => ({
         }}
         render={({ pluginState }) => (
           <ToolbarBlockType
-            isSmall={false}
-            isDisabled={false}
-            isReducedSpacing={false}
+            isSmall={isSmall}
+            isDisabled={disabled}
+            isReducedSpacing={isToolbarReducedSpacing}
             setBlockType={boundSetBlockType}
             pluginState={pluginState}
             popupsMountPoint={popupsMountPoint}
@@ -156,7 +138,12 @@ const blockTypePlugin = (options?: BlockTypePluginOptions): EditorPlugin => ({
           description: formatMessage(messages.blockquoteDescription),
           priority: 1300,
           keyshortcut: keymaps.tooltip(keymaps.toggleBlockQuote),
-          icon: () => <IconQuote label={formatMessage(messages.blockquote)} />,
+          icon: () => (
+            <FontAwesomeIcon
+              icon={faQuotes}
+              label={formatMessage(messages.blockquote)}
+            />
+          ),
           action(insert, state) {
             const tr = insert(
               state.schema.nodes.blockquote.createChecked(
@@ -165,15 +152,7 @@ const blockTypePlugin = (options?: BlockTypePluginOptions): EditorPlugin => ({
               ),
             );
 
-            return addAnalytics(state, tr, {
-              action: ACTION.FORMATTED,
-              actionSubject: ACTION_SUBJECT.TEXT,
-              eventType: EVENT_TYPE.TRACK,
-              actionSubjectId: ACTION_SUBJECT_ID.FORMAT_BLOCK_QUOTE,
-              attributes: {
-                inputMethod: INPUT_METHOD.QUICK_INSERT,
-              },
-            });
+            return tr;
           },
         },
         ...headingPluginOptions(intl),

@@ -11,11 +11,8 @@ import {
   ACTION,
   ACTION_SUBJECT,
   EVENT_TYPE,
-  PLATFORMS,
 } from '../../../../../plugins/analytics';
 import { analyticsEventKey } from '../../../../../plugins/analytics/consts';
-import { getFeatureFlags } from '../../../../../plugins/feature-flags-context/';
-import { getEnabledFeatureFlagKeys } from '../../../../../plugins/feature-flags-context/feature-flags-from-props';
 import { getNodesCount } from '../../../../../utils';
 import measurements from '../../../../../utils/performance/measure-enum';
 import { EditorSharedConfig } from '../../context/shared-config';
@@ -49,10 +46,8 @@ export function useEditor(
 function useCreateEditor(
   config: CreateEditorParams,
 ): [EditorSharedConfig | null, (ref: HTMLDivElement | null) => void] {
-  const [
-    editorSharedConfig,
-    setEditorSharedConfig,
-  ] = React.useState<EditorSharedConfig | null>(null);
+  const [editorSharedConfig, setEditorSharedConfig] =
+    React.useState<EditorSharedConfig | null>(null);
 
   return [
     editorSharedConfig,
@@ -147,13 +142,8 @@ export function useHandleEditorLifecycle(
   React.useEffect(() => {
     //#region Did mount
     if (editorSharedConfig) {
-      const {
-        onMount,
-        editorActions,
-        editorView,
-        eventDispatcher,
-        dispatch,
-      } = editorSharedConfig;
+      const { onMount, editorActions, editorView, eventDispatcher, dispatch } =
+        editorSharedConfig;
 
       editorActions._privateRegisterEditor(editorView, eventDispatcher);
 
@@ -161,23 +151,7 @@ export function useHandleEditorLifecycle(
         onMount(editorActions);
       }
 
-      const featureFlags = getFeatureFlags(editorSharedConfig.editorView.state);
-      const featureFlagsEnabled = featureFlags
-        ? getEnabledFeatureFlagKeys(featureFlags)
-        : [];
-
       // Fire editor started event
-      dispatch(analyticsEventKey, {
-        payload: {
-          action: ACTION.STARTED,
-          actionSubject: ACTION_SUBJECT.EDITOR,
-          attributes: {
-            platform: PLATFORMS.WEB,
-            featureFlags: featureFlagsEnabled,
-          },
-          eventType: EVENT_TYPE.UI,
-        },
-      });
     }
     //#endregion
 
@@ -186,12 +160,8 @@ export function useHandleEditorLifecycle(
         return;
       }
 
-      const {
-        eventDispatcher,
-        editorView,
-        onDestroy,
-        editorActions,
-      } = editorSharedConfig;
+      const { eventDispatcher, editorView, onDestroy, editorActions } =
+        editorSharedConfig;
 
       if (eventDispatcher) {
         eventDispatcher.destroy();

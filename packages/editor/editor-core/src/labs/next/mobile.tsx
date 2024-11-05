@@ -1,7 +1,4 @@
-import {
-  withAnalyticsEvents,
-  WithAnalyticsEventsProps,
-} from '@uidu/analytics';
+import { withAnalyticsEvents, WithAnalyticsEventsProps } from '@uidu/analytics';
 // import { Context as CardContext } from '@atlaskit/smart-card';
 import React, { useCallback } from 'react';
 // import { createContextAdapter } from '../../nodeviews';
@@ -13,7 +10,6 @@ import {
   EditorSharedConfigConsumer,
 } from './Editor';
 import { EditorProps } from './internal/editor-props-type';
-import { useCreateAnalyticsHandler } from './internal/hooks/use-analytics';
 
 export interface MobileEditorProps extends EditorProps {
   isMaxContentSizeReached?: boolean;
@@ -28,8 +24,7 @@ export interface MobileEditorProps extends EditorProps {
 export function MobileEditor(
   props: MobileEditorProps & WithAnalyticsEventsProps,
 ) {
-  const { maxHeight, createAnalyticsEvent } = props;
-  const handleAnalyticsEvent = useCreateAnalyticsHandler(createAnalyticsEvent);
+  const { maxHeight } = props;
   const renderWithConfig = useCallback(
     (config: EditorSharedConfig | null) => {
       return (
@@ -46,7 +41,7 @@ export function MobileEditor(
 
   return (
     // <ContextAdapter>
-    <Editor {...props} onAnalyticsEvent={handleAnalyticsEvent}>
+    <Editor {...props}>
       <EditorSharedConfigConsumer>
         {renderWithConfig}
       </EditorSharedConfigConsumer>

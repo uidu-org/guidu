@@ -1,10 +1,12 @@
-import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
+import { faTrash } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   createLanguageList,
   DEFAULT_LANGUAGES,
   getLanguageIdentifier,
 } from '@uidu/adf-schema';
 import { findParentNodeOfType } from 'prosemirror-utils';
+import React from 'react';
 import { defineMessages } from 'react-intl';
 import commonMessages from '../../messages';
 import { Command } from '../../types';
@@ -70,7 +72,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
     const deleteButton: FloatingToolbarButton<Command> = {
       type: 'button',
       appearance: 'danger',
-      icon: RemoveIcon,
+      icon: () => <FontAwesomeIcon tw="text-base" icon={faTrash} />,
       onMouseEnter: hoverDecoration(nodeType, true),
       onMouseLeave: hoverDecoration(nodeType, false),
       onClick: removeCodeBlock,

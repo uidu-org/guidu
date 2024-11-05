@@ -4,7 +4,6 @@ import { ButtonItem } from '@uidu/menu';
 import { EditorState } from 'prosemirror-state';
 import React from 'react';
 import { EditorPlugin } from '../../types';
-import { typeAheadPluginKey, TypeAheadPluginState } from '../type-ahead';
 import createPlugin, { getPluginState } from './pm-plugins/main';
 // import { VideoState } from './pm-plugins/types';
 // import VideoPicker from './ui/VideoPicker';
@@ -109,71 +108,9 @@ const tokenPlugin = (): EditorPlugin => ({
       },
       selectItem(state, item, insert, { mode }) {
         const { schema } = state;
-        // const sanitizePrivateContent =
-        //   options && options.sanitizePrivateContent;
-        // const mentionInsertDisplayName =
-        //   options && options.mentionInsertDisplayName;
-        // const { schema } = state;
         const pluginState = getPluginState(state);
-        // const { mentionProvider } = pluginState;
         const { id, name } = item.token;
-        // const trimmedNickname =
-        //   nickname && nickname.startsWith('@') ? nickname.slice(1) : nickname;
-        // const renderName =
-        //   mentionInsertDisplayName || !trimmedNickname ? name : trimmedNickname;
-        // const typeAheadPluginState = typeAheadPluginKey.getState(
-        //   state,
-        // ) as TypeAheadPluginState;
-        // const mentionContext = {
-        //   sessionId,
-        // };
-        // if (mentionProvider) {
-        //   mentionProvider.recordMentionSelection(item.mention, mentionContext);
-        // }
-        // const pickerElapsedTime = typeAheadPluginState.queryStarted
-        //   ? Date.now() - typeAheadPluginState.queryStarted
-        //   : 0;
-        // analyticsService.trackEvent('uidu.editor-core.mention.picker.insert', {
-        //   mode,
-        //   isSpecial: isSpecialMention(item.mention) || false,
-        //   accessLevel: accessLevel || '',
-        //   mentionee: id,
-        //   duration: pickerElapsedTime,
-        //   queryLength: (typeAheadPluginState.query || '').length,
-        // });
-        // fireEvent(
-        //   buildTypeAheadInsertedPayload(
-        //     pickerElapsedTime,
-        //     typeAheadPluginState.upKeyCount,
-        //     typeAheadPluginState.downKeyCount,
-        //     sessionId,
-        //     mode,
-        //     item.mention,
-        //     pluginState.mentions,
-        //     typeAheadPluginState.query || '',
-        //   ),
-        // );
-        // sessionId = uuid();
-        // if (mentionProvider && isTeamType(userType)) {
-        //   TeamMentionHighlightController.registerTeamMention();
-        //   return insert(
-        //     buildNodesForTeamMention(
-        //       schema,
-        //       item.mention,
-        //       mentionProvider,
-        //       sanitizePrivateContent,
-        //     ),
-        //   );
-        // }
-        // // Don't insert into document if document data is sanitized.
-        // const text = sanitizePrivateContent ? '' : `@${renderName}`;
-        // if (
-        //   sanitizePrivateContent &&
-        //   isResolvingMentionProvider(mentionProvider)
-        // ) {
-        //   // Cache (locally) for later rendering
-        //   mentionProvider.cacheMentionName(id, renderName);
-        // }
+
         return insert(
           state.schema.nodes.token.createChecked({
             name,
@@ -183,13 +120,6 @@ const tokenPlugin = (): EditorPlugin => ({
       },
       dismiss(state) {
         console.log('dismiss', state);
-        const typeAheadPluginState = typeAheadPluginKey.getState(
-          state,
-        ) as TypeAheadPluginState;
-
-        const pickerElapsedTime = typeAheadPluginState.queryStarted
-          ? Date.now() - typeAheadPluginState.queryStarted
-          : 0;
 
         // fireEvent(
         //   buildTypeAheadCancelPayload(

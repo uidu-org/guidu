@@ -111,7 +111,6 @@ const floatingToolbarPlugin = (): EditorPlugin => ({
     popupsScrollableElement,
     editorView,
     providerFactory,
-    dispatchAnalyticsEvent,
   }) {
     return (
       <WithPluginState
@@ -186,7 +185,6 @@ const floatingToolbarPlugin = (): EditorPlugin => ({
                 popupsMountPoint={popupsMountPoint}
                 popupsBoundariesElement={popupsBoundariesElement}
                 popupsScrollableElement={popupsScrollableElement}
-                dispatchAnalyticsEvent={dispatchAnalyticsEvent}
               />
             </Popup>
           );

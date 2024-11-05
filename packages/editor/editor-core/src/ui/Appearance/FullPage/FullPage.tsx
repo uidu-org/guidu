@@ -120,7 +120,6 @@ export class FullPageEditor extends React.Component<
               props.customPrimaryToolbarComponents
             }
             disabled={!!props.disabled}
-            dispatchAnalyticsEvent={props.dispatchAnalyticsEvent}
             editorActions={props.editorActions}
             editorDOMElement={props.editorDOMElement}
             editorView={props.editorView!}
@@ -141,7 +140,6 @@ export class FullPageEditor extends React.Component<
             contextPanel={props.contextPanel}
             customContentComponents={props.customContentComponents}
             disabled={props.disabled}
-            dispatchAnalyticsEvent={props.dispatchAnalyticsEvent}
             editorActions={props.editorActions}
             editorDOMElement={props.editorDOMElement}
             editorView={props.editorView!}

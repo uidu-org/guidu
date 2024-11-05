@@ -9,6 +9,7 @@ import {
   ProviderFactory,
 } from '@uidu/editor-common';
 import { modifyResponse, ProfileClient } from '@uidu/profilecard';
+import { ShellBody, ShellMain, ShellSidebar } from '@uidu/shell';
 import { profilecard as profilecardUtils } from '@uidu/util-data-test';
 import { init } from 'emoji-mart';
 import * as React from 'react';
@@ -18,7 +19,7 @@ import {
   Props as RendererProps,
 } from '../../src/ui/Renderer';
 import { RendererAppearance } from '../../src/ui/Renderer/types';
-import { story as storyDataDocument } from './story-data';
+import { document3 as storyDataDocument } from './story-data';
 
 console.log('init', init);
 init({ data }).then(() => console.log('init done'));
@@ -217,32 +218,32 @@ export default class RendererDemo extends React.Component<
 
   render() {
     return (
-      <div ref="root" style={{ padding: 20 }}>
-        <fieldset style={{ marginBottom: 20 }}>
-          <legend>Input</legend>
-          <textarea
-            id="renderer-value-input"
-            style={{
-              boxSizing: 'border-box',
-              border: '1px solid lightgray',
-              fontFamily: 'monospace',
-              fontSize: 14,
-              padding: 10,
-              width: '100%',
-              height: 220,
-            }}
-            ref={(ref) => {
-              this.inputBox = ref;
-            }}
-            onChange={this.onDocumentChange}
-            value={this.state.input}
-          />
-          <button onClick={this.toggleEventHandlers}>
-            Toggle Event handlers
-          </button>
-        </fieldset>
-        <div tw="prose prose-primary">{this.renderRenderer()}</div>
-        {this.renderText()}
+      <div ref="root">
+        <ShellBody>
+          <ShellMain>
+            <div tw="p-6">{this.renderRenderer()}</div>
+          </ShellMain>
+          <ShellSidebar tw="w-80 border-l bg-gray-50">
+            <textarea
+              id="renderer-value-input"
+              style={{
+                boxSizing: 'border-box',
+                border: '1px solid lightgray',
+                fontFamily: 'monospace',
+                fontSize: 14,
+                padding: 10,
+                width: '100%',
+                height: 220,
+              }}
+              ref={(ref) => {
+                this.inputBox = ref;
+              }}
+              onChange={this.onDocumentChange}
+              value={this.state.input}
+            />
+            {/* {this.renderText()} */}
+          </ShellSidebar>
+        </ShellBody>
       </div>
     );
   }
@@ -314,10 +315,10 @@ export default class RendererDemo extends React.Component<
 
       return (
         <div>
-          <div style={{ color: '#ccc', marginBottom: '8px' }}>
-            &lt;Renderer&gt;
-          </div>
-          <div id="RendererOutput">
+          <div
+            id="RendererOutput"
+            tw="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto"
+          >
             <Renderer {...props} />
           </div>
           {this.props.truncationEnabled ? expandButton : null}

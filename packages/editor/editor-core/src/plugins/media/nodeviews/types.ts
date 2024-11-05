@@ -3,7 +3,6 @@ import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import { EventDispatcher } from '../../../event-dispatcher';
 import { ProsemirrorGetPosHandler } from '../../../nodeviews';
-import { DispatchAnalyticsEvent } from '../../analytics';
 import { MediaPluginState } from '../pm-plugins/types';
 import { MediaOptions } from '../types';
 
@@ -19,7 +18,6 @@ export interface MediaSingleNodeProps {
   mediaProvider?: Promise<MediaProvider>;
   fullWidthMode?: boolean;
   mediaPluginState: MediaPluginState;
-  dispatchAnalyticsEvent: DispatchAnalyticsEvent;
   isCopyPasteEnabled?: boolean;
 }
 
@@ -28,6 +26,5 @@ export interface MediaSingleNodeViewProps {
   providerFactory: ProviderFactory;
   mediaOptions: MediaOptions;
   fullWidthMode?: boolean;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
   isCopyPasteEnabled?: boolean;
 }

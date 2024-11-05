@@ -22,7 +22,7 @@ function liftListItem(
   selection: Selection,
   tr: Transaction,
 ): Transaction {
-  let { $from, $to } = selection;
+  const { $from, $to } = selection;
   const nodeType = state.schema.nodes.listItem;
   let range = $from.blockRange(
     $to,
@@ -38,8 +38,8 @@ function liftListItem(
   ) {
     return tr;
   }
-  let end = range.end;
-  let endOfList = $to.end(range.depth);
+  const { end } = range;
+  const endOfList = $to.end(range.depth);
   if (end < endOfList) {
     tr.step(
       new ReplaceAroundStep(
@@ -63,7 +63,7 @@ function liftListItem(
       range.depth,
     );
   }
-  return tr.lift(range, liftTarget(range) as number).scrollIntoView();
+  return tr.lift(range, liftTarget(range)).scrollIntoView();
 }
 
 // Function will lift list item following selection to level-1.
@@ -155,7 +155,7 @@ const getListType = (node: Node, schema: Schema): [NodeType, number] | null => {
       return lastMatch;
     }
 
-    const match = node.text!.match(listType.matcher);
+    const match = node.text.match(listType.matcher);
     return match ? [listType.node, match[0].length] : lastMatch;
   }, null);
 };

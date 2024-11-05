@@ -25,11 +25,12 @@ export function transformToCodeBlockAction(
 
       if (node.isText) {
         return node.mark([]);
-      } else if (node.isInline) {
-        return node.attrs.text ? state.schema.text(node.attrs.text) : null;
-      } else {
-        return node.content.childCount ? node.content : null;
       }
+      if (node.isInline) {
+        return node.attrs.text ? state.schema.text(node.attrs.text) : null;
+      }
+
+      return node.content.childCount ? node.content : null;
     },
   );
 

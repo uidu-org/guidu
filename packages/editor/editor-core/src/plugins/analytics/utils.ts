@@ -42,9 +42,10 @@ export function getStateContext(
   return payload;
 }
 
-export function getSelectionType(
-  state: EditorState,
-): { type: SELECTION_TYPE; position?: SELECTION_POSITION } {
+export function getSelectionType(state: EditorState): {
+  type: SELECTION_TYPE;
+  position?: SELECTION_POSITION;
+} {
   const { selection } = state;
   let type: SELECTION_TYPE;
   let position: SELECTION_POSITION | undefined;
@@ -191,8 +192,7 @@ export function getAnalyticsEventsFromTransaction(
     .filter<AnalyticsStep>(
       (step: Step): step is AnalyticsStep => step instanceof AnalyticsStep,
     )
-    .reduce<AnalyticsEventPayloadWithChannel[]>(
-      (acc, step) => [...acc, ...step.analyticsEvents],
-      [],
-    );
+    .reduce<
+      AnalyticsEventPayloadWithChannel[]
+    >((acc, step) => [...acc, ...step.analyticsEvents], []);
 }

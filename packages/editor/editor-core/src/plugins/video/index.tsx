@@ -1,22 +1,15 @@
+import { faVideo } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { video } from '@uidu/adf-schema';
 import { ModalTransition } from '@uidu/modal-dialog';
 import React from 'react';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
 import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
-import {
   EditorDisabledPluginState,
   pluginKey as editorDisabledPluginKey,
 } from '../editor-disabled';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
-import { IconVideo } from '../quick-insert/assets';
 import keymap from './pm-plugins/keymap';
 import createPlugin from './pm-plugins/main';
 import { pluginKey as videoPluginKey } from './pm-plugins/plugin-key';
@@ -91,16 +84,14 @@ const videoPlugin = (): EditorPlugin => ({
         priority: 800,
         keywords: ['video', 'youtube', '/'],
         keyshortcut: '//',
-        icon: () => <IconVideo label={formatMessage(messages.video)} />,
+        icon: () => (
+          <FontAwesomeIcon
+            icon={faVideo}
+            label={formatMessage(messages.video)}
+          />
+        ),
         action: (insert, state) => {
           const tr = insert('');
-          addAnalytics(state, tr, {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.DATE,
-            eventType: EVENT_TYPE.TRACK,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-          });
           return tr.setMeta(videoPluginKey, {
             showVideoPickerAt: tr.selection.from,
           });

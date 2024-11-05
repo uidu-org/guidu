@@ -4,6 +4,7 @@ import { ToolbarInnerProps } from './toolbar-types';
 
 const ToolbarComponentsWrapper = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export class ToolbarInner extends React.Component<ToolbarInnerProps> {
@@ -34,7 +35,6 @@ export class ToolbarInner extends React.Component<ToolbarInnerProps> {
       toolbarSize,
       disabled,
       isToolbarReducedSpacing,
-      dispatchAnalyticsEvent,
     } = this.props;
 
     if (!items || !items.length) {
@@ -58,7 +58,6 @@ export class ToolbarInner extends React.Component<ToolbarInnerProps> {
             toolbarSize,
             isToolbarReducedSpacing,
             containerElement: null,
-            dispatchAnalyticsEvent,
           });
           return element && React.cloneElement(element, props);
         })}

@@ -5,7 +5,6 @@ import { Node } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { DispatchAnalyticsEvent } from '../../analytics';
 import { FloatingToolbarItem } from '../types';
 import { compareArrays, shallowEqual } from '../utils';
 import Button from './Button';
@@ -28,7 +27,6 @@ export interface Props {
   className?: string;
   focusEditor?: () => void;
   editorView?: EditorView;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
   target?: HTMLElement;
   node: Node;
 }
@@ -36,7 +34,8 @@ export interface Props {
 const ToolbarContainer = styled.div`
   background-color: ${themed({ light: 'white', dark: colors.DN70 })};
   border-radius: ${borderRadius()}px;
-  box-shadow: 0 0 1px rgba(9, 30, 66, 0.31),
+  box-shadow:
+    0 0 1px rgba(9, 30, 66, 0.31),
     0 4px 8px -2px rgba(9, 30, 66, 0.25);
   padding: ${akGridSize / 2}px ${akGridSize}px;
   display: flex;
@@ -156,7 +155,6 @@ export default class Toolbar extends Component<Props> {
   render() {
     const {
       items,
-      dispatchAnalyticsEvent,
       dispatchCommand,
       popupsMountPoint,
       popupsBoundariesElement,
@@ -176,6 +174,7 @@ export default class Toolbar extends Component<Props> {
         aria-label="Floating Toolbar"
         hasCompactLeftPadding={firstElementIsSelect}
         className={className}
+        tw="text-base"
       >
         <ButtonGroup>
           {items
@@ -225,7 +224,7 @@ export default class Toolbar extends Component<Props> {
                   );
 
                 case 'custom': {
-                  return item.render(editorView, idx, dispatchAnalyticsEvent);
+                  return item.render(editorView, idx);
                 }
 
                 case 'dropdown':

@@ -5,10 +5,9 @@ import { PMPluginFactory } from '../../../types';
 import TokenNodeView from '../nodeviews/token';
 import { ACTIONS, setProvider } from './actions';
 import { pluginKey } from './plugin-key';
-import { TokenPluginState } from './types';
 
 export function getPluginState(state: EditorState) {
-  return pluginKey.getState(state) as TokenPluginState;
+  return pluginKey.getState(state);
 }
 
 const createPlugin: PMPluginFactory = ({
@@ -61,7 +60,6 @@ const createPlugin: PMPluginFactory = ({
       },
     },
     view(editorView) {
-      console.log('editorView', editorView);
       const providerHandler = (
         name: string,
         providerPromise?: Promise<TokenProvider>,

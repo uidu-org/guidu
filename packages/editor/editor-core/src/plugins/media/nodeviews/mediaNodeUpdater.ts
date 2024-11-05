@@ -10,12 +10,6 @@ import { EditorView } from 'prosemirror-view';
 import { v4 as uuidV4 } from 'uuid';
 import { ProsemirrorGetPosHandler } from '../../../nodeviews';
 import {
-  ACTION,
-  ACTION_SUBJECT,
-  DispatchAnalyticsEvent,
-  EVENT_TYPE,
-} from '../../analytics';
-import {
   replaceExternalMedia,
   updateAllMediaNodesAttrs,
   updateMediaNodeAttrs,
@@ -30,7 +24,6 @@ export interface MediaNodeUpdaterProps {
   mediaProvider?: Promise<MediaProvider>;
   isMediaSingle: boolean;
   mediaOptions?: MediaOptions;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
 }
 
 export class MediaNodeUpdater {
@@ -125,13 +118,6 @@ export class MediaNodeUpdater {
         })(this.props.view.state, this.props.view.dispatch);
       } catch (e) {
         //keep it as external media
-        if (this.props.dispatchAnalyticsEvent) {
-          this.props.dispatchAnalyticsEvent({
-            action: ACTION.UPLOAD_EXTERNAL_FAIL,
-            actionSubject: ACTION_SUBJECT.EDITOR,
-            eventType: EVENT_TYPE.OPERATIONAL,
-          });
-        }
       }
     }
   };

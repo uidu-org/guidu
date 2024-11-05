@@ -2,7 +2,7 @@ import { Fragment, Node, Schema, Slice } from 'prosemirror-model';
 import { mapSlice } from '../../utils/slice';
 
 function joinCodeBlocks(left: Node, right: Node) {
-  const textContext = `${left.textContent!}\n${right.textContent!}`;
+  const textContext = `${left.textContent}\n${right.textContent}`;
   return left.type.create(left.attrs, left.type.schema.text(textContext));
 }
 
@@ -12,7 +12,7 @@ function mergeAdjacentCodeBlocks(fragment: Fragment): Fragment {
     if (maybeCodeBlock.type === maybeCodeBlock.type.schema.nodes.codeBlock) {
       const peekAtPrevious = children[children.length - 1];
       if (peekAtPrevious && peekAtPrevious.type === maybeCodeBlock.type) {
-        return children.push(joinCodeBlocks(children.pop()!, maybeCodeBlock));
+        return children.push(joinCodeBlocks(children.pop(), maybeCodeBlock));
       }
     }
     return children.push(maybeCodeBlock);
@@ -21,11 +21,11 @@ function mergeAdjacentCodeBlocks(fragment: Fragment): Fragment {
 }
 
 export function transformSliceToJoinAdjacentCodeBlocks(slice: Slice): Slice {
-  slice = mapSlice(slice, (node) => {
-    return node.isBlock && !node.isTextblock
+  slice = mapSlice(slice, (node) =>
+    node.isBlock && !node.isTextblock
       ? node.copy(mergeAdjacentCodeBlocks(node.content))
-      : node;
-  });
+      : node,
+  );
   // mapSlice won't be able to merge adjacent top-level code-blocks
   return new Slice(
     mergeAdjacentCodeBlocks(slice.content),

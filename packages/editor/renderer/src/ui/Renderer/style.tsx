@@ -11,7 +11,6 @@ import {
   dateSharedStyle,
   editorFontSize,
   gridMediumMaxWidth,
-  headingsSharedStyles,
   indentationSharedStyles,
   listsSharedStyles,
   mediaSingleClassName,
@@ -72,28 +71,29 @@ export const headingSizes: { [key: string]: { [key: string]: number } } = {
   },
 };
 
-const headingAnchorStyle = (headingTag: string) =>
-  css`
-    & .${HeadingAnchorWrapperClassName} {
-      position: absolute;
-      width: 0;
-      height: ${headingSizes[headingTag].lineHeight}em;
+const headingAnchorStyle = (headingTag: string) => css`
+  & .${HeadingAnchorWrapperClassName} {
+    position: absolute;
+    width: 0;
+    height: ${headingSizes[headingTag].lineHeight}em;
 
-      & button {
-        opacity: 0;
-        transform: translate(8px, 0px);
-        transition: opacity 0.2s ease 0s, transform 0.2s ease 0s;
-      }
+    & button {
+      opacity: 0;
+      transform: translate(8px, 0px);
+      transition:
+        opacity 0.2s ease 0s,
+        transform 0.2s ease 0s;
     }
+  }
 
-    &:hover {
-      & .${HeadingAnchorWrapperClassName} button {
-        opacity: 1;
-        transform: none;
-        width: unset;
-      }
+  &:hover {
+    & .${HeadingAnchorWrapperClassName} button {
+      opacity: 1;
+      transform: none;
+      width: unset;
     }
-  `;
+  }
+`;
 
 const tableSortableColumnStyle = `
   .${RendererCssClassName.SORTABLE_COLUMN} {
@@ -208,12 +208,11 @@ export const Wrapper = styled.div<RendererWrapperProps & HTMLAttributes<{}>>`
   }
 
   ${whitespaceSharedStyles};
-  ${blockquoteSharedStyles};
-  ${headingsSharedStyles};
+  /* ${blockquoteSharedStyles}; */
   ${panelSharedStyles};
   ${ruleSharedStyles};
   ${paragraphSharedStyles};
-  /* ${listsSharedStyles}; */
+  ${listsSharedStyles};
   ${indentationSharedStyles};
   ${blockMarksSharedStyles};
   ${codeMarkSharedStyles};

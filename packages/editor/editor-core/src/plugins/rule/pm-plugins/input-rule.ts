@@ -16,7 +16,6 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../../analytics';
-import { getFeatureFlags } from '../../feature-flags-context';
 
 export const createHorizontalRule = (
   state: EditorState,
@@ -34,20 +33,17 @@ export const createHorizontalRule = (
   }
 
   let tr: Transaction<any> | null = null;
-  const { newInsertionBehaviour } = getFeatureFlags(state);
-  if (newInsertionBehaviour) {
-    /**
-     * This is a workaround to get rid of the typeahead text when using quick insert
-     * Once we insert *nothing*, we get a new transaction, so we can use the new selection
-     * without considering the extra text after the `/` command.
-     **/
-    tr = state.tr.replaceWith(start, end, Fragment.empty);
+  /**
+   * This is a workaround to get rid of the typeahead text when using quick insert
+   * Once we insert *nothing*, we get a new transaction, so we can use the new selection
+   * without considering the extra text after the `/` command.
+   **/
+  tr = state.tr.replaceWith(start, end, Fragment.empty);
 
-    tr = safeInsert(
-      state.schema.nodes.rule.createChecked(),
-      tr.selection.from,
-    )(tr);
-  }
+  tr = safeInsert(
+    state.schema.nodes.rule.createChecked(),
+    tr.selection.from,
+  )(tr);
 
   if (!tr) {
     const { $from } = state.selection;

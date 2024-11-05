@@ -7,7 +7,6 @@ import { EditorView } from 'prosemirror-view';
 import React, { ReactElement } from 'react';
 import EditorActions from '../../../actions';
 import { EventDispatcher } from '../../../event-dispatcher';
-import { DispatchAnalyticsEvent } from '../../../plugins/analytics';
 import {
   EditorAppearance,
   ReactComponents,
@@ -32,7 +31,6 @@ interface FullPageEditorContentAreaProps {
   contextPanel: ReactComponents | undefined;
   customContentComponents: ReactComponents | undefined;
   disabled: boolean | undefined;
-  dispatchAnalyticsEvent: DispatchAnalyticsEvent | undefined;
   editorActions: EditorActions | undefined;
   editorDOMElement: ReactElement;
   editorView: EditorView;
@@ -46,8 +44,8 @@ interface FullPageEditorContentAreaProps {
   scrollContainerRef(ref: HTMLElement | null): void;
 }
 
-export const FullPageContentArea: React.FunctionComponent<FullPageEditorContentAreaProps> = React.memo(
-  (props) => {
+export const FullPageContentArea: React.FunctionComponent<FullPageEditorContentAreaProps> =
+  React.memo((props) => {
     return (
       <ContentArea>
         <ScrollContainer
@@ -90,7 +88,6 @@ export const FullPageContentArea: React.FunctionComponent<FullPageEditorContentA
                         popupsScrollableElement={props.popupsScrollableElement}
                         disabled={!!props.disabled}
                         containerElement={props.scrollContainer}
-                        dispatchAnalyticsEvent={props.dispatchAnalyticsEvent}
                       />
                     }
                     {props.editorDOMElement}
@@ -104,5 +101,4 @@ export const FullPageContentArea: React.FunctionComponent<FullPageEditorContentA
         <WidthEmitter editorView={props.editorView} />
       </ContentArea>
     );
-  },
-);
+  });

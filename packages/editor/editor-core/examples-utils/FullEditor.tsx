@@ -8,21 +8,29 @@ import '@uppy/dashboard/dist/style.css';
 import '@uppy/drag-drop/dist/style.css';
 import '@uppy/url/dist/style.css';
 import '@uppy/webcam/dist/style.css';
-import { init, SearchIndex } from 'emoji-mart';
+import { Emoji, init, SearchIndex } from 'emoji-mart';
 import React, { useMemo, useRef, useState } from 'react';
 import { localUploadOptions } from '../../../media/media-core/src';
-import { story as document } from '../../renderer/examples/helper/story-data';
+import { document3 as document } from '../../renderer/examples/helper/story-data';
 import { getItems } from '../examples-utils/tokens';
-import { Editor, EditorContext, WithEditorActions } from '../src';
 import {
+  Editor,
+  EditorContext,
+  isEmptyDocument,
+  WithEditorActions,
+} from '../src';
+import {
+  alignmentPlugin,
   blockTypePlugin,
+  codeBlockPlugin,
+  datePlugin,
   emojiPlugin,
   insertBlockPlugin,
   layoutPlugin,
+  listsPlugin,
   mediaPlugin,
   mentionsPlugin,
   quickInsertPlugin,
-  saveOnEnterPlugin,
   starterKitPlugin,
   tablesPlugin,
   tokenPlugin,
@@ -83,13 +91,22 @@ export default function FullEditor() {
     () => [
       blockTypePlugin(),
       layoutPlugin(),
-      saveOnEnterPlugin(console.log),
+      // saveOnEnterPlugin(console.log),
+      listsPlugin(),
       starterKitPlugin({
-        placeholder: 'Insert something...',
+        placeholder: ({ doc, node }) => {
+          if (isEmptyDocument(doc)) {
+            return 'Insert something...';
+          }
+          return `Press '/' to insert something...`;
+        },
       }),
       insertBlockPlugin({
         insertMenuItems: [],
       }),
+      datePlugin(),
+      alignmentPlugin(),
+      codeBlockPlugin(),
       emojiPlugin(),
       quickInsertPlugin(),
       videoPlugin(),
@@ -185,11 +202,10 @@ export default function FullEditor() {
                 </ShellHeader>
                 <ShellBody>
                   <ShellMain>
-                    <ShellBody
-                      ref={element}
-                      tw="prose prose-primary max-w-none"
-                    >
-                      {renderEditor({})}
+                    <ShellBody ref={element}>
+                      <div tw="w-full prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto">
+                        {renderEditor({})}
+                      </div>
                     </ShellBody>
                   </ShellMain>
                   <ShellSidebar tw="w-80 border-l bg-gray-50">

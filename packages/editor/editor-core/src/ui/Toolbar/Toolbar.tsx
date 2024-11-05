@@ -14,7 +14,6 @@ export function Toolbar({
   popupsScrollableElement,
   appearance,
   disabled,
-  dispatchAnalyticsEvent,
   toolbarSize,
 }: ToolbarProps) {
   return (
@@ -29,7 +28,6 @@ export function Toolbar({
       popupsBoundariesElement={popupsBoundariesElement}
       popupsScrollableElement={popupsScrollableElement}
       disabled={disabled}
-      dispatchAnalyticsEvent={dispatchAnalyticsEvent}
       toolbarSize={toolbarSize}
       isToolbarReducedSpacing={toolbarSize < ToolbarSize.XXL}
     />

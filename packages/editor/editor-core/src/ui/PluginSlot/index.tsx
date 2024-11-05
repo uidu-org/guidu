@@ -4,7 +4,6 @@ import React from 'react';
 import styled from 'styled-components';
 import EditorActions from '../../actions';
 import { EventDispatcher } from '../../event-dispatcher';
-import { DispatchAnalyticsEvent } from '../../plugins/analytics';
 import { EditorAppearance, UIComponentFactory } from '../../types';
 import { whichTransitionEvent } from '../../utils';
 
@@ -24,7 +23,6 @@ export interface Props {
   popupsScrollableElement?: HTMLElement;
   containerElement: HTMLElement | null;
   disabled: boolean;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
   contentArea?: HTMLElement;
 }
 
@@ -119,7 +117,6 @@ export default class PluginSlot extends React.Component<Props, any> {
       popupsScrollableElement,
       containerElement,
       disabled,
-      dispatchAnalyticsEvent,
     } = this.props;
 
     if (!items || !editorView) {
@@ -135,7 +132,6 @@ export default class PluginSlot extends React.Component<Props, any> {
             editorActions: editorActions as EditorActions,
             eventDispatcher: eventDispatcher as EventDispatcher,
             providerFactory,
-            dispatchAnalyticsEvent,
             appearance: appearance!,
             popupsMountPoint,
             popupsBoundariesElement,

@@ -79,7 +79,7 @@ function ModalWrapper(props: ModalDialogProps) {
   );
 
   return (
-    <Portal zIndex={510}>
+    <Portal zIndex={710}>
       <FadeIn>
         {(fadeInProps) => (
           <div

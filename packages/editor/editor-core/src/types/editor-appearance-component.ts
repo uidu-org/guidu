@@ -2,7 +2,6 @@ import { ExtensionHandlers, ProviderFactory } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import EditorActions from '../actions';
 import { EventDispatcher } from '../event-dispatcher';
-import { DispatchAnalyticsEvent } from '../plugins/analytics';
 import { CollabEditOptions } from '../plugins/collab-edit/types';
 import { ReactComponents } from '../types/editor-props';
 import { UIComponentFactory } from '../types/ui-components';
@@ -21,7 +20,6 @@ export interface EditorAppearanceComponentProps {
   editorView?: EditorView;
 
   eventDispatcher?: EventDispatcher;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
 
   maxHeight?: number;
 

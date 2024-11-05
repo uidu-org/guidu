@@ -1,4 +1,3 @@
-import { CreateUIAnalyticsEvent } from '@uidu/analytics';
 import {
   basePlugin,
   clearMarksOnChangeToEmptyDocumentPlugin,
@@ -8,7 +7,7 @@ import {
   pastePlugin,
   typeAheadPlugin,
   unsupportedContentPlugin,
-  widthPlugin
+  widthPlugin,
 } from '../plugins';
 import { ScrollGutterPluginOptions } from '../plugins/base/pm-plugins/scroll-gutter';
 import { EditorPlugin, EditorProps } from '../types';
@@ -45,7 +44,6 @@ export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
     basePlugin({
       allowInlineCursorTarget: appearance !== 'mobile',
       allowScrollGutter: getScrollGutterOptions(props),
-      addRunTimePerformanceCheck: false,
       inputSamplingLimit: props.inputSamplingLimit,
     }),
     pastePlugin({
@@ -65,11 +63,7 @@ export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
 /**
  * Maps EditorProps to EditorPlugins
  */
-export default function createPluginsList(
-  props: EditorProps,
-  prevProps?: EditorProps,
-  createAnalyticsEvent?: CreateUIAnalyticsEvent,
-): EditorPlugin[] {
+export default function createPluginsList(props: EditorProps): EditorPlugin[] {
   // const isMobile = props.appearance === 'mobile';
   const plugins = [...getDefaultPluginsList(props), ...(props.plugins || [])];
 

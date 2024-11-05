@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@uidu/button": "^1.9.4",
-    "@uidu/dropdown-menu": "^0.12.4",
     "@uidu/shell": "^2.10.4",
     "react": "^18.3.1",
     "react-lorem-component": "^0.13.0"

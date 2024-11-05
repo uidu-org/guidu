@@ -5,7 +5,6 @@ import { EditorView } from 'prosemirror-view';
 import React from 'react';
 import { IntlShape } from 'react-intl';
 import { Command } from '../../types/command';
-import { DispatchAnalyticsEvent } from '../analytics/types/dispatch-analytics-event';
 import { ButtonAppearance } from './ui/Button';
 import { SelectOption } from './ui/Select';
 import { DropdownOptions, RenderOptionsPropsT } from './ui/types';
@@ -49,7 +48,6 @@ export type FloatingToolbarCustom = {
   render: (
     view?: EditorView,
     idx?: number,
-    dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
   ) => React.ComponentClass | React.SFC | React.ReactElement<any> | null;
   hidden?: boolean;
 };

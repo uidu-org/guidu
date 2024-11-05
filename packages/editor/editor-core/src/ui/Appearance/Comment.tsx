@@ -173,7 +173,6 @@ class Editor extends React.Component<
       onSave,
       onCancel,
       disabled,
-      dispatchAnalyticsEvent,
       intl,
     } = this.props;
     const maxContentSizeReached =
@@ -193,7 +192,6 @@ class Editor extends React.Component<
               popupsBoundariesElement={popupsBoundariesElement}
               popupsScrollableElement={popupsScrollableElement}
               disabled={!!disabled}
-              dispatchAnalyticsEvent={dispatchAnalyticsEvent}
             />
             <MainToolbarCustomComponentsSlot>
               {customPrimaryToolbarComponents}
@@ -214,7 +212,6 @@ class Editor extends React.Component<
                       editorView={editorView}
                       editorActions={editorActions}
                       eventDispatcher={eventDispatcher}
-                      dispatchAnalyticsEvent={dispatchAnalyticsEvent}
                       providerFactory={providerFactory}
                       appearance={this.appearance}
                       items={contentComponents}

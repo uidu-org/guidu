@@ -1,9 +1,9 @@
-import MoreIcon from '@atlaskit/icon/glyph/editor/more';
+import { faEllipsis } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { akEditorMenuZIndex } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
-import { analyticsService } from '../../../../analytics';
 import {
   clearFormatting as clearFormattingKeymap,
   toggleCode,
@@ -20,8 +20,7 @@ import {
   Wrapper,
 } from '../../../../ui/styles';
 import ToolbarButton from '../../../../ui/ToolbarButton';
-import { INPUT_METHOD } from '../../../analytics';
-import { clearFormattingWithAnalytics } from '../../commands/clear-formatting';
+import { clearFormatting } from '../../commands/clear-formatting';
 import * as commands from '../../commands/text-formatting';
 import { ClearFormattingState } from '../../pm-plugins/clear-formatting';
 import { TextFormattingState } from '../../pm-plugins/main';
@@ -143,7 +142,7 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
         title={labelMoreFormatting}
         iconBefore={
           <TriggerWrapper>
-            <MoreIcon label={labelMoreFormatting} />
+            <FontAwesomeIcon tw="text-base" icon={faEllipsis} />
           </TriggerWrapper>
         }
       />
@@ -293,40 +292,25 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
   };
 
   private onItemActivated = ({ item }: { item: MenuItem }) => {
-    analyticsService.trackEvent(
-      `uidu.editor-core.format.${item.value.name}.button`,
-    );
-
     const { state, dispatch } = this.props.editorView;
     switch (item.value.name) {
       case 'underline':
-        commands.toggleUnderlineWithAnalytics({
-          inputMethod: INPUT_METHOD.TOOLBAR,
-        })(state, dispatch);
+        commands.toggleUnderline()(state, dispatch);
         break;
       case 'code':
-        commands.toggleCodeWithAnalytics({ inputMethod: INPUT_METHOD.TOOLBAR })(
-          state,
-          dispatch,
-        );
+        commands.toggleCode()(state, dispatch);
         break;
       case 'strike':
-        commands.toggleStrikeWithAnalytics({
-          inputMethod: INPUT_METHOD.TOOLBAR,
-        })(state, dispatch);
+        commands.toggleStrike()(state, dispatch);
         break;
       case 'subscript':
-        commands.toggleSubscriptWithAnalytics({
-          inputMethod: INPUT_METHOD.TOOLBAR,
-        })(state, dispatch);
+        commands.toggleSubscript()(state, dispatch);
         break;
       case 'superscript':
-        commands.toggleSuperscriptWithAnalytics({
-          inputMethod: INPUT_METHOD.TOOLBAR,
-        })(state, dispatch);
+        commands.toggleSuperscript()(state, dispatch);
         break;
       case 'clearFormatting':
-        clearFormattingWithAnalytics(INPUT_METHOD.TOOLBAR)(state, dispatch);
+        clearFormatting()(state, dispatch);
         break;
     }
     this.setState({ isOpen: false });

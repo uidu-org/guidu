@@ -3,22 +3,8 @@ import { safeInsert } from '@uidu/prosemirror-utils';
 import { Fragment } from 'prosemirror-model';
 import { Selection } from 'prosemirror-state';
 import { Command } from '../../../types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../../analytics';
 
-export function insertEmoji(
-  emojiId: EmojiId,
-  inputMethod?:
-    | INPUT_METHOD.PICKER
-    | INPUT_METHOD.ASCII
-    | INPUT_METHOD.TYPEAHEAD,
-): Command {
+export function insertEmoji(emojiId: EmojiId): Command {
   return (state, dispatch) => {
     const { emoji } = state.schema.nodes;
 
@@ -33,15 +19,6 @@ export function insertEmoji(
       if (dispatch) {
         const fragment = Fragment.fromArray([node, textNode]);
         const tr = safeInsert(fragment)(state.tr);
-        if (inputMethod) {
-          addAnalytics(state, tr, {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.EMOJI,
-            attributes: { inputMethod },
-            eventType: EVENT_TYPE.TRACK,
-          });
-        }
 
         dispatch(
           tr.setSelection(

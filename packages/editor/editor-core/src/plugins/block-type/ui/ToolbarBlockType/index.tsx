@@ -1,9 +1,8 @@
-import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
-import TextStyleIcon from '@atlaskit/icon/glyph/editor/text-style';
+import { faChevronDown } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { akEditorMenuZIndex } from '@uidu/editor-common';
 import React, { createElement, useState } from 'react';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
-import { analyticsService as analytics } from '../../../../analytics';
 import { findKeymapByDescription, tooltip } from '../../../../keymaps';
 import DropdownMenu from '../../../../ui/DropdownMenu';
 import { MenuItem } from '../../../../ui/DropdownMenu/types';
@@ -86,18 +85,14 @@ export default function ToolbarBlockType({
       <ToolbarButton
         spacing={isReducedSpacing ? 'none' : 'default'}
         selected={active}
-        className="block-type-btn"
         disabled={disabled}
         onClick={() => setActive((prevActive) => !prevActive)}
         title={labelTextStyles}
         aria-label="Font style"
         iconAfter={
-          <Wrapper isSmall={isSmall}>
-            {isSmall && <TextStyleIcon label={labelTextStyles} />}
-            <ExpandIconWrapper>
-              <ExpandIcon label={labelTextStyles} />
-            </ExpandIconWrapper>
-          </Wrapper>
+          <ExpandIconWrapper tw="text-base">
+            <FontAwesomeIcon tw="h-3 w-3" icon={faChevronDown} />
+          </ExpandIconWrapper>
         }
       >
         {!isSmall && (
@@ -148,14 +143,24 @@ export default function ToolbarBlockType({
     const blockType = item.value;
     setBlockType(blockType.name);
     setActive(false);
-
-    analytics.trackEvent(`uidu.editor-core.format.${blockType.name}.button`);
   };
 
   if (!isDisabled && !blockTypesDisabled) {
     const items = createItems();
     return (
       <MenuWrapper>
+        {/* <Popup
+          isOpen={active}
+          onClose={() => setActive(false)}
+          trigger={() => toolbarButtonFactory(false)}
+          content={() => (
+            <>
+              {items.map((item) => (
+                <ButtonItem>{item.content}</ButtonItem>
+              ))}
+            </>
+          )}
+        ></Popup> */}
         <DropdownMenu
           items={items}
           // onOpenChange={() => setActive((prevActive) => !prevActive)}

@@ -1,6 +1,5 @@
 import { InputRule } from 'prosemirror-inputrules';
 import { Plugin, Selection, Transaction } from 'prosemirror-state';
-import { analyticsService } from '../../../analytics';
 import {
   createInputRule,
   InputRuleHandler,
@@ -24,19 +23,10 @@ import {
  *
  * @param text text to replace with
  */
-function replaceTextUsingCaptureGroup(
-  text: string,
-  trackingEventName?: string,
-): InputRuleHandler {
+function replaceTextUsingCaptureGroup(text: string): InputRuleHandler {
   return (state, match, start, end): Transaction => {
     const [, prefix, , suffix] = match;
     const replacement = (prefix || '') + text + (suffix || '');
-
-    if (trackingEventName) {
-      analyticsService.trackEvent(
-        `uidu.editor-core.format.${trackingEventName}.autoformatting`,
-      );
-    }
 
     let {
       tr,
@@ -48,15 +38,8 @@ function replaceTextUsingCaptureGroup(
   };
 }
 
-function createReplacementRule(
-  to: string,
-  from: RegExp,
-  trackingEventName?: string,
-): InputRuleWithHandler {
-  return createInputRule(
-    from,
-    replaceTextUsingCaptureGroup(to, trackingEventName),
-  );
+function createReplacementRule(to: string, from: RegExp): InputRuleWithHandler {
+  return createInputRule(from, replaceTextUsingCaptureGroup(to));
 }
 
 /**
@@ -67,14 +50,13 @@ function createReplacementRule(
  */
 function createReplacementRules(
   replMap: { [replacement: string]: RegExp },
-  trackingEventName?: string,
   replacementRuleWithAnalytics?: (
     replacement: string,
   ) => (rule: InputRuleWithHandler) => InputRuleWithHandler,
 ): Array<InputRule> {
   return Object.keys(replMap).map((replacement) => {
     const regex = replMap[replacement];
-    const rule = createReplacementRule(replacement, regex, trackingEventName);
+    const rule = createReplacementRule(replacement, regex);
 
     if (replacementRuleWithAnalytics) {
       return replacementRuleWithAnalytics(replacement)(rule);
@@ -87,9 +69,7 @@ function createReplacementRules(
 // We don't agressively upgrade single quotes to smart quotes because
 // they may clash with an emoji. Only do that when we have a matching
 // single quote, or a contraction.
-function createSingleQuotesRules(
-  trackingEventName: string,
-): Array<InputRuleWithHandler> {
+function createSingleQuotesRules(): Array<InputRuleWithHandler> {
   return [
     // wrapped text
     createInputRule(
@@ -98,16 +78,12 @@ function createSingleQuotesRules(
         const [, spacing, innerContent] = match;
         const replacement = spacing + '‘' + innerContent + '’';
 
-        analyticsService.trackEvent(
-          `uidu.editor-core.format.${trackingEventName}.autoformatting`,
-        );
-
         return state.tr.insertText(replacement, start, end);
       },
     ),
 
     // apostrophe
-    createReplacementRule('’', /(\w+)(')(\w+)$/, trackingEventName),
+    createReplacementRule('’', /(\w+)(')(\w+)$/),
   ];
 }
 /**
@@ -134,7 +110,6 @@ function getProductRules(): Array<InputRule> {
       Hipchat: /(\s+|^)(hipchat|HipChat)(\s)$/,
       Trello: /(\s+|^)(trello)(\s)$/,
     },
-    'product',
     productRuleWithAnalytics,
   );
 }
@@ -167,7 +142,6 @@ function getSymbolRules() {
       '←': /(\s+|^)(<--?)(\s)$/,
       '↔︎': /(\s+|^)(<->?)(\s)$/,
     },
-    'arrow',
     symbolRuleWithAnalytics,
   );
 }
@@ -205,7 +179,6 @@ function getPunctuationRules() {
       '–': /(\s+|^)(--)(\s)$/,
       '…': /()(\.\.\.)$/,
     },
-    'typography',
     punctuationRuleWithAnalytics,
   );
 
@@ -214,11 +187,10 @@ function getPunctuationRules() {
       '“': /((?:^|[\s\{\[\(\<'"\u2018\u201C]))(")$/,
       '”': /"$/,
     },
-    'quote',
     punctuationRuleWithAnalytics,
   );
 
-  const singleQuoteRules = createSingleQuotesRules('quote');
+  const singleQuoteRules = createSingleQuotesRules();
 
   return [
     ...dashEllipsisRules,

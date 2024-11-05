@@ -6,7 +6,6 @@ import { EditorView } from 'prosemirror-view';
 import EditorActions from '../../../../actions';
 import { Command, CommandDispatch } from '../../../../types/command';
 import { MenuItem } from '../../../../ui/DropdownMenu/types';
-import { DispatchAnalyticsEvent } from '../../../analytics';
 import { INPUT_METHOD } from '../../../analytics/types';
 import { BlockType } from '../../../block-type/types';
 
@@ -50,7 +49,6 @@ export interface Props {
     node?: PMNode,
     isEditing?: boolean,
   ) => (state: EditorState, dispatch: CommandDispatch) => void;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
 }
 
 export interface State {

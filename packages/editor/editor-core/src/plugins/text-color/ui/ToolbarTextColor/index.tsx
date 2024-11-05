@@ -18,22 +18,6 @@ import {
   TriggerWrapper,
 } from '../../../../ui/styles';
 import ToolbarButton from '../../../../ui/ToolbarButton';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  AnalyticsEventPayload,
-  DispatchAnalyticsEvent,
-  EVENT_TYPE,
-} from '../../../analytics';
-import {
-  ExperimentalTextColorSelectedAEP,
-  ExperimentalTextColorShowMoreToggleAEP,
-  ExperimentalTextColorShowPaletteToggleAEP,
-  TextColorSelectedAttr,
-  TextColorShowMoreToggleAttr,
-  TextColorShowPaletteToggleAttr,
-} from '../../../analytics/types/experimental-events';
 import * as commands from '../../commands/change-color';
 import type { TextColorPluginState } from '../../pm-plugins/main';
 import { EditorTextColorIcon } from './icon';
@@ -79,7 +63,6 @@ export interface Props {
   popupsScrollableElement?: HTMLElement;
   isReducedSpacing?: boolean;
   showMoreColorsToggle?: boolean;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
   disabled?: boolean;
 }
 
@@ -211,14 +194,6 @@ class ToolbarTextColor extends React.Component<
           color !== defaultColor &&
           !originalTextColors.some((col) => col.value === color);
 
-        this.dispatchAnalyticsEvent(
-          this.buildExperimentalAnalyticsSelectColor({
-            color: (swatch ? swatch.label : color).toLowerCase(),
-            isShowingMoreColors,
-            isNewColor,
-          }),
-        );
-
         this.handleOpenChange({
           isOpen: false,
           logCloseEvent: false,
@@ -254,16 +229,6 @@ class ToolbarTextColor extends React.Component<
     });
 
     if (logCloseEvent) {
-      this.dispatchAnalyticsEvent(
-        this.buildExperimentalAnalyticsPalette(
-          isOpen ? ACTION.OPENED : ACTION.CLOSED,
-          {
-            isShowingMoreColors:
-              isExtendedPaletteSelected || isShowingMoreColors,
-            noSelect: isOpen === false,
-          },
-        ),
-      );
     }
   };
 
@@ -271,99 +236,17 @@ class ToolbarTextColor extends React.Component<
     const { isOpen, isShowingMoreColors } = this.state;
 
     if (isOpen === true) {
-      this.dispatchAnalyticsEvent(
-        this.buildExperimentalAnalyticsPalette(ACTION.CLOSED, {
-          isShowingMoreColors,
-          noSelect: true,
-        }),
-      );
-
       this.setState({ isOpen: false });
     }
   };
 
   private handleShowMoreToggle = () => {
     this.setState((state) => {
-      this.dispatchAnalyticsEvent(
-        this.buildExperimentalAnalyticsShowMore(
-          state.isShowingMoreColors ? ACTION.CLOSED : ACTION.OPENED,
-          {
-            showMoreButton: !state.isShowingMoreColors,
-            showLessButton: state.isShowingMoreColors,
-          },
-        ),
-      );
-
       return {
         isShowingMoreColors: !state.isShowingMoreColors,
       };
     });
   };
-
-  private getCommonExperimentalAnalyticsAttributes() {
-    const { showMoreColorsToggle } = this.props;
-    return {
-      experiment: EXPERIMENT_NAME,
-      experimentGroup: showMoreColorsToggle
-        ? EXPERIMENT_GROUP_SUBJECT
-        : EXPERIMENT_GROUP_CONTROL,
-    };
-  }
-
-  private buildExperimentalAnalyticsPalette(
-    action: ACTION.OPENED | ACTION.CLOSED,
-    data: TextColorShowPaletteToggleAttr,
-  ): ExperimentalTextColorShowPaletteToggleAEP {
-    return {
-      action,
-      actionSubject: ACTION_SUBJECT.TOOLBAR,
-      actionSubjectId: ACTION_SUBJECT_ID.FORMAT_COLOR,
-      eventType: EVENT_TYPE.TRACK,
-      attributes: {
-        ...this.getCommonExperimentalAnalyticsAttributes(),
-        ...data,
-      },
-    };
-  }
-
-  private buildExperimentalAnalyticsShowMore(
-    action: ACTION.OPENED | ACTION.CLOSED,
-    data: TextColorShowMoreToggleAttr,
-  ): ExperimentalTextColorShowMoreToggleAEP {
-    return {
-      action,
-      actionSubject: ACTION_SUBJECT.TOOLBAR,
-      actionSubjectId: ACTION_SUBJECT_ID.FORMAT_COLOR,
-      eventType: EVENT_TYPE.TRACK,
-      attributes: {
-        ...this.getCommonExperimentalAnalyticsAttributes(),
-        ...data,
-      },
-    };
-  }
-
-  private buildExperimentalAnalyticsSelectColor(
-    data: TextColorSelectedAttr,
-  ): ExperimentalTextColorSelectedAEP {
-    return {
-      action: ACTION.FORMATTED,
-      actionSubject: ACTION_SUBJECT.TEXT,
-      actionSubjectId: ACTION_SUBJECT_ID.FORMAT_COLOR,
-      eventType: EVENT_TYPE.TRACK,
-      attributes: {
-        ...this.getCommonExperimentalAnalyticsAttributes(),
-        ...data,
-      },
-    };
-  }
-
-  private dispatchAnalyticsEvent(payload: AnalyticsEventPayload) {
-    const { dispatchAnalyticsEvent } = this.props;
-
-    if (dispatchAnalyticsEvent) {
-      dispatchAnalyticsEvent(payload);
-    }
-  }
 }
 
 export default injectIntl(ToolbarTextColor);

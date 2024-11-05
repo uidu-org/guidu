@@ -1,18 +1,13 @@
 import { keymap } from 'prosemirror-keymap';
 import { Plugin } from 'prosemirror-state';
-import { trackAndInvoke } from '../../../analytics';
 import * as keymaps from '../../../keymaps';
-import { INPUT_METHOD } from '../../analytics';
-import { clearFormattingWithAnalytics } from '../commands/clear-formatting';
+import { clearFormatting } from '../commands/clear-formatting';
 
 export function keymapPlugin(): Plugin {
   const list = {};
   keymaps.bindKeymapWithCommand(
-    keymaps.clearFormatting.common!,
-    trackAndInvoke(
-      'uidu.editor-core.format.clear.keyboard',
-      clearFormattingWithAnalytics(INPUT_METHOD.SHORTCUT),
-    ),
+    keymaps.clearFormatting.common,
+    clearFormatting(),
     list,
   );
 

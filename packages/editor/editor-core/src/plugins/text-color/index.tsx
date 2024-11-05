@@ -47,7 +47,6 @@ const textColorPlugin = (
     popupsBoundariesElement,
     popupsScrollableElement,
     isToolbarReducedSpacing,
-    dispatchAnalyticsEvent,
     disabled,
   }) {
     const config = pluginConfig(textColorConfig);
@@ -68,7 +67,6 @@ const textColorPlugin = (
             popupsBoundariesElement={popupsBoundariesElement}
             popupsScrollableElement={popupsScrollableElement}
             showMoreColorsToggle={showMoreColorsToggle}
-            dispatchAnalyticsEvent={dispatchAnalyticsEvent}
             disabled={disabled}
           />
         )}

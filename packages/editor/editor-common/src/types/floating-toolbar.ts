@@ -7,7 +7,6 @@ import { IntlShape } from 'react-intl';
 
 import type { EmojiId } from '@uidu/emoji/types';
 
-import type { DispatchAnalyticsEvent } from '../analytics/types/dispatch-analytics-event';
 import type { ProviderFactory } from '../provider-factory';
 
 import { PaletteColor } from '../ui-color';
@@ -139,7 +138,6 @@ export type FloatingToolbarCustom<T> = {
   render: (
     view?: EditorView,
     idx?: number,
-    dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
   ) => React.ComponentClass | React.SFC | React.ReactElement<any> | null;
   hidden?: boolean;
 };

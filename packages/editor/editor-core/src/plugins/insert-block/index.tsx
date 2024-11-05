@@ -1,11 +1,9 @@
 import { Providers, WithProviders } from '@uidu/editor-common';
 import React from 'react';
-import { MentionPluginState } from '../..';
+import { insertBlockType, MentionPluginState } from '../..';
 import { EditorPlugin } from '../../types';
 import { ToolbarSize } from '../../ui/Toolbar/types';
 import WithPluginState from '../../ui/WithPluginState';
-import { INPUT_METHOD } from '../analytics';
-import { insertBlockTypesWithAnalytics } from '../block-type/commands';
 import {
   BlockTypeState,
   pluginKey as blockTypeStateKey,
@@ -63,7 +61,7 @@ export interface InsertBlockOptions {
  * @param name Block name
  */
 function handleInsertBlockType(name: string) {
-  return insertBlockTypesWithAnalytics(name, INPUT_METHOD.TOOLBAR);
+  return insertBlockType(name);
 }
 
 const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
@@ -72,7 +70,6 @@ const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
   primaryToolbarComponent({
     editorView,
     editorActions,
-    dispatchAnalyticsEvent,
     providerFactory,
     popupsMountPoint,
     popupsBoundariesElement,
@@ -168,7 +165,6 @@ const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
             popupsScrollableElement={popupsScrollableElement}
             insertMenuItems={options.insertMenuItems}
             editorActions={editorActions}
-            dispatchAnalyticsEvent={dispatchAnalyticsEvent}
           />
         )}
       />

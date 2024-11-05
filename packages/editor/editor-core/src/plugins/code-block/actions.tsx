@@ -14,27 +14,26 @@ export const removeCodeBlock: Command = (state, dispatch) => {
   return true;
 };
 
-export const changeLanguage = (language: string): Command => (
-  state,
-  dispatch,
-) => {
-  const {
-    schema: { nodes },
-    tr,
-  } = state;
+export const changeLanguage =
+  (language: string): Command =>
+  (state, dispatch) => {
+    const {
+      schema: { nodes },
+      tr,
+    } = state;
 
-  // setParentNodeMarkup doesn't typecheck the attributes
-  const attrs: CodeBlockAttrs = { language };
+    // setParentNodeMarkup doesn't typecheck the attributes
+    const attrs: CodeBlockAttrs = { language };
 
-  const changeLanguageTr = setParentNodeMarkup(
-    nodes.codeBlock,
-    null,
-    attrs,
-  )(tr);
-  changeLanguageTr.setMeta('scrollIntoView', false);
+    const changeLanguageTr = setParentNodeMarkup(
+      nodes.codeBlock,
+      null,
+      attrs,
+    )(tr);
+    changeLanguageTr.setMeta('scrollIntoView', false);
 
-  if (dispatch) {
-    dispatch(changeLanguageTr);
-  }
-  return true;
-};
+    if (dispatch) {
+      dispatch(changeLanguageTr);
+    }
+    return true;
+  };

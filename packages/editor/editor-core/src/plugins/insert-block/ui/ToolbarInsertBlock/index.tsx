@@ -1,8 +1,4 @@
-import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import ExpandNodeIcon from '@atlaskit/icon/glyph/chevron-right-circle';
-import AddIcon from '@atlaskit/icon/glyph/editor/add';
-import CodeIcon from '@atlaskit/icon/glyph/editor/code';
-import DateIcon from '@atlaskit/icon/glyph/editor/date';
 import DecisionIcon from '@atlaskit/icon/glyph/editor/decision';
 import HorizontalRuleIcon from '@atlaskit/icon/glyph/editor/horizontal-rule';
 import InfoIcon from '@atlaskit/icon/glyph/editor/info';
@@ -13,15 +9,19 @@ import StatusIcon from '@atlaskit/icon/glyph/status';
 import data from '@emoji-mart/data';
 import Picker from '@emoji-mart/react';
 import {
+  faCalendar,
+  faCode,
   faColumns3,
   faFaceSmile,
   faImages,
   faLink,
+  faPlus,
   faQuoteLeft,
   faTable,
   faVideo,
 } from '@fortawesome/pro-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ButtonGroup } from '@uidu/button';
 import { akEditorMenuZIndex, Popup } from '@uidu/editor-common';
 import { EmojiId } from '@uidu/emoji/types';
 import React, { ReactInstance } from 'react';
@@ -41,12 +41,7 @@ import {
 } from '../../../../keymaps';
 import DropdownMenu from '../../../../ui/DropdownMenu';
 import { MenuItem } from '../../../../ui/DropdownMenu/types';
-import {
-  ButtonGroup,
-  ExpandIconWrapper,
-  Shortcut,
-  Wrapper,
-} from '../../../../ui/styles';
+import { Shortcut } from '../../../../ui/styles';
 import ToolbarButton from '../../../../ui/ToolbarButton';
 import {
   ACTION,
@@ -74,7 +69,7 @@ import { TriggerWrapper } from './styles';
 import { Props, State, TOOLBAR_MENU_TYPE } from './types';
 
 const blockTypeIcons = {
-  codeblock: CodeIcon,
+  codeblock: () => <FontAwesomeIcon tw="h-4 w-4" icon={faCode} />,
   panel: InfoIcon,
   blockquote: () => <FontAwesomeIcon tw="h-4 w-4" icon={faQuoteLeft} />,
 };
@@ -127,16 +122,6 @@ class ToolbarInsertBlock extends React.PureComponent<
       (prevState) => ({ emojiPickerOpen: !prevState.emojiPickerOpen }),
       () => {
         if (this.state.emojiPickerOpen) {
-          const { dispatchAnalyticsEvent } = this.props;
-          if (dispatchAnalyticsEvent) {
-            dispatchAnalyticsEvent({
-              action: ACTION.OPENED,
-              actionSubject: ACTION_SUBJECT.PICKER,
-              actionSubjectId: ACTION_SUBJECT_ID.PICKER_EMOJI,
-              attributes: { inputMethod },
-              eventType: EVENT_TYPE.UI,
-            });
-          }
         }
       },
     );
@@ -200,7 +185,7 @@ class ToolbarInsertBlock extends React.PureComponent<
   };
 
   private handleClickOutside = (e: MouseEvent) => {
-    const picker = this.pickerRef && ReactDOM.findDOMNode(this.pickerRef);
+    const picker = this.pickerRef;
     // Ignore click events for detached elements.
     // Workaround for FS-1322 - where two onClicks fire - one when the upload button is
     // still in the document, and one once it's detached. Does not always occur, and
@@ -296,18 +281,15 @@ class ToolbarInsertBlock extends React.PureComponent<
         spacing={isReducedSpacing ? 'none' : 'default'}
         title={renderTooltipContent(labelInsertMenu, undefined, '/')}
         iconBefore={
-          <TriggerWrapper>
-            <AddIcon label={labelInsertMenu} />
-            <ExpandIconWrapper>
-              <ExpandIcon label={labelInsertMenu} />
-            </ExpandIconWrapper>
+          <TriggerWrapper tw="text-base">
+            <FontAwesomeIcon icon={faPlus} />
           </TriggerWrapper>
         }
       />
     );
 
     return (
-      <ButtonGroup width={isReducedSpacing ? 'small' : 'large'}>
+      <ButtonGroup tw="space-x-0">
         {buttons.map((btn) => (
           <ToolbarButton
             ref={btn.handleRef || noop}
@@ -320,28 +302,26 @@ class ToolbarInsertBlock extends React.PureComponent<
             onClick={() => this.insertToolbarMenuItem(btn)}
           />
         ))}
-        <Wrapper>
-          {this.renderPopup()}
-          {dropdownItems.length > 0 &&
-            (!isDisabled ? (
-              <DropdownMenu
-                items={[{ items: dropdownItems }]}
-                onItemActivated={this.insertInsertMenuItem}
-                onOpenChange={this.onOpenChange}
-                mountTo={popupsMountPoint}
-                boundariesElement={popupsBoundariesElement}
-                scrollableElement={popupsScrollableElement}
-                isOpen={isOpen}
-                fitHeight={188}
-                fitWidth={175}
-                zIndex={akEditorMenuZIndex}
-              >
-                {toolbarButtonFactory(false, dropdownItems)}
-              </DropdownMenu>
-            ) : (
-              <div>{toolbarButtonFactory(true, dropdownItems)}</div>
-            ))}
-        </Wrapper>
+        {this.renderPopup()}
+        {dropdownItems.length > 0 &&
+          (!isDisabled ? (
+            <DropdownMenu
+              items={[{ items: dropdownItems }]}
+              onItemActivated={this.insertInsertMenuItem}
+              onOpenChange={this.onOpenChange}
+              mountTo={popupsMountPoint}
+              boundariesElement={popupsBoundariesElement}
+              scrollableElement={popupsScrollableElement}
+              isOpen={isOpen}
+              fitHeight={188}
+              fitWidth={175}
+              zIndex={akEditorMenuZIndex}
+            >
+              {toolbarButtonFactory(false, dropdownItems)}
+            </DropdownMenu>
+          ) : (
+            <div>{toolbarButtonFactory(true, dropdownItems)}</div>
+          ))}
       </ButtonGroup>
     );
   }
@@ -530,7 +510,7 @@ class ToolbarInsertBlock extends React.PureComponent<
       items.push({
         content: labelDate,
         value: { name: 'date' },
-        elemBefore: <DateIcon label={labelDate} />,
+        elemBefore: <FontAwesomeIcon icon={faCalendar} label={labelDate} />,
         elemAfter: <Shortcut>//</Shortcut>,
         shortcut: '//',
       });
@@ -671,18 +651,9 @@ class ToolbarInsertBlock extends React.PureComponent<
   private openMediaPicker = withAnalytics(
     'uidu.editor-core.format.media.button',
     (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
-      const { onShowMediaPicker, dispatchAnalyticsEvent } = this.props;
+      const { onShowMediaPicker } = this.props;
       if (onShowMediaPicker) {
         onShowMediaPicker();
-        if (dispatchAnalyticsEvent) {
-          dispatchAnalyticsEvent({
-            action: ACTION.OPENED,
-            actionSubject: ACTION_SUBJECT.PICKER,
-            actionSubjectId: ACTION_SUBJECT_ID.PICKER_CLOUD,
-            attributes: { inputMethod },
-            eventType: EVENT_TYPE.UI,
-          });
-        }
       }
       return true;
     },
@@ -745,14 +716,11 @@ class ToolbarInsertBlock extends React.PureComponent<
     'uidu.editor-core.emoji.button',
     (emojiId: EmojiId): boolean => {
       this.props.editorView.focus();
-      insertEmoji(
-        {
-          id: emojiId.unified,
-          fallback: emojiId.shortcodes,
-          shortName: emojiId.shortcodes,
-        },
-        INPUT_METHOD.PICKER,
-      )(this.props.editorView.state, this.props.editorView.dispatch);
+      insertEmoji({
+        id: emojiId.unified,
+        fallback: emojiId.shortcodes,
+        shortName: emojiId.shortcodes,
+      })(this.props.editorView.state, this.props.editorView.dispatch);
       this.toggleEmojiPicker();
       return true;
     },

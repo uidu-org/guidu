@@ -62,7 +62,7 @@ const deletePreviousEmptyListItem: Command = (state, dispatch) => {
 
   const previousListItemEmpty =
     $cut.nodeBefore.childCount === 1 &&
-    $cut.nodeBefore.firstChild!.nodeSize <= 2;
+    $cut.nodeBefore.firstChild.nodeSize <= 2;
 
   if (previousListItemEmpty) {
     const { tr } = state;
@@ -82,13 +82,8 @@ const deletePreviousEmptyListItem: Command = (state, dispatch) => {
 
 const joinToPreviousListItem: Command = (state, dispatch) => {
   const { $from } = state.selection;
-  const {
-    paragraph,
-    listItem,
-    codeBlock,
-    bulletList,
-    orderedList,
-  } = state.schema.nodes;
+  const { paragraph, listItem, codeBlock, bulletList, orderedList } =
+    state.schema.nodes;
   const isGapCursorShown = state.selection instanceof GapCursorSelection;
   const $cutPos = isGapCursorShown ? state.doc.resolve($from.pos + 1) : $from;
   let $cut = findCutBefore($cutPos);

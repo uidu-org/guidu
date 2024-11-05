@@ -3,19 +3,12 @@ import { redo, undo } from 'prosemirror-history';
 import { undoInputRule } from 'prosemirror-inputrules';
 import { Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
-import { trackAndInvoke } from '../../../analytics';
 import * as commands from '../../../commands';
 import * as keymaps from '../../../keymaps';
 import { keymap } from '../../../utils/keymap';
-import { INPUT_METHOD } from '../../analytics';
-import {
-  cleanUpAtTheStartOfDocument,
-  insertBlockTypesWithAnalytics,
-} from '../commands';
+import { cleanUpAtTheStartOfDocument, insertBlockType } from '../commands';
 import * as blockTypes from '../types';
 
-const analyticsEventName = (blockTypeName: string, eventSource: string) =>
-  `uidu.editor-core.format.${blockTypeName}.${eventSource}`;
 const tryUndoInputRuleElseUndoHistory = chainCommands(undoInputRule, undo);
 
 export default function keymapPlugin(schema: Schema): Plugin {
@@ -23,44 +16,32 @@ export default function keymapPlugin(schema: Schema): Plugin {
 
   keymaps.bindKeymapWithCommand(
     keymaps.insertNewLine.common,
-    trackAndInvoke(
-      'uidu.editor-core.newline.keyboard',
-      commands.insertNewLineWithAnalytics,
-    ),
+    commands.insertNewLine(),
     list,
   );
   keymaps.bindKeymapWithCommand(
     keymaps.moveUp.common,
-    trackAndInvoke(
-      'uidu.editor-core.moveup.keyboard',
-      commands.createNewParagraphAbove,
-    ),
+    commands.createNewParagraphAbove,
     list,
   );
   keymaps.bindKeymapWithCommand(
     keymaps.moveDown.common,
-    trackAndInvoke(
-      'uidu.editor-core.movedown.keyboard',
-      commands.createNewParagraphBelow,
-    ),
+    commands.createNewParagraphBelow,
     list,
   );
   keymaps.bindKeymapWithCommand(
-    keymaps.findKeyMapForBrowser(keymaps.redo)!,
-    trackAndInvoke('uidu.editor-core.redo.keyboard', redo),
+    keymaps.findKeyMapForBrowser(keymaps.redo),
+    redo,
     list,
   );
 
   keymaps.bindKeymapWithCommand(
     keymaps.undo.common,
-    trackAndInvoke(
-      'uidu.editor-core.undo.keyboard',
-      tryUndoInputRuleElseUndoHistory,
-    ),
+    tryUndoInputRuleElseUndoHistory,
     list,
   );
   keymaps.bindKeymapWithCommand(
-    keymaps.findKeyMapForBrowser(keymaps.redoBarred)!,
+    keymaps.findKeyMapForBrowser(keymaps.redoBarred),
     commands.preventDefault(),
     list,
   );
@@ -73,14 +54,8 @@ export default function keymapPlugin(schema: Schema): Plugin {
 
   if (schema.nodes[blockTypes.BLOCK_QUOTE.nodeName]) {
     keymaps.bindKeymapWithCommand(
-      keymaps.findShortcutByKeymap(keymaps.toggleBlockQuote)!,
-      trackAndInvoke(
-        analyticsEventName(blockTypes.BLOCK_QUOTE.name, INPUT_METHOD.KEYBOARD),
-        insertBlockTypesWithAnalytics(
-          blockTypes.BLOCK_QUOTE.name,
-          INPUT_METHOD.KEYBOARD,
-        ),
-      ),
+      keymaps.findShortcutByKeymap(keymaps.toggleBlockQuote),
+      insertBlockType(blockTypes.BLOCK_QUOTE.name),
       list,
     );
   }

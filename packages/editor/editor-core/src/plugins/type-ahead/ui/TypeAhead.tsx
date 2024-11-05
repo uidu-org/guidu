@@ -11,7 +11,9 @@ import { TypeAheadItemsList } from './TypeAheadItemsList';
 export const TypeAheadContent = styled.div`
   background: ${colors.N0};
   border-radius: ${borderRadius()}px;
-  box-shadow: 0 0 1px ${colors.N60A}, 0 4px 8px -2px ${colors.N50A};
+  box-shadow:
+    0 0 1px ${colors.N60A},
+    0 4px 8px -2px ${colors.N50A};
   padding: ${math.divide(gridSize, 2)}px 0;
   width: 320px;
   max-height: 380px; /* ~5.5 visibile items */
@@ -38,6 +40,16 @@ export class TypeAhead extends React.Component<TypeAheadProps> {
 
   composing: boolean = false;
 
+  componentDidMount() {
+    window.addEventListener('keypress', this.handleKeyPress);
+    window.addEventListener('mousemove', this.handleMouseMove);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keypress', this.handleKeyPress);
+    window.removeEventListener('mousemove', this.handleMouseMove);
+  }
+
   handleKeyPress = () => {
     // When user starts typing, they are not using their mouse
     // Marks as composing, to prevent false positive mouse events
@@ -47,16 +59,6 @@ export class TypeAhead extends React.Component<TypeAheadProps> {
   handleMouseMove = () => {
     // User is actively moving mouse, hence can enable mouse events again
     this.composing = false;
-  };
-
-  componentDidMount = () => {
-    window.addEventListener('keypress', this.handleKeyPress);
-    window.addEventListener('mousemove', this.handleMouseMove);
-  };
-
-  componentWillUnmount = () => {
-    window.removeEventListener('keypress', this.handleKeyPress);
-    window.removeEventListener('mousemove', this.handleMouseMove);
   };
 
   insertByIndex = (index: number) => {
@@ -109,6 +111,7 @@ export class TypeAhead extends React.Component<TypeAheadProps> {
       >
         <TypeAheadContent className="fabric-editor-typeahead">
           {highlight}
+          {/* eslint-disable-next-line no-nested-ternary */}
           {Array.isArray(items) ? (
             <TypeAheadItemsList
               insertByIndex={this.insertByIndex}
