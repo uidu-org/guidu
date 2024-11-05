@@ -10,11 +10,12 @@ So, each EditorPlugin exposes a `pluginsOptions` object that is used by the plug
 
 
 We should redefine the plugin folder structures in this way:
-- proseMirrorPlugins
-  - commands
+- commands
+- proseMirrorPlugins (pm-plugins)
   - keymaps
   - inputRules
   - pasteRules
+  - main
 - nodeViews
 - ui
 

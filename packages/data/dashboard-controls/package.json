@@ -13,7 +13,6 @@
     "@uidu/avatar": "^0.15.4",
     "@uidu/avatar-group": "^2.12.4",
     "@uidu/button": "1.10.0",
-    "@uidu/dropdown-menu": "^0.12.4",
     "@uidu/field-date-range": "^2.8.4",
     "@uidu/form": "^3.3.2",
     "react": "^18.3.1",
