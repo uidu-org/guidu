@@ -20,9 +20,7 @@ import {
   Wrapper,
 } from '../../../../ui/styles';
 import ToolbarButton from '../../../../ui/ToolbarButton';
-import { INPUT_METHOD } from '../../../analytics';
 import { DropdownItem } from '../../../block-type/ui/ToolbarBlockType';
-import { TOOLBAR_MENU_TYPE } from '../../../insert-block/ui/ToolbarInsertBlock/types';
 import { toggleBulletList, toggleOrderedList } from '../../commands';
 import { messages } from '../../messages';
 
@@ -197,7 +195,7 @@ class ToolbarLists extends PureComponent<Props & WrappedComponentProps, State> {
 
   private handleBulletListClick = () => {
     if (!this.props.bulletListDisabled) {
-      if (toggleBulletList(this.props.editorView, INPUT_METHOD.TOOLBAR)) {
+      if (toggleBulletList(this.props.editorView)) {
         return true;
       }
     }
@@ -206,19 +204,14 @@ class ToolbarLists extends PureComponent<Props & WrappedComponentProps, State> {
 
   private handleOrderedListClick = () => {
     if (!this.props.orderedListDisabled) {
-      if (toggleOrderedList(this.props.editorView, INPUT_METHOD.TOOLBAR)) {
+      if (toggleOrderedList(this.props.editorView)) {
         return true;
       }
     }
     return false;
   };
 
-  private onItemActivated = ({
-    item,
-  }: {
-    item: DropdownItem;
-    inputMethod: TOOLBAR_MENU_TYPE;
-  }) => {
+  private onItemActivated = ({ item }: { item: DropdownItem }) => {
     this.setState({ isDropdownOpen: false });
     switch (item.value.name) {
       case 'bullet_list':

@@ -4,14 +4,6 @@ import { Transaction } from 'prosemirror-state';
 import React from 'react';
 import { EditorPlugin } from '../../types';
 import { safeInsert } from '../../utils/insert';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconDivider } from '../quick-insert/assets';
 import inputRulePlugin from './pm-plugins/input-rule';
@@ -65,13 +57,7 @@ const rulePlugin = (): EditorPlugin => ({
             tr = insert(state.schema.nodes.rule.createChecked());
           }
 
-          return addAnalytics(state, tr, {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.DIVIDER,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-            eventType: EVENT_TYPE.TRACK,
-          });
+          return tr;
         },
       },
     ],

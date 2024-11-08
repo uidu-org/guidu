@@ -5,13 +5,9 @@ import { getSelectionRect, isTableSelected } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import React, { Component } from 'react';
 import { closestElement } from '../../../../utils/dom';
-import { INPUT_METHOD } from '../../../analytics';
 import { clearHoverSelection, hoverColumns, hoverRows } from '../../commands';
-import {
-  deleteColumnsWithAnalytics,
-  deleteRowsWithAnalytics,
-} from '../../commands-with-analytics';
 import { getPluginState as getTablePluginState } from '../../pm-plugins/plugin-factory';
+import { deleteColumns, deleteRows } from '../../transforms';
 import { TableCssClassName as ClassName } from '../../types';
 import {
   getColumnDeleteButtonParams,
@@ -184,18 +180,11 @@ class FloatingDeleteButton extends Component<Props, State> {
     if (rect) {
       switch (this.state.selectionType) {
         case 'column': {
-          deleteColumnsWithAnalytics(INPUT_METHOD.BUTTON, rect)(
-            state,
-            dispatch,
-          );
+          deleteColumns(rect)(state, dispatch);
           return;
         }
         case 'row': {
-          deleteRowsWithAnalytics(
-            INPUT_METHOD.BUTTON,
-            rect,
-            !!isHeaderRowRequired,
-          )(state, dispatch);
+          deleteRows(rect, !!isHeaderRowRequired)(state, dispatch);
           return;
         }
       }

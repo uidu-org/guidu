@@ -1,13 +1,3 @@
-export {
-  getAnalyticsAppearance,
-  getAnalyticsEventSeverity,
-  getUnsupportedContentLevelData,
-} from './analytics';
-export type {
-  UnsupportedContentLevelsTracking,
-  UnsupportedContentPayload,
-  UnsupportedContentTooltipPayload,
-} from './analytics';
 export { default as browser } from './browser';
 export { sniffUserBrowserExtensions } from './browser-extensions';
 export type { UserBrowserExtensionResults } from './browser-extensions';

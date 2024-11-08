@@ -2,9 +2,6 @@ import { IndentationMarkAttributes } from '@uidu/adf-schema';
 import { Node as PmNode, Schema } from 'prosemirror-model';
 import { toggleBlockMark } from '../../../commands';
 import { Command } from '../../../types/command';
-import getAttrsWithChangesRecorder from '../../../utils/getAttrsWithChangesRecorder';
-import { INDENT_DIR } from '../../analytics';
-import { createAnalyticsDispatch } from './utils';
 
 const MAX_INDENTATION_LEVEL = 6;
 
@@ -47,31 +44,6 @@ function createIndentationCommand(
   };
 }
 
-function createIndentationCommandWithAnalytics(
-  getNewIndentationAttrs: (
-    prevAttrs?: IndentationMarkAttributes,
-    node?: PmNode,
-  ) => IndentationMarkAttributes | undefined | false,
-  direction: INDENT_DIR,
-): Command {
-  // Create a new getAttrs function to record the changes
-  const {
-    getAttrs,
-    getAndResetAttrsChanges,
-  } = getAttrsWithChangesRecorder(getNewIndentationAttrs, { direction });
-
-  // Use new getAttrs wrapper
-  const indentationCommand = createIndentationCommand(getAttrs);
-
-  // Return a new command where we change dispatch for our analytics dispatch
-  return (state, dispatch) => {
-    return indentationCommand(
-      state,
-      createAnalyticsDispatch(getAndResetAttrsChanges, state, dispatch),
-    );
-  };
-}
-
 /**
  * Get new level for outdent
  * @param oldAttr Old attributes for the mark, undefined if the mark doesn't exit
@@ -79,9 +51,9 @@ function createIndentationCommandWithAnalytics(
  *           - false; Remove the mark
  *           - object; Update attributes
  */
-const getIndentAttrs = (
+function getIndentAttrs(
   oldAttr?: IndentationMarkAttributes,
-): IndentationMarkAttributes | undefined => {
+): IndentationMarkAttributes | undefined {
   if (!oldAttr) {
     return { level: 1 }; // No mark exist, create a new one with level 1
   }
@@ -91,12 +63,9 @@ const getIndentAttrs = (
     return undefined; // Max indentation level reached, do nothing.
   }
   return { level: level + 1 }; // Otherwise, increase the level by one
-};
+}
 
-export const indent: Command = createIndentationCommandWithAnalytics(
-  getIndentAttrs,
-  INDENT_DIR.INDENT,
-);
+export const indent: Command = createIndentationCommand(getIndentAttrs);
 
 /**
  * Get new level for outdent
@@ -120,10 +89,7 @@ const getOutdentAttrs = (
   return { level: level - 1 }; // Decrease the level on other cases
 };
 
-export const outdent: Command = createIndentationCommandWithAnalytics(
-  getOutdentAttrs,
-  INDENT_DIR.OUTDENT,
-);
+export const outdent: Command = createIndentationCommand(getOutdentAttrs);
 
 export const removeIndentation: Command = (state, dispatch) =>
   toggleBlockMark(state.schema.marks.indentation, () => false)(state, dispatch);

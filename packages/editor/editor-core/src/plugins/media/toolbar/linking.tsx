@@ -12,13 +12,6 @@ import {
   RECENT_SEARCH_WIDTH_IN_PX,
 } from '../../../ui/RecentSearch/ToolbarComponents';
 import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-} from '../../analytics';
-import {
   FloatingToolbarConfig,
   FloatingToolbarItem,
 } from '../../floating-toolbar/types';
@@ -81,14 +74,7 @@ export const buildLinkingButtons = (
         onClick: (state, dispatch) => {
           // Track if is visited
           if (dispatch) {
-            dispatch(
-              addAnalytics(state, state.tr, {
-                eventType: EVENT_TYPE.TRACK,
-                action: ACTION.VISITED,
-                actionSubject: ACTION_SUBJECT.MEDIA_SINGLE,
-                actionSubjectId: ACTION_SUBJECT_ID.MEDIA_LINK,
-              }),
-            );
+            dispatch(state.tr);
           }
           return true;
         },
@@ -151,11 +137,7 @@ export const getLinkingToolbar = (
                   onUnlink={() => unlink(view.state, view.dispatch, view)}
                   onBack={(href, meta) => {
                     if (href.trim() && meta.inputMethod) {
-                      setUrlToMedia(href, meta.inputMethod)(
-                        view.state,
-                        view.dispatch,
-                        view,
-                      );
+                      setUrlToMedia(href)(view.state, view.dispatch, view);
                     }
                     hideLinkingToolbar(view.state, view.dispatch, view);
                   }}
@@ -163,11 +145,7 @@ export const getLinkingToolbar = (
                     hideLinkingToolbar(view.state, view.dispatch, view)
                   }
                   onSubmit={(href, meta) => {
-                    setUrlToMedia(href, meta.inputMethod)(
-                      view.state,
-                      view.dispatch,
-                      view,
-                    );
+                    setUrlToMedia(href)(view.state, view.dispatch, view);
                     hideLinkingToolbar(view.state, view.dispatch, view);
                   }}
                   onBlur={() => {

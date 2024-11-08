@@ -3,83 +3,56 @@ import { Plugin } from 'prosemirror-state';
 import { addColumnAfter, addColumnBefore } from 'prosemirror-tables';
 import * as keymaps from '../../../keymaps';
 import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-  INPUT_METHOD,
-  withAnalytics,
-} from '../../analytics';
-import {
+  clearMultipleCells,
   createTable,
   goToNextCell,
   moveCursorBackward,
   triggerUnlessTableHeader,
 } from '../commands';
-import {
-  addRowAroundSelection,
-  emptyMultipleCellsWithAnalytics,
-} from '../commands-with-analytics';
-
-const createTableWithAnalytics = () =>
-  withAnalytics({
-    action: ACTION.INSERTED,
-    actionSubject: ACTION_SUBJECT.DOCUMENT,
-    actionSubjectId: ACTION_SUBJECT_ID.TABLE,
-    attributes: { inputMethod: INPUT_METHOD.SHORTCUT },
-    eventType: EVENT_TYPE.TRACK,
-  })(createTable);
+import { addRowAroundSelection } from '../commands/insert';
 
 export function keymapPlugin(): Plugin {
   const list = {};
 
+  keymaps.bindKeymapWithCommand(keymaps.nextCell.common, goToNextCell(1), list);
   keymaps.bindKeymapWithCommand(
-    keymaps.nextCell.common!,
-    goToNextCell(1),
-    list,
-  );
-  keymaps.bindKeymapWithCommand(
-    keymaps.previousCell.common!,
+    keymaps.previousCell.common,
     goToNextCell(-1),
     list,
   );
+  keymaps.bindKeymapWithCommand(keymaps.toggleTable.common, createTable, list);
   keymaps.bindKeymapWithCommand(
-    keymaps.toggleTable.common!,
-    createTableWithAnalytics(),
+    keymaps.backspace.common,
+    clearMultipleCells(),
     list,
   );
   keymaps.bindKeymapWithCommand(
-    keymaps.backspace.common!,
-    emptyMultipleCellsWithAnalytics(INPUT_METHOD.KEYBOARD),
-    list,
-  );
-  keymaps.bindKeymapWithCommand(
-    keymaps.backspace.common!,
+    keymaps.backspace.common,
     moveCursorBackward,
     list,
   );
 
   // Add row/column shortcuts
   keymaps.bindKeymapWithCommand(
-    keymaps.addRowBefore.common!,
+    keymaps.addRowBefore.common,
     addRowAroundSelection('TOP'),
     list,
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.addRowAfter.common!,
+    keymaps.addRowAfter.common,
     addRowAroundSelection('BOTTOM'),
     list,
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.addColumnBefore.common!,
+    keymaps.addColumnBefore.common,
     triggerUnlessTableHeader(addColumnBefore),
     list,
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.addColumnAfter.common!,
+    keymaps.addColumnAfter.common,
     addColumnAfter,
     list,
   );

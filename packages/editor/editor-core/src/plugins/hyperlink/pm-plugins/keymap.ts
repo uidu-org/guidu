@@ -1,11 +1,8 @@
 import { keymap } from 'prosemirror-keymap';
 import { EditorState, Plugin } from 'prosemirror-state';
-import { analyticsService, trackAndInvoke } from '../../../analytics';
 import * as keymaps from '../../../keymaps';
 import { Command } from '../../../types';
-import { addAnalytics, INPUT_METHOD } from '../../analytics';
 import { queueCards } from '../../card/pm-plugins/actions';
-import { getLinkCreationAnalyticsEvent } from '../analytics';
 import { hideLinkToolbar, showLinkToolbar } from '../commands';
 import { HyperlinkState, stateKey } from '../pm-plugins/main';
 import { getLinkMatch, Match } from '../utils';
@@ -14,28 +11,25 @@ export function createKeymapPlugin(): Plugin | undefined {
   const list = {};
 
   keymaps.bindKeymapWithCommand(
-    keymaps.addLink.common!,
-    trackAndInvoke(
-      'uidu.editor-core.format.hyperlink.keyboard',
-      showLinkToolbar(INPUT_METHOD.SHORTCUT),
-    ),
+    keymaps.addLink.common,
+    showLinkToolbar(),
     list,
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.enter.common!,
+    keymaps.enter.common,
     mayConvertLastWordToHyperlink,
     list,
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.insertNewLine.common!,
+    keymaps.insertNewLine.common,
     mayConvertLastWordToHyperlink,
     list,
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.escape.common!,
+    keymaps.escape.common,
     (state: EditorState, dispatch, view) => {
       const hyperlinkPlugin = stateKey.getState(state) as HyperlinkState;
       if (hyperlinkPlugin.activeLinkMark) {
@@ -81,22 +75,11 @@ const mayConvertLastWordToHyperlink: Command = (state, dispatch) => {
         pos: start,
         appearance: 'inline',
         compareLinkText: true,
-        source: INPUT_METHOD.AUTO_DETECT,
       },
     ])(state.tr.addMark(start, end, markType));
 
-    analyticsService.trackEvent(
-      'uidu.editor-core.format.hyperlink.autoformatting',
-    );
-
     if (dispatch) {
-      dispatch(
-        addAnalytics(
-          state,
-          tr,
-          getLinkCreationAnalyticsEvent(INPUT_METHOD.AUTO_DETECT, url),
-        ),
-      );
+      dispatch(tr);
     }
   }
   return false;

@@ -1,4 +1,4 @@
-import { InputRule } from 'prosemirror-inputrules';
+import { InputRule, inputRules } from 'prosemirror-inputrules';
 import { Node, Schema } from 'prosemirror-model';
 import {
   EditorState,
@@ -7,10 +7,8 @@ import {
   TextSelection,
 } from 'prosemirror-state';
 import { canInsert } from 'prosemirror-utils';
-import { analyticsService } from '../../../analytics';
 import {
   createInputRule,
-  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
 import { INPUT_METHOD } from '../../analytics';
@@ -69,10 +67,6 @@ const addItem =
 
     const where = $from.before($from.depth);
 
-    analyticsService.trackEvent(
-      `uidu.editor-core.${item.name}.trigger.shortcut`,
-    );
-
     if (!shouldBreakNode) {
       tr.delete(where, $from.end($from.depth))
         .replaceSelectionWith(
@@ -126,7 +120,7 @@ export function inputRulePlugin(schema: Schema): Plugin {
     );
   }
 
-  return instrumentedInputRule('tasks-and-decisions', { rules });
+  return inputRules({ rules });
 }
 
 export default inputRulePlugin;

@@ -6,12 +6,11 @@ import {
   Transaction,
 } from 'prosemirror-state';
 import { Command } from '../../types';
-import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock/types';
 import { pluginKey } from './pm-plugins/plugin-key';
 import { VideoType } from './types';
 
 export const insertVideo =
-  (video?: VideoType, inputMethod?: TOOLBAR_MENU_TYPE) =>
+  (video?: VideoType) =>
   (state: EditorState, dispatch: (tr: Transaction) => void): boolean => {
     const { schema, tr } = state;
 
@@ -22,16 +21,6 @@ export const insertVideo =
     }
 
     return true;
-
-    // if (inputMethod) {
-    //   addAnalytics(state, tr, {
-    //     action: ACTION.INSERTED,
-    //     actionSubject: ACTION_SUBJECT.DOCUMENT,
-    //     actionSubjectId: ACTION_SUBJECT_ID.DATE,
-    //     eventType: EVENT_TYPE.TRACK,
-    //     attributes: { inputMethod },
-    //   });
-    // }
   };
 
 export const setVideoPickerAt =

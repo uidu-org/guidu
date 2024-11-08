@@ -178,7 +178,6 @@ export {
   WidthConsumer,
   WidthObserver,
   WidthProvider,
-  WithCreateAnalyticsEvent,
   withOuterListeners,
 } from './ui';
 export type {
@@ -209,7 +208,6 @@ export {
   createCompareNodes,
   ErrorReporter,
   findAndTrackUnsupportedContentNodes,
-  getAnalyticsAppearance,
   getExtensionLozengeData,
   getExtensionRenderer,
   getMarksByOrder,

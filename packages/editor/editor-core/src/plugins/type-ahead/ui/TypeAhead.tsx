@@ -109,7 +109,7 @@ export class TypeAhead extends React.Component<TypeAheadProps> {
         fitWidth={340}
         offset={[0, 8]}
       >
-        <TypeAheadContent className="fabric-editor-typeahead">
+        <TypeAheadContent className="not-prose" tw="text-base">
           {highlight}
           {/* eslint-disable-next-line no-nested-ternary */}
           {Array.isArray(items) ? (

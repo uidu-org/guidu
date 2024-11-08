@@ -4,7 +4,6 @@ import { link } from '@uidu/adf-schema';
 import React from 'react';
 import { addLink, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
-import { INPUT_METHOD } from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import fakeCursorToolbarPlugin from './pm-plugins/fake-cursor-for-toolbar';
 import { createInputRulePlugin } from './pm-plugins/input-rule';
@@ -52,7 +51,6 @@ const hyperlinkPlugin = (): EditorPlugin => ({
           const tr = insert(undefined);
           tr.setMeta(stateKey, {
             type: LinkAction.SHOW_INSERT_TOOLBAR,
-            inputMethod: INPUT_METHOD.QUICK_INSERT,
           });
 
           return tr;

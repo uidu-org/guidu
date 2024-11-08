@@ -94,7 +94,6 @@ export default {
     'grid',
     'mobileScroll',
     'scrollGutterPlugin',
-    'analytics',
     'history',
   ],
   nodes: [

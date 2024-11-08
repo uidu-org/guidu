@@ -6,7 +6,6 @@ import Tooltip from '@uidu/tooltip';
 import React, { KeyboardEvent, PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
-import { analyticsService } from '../../../../analytics';
 import { linkToolbarMessages as linkToolbarCommonMessages } from '../../../../messages';
 import PanelTextInput from '../../../../ui/PanelTextInput';
 import RecentList from '../../../../ui/RecentSearch/RecentList';
@@ -60,7 +59,7 @@ export interface Props {
     displayText: string,
     isTabPressed?: boolean,
   ) => void;
-  onSubmit?: (href: string, text: string, inputMethod: LinkInputType) => void;
+  onSubmit?: (href: string, text: string) => void;
   popupsMountPoint?: HTMLElement;
   popupsBoundariesElement?: HTMLElement;
   autoFocus?: boolean;
@@ -197,9 +196,6 @@ class LinkAddToolbar extends PureComponent<
             this.state.displayText || text,
             INPUT_METHOD.TYPEAHEAD,
           );
-          this.trackAutoCompleteAnalyticsEvent(
-            'uidu.editor-core.format.hyperlink.autocomplete.click',
-          );
         }
       },
     );
@@ -228,9 +224,6 @@ class LinkAddToolbar extends PureComponent<
           this.state.displayText || item.name,
           INPUT_METHOD.TYPEAHEAD,
         );
-        this.trackAutoCompleteAnalyticsEvent(
-          'uidu.editor-core.format.hyperlink.autocomplete.keyboard',
-        );
       }
     } else if (text && text.length > 0) {
       const url = normalizeUrl(text);
@@ -240,9 +233,6 @@ class LinkAddToolbar extends PureComponent<
           url,
           this.state.displayText || text,
           INPUT_METHOD.MANUAL,
-        );
-        this.trackAutoCompleteAnalyticsEvent(
-          'uidu.editor-core.format.hyperlink.autocomplete.notselected',
         );
       }
     }
@@ -289,11 +279,6 @@ class LinkAddToolbar extends PureComponent<
       );
     }
   };
-
-  private trackAutoCompleteAnalyticsEvent(name: string) {
-    const numChars = this.state.text ? this.state.text.length : 0;
-    analyticsService.trackEvent(name, { numChars: numChars });
-  }
 
   render() {
     const { items, isLoading, selectedIndex, text, displayText } = this.state;

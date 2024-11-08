@@ -6,11 +6,7 @@ import { EditorView } from 'prosemirror-view';
 import React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { closestElement } from '../../../../utils/dom';
-import { INPUT_METHOD } from '../../../analytics';
-import {
-  insertColumnWithAnalytics,
-  insertRowWithAnalytics,
-} from '../../commands-with-analytics';
+import { insertColumn, insertRow } from '../../commands';
 import { TableCssClassName as ClassName } from '../../types';
 import { checkIfNumberColumnEnabled } from '../../utils';
 import getPopupOptions from './getPopupOptions';
@@ -58,8 +54,8 @@ class FloatingInsertButton extends React.Component<
       typeof insertColumnButtonIndex !== 'undefined'
         ? 'column'
         : typeof insertRowButtonIndex !== 'undefined'
-        ? 'row'
-        : null;
+          ? 'row'
+          : null;
     if (!tableNode || !tableRef || !type) {
       return null;
     }
@@ -151,11 +147,8 @@ class FloatingInsertButton extends React.Component<
   }
 
   private getCellPosition(type: 'column' | 'row'): number | null {
-    const {
-      tableNode,
-      insertColumnButtonIndex,
-      insertRowButtonIndex,
-    } = this.props;
+    const { tableNode, insertColumnButtonIndex, insertRowButtonIndex } =
+      this.props;
     const tableMap = TableMap.get(tableNode!);
 
     if (type === 'column') {
@@ -186,10 +179,7 @@ class FloatingInsertButton extends React.Component<
       event.preventDefault();
 
       const { state, dispatch } = editorView;
-      insertRowWithAnalytics(INPUT_METHOD.BUTTON, {
-        index: insertRowButtonIndex,
-        moveCursorToInsertedRow: true,
-      })(state, dispatch);
+      insertRow(insertRowButtonIndex, true)(state, dispatch);
     }
   }
 
@@ -200,10 +190,7 @@ class FloatingInsertButton extends React.Component<
       event.preventDefault();
 
       const { state, dispatch } = editorView;
-      insertColumnWithAnalytics(INPUT_METHOD.BUTTON, insertColumnButtonIndex)(
-        state,
-        dispatch,
-      );
+      insertColumn(insertColumnButtonIndex)(state, dispatch);
     }
   }
 }

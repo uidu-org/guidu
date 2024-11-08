@@ -7,14 +7,6 @@ import React from 'react';
 import { toggleTable, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { pluginConfig } from './create-plugin-config';
 import { keymapPlugin } from './pm-plugins/keymap';
@@ -220,13 +212,7 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
         ),
         action(insert, state) {
           const tr = insert(createTable(state.schema));
-          return addAnalytics(state, tr, {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.TABLE,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-            eventType: EVENT_TYPE.TRACK,
-          });
+          return tr;
         },
       },
     ],

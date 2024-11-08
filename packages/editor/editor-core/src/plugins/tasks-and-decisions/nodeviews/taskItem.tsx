@@ -1,8 +1,3 @@
-import {
-  AnalyticsEventPayload,
-  AnalyticsListener,
-  UIAnalyticsEvent,
-} from '@uidu/analytics';
 import { ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { Decoration, DecorationSet, NodeView } from 'prosemirror-view';
@@ -35,47 +30,6 @@ class Task extends ReactNodeView<Props> {
     this.view.dispatch(tr);
   };
 
-  /**
-   * Dynamically generates analytics data relating to the parent list.
-   *
-   * Required to be dynamic, as list (in prosemirror model) may have
-   * changed (e.g. item movements, or additional items in list).
-   * This node view will have not rerendered for those changes, so
-   * cannot render the position and listSize into the
-   * AnalyticsContext at initial render time.
-   */
-  private addListAnalyticsData = (event: UIAnalyticsEvent) => {
-    try {
-      const resolvedPos = this.view.state.doc.resolve(
-        (this.getPos as getPosHandlerNode)(),
-      );
-      const position = resolvedPos.index();
-      const listSize = resolvedPos.parent.childCount;
-      const listLocalId = resolvedPos.parent.attrs.localId;
-
-      event.update((payload: AnalyticsEventPayload) => {
-        const { attributes = {}, actionSubject } = payload;
-        if (actionSubject !== 'action') {
-          // Not action related, ignore
-          return payload;
-        }
-        return {
-          ...payload,
-          attributes: {
-            ...attributes,
-            position,
-            listSize,
-            listLocalId,
-          },
-        };
-      });
-    } catch (e) {
-      // This can occur if pos is NaN (seen it in some test cases)
-      // Act defensively here, and lose some analytics data rather than
-      // cause any user facing error.
-    }
-  };
-
   createDomRef() {
     const domRef = document.createElement('div');
     domRef.style['list-style-type' as any] = 'none';
@@ -93,28 +47,23 @@ class Task extends ReactNodeView<Props> {
   render(props: Props, forwardRef: ForwardRef) {
     const { localId, state } = this.node.attrs;
     return (
-      <AnalyticsListener
-        channel="fabric-elements"
-        onEvent={this.addListAnalyticsData}
-      >
-        <WithPluginState
-          plugins={{
-            taskDecisionPlugin: taskPluginKey,
-          }}
-          render={() => {
-            return (
-              <TaskItem
-                taskId={localId}
-                contentRef={forwardRef}
-                isDone={state === 'DONE'}
-                onChange={this.handleOnChange}
-                showPlaceholder={this.isContentEmpty(this.node)}
-                providers={props.providerFactory}
-              />
-            );
-          }}
-        />
-      </AnalyticsListener>
+      <WithPluginState
+        plugins={{
+          taskDecisionPlugin: taskPluginKey,
+        }}
+        render={() => {
+          return (
+            <TaskItem
+              taskId={localId}
+              contentRef={forwardRef}
+              isDone={state === 'DONE'}
+              onChange={this.handleOnChange}
+              showPlaceholder={this.isContentEmpty(this.node)}
+              providers={props.providerFactory}
+            />
+          );
+        }}
+      />
     );
   }
 

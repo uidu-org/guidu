@@ -29,29 +29,6 @@ const tokenPlugin = (): EditorPlugin => ({
   },
 
   pluginsOptions: {
-    // quickInsert: ({ formatMessage }) => [
-    //   {
-    //     title: formatMessage(messages.token),
-    //     description: formatMessage(messages.tokenDescription),
-    //     priority: 800,
-    //     keywords: ['token', 'youtube', '/'],
-    //     keyshortcut: '//',
-    //     icon: () => <IconVideo label={formatMessage(messages.token)} />,
-    //     action: (insert, state) => {
-    //       const tr = insert('');
-    //       addAnalytics(state, tr, {
-    //         action: ACTION.INSERTED,
-    //         actionSubject: ACTION_SUBJECT.DOCUMENT,
-    //         actionSubjectId: ACTION_SUBJECT_ID.DATE,
-    //         eventType: EVENT_TYPE.TRACK,
-    //         attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-    //       });
-    //       return tr.setMeta(tokenPluginKey, {
-    //         showVideoPickerAt: tr.selection.from,
-    //       });
-    //     },
-    //   },
-    // ],
     typeAhead: {
       trigger: '{',
       // Custom regex must have a capture group around trigger
@@ -120,18 +97,6 @@ const tokenPlugin = (): EditorPlugin => ({
       },
       dismiss(state) {
         console.log('dismiss', state);
-
-        // fireEvent(
-        //   buildTypeAheadCancelPayload(
-        //     pickerElapsedTime,
-        //     typeAheadPluginState.upKeyCount,
-        //     typeAheadPluginState.downKeyCount,
-        //     sessionId,
-        //     typeAheadPluginState.query || '',
-        //   ),
-        // );
-
-        // sessionId = uuid();
       },
     },
   },

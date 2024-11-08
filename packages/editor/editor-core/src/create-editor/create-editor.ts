@@ -1,14 +1,12 @@
 import { ErrorReporter, ErrorReportingHandler } from '@uidu/editor-common';
 import { MarkSpec } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
-import { AnalyticsHandler, analyticsService } from '../analytics';
 import {
   EditorConfig,
   EditorPlugin,
   PluginsOptions,
   PMPluginCreateConfig,
 } from '../types';
-import { name, version } from '../version-wrapper';
 import { sortByOrder } from './sort-by-order';
 
 export function sortByRank(a: { rank: number }, b: { rank: number }): number {
@@ -120,12 +118,4 @@ export function createErrorReporter(
     errorReporter.handler = errorReporterHandler;
   }
   return errorReporter;
-}
-
-export function initAnalytics(analyticsHandler?: AnalyticsHandler) {
-  analyticsService.handler = analyticsHandler || (() => {});
-  analyticsService.trackEvent('uidu.editor-core.start', {
-    name,
-    version,
-  });
 }

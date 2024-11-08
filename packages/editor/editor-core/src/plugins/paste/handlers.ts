@@ -23,7 +23,6 @@ import { EditorView } from 'prosemirror-view';
 import { Command, CommandDispatch } from '../../types';
 import { compose, insideTable, processRawValue } from '../../utils';
 import { mapSlice } from '../../utils/slice';
-import { InputMethodInsertMedia, INPUT_METHOD } from '../analytics';
 import { insertCard, queueCardsFromChangedTr } from '../card/pm-plugins/doc';
 import { CardOptions } from '../card/types';
 import { GapCursorSelection, Side } from '../gap-cursor/';
@@ -85,9 +84,8 @@ export function handlePasteIntoTaskAndDecision(slice: Slice): Command {
 
     const selectionMarks = selection.$head.marks();
 
-    const textFormattingState: TextFormattingState = textFormattingPluginKey.getState(
-      state,
-    );
+    const textFormattingState: TextFormattingState =
+      textFormattingPluginKey.getState(state);
 
     if (
       selection instanceof TextSelection &&
@@ -105,7 +103,7 @@ export function handlePasteIntoTaskAndDecision(slice: Slice): Command {
       .replaceSelection(transformedSlice)
       .scrollIntoView();
 
-    queueCardsFromChangedTr(state, tr, INPUT_METHOD.CLIPBOARD);
+    queueCardsFromChangedTr(state, tr);
     if (dispatch) {
       dispatch(tr);
     }
@@ -175,9 +173,8 @@ export function handlePastePreservingMarks(slice: Slice): Command {
       return false;
     }
 
-    const textFormattingState: TextFormattingState = textFormattingPluginKey.getState(
-      state,
-    );
+    const textFormattingState: TextFormattingState =
+      textFormattingPluginKey.getState(state);
 
     // special case for codeMark: will preserve mark only if codeMark is currently active
     // won't preserve mark if cursor is on the edge on the mark (namely inactive)
@@ -202,7 +199,7 @@ export function handlePastePreservingMarks(slice: Slice): Command {
         .setStoredMarks(selectionMarks)
         .scrollIntoView();
 
-      queueCardsFromChangedTr(state, tr, INPUT_METHOD.CLIPBOARD);
+      queueCardsFromChangedTr(state, tr);
       if (dispatch) {
         dispatch(tr);
       }
@@ -232,7 +229,7 @@ export function handlePastePreservingMarks(slice: Slice): Command {
         .setStoredMarks(selectionMarks)
         .scrollIntoView();
 
-      queueCardsFromChangedTr(state, tr, INPUT_METHOD.CLIPBOARD);
+      queueCardsFromChangedTr(state, tr);
       if (dispatch) {
         dispatch(tr);
       }
@@ -361,16 +358,12 @@ function isOnlyMediaSingle(state: EditorState, slice: Slice) {
   );
 }
 
-export function handleMediaSingle(inputMethod: InputMethodInsertMedia) {
+export function handleMediaSingle() {
   return function (slice: Slice): Command {
     return (state, dispatch, view) => {
       if (view) {
         if (isOnlyMedia(state, slice)) {
-          return insertMediaAsMediaSingle(
-            view,
-            slice.content.firstChild!,
-            inputMethod,
-          );
+          return insertMediaAsMediaSingle(view, slice.content.firstChild);
         }
 
         if (insideTable(state) && isOnlyMediaSingle(state, slice)) {
@@ -440,7 +433,7 @@ export function handleMarkdown(markdownSlice: Slice): Command {
     const tr = closeHistory(state.tr);
     tr.replaceSelection(markdownSlice);
 
-    queueCardsFromChangedTr(state, tr, INPUT_METHOD.CLIPBOARD);
+    queueCardsFromChangedTr(state, tr);
     if (dispatch) {
       dispatch(tr.scrollIntoView());
     }
@@ -567,7 +560,7 @@ export function handleRichText(slice: Slice): Command {
 
     // queue link cards, ignoring any errors
     if (dispatch) {
-      dispatch(queueCardsFromChangedTr(state, tr, INPUT_METHOD.CLIPBOARD));
+      dispatch(queueCardsFromChangedTr(state, tr));
     }
     return true;
   };

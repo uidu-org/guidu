@@ -28,10 +28,6 @@ import React, { ReactInstance } from 'react';
 import ReactDOM from 'react-dom';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import {
-  analyticsService as analytics,
-  withAnalytics,
-} from '../../../../analytics';
-import {
   addLink,
   findKeymapByDescription,
   findShortcutByDescription,
@@ -43,30 +39,22 @@ import DropdownMenu from '../../../../ui/DropdownMenu';
 import { MenuItem } from '../../../../ui/DropdownMenu/types';
 import { Shortcut } from '../../../../ui/styles';
 import ToolbarButton from '../../../../ui/ToolbarButton';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-  INPUT_METHOD,
-  withAnalytics as commandWithAnalytics,
-} from '../../../analytics';
 import { BlockType } from '../../../block-type/types';
 import { DropdownItem } from '../../../block-type/ui/ToolbarBlockType';
 import { insertDate, openDatePicker } from '../../../date/actions';
 import { insertEmoji } from '../../../emoji/commands/insert-emoji';
 import { insertExpand } from '../../../expand/commands';
 import { showLinkToolbar } from '../../../hyperlink/commands';
-import { insertLayoutColumnsWithAnalytics } from '../../../layout/actions';
+import { insertLayoutColumns } from '../../../layout/actions';
 import { showPlaceholderFloatingToolbar } from '../../../placeholder-text/actions';
 import { createHorizontalRule } from '../../../rule/pm-plugins/input-rule';
-import { updateStatusWithAnalytics } from '../../../status/actions';
+import { updateStatus } from '../../../status/actions';
 import { createTable } from '../../../table/commands';
 import { insertTaskDecision } from '../../../tasks-and-decisions/commands';
 import { setVideoPickerAt } from '../../../video/actions';
 import { messages } from './messages';
 import { TriggerWrapper } from './styles';
-import { Props, State, TOOLBAR_MENU_TYPE } from './types';
+import { Props, State } from './types';
 
 const blockTypeIcons = {
   codeblock: () => <FontAwesomeIcon tw="h-4 w-4" icon={faCode} />,
@@ -115,9 +103,7 @@ class ToolbarInsertBlock extends React.PureComponent<
     this.onOpenChange({ isOpen: !isOpen });
   };
 
-  private toggleEmojiPicker = (
-    inputMethod: TOOLBAR_MENU_TYPE = INPUT_METHOD.TOOLBAR,
-  ) => {
+  private toggleEmojiPicker = () => {
     this.setState(
       (prevState) => ({ emojiPickerOpen: !prevState.emojiPickerOpen }),
       () => {
@@ -563,176 +549,118 @@ class ToolbarInsertBlock extends React.PureComponent<
     return items;
   };
 
-  private toggleLinkPanel = withAnalytics(
-    'uidu.editor-core.format.hyperlink.button',
-    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
-      const { editorView } = this.props;
-      showLinkToolbar(inputMethod)(editorView.state, editorView.dispatch);
-      return true;
-    },
-  );
+  private toggleLinkPanel = (): boolean => {
+    const { editorView } = this.props;
+    showLinkToolbar()(editorView.state, editorView.dispatch);
+    return true;
+  };
 
-  // private insertMention = withAnalytics(
-  //   'uidu.editor-core.mention.picker.trigger.button',
-  //   (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
-  //     const { editorView } = this.props;
-  //     insertMentionQuery(inputMethod)(editorView.state, editorView.dispatch);
-  //     return true;
-  //   },
-  // );
+  // private insertMention = (): boolean => {
+  //   const { editorView } = this.props;
+  //   insertMentionQuery()(editorView.state, editorView.dispatch);
+  //   return true;
+  // };
 
-  private insertTable = withAnalytics(
-    'uidu.editor-core.format.table.button',
-    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
-      const { editorView } = this.props;
-      return commandWithAnalytics({
-        action: ACTION.INSERTED,
-        actionSubject: ACTION_SUBJECT.DOCUMENT,
-        actionSubjectId: ACTION_SUBJECT_ID.TABLE,
-        attributes: { inputMethod },
-        eventType: EVENT_TYPE.TRACK,
-      })(createTable)(editorView.state, editorView.dispatch);
-    },
-  );
+  private insertTable = (): boolean => {
+    const { editorView } = this.props;
+    return createTable(editorView.state, editorView.dispatch);
+  };
 
-  private createDate = withAnalytics(
-    'uidu.editor-core.format.date.button',
-    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
-      const { editorView } = this.props;
-      insertDate(undefined, inputMethod)(editorView.state, editorView.dispatch);
-      openDatePicker()(editorView.state, editorView.dispatch);
-      return true;
-    },
-  );
+  private createDate = (): boolean => {
+    const { editorView } = this.props;
+    insertDate(undefined)(editorView.state, editorView.dispatch);
+    openDatePicker()(editorView.state, editorView.dispatch);
+    return true;
+  };
 
-  private createVideo = withAnalytics(
-    'uidu.editor-core.format.video.button',
-    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
-      console.log('createVideo');
-      const { editorView } = this.props;
-      setVideoPickerAt(true)(editorView.state, editorView.dispatch);
-      return true;
-    },
-  );
+  private createVideo = (): boolean => {
+    console.log('createVideo');
+    const { editorView } = this.props;
+    setVideoPickerAt(true)(editorView.state, editorView.dispatch);
+    return true;
+  };
 
-  private createPlaceholderText = withAnalytics(
-    'uidu.editor-core.format.placeholder.button',
-    (): boolean => {
-      const { editorView } = this.props;
-      showPlaceholderFloatingToolbar(editorView.state, editorView.dispatch);
-      return true;
-    },
-  );
+  private createPlaceholderText = (): boolean => {
+    const { editorView } = this.props;
+    showPlaceholderFloatingToolbar(editorView.state, editorView.dispatch);
+    return true;
+  };
 
-  private insertLayoutColumns = withAnalytics(
-    'uidu.editor-core.format.layout.button',
-    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
-      const { editorView } = this.props;
-      insertLayoutColumnsWithAnalytics(inputMethod)(
-        editorView.state,
-        editorView.dispatch,
-      );
-      return true;
-    },
-  );
+  private insertLayoutColumns = (): boolean => {
+    const { editorView } = this.props;
+    insertLayoutColumns(editorView.state, editorView.dispatch);
+    return true;
+  };
 
-  private createStatus = withAnalytics(
-    'uidu.editor-core.format.status.button',
-    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
-      const { editorView } = this.props;
-      updateStatusWithAnalytics(inputMethod)(
-        editorView.state,
-        editorView.dispatch,
-      );
-      return true;
-    },
-  );
+  private createStatus = (): boolean => {
+    const { editorView } = this.props;
+    updateStatus()(editorView.state, editorView.dispatch);
+    return true;
+  };
 
-  private openMediaPicker = withAnalytics(
-    'uidu.editor-core.format.media.button',
-    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
-      const { onShowMediaPicker } = this.props;
-      if (onShowMediaPicker) {
-        onShowMediaPicker();
-      }
-      return true;
-    },
-  );
+  private openMediaPicker = (): boolean => {
+    const { onShowMediaPicker } = this.props;
+    if (onShowMediaPicker) {
+      onShowMediaPicker();
+    }
+    return true;
+  };
 
-  private insertTaskDecision = (
-    name: 'action' | 'decision',
-    inputMethod: TOOLBAR_MENU_TYPE,
-  ) =>
-    withAnalytics(`uidu.editor-core.${name}.trigger.button`, (): boolean => {
-      const { editorView } = this.props;
-      if (!editorView) {
-        return false;
-      }
-      const listType = name === 'action' ? 'taskList' : 'decisionList';
-      insertTaskDecision(
-        editorView,
-        listType,
-        inputMethod,
-      )(editorView.state, editorView.dispatch);
-      return true;
-    });
-
-  private insertHorizontalRule = withAnalytics(
-    'uidu.editor-core.format.horizontalrule.button',
-    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
-      const { editorView } = this.props;
-
-      const tr = createHorizontalRule(
-        editorView.state,
-        editorView.state.selection.from,
-        editorView.state.selection.to,
-        inputMethod,
-      );
-
-      if (tr) {
-        editorView.dispatch(tr);
-        return true;
-      }
-
+  private insertTaskDecision = (name: 'action' | 'decision') => (): boolean => {
+    const { editorView } = this.props;
+    if (!editorView) {
       return false;
-    },
-  );
+    }
+    const listType = name === 'action' ? 'taskList' : 'decisionList';
+    insertTaskDecision(editorView, listType)(
+      editorView.state,
+      editorView.dispatch,
+    );
+    return true;
+  };
+
+  private insertHorizontalRule = (): boolean => {
+    const { editorView } = this.props;
+
+    const tr = createHorizontalRule(
+      editorView.state,
+      editorView.state.selection.from,
+      editorView.state.selection.to,
+    );
+
+    if (tr) {
+      editorView.dispatch(tr);
+      return true;
+    }
+
+    return false;
+  };
 
   private insertExpand = (): boolean => {
     const { state, dispatch } = this.props.editorView;
     return insertExpand(state, dispatch);
   };
 
-  private insertBlockType = (itemName: string) =>
-    withAnalytics(`uidu.editor-core.format.${itemName}.button`, () => {
-      const { editorView, onInsertBlockType } = this.props;
-      const { state, dispatch } = editorView;
+  private insertBlockType = (itemName: string) => () => {
+    const { editorView, onInsertBlockType } = this.props;
+    const { state, dispatch } = editorView;
 
-      onInsertBlockType!(itemName)(state, dispatch);
-      return true;
-    });
+    onInsertBlockType!(itemName)(state, dispatch);
+    return true;
+  };
 
-  private handleSelectedEmoji = withAnalytics(
-    'uidu.editor-core.emoji.button',
-    (emojiId: EmojiId): boolean => {
-      this.props.editorView.focus();
-      insertEmoji({
-        id: emojiId.unified,
-        fallback: emojiId.shortcodes,
-        shortName: emojiId.shortcodes,
-      })(this.props.editorView.state, this.props.editorView.dispatch);
-      this.toggleEmojiPicker();
-      return true;
-    },
-  );
+  private handleSelectedEmoji = (emojiId: EmojiId): boolean => {
+    this.props.editorView.focus();
+    insertEmoji({
+      id: emojiId.unified,
+      fallback: emojiId.shortcodes,
+      shortName: emojiId.shortcodes,
+    })(this.props.editorView.state, this.props.editorView.dispatch);
+    this.toggleEmojiPicker();
+    return true;
+  };
 
-  private onItemActivated = ({
-    item,
-    inputMethod,
-  }: {
-    item: any;
-    inputMethod: TOOLBAR_MENU_TYPE;
-  }): void => {
+  private onItemActivated = ({ item }: { item: any }): void => {
     const {
       editorView,
       editorActions,
@@ -749,10 +677,10 @@ class ToolbarInsertBlock extends React.PureComponent<
 
     switch (item.value.name) {
       case 'link':
-        this.toggleLinkPanel(inputMethod);
+        this.toggleLinkPanel();
         break;
       case 'table':
-        this.insertTable(inputMethod);
+        this.insertTable();
         break;
       case 'image upload':
         if (handleImageUpload) {
@@ -761,13 +689,13 @@ class ToolbarInsertBlock extends React.PureComponent<
         }
         break;
       case 'media':
-        this.openMediaPicker(inputMethod);
+        this.openMediaPicker();
         break;
       // case 'mention':
-      //   this.insertMention(inputMethod);
+      //   this.insertMention();
       //   break;
       case 'emoji':
-        this.toggleEmojiPicker(inputMethod);
+        this.toggleEmojiPicker();
         break;
       case 'codeblock':
       case 'blockquote':
@@ -776,16 +704,13 @@ class ToolbarInsertBlock extends React.PureComponent<
         break;
       case 'action':
       case 'decision':
-        this.insertTaskDecision(item.value.name, inputMethod)();
+        this.insertTaskDecision(item.value.name)();
         break;
 
       case 'horizontalrule':
-        this.insertHorizontalRule(inputMethod);
+        this.insertHorizontalRule();
         break;
       case 'macro':
-        analytics.trackEvent(
-          `uidu.editor-core.format.${item.value.name}.button`,
-        );
         onInsertMacroFromMacroBrowser!(macroProvider!)(
           editorView.state,
           editorView.dispatch,
@@ -801,10 +726,10 @@ class ToolbarInsertBlock extends React.PureComponent<
         this.createPlaceholderText();
         break;
       case 'layout':
-        this.insertLayoutColumns(inputMethod);
+        this.insertLayoutColumns();
         break;
       case 'status':
-        this.createStatus(inputMethod);
+        this.createStatus();
         break;
 
       // https://product-fabric.atlassian.net/browse/ED-8053
@@ -829,13 +754,11 @@ class ToolbarInsertBlock extends React.PureComponent<
   private insertToolbarMenuItem = (btn: any) =>
     this.onItemActivated({
       item: btn,
-      inputMethod: INPUT_METHOD.TOOLBAR,
     });
 
   private insertInsertMenuItem = ({ item }: { item: DropdownItem }) =>
     this.onItemActivated({
       item,
-      inputMethod: INPUT_METHOD.INSERT_MENU,
     });
 }
 

@@ -1,5 +1,4 @@
 import { LinkDefinition } from '@uidu/adf-schema';
-import { AnalyticsEventPayload } from '@uidu/analytics';
 import {
   EventHandlers,
   ProviderFactory,
@@ -16,7 +15,6 @@ export interface MediaProps {
   isInsideOfBlockNode?: boolean;
   marks: Array<LinkDefinition>;
   isLinkMark: () => boolean;
-  fireAnalyticsEvent?: (event: AnalyticsEventPayload) => void;
   // featureFlags?: MediaFeatureFlags;
   eventHandlers?: EventHandlers;
   enableDownloadButton?: boolean;

@@ -1,8 +1,7 @@
 import ChevronLeftLargeIcon from '@atlaskit/icon/glyph/chevron-left-large';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
-import { colors } from '@uidu/theme';
-import { withAnalyticsEvents, WithAnalyticsEventsProps } from '@uidu/analytics';
 import { ErrorMessage } from '@uidu/editor-common';
+import { colors } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import React, { KeyboardEvent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
@@ -10,15 +9,6 @@ import styled from 'styled-components';
 import * as keymaps from '../../../../../keymaps';
 import PanelTextInput from '../../../../../ui/PanelTextInput';
 import { RECENT_SEARCH_WIDTH_IN_PX } from '../../../../../ui/RecentSearch/ToolbarComponents';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-  FireAnalyticsCallback,
-  fireAnalyticsEvent,
-  MediaAltTextActionType,
-} from '../../../../analytics';
 import Button from '../../../../floating-toolbar/ui/Button';
 import { closeMediaAltTextMenu, updateAltText } from '../commands';
 import { messages } from '../messages';
@@ -74,8 +64,7 @@ type Props = {
   view: EditorView;
   value?: string;
   altTextValidator?: (value: string) => string[];
-} & WrappedComponentProps &
-  WithAnalyticsEventsProps;
+} & WrappedComponentProps;
 
 export type AltTextEditComponentState = {
   showClearTextButton: boolean;
@@ -87,7 +76,6 @@ export class AltTextEditComponent extends React.Component<
   Props,
   AltTextEditComponentState
 > {
-  private fireCustomAnalytics?: FireAnalyticsCallback;
   state = {
     showClearTextButton: Boolean(this.props.value),
     validationErrors: this.props.value
@@ -98,9 +86,6 @@ export class AltTextEditComponent extends React.Component<
 
   constructor(props: Props) {
     super(props);
-
-    const { createAnalyticsEvent } = props;
-    this.fireCustomAnalytics = fireAnalyticsEvent(createAnalyticsEvent);
   }
 
   prevValue: string | undefined;
@@ -109,18 +94,7 @@ export class AltTextEditComponent extends React.Component<
     this.prevValue = this.props.value;
   }
 
-  componentWillUnmount() {
-    this.fireAnalytics(ACTION.CLOSED);
-    if (!this.prevValue && this.props.value) {
-      this.fireAnalytics(ACTION.ADDED);
-    }
-    if (this.prevValue && !this.props.value) {
-      this.fireAnalytics(ACTION.CLEARED);
-    }
-    if (this.prevValue && this.prevValue !== this.props.value) {
-      this.fireAnalytics(ACTION.EDITED);
-    }
-  }
+  componentWillUnmount() {}
 
   private getValidationErrors(value: string): string[] {
     const { altTextValidator } = this.props;
@@ -143,12 +117,11 @@ export class AltTextEditComponent extends React.Component<
       'Esc',
     );
 
-    const errorsList = (this.state.validationErrors || []).map(function (
-      error,
-      index,
-    ) {
-      return <ErrorMessage key={index}>{error}</ErrorMessage>;
-    });
+    const errorsList = (this.state.validationErrors || []).map(
+      function (error, index) {
+        return <ErrorMessage key={index}>{error}</ErrorMessage>;
+      },
+    );
 
     return (
       <Container>
@@ -201,20 +174,6 @@ export class AltTextEditComponent extends React.Component<
     closeMediaAltTextMenu(view.state, view.dispatch);
   };
 
-  private fireAnalytics(actionType: MediaAltTextActionType) {
-    const { createAnalyticsEvent } = this.props;
-    if (createAnalyticsEvent && this.fireCustomAnalytics) {
-      this.fireCustomAnalytics({
-        payload: {
-          action: actionType,
-          actionSubject: ACTION_SUBJECT.MEDIA,
-          actionSubjectId: ACTION_SUBJECT_ID.ALT_TEXT,
-          eventType: EVENT_TYPE.TRACK,
-        },
-      });
-    }
-  }
-
   private dispatchCancelEvent = (event: KeyboardEvent) => {
     const { view } = this.props;
 
@@ -260,4 +219,4 @@ export class AltTextEditComponent extends React.Component<
   };
 }
 
-export default withAnalyticsEvents()(injectIntl(AltTextEditComponent));
+export default injectIntl(AltTextEditComponent);

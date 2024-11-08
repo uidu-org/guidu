@@ -9,7 +9,6 @@ import {
 import { EditorView } from 'prosemirror-view';
 import React from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
-import { withAnalytics } from '../../../../analytics';
 import Dropdown from '../../../../ui/Dropdown';
 import {
   ExpandIconWrapper,
@@ -28,9 +27,6 @@ import {
   TextColorIconBar,
   TextColorIconWrapper,
 } from './styles';
-const EXPERIMENT_NAME: string = 'editor.toolbarTextColor.moreColors';
-const EXPERIMENT_GROUP_CONTROL: string = 'control';
-const EXPERIMENT_GROUP_SUBJECT: string = 'subject';
 
 export const messages = defineMessages({
   textColor: {
@@ -177,33 +173,30 @@ class ToolbarTextColor extends React.Component<
     );
   }
 
-  private changeTextColor = withAnalytics(
-    'uidu.editor-core.format.textcolor.button',
-    (color: string, disabled: boolean) => {
-      if (!disabled) {
-        const {
-          pluginState: { palette, paletteExpanded, defaultColor },
-        } = this.props;
-        const { isShowingMoreColors } = this.state;
+  private changeTextColor = (color: string, disabled: boolean) => {
+    if (!disabled) {
+      const {
+        pluginState: { palette, paletteExpanded, defaultColor },
+      } = this.props;
+      const { isShowingMoreColors } = this.state;
 
-        // we store color names in analytics
-        const swatch = (paletteExpanded || palette).find(
-          (sw) => sw.value === color,
-        );
-        const isNewColor =
-          color !== defaultColor &&
-          !originalTextColors.some((col) => col.value === color);
+      // we store color names in analytics
+      const swatch = (paletteExpanded || palette).find(
+        (sw) => sw.value === color,
+      );
+      const isNewColor =
+        color !== defaultColor &&
+        !originalTextColors.some((col) => col.value === color);
 
-        this.handleOpenChange({
-          isOpen: false,
-          logCloseEvent: false,
-        });
-        return this.changeColor(color);
-      }
+      this.handleOpenChange({
+        isOpen: false,
+        logCloseEvent: false,
+      });
+      return this.changeColor(color);
+    }
 
-      return false;
-    },
-  );
+    return false;
+  };
 
   private toggleOpen = () => {
     this.handleOpenChange({ isOpen: !this.state.isOpen, logCloseEvent: true });

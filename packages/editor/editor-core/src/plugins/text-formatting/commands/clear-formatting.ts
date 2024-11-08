@@ -4,14 +4,7 @@ import { CellSelection } from 'prosemirror-tables';
 import { liftTarget } from 'prosemirror-transform';
 import { Command } from '../../../types';
 import { cellSelectionNodesBetween } from '../../../utils/cell-selection';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../../analytics';
+import { ACTION_SUBJECT_ID } from '../../analytics';
 
 export const FORMATTING_NODE_TYPES = ['heading', 'codeBlock', 'blockquote'];
 export const FORMATTING_MARK_TYPES = [
@@ -33,12 +26,6 @@ const formatTypes: Record<string, string> = {
   textColor: ACTION_SUBJECT_ID.FORMAT_COLOR,
   subsup: 'subsup',
 };
-
-export function clearFormattingWithAnalytics(
-  inputMethod: INPUT_METHOD.TOOLBAR | INPUT_METHOD.SHORTCUT,
-): Command {
-  return clearFormatting(inputMethod);
-}
 
 function clearNodeFormattingOnSelection(
   state: EditorState,
@@ -71,9 +58,7 @@ function clearNodeFormattingOnSelection(
   };
 }
 
-export function clearFormatting(
-  inputMethod?: INPUT_METHOD.TOOLBAR | INPUT_METHOD.SHORTCUT,
-): Command {
+export function clearFormatting(): Command {
   return function (state, dispatch): boolean {
     const { tr } = state;
     const formattingCleared: string[] = [];
@@ -131,19 +116,6 @@ export function clearFormatting(
     });
 
     tr.setStoredMarks([]);
-
-    if (formattingCleared.length && inputMethod) {
-      addAnalytics(state, tr, {
-        action: ACTION.FORMATTED,
-        eventType: EVENT_TYPE.TRACK,
-        actionSubject: ACTION_SUBJECT.TEXT,
-        actionSubjectId: ACTION_SUBJECT_ID.FORMAT_CLEAR,
-        attributes: {
-          inputMethod,
-          formattingCleared,
-        },
-      });
-    }
 
     if (dispatch) {
       dispatch(tr);

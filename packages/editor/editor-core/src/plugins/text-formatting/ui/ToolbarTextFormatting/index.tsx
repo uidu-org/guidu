@@ -4,18 +4,13 @@ import { ButtonGroup } from '@uidu/button';
 import { EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
-import { withAnalytics } from '../../../../analytics';
 import {
   renderTooltipContent,
   toggleBold,
   toggleItalic,
 } from '../../../../keymaps';
 import ToolbarButton from '../../../../ui/ToolbarButton';
-import { INPUT_METHOD } from '../../../analytics';
-import {
-  toggleEmWithAnalytics,
-  toggleStrongWithAnalytics,
-} from '../../commands/text-formatting';
+import { toggleEm, toggleStrong } from '../../commands/text-formatting';
 import { TextFormattingState } from '../../pm-plugins/main';
 
 export const messages = defineMessages({
@@ -95,35 +90,23 @@ class ToolbarTextFormatting extends PureComponent<
     );
   }
 
-  private handleBoldClick = withAnalytics(
-    'uidu.editor-core.format.strong.button',
-    () => {
-      const { strongDisabled } = this.props.textFormattingState;
-      if (!strongDisabled) {
-        const { state, dispatch } = this.props.editorView;
-        return toggleStrongWithAnalytics({ inputMethod: INPUT_METHOD.TOOLBAR })(
-          state,
-          dispatch,
-        );
-      }
-      return false;
-    },
-  );
+  private handleBoldClick = () => {
+    const { strongDisabled } = this.props.textFormattingState;
+    if (!strongDisabled) {
+      const { state, dispatch } = this.props.editorView;
+      return toggleStrong()(state, dispatch);
+    }
+    return false;
+  };
 
-  private handleItalicClick = withAnalytics(
-    'uidu.editor-core.format.em.button',
-    (): boolean => {
-      const { emDisabled } = this.props.textFormattingState;
-      if (!emDisabled) {
-        const { state, dispatch } = this.props.editorView;
-        return toggleEmWithAnalytics({ inputMethod: INPUT_METHOD.TOOLBAR })(
-          state,
-          dispatch,
-        );
-      }
-      return false;
-    },
-  );
+  private handleItalicClick = (): boolean => {
+    const { emDisabled } = this.props.textFormattingState;
+    if (!emDisabled) {
+      const { state, dispatch } = this.props.editorView;
+      return toggleEm()(state, dispatch);
+    }
+    return false;
+  };
 }
 
 export default injectIntl(ToolbarTextFormatting);

@@ -12,7 +12,6 @@ import * as React from 'react';
 // prettier-ignore
 import { ComponentType } from 'react';
 import { Serializer } from '..';
-import { AnalyticsEventPayload } from '../analytics/events';
 import { RendererAppearance } from '../ui/Renderer/types';
 import { generateIdFromString } from '../utils';
 import { toReact as markToReact } from './marks';
@@ -41,7 +40,6 @@ export interface ConstructorParams {
   disableHeadingIDs?: boolean;
   allowHeadingAnchorLinks?: boolean;
   allowColumnSorting?: boolean;
-  fireAnalyticsEvent?: (event: AnalyticsEventPayload) => void;
 }
 
 type MarkWithContent = Partial<Mark> & {
@@ -49,23 +47,26 @@ type MarkWithContent = Partial<Mark> & {
 };
 
 function mergeMarks(marksAndNodes: Array<MarkWithContent | Node>) {
-  return marksAndNodes.reduce((acc, markOrNode) => {
-    const prev = (acc.length && acc[acc.length - 1]) || null;
+  return marksAndNodes.reduce(
+    (acc, markOrNode) => {
+      const prev = (acc.length && acc[acc.length - 1]) || null;
 
-    if (
-      markOrNode.type instanceof MarkType &&
-      prev &&
-      prev.type instanceof MarkType &&
-      Array.isArray(prev.content) &&
-      isSameMark(prev as Mark, markOrNode as Mark)
-    ) {
-      prev.content = mergeMarks(prev.content.concat(markOrNode.content));
-    } else {
-      acc.push(markOrNode);
-    }
+      if (
+        markOrNode.type instanceof MarkType &&
+        prev &&
+        prev.type instanceof MarkType &&
+        Array.isArray(prev.content) &&
+        isSameMark(prev as Mark, markOrNode as Mark)
+      ) {
+        prev.content = mergeMarks(prev.content.concat(markOrNode.content));
+      } else {
+        acc.push(markOrNode);
+      }
 
-    return acc;
-  }, [] as Array<MarkWithContent | Node>);
+      return acc;
+    },
+    [] as Array<MarkWithContent | Node>,
+  );
 }
 
 export default class ReactSerializer implements Serializer<JSX.Element> {
@@ -89,8 +90,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
 
   private allowColumnSorting?: boolean;
 
-  private fireAnalyticsEvent?: (event: AnalyticsEventPayload) => void;
-
   constructor({
     providers,
     eventHandlers,
@@ -101,7 +100,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
     disableHeadingIDs,
     allowHeadingAnchorLinks,
     allowColumnSorting,
-    fireAnalyticsEvent,
   }: ConstructorParams) {
     this.providers = providers;
     this.eventHandlers = eventHandlers;
@@ -112,7 +110,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
     this.disableHeadingIDs = disableHeadingIDs;
     this.allowHeadingAnchorLinks = allowHeadingAnchorLinks;
     this.allowColumnSorting = allowColumnSorting;
-    this.fireAnalyticsEvent = fireAnalyticsEvent;
   }
 
   private resetState() {
@@ -279,7 +276,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
       content: node.content ? node.content.toJSON() : undefined,
       allowHeadingAnchorLinks: this.allowHeadingAnchorLinks,
       rendererAppearance: this.appearance,
-      fireAnalyticsEvent: this.fireAnalyticsEvent,
       ...node.attrs,
     };
   }

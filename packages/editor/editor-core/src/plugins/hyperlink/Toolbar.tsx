@@ -22,7 +22,6 @@ import {
   editInsertedLink,
   hideLinkToolbar,
   insertLink,
-  insertLinkWithAnalytics,
   removeLink,
   setLinkHref,
   setLinkText,
@@ -233,15 +232,14 @@ export const getToolbarConfig: FloatingToolbarHandler = (
                     displayUrl={link}
                     displayText={displayText || ''}
                     providerFactory={providerFactory}
-                    onSubmit={(href, text, inputMethod) => {
+                    onSubmit={(href, text) => {
                       isEditLink(activeLinkMark)
                         ? updateLink(
                             href,
                             text,
                             activeLinkMark.pos,
                           )(view.state, view.dispatch)
-                        : insertLinkWithAnalytics(
-                            inputMethod,
+                        : insertLink(
                             activeLinkMark.from,
                             activeLinkMark.to,
                             href,

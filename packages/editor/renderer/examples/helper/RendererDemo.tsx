@@ -143,18 +143,13 @@ const eventHandlers: EventHandlers = {
     onMouseLeave: () => console.log('onMentionMouseLeave'),
   },
   media: {
-    onClick: (
-      result: CardEvent,
-      surroundings?: CardSurroundings,
-      analyticsEvent?: any,
-    ) =>
+    onClick: (result: CardEvent, surroundings?: CardSurroundings) =>
       // json-safe-stringify does not handle cyclic references in the react mouse click event
       console.log(
         'onMediaClick',
         '[react.MouseEvent]',
         result.mediaItemDetails,
         surroundings,
-        analyticsEvent,
       ),
   },
 };

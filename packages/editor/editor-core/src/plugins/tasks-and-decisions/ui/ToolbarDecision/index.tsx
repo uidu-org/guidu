@@ -2,7 +2,6 @@ import DecisionIcon from '@atlaskit/icon/glyph/editor/decision';
 import { EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
-import { withAnalytics } from '../../../../analytics';
 import ToolbarButton from '../../../../ui/ToolbarButton';
 import { messages } from '../../../insert-block/ui/ToolbarInsertBlock/messages';
 import { insertTaskDecision } from '../../commands';
@@ -44,20 +43,17 @@ export class ToolbarDecision extends PureComponent<
     );
   }
 
-  private handleInsertDecision = withAnalytics(
-    'uidu.editor-core.decision.trigger.button',
-    (): boolean => {
-      const { editorView } = this.props;
-      if (!editorView) {
-        return false;
-      }
-      insertTaskDecision(editorView, 'decisionList')(
-        editorView.state,
-        editorView.dispatch,
-      );
-      return true;
-    },
-  );
+  private handleInsertDecision = (): boolean => {
+    const { editorView } = this.props;
+    if (!editorView) {
+      return false;
+    }
+    insertTaskDecision(editorView, 'decisionList')(
+      editorView.state,
+      editorView.dispatch,
+    );
+    return true;
+  };
 }
 
 export default injectIntl(ToolbarDecision);

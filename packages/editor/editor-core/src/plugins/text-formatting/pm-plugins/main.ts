@@ -5,7 +5,6 @@ import { Dispatch } from '../../../event-dispatcher';
 import * as keymaps from '../../../keymaps';
 import { shallowEqual } from '../../../utils';
 import * as commands from '../commands/text-formatting';
-import { createInlineCodeFromTextInputWithAnalytics } from '../commands/text-formatting';
 import { anyMarkActive } from '../utils';
 
 export const pluginKey = new PluginKey('textFormatting');
@@ -121,7 +120,7 @@ export const plugin = (dispatch: Dispatch) =>
         text: string,
       ) {
         const { state, dispatch } = view;
-        return createInlineCodeFromTextInputWithAnalytics(
+        return commands.createInlineCodeFromTextInput(
           from,
           to,
           text,

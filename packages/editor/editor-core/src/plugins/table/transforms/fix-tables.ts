@@ -7,27 +7,12 @@ import {
 import { Node as PMNode } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import { sendLogs } from '../../../utils/sendLogs';
 import {
   calculateColumnWidth,
   contentWidth,
   getCellsRefsInColumn,
   getLayoutSize,
 } from '../pm-plugins/table-resizing/utils';
-
-export const fireAnalytics = (properties = {}) =>
-  sendLogs({
-    events: [
-      {
-        name: 'uidu.uidu.editor-core.fixtable',
-        product: 'uidu',
-        properties,
-        serverTime: new Date().getTime(),
-        server: 'local',
-        user: '-',
-      },
-    ],
-  });
 
 // We attempt to patch the document when we have extra, unneeded, column widths
 // Take this node for example:
@@ -62,7 +47,6 @@ export const removeExtraneousColumnWidths = (
   });
 
   if (hasProblems) {
-    fireAnalytics({ message: 'removeExtraneousColumnWidths' });
     return true;
   }
 

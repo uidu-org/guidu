@@ -1,21 +1,16 @@
-import { InputRule, wrappingInputRule } from 'prosemirror-inputrules';
+import {
+  InputRule,
+  inputRules,
+  wrappingInputRule,
+} from 'prosemirror-inputrules';
 import { NodeType, Schema } from 'prosemirror-model';
 import { EditorState, Plugin } from 'prosemirror-state';
 import {
   createInputRule as defaultCreateInputRule,
   defaultInputRuleHandler,
   InputRuleWithHandler,
-  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-  INPUT_METHOD,
-  ruleWithAnalytics,
-} from '../../analytics';
 
 export function createInputRule(regexp: RegExp, nodeType: NodeType) {
   return wrappingInputRule(
@@ -70,16 +65,6 @@ export const insertList = (
  * @returns {InputRule[]}
  */
 function getBulletListInputRules(schema: Schema): InputRule[] {
-  const ruleWithBulletListAnalytics = ruleWithAnalytics(() => ({
-    action: ACTION.FORMATTED,
-    actionSubject: ACTION_SUBJECT.TEXT,
-    actionSubjectId: ACTION_SUBJECT_ID.FORMAT_LIST_BULLET,
-    eventType: EVENT_TYPE.TRACK,
-    attributes: {
-      inputMethod: INPUT_METHOD.FORMATTING,
-    },
-  }));
-
   // NOTE: we decided to restrict the creation of bullet lists to only "*"x
   const asteriskRule = defaultInputRuleHandler(
     createInputRule(/^\s*([\*\-]) $/, schema.nodes.bulletList),
@@ -98,10 +83,7 @@ function getBulletListInputRules(schema: Schema): InputRule[] {
     true,
   );
 
-  return [
-    ruleWithBulletListAnalytics(asteriskRule),
-    ruleWithBulletListAnalytics(leafNodeAsteriskRule),
-  ];
+  return [asteriskRule, leafNodeAsteriskRule];
 }
 
 /**
@@ -111,16 +93,6 @@ function getBulletListInputRules(schema: Schema): InputRule[] {
  * @returns {InputRule[]}
  */
 function getOrderedListInputRules(schema: Schema): InputRule[] {
-  const ruleWithOrderedListAnalytics = ruleWithAnalytics(() => ({
-    action: ACTION.FORMATTED,
-    actionSubject: ACTION_SUBJECT.TEXT,
-    actionSubjectId: ACTION_SUBJECT_ID.FORMAT_LIST_NUMBER,
-    eventType: EVENT_TYPE.TRACK,
-    attributes: {
-      inputMethod: INPUT_METHOD.FORMATTING,
-    },
-  }));
-
   // NOTE: There is a built in input rule for ordered lists in ProseMirror. However, that
   // input rule will allow for a list to start at any given number, which isn't allowed in
   // markdown (where a ordered list will always start on 1). This is a slightly modified
@@ -137,10 +109,7 @@ function getOrderedListInputRules(schema: Schema): InputRule[] {
     true,
   );
 
-  return [
-    ruleWithOrderedListAnalytics(numberOneRule),
-    ruleWithOrderedListAnalytics(leafNodeNumberOneRule),
-  ];
+  return [numberOneRule, leafNodeNumberOneRule];
 }
 
 export default function inputRulePlugin(schema: Schema): Plugin | undefined {
@@ -155,7 +124,7 @@ export default function inputRulePlugin(schema: Schema): Plugin | undefined {
   }
 
   if (rules.length !== 0) {
-    return instrumentedInputRule('lists', { rules });
+    return inputRules({ rules });
   }
 
   return undefined;

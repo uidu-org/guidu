@@ -6,7 +6,6 @@ import { EmojiDescription, EmojiProvider } from '@uidu/emoji';
 import { ButtonItem } from '@uidu/menu';
 import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
 import React from 'react';
-import { analyticsService } from '../../analytics';
 import { Dispatch } from '../../event-dispatcher';
 import { Command, EditorPlugin } from '../../types';
 import { PortalProviderAPI } from '../../ui/PortalProvider';
@@ -79,13 +78,6 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
       // so it's possible to use it without needing to scan through all triggers again
       customRegex: '\\(?(:)',
       getItems(query, state, _intl, { prevActive, queryChanged }) {
-        if (!prevActive && queryChanged) {
-          analyticsService.trackEvent(
-            'uidu.editor-core.emoji.typeahead.open',
-            {},
-          );
-        }
-
         const pluginState = getEmojiPluginState(state);
 
         if (!query) {

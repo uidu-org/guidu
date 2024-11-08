@@ -2,7 +2,6 @@ import AttachmentIcon from '@atlaskit/icon/glyph/editor/attachment';
 import { PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { withAnalytics } from '../../../../analytics';
 import { EventDispatcher } from '../../../../event-dispatcher';
 import ToolbarButton from '../../../../ui/ToolbarButton';
 import WithPluginState from '../../../../ui/WithPluginState';
@@ -16,11 +15,10 @@ export interface Props {
   isReducedSpacing?: boolean;
 }
 
-const onClickMediaButton = (pluginState: MediaPluginState) =>
-  withAnalytics('uidu.editor-core.media.button', () => {
-    pluginState.showMediaPicker();
-    return true;
-  });
+const onClickMediaButton = (pluginState: MediaPluginState) => () => {
+  pluginState.showMediaPicker();
+  return true;
+};
 
 const ToolbarMedia = ({
   editorView,

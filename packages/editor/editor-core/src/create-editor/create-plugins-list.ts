@@ -67,10 +67,6 @@ export default function createPluginsList(props: EditorProps): EditorPlugin[] {
   // const isMobile = props.appearance === 'mobile';
   const plugins = [...getDefaultPluginsList(props), ...(props.plugins || [])];
 
-  // if (props.allowAnalyticsGASV3) {
-  //   plugins.push(analyticsPlugin(createAnalyticsEvent));
-  // }
-
   // if (props.allowBreakout && isFullPage) {
   //   plugins.push(
   //     breakoutPlugin({ allowBreakoutButton: props.appearance === 'full-page' }),
@@ -120,7 +116,6 @@ export default function createPluginsList(props: EditorProps): EditorPlugin[] {
   // if (props.mentionProvider) {
   //   plugins.push(
   //     mentionsPlugin({
-  //       createAnalyticsEvent,
   //       sanitizePrivateContent: props.sanitizePrivateContent,
   //       mentionInsertDisplayName: props.mentionInsertDisplayName,
   //       useInlineWrapper: isMobile,
@@ -132,7 +127,6 @@ export default function createPluginsList(props: EditorProps): EditorPlugin[] {
   // if (props.emojiProvider) {
   //   plugins.push(
   //     emojiPlugin({
-  //       createAnalyticsEvent,
   //       useInlineWrapper: isMobile,
   //       allowZeroWidthSpaceAfter: !isMobile,
   //     }),

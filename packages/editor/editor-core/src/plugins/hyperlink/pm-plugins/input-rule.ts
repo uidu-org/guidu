@@ -1,14 +1,8 @@
-import { InputRule } from 'prosemirror-inputrules';
+import { InputRule, inputRules } from 'prosemirror-inputrules';
 import { Schema } from 'prosemirror-model';
 import { EditorState, Plugin } from 'prosemirror-state';
-import { analyticsService } from '../../../analytics';
-import {
-  createInputRule,
-  instrumentedInputRule,
-} from '../../../utils/input-rules';
-import { addAnalytics, INPUT_METHOD } from '../../analytics';
+import { createInputRule } from '../../../utils/input-rules';
 import { queueCards } from '../../card/pm-plugins/actions';
-import { getLinkCreationAnalyticsEvent } from '../analytics';
 import { LinkMatcher, Match, normalizeUrl } from '../utils';
 
 export function createLinkInputRule(regexp: RegExp): InputRule {
@@ -25,32 +19,23 @@ export function createLinkInputRule(regexp: RegExp): InputRule {
       const url = normalizeUrl(link.url);
       const markType = schema.mark('link', { href: url });
 
-      analyticsService.trackEvent(
-        'uidu.editor-core.format.hyperlink.autoformatting',
-      );
-
       const tr = queueCards([
         {
           url: link.url,
-          pos: start - (link.input!.length - link.lastIndex),
+          pos: start - (link.input.length - link.lastIndex),
           appearance: 'inline',
           compareLinkText: true,
-          source: INPUT_METHOD.AUTO_DETECT,
         },
       ])(
         state.tr
           .addMark(
-            start - (link.input!.length - link.lastIndex),
-            end - (link.input!.length - link.lastIndex),
+            start - (link.input.length - link.lastIndex),
+            end - (link.input.length - link.lastIndex),
             markType,
           )
           .insertText(' '),
       );
-      return addAnalytics(
-        state,
-        tr,
-        getLinkCreationAnalyticsEvent(INPUT_METHOD.AUTO_DETECT, url),
-      );
+      return tr;
     },
   );
 }
@@ -71,24 +56,16 @@ export function createInputRulePlugin(schema: Schema): Plugin | undefined {
       const url = normalizeUrl(linkUrl);
       const markType = schema.mark('link', { href: url });
 
-      analyticsService.trackEvent(
-        'uidu.editor-core.format.hyperlink.autoformatting',
-      );
-
       const tr = state.tr.replaceWith(
         start + prefix.length,
         end,
         schema.text(linkText, [markType]),
       );
-      return addAnalytics(
-        state,
-        tr,
-        getLinkCreationAnalyticsEvent(INPUT_METHOD.FORMATTING, url),
-      );
+      return tr;
     },
   );
 
-  return instrumentedInputRule('hyperlink', {
+  return inputRules({
     rules: [urlWithASpaceRule, markdownLinkRule],
   });
 }

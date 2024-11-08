@@ -1,4 +1,3 @@
-import { CreateUIAnalyticsEvent, withAnalyticsEvents } from '@uidu/analytics';
 import { akEditorFloatingDialogZIndex, Popup } from '@uidu/editor-common';
 import {
   ColorType as Color,
@@ -10,7 +9,6 @@ import styled from 'styled-components';
 import { dropShadow } from '../../../ui/styles';
 import withOuterListeners from '../../../ui/with-outer-listeners';
 import { DEFAULT_STATUS } from '../actions';
-import { analyticsState, createStatusAnalyticsAndFire } from '../analytics';
 import { StatusType } from '../plugin';
 
 const PopupWithListeners = withOuterListeners(Popup);
@@ -31,7 +29,6 @@ export interface Props {
   defaultText?: string;
   defaultColor?: Color;
   defaultLocalId?: string;
-  createAnalyticsEvent?: CreateUIAnalyticsEvent;
 }
 
 export interface State {
@@ -52,65 +49,17 @@ const PickerContainer = styled.div`
 `;
 
 export class StatusPickerWithoutAnalytcs extends React.Component<Props, State> {
-  private startTime!: number;
-  private inputMethod?: InputMethod;
-  private createStatusAnalyticsAndFireFunc: Function;
-
   constructor(props: Props) {
     super(props);
 
     this.state = this.extractStateFromProps(props);
-    this.createStatusAnalyticsAndFireFunc = createStatusAnalyticsAndFire(
-      props.createAnalyticsEvent,
-    );
   }
 
-  private fireStatusPopupOpenedAnalytics(state: State) {
-    const { color, text, localId, isNew } = state;
-    this.startTime = Date.now();
+  private reset() {}
 
-    this.createStatusAnalyticsAndFireFunc({
-      action: 'opened',
-      actionSubject: 'statusPopup',
-      attributes: {
-        textLength: text ? text.length : 0,
-        selectedColor: color,
-        localId,
-        state: analyticsState(isNew),
-      },
-    });
-  }
+  componentDidMount() {}
 
-  private fireStatusPopupClosedAnalytics(state: State) {
-    const { color, text, localId, isNew } = state;
-    this.createStatusAnalyticsAndFireFunc({
-      action: 'closed',
-      actionSubject: 'statusPopup',
-      attributes: {
-        inputMethod: this.inputMethod,
-        duration: Date.now() - this.startTime,
-        textLength: text ? text.length : 0,
-        selectedColor: color,
-        localId,
-        state: analyticsState(isNew),
-      },
-    });
-  }
-
-  private reset() {
-    this.startTime = Date.now();
-    this.inputMethod = InputMethod.blur;
-  }
-
-  componentDidMount() {
-    this.reset();
-    this.fireStatusPopupOpenedAnalytics(this.state);
-  }
-
-  componentWillUnmount() {
-    this.fireStatusPopupClosedAnalytics(this.state);
-    this.startTime = 0;
-  }
+  componentWillUnmount() {}
 
   componentDidUpdate(
     prevProps: Readonly<Props>,
@@ -123,9 +72,7 @@ export class StatusPickerWithoutAnalytcs extends React.Component<Props, State> {
       const newState = this.extractStateFromProps(this.props);
       this.setState(newState);
 
-      this.fireStatusPopupClosedAnalytics(prevState);
       this.reset();
-      this.fireStatusPopupOpenedAnalytics(newState);
     }
   }
 
@@ -141,13 +88,11 @@ export class StatusPickerWithoutAnalytcs extends React.Component<Props, State> {
 
   handleClickOutside = (event: Event) => {
     event.preventDefault();
-    this.inputMethod = InputMethod.blur;
     this.props.closeStatusPicker();
   };
 
   private handleEscapeKeydown = (event: Event) => {
     event.preventDefault();
-    this.inputMethod = InputMethod.escKey;
     this.props.onEnter(this.state);
   };
 
@@ -180,31 +125,12 @@ export class StatusPickerWithoutAnalytcs extends React.Component<Props, State> {
     );
   }
 
-  private onColorHover = (color: Color) => {
-    this.createStatusAnalyticsAndFireFunc({
-      action: 'hovered',
-      actionSubject: 'statusColorPicker',
-      attributes: {
-        color,
-        localId: this.state.localId,
-        state: analyticsState(this.props.isNew),
-      },
-    });
-  };
+  private onColorHover = (color: Color) => {};
 
   private onColorClick = (color: Color) => {
     const { text, localId } = this.state;
 
     if (color === this.state.color) {
-      this.createStatusAnalyticsAndFireFunc({
-        action: 'clicked',
-        actionSubject: 'statusColorPicker',
-        attributes: {
-          color,
-          localId,
-          state: analyticsState(this.props.isNew),
-        },
-      });
       // closes status box and commits colour
       this.onEnter();
     } else {
@@ -231,7 +157,6 @@ export class StatusPickerWithoutAnalytcs extends React.Component<Props, State> {
   };
 
   private onEnter = () => {
-    this.inputMethod = InputMethod.enterKey;
     this.props.onEnter(this.state);
   };
 
@@ -242,4 +167,4 @@ export class StatusPickerWithoutAnalytcs extends React.Component<Props, State> {
     event.nativeEvent.stopImmediatePropagation();
 }
 
-export default withAnalyticsEvents()(StatusPickerWithoutAnalytcs);
+export default StatusPickerWithoutAnalytcs;

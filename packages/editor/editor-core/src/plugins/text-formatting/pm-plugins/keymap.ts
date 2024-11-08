@@ -1,85 +1,51 @@
-import { MarkType, Schema } from 'prosemirror-model';
+import { Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
-import { trackAndInvoke } from '../../../analytics';
 import * as keymaps from '../../../keymaps';
 import { keymap } from '../../../utils/keymap';
-import { INPUT_METHOD } from '../../analytics';
 import * as commands from '../commands/text-formatting';
 
 export default function keymapPlugin(schema: Schema): Plugin {
   const list = {};
 
   if (schema.marks.strong) {
-    const eventName = analyticsEventName(schema.marks.strong);
     keymaps.bindKeymapWithCommand(
-      keymaps.toggleBold.common!,
-      trackAndInvoke(
-        eventName,
-        commands.toggleStrongWithAnalytics({
-          inputMethod: INPUT_METHOD.SHORTCUT,
-        }),
-      ),
+      keymaps.toggleBold.common,
+      commands.toggleStrong(),
       list,
     );
   }
 
   if (schema.marks.em) {
-    const eventName = analyticsEventName(schema.marks.em);
     keymaps.bindKeymapWithCommand(
-      keymaps.toggleItalic.common!,
-      trackAndInvoke(
-        eventName,
-        commands.toggleEmWithAnalytics({ inputMethod: INPUT_METHOD.SHORTCUT }),
-      ),
+      keymaps.toggleItalic.common,
+      commands.toggleEm(),
       list,
     );
   }
 
   if (schema.marks.code) {
-    const eventName = analyticsEventName(schema.marks.code);
     keymaps.bindKeymapWithCommand(
-      keymaps.toggleCode.common!,
-      trackAndInvoke(
-        eventName,
-        commands.toggleCodeWithAnalytics({
-          inputMethod: INPUT_METHOD.SHORTCUT,
-        }),
-      ),
+      keymaps.toggleCode.common,
+      commands.toggleCode(),
       list,
     );
   }
 
   if (schema.marks.strike) {
-    const eventName = analyticsEventName(schema.marks.strike);
     keymaps.bindKeymapWithCommand(
-      keymaps.toggleStrikethrough.common!,
-      trackAndInvoke(
-        eventName,
-        commands.toggleStrikeWithAnalytics({
-          inputMethod: INPUT_METHOD.SHORTCUT,
-        }),
-      ),
+      keymaps.toggleStrikethrough.common,
+      commands.toggleStrike(),
       list,
     );
   }
 
   if (schema.marks.underline) {
-    const eventName = analyticsEventName(schema.marks.underline);
     keymaps.bindKeymapWithCommand(
-      keymaps.toggleUnderline.common!,
-      trackAndInvoke(
-        eventName,
-        commands.toggleUnderlineWithAnalytics({
-          inputMethod: INPUT_METHOD.SHORTCUT,
-        }),
-      ),
+      keymaps.toggleUnderline.common,
+      commands.toggleUnderline(),
       list,
     );
   }
 
   return keymap(list);
-}
-
-function analyticsEventName(markType: MarkType): string {
-  return `uidu.editor-core.format.${markType.name}.keyboard`;
 }

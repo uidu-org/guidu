@@ -3,14 +3,6 @@ import { findDomRefAtPos } from 'prosemirror-utils';
 import React from 'react';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconStatus } from '../quick-insert/assets';
 import { commitStatusPicker, createStatus, updateStatus } from './actions';
@@ -56,9 +48,8 @@ const baseStatusPlugin = (options?: StatusPluginOptions): EditorPlugin => ({
             domAtPos,
           ) as HTMLElement;
 
-          const statusNode: any = editorView.state.doc.nodeAt(
-            showStatusPickerAt,
-          );
+          const statusNode: any =
+            editorView.state.doc.nodeAt(showStatusPickerAt);
 
           if (!statusNode || statusNode.type.name !== 'status') {
             return null;
@@ -109,15 +100,7 @@ const decorateWithPluginOptions = (
         keywords: ['lozenge'],
         icon: () => <IconStatus label={formatMessage(messages.status)} />,
         action(insert, state) {
-          return addAnalytics(state, createStatus()(insert, state), {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.STATUS,
-            attributes: {
-              inputMethod: INPUT_METHOD.QUICK_INSERT,
-            },
-            eventType: EVENT_TYPE.TRACK,
-          });
+          return createStatus()(insert, state);
         },
       },
     ],

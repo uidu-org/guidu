@@ -7,12 +7,11 @@ import {
   Transaction,
 } from 'prosemirror-state';
 import { Command } from '../../types';
-import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock/types';
 import { pluginKey } from './pm-plugins/plugin-key';
 import { DateType } from './types';
 
 export const insertDate =
-  (date?: DateType, inputMethod?: TOOLBAR_MENU_TYPE) =>
+  (date?: DateType) =>
   (state: EditorState, dispatch: (tr: Transaction) => void): boolean => {
     const { schema } = state;
     let timestamp: string;

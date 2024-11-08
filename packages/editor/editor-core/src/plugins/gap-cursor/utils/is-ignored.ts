@@ -12,6 +12,5 @@ const IGNORED_NODES = [
   'blockquote',
 ];
 
-export const isIgnored = (node?: PMNode | null): boolean => {
-  return !!node && IGNORED_NODES.indexOf(node.type.name) !== -1;
-};
+export const isIgnored = (node?: PMNode | null): boolean =>
+  !!node && IGNORED_NODES.indexOf(node.type.name) !== -1;

@@ -15,19 +15,12 @@ import {
 } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import rafSchedule from 'raf-schd';
-import { analyticsService } from '../../analytics';
 import {
   isElementInTableCell,
   isLastItemMediaGroup,
   setNodeSelection,
 } from '../../utils/';
 import { closestElement } from '../../utils/dom';
-import {
-  ACTION_SUBJECT,
-  addAnalytics,
-  EVENT_TYPE,
-  TABLE_ACTION,
-} from '../analytics';
 import {
   addResizeHandleDecorations,
   clearHoverSelection,
@@ -387,19 +380,6 @@ export const handleCut = (
         } = getSelectedCellInfo(tr.selection);
 
         // Reassigning to make it more obvious and consistent
-        tr = addAnalytics(newState, tr, {
-          action: TABLE_ACTION.CUT,
-          actionSubject: ACTION_SUBJECT.TABLE,
-          actionSubjectId: null,
-          attributes: {
-            verticalCells,
-            horizontalCells,
-            totalCells,
-            totalRowCount,
-            totalColumnCount,
-          },
-          eventType: EVENT_TYPE.TRACK,
-        });
 
         // Need this check again since we are overriding the tr in previous statement
         if (tr.selection instanceof CellSelection) {
@@ -412,13 +392,7 @@ export const handleCut = (
               pluginConfig: { isHeaderRowRequired },
             } = getPluginState(newState);
             tr = deleteRows(rect, isHeaderRowRequired)(tr);
-            analyticsService.trackEvent(
-              'uidu.editor-core.format.table.delete_row.button',
-            );
           } else if (tr.selection.isColSelection()) {
-            analyticsService.trackEvent(
-              'uidu.editor-core.format.table.delete_column.button',
-            );
             tr = deleteColumns(rect)(tr);
           }
         }

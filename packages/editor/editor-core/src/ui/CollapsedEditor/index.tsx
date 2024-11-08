@@ -1,6 +1,5 @@
 import React from 'react';
 import Editor from '../../editor';
-import EditorWithActions from '../../labs/EditorWithActions';
 import ChromeCollapsed from '../ChromeCollapsed';
 
 export interface Props {

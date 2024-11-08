@@ -16,16 +16,7 @@ import {
 } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { Command } from '../../types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  AnalyticsEventPayload,
-  EVENT_TYPE,
-  INPUT_METHOD,
-  USER_CONTEXT,
-} from '../analytics';
+import { INPUT_METHOD } from '../analytics';
 import { GapCursorSelection } from '../gap-cursor';
 import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock/types';
 import {
@@ -33,39 +24,6 @@ import {
   TaskDecisionInputMethod,
   TaskDecisionListType,
 } from './types';
-
-const generateAnalyticsPayload = (
-  listType: TaskDecisionListType,
-  inputMethod: TaskDecisionInputMethod,
-  itemLocalId: string,
-  listLocalId: string,
-  itemIdx: number,
-  listSize: number,
-): AnalyticsEventPayload => {
-  let containerId;
-  let objectId;
-  let userContext: USER_CONTEXT | undefined;
-
-  return {
-    action: ACTION.INSERTED,
-    actionSubject: ACTION_SUBJECT.DOCUMENT,
-    actionSubjectId:
-      listType === 'taskList'
-        ? ACTION_SUBJECT_ID.ACTION
-        : ACTION_SUBJECT_ID.DECISION,
-    eventType: EVENT_TYPE.TRACK,
-    attributes: {
-      inputMethod,
-      containerAri: containerId,
-      objectAri: objectId,
-      userContext,
-      localId: itemLocalId,
-      listLocalId,
-      position: itemIdx,
-      listSize,
-    },
-  };
-};
 
 export const getListTypes = (
   listType: TaskDecisionListType,
@@ -203,20 +161,6 @@ export const insertTaskDecisionWithAnalytics = (
       listLocalId,
       itemLocalId,
     });
-    if (insertTr) {
-      insertTr = addAnalytics(
-        state,
-        insertTr,
-        generateAnalyticsPayload(
-          listType,
-          inputMethod,
-          itemLocalId,
-          listLocalId,
-          itemIdx || 0,
-          listSize || 0,
-        ),
-      );
-    }
     return insertTr;
   }
 

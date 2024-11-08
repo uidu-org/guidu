@@ -6,14 +6,6 @@ import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { ReactMediaGroupNode } from './nodeviews/mediaGroup';
 import { ReactMediaSingleNode } from './nodeviews/mediaSingle';
@@ -185,13 +177,7 @@ const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
           const pluginState = pluginKey.getState(state);
           pluginState.showMediaPicker();
           const tr = insert('');
-          return addAnalytics(state, tr, {
-            action: ACTION.OPENED,
-            actionSubject: ACTION_SUBJECT.PICKER,
-            actionSubjectId: ACTION_SUBJECT_ID.PICKER_CLOUD,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-            eventType: EVENT_TYPE.UI,
-          });
+          return tr;
         },
       },
     ],

@@ -14,7 +14,7 @@ export default class EmojiNode extends PureComponent<EmojiProps, {}> {
 
     return (
       <ClickSelectWrapper>
-        <em-emoji id={id} shortcodes={shortName} size="1rem"></em-emoji>
+        <em-emoji id={id} shortcodes={shortName} size="inherit"></em-emoji>
       </ClickSelectWrapper>
     );
   }

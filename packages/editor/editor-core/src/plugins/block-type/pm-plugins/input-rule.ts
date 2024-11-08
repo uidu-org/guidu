@@ -1,5 +1,6 @@
 import { safeInsert } from '@uidu/prosemirror-utils';
 import {
+  inputRules,
   textblockTypeInputRule,
   wrappingInputRule,
 } from 'prosemirror-inputrules';
@@ -9,7 +10,6 @@ import {
   createInputRule,
   defaultInputRuleHandler,
   InputRuleWithHandler,
-  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
 import { insertBlock } from '../commands/insert-block';
@@ -74,7 +74,6 @@ function getHeadingRules(schema: Schema): InputRuleWithHandler[] {
     true,
   );
 
-  // Old analytics stuff
   const currentHandler = hashRule.handler;
   hashRule.handler = (state, match: string[], start: number, end: number) =>
     currentHandler(state, match, start, end);
@@ -174,7 +173,7 @@ export function inputRulePlugin(schema: Schema): Plugin | undefined {
   }
 
   if (rules.length !== 0) {
-    return instrumentedInputRule('block-type', { rules });
+    return inputRules({ rules });
   }
   return undefined;
 }

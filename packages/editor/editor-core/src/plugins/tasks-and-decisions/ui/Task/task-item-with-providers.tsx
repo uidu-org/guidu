@@ -1,4 +1,3 @@
-import { FabricElementsAnalyticsContext } from '@uidu/analytics-namespaced-context';
 import {
   ContentRef,
   ResourcedTaskItem,
@@ -43,14 +42,6 @@ export default class TaskItemWithProviders extends Component<Props, State> {
     const { ...otherProps } = this.props;
     const userContext = 'new';
 
-    return (
-      <FabricElementsAnalyticsContext
-        data={{
-          userContext,
-        }}
-      >
-        <ResourcedTaskItem {...otherProps} objectAri={objectId} />
-      </FabricElementsAnalyticsContext>
-    );
+    return <ResourcedTaskItem {...otherProps} objectAri={objectId} />;
   }
 }

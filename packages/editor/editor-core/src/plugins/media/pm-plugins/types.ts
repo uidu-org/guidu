@@ -74,6 +74,4 @@ export interface MediaPluginState {
   setView(view: EditorView): void;
 
   destroy(): void;
-
-  trackNewMediaEvent(mediaState: MediaState): void;
 }

@@ -142,50 +142,48 @@ type Props = {
 
   visible: boolean;
   gridType: GridType;
-  highlight: number[];
+  highlight: Highlights;
 };
 
-class Grid extends React.Component<Props> {
-  render() {
-    const {
+function Grid(props: Props) {
+  const {
+    highlight,
+    shouldCalcBreakoutGridLines,
+    theme,
+    containerElement,
+    editorWidth,
+    gridType,
+    visible,
+  } = props;
+
+  const editorMaxWidth = theme.layoutMaxWidth;
+
+  const gridLines = [
+    ...lineLengthGridLines(highlight),
+    ...gutterGridLines(
+      editorMaxWidth,
+      editorWidth,
       highlight,
       shouldCalcBreakoutGridLines,
-      theme,
-      containerElement,
-      editorWidth,
-      gridType,
-      visible,
-    } = this.props;
-    console.log('theme', theme.layoutMaxWidth);
-    const editorMaxWidth = theme.layoutMaxWidth;
+    ),
+  ];
 
-    const gridLines = [
-      ...lineLengthGridLines(highlight),
-      ...gutterGridLines(
-        editorMaxWidth,
-        editorWidth,
-        highlight,
-        shouldCalcBreakoutGridLines,
-      ),
-    ];
-
-    return (
-      <div className="gridParent">
-        <div
-          className={classnames(
-            'gridContainer',
-            gridType,
-            !visible ? 'hidden' : '',
-          )}
-          style={{
-            height: `${containerElement.scrollHeight}px`,
-          }}
-        >
-          {gridLines}
-        </div>
+  return (
+    <div className="gridParent">
+      <div
+        className={classnames(
+          'gridContainer',
+          gridType,
+          !visible ? 'hidden' : '',
+        )}
+        style={{
+          height: `${containerElement.scrollHeight}px`,
+        }}
+      >
+        {gridLines}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 const ThemedGrid = withTheme(Grid);

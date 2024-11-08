@@ -9,7 +9,7 @@ export default class PortalProvider extends React.Component<PortalProviderProps>
 
   constructor(props: PortalProviderProps) {
     super(props);
-    this.portalProviderAPI = new PortalProviderAPI(props.onAnalyticsEvent);
+    this.portalProviderAPI = new PortalProviderAPI();
   }
 
   componentDidUpdate() {

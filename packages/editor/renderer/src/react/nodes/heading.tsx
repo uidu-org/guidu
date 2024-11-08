@@ -1,15 +1,8 @@
 import React from 'react';
 
-import HeadingAnchor from './heading-anchor';
 import Url from 'url-parse';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-} from '../../analytics/enums';
-import AnalyticsContext from '../../analytics/analyticsContext';
 import { CopyTextConsumer } from './copy-text-provider';
+import HeadingAnchor from './heading-anchor';
 
 export type HeadingLevels = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -36,25 +29,13 @@ function Heading(
           {({ copyTextToClipboard }) => {
             return (
               headingId && (
-                <AnalyticsContext.Consumer>
-                  {({ fireAnalyticsEvent }) => (
-                    <HeadingAnchor
-                      onCopyText={() => {
-                        fireAnalyticsEvent({
-                          action: ACTION.CLICKED,
-                          actionSubject: ACTION_SUBJECT.BUTTON,
-                          actionSubjectId:
-                            ACTION_SUBJECT_ID.HEADING_ANCHOR_LINK,
-                          eventType: EVENT_TYPE.UI,
-                        });
-
-                        return copyTextToClipboard(
-                          getCurrentUrlWithHash(headingId),
-                        );
-                      }}
-                    />
-                  )}
-                </AnalyticsContext.Consumer>
+                <HeadingAnchor
+                  onCopyText={() => {
+                    return copyTextToClipboard(
+                      getCurrentUrlWithHash(headingId),
+                    );
+                  }}
+                />
               )
             );
           }}

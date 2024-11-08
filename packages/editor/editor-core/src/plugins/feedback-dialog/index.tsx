@@ -2,13 +2,6 @@ import { PluginKey } from 'prosemirror-state';
 import React from 'react';
 import { EditorPlugin, FeedbackInfo } from '../../types';
 import pkg from '../../version.json';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconFeedback } from '../quick-insert/assets';
 import loadJiraCollectorDialogScript from './loadJiraCollectorDialogScript';
@@ -72,13 +65,7 @@ const feedbackDialog = (feedbackInfo: FeedbackInfo): EditorPlugin => {
           action(insert, state) {
             const tr = insert('');
             openFeedbackDialog(feedbackInfo);
-
-            return addAnalytics(state, tr, {
-              action: ACTION.OPENED,
-              actionSubject: ACTION_SUBJECT.FEEDBACK_DIALOG,
-              attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-              eventType: EVENT_TYPE.UI,
-            });
+            return tr;
           },
         },
       ],

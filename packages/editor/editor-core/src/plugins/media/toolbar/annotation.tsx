@@ -3,13 +3,6 @@ import { getMediaClient, MediaClientConfig } from '@uidu/media-core';
 import { EditorView } from 'prosemirror-view';
 import React from 'react';
 import { defineMessages, IntlShape } from 'react-intl';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-  withAnalytics,
-} from '../../../plugins/analytics';
 import { Command } from '../../../types';
 import Button from '../../floating-toolbar/ui/Button';
 import Separator from '../../floating-toolbar/ui/Separator';
@@ -31,12 +24,7 @@ const annotate: Command = (state, dispatch) => {
 
   const { id, occurrenceKey, file } = selected.firstChild!.attrs;
 
-  return withAnalytics({
-    action: ACTION.CLICKED,
-    actionSubject: ACTION_SUBJECT.MEDIA,
-    actionSubjectId: ACTION_SUBJECT_ID.ANNOTATE_BUTTON,
-    eventType: EVENT_TYPE.UI,
-  })(openMediaEditor(state.selection.from + 1, file))(state, dispatch);
+  return openMediaEditor(state.selection.from + 1, file)(state, dispatch);
 };
 
 export const messages = defineMessages({

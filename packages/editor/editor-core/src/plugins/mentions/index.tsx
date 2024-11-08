@@ -28,13 +28,9 @@ import {
 } from '../type-ahead/pm-plugins/main';
 import { TypeAheadItem } from '../type-ahead/types';
 import mentionNodeView from './nodeviews/mention';
-import {
-  MentionPluginOptions,
-  MentionPluginState,
-  TeamInfoAttrAnalytics,
-} from './types';
+import { MentionPluginOptions, MentionPluginState } from './types';
 import ToolbarMention from './ui/ToolbarMention';
-import { isTeamStats, isTeamType } from './utils';
+import { isTeamType } from './utils';
 
 const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
   let sessionId = uuid();
@@ -139,23 +135,6 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
           tr,
           dispatch,
         ) {
-          // if (!prevActive && queryChanged) {
-          //   analyticsService.trackEvent(
-          //     'uidu.editor-core.mention.picker.trigger.shortcut',
-          //   );
-          //   if (!tr.getMeta(analyticsPluginKey)) {
-          //     (dispatch as AnalyticsDispatch)(analyticsEventKey, {
-          //       payload: {
-          //         action: ACTION.INVOKED,
-          //         actionSubject: ACTION_SUBJECT.TYPEAHEAD,
-          //         actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_MENTION,
-          //         attributes: { inputMethod: INPUT_METHOD.KEYBOARD },
-          //         eventType: EVENT_TYPE.UI,
-          //       },
-          //     });
-          //   }
-          // }
-
           const pluginState = getMentionPluginState(state);
           const mentions =
             !prevActive && queryChanged ? [] : pluginState.mentions || [];
@@ -384,41 +363,7 @@ function mentionPluginFactory(
                   'mentionPlugin',
                   (mentions, query, stats) => {
                     setResults(mentions)(editorView.state, editorView.dispatch);
-
-                    let duration: number = 0;
-                    let userIds: string[] | null = null;
-                    let teams: TeamInfoAttrAnalytics[] | null = null;
-
-                    if (!isTeamStats(stats)) {
-                      // is from user mention
-                      duration = stats && stats.duration;
-                      teams = null;
-                      userIds = mentions
-                        .map((mention) =>
-                          isTeamType(mention.userType) ? null : mention.id,
-                        )
-                        .filter((m) => !!m) as string[];
-                    } else {
-                      // is from team mention
-                      duration = stats && stats.teamMentionDuration;
-                      userIds = null;
-                      teams = mentions
-                        .map((mention) =>
-                          isTeamType(mention.userType)
-                            ? {
-                                teamId: mention.id,
-                                includesYou: mention.context!.includesYou,
-                                memberCount: mention.context!.memberCount,
-                              }
-                            : null,
-                        )
-                        .filter((m) => !!m) as TeamInfoAttrAnalytics[];
-                    }
                   },
-                  // undefined,
-                  // undefined,
-                  // undefined,
-                  // sendAnalytics,
                 );
               })
               .catch(() =>

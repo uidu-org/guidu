@@ -2,7 +2,7 @@ import {
   cellBackgroundColorPalette,
   ColorPalette,
 } from '@uidu/editor-common/ui-color';
-import { Rect, splitCell } from 'prosemirror-tables';
+import { mergeCells, Rect, splitCell } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
 import React, { Component } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
@@ -15,28 +15,21 @@ import {
 import DropdownMenu from '../../../../ui/DropdownMenu';
 import { Shortcut } from '../../../../ui/styles';
 import { closestElement } from '../../../../utils/dom';
-import { INPUT_METHOD } from '../../../analytics';
 import { DropdownItem } from '../../../block-type/ui/ToolbarBlockType';
 import {
   clearHoverSelection,
+  clearMultipleCells,
   hoverColumns,
   hoverMergedCells,
   hoverRows,
+  insertColumn,
+  insertRow,
+  setMultipleCellAttrs,
+  sortByColumn,
   toggleContextualMenu,
 } from '../../commands';
-import {
-  deleteColumnsWithAnalytics,
-  deleteRowsWithAnalytics,
-  emptyMultipleCellsWithAnalytics,
-  insertColumnWithAnalytics,
-  insertRowWithAnalytics,
-  mergeCellsWithAnalytics,
-  setColorWithAnalytics,
-  sortColumnWithAnalytics,
-  splitCellWithAnalytics,
-} from '../../commands-with-analytics';
 import { getPluginState } from '../../pm-plugins/plugin-factory';
-import { canMergeCells } from '../../transforms';
+import { canMergeCells, deleteColumns, deleteRows } from '../../transforms';
 import { SortOrder, TableCssClassName as ClassName } from '../../types';
 import {
   getMergedCellsPositions,
@@ -286,55 +279,35 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
 
     switch (item.value.name) {
       case 'sort_column_desc':
-        sortColumnWithAnalytics(
-          INPUT_METHOD.CONTEXT_MENU,
-          selectionRect.left,
-          SortOrder.DESC,
-        )(state, dispatch);
+        sortByColumn(selectionRect.left, SortOrder.DESC)(state, dispatch);
         this.toggleOpen();
         break;
       case 'sort_column_asc':
-        sortColumnWithAnalytics(
-          INPUT_METHOD.CONTEXT_MENU,
-          selectionRect.left,
-          SortOrder.ASC,
-        )(state, dispatch);
+        sortByColumn(selectionRect.left, SortOrder.ASC)(state, dispatch);
         this.toggleOpen();
         break;
       case 'merge':
-        mergeCellsWithAnalytics()(state, dispatch);
+        mergeCells()(state, dispatch);
         this.toggleOpen();
         break;
       case 'split':
-        splitCellWithAnalytics()(state, dispatch);
+        splitCell()(state, dispatch);
         this.toggleOpen();
         break;
       case 'clear':
-        emptyMultipleCellsWithAnalytics(
-          INPUT_METHOD.CONTEXT_MENU,
-          targetCellPosition,
-        )(state, dispatch);
+        clearMultipleCells(targetCellPosition)(state, dispatch);
         this.toggleOpen();
         break;
       case 'insert_column':
-        insertColumnWithAnalytics(
-          INPUT_METHOD.CONTEXT_MENU,
-          selectionRect.right,
-        )(state, dispatch);
+        insertColumn(selectionRect.right)(state, dispatch);
         this.toggleOpen();
         break;
       case 'insert_row':
-        insertRowWithAnalytics(INPUT_METHOD.CONTEXT_MENU, {
-          index: selectionRect.bottom,
-          moveCursorToInsertedRow: true,
-        })(state, dispatch);
+        insertRow(selectionRect.bottom, true)(state, dispatch);
         this.toggleOpen();
         break;
       case 'delete_column':
-        deleteColumnsWithAnalytics(INPUT_METHOD.CONTEXT_MENU, selectionRect)(
-          state,
-          dispatch,
-        );
+        deleteColumns(selectionRect)(state, dispatch);
         this.toggleOpen();
         break;
       case 'delete_row':
@@ -342,11 +315,7 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
           pluginConfig: { isHeaderRowRequired },
         } = getPluginState(state);
 
-        deleteRowsWithAnalytics(
-          INPUT_METHOD.CONTEXT_MENU,
-          selectionRect,
-          !!isHeaderRowRequired,
-        )(state, dispatch);
+        deleteRows(selectionRect, !!isHeaderRowRequired)(state, dispatch);
         this.toggleOpen();
         break;
     }
@@ -432,7 +401,10 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
     // TargetCellPosition could be outdated: https://product-fabric.atlassian.net/browse/ED-8129
     const { targetCellPosition } = getPluginState(editorView.state);
     const { state, dispatch } = editorView;
-    setColorWithAnalytics(color, targetCellPosition)(state, dispatch);
+    setMultipleCellAttrs({ background: color }, targetCellPosition)(
+      state,
+      dispatch,
+    );
     this.toggleOpen();
   };
 }

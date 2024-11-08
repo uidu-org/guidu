@@ -3,14 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { layoutColumn, layoutSection } from '@uidu/adf-schema';
 import React from 'react';
 import { EditorPlugin } from '../../types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { FloatingToolbarConfig } from '../floating-toolbar/types';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { createDefaultLayoutSection } from './actions';
@@ -66,15 +58,8 @@ const layoutPlugin = (layoutsConfig?: {
         ),
         action(insert, state) {
           const tr = insert(createDefaultLayoutSection(state));
-          return addAnalytics(state, tr, {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.LAYOUT,
-            attributes: {
-              inputMethod: INPUT_METHOD.QUICK_INSERT,
-            },
-            eventType: EVENT_TYPE.TRACK,
-          });
+
+          return tr;
         },
       },
     ],

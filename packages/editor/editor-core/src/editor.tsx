@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-import { CreateUIAnalyticsEvent } from '@uidu/analytics';
 import {
   combineExtensionProviders,
   ExtensionProvider,
@@ -109,8 +108,6 @@ export default class Editor extends PureComponent<EditorProps> {
 
   private providerFactory: ProviderFactory;
 
-  private createAnalyticsEvent?: CreateUIAnalyticsEvent;
-
   constructor(props: EditorProps, context: Context) {
     super(props);
     this.providerFactory = new ProviderFactory();
@@ -186,7 +183,6 @@ export default class Editor extends PureComponent<EditorProps> {
             extensionProviderToQuickInsertProvider(
               extensionProvider,
               this.editorActions,
-              this.createAnalyticsEvent,
             ),
           ])
         : quickInsert.provider;
@@ -305,7 +301,6 @@ export default class Editor extends PureComponent<EditorProps> {
                   plugins,
                   ...otherProps,
                 }}
-                // createAnalyticsEvent={createAnalyticsEvent}
                 portalProviderAPI={portalProviderAPI}
                 providerFactory={this.providerFactory}
                 onEditorCreated={this.onEditorCreated}

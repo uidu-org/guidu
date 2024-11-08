@@ -189,15 +189,6 @@ export type FeatureFlags = {
   tableOverflowShadowsOptimization?: boolean;
 
   /**
-   * @description
-   * Yield to user interaction work before sending analytics
-   *
-   * @see https://product-fabric.atlassian.net/browse/ED-10584
-   * @default false
-   */
-  queueAnalytics?: boolean;
-
-  /**
    * Enable extend floating toolbars
    * @see https://product-fabric.atlassian.net/browse/ED-11963
    * @default false

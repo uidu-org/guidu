@@ -14,13 +14,6 @@ import {
 } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
 import { AlignmentState } from '../plugins/alignment/pm-plugins/types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-  withAnalytics,
-} from '../plugins/analytics';
 import { Command } from '../types';
 import { canMoveDown, canMoveUp } from '../utils';
 
@@ -57,13 +50,6 @@ export function insertNewLine(): Command {
     return false;
   };
 }
-
-export const insertNewLineWithAnalytics = withAnalytics({
-  action: ACTION.INSERTED,
-  actionSubject: ACTION_SUBJECT.TEXT,
-  actionSubjectId: ACTION_SUBJECT_ID.LINE_BREAK,
-  eventType: EVENT_TYPE.TRACK,
-})(insertNewLine());
 
 export function insertRule(): Command {
   return function (state, dispatch) {

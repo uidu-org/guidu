@@ -1,4 +1,3 @@
-import { FabricElementsAnalyticsContext } from '@uidu/analytics-namespaced-context';
 import { ProviderFactory, WithProviders } from '@uidu/editor-common';
 import * as React from 'react';
 import { PureComponent, ReactNode } from 'react';
@@ -40,21 +39,15 @@ export default class TaskItem extends PureComponent<Props, {}> {
     }
 
     return (
-      <FabricElementsAnalyticsContext
-        data={{
-          userContext: 'document',
-        }}
+      <TaskItemWithProviders
+        objectAri={objectAri}
+        containerAri={containerAri}
+        taskId={localId}
+        isDone={state === 'DONE'}
+        taskDecisionProvider={taskDecisionProvider}
       >
-        <TaskItemWithProviders
-          objectAri={objectAri}
-          containerAri={containerAri}
-          taskId={localId}
-          isDone={state === 'DONE'}
-          taskDecisionProvider={taskDecisionProvider}
-        >
-          {children}
-        </TaskItemWithProviders>
-      </FabricElementsAnalyticsContext>
+        {children}
+      </TaskItemWithProviders>
     );
   };
 

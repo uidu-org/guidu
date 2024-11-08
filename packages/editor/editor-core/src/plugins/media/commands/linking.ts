@@ -4,14 +4,6 @@ import { EditorState, Transaction } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { createToggleBlockMarkOnRange } from '../../../commands';
 import { CommandDispatch } from '../../../types/command';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../../analytics';
 import { normalizeUrl } from '../../hyperlink/utils';
 import {
   createMediaLinkingCommand,
@@ -130,51 +122,17 @@ export const unlink = createMediaLinkingCommand(
     type: MediaLinkingActionsTypes.unlink,
   },
   (tr, state) => {
-    return addAnalytics(
-      state,
-      toggleLinkMark(tr, state, { forceRemove: true }),
-      {
-        eventType: EVENT_TYPE.TRACK,
-        action: ACTION.UNLINK,
-        actionSubject: ACTION_SUBJECT.MEDIA_SINGLE,
-        actionSubjectId: ACTION_SUBJECT_ID.MEDIA_LINK,
-      },
-    );
+    return toggleLinkMark(tr, state, { forceRemove: true });
   },
 );
 
-export const setUrlToMedia = (
-  url: string,
-  inputMethod: INPUT_METHOD.TYPEAHEAD | INPUT_METHOD.MANUAL,
-) =>
+export const setUrlToMedia = (url: string) =>
   createMediaLinkingCommand(
     {
       type: MediaLinkingActionsTypes.setUrl,
       payload: normalizeUrl(url),
     },
     (tr, state) => {
-      const currentUrl = getCurrentUrl(state);
-      if (!currentUrl) {
-        // Insert Media Link
-        addAnalytics(state, tr, {
-          eventType: EVENT_TYPE.TRACK,
-          action: ACTION.INSERTED,
-          actionSubject: ACTION_SUBJECT.DOCUMENT,
-          actionSubjectId: ACTION_SUBJECT_ID.MEDIA_LINK,
-          attributes: {
-            inputMethod,
-          },
-        });
-      } else if (url !== currentUrl) {
-        // Change Url Event
-        addAnalytics(state, tr, {
-          eventType: EVENT_TYPE.TRACK,
-          action: ACTION.CHANGED_URL,
-          actionSubject: ACTION_SUBJECT.MEDIA_SINGLE,
-          actionSubjectId: ACTION_SUBJECT_ID.MEDIA_LINK,
-        });
-      }
-
       return toggleLinkMark(tr, state, { url: url });
     },
   );

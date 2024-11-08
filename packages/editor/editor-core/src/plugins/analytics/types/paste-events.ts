@@ -1,10 +1,10 @@
+import { TrackAEP } from '@uidu/editor-common';
 import {
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   INPUT_METHOD,
 } from './enums';
-import { TrackAEP } from './utils';
 
 export const PasteTypes: { [type: string]: PasteType } = {
   richText: 'richText',

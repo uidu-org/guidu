@@ -4,7 +4,7 @@ import {
   ExtensionHandlers,
   ExtensionProvider,
   Providers,
-  Transformer
+  Transformer,
 } from '@uidu/editor-common';
 import { MentionProvider } from '@uidu/mentions';
 import { TaskDecisionProvider } from '@uidu/task-decision';
@@ -12,7 +12,6 @@ import { Node, Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import { ReactElement } from 'react';
 import EditorActions from '../actions';
-import { AnalyticsHandler } from '../analytics/handler';
 import { AnnotationProvider } from '../plugins/annotation/types';
 import { CollabEditOptions } from '../plugins/collab-edit/types';
 import { MediaState } from '../plugins/media/types';
@@ -44,8 +43,6 @@ export interface EditorProps {
   appearance?: EditorAppearance;
   children?: (editorProps) => any;
   containerElement?: HTMLElement | undefined;
-  // Legacy analytics support handler, which will be removed soon. **Do not use**.
-  analyticsHandler?: AnalyticsHandler;
 
   contentComponents?: ReactComponents;
   primaryToolbarComponents?: ReactComponents;

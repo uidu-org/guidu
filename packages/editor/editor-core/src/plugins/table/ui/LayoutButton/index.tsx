@@ -8,7 +8,7 @@ import React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import commonMessages from '../../../../messages';
 import ToolbarButton from '../../../../ui/ToolbarButton';
-import { toggleTableLayoutWithAnalytics } from '../../commands-with-analytics';
+import { toggleTableLayout } from '../../commands';
 import { TableCssClassName as ClassName } from '../../types';
 
 export interface Props {
@@ -101,7 +101,7 @@ class LayoutButton extends React.Component<Props & WrappedComponentProps, any> {
 
   private handleClick = () => {
     const { state, dispatch } = this.props.editorView;
-    toggleTableLayoutWithAnalytics()(state, dispatch);
+    toggleTableLayout(state, dispatch);
   };
 }
 

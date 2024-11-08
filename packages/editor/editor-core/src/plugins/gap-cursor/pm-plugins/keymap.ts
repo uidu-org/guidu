@@ -10,7 +10,7 @@ export default function keymapPlugin(): SafePlugin {
   const map = {};
 
   keymaps.bindKeymapWithCommand(
-    keymaps.insertNewLine.common!,
+    keymaps.insertNewLine.common,
     (state, dispatch, view) => {
       const isInGapCursor = state.selection instanceof GapCursorSelection;
       // Only operate in gap cursor
@@ -23,7 +23,7 @@ export default function keymapPlugin(): SafePlugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.moveLeft.common!,
+    keymaps.moveLeft.common,
     (state, dispatch, view) => {
       const endOfTextblock = view ? view.endOfTextblock.bind(view) : undefined;
       return arrow(Direction.LEFT, endOfTextblock)(state, dispatch, view);
@@ -32,7 +32,7 @@ export default function keymapPlugin(): SafePlugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.moveRight.common!,
+    keymaps.moveRight.common,
     (state, dispatch, view) => {
       const endOfTextblock = view ? view.endOfTextblock.bind(view) : undefined;
       return arrow(Direction.RIGHT, endOfTextblock)(state, dispatch);
@@ -41,7 +41,7 @@ export default function keymapPlugin(): SafePlugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.moveUp.common!,
+    keymaps.moveUp.common,
     (state, dispatch, view) => {
       const endOfTextblock = view ? view.endOfTextblock.bind(view) : undefined;
       return arrow(Direction.UP, endOfTextblock)(state, dispatch);
@@ -50,7 +50,7 @@ export default function keymapPlugin(): SafePlugin {
   );
 
   keymaps.bindKeymapWithCommand(
-    keymaps.moveDown.common!,
+    keymaps.moveDown.common,
     (state, dispatch, view) => {
       const endOfTextblock = view ? view.endOfTextblock.bind(view) : undefined;
       return arrow(Direction.DOWN, endOfTextblock)(state, dispatch);
@@ -60,14 +60,14 @@ export default function keymapPlugin(): SafePlugin {
 
   // default PM's Backspace doesn't handle removing block nodes when cursor is after it
   keymaps.bindKeymapWithCommand(
-    keymaps.backspace.common!,
+    keymaps.backspace.common,
     deleteNode(Direction.BACKWARD),
     map,
   );
 
   // handle Delete key (remove node after the cursor)
   keymaps.bindKeymapWithCommand(
-    keymaps.deleteKey.common!,
+    keymaps.deleteKey.common,
     deleteNode(Direction.FORWARD),
     map,
   );
