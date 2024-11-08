@@ -14,8 +14,6 @@
     "@babel/runtime": "^7.25.6",
     "@uidu/adf-schema": "^2.11.6",
     "@uidu/adf-utils": "^2.8.4",
-    "@uidu/analytics": "^0.12.4",
-    "@uidu/analytics-namespaced-context": "^0.10.4",
     "@uidu/editor-json-transformer": "1.9.4",
     "@uidu/emoji": "^0.15.5",
     "@uidu/media-core": "4.0.1",
@@ -45,7 +43,6 @@
     "entrypoints": [
       "index.ts",
       "provider-factory.ts",
-      "analytics/index.ts",
       "safe-plugin/index.ts",
       "selection/index.ts",
       "type-ahead/index.ts",

@@ -41,7 +41,6 @@ import {
   getColumnOrRowIndex,
   getMousePositionHorizontalRelativeByElement,
   getMousePositionVerticalRelativeByElement,
-  getSelectedCellInfo,
   hasResizeHandler,
   isCell,
   isColumnControlsDecorations,
@@ -371,14 +370,6 @@ export const handleCut = (
     if (tr.selection instanceof CellSelection) {
       const rect = getSelectionRect(cellSelection);
       if (rect) {
-        const {
-          verticalCells,
-          horizontalCells,
-          totalCells,
-          totalRowCount,
-          totalColumnCount,
-        } = getSelectedCellInfo(tr.selection);
-
         // Reassigning to make it more obvious and consistent
 
         // Need this check again since we are overriding the tr in previous statement

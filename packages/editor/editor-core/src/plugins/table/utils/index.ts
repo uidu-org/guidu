@@ -1,4 +1,3 @@
-export { getSelectedCellInfo, getSelectedTableInfo } from './analytics';
 export {
   getColumnClassNames,
   getColumnDeleteButtonParams,
