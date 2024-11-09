@@ -10,7 +10,7 @@
   "module": "dist/uidu-field-geosuggest.esm.js",
   "types": "dist/uidu-field-geosuggest.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.25.6",
+    "@babel/runtime": "^7.26.0",
     "@googlemaps/js-api-loader": "^1.16.8",
     "@heroicons/react": "^2.1.5",
     "@uidu/field-base": "^4.11.7",
@@ -18,7 +18,7 @@
     "@uidu/popup": "^0.14.5",
     "@uidu/spinner": "^0.11.4",
     "react": "^18.3.1",
-    "tslib": "^2.7.0",
+    "tslib": "^2.8.1",
     "use-places-autocomplete": "^4.0.1"
   },
   "devDependencies": {

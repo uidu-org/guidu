@@ -8,15 +8,15 @@
   "module": "dist/uidu-field-phone.esm.js",
   "types": "dist/uidu-field-phone.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.25.6",
+    "@babel/runtime": "^7.26.0",
     "@uidu/field-base": "^4.11.8",
     "@uidu/field-text": "^2.6.4",
     "@uidu/form": "3.3.2",
     "@uidu/select": "2.14.0",
     "react": "^18.3.1",
-    "react-phone-number-input": "^3.4.5",
+    "react-phone-number-input": "^3.4.9",
     "styled-components": "^5.3.11",
-    "tslib": "^2.7.0"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.11.4",

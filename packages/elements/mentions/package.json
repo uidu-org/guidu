@@ -12,7 +12,7 @@
   "dependencies": {
     "@atlaskit/icon": "^21.12.8",
     "@atlaskit/util-service-support": "^6.2.3",
-    "@babel/runtime": "^7.25.6",
+    "@babel/runtime": "^7.26.0",
     "@uidu/avatar": "^0.15.4",
     "@uidu/button": "^1.9.4",
     "@uidu/lozenge": "^0.11.4",
@@ -20,9 +20,9 @@
     "@uidu/tooltip": "^0.11.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-intl": "^6.6.8",
+    "react-intl": "^6.8.7",
     "styled-components": "^5.3.11",
-    "tslib": "^2.7.0",
+    "tslib": "^2.8.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

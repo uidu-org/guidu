@@ -9,7 +9,7 @@
   "module": "dist/uidu-dashboard-manager.esm.js",
   "types": "dist/uidu-dashboard-manager.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.25.6",
+    "@babel/runtime": "^7.26.0",
     "@cubejs-client/core": "^0.34.37",
     "@cubejs-client/react": "^0.34.46",
     "@tanstack/react-table": "^8.20.5",
@@ -18,10 +18,10 @@
     "d3-collection": "^1.0.7",
     "lodash": "^4.17.21",
     "react": "^18.3.1",
-    "react-grid-layout": "^1.4.4",
+    "react-grid-layout": "^1.5.0",
     "react-resizable": "^3.0.5",
     "styled-components": "^5.3.11",
-    "tslib": "^2.7.0"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@uidu/dashboard-controls": "^1.9.5",

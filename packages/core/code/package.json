@@ -13,12 +13,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/runtime": "^7.25.6",
+    "@babel/runtime": "^7.26.0",
     "@uidu/theme": "^0.12.4",
     "hast-util-to-jsx-runtime": "^2.3.2",
     "memoize-one": "^6.0.0",
-    "react-syntax-highlighter": "^15.5.0",
-    "tslib": "^2.7.0"
+    "react-syntax-highlighter": "^15.6.1",
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.11.4",

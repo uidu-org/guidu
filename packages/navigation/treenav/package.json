@@ -9,12 +9,12 @@
   "module": "dist/uidu-treenav.esm.js",
   "types": "dist/uidu-treenav.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.25.6",
+    "@babel/runtime": "^7.26.0",
     "react": "^18.3.1",
     "react-feather": "^2.0.10",
     "react-media": "^1.10.0",
     "react-router-dom": "^5.3.4",
-    "tslib": "^2.7.0"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.11.4",

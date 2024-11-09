@@ -9,12 +9,12 @@
   "module": "dist/uidu-field-textarea.esm.js",
   "types": "dist/uidu-field-textarea.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.25.6",
+    "@babel/runtime": "^7.26.0",
     "@uidu/field-base": "^4.11.7",
     "@uidu/spinner": "0.11.4",
     "autosize": "^6.0.1",
     "react": "^18.3.1",
-    "tslib": "^2.7.0"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.11.4",
