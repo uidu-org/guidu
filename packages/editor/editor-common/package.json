@@ -18,7 +18,6 @@
     "@uidu/emoji": "^0.15.5",
     "@uidu/media-core": "4.0.1",
     "@uidu/mentions": "^0.14.5",
-    "@uidu/profilecard": "^0.12.5",
     "@uidu/theme": "^0.12.4",
     "@uidu/tooltip": "0.11.4",
     "chromatism": "^3.0.0",

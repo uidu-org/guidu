@@ -8,27 +8,16 @@ import {
   ExtensionHandlers,
   ProviderFactory,
 } from '@uidu/editor-common';
-import { modifyResponse, ProfileClient } from '@uidu/profilecard';
 import { ShellBody, ShellMain, ShellSidebar } from '@uidu/shell';
-import { profilecard as profilecardUtils } from '@uidu/util-data-test';
 import { init } from 'emoji-mart';
 import * as React from 'react';
-import { renderDocument, TextSerializer } from '../../src';
-import {
-  default as Renderer,
-  Props as RendererProps,
-} from '../../src/ui/Renderer';
+import { renderDocument, RendererProps, TextSerializer } from '../../src';
+import Renderer from '../../src/ui/Renderer';
 import { RendererAppearance } from '../../src/ui/Renderer/types';
 import { document3 as storyDataDocument } from './story-data';
 
 console.log('init', init);
 init({ data }).then(() => console.log('init done'));
-
-const { getMockProfileClient: getMockProfileClientUtil } = profilecardUtils;
-const MockProfileClient = getMockProfileClientUtil(
-  ProfileClient,
-  modifyResponse,
-);
 
 // const mentionProvider = Promise.resolve({
 //   shouldHighlightMention(mention: { id: string }) {
@@ -37,32 +26,6 @@ const MockProfileClient = getMockProfileClientUtil(
 // });
 
 // const emojiProvider = emoji.storyData.getEmojiResource();
-
-const profilecardProvider = Promise.resolve({
-  cloudId: 'DUMMY-CLOUDID',
-  resourceClient: new MockProfileClient({
-    cacheSize: 10,
-    cacheMaxAge: 5000,
-  }),
-  getActions: (id: string) => {
-    const actions = [
-      {
-        label: 'Mention',
-        callback: () => console.log('profile-card:mention'),
-      },
-      {
-        label: 'Message',
-        callback: () => console.log('profile-card:message'),
-      },
-    ];
-
-    return id === '1' ? actions : actions.slice(0, 1);
-  },
-});
-
-// const taskDecisionProvider = Promise.resolve(
-//   taskDecision.getMockTaskDecisionResource(),
-// );
 
 const providerFactory = ProviderFactory.create({
   // mentionProvider,
@@ -82,8 +45,6 @@ const providerFactory = ProviderFactory.create({
       };
     },
   }),
-  profilecardProvider,
-  // taskDecisionProvider,
 });
 
 const extensionHandlers: ExtensionHandlers = {

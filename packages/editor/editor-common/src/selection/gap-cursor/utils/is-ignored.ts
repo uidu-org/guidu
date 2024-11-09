@@ -6,8 +6,6 @@ const IGNORED_NODES = [
   'bulletList',
   'orderedList',
   'listItem',
-  'taskItem',
-  'decisionItem',
   'heading',
   'blockquote',
   'layoutColumn',

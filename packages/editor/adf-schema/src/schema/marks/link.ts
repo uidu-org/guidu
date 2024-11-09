@@ -74,7 +74,7 @@ export const link: MarkSpec = {
     },
     {
       tag: 'a[href]',
-      context: 'paragraph/|heading/|mediaSingle/|taskItem/|decisionItem/',
+      context: 'paragraph/|heading/|mediaSingle/',
       getAttrs: getLinkAttrs('href'),
     },
     {

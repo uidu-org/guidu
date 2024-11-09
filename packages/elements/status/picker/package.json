@@ -1,5 +1,0 @@
-{
-  "main": "dist/uidu-status-picker.cjs.js",
-  "module": "dist/uidu-status-picker.esm.js",
-  "types": "dist/uidu-status-picker.cjs.d.ts"
-}

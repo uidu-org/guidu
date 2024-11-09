@@ -1,8 +1,8 @@
-import { AtlassianIcon } from '@atlaskit/logo';
+import { FaceSmileIcon } from '@heroicons/react/24/solid';
 import * as React from 'react';
 import Button from '../src';
 
-const Icon = <AtlassianIcon label="Test icon" size="small" />;
+const Icon = <FaceSmileIcon label="Test icon" size="small" />;
 
 const ButtonWrapper = ({
   inline = true,

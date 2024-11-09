@@ -52,8 +52,6 @@ export const PasteContents: { [P in PasteContent]: P } = {
   bodiedExtension: 'bodiedExtension',
   bulletList: 'bulletList',
   codeBlock: 'codeBlock',
-  decisionList: 'decisionList',
-  decisionItem: 'decisionItem',
   extension: 'extension',
   heading: 'heading',
   orderedList: 'orderedList',
@@ -61,7 +59,6 @@ export const PasteContents: { [P in PasteContent]: P } = {
   rule: 'rule',
   tableHeader: 'tableHeader',
   tableRow: 'tableRow',
-  taskItem: 'taskItem',
   uncategorized: 'uncategorized',
 };
 
@@ -75,8 +72,6 @@ export type PasteContent =
   | 'bodiedExtension'
   | 'bulletList'
   | 'codeBlock'
-  | 'decisionList'
-  | 'decisionItem'
   | 'extension'
   | 'heading'
   | 'mediaCard'
@@ -89,7 +84,6 @@ export type PasteContent =
   | 'rule'
   | 'tableHeader'
   | 'tableRow'
-  | 'taskItem'
   | 'uncategorized'
   | 'mixed';
 

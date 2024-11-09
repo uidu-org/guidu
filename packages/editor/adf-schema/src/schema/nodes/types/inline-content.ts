@@ -16,7 +16,6 @@ import { InlineCardDefinition as InlineCard } from '../inline-card';
 import { InlineExtensionDefinition as InlineExtension } from '../inline-extension';
 import { MentionDefinition as Mention } from '../mention';
 import { PlaceholderDefinition as Placeholder } from '../placeholder';
-import { StatusDefinition as Status } from '../status';
 import { TextDefinition as Text } from '../text';
 import { MarksObject } from './mark';
 
@@ -45,8 +44,7 @@ export type InlineAtomic =
   | InlineExtension
   | Date
   | Placeholder
-  | InlineCard
-  | Status;
+  | InlineCard;
 /**
  * @name inline_node
  */

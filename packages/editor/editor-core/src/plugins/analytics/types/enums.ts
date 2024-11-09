@@ -156,7 +156,6 @@ export enum ACTION_SUBJECT_ID {
   SAVE = 'save',
   SECTION = 'section',
   SMART_LINK = 'smartLink',
-  STATUS = 'status',
   SYMBOL = 'symbol',
   TABLE = 'table',
   TYPEAHEAD_EMOJI = 'emojiTypeAhead',

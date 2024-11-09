@@ -284,24 +284,6 @@ export const formatting: (intl: IntlShape) => Format[] = ({
     ),
   },
   {
-    name: formatMessage(insertBlockMessages.action),
-    type: 'taskItem',
-    autoFormatting: () => (
-      <span>
-        <CodeSm>[]</CodeSm> <CodeLg>Space</CodeLg>
-      </span>
-    ),
-  },
-  {
-    name: formatMessage(insertBlockMessages.decision),
-    type: 'decisionItem',
-    autoFormatting: () => (
-      <span>
-        <CodeSm>&lt;&gt;</CodeSm> <CodeLg>Space</CodeLg>
-      </span>
-    ),
-  },
-  {
     name: formatMessage(insertBlockMessages.emoji),
     type: 'emoji',
     autoFormatting: () => (

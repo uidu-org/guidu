@@ -10,7 +10,6 @@ import {
   listsSharedStyles,
   paragraphSharedStyles,
   shadowSharedStyle,
-  tasksAndDecisionsStyles,
   whitespaceSharedStyles,
 } from '@uidu/editor-common';
 import styled from 'styled-components';
@@ -56,7 +55,7 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
     ${inlineNodeSharedStyle};
   }
 
-  .ProseMirror[contenteditable='false'] .taskItemView-content-wrap {
+  .ProseMirror[contenteditable='false'] {
     pointer-events: none;
     opacity: 0.7;
   }
@@ -117,7 +116,6 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
   ${panelStyles}
   ${fakeCursorStyles}
   ${mentionsStyles}
-  ${tasksAndDecisionsStyles}
   ${gridStyles}
   ${linkStyles}
   /* ${blockMarksSharedStyles} */

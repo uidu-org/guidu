@@ -6,5 +6,4 @@ export default [
   'inlineExtension',
   'mention',
   'placeholder',
-  'status',
 ];

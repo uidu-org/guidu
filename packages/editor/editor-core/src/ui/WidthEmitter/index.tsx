@@ -44,17 +44,15 @@ function useCreateWidthCallbacks({
   return [contextPanelWidthCallback, containerWidthCallback];
 }
 
-const WidthEmitter = ({ editorView }: Props) => {
+function WidthEmitter({ editorView }: Props) {
   const [contextPanelWidth, setContextPanelWidth] = React.useState(0);
   const [containerWidth, setContainerWidth] = React.useState(0);
-  const [
-    contextPanelWidthCallback,
-    containerWidthCallback,
-  ] = useCreateWidthCallbacks({ setContextPanelWidth, setContainerWidth });
+  const [contextPanelWidthCallback, containerWidthCallback] =
+    useCreateWidthCallbacks({ setContextPanelWidth, setContainerWidth });
 
   React.useEffect(() => {
     const width = containerWidth - contextPanelWidth;
-    if (width <= 0 || isNaN(width) || !editorView) {
+    if (width <= 0 || Number.isNaN(width) || !editorView) {
       return null;
     }
 
@@ -80,6 +78,6 @@ const WidthEmitter = ({ editorView }: Props) => {
       <WidthConsumer>{containerWidthCallback}</WidthConsumer>
     </>
   );
-};
+}
 
 export default WidthEmitter;

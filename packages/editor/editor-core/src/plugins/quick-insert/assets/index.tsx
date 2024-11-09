@@ -22,7 +22,6 @@ export const IconPanelNote = loadable(() => import('./panel-note'));
 export const IconPanelSuccess = loadable(() => import('./panel-success'));
 export const IconPanelWarning = loadable(() => import('./panel-warning'));
 export const IconPanel = loadable(() => import('./panel'));
-export const IconStatus = loadable(() => import('./status'));
 export const IconFallback = loadable(() => import('./fallback'));
 
 type HeadingProps = IconProps & {

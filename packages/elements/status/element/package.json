@@ -1,5 +1,0 @@
-{
-  "main": "dist/uidu-status-element.cjs.js",
-  "module": "dist/uidu-status-element.esm.js",
-  "types": "dist/uidu-status-element.cjs.d.ts"
-}

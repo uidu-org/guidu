@@ -7,7 +7,6 @@ import {
   Transformer,
 } from '@uidu/editor-common';
 import { MentionProvider } from '@uidu/mentions';
-import { TaskDecisionProvider } from '@uidu/task-decision';
 import { Node, Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import { ReactElement } from 'react';
@@ -83,7 +82,6 @@ export interface EditorProps {
   collabEditProvider?: Providers['collabEditProvider'];
   presenceProvider?: Promise<any>;
   emojiProvider?: Providers['emojiProvider'];
-  taskDecisionProvider?: Promise<TaskDecisionProvider>;
   allowNestedTasks?: boolean;
 
   legacyImageUploadProvider?: Providers['imageUploadProvider'];

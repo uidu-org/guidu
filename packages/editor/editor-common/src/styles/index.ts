@@ -96,5 +96,4 @@ export {
   TableSharedCssClassName,
   tableSharedStyle,
 } from './shared/table';
-export { tasksAndDecisionsStyles } from './shared/task-decision';
 export { whitespaceSharedStyles } from './shared/whitespace';

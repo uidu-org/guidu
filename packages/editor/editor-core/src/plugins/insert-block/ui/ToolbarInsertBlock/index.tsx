@@ -5,7 +5,6 @@ import InfoIcon from '@atlaskit/icon/glyph/editor/info';
 import EditorMoreIcon from '@atlaskit/icon/glyph/editor/more';
 import TaskIcon from '@atlaskit/icon/glyph/editor/task';
 import PlaceholderTextIcon from '@atlaskit/icon/glyph/media-services/text';
-import StatusIcon from '@atlaskit/icon/glyph/status';
 import data from '@emoji-mart/data';
 import Picker from '@emoji-mart/react';
 import {
@@ -47,9 +46,7 @@ import { showLinkToolbar } from '../../../hyperlink/commands';
 import { insertLayoutColumns } from '../../../layout/actions';
 import { showPlaceholderFloatingToolbar } from '../../../placeholder-text/actions';
 import { createHorizontalRule } from '../../../rule/pm-plugins/input-rule';
-import { updateStatus } from '../../../status/actions';
 import { createTable } from '../../../table/commands';
-import { insertTaskDecision } from '../../../tasks-and-decisions/commands';
 import { setVideoPickerAt } from '../../../video/actions';
 import { messages } from './messages';
 import { TriggerWrapper } from './styles';
@@ -328,7 +325,6 @@ class ToolbarInsertBlock extends React.PureComponent<
       linkDisabled,
       emojiDisabled,
       emojiProvider,
-      nativeStatusSupported,
       insertMenuItems,
       dateEnabled,
       placeholderTextEnabled,
@@ -523,15 +519,6 @@ class ToolbarInsertBlock extends React.PureComponent<
       });
     }
 
-    if (nativeStatusSupported) {
-      const labelStatus = formatMessage(messages.status);
-      items.push({
-        content: labelStatus,
-        value: { name: 'status' },
-        elemBefore: <StatusIcon label={labelStatus} />,
-      });
-    }
-
     if (insertMenuItems) {
       items = items.concat(insertMenuItems);
       // keeping this here for backwards compatibility so confluence
@@ -591,30 +578,11 @@ class ToolbarInsertBlock extends React.PureComponent<
     return true;
   };
 
-  private createStatus = (): boolean => {
-    const { editorView } = this.props;
-    updateStatus()(editorView.state, editorView.dispatch);
-    return true;
-  };
-
   private openMediaPicker = (): boolean => {
     const { onShowMediaPicker } = this.props;
     if (onShowMediaPicker) {
       onShowMediaPicker();
     }
-    return true;
-  };
-
-  private insertTaskDecision = (name: 'action' | 'decision') => (): boolean => {
-    const { editorView } = this.props;
-    if (!editorView) {
-      return false;
-    }
-    const listType = name === 'action' ? 'taskList' : 'decisionList';
-    insertTaskDecision(editorView, listType)(
-      editorView.state,
-      editorView.dispatch,
-    );
     return true;
   };
 
@@ -726,9 +694,6 @@ class ToolbarInsertBlock extends React.PureComponent<
         break;
       case 'layout':
         this.insertLayoutColumns();
-        break;
-      case 'status':
-        this.createStatus();
         break;
 
       // https://product-fabric.atlassian.net/browse/ED-8053

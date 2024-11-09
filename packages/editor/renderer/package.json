@@ -20,8 +20,6 @@
     "@uidu/editor-json-transformer": "^1.9.4",
     "@uidu/media-card": "^0.17.6",
     "@uidu/mentions": "^0.14.5",
-    "@uidu/status": "^0.13.5",
-    "@uidu/task-decision": "^0.11.4",
     "@uidu/theme": "^0.12.4",
     "@uidu/tooltip": "^0.11.4",
     "get-video-id": "^3.7.0",

@@ -19,8 +19,6 @@
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.12.8",
-    "@atlaskit/icon-file-type": "^6.4.6",
-    "@atlaskit/icon-object": "^6.3.8",
     "@uidu/avatar": "^0.15.4",
     "@uidu/button": "^1.9.4",
     "@uidu/docs": "^0.11.4",

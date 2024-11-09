@@ -53,7 +53,6 @@ export interface InsertBlockOptions {
   allowExpand?: boolean;
   insertMenuItems?: any;
   horizontalRuleEnabled?: boolean;
-  nativeStatusSupported?: boolean;
 }
 
 /**
@@ -130,10 +129,8 @@ const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
             isTypeAheadAllowed={typeAheadState && typeAheadState.isAllowed}
             editorView={editorView}
             tableSupported={!!tablesState}
-            actionSupported={!!editorView.state.schema.nodes.taskItem}
             // mentionsSupported={!!(mentionState && mentionState.mentionProvider)}
             // mentionsEnabled={!!mentionState}
-            decisionSupported={!!editorView.state.schema.nodes.decisionItem}
             dateEnabled={!!dateState}
             videoEnabled={!!videoState}
             placeholderTextEnabled={
@@ -155,7 +152,6 @@ const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
             }
             emojiDisabled={!emojiState}
             emojiProvider={providers.emojiProvider}
-            nativeStatusSupported={options.nativeStatusSupported}
             horizontalRuleEnabled={options.horizontalRuleEnabled}
             onInsertBlockType={handleInsertBlockType}
             onInsertMacroFromMacroBrowser={insertMacroFromMacroBrowser}

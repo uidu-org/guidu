@@ -130,7 +130,6 @@ export default class Editor extends PureComponent<EditorProps> {
       emojiProvider,
       mentionProvider,
       tokenProvider,
-      taskDecisionProvider,
       collabEditProvider,
       activityProvider,
       presenceProvider,
@@ -145,11 +144,6 @@ export default class Editor extends PureComponent<EditorProps> {
     this.providerFactory.setProvider('emojiProvider', emojiProvider);
     this.providerFactory.setProvider('mentionProvider', mentionProvider);
     this.providerFactory.setProvider('tokenProvider', tokenProvider);
-    this.providerFactory.setProvider(
-      'taskDecisionProvider',
-      taskDecisionProvider,
-    );
-
     this.providerFactory.setProvider('mediaProvider', mediaProvider);
     this.providerFactory.setProvider(
       'collabEditProvider',

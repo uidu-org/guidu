@@ -126,7 +126,6 @@ export {
   tableResizeHandleWidth,
   TableSharedCssClassName,
   tableSharedStyle,
-  tasksAndDecisionsStyles,
   whitespaceSharedStyles,
 } from './styles';
 export { SortOrder } from './types';

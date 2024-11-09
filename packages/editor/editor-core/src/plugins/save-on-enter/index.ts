@@ -1,4 +1,5 @@
 import { SafePlugin } from '@uidu/editor-common/safe-plugin';
+import { CommandDispatch } from '@uidu/editor-common/types';
 import { keymap } from 'prosemirror-keymap';
 import { ResolvedPos } from 'prosemirror-model';
 import { EditorState, TextSelection } from 'prosemirror-state';
@@ -40,13 +41,8 @@ function isEmptyAtCursor($cursor: ResolvedPos) {
 
 function canSaveOnEnter(editorView: EditorView) {
   const { $cursor } = editorView.state.selection as TextSelection;
-  const { decisionItem, paragraph, taskItem } = editorView.state.schema.nodes;
-  return (
-    !$cursor ||
-    ($cursor.parent.type === paragraph && $cursor.depth === 1) ||
-    ($cursor.parent.type === decisionItem && !isEmptyAtCursor($cursor)) ||
-    ($cursor.parent.type === taskItem && !isEmptyAtCursor($cursor))
-  );
+  const { paragraph } = editorView.state.schema.nodes;
+  return !$cursor || ($cursor.parent.type === paragraph && $cursor.depth === 1);
 }
 
 const saveOnEnterPlugin = (onSave?) => ({

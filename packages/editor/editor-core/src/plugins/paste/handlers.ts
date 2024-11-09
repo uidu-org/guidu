@@ -21,12 +21,11 @@ import {
 } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { Command, CommandDispatch } from '../../types';
-import { compose, insideTable, processRawValue } from '../../utils';
+import { insideTable, processRawValue } from '../../utils';
 import { mapSlice } from '../../utils/slice';
 import { insertCard, queueCardsFromChangedTr } from '../card/pm-plugins/doc';
 import { CardOptions } from '../card/types';
 import { GapCursorSelection, Side } from '../gap-cursor/';
-import { linkifyContent } from '../hyperlink/utils';
 import { runMacroAutoConvert } from '../macro';
 import { insertMediaAsMediaSingle } from '../media/utils/media-single';
 import {
@@ -56,58 +55,10 @@ export function handlePasteIntoTaskAndDecision(slice: Slice): Command {
 
     const {
       marks: { code: codeMark },
-      nodes: {
-        decisionItem,
-        decisionList,
-        emoji,
-        hardBreak,
-        mention,
-        paragraph,
-        taskList,
-        taskItem,
-        text,
-      },
+      nodes: { emoji, hardBreak, mention, paragraph, text },
     } = schema;
 
-    if (
-      !decisionItem ||
-      !decisionList ||
-      !taskList ||
-      !taskItem ||
-      !hasParentNodeOfType([decisionItem, taskItem])(state.selection)
-    ) {
-      return false;
-    }
-
-    type Fn = (slice: Slice) => Slice;
-    const filters: [Fn, ...Array<Fn>] = [linkifyContent(schema)];
-
-    const selectionMarks = selection.$head.marks();
-
-    const textFormattingState: TextFormattingState =
-      textFormattingPluginKey.getState(state);
-
-    if (
-      selection instanceof TextSelection &&
-      Array.isArray(selectionMarks) &&
-      selectionMarks.length > 0 &&
-      hasOnlyNodesOfType(paragraph, text, emoji, mention, hardBreak)(slice) &&
-      (!codeMark.isInSet(selectionMarks) || textFormattingState.codeActive) // for codeMarks let's make sure mark is active
-    ) {
-      filters.push(applyTextMarksToSlice(schema, selection.$head.marks()));
-    }
-
-    const transformedSlice = compose.apply(null, filters)(slice);
-
-    const tr = closeHistory(state.tr)
-      .replaceSelection(transformedSlice)
-      .scrollIntoView();
-
-    queueCardsFromChangedTr(state, tr);
-    if (dispatch) {
-      dispatch(tr);
-    }
-    return true;
+    return false;
   };
 }
 

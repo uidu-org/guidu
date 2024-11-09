@@ -67,68 +67,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/activity@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@atlaskit/activity@npm:1.0.3"
-  dependencies:
-    "@atlaskit/util-service-support": "npm:2.0.4"
-    tslib: "npm:^1.7.1"
-  peerDependencies:
-    react: ^15.3.2 || ^16.0.0
-  checksum: 10/717b4bfd4e5391ef9970c49e0475ca3fe24f2ba9289fd8b6bacd3eec280330dd85acb734c99ec76503335107aac5e6398389810eddfbf4cac99373c62e8445d9
-  languageName: node
-  linkType: hard
-
-"@atlaskit/analytics-namespaced-context@npm:^6.7.0":
-  version: 6.7.3
-  resolution: "@atlaskit/analytics-namespaced-context@npm:6.7.3"
-  dependencies:
-    "@atlaskit/analytics-next": "npm:^9.1.0"
-    "@babel/runtime": "npm:^7.0.0"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/e37a42b3b0a4881a11ff48bedd4c711971913aeb8d86bc236c8cc0ee06d42c85548614a057e894a55b9bd508781e860af779a5524240d6e369135da7ae645a67
-  languageName: node
-  linkType: hard
-
-"@atlaskit/analytics-next-stable-react-context@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@atlaskit/analytics-next-stable-react-context@npm:1.0.1"
-  dependencies:
-    tslib: "npm:^2.0.0"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/5fca74fccebe64449e5b8341f75f6730efac4cbe07a96a1b834183c9acc0248065f7181f70cf3c98fe4be7e87a4f68033fc449eebfb513ccf9019e61f9cea869
-  languageName: node
-  linkType: hard
-
-"@atlaskit/analytics-next@npm:^9.1.0":
-  version: 9.1.4
-  resolution: "@atlaskit/analytics-next@npm:9.1.4"
-  dependencies:
-    "@atlaskit/analytics-next-stable-react-context": "npm:1.0.1"
-    "@babel/runtime": "npm:^7.0.0"
-    prop-types: "npm:^15.5.10"
-    use-memo-one: "npm:^1.1.1"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/e2290f5ba80597aa85aabf7e55339351dedaf5dd8ae13125191e74685a339c1c6b3671bd6fe1330b62b82bc978a5db278aac38af500692cd517fa54f36a45275
-  languageName: node
-  linkType: hard
-
-"@atlaskit/app-provider@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@atlaskit/app-provider@npm:0.4.0"
-  dependencies:
-    "@atlaskit/tokens": "npm:^1.28.0"
-    "@babel/runtime": "npm:^7.0.0"
-    bind-event-listener: "npm:^2.1.1"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/a86cd31554854773bfdc1f7504ef3270be5087462020e8b2c1f0615b015e4d315d0a91c9ce054df009bf6b8044f9c2e4f2efc0db47a4d9e47abc328c9f0b56f0
-  languageName: node
-  linkType: hard
-
 "@atlaskit/codemod-utils@npm:^4.2.0":
   version: 4.2.3
   resolution: "@atlaskit/codemod-utils@npm:4.2.3"
@@ -150,7 +88,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/focus-ring@npm:^1.3.0, @atlaskit/focus-ring@npm:^1.3.6":
+"@atlaskit/focus-ring@npm:^1.3.6":
   version: 1.3.6
   resolution: "@atlaskit/focus-ring@npm:1.3.6"
   dependencies:
@@ -163,31 +101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/icon-file-type@npm:^6.4.6":
-  version: 6.4.6
-  resolution: "@atlaskit/icon-file-type@npm:6.4.6"
-  dependencies:
-    "@atlaskit/icon": "npm:^22.0.0"
-    "@babel/runtime": "npm:^7.0.0"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/f28175a8805fd835a32d8763d4e32bb207280958b27c28000788c360943bd02bd28b1d0df81ac5bb3a6cee5876e578e621d79203fda1ec7ffc7f010df7bf4db3
-  languageName: node
-  linkType: hard
-
-"@atlaskit/icon-object@npm:^6.3.8":
-  version: 6.3.8
-  resolution: "@atlaskit/icon-object@npm:6.3.8"
-  dependencies:
-    "@atlaskit/icon": "npm:^22.0.0"
-    "@babel/runtime": "npm:^7.0.0"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/ae8ba936de24d0f6ce742d8cc77b4dabc33a099b6835fe9fe09463f79f9f6b6c8dae6dd57bc49f9a112555edc6574d537dffc31c4ac4f4bd753b55a9ab195535
-  languageName: node
-  linkType: hard
-
-"@atlaskit/icon@npm:^21.12.0, @atlaskit/icon@npm:^21.12.8":
+"@atlaskit/icon@npm:^21.12.8":
   version: 21.12.8
   resolution: "@atlaskit/icon@npm:21.12.8"
   dependencies:
@@ -198,19 +112,6 @@ __metadata:
   peerDependencies:
     react: ^16.8.0
   checksum: 10/ffe950ab78200453c2ffefc0041672f56568f0771d77f85fd3b773ad9f37b48620eb33755fd18be387d51c42ebc59249cd088e1671615812144cbc69c2782d5e
-  languageName: node
-  linkType: hard
-
-"@atlaskit/icon@npm:^22.0.0":
-  version: 22.0.0
-  resolution: "@atlaskit/icon@npm:22.0.0"
-  dependencies:
-    "@atlaskit/tokens": "npm:^1.28.0"
-    "@babel/runtime": "npm:^7.0.0"
-    "@emotion/react": "npm:^11.7.1"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/4ee022f66353edc74299547fdb7a0cc0b2b8c18de761efa188dc7aad468ff65723c6bba3ed3d76bc2003672e66a7b1a1fed685b34c807664213ecb9561b0c12c
   languageName: node
   linkType: hard
 
@@ -230,7 +131,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/motion@npm:^1.5.0, @atlaskit/motion@npm:^1.5.1":
+"@atlaskit/motion@npm:^1.5.1":
   version: 1.5.1
   resolution: "@atlaskit/motion@npm:1.5.1"
   dependencies:
@@ -244,100 +145,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/platform-feature-flags@npm:^0.2.0, @atlaskit/platform-feature-flags@npm:^0.2.2":
+"@atlaskit/platform-feature-flags@npm:^0.2.0":
   version: 0.2.4
   resolution: "@atlaskit/platform-feature-flags@npm:0.2.4"
   dependencies:
     "@babel/runtime": "npm:^7.0.0"
   checksum: 10/f1093e80f17951c4b0b2a3befb9b729287b20182ed94f308ac4e9487d9fba02a43c17f9109dfe91b6274456142e3d6e966cef3ddc87290d512ba1b7d6d5d217d
-  languageName: node
-  linkType: hard
-
-"@atlaskit/primitives@npm:^1.9.0":
-  version: 1.10.0
-  resolution: "@atlaskit/primitives@npm:1.10.0"
-  dependencies:
-    "@atlaskit/app-provider": "npm:^0.4.0"
-    "@atlaskit/tokens": "npm:^1.28.0"
-    "@babel/runtime": "npm:^7.0.0"
-    "@emotion/react": "npm:^11.7.1"
-    "@emotion/serialize": "npm:^1.1.0"
-    bind-event-listener: "npm:^2.1.1"
-    tiny-invariant: "npm:^1.2.0"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/d0afb61f1522db0f801045a098cf3cdcf21447850e375ef8277ec97e23415f1959e7c7c2d7ca36ee0e10b160b3ae222e4558725f5c58783733d607cfa8784976
-  languageName: node
-  linkType: hard
-
-"@atlaskit/progress-indicator@npm:^9.5.18":
-  version: 9.5.18
-  resolution: "@atlaskit/progress-indicator@npm:9.5.18"
-  dependencies:
-    "@atlaskit/analytics-next": "npm:^9.1.0"
-    "@atlaskit/ds-lib": "npm:^2.2.0"
-    "@atlaskit/focus-ring": "npm:^1.3.0"
-    "@atlaskit/primitives": "npm:^1.9.0"
-    "@atlaskit/theme": "npm:^12.6.0"
-    "@atlaskit/tokens": "npm:^1.28.0"
-    "@babel/runtime": "npm:^7.0.0"
-    "@emotion/react": "npm:^11.7.1"
-    bind-event-listener: "npm:^2.1.1"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/21203cf6ab5ffd988c7e2676c6994ff75b09522445a784ba1fb55a66e53331243424b9c071ca1e9192bb3da4935567e3e7b545e733153733853d94cefbef58f3
-  languageName: node
-  linkType: hard
-
-"@atlaskit/tag-group@npm:^10.2.5":
-  version: 10.2.5
-  resolution: "@atlaskit/tag-group@npm:10.2.5"
-  dependencies:
-    "@babel/runtime": "npm:^7.0.0"
-    "@emotion/react": "npm:^11.7.1"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/42b0e4b66bd57579cc914e0c3151fcffff64c18f46d12922a15e43b8211d2e1b866000ae9cd145d9b6f18416d80b85cce05d65bda273fbed1f4c96a4b0d71411
-  languageName: node
-  linkType: hard
-
-"@atlaskit/tag@npm:^11.6.2":
-  version: 11.6.2
-  resolution: "@atlaskit/tag@npm:11.6.2"
-  dependencies:
-    "@atlaskit/analytics-next": "npm:^9.1.0"
-    "@atlaskit/ds-lib": "npm:^2.2.0"
-    "@atlaskit/icon": "npm:^21.12.0"
-    "@atlaskit/motion": "npm:^1.5.0"
-    "@atlaskit/theme": "npm:^12.6.0"
-    "@atlaskit/tokens": "npm:^1.28.0"
-    "@babel/runtime": "npm:^7.0.0"
-    "@emotion/react": "npm:^11.7.1"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/d07f8560fea72662ef31021818dc0728d29731308a0b35bf60e9904056299db1b149cab46b3f01379580a36f3b17adb9958bfd242f428cde0d5c50b8eda930eb
-  languageName: node
-  linkType: hard
-
-"@atlaskit/task-decision@npm:^17.9.2":
-  version: 17.9.2
-  resolution: "@atlaskit/task-decision@npm:17.9.2"
-  dependencies:
-    "@atlaskit/analytics-namespaced-context": "npm:^6.7.0"
-    "@atlaskit/analytics-next": "npm:^9.1.0"
-    "@atlaskit/icon": "npm:^21.12.0"
-    "@atlaskit/platform-feature-flags": "npm:^0.2.2"
-    "@atlaskit/theme": "npm:^12.6.0"
-    "@atlaskit/tokens": "npm:^1.25.0"
-    "@atlaskit/util-service-support": "npm:^6.2.0"
-    "@babel/runtime": "npm:^7.0.0"
-    "@emotion/react": "npm:^11.7.1"
-    uuid: "npm:^3.1.0"
-  peerDependencies:
-    react: ^16.8.0
-    react-dom: ^16.8.0
-    url-search-params: ^0.10.0
-  checksum: 10/8e5c7550f932a97a89239e12f1af9141911af257b2390c489ecc21a8ca4688cae75160a199ebaededbc86408f0ca1591f251466d38d274d955782162229d5908
   languageName: node
   linkType: hard
 
@@ -371,35 +184,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/util-service-support@npm:2.0.4":
-  version: 2.0.4
-  resolution: "@atlaskit/util-service-support@npm:2.0.4"
-  dependencies:
-    tslib: "npm:^1.2.0"
-    url: "npm:^0.11.0"
-    url-search-params: "npm:^0.10.0"
-  checksum: 10/3b2ce07be7d25f8627195dee1f589104c2d094a98b308f55c019a6575b41cc98b59075cf76094ba4d0e8ff690e282f87a7da09da6780680f50192052a493c5ab
-  languageName: node
-  linkType: hard
-
-"@atlaskit/util-service-support@npm:^6.2.0, @atlaskit/util-service-support@npm:^6.2.3":
+"@atlaskit/util-service-support@npm:^6.2.3":
   version: 6.2.3
   resolution: "@atlaskit/util-service-support@npm:6.2.3"
   dependencies:
     "@babel/runtime": "npm:^7.0.0"
   checksum: 10/18172d6d51de3f01502f30dfb5a6a14dc68f4ea99d12874266c5fbc55f7c6be4a581da11f693e829b5e40d44b629ad13a1bbf5153c3157c1db284ab7a15fd361
-  languageName: node
-  linkType: hard
-
-"@atlaskit/width-detector@npm:^4.1.5":
-  version: 4.1.5
-  resolution: "@atlaskit/width-detector@npm:4.1.5"
-  dependencies:
-    "@babel/runtime": "npm:^7.0.0"
-    raf-schd: "npm:^4.0.3"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/901fbef333332455b649e66c3e16f291e961569b3af4149127c848a9ac96848c7f3d2032d4ca19fb4cd55783e699ac5d96bce9ab0c136340c66f6dd3ba02f0d4
   languageName: node
   linkType: hard
 
@@ -3049,7 +2839,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/serialize@npm:^1.1.0, @emotion/serialize@npm:^1.2.0, @emotion/serialize@npm:^1.3.0, @emotion/serialize@npm:^1.3.1":
+"@emotion/serialize@npm:^1.2.0, @emotion/serialize@npm:^1.3.0, @emotion/serialize@npm:^1.3.1":
   version: 1.3.1
   resolution: "@emotion/serialize@npm:1.3.1"
   dependencies:
@@ -7474,17 +7264,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/unist@npm:*, @types/unist@npm:^2.0.0":
-  version: 2.0.6
-  resolution: "@types/unist@npm:2.0.6"
-  checksum: 10/25cb860ff10dde48b54622d58b23e66214211a61c84c0f15f88d38b61aa1b53d4d46e42b557924a93178c501c166aa37e28d7f6d994aba13d24685326272d5db
-  languageName: node
-  linkType: hard
-
-"@types/unist@npm:^3.0.0":
+"@types/unist@npm:*, @types/unist@npm:^3.0.0":
   version: 3.0.3
   resolution: "@types/unist@npm:3.0.3"
   checksum: 10/96e6453da9e075aaef1dc22482463898198acdc1eeb99b465e65e34303e2ec1e3b1ed4469a9118275ec284dc98019f63c3f5d49422f0e4ac707e5ab90fb3b71a
+  languageName: node
+  linkType: hard
+
+"@types/unist@npm:^2.0.0":
+  version: 2.0.6
+  resolution: "@types/unist@npm:2.0.6"
+  checksum: 10/25cb860ff10dde48b54622d58b23e66214211a61c84c0f15f88d38b61aa1b53d4d46e42b557924a93178c501c166aa37e28d7f6d994aba13d24685326272d5db
   languageName: node
   linkType: hard
 
@@ -8101,7 +7891,6 @@ __metadata:
   resolution: "@uidu/button@workspace:packages/core/button"
   dependencies:
     "@atlaskit/icon": "npm:^21.12.8"
-    "@atlaskit/logo": "npm:^13.14.9"
     "@babel/runtime": "npm:^7.25.6"
     "@uidu/analytics": "npm:^0.12.4"
     "@uidu/checkbox": "npm:^2.7.1"
@@ -8641,7 +8430,6 @@ __metadata:
     "@uidu/emoji": "npm:^0.15.5"
     "@uidu/media-core": "npm:4.0.1"
     "@uidu/mentions": "npm:^0.14.5"
-    "@uidu/profilecard": "npm:^0.12.5"
     "@uidu/theme": "npm:^0.12.4"
     "@uidu/tooltip": "npm:0.11.4"
     chromatism: "npm:^3.0.0"
@@ -8670,7 +8458,6 @@ __metadata:
   dependencies:
     "@atlaskit/icon": "npm:^21.12.8"
     "@atlaskit/util-service-support": "npm:^6.2.3"
-    "@atlaskit/width-detector": "npm:^4.1.5"
     "@babel/runtime": "npm:^7.25.6"
     "@emoji-mart/data": "npm:^1.2.1"
     "@emoji-mart/react": "npm:^1.1.1"
@@ -8702,13 +8489,10 @@ __metadata:
     "@uidu/menu": "npm:^0.16.4"
     "@uidu/modal-dialog": "npm:1.8.4"
     "@uidu/popup": "workspace:^"
-    "@uidu/profilecard": "npm:^0.12.5"
     "@uidu/prosemirror-utils": "npm:0.3.3"
     "@uidu/select": "npm:^2.14.0"
     "@uidu/shell": "npm:^2.10.4"
     "@uidu/spinner": "npm:^0.11.4"
-    "@uidu/status": "npm:^0.13.5"
-    "@uidu/task-decision": "npm:^0.11.4"
     "@uidu/theme": "npm:^0.12.4"
     "@uidu/tooltip": "npm:^0.11.4"
     assert: "npm:^2.1.0"
@@ -9511,8 +9295,6 @@ __metadata:
   resolution: "@uidu/inline-edit@workspace:packages/core/inline-edit"
   dependencies:
     "@atlaskit/icon": "npm:^21.12.8"
-    "@atlaskit/tag": "npm:^11.6.2"
-    "@atlaskit/tag-group": "npm:^10.2.5"
     "@babel/runtime": "npm:^7.25.6"
     "@loadable/component": "npm:^5.16.4"
     "@uidu/analytics": "npm:^0.12.4"
@@ -9813,8 +9595,6 @@ __metadata:
   resolution: "@uidu/menu@workspace:packages/core/menu"
   dependencies:
     "@atlaskit/icon": "npm:^21.12.8"
-    "@atlaskit/icon-file-type": "npm:^6.4.6"
-    "@atlaskit/icon-object": "npm:^6.3.8"
     "@babel/runtime": "npm:^7.25.6"
     "@emotion/react": "npm:^11.13.3"
     "@uidu/avatar": "npm:^0.15.4"
@@ -9994,7 +9774,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/onboarding@workspace:packages/core/onboarding"
   dependencies:
-    "@atlaskit/progress-indicator": "npm:^9.5.18"
     "@babel/runtime": "npm:^7.25.6"
     "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
@@ -10181,36 +9960,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/profilecard@npm:^0.12.0, @uidu/profilecard@npm:^0.12.5, @uidu/profilecard@workspace:packages/elements/profilecard":
-  version: 0.0.0-use.local
-  resolution: "@uidu/profilecard@workspace:packages/elements/profilecard"
-  dependencies:
-    "@atlaskit/icon": "npm:^21.12.8"
-    "@babel/runtime": "npm:^7.25.6"
-    "@uidu/avatar": "npm:^0.15.4"
-    "@uidu/button": "npm:^1.9.4"
-    "@uidu/docs": "npm:*"
-    "@uidu/lozenge": "npm:^0.11.4"
-    "@uidu/popup": "npm:^0.14.5"
-    "@uidu/spinner": "npm:^0.11.4"
-    "@uidu/theme": "npm:^0.12.4"
-    date-fns: "npm:^2.30.0"
-    enzyme: "npm:^3.11.0"
-    es6-promise: "npm:^4.2.8"
-    fetch-mock: "npm:^9.11.0"
-    loader-utils: "npm:^2.0.4"
-    lodash: "npm:^4.17.21"
-    react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
-    react-intl: "npm:^6.6.8"
-    react-node-resolver: "npm:^2.0.1"
-    sinon: "npm:^14.0.2"
-    styled-components: "npm:^5.3.11"
-    typescript: "npm:^5.5.4"
-    uid: "npm:^2.0.2"
-  languageName: unknown
-  linkType: soft
-
 "@uidu/progress-bar@workspace:packages/core/progress-bar":
   version: 0.0.0-use.local
   resolution: "@uidu/progress-bar@workspace:packages/core/progress-bar"
@@ -10272,7 +10021,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/renderer@npm:^2.16.5, @uidu/renderer@workspace:packages/editor/renderer":
+"@uidu/renderer@workspace:packages/editor/renderer":
   version: 0.0.0-use.local
   resolution: "@uidu/renderer@workspace:packages/editor/renderer"
   dependencies:
@@ -10291,8 +10040,6 @@ __metadata:
     "@uidu/media-card": "npm:^0.17.6"
     "@uidu/mentions": "npm:^0.14.5"
     "@uidu/navigation": "npm:^1.7.4"
-    "@uidu/status": "npm:^0.13.5"
-    "@uidu/task-decision": "npm:^0.11.4"
     "@uidu/theme": "npm:^0.12.4"
     "@uidu/tooltip": "npm:^0.11.4"
     "@uidu/util-data-test": "npm:^0.10.4"
@@ -10462,29 +10209,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/status@npm:^0.13.5, @uidu/status@workspace:packages/elements/status":
-  version: 0.0.0-use.local
-  resolution: "@uidu/status@workspace:packages/elements/status"
-  dependencies:
-    "@atlaskit/icon": "npm:^21.12.8"
-    "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
-    "@uidu/analytics-gas-types": "npm:^0.4.7"
-    "@uidu/docs": "npm:^0.11.4"
-    "@uidu/elements-test-helpers": "npm:^0.12.5"
-    "@uidu/field-text": "npm:^2.6.4"
-    "@uidu/lozenge": "npm:^0.11.4"
-    "@uidu/theme": "npm:^0.12.4"
-    react: "npm:^18.3.1"
-    react-intl: "npm:^6.6.8"
-    styled-components: "npm:^5.3.11"
-    tslib: "npm:^2.7.0"
-  peerDependencies:
-    react: ^18.0.0
-    react-intl: ^6.0.3
-  languageName: unknown
-  linkType: soft
-
 "@uidu/stepper@npm:^0.10.4, @uidu/stepper@workspace:packages/navigation/stepper":
   version: 0.0.0-use.local
   resolution: "@uidu/stepper@workspace:packages/navigation/stepper"
@@ -10604,43 +10328,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/task-decision@npm:^0.11.4, @uidu/task-decision@workspace:packages/elements/task-decision":
-  version: 0.0.0-use.local
-  resolution: "@uidu/task-decision@workspace:packages/elements/task-decision"
-  dependencies:
-    "@atlaskit/icon": "npm:^21.12.8"
-    "@atlaskit/util-service-support": "npm:^6.2.3"
-    "@babel/runtime": "npm:^7.25.6"
-    "@types/url-search-params": "npm:^1.1.2"
-    "@uidu/analytics": "npm:^0.12.4"
-    "@uidu/analytics-listeners": "npm:^0.10.4"
-    "@uidu/analytics-namespaced-context": "npm:^0.10.4"
-    "@uidu/avatar": "npm:^0.15.4"
-    "@uidu/avatar-group": "npm:^2.12.4"
-    "@uidu/button": "npm:^1.9.4"
-    "@uidu/docs": "npm:^0.11.4"
-    "@uidu/editor-common": "npm:^2.18.7"
-    "@uidu/elements-test-helpers": "npm:^0.12.5"
-    "@uidu/renderer": "npm:^2.16.5"
-    "@uidu/spinner": "npm:^0.11.4"
-    "@uidu/theme": "npm:^0.12.4"
-    "@uidu/util-data-test": "npm:^0.10.4"
-    date-fns: "npm:^2.30.0"
-    lodash.debounce: "npm:^4.0.8"
-    react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
-    styled-components: "npm:^5.3.11"
-    tslib: "npm:^2.7.0"
-    url-search-params: "npm:^1.1.0"
-    uuid: "npm:^8.3.2"
-  peerDependencies:
-    react: ^18.0.0
-    react-dom: ^18.0.0
-    styled-components: <6
-    url-search-params: ^1.1.0
-  languageName: unknown
-  linkType: soft
-
 "@uidu/text-serializer@workspace:packages/editor/text-serializer":
   version: 0.0.0-use.local
   resolution: "@uidu/text-serializer@workspace:packages/editor/text-serializer"
@@ -10747,7 +10434,6 @@ __metadata:
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/emoji": "npm:^0.15.5"
     "@uidu/mentions": "npm:^0.14.5"
-    "@uidu/task-decision": "npm:^0.11.4"
     date-fns: "npm:^2.30.0"
     js-search: "npm:^2.0.1"
     lodash.sample: "npm:^4.2.1"
@@ -17006,13 +16692,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es6-promise@npm:^4.2.8":
-  version: 4.2.8
-  resolution: "es6-promise@npm:4.2.8"
-  checksum: 10/b250c55523c496c43c9216c2646e58ec182b819e036fe5eb8d83fa16f044ecc6b8dcefc88ace2097be3d3c4d02b6aa8eeae1a66deeaf13e7bee905ebabb350a3
-  languageName: node
-  linkType: hard
-
 "es6-promisify@npm:^6.0.0":
   version: 6.1.1
   resolution: "es6-promisify@npm:6.1.1"
@@ -19574,16 +19253,8 @@ __metadata:
   dependencies:
     "@amcharts/amcharts4": "npm:^4.10.39"
     "@amcharts/amcharts4-geodata": "npm:^4.1.30"
-    "@atlaskit/activity": "npm:^1.0.3"
     "@atlaskit/icon": "npm:^21.12.8"
-    "@atlaskit/icon-file-type": "npm:^6.4.6"
-    "@atlaskit/icon-object": "npm:^6.3.8"
-    "@atlaskit/logo": "npm:^13.14.9"
-    "@atlaskit/progress-indicator": "npm:^9.5.18"
-    "@atlaskit/tag": "npm:^11.6.2"
-    "@atlaskit/task-decision": "npm:^17.9.2"
     "@atlaskit/util-service-support": "npm:^6.2.3"
-    "@atlaskit/width-detector": "npm:^4.1.5"
     "@babel/cli": "npm:^7.25.6"
     "@babel/core": "npm:^7.25.2"
     "@babel/eslint-parser": "npm:^7.25.1"
@@ -19677,7 +19348,6 @@ __metadata:
     "@uidu/field-time": "npm:2.8.8"
     "@uidu/form": "npm:3.3.2"
     "@uidu/popup": "workspace:^"
-    "@uidu/profilecard": "npm:^0.12.0"
     "@uifabric/file-type-icons": "npm:^7.10.11"
     "@uppy/aws-s3": "npm:^3.6.2"
     "@uppy/core": "npm:^3.13.1"
@@ -32595,7 +32265,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tiny-invariant@npm:^1.0.2, tiny-invariant@npm:^1.0.6, tiny-invariant@npm:^1.2.0, tiny-invariant@npm:^1.3.1, tiny-invariant@npm:^1.3.3":
+"tiny-invariant@npm:^1.0.2, tiny-invariant@npm:^1.0.6, tiny-invariant@npm:^1.3.1, tiny-invariant@npm:^1.3.3":
   version: 1.3.3
   resolution: "tiny-invariant@npm:1.3.3"
   checksum: 10/5e185c8cc2266967984ce3b352a4e57cb89dad5a8abb0dea21468a6ecaa67cd5bb47a3b7a85d08041008644af4f667fb8b6575ba38ba5fb00b3b5068306e59fe
@@ -32907,7 +32577,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.10.0, tslib@npm:^1.2.0, tslib@npm:^1.7.1, tslib@npm:^1.8.0, tslib@npm:^1.8.1, tslib@npm:^1.9.0":
+"tslib@npm:^1.10.0, tslib@npm:^1.8.0, tslib@npm:^1.8.1, tslib@npm:^1.9.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: 10/7dbf34e6f55c6492637adb81b555af5e3b4f9cc6b998fb440dac82d3b42bdc91560a35a5fb75e20e24a076c651438234da6743d139e4feabf0783f3cdfe1dddb
@@ -33712,13 +33382,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"url-search-params@npm:^0.10.0":
-  version: 0.10.2
-  resolution: "url-search-params@npm:0.10.2"
-  checksum: 10/847622025ace6ff9289a644ec5883d55512ec8fc239c51d5f64d6b9e9540a4906d3341768a8a1de3f7cf8b098f590d150664044a83e109b3ac164cf5dd41d8e7
-  languageName: node
-  linkType: hard
-
 "url-search-params@npm:^1.1.0":
   version: 1.1.0
   resolution: "url-search-params@npm:1.1.0"
@@ -33865,7 +33528,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^3.0.1, uuid@npm:^3.1.0, uuid@npm:^3.3.2":
+"uuid@npm:^3.0.1, uuid@npm:^3.3.2":
   version: 3.4.0
   resolution: "uuid@npm:3.4.0"
   bin:

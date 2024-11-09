@@ -149,10 +149,6 @@ export default function createPluginsList(props: EditorProps): EditorPlugin[] {
   //   );
   // }
 
-  // if (props.allowTasksAndDecisions || props.taskDecisionProvider) {
-  //   plugins.push(tasksAndDecisionsPlugin());
-  // }
-
   // if (props.feedbackInfo) {
   //   plugins.push(feedbackDialogPlugin(props.feedbackInfo));
   // }
@@ -230,21 +226,6 @@ export default function createPluginsList(props: EditorProps): EditorPlugin[] {
   //   plugins.push(customAutoformatPlugin());
   // }
 
-  // let statusMenuDisabled = true;
-  // if (props.allowStatus) {
-  //   statusMenuDisabled =
-  //     typeof props.allowStatus === 'object'
-  //       ? props.allowStatus.menuDisabled
-  //       : false;
-  //   plugins.push(
-  //     statusPlugin({
-  //       menuDisabled: statusMenuDisabled,
-  //       useInlineWrapper: isMobile,
-  //       allowZeroWidthSpaceAfter: !isMobile,
-  //     }),
-  //   );
-  // }
-
   // if (props.allowIndentation) {
   //   plugins.push(indentationPlugin());
   // }
@@ -255,7 +236,6 @@ export default function createPluginsList(props: EditorProps): EditorPlugin[] {
   //     allowTables: !!props.allowTables,
   //     insertMenuItems: props.insertMenuItems,
   //     horizontalRuleEnabled: props.allowRule,
-  //     nativeStatusSupported: !statusMenuDisabled,
   //   }),
   // );
 

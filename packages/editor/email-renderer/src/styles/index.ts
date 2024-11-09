@@ -13,8 +13,6 @@ import { styles as bulletListStyles } from '../nodes/bullet-list';
 import { styles as captionStyles } from '../nodes/caption';
 import { styles as codeBlockStyles } from '../nodes/code-block';
 import { styles as dateStyles } from '../nodes/date';
-import { styles as decisionStyles } from '../nodes/decision-item';
-import { styles as decisionListStyles } from '../nodes/decision-list';
 import { styles as expandStyles } from '../nodes/expand';
 import { styles as headingStyles } from '../nodes/heading';
 import { styles as inlineCardStyles } from '../nodes/inline-card';
@@ -28,13 +26,10 @@ import { styles as orderedListStyles } from '../nodes/ordered-list';
 import { styles as panelStyles } from '../nodes/panel';
 import { styles as paragraphStyles } from '../nodes/paragraph';
 import { styles as ruleStyles } from '../nodes/rule';
-import { styles as statusStyles } from '../nodes/status';
 import { styles as tableStyles } from '../nodes/table';
 import { styles as tableCellStyles } from '../nodes/table-cell';
 import { styles as tableHeaderStyles } from '../nodes/table-header';
 import { styles as tableRowStyles } from '../nodes/table-row';
-import { styles as taskItemStyles } from '../nodes/task-item';
-import { styles as taskListStyles } from '../nodes/task-list';
 import { styles as videoStyles } from '../nodes/video';
 import { styles as tableUtilStyles } from '../table-util';
 import { fontFamily, fontSize, fontWeight, lineHeight } from './common';
@@ -57,7 +52,6 @@ const styles = `
   ${listItemStyles}
   ${ruleStyles}
   ${mentionStyles}
-  ${statusStyles}
   ${tableHeaderStyles}
   ${tableCellStyles}
   ${tableRowStyles}
@@ -65,10 +59,8 @@ const styles = `
   ${bodiedExtensionStyles}
   ${inlineExtensionStyles}
   ${dateStyles}
-  ${decisionStyles}
   ${inlineCardStyles}
   ${panelStyles}
-  ${taskItemStyles}
   ${mediaStyles}
   ${mediaInlineStyles}
   ${mediaSingleStyles}
@@ -76,7 +68,6 @@ const styles = `
   ${tableStyles}
   ${tableUtilStyles}
   ${taskListStyles}
-  ${decisionListStyles}
 
   ${alignmentStyles}
   ${codeStyles}
@@ -91,8 +82,6 @@ const styles = `
 
   /* Hacks to bypass diff styles */
 
-  .${createClassName('taskItem')}-iconTd
-  span.diff-image-container:first-child:nth-last-child(2),
   .${createClassName('panel')} > span.diff-image-container.diff-removed {
     display: none;
   }
