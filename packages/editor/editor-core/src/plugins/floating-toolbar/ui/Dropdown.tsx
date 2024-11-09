@@ -51,7 +51,6 @@ export default function Dropdown(props: Props) {
 
   const renderArrayOptions = (options: Array<DropdownOptionT<Function>>) => (
     <div>
-      <h3>Pippo</h3>
       <DropdownMenu
         hide={hide}
         dispatchCommand={props.dispatchCommand}
