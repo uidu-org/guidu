@@ -115,22 +115,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/logo@npm:^13.14.9":
-  version: 13.14.9
-  resolution: "@atlaskit/logo@npm:13.14.9"
-  dependencies:
-    "@atlaskit/ds-lib": "npm:^2.2.0"
-    "@atlaskit/theme": "npm:^12.6.0"
-    "@atlaskit/tokens": "npm:^1.25.0"
-    "@babel/runtime": "npm:^7.0.0"
-    "@emotion/react": "npm:^11.7.1"
-    react-uid: "npm:^2.2.0"
-  peerDependencies:
-    react: ^16.8.0
-  checksum: 10/6a45bebb12d0c7dd22aabcecffdf367a9620866b6078c5b43ceb8e05e0c28a277f21719712fb856decc5724c352e872660eb2ec28386d1f53992beb5689faba4
-  languageName: node
-  linkType: hard
-
 "@atlaskit/motion@npm:^1.5.1":
   version: 1.5.1
   resolution: "@atlaskit/motion@npm:1.5.1"
@@ -168,7 +152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atlaskit/tokens@npm:^1.18.0, @atlaskit/tokens@npm:^1.25.0, @atlaskit/tokens@npm:^1.28.0":
+"@atlaskit/tokens@npm:^1.18.0, @atlaskit/tokens@npm:^1.28.0":
   version: 1.28.0
   resolution: "@atlaskit/tokens@npm:1.28.0"
   dependencies:
@@ -7865,7 +7849,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/breadcrumbs@workspace:packages/navigation/breadcrumbs"
   dependencies:
-    "@atlaskit/logo": "npm:^13.14.9"
     "@babel/runtime": "npm:^7.25.6"
     "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
@@ -29111,7 +29094,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-uid@npm:^2.2.0, react-uid@npm:^2.3.3":
+"react-uid@npm:^2.3.3":
   version: 2.3.3
   resolution: "react-uid@npm:2.3.3"
   dependencies:
