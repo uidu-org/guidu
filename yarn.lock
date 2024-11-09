@@ -7681,9 +7681,9 @@ __metadata:
     "@uidu/button": "npm:^1.9.4"
     "@uidu/code": "npm:^0.11.4"
     "@uidu/docs": "npm:^0.11.4"
-    "@uidu/dropdown-menu": "npm:^0.12.4"
     "@uidu/field-base": "npm:^4.11.7"
     "@uidu/field-toggle": "npm:^2.6.7"
+    "@uidu/menu": "workspace:^"
     "@uidu/theme": "npm:^0.12.4"
     "@uidu/tooltip": "npm:^0.11.4"
     react: "npm:^18.3.1"
@@ -8284,47 +8284,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/dropdown-menu@workspace:packages/core/dropdown-menu"
   dependencies:
-    "@atlaskit/icon": "npm:^21.12.8"
     "@babel/runtime": "npm:^7.25.6"
     "@uidu/avatar": "npm:^0.15.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
-    "@uidu/droplist": "npm:^0.11.4"
-    "@uidu/item": "npm:^0.11.4"
     "@uidu/lozenge": "npm:^0.11.4"
-    "@uidu/theme": "npm:^0.12.4"
     "@uidu/tooltip": "npm:^0.11.4"
-    array-find: "npm:^1.0.0"
-    prop-types: "npm:^15.8.1"
-    react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
-    react-uid: "npm:^2.3.3"
-    styled-components: "npm:^5.3.11"
-    tslib: "npm:^2.7.0"
-    uuid: "npm:^8.3.2"
-  peerDependencies:
-    react: ^18.0.0
-    react-dom: ^18.0.0
-    styled-components: <6
-  languageName: unknown
-  linkType: soft
-
-"@uidu/droplist@npm:^0.11.4, @uidu/droplist@workspace:packages/core/droplist":
-  version: 0.0.0-use.local
-  resolution: "@uidu/droplist@workspace:packages/core/droplist"
-  dependencies:
-    "@atlaskit/icon": "npm:^21.12.8"
-    "@babel/runtime": "npm:^7.25.6"
-    "@uidu/button": "npm:^1.9.4"
-    "@uidu/docs": "npm:^0.11.4"
-    "@uidu/field-base": "npm:^4.11.7"
-    "@uidu/item": "npm:^0.11.4"
-    "@uidu/layer": "npm:^0.11.4"
-    "@uidu/spinner": "npm:^0.11.4"
-    "@uidu/theme": "npm:^0.12.4"
-    "@uidu/tooltip": "npm:^0.11.4"
-    classnames: "npm:^2.5.1"
-    prop-types: "npm:^15.8.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     styled-components: "npm:^5.3.11"
@@ -9502,7 +9467,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/menu@npm:0.16.4, @uidu/menu@npm:^0.16.4, @uidu/menu@workspace:packages/core/menu":
+"@uidu/menu@npm:0.16.4, @uidu/menu@npm:^0.16.4, @uidu/menu@workspace:^, @uidu/menu@workspace:packages/core/menu":
   version: 0.0.0-use.local
   resolution: "@uidu/menu@workspace:packages/core/menu"
   dependencies:
@@ -29014,21 +28979,6 @@ __metadata:
     react: ">=16.6.0"
     react-dom: ">=16.6.0"
   checksum: 10/ca32d3fd2168c976c5d90a317f25d5f5cd723608b415fb3b9006f9d793c8965c619562d0884503a3e44e4b06efbca4fdd1520f30e58ca3e00a0890e637d55419
-  languageName: node
-  linkType: hard
-
-"react-uid@npm:^2.3.3":
-  version: 2.3.3
-  resolution: "react-uid@npm:2.3.3"
-  dependencies:
-    tslib: "npm:^2.0.0"
-  peerDependencies:
-    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-  checksum: 10/c026f9a5cda9e1cb5fa7d8327c6661cdd05f818f20387563b4ca830f8895199dbdf50e41a26c8c3e00e1a440f512c84fb5a6222e55c6f1259f2c392efa8a0028
   languageName: node
   linkType: hard
 

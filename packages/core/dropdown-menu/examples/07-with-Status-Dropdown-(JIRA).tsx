@@ -1,8 +1,9 @@
 import Lozenge from '@uidu/lozenge';
+import { ButtonItem, MenuGroup } from '@uidu/menu';
 import React from 'react';
 import { ArrowRight } from 'react-feather';
 import styled from 'styled-components';
-import DropdownMenu, { DropdownItem, DropdownItemGroup } from '../src';
+import DropdownMenu from '../src';
 
 const JiraItem = styled.div`
   align-items: center;
@@ -11,9 +12,9 @@ const JiraItem = styled.div`
 `;
 
 export default () => (
-  <DropdownMenu defaultOpen triggerType="button" trigger="To do">
-    <DropdownItemGroup>
-      <DropdownItem
+  <DropdownMenu defaultOpen trigger="To do">
+    <MenuGroup>
+      <ButtonItem
         elemAfter={
           <JiraItem>
             <ArrowRight label="" size="small" />
@@ -22,8 +23,8 @@ export default () => (
         }
       >
         Status project
-      </DropdownItem>
-      <DropdownItem
+      </ButtonItem>
+      <ButtonItem
         elemAfter={
           <JiraItem>
             <ArrowRight label="" size="small" />
@@ -32,8 +33,8 @@ export default () => (
         }
       >
         Move to done
-      </DropdownItem>
-      <DropdownItem>View workflow</DropdownItem>
-    </DropdownItemGroup>
+      </ButtonItem>
+      <ButtonItem>View workflow</ButtonItem>
+    </MenuGroup>
   </DropdownMenu>
 );

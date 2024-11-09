@@ -35,9 +35,7 @@ export default function Reactions({
           />
         </Tooltip>
       )}
-      triggerType="default"
-      position="bottom"
-      boundariesElement="scrollParent"
+      placement="bottom-start"
       onOpenChange={onOpenChange}
       content={() => (
         <div tw="grid grid-cols-4 p-6">

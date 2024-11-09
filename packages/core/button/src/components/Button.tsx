@@ -186,15 +186,15 @@ function Button(props: ButtonProps) {
         state === 'hover' || state === 'active' || state === 'selected'
           ? tw`cursor-pointer`
           : state === 'disabled'
-          ? tw`cursor-not-allowed`
-          : tw`cursor-default`,
+            ? tw`cursor-not-allowed`
+            : tw`cursor-default`,
         spacing === 'none' ? tw`align-baseline` : tw`align-middle`,
         shouldFitContainer ? tw`w-full` : tw`w-auto`,
         state === 'active'
           ? tw`[transition-duration:0s]`
           : state === 'focus'
-          ? tw`[transition-duration:0s, 0.2s]`
-          : tw`[transition-duration:0.1s, 0.15s]`,
+            ? tw`[transition-duration:0s, 0.2s]`
+            : tw`[transition-duration:0.1s, 0.15s]`,
       ]}
       appearance={appearance}
       className={className}
@@ -241,10 +241,8 @@ function Button(props: ButtonProps) {
 }
 
 const ButtonWithRef = React.forwardRef<HTMLElement, ButtonProps>(
-  // @ts-ignore
   (props, ref) => <Button {...props} consumerRef={ref} />,
 );
 ButtonWithRef.displayName = 'Button';
 
-// @ts-ignore
 export default ButtonWithRef;

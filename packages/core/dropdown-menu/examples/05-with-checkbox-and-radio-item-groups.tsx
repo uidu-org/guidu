@@ -1,14 +1,9 @@
 import React from 'react';
-import Dropdown, {
-  DropdownItemCheckbox,
-  DropdownItemGroupCheckbox,
-  DropdownItemGroupRadio,
-  DropdownItemRadio,
-} from '../src';
+import Dropdown from '../src';
 
 export default () => (
-  <Dropdown defaultOpen triggerType="button" trigger="Drop menu">
-    <DropdownItemGroupRadio id="languages" title="Languages">
+  <Dropdown defaultOpen trigger="Drop menu">
+    {/* <DropdownItemGroupRadio id="languages" title="Languages">
       <DropdownItemRadio defaultSelected id="js-radio">
         JavaScript
       </DropdownItemRadio>
@@ -24,6 +19,6 @@ export default () => (
       <DropdownItemCheckbox defaultSelected id="ruby">
         Ruby
       </DropdownItemCheckbox>
-    </DropdownItemGroupCheckbox>
+    </DropdownItemGroupCheckbox> */}
   </Dropdown>
 );

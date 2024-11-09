@@ -33,7 +33,7 @@ export default class DrawersExample extends Component<{}, State> {
             <p id="paragraph">
               The drawer should not set a new stacking context by using a
               transform CSS property as this causes issues for fixed positioned
-              elements such as @uidu/dropdown-menu.
+              elements such as @uidu/popup.
             </p>
             {/* The position here is used by the withDropdown integration test. */}
           </div>
