@@ -1,4 +1,5 @@
 import { browser } from '@uidu/editor-common';
+import 'highlight.js/styles/atom-one-dark.css'; // Example theme
 import { DOMOutputSpec, DOMSerializer, Node } from 'prosemirror-model';
 
 const MATCH_NEWLINES = new RegExp('\n', 'g');
@@ -27,15 +28,18 @@ const toDOM = (node: Node) =>
 
 export class CodeBlockView {
   node: Node;
+
   dom: HTMLElement;
+
   contentDOM: HTMLElement;
+
   lineNumberGutter: HTMLElement;
 
   constructor(node: Node) {
     const { dom, contentDOM } = DOMSerializer.renderSpec(document, toDOM(node));
     this.node = node;
     this.dom = dom as HTMLElement;
-    this.contentDOM = contentDOM as HTMLElement;
+    this.contentDOM = contentDOM;
     // this.lineNumberGutter = this.dom.querySelector(
     //   '.line-number-gutter',
     // ) as HTMLElement;

@@ -81,12 +81,10 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
     this.containerWidth = containerWidth;
 
     // store table size using previous full-width mode so can detect if it has changed
-    const dynamicTextSizing = options ? options.dynamicTextSizing : false;
     const isFullWidthModeEnabled = options
       ? options.wasFullWidthModeEnabled
       : false;
     this.layoutSize = this.tableNodeLayoutSize(node, containerWidth.width, {
-      dynamicTextSizing,
       isFullWidthModeEnabled,
     });
 
@@ -167,13 +165,8 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
   }
 
   render() {
-    const {
-      view,
-      node,
-      pluginState,
-      tableResizingPluginState,
-      width,
-    } = this.props;
+    const { view, node, pluginState, tableResizingPluginState, width } =
+      this.props;
     const { isLoading, tableContainerWidth } = this.state;
     const {
       pluginConfig: { allowControls = true },
@@ -334,7 +327,6 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
       const { view, node, getPos, options, containerWidth } = this.props;
 
       autoSizeTable(view, node, this.table, getPos(), {
-        dynamicTextSizing: (options && options.dynamicTextSizing) || false,
         containerWidth: containerWidth.width,
       });
     }

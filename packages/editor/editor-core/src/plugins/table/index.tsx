@@ -53,7 +53,6 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
         name: 'table',
         plugin: ({ dispatch, portalProviderAPI }) => {
           const {
-            dynamicSizingEnabled,
             fullWidthEnabled,
             wasFullWidthEnabled,
             breakoutEnabled,
@@ -63,7 +62,7 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
             dispatch,
             portalProviderAPI,
             pluginConfig(tableOptions),
-            breakoutEnabled && dynamicSizingEnabled,
+            breakoutEnabled,
             breakoutEnabled,
             fullWidthEnabled,
             wasFullWidthEnabled,
@@ -78,7 +77,6 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
           const { allowColumnResizing } = pluginConfig(tableOptions);
           return allowColumnResizing
             ? createFlexiResizingPlugin(dispatch, {
-                dynamicTextSizing: dynamicSizingEnabled && !fullWidthEnabled,
                 lastColumnResizable: !fullWidthEnabled,
               } as ColumnResizingPluginState)
             : undefined;

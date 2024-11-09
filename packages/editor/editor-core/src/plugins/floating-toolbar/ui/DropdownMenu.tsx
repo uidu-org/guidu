@@ -36,7 +36,7 @@ export default function Dropdown({ hide, dispatchCommand, items }: Props) {
         .map((item, idx) => (
           <ButtonItem
             key={idx}
-            isCompact={true}
+            isCompact
             iconBefore={
               item.selected ? (
                 <EditorDoneIcon
@@ -49,7 +49,8 @@ export default function Dropdown({ hide, dispatchCommand, items }: Props) {
               )
             }
             onClick={() => {
-              hide();
+              // hide();
+              console.log('item.onClick', item.onClick);
               dispatchCommand(item.onClick);
             }}
             isDisabled={item.disabled}

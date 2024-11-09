@@ -1,7 +1,10 @@
+import { toJsxRuntime } from 'hast-util-to-jsx-runtime';
+import 'highlight.js/styles/atom-one-dark.css'; // Example theme
+import { all, createLowlight } from 'lowlight';
 import React, { PureComponent } from 'react';
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { normalizeLanguage, SupportedLanguages } from '../supportedLanguages';
-import { Theme, ThemeProps, applyTheme } from '../themes/themeBuilder';
+import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
+import { SupportedLanguages } from '../supportedLanguages';
 
 type CodeProps = {
   /** The style object to apply to code */
@@ -18,13 +21,12 @@ type CodeProps = {
   showLineNumbers: boolean;
   /** The code to be formatted */
   text: string;
-  /** A custom theme to be applied, implements the Theme interface */
-  theme?: Theme | ThemeProps;
 };
+
+const lowlight = createLowlight(all);
 
 export default class Code extends PureComponent<CodeProps, {}> {
   static defaultProps = {
-    theme: {},
     showLineNumbers: false,
     lineNumberContainerStyle: {},
     codeTagProps: {},
@@ -32,17 +34,29 @@ export default class Code extends PureComponent<CodeProps, {}> {
   };
 
   render() {
-    const { inlineCodeStyle } = applyTheme(this.props.theme);
-    const language = normalizeLanguage(this.props.language);
+    const language = 'html'; // normalizeLanguage(this.props.language);
 
     const props = {
       language,
       PreTag: this.props.preTag,
-      style: this.props.codeStyle || inlineCodeStyle,
       showLineNumbers: this.props.showLineNumbers,
       lineNumberContainerStyle: this.props.lineNumberContainerStyle,
       codeTagProps: this.props.codeTagProps,
     };
+
+    const languages = lowlight.listLanguages();
+
+    const tree =
+      language &&
+      (languages.includes(language) || lowlight.registered?.(language))
+        ? lowlight.highlight(language, this.props.text)
+        : lowlight.highlightAuto(this.props.text);
+
+    return (
+      <div className="code-content">
+        <code>{toJsxRuntime(tree, { Fragment, jsx, jsxs })}</code>
+      </div>
+    );
 
     return <SyntaxHighlighter {...props}>{this.props.text}</SyntaxHighlighter>;
   }

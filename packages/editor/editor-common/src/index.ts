@@ -144,7 +144,6 @@ export type {
   Transformer,
 } from './types';
 export {
-  BaseTheme,
   calcColumnsFromPx,
   calcPctFromPx,
   calcPxFromColumns,
@@ -152,7 +151,6 @@ export {
   ClearNextSiblingMarginTop,
   DEFAULT_IMAGE_HEIGHT,
   DEFAULT_IMAGE_WIDTH,
-  Emoji,
   ErrorMessage,
   ExpandIconWrapper,
   ExpandLayoutWrapper,

@@ -36,6 +36,7 @@ export const Popup: FC<PopupProps> = memo(
     popupComponent: PopupContainer = DefaultPopupComponent,
     zIndex = layers.spotlight(),
     autoFocus = true,
+    shouldDisableFocusTrap = false,
   }: PopupProps) => {
     const [popupRef, setPopupRef] = useState<HTMLDivElement | null>(null);
     const [triggerRef, setTriggerRef] = useState<HTMLElement | null>(null);
@@ -43,7 +44,7 @@ export const Popup: FC<PopupProps> = memo(
       null,
     );
 
-    useFocusManager({ initialFocusRef, popupRef });
+    useFocusManager({ initialFocusRef, popupRef, shouldDisableFocusTrap });
     useCloseManager({ isOpen, onClose, popupRef, triggerRef });
 
     return (

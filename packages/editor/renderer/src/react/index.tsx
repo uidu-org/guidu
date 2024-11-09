@@ -8,8 +8,6 @@ import {
 } from '@uidu/editor-common';
 import { Fragment, Mark, MarkType, Node, Schema } from 'prosemirror-model';
 import * as React from 'react';
-// @ts-ignore: unused variable
-// prettier-ignore
 import { ComponentType } from 'react';
 import { Serializer } from '..';
 import { RendererAppearance } from '../ui/Renderer/types';

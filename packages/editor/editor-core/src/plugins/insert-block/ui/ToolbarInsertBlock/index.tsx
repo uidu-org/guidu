@@ -25,7 +25,6 @@ import { ButtonGroup } from '@uidu/button';
 import { akEditorMenuZIndex, Popup } from '@uidu/editor-common';
 import { EmojiId } from '@uidu/emoji/types';
 import React, { ReactInstance } from 'react';
-import ReactDOM from 'react-dom';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import {
   addLink,
@@ -150,7 +149,7 @@ class ToolbarInsertBlock extends React.PureComponent<
   private handleButtonRef = (ref: HTMLElement): void => {
     const buttonRef = ref || null;
     if (buttonRef) {
-      this.button = ReactDOM.findDOMNode(buttonRef) as HTMLElement;
+      this.button = ref;
     }
   };
 

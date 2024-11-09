@@ -3,7 +3,6 @@ import { EditorView } from 'prosemirror-view';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 
 export type TableOptions = {
-  dynamicTextSizing?: boolean;
   isBreakoutEnabled?: boolean;
   isFullWidthModeEnabled?: boolean;
   wasFullWidthModeEnabled?: boolean;

@@ -1,8 +1,5 @@
-import DropdownList from '@uidu/droplist';
-import { Popup } from '@uidu/editor-common';
+import UiduPopup from '@uidu/popup';
 import * as React from 'react';
-import { PureComponent } from 'react';
-import withOuterListeners from '../with-outer-listeners';
 
 export interface Props {
   mountTo?: HTMLElement;
@@ -27,75 +24,23 @@ export interface State {
  *
  * Also it controls popper's placement.
  */
-export class Dropdown extends PureComponent<Props, State> {
-  constructor(props: Props) {
-    super(props);
+export default function Dropdown(props: Props) {
+  const [isOpen, setIsOpen] = React.useState(false);
 
-    this.state = {
-      popupPlacement: ['bottom', 'left'],
-    };
-  }
+  const { trigger, children } = props;
 
-  private handleRef = (target: HTMLElement | null) => {
-    this.setState({ target: target || undefined });
-  };
-
-  private updatePopupPlacement = (placement: [string, string]) => {
-    this.setState({ popupPlacement: placement });
-  };
-
-  private renderDropdown() {
-    const { target, popupPlacement } = this.state;
-    const {
-      children,
-      mountTo,
-      boundariesElement,
-      scrollableElement,
-      onOpenChange,
-      fitHeight,
-      fitWidth,
-      zIndex,
-    } = this.props;
-
-    return (
-      <Popup
-        target={target}
-        mountTo={mountTo}
-        boundariesElement={boundariesElement}
-        scrollableElement={scrollableElement}
-        onPlacementChanged={this.updatePopupPlacement}
-        fitHeight={fitHeight}
-        fitWidth={fitWidth}
-        zIndex={zIndex}
-      >
-        <div style={{ height: 0, minWidth: fitWidth || 0 }}>
-          <DropdownList
-            isOpen={true}
-            onOpenChange={onOpenChange}
-            appearance="tall"
-            position={popupPlacement.join(' ')}
-            shouldFlip={false}
-            shouldFitContainer={true}
-          >
-            {children}
-          </DropdownList>
+  return (
+    <UiduPopup
+      trigger={(triggerProps) => (
+        <div {...triggerProps} onClick={() => setIsOpen(true)}>
+          {trigger}
         </div>
-      </Popup>
-    );
-  }
-
-  render() {
-    const { trigger, isOpen } = this.props;
-
-    return (
-      <div>
-        <div ref={this.handleRef}>{trigger}</div>
-        {isOpen ? this.renderDropdown() : null}
-      </div>
-    );
-  }
+      )}
+      isOpen={isOpen}
+      onClose={() => setIsOpen(false)}
+      placement="bottom-start"
+      content={() => <>{children}</>}
+      shouldDisableFocusTrap
+    />
+  );
 }
-
-const DropdownWithOuterListeners = withOuterListeners(Dropdown);
-
-export default DropdownWithOuterListeners;

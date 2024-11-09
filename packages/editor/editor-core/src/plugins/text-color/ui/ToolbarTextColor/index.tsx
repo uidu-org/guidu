@@ -1,15 +1,11 @@
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import EditorBackgroundColorIcon from '@atlaskit/icon/glyph/editor/background-color';
 import Button from '@uidu/button';
-import { akEditorMenuZIndex } from '@uidu/editor-common';
-import {
-  ColorPalette,
-  textColorPalette as originalTextColors,
-} from '@uidu/editor-common/ui-color';
+import { ColorPalette } from '@uidu/editor-common/ui-color';
+import Popup from '@uidu/popup';
 import { EditorView } from 'prosemirror-view';
-import React from 'react';
-import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
-import Dropdown from '../../../../ui/Dropdown';
+import React, { useState } from 'react';
+import { defineMessages, useIntl } from 'react-intl';
 import {
   ExpandIconWrapper,
   MenuWrapper,
@@ -46,200 +42,176 @@ export const messages = defineMessages({
   },
 });
 
-export interface State {
-  isOpen: boolean;
-  isShowingMoreColors: boolean;
-}
-
 export interface Props {
   pluginState: TextColorPluginState;
   editorView: EditorView;
-  popupsMountPoint?: HTMLElement;
-  popupsBoundariesElement?: HTMLElement;
-  popupsScrollableElement?: HTMLElement;
   isReducedSpacing?: boolean;
   showMoreColorsToggle?: boolean;
   disabled?: boolean;
 }
 
-interface HandleOpenChangeData {
-  isOpen: boolean;
-  logCloseEvent: boolean;
-}
+function ToolbarTextColor(props: Props) {
+  const {
+    pluginState: { paletteExpanded, defaultColor },
+    editorView: { state, dispatch },
+  } = props;
+  const intl = useIntl();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isShowingMoreColors, setIsShowingMoreColors] = useState(false);
 
-class ToolbarTextColor extends React.Component<
-  Props & WrappedComponentProps,
-  State
-> {
-  state: State = {
-    isOpen: false,
-    isShowingMoreColors: false,
-  };
+  const changeColor = (color: string) =>
+    commands.changeColor(color)(state, dispatch);
 
-  changeColor = (color: string) =>
-    commands.changeColor(color)(
-      this.props.editorView.state,
-      this.props.editorView.dispatch,
-    );
-
-  render() {
-    const { isOpen, isShowingMoreColors } = this.state;
-    const {
-      popupsMountPoint,
-      popupsBoundariesElement,
-      popupsScrollableElement,
-      isReducedSpacing,
-      pluginState,
-      pluginState: { paletteExpanded },
-      intl: { formatMessage },
-      showMoreColorsToggle,
-      disabled,
-    } = this.props;
-
-    const labelTextColor = formatMessage(messages.textColor);
-
-    const palette =
-      isShowingMoreColors && paletteExpanded
-        ? paletteExpanded
-        : pluginState.palette;
-
-    return (
-      <MenuWrapper>
-        <Dropdown
-          mountTo={popupsMountPoint}
-          boundariesElement={popupsBoundariesElement}
-          scrollableElement={popupsScrollableElement}
-          isOpen={isOpen && !pluginState.disabled}
-          handleClickOutside={this.hide}
-          handleEscapeKeydown={this.hide}
-          fitWidth={242}
-          fitHeight={80}
-          zIndex={akEditorMenuZIndex}
-          trigger={
-            <ToolbarButton
-              spacing={isReducedSpacing ? 'none' : 'default'}
-              disabled={disabled || pluginState.disabled}
-              selected={isOpen}
-              aria-label={labelTextColor}
-              title={labelTextColor}
-              onClick={this.toggleOpen}
-              iconBefore={
-                <TriggerWrapper>
-                  <TextColorIconWrapper>
-                    <EditorTextColorIcon />
-                    <TextColorIconBar
-                      selectedColor={
-                        pluginState.color !== pluginState.defaultColor &&
-                        pluginState.color
-                      }
-                      gradientColors={
-                        pluginState.disabled ? disabledRainbow : rainbow
-                      }
-                    />
-                  </TextColorIconWrapper>
-                  <ExpandIconWrapper>
-                    <ExpandIcon label={labelTextColor} />
-                  </ExpandIconWrapper>
-                </TriggerWrapper>
-              }
-            />
-          }
-        >
-          <ColorPalette
-            palette={palette}
-            onClick={(color) =>
-              this.changeTextColor(color, pluginState.disabled)
-            }
-            selectedColor={pluginState.color}
-          />
-          {showMoreColorsToggle && (
-            <ShowMoreWrapper>
-              <Button
-                appearance="subtle"
-                onClick={this.handleShowMoreToggle}
-                iconBefore={<EditorBackgroundColorIcon label="" />}
-              >
-                {formatMessage(
-                  isShowingMoreColors
-                    ? messages.lessColors
-                    : messages.moreColors,
-                )}
-              </Button>
-            </ShowMoreWrapper>
-          )}
-        </Dropdown>
-        <Separator />
-      </MenuWrapper>
-    );
-  }
-
-  private changeTextColor = (color: string, disabled: boolean) => {
+  const changeTextColor = (color: string, disabled: boolean) => {
     if (!disabled) {
-      const {
-        pluginState: { palette, paletteExpanded, defaultColor },
-      } = this.props;
-      const { isShowingMoreColors } = this.state;
+      setIsOpen(false);
 
-      // we store color names in analytics
-      const swatch = (paletteExpanded || palette).find(
-        (sw) => sw.value === color,
-      );
-      const isNewColor =
-        color !== defaultColor &&
-        !originalTextColors.some((col) => col.value === color);
-
-      this.handleOpenChange({
-        isOpen: false,
-        logCloseEvent: false,
-      });
-      return this.changeColor(color);
+      return changeColor(color);
     }
 
     return false;
   };
 
-  private toggleOpen = () => {
-    this.handleOpenChange({ isOpen: !this.state.isOpen, logCloseEvent: true });
+  const hide = () => {
+    setIsOpen(false);
   };
 
-  private handleOpenChange = ({
-    isOpen,
-    logCloseEvent,
-  }: HandleOpenChangeData) => {
-    const {
-      pluginState: { palette, color },
-    } = this.props;
-    const { isShowingMoreColors } = this.state;
-
-    // pre-expand if a non-standard colour has been selected
-    const isExtendedPaletteSelected: boolean = !palette.find(
-      (swatch) => swatch.value === color,
-    );
-
-    this.setState({
-      isOpen,
-      isShowingMoreColors: isExtendedPaletteSelected || isShowingMoreColors,
-    });
-
-    if (logCloseEvent) {
-    }
+  const handleShowMoreToggle = () => {
+    setIsShowingMoreColors((prev) => !prev);
   };
 
-  private hide = () => {
-    const { isOpen, isShowingMoreColors } = this.state;
+  const { isReducedSpacing, pluginState, showMoreColorsToggle, disabled } =
+    props;
 
-    if (isOpen === true) {
-      this.setState({ isOpen: false });
-    }
-  };
+  const labelTextColor = intl.formatMessage(messages.textColor);
 
-  private handleShowMoreToggle = () => {
-    this.setState((state) => {
-      return {
-        isShowingMoreColors: !state.isShowingMoreColors,
-      };
-    });
-  };
+  const palette =
+    isShowingMoreColors && paletteExpanded
+      ? paletteExpanded
+      : pluginState.palette;
+
+  return (
+    <MenuWrapper>
+      <Popup
+        isOpen={isOpen}
+        onClose={hide}
+        trigger={(triggerProps) => (
+          <ToolbarButton
+            {...triggerProps}
+            onClick={() => setIsOpen((prev) => !prev)}
+            spacing={isReducedSpacing ? 'none' : 'default'}
+            disabled={disabled || pluginState.disabled}
+            selected={isOpen}
+            aria-label={labelTextColor}
+            title={labelTextColor}
+            iconBefore={
+              <TriggerWrapper>
+                <TextColorIconWrapper>
+                  <EditorTextColorIcon />
+                  <TextColorIconBar
+                    selectedColor={
+                      pluginState.color !== pluginState.defaultColor &&
+                      pluginState.color
+                    }
+                    gradientColors={
+                      pluginState.disabled ? disabledRainbow : rainbow
+                    }
+                  />
+                </TextColorIconWrapper>
+                <ExpandIconWrapper>
+                  <ExpandIcon label={labelTextColor} />
+                </ExpandIconWrapper>
+              </TriggerWrapper>
+            }
+          />
+        )}
+        content={() => (
+          <>
+            <ColorPalette
+              palette={palette}
+              onClick={(color) => changeTextColor(color, pluginState.disabled)}
+              selectedColor={pluginState.color}
+            />
+            {showMoreColorsToggle && (
+              <ShowMoreWrapper>
+                <Button
+                  appearance="subtle"
+                  onClick={handleShowMoreToggle}
+                  iconBefore={<EditorBackgroundColorIcon label="" />}
+                >
+                  {intl.formatMessage(
+                    isShowingMoreColors
+                      ? messages.lessColors
+                      : messages.moreColors,
+                  )}
+                </Button>
+              </ShowMoreWrapper>
+            )}
+          </>
+        )}
+      />
+      {/* <Dropdown
+        mountTo={popupsMountPoint}
+        boundariesElement={popupsBoundariesElement}
+        scrollableElement={popupsScrollableElement}
+        isOpen={isOpen && !pluginState.disabled}
+        handleClickOutside={hide}
+        handleEscapeKeydown={hide}
+        fitWidth={242}
+        fitHeight={80}
+        zIndex={akEditorMenuZIndex}
+        trigger={
+          <ToolbarButton
+            spacing={isReducedSpacing ? 'none' : 'default'}
+            disabled={disabled || pluginState.disabled}
+            selected={isOpen}
+            aria-label={labelTextColor}
+            title={labelTextColor}
+            onClick={toggleOpen}
+            iconBefore={
+              <TriggerWrapper>
+                <TextColorIconWrapper>
+                  <EditorTextColorIcon />
+                  <TextColorIconBar
+                    selectedColor={
+                      pluginState.color !== pluginState.defaultColor &&
+                      pluginState.color
+                    }
+                    gradientColors={
+                      pluginState.disabled ? disabledRainbow : rainbow
+                    }
+                  />
+                </TextColorIconWrapper>
+                <ExpandIconWrapper>
+                  <ExpandIcon label={labelTextColor} />
+                </ExpandIconWrapper>
+              </TriggerWrapper>
+            }
+          />
+        }
+      >
+        <ColorPalette
+          palette={palette}
+          onClick={(color) => changeTextColor(color, pluginState.disabled)}
+          selectedColor={pluginState.color}
+        />
+        {showMoreColorsToggle && (
+          <ShowMoreWrapper>
+            <Button
+              appearance="subtle"
+              onClick={handleShowMoreToggle}
+              iconBefore={<EditorBackgroundColorIcon label="" />}
+            >
+              {intl.formatMessage(
+                isShowingMoreColors ? messages.lessColors : messages.moreColors,
+              )}
+            </Button>
+          </ShowMoreWrapper>
+        )}
+      </Dropdown> */}
+      <Separator />
+    </MenuWrapper>
+  );
 }
 
-export default injectIntl(ToolbarTextColor);
+export default ToolbarTextColor;

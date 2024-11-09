@@ -3,7 +3,6 @@ import { Popup } from '@uidu/editor-common';
 import Spinner from '@uidu/spinner';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import ReactDOM from 'react-dom';
 import { openFeedbackDialog } from '../../plugins/feedback-dialog';
 import { FeedbackInfo } from '../../types';
 import deprecationWarnings, {
@@ -102,7 +101,7 @@ export default class ToolbarFeedback extends PureComponent<Props, State> {
   private handleRef = (ref: ToolbarButton | null) => {
     if (ref) {
       this.setState({
-        target: ReactDOM.findDOMNode(ref || null) as HTMLElement,
+        target: ref,
       });
     }
   };

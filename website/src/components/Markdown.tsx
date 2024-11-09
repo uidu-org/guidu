@@ -1,4 +1,4 @@
-import { AkCode, AkCodeBlock } from '@uidu/code';
+import { Code, CodeBlock } from '@uidu/code';
 import * as CommonMark from 'commonmark';
 import * as ReactRenderer from 'commonmark-react-renderer';
 import * as React from 'react';
@@ -16,14 +16,11 @@ const renderer = new ReactRenderer({
   renderers: {
     CodeBlock: (props: Props) => (
       <p>
-        <AkCodeBlock
-          text={props.literal}
-          language={props.language || markdown}
-        />
+        <CodeBlock text={props.literal} language={props.language || markdown} />
       </p>
     ),
     Code: (props: Props) => (
-      <AkCode text={props.literal} language={props.language || markdown} />
+      <Code text={props.literal} language={props.language || markdown} />
     ),
     Heading,
   },

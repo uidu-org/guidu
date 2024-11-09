@@ -8,7 +8,7 @@ import {
 } from '@uidu/editor-common';
 import { borderRadius, colors, themed } from '@uidu/theme';
 import { css } from 'styled-components';
-import { akEditorCodeBlockPadding, akEditorCodeFontFamily } from '../../styles';
+import { akEditorCodeBlockPadding } from '../../styles';
 
 export const codeBlockStyles = css`
   .ProseMirror .code-block {
@@ -59,7 +59,9 @@ export const codeBlockStyles = css`
         display: inline-block;
         min-width: 100%;
         tab-size: 4;
-        font-family: ${akEditorCodeFontFamily};
+        font-family:
+          Courier New,
+          monospace;
       }
     }
 
@@ -96,7 +98,7 @@ export const codeBlockStyles = css`
     }
 
     .code-content {
-      background-color: ${akEditorDeleteBackground};
+      /* background-color: ${akEditorDeleteBackground}; */
     }
   }
 

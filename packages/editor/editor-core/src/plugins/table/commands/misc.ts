@@ -54,7 +54,7 @@ export const setTableRef = (ref?: HTMLElement | null) =>
   createCommand(
     (state) => {
       const tableRef = ref || undefined;
-      const tableNode = ref ? findTable(state.selection)!.node : undefined;
+      const tableNode = ref ? findTable(state.selection).node : undefined;
       const tableWrapperTarget =
         closestElement(tableRef, `.${ClassName.TABLE_NODE_WRAPPER}`) ||
         undefined;
@@ -437,7 +437,7 @@ export const autoSizeTable = (
   node: PMNode,
   table: HTMLTableElement,
   basePos: number,
-  opts: { dynamicTextSizing: boolean; containerWidth: number },
+  opts: { containerWidth: number },
 ) => {
   view.dispatch(fixAutoSizedTable(view, node, table, basePos, opts));
   return true;

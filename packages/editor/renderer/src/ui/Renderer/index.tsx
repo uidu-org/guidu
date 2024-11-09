@@ -1,7 +1,6 @@
 import { defaultSchema } from '@uidu/adf-schema';
 import {
   ADFStage,
-  BaseTheme,
   EventHandlers,
   ExtensionHandlers,
   ProviderFactory,
@@ -169,21 +168,10 @@ export class Renderer extends PureComponent<Props, {}> {
 
 export default Renderer;
 
-type RendererWrapperProps = {
-  appearance: RendererAppearance;
-  dynamicTextSizing: boolean;
-} & { children?: React.ReactNode };
-
-export function RendererWrapper({
-  appearance,
-  children,
-  dynamicTextSizing,
-}: RendererWrapperProps) {
+export function RendererWrapper({ children }: { children?: React.ReactNode }) {
   return (
     <WidthProvider>
-      <BaseTheme dynamicTextSizing={dynamicTextSizing}>
-        <Wrapper appearance={appearance}>{children}</Wrapper>
-      </BaseTheme>
+      <Wrapper>{children}</Wrapper>
     </WidthProvider>
   );
 }

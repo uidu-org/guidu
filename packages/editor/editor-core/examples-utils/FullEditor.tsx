@@ -33,6 +33,7 @@ import {
   quickInsertPlugin,
   starterKitPlugin,
   tablesPlugin,
+  textColorPlugin,
   tokenPlugin,
   videoPlugin,
 } from '../src/plugins';
@@ -55,7 +56,10 @@ export default function FullEditor() {
   const [value, setValue] = useState(document);
 
   const handleChange = (actions) => (editorView) => {
+    console.log('actions', actions);
+    console.log('editorView', editorView);
     actions.getValue().then((newValue) => {
+      console.log('newValue', newValue);
       setValue(newValue);
       const links = filter(newValue, (node) =>
         (node.marks || []).some((mark) => mark.type === 'link'),
@@ -92,6 +96,7 @@ export default function FullEditor() {
       blockTypePlugin(),
       layoutPlugin(),
       // saveOnEnterPlugin(console.log),
+      textColorPlugin(),
       listsPlugin(),
       starterKitPlugin({
         placeholder: ({ doc, node }) => {
@@ -111,7 +116,19 @@ export default function FullEditor() {
       quickInsertPlugin(),
       videoPlugin(),
       mentionsPlugin(),
-      tablesPlugin({ tableOptions: {} }),
+      tablesPlugin({
+        tableOptions: {
+          allowColumnSorting: true,
+          allowControls: true,
+          allowMergeCells: true,
+          allowNumberColumn: true,
+          allowColumnResizing: true,
+          allowBackgroundColor: true,
+          allowHeaderRow: true,
+          allowHeaderColumn: true,
+        },
+        allowContextualMenu: true,
+      }),
       // datePlugin(),
       tokenPlugin(),
       mediaPlugin({

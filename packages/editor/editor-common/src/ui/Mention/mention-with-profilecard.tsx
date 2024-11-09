@@ -2,7 +2,6 @@ import { MentionUserType as UserType } from '@uidu/adf-schema';
 import { MentionProvider, ResourcedMention } from '@uidu/mentions';
 import ProfileCard, { ProfileCardAction } from '@uidu/profilecard';
 import React, { PureComponent, ReactInstance, SyntheticEvent } from 'react';
-import { findDOMNode } from 'react-dom';
 import { ProfilecardProvider } from '../../provider-factory/profile-card-provider';
 import { MentionEventHandler } from '../EventHandlers';
 import Popup from '../Popup';
@@ -66,11 +65,11 @@ export default class MentionWithProfileCard extends PureComponent<
     return [popupAlignX, popupAlignY];
   }
 
-  private handleMentionNodeRef = (component: ReactInstance | null) => {
-    if (!component) {
+  private handleMentionNodeRef = (ref: ReactInstance | null) => {
+    if (!ref) {
       this.domNode = null;
     } else {
-      this.domNode = findDOMNode(component) as HTMLElement;
+      this.domNode = ref as HTMLElement;
     }
   };
 

@@ -1,5 +1,5 @@
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
-import React, { Component, ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import UiDropdown from '../../../ui/Dropdown';
 import Button from './Button';
@@ -38,93 +38,92 @@ export interface State {
   isOpen: boolean;
 }
 
-export default class Dropdown extends Component<Props, State> {
-  state: State = { isOpen: false };
+export default function Dropdown(props: Props) {
+  const [isOpen, setIsOpen] = useState(false);
 
-  render() {
-    const { isOpen } = this.state;
-    const {
-      title,
-      icon,
-      options,
-      dispatchCommand,
-      mountPoint,
-      boundariesElement,
-      scrollableElement,
-      hideExpandIcon,
-    } = this.props;
+  const toggleOpen = () => {
+    setIsOpen((prev) => !prev);
+  };
 
-    let trigger;
-    if (icon) {
-      const TriggerIcon = hideExpandIcon ? icon : <CompositeIcon icon={icon} />;
-      trigger = (
-        <Button
-          title={title}
-          icon={TriggerIcon}
-          onClick={this.toggleOpen}
-          selected={isOpen}
-        />
-      );
-    } else {
-      trigger = (
-        <Button
-          iconAfter={
-            <DropdownExpandContainer>
-              <ExpandIcon label="Expand dropdown menu" />
-            </DropdownExpandContainer>
-          }
-          onClick={this.toggleOpen}
-          selected={isOpen}
-        >
-          {title}
-        </Button>
-      );
-    }
+  const hide = () => {
+    setTimeout(() => setIsOpen(false), 3000);
+  };
 
-    /**
-     * We want to change direction of our dropdowns a bit early,
-     * not exactly when it hits the boundary.
-     */
-    const fitTolerance = 10;
-    const fitWidth = Array.isArray(options)
-      ? menuItemDimensions.width
-      : options.width;
-    const fitHeight = Array.isArray(options)
-      ? options.length * menuItemDimensions.height + itemSpacing * 2
-      : options.height;
+  const renderArrayOptions = (options: Array<DropdownOptionT<Function>>) => (
+    <div>
+      <h3>Pippo</h3>
+      <DropdownMenu
+        hide={hide}
+        dispatchCommand={props.dispatchCommand}
+        items={options}
+      />
+    </div>
+  );
 
-    return (
-      <UiDropdown
-        mountTo={mountPoint}
-        boundariesElement={boundariesElement}
-        scrollableElement={scrollableElement}
-        isOpen={isOpen}
-        handleClickOutside={this.hide}
-        handleEscapeKeydown={this.hide}
-        fitWidth={fitWidth + fitTolerance}
-        fitHeight={fitHeight + fitTolerance}
-        trigger={trigger}
+  const {
+    title,
+    icon,
+    options,
+    dispatchCommand,
+    mountPoint,
+    boundariesElement,
+    scrollableElement,
+    hideExpandIcon,
+  } = props;
+
+  let trigger;
+  if (icon) {
+    const TriggerIcon = hideExpandIcon ? icon : <CompositeIcon icon={icon} />;
+    trigger = (
+      <Button
+        title={title}
+        icon={TriggerIcon}
+        // onClick={toggleOpen}
+        selected={isOpen}
+      />
+    );
+  } else {
+    trigger = (
+      <Button
+        iconAfter={
+          <DropdownExpandContainer>
+            <ExpandIcon label="Expand dropdown menu" />
+          </DropdownExpandContainer>
+        }
+        onClick={toggleOpen}
+        selected={isOpen}
       >
-        {Array.isArray(options)
-          ? this.renderArrayOptions(options)
-          : options.render({ hide: this.hide, dispatchCommand })}
-      </UiDropdown>
+        {title}
+      </Button>
     );
   }
 
-  private renderArrayOptions = (options: Array<DropdownOptionT<Function>>) => (
-    <DropdownMenu
-      hide={this.hide}
-      dispatchCommand={this.props.dispatchCommand}
-      items={options}
-    />
+  /**
+   * We want to change direction of our dropdowns a bit early,
+   * not exactly when it hits the boundary.
+   */
+  const fitTolerance = 10;
+  const fitWidth = Array.isArray(options)
+    ? menuItemDimensions.width
+    : options.width;
+  const fitHeight = Array.isArray(options)
+    ? options.length * menuItemDimensions.height + itemSpacing * 2
+    : options.height;
+
+  return (
+    <UiDropdown
+      // mountTo={mountPoint}
+      // boundariesElement={boundariesElement}
+      // scrollableElement={scrollableElement}
+      // handleClickOutside={hide}
+      // handleEscapeKeydown={hide}
+      // fitWidth={fitWidth + fitTolerance}
+      // fitHeight={fitHeight + fitTolerance}
+      trigger={trigger}
+    >
+      {Array.isArray(options)
+        ? renderArrayOptions(options)
+        : options.render({ hide: hide, dispatchCommand })}
+    </UiDropdown>
   );
-
-  private toggleOpen = () => {
-    this.setState({ isOpen: !this.state.isOpen });
-  };
-
-  private hide = () => {
-    this.setState({ isOpen: false });
-  };
 }

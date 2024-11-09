@@ -1,6 +1,6 @@
-export { BaseTheme, mapBreakpointToLayoutMaxWidth } from './BaseTheme';
+export { mapBreakpointToLayoutMaxWidth } from './BaseTheme';
 export { ClearNextSiblingMarginTop } from './clear-next-sibling-margin-top';
-export { default as Emoji } from './Emoji';
+// export { default as Emoji } from './Emoji';
 export type {
   CardEventClickHandler,
   CardSurroundings,

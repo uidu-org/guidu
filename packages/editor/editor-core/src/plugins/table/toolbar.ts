@@ -45,11 +45,12 @@ export const getToolbarConfig: FloatingToolbarHandler = (
   const tableState: TablePluginState | undefined = pluginKey.getState(state);
   const resizeState: ColumnResizingPluginState | undefined =
     tableResizingPluginKey.getState(state);
+
   if (tableState && tableState.tableRef && tableState.pluginConfig) {
     const { pluginConfig } = tableState;
     return {
       title: 'Table floating controls',
-      getDomRef: () => tableState.tableWrapperTarget!,
+      getDomRef: () => tableState.tableWrapperTarget,
       nodeType: state.schema.nodes.table,
       offset: [0, 3],
       items: [

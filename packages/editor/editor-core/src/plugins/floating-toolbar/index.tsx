@@ -28,7 +28,7 @@ type ConfigWithNodeInfo = {
 };
 
 export const getRelevantConfig = (
-  selection: Selection<any>,
+  selection: Selection,
   configs: Array<FloatingToolbarConfig>,
 ): ConfigWithNodeInfo | undefined => {
   // node selections always take precedence, see if
@@ -236,8 +236,8 @@ function floatingToolbarPluginFactory(options: {
   const apply = (
     _tr: Transaction,
     _pluginState: any,
-    _oldState: EditorState<any>,
-    newState: EditorState<any>,
+    _oldState: EditorState,
+    newState: EditorState,
   ) => {
     const { intl } = reactContext();
     const activeConfigs = floatingToolbarHandlers
@@ -247,7 +247,6 @@ function floatingToolbarPluginFactory(options: {
 
     const relevantConfig =
       activeConfigs && getRelevantConfig(newState.selection, activeConfigs);
-
     dispatch(pluginKey, relevantConfig);
     return relevantConfig;
   };

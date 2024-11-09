@@ -7,9 +7,14 @@ const noop = () => {};
 export const useFocusManager = ({
   popupRef,
   initialFocusRef,
+  shouldDisableFocusTrap,
 }: FocusManagerHook): void => {
   useEffect(() => {
     if (!popupRef) {
+      return noop;
+    }
+
+    if (shouldDisableFocusTrap) {
       return noop;
     }
 

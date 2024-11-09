@@ -25,7 +25,7 @@ export function getLayoutSize(
   containerWidth: number = 0,
   options: TableOptions,
 ): number {
-  const { dynamicTextSizing, isFullWidthModeEnabled } = options;
+  const { isFullWidthModeEnabled } = options;
 
   if (isFullWidthModeEnabled) {
     return containerWidth
@@ -43,10 +43,6 @@ export function getLayoutSize(
   );
   if (calculatedTableWidth.endsWith('px')) {
     return parseInt(calculatedTableWidth, 10);
-  }
-
-  if (dynamicTextSizing && tableLayout === 'default') {
-    return getDefaultLayoutMaxWidth(containerWidth);
   }
 
   return tableLayoutToSize[tableLayout] || containerWidth;

@@ -7,7 +7,6 @@ import FieldDate from '@uidu/field-date';
 import Form, { useForm } from '@uidu/form';
 import { borderRadius, colors } from '@uidu/theme';
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 import withOuterListeners from '../../../../ui/with-outer-listeners';
 import { DateType } from '../../types';
 
@@ -63,7 +62,7 @@ export default function DatePicker(props: Props) {
   };
 
   const handleRef = (ref?: HTMLElement) => {
-    const elm = ref && (ReactDOM.findDOMNode(ref) as HTMLElement);
+    const elm = ref;
     if (elm) {
       elm.focus();
     }
