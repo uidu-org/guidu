@@ -16,7 +16,6 @@
     "@atlaskit/icon": "^21.12.8",
     "@atlaskit/util-service-support": "^6.2.3",
     "@babel/runtime": "^7.25.6",
-    "@uidu/analytics": "^0.12.4",
     "@uidu/button": "^1.9.4",
     "@uidu/code": "^0.11.4",
     "@uidu/field-text": "^2.6.4",

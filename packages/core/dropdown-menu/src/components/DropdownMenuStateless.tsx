@@ -1,10 +1,5 @@
 /* eslint-disable react/no-array-index-key */
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import Button from '@uidu/button';
 import Droplist from '@uidu/droplist';
 import React, { Component, KeyboardEvent, MouseEvent } from 'react';
@@ -13,7 +8,6 @@ import { uid } from 'react-uid';
 import WidthConstrainer from '../styled/WidthConstrainer';
 import { DropdownMenuStatelessProps, OnOpenChangeArgs } from '../types';
 import { KEY_DOWN, KEY_ENTER, KEY_SPACE } from '../util/keys';
-import pkg from '../version.json';
 import DropdownItemClickManager from './context/DropdownItemClickManager';
 import DropdownItemFocusManager from './context/DropdownItemFocusManager';
 import DropdownItemSelectionCache from './context/DropdownItemSelectionCache';
@@ -28,7 +22,7 @@ interface State {
   autoFocusDropdownItems: boolean;
 }
 
-export class DropdownMenuStateless extends Component<
+class DropdownMenuStateless extends Component<
   DropdownMenuStatelessProps,
   State
 > {
@@ -370,11 +364,6 @@ export class DropdownMenuStateless extends Component<
           shouldFlip={shouldFlip}
           trigger={this.renderTrigger()}
           onPositioned={this.onDroplistPositioned}
-          analyticsContext={{
-            componentName: 'dropdownMenu',
-            packageName: pkg.name,
-            packageVersion: pkg.version,
-          }}
           testId={testId}
         >
           <WidthConstrainer
@@ -396,24 +385,6 @@ export class DropdownMenuStateless extends Component<
   }
 }
 
-export { DropdownMenuStateless as DropdownMenuStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
+export { DropdownMenuStateless };
 
-export default withAnalyticsContext({
-  componentName: 'dropdownMenu',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onOpenChange: createAndFireEventOnGuidu({
-      action: 'toggled',
-      actionSubject: 'dropdownMenu',
-
-      attributes: {
-        componentName: 'dropdownMenu',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(DropdownMenuStateless),
-);
+export default DropdownMenuStateless;

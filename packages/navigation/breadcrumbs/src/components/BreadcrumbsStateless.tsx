@@ -1,19 +1,12 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-  WithAnalyticsEventsProps,
-} from '@uidu/analytics';
 import React, { useCallback } from 'react';
 import Container from '../styled/BreadcrumbsContainer';
-import pkg from '../version.json';
 import EllipsisItem from './EllipsisItem';
 
 const defaultMaxItems = 8;
 
 const { toArray } = React.Children;
 
-export interface BreadcrumbsStatelessProps extends WithAnalyticsEventsProps {
+export interface BreadcrumbsStatelessProps {
   /** Override collapsing of the nav when there are more than maxItems */
   isExpanded?: boolean;
   /** Set the maximum number of breadcrumbs to display. When there are more
@@ -102,24 +95,6 @@ function BreadcrumbsStateless({
   );
 }
 
-export { BreadcrumbsStateless as BreadcrumbsStatelessWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
+export { BreadcrumbsStateless };
 
-export default withAnalyticsContext({
-  componentName: 'breadcrumbs',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onExpand: createAndFireEventOnGuidu({
-      action: 'expanded',
-      actionSubject: 'breadcrumbs',
-
-      attributes: {
-        componentName: 'breadcrumbs',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(BreadcrumbsStateless),
-);
+export default BreadcrumbsStateless;

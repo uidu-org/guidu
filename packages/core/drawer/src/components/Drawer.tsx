@@ -1,36 +1,13 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import Blanket from '@uidu/blanket';
 import { canUseDOM } from 'exenv';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { TransitionGroup } from 'react-transition-group';
-import { CloseTrigger, DrawerProps } from '../types';
-import pkg from '../version.json';
+import { DrawerProps } from '../types';
 import DrawerPrimitive from './DrawerPrimitive';
 import { Fade } from './transitions';
 
 const OnlyChild = ({ children }) => React.Children.toArray(children)[0] || null;
-
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-const createAndFireOnClick = (
-  createAnalyticsEvent: any,
-  trigger: CloseTrigger,
-) =>
-  createAndFireEventOnGuidu({
-    action: 'dismissed',
-    actionSubject: 'drawer',
-    attributes: {
-      componentName: 'drawer',
-      packageName: pkg.name,
-      packageVersion: pkg.version,
-      trigger,
-    },
-  })(createAnalyticsEvent);
 
 export class DrawerBase extends React.Component<DrawerProps> {
   static defaultProps = {
@@ -66,23 +43,18 @@ export class DrawerBase extends React.Component<DrawerProps> {
   }
 
   handleBlanketClick = (event: React.MouseEvent) => {
-    this.handleClose(event, 'blanket');
+    this.handleClose(event);
   };
 
   handleBackButtonClick = (event: React.MouseEvent) => {
-    this.handleClose(event, 'backButton');
+    this.handleClose(event);
   };
 
-  handleClose = (
-    event: React.KeyboardEvent | React.MouseEvent,
-    trigger: CloseTrigger,
-  ) => {
-    const { createAnalyticsEvent, onClose } = this.props;
-
-    const analyticsEvent = createAndFireOnClick(createAnalyticsEvent, trigger);
+  handleClose = (event: React.KeyboardEvent | React.MouseEvent) => {
+    const { onClose } = this.props;
 
     if (onClose) {
-      onClose(event, analyticsEvent);
+      onClose(event);
     }
   };
 
@@ -90,7 +62,7 @@ export class DrawerBase extends React.Component<DrawerProps> {
     const { isOpen, onKeyDown } = this.props;
 
     if (event.key === 'Escape' && isOpen) {
-      this.handleClose(event, 'escKey');
+      this.handleClose(event);
     }
     if (onKeyDown) {
       onKeyDown(event);
@@ -145,8 +117,4 @@ export class DrawerBase extends React.Component<DrawerProps> {
   }
 }
 
-export default withAnalyticsContext({
-  componentName: 'drawer',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(withAnalyticsEvents()(DrawerBase));
+export default DrawerBase;

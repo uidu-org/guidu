@@ -1,10 +1,4 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import React, { Component } from 'react';
-import pkg from '../../version.json';
 import { Tabs as StyledTabs } from '../styled';
 import {
   IsSelectedTestFunction,
@@ -120,24 +114,6 @@ class Tabs extends Component<TabsProps, TabsState> {
   }
 }
 
-export { Tabs as TabsWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
+export { Tabs };
 
-export default withAnalyticsContext({
-  componentName: 'tabs',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onSelect: createAndFireEventOnGuidu({
-      action: 'clicked',
-      actionSubject: 'tab',
-
-      attributes: {
-        componentName: 'tabs',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(Tabs),
-);
+export default Tabs;

@@ -1,20 +1,13 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-  WithAnalyticsEventsProps,
-} from '@uidu/analytics';
 import { Placement, Popper } from '@uidu/popper';
 import React, { Component, ComponentType, ReactNode } from 'react';
 import FocusLock from 'react-focus-lock';
 import { Image } from '../styled/Dialog';
 import { Actions } from '../types';
-import pkg from '../version.json';
 import { CardTokens } from './Card.js';
 import SpotlightCard from './SpotlightCard';
 import ValueChanged from './ValueChanged';
 
-export interface SpotlightDialogProps extends WithAnalyticsEventsProps {
+export interface SpotlightDialogProps {
   /** Buttons to render in the footer */
   actions?: Actions;
   /** An optional element rendered beside the footer actions */
@@ -145,22 +138,4 @@ class SpotlightDialog extends Component<SpotlightDialogProps, State> {
   }
 }
 
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsContext({
-  componentName: 'spotlight',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    targetOnClick: createAndFireEventOnGuidu({
-      action: 'clicked',
-      actionSubject: 'spotlight',
-      attributes: {
-        componentName: 'spotlight',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(SpotlightDialog),
-);
+export default SpotlightDialog;

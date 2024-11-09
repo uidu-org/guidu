@@ -1,4 +1,3 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { ButtonProps } from '@uidu/button';
 import { KeyboardEvent, MouseEvent, ReactNode } from 'react';
 
@@ -97,9 +96,7 @@ export interface OnOpenChangeArgs {
   event?: MouseEvent | KeyboardEvent;
 }
 
-export interface DropdownMenuStatelessProps
-  extends DropdownMenuBaseProps,
-    WithAnalyticsEventsProps {
+export interface DropdownMenuStatelessProps extends DropdownMenuBaseProps {
   /** Called when the menu should be open/closed. Received an object with `isOpen` state. */
   onOpenChange: (args: OnOpenChangeArgs) => void;
 }

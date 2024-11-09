@@ -1,4 +1,3 @@
-import { AnalyticsEventPayload, CreateUIAnalyticsEvent } from '@uidu/analytics';
 import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
@@ -13,11 +12,6 @@ import {
   SearchSort,
   ToneSelection,
 } from '../../types';
-import {
-  typeaheadCancelledEvent,
-  typeaheadRenderedEvent,
-  typeaheadSelectedEvent,
-} from '../../util/analytics';
 import { defaultListLimit } from '../../util/constants';
 import debug from '../../util/logger';
 import { toEmojiId } from '../../util/type-helpers';
@@ -37,7 +31,6 @@ export interface EmojiTypeAheadBaseProps {
 
   onOpen?: OnLifecycle;
   onClose?: OnLifecycle;
-  createAnalyticsEvent?: CreateUIAnalyticsEvent;
 }
 
 export interface Props extends EmojiTypeAheadBaseProps {
@@ -140,11 +133,6 @@ export default class EmojiTypeAheadComponent extends PureComponent<
     const { emojiProvider, query } = this.props;
     const { emojis } = this.state;
     emojiProvider.unsubscribe(this.onProviderChange);
-    if (!this.selected) {
-      this.fireAnalyticsEvent(
-        typeaheadCancelledEvent(Date.now() - this.openTime, query, emojis),
-      );
-    }
     this.sessionId = uuid();
     this.selected = false;
   }
@@ -189,20 +177,11 @@ export default class EmojiTypeAheadComponent extends PureComponent<
     return typeof tone === 'undefined'
       ? undefined
       : tone >= 0 && tone <= 5
-      ? ['default', 'light', 'mediumLight', 'medium', 'mediumDark', 'dark'][
-          tone
-        ]
-      : undefined;
+        ? ['default', 'light', 'mediumLight', 'medium', 'mediumDark', 'dark'][
+            tone
+          ]
+        : undefined;
   };
-
-  private fireAnalyticsEvent(payload: AnalyticsEventPayload) {
-    if (!this.props.createAnalyticsEvent) {
-      return;
-    }
-    payload.attributes.sessionId = this.sessionId;
-
-    this.props.createAnalyticsEvent(payload).fire('fabric-elements');
-  }
 
   private onSearch(query?: string) {
     const { emojiProvider, listLimit } = this.props;
@@ -227,9 +206,6 @@ export default class EmojiTypeAheadComponent extends PureComponent<
     const { emojis, query } = result;
     const wasVisible = this.state.visible;
     const visible = emojis.length > 0;
-    this.fireAnalyticsEvent(
-      typeaheadRenderedEvent(Date.now() - this.renderStartTime, query, emojis),
-    );
     debug(
       'emoji-typeahead.applyPropChanges',
       emojis.length,
@@ -277,17 +253,6 @@ export default class EmojiTypeAheadComponent extends PureComponent<
     const { emojis } = this.state;
 
     this.selected = true;
-
-    this.fireAnalyticsEvent(
-      typeaheadSelectedEvent(
-        exactMatch || this.pressed,
-        Date.now() - this.openTime,
-        emoji,
-        emojis,
-        query,
-        exactMatch,
-      ),
-    );
   }
 
   private onProviderChange: OnEmojiProviderChange = {

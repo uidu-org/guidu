@@ -8,9 +8,6 @@
   "sideEffects": false,
   "main": "dist/uidu-blanket.cjs.js",
   "module": "dist/uidu-blanket.esm.js",
-  "dependencies": {
-    "@uidu/analytics": "0.12.4"
-  },
   "devDependencies": {
     "@uidu/button": "^1.9.4",
     "@uidu/docs": "^0.11.4",

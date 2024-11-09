@@ -1,11 +1,5 @@
 /* eslint-disable react/require-default-props */
 
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-  WithAnalyticsEventsProps,
-} from '@uidu/analytics';
 import { Placement, Popper } from '@uidu/popper';
 import Portal from '@uidu/portal';
 import { layers } from '@uidu/theme';
@@ -15,9 +9,7 @@ import NodeResolver from 'react-node-resolver';
 import { StyledComponentBase } from 'styled-components';
 import { Tooltip as StyledTooltip } from '../styled';
 import { FakeMouseElement, PositionType, PositionTypeBase } from '../types';
-import pkg from '../version.json';
 import Animation from './Animation';
-import { hoveredPayload, unhoveredPayload } from './utils/analytics-payloads';
 
 const SCROLL_OPTIONS = { capture: true, passive: true };
 
@@ -47,7 +39,7 @@ function getMousePosition(
   };
 }
 
-export interface TooltipProps extends WithAnalyticsEventsProps {
+export interface TooltipProps {
   /** The content of the tooltip */
   content: React.ReactNode;
   /** Classname applied to tooltip container */
@@ -346,18 +338,8 @@ class Tooltip extends React.Component<TooltipProps, State> {
   }
 }
 
-export { Tooltip as TooltipWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
+export { Tooltip };
 
 export type TooltipType = Tooltip;
 
-export default withAnalyticsContext({
-  componentName: 'tooltip',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onHide: unhoveredPayload,
-    onShow: createAndFireEventOnGuidu({ ...hoveredPayload }),
-  })(Tooltip),
-);
+export default Tooltip;

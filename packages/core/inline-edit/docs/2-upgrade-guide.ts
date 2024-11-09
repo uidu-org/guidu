@@ -116,6 +116,6 @@ version is not currently exported.
 - **readView:** The function signature has been updated to \`() => React.ReactNode\`
 - **editView:** The function signature has been updated to \`(editViewProps) => React.ReactNode\`
   - Where editViewProps should be spread onto the returned input node
-- **onConfirm:** The function signature has been updated to \`(value: any, analyticsEvent: UIAnalyticsEvent) => void\`
+- **onConfirm:** The function signature has been updated to \`(value: any) => void\`
 
 `;

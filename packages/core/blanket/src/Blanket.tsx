@@ -1,4 +1,3 @@
-import { usePlatformLeafEventHandler } from '@uidu/analytics';
 import React, { forwardRef, memo, MouseEvent, useCallback } from 'react';
 import styled from 'styled-components';
 import tw, { theme } from 'twin.macro';
@@ -22,12 +21,6 @@ const Div = styled.div<{
 const packageName = process.env._PACKAGE_NAME_ as string;
 const packageVersion = process.env._PACKAGE_VERSION_ as string;
 
-const analyticsAttributes = {
-  componentName: 'blanket',
-  packageName,
-  packageVersion,
-};
-
 function StatelessBlanket(
   {
     shouldAllowClickThrough = false,
@@ -37,23 +30,13 @@ function StatelessBlanket(
     paddingRight = 0,
     className = null,
     children,
-    analyticsContext,
   }: BlanketProps,
   ref,
 ) {
-  const onBlanketClickedWithAnalytics = usePlatformLeafEventHandler({
-    fn: onBlanketClicked,
-    action: 'clicked',
-    analyticsData: analyticsContext,
-    ...analyticsAttributes,
-  });
-
   const blanketClickOutsideChildren = useCallback(
     (e: MouseEvent<HTMLDivElement>) =>
-      e.currentTarget === e.target
-        ? onBlanketClickedWithAnalytics(e)
-        : undefined,
-    [onBlanketClickedWithAnalytics],
+      e.currentTarget === e.target ? onBlanketClicked(e) : undefined,
+    [onBlanketClicked],
   );
 
   const onClick = shouldAllowClickThrough

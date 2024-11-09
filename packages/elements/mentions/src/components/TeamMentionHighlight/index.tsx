@@ -1,13 +1,7 @@
 import EditorCloseIcon from '@atlaskit/icon/glyph/editor/close';
-import { withAnalyticsEvents, WithAnalyticsEventsProps } from '@uidu/analytics';
 import Button from '@uidu/button';
 import Tooltip from '@uidu/tooltip';
 import React, { RefObject } from 'react';
-import {
-  Actions,
-  ComponentNames,
-  fireAnalyticsTeamMentionHighlightEvent,
-} from '../../utils/analytics';
 import {
   TeamMentionHighlightCloseTooltip,
   TeamMentionHighlightDescription,
@@ -29,7 +23,7 @@ export interface State {
   isHighlightHidden: boolean;
 }
 
-export type Props = OwnProps & WithAnalyticsEventsProps;
+export type Props = OwnProps;
 
 const ICON_URL =
   'data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIHdpZHRoPSIxMjgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48Y2lyY2xlIGN4PSI2NCIgY3k9IjY0IiBmaWxsPSIjNTI0M2FhIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHI9IjY0Ii8+PHBhdGggZD0ibTgwIDY0Yy02LjYyNzQxNyAwLTEyLTUuMzcyNTgzLTEyLTEyczUuMzcyNTgzLTEyIDEyLTEyIDEyIDUuMzcyNTgzIDEyIDEyLTUuMzcyNTgzIDEyLTEyIDEyem0tMzItMTJjLTYuNjI3NDE3IDAtMTItNS4zNzI1ODMtMTItMTJzNS4zNzI1ODMtMTIgMTItMTIgMTIgNS4zNzI1ODMgMTIgMTItNS4zNzI1ODMgMTItMTIgMTJ6bTEyIDI0YzAtNC40MiAzLjU0OC04IDgtOGgyNGM0LjQyIDAgOCAzLjU0IDggOHYxNC45MmMwIDEyLjEwOC00MCAxMi4xMDgtNDAgMHptOC0xMmgtLjAxMmMtMy4xODQzNTM3LjAwNDI0LTYuMjM2NTQxIDEuMjczNTYxNS04LjQ4NDg0MjcgMy41Mjg2MTQ5LTIuMjQ4MzAxOCAyLjI1NTA1MzQtMy41MDg0NjU2IDUuMzExMDMzLTMuNTAzMTU3MyA4LjQ5NTM4NTF2MTEuMjI4Yy0xMS43ODQgMi4xMzYtMjgtLjI1Mi0yOC03LjkzNnYtMTUuMzA0YzAtNC40MjQgMy41NDgtOC4wMTIgOC04LjAxMmgyNGMyLjEyMjcwODYtLjAwMzE5MTIgNC4xNTkzOTQ2LjgzODYzODYgNS42NjAzNzggMi4zMzk2MjJzMi4zNDI4MTMyIDMuNTM3NjY5NCAyLjMzOTYyMiA1LjY2MDM3OHoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjk1Ii8+PC9nPjwvc3ZnPg==';
@@ -156,12 +150,12 @@ export class TeamMentionHighlightInternal extends React.Component<
               </Styled.Heading>
               <Styled.Body>
                 <TeamMentionHighlightDescription>
-                  {description => (
+                  {(description) => (
                     <div>
                       {description}
                       <span ref={this.elCreateTeamWrapper}>
                         <TeamMentionHighlightDescriptionLink>
-                          {linkText => (
+                          {(linkText) => (
                             <a href={createTeamLink} target="_blank">
                               {' '}
                               {linkText}
@@ -178,7 +172,7 @@ export class TeamMentionHighlightInternal extends React.Component<
             <Styled.Actions>
               <div ref={this.elCloseWrapper}>
                 <TeamMentionHighlightCloseTooltip>
-                  {tooltip => (
+                  {(tooltip) => (
                     <Tooltip content={tooltip} position="bottom">
                       <Button
                         appearance="subtle"
@@ -200,37 +194,7 @@ export class TeamMentionHighlightInternal extends React.Component<
   }
 }
 
-const TeamMentionHighlightWithAnalytics = withAnalyticsEvents({
-  onClose: (createEvent: any) => {
-    fireAnalyticsTeamMentionHighlightEvent(createEvent)(
-      ComponentNames.TEAM_MENTION_HIGHLIGHT,
-      Actions.CLOSED,
-      ComponentNames.MENTION,
-      'closeButton',
-    );
-  },
-
-  onCreateTeamLinkClick: (createEvent: any) => {
-    fireAnalyticsTeamMentionHighlightEvent(createEvent)(
-      ComponentNames.TEAM_MENTION_HIGHLIGHT,
-      Actions.CLICKED,
-      ComponentNames.MENTION,
-      'createTeamLink',
-    );
-  },
-
-  onViewed: (createEvent: any) => {
-    fireAnalyticsTeamMentionHighlightEvent(createEvent)(
-      ComponentNames.TEAM_MENTION_HIGHLIGHT,
-      Actions.VIEWED,
-      ComponentNames.MENTION,
-      undefined,
-      TeamMentionHighlightController.getSeenCount(),
-    );
-  },
-})(TeamMentionHighlightInternal);
-
-const TeamMentionHighlight = TeamMentionHighlightWithAnalytics;
+const TeamMentionHighlight = TeamMentionHighlightInternal;
 type TeamMentionHighlight = TeamMentionHighlightInternal;
 
 export default TeamMentionHighlight;

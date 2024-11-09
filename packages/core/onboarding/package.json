@@ -11,7 +11,6 @@
   "types": "dist/uidu-onboarding.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.25.6",
-    "@uidu/analytics": "^0.12.4",
     "@uidu/button": "^1.9.4",
     "@uidu/modal-dialog": "^1.8.4",
     "@uidu/popper": "^0.11.5",

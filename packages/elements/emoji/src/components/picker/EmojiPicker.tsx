@@ -1,7 +1,3 @@
-import {
-  withAnalyticsEvents,
-  WithAnalyticsEventsProps,
-} from '@uidu/analytics';
 import * as React from 'react';
 import { ComponentClass } from 'react';
 import { EmojiProvider } from '../../api/EmojiResource';
@@ -18,10 +14,12 @@ import { LoadingItem } from './EmojiPickerVirtualItems';
 import * as styles from './styles';
 
 const emojiPickerModuleLoader = () =>
-  import(/* webpackChunkName:"@uidu-internal_emojiPickerComponent" */ './EmojiPickerComponent');
+  import(
+    /* webpackChunkName:"@uidu-internal_emojiPickerComponent" */ './EmojiPickerComponent'
+  );
 
 const emojiPickerLoader: () => Promise<ComponentClass<ComponentProps>> = () =>
-  emojiPickerModuleLoader().then(module => module.default);
+  emojiPickerModuleLoader().then((module) => module.default);
 
 export interface Props extends LoadingProps {
   onSelection?: OnEmojiEvent;
@@ -30,7 +28,7 @@ export interface Props extends LoadingProps {
 }
 
 export class EmojiPickerInternal extends LoadingEmojiComponent<
-  Props & WithAnalyticsEventsProps,
+  Props,
   LoadingState
 > {
   // state initialised with static component to prevent
@@ -45,7 +43,7 @@ export class EmojiPickerInternal extends LoadingEmojiComponent<
   }
 
   asyncLoadComponent() {
-    emojiPickerLoader().then(component => {
+    emojiPickerLoader().then((component) => {
       EmojiPickerInternal.AsyncLoadedComponent = component;
       this.setAsyncState(component);
     });
@@ -79,6 +77,6 @@ export class EmojiPickerInternal extends LoadingEmojiComponent<
   }
 }
 
-const EmojiPicker = withAnalyticsEvents()(EmojiPickerInternal);
+const EmojiPicker = EmojiPickerInternal;
 
 export default EmojiPicker;

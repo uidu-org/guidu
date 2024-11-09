@@ -1,11 +1,6 @@
 /* eslint-disable react/prop-types */
 import Checkbox from '@atlaskit/icon/glyph/checkbox';
 import Radio from '@atlaskit/icon/glyph/radio';
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import Tooltip from '@uidu/tooltip';
 import React, { PureComponent } from 'react';
 import {
@@ -17,7 +12,6 @@ import {
   InputWrapper,
 } from '../styled/Item';
 import { getInputBackground, getInputFill } from '../utils';
-import pkg from '../version.json';
 import Element from './Element';
 
 const inputTypes = { checkbox: Checkbox, radio: Radio };
@@ -152,24 +146,6 @@ class Item extends PureComponent<any> {
   }
 }
 
-export { Item as DroplistItemWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
+export { Item };
 
-export default withAnalyticsContext({
-  componentName: 'droplistItem',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onActivate: createAndFireEventOnGuidu({
-      action: 'selected',
-      actionSubject: 'droplistItem',
-
-      attributes: {
-        componentName: 'droplistItem',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(Item),
-);
+export default Item;

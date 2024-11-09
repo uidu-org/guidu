@@ -1,8 +1,3 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import Layer from '@uidu/layer';
 import Spinner from '@uidu/spinner';
 import { gridSize } from '@uidu/theme/constants';
@@ -14,7 +9,6 @@ import Wrapper, {
   Trigger,
 } from '../styled/Droplist';
 import itemTheme from '../theme/item-theme';
-import pkg from '../version.json';
 
 const halfFocusRing = 1;
 const dropOffset = `0, ${gridSize()}px`;
@@ -184,24 +178,6 @@ class Droplist extends Component<any> {
   }
 }
 
-export { Droplist as DroplistWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
+export { Droplist };
 
-export default withAnalyticsContext({
-  componentName: 'droplist',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onOpenChange: createAndFireEventOnGuidu({
-      action: 'toggled',
-      actionSubject: 'droplist',
-
-      attributes: {
-        componentName: 'droplist',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(Droplist),
-);
+export default Droplist;

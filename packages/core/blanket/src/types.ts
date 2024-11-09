@@ -1,4 +1,3 @@
-import { UIAnalyticsEvent } from '@uidu/analytics';
 import { ReactNode } from 'react';
 
 export interface BlanketProps {
@@ -13,14 +12,7 @@ export interface BlanketProps {
   /**
    * Handler function to be called when the blanket is clicked.
    */
-  onBlanketClicked?: (
-    event: React.MouseEvent<HTMLDivElement>,
-    analyticsEvent: UIAnalyticsEvent,
-  ) => void;
-  /**
-   * Additional information to be included in the `context` of analytics events.
-   */
-  analyticsContext?: Record<string, any>;
+  onBlanketClicked?: (event: React.MouseEvent<HTMLDivElement>) => void;
   /**
    * A `testId` prop is provided for specified elements,
    * which is a unique string that appears as a data attribute `data-testid` in the rendered code,

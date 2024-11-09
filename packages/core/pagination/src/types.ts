@@ -1,4 +1,3 @@
-import { UIAnalyticsEvent } from '@uidu/analytics';
 import { ReactElement, SyntheticEvent } from 'react';
 
 export interface PaginationPropTypes {
@@ -8,9 +7,6 @@ export interface PaginationPropTypes {
     selectedIndex: number,
     arg: { max: number; ellipsis: (arg: { key: string }) => ReactElement<any> },
   ) => ReactElement<any>[];
-  /** This prop should not be accessed under any circumstances. It is
-   provided by @uidu/analytics. */
-  createAnalyticsEvent?: any;
   /** Replace the built-in Page, Previous, Next and/ or Ellipsis component */
   components?: {
     Page?: React.ElementType<any>;
@@ -31,11 +27,7 @@ export interface PaginationPropTypes {
   /** Maximum number of pages to be displayed in the pagination */
   max?: number;
   /** The onChange handler which is called when the page is changed */
-  onChange?: (
-    event: SyntheticEvent<any>,
-    page: any,
-    analyticsEvent?: UIAnalyticsEvent,
-  ) => void;
+  onChange?: (event: SyntheticEvent<any>, page: any) => void;
   /** Array of the pages to display */
   pages: any[];
   /** Index of the selected page. This will make this pagination controlled */

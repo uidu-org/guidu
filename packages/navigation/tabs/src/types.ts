@@ -1,6 +1,4 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { ComponentType, KeyboardEvent, MouseEvent, ReactNode } from 'react';
-
 
 export interface TabData {
   label?: string;
@@ -60,7 +58,7 @@ export type OnSelectCallback = (
   selectedIndex: number,
 ) => void;
 
-export interface TabsProps extends WithAnalyticsEventsProps {
+export interface TabsProps {
   /** Custom components to render instead of the default tab item or content.
    * See Tab Content Provided Props and Tab Item Provided Props below. */
   components?: {

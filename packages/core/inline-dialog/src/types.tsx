@@ -1,4 +1,3 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { ReactNode } from 'react';
 
 export type Placement =
@@ -18,7 +17,7 @@ export type Placement =
   | 'left'
   | 'left-start';
 
-export interface Props extends WithAnalyticsEventsProps {
+export interface Props {
   /** The elements that the InlineDialog will be positioned relative to. */
   children: ReactNode;
   /** The elements to be displayed within the InlineDialog. */

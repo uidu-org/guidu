@@ -7638,65 +7638,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/analytics-gas-types@npm:^0.4.7, @uidu/analytics-gas-types@workspace:packages/elements/analytics-gas-types":
-  version: 0.0.0-use.local
-  resolution: "@uidu/analytics-gas-types@workspace:packages/elements/analytics-gas-types"
-  dependencies:
-    "@uidu/analytics": "npm:^0.12.4"
-    "@uidu/docs": "npm:^0.11.4"
-    tslib: "npm:^2.7.0"
-  languageName: unknown
-  linkType: soft
-
-"@uidu/analytics-listeners@npm:^0.10.4, @uidu/analytics-listeners@workspace:packages/elements/analytics-listeners":
-  version: 0.0.0-use.local
-  resolution: "@uidu/analytics-listeners@workspace:packages/elements/analytics-listeners"
-  dependencies:
-    "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
-    "@uidu/analytics-gas-types": "npm:^0.4.7"
-    "@uidu/analytics-namespaced-context": "npm:^0.10.4"
-    "@uidu/button": "npm:^1.9.4"
-    "@uidu/docs": "npm:^0.11.4"
-    lodash.last: "npm:^3.0.0"
-    lodash.merge: "npm:^4.6.2"
-    react: "npm:^18.3.1"
-    tslib: "npm:^2.7.0"
-  peerDependencies:
-    react: ^18.0.0
-  languageName: unknown
-  linkType: soft
-
-"@uidu/analytics-namespaced-context@npm:^0.10.4, @uidu/analytics-namespaced-context@workspace:packages/elements/analytics-namespaced-context":
-  version: 0.0.0-use.local
-  resolution: "@uidu/analytics-namespaced-context@workspace:packages/elements/analytics-namespaced-context"
-  dependencies:
-    "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
-    "@uidu/analytics-listeners": "npm:^0.10.4"
-    "@uidu/docs": "npm:^0.11.4"
-    react: "npm:^18.3.1"
-    tslib: "npm:^2.7.0"
-  peerDependencies:
-    react: ^18.0.0
-  languageName: unknown
-  linkType: soft
-
-"@uidu/analytics-viewer@workspace:packages/elements/analytics-viewer":
-  version: 0.0.0-use.local
-  resolution: "@uidu/analytics-viewer@workspace:packages/elements/analytics-viewer"
-  dependencies:
-    "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
-    react: "npm:^18.3.1"
-    styled-components: "npm:^5.3.11"
-    tslib: "npm:^2.7.0"
-  peerDependencies:
-    react: ^18.0.0
-  languageName: unknown
-  linkType: soft
-
-"@uidu/analytics@npm:0.12.4, @uidu/analytics@npm:^0.12.4, @uidu/analytics@workspace:packages/core/analytics":
+"@uidu/analytics@workspace:packages/core/analytics":
   version: 0.0.0-use.local
   resolution: "@uidu/analytics@workspace:packages/core/analytics"
   dependencies:
@@ -7759,7 +7701,6 @@ __metadata:
   resolution: "@uidu/avatar@workspace:packages/core/avatar"
   dependencies:
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/field-base": "npm:^4.11.7"
@@ -7813,7 +7754,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@uidu/blanket@workspace:packages/core/blanket"
   dependencies:
-    "@uidu/analytics": "npm:0.12.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
     react: "npm:^18.3.1"
@@ -7850,7 +7790,6 @@ __metadata:
   resolution: "@uidu/breadcrumbs@workspace:packages/navigation/breadcrumbs"
   dependencies:
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/select": "npm:^2.14.0"
@@ -7875,7 +7814,6 @@ __metadata:
   dependencies:
     "@atlaskit/icon": "npm:^21.12.8"
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/checkbox": "npm:^2.7.1"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/form": "npm:^3.3.2"
@@ -8323,7 +8261,6 @@ __metadata:
   resolution: "@uidu/drawer@workspace:packages/core/drawer"
   dependencies:
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/blanket": "npm:^0.7.11"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
@@ -8349,7 +8286,6 @@ __metadata:
   dependencies:
     "@atlaskit/icon": "npm:^21.12.8"
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/avatar": "npm:^0.15.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
@@ -8379,7 +8315,6 @@ __metadata:
   dependencies:
     "@atlaskit/icon": "npm:^21.12.8"
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/field-base": "npm:^4.11.7"
@@ -8642,7 +8577,6 @@ __metadata:
     "@babel/runtime": "npm:^7.25.6"
     "@types/js-search": "npm:^1.4.4"
     "@types/react-virtualized": "npm:^9.21.30"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/code": "npm:^0.11.4"
     "@uidu/docs": "npm:^0.11.4"
@@ -9116,7 +9050,6 @@ __metadata:
   resolution: "@uidu/flag@workspace:packages/core/flag"
   dependencies:
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/form": "npm:^3.3.1"
@@ -9254,7 +9187,6 @@ __metadata:
   dependencies:
     "@atlaskit/icon": "npm:^21.12.8"
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/form": "npm:^3.3.1"
@@ -9280,7 +9212,6 @@ __metadata:
     "@atlaskit/icon": "npm:^21.12.8"
     "@babel/runtime": "npm:^7.25.6"
     "@loadable/component": "npm:^5.16.4"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/field": "npm:^1.6.4"
@@ -9556,8 +9487,6 @@ __metadata:
     "@atlaskit/util-service-support": "npm:^6.2.3"
     "@babel/runtime": "npm:^7.25.6"
     "@faker-js/faker": "npm:^8.4.1"
-    "@uidu/analytics": "npm:^0.12.4"
-    "@uidu/analytics-gas-types": "npm:^0.4.7"
     "@uidu/avatar": "npm:^0.15.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
@@ -9683,7 +9612,6 @@ __metadata:
     "@atlaskit/icon": "npm:^21.12.8"
     "@atlaskit/motion": "npm:^1.5.1"
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/avatar": "npm:^0.15.4"
     "@uidu/blanket": "npm:^0.7.11"
     "@uidu/button": "npm:^1.9.4"
@@ -9758,7 +9686,6 @@ __metadata:
   resolution: "@uidu/onboarding@workspace:packages/core/onboarding"
   dependencies:
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/modal-dialog": "npm:^1.8.4"
@@ -9815,7 +9742,6 @@ __metadata:
   resolution: "@uidu/pagination@workspace:packages/core/pagination"
   dependencies:
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/section-message": "npm:^0.12.5"
@@ -10286,7 +10212,6 @@ __metadata:
   resolution: "@uidu/tabs@workspace:packages/navigation/tabs"
   dependencies:
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/theme": "npm:^0.12.4"
     react: "npm:^18.3.1"
@@ -10372,7 +10297,6 @@ __metadata:
   dependencies:
     "@atlaskit/icon": "npm:^21.12.8"
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/button": "npm:^1.9.4"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/popper": "npm:^0.11.5"
@@ -10413,7 +10337,6 @@ __metadata:
   dependencies:
     "@atlaskit/util-service-support": "npm:^6.2.3"
     "@babel/runtime": "npm:^7.25.6"
-    "@uidu/analytics": "npm:^0.12.4"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/emoji": "npm:^0.15.5"
     "@uidu/mentions": "npm:^0.14.5"

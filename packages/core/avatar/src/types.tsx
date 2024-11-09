@@ -1,4 +1,3 @@
-import { AnalyticsEvent, WithAnalyticsEventsProps } from '@uidu/analytics';
 import { ThemeProp } from '@uidu/theme/components';
 import { ComponentType, ReactNode } from 'react';
 import { WithPseudoStateProps } from './hoc/withPseudoState';
@@ -21,14 +20,12 @@ export type IndicatorSizeType = 'small' | 'medium' | 'large' | 'xlarge';
 export type StatusType = ('approved' | 'declined' | 'locked') | ReactNode;
 export type StyledComponentType = 'custom' | 'button' | 'link' | 'span';
 
-export type AvatarClickType = (
-  event: { event: React.MouseEvent; item: Record<string, any> },
-  analyticsEvent?: AnalyticsEvent,
-) => void;
+export type AvatarClickType = (event: {
+  event: React.MouseEvent;
+  item: Record<string, any>;
+}) => void;
 
-export interface AvatarPropTypes
-  extends WithAnalyticsEventsProps,
-    WithPseudoStateProps {
+export interface AvatarPropTypes extends WithPseudoStateProps {
   /** Indicates the shape of the avatar. Most avatars are circular, but square avatars
    can be used for 'container' objects. */
   appearance?: AppearanceType;

@@ -15,7 +15,6 @@
     "@atlaskit/icon": "^21.12.8",
     "@atlaskit/motion": "^1.5.1",
     "@babel/runtime": "^7.25.6",
-    "@uidu/analytics": "^0.12.4",
     "@uidu/blanket": "^0.7.11",
     "@uidu/portal": "^1.6.4",
     "@uidu/theme": "^0.12.4",

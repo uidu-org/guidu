@@ -37,5 +37,3 @@ export const defaultCategories: CategoryId[] = [
 export const defaultListLimit = 50;
 
 export const migrationUserId = 'hipchat_migration_emoticons';
-
-export const analyticsEmojiPrefix = 'uidu.emoji.picker';

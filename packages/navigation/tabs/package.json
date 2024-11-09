@@ -8,7 +8,6 @@
   "main": "dist/uidu-tabs.cjs.js",
   "dependencies": {
     "@babel/runtime": "^7.25.6",
-    "@uidu/analytics": "^0.12.4",
     "@uidu/docs": "^0.11.4",
     "@uidu/theme": "^0.12.4",
     "react": "^18.3.1",

@@ -10,7 +10,6 @@
   "dependencies": {
     "@atlaskit/icon": "^21.12.8",
     "@babel/runtime": "^7.25.6",
-    "@uidu/analytics": "^0.12.4",
     "@uidu/item": "^0.11.4",
     "@uidu/layer": "^0.11.4",
     "@uidu/spinner": "^0.11.4",

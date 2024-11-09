@@ -1,8 +1,3 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import Tooltip from '@uidu/tooltip';
 import React, { Component, ReactNode } from 'react';
 import { getProps, getStyledAvatar } from '../helpers';
@@ -17,7 +12,6 @@ import {
   SizeType,
 } from '../types';
 import { omit } from '../utils';
-import pkg from '../version.json';
 import AvatarImage from './AvatarImage';
 import { propsOmittedFromClickData } from './constants';
 import Presence from './Presence';
@@ -40,25 +34,6 @@ class Avatar extends Component<AvatarPropTypes> {
     size: 'medium' as SizeType,
   };
 
-  createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-  clickAnalyticsCaller = () => {
-    const { createAnalyticsEvent } = this.props;
-
-    return createAnalyticsEvent
-      ? this.createAndFireEventOnGuidu({
-          action: 'clicked',
-          actionSubject: 'avatar',
-
-          attributes: {
-            componentName: 'avatar',
-            packageName: pkg.name,
-            packageVersion: pkg.version,
-          },
-        })(createAnalyticsEvent)
-      : undefined;
-  };
-
   // expose blur/focus to consumers via ref
   blur = () => {
     if (this.ref) this.ref.blur();
@@ -77,9 +52,7 @@ class Avatar extends Component<AvatarPropTypes> {
 
     const item = omit(this.props, ...propsOmittedFromClickData);
 
-    const analyticsEvent = this.clickAnalyticsCaller();
-
-    onClick({ item, event }, analyticsEvent);
+    onClick({ item, event });
   };
 
   // enforce status / presence rules
@@ -211,8 +184,4 @@ export const AvatarWithoutAnalytics = mapProps<AvatarPropTypes>({
     ),
 })(withPseudoState(Avatar));
 
-export default withAnalyticsContext({
-  componentName: 'avatar',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(withAnalyticsEvents()(AvatarWithoutAnalytics));
+export default AvatarWithoutAnalytics;

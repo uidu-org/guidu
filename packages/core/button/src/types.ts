@@ -1,4 +1,3 @@
-import { UIAnalyticsEvent } from '@uidu/analytics';
 import * as React from 'react';
 import { LinkProps } from 'react-router-dom';
 
@@ -50,11 +49,7 @@ export type OnlyButtonProps = {
   isSelected?: boolean;
   /** Handler to be called on blur */
   onBlur?: React.FocusEventHandler<HTMLElement>;
-  /** Handler to be called on click. The second argument can be used to track analytics data. See the tutorial in the analytics-next package for details */
-  onClick?: (
-    e: React.MouseEvent<HTMLElement>,
-    analyticsEvent: UIAnalyticsEvent,
-  ) => void;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
   onMouseDown?: React.MouseEventHandler<HTMLElement>;
   onMouseEnter?: React.MouseEventHandler<HTMLElement>;
   onMouseLeave?: React.MouseEventHandler<HTMLElement>;

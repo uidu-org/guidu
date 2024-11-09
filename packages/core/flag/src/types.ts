@@ -1,4 +1,3 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FocusEventHandler, MouseEventHandler, ReactNode } from 'react';
 
 export type ChildrenType = any;
@@ -68,9 +67,7 @@ export type AutoDismissFlagProps = {
   testId?: string;
 };
 
-export interface FlagProps
-  extends AutoDismissFlagProps,
-    WithAnalyticsEventsProps {
+export interface FlagProps extends AutoDismissFlagProps {
   /** Standard onBlur event, applied to Flag by AutoDismissFlag */
   onBlur?: FocusEventHandler;
   /** Standard onFocus event, applied to Flag by AutoDismissFlag */
