@@ -11,7 +11,7 @@ import '@uppy/webcam/dist/style.css';
 import { Emoji, init, SearchIndex } from 'emoji-mart';
 import React, { useMemo, useRef, useState } from 'react';
 import { localUploadOptions } from '../../../media/media-core/src';
-import { document3 as document } from '../../renderer/examples/helper/story-data';
+import { story2 as document } from '../../renderer/examples/helper/story-data';
 import { getItems } from '../examples-utils/tokens';
 import {
   Editor,

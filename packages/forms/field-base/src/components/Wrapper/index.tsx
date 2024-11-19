@@ -50,7 +50,7 @@ export default function Wrapper<T>({
       >
         {input}
       </InputGroup>
-      {fieldState?.error && (
+      {fieldState?.error && showErrors && (
         <div tw="flex space-x-2 mt-3">
           <ErrorIcon fieldState={fieldState} />
           <ErrorMessages messages={[fieldState.error]} />
@@ -72,7 +72,9 @@ export default function Wrapper<T>({
       >
         <FloatLabel htmlFor={id} className="has-float-label">
           {input}
-          {fieldState?.error && <ErrorMessages messages={[fieldState.error]} />}
+          {fieldState?.error && showErrors && (
+            <ErrorMessages messages={[fieldState.error]} />
+          )}
           <span>
             {floatLabel}
             {required && ' '}
