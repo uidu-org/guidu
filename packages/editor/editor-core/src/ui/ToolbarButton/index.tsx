@@ -59,7 +59,7 @@ function ToolbarButton({
       spacing={spacing || 'default'}
       target={target}
       shouldFitContainer
-      appearance={selected ? 'primary' : 'default'}
+      appearance={selected ? 'primary' : 'subtle'}
       tw="h-10!"
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
