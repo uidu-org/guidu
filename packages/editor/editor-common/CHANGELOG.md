@@ -1,5 +1,11 @@
 # @uidu/editor-common
 
+## 3.1.0
+
+### Minor Changes
+
+- be24a45: Fix empji missing export
+
 ## 3.0.1
 
 ### Patch Changes
