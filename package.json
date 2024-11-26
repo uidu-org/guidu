@@ -84,7 +84,35 @@
     "typescript": "^4.0.2",
     "webpack": "^5.7.0"
   },
-  "dependencies": {
+  "packageManager": "yarn@4.2.2",
+  "engines": {
+    "node": "^18.0.0",
+    "npm": "^6.1.0",
+    "yarn": "^1.9.2"
+  },
+  "bolt": {
+    "version": "^0.24.3",
+    "workspaces": [
+      "packages/*/*",
+      "themes/*",
+      "build/*",
+      "website"
+    ]
+  },
+  "manypkg": {
+    "defaultBranch": "main"
+  },
+  "preconstruct": {
+    "packages": [
+      "build/docs",
+      "packages/*/*",
+      "!packages/editor/json-schema-generator",
+      "!packages/uidu/schema.d.ts",
+      "!packages/core/tailwind-config",
+      "!packages/core/eslint-config"
+    ]
+  },
+  "devDependencies": {
     "@amcharts/amcharts4": "^4.10.39",
     "@amcharts/amcharts4-geodata": "^4.1.30",
     "@atlaskit/icon": "^21.12.8",
@@ -108,7 +136,7 @@
     "@babel/preset-typescript": "^7.26.0",
     "@babel/register": "^7.25.9",
     "@babel/runtime": "^7.26.0",
-    "@changesets/cli": "^2.27.9",
+    "@changesets/cli": "^2.27.10",
     "@cubejs-client/core": "^0.34.37",
     "@cubejs-client/react": "^0.34.46",
     "@emotion/react": "^11.13.3",
@@ -121,7 +149,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@loadable/babel-plugin": "^5.16.1",
     "@loadable/component": "^5.16.4",
-    "@manypkg/cli": "^0.22.0",
+    "@manypkg/cli": "^0.23.0",
     "@mdx-js/loader": "^2.3.0",
     "@popperjs/core": "^2.11.8",
     "@preconstruct/cli": "^2.8.10",
@@ -424,33 +452,5 @@
     "workspace": "^0.0.1-preview.1",
     "zoid": "^9.0.86",
     "zxcvbn": "^4.4.2"
-  },
-  "packageManager": "yarn@4.2.2",
-  "engines": {
-    "node": "^18.0.0",
-    "npm": "^6.1.0",
-    "yarn": "^1.9.2"
-  },
-  "bolt": {
-    "version": "^0.24.3",
-    "workspaces": [
-      "packages/*/*",
-      "themes/*",
-      "build/*",
-      "website"
-    ]
-  },
-  "manypkg": {
-    "defaultBranch": "main"
-  },
-  "preconstruct": {
-    "packages": [
-      "build/docs",
-      "packages/*/*",
-      "!packages/editor/json-schema-generator",
-      "!packages/uidu/schema.d.ts",
-      "!packages/core/tailwind-config",
-      "!packages/core/eslint-config"
-    ]
   }
 }

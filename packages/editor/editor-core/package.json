@@ -51,7 +51,7 @@
     "get-video-id": "^3.7.0",
     "highlight.js": "^11.10.0",
     "linkify-it": "^4.0.1",
-    "lowlight": "^3.1.0",
+    "lowlight": "^3.2.0",
     "markdown-it": "^13.0.2",
     "memoize-one": "^6.0.0",
     "prop-types": "^15.8.1",
