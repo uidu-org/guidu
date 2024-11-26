@@ -1,5 +1,22 @@
 # @uidu/media-viewer
 
+## 1.11.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/shell@3.0.0
+  - @uidu/avatar@1.0.0
+  - @uidu/modal-dialog@1.9.0
+  - @uidu/media-core@4.1.0
+  - @uidu/spinner@0.12.0
+  - @uidu/button@1.11.0
+  - @uidu/theme@0.13.0
+
 ## 1.10.6
 
 ### Patch Changes

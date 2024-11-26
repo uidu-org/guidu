@@ -1,5 +1,19 @@
 # @uidu/field-geosuggest
 
+## 3.1.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/field-base@5.0.0
+  - @uidu/popup@1.0.0
+  - @uidu/spinner@0.12.0
+  - @uidu/menu@0.17.0
+
 ## 3.0.4
 
 ### Patch Changes

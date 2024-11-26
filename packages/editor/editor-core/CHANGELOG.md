@@ -1,5 +1,43 @@
 # @uidu/editor-core
 
+## 2.25.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/editor-common@3.0.0
+  - @uidu/avatar-group@3.0.0
+  - @uidu/adf-schema@3.0.0
+  - @uidu/mentions@1.0.0
+  - @uidu/adf-utils@3.0.0
+  - @uidu/field-base@5.0.0
+  - @uidu/emoji@1.0.0
+  - @uidu/avatar@1.0.0
+  - @uidu/popup@1.0.0
+  - @uidu/editor-markdown-transformer@1.10.0
+  - @uidu/editor-json-transformer@1.10.0
+  - @uidu/activity-provider@0.8.0
+  - @uidu/prosemirror-utils@0.4.0
+  - @uidu/media-filmstrip@0.14.0
+  - @uidu/media-picker@1.12.0
+  - @uidu/modal-dialog@1.9.0
+  - @uidu/field-date@2.10.0
+  - @uidu/field-text@2.7.0
+  - @uidu/media-card@0.18.0
+  - @uidu/media-core@4.1.0
+  - @uidu/date@0.11.0
+  - @uidu/spinner@0.12.0
+  - @uidu/tooltip@0.12.0
+  - @uidu/select@2.15.0
+  - @uidu/button@1.11.0
+  - @uidu/theme@0.13.0
+  - @uidu/form@3.4.0
+  - @uidu/menu@0.17.0
+
 ## 2.24.9
 
 ### Patch Changes

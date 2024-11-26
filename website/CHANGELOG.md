@@ -1,5 +1,36 @@
 # Change Log
 
+## 0.11.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/breadcrumbs@2.0.0
+  - @uidu/shell@3.0.0
+  - @uidu/code@1.0.0
+  - @uidu/page-header@1.2.0
+  - @uidu/navigation@1.8.0
+  - @uidu/modal-dialog@1.9.0
+  - @uidu/field-text@2.7.0
+  - @uidu/checkbox@2.8.0
+  - @uidu/lozenge@0.12.0
+  - @uidu/spinner@0.12.0
+  - @uidu/tooltip@0.12.0
+  - @uidu/select@2.15.0
+  - @uidu/button@1.11.0
+  - @uidu/drawer@0.14.0
+  - @uidu/badge@0.12.0
+  - @uidu/theme@0.13.0
+  - @uidu/table@6.10.0
+  - @uidu/form@3.4.0
+  - @uidu/list@3.12.0
+  - @uidu/themes-uidu@0.6.0
+  - @uidu/docs@0.12.0
+
 ## 0.10.11
 
 ### Patch Changes

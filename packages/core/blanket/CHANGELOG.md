@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 1.0.0
+
+### Major Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
 ## 0.7.11
 
 ### Patch Changes

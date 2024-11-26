@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.11.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
 ## 0.10.4
 
 ### Patch Changes

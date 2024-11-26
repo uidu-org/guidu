@@ -1,5 +1,21 @@
 # @uidu/emoji
 
+## 1.0.0
+
+### Major Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/code@1.0.0
+  - @uidu/field-text@2.7.0
+  - @uidu/spinner@0.12.0
+  - @uidu/tooltip@0.12.0
+  - @uidu/button@1.11.0
+  - @uidu/theme@0.13.0
+
 ## 0.15.5
 
 ### Patch Changes

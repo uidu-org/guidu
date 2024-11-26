@@ -1,5 +1,23 @@
 # @uidu/navigation
 
+## 1.10.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/shell@3.0.0
+  - @uidu/avatar@1.0.0
+  - @uidu/popup@1.0.0
+  - @uidu/inline-dialog@0.12.0
+  - @uidu/tooltip@0.12.0
+  - @uidu/button@1.11.0
+  - @uidu/theme@0.13.0
+  - @uidu/menu@0.17.0
+
 ## 1.9.6
 
 ### Patch Changes

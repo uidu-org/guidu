@@ -1,5 +1,23 @@
 # @uidu/table
 
+## 6.10.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/shell@3.0.0
+  - @uidu/popup@1.0.0
+  - @uidu/data-manager@4.15.0
+  - @uidu/data-fields@4.7.0
+  - @uidu/checkbox@2.8.0
+  - @uidu/button@1.11.0
+  - @uidu/portal@1.7.0
+  - @uidu/menu@0.17.0
+
 ## 6.9.0
 
 ### Minor Changes

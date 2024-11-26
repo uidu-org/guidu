@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 2.8.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
 ## 2.7.4
 
 ### Patch Changes

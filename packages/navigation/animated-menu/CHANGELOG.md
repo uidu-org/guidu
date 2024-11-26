@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 1.7.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
 ## 1.6.4
 
 ### Patch Changes

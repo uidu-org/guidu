@@ -1,5 +1,16 @@
 # @uidu/media-core
 
+## 4.1.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/docs@0.12.0
+
 ## 4.0.1
 
 ### Patch Changes

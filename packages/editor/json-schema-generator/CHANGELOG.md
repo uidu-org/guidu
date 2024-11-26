@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.5.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
 ## 1.4.4
 
 ### Patch Changes

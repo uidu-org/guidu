@@ -1,5 +1,16 @@
 # @uidu/theme
 
+## 0.13.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/form@3.4.0
+
 ## 0.12.4
 
 ### Patch Changes

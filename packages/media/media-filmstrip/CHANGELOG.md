@@ -1,5 +1,20 @@
 # @uidu/media-filmstrip
 
+## 0.14.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/media-viewer@1.11.0
+  - @uidu/modal-dialog@1.9.0
+  - @uidu/media-card@0.18.0
+  - @uidu/media-core@4.1.0
+  - @uidu/theme@0.13.0
+
 ## 0.13.5
 
 ### Patch Changes

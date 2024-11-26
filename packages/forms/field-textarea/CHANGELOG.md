@@ -1,5 +1,17 @@
 # @uidu/field-textarea
 
+## 2.8.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/field-base@5.0.0
+  - @uidu/spinner@0.12.0
+
 ## 2.7.4
 
 ### Patch Changes

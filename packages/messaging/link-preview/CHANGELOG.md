@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 1.10.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
 ## 1.9.4
 
 ### Patch Changes

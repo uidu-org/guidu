@@ -1,5 +1,16 @@
 # @uidu/adf-utils
 
+## 3.0.0
+
+### Major Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/adf-schema@3.0.0
+
 ## 2.8.4
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/radio
 
+## 2.9.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/field-base@5.0.0
+
 ## 2.8.4
 
 ### Patch Changes

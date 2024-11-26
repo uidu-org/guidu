@@ -1,5 +1,18 @@
 # @uidu/flag
 
+## 0.12.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/button@1.11.0
+  - @uidu/portal@1.7.0
+  - @uidu/theme@0.13.0
+
 ## 0.11.4
 
 ### Patch Changes

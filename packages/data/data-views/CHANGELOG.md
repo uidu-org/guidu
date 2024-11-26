@@ -1,5 +1,22 @@
 # @uidu/data-views
 
+## 3.11.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/field-counter@2.7.0
+  - @uidu/data-controls@4.10.0
+  - @uidu/field-number@2.8.0
+  - @uidu/data-manager@4.15.0
+  - @uidu/select@2.15.0
+  - @uidu/button@1.11.0
+  - @uidu/form@3.4.0
+
 ## 3.10.6
 
 ### Patch Changes

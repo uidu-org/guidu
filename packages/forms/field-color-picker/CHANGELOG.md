@@ -1,5 +1,18 @@
 # @uidu/field-color-picker
 
+## 3.8.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/field-base@5.0.0
+  - @uidu/popup@1.0.0
+  - @uidu/button@1.11.0
+
 ## 3.7.0
 
 ### Minor Changes
