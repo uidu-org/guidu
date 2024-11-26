@@ -1,5 +1,19 @@
 # @uidu/media-viewer
 
+## 1.11.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/avatar@1.0.1
+  - @uidu/button@1.11.1
+  - @uidu/modal-dialog@1.9.1
+  - @uidu/spinner@0.12.1
+  - @uidu/theme@0.13.1
+  - @uidu/media-core@4.1.1
+  - @uidu/shell@3.0.1
+
 ## 1.11.0
 
 ### Minor Changes

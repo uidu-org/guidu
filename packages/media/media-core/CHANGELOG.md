@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 4.1.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/docs@0.12.1
+
 ## 4.1.0
 
 ### Minor Changes

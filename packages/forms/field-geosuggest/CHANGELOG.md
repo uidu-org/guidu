@@ -1,5 +1,16 @@
 # @uidu/field-geosuggest
 
+## 3.1.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/menu@0.17.1
+  - @uidu/popup@1.0.1
+  - @uidu/spinner@0.12.1
+  - @uidu/field-base@5.0.1
+
 ## 3.1.0
 
 ### Minor Changes

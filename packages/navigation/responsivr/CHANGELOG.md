@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.11.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+
 ## 0.11.0
 
 ### Minor Changes

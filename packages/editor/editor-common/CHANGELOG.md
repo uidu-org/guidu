@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 3.0.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/theme@0.13.1
+  - @uidu/tooltip@0.12.1
+  - @uidu/adf-schema@3.0.1
+  - @uidu/adf-utils@3.0.1
+  - @uidu/editor-json-transformer@1.10.1
+  - @uidu/emoji@1.0.1
+  - @uidu/mentions@1.0.1
+  - @uidu/media-core@4.1.1
+
 ## 3.0.0
 
 ### Major Changes

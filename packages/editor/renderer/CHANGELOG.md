@@ -1,5 +1,21 @@
 # @uidu/renderer
 
+## 3.0.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/code@1.0.1
+  - @uidu/theme@0.13.1
+  - @uidu/tooltip@0.12.1
+  - @uidu/adf-schema@3.0.1
+  - @uidu/adf-utils@3.0.1
+  - @uidu/editor-common@3.0.1
+  - @uidu/editor-json-transformer@1.10.1
+  - @uidu/mentions@1.0.1
+  - @uidu/media-card@0.18.1
+
 ## 3.0.0
 
 ### Major Changes

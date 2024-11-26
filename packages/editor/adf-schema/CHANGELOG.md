@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 3.0.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/media-core@4.1.1
+
 ## 3.0.0
 
 ### Major Changes

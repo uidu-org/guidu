@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 1.0.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+
 ## 1.0.0
 
 ### Major Changes

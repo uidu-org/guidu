@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 2.14.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/field-base@5.0.1
+  - @uidu/field-text@2.7.1
+
 ## 2.14.0
 
 ### Minor Changes

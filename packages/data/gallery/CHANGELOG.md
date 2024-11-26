@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 2.9.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/spinner@0.12.1
+  - @uidu/data-controls@4.10.1
+  - @uidu/data-fields@4.7.1
+  - @uidu/shell@3.0.1
+
 ## 2.9.0
 
 ### Minor Changes

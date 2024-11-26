@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-viewer",
-  "version": "1.11.0",
+  "version": "1.11.1",
   "description": "MediaViewer is Atlassian's powerful solution for viewing files on the web. It's both powerful and extendable yet easy-to-integrate",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/media/media-viewer",
   "license": "ISC",
@@ -14,13 +14,13 @@
     "@loadable/component": "^5.16.4",
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/toolbar": "^3.12.0",
-    "@uidu/avatar": "^1.0.0",
-    "@uidu/button": "^1.11.0",
-    "@uidu/media-core": "^4.1.0",
-    "@uidu/modal-dialog": "1.9.0",
-    "@uidu/shell": "^3.0.0",
-    "@uidu/spinner": "^0.12.0",
-    "@uidu/theme": "^0.13.0",
+    "@uidu/avatar": "^1.0.1",
+    "@uidu/button": "^1.11.1",
+    "@uidu/media-core": "^4.1.1",
+    "@uidu/modal-dialog": "1.9.1",
+    "@uidu/shell": "^3.0.1",
+    "@uidu/spinner": "^0.12.1",
+    "@uidu/theme": "^0.13.1",
     "raf-schd": "^4.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -31,8 +31,8 @@
     "twin.macro": "^3.4.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.12.0",
-    "@uidu/media-card": "^0.18.0",
+    "@uidu/docs": "^0.12.1",
+    "@uidu/media-card": "^0.18.1",
     "react-intl": "^6.8.7"
   },
   "publishConfig": {

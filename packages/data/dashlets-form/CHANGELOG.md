@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 1.9.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/dropdown-menu@1.1.0
+  - @uidu/accordion@0.13.1
+  - @uidu/dashlets@3.12.1
+  - @uidu/field-downshift@2.14.1
+  - @uidu/field-toggle@2.7.1
+  - @uidu/form@3.4.1
+  - @uidu/select@2.15.1
+  - @uidu/shell@3.0.1
+
 ## 1.9.0
 
 ### Minor Changes

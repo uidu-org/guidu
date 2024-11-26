@@ -1,5 +1,13 @@
 # @uidu/email-renderer
 
+## 2.0.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/adf-schema@3.0.1
+
 ## 2.0.0
 
 ### Major Changes

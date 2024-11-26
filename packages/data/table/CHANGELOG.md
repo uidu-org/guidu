@@ -1,5 +1,20 @@
 # @uidu/table
 
+## 6.10.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/button@1.11.1
+  - @uidu/menu@0.17.1
+  - @uidu/popup@1.0.1
+  - @uidu/portal@1.7.1
+  - @uidu/data-fields@4.7.1
+  - @uidu/data-manager@4.15.1
+  - @uidu/checkbox@2.8.1
+  - @uidu/shell@3.0.1
+
 ## 6.10.0
 
 ### Minor Changes

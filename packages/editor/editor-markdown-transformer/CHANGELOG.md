@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 1.10.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/adf-schema@3.0.1
+  - @uidu/editor-common@3.0.1
+
 ## 1.10.0
 
 ### Minor Changes

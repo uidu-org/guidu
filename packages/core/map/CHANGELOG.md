@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.13.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/theme@0.13.1
+
 ## 0.13.0
 
 ### Minor Changes

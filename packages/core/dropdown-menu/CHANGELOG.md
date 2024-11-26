@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 1.1.0
+
+### Minor Changes
+
+- e7d9464: Fix workspace protocol
+
+### Patch Changes
+
+- Updated dependencies [e7d9464]
+  - @uidu/button@1.11.1
+  - @uidu/popup@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

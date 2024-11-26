@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.11.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/payments@1.16.1
+  - @uidu/form@3.4.1
+
 ## 0.11.0
 
 ### Minor Changes

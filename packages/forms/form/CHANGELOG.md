@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.4.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/button@1.11.1
+
 ## 3.4.0
 
 ### Minor Changes

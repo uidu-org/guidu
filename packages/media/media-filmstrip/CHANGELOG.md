@@ -1,5 +1,17 @@
 # @uidu/media-filmstrip
 
+## 0.14.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/modal-dialog@1.9.1
+  - @uidu/theme@0.13.1
+  - @uidu/media-card@0.18.1
+  - @uidu/media-core@4.1.1
+  - @uidu/media-viewer@1.11.1
+
 ## 0.14.0
 
 ### Minor Changes

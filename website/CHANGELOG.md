@@ -1,5 +1,33 @@
 # Change Log
 
+## 0.11.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/docs@0.12.1
+  - @uidu/badge@0.12.1
+  - @uidu/button@1.11.1
+  - @uidu/code@1.0.1
+  - @uidu/drawer@0.14.1
+  - @uidu/lozenge@0.12.1
+  - @uidu/modal-dialog@1.9.1
+  - @uidu/spinner@0.12.1
+  - @uidu/theme@0.13.1
+  - @uidu/tooltip@0.12.1
+  - @uidu/list@3.12.1
+  - @uidu/table@6.10.1
+  - @uidu/checkbox@2.8.1
+  - @uidu/field-text@2.7.1
+  - @uidu/form@3.4.1
+  - @uidu/select@2.15.1
+  - @uidu/breadcrumbs@2.0.1
+  - @uidu/navigation@1.8.1
+  - @uidu/page-header@1.2.1
+  - @uidu/shell@3.0.1
+  - @uidu/themes-uidu@0.6.1
+
 ## 0.11.0
 
 ### Minor Changes

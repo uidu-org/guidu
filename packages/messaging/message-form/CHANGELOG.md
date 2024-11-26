@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.13.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/dropdown-menu@1.1.0
+  - @uidu/spinner@0.12.1
+  - @uidu/field-mentions@2.7.1
+  - @uidu/field-text@2.7.1
+  - @uidu/form@3.4.1
+  - @uidu/media-filmstrip@0.14.1
+  - @uidu/message@0.14.1
+
 ## 0.13.0
 
 ### Minor Changes

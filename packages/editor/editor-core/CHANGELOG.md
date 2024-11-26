@@ -1,5 +1,43 @@
 # @uidu/editor-core
 
+## 2.26.0
+
+### Minor Changes
+
+- e7d9464: Fix workspace protocol
+
+### Patch Changes
+
+- Updated dependencies [e7d9464]
+  - @uidu/avatar-group@3.1.0
+  - @uidu/avatar@1.0.1
+  - @uidu/button@1.11.1
+  - @uidu/menu@0.17.1
+  - @uidu/modal-dialog@1.9.1
+  - @uidu/popup@1.0.1
+  - @uidu/spinner@0.12.1
+  - @uidu/theme@0.13.1
+  - @uidu/tooltip@0.12.1
+  - @uidu/activity-provider@0.8.1
+  - @uidu/adf-schema@3.0.1
+  - @uidu/adf-utils@3.0.1
+  - @uidu/editor-common@3.0.1
+  - @uidu/editor-json-transformer@1.10.1
+  - @uidu/editor-markdown-transformer@1.10.1
+  - @uidu/prosemirror-utils@0.4.1
+  - @uidu/date@0.11.1
+  - @uidu/emoji@1.0.1
+  - @uidu/mentions@1.0.1
+  - @uidu/field-base@5.0.1
+  - @uidu/field-date@2.10.1
+  - @uidu/field-text@2.7.1
+  - @uidu/form@3.4.1
+  - @uidu/select@2.15.1
+  - @uidu/media-card@0.18.1
+  - @uidu/media-core@4.1.1
+  - @uidu/media-filmstrip@0.14.1
+  - @uidu/media-picker@1.12.1
+
 ## 2.25.0
 
 ### Minor Changes
