@@ -1,8 +1,7 @@
+import { FaceSmileIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 
 import { Link, MemoryRouter } from 'react-router-dom';
-
-import { AtlassianIcon } from '@atlaskit/logo';
 
 import { BreadcrumbsItem, BreadcrumbsStateless } from '../src';
 
@@ -15,13 +14,8 @@ interface Props {
 }
 class RouterLink extends React.PureComponent<Props, {}> {
   render() {
-    const {
-      children,
-      className,
-      href,
-      onMouseEnter,
-      onMouseLeave,
-    } = this.props;
+    const { children, className, href, onMouseEnter, onMouseLeave } =
+      this.props;
 
     return (
       <Link
@@ -48,13 +42,13 @@ const ButtonWithRouter = () => (
         />
         <BreadcrumbsItem
           href="/item"
-          iconBefore={<AtlassianIcon label="Test icon" size="small" />}
+          iconBefore={<FaceSmileIcon label="Test icon" size="small" />}
           text="Icon Before"
           component={RouterLink}
         />
         <BreadcrumbsItem
           href="/item"
-          iconAfter={<AtlassianIcon label="Test icon" size="small" />}
+          iconAfter={<FaceSmileIcon label="Test icon" size="small" />}
           text="Icon After"
           component={RouterLink}
         />

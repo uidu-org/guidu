@@ -1,4 +1,4 @@
-import { AkCodeBlock } from '@uidu/code';
+import { CodeBlock } from '@uidu/code';
 import FieldRange from '@uidu/field-range';
 import React from 'react';
 import SectionMessage from '../src';
@@ -47,7 +47,7 @@ class Example extends React.Component<any, any> {
               in the success of my undertaking.
             </p>
 
-            <AkCodeBlock
+            <CodeBlock
               language="javascript"
               text="const CODE_BLOCK_FULL_PARENT_WIDTH = true;"
               showLineNumbers

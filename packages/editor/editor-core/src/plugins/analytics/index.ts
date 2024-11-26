@@ -1,12 +1,4 @@
-import analyticsPlugin from './plugin';
-import { analyticsPluginKey as pluginKey } from './plugin-key';
-
 export type { HigherOrderCommand } from '../../types/command';
-export { fireAnalyticsEvent } from './fire-analytics-event';
-export type {
-  FireAnalyticsCallback,
-  FireAnalyticsEvent,
-} from './fire-analytics-event';
 export {
   ACTION,
   ACTION_SUBJECT,
@@ -32,18 +24,11 @@ export {
   USER_CONTEXT,
 } from './types';
 export type {
-  AnalyticsDispatch,
-  AnalyticsEventPayload,
-  AnalyticsEventPayloadWithChannel,
-  ErrorEventPayload,
   FormatEventPayload,
   GeneralEventPayload,
-  HistoryEventPayload,
   InputMethodInsertLink,
   InputMethodInsertMedia,
   InsertEventPayload,
-  MediaAltTextActionType,
-  MediaEventPayload,
   PasteContent,
   PasteEventPayload,
   PasteSource,
@@ -52,16 +37,3 @@ export type {
   SubstituteEventPayload,
   TableEventPayload,
 } from './types';
-export type { DispatchAnalyticsEvent } from './types/dispatch-analytics-event';
-export {
-  addAnalytics,
-  findInsertLocation,
-  getAnalyticsEventsFromTransaction,
-  getSelectionType,
-  getStateContext,
-  ruleWithAnalytics,
-  withAnalytics,
-} from './utils';
-
-export const analyticsPluginKey = pluginKey;
-export default analyticsPlugin;

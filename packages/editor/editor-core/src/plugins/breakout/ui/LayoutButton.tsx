@@ -93,6 +93,10 @@ class LayoutButton extends React.Component<Props & WrappedComponentProps, {}> {
 
     const { state } = editorView;
 
+    console.log('state', state);
+    console.log('node', node);
+    console.log('isBreakoutMarkAllowed(state)', isBreakoutMarkAllowed(state));
+
     if (!node || !isBreakoutMarkAllowed(state)) {
       return null;
     }

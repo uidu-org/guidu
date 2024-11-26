@@ -4,11 +4,7 @@ import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { HEADING_KEYS } from '../../../keymaps/consts';
 import { areBlockTypesDisabled } from '../../../utils';
-import { INPUT_METHOD } from '../../analytics';
-import {
-  setHeadingWithAnalytics,
-  setNormalTextWithAnalytics,
-} from '../commands';
+import { setHeading, setNormalText } from '../commands';
 import {
   BlockType,
   BLOCK_QUOTE,
@@ -105,20 +101,15 @@ const autoformatHeading = (
   view: EditorView,
 ): boolean => {
   if (headingLevel === 0) {
-    setNormalTextWithAnalytics(INPUT_METHOD.FORMATTING)(
-      view.state,
-      view.dispatch,
-    );
+    setNormalText()(view.state, view.dispatch);
   } else {
-    setHeadingWithAnalytics(headingLevel, INPUT_METHOD.FORMATTING)(
-      view.state,
-      view.dispatch,
-    );
+    setHeading(headingLevel)(view.state, view.dispatch);
   }
   return true;
 };
 
-export const pluginKey = new PluginKey('blockTypePlugin');
+export const pluginKey = new PluginKey<BlockTypeState>('blockTypePlugin');
+
 export const createPlugin = (
   dispatch: (eventName: string | PluginKey, data: any) => void,
   lastNodeMustBeParagraph?: boolean,
@@ -130,7 +121,7 @@ export const createPlugin = (
       _transactions: Transaction[],
       _oldState: EditorState,
       newState: EditorState,
-    ): Transaction | void {
+    ) {
       if (lastNodeMustBeParagraph) {
         const pos = newState.doc.resolve(newState.doc.content.size - 1);
         const lastNode = pos.node(1);
@@ -143,7 +134,9 @@ export const createPlugin = (
             )
             .setMeta('addToHistory', false);
         }
+        return undefined;
       }
+      return undefined;
     },
 
     state: {

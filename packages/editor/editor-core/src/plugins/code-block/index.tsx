@@ -1,18 +1,12 @@
+import { faCode } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { codeBlock } from '@uidu/adf-schema';
 import React from 'react';
 import { EditorPlugin, PMPluginFactoryParams } from '../../types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../block-type/messages';
-import { IconCode } from '../quick-insert/assets';
 import ideUX from './pm-plugins/ide-ux';
 import keymap from './pm-plugins/keymaps';
+import { LowlightPlugin } from './pm-plugins/lowlight';
 import { createPlugin } from './pm-plugins/main';
 import { getToolbarConfig } from './toolbar';
 
@@ -34,6 +28,14 @@ const codeBlockPlugin = (): EditorPlugin => ({
         name: 'codeBlockKeyMap',
         plugin: ({ schema }: PMPluginFactoryParams) => keymap(schema),
       },
+      {
+        name: 'codeBlockLowlight',
+        plugin: () =>
+          LowlightPlugin({
+            name: 'codeBlock',
+            defaultLanguage: 'text',
+          }),
+      },
     ];
   },
   pluginsOptions: {
@@ -43,17 +45,11 @@ const codeBlockPlugin = (): EditorPlugin => ({
         description: formatMessage(messages.codeblockDescription),
         priority: 700,
         keyshortcut: '```',
-        icon: () => <IconCode label={formatMessage(messages.codeblock)} />,
+        icon: () => <FontAwesomeIcon icon={faCode} />,
         action(insert, state) {
           const schema = state.schema;
           const tr = insert(schema.nodes.codeBlock.createChecked());
-          return addAnalytics(state, tr, {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.CODE_BLOCK,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-            eventType: EVENT_TYPE.TRACK,
-          });
+          return tr;
         },
       },
     ],

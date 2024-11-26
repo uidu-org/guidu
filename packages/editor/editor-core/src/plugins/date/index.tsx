@@ -1,3 +1,5 @@
+import { faCalendar } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import loadable from '@loadable/component';
 import { date } from '@uidu/adf-schema';
 import { todayTimestampInUTC } from '@uidu/editor-common';
@@ -6,19 +8,10 @@ import React from 'react';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
 import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
-import {
   EditorDisabledPluginState,
   pluginKey as editorDisabledPluginKey,
 } from '../editor-disabled';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
-import { IconDate } from '../quick-insert/assets';
 import { insertDate, setDatePickerAt } from './actions';
 import keymap from './pm-plugins/keymap';
 import createDatePlugin from './pm-plugins/main';
@@ -113,20 +106,18 @@ const datePlugin = (): EditorPlugin => ({
         priority: 800,
         keywords: ['time', 'today', '/'],
         keyshortcut: '//',
-        icon: () => <IconDate label={formatMessage(messages.date)} />,
+        icon: () => (
+          <FontAwesomeIcon
+            icon={faCalendar}
+            label={formatMessage(messages.date)}
+          />
+        ),
         action(insert, state) {
           const dateNode = state.schema.nodes.date.createChecked({
             timestamp: todayTimestampInUTC(),
           });
 
           const tr = insert(dateNode, { selectInlineNode: true });
-          addAnalytics(state, tr, {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.DATE,
-            eventType: EVENT_TYPE.TRACK,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-          });
           return tr.setMeta(datePluginKey, {
             showDatePickerAt: tr.selection.from,
           });

@@ -1,8 +1,6 @@
-import { startMeasure, stopMeasure } from '@uidu/editor-common';
-import { InputRule, inputRules } from 'prosemirror-inputrules';
+import { InputRule } from 'prosemirror-inputrules';
 import { Mark as PMMark } from 'prosemirror-model';
 import { EditorState, Transaction } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
 
 export type InputRuleWithHandler = InputRule & { handler: InputRuleHandler };
 
@@ -33,33 +31,6 @@ export function defaultInputRuleHandler(
   };
 
   return inputRule;
-}
-
-// The chrome profiler groups all input rules together, making it tricky to detect which one is slow.
-// This instrumentated method will add new marks with the format input-rule:<pluginName> making it
-// pretty straightforward to find issues.
-export function instrumentedInputRule(
-  pluginName: string,
-  { rules }: { rules: any },
-) {
-  const plugin = inputRules({ rules });
-
-  const handleTextInput = plugin.props.handleTextInput;
-  const timerId = `input-rule:${pluginName}`;
-
-  plugin.props.handleTextInput = (
-    view: EditorView<any>,
-    from: number,
-    to: number,
-    text: string,
-  ) => {
-    startMeasure(timerId);
-    const result = handleTextInput!(view, from, to, text);
-    stopMeasure(timerId, () => {});
-    return result;
-  };
-
-  return plugin;
 }
 
 export function createInputRule(

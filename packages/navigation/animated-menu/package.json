@@ -9,13 +9,13 @@
   "module": "dist/uidu-animated-menu.esm.js",
   "types": "dist/uidu-animated-menu.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.25.6",
+    "@babel/runtime": "^7.26.0",
     "classnames": "^2.5.1",
     "react": "^18.3.1",
     "react-flip-toolkit": "^7.2.4",
     "react-router-dom": "^5.3.4",
     "styled-components": "^5.3.11",
-    "tslib": "^2.7.0"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.11.4"

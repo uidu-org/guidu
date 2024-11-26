@@ -1,30 +1,18 @@
 import { defaultSchema } from '@uidu/adf-schema';
-import { reduce } from '@uidu/adf-utils';
-import { CreateUIAnalyticsEvent } from '@uidu/analytics';
-import { FabricChannel } from '@uidu/analytics-listeners';
-import { FabricEditorAnalyticsContext } from '@uidu/analytics-namespaced-context';
 import {
   ADFStage,
-  BaseTheme,
   EventHandlers,
   ExtensionHandlers,
-  getAnalyticsAppearance,
-  getResponseEndTime,
   ProviderFactory,
-  startMeasure,
   stopMeasure,
   UnsupportedBlock,
   WidthProvider,
-  WithCreateAnalyticsEvent,
 } from '@uidu/editor-common';
 import { Schema } from 'prosemirror-model';
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { IntlProvider } from 'react-intl';
 import { ReactSerializer, renderDocument, RendererContext } from '../..';
-import AnalyticsContext from '../../analytics/analyticsContext';
-import { ACTION, ACTION_SUBJECT, EVENT_TYPE } from '../../analytics/enums';
-import { AnalyticsEventPayload, MODE, PLATFORM } from '../../analytics/events';
 import { CopyTextProvider } from '../../react/nodes/copy-text-provider';
 import { RenderOutputStat } from '../../render-document';
 import { Provider as SmartCardStorageProvider } from '../SmartCardStorage';
@@ -53,7 +41,6 @@ export interface Props {
   allowHeadingAnchorLinks?: boolean;
   maxHeight?: number;
   truncated?: boolean;
-  createAnalyticsEvent?: CreateUIAnalyticsEvent;
   allowColumnSorting?: boolean;
 }
 
@@ -68,57 +55,11 @@ export class Renderer extends PureComponent<Props, {}> {
     super(props);
     this.providerFactory = props.dataProviders || new ProviderFactory();
     this.updateSerializer(props);
-    startMeasure('Renderer Render Time');
-  }
-
-  private anchorLinkAnalytics() {
-    const anchorLinkAttributeHit =
-      !this.props.disableHeadingIDs &&
-      window.location.hash &&
-      document.getElementById(
-        decodeURIComponent(window.location.hash.slice(1)),
-      );
-
-    if (anchorLinkAttributeHit) {
-      this.fireAnalyticsEvent({
-        action: ACTION.VIEWED,
-        actionSubject: ACTION_SUBJECT.ANCHOR_LINK,
-        attributes: { platform: PLATFORM.WEB, mode: MODE.RENDERER },
-        eventType: EVENT_TYPE.UI,
-      });
-    }
   }
 
   componentDidMount() {
-    this.fireAnalyticsEvent({
-      action: ACTION.STARTED,
-      actionSubject: ACTION_SUBJECT.RENDERER,
-      attributes: { platform: PLATFORM.WEB },
-      eventType: EVENT_TYPE.UI,
-    });
-
     this.rafID = requestAnimationFrame(() => {
-      stopMeasure('Renderer Render Time', (duration) => {
-        this.fireAnalyticsEvent({
-          action: ACTION.RENDERED,
-          actionSubject: ACTION_SUBJECT.RENDERER,
-          attributes: {
-            platform: PLATFORM.WEB,
-            duration,
-            ttfb: getResponseEndTime(),
-            nodes: reduce<Record<string, number>>(
-              this.props.document,
-              (acc, node) => {
-                acc[node.type] = (acc[node.type] || 0) + 1;
-                return acc;
-              },
-              {},
-            ),
-          },
-          eventType: EVENT_TYPE.OPERATIONAL,
-        });
-      });
-      this.anchorLinkAnalytics();
+      stopMeasure('Renderer Render Time', (duration) => {});
     });
   }
 
@@ -159,18 +100,8 @@ export class Renderer extends PureComponent<Props, {}> {
       disableHeadingIDs,
       allowHeadingAnchorLinks,
       allowColumnSorting,
-      fireAnalyticsEvent: this.fireAnalyticsEvent,
     });
   }
-
-  private fireAnalyticsEvent = (event: AnalyticsEventPayload) => {
-    const { createAnalyticsEvent } = this.props;
-
-    if (createAnalyticsEvent) {
-      const channel = FabricChannel.editor;
-      createAnalyticsEvent(event).fire(channel);
-    }
-  };
 
   render() {
     const {
@@ -197,18 +128,11 @@ export class Renderer extends PureComponent<Props, {}> {
       const rendererOutput = (
         <CopyTextProvider>
           <IntlProvider locale="en">
-            <AnalyticsContext.Provider
-              value={{
-                fireAnalyticsEvent: (event: AnalyticsEventPayload) =>
-                  this.fireAnalyticsEvent(event),
-              }}
-            >
-              <SmartCardStorageProvider>
-                <RendererWrapper appearance={appearance}>
-                  {result}
-                </RendererWrapper>
-              </SmartCardStorageProvider>
-            </AnalyticsContext.Provider>
+            <SmartCardStorageProvider>
+              <RendererWrapper appearance={appearance}>
+                {result}
+              </RendererWrapper>
+            </SmartCardStorageProvider>
           </IntlProvider>
         </CopyTextProvider>
       );
@@ -242,37 +166,12 @@ export class Renderer extends PureComponent<Props, {}> {
   }
 }
 
-function RendererWithAnalytics(props: Props) {
-  return (
-    <FabricEditorAnalyticsContext
-      data={{ appearance: getAnalyticsAppearance(props.appearance) }}
-    >
-      <WithCreateAnalyticsEvent
-        render={(createAnalyticsEvent) => (
-          <Renderer {...props} createAnalyticsEvent={createAnalyticsEvent} />
-        )}
-      />
-    </FabricEditorAnalyticsContext>
-  );
-}
+export default Renderer;
 
-export default RendererWithAnalytics;
-
-type RendererWrapperProps = {
-  appearance: RendererAppearance;
-  dynamicTextSizing: boolean;
-} & { children?: React.ReactNode };
-
-export function RendererWrapper({
-  appearance,
-  children,
-  dynamicTextSizing,
-}: RendererWrapperProps) {
+export function RendererWrapper({ children }: { children?: React.ReactNode }) {
   return (
     <WidthProvider>
-      <BaseTheme dynamicTextSizing={dynamicTextSizing}>
-        <Wrapper appearance={appearance}>{children}</Wrapper>
-      </BaseTheme>
+      <Wrapper>{children}</Wrapper>
     </WidthProvider>
   );
 }

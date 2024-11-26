@@ -13,16 +13,12 @@ import { getResizeCellPos } from './utils';
 
 export function createPlugin(
   dispatch: Dispatch<ColumnResizingPluginState>,
-  {
-    lastColumnResizable = true,
-    dynamicTextSizing = false,
-  }: ColumnResizingPluginState,
+  { lastColumnResizable = true }: ColumnResizingPluginState,
 ) {
   return new Plugin({
     key: pluginKey,
     state: createPluginState(dispatch, {
       lastColumnResizable,
-      dynamicTextSizing,
       resizeHandlePos: null,
       dragging: null,
       lastClick: null,
@@ -50,14 +46,7 @@ export function createPlugin(
 
           const { dragging } = getPluginState(state);
           if (resizeHandlePos !== null && !dragging) {
-            if (
-              handleMouseDown(
-                view,
-                event as MouseEvent,
-                resizeHandlePos,
-                dynamicTextSizing,
-              )
-            ) {
+            if (handleMouseDown(view, event as MouseEvent, resizeHandlePos)) {
               const { state, dispatch } = view;
               return setResizeHandlePos(resizeHandlePos)(state, dispatch);
             }

@@ -9,10 +9,10 @@
   "main": "dist/uidu-page-header.cjs.js",
   "types": "dist/uidu-page-header.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.25.6",
+    "@babel/runtime": "^7.26.0",
     "@uidu/shell": "^2.10.4",
     "@uidu/theme": "^0.12.4",
-    "tslib": "^2.7.0"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@uidu/breadcrumbs": "^1.6.4",

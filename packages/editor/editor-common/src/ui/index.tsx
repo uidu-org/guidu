@@ -1,6 +1,6 @@
-export { BaseTheme, mapBreakpointToLayoutMaxWidth } from './BaseTheme';
+export { mapBreakpointToLayoutMaxWidth } from './BaseTheme';
 export { ClearNextSiblingMarginTop } from './clear-next-sibling-margin-top';
-export { default as Emoji } from './Emoji';
+// export { default as Emoji } from './Emoji';
 export type {
   CardEventClickHandler,
   CardSurroundings,
@@ -48,4 +48,3 @@ export { WidthObserver } from './WidthObserver';
 export { getBreakpoint, WidthConsumer, WidthProvider } from './WidthProvider';
 export type { WidthConsumerContext } from './WidthProvider';
 export { default as withOuterListeners } from './with-outer-listeners';
-export { WithCreateAnalyticsEvent } from './WithCreateAnalyticsEvent';

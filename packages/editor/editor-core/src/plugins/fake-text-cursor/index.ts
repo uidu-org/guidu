@@ -3,11 +3,13 @@ import { PluginKey } from 'prosemirror-state';
 import { EditorPlugin } from '../../types';
 import { drawFakeTextCursor } from './cursor';
 
-export const stateKey = new PluginKey('fakeTextCursorPlugin');
+export const fakeCursorForToolbarPluginKey = new PluginKey(
+  'fakeTextCursorPlugin',
+);
 
 export const createPlugin = () =>
   new SafePlugin({
-    key: stateKey,
+    key: fakeCursorForToolbarPluginKey,
     props: {
       decorations: drawFakeTextCursor,
     },

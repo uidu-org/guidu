@@ -24,10 +24,6 @@ export type {
 export { confluenceJiraIssue } from './confluence-jira-issue';
 export { date } from './date';
 export type { DateDefinition } from './date';
-export { decisionItem } from './decision-item';
-export type { DecisionItemDefinition } from './decision-item';
-export { decisionList, decisionListSelector } from './decision-list';
-export type { DecisionListDefinition } from './decision-list';
 export { doc } from './doc';
 export type { DocNode } from './doc';
 export { emoji } from './emoji';
@@ -106,8 +102,6 @@ export { placeholder } from './placeholder';
 export type { PlaceholderDefinition } from './placeholder';
 export { rule } from './rule';
 export type { RuleDefinition } from './rule';
-export { status } from './status';
-export type { StatusDefinition } from './status';
 export {
   setCellAttrs,
   table,
@@ -135,10 +129,6 @@ export type {
   TableHeader as TableHeaderDefinition,
   TableRow as TableRowDefinition,
 } from './tableNodes';
-export { taskItem } from './task-item';
-export type { TaskItemDefinition } from './task-item';
-export { taskList, taskListSelector } from './task-list';
-export type { TaskListContent, TaskListDefinition } from './task-list';
 export { text } from './text';
 export type { TextDefinition } from './text';
 export { token } from './token';

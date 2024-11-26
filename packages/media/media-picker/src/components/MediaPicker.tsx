@@ -12,7 +12,7 @@ import ReactFocusLock from 'react-focus-lock';
 import { MediaPickerProps } from '../types';
 
 const defaultOptions = {
-  debug: process.env.NODE_ENV === 'development',
+  debug: false, // process.env.NODE_ENV === 'development',
   allowMultipleUploadBatches: true,
   restrictions: {
     maxNumberOfFiles: null,

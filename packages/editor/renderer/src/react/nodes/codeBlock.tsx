@@ -1,4 +1,4 @@
-import { AkCodeBlock } from '@uidu/code';
+import { CodeBlock as OriginalCodeBlock } from '@uidu/code';
 import { overflowShadow, OverflowShadowProps } from '@uidu/editor-common';
 import * as React from 'react';
 import { PureComponent } from 'react';
@@ -13,7 +13,7 @@ export interface Props {
 
 class CodeBlock extends PureComponent<Props & OverflowShadowProps, {}> {
   render() {
-    const { children, language, handleRef, shadowClassNames } = this.props;
+    const { children, language, handleRef } = this.props;
 
     const codeProps = {
       language,
@@ -21,9 +21,9 @@ class CodeBlock extends PureComponent<Props & OverflowShadowProps, {}> {
     };
 
     return (
-      <div className={`code-block ${shadowClassNames}`} ref={handleRef}>
-        <AkCodeBlock {...codeProps} />
-      </div>
+      <pre className={`code-block`} ref={handleRef}>
+        <OriginalCodeBlock {...codeProps} />
+      </pre>
     );
   }
 }

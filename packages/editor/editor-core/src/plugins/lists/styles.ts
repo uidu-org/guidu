@@ -3,9 +3,11 @@ import { css } from 'styled-components';
 export const listsStyles = css`
   .ProseMirror li {
     position: relative;
-
-    > p:not(:first-child) {
-      margin: 4px 0 0 0;
+    > p:first-child {
+      margin-top: 0;
+    }
+    > p:last-child {
+      margin-bottom: 0;
     }
   }
 

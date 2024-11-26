@@ -4,15 +4,6 @@ import { Transaction } from 'prosemirror-state';
 import React from 'react';
 import { EditorPlugin } from '../../types';
 import { safeInsert } from '../../utils/insert';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
-import { getFeatureFlags } from '../feature-flags-context';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconDivider } from '../quick-insert/assets';
 import inputRulePlugin from './pm-plugins/input-rule';
@@ -51,31 +42,22 @@ const rulePlugin = (): EditorPlugin => ({
         ),
         action(insert, state) {
           let tr: Transaction<any> | null = null;
-          const { newInsertionBehaviour } = getFeatureFlags(state);
-          if (newInsertionBehaviour) {
-            /**
-             * This is a workaround to get rid of the typeahead text when using quick insert
-             * Once we insert *nothing*, we get a new transaction, so we can use the new selection
-             * without considering the extra text after the `/` command.
-             **/
-            tr = insert(Fragment.empty);
-            tr = safeInsert(
-              state.schema.nodes.rule.createChecked(),
-              tr.selection.from,
-            )(tr);
-          }
+          /**
+           * This is a workaround to get rid of the typeahead text when using quick insert
+           * Once we insert *nothing*, we get a new transaction, so we can use the new selection
+           * without considering the extra text after the `/` command.
+           **/
+          tr = insert(Fragment.empty);
+          tr = safeInsert(
+            state.schema.nodes.rule.createChecked(),
+            tr.selection.from,
+          )(tr);
 
           if (!tr) {
             tr = insert(state.schema.nodes.rule.createChecked());
           }
 
-          return addAnalytics(state, tr, {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.DIVIDER,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-            eventType: EVENT_TYPE.TRACK,
-          });
+          return tr;
         },
       },
     ],

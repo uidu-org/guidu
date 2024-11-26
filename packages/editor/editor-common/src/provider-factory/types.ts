@@ -1,6 +1,5 @@
 import { EmojiProvider } from '@uidu/emoji';
 import { MentionProvider } from '@uidu/mentions';
-import { TaskDecisionProvider } from '@uidu/task-decision';
 import { ExtensionProvider } from '../extensions/types';
 import { AutoformattingProvider } from './autoformatting-provider';
 import { CardProvider } from './card-provider';
@@ -8,7 +7,6 @@ import type { CollabEditProvider } from './collab-edit-provider';
 import { ImageUploadProvider } from './image-upload-provider';
 import { MacroProvider } from './macro-provider';
 import { MediaProvider } from './media-provider';
-import { ProfilecardProvider } from './profile-card-provider';
 import { QuickInsertProvider } from './quick-insert-provider';
 import { TokenProvider } from './token-provider';
 
@@ -18,13 +16,11 @@ export interface Providers {
   mentionProvider?: Promise<MentionProvider>;
   extensionProvider?: Promise<ExtensionProvider>;
   autoformattingProvider?: Promise<AutoformattingProvider>;
-  taskDecisionProvider?: Promise<TaskDecisionProvider>;
   imageUploadProvider?: Promise<ImageUploadProvider>;
   collabEditProvider?: Promise<CollabEditProvider>;
   macroProvider?: Promise<MacroProvider>;
   cardProvider?: Promise<CardProvider>;
   quickInsertProvider?: Promise<QuickInsertProvider>;
-  profilecardProvider?: Promise<ProfilecardProvider>;
   tokenProvider?: Promise<TokenProvider>;
 
   activityProvider?: Promise<any>; // TODO: Activity AK component looks deprecated any suggestion?

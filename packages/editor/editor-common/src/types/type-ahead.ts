@@ -3,7 +3,6 @@ import type { ReactElement } from 'react';
 import { Fragment, Node as PMNode } from 'prosemirror-model';
 import { EditorState, Transaction } from 'prosemirror-state';
 
-import type { TypeAheadPayload } from '../analytics/types/type-ahead';
 import type { SelectItemMode, TypeAheadAvailableNodes } from '../type-ahead';
 
 type TypeAheadForceSelectProps = {
@@ -66,7 +65,6 @@ export type TypeAheadHandler = {
   customRegex?: string;
   headless?: boolean;
   forceSelect?: TypeAheadForceSelect;
-  onInvokeAnalytics?: TypeAheadPayload;
   onOpen?: (editorState: EditorState) => void;
   getItems: (props: {
     query: string;

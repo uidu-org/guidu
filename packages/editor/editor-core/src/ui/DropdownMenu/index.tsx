@@ -1,17 +1,13 @@
-import DropList from '@uidu/droplist';
-import { akEditorFloatingPanelZIndex, Popup } from '@uidu/editor-common';
 import { ButtonItem, MenuGroup } from '@uidu/menu';
+import Popup from '@uidu/popup';
 import Tooltip from '@uidu/tooltip';
-import React, { Fragment, PureComponent } from 'react';
+import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
-import withOuterListeners from '../with-outer-listeners';
-import { MenuItem, Props, State } from './types';
+import { MenuItem, Props } from './types';
 
 const Wrapper = styled.div`
   line-height: 0;
 `;
-
-const DropListWithOutsideListeners: any = withOuterListeners(DropList);
 
 /**
  * Wrapper around @uidu/droplist which uses Popup and Portal to render
@@ -19,27 +15,27 @@ const DropListWithOutsideListeners: any = withOuterListeners(DropList);
  *
  * Also it controls popper's placement.
  */
-export default class DropdownMenuWrapper extends PureComponent<Props, State> {
-  state: State = {
-    popupPlacement: ['bottom', 'left'],
+export default function DropdownMenuWrapper(props: Props) {
+  const [popupPlacement, setPopupPlacement] = useState(['bottom', 'left']);
+  const [target, setTarget] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleRef = (target: HTMLElement | null) => {
+    setTarget(target || undefined);
   };
 
-  private handleRef = (target: HTMLElement | null) => {
-    this.setState({ target: target || undefined });
+  const updatePopupPlacement = (placement: [string, string]) => {
+    setPopupPlacement(placement);
   };
 
-  private updatePopupPlacement = (placement: [string, string]) => {
-    this.setState({ popupPlacement: placement });
-  };
-
-  private handleClose = () => {
-    if (this.props.onOpenChange) {
-      this.props.onOpenChange({ isOpen: false });
+  const handleClose = () => {
+    if (props.onOpenChange) {
+      props.onOpenChange({ isOpen: false });
     }
   };
 
-  private renderItem(item: MenuItem) {
-    const { onItemActivated } = this.props;
+  const renderItem = (item: MenuItem) => {
+    const { onItemActivated } = props;
 
     // onClick and value.name are the action indicators in the handlers
     // If neither are present, don't wrap in an Item.
@@ -74,62 +70,35 @@ export default class DropdownMenuWrapper extends PureComponent<Props, State> {
     }
 
     return dropListItem;
-  }
+  };
 
-  private renderDropdownMenu() {
-    const { target, popupPlacement } = this.state;
-    const {
-      items,
-      mountTo,
-      boundariesElement,
-      scrollableElement,
-      offset,
-      fitHeight,
-      fitWidth,
-      isOpen,
-      zIndex,
-    } = this.props;
+  const renderDropdownMenu = () => {
+    const { items } = props;
 
     return (
+      <>
+        {items.map((group, index) => (
+          <MenuGroup key={index}>
+            {group.items.map((item) => renderItem(item))}
+          </MenuGroup>
+        ))}
+      </>
+    );
+  };
+
+  return (
+    <Wrapper>
       <Popup
-        target={isOpen ? target : undefined}
-        mountTo={mountTo}
-        boundariesElement={boundariesElement}
-        scrollableElement={scrollableElement}
-        onPlacementChanged={this.updatePopupPlacement}
-        fitHeight={fitHeight}
-        fitWidth={fitWidth}
-        zIndex={zIndex || akEditorFloatingPanelZIndex}
-        offset={offset}
-      >
-        <DropListWithOutsideListeners
-          isOpen={true}
-          appearance="tall"
-          position={popupPlacement.join(' ')}
-          shouldFlip={false}
-          shouldFitContainer={true}
-          isTriggerNotTabbable={true}
-          handleClickOutside={this.handleClose}
-          handleEscapeKeydown={this.handleClose}
-        >
-          {items.map((group, index) => (
-            <MenuGroup key={index}>
-              {group.items.map((item) => this.renderItem(item))}
-            </MenuGroup>
-          ))}
-        </DropListWithOutsideListeners>
-      </Popup>
-    );
-  }
-
-  render() {
-    const { children, isOpen } = this.props;
-
-    return (
-      <Wrapper>
-        <div ref={this.handleRef}>{children}</div>
-        {isOpen ? this.renderDropdownMenu() : null}
-      </Wrapper>
-    );
-  }
+        trigger={(triggerProps) => (
+          <div {...triggerProps} onClick={() => setIsOpen((prev) => !prev)}>
+            {props.children}
+          </div>
+        )}
+        content={() => renderDropdownMenu()}
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        placement="bottom-start"
+      />
+    </Wrapper>
+  );
 }

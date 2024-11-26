@@ -1,7 +1,6 @@
-import { UIAnalyticsEvent, WithAnalyticsEventsProps } from '@uidu/analytics';
 import React from 'react';
 
-interface CommonProps extends WithAnalyticsEventsProps {
+interface CommonProps {
   /** Label above the input. */
   label?: string;
   /** Validation function handled by final-form. */
@@ -43,7 +42,7 @@ export interface InlineEditUncontrolledProps<FieldBaseProps>
    * Handler called editView is closed and changes are confirmed.
    * Field value is passed as an argument to this function.
    */
-  onConfirm: (value: any, analyticsEvent: UIAnalyticsEvent) => void;
+  onConfirm: (value: any) => void;
   /** Handler called when checkmark is. */
   onCancel: () => void;
 }
@@ -60,7 +59,7 @@ export interface InlineEditProps<FieldBaseProps> extends CommonProps {
    * Handler called editView is closed and changes are confirmed.
    * Field value is passed as an argument to this function.
    */
-  onConfirm: (value: any, analyticsEvent: UIAnalyticsEvent) => void;
+  onConfirm: (value: any) => void;
   /** The value shown in the editView when it is entered. Should be updated by onConfirm. */
   defaultValue: any;
   /** Determines whether isEditing begins as true. */
@@ -72,7 +71,7 @@ export interface InlineEditableTextfieldProps extends CommonProps {
    * Handler called editView is closed and changes are confirmed.
    * Field value is passed as an argument to this function.
    */
-  onConfirm: (value: string, analyticsEvent: UIAnalyticsEvent) => void;
+  onConfirm: (value: string) => void;
   /** The value shown in the editView when it is entered. Should be updated by onConfirm. */
   defaultValue: any;
   /** Text shown in read view when value is an empty string. */

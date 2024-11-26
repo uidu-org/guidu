@@ -1,21 +1,8 @@
-import { InputRule } from 'prosemirror-inputrules';
+import { InputRule, inputRules } from 'prosemirror-inputrules';
 import { MarkType, Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
-import { analyticsService } from '../../../analytics';
 import { applyMarkOnRange } from '../../../utils/commands';
-import {
-  createInputRule,
-  InputRuleHandler,
-  instrumentedInputRule,
-} from '../../../utils/input-rules';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../../analytics';
-import { ruleWithAnalytics } from '../../analytics/utils';
+import { createInputRule, InputRuleHandler } from '../../../utils/input-rules';
 
 const validCombos = {
   '**': ['_', '~~'],
@@ -94,10 +81,6 @@ function addMark(
       }
     }
 
-    analyticsService.trackEvent(
-      `uidu.editor-core.format.${markType.name}.autoformatting`,
-    );
-
     // apply mark to the range (from, to)
     let tr = state.tr.addMark(from, to, markType.create());
 
@@ -156,7 +139,6 @@ function addCodeMark(
       end -= state.selection.to - state.selection.from;
     }
 
-    analyticsService.trackEvent('uidu.editor-core.format.code.autoformatting');
     const regexStart = end - match[2].length + 1;
     const codeMark = state.schema.marks.code.create();
     return applyMarkOnRange(regexStart, end, false, codeMark, tr)
@@ -183,17 +165,6 @@ export const codeRegex = /(\S*)(`[^\s][^`]*`)$/;
  * @returns {InputRule[]}
  */
 function getStrongInputRules(schema: Schema): InputRule[] {
-  const ruleWithStrongAnalytics = ruleWithAnalytics(() => ({
-    action: ACTION.FORMATTED,
-    actionSubject: ACTION_SUBJECT.TEXT,
-    actionSubjectId: ACTION_SUBJECT_ID.FORMAT_STRONG,
-    eventType: EVENT_TYPE.TRACK,
-    attributes: {
-      inputMethod: INPUT_METHOD.FORMATTING,
-    },
-  }));
-  // **string** or __strong__ should bold the text
-
   const markLength = 2;
   const doubleUnderscoreRule = createInputRule(
     strongRegex1,
@@ -205,10 +176,7 @@ function getStrongInputRules(schema: Schema): InputRule[] {
     addMark(schema.marks.strong, schema, markLength, '**'),
   );
 
-  return [
-    ruleWithStrongAnalytics(doubleUnderscoreRule),
-    ruleWithStrongAnalytics(doubleAsterixRule),
-  ];
+  return [doubleUnderscoreRule, doubleAsterixRule];
 }
 
 /**
@@ -218,16 +186,6 @@ function getStrongInputRules(schema: Schema): InputRule[] {
  * @returns {InputRule[]}
  */
 function getItalicInputRules(schema: Schema): InputRule[] {
-  const ruleWithItalicAnalytics = ruleWithAnalytics(() => ({
-    action: ACTION.FORMATTED,
-    actionSubject: ACTION_SUBJECT.TEXT,
-    actionSubjectId: ACTION_SUBJECT_ID.FORMAT_ITALIC,
-    eventType: EVENT_TYPE.TRACK,
-    attributes: {
-      inputMethod: INPUT_METHOD.FORMATTING,
-    },
-  }));
-
   // *string* or _string_ should italic the text
   const markLength = 1;
 
@@ -241,10 +199,7 @@ function getItalicInputRules(schema: Schema): InputRule[] {
     addMark(schema.marks.em, schema, markLength, '*'),
   );
 
-  return [
-    ruleWithItalicAnalytics(underscoreRule),
-    ruleWithItalicAnalytics(asterixRule),
-  ];
+  return [underscoreRule, asterixRule];
 }
 
 /**
@@ -254,23 +209,13 @@ function getItalicInputRules(schema: Schema): InputRule[] {
  * @returns {InputRule[]}
  */
 function getStrikeInputRules(schema: Schema): InputRule[] {
-  const ruleWithStrikeAnalytics = ruleWithAnalytics(() => ({
-    action: ACTION.FORMATTED,
-    actionSubject: ACTION_SUBJECT.TEXT,
-    actionSubjectId: ACTION_SUBJECT_ID.FORMAT_STRIKE,
-    eventType: EVENT_TYPE.TRACK,
-    attributes: {
-      inputMethod: INPUT_METHOD.FORMATTING,
-    },
-  }));
-
   const markLength = 2;
   const doubleTildeRule = createInputRule(
     strikeRegex,
     addMark(schema.marks.strike, schema, markLength, '~~'),
   );
 
-  return [ruleWithStrikeAnalytics(doubleTildeRule)];
+  return [doubleTildeRule];
 }
 
 /**
@@ -280,22 +225,12 @@ function getStrikeInputRules(schema: Schema): InputRule[] {
  * @returns {InputRule[]}
  */
 function getCodeInputRules(schema: Schema): InputRule[] {
-  const ruleWithCodeAnalytics = ruleWithAnalytics(() => ({
-    action: ACTION.FORMATTED,
-    actionSubject: ACTION_SUBJECT.TEXT,
-    actionSubjectId: ACTION_SUBJECT_ID.FORMAT_CODE,
-    eventType: EVENT_TYPE.TRACK,
-    attributes: {
-      inputMethod: INPUT_METHOD.FORMATTING,
-    },
-  }));
-
   const backTickRule = createInputRule(
     codeRegex,
     addCodeMark(schema.marks.code, '`'),
   );
 
-  return [ruleWithCodeAnalytics(backTickRule)];
+  return [backTickRule];
 }
 
 export function inputRulePlugin(schema: Schema): Plugin | undefined {
@@ -318,7 +253,7 @@ export function inputRulePlugin(schema: Schema): Plugin | undefined {
   }
 
   if (rules.length !== 0) {
-    return instrumentedInputRule('text-formatting', { rules });
+    return inputRules({ rules });
   }
   return undefined;
 }

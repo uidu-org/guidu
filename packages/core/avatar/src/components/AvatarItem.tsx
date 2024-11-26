@@ -93,7 +93,7 @@ class AvatarItem extends Component<Props> {
     } = this.props;
 
     // distill props from context, props, and state
-    const enhancedProps = getProps(this);
+    const enhancedProps = getProps(this.props);
 
     // provide element interface based on props
     const StyledComponent: any = getStyledAvatarItem(this.props);
@@ -103,7 +103,7 @@ class AvatarItem extends Component<Props> {
         {({ mode }: any) => (
           <ThemeItem.Provider value={this.props.theme}>
             <ThemeItem.Consumer>
-              {tokens => {
+              {(tokens) => {
                 // maintain the illusion of a mask around presence/status
                 const borderColor = getBackgroundColor({
                   ...this.props,

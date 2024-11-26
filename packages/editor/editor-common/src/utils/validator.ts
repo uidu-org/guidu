@@ -1,7 +1,6 @@
 import {
   CellAttributes,
   defaultSchema,
-  generateUuid as uuid,
   inlineNodes,
   isSafeUrl,
 } from '@uidu/adf-schema';
@@ -285,15 +284,6 @@ export const getValidNode = (
       }
       case 'token': {
         if (attrs && attrs.id && attrs.name) {
-          return {
-            type,
-            attrs,
-          };
-        }
-        break;
-      }
-      case 'status': {
-        if (attrs && attrs.text && attrs.color) {
           return {
             type,
             attrs,
@@ -586,44 +576,6 @@ export const getValidNode = (
           }
         }
         break;
-      }
-      case 'decisionList': {
-        return {
-          type,
-          content,
-          attrs: {
-            localId: (attrs && attrs.localId) || uuid(),
-          },
-        };
-      }
-      case 'decisionItem': {
-        return {
-          type,
-          content,
-          attrs: {
-            localId: (attrs && attrs.localId) || uuid(),
-            state: (attrs && attrs.state) || 'DECIDED',
-          },
-        };
-      }
-      case 'taskList': {
-        return {
-          type,
-          content,
-          attrs: {
-            localId: (attrs && attrs.localId) || uuid(),
-          },
-        };
-      }
-      case 'taskItem': {
-        return {
-          type,
-          content,
-          attrs: {
-            localId: (attrs && attrs.localId) || uuid(),
-            state: (attrs && attrs.state) || 'TODO',
-          },
-        };
       }
       case 'table': {
         if (

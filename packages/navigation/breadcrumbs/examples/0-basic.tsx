@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { AtlassianIcon } from '@atlaskit/logo';
-
+import { FaceSmileIcon } from '@heroicons/react/24/solid';
 import { BreadcrumbsItem, BreadcrumbsStateless } from '../src';
 
 export default class BreadcrumbsExpand extends React.Component<
@@ -21,18 +20,18 @@ export default class BreadcrumbsExpand extends React.Component<
     return (
       <BreadcrumbsStateless
         isExpanded={this.state.isExpanded}
-        onExpand={e => this.expand(e)}
+        onExpand={(e) => this.expand(e)}
       >
         <BreadcrumbsItem href="/pages" text="Pages" />
         <BreadcrumbsItem href="/pages/home" text="Home" />
         <BreadcrumbsItem
           href="/item"
-          iconBefore={<AtlassianIcon label="Test icon" size="small" />}
+          iconBefore={<FaceSmileIcon label="Test icon" size="small" />}
           text="Icon Before"
         />
         <BreadcrumbsItem
           href="/item"
-          iconAfter={<AtlassianIcon label="Test icon" size="small" />}
+          iconAfter={<FaceSmileIcon label="Test icon" size="small" />}
           text="Icon After"
         />
       </BreadcrumbsStateless>

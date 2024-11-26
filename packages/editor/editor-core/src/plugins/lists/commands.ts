@@ -33,17 +33,7 @@ import {
   walkNextNode,
 } from '../../utils/commands';
 import { hasVisibleContent, isNodeEmpty } from '../../utils/document';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INDENT_DIR,
-  INDENT_TYPE,
-  INPUT_METHOD,
-  withAnalytics,
-} from '../analytics';
+import { INPUT_METHOD } from '../analytics';
 import { GapCursorSelection } from '../gap-cursor';
 import { liftFollowingList, liftSelectionList } from './transforms';
 
@@ -62,7 +52,7 @@ const deletePreviousEmptyListItem: Command = (state, dispatch) => {
 
   const previousListItemEmpty =
     $cut.nodeBefore.childCount === 1 &&
-    $cut.nodeBefore.firstChild!.nodeSize <= 2;
+    $cut.nodeBefore.firstChild.nodeSize <= 2;
 
   if (previousListItemEmpty) {
     const { tr } = state;
@@ -82,16 +72,11 @@ const deletePreviousEmptyListItem: Command = (state, dispatch) => {
 
 const joinToPreviousListItem: Command = (state, dispatch) => {
   const { $from } = state.selection;
-  const {
-    paragraph,
-    listItem,
-    codeBlock,
-    bulletList,
-    orderedList,
-  } = state.schema.nodes;
+  const { paragraph, listItem, codeBlock, bulletList, orderedList } =
+    state.schema.nodes;
   const isGapCursorShown = state.selection instanceof GapCursorSelection;
   const $cutPos = isGapCursorShown ? state.doc.resolve($from.pos + 1) : $from;
-  let $cut = findCutBefore($cutPos);
+  const $cut = findCutBefore($cutPos);
   if (!$cut) {
     return false;
   }
@@ -147,7 +132,7 @@ const joinToPreviousListItem: Command = (state, dispatch) => {
 
       // find out if there's now another list following and join them
       // as in, [list, p, list] => [list with p, list], and we want [joined list]
-      let $postCut = tr.doc.resolve(
+      const $postCut = tr.doc.resolve(
         tr.mapping.map($cut.pos + $cut.nodeAfter.nodeSize),
       );
       if (
@@ -224,8 +209,9 @@ export const enterKeyCommand: Command = (state, dispatch): boolean => {
       /** Check if the wrapper has any visible content */
       const wrapperHasContent = hasVisibleContent(wrapper);
       if (isNodeEmpty(node) && !wrapperHasContent) {
-        return outdentList(INPUT_METHOD.KEYBOARD)(state, dispatch);
-      } else if (!hasParentNodeOfType(codeBlock)(selection)) {
+        return outdentList()(state, dispatch);
+      }
+      if (!hasParentNodeOfType(codeBlock)(selection)) {
         return splitListItem(listItem)(state, dispatch);
       }
     }
@@ -251,18 +237,18 @@ export const deleteKeyCommand: Command = (state, dispatch): boolean => {
 
     if (foundNode) {
       if ($next.parent && $next.parent.type.name === 'paragraph') {
-        //Next is a paragraph
+        // Next is a paragraph
 
-        const content = $next.parent.content;
+        const { content } = $next.parent;
 
         insertContentDeleteRange(
           tr,
           (tr) => tr.doc.resolve($head.pos),
           [
-            [content, $head.pos], //Insert text content into the current paragraph
+            [content, $head.pos], // Insert text content into the current paragraph
           ],
           [
-            [$next.before(), $next.before() + $next.parent.nodeSize], //Delete range for next node
+            [$next.before(), $next.before() + $next.parent.nodeSize], // Delete range for next node
           ],
         );
 
@@ -271,15 +257,16 @@ export const deleteKeyCommand: Command = (state, dispatch): boolean => {
         }
 
         return true;
-      } else if (
+      }
+      if (
         headGreatGrandParent === nextGrandParent &&
         headGreatGrandParent !== undefined &&
         $next.parent.firstChild &&
         $next.parent.firstChild.type.name === 'paragraph'
       ) {
-        //Next is a node with a paragraph inside, with the same list as the parent
+        // Next is a node with a paragraph inside, with the same list as the parent
 
-        const content = $next.parent.firstChild.content;
+        const { content } = $next.parent.firstChild;
         const childrenContent = $next.parent.content.cut(
           $next.parent.firstChild.nodeSize,
         );
@@ -288,11 +275,11 @@ export const deleteKeyCommand: Command = (state, dispatch): boolean => {
           tr,
           (tr) => tr.doc.resolve($head.pos),
           [
-            [content, $head.pos], //Insert text content into the current paragraph
-            [childrenContent, $head.after()], //Insert children nodes of the next list element, after this paragraph
+            [content, $head.pos], // Insert text content into the current paragraph
+            [childrenContent, $head.after()], // Insert children nodes of the next list element, after this paragraph
           ],
           [
-            [$next.before(), $next.before() + $next.parent.nodeSize], //Delete range for next node
+            [$next.before(), $next.before() + $next.parent.nodeSize], // Delete range for next node
           ],
         );
 
@@ -319,10 +306,7 @@ export const backspaceKeyCommand = baseCommand.chainCommands(
       isFirstChildOfParent,
       canOutdent,
     ],
-    baseCommand.chainCommands(
-      deletePreviousEmptyListItem,
-      outdentList(INPUT_METHOD.KEYBOARD),
-    ),
+    baseCommand.chainCommands(deletePreviousEmptyListItem, outdentList()),
   ),
 
   // if we're just inside a paragraph node (or gapcursor is shown) and backspace, then try to join
@@ -341,9 +325,9 @@ export const backspaceKeyCommand = baseCommand.chainCommands(
 function splitListItem(itemType: NodeType): Command {
   return function (state, dispatch) {
     const ref = state.selection as NodeSelection;
-    const $from = ref.$from;
-    const $to = ref.$to;
-    const node = ref.node;
+    const { $from } = ref;
+    const { $to } = ref;
+    const { node } = ref;
     if ((node && node.isBlock) || $from.depth < 2 || !$from.sameParent($to)) {
       return false;
     }
@@ -380,7 +364,7 @@ function splitListItem(itemType: NodeType): Command {
           wrap = Fragment.from($from.node(d).copy(wrap));
         }
         // Add a second list item with an empty default start node
-        wrap = wrap.append(Fragment.from(itemType.createAndFill()!));
+        wrap = wrap.append(Fragment.from(itemType.createAndFill()));
         const tr$1 = state.tr.replace(
           $from.before(keepItem ? undefined : -1),
           $from.after(-3),
@@ -417,8 +401,8 @@ function splitListItem(itemType: NodeType): Command {
  * @returns
  */
 function mergeLists(listItem: NodeType, range: NodeRange) {
-  return (command: Command): Command => {
-    return (state, dispatch) =>
+  return (command: Command): Command =>
+    (state, dispatch) =>
       command(state, (tr) => {
         /* we now need to handle the case that we lifted a sublist out,
          * and any listItems at the current level get shifted out to
@@ -469,12 +453,9 @@ function mergeLists(listItem: NodeType, range: NodeRange) {
           dispatch(tr.scrollIntoView());
         }
       });
-  };
 }
 
-export function outdentList(
-  inputMethod: InputMethod = INPUT_METHOD.KEYBOARD,
-): Command {
+export function outdentList(): Command {
   return function (state, dispatch) {
     const { listItem } = state.schema.nodes;
     const { $from, $to } = state.selection;
@@ -485,33 +466,16 @@ export function outdentList(
       // the predicate is for when you're backspacing a top level list item:
       // we don't want to go up past the doc node, otherwise the range
       // to clear will include everything
-      let range = $from.blockRange(
+      const range = $from.blockRange(
         $to,
-        (node) => node.childCount > 0 && node.firstChild!.type === listItem,
+        (node) => node.childCount > 0 && node.firstChild.type === listItem,
       );
 
       if (!range) {
         return false;
       }
-      const initialIndentationLevel = numberNestedLists(
-        state.selection.$from,
-        state.schema.nodes,
-      );
 
       return compose(
-        withAnalytics({
-          action: ACTION.FORMATTED,
-          actionSubject: ACTION_SUBJECT.TEXT,
-          actionSubjectId: ACTION_SUBJECT_ID.FORMAT_INDENT,
-          eventType: EVENT_TYPE.TRACK,
-          attributes: {
-            inputMethod,
-            previousIndentationLevel: initialIndentationLevel,
-            newIndentLevel: initialIndentationLevel - 1,
-            direction: INDENT_DIR.OUTDENT,
-            indentType: INDENT_TYPE.LIST,
-          },
-        }), // 3. Send analytics event
         mergeLists(listItem, range), // 2. Check if I need to merge nearest list
         baseListCommand.liftListItem, // 1. First lift list item
       )(listItem)(state, dispatch);
@@ -554,9 +518,7 @@ function canSink(initialIndentationLevel: number, state: EditorState): boolean {
   return true;
 }
 
-export function indentList(
-  inputMethod: InputMethod = INPUT_METHOD.KEYBOARD,
-): Command {
+export function indentList(): Command {
   return function (state, dispatch) {
     const { listItem } = state.schema.nodes;
     if (isInsideListItem(state)) {
@@ -567,23 +529,7 @@ export function indentList(
       );
 
       if (canSink(initialIndentationLevel, state)) {
-        // Analytics command wrapper should be here because we need to get indentation level
-        compose(
-          withAnalytics({
-            action: ACTION.FORMATTED,
-            actionSubject: ACTION_SUBJECT.TEXT,
-            actionSubjectId: ACTION_SUBJECT_ID.FORMAT_INDENT,
-            eventType: EVENT_TYPE.TRACK,
-            attributes: {
-              inputMethod,
-              previousIndentationLevel: initialIndentationLevel,
-              newIndentLevel: initialIndentationLevel + 1,
-              direction: INDENT_DIR.INDENT,
-              indentType: INDENT_TYPE.LIST,
-            },
-          }),
-          baseListCommand.sinkListItem,
-        )(listItem)(state, dispatch);
+        compose(baseListCommand.sinkListItem)(listItem)(state, dispatch);
       }
       return true;
     }
@@ -636,12 +582,12 @@ export function adjustSelectionInList(
   doc: Node,
   selection: TextSelection,
 ): TextSelection {
-  let { $from, $to } = selection;
+  const { $from, $to } = selection;
 
   const isSameLine = $from.pos === $to.pos;
 
   let startPos = $from.pos;
-  let endPos = $to.pos;
+  const endPos = $to.pos;
 
   if (isSameLine && startPos === doc.nodeSize - 3) {
     // Line is empty, don't do anything
@@ -688,70 +634,6 @@ export const rootListDepth = (
   return depth;
 };
 
-// Returns the number of nested lists that are ancestors of the given selection
-export const numberNestedLists = (
-  resolvedPos: ResolvedPos,
-  nodes: Record<string, NodeType>,
-) => {
-  const { bulletList, orderedList } = nodes;
-  let count = 0;
-  for (let i = resolvedPos.depth - 1; i > 0; i--) {
-    const node = resolvedPos.node(i);
-    if (node.type === bulletList || node.type === orderedList) {
-      count += 1;
-    }
-  }
-  return count;
-};
-
-export const toggleList = (
-  state: EditorState,
-  dispatch: (tr: Transaction) => void,
-  view: EditorView,
-  listType: 'bulletList' | 'orderedList',
-  inputMethod: InputMethod,
-): boolean => {
-  const { selection } = state;
-  const fromNode = selection.$from.node(selection.$from.depth - 2);
-  const endNode = selection.$to.node(selection.$to.depth - 2);
-  if (
-    !fromNode ||
-    fromNode.type.name !== listType ||
-    !endNode ||
-    endNode.type.name !== listType
-  ) {
-    return toggleListCommandWithAnalytics(inputMethod, listType)(
-      state,
-      dispatch,
-      view,
-    );
-  } else {
-    const depth = rootListDepth(selection.$to, state.schema.nodes);
-    let tr = liftFollowingList(
-      state,
-      selection.$to.pos,
-      selection.$to.end(depth),
-      depth || 0,
-      state.tr,
-    );
-    tr = liftSelectionList(state, tr);
-    tr = addAnalytics(state, tr, {
-      action: ACTION.FORMATTED,
-      actionSubject: ACTION_SUBJECT.TEXT,
-      actionSubjectId:
-        listType === 'bulletList'
-          ? ACTION_SUBJECT_ID.FORMAT_LIST_BULLET
-          : ACTION_SUBJECT_ID.FORMAT_LIST_NUMBER,
-      eventType: EVENT_TYPE.TRACK,
-      attributes: {
-        inputMethod,
-      },
-    });
-    dispatch(tr);
-    return true;
-  }
-};
-
 /**
  * Check of is selection is inside a list of the specified type
  * @param state
@@ -770,6 +652,29 @@ function isInsideList(
     (grandgrandParent && grandgrandParent.type === state.schema.nodes[listType])
   );
 }
+
+export function wrapInList(nodeType: NodeType): Command {
+  return baseCommand.autoJoin(
+    baseListCommand.wrapInList(nodeType),
+    (before, after) => before.type === after.type && before.type === nodeType,
+  );
+}
+
+// Returns the number of nested lists that are ancestors of the given selection
+export const numberNestedLists = (
+  resolvedPos: ResolvedPos,
+  nodes: Record<string, NodeType>,
+) => {
+  const { bulletList, orderedList } = nodes;
+  let count = 0;
+  for (let i = resolvedPos.depth - 1; i > 0; i--) {
+    const node = resolvedPos.node(i);
+    if (node.type === bulletList || node.type === orderedList) {
+      count += 1;
+    }
+  }
+  return count;
+};
 
 export function toggleListCommand(
   listType: 'bulletList' | 'orderedList',
@@ -808,81 +713,58 @@ export function toggleListCommand(
     if (isInsideList(state, listType) && isSameListTypeSelected) {
       // Untoggles list
       return liftListItems()(state, dispatch);
-    } else {
-      // Converts list type e.g. bullet_list -> ordered_list if needed
-      if (!isSameListTypeSelected) {
-        liftListItems()(state, dispatch);
-        state = view.state;
-      }
-
-      // Remove any invalid marks that are not supported
-      const tr = sanitiseSelectionMarksForWrapping(state, listNodeType);
-      if (tr && dispatch) {
-        dispatch(tr);
-        state = view.state;
-      }
-      // Wraps selection in list
-      return wrapInList(listNodeType)(state, dispatch);
     }
+    // Converts list type e.g. bullet_list -> ordered_list if needed
+    if (!isSameListTypeSelected) {
+      liftListItems()(state, dispatch);
+      state = view.state;
+    }
+
+    // Remove any invalid marks that are not supported
+    const tr = sanitiseSelectionMarksForWrapping(state, listNodeType);
+    if (tr && dispatch) {
+      dispatch(tr);
+      state = view.state;
+    }
+    // Wraps selection in list
+    return wrapInList(listNodeType)(state, dispatch);
   };
 }
 
-// TODO: Toggle list command dispatch more than one time, so commandWithAnalytics doesn't work as expected.
-// This is a helper to fix that.
-export const toggleListCommandWithAnalytics = (
-  inputMethod: InputMethod,
+export const toggleList = (
+  state: EditorState,
+  dispatch: (tr: Transaction) => void,
+  view: EditorView,
   listType: 'bulletList' | 'orderedList',
-): Command => {
-  const listTypeActionSubjectId = {
-    bulletList: ACTION_SUBJECT_ID.FORMAT_LIST_BULLET,
-    orderedList: ACTION_SUBJECT_ID.FORMAT_LIST_NUMBER,
-  };
-  return (state, dispatch, view) => {
-    if (toggleListCommand(listType)(state, dispatch, view)) {
-      if (view && dispatch) {
-        dispatch(
-          addAnalytics(state, view.state.tr, {
-            action: ACTION.FORMATTED,
-            actionSubject: ACTION_SUBJECT.TEXT,
-            actionSubjectId: listTypeActionSubjectId[listType] as
-              | ACTION_SUBJECT_ID.FORMAT_LIST_BULLET
-              | ACTION_SUBJECT_ID.FORMAT_LIST_NUMBER,
-            eventType: EVENT_TYPE.TRACK,
-            attributes: {
-              inputMethod,
-            },
-          }),
-        );
-      }
-      return true;
-    }
-    return false;
-  };
+): boolean => {
+  const { selection } = state;
+  const fromNode = selection.$from.node(selection.$from.depth - 2);
+  const endNode = selection.$to.node(selection.$to.depth - 2);
+  if (
+    !fromNode ||
+    fromNode.type.name !== listType ||
+    !endNode ||
+    endNode.type.name !== listType
+  ) {
+    return toggleListCommand(listType)(state, dispatch, view);
+  }
+  const depth = rootListDepth(selection.$to, state.schema.nodes);
+  let tr = liftFollowingList(
+    state,
+    selection.$to.pos,
+    selection.$to.end(depth),
+    depth || 0,
+    state.tr,
+  );
+  tr = liftSelectionList(state, tr);
+  dispatch(tr);
+  return true;
 };
 
-export function toggleBulletList(
-  view: EditorView,
-  inputMethod: InputMethod = INPUT_METHOD.TOOLBAR,
-) {
-  return toggleList(view.state, view.dispatch, view, 'bulletList', inputMethod);
+export function toggleBulletList(view: EditorView) {
+  return toggleList(view.state, view.dispatch, view, 'bulletList');
 }
 
-export function toggleOrderedList(
-  view: EditorView,
-  inputMethod: InputMethod = INPUT_METHOD.TOOLBAR,
-) {
-  return toggleList(
-    view.state,
-    view.dispatch,
-    view,
-    'orderedList',
-    inputMethod,
-  );
-}
-
-export function wrapInList(nodeType: NodeType): Command {
-  return baseCommand.autoJoin(
-    baseListCommand.wrapInList(nodeType),
-    (before, after) => before.type === after.type && before.type === nodeType,
-  );
+export function toggleOrderedList(view: EditorView) {
+  return toggleList(view.state, view.dispatch, view, 'orderedList');
 }

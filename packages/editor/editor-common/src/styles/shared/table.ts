@@ -38,14 +38,6 @@ const tableSharedStyle = css`
     position: relative;
     margin: 0 auto ${tableMarginBottom}px;
     box-sizing: border-box;
-
-    /**
-     * Fix block top alignment inside table cells.
-     */
-    .taskItemView-content-wrap > div,
-    .decisionItemView-content-wrap > div {
-      margin-top: 0;
-    }
   }
   .${TableSharedCssClassName.TABLE_CONTAINER}[data-number-column='true'] {
     padding-left: ${akEditorTableNumberColumnWidth - 1}px;

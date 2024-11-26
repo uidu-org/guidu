@@ -1,3 +1,5 @@
+import { faTable } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { table, tableCell, tableHeader, tableRow } from '@uidu/adf-schema';
 import { tableEditing } from 'prosemirror-tables';
 import { createTable } from 'prosemirror-utils';
@@ -5,16 +7,7 @@ import React from 'react';
 import { toggleTable, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
-import { IconTable } from '../quick-insert/assets';
 import { pluginConfig } from './create-plugin-config';
 import { keymapPlugin } from './pm-plugins/keymap';
 import { createPlugin } from './pm-plugins/main';
@@ -60,7 +53,6 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
         name: 'table',
         plugin: ({ dispatch, portalProviderAPI }) => {
           const {
-            dynamicSizingEnabled,
             fullWidthEnabled,
             wasFullWidthEnabled,
             breakoutEnabled,
@@ -70,7 +62,7 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
             dispatch,
             portalProviderAPI,
             pluginConfig(tableOptions),
-            breakoutEnabled && dynamicSizingEnabled,
+            breakoutEnabled,
             breakoutEnabled,
             fullWidthEnabled,
             wasFullWidthEnabled,
@@ -85,7 +77,6 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
           const { allowColumnResizing } = pluginConfig(tableOptions);
           return allowColumnResizing
             ? createFlexiResizingPlugin(dispatch, {
-                dynamicTextSizing: dynamicSizingEnabled && !fullWidthEnabled,
                 lastColumnResizable: !fullWidthEnabled,
               } as ColumnResizingPluginState)
             : undefined;
@@ -211,16 +202,15 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
         description: formatMessage(messages.tableDescription),
         priority: 600,
         keyshortcut: tooltip(toggleTable),
-        icon: () => <IconTable label={formatMessage(messages.table)} />,
+        icon: () => (
+          <FontAwesomeIcon
+            icon={faTable}
+            label={formatMessage(messages.table)}
+          />
+        ),
         action(insert, state) {
           const tr = insert(createTable(state.schema));
-          return addAnalytics(state, tr, {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.TABLE,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-            eventType: EVENT_TYPE.TRACK,
-          });
+          return tr;
         },
       },
     ],

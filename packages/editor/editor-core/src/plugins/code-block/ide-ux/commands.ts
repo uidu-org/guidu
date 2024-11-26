@@ -1,16 +1,5 @@
 import { EditorState, TextSelection } from 'prosemirror-state';
-import { analyticsService } from '../../../analytics';
 import { CommandDispatch } from '../../../types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INDENT_DIR,
-  INDENT_TYPE,
-  INPUT_METHOD,
-} from '../../analytics';
 import {
   forEachLine,
   getLineInfo,
@@ -44,20 +33,6 @@ export function indent(state: EditorState, dispatch?: CommandDispatch) {
     );
     tr.insertText(indentToAdd, tr.mapping.map(start + offset, -1));
 
-    addAnalytics(state, tr, {
-      action: ACTION.FORMATTED,
-      actionSubject: ACTION_SUBJECT.TEXT,
-      actionSubjectId: ACTION_SUBJECT_ID.FORMAT_INDENT,
-      eventType: EVENT_TYPE.TRACK,
-      attributes: {
-        inputMethod: INPUT_METHOD.KEYBOARD,
-        previousIndentationLevel: indentLevel,
-        newIndentLevel: indentLevel + 1,
-        direction: INDENT_DIR.INDENT,
-        indentType: INDENT_TYPE.CODE_BLOCK,
-      },
-    });
-
     if (!selection.empty) {
       tr.setSelection(
         TextSelection.create(
@@ -70,7 +45,6 @@ export function indent(state: EditorState, dispatch?: CommandDispatch) {
   });
   if (dispatch) {
     dispatch(tr);
-    analyticsService.trackEvent(`uidu.editor-core.codeblock.indent`);
   }
   return true;
 }
@@ -89,25 +63,10 @@ export function outdent(state: EditorState, dispatch?: CommandDispatch) {
         tr.mapping.map(start + offset),
         tr.mapping.map(start + offset + unindentLength),
       );
-
-      addAnalytics(state, tr, {
-        action: ACTION.FORMATTED,
-        actionSubject: ACTION_SUBJECT.TEXT,
-        actionSubjectId: ACTION_SUBJECT_ID.FORMAT_INDENT,
-        eventType: EVENT_TYPE.TRACK,
-        attributes: {
-          inputMethod: INPUT_METHOD.KEYBOARD,
-          previousIndentationLevel: indentLevel,
-          newIndentLevel: indentLevel - 1,
-          direction: INDENT_DIR.OUTDENT,
-          indentType: INDENT_TYPE.CODE_BLOCK,
-        },
-      });
     }
   });
   if (dispatch) {
     dispatch(tr);
-    analyticsService.trackEvent('uidu.editor-core.codeblock.outdent');
   }
   return true;
 }
@@ -120,7 +79,6 @@ export function insertIndent(state: EditorState, dispatch: CommandDispatch) {
       indentToken.size,
   );
   dispatch(state.tr.insertText(indentToAdd));
-  analyticsService.trackEvent('uidu.editor-core.codeblock.indent.insert');
   return true;
 }
 
@@ -131,7 +89,7 @@ export function insertNewlineWithIndent(
   const { text: textAtStartOfLine } = getStartOfCurrentLine(state);
   const { indentText } = getLineInfo(textAtStartOfLine);
   if (indentText && dispatch) {
-    dispatch(state.tr.insertText('\n' + indentText));
+    dispatch(state.tr.insertText(`\n${indentText}`));
     return true;
   }
   return false;

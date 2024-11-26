@@ -1,71 +1,90 @@
-import { ButtonProps } from '@uidu/button';
+import Button, { ButtonProps } from '@uidu/button';
 import Tooltip, { PositionType } from '@uidu/tooltip';
-import React from 'react';
-import Button from './styles';
+import React, { forwardRef, Ref } from 'react';
 
 export type Props = {
-  className?: string;
-  disabled?: boolean;
   hideTooltip?: boolean;
   href?: string;
-  iconAfter?: React.ReactElement<any>;
-  iconBefore?: React.ReactElement<any>;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   selected?: boolean;
   spacing?: 'default' | 'compact' | 'none';
   target?: string;
   title?: React.ReactNode;
   titlePosition?: PositionType;
-} & Pick<ButtonProps, 'theme' | 'aria-label'>;
+  forwardedRef?: React.Ref<HTMLButtonElement>;
+} & Pick<
+  ButtonProps,
+  | 'aria-label'
+  | 'className'
+  | 'iconAfter'
+  | 'iconBefore'
+  | 'children'
+  | 'disabled'
+  | 'appearance'
+>;
 
-export default class ToolbarButton extends React.PureComponent<Props, {}> {
-  static defaultProps = {
-    className: '',
-    titlePosition: 'top' as PositionType,
-  };
-
-  private handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    const { disabled, onClick } = this.props;
-
+function ToolbarButton({
+  className = '',
+  titlePosition = 'top' as PositionType,
+  disabled,
+  onClick,
+  selected,
+  spacing,
+  hideTooltip,
+  href,
+  iconAfter,
+  iconBefore,
+  target,
+  title,
+  children,
+  forwardedRef,
+  ...rest
+}: Props) {
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     if (!disabled && onClick) {
       onClick(event);
     }
   };
+  const button = (
+    <Button
+      ref={forwardedRef}
+      aria-haspopup
+      className={className}
+      href={href}
+      iconAfter={iconAfter}
+      iconBefore={iconBefore}
+      isDisabled={disabled}
+      isSelected={selected}
+      onClick={handleClick}
+      spacing={spacing || 'default'}
+      target={target}
+      shouldFitContainer
+      appearance={selected ? 'primary' : 'default'}
+      tw="h-10!"
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...rest}
+    >
+      {children}
+    </Button>
+  );
 
-  render() {
-    const button = (
-      <Button
-        appearance="subtle"
-        aria-haspopup
-        className={this.props.className}
-        href={this.props.href}
-        aria-label={this.props['aria-label']}
-        iconAfter={this.props.iconAfter}
-        iconBefore={this.props.iconBefore}
-        isDisabled={this.props.disabled}
-        isSelected={this.props.selected}
-        onClick={this.handleClick}
-        spacing={this.props.spacing || 'default'}
-        target={this.props.target}
-        theme={this.props.theme}
-        shouldFitContainer
-      >
-        {this.props.children}
-      </Button>
-    );
+  const tooltipContent = !hideTooltip ? title : null;
 
-    const tooltipContent = !this.props.hideTooltip ? this.props.title : null;
-
-    return this.props.title ? (
-      <Tooltip
-        content={tooltipContent}
-        hideTooltipOnClick={true}
-        position={this.props.titlePosition}
-      >
-        {button}
-      </Tooltip>
-    ) : (
-      button
-    );
-  }
+  return title ? (
+    <Tooltip
+      content={tooltipContent}
+      hideTooltipOnClick
+      position={titlePosition}
+      delay={0}
+    >
+      {button}
+    </Tooltip>
+  ) : (
+    button
+  );
 }
+
+export default forwardRef((props: Props, ref: Ref<HTMLButtonElement>) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <ToolbarButton {...props} forwardedRef={ref} />
+)) as React.ComponentType<Props>;

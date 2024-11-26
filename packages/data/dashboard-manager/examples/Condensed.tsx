@@ -1,4 +1,4 @@
-import { More, Shuffle } from '@uidu/dashboard-controls';
+import { Shuffle } from '@uidu/dashboard-controls';
 import {
   ScrollableContainer,
   ShellBody,

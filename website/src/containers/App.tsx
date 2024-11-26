@@ -5,7 +5,6 @@ import * as React from 'react';
 import { IntlProvider } from 'react-intl';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import AnalyticsListeners from '../components/Analytics/AnalyticsListeners';
 import GlobalStyles from '../GlobalStyles';
 import ChangeLogExplorer from '../pages/ChangeLogExplorer';
 import Document from '../pages/Document';
@@ -83,87 +82,82 @@ export default class App extends React.Component<{}, State> {
       <IntlProvider defaultLocale="en">
         <GlobalStyles />
         <BrowserRouter>
-          <AnalyticsListeners>
+          <Route>
+            <ScrollHandler />
+          </Route>
+          <Switch>
+            <Route
+              path="/examples/:groupId?/:pkgId?/:exampleId*"
+              component={FullscreenExamples}
+            />
             <Route>
-              <ScrollHandler />
+              <Shell>
+                <ShellMain>
+                  {/* <ShellHeader></ShellHeader> */}
+                  <ShellBody>
+                    <ShellSidebar
+                      tw="lg:flex hidden"
+                      style={{
+                        flex: '1 0 18%',
+                        minWidth: '18rem',
+                      }}
+                    >
+                      <Nav />
+                    </ShellSidebar>
+                    <ShellMain>
+                      <Boundary>
+                        <Switch>
+                          <Route exact path="/" component={Home} />
+                          <Route path="/docs/:docId*" component={Document} />
+                          <Route
+                            path="/packages/examples"
+                            component={({ location }) => (
+                              <Redirect
+                                to={location.pathname.replace('/examples', '')}
+                              />
+                            )}
+                          />
+                          <Route
+                            path="/packages/:groupId/:pkgId/docs/:docId"
+                            component={PackageDocument}
+                          />
+
+                          <Route
+                            path="/packages/:groupId/:pkgId"
+                            component={Package}
+                          />
+                          <Route path="/packages" component={PackagesList} />
+                          <Route
+                            path="/changelog/:groupId/:pkgId/:semver?"
+                            component={ChangeLogExplorer}
+                          />
+                          <Route path="/error" component={FourOhFour} />
+                          <Route component={FourOhFour} />
+                        </Switch>
+
+                        <Route
+                          path="/packages/:groupId/:pkgId/changelog/:semver?"
+                          children={(props) => (
+                            <ModalTransition>
+                              {props.match && <ChangelogModal {...props} />}
+                            </ModalTransition>
+                          )}
+                        />
+                        <Route
+                          path="/packages/:groupId/:pkgId/example/:exampleId"
+                          children={(props) => (
+                            <ModalTransition>
+                              {props.match && <ExamplesModal {...props} />}
+                            </ModalTransition>
+                          )}
+                        />
+                      </Boundary>
+                    </ShellMain>
+                  </ShellBody>
+                </ShellMain>
+              </Shell>
             </Route>
-            <Switch>
-              <Route
-                path="/examples/:groupId?/:pkgId?/:exampleId*"
-                component={FullscreenExamples}
-              />
-              <Route>
-                <Shell>
-                  <ShellMain>
-                    {/* <ShellHeader></ShellHeader> */}
-                    <ShellBody>
-                      <ShellSidebar
-                        tw="lg:flex hidden"
-                        style={{
-                          flex: '1 0 18%',
-                          minWidth: '18rem',
-                        }}
-                      >
-                        <Nav />
-                      </ShellSidebar>
-                      <ShellMain>
-                        <Boundary>
-                          <Switch>
-                            <Route exact path="/" component={Home} />
-                            <Route path="/docs/:docId*" component={Document} />
-                            <Route
-                              path="/packages/examples"
-                              component={({ location }) => (
-                                <Redirect
-                                  to={location.pathname.replace(
-                                    '/examples',
-                                    '',
-                                  )}
-                                />
-                              )}
-                            />
-                            <Route
-                              path="/packages/:groupId/:pkgId/docs/:docId"
-                              component={PackageDocument}
-                            />
-
-                            <Route
-                              path="/packages/:groupId/:pkgId"
-                              component={Package}
-                            />
-                            <Route path="/packages" component={PackagesList} />
-                            <Route
-                              path="/changelog/:groupId/:pkgId/:semver?"
-                              component={ChangeLogExplorer}
-                            />
-                            <Route path="/error" component={FourOhFour} />
-                            <Route component={FourOhFour} />
-                          </Switch>
-
-                          <Route
-                            path="/packages/:groupId/:pkgId/changelog/:semver?"
-                            children={(props) => (
-                              <ModalTransition>
-                                {props.match && <ChangelogModal {...props} />}
-                              </ModalTransition>
-                            )}
-                          />
-                          <Route
-                            path="/packages/:groupId/:pkgId/example/:exampleId"
-                            children={(props) => (
-                              <ModalTransition>
-                                {props.match && <ExamplesModal {...props} />}
-                              </ModalTransition>
-                            )}
-                          />
-                        </Boundary>
-                      </ShellMain>
-                    </ShellBody>
-                  </ShellMain>
-                </Shell>
-              </Route>
-            </Switch>
-          </AnalyticsListeners>
+          </Switch>
         </BrowserRouter>
       </IntlProvider>
     );

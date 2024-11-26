@@ -1,15 +1,14 @@
 import loadable from '@loadable/component';
-import Observer from '@researchgate/react-intersection-observer';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { useInView } from 'react-intersection-observer';
 // import 'overlayscrollbars/overlayscrollbars.css';
 import React, {
   useCallback,
   useEffect,
   useImperativeHandle,
   useRef,
-  useState,
 } from 'react';
-import { ObserverComponent, Shadow, StyledScrollableContainer } from './styled';
+import { Shadow, StyledScrollableContainer } from './styled';
 import { ShellBodyProps } from './types';
 
 const OverlayScrollbars = loadable.lib(() => import('overlayscrollbars-react'));
@@ -35,7 +34,6 @@ function ScrollableContainer({
   enableCustomScrollbars = false,
   customScrollbarProps = {},
 }: ShellBodyProps) {
-  const [shadowedHeader, setShadowedHeader] = useState(false);
   const element: React.RefObject<HTMLDivElement> = useRef();
   const overlayScrollbar = useRef(null);
 
@@ -57,24 +55,18 @@ function ScrollableContainer({
     };
   }, [getScrollable]);
 
-  const handleHeader = (e) => {
-    setShadowedHeader(!e.isIntersecting);
-  };
+  const { ref, inView } = useInView({
+    threshold: 0,
+    initialInView: true,
+    root: forwardedRef && forwardedRef.current,
+  });
 
   const content = (
     <StyledScrollableContainer id={id} ref={element} className={className}>
       {shadowOnScroll && (
         <>
-          <Observer
-            onChange={handleHeader}
-            root={forwardedRef && forwardedRef.current}
-          >
-            <ObserverComponent />
-          </Observer>
-          <Shadow
-            active={shadowedHeader}
-            width={getScrollable()?.offsetWidth}
-          />
+          <div ref={ref} tw="w-full" />
+          <Shadow active={!inView} width={getScrollable()?.offsetWidth} />
         </>
       )}
       <InnerComponent className={innerClassName}>{children}</InnerComponent>

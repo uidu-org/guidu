@@ -1,22 +1,16 @@
-import { InputRule, wrappingInputRule } from 'prosemirror-inputrules';
-import { Node as PMNode, NodeRange, NodeType, Schema } from 'prosemirror-model';
+import {
+  InputRule,
+  inputRules,
+  wrappingInputRule,
+} from 'prosemirror-inputrules';
+import { NodeType, Schema } from 'prosemirror-model';
 import { EditorState, Plugin } from 'prosemirror-state';
-import { analyticsService, trackAndInvoke } from '../../../analytics';
 import {
   createInputRule as defaultCreateInputRule,
   defaultInputRuleHandler,
   InputRuleWithHandler,
-  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-  INPUT_METHOD,
-  ruleWithAnalytics,
-} from '../../analytics';
 
 export function createInputRule(regexp: RegExp, nodeType: NodeType) {
   return wrappingInputRule(
@@ -36,7 +30,7 @@ export const insertList = (
 ) => {
   // To ensure that match is done after HardBreak.
   const { hardBreak } = state.schema.nodes;
-  if (state.doc.resolve(start).nodeAfter!.type !== hardBreak) {
+  if (state.doc.resolve(start).nodeAfter.type !== hardBreak) {
     return null;
   }
 
@@ -45,17 +39,12 @@ export const insertList = (
     return null;
   }
 
-  // Track event
-  analyticsService.trackEvent(
-    `uidu.editor-core.format.list.${listTypeName}.autoformatting`,
-  );
-
   // Split at the start of autoformatting and delete formatting characters.
   let tr = state.tr.delete(start, end).split(start);
 
   // If node has more content split at the end of autoformatting.
-  let currentNode = tr.doc.nodeAt(start + 1) as PMNode;
-  tr.doc.nodesBetween(start, start + currentNode!.nodeSize, (node, pos) => {
+  const currentNode = tr.doc.nodeAt(start + 1);
+  tr.doc.nodesBetween(start, start + currentNode.nodeSize, (node, pos) => {
     if (node.type === hardBreak) {
       tr = tr.split(pos + 1).delete(pos, pos + 1);
     }
@@ -64,8 +53,8 @@ export const insertList = (
   // Wrap content in list node
   const { listItem } = state.schema.nodes;
   const position = tr.doc.resolve(start + 2);
-  let range = position.blockRange(position)!;
-  tr = tr.wrap(range as NodeRange, [{ type: listType }, { type: listItem }]);
+  const range = position.blockRange(position);
+  tr = tr.wrap(range, [{ type: listType }, { type: listItem }]);
   return tr;
 };
 
@@ -76,39 +65,25 @@ export const insertList = (
  * @returns {InputRule[]}
  */
 function getBulletListInputRules(schema: Schema): InputRule[] {
-  const ruleWithBulletListAnalytics = ruleWithAnalytics(() => ({
-    action: ACTION.FORMATTED,
-    actionSubject: ACTION_SUBJECT.TEXT,
-    actionSubjectId: ACTION_SUBJECT_ID.FORMAT_LIST_BULLET,
-    eventType: EVENT_TYPE.TRACK,
-    attributes: {
-      inputMethod: INPUT_METHOD.FORMATTING,
-    },
-  }));
-
   // NOTE: we decided to restrict the creation of bullet lists to only "*"x
   const asteriskRule = defaultInputRuleHandler(
     createInputRule(/^\s*([\*\-]) $/, schema.nodes.bulletList),
     true,
   );
 
-  asteriskRule.handler = trackAndInvoke(
-    'uidu.editor-core.format.list.bullet.autoformatting',
-    asteriskRule.handler as any,
-  );
+  // asteriskRule.handler = trackAndInvoke(
+  //   'uidu.editor-core.format.list.bullet.autoformatting',
+  //   asteriskRule.handler as any,
+  // );
 
   const leafNodeAsteriskRule = defaultCreateInputRule(
     new RegExp(`${leafNodeReplacementCharacter}\\s*([\\*\\-]) $`),
-    (state, _match, start, end) => {
-      return insertList(state, schema.nodes.bulletList, 'bullet', start, end);
-    },
+    (state, _match, start, end) =>
+      insertList(state, schema.nodes.bulletList, 'bullet', start, end),
     true,
   );
 
-  return [
-    ruleWithBulletListAnalytics(asteriskRule),
-    ruleWithBulletListAnalytics(leafNodeAsteriskRule),
-  ];
+  return [asteriskRule, leafNodeAsteriskRule];
 }
 
 /**
@@ -118,16 +93,6 @@ function getBulletListInputRules(schema: Schema): InputRule[] {
  * @returns {InputRule[]}
  */
 function getOrderedListInputRules(schema: Schema): InputRule[] {
-  const ruleWithOrderedListAnalytics = ruleWithAnalytics(() => ({
-    action: ACTION.FORMATTED,
-    actionSubject: ACTION_SUBJECT.TEXT,
-    actionSubjectId: ACTION_SUBJECT_ID.FORMAT_LIST_NUMBER,
-    eventType: EVENT_TYPE.TRACK,
-    attributes: {
-      inputMethod: INPUT_METHOD.FORMATTING,
-    },
-  }));
-
   // NOTE: There is a built in input rule for ordered lists in ProseMirror. However, that
   // input rule will allow for a list to start at any given number, which isn't allowed in
   // markdown (where a ordered list will always start on 1). This is a slightly modified
@@ -136,29 +101,15 @@ function getOrderedListInputRules(schema: Schema): InputRule[] {
     createInputRule(/^(1)[\.\)] $/, schema.nodes.orderedList),
     true,
   );
-  numberOneRule.handler = trackAndInvoke(
-    'uidu.editor-core.format.list.numbered.autoformatting',
-    numberOneRule.handler as any,
-  );
 
   const leafNodeNumberOneRule = defaultCreateInputRule(
     new RegExp(`${leafNodeReplacementCharacter}(1)[\\.\\)] $`),
-    (state, _match, start, end) => {
-      return insertList(
-        state,
-        schema.nodes.orderedList,
-        'numbered',
-        start,
-        end,
-      );
-    },
+    (state, _match, start, end) =>
+      insertList(state, schema.nodes.orderedList, 'numbered', start, end),
     true,
   );
 
-  return [
-    ruleWithOrderedListAnalytics(numberOneRule),
-    ruleWithOrderedListAnalytics(leafNodeNumberOneRule),
-  ];
+  return [numberOneRule, leafNodeNumberOneRule];
 }
 
 export default function inputRulePlugin(schema: Schema): Plugin | undefined {
@@ -173,7 +124,7 @@ export default function inputRulePlugin(schema: Schema): Plugin | undefined {
   }
 
   if (rules.length !== 0) {
-    return instrumentedInputRule('lists', { rules });
+    return inputRules({ rules });
   }
 
   return undefined;

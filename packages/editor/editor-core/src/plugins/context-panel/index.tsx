@@ -4,7 +4,9 @@ import { Dispatch } from '../../event-dispatcher';
 import { EditorPlugin } from '../../types';
 import { ContextPanelHandler } from './types';
 
-export const pluginKey = new PluginKey('contextPanelPluginKey');
+export const pluginKey = new PluginKey<ContextPanelPluginState>(
+  'contextPanelPluginKey',
+);
 
 export type ContextPanelPluginState = {
   visible: boolean;

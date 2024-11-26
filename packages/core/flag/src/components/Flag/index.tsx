@@ -1,14 +1,8 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import React, { Component, MouseEventHandler } from 'react';
 import { ChevronDown, ChevronUp, X } from 'react-feather';
 import { DEFAULT_APPEARANCE } from '../../constants';
 import { flagFocusRingColor } from '../../theme';
 import { FlagProps } from '../../types';
-import pkg from '../../version.json';
 import Expander from '../Expander';
 import Actions from '../FlagActions';
 import Container, {
@@ -150,46 +144,6 @@ class Flag extends Component<FlagProps, State> {
   }
 }
 
-export { Flag as FlagWithoutAnalytics };
-const createAndFireEventOnUidu = createAndFireEvent('uidu');
+export { Flag };
 
-export default withAnalyticsContext({
-  componentName: 'flag',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onBlur: createAndFireEventOnUidu({
-      action: 'blurred',
-      actionSubject: 'flag',
-
-      attributes: {
-        componentName: 'flag',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onDismissed: createAndFireEventOnUidu({
-      action: 'dismissed',
-      actionSubject: 'flag',
-
-      attributes: {
-        componentName: 'flag',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-
-    onFocus: createAndFireEventOnUidu({
-      action: 'focused',
-      actionSubject: 'flag',
-
-      attributes: {
-        componentName: 'flag',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(Flag),
-);
+export default Flag;

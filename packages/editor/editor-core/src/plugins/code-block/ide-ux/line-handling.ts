@@ -13,9 +13,9 @@ export const isCursorInsideCodeBlock = (state: EditorState): boolean =>
 export const getStartOfCurrentLine = (state: EditorState) => {
   const { $from } = state.selection;
   if ($from.nodeBefore && $from.nodeBefore.isText) {
-    const prevNewLineIndex = $from.nodeBefore.text!.lastIndexOf('\n');
+    const prevNewLineIndex = $from.nodeBefore.text.lastIndexOf('\n');
     return {
-      text: $from.nodeBefore.text!.substring(prevNewLineIndex + 1),
+      text: $from.nodeBefore.text.substring(prevNewLineIndex + 1),
       pos: $from.start() + prevNewLineIndex + 1,
     };
   }
@@ -25,9 +25,9 @@ export const getStartOfCurrentLine = (state: EditorState) => {
 export const getEndOfCurrentLine = (state: EditorState) => {
   const { $to } = state.selection;
   if ($to.nodeAfter && $to.nodeAfter.isText) {
-    const nextNewLineIndex = $to.nodeAfter.text!.indexOf('\n');
+    const nextNewLineIndex = $to.nodeAfter.text.indexOf('\n');
     return {
-      text: $to.nodeAfter.text!.substring(
+      text: $to.nodeAfter.text.substring(
         0,
         nextNewLineIndex >= 0 ? nextNewLineIndex : undefined,
       ),

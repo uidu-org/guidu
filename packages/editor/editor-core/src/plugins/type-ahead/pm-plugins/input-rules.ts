@@ -1,9 +1,8 @@
+import { inputRules } from 'prosemirror-inputrules';
 import { Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
-import { analyticsService } from '../../../analytics';
 import {
   createInputRule,
-  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
 import { TypeAheadHandler } from '../types';
@@ -52,19 +51,13 @@ export function inputRulePlugin(
     const { tr, selection } = state;
     const marks = selection.$from.marks();
 
-    analyticsService.trackEvent('uidu.editor-core.typeahead.trigger', {
-      trigger,
-    });
-
     return tr.replaceSelectionWith(
       schema.text(trigger, [mark, ...marks]),
       false,
     );
   });
 
-  const plugin = instrumentedInputRule('type-ahead', {
-    rules: [typeAheadInputRule],
-  });
+  const plugin = inputRules({ rules: [typeAheadInputRule] });
   typeAheadInputRulesPluginKey = (plugin as any).key;
 
   return plugin;

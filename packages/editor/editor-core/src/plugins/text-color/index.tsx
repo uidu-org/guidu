@@ -41,15 +41,7 @@ const textColorPlugin = (
     ];
   },
 
-  primaryToolbarComponent({
-    editorView,
-    popupsMountPoint,
-    popupsBoundariesElement,
-    popupsScrollableElement,
-    isToolbarReducedSpacing,
-    dispatchAnalyticsEvent,
-    disabled,
-  }) {
+  primaryToolbarComponent({ editorView, isToolbarReducedSpacing, disabled }) {
     const config = pluginConfig(textColorConfig);
     const showMoreColorsToggle =
       config && config.EXPERIMENTAL_allowMoreTextColors;
@@ -64,11 +56,7 @@ const textColorPlugin = (
             pluginState={textColor}
             isReducedSpacing={isToolbarReducedSpacing}
             editorView={editorView}
-            popupsMountPoint={popupsMountPoint}
-            popupsBoundariesElement={popupsBoundariesElement}
-            popupsScrollableElement={popupsScrollableElement}
             showMoreColorsToggle={showMoreColorsToggle}
-            dispatchAnalyticsEvent={dispatchAnalyticsEvent}
             disabled={disabled}
           />
         )}

@@ -43,24 +43,7 @@ ${(
   />
 )}
 
-${
-  (
-    // Note: DropdownItem props are the same as Item props.
-    // Unfortunately, we can't pass props direclty from DropdownItem as it is wrapped by a function and extract-react-type can't access it.
-    // We decided to render directly the props from Item to help the consumer.
-    <Props
-      heading="DropdownItem Props"
-      props={require('!!extract-react-types-loader!../../item/src/components/Item')}
-    />
-  )
-}
 
-${(
-  <Props
-    heading="DropdownItemGroup Props"
-    props={require('!!extract-react-types-loader!../src/components/group/DropdownItemGroup')}
-  />
-)}
 
 ${(
   <Props
@@ -69,11 +52,5 @@ ${(
   />
 )}
 
-${(
-  <Props
-    heading="DropdownMenuStateless Props"
-    props={require('!!extract-react-types-loader!../src/components/DropdownMenuStateless')}
-  />
-)}
 
 `;

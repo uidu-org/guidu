@@ -1,13 +1,7 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import { Manager, Popper, Reference } from '@uidu/popper';
 import React, { Component } from 'react';
 import NodeResolver from 'react-node-resolver';
 import { Placement, Props } from '../types';
-import pkg from '../version.json';
 import { Container } from './styled';
 
 class InlineDialog extends Component<Props, {}> {
@@ -104,24 +98,6 @@ class InlineDialog extends Component<Props, {}> {
   }
 }
 
-export { InlineDialog as InlineDialogWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
+export { InlineDialog };
 
-export default withAnalyticsContext({
-  componentName: 'inlineDialog',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onClose: createAndFireEventOnGuidu({
-      action: 'closed',
-      actionSubject: 'inlineDialog',
-
-      attributes: {
-        componentName: 'inlineDialog',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(InlineDialog),
-);
+export default InlineDialog;

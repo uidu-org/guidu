@@ -1,10 +1,6 @@
-import Avatar, {
-  AvatarClickType,
-  getProps,
-  withPseudoState,
-} from '@uidu/avatar';
-import { DropdownItem } from '@uidu/dropdown-menu';
-import React, { Component } from 'react';
+import Avatar, { AvatarClickType, getProps } from '@uidu/avatar';
+import { ButtonItem } from '@uidu/menu';
+import React from 'react';
 
 interface Props {
   avatar: Record<string, any>;
@@ -14,36 +10,33 @@ interface Props {
   onAvatarClick?: AvatarClickType;
 }
 
-class AvatarGroupItem extends Component<Props> {
-  render() {
-    const { avatar, onAvatarClick } = this.props;
-    const { href, ...rest } = avatar;
-    const enhancedProps = getProps(this);
-    return (
-      <DropdownItem
-        isInteractive
-        {...enhancedProps}
-        elemBefore={
-          <Avatar
-            {...rest}
-            borderColor="transparent"
-            enableTooltip={false}
-            size="small"
-          />
+function AvatarGroupItem(props: Props) {
+  const { avatar, onAvatarClick } = props;
+  const { href, ...rest } = avatar;
+  const enhancedProps = getProps(props);
+  return (
+    <ButtonItem
+      isInteractive
+      {...enhancedProps}
+      iconBefore={
+        <Avatar
+          {...rest}
+          borderColor="transparent"
+          enableTooltip={false}
+          size="small"
+        />
+      }
+      onClick={(event: React.MouseEvent) => {
+        if (typeof onAvatarClick === 'function') {
+          onAvatarClick({ event, item: avatar });
         }
-        href={href}
-        onClick={(event: React.MouseEvent) => {
-          if (typeof onAvatarClick === 'function') {
-            onAvatarClick({ event, item: avatar });
-          }
-        }}
-        rel={avatar.target ? 'noopener noreferrer' : null}
-        target={avatar.target}
-      >
-        {avatar.name}
-      </DropdownItem>
-    );
-  }
+      }}
+      // rel={avatar.target ? 'noopener noreferrer' : null}
+      // target={avatar.target}
+    >
+      {avatar.name}
+    </ButtonItem>
+  );
 }
 
-export default withPseudoState(AvatarGroupItem);
+export default AvatarGroupItem;

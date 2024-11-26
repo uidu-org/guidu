@@ -22,13 +22,6 @@ import { Mark } from 'prosemirror-model';
 import React, { Component, ReactElement, SyntheticEvent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styled, { css } from 'styled-components';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-} from '../../analytics/enums';
-import { AnalyticsEventPayload, MODE, PLATFORM } from '../../analytics/events';
 import { FullPagePadding } from '../../ui/Renderer/style';
 import { RendererAppearance } from '../../ui/Renderer/types';
 import { getEventHandler } from '../../utils';
@@ -43,7 +36,6 @@ export interface Props {
   rendererAppearance: RendererAppearance;
   marks: Mark[];
   isLinkMark: () => boolean;
-  fireAnalyticsEvent?: (event: AnalyticsEventPayload) => void;
 }
 
 export interface State {
@@ -167,19 +159,7 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
   private handleMediaLinkClick = (
     event: SyntheticEvent<HTMLAnchorElement, Event>,
   ) => {
-    const { fireAnalyticsEvent, eventHandlers, isLinkMark, marks } = this.props;
-    if (fireAnalyticsEvent) {
-      fireAnalyticsEvent({
-        action: ACTION.VISITED,
-        actionSubject: ACTION_SUBJECT.MEDIA_SINGLE,
-        actionSubjectId: ACTION_SUBJECT_ID.MEDIA_LINK,
-        eventType: EVENT_TYPE.TRACK,
-        attributes: {
-          platform: PLATFORM.WEB,
-          mode: MODE.RENDERER,
-        },
-      });
-    }
+    const { eventHandlers, isLinkMark, marks } = this.props;
 
     const handler = getEventHandler(eventHandlers, 'link');
     if (handler) {

@@ -1,13 +1,14 @@
-import Avatar, {
+import DefaultAvatar, {
   AvatarClickType,
   AvatarPropTypes,
   SizeType,
 } from '@uidu/avatar';
-import DropdownMenu, { DropdownItemGroup } from '@uidu/dropdown-menu';
-import React, { Component, ElementType } from 'react';
+import { MenuGroup } from '@uidu/menu';
+import Popup, { TriggerProps } from '@uidu/popup';
+import React, { ElementType, useCallback, useState } from 'react';
 import { Grid, Stack } from '../styled/AvatarGroup';
 import AvatarGroupItem from './AvatarGroupItem';
-import MoreIndicator, { MoreIndicatorProps } from './MoreIndicator';
+import MoreIndicator from './MoreIndicator';
 
 const GROUP_COMPONENT = {
   grid: Grid,
@@ -49,107 +50,120 @@ interface Props {
   boundariesElement?: 'viewport' | 'window' | 'scrollParent';
 }
 
-export default class AvatarGroup extends Component<Props> {
-  static defaultProps = {
-    appearance: 'stack',
-    avatar: Avatar,
-    maxCount: 0,
-    showMoreButtonProps: {},
-    size: 'medium',
-  };
+function MoreDropdown({
+  max,
+  total,
+  data,
+  onAvatarClick,
+  showMoreButtonProps,
+  borderColor,
+  appearance,
+  size,
+  onMoreClick,
+}: Omit<Props, 'maxCount'> & {
+  max: number;
+  total: number;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
 
-  renderMoreDropdown(max: number, total: number) {
-    const {
-      appearance,
-      data,
-      borderColor,
-      onMoreClick,
-      showMoreButtonProps,
-      onAvatarClick,
-      size,
-      boundariesElement,
-    } = this.props;
-
-    // bail if there's not enough items
-    if (total <= max) return null;
-
-    // prepare the button -- we'll use it twice
-    const MoreButton = (props: MoreIndicatorProps) => (
-      <MoreIndicator
-        {...showMoreButtonProps}
-        borderColor={borderColor}
-        count={total - max}
-        isStack={appearance === 'stack'}
-        size={size}
-        {...(props as any)}
+  const items = data
+    .slice(max)
+    .map((avatar: AvatarPropTypes, index: number) => (
+      <AvatarGroupItem
+        avatar={avatar}
+        key={index}
+        onAvatarClick={onAvatarClick}
       />
-    );
+    ));
 
-    // bail if the consumer wants to handle onClick
-    if (typeof onMoreClick === 'function') {
-      return <MoreButton onClick={onMoreClick} />;
-    }
-
-    // crop and prepare the dropdown items
-    const items = data
-      .slice(max)
-      .map((avatar: AvatarPropTypes, index: number) => (
-        <AvatarGroupItem
-          avatar={avatar}
-          key={index}
-          onAvatarClick={onAvatarClick}
-        />
-      ));
-
-    return (
-      <DropdownMenu
-        trigger={<MoreButton />}
-        position="bottom right"
-        boundariesElement={boundariesElement}
-        shouldFlip
+  const MoreButton = useCallback(
+    (props: TriggerProps) => (
+      <div
+        {...props}
+        onClick={() => setIsOpen((prev) => !prev)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') setIsOpen((prev) => !prev);
+        }}
       >
-        <DropdownItemGroup>{items}</DropdownItemGroup>
-      </DropdownMenu>
-    );
-  }
-
-  render() {
-    const {
-      avatar: Item,
-      appearance,
-      borderColor,
-      data,
-      maxCount,
-      onAvatarClick,
-      size,
-    }: Props = this.props;
-    // NOTE: conditionally defaulting the `maxCount` prop based on `appearance`
-    const max = maxCount === 0 ? MAX_COUNT[appearance] : maxCount;
-    const total = data.length;
-    const Group = GROUP_COMPONENT[appearance];
-
-    // Render (max - 1) avatars to leave space for moreIndicator
-    const maxAvatar = total > max ? max - 1 : max;
-
-    const items = data
-      .slice(0, maxAvatar)
-      .map((avatar, idx) => (
-        <Item
-          {...avatar}
+        <MoreIndicator
+          ref={console.log}
+          {...showMoreButtonProps}
           borderColor={borderColor}
-          groupAppearance={appearance}
-          key={idx}
-          onClick={avatar.onClick || onAvatarClick}
+          count={total - max}
+          isStack={appearance === 'stack'}
           size={size}
-          stackIndex={max - idx}
         />
-      ));
+      </div>
+    ),
+    [total, max, borderColor, appearance, size, showMoreButtonProps],
+  );
 
-    return (
-      <Group size={size}>
-        {items}
-        {this.renderMoreDropdown(+maxAvatar, total)}
-      </Group>
-    );
+  const Content = useCallback(() => <MenuGroup>{items}</MenuGroup>, [items]);
+
+  if (total <= max) return null;
+
+  if (typeof onMoreClick === 'function') {
+    return <MoreButton onClick={onMoreClick} />;
   }
+
+  return (
+    <Popup
+      isOpen={isOpen}
+      onClose={() => setIsOpen(false)}
+      trigger={MoreButton}
+      content={Content}
+      placement="auto-start"
+    />
+  );
+}
+
+export default function AvatarGroup({
+  appearance = 'stack',
+  avatar: Avatar = DefaultAvatar,
+  maxCount = 0,
+  showMoreButtonProps = {},
+  size = 'medium',
+  borderColor,
+  data,
+  onAvatarClick,
+}: Props) {
+  // NOTE: conditionally defaulting the `maxCount` prop based on `appearance`
+  const max = maxCount === 0 ? MAX_COUNT[appearance] : maxCount;
+  const total = data.length;
+  const Group = GROUP_COMPONENT[appearance];
+
+  // Render (max - 1) avatars to leave space for moreIndicator
+  const maxAvatar = total > max ? max - 1 : max;
+
+  const items = data.slice(0, maxAvatar).map((avt, idx) => (
+    <Avatar
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...avt}
+      borderColor={borderColor}
+      groupAppearance={appearance}
+      key={avt.src || idx}
+      onClick={avt.onClick || onAvatarClick}
+      size={size}
+      stackIndex={max - idx}
+    />
+  ));
+
+  return (
+    <Group size={size}>
+      {items}
+      <MoreDropdown
+        max={+maxAvatar}
+        total={total}
+        data={data}
+        onAvatarClick={onAvatarClick}
+        showMoreButtonProps={showMoreButtonProps}
+        borderColor={borderColor}
+        appearance={appearance}
+        size={size}
+        avatar={Avatar}
+      />
+    </Group>
+  );
 }

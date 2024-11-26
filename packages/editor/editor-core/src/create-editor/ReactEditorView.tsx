@@ -1,52 +1,17 @@
-import { CreateUIAnalyticsEvent } from '@uidu/analytics';
-import {
-  browser,
-  ErrorReporter,
-  getResponseEndTime,
-  measureRender,
-  ProviderFactory,
-  startMeasure,
-  stopMeasure,
-  Transformer,
-} from '@uidu/editor-common';
-import * as PropTypes from 'prop-types';
+import { browser, ErrorReporter, ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState, Selection, Transaction } from 'prosemirror-state';
 import { DirectEditorProps, EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
-import { analyticsService } from '../analytics';
 import { createDispatch, Dispatch, EventDispatcher } from '../event-dispatcher';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  AnalyticsDispatch,
-  AnalyticsEventPayload,
-  DispatchAnalyticsEvent,
-  EVENT_TYPE,
-  fireAnalyticsEvent,
-  FULL_WIDTH_MODE,
-  getAnalyticsEventsFromTransaction,
-  PLATFORMS,
-} from '../plugins/analytics';
-import { analyticsEventKey } from '../plugins/analytics/consts';
 import {
   EditorDisabledPluginState,
   pluginKey as editorDisabledPluginKey,
 } from '../plugins/editor-disabled';
-import {
-  createFeatureFlagsFromProps,
-  getEnabledFeatureFlagKeys,
-} from '../plugins/feature-flags-context/feature-flags-from-props';
-import {
-  EditorAppearance,
-  EditorConfig,
-  EditorPlugin,
-  EditorProps,
-} from '../types';
+import { EditorConfig, EditorProps } from '../types';
 import { PortalProviderAPI } from '../ui/PortalProvider';
 import { processRawValue } from '../utils';
-import { getNodesCount } from '../utils/document';
 import { getDocStructure, SimplifiedNode } from '../utils/document-logger';
 import { isFullPage } from '../utils/is-full-page';
 import {
@@ -54,11 +19,9 @@ import {
   validateNodes,
   validNode,
 } from '../utils/nodes';
-import measurements from '../utils/performance/measure-enum';
 import {
   createErrorReporter,
   createPMPlugins,
-  initAnalytics,
   processPluginsList,
 } from './create-editor';
 import createPluginList from './create-plugins-list';
@@ -66,10 +29,8 @@ import { createSchema } from './create-schema';
 
 export type EditorViewProps = WrappedComponentProps & {
   editorProps: EditorProps;
-  createAnalyticsEvent?: CreateUIAnalyticsEvent;
   providerFactory: ProviderFactory;
   portalProviderAPI: PortalProviderAPI;
-  allowAnalyticsGASV3?: boolean;
   disabled?: boolean;
   render?: (props: {
     editor: JSX.Element;
@@ -77,7 +38,6 @@ export type EditorViewProps = WrappedComponentProps & {
     config: EditorConfig;
     eventDispatcher: EventDispatcher;
     transformer?: Transformer<string>;
-    dispatchAnalyticsEvent: DispatchAnalyticsEvent;
   }) => JSX.Element;
   onEditorCreated: (instance: {
     view: EditorView;
@@ -118,15 +78,6 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
 
   dispatch: Dispatch;
 
-  analyticsEventHandler!: (payloadChannel: {
-    payload: AnalyticsEventPayload;
-    channel?: string;
-  }) => void;
-
-  static contextTypes = {
-    getAnalyticsEventHandlers: PropTypes.func,
-  };
-
   // ProseMirror is instantiated prior to the initial React render cycle,
   // so we allow transactions by default, to avoid discarding the initial one.
   private canDispatchTransactions = true;
@@ -142,27 +93,10 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
       props.editorProps.errorReporterHandler,
     );
     this.editorState = this.createEditorState({ props, replaceDoc: true });
-
-    const { createAnalyticsEvent, allowAnalyticsGASV3 } = props;
-    if (allowAnalyticsGASV3) {
-      this.activateAnalytics(createAnalyticsEvent);
-    }
-    initAnalytics(props.editorProps.analyticsHandler);
-    const featureFlags = createFeatureFlagsFromProps(this.props.editorProps);
-    const featureFlagsEnabled = featureFlags
-      ? getEnabledFeatureFlagKeys(featureFlags)
-      : [];
-
-    this.dispatchAnalyticsEvent({
-      action: ACTION.STARTED,
-      actionSubject: ACTION_SUBJECT.EDITOR,
-      attributes: {
-        platform: PLATFORMS.WEB,
-        featureFlags: featureFlagsEnabled,
-      },
-      eventType: EVENT_TYPE.UI,
-    });
   }
+
+  getEditorState = () => this.view?.state;
+  getEditorView = () => this.view;
 
   private broadcastDisabled = (disabled: boolean) => {
     const editorView = this.view;
@@ -193,115 +127,6 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
       ) {
         this.focusTimeoutId = handleEditorFocus(this.view);
       }
-    }
-
-    // Activate or deactivate analytics if change property
-    if (this.props.allowAnalyticsGASV3 !== nextProps.allowAnalyticsGASV3) {
-      if (nextProps.allowAnalyticsGASV3) {
-        this.activateAnalytics(nextProps.createAnalyticsEvent);
-      } else {
-        this.deactivateAnalytics();
-      }
-    } else {
-      // Allow analytics is the same, check if we receive a new create analytics prop
-      if (
-        this.props.allowAnalyticsGASV3 &&
-        nextProps.createAnalyticsEvent !== this.props.createAnalyticsEvent
-      ) {
-        this.deactivateAnalytics(); // Deactivate the old one
-        this.activateAnalytics(nextProps.createAnalyticsEvent); // Activate the new one
-      }
-    }
-
-    const { appearance } = this.props.editorProps;
-    const { appearance: nextAppearance } = nextProps.editorProps;
-    if (nextAppearance !== appearance) {
-      this.reconfigureState(nextProps);
-      if (nextAppearance === 'full-width' || appearance === 'full-width') {
-        this.dispatchAnalyticsEvent({
-          action: ACTION.CHANGED_FULL_WIDTH_MODE,
-          actionSubject: ACTION_SUBJECT.EDITOR,
-          eventType: EVENT_TYPE.TRACK,
-          attributes: {
-            previousMode: this.formatFullWidthAppearance(appearance),
-            newMode: this.formatFullWidthAppearance(nextAppearance),
-          },
-        });
-      }
-    }
-  }
-
-  formatFullWidthAppearance = (
-    appearance: EditorAppearance | undefined,
-  ): FULL_WIDTH_MODE => {
-    if (appearance === 'full-width') {
-      return FULL_WIDTH_MODE.FULL_WIDTH;
-    }
-    return FULL_WIDTH_MODE.FIXED_WIDTH;
-  };
-
-  reconfigureState = (props: EditorViewProps) => {
-    if (!this.view) {
-      return;
-    }
-
-    // We cannot currently guarentee when all the portals will have re-rendered during a reconfigure
-    // so we blur here to stop ProseMirror from trying to apply selection to detached nodes or
-    // nodes that haven't been re-rendered to the document yet.
-    if (this.view.dom instanceof HTMLElement && this.view.hasFocus()) {
-      this.view.dom.blur();
-    }
-
-    this.config = processPluginsList(
-      this.getPlugins(
-        props.editorProps,
-        this.props.editorProps,
-        props.createAnalyticsEvent,
-      ),
-    );
-
-    const state = this.editorState;
-    const plugins = createPMPlugins({
-      schema: state.schema,
-      dispatch: this.dispatch,
-      errorReporter: this.errorReporter,
-      editorConfig: this.config,
-      eventDispatcher: this.eventDispatcher,
-      providerFactory: props.providerFactory,
-      portalProviderAPI: props.portalProviderAPI,
-      reactContext: () => ({
-        ...this.context,
-        intl: this.props.intl,
-      }),
-      dispatchAnalyticsEvent: this.dispatchAnalyticsEvent,
-    });
-
-    const newState = state.reconfigure({ plugins });
-
-    // need to update the state first so when the view builds the nodeviews it is
-    // using the latest plugins
-    this.view.updateState(newState);
-
-    return this.view.update({ ...this.view.props, state: newState });
-  };
-
-  /**
-   * Deactivate analytics event handler, if exist any.
-   */
-  deactivateAnalytics() {
-    if (this.analyticsEventHandler) {
-      this.eventDispatcher.off(analyticsEventKey, this.analyticsEventHandler);
-    }
-  }
-
-  /**
-   * Create analytics event handler, if createAnalyticsEvent exist
-   * @param createAnalyticsEvent
-   */
-  activateAnalytics(createAnalyticsEvent?: CreateUIAnalyticsEvent) {
-    if (createAnalyticsEvent) {
-      this.analyticsEventHandler = fireAnalyticsEvent(createAnalyticsEvent);
-      this.eventDispatcher.on(analyticsEventKey, this.analyticsEventHandler);
     }
   }
 
@@ -342,15 +167,6 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
     // this.view will be destroyed when React unmounts in handleEditorViewRef
   }
 
-  // Helper to allow tests to inject plugins directly
-  getPlugins(
-    editorProps: EditorProps,
-    prevEditorProps?: EditorProps,
-    createAnalyticsEvent?: CreateUIAnalyticsEvent,
-  ): EditorPlugin[] {
-    return createPluginList(editorProps, prevEditorProps, createAnalyticsEvent);
-  }
-
   createEditorState = (options: {
     props: EditorViewProps;
     replaceDoc?: boolean;
@@ -371,12 +187,9 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
     }
 
     this.config = processPluginsList(
-      this.getPlugins(
-        options.props.editorProps,
-        undefined,
-        options.props.createAnalyticsEvent,
-      ),
+      createPluginList(options.props.editorProps),
     );
+    console.log(console.log('editorConfig', this.config));
     const schema = createSchema(this.config);
 
     const { contentTransformerProvider, defaultValue } =
@@ -394,7 +207,6 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
         ...this.context,
         intl: this.props.intl,
       }),
-      dispatchAnalyticsEvent: this.dispatchAnalyticsEvent,
     });
 
     this.contentTransformer = contentTransformerProvider
@@ -441,9 +253,7 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
     newEditorState: EditorState;
   }) => {
     this.config.onEditorViewStateUpdatedCallbacks.forEach((entry) => {
-      startMeasure(`🦉 ${entry.pluginName}::onEditorViewStateUpdated`);
       entry.callback({ transaction, oldEditorState, newEditorState });
-      stopMeasure(`🦉 ${entry.pluginName}::onEditorViewStateUpdated`);
     });
   };
 
@@ -452,62 +262,31 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
       return;
     }
 
-    startMeasure(`🦉 ReactEditorView::dispatchTransaction`);
-
     const nodes: PMNode[] = findChangedNodesFromTransaction(transaction);
     const changedNodesValid = validateNodes(nodes);
 
     if (changedNodesValid) {
       const oldEditorState = this.view.state;
 
-      // go ahead and update the state now we know the transaction is good
-      startMeasure(`🦉 EditorView::state::apply`);
       const editorState = this.view.state.apply(transaction);
-      stopMeasure(`🦉 EditorView::state::apply`);
-
-      startMeasure(`🦉 EditorView::updateState`);
       this.view.updateState(editorState);
-      stopMeasure(`🦉 EditorView::updateState`);
-
-      startMeasure(`🦉 EditorView::onEditorViewStateUpdated`);
       this.onEditorViewStateUpdated({
         transaction,
         oldEditorState,
         newEditorState: editorState,
       });
-      stopMeasure(`🦉 EditorView::onEditorViewStateUpdated`);
 
       if (this.props.editorProps.onChange && transaction.docChanged) {
         const source = transaction.getMeta('isRemote') ? 'remote' : 'local';
-
-        startMeasure(`🦉 ReactEditorView::onChange`);
         this.props.editorProps.onChange(this.view, { source });
-        stopMeasure(`🦉 ReactEditorView::onChange`);
       }
       this.editorState = editorState;
     } else {
       const invalidNodes = nodes
         .filter((node) => !validNode(node))
         .map<SimplifiedNode | string>((node) => getDocStructure(node));
-
-      analyticsService.trackEvent(
-        'uidu.uidu.editor-core.invalidtransaction',
-        { invalidNodes: JSON.stringify(invalidNodes) }, // V2 events don't support object properties
-      );
-
-      this.dispatchAnalyticsEvent({
-        action: ACTION.DISPATCHED_INVALID_TRANSACTION,
-        actionSubject: ACTION_SUBJECT.EDITOR,
-        eventType: EVENT_TYPE.OPERATIONAL,
-        attributes: {
-          analyticsEventPayloads:
-            getAnalyticsEventsFromTransaction(transaction),
-          invalidNodes,
-        },
-      });
+      console.log('invalidNodes', invalidNodes);
     }
-
-    stopMeasure(`🦉 ReactEditorView::dispatchTransaction`, () => {});
   };
 
   getDirectEditorProps = (state?: EditorState): DirectEditorProps => ({
@@ -526,22 +305,6 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
   });
 
   createEditorView = (node: HTMLDivElement) => {
-    measureRender(measurements.PROSEMIRROR_RENDERED, (duration, startTime) => {
-      if (this.view) {
-        this.dispatchAnalyticsEvent({
-          action: ACTION.PROSEMIRROR_RENDERED,
-          actionSubject: ACTION_SUBJECT.EDITOR,
-          attributes: {
-            duration,
-            startTime,
-            nodes: getNodesCount(this.view.state.doc),
-            ttfb: getResponseEndTime(),
-          },
-          eventType: EVENT_TYPE.OPERATIONAL,
-        });
-      }
-    });
-
     // Creates the editor-view from this.editorState. If an editor has been mounted
     // previously, this will contain the previous state of the editor.
     this.view = new EditorView({ mount: node }, this.getDirectEditorProps());
@@ -586,15 +349,6 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
     }
   };
 
-  dispatchAnalyticsEvent = (payload: AnalyticsEventPayload): void => {
-    if (this.props.allowAnalyticsGASV3 && this.eventDispatcher) {
-      const dispatch: AnalyticsDispatch = createDispatch(this.eventDispatcher);
-      dispatch(analyticsEventKey, {
-        payload,
-      });
-    }
-  };
-
   render() {
     const editor = (
       <div
@@ -610,7 +364,6 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
           config: this.config,
           eventDispatcher: this.eventDispatcher,
           transformer: this.contentTransformer,
-          dispatchAnalyticsEvent: this.dispatchAnalyticsEvent,
         })
       : editor;
   }

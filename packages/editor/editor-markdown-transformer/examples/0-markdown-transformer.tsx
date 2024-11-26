@@ -75,9 +75,6 @@ class Example extends React.PureComponent<Props, State> {
             contentTransformerProvider={(schema) =>
               new MarkdownTransformer(schema)
             }
-            // taskDecisionProvider={Promise.resolve(
-            //   taskDecision.getMockTaskDecisionResource(),
-            // )}
           >
             {({ renderEditor }) => <div tw="prose">{renderEditor()}</div>}
           </Editor>

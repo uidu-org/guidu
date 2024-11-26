@@ -23,7 +23,6 @@ import {
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import WithPluginState from '../../../ui/WithPluginState';
 import { setNodeSelection, setTextSelection } from '../../../utils';
-import { DispatchAnalyticsEvent } from '../../analytics';
 import { createDisplayGrid } from '../../grid';
 import { pluginKey as widthPluginKey } from '../../width';
 import { isMobileUploadCompleted } from '../commands/helpers';
@@ -53,7 +52,6 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
     view: { state },
     view,
     mediaPluginState,
-    dispatchAnalyticsEvent,
   } = props;
   // static defaultProps: Partial<MediaSingleNodeProps> = {
   //   mediaOptions: {},
@@ -79,9 +77,8 @@ export default function MediaSingleNode(props: MediaSingleNodeProps) {
         ...props,
         isMediaSingle: true,
         node: node || node.firstChild,
-        dispatchAnalyticsEvent,
       }),
-    [node, props, dispatchAnalyticsEvent],
+    [node, props],
   );
 
   // const UNSAFE_componentWillReceiveProps(nextProps: MediaSingleNodeProps) {
@@ -380,13 +377,8 @@ class MediaSingleNodeView extends SelectionBasedNodeView<MediaSingleNodeViewProp
   }
 
   render() {
-    const {
-      eventDispatcher,
-      fullWidthMode,
-      providerFactory,
-      mediaOptions,
-      dispatchAnalyticsEvent,
-    } = this.reactComponentProps;
+    const { eventDispatcher, fullWidthMode, providerFactory, mediaOptions } =
+      this.reactComponentProps;
 
     // getPos is a boolean for marks, since this is a node we know it must be a function
     const getPos = this.getPos as getPosHandlerNode;
@@ -422,7 +414,6 @@ class MediaSingleNodeView extends SelectionBasedNodeView<MediaSingleNodeViewProp
                   selected={isSelected}
                   eventDispatcher={eventDispatcher}
                   mediaPluginState={mediaPluginState}
-                  dispatchAnalyticsEvent={dispatchAnalyticsEvent}
                 />
               );
             }}
@@ -456,7 +447,6 @@ export const ReactMediaSingleNode =
     providerFactory: ProviderFactory,
     mediaOptions: MediaOptions = {},
     fullWidthMode?: boolean,
-    dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
     isCopyPasteEnabled?: boolean,
   ) =>
   (node: PMNode, view: EditorView, getPos: getPosHandler) =>
@@ -465,6 +455,5 @@ export const ReactMediaSingleNode =
       fullWidthMode,
       providerFactory,
       mediaOptions,
-      dispatchAnalyticsEvent,
       isCopyPasteEnabled,
     }).init();

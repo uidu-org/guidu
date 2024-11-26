@@ -1,6 +1,6 @@
 import { ProviderFactory, WithProviders } from '@uidu/editor-common';
 import React from 'react';
-import HyperlinkAddToolbar, { LinkInputType } from './HyperlinkAddToolbar';
+import HyperlinkAddToolbar from './HyperlinkAddToolbar';
 
 export interface Props {
   providerFactory: ProviderFactory;
@@ -10,20 +10,15 @@ export interface Props {
     text: string,
     isTabPressed?: boolean,
   ) => void;
-  onSubmit: (href: string, text: string, inputMethod: LinkInputType) => void;
+  onSubmit: (href: string, text: string) => void;
   displayText: string;
   displayUrl?: string;
 }
 
 export default class Toolbar extends React.PureComponent<Props, {}> {
   render() {
-    const {
-      onSubmit,
-      onBlur,
-      displayText,
-      displayUrl,
-      providerFactory,
-    } = this.props;
+    const { onSubmit, onBlur, displayText, displayUrl, providerFactory } =
+      this.props;
     return (
       <WithProviders
         providers={['activityProvider']}

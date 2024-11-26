@@ -2,7 +2,6 @@ import type React from 'react';
 
 import type { EditorView } from 'prosemirror-view';
 
-import type { DispatchAnalyticsEvent } from '../analytics/types/dispatch-analytics-event';
 import type { EventDispatcher } from '../event-dispatcher';
 import type { ProviderFactory } from '../provider-factory';
 
@@ -13,7 +12,6 @@ export type UiComponentFactoryParams = {
   editorView: EditorView;
   editorActions: EditorActionsOptions;
   eventDispatcher: EventDispatcher;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
   providerFactory: ProviderFactory;
   appearance: EditorAppearance;
   popupsMountPoint?: HTMLElement;

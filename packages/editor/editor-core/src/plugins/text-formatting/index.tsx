@@ -1,7 +1,7 @@
 import { code, em, strike, strong, subsup, underline } from '@uidu/adf-schema';
+import { ButtonGroup } from '@uidu/button';
 import React from 'react';
 import { EditorPlugin } from '../../types';
-import { ButtonGroup } from '../../ui/styles';
 import WithPluginState from '../../ui/WithPluginState';
 import {
   plugin as clearFormattingPlugin,
@@ -90,7 +90,7 @@ const textFormatting = (options: TextFormattingOptions = {}): EditorPlugin => ({
           clearFormattingState: clearFormattingPluginKey,
         }}
         render={({ textFormattingState, clearFormattingState }): any => (
-          <ButtonGroup width={isToolbarReducedSpacing ? 'small' : 'large'}>
+          <ButtonGroup tw="space-x-0">
             <ToolbarTextFormatting
               disabled={disabled}
               editorView={editorView}

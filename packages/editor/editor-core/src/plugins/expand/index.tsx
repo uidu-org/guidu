@@ -1,14 +1,6 @@
 import { expand, nestedExpand } from '@uidu/adf-schema';
 import React from 'react';
 import { EditorPlugin, EditorProps } from '../../types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconExpand } from '../quick-insert/assets';
 import { createExpandNode } from './commands';
@@ -61,16 +53,7 @@ const expandPlugin = (options?: ExpandPluginOptions): EditorPlugin => ({
           action(insert, state) {
             const node = createExpandNode(state);
             const tr = insert(node);
-            return addAnalytics(state, tr, {
-              action: ACTION.INSERTED,
-              actionSubject: ACTION_SUBJECT.DOCUMENT,
-              actionSubjectId:
-                node.type === state.schema.nodes.nestedExpand
-                  ? ACTION_SUBJECT_ID.NESTED_EXPAND
-                  : ACTION_SUBJECT_ID.EXPAND,
-              attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-              eventType: EVENT_TYPE.TRACK,
-            });
+            return tr;
           },
         },
       ];

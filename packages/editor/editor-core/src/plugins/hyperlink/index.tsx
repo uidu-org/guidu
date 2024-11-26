@@ -1,17 +1,10 @@
+import { faLink } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { link } from '@uidu/adf-schema';
 import React from 'react';
 import { addLink, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
-import { IconLink } from '../quick-insert/assets';
 import fakeCursorToolbarPlugin from './pm-plugins/fake-cursor-for-toolbar';
 import { createInputRulePlugin } from './pm-plugins/input-rule';
 import { createKeymapPlugin } from './pm-plugins/keymap';
@@ -51,21 +44,16 @@ const hyperlinkPlugin = (): EditorPlugin => ({
         keywords: ['url', 'link', 'hyperlink'],
         priority: 1200,
         keyshortcut: tooltip(addLink),
-        icon: () => <IconLink label={formatMessage(messages.link)} />,
+        icon: () => (
+          <FontAwesomeIcon icon={faLink} label={formatMessage(messages.link)} />
+        ),
         action(insert, state) {
           const tr = insert(undefined);
           tr.setMeta(stateKey, {
             type: LinkAction.SHOW_INSERT_TOOLBAR,
-            inputMethod: INPUT_METHOD.QUICK_INSERT,
           });
 
-          return addAnalytics(state, tr, {
-            action: ACTION.INVOKED,
-            actionSubject: ACTION_SUBJECT.TYPEAHEAD,
-            actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_LINK,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-            eventType: EVENT_TYPE.UI,
-          });
+          return tr;
         },
       },
     ],

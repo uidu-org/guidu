@@ -68,15 +68,7 @@ export type {
   QuickInsertItem,
   QuickInsertProvider,
 } from './plugins/quick-insert/types';
-export {
-  commitStatusPicker,
-  setStatusPickerAt,
-  updateStatus,
-} from './plugins/status/actions';
-export { pluginKey as statusPluginKey } from './plugins/status/plugin';
-export type { StatusState, StatusType } from './plugins/status/plugin';
 export { createTable } from './plugins/table/commands';
-export { insertTaskDecision } from './plugins/tasks-and-decisions/commands';
 export { textColorPluginKey } from './plugins/text-color';
 export type { TextColorPluginState } from './plugins/text-color';
 export { changeColor } from './plugins/text-color/commands/change-color';

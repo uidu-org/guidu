@@ -1,6 +1,6 @@
 import { Token, TokenProvider } from '@uidu/editor-common/provider-factory';
 import { Command } from '../../../types';
-import pluginKey from './plugin-key';
+import { pluginKey } from './plugin-key';
 
 export const ACTIONS = {
   SET_PROVIDER: 'SET_PROVIDER',

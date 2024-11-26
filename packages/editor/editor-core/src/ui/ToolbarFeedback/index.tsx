@@ -3,17 +3,6 @@ import { Popup } from '@uidu/editor-common';
 import Spinner from '@uidu/spinner';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import ReactDOM from 'react-dom';
-import { withAnalytics } from '../../analytics';
-import { createDispatch } from '../../event-dispatcher';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  AnalyticsDispatch,
-  EVENT_TYPE,
-} from '../../plugins/analytics';
-import { analyticsEventKey } from '../../plugins/analytics/consts';
 import { openFeedbackDialog } from '../../plugins/feedback-dialog';
 import { FeedbackInfo } from '../../types';
 import deprecationWarnings, {
@@ -112,7 +101,7 @@ export default class ToolbarFeedback extends PureComponent<Props, State> {
   private handleRef = (ref: ToolbarButton | null) => {
     if (ref) {
       this.setState({
-        target: ReactDOM.findDOMNode(ref || null) as HTMLElement,
+        target: ref,
       });
     }
   };
@@ -218,25 +207,11 @@ export default class ToolbarFeedback extends PureComponent<Props, State> {
     this.setState({ jiraIssueCollectorScriptLoading: false });
   };
 
-  private openFeedbackPopup = withAnalytics(
-    'uidu.editor-core.feedback.button',
-    (): boolean => {
-      const dispatch: AnalyticsDispatch = createDispatch(
-        this.context.editorActions.eventDispatcher,
-      );
-      dispatch(analyticsEventKey, {
-        payload: {
-          action: ACTION.CLICKED,
-          actionSubject: ACTION_SUBJECT.BUTTON,
-          actionSubjectId: ACTION_SUBJECT_ID.BUTTON_FEEDBACK,
-          eventType: EVENT_TYPE.UI,
-        },
-      });
-      this.openJiraIssueCollector();
+  private openFeedbackPopup = (): boolean => {
+    this.openJiraIssueCollector();
 
-      return true;
-    },
-  );
+    return true;
+  };
 
   private openLearnMorePage = () => {
     window.open('https://confluence.atlassian.com/x/NU1VO', '_blank');

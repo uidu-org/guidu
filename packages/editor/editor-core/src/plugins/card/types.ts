@@ -28,7 +28,6 @@ export type Request = {
   url: string;
   appearance: CardAppearance;
   compareLinkText: boolean;
-  source: CardReplacementInputMethod;
 };
 
 export type CardPluginState = {

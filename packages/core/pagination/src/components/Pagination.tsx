@@ -1,12 +1,6 @@
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import React, { Component, Fragment, SyntheticEvent } from 'react';
 import { PaginationPropTypes } from '../types';
 import collapseRangeHelper from '../util/collapseRange';
-import pkg from '../version.json';
 import { LeftNavigator, RightNavigator } from './Navigators';
 import PageComponent from './Page';
 import renderDefaultEllipsis from './renderEllipsis';
@@ -44,39 +38,14 @@ class Pagination extends Component<PaginationPropTypes, State> {
     return null;
   }
 
-  createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-  onChangeAnalyticsCaller = () => {
-    const { createAnalyticsEvent } = this.props;
-
-    if (createAnalyticsEvent) {
-      return this.createAndFireEventOnGuidu({
-        action: 'changed',
-        actionSubject: 'pageNumber',
-
-        attributes: {
-          componentName: 'pagination',
-          packageName: pkg.name,
-          packageVersion: pkg.version,
-        },
-      })(createAnalyticsEvent);
-    }
-    return undefined;
-  };
-
   onChange = (event: SyntheticEvent<any>, newSelectedPage: number) => {
     if (this.props.selectedIndex === undefined) {
       this.setState({
         selectedIndex: newSelectedPage,
       });
     }
-    const analyticsEvent = this.onChangeAnalyticsCaller();
     if (this.props.onChange) {
-      this.props.onChange(
-        event,
-        this.props.pages[newSelectedPage],
-        analyticsEvent,
-      );
+      this.props.onChange(event, this.props.pages[newSelectedPage]);
     }
   };
 
@@ -163,8 +132,4 @@ class Pagination extends Component<PaginationPropTypes, State> {
   }
 }
 
-export default withAnalyticsContext({
-  componentName: 'pagination',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(withAnalyticsEvents()(Pagination));
+export default Pagination;

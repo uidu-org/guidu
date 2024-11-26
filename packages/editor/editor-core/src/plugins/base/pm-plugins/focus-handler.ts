@@ -1,7 +1,8 @@
 import { Plugin, PluginKey } from 'prosemirror-state';
 import { Dispatch } from '../../../event-dispatcher';
 
-export const focusStateKey = new PluginKey('focusStatePlugin');
+export const focusStateKey = new PluginKey<boolean>('focusStatePlugin');
+
 export default (dispatch: Dispatch) =>
   new Plugin({
     key: focusStateKey,

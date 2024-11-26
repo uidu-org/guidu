@@ -54,7 +54,7 @@ export const setTableRef = (ref?: HTMLElement | null) =>
   createCommand(
     (state) => {
       const tableRef = ref || undefined;
-      const tableNode = ref ? findTable(state.selection)!.node : undefined;
+      const tableNode = ref ? findTable(state.selection).node : undefined;
       const tableWrapperTarget =
         closestElement(tableRef, `.${ClassName.TABLE_NODE_WRAPPER}`) ||
         undefined;
@@ -82,69 +82,67 @@ export const setTableRef = (ref?: HTMLElement | null) =>
     (tr) => tr.setMeta('addToHistory', false),
   );
 
-export const setCellAttr = (name: string, value: any): Command => (
-  state,
-  dispatch,
-) => {
-  const { tr, selection } = state;
-  if (selection instanceof CellSelection) {
-    let updated = false;
-    selection.forEachCell((cell, pos) => {
-      if (cell.attrs[name] !== value) {
-        tr.setNodeMarkup(pos, cell.type, { ...cell.attrs, [name]: value });
-        updated = true;
+export const setCellAttr =
+  (name: string, value: any): Command =>
+  (state, dispatch) => {
+    const { tr, selection } = state;
+    if (selection instanceof CellSelection) {
+      let updated = false;
+      selection.forEachCell((cell, pos) => {
+        if (cell.attrs[name] !== value) {
+          tr.setNodeMarkup(pos, cell.type, { ...cell.attrs, [name]: value });
+          updated = true;
+        }
+      });
+      if (updated) {
+        if (dispatch) {
+          dispatch(tr);
+        }
+        return true;
       }
-    });
-    if (updated) {
-      if (dispatch) {
-        dispatch(tr);
+    } else {
+      const cell: any = selectionCell(state);
+      if (cell) {
+        if (dispatch) {
+          dispatch(
+            tr.setNodeMarkup(cell.pos, cell.nodeAfter.type, {
+              ...cell.nodeAfter.attrs,
+              [name]: value,
+            }),
+          );
+        }
+        return true;
       }
-      return true;
     }
-  } else {
-    const cell: any = selectionCell(state);
-    if (cell) {
-      if (dispatch) {
-        dispatch(
-          tr.setNodeMarkup(cell.pos, cell.nodeAfter.type, {
-            ...cell.nodeAfter.attrs,
-            [name]: value,
-          }),
-        );
+    return false;
+  };
+
+export const triggerUnlessTableHeader =
+  (command: Command): Command =>
+  (state, dispatch) => {
+    const {
+      selection,
+      schema: {
+        nodes: { tableHeader },
+      },
+    } = state;
+
+    if (selection instanceof TextSelection) {
+      const cell = findCellClosestToPos(selection.$from);
+      if (cell && cell.node.type !== tableHeader) {
+        return command(state, dispatch);
       }
-      return true;
     }
-  }
-  return false;
-};
 
-export const triggerUnlessTableHeader = (command: Command): Command => (
-  state,
-  dispatch,
-) => {
-  const {
-    selection,
-    schema: {
-      nodes: { tableHeader },
-    },
-  } = state;
-
-  if (selection instanceof TextSelection) {
-    const cell = findCellClosestToPos(selection.$from);
-    if (cell && cell.node.type !== tableHeader) {
-      return command(state, dispatch);
+    if (selection instanceof CellSelection) {
+      const rect = getSelectionRect(selection);
+      if (!checkIfHeaderRowEnabled(state) || (rect && rect.top > 0)) {
+        return command(state, dispatch);
+      }
     }
-  }
 
-  if (selection instanceof CellSelection) {
-    const rect = getSelectionRect(selection);
-    if (!checkIfHeaderRowEnabled(state) || (rect && rect.top > 0)) {
-      return command(state, dispatch);
-    }
-  }
-
-  return false;
-};
+    return false;
+  };
 
 export const transformSliceRemoveCellBackgroundColor = (
   slice: Slice,
@@ -225,21 +223,21 @@ export const deleteTable: Command = (state, dispatch) => {
   return true;
 };
 
-export const convertFirstRowToHeader = (schema: Schema) => (
-  tr: Transaction,
-): Transaction => {
-  const table = findTable(tr.selection)!;
-  const map = TableMap.get(table.node);
-  for (let i = 0; i < map.width; i++) {
-    const cell = table.node.child(0).child(i);
-    tr.setNodeMarkup(
-      table.start + map.map[i],
-      schema.nodes.tableHeader,
-      cell.attrs,
-    );
-  }
-  return tr;
-};
+export const convertFirstRowToHeader =
+  (schema: Schema) =>
+  (tr: Transaction): Transaction => {
+    const table = findTable(tr.selection)!;
+    const map = TableMap.get(table.node);
+    for (let i = 0; i < map.width; i++) {
+      const cell = table.node.child(0).child(i);
+      tr.setNodeMarkup(
+        table.start + map.map[i],
+        schema.nodes.tableHeader,
+        cell.attrs,
+      );
+    }
+    return tr;
+  };
 
 export const moveCursorBackward: Command = (state, dispatch) => {
   const { $cursor } = state.selection as TextSelection;
@@ -303,36 +301,37 @@ export const moveCursorBackward: Command = (state, dispatch) => {
   return true;
 };
 
-export const setMultipleCellAttrs = (
-  attrs: Object,
-  targetCellPosition?: number,
-): Command => (state, dispatch) => {
-  let cursorPos: number | undefined;
-  let { tr } = state;
+export const setMultipleCellAttrs =
+  (attrs: Object, targetCellPosition?: number): Command =>
+  (state, dispatch) => {
+    let cursorPos: number | undefined;
+    let { tr } = state;
 
-  if (isCellSelection(tr.selection)) {
-    const selection = (tr.selection as any) as CellSelection;
-    selection.forEachCell((_cell, pos) => {
-      const $pos = tr.doc.resolve(tr.mapping.map(pos + 1));
-      tr = setCellAttrs(findCellClosestToPos($pos)!, attrs)(tr);
-    });
-    cursorPos = selection.$headCell.pos;
-  } else if (targetCellPosition) {
-    const cell = findCellClosestToPos(tr.doc.resolve(targetCellPosition + 1))!;
-    tr = setCellAttrs(cell, attrs)(tr);
-    cursorPos = cell.pos;
-  }
-
-  if (tr.docChanged && cursorPos !== undefined) {
-    const $pos = tr.doc.resolve(tr.mapping.map(cursorPos!));
-
-    if (dispatch) {
-      dispatch(tr.setSelection(Selection.near($pos)));
+    if (isCellSelection(tr.selection)) {
+      const selection = tr.selection as any as CellSelection;
+      selection.forEachCell((_cell, pos) => {
+        const $pos = tr.doc.resolve(tr.mapping.map(pos + 1));
+        tr = setCellAttrs(findCellClosestToPos($pos)!, attrs)(tr);
+      });
+      cursorPos = selection.$headCell.pos;
+    } else if (targetCellPosition) {
+      const cell = findCellClosestToPos(
+        tr.doc.resolve(targetCellPosition + 1),
+      )!;
+      tr = setCellAttrs(cell, attrs)(tr);
+      cursorPos = cell.pos;
     }
-    return true;
-  }
-  return false;
-};
+
+    if (tr.docChanged && cursorPos !== undefined) {
+      const $pos = tr.doc.resolve(tr.mapping.map(cursorPos!));
+
+      if (dispatch) {
+        dispatch(tr.setSelection(Selection.near($pos)));
+      }
+      return true;
+    }
+    return false;
+  };
 
 export const selectColumn = (column: number, expand?: boolean) =>
   createCommand(
@@ -438,40 +437,40 @@ export const autoSizeTable = (
   node: PMNode,
   table: HTMLTableElement,
   basePos: number,
-  opts: { dynamicTextSizing: boolean; containerWidth: number },
+  opts: { containerWidth: number },
 ) => {
   view.dispatch(fixAutoSizedTable(view, node, table, basePos, opts));
   return true;
 };
 
-export const addBoldInEmptyHeaderCells = (
-  tableCellHeader: ContentNodeWithPos,
-): Command => (state, dispatch): boolean => {
-  const { tr } = state;
-  if (
-    // Avoid infinite loop when the current selection is not a TextSelection
-    isTextSelection(tr.selection) &&
-    tr.selection.$cursor &&
-    // When storedMark is null that means this is the initial state
-    // if the user press to remove the mark storedMark will be an empty array
-    // and we shouldn't apply the strong mark
-    tr.storedMarks == null &&
-    // Check if the current node is a direct child from paragraph
-    tr.selection.$from.depth === tableCellHeader.depth + 1 &&
-    // this logic is applied only for empty paragraph
-    tableCellHeader.node.nodeSize === 4 &&
-    isNodeTypeParagraph(tableCellHeader.node.firstChild)
-  ) {
-    const { strong } = state.schema.marks;
-    tr.setStoredMarks([strong.create()]).setMeta('addToHistory', false);
+export const addBoldInEmptyHeaderCells =
+  (tableCellHeader: ContentNodeWithPos): Command =>
+  (state, dispatch): boolean => {
+    const { tr } = state;
+    if (
+      // Avoid infinite loop when the current selection is not a TextSelection
+      isTextSelection(tr.selection) &&
+      tr.selection.$cursor &&
+      // When storedMark is null that means this is the initial state
+      // if the user press to remove the mark storedMark will be an empty array
+      // and we shouldn't apply the strong mark
+      tr.storedMarks == null &&
+      // Check if the current node is a direct child from paragraph
+      tr.selection.$from.depth === tableCellHeader.depth + 1 &&
+      // this logic is applied only for empty paragraph
+      tableCellHeader.node.nodeSize === 4 &&
+      isNodeTypeParagraph(tableCellHeader.node.firstChild)
+    ) {
+      const { strong } = state.schema.marks;
+      tr.setStoredMarks([strong.create()]).setMeta('addToHistory', false);
 
-    if (dispatch) {
-      dispatch(tr);
+      if (dispatch) {
+        dispatch(tr);
+      }
+
+      return true;
     }
 
-    return true;
-  }
-
-  return false;
-};
+    return false;
+  };
 // #endregion

@@ -1,16 +1,9 @@
-import { AnalyticsEventPayload, CreateUIAnalyticsEvent } from '@uidu/analytics';
 import classNames from 'classnames';
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { FormattedMessage, MessageDescriptor } from 'react-intl';
 import { EmojiProvider, supportsUploadFeature } from '../../api/EmojiResource';
 import { EmojiUpload } from '../../types';
-import {
-  createAndFireEventInElementsChannel,
-  selectedFileEvent,
-  uploadCancelButton,
-  uploadConfirmButton,
-} from '../../util/analytics';
 import EmojiUploadPicker from '../common/EmojiUploadPicker';
 import { uploadEmoji } from '../common/UploadEmoji';
 import * as styles from './styles';
@@ -22,7 +15,6 @@ export interface UploadRefHandler {
 export interface Props {
   emojiProvider: EmojiProvider;
   onUploaderRef?: UploadRefHandler;
-  createAnalyticsEvent?: CreateUIAnalyticsEvent;
 }
 
 export interface State {
@@ -43,19 +35,12 @@ export default class EmojiUploadComponent extends PureComponent<Props, State> {
 
   private onUploadEmoji = (upload: EmojiUpload, retry: boolean) => {
     const { emojiProvider } = this.props;
-    this.fireAnalytics(uploadConfirmButton({ retry }));
     const errorSetter = (message?: MessageDescriptor) => {
       this.setState({
         uploadErrorMessage: message,
       });
     };
-    uploadEmoji(
-      upload,
-      emojiProvider,
-      errorSetter,
-      this.prepareForUpload,
-      this.fireAnalytics,
-    );
+    uploadEmoji(upload, emojiProvider, errorSetter, this.prepareForUpload);
   };
 
   private prepareForUpload = () => {
@@ -73,25 +58,14 @@ export default class EmojiUploadComponent extends PureComponent<Props, State> {
     }
   };
 
-  onFileChooserClicked = () => {
-    this.fireAnalytics(selectedFileEvent());
-  };
+  onFileChooserClicked = () => {};
 
   private onUploadCancelled = () => {
-    this.fireAnalytics(uploadCancelButton());
     this.prepareForUpload();
   };
 
   private onUploaderRef = (emojiUploadPicker: EmojiUploadPicker | null) => {
     this.ref = emojiUploadPicker;
-  };
-
-  private fireAnalytics = (analyticsEvent: AnalyticsEventPayload) => {
-    const { createAnalyticsEvent } = this.props;
-
-    if (createAnalyticsEvent) {
-      createAndFireEventInElementsChannel(analyticsEvent)(createAnalyticsEvent);
-    }
   };
 
   render() {

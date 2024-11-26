@@ -1,4 +1,3 @@
-import { UIAnalyticsEvent, WithAnalyticsEventsProps } from '@uidu/analytics';
 import {
   AbstractMentionResource,
   DefaultMentionNameResolver,
@@ -31,21 +30,13 @@ export interface MockMentionConfig {
 }
 
 export const createMockMentionNameResolver = () => {
-  const analyticsProps: WithAnalyticsEventsProps = {
-    createAnalyticsEvent: payload => {
-      // eslint-disable-next-line no-console
-      console.log('analytics event', payload);
-      return new UIAnalyticsEvent({ payload });
-    },
-  };
-  return new DefaultMentionNameResolver(
-    new MockMentionNameClient(),
-    analyticsProps,
-  );
+  return new DefaultMentionNameResolver(new MockMentionNameClient());
 };
 
-export class MockMentionResource extends AbstractMentionResource
-  implements ResolvingMentionProvider, TeamMentionProvider {
+export class MockMentionResource
+  extends AbstractMentionResource
+  implements ResolvingMentionProvider, TeamMentionProvider
+{
   private config: MockMentionConfig;
   private lastReturnedSearch: number;
 

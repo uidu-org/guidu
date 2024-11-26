@@ -1,4 +1,3 @@
-import { CreateUIAnalyticsEvent, withAnalyticsEvents } from '@uidu/analytics';
 import * as React from 'react';
 import { ComponentClass } from 'react';
 import { EmojiProvider } from '../../api/EmojiResource';
@@ -21,7 +20,6 @@ const emojiUploadLoader: () => Promise<ComponentClass<ComponentProps>> = () =>
 
 export interface Props extends LoadingProps {
   onUploaderRef?: UploadRefHandler;
-  createAnalyticsEvent?: CreateUIAnalyticsEvent;
 }
 
 export class EmojiUploaderInternal extends LoadingEmojiComponent<
@@ -61,7 +59,6 @@ export class EmojiUploaderInternal extends LoadingEmojiComponent<
 }
 
 type EmojiUploader = EmojiUploaderInternal;
-
-const EmojiUploader = withAnalyticsEvents()(EmojiUploaderInternal);
+const EmojiUploader = EmojiUploaderInternal;
 
 export default EmojiUploader;

@@ -19,8 +19,11 @@ export type AccordionPropTypesBase = {
 export type AccordionPropTypes = AccordionPropTypesBase & {
   onChange?: (expanded: string[]) => void;
   /** Handler to be called on click. */
-  onClick?: (
-    { event, item }: { event: KeyboardEvent | MouseEvent; item: any },
-    AnalyticsEventInterface,
-  ) => void;
+  onClick?: ({
+    event,
+    item,
+  }: {
+    event: KeyboardEvent | MouseEvent;
+    item: any;
+  }) => void;
 };

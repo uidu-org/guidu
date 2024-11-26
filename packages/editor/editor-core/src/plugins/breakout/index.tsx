@@ -144,9 +144,9 @@ const breakoutPlugin = (options?: BreakoutPluginOptions): EditorPlugin => ({
     popupsScrollableElement,
   }) {
     // This is a bit crappy, but should be resolved once we move to a static schema.
-    if (options && !options.allowBreakoutButton) {
-      return null;
-    }
+    // if (options && !options.allowBreakoutButton) {
+    //   return null;
+    // }
 
     return (
       <WithPluginState

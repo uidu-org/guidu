@@ -1,19 +1,12 @@
+import { faImages } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { media, mediaGroup, mediaSingle } from '@uidu/adf-schema';
 import type { MediaProvider } from '@uidu/editor-common';
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
-import { IconImages } from '../quick-insert/assets';
 import { ReactMediaGroupNode } from './nodeviews/mediaGroup';
 import { ReactMediaSingleNode } from './nodeviews/mediaSingle';
 import { createPlugin as createMediaAltTextPlugin } from './pm-plugins/alt-text';
@@ -67,7 +60,6 @@ const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
           errorReporter,
           portalProviderAPI,
           reactContext,
-          dispatchAnalyticsEvent,
         }: PMPluginFactoryParams) =>
           createPlugin(
             schema,
@@ -86,7 +78,6 @@ const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
                   providerFactory,
                   options,
                   options && options.fullWidthEnabled,
-                  dispatchAnalyticsEvent,
                   options && options.isCopyPasteEnabled,
                 ),
               },
@@ -177,20 +168,16 @@ const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
         keywords: ['media', 'attachment'],
         icon: () => (
           <FormattedMessage {...messages.filesAndImages}>
-            {(label: string) => <IconImages label={label} />}
+            {(label: string) => (
+              <FontAwesomeIcon icon={faImages} label={label} />
+            )}
           </FormattedMessage>
         ),
         action(insert, state) {
           const pluginState = pluginKey.getState(state);
           pluginState.showMediaPicker();
           const tr = insert('');
-          return addAnalytics(state, tr, {
-            action: ACTION.OPENED,
-            actionSubject: ACTION_SUBJECT.PICKER,
-            actionSubjectId: ACTION_SUBJECT_ID.PICKER_CLOUD,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-            eventType: EVENT_TYPE.UI,
-          });
+          return tr;
         },
       },
     ],

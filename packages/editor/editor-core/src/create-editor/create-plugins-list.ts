@@ -1,4 +1,3 @@
-import { CreateUIAnalyticsEvent } from '@uidu/analytics';
 import {
   basePlugin,
   clearMarksOnChangeToEmptyDocumentPlugin,
@@ -8,7 +7,7 @@ import {
   pastePlugin,
   typeAheadPlugin,
   unsupportedContentPlugin,
-  widthPlugin
+  widthPlugin,
 } from '../plugins';
 import { ScrollGutterPluginOptions } from '../plugins/base/pm-plugins/scroll-gutter';
 import { EditorPlugin, EditorProps } from '../types';
@@ -45,7 +44,6 @@ export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
     basePlugin({
       allowInlineCursorTarget: appearance !== 'mobile',
       allowScrollGutter: getScrollGutterOptions(props),
-      addRunTimePerformanceCheck: false,
       inputSamplingLimit: props.inputSamplingLimit,
     }),
     pastePlugin({
@@ -65,17 +63,9 @@ export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
 /**
  * Maps EditorProps to EditorPlugins
  */
-export default function createPluginsList(
-  props: EditorProps,
-  prevProps?: EditorProps,
-  createAnalyticsEvent?: CreateUIAnalyticsEvent,
-): EditorPlugin[] {
+export default function createPluginsList(props: EditorProps): EditorPlugin[] {
   // const isMobile = props.appearance === 'mobile';
   const plugins = [...getDefaultPluginsList(props), ...(props.plugins || [])];
-
-  // if (props.allowAnalyticsGASV3) {
-  //   plugins.push(analyticsPlugin(createAnalyticsEvent));
-  // }
 
   // if (props.allowBreakout && isFullPage) {
   //   plugins.push(
@@ -126,7 +116,6 @@ export default function createPluginsList(
   // if (props.mentionProvider) {
   //   plugins.push(
   //     mentionsPlugin({
-  //       createAnalyticsEvent,
   //       sanitizePrivateContent: props.sanitizePrivateContent,
   //       mentionInsertDisplayName: props.mentionInsertDisplayName,
   //       useInlineWrapper: isMobile,
@@ -138,7 +127,6 @@ export default function createPluginsList(
   // if (props.emojiProvider) {
   //   plugins.push(
   //     emojiPlugin({
-  //       createAnalyticsEvent,
   //       useInlineWrapper: isMobile,
   //       allowZeroWidthSpaceAfter: !isMobile,
   //     }),
@@ -159,10 +147,6 @@ export default function createPluginsList(
   //       wasFullWidthEnabled: prevProps && prevProps.appearance === 'full-width',
   //     }),
   //   );
-  // }
-
-  // if (props.allowTasksAndDecisions || props.taskDecisionProvider) {
-  //   plugins.push(tasksAndDecisionsPlugin());
   // }
 
   // if (props.feedbackInfo) {
@@ -242,21 +226,6 @@ export default function createPluginsList(
   //   plugins.push(customAutoformatPlugin());
   // }
 
-  // let statusMenuDisabled = true;
-  // if (props.allowStatus) {
-  //   statusMenuDisabled =
-  //     typeof props.allowStatus === 'object'
-  //       ? props.allowStatus.menuDisabled
-  //       : false;
-  //   plugins.push(
-  //     statusPlugin({
-  //       menuDisabled: statusMenuDisabled,
-  //       useInlineWrapper: isMobile,
-  //       allowZeroWidthSpaceAfter: !isMobile,
-  //     }),
-  //   );
-  // }
-
   // if (props.allowIndentation) {
   //   plugins.push(indentationPlugin());
   // }
@@ -267,7 +236,6 @@ export default function createPluginsList(
   //     allowTables: !!props.allowTables,
   //     insertMenuItems: props.insertMenuItems,
   //     horizontalRuleEnabled: props.allowRule,
-  //     nativeStatusSupported: !statusMenuDisabled,
   //   }),
   // );
 

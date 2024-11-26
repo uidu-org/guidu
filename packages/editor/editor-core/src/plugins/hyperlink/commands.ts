@@ -3,19 +3,8 @@ import { Mark, Node, ResolvedPos } from 'prosemirror-model';
 import { EditorState, Selection } from 'prosemirror-state';
 import { Command } from '../../types';
 import { filter, Predicate } from '../../utils/commands';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-  withAnalytics,
-} from '../analytics';
 import { queueCardsFromChangedTr } from '../card/pm-plugins/doc';
-import { getLinkCreationAnalyticsEvent } from './analytics';
 import { LinkAction, stateKey } from './pm-plugins/main';
-import { LinkInputType } from './ui/HyperlinkAddToolbar/HyperlinkAddToolbar';
 import { normalizeUrl } from './utils';
 
 export function isTextAtPos(pos: number): Predicate {
@@ -142,7 +131,6 @@ export function insertLink(
   to: number,
   href: string,
   text?: string,
-  source?: INPUT_METHOD.MANUAL | INPUT_METHOD.TYPEAHEAD,
 ): Command {
   return (state, dispatch) => {
     const link = state.schema.marks.link;
@@ -161,7 +149,7 @@ export function insertLink(
         Selection.near(tr.doc.resolve(from + textContent.length)),
       );
 
-      queueCardsFromChangedTr(state, tr, source!, false);
+      queueCardsFromChangedTr(state, tr, false);
 
       tr.setMeta(stateKey, { type: LinkAction.HIDE_TOOLBAR });
       if (dispatch) {
@@ -172,17 +160,6 @@ export function insertLink(
     return false;
   };
 }
-
-export const insertLinkWithAnalytics = (
-  inputMethod: LinkInputType,
-  from: number,
-  to: number,
-  href: string,
-  text?: string,
-) =>
-  withAnalytics(getLinkCreationAnalyticsEvent(inputMethod, href))(
-    insertLink(from, to, href, text, inputMethod),
-  );
 
 export function removeLink(pos: number): Command {
   return setLinkHref('', pos);
@@ -201,24 +178,11 @@ export function editInsertedLink(): Command {
   };
 }
 
-export function showLinkToolbar(
-  inputMethod:
-    | INPUT_METHOD.TOOLBAR
-    | INPUT_METHOD.QUICK_INSERT
-    | INPUT_METHOD.SHORTCUT
-    | INPUT_METHOD.INSERT_MENU = INPUT_METHOD.TOOLBAR,
-): Command {
+export function showLinkToolbar(): Command {
   return function (state, dispatch) {
     if (dispatch) {
       let tr = state.tr.setMeta(stateKey, {
         type: LinkAction.SHOW_INSERT_TOOLBAR,
-      });
-      tr = addAnalytics(state, tr, {
-        action: ACTION.INVOKED,
-        actionSubject: ACTION_SUBJECT.TYPEAHEAD,
-        actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_LINK,
-        attributes: { inputMethod },
-        eventType: EVENT_TYPE.UI,
       });
       dispatch(tr);
     }

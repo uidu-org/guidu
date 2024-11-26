@@ -1,6 +1,6 @@
 import { browser } from '@uidu/editor-common';
+import 'highlight.js/styles/atom-one-dark.css'; // Example theme
 import { DOMOutputSpec, DOMSerializer, Node } from 'prosemirror-model';
-import rafSchedule from 'raf-schd';
 
 const MATCH_NEWLINES = new RegExp('\n', 'g');
 
@@ -8,57 +8,61 @@ const MATCH_NEWLINES = new RegExp('\n', 'g');
 const isIE11 = browser.ie && browser.ie_version <= 11;
 const toDOM = (node: Node) =>
   [
-    'div',
-    { class: 'code-block' + (isIE11 ? ' ie11' : '') },
-    ['div', { class: 'line-number-gutter', contenteditable: 'false' }],
+    'pre',
+    { class: `code-block${isIE11 ? ' ie11' : ''}` },
     [
       'div',
-      { class: 'code-content' },
+      {
+        class: 'code-content',
+      },
       [
-        'pre',
-        [
-          'code',
-          { 'data-language': node.attrs.language || '', spellcheck: 'false' },
-          0,
-        ],
+        'code',
+        {
+          'data-language': node.attrs.language || '',
+          spellcheck: 'false',
+        },
+        0,
       ],
     ],
   ] as DOMOutputSpec;
 
 export class CodeBlockView {
   node: Node;
+
   dom: HTMLElement;
+
   contentDOM: HTMLElement;
+
   lineNumberGutter: HTMLElement;
 
   constructor(node: Node) {
     const { dom, contentDOM } = DOMSerializer.renderSpec(document, toDOM(node));
     this.node = node;
     this.dom = dom as HTMLElement;
-    this.contentDOM = contentDOM as HTMLElement;
-    this.lineNumberGutter = this.dom.querySelector(
-      '.line-number-gutter',
-    ) as HTMLElement;
+    this.contentDOM = contentDOM;
+    // this.lineNumberGutter = this.dom.querySelector(
+    //   '.line-number-gutter',
+    // ) as HTMLElement;
 
-    this.ensureLineNumbers();
+    // this.ensureLineNumbers();
   }
 
-  private ensureLineNumbers = rafSchedule(() => {
-    let lines = 1;
-    this.node.forEach((node) => {
-      const text = node.text;
-      if (text) {
-        lines += (node.text!.match(MATCH_NEWLINES) || []).length;
-      }
-    });
+  // private ensureLineNumbers = rafSchedule(() => {
+  //   let lines = 1;
+  //   this.node.forEach((node) => {
+  //     const text = node.text;
+  //     if (text) {
+  //       lines += (node.text!.match(MATCH_NEWLINES) || []).length;
+  //     }
+  //   });
 
-    while (this.lineNumberGutter.childElementCount < lines) {
-      this.lineNumberGutter.appendChild(document.createElement('span'));
-    }
-    while (this.lineNumberGutter.childElementCount > lines) {
-      this.lineNumberGutter.removeChild(this.lineNumberGutter.lastChild!);
-    }
-  });
+  //   while (this.lineNumberGutter.childElementCount < lines) {
+  //     this.lineNumberGutter.appendChild(document.createElement('span'));
+  //   }
+  //   while (this.lineNumberGutter.childElementCount > lines) {
+  //     this.lineNumberGutter.removeChild(this.lineNumberGutter.lastChild!);
+  //   }
+  // });
 
   update(node: Node) {
     if (node.type !== this.node.type) {
@@ -72,7 +76,7 @@ export class CodeBlockView {
         );
       }
       this.node = node;
-      this.ensureLineNumbers();
+      // this.ensureLineNumbers();
     }
     return true;
   }

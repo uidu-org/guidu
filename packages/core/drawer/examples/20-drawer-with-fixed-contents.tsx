@@ -1,13 +1,9 @@
 import Button from '@uidu/button';
-import DropdownMenu, {
-  DropdownItem,
-  DropdownItemGroup,
-} from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
 import Drawer from '../src';
 
 type State = {
-  isDrawerOpen: boolean,
+  isDrawerOpen: boolean;
 };
 
 export default class DrawersExample extends Component<{}, State> {
@@ -37,20 +33,9 @@ export default class DrawersExample extends Component<{}, State> {
             <p id="paragraph">
               The drawer should not set a new stacking context by using a
               transform CSS property as this causes issues for fixed positioned
-              elements such as @uidu/dropdown-menu.
+              elements such as @uidu/popup.
             </p>
             {/* The position here is used by the withDropdown integration test. */}
-            <div style={{ position: 'fixed', left: 100, top: 200 }}>
-              <DropdownMenu
-                trigger={<div id="trigger">Choices</div>}
-                triggerType="button"
-              >
-                <DropdownItemGroup>
-                  <DropdownItem>Sydney</DropdownItem>
-                  <DropdownItem>Melbourne</DropdownItem>
-                </DropdownItemGroup>
-              </DropdownMenu>
-            </div>
           </div>
         </Drawer>
         <Button type="button" onClick={this.openDrawer}>

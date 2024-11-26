@@ -7,8 +7,6 @@ import bulletList from './nodes/bullet-list';
 import caption from './nodes/caption';
 import codeBlock from './nodes/code-block';
 import date from './nodes/date';
-import decisionItem from './nodes/decision-item';
-import decisionList from './nodes/decision-list';
 import emoji from './nodes/emoji';
 import expand from './nodes/expand';
 import hardBreak from './nodes/hard-break';
@@ -27,13 +25,10 @@ import orderedList from './nodes/ordered-list';
 import panel from './nodes/panel';
 import paragraph from './nodes/paragraph';
 import rule from './nodes/rule';
-import status from './nodes/status';
 import table from './nodes/table';
 import tableCell from './nodes/table-cell';
 import tableHeader from './nodes/table-header';
 import tableRow from './nodes/table-row';
-import taskItem from './nodes/task-item';
-import taskList from './nodes/task-list';
 import text from './nodes/text';
 import token from './nodes/token';
 import unknownBlock from './nodes/unknown-block';
@@ -48,8 +43,6 @@ export const nodeSerializers: { [key: string]: NodeSerializer } = {
   bulletList,
   caption,
   codeBlock,
-  decisionList,
-  decisionItem,
   emoji,
   extension: bodiedExtension, // Old node, treated as bodied ext. for backwards compatibility
   image: renderNothing,
@@ -75,12 +68,9 @@ export const nodeSerializers: { [key: string]: NodeSerializer } = {
   tableCell,
   tableHeader,
   tableRow,
-  taskItem,
-  taskList,
   text,
   token,
   unknownBlock,
-  status,
   date,
   expand,
   nestedExpand: expand,

@@ -5,7 +5,6 @@ import { Dispatch } from '../../../event-dispatcher';
 import * as keymaps from '../../../keymaps';
 import { shallowEqual } from '../../../utils';
 import * as commands from '../commands/text-formatting';
-import { createInlineCodeFromTextInputWithAnalytics } from '../commands/text-formatting';
 import { anyMarkActive } from '../utils';
 
 export const pluginKey = new PluginKey('textFormatting');
@@ -37,14 +36,8 @@ export interface TextFormattingState {
 const getTextFormattingState = (
   editorState: EditorState,
 ): TextFormattingState => {
-  const {
-    em,
-    code,
-    strike,
-    strong,
-    subsup,
-    underline,
-  } = editorState.schema.marks;
+  const { em, code, strike, strong, subsup, underline } =
+    editorState.schema.marks;
   const state: TextFormattingState = {};
 
   if (code) {
@@ -114,7 +107,8 @@ export const plugin = (dispatch: Dispatch) =>
         const { state, dispatch } = view;
         if (event.key === keymaps.moveRight.common) {
           return commands.moveRight()(state, dispatch);
-        } else if (event.key === keymaps.moveLeft.common) {
+        }
+        if (event.key === keymaps.moveLeft.common) {
           return commands.moveLeft()(state, dispatch);
         }
         return false;
@@ -126,7 +120,7 @@ export const plugin = (dispatch: Dispatch) =>
         text: string,
       ) {
         const { state, dispatch } = view;
-        return createInlineCodeFromTextInputWithAnalytics(
+        return commands.createInlineCodeFromTextInput(
           from,
           to,
           text,

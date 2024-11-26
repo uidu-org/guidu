@@ -1,8 +1,9 @@
 import Button from '@uidu/button';
+import { ButtonItem, MenuGroup } from '@uidu/menu';
 import { colors } from '@uidu/theme';
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { DropdownItem, DropdownItemGroup, DropdownMenuStateless } from '../src';
+import DropdownMenu from '../src';
 
 const windowScroll = 1000;
 
@@ -44,18 +45,16 @@ export default class OverflowParentExample extends Component<{}, State> {
     const { isMenuFixed, isMenuOpen } = this.state;
 
     return (
-      <DropdownMenuStateless
-        triggerType="button"
+      <DropdownMenu
         trigger="Choices"
-        isMenuFixed={isMenuFixed}
         isOpen={isMenuOpen}
         onOpenChange={this.toggleMenuOpen}
       >
-        <DropdownItemGroup>
-          <DropdownItem>Sydney</DropdownItem>
-          <DropdownItem>Melbourne</DropdownItem>
-        </DropdownItemGroup>
-      </DropdownMenuStateless>
+        <MenuGroup>
+          <ButtonItem>Sydney</ButtonItem>
+          <ButtonItem>Melbourne</ButtonItem>
+        </MenuGroup>
+      </DropdownMenu>
     );
   }
 

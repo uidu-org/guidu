@@ -94,9 +94,9 @@ class RecentLink extends React.Component<
     const { items, url, selectedIndex } = this.state;
     const inputMethod = this.getCurrentInputMethod();
 
-    if (!inputMethod) {
-      return; // No call submit, if there is nothing to submit
-    }
+    // if (!inputMethod) {
+    //   return; // No call submit, if there is nothing to submit
+    // }
 
     switch (inputMethod) {
       case INPUT_METHOD.MANUAL: {

@@ -36,7 +36,7 @@ class MoreIndicator extends Component<MoreIndicatorProps> {
   };
 
   render() {
-    const outerProps = getProps(this);
+    const outerProps = getProps(this.props);
     const { appearance, isActive, isFocus, isHover, size, count } = this.props;
 
     const displayCount = count! > MAX_DISPLAY_COUNT ? MAX_DISPLAY_COUNT : count;

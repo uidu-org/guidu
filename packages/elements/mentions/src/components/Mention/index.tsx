@@ -1,13 +1,6 @@
-import {
-  CreateUIAnalyticsEvent,
-  UIAnalyticsEvent,
-  withAnalyticsEvents,
-  WithAnalyticsEventsProps,
-} from '@uidu/analytics';
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { isRestricted, MentionEventHandler, MentionType } from '../../types';
-import { fireAnalyticsMentionEvent } from '../../utils/analytics';
 import { messages } from '../i18n';
 import { NoAccessTooltip } from '../NoAccessTooltip';
 import { MentionStyle } from './styles';
@@ -26,7 +19,7 @@ export type OwnProps = {
   onHover?: () => void;
 };
 
-export type Props = OwnProps & WithAnalyticsEventsProps;
+export type Props = OwnProps;
 
 export class MentionInternal extends React.PureComponent<Props, {}> {
   private hoverTimeout?: number;
@@ -84,18 +77,14 @@ export class MentionInternal extends React.PureComponent<Props, {}> {
         {...messages.unknownUserError}
         values={{ userId: id.slice(-5) }}
       >
-        {message => `@${message}`}
+        {(message) => `@${message}`}
       </FormattedMessage>
     );
   }
 
   render() {
-    const {
-      handleOnClick,
-      handleOnMouseEnter,
-      handleOnMouseLeave,
-      props,
-    } = this;
+    const { handleOnClick, handleOnMouseEnter, handleOnMouseLeave, props } =
+      this;
     const { text, id, accessLevel } = props;
     const mentionType: MentionType = this.getMentionType();
 
@@ -128,41 +117,7 @@ export class MentionInternal extends React.PureComponent<Props, {}> {
   }
 }
 
-const MentionWithAnalytics = withAnalyticsEvents({
-  onClick: (
-    createEvent: CreateUIAnalyticsEvent,
-    props: Props,
-  ): UIAnalyticsEvent => {
-    const { id, text, accessLevel } = props;
-
-    const event = fireAnalyticsMentionEvent(createEvent)(
-      'mention',
-      'selected',
-      text,
-      id,
-      accessLevel,
-    );
-    return event;
-  },
-
-  onHover: (
-    createEvent: CreateUIAnalyticsEvent,
-    props: Props,
-  ): UIAnalyticsEvent => {
-    const { id, text, accessLevel } = props;
-
-    const event = fireAnalyticsMentionEvent(createEvent)(
-      'mention',
-      'hovered',
-      text,
-      id,
-      accessLevel,
-    );
-    return event;
-  },
-})(MentionInternal);
-
-const Mention = MentionWithAnalytics;
+const Mention = MentionInternal;
 type Mention = MentionInternal;
 
 export default Mention;

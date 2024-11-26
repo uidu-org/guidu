@@ -1,3 +1,4 @@
+import { ToolbarWidths } from '@uidu/editor-common/types';
 import { EditorAppearance } from '../../types';
 import { isFullPage } from '../../utils/is-full-page';
 import { ToolbarBreakPoint } from './toolbar-types';
@@ -26,25 +27,23 @@ const toolbarSizesForAppearance = (appearance?: EditorAppearance) =>
 export const toolbarSizeToWidth = (
   toolbarSize: ToolbarSize,
   appearance?: EditorAppearance,
-) => {
-  return (
+) =>
+  (
     toolbarSizesForAppearance(appearance).find(
       ({ size }) => toolbarSize === size,
     ) || {
       width: ToolbarWidths.S,
     }
   ).width;
-};
 
 export const widthToToolbarSize = (
   toolbarWidth: number,
   appearance?: EditorAppearance,
-) => {
-  return (
+) =>
+  (
     toolbarSizesForAppearance(appearance).find(
       ({ width }) => toolbarWidth > width,
     ) || {
       size: ToolbarSize.XXXS,
     }
   ).size;
-};

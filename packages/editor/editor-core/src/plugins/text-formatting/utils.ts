@@ -6,11 +6,10 @@ import {
   FORMATTING_NODE_TYPES,
 } from './commands/clear-formatting';
 
-export const nodeLen = (node: Node): number => {
-  return node.nodeType === 3 && node.nodeValue
+export const nodeLen = (node: Node): number =>
+  node.nodeType === 3 && node.nodeValue
     ? node.nodeValue.length
     : node.childNodes.length;
-};
 
 export const isIgnorable = (dom: any): boolean =>
   dom.pmViewDesc && dom.pmViewDesc.size === 0;
@@ -90,7 +89,7 @@ export const anyMarkActive = (
 };
 
 const blockStylingIsPresent = (state: EditorState): boolean => {
-  let { from, to } = state.selection;
+  const { from, to } = state.selection;
   let isBlockStyling = false;
   state.doc.nodesBetween(from, to, (node) => {
     if (FORMATTING_NODE_TYPES.indexOf(node.type.name) !== -1) {
@@ -104,7 +103,7 @@ const blockStylingIsPresent = (state: EditorState): boolean => {
 
 const marksArePresent = (state: EditorState) => {
   const activeMarkTypes = FORMATTING_MARK_TYPES.filter((mark) => {
-    if (!!state.schema.marks[mark]) {
+    if (state.schema.marks[mark]) {
       const { $from, empty } = state.selection;
       const { marks } = state.schema;
       if (empty) {
@@ -117,6 +116,5 @@ const marksArePresent = (state: EditorState) => {
   return activeMarkTypes.length > 0;
 };
 
-export const checkFormattingIsPresent = (state: EditorState) => {
-  return marksArePresent(state) || blockStylingIsPresent(state);
-};
+export const checkFormattingIsPresent = (state: EditorState) =>
+  marksArePresent(state) || blockStylingIsPresent(state);

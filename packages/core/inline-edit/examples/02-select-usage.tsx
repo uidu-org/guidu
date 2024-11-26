@@ -1,5 +1,3 @@
-import Tag from '@atlaskit/tag';
-import Group from '@atlaskit/tag-group';
 import Select, { ValueType } from '@uidu/select';
 import { fontSize, gridSize } from '@uidu/theme/constants';
 import React from 'react';
@@ -80,11 +78,11 @@ export default class InlineEditExample extends React.Component<void, State> {
               <ReadViewContainer>Click to choose options</ReadViewContainer>
             ) : (
               <div style={{ padding: `${gridSize() / 2}px` }}>
-                <Group>
+                {/* <Group>
                   {this.state.editValue.map((option: OptionType) => (
                     <Tag text={option.label} key={option.label} />
                   ))}
-                </Group>
+                </Group> */}
               </div>
             )
           }

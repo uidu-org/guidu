@@ -1,11 +1,9 @@
 import { Providers, WithProviders } from '@uidu/editor-common';
 import React from 'react';
-import { MentionPluginState } from '../..';
+import { insertBlockType, MentionPluginState } from '../..';
 import { EditorPlugin } from '../../types';
 import { ToolbarSize } from '../../ui/Toolbar/types';
 import WithPluginState from '../../ui/WithPluginState';
-import { INPUT_METHOD } from '../analytics';
-import { insertBlockTypesWithAnalytics } from '../block-type/commands';
 import {
   BlockTypeState,
   pluginKey as blockTypeStateKey,
@@ -55,7 +53,6 @@ export interface InsertBlockOptions {
   allowExpand?: boolean;
   insertMenuItems?: any;
   horizontalRuleEnabled?: boolean;
-  nativeStatusSupported?: boolean;
 }
 
 /**
@@ -63,7 +60,7 @@ export interface InsertBlockOptions {
  * @param name Block name
  */
 function handleInsertBlockType(name: string) {
-  return insertBlockTypesWithAnalytics(name, INPUT_METHOD.TOOLBAR);
+  return insertBlockType(name);
 }
 
 const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
@@ -72,7 +69,6 @@ const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
   primaryToolbarComponent({
     editorView,
     editorActions,
-    dispatchAnalyticsEvent,
     providerFactory,
     popupsMountPoint,
     popupsBoundariesElement,
@@ -133,10 +129,8 @@ const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
             isTypeAheadAllowed={typeAheadState && typeAheadState.isAllowed}
             editorView={editorView}
             tableSupported={!!tablesState}
-            actionSupported={!!editorView.state.schema.nodes.taskItem}
             // mentionsSupported={!!(mentionState && mentionState.mentionProvider)}
             // mentionsEnabled={!!mentionState}
-            decisionSupported={!!editorView.state.schema.nodes.decisionItem}
             dateEnabled={!!dateState}
             videoEnabled={!!videoState}
             placeholderTextEnabled={
@@ -158,7 +152,6 @@ const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
             }
             emojiDisabled={!emojiState}
             emojiProvider={providers.emojiProvider}
-            nativeStatusSupported={options.nativeStatusSupported}
             horizontalRuleEnabled={options.horizontalRuleEnabled}
             onInsertBlockType={handleInsertBlockType}
             onInsertMacroFromMacroBrowser={insertMacroFromMacroBrowser}
@@ -168,7 +161,6 @@ const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
             popupsScrollableElement={popupsScrollableElement}
             insertMenuItems={options.insertMenuItems}
             editorActions={editorActions}
-            dispatchAnalyticsEvent={dispatchAnalyticsEvent}
           />
         )}
       />

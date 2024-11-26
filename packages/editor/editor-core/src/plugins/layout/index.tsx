@@ -1,17 +1,10 @@
+import { faColumns3 } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { layoutColumn, layoutSection } from '@uidu/adf-schema';
 import React from 'react';
 import { EditorPlugin } from '../../types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { FloatingToolbarConfig } from '../floating-toolbar/types';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
-import { IconLayout } from '../quick-insert/assets';
 import { createDefaultLayoutSection } from './actions';
 import { default as createLayoutPlugin } from './pm-plugins/main';
 import { pluginKey } from './pm-plugins/plugin-key';
@@ -57,18 +50,16 @@ const layoutPlugin = (layoutsConfig?: {
         description: formatMessage(messages.columnsDescription),
         keywords: ['layout', 'section', 'column'],
         priority: 1100,
-        icon: () => <IconLayout label={formatMessage(messages.columns)} />,
+        icon: () => (
+          <FontAwesomeIcon
+            icon={faColumns3}
+            label={formatMessage(messages.columns)}
+          />
+        ),
         action(insert, state) {
           const tr = insert(createDefaultLayoutSection(state));
-          return addAnalytics(state, tr, {
-            action: ACTION.INSERTED,
-            actionSubject: ACTION_SUBJECT.DOCUMENT,
-            actionSubjectId: ACTION_SUBJECT_ID.LAYOUT,
-            attributes: {
-              inputMethod: INPUT_METHOD.QUICK_INSERT,
-            },
-            eventType: EVENT_TYPE.TRACK,
-          });
+
+          return tr;
         },
       },
     ],

@@ -7,27 +7,12 @@ import {
 import { Node as PMNode } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import { sendLogs } from '../../../utils/sendLogs';
 import {
   calculateColumnWidth,
   contentWidth,
   getCellsRefsInColumn,
   getLayoutSize,
 } from '../pm-plugins/table-resizing/utils';
-
-export const fireAnalytics = (properties = {}) =>
-  sendLogs({
-    events: [
-      {
-        name: 'uidu.uidu.editor-core.fixtable',
-        product: 'uidu',
-        properties,
-        serverTime: new Date().getTime(),
-        server: 'local',
-        user: '-',
-      },
-    ],
-  });
 
 // We attempt to patch the document when we have extra, unneeded, column widths
 // Take this node for example:
@@ -62,7 +47,6 @@ export const removeExtraneousColumnWidths = (
   });
 
   if (hasProblems) {
-    fireAnalytics({ message: 'removeExtraneousColumnWidths' });
     return true;
   }
 
@@ -100,7 +84,7 @@ export const fixAutoSizedTable = (
   tableNode: PMNode,
   tableRef: HTMLTableElement,
   tablePos: number,
-  opts: { dynamicTextSizing: boolean; containerWidth: number },
+  opts: { containerWidth: number },
 ): Transaction => {
   let { tr } = view.state;
   const domAtPos = view.domAtPos.bind(view);
@@ -116,9 +100,7 @@ export const fixAutoSizedTable = (
     0,
   );
   const tableLayout = getLayoutBasedOnWidth(totalContentWidth);
-  const maxLayoutSize = getLayoutSize(tableLayout, opts.containerWidth, {
-    dynamicTextSizing: opts.dynamicTextSizing,
-  });
+  const maxLayoutSize = getLayoutSize(tableLayout, opts.containerWidth);
 
   // Content width will generally not meet the constraints of the layout
   // whether it be below or above, so we scale our columns widths

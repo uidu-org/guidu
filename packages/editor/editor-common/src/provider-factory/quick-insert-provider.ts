@@ -26,7 +26,6 @@ export type QuickInsertItemId =
   | 'feedbackdialog'
   | 'orderedList'
   | 'rule'
-  | 'status'
   | 'mention'
   | 'emoji'
   | 'action'

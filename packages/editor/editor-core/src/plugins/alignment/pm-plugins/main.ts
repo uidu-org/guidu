@@ -1,8 +1,8 @@
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { Dispatch } from '../../../event-dispatcher';
 import { isAlignable } from '../commands';
+import { AlignmentPluginState } from '../types';
 import { getActiveAlignment } from '../utils';
-import { AlignmentPluginState } from './types';
 
 export function createInitialPluginState(
   editorState: EditorState,
@@ -14,7 +14,7 @@ export function createInitialPluginState(
   };
 }
 
-export const pluginKey = new PluginKey('alignmentPlugin');
+export const pluginKey = new PluginKey<AlignmentPluginState>('alignmentPlugin');
 
 export function createPlugin(
   dispatch: Dispatch,

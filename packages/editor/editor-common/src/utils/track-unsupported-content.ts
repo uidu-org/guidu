@@ -1,11 +1,4 @@
 import { Node as PMNode, Schema } from 'prosemirror-model';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-  UnsupportedContentPayload,
-} from './analytics';
 
 const whitelistedAttributes = [
   'align',
@@ -37,8 +30,6 @@ const whitelistedAttributes = [
   'background',
 ];
 
-type DispatchAnalyticsEvent = (payload: UnsupportedContentPayload) => void;
-
 function concatAncestorHierarchy(node: PMNode, ancestoryHierarchy?: string) {
   const { name } = node.type;
   // Space concatenator used to reduce analytics payload size
@@ -69,7 +60,6 @@ const sanitizeAttributes = (attrs: {} = {}) => {
 export const findAndTrackUnsupportedContentNodes = (
   node: PMNode,
   schema: Schema,
-  dispatchAnalyticsEvent: DispatchAnalyticsEvent,
   ancestorHierarchy = '',
 ): void => {
   const { type: nodeType, marks: nodeMarks } = node;
@@ -89,11 +79,7 @@ export const findAndTrackUnsupportedContentNodes = (
           marks: [],
           attrs: sanitizedAttrs || {},
         };
-        fireUnsupportedEvent(
-          dispatchAnalyticsEvent,
-          ACTION_SUBJECT_ID.UNSUPPORTED_MARK,
-          unsupportedNode,
-        );
+        fireUnsupportedEvent(unsupportedNode);
       } else if (mark.type === unsupportedNodeAttribute) {
         const { unsupported } = mark.attrs || {};
         const sanitizedAttrs = sanitizeAttributes(unsupported) || {};
@@ -104,11 +90,7 @@ export const findAndTrackUnsupportedContentNodes = (
           marks: [],
           attrs: sanitizedAttrs || {},
         };
-        fireUnsupportedEvent(
-          dispatchAnalyticsEvent,
-          ACTION_SUBJECT_ID.UNSUPPORTED_NODE_ATTRIBUTE,
-          unsupportedNodeAttribute,
-        );
+        fireUnsupportedEvent(unsupportedNodeAttribute);
       }
     });
   }
@@ -124,22 +106,13 @@ export const findAndTrackUnsupportedContentNodes = (
       marks: sanitizeMarks(marks) || [],
       attrs: sanitizeAttributes(attrs) || {},
     };
-    const actionSubjectId =
-      nodeType === unsupportedInline
-        ? ACTION_SUBJECT_ID.UNSUPPORTED_INLINE
-        : ACTION_SUBJECT_ID.UNSUPPORTED_BLOCK;
-    fireUnsupportedEvent(
-      dispatchAnalyticsEvent,
-      actionSubjectId,
-      unsupportedNode,
-    );
+    fireUnsupportedEvent(unsupportedNode);
   } else {
     // Recursive check for nested content
     node.content.forEach((childNode) =>
       findAndTrackUnsupportedContentNodes(
         childNode,
         schema,
-        dispatchAnalyticsEvent,
         concatAncestorHierarchy(node, ancestorHierarchy),
       ),
     );
@@ -147,8 +120,6 @@ export const findAndTrackUnsupportedContentNodes = (
 };
 
 export const fireUnsupportedEvent = (
-  dispatchAnalyticsEvent: DispatchAnalyticsEvent,
-  actionSubjectId: ACTION_SUBJECT_ID,
   unsupportedNode: {} = {},
   errorCode?: string,
 ) => {
@@ -161,12 +132,4 @@ export const fireUnsupportedEvent = (
   if (errorCode) {
     attrs.errorCode = errorCode;
   }
-  const payload: UnsupportedContentPayload = {
-    action: ACTION.UNSUPPORTED_CONTENT_ENCOUNTERED,
-    actionSubject: ACTION_SUBJECT.DOCUMENT,
-    actionSubjectId,
-    attributes: attrs,
-    eventType: EVENT_TYPE.TRACK,
-  };
-  dispatchAnalyticsEvent(payload);
 };

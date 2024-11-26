@@ -15,7 +15,6 @@ export type LightPMPluginFactoryParams = {
   prevProps?: {};
   portalProviderAPI: any;
   reactContext: () => { [key: string]: any };
-  dispatchAnalyticsEvent: any;
 };
 export type LightPMPluginFactory = (
   params: LightPMPluginFactoryParams,

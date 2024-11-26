@@ -2,13 +2,14 @@ import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import { defineMessages } from 'react-intl';
 import commonMessages from '../../messages';
 import { FloatingToolbarHandler } from '../floating-toolbar/types';
-import { clearHoverSelection, hoverTable } from './commands';
 import {
-  deleteTableWithAnalytics,
-  toggleHeaderColumnWithAnalytics,
-  toggleHeaderRowWithAnalytics,
-  toggleNumberColumnWithAnalytics,
-} from './commands-with-analytics';
+  clearHoverSelection,
+  deleteTable,
+  hoverTable,
+  toggleHeaderColumn,
+  toggleHeaderRow,
+  toggleNumberColumn,
+} from './commands';
 import { pluginKey } from './pm-plugins/plugin-factory';
 import { pluginKey as tableResizingPluginKey } from './pm-plugins/table-resizing/index';
 import { ColumnResizingPluginState, TablePluginState } from './types';
@@ -44,11 +45,12 @@ export const getToolbarConfig: FloatingToolbarHandler = (
   const tableState: TablePluginState | undefined = pluginKey.getState(state);
   const resizeState: ColumnResizingPluginState | undefined =
     tableResizingPluginKey.getState(state);
+
   if (tableState && tableState.tableRef && tableState.pluginConfig) {
     const { pluginConfig } = tableState;
     return {
       title: 'Table floating controls',
-      getDomRef: () => tableState.tableWrapperTarget!,
+      getDomRef: () => tableState.tableWrapperTarget,
       nodeType: state.schema.nodes.table,
       offset: [0, 3],
       items: [
@@ -61,19 +63,19 @@ export const getToolbarConfig: FloatingToolbarHandler = (
           options: [
             {
               title: formatMessage(messages.headerRow),
-              onClick: toggleHeaderRowWithAnalytics(),
+              onClick: toggleHeaderRow,
               selected: tableState.isHeaderRowEnabled,
               hidden: !pluginConfig.allowHeaderRow,
             },
             {
               title: formatMessage(messages.headerColumn),
-              onClick: toggleHeaderColumnWithAnalytics(),
+              onClick: toggleHeaderColumn,
               selected: tableState.isHeaderColumnEnabled,
               hidden: !pluginConfig.allowHeaderColumn,
             },
             {
               title: formatMessage(messages.numberedColumn),
-              onClick: toggleNumberColumnWithAnalytics(),
+              onClick: toggleNumberColumn,
               selected: checkIfNumberColumnEnabled(state),
               hidden: !pluginConfig.allowNumberColumn,
             },
@@ -92,7 +94,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
           type: 'button',
           appearance: 'danger',
           icon: RemoveIcon,
-          onClick: deleteTableWithAnalytics(),
+          onClick: deleteTable,
           disabled: !!resizeState && !!resizeState.dragging,
           onMouseEnter: hoverTable(true),
           onMouseLeave: clearHoverSelection(),

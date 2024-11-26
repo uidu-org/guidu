@@ -1,5 +1,4 @@
 import { ButtonItem, MenuGroup } from '@uidu/menu';
-import { borderRadius } from '@uidu/theme';
 import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Shortcut } from '../../../ui/styles';
@@ -7,21 +6,14 @@ import IconFallback from '../../quick-insert/assets/fallback';
 import { TypeAheadItem } from '../types';
 
 export const ItemIcon = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 2rem;
+  height: 2rem;
   overflow: hidden;
-  border: 1px solid rgba(223, 225, 229, 0.5); /* N60 at 50% */
-  border-radius: ${borderRadius()}px;
   box-sizing: border-box;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  div {
-    width: 40px;
-    height: 40px;
-  }
 `;
 
 const fallbackIcon = (label: string) => <IconFallback label={label} />;
@@ -43,8 +35,8 @@ export function scrollIntoViewIfNeeded(element: HTMLElement) {
     offsetTop + offsetHeight > offsetParentHeight + scrollTop
       ? 1
       : scrollTop > offsetTop
-      ? -1
-      : 0;
+        ? -1
+        : 0;
 
   if (direction !== 0 && offsetParent) {
     offsetParent.scrollTop =
@@ -131,12 +123,12 @@ export function TypeAheadItemComponent({
       onClick={insertByIndex}
       onMouseDown={setCurrentIndex}
       iconBefore={
-        <ItemIcon>
+        <ItemIcon tw="h-5 w-5">
           {item.icon ? item.icon() : fallbackIcon(item.title)}
         </ItemIcon>
       }
       iconAfter={item.keyshortcut && <Shortcut>{item.keyshortcut}</Shortcut>}
-      description={item.description}
+      // description={item.description}
       isSelected={isSelected()}
       aria-describedby={item.title}
       ref={ref}

@@ -7,6 +7,15 @@ import FullEditor from '../examples-utils/FullEditor';
 export default function Composable() {
   return (
     <IntlProvider locale="en">
+      <style>
+        {`.is-empty::before {
+          color: #adb5bd;
+          content: attr(data-placeholder);
+          float: left;
+          height: 0;
+          pointer-events: none;
+        }`}
+      </style>
       <ShellMain>
         <GuiduThemeProvider>
           <FullEditor />

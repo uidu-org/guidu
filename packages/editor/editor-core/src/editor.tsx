@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-import { CreateUIAnalyticsEvent } from '@uidu/analytics';
 import {
   combineExtensionProviders,
   ExtensionProvider,
@@ -67,10 +66,19 @@ const ContentArea = styled(ContentStyles)`
   /** Hack for Bitbucket to ensure entire editorView gets drop event; see ED-3294 **/
   /** Hack for tables controlls. Otherwise marging collapse and controlls are misplaced. **/
   .ProseMirror {
-    // margin: -1rem 0rem 1rem;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    white-space: break-spaces;
+    -webkit-font-variant-ligatures: none;
+    font-variant-ligatures: none;
+    font-feature-settings: 'liga' 0; /* the above doesn't seem to work in Edge */
 
     .ProseMirror-separator {
-      margin: 0;
+      display: inline !important;
+      border: none !important;
+      margin: 0 !important;
+      width: 0 !important;
+      height: 0 !important;
     }
   }
 
@@ -100,8 +108,6 @@ export default class Editor extends PureComponent<EditorProps> {
 
   private providerFactory: ProviderFactory;
 
-  private createAnalyticsEvent?: CreateUIAnalyticsEvent;
-
   constructor(props: EditorProps, context: Context) {
     super(props);
     this.providerFactory = new ProviderFactory();
@@ -124,7 +130,6 @@ export default class Editor extends PureComponent<EditorProps> {
       emojiProvider,
       mentionProvider,
       tokenProvider,
-      taskDecisionProvider,
       collabEditProvider,
       activityProvider,
       presenceProvider,
@@ -139,11 +144,6 @@ export default class Editor extends PureComponent<EditorProps> {
     this.providerFactory.setProvider('emojiProvider', emojiProvider);
     this.providerFactory.setProvider('mentionProvider', mentionProvider);
     this.providerFactory.setProvider('tokenProvider', tokenProvider);
-    this.providerFactory.setProvider(
-      'taskDecisionProvider',
-      taskDecisionProvider,
-    );
-
     this.providerFactory.setProvider('mediaProvider', mediaProvider);
     this.providerFactory.setProvider(
       'collabEditProvider',
@@ -177,7 +177,6 @@ export default class Editor extends PureComponent<EditorProps> {
             extensionProviderToQuickInsertProvider(
               extensionProvider,
               this.editorActions,
-              this.createAnalyticsEvent,
             ),
           ])
         : quickInsert.provider;
@@ -253,13 +252,7 @@ export default class Editor extends PureComponent<EditorProps> {
     />
   );
 
-  renderEditor = ({
-    view,
-    eventDispatcher,
-    dispatchAnalyticsEvent,
-    config,
-    editor,
-  }) => {
+  renderEditor = ({ view, eventDispatcher, config, editor }) => {
     const {
       popupsMountPoint,
       className,
@@ -274,7 +267,6 @@ export default class Editor extends PureComponent<EditorProps> {
           editorView={view}
           editorActions={this.editorActions}
           eventDispatcher={eventDispatcher}
-          dispatchAnalyticsEvent={dispatchAnalyticsEvent}
           providerFactory={this.providerFactory}
           items={config.contentComponents}
           popupsMountPoint={popupsMountPoint}
@@ -303,24 +295,16 @@ export default class Editor extends PureComponent<EditorProps> {
                   plugins,
                   ...otherProps,
                 }}
-                // createAnalyticsEvent={createAnalyticsEvent}
                 portalProviderAPI={portalProviderAPI}
                 providerFactory={this.providerFactory}
                 onEditorCreated={this.onEditorCreated}
                 onEditorDestroyed={this.onEditorDestroyed}
                 disabled={this.props.disabled}
-                render={({
-                  editor,
-                  view,
-                  eventDispatcher,
-                  config,
-                  dispatchAnalyticsEvent,
-                }) =>
+                render={({ editor, view, eventDispatcher, config }) =>
                   children({
                     view,
                     editor,
                     config,
-                    dispatchAnalyticsEvent,
                     renderToolbar: (props) =>
                       this.renderToolbar({
                         view,
@@ -333,7 +317,6 @@ export default class Editor extends PureComponent<EditorProps> {
                         editor,
                         view,
                         eventDispatcher,
-                        dispatchAnalyticsEvent,
                         config,
                         ...props,
                       }),

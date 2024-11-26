@@ -1,12 +1,9 @@
-// @ts-ignore
 import { MarkdownTransformer } from '@uidu/editor-markdown-transformer';
-import { Fragment, Node, Schema, Slice } from 'prosemirror-model';
+import { Fragment, Schema, Slice } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
-// @ts-ignore
 import { handlePaste as handlePasteTable } from 'prosemirror-tables';
 import { insideTable } from '../../../utils';
 import * as clipboard from '../../../utils/clipboard';
-import { PasteTypes } from '../../analytics';
 import { CardOptions } from '../../card';
 import {
   transformSingleLineCodeBlockToCodeMark,
@@ -33,20 +30,20 @@ import {
   transformSliceToFixHardBreakProblemOnCopyFromCell,
   transformSliceToRemoveOpenTable,
 } from '../../table/utils';
-import { handleMacroAutoConvert, handleMention } from '../handlers';
+import {
+  handleCodeBlock,
+  handleExpand,
+  handleMacroAutoConvert,
+  handleMarkdown,
+  handleMediaSingle,
+  handleMention,
+  handlePasteAsPlainText,
+  handlePasteIntoTaskAndDecision,
+  handlePastePreservingMarks,
+  handleRichText,
+} from '../handlers';
 import { md } from '../md';
 import { escapeLinks, htmlContainsSingleFile } from '../util';
-import {
-  handleCodeBlockWithAnalytics,
-  handleExpandWithAnalytics,
-  handleMarkdownWithAnalytics,
-  handleMediaSingleWithAnalytics,
-  handlePasteAsPlainTextWithAnalytics,
-  handlePasteIntoTaskAndDecisionWithAnalytics,
-  handlePastePreservingMarksWithAnalytics,
-  handleRichTextWithAnalytics,
-  sendPasteAnalyticsEvent,
-} from './analytics';
 
 export const stateKey = new PluginKey('pastePlugin');
 
@@ -90,7 +87,7 @@ export function createPlugin(
     key: stateKey,
     props: {
       handlePaste(view, rawEvent, slice) {
-        const event = rawEvent as ClipboardEvent;
+        const event = rawEvent;
         if (!event.clipboardData) {
           return false;
         }
@@ -138,13 +135,7 @@ export function createPlugin(
 
         const { state, dispatch } = view;
 
-        if (
-          handlePasteAsPlainTextWithAnalytics(view, event, slice)(
-            state,
-            dispatch,
-            view,
-          )
-        ) {
+        if (handlePasteAsPlainText(slice, event)(state, dispatch, view)) {
           return true;
         }
 
@@ -169,65 +160,30 @@ export function createPlugin(
             )
           ) {
             // TODO: handleMacroAutoConvert dispatch twice, so we can't use the helper
-            sendPasteAnalyticsEvent(view, event, markdownSlice, {
-              type: PasteTypes.markdown,
-            });
             return true;
           }
         }
 
-        if (
-          handlePasteIntoTaskAndDecisionWithAnalytics(
-            view,
-            event,
-            slice,
-            isPlainText ? PasteTypes.plain : PasteTypes.richText,
-          )(state, dispatch)
-        ) {
+        if (handlePasteIntoTaskAndDecision(slice)(state, dispatch)) {
           return true;
         }
 
         // If we're in a code block, append the text contents of clipboard inside it
-        if (
-          handleCodeBlockWithAnalytics(
-            view,
-            event,
-            slice,
-            text,
-          )(state, dispatch)
-        ) {
+        if (handleCodeBlock(text)(state, dispatch)) {
           return true;
         }
 
-        if (
-          handleMediaSingleWithAnalytics(
-            view,
-            event,
-            slice,
-            isPastedFile ? PasteTypes.binary : PasteTypes.richText,
-          )(state, dispatch, view)
-        ) {
+        if (handleMediaSingle()(slice)(state, dispatch, view)) {
           return true;
         }
 
         // If the clipboard only contains plain text, attempt to parse it as Markdown
         if (isPlainText && markdownSlice) {
-          if (
-            handlePastePreservingMarksWithAnalytics(
-              view,
-              event,
-              markdownSlice,
-              PasteTypes.markdown,
-            )(state, dispatch)
-          ) {
+          if (handlePastePreservingMarks(markdownSlice)(state, dispatch)) {
             return true;
           }
 
-          return handleMarkdownWithAnalytics(
-            view,
-            event,
-            markdownSlice,
-          )(state, dispatch);
+          return handleMarkdown(markdownSlice)(state, dispatch);
         }
 
         // finally, handle rich-text copy-paste
@@ -243,9 +199,6 @@ export function createPlugin(
             )
           ) {
             // TODO: handleMacroAutoConvert dispatch twice, so we can't use the helper
-            sendPasteAnalyticsEvent(view, event, slice, {
-              type: PasteTypes.richText,
-            });
             return true;
           }
 
@@ -272,25 +225,15 @@ export function createPlugin(
           // get prosemirror-tables to handle pasting tables if it can
           // otherwise, just the replace the selection with the content
           if (handlePasteTable(view, null, slice)) {
-            sendPasteAnalyticsEvent(view, event, slice, {
-              type: PasteTypes.richText,
-            });
             return true;
           }
 
           // ED-4732
-          if (
-            handlePastePreservingMarksWithAnalytics(
-              view,
-              event,
-              slice,
-              PasteTypes.richText,
-            )(state, dispatch)
-          ) {
+          if (handlePastePreservingMarks(slice)(state, dispatch)) {
             return true;
           }
 
-          if (handleExpandWithAnalytics(view, event, slice)(state, dispatch)) {
+          if (handleExpand(slice)(state, dispatch)) {
             return true;
           }
 
@@ -298,11 +241,7 @@ export function createPlugin(
             slice = transformSliceNestedExpandToExpand(slice, state.schema);
           }
 
-          return handleRichTextWithAnalytics(
-            view,
-            event,
-            slice,
-          )(state, dispatch);
+          return handleRichText(slice)(state, dispatch);
         }
 
         return false;
@@ -342,11 +281,11 @@ export function createPlugin(
 
         if (
           slice.content.childCount &&
-          slice.content.lastChild!.type === schema.nodes.codeBlock
+          slice.content.lastChild.type === schema.nodes.codeBlock
         ) {
           slice = new Slice(
             slice.content.append(
-              Fragment.from(schema.nodes.paragraph.createAndFill() as Node),
+              Fragment.from(schema.nodes.paragraph.createAndFill()),
             ),
             slice.openStart,
             1,

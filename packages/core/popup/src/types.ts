@@ -169,6 +169,12 @@ export interface PopupProps {
    * Defaults to `true`.
    */
   autoFocus?: boolean;
+
+  /**
+   * Controls whether the focus trap should be disabled.
+   * Defaults to `false`.
+   */
+  shouldDisableFocusTrap?: boolean;
 }
 
 export type CloseManagerHook = Pick<PopupProps, 'isOpen' | 'onClose'> & {
@@ -179,6 +185,7 @@ export type CloseManagerHook = Pick<PopupProps, 'isOpen' | 'onClose'> & {
 export type FocusManagerHook = {
   popupRef: PopupRef;
   initialFocusRef: HTMLElement | null;
+  shouldDisableFocusTrap?: boolean;
 };
 
 export type RepositionOnUpdateProps = {

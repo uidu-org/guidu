@@ -1,19 +1,11 @@
-import QuestionCircleIcon from '@atlaskit/icon/glyph/question-circle';
+import { faQuestionCircle } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Providers } from '@uidu/editor-common/provider-factory';
 import { keymap } from 'prosemirror-keymap';
 import { EditorState, Plugin, Transaction } from 'prosemirror-state';
 import React from 'react';
-import { analyticsService } from '../../analytics';
 import * as keymaps from '../../keymaps';
 import { openHelp, tooltip } from '../../keymaps';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../../plugins/analytics';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
@@ -70,17 +62,16 @@ const helpDialog = (
         keywords: ['help', '?'],
         priority: 4000,
         keyshortcut: tooltip(openHelp),
-        icon: () => <QuestionCircleIcon label={formatMessage(messages.help)} />,
+        icon: () => (
+          <FontAwesomeIcon
+            icon={faQuestionCircle}
+            label={formatMessage(messages.help)}
+          />
+        ),
         action(insert, state) {
           const tr = insert('');
           openHelpCommand(tr);
-          return addAnalytics(state, tr, {
-            action: ACTION.HELP_OPENED,
-            actionSubject: ACTION_SUBJECT.HELP,
-            actionSubjectId: ACTION_SUBJECT_ID.HELP_QUICK_INSERT,
-            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
-            eventType: EVENT_TYPE.UI,
-          });
+          return tr;
         },
       },
     ],
@@ -109,19 +100,11 @@ const helpDialog = (
 const keymapPlugin = (): Plugin => {
   const list = {};
   keymaps.bindKeymapWithCommand(
-    keymaps.openHelp.common!,
+    keymaps.openHelp.common,
     (state, dispatch) => {
       let { tr } = state;
       const isVisible = tr.getMeta(pluginKey);
       if (!isVisible) {
-        analyticsService.trackEvent('uidu.editor-core.help.keyboard');
-        tr = addAnalytics(state, tr, {
-          action: ACTION.CLICKED,
-          actionSubject: ACTION_SUBJECT.BUTTON,
-          actionSubjectId: ACTION_SUBJECT_ID.BUTTON_HELP,
-          attributes: { inputMethod: INPUT_METHOD.SHORTCUT },
-          eventType: EVENT_TYPE.UI,
-        });
         openHelpCommand(tr, dispatch);
       }
       return true;

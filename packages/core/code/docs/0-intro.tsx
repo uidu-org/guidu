@@ -7,7 +7,7 @@ export default md`
 
   ## Usage
 
-  ${code`import { AkCode, AkCodeBlock } from '@uidu/code`}
+  ${code`import { Code, CodeBlock } from '@uidu/code`}
 
   ${(
     <Example

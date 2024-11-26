@@ -1,7 +1,6 @@
 import { safeInsert } from '@uidu/prosemirror-utils';
 import { Fragment, Node } from 'prosemirror-model';
 import { EditorState, NodeSelection, Selection } from 'prosemirror-state';
-import { analyticsService } from '../../../analytics';
 import { Command } from '../../../types';
 import {
   isChromeWithSelectionBug,
@@ -103,8 +102,8 @@ export const selectItem =
             maybeNode instanceof Node || isInputFragment
               ? maybeNode
               : typeof maybeNode === 'string'
-              ? state.schema.text(maybeNode)
-              : Node.fromJSON(state.schema, maybeNode);
+                ? state.schema.text(maybeNode)
+                : Node.fromJSON(state.schema, maybeNode);
         } catch (e) {
           // eslint-disable-next-line no-console
           console.error(e);
@@ -155,10 +154,6 @@ export const selectItem =
 
         return tr;
       };
-
-      analyticsService.trackEvent('uidu.editor-core.typeahead.select', {
-        mode,
-      });
 
       const tr = handler.selectItem(state, item, insert, { mode });
 

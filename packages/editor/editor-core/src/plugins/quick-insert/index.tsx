@@ -1,18 +1,8 @@
 import { ProviderFactory } from '@uidu/editor-common';
 import { Plugin, PluginKey } from 'prosemirror-state';
 import { IntlShape } from 'react-intl';
-import { analyticsService } from '../../analytics';
 import { Command, EditorPlugin } from '../../types';
 import { dedupe } from '../../utils';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  AnalyticsDispatch,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
-import { analyticsEventKey } from '../analytics/consts';
 import { find } from './search';
 import {
   QuickInsertHandler,
@@ -44,18 +34,6 @@ const quickInsertPlugin = (): EditorPlugin => ({
         _tr,
         dispatch,
       ) => {
-        analyticsService.trackEvent('uidu.editor-core.quickinsert.query');
-        if (!prevActive && queryChanged) {
-          (dispatch as AnalyticsDispatch)(analyticsEventKey, {
-            payload: {
-              action: ACTION.INVOKED,
-              actionSubject: ACTION_SUBJECT.TYPEAHEAD,
-              actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_QUICK_INSERT,
-              attributes: { inputMethod: INPUT_METHOD.KEYBOARD },
-              eventType: EVENT_TYPE.UI,
-            },
-          });
-        }
         const quickInsertState = pluginKey.getState(state);
 
         const defaultItems = processItems(quickInsertState.items, intl);
@@ -81,12 +59,8 @@ const quickInsertPlugin = (): EditorPlugin => ({
 
         return defaultSearch();
       },
-      selectItem: (state, item, insert) => {
-        analyticsService.trackEvent('uidu.editor-core.quickinsert.select', {
-          item: item.title,
-        });
-        return (item as QuickInsertItem).action(insert, state);
-      },
+      selectItem: (state, item, insert) =>
+        (item as QuickInsertItem).action(insert, state),
     },
   },
 });

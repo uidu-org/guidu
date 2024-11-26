@@ -1,4 +1,3 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import * as React from 'react';
 
 export type DrawerSize = 'narrow' | 'medium' | 'wide' | 'extended' | 'full';
@@ -28,26 +27,22 @@ export type DrawerPrimitiveProps = BaseProps & {
   shouldUnmountOnExit?: boolean;
 };
 
-export type DrawerProps = BaseProps &
-  WithAnalyticsEventsProps & {
-    /**
+export type DrawerProps = BaseProps & {
+  /**
       Callback function to be called when the drawer will be closed.
     */
-    onClose?: (
-      event: React.MouseEvent | React.KeyboardEvent,
-      analyticsEvent: any,
-    ) => void;
-    /** A callback function that will be called when the drawer has finished its close transition. */
-    onCloseComplete?: () => void;
-    /**
+  onClose?: (event: React.MouseEvent | React.KeyboardEvent) => void;
+  /** A callback function that will be called when the drawer has finished its close transition. */
+  onCloseComplete?: () => void;
+  /**
       Callback function that will be called when the drawer is displayed and `keydown` event is triggered.
     */
-    onKeyDown?: (event: React.KeyboardEvent) => void;
-    /** Controls if the drawer is open or close */
-    isOpen: boolean;
-    /** Boolean that controls if drawer should be retained/discarded */
-    shouldUnmountOnExit?: boolean;
-  };
+  onKeyDown?: (event: React.KeyboardEvent) => void;
+  /** Controls if the drawer is open or close */
+  isOpen: boolean;
+  /** Boolean that controls if drawer should be retained/discarded */
+  shouldUnmountOnExit?: boolean;
+};
 
 /**
   Type of keyboard event that triggers which key will should close the drawer.

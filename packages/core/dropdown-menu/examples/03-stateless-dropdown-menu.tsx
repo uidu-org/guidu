@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {
-  DropdownItemGroupRadio,
-  DropdownItemRadio,
-  DropdownMenuStateless,
-} from '../src';
+import DropdownMenu from '../src';
 
 type State = {
   isDropdownOpen: boolean;
@@ -15,20 +11,19 @@ export default class StatelessMenuExample extends Component<{}, State> {
   render() {
     return (
       <div>
-        <DropdownMenuStateless
+        <DropdownMenu
           isOpen={this.state.isDropdownOpen}
           onOpenChange={(attrs) => {
             this.setState({ isDropdownOpen: attrs.isOpen });
           }}
           trigger="Choose"
-          triggerType="button"
-          isMenuFixed
         >
-          <DropdownItemGroupRadio id="cities">
+          <div>Content</div>
+          {/* <DropdownItemGroupRadio id="cities">
             <DropdownItemRadio id="sydney">Sydney</DropdownItemRadio>
             <DropdownItemRadio id="melbourne">Melbourne</DropdownItemRadio>
-          </DropdownItemGroupRadio>
-        </DropdownMenuStateless>
+          </DropdownItemGroupRadio> */}
+        </DropdownMenu>
       </div>
     );
   }

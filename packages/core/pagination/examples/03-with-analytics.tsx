@@ -1,4 +1,3 @@
-import { AnalyticsListener } from '@uidu/analytics';
 import React, { Component } from 'react';
 import Pagination from '../src';
 
@@ -45,7 +44,7 @@ export default class extends Component<{}, State> {
   render() {
     const { analyticEventContext, analyticEventPayload, items } = this.state;
     return (
-      <AnalyticsListener channel="uidu" onEvent={this.sendAnalytics}>
+      <>
         <Pagination
           getPageLabel={(page: any) =>
             typeof page === 'object' ? page.value : page
@@ -56,7 +55,7 @@ export default class extends Component<{}, State> {
         <pre>{JSON.stringify(analyticEventContext, null, 2)}</pre>
         <h2>Analytics event payload received</h2>
         <pre>{JSON.stringify(analyticEventPayload, null, 2)}</pre>
-      </AnalyticsListener>
+      </>
     );
   }
 }

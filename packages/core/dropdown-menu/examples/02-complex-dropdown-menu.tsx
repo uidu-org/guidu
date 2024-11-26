@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import DropdownMenu, {
-  DropdownItemGroupRadio,
-  DropdownItemRadio,
-} from '../src';
+import DropdownMenu from '../src';
 
 const Container = styled.div`
   padding: 200px 40px;
@@ -13,12 +10,11 @@ export default () => (
   <Container>
     <DropdownMenu
       trigger="Choices"
-      triggerType="button"
       shouldFlip={false}
       position="right middle"
       onOpenChange={(e) => console.log('dropdown opened', e)}
     >
-      <DropdownItemGroupRadio id="cities-aus" title="Australia">
+      {/* <DropdownItemGroupRadio id="cities-aus" title="Australia">
         <DropdownItemRadio id="sydney">Sydney</DropdownItemRadio>
       </DropdownItemGroupRadio>
       <DropdownItemGroupRadio id="cities-usa" title="United States">
@@ -29,7 +25,7 @@ export default () => (
         <DropdownItemRadio id="amsterdam">Amsterdam</DropdownItemRadio>
         <DropdownItemRadio id="yokohama">Yokohama</DropdownItemRadio>
         <DropdownItemRadio id="manila">Manila</DropdownItemRadio>
-      </DropdownItemGroupRadio>
+      </DropdownItemGroupRadio> */}
     </DropdownMenu>
   </Container>
 );

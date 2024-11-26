@@ -1,5 +1,2 @@
-import { Theme } from './themes/themeBuilder';
-
-export { default as AkCode } from './ThemedCode';
-export { default as AkCodeBlock } from './ThemedCodeBlock';
-export type CodeTheme = Theme;
+export { default as Code } from './components/Code';
+export { default as CodeBlock } from './components/CodeBlock';

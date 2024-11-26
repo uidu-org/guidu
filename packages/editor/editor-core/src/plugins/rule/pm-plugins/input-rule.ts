@@ -1,53 +1,33 @@
-import { InputRule } from 'prosemirror-inputrules';
+import { InputRule, inputRules } from 'prosemirror-inputrules';
 import { Fragment, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, Transaction } from 'prosemirror-state';
-import { analyticsService } from '../../../analytics';
 import {
   createInputRule,
-  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
 import { safeInsert } from '../../../utils/insert';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../../analytics';
-import { getFeatureFlags } from '../../feature-flags-context';
 
 export const createHorizontalRule = (
   state: EditorState,
   start: number,
   end: number,
-  inputMethod:
-    | INPUT_METHOD.QUICK_INSERT
-    | INPUT_METHOD.TOOLBAR
-    | INPUT_METHOD.INSERT_MENU
-    | INPUT_METHOD.FORMATTING
-    | INPUT_METHOD.SHORTCUT,
 ) => {
   if (!state.selection.empty) {
     return null;
   }
 
   let tr: Transaction<any> | null = null;
-  const { newInsertionBehaviour } = getFeatureFlags(state);
-  if (newInsertionBehaviour) {
-    /**
-     * This is a workaround to get rid of the typeahead text when using quick insert
-     * Once we insert *nothing*, we get a new transaction, so we can use the new selection
-     * without considering the extra text after the `/` command.
-     **/
-    tr = state.tr.replaceWith(start, end, Fragment.empty);
+  /**
+   * This is a workaround to get rid of the typeahead text when using quick insert
+   * Once we insert *nothing*, we get a new transaction, so we can use the new selection
+   * without considering the extra text after the `/` command.
+   **/
+  tr = state.tr.replaceWith(start, end, Fragment.empty);
 
-    tr = safeInsert(
-      state.schema.nodes.rule.createChecked(),
-      tr.selection.from,
-    )(tr);
-  }
+  tr = safeInsert(
+    state.schema.nodes.rule.createChecked(),
+    tr.selection.from,
+  )(tr);
 
   if (!tr) {
     const { $from } = state.selection;
@@ -67,13 +47,7 @@ export const createHorizontalRule = (
     );
   }
 
-  return addAnalytics(state, tr, {
-    action: ACTION.INSERTED,
-    actionSubject: ACTION_SUBJECT.DOCUMENT,
-    actionSubjectId: ACTION_SUBJECT_ID.DIVIDER,
-    attributes: { inputMethod },
-    eventType: EVENT_TYPE.TRACK,
-  });
+  return tr;
 };
 
 const createHorizontalRuleAutoformat = (
@@ -81,11 +55,7 @@ const createHorizontalRuleAutoformat = (
   start: number,
   end: number,
 ) => {
-  analyticsService.trackEvent(
-    `uidu.editor-core.format.horizontalrule.autoformatting`,
-  );
-
-  return createHorizontalRule(state, start, end, INPUT_METHOD.FORMATTING);
+  return createHorizontalRule(state, start, end);
 };
 
 export function inputRulePlugin(schema: Schema): Plugin | undefined {
@@ -120,7 +90,7 @@ export function inputRulePlugin(schema: Schema): Plugin | undefined {
   }
 
   if (rules.length !== 0) {
-    return instrumentedInputRule('rule', { rules });
+    return inputRules({ rules });
   }
 
   return undefined;

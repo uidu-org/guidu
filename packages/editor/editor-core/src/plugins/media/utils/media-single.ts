@@ -17,16 +17,6 @@ import { safeInsert } from '../../../utils/insert';
 import { getParentNodeWidth } from '../../../utils/node-width';
 import { atTheBeginningOfBlock } from '../../../utils/prosemirror/position';
 import { mapSlice } from '../../../utils/slice';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  InputMethodInsertMedia,
-  InsertEventPayload,
-} from '../../analytics';
-import { getFeatureFlags } from '../../feature-flags-context';
 import { WidthPluginState } from '../../width';
 import { MediaState } from '../types';
 import { alignmentLayouts } from '../ui/ResizableMediaSingle/utils';
@@ -53,20 +43,6 @@ export interface MediaSingleState extends MediaState {
   scaleFactor?: number;
 }
 
-const getInsertMediaAnalytics = (
-  inputMethod: InputMethodInsertMedia,
-  fileExtension?: string,
-): InsertEventPayload => ({
-  action: ACTION.INSERTED,
-  actionSubject: ACTION_SUBJECT.DOCUMENT,
-  actionSubjectId: ACTION_SUBJECT_ID.MEDIA,
-  attributes: {
-    inputMethod,
-    fileExtension,
-  },
-  eventType: EVENT_TYPE.TRACK,
-});
-
 function shouldAddParagraph(state: EditorState) {
   return (
     atTheBeginningOfBlock(state) &&
@@ -74,17 +50,10 @@ function shouldAddParagraph(state: EditorState) {
   );
 }
 
-function insertNodesWithOptionalParagraph(
-  nodes: PMNode[],
-  analyticsAttributes: {
-    inputMethod?: InputMethodInsertMedia;
-    fileExtension?: string;
-  } = {},
-): Command {
+function insertNodesWithOptionalParagraph(nodes: PMNode[]): Command {
   return function (state, dispatch) {
     const { tr, schema } = state;
     const { paragraph } = schema.nodes;
-    const { inputMethod, fileExtension } = analyticsAttributes;
 
     let openEnd = 0;
     if (shouldAddParagraph(state)) {
@@ -93,13 +62,6 @@ function insertNodesWithOptionalParagraph(
     }
 
     tr.replaceSelection(new Slice(Fragment.from(nodes), 0, openEnd));
-    if (inputMethod) {
-      addAnalytics(
-        state,
-        tr,
-        getInsertMediaAnalytics(inputMethod, fileExtension),
-      );
-    }
 
     if (dispatch) {
       dispatch(tr);
@@ -114,7 +76,6 @@ export const isMediaSingle = (schema: Schema, fileMimeType?: string) =>
 export const insertMediaAsMediaSingle = (
   view: EditorView,
   node: PMNode,
-  inputMethod: InputMethodInsertMedia,
 ): boolean => {
   const { state, dispatch } = view;
   const { mediaSingle, media } = state.schema.nodes;
@@ -134,15 +95,8 @@ export const insertMediaAsMediaSingle = (
 
   const mediaSingleNode = mediaSingle.create({}, node);
   const nodes = [mediaSingleNode];
-  const analyticsAttributes = {
-    inputMethod,
-    // eslint-disable-next-line no-underscore-dangle
-    fileExtension: node.attrs.__fileMimeType,
-  };
-  return insertNodesWithOptionalParagraph(nodes, analyticsAttributes)(
-    state,
-    dispatch,
-  );
+
+  return insertNodesWithOptionalParagraph(nodes)(state, dispatch);
 };
 
 export const createMediaSingleNode =
@@ -174,7 +128,6 @@ export const createMediaSingleNode =
 export const insertMediaSingleNode = (
   view: EditorView,
   mediaState: MediaState,
-  inputMethod?: InputMethodInsertMedia,
 ): boolean => {
   const { state, dispatch } = view;
   const grandParent = state.selection.$from.node(-1);
@@ -183,40 +136,18 @@ export const insertMediaSingleNode = (
   );
   const shouldSplit =
     grandParent && grandParent.type.validContent(Fragment.from(node));
-  let fileExtension: string | undefined;
-  if (mediaState.metadata?.filename) {
-    const extensionIdx = mediaState.metadata?.filename.lastIndexOf('.');
-    fileExtension =
-      extensionIdx >= 0
-        ? mediaState.metadata?.filename.substring(extensionIdx + 1)
-        : undefined;
-  }
 
   if (shouldSplit) {
-    insertNodesWithOptionalParagraph([node], { fileExtension, inputMethod })(
-      state,
-      dispatch,
-    );
+    insertNodesWithOptionalParagraph([node])(state, dispatch);
   } else {
-    const { newInsertionBehaviour } = getFeatureFlags(view.state);
     let tr: Transaction<any> | null = null;
-    if (newInsertionBehaviour) {
-      tr = safeInsert(node, state.selection.from)(state.tr);
-    }
+    tr = safeInsert(node, state.selection.from)(state.tr);
 
     if (!tr) {
       const content = shouldAddParagraph(view.state)
         ? Fragment.fromArray([node, state.schema.nodes.paragraph.create()])
         : node;
       tr = pmSafeInsert(content, undefined, true)(state.tr);
-    }
-
-    if (inputMethod) {
-      tr = addAnalytics(
-        state,
-        tr,
-        getInsertMediaAnalytics(inputMethod, fileExtension),
-      );
     }
     dispatch(tr);
   }

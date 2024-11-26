@@ -131,18 +131,6 @@ export const messages = defineMessages({
     defaultMessage: 'Structure your page using sections',
     description: 'Create a multi column section or layout',
   },
-  status: {
-    id: 'uidu.editor-core.status',
-    defaultMessage: 'Status',
-    description:
-      'Inserts an item representing the status of an activity to task.',
-  },
-  statusDescription: {
-    id: 'uidu.editor-core.status.description',
-    defaultMessage: 'Add a custom status label',
-    description:
-      'Inserts an item representing the status of an activity to task.',
-  },
   viewMore: {
     id: 'uidu.editor-core.viewMore',
     defaultMessage: 'View more',

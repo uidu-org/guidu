@@ -43,10 +43,8 @@ const getButtonElementProps = (props: Record<string, any>) => {
 };
 
 export default function getProps<Props extends Record<string, any>>(
-  component: React.Component<Props>,
+  props: Props,
 ) {
-  const { props } = component;
-
   const defaultProps = {
     ...getAppearanceProps(props),
     ...getInteractionProps(props),

@@ -1,6 +1,5 @@
-import { GuiduThemeProvider } from '@uidu/theme';
 import React from 'react';
-import { AkCodeBlock } from '../src';
+import { CodeBlock } from '../src';
 
 const exampleCodeBlock = `  // React component
   class HelloMessage extends React.Component {
@@ -22,7 +21,7 @@ const exampleCodeBlock = `  // React component
 export default function Component() {
   return (
     <GuidumeProvider mode="dark">
-      <AkCodeBlock language="java" text={exampleCodeBlock} />
+      <CodeBlock language="java" text={exampleCodeBlock} />
     </GuidumeProvider>
   );
 }

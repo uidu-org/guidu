@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Select from 'react-select';
 import styled from 'styled-components';
 
 export interface RenderOptionsPropsT<T> {
@@ -50,14 +51,14 @@ export default class Search extends Component<Props, State> {
     } = this.props;
     return (
       <SelectWrapper width={width}>
-        {/* <Select
+        <Select
           options={options}
           value={defaultValue}
           onChange={onChange}
           placeholder={placeholder}
           spacing={'compact'}
           // menuPlacement="auto"
-        /> */}
+        />
       </SelectWrapper>
     );
   }

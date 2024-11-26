@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { AtlassianIcon } from '@atlaskit/logo';
-
+import { FaceSmileIcon } from '@heroicons/react/24/solid';
 import Breadcrumbs, { BreadcrumbsItem } from '../../src';
 
-const TestIcon = <AtlassianIcon label="Test icon" size="small" />;
+const TestIcon = <FaceSmileIcon label="Test icon" size="small" />;
 
 export default function Example() {
   return (

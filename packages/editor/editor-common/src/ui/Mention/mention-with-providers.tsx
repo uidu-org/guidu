@@ -1,9 +1,7 @@
 import { MentionUserType as UserType } from '@uidu/adf-schema';
 import { MentionProvider, ResourcedMention } from '@uidu/mentions';
 import React, { PureComponent } from 'react';
-import { ProfilecardProvider } from '../../provider-factory/profile-card-provider';
 import { MentionEventHandlers } from '../EventHandlers';
-import ResourcedMentionWithProfilecard from './mention-with-profilecard';
 
 export interface Props {
   id: string;
@@ -11,48 +9,21 @@ export interface Props {
   accessLevel?: string;
   userType?: UserType;
   mentionProvider?: Promise<MentionProvider>;
-  profilecardProvider?: Promise<ProfilecardProvider>;
   eventHandlers?: MentionEventHandlers;
   portal?: HTMLElement;
 }
 
-export interface State {
-  profilecardProvider: ProfilecardProvider | null;
-}
+export interface State {}
 
 const GENERIC_USER_IDS = ['HipChat', 'all', 'here'];
 const noop = () => {};
 
 export default class MentionWithProviders extends PureComponent<Props, State> {
-  state: State = { profilecardProvider: null };
+  state: State = {};
 
-  UNSAFE_componentWillMount() {
-    this.updateProfilecardProvider(this.props);
-  }
+  UNSAFE_componentWillMount() {}
 
-  UNSAFE_componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.profilecardProvider !== this.props.profilecardProvider) {
-      this.updateProfilecardProvider(nextProps);
-    }
-  }
-
-  private updateProfilecardProvider(props: Props) {
-    // We are not using async/await here to avoid having an intermediate Promise
-    // introduced by the transpiler.
-    // This will allow consumer to use a SynchronousPromise.resolve and avoid useless
-    // rerendering
-    if (props.profilecardProvider) {
-      props.profilecardProvider
-        .then((profilecardProvider) => {
-          this.setState({ profilecardProvider });
-        })
-        .catch(() => {
-          this.setState({ profilecardProvider: null });
-        });
-    } else {
-      this.setState({ profilecardProvider: null });
-    }
-  }
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {}
 
   render() {
     const {
@@ -65,20 +36,17 @@ export default class MentionWithProviders extends PureComponent<Props, State> {
       text,
     } = this.props;
 
-    const { profilecardProvider } = this.state;
-
     const actionHandlers: MentionEventHandlers = {} as any;
-    (['onClick', 'onMouseEnter', 'onMouseLeave'] as Array<
-      keyof MentionEventHandlers
-    >).forEach((handler) => {
+    (
+      ['onClick', 'onMouseEnter', 'onMouseLeave'] as Array<
+        keyof MentionEventHandlers
+      >
+    ).forEach((handler) => {
       actionHandlers[handler] =
         (eventHandlers && eventHandlers[handler]) || noop;
     });
 
-    const MentionComponent =
-      profilecardProvider && GENERIC_USER_IDS.indexOf(id) === -1
-        ? ResourcedMentionWithProfilecard
-        : ResourcedMention;
+    const MentionComponent = ResourcedMention;
 
     return (
       <MentionComponent
@@ -87,7 +55,6 @@ export default class MentionWithProviders extends PureComponent<Props, State> {
         accessLevel={accessLevel}
         userType={userType}
         mentionProvider={mentionProvider}
-        profilecardProvider={profilecardProvider!}
         portal={portal}
         {...actionHandlers}
       />

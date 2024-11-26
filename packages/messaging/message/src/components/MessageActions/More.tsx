@@ -29,7 +29,6 @@ export default function More({ actions, onOpenChange }) {
           ))}
         </MenuGroup>
       )}
-      triggerType="default"
       position="top middle"
       boundariesElement="scrollParent"
       onOpenChange={onOpenChange}

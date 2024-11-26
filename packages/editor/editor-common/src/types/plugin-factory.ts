@@ -1,8 +1,6 @@
 import type { Schema } from 'prosemirror-model';
 import type { IntlShape } from 'react-intl';
 
-import type { PortalProviderAPI } from '@uidu/editor-core';
-import type { DispatchAnalyticsEvent } from '../analytics/types/dispatch-analytics-event';
 import type { Dispatch, EventDispatcher } from '../event-dispatcher';
 import type { ProviderFactory } from '../provider-factory';
 import type { SafePlugin } from '../safe-plugin';
@@ -17,9 +15,7 @@ export type PMPluginFactoryParams = {
   eventDispatcher: EventDispatcher;
   providerFactory: ProviderFactory;
   errorReporter?: ErrorReporter;
-  portalProviderAPI: PortalProviderAPI;
   reactContext: () => EditorReactContext;
-  dispatchAnalyticsEvent: DispatchAnalyticsEvent;
   featureFlags: FeatureFlags;
   getIntl: () => IntlShape;
 };

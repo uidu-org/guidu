@@ -27,13 +27,12 @@ export const registerCard = (info: CardInfo) => (tr: Transaction) =>
     info,
   });
 
-export const setProvider = (cardProvider: CardProvider | null) => (
-  tr: Transaction,
-) =>
-  cardAction(tr, {
-    type: 'SET_PROVIDER',
-    provider: cardProvider,
-  });
+export const setProvider =
+  (cardProvider: CardProvider | null) => (tr: Transaction) =>
+    cardAction(tr, {
+      type: 'SET_PROVIDER',
+      provider: cardProvider,
+    });
 
 export const showLinkToolbar = (tr: Transaction) =>
   cardAction(tr, { type: 'SHOW_LINK_TOOLBAR' });

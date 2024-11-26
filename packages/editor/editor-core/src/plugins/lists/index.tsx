@@ -1,19 +1,12 @@
+import { faListOl, faListUl } from '@fortawesome/pro-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { bulletList, listItem, orderedList } from '@uidu/adf-schema';
 import React from 'react';
 import { toggleBulletList, toggleOrderedList, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
 import { ToolbarSize } from '../../ui/Toolbar/types';
 import WithPluginState from '../../ui/WithPluginState';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { messages } from '../lists/messages';
-import { IconList, IconListNumber } from '../quick-insert/assets';
 import inputRulePlugin from './pm-plugins/input-rule';
 import keymapPlugin from './pm-plugins/keymap';
 import { createPlugin, pluginKey } from './pm-plugins/main';
@@ -49,7 +42,12 @@ const listPlugin = (): EditorPlugin => ({
         keywords: ['ul', 'unordered list'],
         priority: 1100,
         keyshortcut: tooltip(toggleBulletList),
-        icon: () => <IconList label={formatMessage(messages.unorderedList)} />,
+        icon: () => (
+          <FontAwesomeIcon
+            icon={faListUl}
+            label={formatMessage(messages.unorderedList)}
+          />
+        ),
         action(insert, state) {
           const tr = insert(
             state.schema.nodes.bulletList.createChecked(
@@ -61,15 +59,7 @@ const listPlugin = (): EditorPlugin => ({
             ),
           );
 
-          return addAnalytics(state, tr, {
-            action: ACTION.FORMATTED,
-            actionSubject: ACTION_SUBJECT.TEXT,
-            actionSubjectId: ACTION_SUBJECT_ID.FORMAT_LIST_BULLET,
-            eventType: EVENT_TYPE.TRACK,
-            attributes: {
-              inputMethod: INPUT_METHOD.QUICK_INSERT,
-            },
-          });
+          return tr;
         },
       },
       {
@@ -79,7 +69,10 @@ const listPlugin = (): EditorPlugin => ({
         priority: 1200,
         keyshortcut: tooltip(toggleOrderedList),
         icon: () => (
-          <IconListNumber label={formatMessage(messages.orderedList)} />
+          <FontAwesomeIcon
+            icon={faListOl}
+            label={formatMessage(messages.orderedList)}
+          />
         ),
         action(insert, state) {
           const tr = insert(
@@ -92,15 +85,7 @@ const listPlugin = (): EditorPlugin => ({
             ),
           );
 
-          return addAnalytics(state, tr, {
-            action: ACTION.FORMATTED,
-            actionSubject: ACTION_SUBJECT.TEXT,
-            actionSubjectId: ACTION_SUBJECT_ID.FORMAT_LIST_NUMBER,
-            eventType: EVENT_TYPE.TRACK,
-            attributes: {
-              inputMethod: INPUT_METHOD.QUICK_INSERT,
-            },
-          });
+          return tr;
         },
       },
     ],

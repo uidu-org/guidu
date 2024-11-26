@@ -126,7 +126,6 @@ export {
   tableResizeHandleWidth,
   TableSharedCssClassName,
   tableSharedStyle,
-  tasksAndDecisionsStyles,
   whitespaceSharedStyles,
 } from './styles';
 export { SortOrder } from './types';
@@ -144,7 +143,6 @@ export type {
   Transformer,
 } from './types';
 export {
-  BaseTheme,
   calcColumnsFromPx,
   calcPctFromPx,
   calcPxFromColumns,
@@ -152,7 +150,6 @@ export {
   ClearNextSiblingMarginTop,
   DEFAULT_IMAGE_HEIGHT,
   DEFAULT_IMAGE_WIDTH,
-  Emoji,
   ErrorMessage,
   ExpandIconWrapper,
   ExpandLayoutWrapper,
@@ -178,7 +175,6 @@ export {
   WidthConsumer,
   WidthObserver,
   WidthProvider,
-  WithCreateAnalyticsEvent,
   withOuterListeners,
 } from './ui';
 export type {
@@ -209,7 +205,6 @@ export {
   createCompareNodes,
   ErrorReporter,
   findAndTrackUnsupportedContentNodes,
-  getAnalyticsAppearance,
   getExtensionLozengeData,
   getExtensionRenderer,
   getMarksByOrder,

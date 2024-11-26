@@ -27,20 +27,18 @@ export function createPlugin(
   return new Plugin({
     key: pluginKey,
     state: createPluginState(dispatch, { editorDisabled: false }),
-    view: () => {
-      return {
-        update(view) {
-          if (getPluginState(view.state).editorDisabled !== !view.editable) {
-            const tr = view.state.tr.setMeta(pluginKey, {
-              editorDisabled: !view.editable,
-            } as EditorDisabledPluginState);
+    view: () => ({
+      update(view) {
+        if (getPluginState(view.state).editorDisabled !== !view.editable) {
+          const tr = view.state.tr.setMeta(pluginKey, {
+            editorDisabled: !view.editable,
+          } as EditorDisabledPluginState);
 
-            tr.setMeta('isLocal', true);
-            view.dispatch(tr);
-          }
-        },
-      };
-    },
+          tr.setMeta('isLocal', true);
+          view.dispatch(tr);
+        }
+      },
+    }),
   });
 }
 

@@ -9,7 +9,7 @@
   "module": "dist/uidu-email-builder.esm.js",
   "types": "dist/uidu-email-builder.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.25.6",
+    "@babel/runtime": "^7.26.0",
     "@craftjs/core": "^0.2.5",
     "@craftjs/utils": "^0.2.1",
     "@heroicons/react": "^2.1.5",
@@ -25,7 +25,7 @@
     "get-video-id": "^3.7.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-intl": "^6.6.8",
+    "react-intl": "^6.8.7",
     "styled-components": "^5.3.11",
     "twin.macro": "^3.4.1"
   },

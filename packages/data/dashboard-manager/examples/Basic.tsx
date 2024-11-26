@@ -1,6 +1,7 @@
 import cubejs from '@cubejs-client/core';
 import { CubeProvider } from '@cubejs-client/react';
-import { More, Shuffle } from '@uidu/dashboard-controls';
+import { Shuffle } from '@uidu/dashboard-controls';
+import { More } from '@uidu/data-controls';
 import {
   ScrollableContainer,
   ShellBody,

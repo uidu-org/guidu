@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { normalizeLanguage, SupportedLanguages } from '../supportedLanguages';
-import { Theme, ThemeProps, applyTheme } from '../themes/themeBuilder';
 import Code from './Code';
 
 type CodeBlockProps = {
@@ -10,8 +9,6 @@ type CodeBlockProps = {
   language: SupportedLanguages | string;
   /** Indicates whether or not to show line numbers */
   showLineNumbers?: boolean;
-  /** A custom theme to be applied, implements the Theme interface */
-  theme?: Theme | ThemeProps;
 };
 
 const LANGUAGE_FALLBACK = 'text';
@@ -45,17 +42,12 @@ export default class CodeBlock extends PureComponent<CodeBlockProps, {}> {
   };
 
   render() {
-    const {
-      lineNumberContainerStyle,
-      codeBlockStyle,
-      codeContainerStyle,
-    } = applyTheme(this.props.theme);
     const props = {
       language: normalizeLanguage(this.props.language || LANGUAGE_FALLBACK),
-      codeStyle: codeBlockStyle,
+      // codeStyle: codeBlockStyle,
       showLineNumbers: this.props.showLineNumbers,
-      codeTagProps: { style: codeContainerStyle },
-      lineNumberContainerStyle,
+      codeTagProps: {},
+      // lineNumberContainerStyle,
       text: this.props.text.toString(),
     };
 

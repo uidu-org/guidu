@@ -5,7 +5,6 @@ import Blockquote from './blockquote';
 import type { Props as BodiedExtensionProps } from './bodiedExtension';
 import BodiedExtension from './bodiedExtension';
 import BulletList from './bulletList';
-import DecisionList from './decisionList';
 import Doc from './doc';
 import type { Props as ExtensionProps } from './extension';
 import Extension from './extension';
@@ -26,7 +25,6 @@ import Rule from './rule';
 import Table from './table';
 import { TableCell, TableHeader } from './tableCell';
 import TableRow from './tableRow';
-import TaskList from './taskList';
 import Token from './token';
 import UnknownBlock from './unknownBlock';
 import Video from './video';
@@ -37,28 +35,12 @@ const CodeBlock = loadable(
       /* webpackChunkName:"@uidu-internal-renderer-node_CodeBlock" */ './codeBlock'
     ),
 );
-const TaskItem = loadable(
-  () =>
-    import(
-      /* webpackChunkName:"@uidu-internal-renderer-node_TaskItem" */ './taskItem'
-    ),
-);
-const DecisionItem = loadable(
-  () =>
-    import(
-      /* webpackChunkName:"@uidu-internal-renderer-node_DecisionItem" */ './decisionItem'
-    ),
-);
+
 const Date = loadable(
   () =>
     import(/* webpackChunkName:"@uidu-internal-renderer-node_Date" */ './date'),
 );
-const Status = loadable(
-  () =>
-    import(
-      /* webpackChunkName:"@uidu-internal-renderer-node_Status" */ './status'
-    ),
-);
+
 const Emoji = loadable(
   () =>
     import(
@@ -102,8 +84,6 @@ export const nodeToReact: { [key: string]: React.ComponentType<any> } = {
   blockCard: BlockCard,
   codeBlock: CodeBlock,
   date: Date,
-  decisionItem: DecisionItem,
-  decisionList: DecisionList,
   doc: Doc,
   emoji: Emoji,
   extension: Extension,
@@ -125,9 +105,6 @@ export const nodeToReact: { [key: string]: React.ComponentType<any> } = {
   paragraph: Paragraph,
   placeholder: Placeholder,
   rule: Rule,
-  status: Status,
-  taskItem: TaskItem,
-  taskList: TaskList,
   table: Table,
   tableCell: TableCell,
   tableHeader: TableHeader,
@@ -277,8 +254,6 @@ export {
   BlockCard,
   CodeBlock,
   Date,
-  DecisionItem,
-  DecisionList,
   Doc,
   Emoji,
   Extension,
@@ -299,9 +274,6 @@ export {
   Paragraph,
   Placeholder,
   Rule,
-  Status,
-  TaskItem,
-  TaskList,
   Table,
   TableCell,
   TableRow,

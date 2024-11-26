@@ -1,18 +1,19 @@
 import Avatar from '@uidu/avatar';
+import { MenuGroup } from '@uidu/menu';
 import React from 'react';
 import { HelpCircle } from 'react-feather';
-import Dropdown, { DropdownItem, DropdownItemGroup } from '../src';
+import Dropdown from '../src';
 
 const getDropDownData = () => (
-  <DropdownItemGroup title="Heading">
-    <DropdownItem>Hello it with some really quite long text here.</DropdownItem>
+  <MenuGroup title="Heading">
+    {/* <DropdownItem>Hello it with some really quite long text here.</DropdownItem>
     <DropdownItem>Some text 2</DropdownItem>
     <DropdownItem isDisabled>Some disabled text</DropdownItem>
     <DropdownItem>Some more text</DropdownItem>
     <DropdownItem href="//atlassian.com" target="_new">
       A link item
-    </DropdownItem>
-  </DropdownItemGroup>
+    </DropdownItem> */}
+  </MenuGroup>
 );
 
 // added tabIndex in dropdown trigger for keyboard naviagtion support

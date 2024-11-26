@@ -5,29 +5,16 @@ import {
   validator,
 } from '@uidu/adf-utils';
 import { Schema } from 'prosemirror-model';
-import { ACTION_SUBJECT_ID, UnsupportedContentPayload } from './analytics';
-import { fireUnsupportedEvent } from './track-unsupported-content';
 
 export const UNSUPPORTED_NODE_ATTRIBUTE = 'unsupportedNodeAttribute';
 
-type DispatchAnalyticsEvent = (event: UnsupportedContentPayload) => void;
-
-const errorCallbackFor = (
-  marks: any,
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
-) => {
+const errorCallbackFor = (marks: any) => {
   return (
     entity: ADFEntity,
     error: ValidationError,
     options: ErrorCallbackOptions,
   ) => {
-    return validationErrorHandler(
-      entity,
-      error,
-      options,
-      marks,
-      dispatchAnalyticsEvent,
-    );
+    return validationErrorHandler(entity, error, options, marks);
   };
 };
 
@@ -36,7 +23,6 @@ export const validationErrorHandler = (
   error: ValidationError,
   options: ErrorCallbackOptions,
   marks: string[],
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
 ) => {
   if (entity && entity.type === UNSUPPORTED_NODE_ATTRIBUTE) {
     return entity;
@@ -73,9 +59,6 @@ export const validationErrorHandler = (
   // Can't fix it by wrapping
   // TODO: We can repair missing content like `panel` without a `paragraph`.
   if (error.code === 'INVALID_CONTENT_LENGTH') {
-    if (dispatchAnalyticsEvent) {
-      trackValidationError(dispatchAnalyticsEvent, error, entity);
-    }
     return entity;
   }
   if (options.allowUnsupportedBlock) {
@@ -86,42 +69,19 @@ export const validationErrorHandler = (
     return wrapWithUnsupported(entity, 'inline');
   }
 
-  if (dispatchAnalyticsEvent) {
-    trackValidationError(dispatchAnalyticsEvent, error, entity);
-  }
   return entity;
 };
-
-function trackValidationError(
-  dispatchAnalyticsEvent: DispatchAnalyticsEvent,
-  error: ValidationError,
-  entity: ADFEntity,
-) {
-  if (!dispatchAnalyticsEvent) {
-    return;
-  }
-  fireUnsupportedEvent(
-    dispatchAnalyticsEvent,
-    ACTION_SUBJECT_ID.UNSUPPORTED_ERROR,
-    entity,
-    error.code,
-  );
-}
 
 export const validateADFEntity = (
   schema: Schema,
   node: ADFEntity,
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
 ): ADFEntity => {
   const nodes = Object.keys(schema.nodes);
   const marks = Object.keys(schema.marks);
   const validate = validator(nodes, marks, { allowPrivateAttributes: true });
   const emptyDoc: ADFEntity = { type: 'doc', content: [] };
 
-  const { entity = emptyDoc } = validate(
-    node,
-    errorCallbackFor(marks, dispatchAnalyticsEvent),
-  );
+  const { entity = emptyDoc } = validate(node, errorCallbackFor(marks));
 
   return entity;
 };

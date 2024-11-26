@@ -7,21 +7,11 @@ import { Node } from 'prosemirror-model';
 import { EditorState, NodeSelection } from 'prosemirror-state';
 import { removeSelectedNode } from 'prosemirror-utils';
 import { defineMessages, IntlShape } from 'react-intl';
-import { analyticsService } from '../../analytics';
 import commonMessages, {
   linkMessages,
   linkToolbarMessages,
 } from '../../messages';
 import { Command } from '../../types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  AnalyticsEventPayload,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
 import { hoverDecoration } from '../base/pm-plugins/decoration';
 import {
   FloatingToolbarConfig,
@@ -78,26 +68,9 @@ export const removeCard: Command = (state, dispatch) => {
   if (!(state.selection instanceof NodeSelection)) {
     return false;
   }
-
-  const type = state.selection.node.type.name;
-  const payload: AnalyticsEventPayload = {
-    action: ACTION.DELETED,
-    actionSubject: ACTION_SUBJECT.SMART_LINK,
-    actionSubjectId: type as
-      | ACTION_SUBJECT_ID.CARD_INLINE
-      | ACTION_SUBJECT_ID.CARD_BLOCK,
-    attributes: {
-      inputMethod: INPUT_METHOD.TOOLBAR,
-      displayMode: type as
-        | ACTION_SUBJECT_ID.CARD_INLINE
-        | ACTION_SUBJECT_ID.CARD_BLOCK,
-    },
-    eventType: EVENT_TYPE.TRACK,
-  };
   if (dispatch) {
-    dispatch(addAnalytics(state, removeSelectedNode(state.tr), payload));
+    dispatch(state, removeSelectedNode(state.tr));
   }
-  analyticsService.trackEvent('uidu.editor-core.format.card.delete.button');
   return true;
 };
 
@@ -106,28 +79,13 @@ export const visitCardLink: Command = (state, dispatch) => {
     return false;
   }
 
-  const { type } = state.selection.node;
   const { url } = titleUrlPairFromNode(state.selection.node);
 
-  const payload: AnalyticsEventPayload = {
-    action: ACTION.VISITED,
-    actionSubject: ACTION_SUBJECT.SMART_LINK,
-    actionSubjectId: type.name as
-      | ACTION_SUBJECT_ID.CARD_INLINE
-      | ACTION_SUBJECT_ID.CARD_BLOCK,
-    attributes: {
-      inputMethod: INPUT_METHOD.TOOLBAR,
-    },
-    eventType: EVENT_TYPE.TRACK,
-  };
-
-  // All card links should open in the same tab per https://product-fabric.atlassian.net/browse/MS-1583.
-  analyticsService.trackEvent('uidu.editor-core.format.card.visit.button');
   // We are in edit mode here, open the smart card URL in a new window.
   window.open(url);
 
   if (dispatch) {
-    dispatch(addAnalytics(state, state.tr, payload));
+    dispatch(state.tr);
   }
   return true;
 };

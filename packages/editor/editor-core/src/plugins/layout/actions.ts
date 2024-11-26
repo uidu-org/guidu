@@ -4,15 +4,6 @@ import { EditorState, TextSelection, Transaction } from 'prosemirror-state';
 import { Command } from '../../types/command';
 import { getStepRange, isEmptyDocument } from '../../utils';
 import { flatmap, mapChildren } from '../../utils/slice';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  EVENT_TYPE,
-} from '../analytics/types/enums';
-import { LAYOUT_TYPE } from '../analytics/types/node-events';
-import { addAnalytics, withAnalytics } from '../analytics/utils';
-import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock/types';
 import { pluginKey } from './pm-plugins/plugin-key';
 import { LayoutState } from './pm-plugins/types';
 import { Change, PresetLayout } from './types';
@@ -100,19 +91,6 @@ export const insertLayoutColumns: Command = (state, dispatch) => {
   }
   return true;
 };
-
-export const insertLayoutColumnsWithAnalytics = (
-  inputMethod: TOOLBAR_MENU_TYPE,
-): Command =>
-  withAnalytics({
-    action: ACTION.INSERTED,
-    actionSubject: ACTION_SUBJECT.DOCUMENT,
-    actionSubjectId: ACTION_SUBJECT_ID.LAYOUT,
-    attributes: {
-      inputMethod,
-    },
-    eventType: EVENT_TYPE.TRACK,
-  })(insertLayoutColumns);
 
 /**
  * Handles switching from 2 -> 3 cols, or 3 -> 2 cols
@@ -230,15 +208,6 @@ export const setPresetLayout =
 
     let tr = forceSectionToPresetLayout(state, node, pos, layout);
     if (tr) {
-      tr = addAnalytics(state, tr, {
-        action: ACTION.CHANGED_LAYOUT,
-        actionSubject: ACTION_SUBJECT.LAYOUT,
-        attributes: {
-          previousLayout: formatLayoutName(<PresetLayout>selectedLayout),
-          newLayout: formatLayoutName(layout),
-        },
-        eventType: EVENT_TYPE.TRACK,
-      });
       tr.setMeta('scrollIntoView', false);
       if (dispatch) {
         dispatch(tr);
@@ -333,30 +302,9 @@ export const deleteActiveLayoutNode: Command = (state, dispatch) => {
     const node = state.doc.nodeAt(pos) as Node;
     if (dispatch) {
       let tr = state.tr.delete(pos, pos + node.nodeSize);
-      tr = addAnalytics(state, tr, {
-        action: ACTION.DELETED,
-        actionSubject: ACTION_SUBJECT.LAYOUT,
-        attributes: { layout: formatLayoutName(<PresetLayout>selectedLayout) },
-        eventType: EVENT_TYPE.TRACK,
-      });
       dispatch(tr);
     }
     return true;
   }
   return false;
-};
-
-const formatLayoutName = (layout: PresetLayout): LAYOUT_TYPE => {
-  switch (layout) {
-    case 'two_equal':
-      return LAYOUT_TYPE.TWO_COLS_EQUAL;
-    case 'three_equal':
-      return LAYOUT_TYPE.THREE_COLS_EQUAL;
-    case 'two_left_sidebar':
-      return LAYOUT_TYPE.LEFT_SIDEBAR;
-    case 'two_right_sidebar':
-      return LAYOUT_TYPE.RIGHT_SIDEBAR;
-    case 'three_with_sidebars':
-      return LAYOUT_TYPE.THREE_WITH_SIDEBARS;
-  }
 };

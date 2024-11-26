@@ -1,14 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import Button from '@uidu/button';
+import Form, { useForm } from '@uidu/form';
 import { RadioGroup } from '@uidu/radio';
 import React, { FC, useState } from 'react';
 import Popup from '../src';
 
 const radioValues = [
-  { name: 'None', value: '-1', label: 'None' },
-  { name: 'Button 0', value: '0', label: 'Button 0' },
-  { name: 'Button 1', value: '1', label: 'Button 1' },
-  { name: 'Button 2', value: '2', label: 'Button 2' },
+  { name: 'None', id: '-1', label: 'None' },
+  { name: 'Button 0', id: '0', label: 'Button 0' },
+  { name: 'Button 1', id: '1', label: 'Button 1' },
+  { name: 'Button 2', id: '2', label: 'Button 2' },
 ];
 
 const spacerCSS = {
@@ -54,16 +55,21 @@ export default () => {
   const [isOpen, setIsOpen] = useState(false);
   const [buttonToFocus, setButtonToFocus] = useState('-1');
 
+  const form = useForm({});
+
   return (
     <div css={spacerCSS}>
       <p>
         <strong>Choose a button to focus initially:</strong>
       </p>
-      <RadioGroup
-        onChange={({ currentTarget: { value } }) => setButtonToFocus(value)}
-        defaultValue={radioValues[0].value}
-        options={radioValues}
-      />
+      <Form form={form}>
+        <RadioGroup
+          name="buttonToFocus"
+          onChange={(name, value) => setButtonToFocus(value)}
+          defaultValue={radioValues[0].value}
+          options={radioValues}
+        />
+      </Form>
       <Popup
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}

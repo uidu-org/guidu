@@ -1,19 +1,11 @@
 import { SafePlugin } from '@uidu/editor-common/safe-plugin';
+import { CommandDispatch } from '@uidu/editor-common/types';
 import { keymap } from 'prosemirror-keymap';
 import { ResolvedPos } from 'prosemirror-model';
 import { EditorState, TextSelection } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import { insertNewLineWithAnalytics } from '../../commands';
+import { insertNewLine } from '../../commands';
 import { Dispatch } from '../../event-dispatcher';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  AnalyticsEventPayload,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../analytics';
-import { analyticsEventKey } from '../analytics/consts';
 
 export function createPlugin(
   eventDispatch: Dispatch,
@@ -25,7 +17,7 @@ export function createPlugin(
 
   return keymap({
     'Shift-Enter': (state, dispatch, editorView) => {
-      insertNewLineWithAnalytics(state, dispatch, editorView);
+      insertNewLine(state, dispatch, editorView);
       return true;
     },
     Enter(
@@ -34,7 +26,6 @@ export function createPlugin(
       editorView: EditorView,
     ) {
       if (canSaveOnEnter(editorView)) {
-        eventDispatch(analyticsEventKey, analyticsPayload(state));
         onSave(editorView);
         return true;
       }
@@ -50,30 +41,9 @@ function isEmptyAtCursor($cursor: ResolvedPos) {
 
 function canSaveOnEnter(editorView: EditorView) {
   const { $cursor } = editorView.state.selection as TextSelection;
-  const { decisionItem, paragraph, taskItem } = editorView.state.schema.nodes;
-  return (
-    !$cursor ||
-    ($cursor.parent.type === paragraph && $cursor.depth === 1) ||
-    ($cursor.parent.type === decisionItem && !isEmptyAtCursor($cursor)) ||
-    ($cursor.parent.type === taskItem && !isEmptyAtCursor($cursor))
-  );
+  const { paragraph } = editorView.state.schema.nodes;
+  return !$cursor || ($cursor.parent.type === paragraph && $cursor.depth === 1);
 }
-
-const analyticsPayload = (
-  state: EditorState,
-): { payload: AnalyticsEventPayload } => ({
-  payload: {
-    action: ACTION.STOPPED,
-    actionSubject: ACTION_SUBJECT.EDITOR,
-    actionSubjectId: ACTION_SUBJECT_ID.SAVE,
-    attributes: {
-      inputMethod: INPUT_METHOD.SHORTCUT,
-      documentSize: state.doc.nodeSize,
-      // TODO add individual node counts - tables, headings, lists, mediaSingles, mediaGroups, mediaCards, panels, extensions, decisions, action, codeBlocks
-    },
-    eventType: EVENT_TYPE.UI,
-  },
-});
 
 const saveOnEnterPlugin = (onSave?) => ({
   name: 'saveOnEnter',

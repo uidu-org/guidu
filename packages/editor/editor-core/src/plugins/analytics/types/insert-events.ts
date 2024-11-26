@@ -152,17 +152,6 @@ type InsertEmojiAEP = InsertAEP<
   undefined
 >;
 
-type InsertStatusAEP = InsertAEP<
-  ACTION_SUBJECT_ID.STATUS,
-  {
-    inputMethod:
-      | INPUT_METHOD.QUICK_INSERT
-      | INPUT_METHOD.TOOLBAR
-      | INPUT_METHOD.INSERT_MENU;
-  },
-  undefined
->;
-
 export type InputMethodInsertMedia =
   | INPUT_METHOD.CLIPBOARD
   | INPUT_METHOD.PICKER_CLOUD
@@ -271,7 +260,6 @@ export type InsertEventPayload =
   | InsertExpandAEP
   | InsertActionDecisionAEP
   | InsertEmojiAEP
-  | InsertStatusAEP
   | InsertMediaAEP
   | InsertLinkAEP
   | InsertLinkPreviewAEP

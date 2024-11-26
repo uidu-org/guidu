@@ -1,26 +1,12 @@
-import { CreateUIAnalyticsEvent } from '@uidu/analytics';
 import React from 'react';
-import { ACTION, ACTION_SUBJECT, EVENT_TYPE } from '../plugins/analytics';
-import { editorAnalyticsChannel } from '../plugins/analytics/consts';
 
 export type ErrorBoundaryProps = {
-  createAnalyticsEvent?: CreateUIAnalyticsEvent | undefined;
   rethrow?: boolean;
   children: React.ReactNode;
 };
 
 export type ErrorBoundaryState = {
   error?: Error;
-};
-
-type AnalyticsErrorBoundaryErrorInfo = {
-  componentStack: string;
-};
-
-type AnalyticsErrorBoundaryAttributes = {
-  error: string;
-  info?: AnalyticsErrorBoundaryErrorInfo;
-  [key: string]: any;
 };
 
 export default class ErrorBoundary extends React.Component<
@@ -35,51 +21,11 @@ export default class ErrorBoundary extends React.Component<
     error: undefined,
   };
 
-  fireAnalytics = (analyticsErrorPayload: AnalyticsErrorBoundaryAttributes) => {
-    const { createAnalyticsEvent } = this.props;
-    this.getProductName()
-      .then((product) => {
-        if (createAnalyticsEvent) {
-          createAnalyticsEvent({
-            action: ACTION.EDITOR_CRASHED,
-            actionSubject: ACTION_SUBJECT.EDITOR,
-            eventType: EVENT_TYPE.OPERATIONAL,
-            attributes: {
-              product,
-              browserInfo:
-                window && window.navigator && window.navigator.userAgent
-                  ? window.navigator.userAgent
-                  : 'unknown',
-
-              ...analyticsErrorPayload,
-            },
-          }).fire(editorAnalyticsChannel);
-        } else {
-          // eslint-disable-next-line no-console
-          console.error(
-            'Editor Error Boundary: Missing `createAnalyticsEvent` prop.',
-            {
-              channel: editorAnalyticsChannel,
-              product,
-              error: analyticsErrorPayload,
-            },
-          );
-        }
-      })
-      .catch((e) => {
-        // eslint-disable-next-line no-console
-        console.error('Failed to resolve product name from', e);
-      });
-  };
-
   private getProductName = async () => {
     return 'uidu';
   };
 
-  componentDidCatch(error: Error, errorInfo: AnalyticsErrorBoundaryErrorInfo) {
-    // Log the error
-    this.fireAnalytics({ error: error.toString(), errorInfo });
-
+  componentDidCatch(error: Error) {
     // Update state to allow a re-render to attempt graceful recovery (in the event that
     // the error was caused by a race condition or is intermittent)
     this.setState({ error }, () => {

@@ -22,7 +22,6 @@ import {
   editInsertedLink,
   hideLinkToolbar,
   insertLink,
-  insertLinkWithAnalytics,
   removeLink,
   setLinkHref,
   setLinkText,
@@ -123,8 +122,6 @@ export const getToolbarConfig: FloatingToolbarHandler = (
         state.schema.nodes.text,
         state.schema.nodes.paragraph,
         state.schema.nodes.heading,
-        state.schema.nodes.taskItem,
-        state.schema.nodes.decisionItem,
       ].filter((nodeType) => !!nodeType), // Use only the node types existing in the schema ED-6745
       align: 'left' as AlignType,
       className: activeLinkMark.type.match('INSERT|EDIT_INSERTED')
@@ -233,15 +230,14 @@ export const getToolbarConfig: FloatingToolbarHandler = (
                     displayUrl={link}
                     displayText={displayText || ''}
                     providerFactory={providerFactory}
-                    onSubmit={(href, text, inputMethod) => {
+                    onSubmit={(href, text) => {
                       isEditLink(activeLinkMark)
                         ? updateLink(
                             href,
                             text,
                             activeLinkMark.pos,
                           )(view.state, view.dispatch)
-                        : insertLinkWithAnalytics(
-                            inputMethod,
+                        : insertLink(
                             activeLinkMark.from,
                             activeLinkMark.to,
                             href,

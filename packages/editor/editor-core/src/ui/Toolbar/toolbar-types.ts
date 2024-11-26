@@ -2,7 +2,6 @@ import { ProviderFactory } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import EditorActions from '../../actions';
 import { EventDispatcher } from '../../event-dispatcher';
-import { DispatchAnalyticsEvent } from '../../plugins/analytics';
 import { EditorAppearance } from '../../types/editor-appearance';
 import { ToolbarSize, ToolbarUIComponentFactory } from './types';
 
@@ -22,7 +21,6 @@ export interface ToolbarProps {
   popupsBoundariesElement?: HTMLElement;
   popupsScrollableElement?: HTMLElement;
   disabled: boolean;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
   toolbarSize: ToolbarSize;
 }
 

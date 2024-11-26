@@ -1,153 +1,131 @@
 import { SafePlugin } from '@uidu/editor-common/safe-plugin';
-import { browser } from '@uidu/editor-common/utils';
+import { Node } from 'prosemirror-model';
 import { EditorState, PluginKey } from 'prosemirror-state';
 import { Decoration, DecorationSet } from 'prosemirror-view';
 import { EditorPlugin } from '../../types';
 import {
-  bracketTyped,
   isEmptyDocument,
   isInEmptyLine,
+  isNodeEmpty,
 } from '../../utils/document';
-import { pluginKey as alignmentPluginKey } from '../alignment/pm-plugins/main';
-import { isComposing } from '../base/pm-plugins/composition';
 import { focusStateKey } from '../base/pm-plugins/focus-handler';
 import { isTypeAheadOpen } from '../type-ahead/utils';
-import { placeHolderClassName } from './styles';
 
-export const pluginKey = new PluginKey('placeholderPlugin');
+export const pluginKey = new PluginKey<PlaceholderPluginState>(
+  'placeholderPlugin',
+);
 
-interface PlaceHolderState {
-  hasPlaceholder: boolean;
-  placeholderText?: string;
-  pos?: number;
+export interface PlaceholderPluginOptions {
+  /**
+   * **The class name for the empty editor**
+   * @default 'is-editor-empty'
+   */
+  emptyEditorClass: string;
+
+  /**
+   * **The class name for empty nodes**
+   * @default 'is-empty'
+   */
+  emptyNodeClass: string;
+
+  /**
+   * **The placeholder content**
+   *
+   * You can use a function to return a dynamic placeholder or a string.
+   * @default 'Write something …'
+   */
+  placeholder:
+    | ((PlaceholderProps: {
+        doc: Node;
+        node: Node;
+        pos: number;
+        hasAnchor: boolean;
+      }) => string)
+    | string;
+  /**
+   * **Checks if the placeholder should be only shown when the current node is empty.**
+   *
+   * If true, the placeholder will only be shown when the current node is empty.
+   * If false, the placeholder will be shown when any node is empty.
+   * @default true
+   */
+  showOnlyCurrent: boolean;
+  /**
+   * **Controls if the placeholder should be shown for all descendents.**
+   *
+   * If true, the placeholder will be shown for all descendents.
+   * If false, the placeholder will only be shown for the current node.
+   * @default false
+   */
+  includeChildren: boolean;
 }
 
-function getPlaceholderState(editorState: EditorState): PlaceHolderState {
+interface PlaceholderPluginState {
+  pos?: number;
+  placeholder: PlaceholderPluginOptions['placeholder'];
+}
+
+function getPlaceholderState(editorState: EditorState): PlaceholderPluginState {
   return pluginKey.getState(editorState);
 }
 
-export function createPlaceholderDecoration(
-  editorState: EditorState,
-  placeholderText: string,
-  pos: number = 1,
-): DecorationSet {
-  const placeholderDecoration = document.createElement('span');
-  let placeHolderClass = placeHolderClassName;
-
-  const alignment = alignmentPluginKey.getState(editorState);
-  if (alignment && alignment.align === 'end') {
-    placeHolderClass = placeHolderClass + ' align-end';
-  } else if (alignment && alignment.align === 'center') {
-    placeHolderClass = placeHolderClass + ' align-center';
-  }
-  placeholderDecoration.className = placeHolderClass;
-  const placeholderNode = document.createElement('span');
-  placeholderNode.textContent = placeholderText;
-  placeholderDecoration.appendChild(placeholderNode);
-
-  // ME-2289 Tapping on backspace in empty editor hides and displays the keyboard
-  // Add a editable buff node as the cursor moving forward is inevitable
-  // when backspace in GBoard composition
-  if (browser.android && browser.chrome) {
-    const buffNode = document.createElement('span');
-    buffNode.setAttribute('contenteditable', 'true');
-    buffNode.textContent = ' ';
-    placeholderDecoration.appendChild(buffNode);
-  }
-
-  return DecorationSet.create(editorState.doc, [
-    Decoration.widget(pos, placeholderDecoration, {
-      side: -1,
-      key: 'placeholder',
-    }),
-  ]);
-}
-
-function setPlaceHolderState(
-  placeholderText: string,
+function setPlaceholderState(
+  placeholder: PlaceholderPluginOptions['placeholder'],
   pos?: number,
-): PlaceHolderState {
+): PlaceholderPluginState {
   return {
-    hasPlaceholder: true,
-    placeholderText,
-    pos: pos ? pos : 1,
+    placeholder,
+    pos: pos || 1,
   };
 }
 
-const emptyPlaceholder: PlaceHolderState = { hasPlaceholder: false };
+const emptyPlaceholder: PlaceholderPluginState = { placeholder: null };
 
-function createPlaceHolderStateFrom(
+function createPlaceholderStateFrom(
   editorState: EditorState,
-  getPlaceholderHintMessage: () => string | undefined,
-  defaultPlaceholderText?: string,
-  bracketPlaceholderText?: string,
-): PlaceHolderState {
+  placeholder: PlaceholderPluginOptions['placeholder'],
+): PlaceholderPluginState {
   const isEditorFocused = focusStateKey.getState(editorState);
 
   if (isTypeAheadOpen(editorState)) {
     return emptyPlaceholder;
   }
 
-  if (defaultPlaceholderText && isEmptyDocument(editorState.doc)) {
-    return setPlaceHolderState(defaultPlaceholderText);
+  if (placeholder && isEmptyDocument(editorState.doc)) {
+    return setPlaceholderState(placeholder);
   }
 
-  const placeholderHint = getPlaceholderHintMessage();
-  if (placeholderHint && isInEmptyLine(editorState) && isEditorFocused) {
+  if (placeholder && isInEmptyLine(editorState) && isEditorFocused) {
     const { $from } = editorState.selection;
-    return setPlaceHolderState(placeholderHint, $from.pos);
+    return setPlaceholderState(placeholder, $from.pos);
   }
 
-  if (bracketPlaceholderText && bracketTyped(editorState) && isEditorFocused) {
-    const { $from } = editorState.selection;
-    // Space is to account for positioning of the bracket
-    const bracketHint = '  ' + bracketPlaceholderText;
-    return setPlaceHolderState(bracketHint, $from.pos - 1);
-  }
+  // if (bracketPlaceholderText && bracketTyped(editorState) && isEditorFocused) {
+  //   const { $from } = editorState.selection;
+  //   // Space is to account for positioning of the bracket
+  //   const bracketHint = '  ' + bracketPlaceholderText;
+  //   return setPlaceholderState(bracketHint, $from.pos - 1);
+  // }
   return emptyPlaceholder;
 }
 
-function createGetPlaceholderHintMessage(
-  placeholderHints?: string[],
-): () => string | undefined {
-  let index = 0;
-
-  return () => {
-    if (!placeholderHints || placeholderHints.length === 0) {
-      return undefined;
-    }
-    const { length } = placeholderHints;
-
-    const placeholder = placeholderHints[index++];
-    index = index % length;
-
-    return placeholder;
-  };
-}
-
-export function createPlugin(
-  defaultPlaceholderText?: string,
-  placeholderHints?: string[],
-  bracketPlaceholderText?: string,
-): SafePlugin | undefined {
-  if (!defaultPlaceholderText && !placeholderHints && !bracketPlaceholderText) {
+export function createPlugin({
+  placeholder,
+  emptyEditorClass = 'is-editor-empty',
+  emptyNodeClass = 'is-empty',
+  showOnlyCurrent = true,
+}: PlaceholderPluginOptions): SafePlugin<PlaceholderPluginOptions> | undefined {
+  if (!placeholder) {
     return undefined;
   }
-  const getPlaceholderHintMessage =
-    createGetPlaceholderHintMessage(placeholderHints);
-
-  return new SafePlugin<PlaceHolderState>({
+  return new SafePlugin<PlaceholderPluginState>({
     key: pluginKey,
     state: {
-      init: (_, state) =>
-        createPlaceHolderStateFrom(
-          state,
-          getPlaceholderHintMessage,
-          defaultPlaceholderText,
-          bracketPlaceholderText,
-        ),
+      init: (_, state) => createPlaceholderStateFrom(state, placeholder),
       apply: (tr, _oldPluginState, _oldEditorState, newEditorState) => {
         const meta = tr.getMeta(pluginKey);
+
+        // console.log('meta', meta);
 
         if (meta) {
           if (meta.removePlaceholder) {
@@ -155,46 +133,58 @@ export function createPlugin(
           }
 
           if (meta.applyPlaceholderIfEmpty) {
-            return createPlaceHolderStateFrom(
-              newEditorState,
-              getPlaceholderHintMessage,
-              defaultPlaceholderText,
-              bracketPlaceholderText,
-            );
+            return createPlaceholderStateFrom(newEditorState, placeholder);
           }
         }
 
-        return createPlaceHolderStateFrom(
-          newEditorState,
-          getPlaceholderHintMessage,
-          defaultPlaceholderText,
-          bracketPlaceholderText,
-        );
+        return createPlaceholderStateFrom(newEditorState, placeholder);
       },
     },
     props: {
       decorations(editorState): DecorationSet | undefined {
-        const { hasPlaceholder, placeholderText, pos } =
-          getPlaceholderState(editorState);
+        const decorations: Decoration[] = [];
 
-        if (
-          hasPlaceholder &&
-          placeholderText &&
-          pos !== undefined &&
-          !isComposing(editorState)
-        ) {
-          return createPlaceholderDecoration(editorState, placeholderText, pos);
-        }
-        return undefined;
+        const { doc, selection } = editorState;
+        const { anchor } = selection;
+
+        const isEmptyDoc = isEmptyDocument(doc);
+
+        const { placeholder } = getPlaceholderState(editorState);
+
+        doc.descendants((node, pos) => {
+          const hasAnchor = anchor >= pos && anchor <= pos + node.nodeSize;
+          const isEmpty = !node.isLeaf && isNodeEmpty(node);
+
+          if ((hasAnchor || !showOnlyCurrent) && isEmpty) {
+            const classes = [emptyNodeClass];
+
+            if (isEmptyDoc) {
+              classes.push(emptyEditorClass);
+            }
+
+            const decoration = Decoration.node(pos, pos + node.nodeSize, {
+              class: classes.join(' '),
+              'data-placeholder':
+                typeof placeholder === 'function'
+                  ? placeholder({
+                      doc,
+                      node,
+                      pos,
+                      hasAnchor,
+                    })
+                  : placeholder,
+            });
+
+            decorations.push(decoration);
+          }
+
+          return false; // this.options.includeChildren;
+        });
+
+        return DecorationSet.create(doc, decorations);
       },
     },
   });
-}
-
-export interface PlaceholderPluginOptions {
-  placeholder?: string;
-  placeholderHints?: string[];
-  placeholderBracketHint?: string;
 }
 
 const placeholderPlugin = (
@@ -206,12 +196,7 @@ const placeholderPlugin = (
     return [
       {
         name: 'placeholder',
-        plugin: () =>
-          createPlugin(
-            options && options.placeholder,
-            options && options.placeholderHints,
-            options && options.placeholderBracketHint,
-          ),
+        plugin: () => createPlugin(options),
       },
     ];
   },

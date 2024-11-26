@@ -4,7 +4,7 @@ import EditorActions from '../../actions';
 
 export type EditorContextProps = { editorActions?: EditorActions };
 
-const EditorContext = React.createContext({});
+export const EditorContext = React.createContext({});
 
 export const useEditorContext = () =>
   React.useContext<EditorContextProps>(EditorContext);

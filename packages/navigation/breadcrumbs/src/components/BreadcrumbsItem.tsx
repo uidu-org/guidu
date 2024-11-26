@@ -1,16 +1,10 @@
-import {
-  createAndFireEvent,
-  withAnalyticsEvents,
-  WithAnalyticsEventsProps,
-} from '@uidu/analytics';
 import AKTooltip from '@uidu/tooltip';
 import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import ItemWrapper from '../styled/BreadcrumbsItem';
 import Button from '../styled/Button';
 import Separator from '../styled/Separator';
-import pkg from '../version.json';
 
-interface IProps extends WithAnalyticsEventsProps {
+interface IProps {
   /** Whether this item will be followed by a separator. */
   hasSeparator?: boolean;
   /** The url or path which the breadcrumb should act as a link to. */
@@ -79,12 +73,6 @@ function BreadcrumbsItem({
         target={target}
         ref={button}
         component={component}
-        // @ts-ignore - 31052019 VBZ - this shouldn't exist right?
-        analyticsContext={{
-          componentName: 'breadcrumbsItem',
-          packageName: pkg.name,
-          packageVersion: pkg.version,
-        }}
         testId={testId}
       >
         {text}
@@ -108,18 +96,5 @@ function BreadcrumbsItem({
   );
 }
 
-export { BreadcrumbsItem as BreadcrumbsItemWithoutAnalytics };
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default withAnalyticsEvents({
-  onClick: createAndFireEventOnGuidu({
-    action: 'clicked',
-    actionSubject: 'breadcrumbsItem',
-
-    attributes: {
-      componentName: 'breadcrumbsItem',
-      packageName: pkg.name,
-      packageVersion: pkg.version,
-    },
-  }),
-})(BreadcrumbsItem);
+export { BreadcrumbsItem };
+export default BreadcrumbsItem;

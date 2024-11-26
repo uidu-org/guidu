@@ -1,5 +1,4 @@
 import {
-  akEditorFullWidthLayoutWidth,
   akEditorTableBorder,
   akEditorTableNumberColumnWidth,
   akEditorTableToolbar,
@@ -9,9 +8,7 @@ import {
   codeMarkSharedStyles,
   columnLayoutSharedStyle,
   dateSharedStyle,
-  editorFontSize,
   gridMediumMaxWidth,
-  headingsSharedStyles,
   indentationSharedStyles,
   listsSharedStyles,
   mediaSingleClassName,
@@ -32,19 +29,16 @@ import {
   fontFamily,
   fontSize,
   gridSize,
-  themed,
   typography,
 } from '@uidu/theme';
 import { HTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import { RendererCssClassName } from '../../consts';
 import { HeadingAnchorWrapperClassName } from '../../react/nodes/heading-anchor';
-import { RendererAppearance } from './types';
 
 export const FullPagePadding = 32;
 
 export type RendererWrapperProps = {
-  appearance?: RendererAppearance;
   theme?: any;
 };
 
@@ -72,28 +66,29 @@ export const headingSizes: { [key: string]: { [key: string]: number } } = {
   },
 };
 
-const headingAnchorStyle = (headingTag: string) =>
-  css`
-    & .${HeadingAnchorWrapperClassName} {
-      position: absolute;
-      width: 0;
-      height: ${headingSizes[headingTag].lineHeight}em;
+const headingAnchorStyle = (headingTag: string) => css`
+  & .${HeadingAnchorWrapperClassName} {
+    position: absolute;
+    width: 0;
+    height: ${headingSizes[headingTag].lineHeight}em;
 
-      & button {
-        opacity: 0;
-        transform: translate(8px, 0px);
-        transition: opacity 0.2s ease 0s, transform 0.2s ease 0s;
-      }
+    & button {
+      opacity: 0;
+      transform: translate(8px, 0px);
+      transition:
+        opacity 0.2s ease 0s,
+        transform 0.2s ease 0s;
     }
+  }
 
-    &:hover {
-      & .${HeadingAnchorWrapperClassName} button {
-        opacity: 1;
-        transform: none;
-        width: unset;
-      }
+  &:hover {
+    & .${HeadingAnchorWrapperClassName} button {
+      opacity: 1;
+      transform: none;
+      width: unset;
     }
-  `;
+  }
+`;
 
 const tableSortableColumnStyle = `
   .${RendererCssClassName.SORTABLE_COLUMN} {
@@ -129,46 +124,8 @@ const tableStyles = ({ appearance }: RendererWrapperProps) => {
   return '';
 };
 
-const fullPageStyles = ({ theme, appearance }: RendererWrapperProps) => {
-  if (appearance !== 'full-page' && appearance !== 'mobile') {
-    return '';
-  }
-
-  return `
-    max-width: ${
-      theme && theme.layoutMaxWidth ? `${theme.layoutMaxWidth}px` : 'none'
-    };
-    margin: 0 auto;
-    padding: 0 ${appearance === 'full-page' ? FullPagePadding : 0}px;
-  `;
-};
-
-const fullWidthStyles = ({ appearance }: RendererWrapperProps) => {
-  if (appearance !== 'full-width') {
-    return '';
-  }
-
-  return `
-  max-width: ${akEditorFullWidthLayoutWidth}px;
-  margin: 0 auto;
-
-  .fabric-editor-breakout-mark,
-  .pm-table-container,
-  .ak-renderer-extension {
-    width: 100% !important;
-  }
-  `;
-};
-
 // prettier-ignore
 export const Wrapper = styled.div<RendererWrapperProps & HTMLAttributes<{}>>`
-  /* font-size: ${editorFontSize}px;
-  line-height: 24px;
-  color: ${themed({ light: colors.N800, dark: '#B8C7E0' })}; */
-
-  ${fullPageStyles}
-  ${fullWidthStyles}
-
   & h1 {
     ${headingAnchorStyle('h1')}
   }
@@ -208,12 +165,11 @@ export const Wrapper = styled.div<RendererWrapperProps & HTMLAttributes<{}>>`
   }
 
   ${whitespaceSharedStyles};
-  ${blockquoteSharedStyles};
-  ${headingsSharedStyles};
+  /* ${blockquoteSharedStyles}; */
   ${panelSharedStyles};
   ${ruleSharedStyles};
   ${paragraphSharedStyles};
-  /* ${listsSharedStyles}; */
+  ${listsSharedStyles};
   ${indentationSharedStyles};
   ${blockMarksSharedStyles};
   ${codeMarkSharedStyles};
@@ -328,7 +284,6 @@ export const Wrapper = styled.div<RendererWrapperProps & HTMLAttributes<{}>>`
     }
 
     table {
-      ${tableStyles};
       ${tableSortableColumnStyle};
       margin-left: 0;
       margin-right: 0;

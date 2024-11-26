@@ -1,28 +1,17 @@
 import { safeInsert } from '@uidu/prosemirror-utils';
 import {
+  inputRules,
   textblockTypeInputRule,
   wrappingInputRule,
 } from 'prosemirror-inputrules';
 import { NodeType, Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
-import { analyticsService, trackAndInvoke } from '../../../analytics';
 import {
   createInputRule,
   defaultInputRuleHandler,
   InputRuleWithHandler,
-  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  AnalyticsEventPayload,
-  EVENT_TYPE,
-  INPUT_METHOD,
-  ruleWithAnalytics,
-} from '../../analytics';
 import { insertBlock } from '../commands/insert-block';
 import {
   isConvertableToCodeBlock,
@@ -85,33 +74,11 @@ function getHeadingRules(schema: Schema): InputRuleWithHandler[] {
     true,
   );
 
-  // Old analytics stuff
   const currentHandler = hashRule.handler;
-  hashRule.handler = (state, match: string[], start: number, end: number) => {
-    analyticsService.trackEvent(
-      `uidu.editor-core.format.heading${match[1].length}.autoformatting`,
-    );
-    return currentHandler(state, match, start, end);
-  };
+  hashRule.handler = (state, match: string[], start: number, end: number) =>
+    currentHandler(state, match, start, end);
 
-  // New analytics handler
-  const ruleWithHeadingAnalytics = ruleWithAnalytics(
-    (_state, match: string[]) => ({
-      action: ACTION.FORMATTED,
-      actionSubject: ACTION_SUBJECT.TEXT,
-      eventType: EVENT_TYPE.TRACK,
-      actionSubjectId: ACTION_SUBJECT_ID.FORMAT_HEADING,
-      attributes: {
-        inputMethod: INPUT_METHOD.FORMATTING,
-        newHeadingLevel: getHeadingLevel(match).level,
-      },
-    }),
-  );
-
-  return [
-    ruleWithHeadingAnalytics(hashRule),
-    ruleWithHeadingAnalytics(leftNodeReplacementHashRule),
-  ];
+  return [hashRule, leftNodeReplacementHashRule];
 }
 
 /**
@@ -127,11 +94,6 @@ function getBlockQuoteRules(schema: Schema): InputRuleWithHandler[] {
     true,
   );
 
-  greatherThanRule.handler = trackAndInvoke(
-    'uidu.editor-core.format.blockquote.autoformatting',
-    greatherThanRule.handler,
-  );
-
   const leftNodeReplacementGreatherRule = createInputRule(
     new RegExp(`${leafNodeReplacementCharacter}\\s*>\\s$`),
     (state, _match, start, end) =>
@@ -139,21 +101,7 @@ function getBlockQuoteRules(schema: Schema): InputRuleWithHandler[] {
     true,
   );
 
-  // Analytics V3 handler
-  const ruleWithBlockQuoteAnalytics = ruleWithAnalytics(() => ({
-    action: ACTION.FORMATTED,
-    actionSubject: ACTION_SUBJECT.TEXT,
-    eventType: EVENT_TYPE.TRACK,
-    actionSubjectId: ACTION_SUBJECT_ID.FORMAT_BLOCK_QUOTE,
-    attributes: {
-      inputMethod: INPUT_METHOD.FORMATTING,
-    },
-  }));
-
-  return [
-    ruleWithBlockQuoteAnalytics(greatherThanRule),
-    ruleWithBlockQuoteAnalytics(leftNodeReplacementGreatherRule),
-  ];
+  return [greatherThanRule, leftNodeReplacementGreatherRule];
 }
 
 /**
@@ -163,14 +111,6 @@ function getBlockQuoteRules(schema: Schema): InputRuleWithHandler[] {
  * @returns {InputRuleWithHandler[]}
  */
 function getCodeBlockRules(schema: Schema): InputRuleWithHandler[] {
-  const analyticsPayload: AnalyticsEventPayload = {
-    action: ACTION.INSERTED,
-    actionSubject: ACTION_SUBJECT.DOCUMENT,
-    actionSubjectId: ACTION_SUBJECT_ID.CODE_BLOCK,
-    attributes: { inputMethod: INPUT_METHOD.FORMATTING },
-    eventType: EVENT_TYPE.TRACK,
-  };
-
   const threeTildeRule = createInputRule(
     /((^`{3,})|(\s`{3,}))(\S*)$/,
     (state, match, start, end) => {
@@ -180,14 +120,11 @@ function getCodeBlockRules(schema: Schema): InputRuleWithHandler[] {
       }
       const newStart = match[0][0] === ' ' ? start + 1 : start;
       if (isConvertableToCodeBlock(state)) {
-        analyticsService.trackEvent(
-          `uidu.editor-core.format.codeblock.autoformatting`,
-        );
         const tr = transformToCodeBlockAction(state, attributes)
           // remove markdown decorator ```
           .delete(newStart, end)
           .scrollIntoView();
-        return addAnalytics(state, tr, analyticsPayload);
+        return tr;
       }
       let { tr } = state;
       tr = tr.delete(newStart, end);
@@ -204,7 +141,7 @@ function getCodeBlockRules(schema: Schema): InputRuleWithHandler[] {
       if (match[4]) {
         attributes.language = match[4];
       }
-      let tr = insertBlock(
+      const tr = insertBlock(
         state,
         schema.nodes.codeBlock,
         'codeblock',
@@ -212,9 +149,6 @@ function getCodeBlockRules(schema: Schema): InputRuleWithHandler[] {
         end,
         attributes,
       );
-      if (tr) {
-        tr = addAnalytics(state, tr, analyticsPayload);
-      }
       return tr;
     },
     true,
@@ -239,7 +173,7 @@ export function inputRulePlugin(schema: Schema): Plugin | undefined {
   }
 
   if (rules.length !== 0) {
-    return instrumentedInputRule('block-type', { rules });
+    return inputRules({ rules });
   }
   return undefined;
 }

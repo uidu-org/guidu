@@ -1,16 +1,12 @@
 import Shell from '@uidu/shell';
 import qs from 'query-string';
 import * as React from 'react';
-import {
-  initializeGA,
-  observePerformanceMetrics,
-  sendInitialApdex,
-} from '../../components/Analytics/GoogleAnalyticsListener';
 import Loading from '../../components/Loading';
 import Loadable from '../../components/WrappedLoader';
 import GlobalStyles from '../../GlobalStyles';
 import * as fs from '../../utils/fs';
 import packageResolver from '../../utils/packageResolver';
+import { ErrorMessage } from './styled';
 
 export default class ExamplesIFrame extends React.Component {
   state = {
@@ -36,16 +32,7 @@ export default class ExamplesIFrame extends React.Component {
   componentDidMount() {
     if (window.self === window.top) {
       const location = window.location.pathname + window.location.search;
-      window.addEventListener(
-        'load',
-        () => {
-          sendInitialApdex(location);
-        },
-        { once: true },
-      );
-      observePerformanceMetrics(location);
     }
-    initializeGA();
   }
 
   render() {

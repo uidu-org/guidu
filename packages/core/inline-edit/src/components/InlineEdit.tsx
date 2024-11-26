@@ -1,4 +1,3 @@
-import { UIAnalyticsEvent } from '@uidu/analytics';
 import React from 'react';
 import { InlineEditProps } from '../types';
 import InlineEditUncontrolled from './InlineEditUncontrolled';
@@ -27,11 +26,11 @@ class InlineEdit<FieldValue = string> extends React.Component<
     }
   }
 
-  onConfirm = (value: string, analyticsEvent: UIAnalyticsEvent) => {
+  onConfirm = (value: string) => {
     this.setState({
       isEditing: false,
     });
-    this.props.onConfirm(value, analyticsEvent);
+    this.props.onConfirm(value);
   };
 
   onCancel = () => {

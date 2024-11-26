@@ -21,14 +21,13 @@ export const InlineNodeInnerWrapper = styled.span`
   display: block;
 `;
 
-const InlineNodeWrapper: React.StatelessComponent<{
-  useInlineWrapper?: boolean;
-}> = ({ useInlineWrapper, children }) =>
-  useInlineWrapper ? (
+function InlineNodeWrapper({ useInlineWrapper, children }) {
+  return useInlineWrapper ? (
     <InlineNodeInnerWrapper>{children}</InlineNodeInnerWrapper>
   ) : (
     <>{children}</>
   );
+}
 
 InlineNodeWrapper.displayName = 'InlineNodeWrapper';
 

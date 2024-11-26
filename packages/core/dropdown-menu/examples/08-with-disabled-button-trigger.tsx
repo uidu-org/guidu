@@ -1,15 +1,15 @@
+import { ButtonItem, MenuGroup } from '@uidu/menu';
 import React from 'react';
-import DropdownMenu, { DropdownItem, DropdownItemGroup } from '../src';
+import DropdownMenu from '../src';
 
 export default () => (
   <DropdownMenu
     trigger="Disabled trigger"
-    triggerType="button"
     triggerButtonProps={{ isDisabled: true }}
   >
-    <DropdownItemGroup>
-      <DropdownItem>Sydney</DropdownItem>
-      <DropdownItem>Melbourne</DropdownItem>
-    </DropdownItemGroup>
+    <MenuGroup>
+      <ButtonItem>Sydney</ButtonItem>
+      <ButtonItem>Melbourne</ButtonItem>
+    </MenuGroup>
   </DropdownMenu>
 );

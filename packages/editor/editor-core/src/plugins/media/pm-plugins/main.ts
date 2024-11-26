@@ -11,10 +11,8 @@ import { findDomRefAtPos } from 'prosemirror-utils';
 import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import analyticsService from '../../../analytics/service';
 import { Dispatch } from '../../../event-dispatcher';
 import { ProsemirrorGetPosHandler } from '../../../nodeviews';
-import { InputMethodInsertMedia, INPUT_METHOD } from '../../analytics';
 import { updateMediaNodeAttrs } from '../commands';
 import * as helpers from '../commands/helpers';
 import { MediaPluginOptions } from '../media-plugin-options';
@@ -387,29 +385,6 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     }
     return undefined;
   }
-
-  public trackNewMediaEvent(mediaState: MediaState) {
-    return analyticsService.trackEvent(
-      `uidu.editor-core.media.file`,
-      mediaState.metadata.mime_type
-        ? { fileMimeType: mediaState.metadata.mime_type }
-        : {},
-    );
-  }
-
-  private getInputMethod = (
-    pickerType: string,
-  ): InputMethodInsertMedia | undefined => {
-    switch (pickerType) {
-      case 'popup':
-        return INPUT_METHOD.PICKER_CLOUD;
-      case 'clipboard':
-        return INPUT_METHOD.CLIPBOARD;
-      case 'dropzone':
-        return INPUT_METHOD.DRAG_AND_DROP;
-    }
-    return undefined;
-  };
 
   updateMediaNodeAttrs = (
     id: string,

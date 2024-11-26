@@ -1,7 +1,6 @@
 import noop from '@atlaskit/ds-lib/noop';
 import useCloseOnEscapePress from '@atlaskit/ds-lib/use-close-on-escape-press';
 import FadeIn from '@atlaskit/motion/fade-in';
-import { usePlatformLeafEventHandler } from '@uidu/analytics';
 import Blanket from '@uidu/blanket';
 import Portal from '@uidu/portal';
 import React, { useCallback } from 'react';
@@ -36,27 +35,19 @@ function ModalWrapper(props: ModalDialogProps) {
   // When a user supplies a ref to focus we skip auto focus via react-focus-lock
   const autoFocusLock = typeof autoFocus === 'boolean' ? autoFocus : false;
 
-  const onCloseHandler = usePlatformLeafEventHandler({
-    fn: onClose,
-    action: 'closed',
-    componentName: 'modalDialog',
-    packageName: process.env._PACKAGE_NAME_!,
-    packageVersion: process.env._PACKAGE_VERSION_!,
-  });
-
   const onBlanketClicked = useCallback(
     (e) => {
       if (shouldCloseOnOverlayClick) {
-        onCloseHandler(e);
+        onClose(e);
       }
     },
-    [shouldCloseOnOverlayClick, onCloseHandler],
+    [shouldCloseOnOverlayClick, onClose],
   );
 
   usePreventProgrammaticScroll();
 
   useCloseOnEscapePress({
-    onClose: onCloseHandler,
+    onClose,
     isDisabled: !shouldCloseOnEscapePress || !isForeground,
   });
 
@@ -70,7 +61,7 @@ function ModalWrapper(props: ModalDialogProps) {
         testId={testId}
         autoFocus={autoFocus}
         stackIndex={stackIndex}
-        onClose={onCloseHandler}
+        onClose={onClose}
         shouldScrollInViewport={shouldScrollInViewport}
         className={className}
         {...modalDialogProps}
@@ -79,7 +70,7 @@ function ModalWrapper(props: ModalDialogProps) {
   );
 
   return (
-    <Portal zIndex={510}>
+    <Portal zIndex={710}>
       <FadeIn>
         {(fadeInProps) => (
           <div

@@ -14,7 +14,6 @@ export type MentionEventHandler = (
 export type CardEventClickHandler = (
   result: any,
   surroundings?: CardSurroundings,
-  analyticsEvent?: any,
 ) => void;
 export type LinkEventClickHandler = (
   event: SyntheticEvent<HTMLAnchorElement>,

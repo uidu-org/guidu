@@ -10,9 +10,7 @@
   "module": "dist/uidu-onboarding.esm.js",
   "types": "dist/uidu-onboarding.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/progress-indicator": "^9.5.18",
-    "@babel/runtime": "^7.25.6",
-    "@uidu/analytics": "^0.12.4",
+    "@babel/runtime": "^7.26.0",
     "@uidu/button": "^1.9.4",
     "@uidu/modal-dialog": "^1.8.4",
     "@uidu/popper": "^0.11.5",
@@ -25,7 +23,7 @@
     "react-scrolllock": "^5.0.1",
     "react-transition-group": "^4.4.5",
     "scroll-into-view-if-needed": "^3.1.0",
-    "tslib": "^2.7.0"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.11.4",

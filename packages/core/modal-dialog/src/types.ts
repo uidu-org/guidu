@@ -1,4 +1,3 @@
-import type { UIAnalyticsEvent } from '@uidu/analytics';
 import React, { RefObject } from 'react';
 import type { WidthNames } from './internal/constants';
 
@@ -9,10 +8,7 @@ export type KeyboardOrMouseEvent =
 
 export type Appearance = 'danger' | 'warning';
 
-export type OnCloseHandler = (
-  e: KeyboardOrMouseEvent,
-  analyticEvent: UIAnalyticsEvent,
-) => void;
+export type OnCloseHandler = (e: KeyboardOrMouseEvent) => void;
 
 export type OnCloseCompleteHandler = (element: HTMLElement) => void;
 

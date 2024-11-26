@@ -1,6 +1,4 @@
-import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { MentionNameDetails, MentionNameStatus } from '../types';
-import { fireAnalyticsMentionHydrationEvent } from '../utils/analytics';
 import { MentionNameClient } from './MentionNameClient';
 
 interface Callback {
@@ -34,19 +32,13 @@ export class DefaultMentionNameResolver implements MentionNameResolver {
     duration: number,
   ) => void;
 
-  constructor(
-    client: MentionNameClient,
-    analyticsProps: WithAnalyticsEventsProps = {},
-  ) {
+  constructor(client: MentionNameClient) {
     this.client = client;
-    this.fireHydrationEvent =
-      fireAnalyticsMentionHydrationEvent(analyticsProps);
   }
 
   lookupName(id: string): Promise<MentionNameDetails> | MentionNameDetails {
     const name = this.nameCache.get(id);
     if (name) {
-      this.fireAnalytics(true, name);
       return name;
     }
 
@@ -116,8 +108,6 @@ export class DefaultMentionNameResolver implements MentionNameResolver {
           // ignore - exception in consumer
         }
       });
-
-      this.fireAnalytics(false, mentionDetail);
     }
   }
 
@@ -159,14 +149,4 @@ export class DefaultMentionNameResolver implements MentionNameResolver {
       this.scheduleProcessQueue();
     }
   };
-
-  private fireAnalytics(fromCache: boolean, mentionDetail: MentionNameDetails) {
-    const { id } = mentionDetail;
-    const action =
-      mentionDetail.status === MentionNameStatus.OK ? 'completed' : 'failed';
-    const start = this.nameStartTime.get(id);
-    const duration = start ? Date.now() - start : 0;
-    this.nameStartTime.delete(id);
-    this.fireHydrationEvent(action, id, fromCache, duration);
-  }
 }

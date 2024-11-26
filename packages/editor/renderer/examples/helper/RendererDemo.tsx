@@ -8,26 +8,16 @@ import {
   ExtensionHandlers,
   ProviderFactory,
 } from '@uidu/editor-common';
-import { modifyResponse, ProfileClient } from '@uidu/profilecard';
-import { profilecard as profilecardUtils } from '@uidu/util-data-test';
+import { ShellBody, ShellMain, ShellSidebar } from '@uidu/shell';
 import { init } from 'emoji-mart';
 import * as React from 'react';
-import { renderDocument, TextSerializer } from '../../src';
-import {
-  default as Renderer,
-  Props as RendererProps,
-} from '../../src/ui/Renderer';
+import { renderDocument, RendererProps, TextSerializer } from '../../src';
+import Renderer from '../../src/ui/Renderer';
 import { RendererAppearance } from '../../src/ui/Renderer/types';
-import { story as storyDataDocument } from './story-data';
+import { document3 as storyDataDocument } from './story-data';
 
 console.log('init', init);
 init({ data }).then(() => console.log('init done'));
-
-const { getMockProfileClient: getMockProfileClientUtil } = profilecardUtils;
-const MockProfileClient = getMockProfileClientUtil(
-  ProfileClient,
-  modifyResponse,
-);
 
 // const mentionProvider = Promise.resolve({
 //   shouldHighlightMention(mention: { id: string }) {
@@ -36,32 +26,6 @@ const MockProfileClient = getMockProfileClientUtil(
 // });
 
 // const emojiProvider = emoji.storyData.getEmojiResource();
-
-const profilecardProvider = Promise.resolve({
-  cloudId: 'DUMMY-CLOUDID',
-  resourceClient: new MockProfileClient({
-    cacheSize: 10,
-    cacheMaxAge: 5000,
-  }),
-  getActions: (id: string) => {
-    const actions = [
-      {
-        label: 'Mention',
-        callback: () => console.log('profile-card:mention'),
-      },
-      {
-        label: 'Message',
-        callback: () => console.log('profile-card:message'),
-      },
-    ];
-
-    return id === '1' ? actions : actions.slice(0, 1);
-  },
-});
-
-// const taskDecisionProvider = Promise.resolve(
-//   taskDecision.getMockTaskDecisionResource(),
-// );
 
 const providerFactory = ProviderFactory.create({
   // mentionProvider,
@@ -81,8 +45,6 @@ const providerFactory = ProviderFactory.create({
       };
     },
   }),
-  profilecardProvider,
-  // taskDecisionProvider,
 });
 
 const extensionHandlers: ExtensionHandlers = {
@@ -142,18 +104,13 @@ const eventHandlers: EventHandlers = {
     onMouseLeave: () => console.log('onMentionMouseLeave'),
   },
   media: {
-    onClick: (
-      result: CardEvent,
-      surroundings?: CardSurroundings,
-      analyticsEvent?: any,
-    ) =>
+    onClick: (result: CardEvent, surroundings?: CardSurroundings) =>
       // json-safe-stringify does not handle cyclic references in the react mouse click event
       console.log(
         'onMediaClick',
         '[react.MouseEvent]',
         result.mediaItemDetails,
         surroundings,
-        analyticsEvent,
       ),
   },
 };
@@ -217,32 +174,32 @@ export default class RendererDemo extends React.Component<
 
   render() {
     return (
-      <div ref="root" style={{ padding: 20 }}>
-        <fieldset style={{ marginBottom: 20 }}>
-          <legend>Input</legend>
-          <textarea
-            id="renderer-value-input"
-            style={{
-              boxSizing: 'border-box',
-              border: '1px solid lightgray',
-              fontFamily: 'monospace',
-              fontSize: 14,
-              padding: 10,
-              width: '100%',
-              height: 220,
-            }}
-            ref={(ref) => {
-              this.inputBox = ref;
-            }}
-            onChange={this.onDocumentChange}
-            value={this.state.input}
-          />
-          <button onClick={this.toggleEventHandlers}>
-            Toggle Event handlers
-          </button>
-        </fieldset>
-        <div tw="prose prose-primary">{this.renderRenderer()}</div>
-        {this.renderText()}
+      <div ref="root">
+        <ShellBody>
+          <ShellMain>
+            <div tw="p-6">{this.renderRenderer()}</div>
+          </ShellMain>
+          <ShellSidebar tw="w-80 border-l bg-gray-50">
+            <textarea
+              id="renderer-value-input"
+              style={{
+                boxSizing: 'border-box',
+                border: '1px solid lightgray',
+                fontFamily: 'monospace',
+                fontSize: 14,
+                padding: 10,
+                width: '100%',
+                height: 220,
+              }}
+              ref={(ref) => {
+                this.inputBox = ref;
+              }}
+              onChange={this.onDocumentChange}
+              value={this.state.input}
+            />
+            {/* {this.renderText()} */}
+          </ShellSidebar>
+        </ShellBody>
       </div>
     );
   }
@@ -314,10 +271,10 @@ export default class RendererDemo extends React.Component<
 
       return (
         <div>
-          <div style={{ color: '#ccc', marginBottom: '8px' }}>
-            &lt;Renderer&gt;
-          </div>
-          <div id="RendererOutput">
+          <div
+            id="RendererOutput"
+            tw="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl mx-auto"
+          >
             <Renderer {...props} />
           </div>
           {this.props.truncationEnabled ? expandButton : null}

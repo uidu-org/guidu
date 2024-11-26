@@ -1,22 +1,14 @@
 import { ProviderFactory } from '@uidu/editor-common';
 import type { EmojiProvider } from '@uidu/emoji/resource';
 import type { EmojiDescription } from '@uidu/emoji/types';
+import { inputRules } from 'prosemirror-inputrules';
 import { Node, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
 import { isMarkTypeAllowedInCurrentSelection } from '../../../utils';
 import {
   createInputRule,
-  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../../analytics';
 
 let matcher: AsciiEmojiMatcher;
 
@@ -31,7 +23,7 @@ export function inputRulePlugin(
       inputRuleHandler,
     );
 
-    return instrumentedInputRule('emoji', {
+    return inputRules({
       rules: [asciiEmojiRule],
     });
   }
@@ -240,13 +232,7 @@ class AsciiEmojiTransactionCreator {
       this.to,
       this.createNodes(),
     );
-    return addAnalytics(this.state, tr, {
-      action: ACTION.INSERTED,
-      actionSubject: ACTION_SUBJECT.DOCUMENT,
-      actionSubjectId: ACTION_SUBJECT_ID.EMOJI,
-      attributes: { inputMethod: INPUT_METHOD.ASCII },
-      eventType: EVENT_TYPE.TRACK,
-    });
+    return tr;
   }
 
   private get from(): number {

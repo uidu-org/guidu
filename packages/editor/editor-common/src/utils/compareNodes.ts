@@ -2,7 +2,6 @@ import {
   CardAttributes,
   DateDefinition,
   MentionAttributes,
-  StatusDefinition,
   UrlType,
 } from '@uidu/adf-schema';
 import { Mark, Node as PMNode } from 'prosemirror-model';
@@ -103,13 +102,6 @@ function getMetaFromNode(
       return {
         type: ContentType.TEXT,
         value: firstWord,
-      };
-    }
-    case 'status': {
-      const text = (firstChild.attrs as StatusDefinition['attrs']).text;
-      return {
-        type: ContentType.STATUS,
-        value: text,
       };
     }
     case 'date': {

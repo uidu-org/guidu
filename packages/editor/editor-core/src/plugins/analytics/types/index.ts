@@ -5,17 +5,10 @@ export {
   EVENT_TYPE,
   INPUT_METHOD,
 } from './enums';
-export type {
-  AnalyticsDispatch,
-  AnalyticsEventPayload,
-  AnalyticsEventPayloadWithChannel,
-  ErrorEventPayload,
-} from './events';
 export { INDENT_DIR, INDENT_TYPE } from './format-events';
 export type { FormatEventPayload } from './format-events';
 export { FULL_WIDTH_MODE, MODE, PLATFORMS } from './general-events';
 export type { GeneralEventPayload } from './general-events';
-export type { HistoryEventPayload } from './history-events';
 export {
   LINK_REPRESENTATION,
   LINK_RESOURCE,
@@ -28,7 +21,6 @@ export type {
   InputMethodInsertMedia,
   InsertEventPayload,
 } from './insert-events';
-export type { MediaAltTextActionType, MediaEventPayload } from './media-events';
 export { PasteContents, PasteSources, PasteTypes } from './paste-events';
 export type {
   PasteContent,

@@ -1,10 +1,5 @@
 import ConfirmIcon from '@atlaskit/icon/glyph/check';
 import CancelIcon from '@atlaskit/icon/glyph/cross';
-import {
-  createAndFireEvent,
-  withAnalyticsContext,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 import Button from '@uidu/button';
 import Field from '@uidu/field';
 import Form from '@uidu/form';
@@ -20,7 +15,6 @@ import InlineDialogChild from '../styled/InlineDialogChild';
 import ReadViewContentWrapper from '../styled/ReadViewContentWrapper';
 import ReadViewWrapper from '../styled/ReadViewWrapper';
 import { InlineEditUncontrolledProps } from '../types';
-import pkg from '../version.json';
 
 const DRAG_THRESHOLD = 5;
 
@@ -214,7 +208,6 @@ class InlineEditUncontrolled<FieldValue = string> extends React.Component<
     return (
       <Form
         handleSubmit={(data: { inlineEdit: any }) =>
-          // @ts-ignore - HOC passes analytics event
           this.props.onConfirm(data.inlineEdit)
         }
         onKeyDown={(e) => {
@@ -286,24 +279,4 @@ class InlineEditUncontrolled<FieldValue = string> extends React.Component<
   }
 }
 
-const createAndFireEventOnGuidu = createAndFireEvent('uidu');
-
-export default (withAnalyticsContext({
-  componentName: 'inlineEdit',
-  packageName: pkg.name,
-  packageVersion: pkg.version,
-})(
-  withAnalyticsEvents({
-    onConfirm: createAndFireEventOnGuidu({
-      action: 'confirmed',
-      actionSubject: 'inlineEdit',
-
-      attributes: {
-        componentName: 'inlineEdit',
-        packageName: pkg.name,
-        packageVersion: pkg.version,
-      },
-    }),
-  })(InlineEditUncontrolled),
-  // Props with generics cannot be inferred by analytics-next HOCs
-) as unknown) as typeof InlineEditUncontrolled;
+export default InlineEditUncontrolled;

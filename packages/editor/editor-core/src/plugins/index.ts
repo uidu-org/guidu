@@ -1,6 +1,5 @@
 // export { default as breakoutPlugin } from './breakout';
 export { default as alignmentPlugin } from './alignment';
-export { default as analyticsPlugin } from './analytics';
 export { default as annotationPlugin } from './annotation';
 export { default as basePlugin } from './base';
 export {
@@ -10,8 +9,8 @@ export {
 export type { BlockTypeState } from './block-type';
 // export { default as cardPlugin } from './card';
 export { default as clearMarksOnChangeToEmptyDocumentPlugin } from './clear-marks-on-change-to-empty-document';
+export { default as codeBlockPlugin } from './code-block';
 export { default as contextPanelPlugin } from './context-panel';
-// export { default as codeBlockPlugin } from './code-block';
 // export { CollabEditProvider, default as collabEditPlugin } from './collab-edit';
 export { default as customAutoformatPlugin } from './custom-autoformat';
 export { default as datePlugin } from './date';
@@ -38,16 +37,13 @@ export { default as mentionsPlugin } from './mentions';
 // export { default as panelPlugin } from './panel';
 export { default as pastePlugin } from './paste';
 export { default as placeholderPlugin } from './placeholder';
-export { default as placeholderTextPlugin } from './placeholder-text';
 export { default as quickInsertPlugin } from './quick-insert';
 export { default as rulePlugin } from './rule';
 export { default as saveOnEnterPlugin } from './save-on-enter';
 export { default as starterKitPlugin } from './starter-kit';
-export { default as statusPlugin } from './status';
 // export { default as submitEditorPlugin } from './submit-editor';
 // export { default as sharedContextPlugin } from './shared-context';
 export { default as tablesPlugin } from './table';
-// export { default as tasksAndDecisionsPlugin } from './tasks-and-decisions';
 export { default as textColorPlugin } from './text-color';
 export { default as textFormattingPlugin } from './text-formatting';
 export { default as tokenPlugin } from './token';

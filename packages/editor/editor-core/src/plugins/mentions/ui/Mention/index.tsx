@@ -59,7 +59,7 @@ export default class Mention extends PureComponent<MentionProps, {}> {
   render() {
     return (
       <WithProviders
-        providers={['mentionProvider', 'profilecardProvider']}
+        providers={['mentionProvider']}
         providerFactory={this.providerFactory}
         renderNode={this.renderWithProvider}
       />

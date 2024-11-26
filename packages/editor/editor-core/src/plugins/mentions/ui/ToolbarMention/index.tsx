@@ -1,9 +1,7 @@
 import MentionIcon from '@atlaskit/icon/glyph/editor/mention';
 import { EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
-import { withAnalytics } from '../../../../analytics';
 import ToolbarButton from '../../../../ui/ToolbarButton';
-import { INPUT_METHOD } from '../../../analytics';
 import { insertMentionQuery } from '../../commands/insert-mention-query';
 
 export interface Props {
@@ -28,17 +26,14 @@ export default class ToolbarMention extends PureComponent<Props> {
     );
   }
 
-  private handleInsertMention = withAnalytics(
-    'uidu.editor-core.mention.picker.trigger.button',
-    (): boolean => {
-      if (!this.props.editorView) {
-        return false;
-      }
-      insertMentionQuery(INPUT_METHOD.TOOLBAR)(
-        this.props.editorView.state,
-        this.props.editorView.dispatch,
-      );
-      return true;
-    },
-  );
+  private handleInsertMention = (): boolean => {
+    if (!this.props.editorView) {
+      return false;
+    }
+    insertMentionQuery()(
+      this.props.editorView.state,
+      this.props.editorView.dispatch,
+    );
+    return true;
+  };
 }
