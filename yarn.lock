@@ -7572,6 +7572,7 @@ __metadata:
     "@uidu/field-base": "npm:^5.0.0"
     "@uidu/field-toggle": "npm:^2.7.0"
     "@uidu/menu": "workspace:^"
+    "@uidu/popup": "workspace:^"
     "@uidu/theme": "npm:^0.13.0"
     "@uidu/tooltip": "npm:^0.12.0"
     react: "npm:^18.3.1"
@@ -7803,6 +7804,8 @@ __metadata:
     "@uidu/docs": "npm:^0.12.0"
     "@uidu/theme": "npm:^0.13.0"
     hast-util-to-jsx-runtime: "npm:^2.3.2"
+    highlight.js: "npm:^11.10.0"
+    lowlight: "npm:^3.2.0"
     memoize-one: "npm:^6.0.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -8176,6 +8179,7 @@ __metadata:
     "@uidu/button": "npm:^1.11.0"
     "@uidu/docs": "npm:^0.12.0"
     "@uidu/lozenge": "npm:^0.12.0"
+    "@uidu/popup": "workspace:^"
     "@uidu/tooltip": "npm:^0.12.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
@@ -8270,6 +8274,7 @@ __metadata:
     emoji-mart: "npm:^5.6.0"
     eventemitter2: "npm:^6.4.9"
     get-video-id: "npm:^3.7.0"
+    highlight.js: "npm:^11.10.0"
     linkify-it: "npm:^4.0.1"
     lowlight: "npm:^3.1.0"
     markdown-it: "npm:^13.0.2"
@@ -8293,6 +8298,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     react-intl: "npm:^6.8.7"
     react-loadable: "npm:^5.5.0"
+    react-select: "npm:^5.8.3"
     styled-components: "npm:^5.3.11"
     tslib: "npm:^2.8.1"
     twin.macro: "npm:^3.4.1"
@@ -19575,6 +19581,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"highlight.js@npm:^11.10.0, highlight.js@npm:~11.10.0":
+  version: 11.10.0
+  resolution: "highlight.js@npm:11.10.0"
+  checksum: 10/fc8747bcd4a491fc6a47ff80536881dcc9ea9b36cdc2a22a7be5670b89d76ca6c26df9d749017a23bbb2eb708331097a5ecbcee6330fb9064512d80cc3369d99
+  languageName: node
+  linkType: hard
+
 "highlight.js@npm:~11.9.0":
   version: 11.9.0
   resolution: "highlight.js@npm:11.9.0"
@@ -22517,6 +22530,17 @@ __metadata:
     devlop: "npm:^1.0.0"
     highlight.js: "npm:~11.9.0"
   checksum: 10/0d6e5b70ea84828becd5321f2171416fcdc11921bd678e5eb1a05af0fe1c1588500cb24e94c0d6e0f5c67a0093d41d959bfe9f332e0db17b644a452b2983e0b6
+  languageName: node
+  linkType: hard
+
+"lowlight@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "lowlight@npm:3.2.0"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+    devlop: "npm:^1.0.0"
+    highlight.js: "npm:~11.10.0"
+  checksum: 10/da156dc58b76ed8ccb9c0a6697f9573c7809b195d21d842ec7dfcf700e3f9ee4bc41149454e1bab7b59811c9de30ee1e8b0e4fcc76950cf9d53793b59a1ab598
   languageName: node
   linkType: hard
 
