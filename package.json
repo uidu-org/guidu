@@ -34,7 +34,7 @@
     "build:adf-schema:json-schema": "        cd packages/editor/adf-schema && yarn run build:json-schema && echo 'Done.'",
     "build:editor-mobile-bridge": "          cd packages/editor/editor-mobile-bridge && yarn build:minimize",
     "build:email-renderer:styles": "         cd packages/editor/email-renderer && yarn run build:styles",
-    "build:pkg": "                           bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects",
+    "build:pkg": "                           yarn manypkg exec copy-pkg package.json dist/package.json --only name,version,sideEffects",
     "build:website": "                       yarn install --immutable && cd website && yarn build",
     "changeset": "                           changeset",
     "delete": "                              yarn run delete:build && yarn run delete:tmp && yarn run delete:modules",
