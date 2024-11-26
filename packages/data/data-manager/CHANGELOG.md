@@ -1,5 +1,28 @@
 # @uidu/data-manager
 
+## 4.15.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/shell@3.0.0
+  - @uidu/data-controls@4.10.0
+  - @uidu/data-fields@4.7.0
+  - @uidu/pagination@0.12.0
+  - @uidu/data-views@3.11.0
+  - @uidu/calendar@0.12.0
+  - @uidu/spinner@0.12.0
+  - @uidu/gallery@2.9.0
+  - @uidu/button@1.11.0
+  - @uidu/board@2.11.0
+  - @uidu/table@6.10.0
+  - @uidu/menu@0.17.0
+  - @uidu/list@3.12.0
+
 ## 4.14.6
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @uidu/field-image-uploader
 
+## 3.11.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/field-base@5.0.0
+  - @uidu/field-range@2.7.0
+  - @uidu/media-core@4.1.0
+  - @uidu/spinner@0.12.0
+  - @uidu/button@1.11.0
+  - @uidu/form@3.4.0
+
 ## 3.10.9
 
 ### Patch Changes

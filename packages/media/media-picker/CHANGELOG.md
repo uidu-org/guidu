@@ -1,5 +1,16 @@
 # @uidu/media-picker
 
+## 1.12.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/media-core@4.1.0
+
 ## 1.11.6
 
 ### Patch Changes

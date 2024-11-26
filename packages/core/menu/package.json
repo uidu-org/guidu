@@ -1,6 +1,6 @@
 {
   "name": "@uidu/menu",
-  "version": "0.16.4",
+  "version": "0.17.0",
   "description": "A collection of composable menu components that can be used anywhere.",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/menu",
   "license": "ISC",
@@ -12,17 +12,17 @@
   "dependencies": {
     "@babel/runtime": "^7.26.0",
     "@emotion/react": "^11.13.3",
-    "@uidu/theme": "^0.12.4",
+    "@uidu/theme": "^0.13.0",
     "react-router-dom": "^5.3.4",
     "styled-components": "^5.3.11",
     "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.12.8",
-    "@uidu/avatar": "^0.15.4",
-    "@uidu/button": "^1.9.4",
-    "@uidu/docs": "^0.11.4",
-    "@uidu/section-message": "^0.12.5",
+    "@uidu/avatar": "^1.0.0",
+    "@uidu/button": "^1.11.0",
+    "@uidu/docs": "^0.12.0",
+    "@uidu/section-message": "^0.13.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

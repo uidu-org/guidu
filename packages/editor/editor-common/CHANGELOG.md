@@ -1,5 +1,23 @@
 # @uidu/editor-common
 
+## 3.0.0
+
+### Major Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/adf-schema@3.0.0
+  - @uidu/mentions@1.0.0
+  - @uidu/adf-utils@3.0.0
+  - @uidu/emoji@1.0.0
+  - @uidu/editor-json-transformer@1.10.0
+  - @uidu/media-core@4.1.0
+  - @uidu/tooltip@0.12.0
+  - @uidu/theme@0.13.0
+
 ## 2.18.7
 
 ### Patch Changes

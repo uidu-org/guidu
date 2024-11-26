@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tailwind-config",
-  "version": "0.7.4",
+  "version": "0.8.0",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/tailwind-config",
   "author": "uidu",
   "sideEffects": false,

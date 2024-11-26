@@ -1,5 +1,28 @@
 # @uidu/data-fields
 
+## 4.7.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/popup@1.0.0
+  - @uidu/field-color-picker@3.8.0
+  - @uidu/field-downshift@2.14.0
+  - @uidu/field-number@2.8.0
+  - @uidu/field-toggle@2.7.0
+  - @uidu/field-date@2.10.0
+  - @uidu/field-text@2.7.0
+  - @uidu/field-time@2.9.0
+  - @uidu/select@2.15.0
+  - @uidu/button@1.11.0
+  - @uidu/form@3.4.0
+  - @uidu/menu@0.17.0
+  - @uidu/map@0.13.0
+
 ## 4.6.0
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @uidu/drawer
 
+## 0.14.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/blanket@1.0.0
+  - @uidu/theme@0.13.0
+  - @uidu/item@0.12.0
+  - @uidu/docs@0.12.0
+
 ## 0.13.4
 
 ### Patch Changes

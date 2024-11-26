@@ -1,5 +1,23 @@
 # @uidu/devise
 
+## 1.12.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/shell@3.0.0
+  - @uidu/avatar@1.0.0
+  - @uidu/field-password@2.8.0
+  - @uidu/field-phone@2.8.0
+  - @uidu/field-text@2.7.0
+  - @uidu/checkbox@2.8.0
+  - @uidu/spinner@0.12.0
+  - @uidu/form@3.4.0
+
 ## 1.11.5
 
 ### Patch Changes

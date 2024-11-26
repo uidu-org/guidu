@@ -1,5 +1,22 @@
 # @uidu/message-form
 
+## 0.13.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/dropdown-menu@1.0.0
+  - @uidu/media-filmstrip@0.14.0
+  - @uidu/field-mentions@2.7.0
+  - @uidu/message@0.14.0
+  - @uidu/field-text@2.7.0
+  - @uidu/spinner@0.12.0
+  - @uidu/form@3.4.0
+
 ## 0.12.4
 
 ### Patch Changes

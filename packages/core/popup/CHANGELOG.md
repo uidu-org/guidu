@@ -1,5 +1,18 @@
 # @uidu/popup
 
+## 1.0.0
+
+### Major Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/popper@0.12.0
+  - @uidu/portal@1.7.0
+  - @uidu/theme@0.13.0
+
 ## 0.14.5
 
 ### Patch Changes

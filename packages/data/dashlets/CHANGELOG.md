@@ -1,5 +1,20 @@
 # @uidu/blocks
 
+## 3.12.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/dashboard-manager@2.12.0
+  - @uidu/data-fields@4.7.0
+  - @uidu/spinner@0.12.0
+  - @uidu/tooltip@0.12.0
+  - @uidu/table@6.10.0
+
 ## 3.11.12
 
 ### Patch Changes

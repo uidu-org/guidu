@@ -1,5 +1,19 @@
 # @uidu/gallery
 
+## 2.9.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/shell@3.0.0
+  - @uidu/data-controls@4.10.0
+  - @uidu/data-fields@4.7.0
+  - @uidu/spinner@0.12.0
+
 ## 2.8.5
 
 ### Patch Changes

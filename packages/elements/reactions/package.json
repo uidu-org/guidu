@@ -1,6 +1,6 @@
 {
   "name": "@uidu/reactions",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "A React component that renders a message",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/reactions",
   "license": "ISC",

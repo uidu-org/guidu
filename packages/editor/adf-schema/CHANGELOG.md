@@ -1,5 +1,16 @@
 # @uidu/adf-schema
 
+## 3.0.0
+
+### Major Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/media-core@4.1.0
+
 ## 2.11.6
 
 ### Patch Changes

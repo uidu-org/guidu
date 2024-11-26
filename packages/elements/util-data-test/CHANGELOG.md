@@ -1,5 +1,17 @@
 # @uidu/util-data-test
 
+## 0.11.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/mentions@1.0.0
+  - @uidu/emoji@1.0.0
+
 ## 0.10.4
 
 ### Patch Changes

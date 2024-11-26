@@ -1,5 +1,11 @@
 # @uidu/prosemirror-utils
 
+## 0.4.0
+
+### Minor Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # Change Log
 
+## 3.0.0
+
+### Major Changes
+
+- e07a84e: Massive dependency update, cleanup some packages from analytics, smaller bundle size, and more.
+
+### Patch Changes
+
+- Updated dependencies [e07a84e]
+  - @uidu/avatar@1.0.0
+  - @uidu/tooltip@0.12.0
+  - @uidu/theme@0.13.0
+  - @uidu/menu@0.17.0
+
 ## 2.12.4
 
 ### Patch Changes
