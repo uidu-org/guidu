@@ -5572,16 +5572,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@researchgate/react-intersection-observer@npm:^1.3.5":
-  version: 1.3.5
-  resolution: "@researchgate/react-intersection-observer@npm:1.3.5"
-  peerDependencies:
-    react: ^16.3.2
-    react-dom: ^16.3.2
-  checksum: 10/1a30c908dbc38732efe46933fb005bc0380f63e2d51eb86290551e03dee9f4cd733cca34f924b40d439623f0adee5c47c62dabbbaa317c7fe1ea22b6f19f5231
-  languageName: node
-  linkType: hard
-
 "@restart/hooks@npm:^0.4.7":
   version: 0.4.7
   resolution: "@restart/hooks@npm:0.4.7"
@@ -9876,7 +9866,6 @@ __metadata:
     "@babel/runtime": "npm:^7.26.0"
     "@faker-js/faker": "npm:^8.4.1"
     "@loadable/component": "npm:^5.16.4"
-    "@researchgate/react-intersection-observer": "npm:^1.3.5"
     "@types/overlayscrollbars": "npm:^1.12.5"
     "@uidu/docs": "npm:^0.11.4"
     "@uidu/navigation": "npm:^1.7.4"
@@ -9887,6 +9876,7 @@ __metadata:
     overlayscrollbars-react: "npm:^0.5.6"
     react: "npm:^18.3.1"
     react-feather: "npm:^2.0.10"
+    react-intersection-observer: "npm:^9.13.1"
     react-intl: "npm:^6.8.7"
     react-router-dom: "npm:^5.3.4"
     react-scroll: "npm:^1.9.0"
@@ -18939,7 +18929,6 @@ __metadata:
     "@mdx-js/loader": "npm:^2.3.0"
     "@popperjs/core": "npm:^2.11.8"
     "@preconstruct/cli": "npm:^2.8.10"
-    "@researchgate/react-intersection-observer": "npm:^1.3.5"
     "@stripe/react-stripe-js": "npm:^2.8.1"
     "@stripe/stripe-js": "npm:^3.5.0"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"

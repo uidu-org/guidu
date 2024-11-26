@@ -12,10 +12,6 @@ export const StyledScrollableContainer = styled.div`
   position: relative;
 `;
 
-export const ObserverComponent = styled.div`
-  width: 100%;
-`;
-
 export const Shadow = styled.div<{ active: boolean; width: number }>`
   position: fixed;
   height: 10px;
