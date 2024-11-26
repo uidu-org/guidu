@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.12.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+
 ## 0.12.0
 
 ### Minor Changes

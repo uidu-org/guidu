@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.13.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/button@1.11.1
+
 ## 0.13.0
 
 ### Minor Changes

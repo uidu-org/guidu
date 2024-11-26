@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.13.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+
 ## 0.13.0
 
 ### Minor Changes

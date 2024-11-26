@@ -1,5 +1,20 @@
 # @uidu/devise
 
+## 1.12.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/avatar@1.0.1
+  - @uidu/spinner@0.12.1
+  - @uidu/checkbox@2.8.1
+  - @uidu/field-password@2.8.1
+  - @uidu/field-phone@2.8.1
+  - @uidu/field-text@2.7.1
+  - @uidu/form@3.4.1
+  - @uidu/shell@3.0.1
+
 ## 1.12.0
 
 ### Minor Changes

@@ -1,5 +1,13 @@
 # @uidu/toggle
 
+## 2.7.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/field-base@5.0.1
+
 ## 2.7.0
 
 ### Minor Changes

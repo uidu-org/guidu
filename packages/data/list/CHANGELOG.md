@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 3.12.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/data-fields@4.7.1
+  - @uidu/shell@3.0.1
+
 ## 3.12.0
 
 ### Minor Changes

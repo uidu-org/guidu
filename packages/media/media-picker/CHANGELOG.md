@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 1.12.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/media-core@4.1.1
+
 ## 1.12.0
 
 ### Minor Changes

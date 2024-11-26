@@ -1,6 +1,6 @@
 {
   "name": "@uidu/email-builder",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/email-builder",
   "license": "MIT",
   "author": "uidu",
@@ -13,15 +13,15 @@
     "@craftjs/core": "^0.2.5",
     "@craftjs/utils": "^0.2.1",
     "@heroicons/react": "^2.1.5",
-    "@uidu/adf-schema": "3.0.0",
-    "@uidu/button": "1.11.0",
-    "@uidu/editor-core": "2.25.0",
-    "@uidu/email-renderer": "2.0.0",
-    "@uidu/field-number": "2.8.0",
-    "@uidu/field-text": "2.7.0",
-    "@uidu/form": "3.4.0",
-    "@uidu/portal": "1.7.0",
-    "@uidu/select": "2.15.0",
+    "@uidu/adf-schema": "3.0.1",
+    "@uidu/button": "1.11.1",
+    "@uidu/editor-core": "2.26.0",
+    "@uidu/email-renderer": "2.0.1",
+    "@uidu/field-number": "2.8.1",
+    "@uidu/field-text": "2.7.1",
+    "@uidu/form": "3.4.1",
+    "@uidu/portal": "1.7.1",
+    "@uidu/select": "2.15.1",
     "get-video-id": "^3.7.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -30,7 +30,7 @@
     "twin.macro": "^3.4.1"
   },
   "devDependencies": {
-    "@uidu/shell": "3.0.0",
+    "@uidu/shell": "3.0.1",
     "mjml-browser": "^4.15.3"
   }
 }

@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 4.15.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/button@1.11.1
+  - @uidu/menu@0.17.1
+  - @uidu/pagination@0.12.1
+  - @uidu/spinner@0.12.1
+  - @uidu/board@2.11.1
+  - @uidu/calendar@0.12.1
+  - @uidu/data-controls@4.10.1
+  - @uidu/data-fields@4.7.1
+  - @uidu/data-views@3.11.1
+  - @uidu/gallery@2.9.1
+  - @uidu/list@3.12.1
+  - @uidu/table@6.10.1
+  - @uidu/shell@3.0.1
+
 ## 4.15.0
 
 ### Minor Changes

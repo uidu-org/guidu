@@ -1,5 +1,17 @@
 # @uidu/stripe-accounts
 
+## 0.15.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/spinner@0.12.1
+  - @uidu/payments@1.16.1
+  - @uidu/field-text@2.7.1
+  - @uidu/form@3.4.1
+  - @uidu/stepper@0.11.1
+
 ## 0.15.0
 
 ### Minor Changes

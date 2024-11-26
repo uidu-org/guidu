@@ -1,5 +1,13 @@
 # Change Log
 
+## 5.0.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/form@3.4.1
+
 ## 5.0.0
 
 ### Major Changes

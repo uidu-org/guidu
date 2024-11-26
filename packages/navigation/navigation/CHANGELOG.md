@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 1.8.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/dropdown-menu@1.1.0
+  - @uidu/avatar@1.0.1
+  - @uidu/inline-dialog@0.12.1
+  - @uidu/menu@0.17.1
+  - @uidu/theme@0.13.1
+  - @uidu/tooltip@0.12.1
+  - @uidu/animated-menu@1.7.1
+  - @uidu/shell@3.0.1
+
 ## 1.8.0
 
 ### Minor Changes

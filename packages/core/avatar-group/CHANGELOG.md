@@ -1,5 +1,20 @@
 # Change Log
 
+## 3.1.0
+
+### Minor Changes
+
+- e7d9464: Fix workspace protocol
+
+### Patch Changes
+
+- Updated dependencies [e7d9464]
+  - @uidu/avatar@1.0.1
+  - @uidu/menu@0.17.1
+  - @uidu/popup@1.0.1
+  - @uidu/theme@0.13.1
+  - @uidu/tooltip@0.12.1
+
 ## 3.0.0
 
 ### Major Changes

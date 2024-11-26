@@ -1,5 +1,15 @@
 # @uidu/modal-dialog
 
+## 1.9.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/blanket@1.0.1
+  - @uidu/portal@1.7.1
+  - @uidu/theme@0.13.1
+
 ## 1.9.0
 
 ### Minor Changes

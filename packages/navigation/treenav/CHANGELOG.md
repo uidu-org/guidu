@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.10.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+
 ## 0.10.0
 
 ### Minor Changes

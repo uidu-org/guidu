@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.12.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/button@1.11.1
+  - @uidu/shell@3.0.1
+
 ## 0.12.0
 
 ### Minor Changes

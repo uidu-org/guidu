@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 1.5.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+
 ## 1.5.0
 
 ### Minor Changes

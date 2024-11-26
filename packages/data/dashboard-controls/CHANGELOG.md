@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 1.10.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/avatar-group@3.1.0
+  - @uidu/avatar@1.0.1
+  - @uidu/button@1.11.1
+  - @uidu/field-date-range@2.9.1
+  - @uidu/form@3.4.1
+
 ## 1.10.0
 
 ### Minor Changes

@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.11.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/changelog-loader@0.1.35
+  - @uidu/fs-loader@0.1.55
+  - @uidu/nav-info-loader@0.2.9
+
 ## 0.11.0
 
 ### Minor Changes

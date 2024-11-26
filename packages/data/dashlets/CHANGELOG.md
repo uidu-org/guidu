@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 3.12.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/spinner@0.12.1
+  - @uidu/tooltip@0.12.1
+  - @uidu/dashboard-manager@2.12.1
+  - @uidu/data-fields@4.7.1
+  - @uidu/table@6.10.1
+
 ## 3.12.0
 
 ### Minor Changes

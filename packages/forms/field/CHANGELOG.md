@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 1.7.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/checkbox@2.8.1
+  - @uidu/field-number@2.8.1
+  - @uidu/field-text@2.7.1
+  - @uidu/field-textarea@2.8.1
+  - @uidu/select@2.15.1
+
 ## 1.7.0
 
 ### Minor Changes

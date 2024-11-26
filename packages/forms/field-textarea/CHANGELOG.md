@@ -1,5 +1,14 @@
 # @uidu/field-textarea
 
+## 2.8.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/spinner@0.12.1
+  - @uidu/field-base@5.0.1
+
 ## 2.8.0
 
 ### Minor Changes

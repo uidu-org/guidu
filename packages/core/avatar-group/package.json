@@ -1,6 +1,6 @@
 {
   "name": "@uidu/avatar-group",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "A component to display avatars as a group, either as a stack or in a grid.",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/avatar-group",
   "license": "ISC",
@@ -10,19 +10,19 @@
   "module": "dist/uidu-avatar-group.esm.js",
   "dependencies": {
     "@babel/runtime": "^7.26.0",
-    "@uidu/avatar": "^1.0.0",
-    "@uidu/menu": "0.17.0",
-    "@uidu/popup": "1.0.0",
-    "@uidu/theme": "^0.13.0",
-    "@uidu/tooltip": "^0.12.0",
+    "@uidu/avatar": "^1.0.1",
+    "@uidu/menu": "0.17.1",
+    "@uidu/popup": "1.0.1",
+    "@uidu/theme": "^0.13.1",
+    "@uidu/tooltip": "^0.12.1",
     "tslib": "^2.8.1"
   },
   "devDependencies": {
-    "@uidu/button": "^1.11.0",
-    "@uidu/code": "^1.0.0",
-    "@uidu/docs": "^0.12.0",
-    "@uidu/field-base": "^5.0.0",
-    "@uidu/field-toggle": "^2.7.0",
+    "@uidu/button": "^1.11.1",
+    "@uidu/code": "^1.0.1",
+    "@uidu/docs": "^0.12.1",
+    "@uidu/field-base": "^5.0.1",
+    "@uidu/field-toggle": "^2.7.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "styled-components": "^5.3.11"

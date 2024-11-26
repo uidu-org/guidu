@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+
 ## 0.6.0
 
 ### Minor Changes

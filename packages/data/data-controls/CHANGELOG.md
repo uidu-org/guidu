@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 4.10.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/button@1.11.1
+  - @uidu/drawer@0.14.1
+  - @uidu/inline-dialog@0.12.1
+  - @uidu/menu@0.17.1
+  - @uidu/popup@1.0.1
+  - @uidu/spinner@0.12.1
+  - @uidu/tooltip@0.12.1
+  - @uidu/data-fields@4.7.1
+  - @uidu/data-manager@4.15.1
+  - @uidu/data-views@3.11.1
+  - @uidu/checkbox@2.8.1
+  - @uidu/field-text@2.7.1
+  - @uidu/form@3.4.1
+  - @uidu/select@2.15.1
+  - @uidu/shell@3.0.1
+
 ## 4.10.0
 
 ### Minor Changes

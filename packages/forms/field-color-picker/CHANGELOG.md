@@ -1,5 +1,15 @@
 # @uidu/field-color-picker
 
+## 3.8.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/button@1.11.1
+  - @uidu/popup@1.0.1
+  - @uidu/field-base@5.0.1
+
 ## 3.8.0
 
 ### Minor Changes

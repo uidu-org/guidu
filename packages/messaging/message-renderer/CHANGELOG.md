@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.12.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/dropdown-menu@1.1.0
+  - @uidu/theme@0.13.1
+
 ## 0.12.0
 
 ### Minor Changes

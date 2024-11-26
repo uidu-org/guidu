@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.13.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/message@0.14.1
+  - @uidu/message-form@0.13.1
+  - @uidu/message-renderer@0.12.1
+
 ## 0.13.0
 
 ### Minor Changes

@@ -1,5 +1,16 @@
 # @uidu/payments
 
+## 1.16.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/section-message@0.13.1
+  - @uidu/theme@0.13.1
+  - @uidu/field-base@5.0.1
+  - @uidu/form@3.4.1
+
 ## 1.16.0
 
 ### Minor Changes

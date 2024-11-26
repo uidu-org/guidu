@@ -1,5 +1,25 @@
 # @uidu/data-fields
 
+## 4.7.1
+
+### Patch Changes
+
+- e7d9464: Fix workspace protocol
+- Updated dependencies [e7d9464]
+  - @uidu/button@1.11.1
+  - @uidu/map@0.13.1
+  - @uidu/menu@0.17.1
+  - @uidu/popup@1.0.1
+  - @uidu/field-color-picker@3.8.1
+  - @uidu/field-date@2.10.1
+  - @uidu/field-downshift@2.14.1
+  - @uidu/field-number@2.8.1
+  - @uidu/field-text@2.7.1
+  - @uidu/field-time@2.9.1
+  - @uidu/field-toggle@2.7.1
+  - @uidu/form@3.4.1
+  - @uidu/select@2.15.1
+
 ## 4.7.0
 
 ### Minor Changes
