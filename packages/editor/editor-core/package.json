@@ -38,7 +38,7 @@
     "@uidu/mentions": "^1.0.0",
     "@uidu/menu": "^0.17.0",
     "@uidu/modal-dialog": "1.9.0",
-    "@uidu/popup": "workspace:^",
+    "@uidu/popup": "1.0.0",
     "@uidu/prosemirror-utils": "0.4.0",
     "@uidu/select": "^2.15.0",
     "@uidu/spinner": "^0.12.0",
