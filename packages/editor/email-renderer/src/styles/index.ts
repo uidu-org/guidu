@@ -67,7 +67,6 @@ const styles = `
   ${captionStyles}
   ${tableStyles}
   ${tableUtilStyles}
-  ${taskListStyles}
 
   ${alignmentStyles}
   ${codeStyles}
