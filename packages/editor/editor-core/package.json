@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-core",
-  "version": "2.26.0",
+  "version": "2.26.1",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/editor-core",
   "license": "MIT",
   "main": "dist/uidu-editor-core.cjs.js",
@@ -23,7 +23,7 @@
     "@uidu/avatar-group": "^3.1.0",
     "@uidu/button": "^1.11.1",
     "@uidu/date": "^0.11.1",
-    "@uidu/editor-common": "^3.0.1",
+    "@uidu/editor-common": "^3.1.1",
     "@uidu/editor-json-transformer": "^1.10.1",
     "@uidu/editor-markdown-transformer": "^1.10.1",
     "@uidu/emoji": "^1.0.1",

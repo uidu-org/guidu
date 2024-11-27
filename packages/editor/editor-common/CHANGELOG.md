@@ -1,5 +1,11 @@
 # @uidu/editor-common
 
+## 3.1.1
+
+### Patch Changes
+
+- b5cf230: Bakcground color in toolbar
+
 ## 3.1.0
 
 ### Minor Changes
