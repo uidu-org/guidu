@@ -1,5 +1,12 @@
 # @uidu/text-serializer
 
+## 1.0.3
+
+### Patch Changes
+
+- Updated dependencies [b5cf230]
+  - @uidu/editor-common@3.1.1
+
 ## 1.0.2
 
 ### Patch Changes
