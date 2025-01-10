@@ -1,5 +1,11 @@
 # @uidu/field-geosuggest
 
+## 4.0.0
+
+### Major Changes
+
+- e908768: Fix zIndex
+
 ## 3.1.1
 
 ### Patch Changes
