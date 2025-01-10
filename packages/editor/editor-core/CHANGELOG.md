@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 2.26.1
+
+### Patch Changes
+
+- b5cf230: Bakcground color in toolbar
+- Updated dependencies [b5cf230]
+  - @uidu/editor-common@3.1.1
+
 ## 2.26.0
 
 ### Minor Changes
