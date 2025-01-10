@@ -323,6 +323,7 @@ function FieldGeosuggest({
     >
       <div tw="relative w-full">
         <Popup
+          zIndex={999}
           autoFocus={false}
           isOpen={status === 'OK'}
           placement="bottom-start"
