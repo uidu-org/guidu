@@ -8192,7 +8192,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-common@npm:3.0.1, @uidu/editor-common@npm:^3.0.1, @uidu/editor-common@workspace:packages/editor/editor-common":
+"@uidu/editor-common@npm:3.1.1, @uidu/editor-common@npm:^3.0.1, @uidu/editor-common@npm:^3.1.1, @uidu/editor-common@workspace:packages/editor/editor-common":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-common@workspace:packages/editor/editor-common"
   dependencies:
@@ -8226,7 +8226,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@uidu/editor-core@npm:2.26.0, @uidu/editor-core@npm:^2.26.0, @uidu/editor-core@workspace:packages/editor/editor-core":
+"@uidu/editor-core@npm:2.26.1, @uidu/editor-core@npm:^2.26.0, @uidu/editor-core@workspace:packages/editor/editor-core":
   version: 0.0.0-use.local
   resolution: "@uidu/editor-core@workspace:packages/editor/editor-core"
   dependencies:
@@ -8247,7 +8247,7 @@ __metadata:
     "@uidu/button": "npm:^1.11.1"
     "@uidu/date": "npm:^0.11.1"
     "@uidu/docs": "npm:^0.12.1"
-    "@uidu/editor-common": "npm:^3.0.1"
+    "@uidu/editor-common": "npm:^3.1.1"
     "@uidu/editor-json-transformer": "npm:^1.10.1"
     "@uidu/editor-markdown-transformer": "npm:^1.10.1"
     "@uidu/emoji": "npm:^1.0.1"
@@ -8357,7 +8357,7 @@ __metadata:
     "@heroicons/react": "npm:^2.1.5"
     "@uidu/adf-schema": "npm:3.0.1"
     "@uidu/button": "npm:1.11.1"
-    "@uidu/editor-core": "npm:2.26.0"
+    "@uidu/editor-core": "npm:2.26.1"
     "@uidu/email-renderer": "npm:2.0.1"
     "@uidu/field-number": "npm:2.8.1"
     "@uidu/field-text": "npm:2.7.1"
@@ -10081,7 +10081,7 @@ __metadata:
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
     "@uidu/adf-schema": "npm:3.0.1"
-    "@uidu/editor-common": "npm:3.0.1"
+    "@uidu/editor-common": "npm:3.1.1"
     prosemirror-model: "npm:^1.23.0"
   languageName: unknown
   linkType: soft
