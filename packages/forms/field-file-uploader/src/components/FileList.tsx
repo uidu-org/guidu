@@ -9,7 +9,6 @@ import Button, { ButtonGroup } from '@uidu/button';
 import { ButtonItem, MenuGroup } from '@uidu/menu';
 import { getFileTypeIconProps } from '@uifabric/file-type-icons';
 import Uppy from '@uppy/core';
-import '@uppy/core/dist/style.css';
 import React from 'react';
 
 export type FileListProps = {
