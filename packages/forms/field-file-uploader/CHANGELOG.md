@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 3.6.2
+
+### Patch Changes
+
+- eec7357: Remove uppy styling
+
 ## 3.6.1
 
 ### Patch Changes
