@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 1.1.0
+
+### Minor Changes
+
+- 7f13027: Remove process
+
 ## 1.0.1
 
 ### Patch Changes
