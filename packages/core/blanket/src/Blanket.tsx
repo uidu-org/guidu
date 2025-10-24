@@ -18,9 +18,6 @@ const Div = styled.div<{
     isStacked ? `calc(${theme`zIndex.blanket`} + 1)` : theme`zIndex.blanket`};
 `;
 
-const packageName = process.env._PACKAGE_NAME_ as string;
-const packageVersion = process.env._PACKAGE_VERSION_ as string;
-
 function StatelessBlanket(
   {
     shouldAllowClickThrough = false,
