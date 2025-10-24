@@ -1,6 +1,6 @@
 {
   "name": "@uidu/blanket",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A React component that covers the underlying UI for a layered component.",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/blanket",
   "license": "ISC",
