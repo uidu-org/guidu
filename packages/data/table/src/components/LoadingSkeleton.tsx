@@ -21,6 +21,8 @@ export function ScrollSeekPlaceholder({
 }) {
   const { StyledRow, Td } = components;
 
+  console.log('columns', columns);
+
   return (
     <div
       key={`fake-${i}`}
@@ -29,26 +31,50 @@ export function ScrollSeekPlaceholder({
     >
       {columns
         .filter((column) => !column.columnDef.meta?.isPrivate)
-        .map((column, index) => (
-          <Td
-            key={`${column.id}-fake-${i}`}
-            $width={`calc(var(--col-${column.id.replace(
-              '.',
-              '_',
-            )}-size) * 1px)`}
-            // tw="border-b border-r border-opacity-50 p-4 flex[1 0 auto]"
-            // $width={column.getSize()}
-            $minWidth={column.columnDef.minSize}
-            $maxWidth={column.columnDef.maxSize}
-            $isSorted={column.getIsSorted()}
-            $pinned={column.columnDef.meta?.pinned}
-            $index={index}
-            $height={rowHeight}
-            // style={{ width: column.getSize() }}
-          >
-            <div tw="bg-gray-200 w-full [height:30%] rounded animate-pulse" />
-          </Td>
-        ))}
+        .map((column, index) => {
+          if (column.columns.length > 0) {
+            return column.columns.map((subColumn, i) => (
+              <Td
+                key={`${subColumn.id}-fake-${i}`}
+                $width={`calc(var(--col-${subColumn.id.replace(
+                  '.',
+                  '_',
+                )}-size) * 1px)`}
+                // tw="border-b border-r border-opacity-50 p-4 flex[1 0 auto]"
+                // $width={subColumn.getSize()}
+                $minWidth={subColumn.columnDef.minSize}
+                $maxWidth={subColumn.columnDef.maxSize}
+                $isSorted={subColumn.getIsSorted()}
+                $pinned={subColumn.columnDef.meta?.pinned}
+                $index={index}
+                $height={rowHeight}
+                // style={{ width: subColumn.getSize() }}
+              >
+                <div tw="bg-gray-200 w-full [height:30%] rounded animate-pulse" />
+              </Td>
+            ));
+          }
+          return (
+            <Td
+              key={`${column.id}-fake-${i}`}
+              $width={`calc(var(--col-${column.id.replace(
+                '.',
+                '_',
+              )}-size) * 1px)`}
+              // tw="border-b border-r border-opacity-50 p-4 flex[1 0 auto]"
+              // $width={column.getSize()}
+              $minWidth={column.columnDef.minSize}
+              $maxWidth={column.columnDef.maxSize}
+              $isSorted={column.getIsSorted()}
+              $pinned={column.columnDef.meta?.pinned}
+              $index={index}
+              $height={rowHeight}
+              // style={{ width: column.getSize() }}
+            >
+              <div tw="bg-gray-200 w-full [height:30%] rounded animate-pulse" />
+            </Td>
+          );
+        })}
     </div>
   );
 }
@@ -61,6 +87,7 @@ export default function LoadingSkeleton<T extends { id: string }>({
 }: LoadingSkeletonProps<T>) {
   return Array.from(Array(count).keys()).map((i) => (
     <ScrollSeekPlaceholder
+      key={i}
       columns={columns}
       i={i}
       rowHeight={rowHeight}
