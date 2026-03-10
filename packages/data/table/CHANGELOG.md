@@ -1,5 +1,12 @@
 # @uidu/table
 
+## 6.10.2
+
+### Patch Changes
+
+- Updated dependencies [7faf452]
+  - @uidu/data-manager@4.16.0
+
 ## 6.10.1
 
 ### Patch Changes

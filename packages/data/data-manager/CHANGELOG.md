@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 4.16.0
+
+### Minor Changes
+
+- 7faf452: Loading skeleton
+
+### Patch Changes
+
+- @uidu/data-controls@4.10.2
+- @uidu/data-views@3.11.2
+- @uidu/table@6.10.2
+
 ## 4.15.1
 
 ### Patch Changes
