@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 3.12.2
+
+### Patch Changes
+
+- @uidu/table@6.10.2
+
 ## 3.12.1
 
 ### Patch Changes

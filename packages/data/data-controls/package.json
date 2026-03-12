@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "4.10.1",
+  "version": "4.10.2",
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/data-controls",
   "license": "MIT",
@@ -16,8 +16,8 @@
     "@uidu/button": "1.11.1",
     "@uidu/checkbox": "^2.8.1",
     "@uidu/data-fields": "^4.7.1",
-    "@uidu/data-manager": "4.15.1",
-    "@uidu/data-views": "^3.11.1",
+    "@uidu/data-manager": "4.16.0",
+    "@uidu/data-views": "^3.11.2",
     "@uidu/drawer": "^0.14.1",
     "@uidu/field-text": "^2.7.1",
     "@uidu/form": "^3.4.1",
